@@ -1,0 +1,50 @@
+================================================================
+          CREDENCIALES DE ACCESO - CLÍNICA ALFRA
+================================================================
+
+ADMINISTRADORES (ACCESO MAESTRO GARANTIZADO)
+----------------------------------------------------------------
+Estos accesos funcionan siempre con la misma contraseña maestra:
+
+1. Antonio Rangel
+   Email: antonio880718@gmail.com
+   Contraseña: Alfra2026!
+
+2. Alejandra Rodriguez
+   Email: alejandra291714@gmail.com
+   Contraseña: Alfra2026!
+
+----------------------------------------------------------------
+ESPECIALISTAS (CREADOS EN MODULO NÓMINA)
+----------------------------------------------------------------
+Las credenciales generadas automáticamente siguen el patrón:
+[nombre]@XXXX (4 dígitos aleatorios)
+
+1. Antonio Rangel (Especialista)
+   Email: antonio@alfra.com
+   Password Sugerida: antonio@ (seguido de 4 números generados)
+
+2. Dra. Prueba Circuit (Especialista)
+   Email: drprueba@alfra.com
+   Password sugerida: dra@ (seguido de 4 números generados)
+
+----------------------------------------------------------------
+PACIENTES (CREADOS EN PRUEBAS)
+----------------------------------------------------------------
+1. Prueba General
+   Email: prueba@alfra.com
+   Password sugerida: prueba@ (seguido de 4 números generados)
+
+2. Registro Autónomo
+   Email: autoregistro2099@gmail.com
+   Password: la que se haya definido en el registro directo.
+
+3. Paciente Test
+   Email: pacientetest20240508@gmail.com
+
+================================================================
+NOTA IMPORTANTE: 
+Si no recuerdas la contraseña de 4 dígitos de un empleado o 
+paciente, puedes volver a generarlos o editarlos desde el 
+panel de Administración > Gestión Nómina.
+================================================================

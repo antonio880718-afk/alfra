@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-blancoPuro text-gray-800 antialiased font-sans;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .transition-all-200 {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 4px 10px -2px rgba(0, 0, 0, 0.02);
+  }
+
+  .premium-shadow-hover {
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 8px 15px -3px rgba(0, 0, 0, 0.03);
+  }
+}

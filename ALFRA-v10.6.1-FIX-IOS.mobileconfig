@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>FullScreen</key>
+			<true/>
+			<key>IsRemovable</key>
+			<true/>
+			<key>Label</key>
+			<string>ALFRA Clínica</string>
+			<key>PayloadDescription</key>
+			<string>Acceso directo a la aplicación ALFRA</string>
+			<key>PayloadDisplayName</key>
+			<string>ALFRA Clínica</string>
+			<key>PayloadIdentifier</key>
+			<string>com.alfra.app.webclip.1</string>
+			<key>PayloadType</key>
+			<string>com.apple.webClip.managed</string>
+			<key>PayloadUUID</key>
+			<string>EF7E7E7E-1234-5678-ABCD-EF7E7E7E7E7E</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Precomposed</key>
+			<true/>
+			<key>URL</key>
+			<string>https://clinica-alfra.firebaseapp.com</string>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>Instalador ALFRA iOS</string>
+	<key>PayloadIdentifier</key>
+	<string>com.alfra.app.profile.1</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>FA8F8F8F-4321-8765-DCBA-FA8F8F8F8F8F</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

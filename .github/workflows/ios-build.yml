@@ -1,0 +1,51 @@
+name: Build iOS App (Simulator)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Web Project
+        run: npm run build
+
+      - name: Capacitor Sync
+        run: npx cap sync ios
+
+      - name: Install CocoaPods
+        run: |
+          cd ios/App
+          pod install
+
+      - name: Build iOS App (.app)
+        run: |
+          xcodebuild -workspace ios/App/App.xcworkspace \
+                     -scheme App \
+                     -configuration Debug \
+                     -sdk iphonesimulator \
+                     -derivedDataPath build
+
+      - name: Compress .app bundle
+        run: |
+          cd build/Build/Products/Debug-iphonesimulator
+          zip -r ../../../../ALFRA-v10.6.1-iOS-Simulator.app.zip App.app
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ALFRA-iOS-Simulator-App
+          path: ALFRA-v10.6.1-iOS-Simulator.app.zip
