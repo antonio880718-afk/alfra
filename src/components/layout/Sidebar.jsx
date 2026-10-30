@@ -27,7 +27,7 @@ export default function Sidebar() {
             { name: 'Auditoría Clínica', icon: Stethoscope, path: '/auditoria' },
             { name: 'Solicitudes', icon: ClipboardList, path: '/solicitudes' },
             { name: 'Limpieza y Mant.', icon: Sparkles, path: '/admin-tareas-limpieza' },
-            ...(isLocalhost ? [{ name: 'Checador y Asistencia', icon: Clock, path: '/checador' }] : []),
+            { name: 'Checador y Asistencia', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
             { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
@@ -38,7 +38,7 @@ export default function Sidebar() {
             { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
             { name: 'Membresías', icon: CreditCard, path: '/membresias' },
             { name: 'Paquetes de Tratamientos', icon: ClipboardList, path: '/financiamientos' },
-            ...(isLocalhost ? [{ name: 'Checador Digital', icon: Clock, path: '/checador' }] : []),
+            { name: 'Checador Digital', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
             { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
@@ -47,7 +47,7 @@ export default function Sidebar() {
             { name: 'Mi Agenda', icon: Calendar, path: '/agenda' },
             { name: 'Mis Comisiones', icon: DollarSign, path: '/mis-comisiones' },
             { name: 'Mis Pacientes', icon: UsersIcon, path: '/mis-pacientes' },
-            ...(isLocalhost ? [{ name: 'Checador Digital', icon: Clock, path: '/checador' }] : []),
+            { name: 'Checador Digital', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
             { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
@@ -59,6 +59,7 @@ export default function Sidebar() {
     } else if (userRole === 'Limpieza') {
         menuItems = [
             { name: 'Dashboard', icon: Sparkles, path: '/limpieza' },
+            { name: 'Checador Digital', icon: Clock, path: '/checador' },
             { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     }

@@ -4,7 +4,7 @@ import React from 'react';
 import {
     LayoutDashboard, Users as UsersIcon, User, Calendar, DollarSign, Stethoscope,
     Tag, PiggyBank, TrendingUp, LogOut, Menu, X, UserPlus, Archive,
-    CreditCard, PieChart, ClipboardList, Bell, Megaphone, Sparkles
+    CreditCard, PieChart, ClipboardList, Bell, Megaphone, Sparkles, Clock
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
@@ -81,6 +81,7 @@ export default function AppLayout() {
             { name: 'Reportes', icon: PieChart, path: '/reportes' },
             { name: 'Auditoría Clínica', icon: Stethoscope, path: '/auditoria' },
             { name: 'Limpieza y Mant.', icon: Sparkles, path: '/admin-tareas-limpieza' },
+            { name: 'Checador y Asistencia', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
         ];
     } else if (userRole === 'Recepcionista') {
@@ -90,6 +91,7 @@ export default function AppLayout() {
             { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
             { name: 'Membresías', icon: CreditCard, path: '/membresias' },
             { name: 'Paquetes de Tratamientos', icon: ClipboardList, path: '/financiamientos' },
+            { name: 'Checador Digital', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
         ];
     } else if (userRole === 'Especialista' || userRole === 'Doctor') {
@@ -97,6 +99,7 @@ export default function AppLayout() {
             { name: 'Mi Agenda', icon: Calendar, path: '/agenda' },
             { name: 'Mis Comisiones', icon: DollarSign, path: '/mis-comisiones' },
             { name: 'Mis Pacientes', icon: UsersIcon, path: '/mis-pacientes' },
+            { name: 'Checador Digital', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
         ];
     } else if (userRole === 'Limpieza') {

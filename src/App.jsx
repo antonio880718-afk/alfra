@@ -312,9 +312,7 @@ function App() {
                 <Route path="laboratorio-proyeccion-agenda" element={<RoleGuard roles={['Administrador']}><LaboratorioAgendaInteligente /></RoleGuard>} />
                 <Route path="laboratorio-proyeccion-dashboard" element={<RoleGuard roles={['Administrador']}><LaboratorioDashboardFinanciero /></RoleGuard>} />
                 <Route path="solicitudes" element={<RoleGuard roles={['Administrador']}><SolicitudesView /></RoleGuard>} />
-                {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && (
-                  <Route path="checador" element={<RoleGuard roles={['Administrador', 'Recepcionista', 'Especialista', 'Doctor']}><ChecadorView /></RoleGuard>} />
-                )}
+                <Route path="checador" element={<RoleGuard roles={['Administrador', 'Recepcionista', 'Especialista', 'Doctor', 'Limpieza']}><ChecadorView /></RoleGuard>} />
 
                 {/* Recepcion Routes */}
                 <Route path="citas" element={<RoleGuard roles={['Administrador', 'Recepcionista']}><CalendarioCitas /></RoleGuard>} />

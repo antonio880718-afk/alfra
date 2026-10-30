@@ -25,6 +25,7 @@ export default function BottomNav() {
             { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
             { name: 'Membres\u00edas', icon: CreditCard, path: '/membresias' },
             { name: 'Solicitudes', icon: PieChart, path: '/solicitudes' },
+            { name: 'Checador', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
             { name: 'Marketing', icon: Tag, path: '/comercial' },
             { name: 'Reportes', icon: PieChart, path: '/reportes' },
@@ -39,6 +40,7 @@ export default function BottomNav() {
             { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
             { name: 'Membres\u00edas', icon: CreditCard, path: '/membresias' },
             { name: 'Paquetes', icon: ClipboardList, path: '/financiamientos' },
+            { name: 'Checador', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
             { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
@@ -47,6 +49,7 @@ export default function BottomNav() {
             { name: 'Agenda', icon: Calendar, path: '/agenda' },
             { name: 'Comisiones', icon: DollarSign, path: '/mis-comisiones' },
             { name: 'Pacientes', icon: Users, path: '/mis-pacientes' },
+            { name: 'Checador', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
             { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
@@ -58,6 +61,7 @@ export default function BottomNav() {
     } else if (userRole === 'Limpieza') {
         allItems = [
             { name: 'Limpieza', icon: Sparkles, path: '/limpieza' },
+            { name: 'Checador', icon: Clock, path: '/checador' },
             { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     }
