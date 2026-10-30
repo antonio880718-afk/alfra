@@ -22,7 +22,7 @@ export default function ChecadorView() {
     // Configuraci?n de Geocerca GPS de la Cl?nica
     const [configClinica, setConfigClinica] = useState(CLINICA_COORDS_DEFAULT);
     const [editandoConfig, setEditandoConfig] = useState(false);
-    const [nuevoRadio, setNuevoRadio] = useState(150);
+    const [nuevoRadio, setNuevoRadio] = useState(250);
     const [guardandoConfig, setGuardandoConfig] = useState(false);
 
     // Estado del sensor GPS del dispositivo
@@ -44,7 +44,7 @@ export default function ChecadorView() {
     useEffect(() => {
         getConfigChecadorGPS().then(cfg => {
             setConfigClinica(cfg);
-            setNuevoRadio(cfg.radioMetros || 150);
+            setNuevoRadio(cfg.radioMetros || 250);
         });
     }, []);
 
@@ -119,8 +119,13 @@ export default function ChecadorView() {
 
     const dentroDeLaClinica = useMemo(() => {
         if (distanciaMetros === null) return false;
-        return distanciaMetros <= (configClinica.radioMetros || 150);
-    }, [distanciaMetros, configClinica]);
+        const radioBase = configClinica.radioMetros || 250;
+        // Margen de tolerancia para computadoras de escritorio (geolocalización Wi-Fi en Windows suele dar ±135m)
+        const margenPrecision = (gpsCoords?.precision && gpsCoords.precision > 50)
+            ? Math.min(gpsCoords.precision, 150)
+            : 0;
+        return distanciaMetros <= (radioBase + margenPrecision);
+    }, [distanciaMetros, configClinica, gpsCoords]);
 
     const playBeep = (type = 'success') => {
         try {
@@ -216,7 +221,7 @@ export default function ChecadorView() {
                 ...configClinica,
                 lat: gpsCoords.lat,
                 lng: gpsCoords.lng,
-                radioMetros: Number(nuevoRadio) || 150
+                radioMetros: Number(nuevoRadio) || 250
             };
             await saveConfigChecadorGPS(updated);
             setConfigClinica(updated);
@@ -403,9 +408,9 @@ export default function ChecadorView() {
                                     {gpsCargando ? (
                                         'Consultando antena GPS de tu dispositivo...'
                                     ) : dentroDeLaClinica ? (
-                                        `✅ Te encuentras dentro del radio autorizado (${configClinica.radioMetros || 150}m). Presiona un botón abajo para checar.`
+                                        `✅ Te encuentras dentro del radio autorizado (${configClinica.radioMetros || 250}m). Presiona un botón abajo para checar.`
                                     ) : (
-                                        `🔒 Te encuentras fuera del perímetro permitido (${configClinica.radioMetros || 150}m). Acércate a la clínica para habilitar el registro.`
+                                        `🔒 Te encuentras fuera del perímetro permitido (${configClinica.radioMetros || 250}m). Acércate a la clínica para habilitar el registro.`
                                     )}
                                 </p>
                             </div>
@@ -488,7 +493,7 @@ export default function ChecadorView() {
                                 </h3>
                             </div>
                             <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full font-medium">
-                                Radio: {configClinica.radioMetros || 150}m
+                                Radio: {configClinica.radioMetros || 250}m
                             </span>
                         </div>
 

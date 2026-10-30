@@ -1,4 +1,4 @@
-import {
+﻿import {
     collection, addDoc, getDocs, doc, getDoc, setDoc,
     query, where, orderBy, onSnapshot, serverTimestamp, limit
 } from 'firebase/firestore';
@@ -7,17 +7,18 @@ import { db } from '../lib/firebase';
 const ASISTENCIA_COL = collection(db, 'asistencia');
 const CONFIG_DOC = doc(db, 'configuracion', 'checador_gps');
 
-// Coordenadas oficiales por defecto de CL�NICA ALFRA LZC
-// R�o Fuerte 26, Lomas de Bella Vista, Cd. L�zaro C�rdenas, Mich.
+// Coordenadas oficiales de CLÍNICA ALFRA LZC
+// Calle Río Fuerte #26, Col. Lomas de Bella Vista, Cd. Lázaro Cárdenas, Mich.
 export const CLINICA_COORDS_DEFAULT = {
-    lat: 17.9881351,
-    lng: -102.219044,
-    radioMetros: 150, // Per�metro permitido (150 metros a la redonda)
-    direccion: 'Calle R�o Fuerte #26, Col. Lomas de Bella Vista, L�zaro C�rdenas, Mich.'
+    lat: 17.9714,
+    lng: -102.2216,
+    radioMetros: 250, // Perímetro permitido (250m para cubrir clínica y tolerar geolocalización por Wi-Fi de PC)
+    nombre: 'CLINICA ALFRA LZC',
+    direccion: 'Calle Río Fuerte #26, Col. Lomas de Bella Vista, Lázaro Cárdenas, Mich.'
 };
 
 /**
- * F�rmula de Haversine para calcular la distancia en metros entre dos coordenadas GPS
+ * Fórmula de Haversine para calcular la distancia en metros entre dos coordenadas GPS
  */
 export function calcularDistanciaMetros(lat1, lon1, lat2, lon2) {
     if (!lat1 || !lon1 || !lat2 || !lon2) return 999999;
@@ -33,13 +34,18 @@ export function calcularDistanciaMetros(lat1, lon1, lat2, lon2) {
 }
 
 /**
- * Obtener configuraci�n de GPS de la cl�nica
+ * Obtener configuración de GPS de la clínica
  */
 export async function getConfigChecadorGPS() {
     try {
         const snap = await getDoc(CONFIG_DOC);
         if (snap.exists()) {
-            return { ...CLINICA_COORDS_DEFAULT, ...snap.data() };
+            const data = snap.data();
+            // Si tiene las coordenadas antiguas de prueba (17.9881351), usar las reales de Río Fuerte 26
+            if (data.lat && Math.abs(data.lat - 17.9881351) < 0.001) {
+                return CLINICA_COORDS_DEFAULT;
+            }
+            return { ...CLINICA_COORDS_DEFAULT, ...data };
         }
     } catch (e) {
         console.warn('Usando coordenadas por defecto:', e);
@@ -48,7 +54,7 @@ export async function getConfigChecadorGPS() {
 }
 
 /**
- * Guardar nueva configuraci�n de GPS de la cl�nica (Solo Administrador)
+ * Guardar nueva configuración de GPS de la clínica (Solo Administrador)
  */
 export async function saveConfigChecadorGPS(config) {
     await setDoc(CONFIG_DOC, {
@@ -76,7 +82,7 @@ export async function registrarChecadoGPS({
     const hoyYMD = ahora.toISOString().split('T')[0];
     const horaStr = ahora.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true });
 
-    // Determinar si es retardo (Entradas despu�s de las 09:10 AM)
+    // Determinar si es retardo (Entradas después de las 09:10 AM)
     const horaNum = ahora.getHours();
     const minNum = ahora.getMinutes();
     const esRetardo = tipo === 'Entrada' && (horaNum > 9 || (horaNum === 9 && minNum > 10));
@@ -118,7 +124,6 @@ export function onAsistenciaHoyChange(callback) {
     );
     return onSnapshot(q, (snap) => {
         const docs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-        // Ordenar desc por fecha de creaci�n
         docs.sort((a, b) => new Date(b.creadoEn || 0) - new Date(a.creadoEn || 0));
         callback(docs);
     }, (err) => {
@@ -142,7 +147,7 @@ export function onMisRegistrosAsistenciaChange(uid, callback) {
     return onSnapshot(q, (snap) => {
         const docs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
         docs.sort((a, b) => new Date(b.creadoEn || 0) - new Date(a.creadoEn || 0));
-        callback(docs.slice(0, 30)); // �ltimos 30 registros
+        callback(docs.slice(0, 30));
     }, (err) => {
         console.warn('Error escuchando registros personales:', err);
         callback([]);
