@@ -1,4 +1,4 @@
-import { collection, addDoc, updateDoc, setDoc, doc, getDocs, getDoc, query, orderBy, where } from 'firebase/firestore';
+import { collection, addDoc, updateDoc, setDoc, doc, getDocs, getDoc, query, orderBy, where, onSnapshot } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 
 const COLLECTION_NAME = 'seguimiento';
@@ -34,16 +34,26 @@ export const createSeguimiento = async (pacienteId, data) => {
     }
 };
 
+export const onSeguimientosChange = (callback) => {
+    return onSnapshot(seguimientoCol, (snap) => {
+        const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        callback(items);
+    }, (err) => {
+        console.error("Error in onSeguimientosChange listener:", err);
+        callback([]);
+    });
+};
+
 export const getSeguimientosPaciente = async (pacienteId) => {
     try {
-        const q = query(seguimientoCol, orderBy('fechaRegistro', 'desc'));
+        const q = query(seguimientoCol, where('pacienteId', '==', pacienteId));
         const snapshot = await getDocs(q);
         return snapshot.docs
             .map(doc => ({ id: doc.id, ...doc.data() }))
-            .filter(s => s.pacienteId === pacienteId);
+            .sort((a, b) => new Date(b.fechaRegistro || 0) - new Date(a.fechaRegistro || 0));
     } catch (error) {
         console.error("Error fetching seguimientos:", error);
-        return []; // Return empty instead of throwing
+        return [];
     }
 };
 
@@ -82,9 +92,10 @@ export const CUIDADOS_PRESET = {
 };
 
 // Guardar/actualizar el plan de apoyo en casa de un paciente
-export const saveApoyoEnCasa = async (pacienteId, cuidados) => {
+export const saveApoyoEnCasa = async (tratamientoId, pacienteId, cuidados) => {
+    if (!tratamientoId) return;
     try {
-        const docRef = doc(db, APOYO_COLLECTION, pacienteId);
+        const docRef = doc(db, APOYO_COLLECTION, tratamientoId);
         await setDoc(docRef, {
             pacienteId,
             cuidados, // array de { id, texto, activo: true/false }
@@ -98,9 +109,10 @@ export const saveApoyoEnCasa = async (pacienteId, cuidados) => {
 };
 
 // Obtener el plan de apoyo en casa de un paciente
-export const getApoyoEnCasa = async (pacienteId) => {
+export const getApoyoEnCasa = async (tratamientoId) => {
+    if (!tratamientoId) return [];
     try {
-        const docRef = doc(db, APOYO_COLLECTION, pacienteId);
+        const docRef = doc(db, APOYO_COLLECTION, tratamientoId);
         const snap = await getDoc(docRef);
         if (snap.exists()) {
             return snap.data().cuidados || [];
@@ -110,4 +122,62 @@ export const getApoyoEnCasa = async (pacienteId) => {
         console.error("Error getting apoyo en casa:", error);
         return null;
     }
+};
+// ─── REGISTROS DIARIOS (TRACKERS) ───────────────────────────────────────────
+const DAILY_TRACKERS_COLLECTION = 'registrosDiarios';
+const dailyTrackersCol = collection(db, DAILY_TRACKERS_COLLECTION);
+
+export const saveDailyTracker = async (pacienteId, type, data) => {
+    try {
+        const d = new Date();
+        const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        const docId = `${pacienteId}_${type}_${today}`;
+        const docRef = doc(db, DAILY_TRACKERS_COLLECTION, docId);
+
+        await setDoc(docRef, {
+            pacienteId,
+            fecha: today,
+            tipo: type, // 'alimentacion' o 'facial'
+            data,
+            timestamp: new Date().toISOString()
+        }, { merge: true });
+
+        return docId;
+    } catch (error) {
+        console.error("Error saving daily tracker:", error);
+        throw error;
+    }
+};
+
+export const getDailyTrackers = async (pacienteId, count = 100) => {
+    try {
+        const q = query(
+            dailyTrackersCol,
+            where('pacienteId', '==', pacienteId)
+        );
+        const snapshot = await getDocs(q);
+        return snapshot.docs
+            .map(doc => ({ id: doc.id, ...doc.data() }))
+            .sort((a, b) => b.fecha.localeCompare(a.fecha))
+            .slice(0, count);
+    } catch (error) {
+        console.error("Error fetching daily trackers:", error);
+        return [];
+    }
+};
+
+export const onDailyTrackersChange = (pacienteId, callback) => {
+    const q = query(
+        dailyTrackersCol,
+        where('pacienteId', '==', pacienteId)
+    );
+    return onSnapshot(q, (snapshot) => {
+        const trackers = snapshot.docs
+            .map(doc => ({ id: doc.id, ...doc.data() }))
+            .sort((a, b) => b.fecha.localeCompare(a.fecha));
+        callback(trackers);
+    }, (error) => {
+        console.error('Error in daily trackers listener:', error);
+        callback([]);
+    });
 };

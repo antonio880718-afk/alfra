@@ -1,27 +1,86 @@
-import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import React from 'react';
 import {
-    LayoutDashboard, Users as UsersIcon, Calendar, DollarSign, Stethoscope,
-    Tag, PiggyBank, TrendingUp, LogOut, Menu, X, UserPlus, Archive
+    LayoutDashboard, Users as UsersIcon, User, Calendar, DollarSign, Stethoscope,
+    Tag, PiggyBank, TrendingUp, LogOut, Menu, X, UserPlus, Archive,
+    CreditCard, PieChart, ClipboardList, Bell, Megaphone, Sparkles
 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { onAlertasAdminChange, onAlertasPacienteChange, onAlertasEspecialistaChange, markAlertAsRead } from '../../services/citasService';
+import { getPacienteByUid } from '../../services/pacientesService';
+import { getStaffDocByUid } from '../../services/staffService';
+import { getAuth } from 'firebase/auth';
 
 export default function AppLayout() {
     const { userRole, logout } = useAuth();
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [alertas, setAlertas] = useState([]);
+    const [showAlertas, setShowAlertas] = useState(false);
+
+    useEffect(() => {
+        let active = true;
+        let unsub = () => {};
+
+        const setupAlerts = async () => {
+            if (userRole === 'Administrador') {
+                unsub = onAlertasAdminChange((alerts) => {
+                    if (active) setAlertas(alerts);
+                });
+            } else if (userRole === 'Especialista' || userRole === 'Doctor') {
+                const auth = getAuth();
+                const uid = auth.currentUser?.uid;
+                if (uid) {
+                    const staffDoc = await getStaffDocByUid(uid);
+                    if (!active) return;
+                    const docId = staffDoc ? staffDoc.id : uid;
+                    unsub = onAlertasEspecialistaChange(docId, (alerts) => {
+                        if (active) setAlertas(alerts);
+                    });
+                }
+            } else if (userRole === 'Paciente' || userRole === 'Limpieza') {
+                const auth = getAuth();
+                const uid = auth.currentUser?.uid;
+                if (uid) {
+                    const p = await getPacienteByUid(uid);
+                    if (!active) return;
+                    if (p?.id) {
+                        unsub = onAlertasPacienteChange(p.id, (alerts) => {
+                            if (active) setAlertas(alerts);
+                        });
+                    }
+                }
+            }
+        };
+
+        setupAlerts();
+
+        return () => {
+            active = false;
+            unsub();
+        };
+    }, [userRole]);
+
+    const handleDismissAlerta = async (id) => {
+        await markAlertAsRead(id);
+    };
 
     let menuItems = [];
     if (userRole === 'Administrador') {
         menuItems = [
             { name: 'Dashboard KPIs', icon: LayoutDashboard, path: '/dashboard' },
             { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
+            { name: 'Membresías', icon: CreditCard, path: '/membresias' },
+            { name: 'Servicios y Marketing', icon: Tag, path: '/comercial' },
             { name: 'Agenda Global', icon: Calendar, path: '/agenda-global' },
             { name: 'Gestión Nómina', icon: UsersIcon, path: '/nomina' },
             { name: 'Contabilidad', icon: TrendingUp, path: '/finanzas' },
             { name: 'Corte de Caja', icon: DollarSign, path: '/corte-caja' },
-            { name: 'Financiamientos', icon: PiggyBank, path: '/financiamientos' },
+            { name: 'Paquetes de Tratamientos', icon: ClipboardList, path: '/financiamientos' },
+            { name: 'Reportes', icon: PieChart, path: '/reportes' },
             { name: 'Auditoría Clínica', icon: Stethoscope, path: '/auditoria' },
+            { name: 'Limpieza y Mant.', icon: Sparkles, path: '/admin-tareas-limpieza' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
         ];
     } else if (userRole === 'Recepcionista') {
@@ -29,17 +88,25 @@ export default function AppLayout() {
             { name: 'Calendario Global', icon: Calendar, path: '/citas' },
             { name: 'Recepción y Caja', icon: DollarSign, path: '/caja' },
             { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
+            { name: 'Membresías', icon: CreditCard, path: '/membresias' },
+            { name: 'Paquetes de Tratamientos', icon: ClipboardList, path: '/financiamientos' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
         ];
-    } else if (userRole === 'Especialista') {
+    } else if (userRole === 'Especialista' || userRole === 'Doctor') {
         menuItems = [
             { name: 'Mi Agenda', icon: Calendar, path: '/agenda' },
+            { name: 'Mis Comisiones', icon: DollarSign, path: '/mis-comisiones' },
             { name: 'Mis Pacientes', icon: UsersIcon, path: '/mis-pacientes' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
         ];
+    } else if (userRole === 'Limpieza') {
+        menuItems = [
+            { name: 'Aseo y Limpieza', icon: Sparkles, path: '/limpieza' },
+        ];
     } else if (userRole === 'Paciente') {
         menuItems = [
-            { name: 'Mi Perfil Wellness', icon: Stethoscope, path: '/pacientes' },
+            { name: 'Mi Perfil', icon: User, path: '/pacientes' },
+            { name: 'Novedades', icon: Megaphone, path: '/promociones' },
         ];
     }
 
@@ -56,11 +123,26 @@ export default function AppLayout() {
                     style={{ paddingTop: 'env(safe-area-inset-top, 0px)', minHeight: '110px' }}>
                     {/* Logo grande 3x */}
                     <img
-                        src="/logo.png.png"
+                        src="/logo.png"
                         alt="ALFRA Clínica"
                         style={{ height: '96px', width: 'auto', objectFit: 'contain', maxWidth: '75%' }}
                     />
-                    {/* Botón abrir menú lateral */}
+                    <div className="flex items-center gap-2">
+                    {(userRole === 'Administrador' || userRole === 'Especialista' || userRole === 'Doctor' || userRole === 'Paciente' || userRole === 'Limpieza') && (
+                        <button
+                            onClick={() => setShowAlertas(!showAlertas)}
+                            className="relative p-3 rounded-2xl bg-turquesa/10 active:bg-turquesa/25"
+                            style={{ minWidth: '56px', minHeight: '56px' }}
+                        >
+                            <Bell size={26} className="text-turquesa" />
+                            {alertas.length > 0 && (
+                                <span className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 text-white text-[10px] font-black rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                                    {alertas.length}
+                                </span>
+                            )}
+                        </button>
+                    )}
+                    {/* Boton abrir menu lateral */}
                     <button
                         onClick={() => setDrawerOpen(true)}
                         className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl bg-turquesa/10 active:bg-turquesa/25"
@@ -69,7 +151,51 @@ export default function AppLayout() {
                     >
                         <Menu size={30} className="text-turquesa" strokeWidth={2.5} />
                     </button>
+                    </div>
                 </header>
+
+                {/* PANEL DE NOTIFICACIONES */}
+                {showAlertas && (
+                    <div className="fixed inset-0 z-50" onClick={() => setShowAlertas(false)}>
+                        <div className="absolute top-0 right-0 left-0 md:left-auto md:right-4 md:top-4 md:w-96 bg-white rounded-b-3xl md:rounded-3xl shadow-2xl border border-gray-100 max-h-[80vh] overflow-hidden animate-in slide-in-from-top duration-300" onClick={e => e.stopPropagation()}>
+                            <div className="bg-gradient-to-r from-acero to-[#1a3040] p-5 flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                    <Bell size={20} className="text-turquesa" />
+                                    <h3 className="text-white font-black text-sm uppercase tracking-widest">Notificaciones</h3>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className="bg-turquesa/20 text-turquesa text-[10px] font-black px-2.5 py-1 rounded-full">{alertas.length}</span>
+                                    {alertas.length > 0 && (
+                                        <button onClick={async () => { for (const a of alertas) await handleDismissAlerta(a.id); }} className="text-white/60 hover:text-white text-[10px] font-bold underline">Limpiar</button>
+                                    )}
+                                </div>
+                            </div>
+                            <div className="overflow-y-auto max-h-[60vh] p-3 space-y-2">
+                                {alertas.length === 0 ? (
+                                    <div className="text-center py-12">
+                                        <Bell size={32} className="text-gray-200 mx-auto mb-3" />
+                                        <p className="text-gray-400 text-sm font-bold">Sin notificaciones pendientes</p>
+                                    </div>
+                                ) : alertas.map(a => (
+                                    <div key={a.id} className="flex items-start gap-3 p-3 bg-turquesa/5 rounded-2xl border border-turquesa/10 hover:bg-turquesa/10 transition-all group">
+                                        <div className="w-8 h-8 bg-turquesa/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                                            <Bell size={14} className="text-turquesa" />
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <p className="text-sm text-gray-800 font-medium leading-snug">{a.mensaje}</p>
+                                            <p className="text-[10px] text-gray-400 font-bold mt-1">
+                                                {a.createdAt?.toDate ? a.createdAt.toDate().toLocaleString('es-MX', {day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}) : ''}
+                                            </p>
+                                        </div>
+                                        <button onClick={() => handleDismissAlerta(a.id)} className="text-gray-400 hover:text-red-500 active:text-red-600 p-2 rounded-xl hover:bg-red-50 active:bg-red-100 transition-all" title="Marcar como leida">
+                                            <X size={14} />
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 {/* ── OVERLAY ── */}
                 {drawerOpen && (
@@ -87,7 +213,7 @@ export default function AppLayout() {
                     {/* Encabezado del drawer — logo grande */}
                     <div className="flex items-center justify-between px-5 py-5 border-b border-gray-100 bg-gradient-to-r from-turquesa/5 to-transparent">
                         <img
-                            src="/logo.png.png"
+                            src="/logo.png"
                             alt="ALFRA Clínica"
                             style={{ height: '100px', width: 'auto', objectFit: 'contain', maxWidth: '70%' }}
                         />
@@ -141,7 +267,7 @@ export default function AppLayout() {
 
                 {/* ── CONTENIDO DE LA PÁGINA ── */}
                 {/* paddingBottom con safe-area para que los botones del sistema no tapen nada */}
-                <div className="flex-1 overflow-y-auto p-4 md:p-8"
+                <div className="flex-1 overflow-y-auto p-4 md:p-8 3xl:p-12 4xl:p-16"
                     style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom, 24px))' }}>
                     <Outlet />
                 </div>

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
     LayoutDashboard, Users, Calendar, DollarSign, Stethoscope,
-    Tag, PiggyBank, TrendingUp, ClipboardList, ChevronUp, X
+    Tag, PiggyBank, TrendingUp, ClipboardList, ChevronUp, X, Megaphone, User, Clock,
+    CreditCard, Archive, PieChart, UserPlus, Sparkles
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 
 export default function BottomNav() {
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const { userRole } = useAuth();
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -18,23 +20,45 @@ export default function BottomNav() {
             { name: 'Nómina', icon: Users, path: '/nomina' },
             { name: 'Contabilidad', icon: TrendingUp, path: '/finanzas' },
             { name: 'Corte Caja', icon: DollarSign, path: '/corte-caja' },
-            { name: 'Financiamientos', icon: PiggyBank, path: '/financiamientos' },
+            { name: 'Paquetes', icon: ClipboardList, path: '/financiamientos' },
             { name: 'Auditoría', icon: Stethoscope, path: '/auditoria' },
-            { name: 'Catálogo', icon: Tag, path: '/comercial' },
+            { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
+            { name: 'Membres\u00edas', icon: CreditCard, path: '/membresias' },
+            { name: 'Solicitudes', icon: PieChart, path: '/solicitudes' },
+            { name: 'Inventario', icon: Archive, path: '/inventario' },
+            { name: 'Marketing', icon: Tag, path: '/comercial' },
+            { name: 'Reportes', icon: PieChart, path: '/reportes' },
+            { name: 'Proyeccion IA', icon: TrendingUp, path: '/laboratorio-proyeccion-agenda' },
+            { name: 'Finanzas IA', icon: TrendingUp, path: '/laboratorio-proyeccion-dashboard' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     } else if (userRole === 'Recepcionista') {
         allItems = [
             { name: 'Citas', icon: Calendar, path: '/citas' },
             { name: 'Caja', icon: DollarSign, path: '/caja' },
+            { name: 'Pacientes', icon: UserPlus, path: '/admin-pacientes' },
+            { name: 'Membres\u00edas', icon: CreditCard, path: '/membresias' },
+            { name: 'Paquetes', icon: ClipboardList, path: '/financiamientos' },
+            { name: 'Inventario', icon: Archive, path: '/inventario' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
-    } else if (userRole === 'Especialista') {
+    } else if (userRole === 'Especialista' || userRole === 'Doctor') {
         allItems = [
             { name: 'Agenda', icon: Calendar, path: '/agenda' },
-            { name: 'Pacientes', icon: Users, path: '/especialista/expediente/p1' },
+            { name: 'Comisiones', icon: DollarSign, path: '/mis-comisiones' },
+            { name: 'Pacientes', icon: Users, path: '/mis-pacientes' },
+            { name: 'Inventario', icon: Archive, path: '/inventario' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     } else if (userRole === 'Paciente') {
         allItems = [
-            { name: 'Mi Perfil', icon: Stethoscope, path: '/pacientes' },
+            { name: 'Mi Perfil', icon: User, path: '/pacientes' },
+            { name: 'Novedades', icon: Megaphone, path: '/promociones' },
+        ];
+    } else if (userRole === 'Limpieza') {
+        allItems = [
+            { name: 'Limpieza', icon: Sparkles, path: '/limpieza' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     }
 

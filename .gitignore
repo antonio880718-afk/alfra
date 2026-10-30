@@ -3,3 +3,14 @@ node_modules
 dist
 dist-ssr
 *.local
+*.apk
+*.aab
+*.jks
+.agent/
+.agents/
+.gemini/
+.gsd/
+.firebase/
+capturas_playstore/
+scratch/
+*.log

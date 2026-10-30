@@ -48,3 +48,15 @@ Si no recuerdas la contraseña de 4 dígitos de un empleado o
 paciente, puedes volver a generarlos o editarlos desde el 
 panel de Administración > Gestión Nómina.
 ================================================================
+
+================================================================
+          CREDENCIALES DE GOOGLE PLAY STORE (ANDROID)
+================================================================
+Estas son las credenciales de la llave criptográfica (Keystore)
+utilizada para firmar la aplicación al subirla a la Play Store.
+ES CRÍTICO NO PERDER EL ARCHIVO `android/app/release-key.jks`.
+
+Alias de la Llave: alfra
+Contraseña de la Llave: alfra2026
+Contraseña del Almacén (Keystore): alfra2026
+================================================================

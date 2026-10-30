@@ -14,6 +14,7 @@ export default function RegistroPaciente() {
         confirmar: '',
         telefono: '',
         fechaNacimiento: '',
+        comoNosConocio: '',
     });
     const [showPass, setShowPass] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -27,6 +28,8 @@ export default function RegistroPaciente() {
         setError('');
 
         if (!form.nombre.trim()) { setError('Ingresa tu nombre completo.'); return; }
+        if (!form.telefono.trim()) { setError('Ingresa tu teléfono para enlazar tu expediente.'); return; }
+        if (form.telefono.replace(/\D/g, '').length < 10) { setError('El número de teléfono debe ser a 10 dígitos.'); return; }
         if (form.password.length < 6) { setError('La contraseña debe tener al menos 6 caracteres.'); return; }
         if (form.password !== form.confirmar) { setError('Las contraseñas no coinciden.'); return; }
 
@@ -38,6 +41,7 @@ export default function RegistroPaciente() {
                 nombre: form.nombre,
                 telefono: form.telefono,
                 fechaNacimiento: form.fechaNacimiento,
+                comoNosConocio: form.comoNosConocio,
             });
             setExito(true);
             setTimeout(() => navigate('/pacientes'), 2000);
@@ -72,7 +76,7 @@ export default function RegistroPaciente() {
                     <>
                         {/* Header */}
                         <div className="text-center mb-6">
-                            <img src="/logo.png.png" alt="ALFRA" className="h-24 w-auto mx-auto object-contain mb-4" />
+                            <img src="/logo.png" alt="ALFRA" className="h-24 w-auto mx-auto object-contain mb-4" />
                             <h1 className="text-2xl font-bold text-acero">Crea tu Cuenta de Paciente</h1>
                             <p className="text-gray-500 text-sm mt-1">Únete a Clínica ALFRA y lleva tu tratamiento en un solo lugar</p>
                         </div>
@@ -111,19 +115,25 @@ export default function RegistroPaciente() {
                             </div>
 
                             {/* Teléfono */}
-                            <div className="relative">
+                            <div className="relative mb-2">
                                 <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                                 <input
+                                    required
                                     type="tel"
-                                    placeholder="Teléfono (opcional)"
+                                    placeholder="Teléfono (Ej. 55 1234 5678)"
                                     value={form.telefono}
                                     onChange={e => set('telefono', e.target.value)}
                                     className="w-full pl-9 pr-4 py-3 rounded-xl border border-gray-200 focus:border-turquesa focus:ring-2 focus:ring-turquesa/20 outline-none transition-all text-sm"
                                 />
+                                <p className="text-[10px] text-gray-500 mt-1 ml-1 leading-tight">
+                                    <span className="text-turquesa font-bold">Importante:</span> Ingresa el mismo número que proporcionaste en Clínica para enlazar tu historial.
+                                </p>
                             </div>
 
                             {/* Fecha de nacimiento */}
-                            <div className="relative">
+                            <div>
+                                <label className="text-[11px] font-bold text-gray-500 ml-1 mb-1 block">Fecha de nacimiento</label>
+                                <div className="relative">
                                 <Calendar size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                                 <input
                                     type="date"
@@ -132,6 +142,28 @@ export default function RegistroPaciente() {
                                     onChange={e => set('fechaNacimiento', e.target.value)}
                                     className="w-full pl-9 pr-4 py-3 rounded-xl border border-gray-200 focus:border-turquesa focus:ring-2 focus:ring-turquesa/20 outline-none transition-all text-sm text-gray-600"
                                 />
+                                </div>
+                            </div>
+
+                            {/* ¿Cómo nos conociste? */}
+                            <div>
+                                <label className="text-[11px] font-bold text-gray-500 ml-1 mb-1 block">¿Cómo nos conociste?</label>
+                                <select
+                                    value={form.comoNosConocio}
+                                    onChange={e => set('comoNosConocio', e.target.value)}
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-turquesa focus:ring-2 focus:ring-turquesa/20 outline-none transition-all text-sm text-gray-600 bg-white"
+                                >
+                                    <option value="">Selecciona una opción (opcional)</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="TikTok">TikTok</option>
+                                    <option value="Google / Maps">Google / Maps</option>
+                                    <option value="Recomendación de un paciente">Recomendación de un paciente</option>
+                                    <option value="Volante / Publicidad impresa">Volante / Publicidad impresa</option>
+                                    <option value="Pasaba por aquí">Pasaba por aquí</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
                             </div>
 
                             {/* Password */}

@@ -20,7 +20,8 @@ export const Button = ({
     };
 
     const sizes = {
-        sm: "px-3 py-1.5 text-sm gap-1.5",
+        xs: "px-2 py-1 text-[10px] gap-1",
+    sm: "px-3 py-1.5 text-sm gap-1.5",
         md: "px-4 py-2 text-sm gap-2",
         lg: "px-6 py-3 text-base gap-2"
     };
@@ -32,7 +33,7 @@ export const Button = ({
             className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${widthStyle} ${className}`}
             {...props}
         >
-            {Icon && <Icon size={size === 'sm' ? 16 : 20} />}
+            {Icon && <Icon size={size === 'xs' ? 12 : size === 'sm' ? 16 : 20} />}
             {children}
         </button>
     );

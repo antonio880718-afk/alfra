@@ -16,6 +16,7 @@ export const onInventarioChange = (callback) => {
     return onSnapshot(inventarioCol, (snap) => {
         const items = snap.docs
             .map(d => ({ id: d.id, ...d.data() }))
+            .filter(d => !d.eliminado) // Filtro Soft Delete
             .sort((a, b) => (a.nombre || '').localeCompare(b.nombre || ''));
         callback(items);
     }, (err) => {
@@ -51,9 +52,14 @@ export const updateInventarioItem = async (id, data) => {
     await updateDoc(ref, { ...data, updatedAt: new Date().toISOString() });
 };
 
-/** Eliminar un item */
+/** Eliminar un item (SOFT DELETE, no se permite el borrado físico) */
 export const deleteInventarioItem = async (id) => {
-    await deleteDoc(doc(db, 'inventario', id));
+    // await deleteDoc(doc(db, 'inventario', id)); // HARD DELETE DESACTIVADO
+    await updateDoc(doc(db, 'inventario', id), {
+        activo: false,
+        eliminado: true,
+        deletedAt: new Date().toISOString(),
+    });
 };
 
 // ═══════════════════════════════════════════════════════════════

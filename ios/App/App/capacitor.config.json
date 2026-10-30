@@ -23,6 +23,9 @@
 	},
 	"packageClassList": [
 		"AppPlugin",
+		"FilesystemPlugin",
+		"PushNotificationsPlugin",
+		"SharePlugin",
 		"SplashScreenPlugin",
 		"StatusBarPlugin"
 	]

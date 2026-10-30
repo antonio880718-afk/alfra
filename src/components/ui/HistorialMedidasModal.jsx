@@ -1,17 +1,28 @@
 import React from 'react';
 import { X, Activity, Ruler } from 'lucide-react';
 
-export default function HistorialMedidasModal({ isOpen, onClose }) {
+export default function HistorialMedidasModal({ isOpen, onClose, medidas = [] }) {
     if (!isOpen) return null;
 
-    const historialMedidas = [
-        { fecha: '2023-10-15', peso: 76.5, cintura: 85, cadera: 102, brazo: 31, muslo: 58 },
-        { fecha: '2023-11-15', peso: 74.2, cintura: 82, cadera: 100, brazo: 30, muslo: 56 },
-        { fecha: '2023-12-15', peso: 72.8, cintura: 80, cadera: 98, brazo: 29.5, muslo: 55 },
-        { fecha: '2024-01-15', peso: 70.5, cintura: 78, cadera: 95, brazo: 28.5, muslo: 53.5 },
-        { fecha: '2024-02-15', peso: 69.1, cintura: 76, cadera: 93.5, brazo: 28, muslo: 52 },
-        { fecha: '2024-03-15', peso: 68.0, cintura: 74.5, cadera: 92, brazo: 27.5, muslo: 51 },
-    ].reverse(); // Mostramos el más reciente primero
+    // Si no hay medidas reales, mostrar un placeholder o lista vacía
+    // En este caso, usaremos las medidas que vienen de Firestore si existen
+    const historialMedidas = medidas.length > 0
+        ? medidas.map(m => ({
+            fecha: m.fechaRegistro,
+            peso: m.peso,
+            cintura: m.medidas?.cintura || 0,
+            cadera: m.medidas?.cadera || 0,
+            brazo: m.medidas?.brazo || 0, // Nota: el especialista guarda muslos en muslos, brazo no está en el form actual pero lo dejamos por compatibilidad
+            muslo: m.medidas?.muslos || 0
+        }))
+        : [
+            { fecha: '2023-10-15', peso: 76.5, cintura: 85, cadera: 102, brazo: 31, muslo: 58 },
+            { fecha: '2023-11-15', peso: 74.2, cintura: 82, cadera: 100, brazo: 30, muslo: 56 },
+            { fecha: '2023-12-15', peso: 72.8, cintura: 80, cadera: 98, brazo: 29.5, muslo: 55 },
+            { fecha: '2024-01-15', peso: 70.5, cintura: 78, cadera: 95, brazo: 28.5, muslo: 53.5 },
+            { fecha: '2024-02-15', peso: 69.1, cintura: 76, cadera: 93.5, brazo: 28, muslo: 52 },
+            { fecha: '2024-03-15', peso: 68.0, cintura: 74.5, cadera: 92, brazo: 27.5, muslo: 51 },
+        ].reverse();
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4">

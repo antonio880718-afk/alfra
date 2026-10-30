@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
+import { useNavigate } from 'react-router-dom';
 import {
     Search, FolderOpen, User, Calendar, X, AlertCircle,
-    FileText, Activity, HeartPulse, Camera, Loader,
-    History, FileCheck as FileChecked, PlusCircle, Plus, CheckCircle
+    FileText, Activity, HeartPulse, Camera, Loader, Home,
+    History, FileCheck as FileChecked, PlusCircle, Plus, CheckCircle,
+    Copy, Check, AlertTriangle, ExternalLink
 } from 'lucide-react';
 import { onPacientesChange } from '../../services/pacientesService';
-import { getSeguimientosPaciente, getApoyoEnCasa } from '../../services/seguimientoService';
+import { onCitasChange } from '../../services/citasService';
+import { onStaffChange } from '../../services/staffService';
+import { getSeguimientosPaciente, getApoyoEnCasa, getDailyTrackers, onSeguimientosChange } from '../../services/seguimientoService';
+import { getSolicitudesEliminacion, eliminarTratamiento, rechazarEliminacionTratamiento, onSesionesChange, auditarExpedientesPorDia } from '../../services/tratamientosService';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, ReferenceLine } from 'recharts';
 
 export default function AuditoriaClinica() {
+    const navigate = useNavigate();
     const [pacientes, setPacientes] = useState([]);
+    const [staffList, setStaffList] = useState([]);
+    const [citasAll, setCitasAll] = useState([]);
+    const [sesionesAll, setSesionesAll] = useState([]);
+    const [seguimientosAll, setSeguimientosAll] = useState([]);
+    const [fechaAuditoriaDia, setFechaAuditoriaDia] = useState(() => new Date().toISOString().split('T')[0]);
+    const [copiedKey, setCopiedKey] = useState('');
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedPatient, setSelectedPatient] = useState(null);
@@ -18,6 +31,10 @@ export default function AuditoriaClinica() {
     const [treatmentType, setTreatmentType] = useState('Facial');
     const [signingConsent, setSigningConsent] = useState(null);
     const fileInputRef = React.useRef(null);
+
+    // Bajas Requests
+    const [solicitudesBaja, setSolicitudesBaja] = useState([]);
+    const [loadingBajas, setLoadingBajas] = useState(true);
 
     // Mock Adherence Data
     const mockAdherenciaDiaria = [
@@ -61,14 +78,76 @@ export default function AuditoriaClinica() {
     const [historial, setHistorial] = useState([]);
     const [loadingHistorial, setLoadingHistorial] = useState(false);
     const [apoyoCuidados, setApoyoCuidados] = useState([]);
+    const [adherenciaReal, setAdherenciaReal] = useState([]);
 
     React.useEffect(() => {
         const unsub = onPacientesChange((data) => {
             setPacientes(data);
             setLoading(false);
         });
-        return () => unsub();
+        const unsubCitas = onCitasChange(setCitasAll);
+        const unsubSesiones = onSesionesChange(setSesionesAll);
+        const unsubSegs = onSeguimientosChange(setSeguimientosAll);
+        const unsubStaff = onStaffChange(setStaffList);
+        fetchBajas();
+        return () => {
+            unsub();
+            if (unsubCitas) unsubCitas();
+            if (unsubSesiones) unsubSesiones();
+            if (unsubSegs) unsubSegs();
+            if (unsubStaff) unsubStaff();
+        };
     }, []);
+
+    const handleCopiarMensaje = async (texto, key) => {
+        try {
+            await navigator.clipboard.writeText(texto);
+            setCopiedKey(key);
+            setTimeout(() => setCopiedKey(''), 3000);
+        } catch {
+            const ta = document.createElement('textarea');
+            ta.value = texto;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            setCopiedKey(key);
+            setTimeout(() => setCopiedKey(''), 3000);
+        }
+    };
+
+    const reporteDiaExpedientes = React.useMemo(() => {
+        const citasDia = (citasAll || []).filter((c) => (c.fecha || c.fechaHora || '').startsWith(fechaAuditoriaDia));
+        return auditarExpedientesPorDia(citasDia, sesionesAll, seguimientosAll, fechaAuditoriaDia, staffList, pacientes);
+    }, [citasAll, sesionesAll, seguimientosAll, fechaAuditoriaDia, staffList, pacientes]);
+
+    const fetchBajas = async () => {
+        setLoadingBajas(true);
+        try {
+            const reqs = await getSolicitudesEliminacion();
+            setSolicitudesBaja(reqs);
+        } catch (e) {
+            console.error('Error fetching bajas', e);
+        } finally {
+            setLoadingBajas(false);
+        }
+    };
+
+    const handleAprobarBaja = async (tratId) => {
+        if (!confirm('¿Aprobar Baja Definitiva?\n\nEste expediente se volverá invisible para el Especialista (Borrado Lógico).')) return;
+        try {
+            await eliminarTratamiento(tratId);
+            fetchBajas();
+        } catch (e) { alert('Error aprobando.'); }
+    };
+
+    const handleRechazarBaja = async (tratId) => {
+        if (!confirm('¿Rechazar solicitud y reactivar tratamiento?')) return;
+        try {
+            await rechazarEliminacionTratamiento(tratId);
+            fetchBajas();
+        } catch (e) { alert('Error rechazando.'); }
+    };
 
     const openEMR = async (paciente) => {
         setSelectedPatient(paciente);
@@ -79,6 +158,8 @@ export default function AuditoriaClinica() {
             setHistorial(h);
             const a = await getApoyoEnCasa(paciente.id);
             setApoyoCuidados(a || []);
+            const trackers = await getDailyTrackers(paciente.id);
+            setAdherenciaReal(trackers || []);
         } catch (err) {
             console.error(err);
         } finally {
@@ -130,6 +211,109 @@ export default function AuditoriaClinica() {
                 </div>
             </div>
 
+            {/* REPORTE DIARIO DE EXPEDIENTES NO ACTUALIZADOS AL DÍA */}
+            <Card className={reporteDiaExpedientes.sinActualizar.length > 0 ? 'bg-red-50/70 border-2 border-red-200' : 'bg-emerald-50/40 border border-emerald-200'}>
+                <div className="space-y-4">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                        <div className="flex items-start gap-3">
+                            <div className={`p-2.5 rounded-xl shrink-0 ${reporteDiaExpedientes.sinActualizar.length > 0 ? 'bg-red-100 text-red-600' : 'bg-emerald-100 text-emerald-600'}`}>
+                                {reporteDiaExpedientes.sinActualizar.length > 0 ? <AlertTriangle size={22} /> : <CheckCircle size={22} />}
+                            </div>
+                            <div>
+                                <h3 className={`text-sm sm:text-base font-black uppercase tracking-tight ${reporteDiaExpedientes.sinActualizar.length > 0 ? 'text-red-800' : 'text-emerald-800'}`}>
+                                    {reporteDiaExpedientes.sinActualizar.length > 0
+                                        ? `🚨 Reporte Diario: ${reporteDiaExpedientes.sinActualizar.length} Expediente(s) No Actualizado(s) al Día`
+                                        : '✓ Reporte Diario: Todos los Expedientes de las Citas del Día Están Actualizados'}
+                                </h3>
+                                <p className="text-xs text-gray-600 mt-0.5">
+                                    Citas programadas en la fecha seleccionada: <strong>{reporteDiaExpedientes.totalCitas}</strong> • Actualizados: <strong className="text-emerald-700">{reporteDiaExpedientes.actualizados.length}</strong> • Sin actualizar: <strong className="text-red-600">{reporteDiaExpedientes.sinActualizar.length}</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-gray-200 shadow-sm">
+                                <Calendar size={14} className="text-turquesa" />
+                                <input
+                                    type="date"
+                                    value={fechaAuditoriaDia}
+                                    onChange={(e) => e.target.value && setFechaAuditoriaDia(e.target.value)}
+                                    className="text-xs font-bold text-gray-700 outline-none bg-transparent cursor-pointer"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {reporteDiaExpedientes.sinActualizar.length > 0 && (
+                        <div className="space-y-3 pt-1">
+                            {reporteDiaExpedientes.porEspecialista.map((grupo, idx) => {
+                                const keyId = `aud-esp-${idx}`;
+                                return (
+                                    <div key={idx} className="bg-white p-4 rounded-2xl border border-red-200 shadow-sm space-y-2.5">
+                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                            <div>
+                                                <span className="text-xs font-black text-acero uppercase">
+                                                    👩‍⚕️ Especialista: <span className="text-red-700">{grupo.especialista}</span>
+                                                </span>
+                                                <p className="text-xs text-gray-700 mt-0.5">
+                                                    Paciente(s) sin actualizar expediente:{' '}
+                                                    <strong className="text-red-700">{grupo.listaPacientes}</strong>
+                                                </p>
+                                            </div>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleCopiarMensaje(grupo.mensaje, keyId)}
+                                                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-black transition-all cursor-pointer shrink-0 ${
+                                                    copiedKey === keyId
+                                                        ? 'bg-emerald-600 text-white'
+                                                        : 'bg-red-600 hover:bg-red-700 text-white shadow-sm'
+                                                }`}
+                                            >
+                                                {copiedKey === keyId ? <Check size={14} /> : <Copy size={14} />}
+                                                {copiedKey === keyId ? '¡Copiado al portapapeles!' : `Copiar Mensaje para ${grupo.especialista}`}
+                                            </button>
+                                        </div>
+                                        <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700 select-all">
+                                            "{grupo.mensaje}"
+                                        </div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {grupo.citas.map((c, cIdx) => {
+                                                const copyPacKey = `aud-pac-${idx}-${cIdx}`;
+                                                return (
+                                                    <div key={c.id || cIdx} className="flex items-center gap-1">
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => c.pacienteId && navigate(`/especialista/expediente/${c.pacienteId}`)}
+                                                            className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 border border-red-200 cursor-pointer"
+                                                        >
+                                                            <ExternalLink size={12} /> Abrir expediente: {c.pacienteNombreLimpio} ({c.servicio || 'Cita'})
+                                                        </button>
+                                                        {grupo.citas.length > 1 && c.mensajeIndividual && (
+                                                            <button
+                                                                type="button"
+                                                                onClick={() => handleCopiarMensaje(c.mensajeIndividual, copyPacKey)}
+                                                                className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg border cursor-pointer ${
+                                                                    copiedKey === copyPacKey
+                                                                        ? 'bg-emerald-600 text-white border-emerald-600'
+                                                                        : 'bg-white text-gray-600 hover:text-red-700 border-gray-200'
+                                                                }`}
+                                                            >
+                                                                {copiedKey === copyPacKey ? <Check size={11} /> : <Copy size={11} />}
+                                                                {copiedKey === copyPacKey ? 'Copiado' : `Copiar solo ${c.pacienteNombreLimpio}`}
+                                                            </button>
+                                                        )}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                </div>
+            </Card>
+
             <Card className="bg-turquesa/5 border-turquesa/20">
                 <div className="flex flex-col md:flex-row gap-4 items-end">
                     <div className="flex-1 w-full">
@@ -147,6 +331,35 @@ export default function AuditoriaClinica() {
                     </div>
                 </div>
             </Card>
+
+            {/* WIDGET: SOLICITUDES DE BAJA */}
+            {!loadingBajas && solicitudesBaja.length > 0 && (
+                <Card className="bg-orange-50 border-orange-200">
+                    <h3 className="text-orange-800 font-black mb-3 flex items-center gap-2">
+                        <AlertCircle size={20} /> Solicitudes de Eliminación de Expedientes
+                    </h3>
+                    <div className="space-y-3">
+                        {solicitudesBaja.map(sol => (
+                            <div key={sol.id} className="bg-white p-4 rounded-xl border border-orange-100 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+                                <div>
+                                    <h4 className="font-bold text-acero">{sol.nombre}</h4>
+                                    <p className="text-xs text-gray-500 mt-1">
+                                        Solicitado por: <span className="font-bold">{sol.solicitadoPor}</span> el {new Date(sol.fechaSolicitudEliminacion).toLocaleDateString('es-MX')}
+                                    </p>
+                                </div>
+                                <div className="flex gap-2 shrink-0">
+                                    <Button size="sm" variant="outline" className="text-gray-500 hover:bg-gray-100" onClick={() => handleRechazarBaja(sol.id)}>
+                                        <X size={14} className="mr-1" /> Rechazar
+                                    </Button>
+                                    <Button size="sm" className="bg-orange-500 hover:bg-orange-600 border-none shadow-md" onClick={() => handleAprobarBaja(sol.id)}>
+                                        <CheckCircle size={14} className="mr-1" /> Aprobar Baja
+                                    </Button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </Card>
+            )}
 
             <Card>
                 <div className="overflow-x-auto">
@@ -213,9 +426,14 @@ export default function AuditoriaClinica() {
                                         <td className="py-4 px-4 text-gray-600 text-sm">{paciente.tratante}</td>
                                         <td className="py-4 px-4 text-gray-500 text-sm">{paciente.ultimaCita}</td>
                                         <td className="py-4 px-4 text-center">
-                                            <Button variant={paciente.requiereActualizacion ? "primary" : "outline"} size="sm" icon={FolderOpen} onClick={() => openEMR(paciente)}>
-                                                {paciente.requiereActualizacion ? "Completar Expediente" : "Abrir Expediente"}
-                                            </Button>
+                                            <div className="flex justify-center gap-2">
+                                                <Button variant={paciente.requiereActualizacion ? "primary" : "outline"} size="sm" icon={FolderOpen} onClick={() => openEMR(paciente)}>
+                                                    Resumen Modal
+                                                </Button>
+                                                <Button variant="outline" size="sm" className="bg-turquesa/10 text-turquesa border-turquesa/30 hover:bg-turquesa/20" icon={FileText} onClick={() => navigate('/especialista/expediente/' + paciente.id)}>
+                                                    Expediente Integral
+                                                </Button>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))
@@ -492,109 +710,133 @@ export default function AuditoriaClinica() {
 
                             {/* ADHERENCIA TAB */}
                             {activeTab === 'adherencia' && (() => {
-                                // ── Motor de análisis dinámico ────────────────────────────────
-                                const totalDias = mockAdherenciaDiaria.length;
-                                const diasExcedidos = mockAdherenciaDiaria.filter(d => d.cals > d.lim).length;
-                                const promedioCheck = mockAdherenciaDiaria.reduce((s, d) => s + d.check, 0) / totalDias;
-                                const maxCheck = 6; // pasos totales del checklist
-                                const pctIncompleto = Math.round((1 - promedioCheck / maxCheck) * 100);
+                                // Procesar datos reales
+                                const diasSemanales = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+                                const statsSemanales = Array.from({ length: 7 }).map((_, i) => {
+                                    const d = new Date();
+                                    d.setDate(d.getDate() - (6 - i));
+                                    const fechaIso = d.toISOString().split('T')[0];
+                                    const diaSemana = diasSemanales[d.getDay()];
+                                    const regAlimentacion = adherenciaReal.find(r => r.tipo === 'alimentacion' && r.fecha === fechaIso);
+                                    const regFacial = adherenciaReal.find(r => r.tipo === 'facial' && r.fecha === fechaIso);
+                                    const regApoyo = adherenciaReal.find(r => r.tipo === 'apoyo' && r.fecha === fechaIso);
+                                    return {
+                                        d: diaSemana,
+                                        fecha: fechaIso,
+                                        cals: regAlimentacion?.data?.totalCalorias || 0,
+                                        lim: regAlimentacion?.data?.metaCalorias || 2000,
+                                        check: regFacial ? Object.values(regFacial.data).filter(Boolean).length : 0,
+                                        checksApoyo: regApoyo ? Object.values(regApoyo.data).filter(Boolean).length : 0,
+                                        totalApoyo: regApoyo ? Object.keys(regApoyo.data).length : 0
+                                    };
+                                });
+
+                                const totalDias = statsSemanales.filter(d => d.cals > 0 || d.check > 0 || d.checksApoyo > 0).length || 1;
+                                const diasExcedidos = statsSemanales.filter(d => d.cals > d.lim && d.cals > 0).length;
+                                const promedioCheck = statsSemanales.reduce((s, d) => s + d.check, 0) / (statsSemanales.filter(d => d.check > 0).length || 1);
+                                const promedioApoyo = statsSemanales.reduce((s, d) => s + d.checksApoyo, 0) / (statsSemanales.filter(d => d.totalApoyo > 0).length || 1);
+                                const maxCheck = 6;
                                 const pctExcedido = Math.round((diasExcedidos / totalDias) * 100);
+                                const peorDia = [...statsSemanales].sort((a, b) => (b.cals - b.lim) - (a.cals - a.lim))[0];
+                                const peorCheck = [...statsSemanales].filter(d => d.check > 0).sort((a, b) => a.check - b.check)[0] || statsSemanales[0];
 
-                                // Día con más calorías
-                                const peorDia = [...mockAdherenciaDiaria].sort((a, b) => (b.cals - b.lim) - (a.cals - a.lim))[0];
-                                // Día con menos checks
-                                const peorCheck = [...mockAdherenciaDiaria].sort((a, b) => a.check - b.check)[0];
-
-                                // Nivel de riesgo
-                                let nivel; // 'excelente' | 'moderado' | 'critico'
-                                if (diasExcedidos === 0 && promedioCheck >= 5) nivel = 'excelente';
+                                let nivel;
+                                if (diasExcedidos === 0 && (promedioCheck >= 5 || totalDias === 0)) nivel = 'excelente';
                                 else if (diasExcedidos <= 2 && promedioCheck >= 4) nivel = 'moderado';
                                 else nivel = 'critico';
 
-                                // Mensajes dinámicos según nivel
                                 const alertaTexto = (() => {
-                                    if (nivel === 'excelente') return `El paciente mantiene un excelente control calórico (0 días excedidos) y su adherencia al checklist es alta (${promedioCheck.toFixed(1)}/${maxCheck} pasos en promedio). El progreso va en línea con los objetivos establecidos.`;
-                                    if (nivel === 'moderado') return `El paciente excedió su límite calórico ${diasExcedidos} de los últimos ${totalDias} días (${pctExcedido}%). Su checklist está incompleto el ${pctIncompleto}% del tiempo. El ${peorDia.d} fue el día con mayor desviación calórica (${peorDia.cals} kcal vs límite ${peorDia.lim}).`;
-                                    return `Alerta: el paciente excedió su límite calórico ${diasExcedidos} de ${totalDias} días (${pctExcedido}% del tiempo). El checklist registra solo ${promedioCheck.toFixed(1)} de ${maxCheck} pasos completados. El día ${peorCheck.d} fue el de menor adherencia con solo ${peorCheck.check} pasos.`;
+                                    if (adherenciaReal.length === 0) return "Esperando registros del paciente desde su App.";
+                                    if (nivel === 'excelente') return `El paciente mantiene un excelente control calórico.`;
+                                    if (nivel === 'moderado') return `Exceso calórico en ${diasExcedidos} de los últimos días (${pctExcedido}%). El ${peorDia.d} fue el día con mayor desviación.`;
+                                    return `Alerta: exceso calórico recurrente (${pctExcedido}%). El día ${peorCheck.d} fue el de menor adherencia.`;
                                 })();
 
                                 const pronosticoTexto = (() => {
-                                    if (nivel === 'excelente') return `Resultados en buena trayectoria. Con este nivel de adherencia se estima que el paciente alcanzará los objetivos de la sesión en tiempo y forma. Reforzar positivamente los hábitos y ajustar metas si es necesario.`;
-                                    if (nivel === 'moderado') return `La desviación moderada puede retrasar resultados entre un 10% y 15%. Se sugiere reforzar la hidratación y puntualidad en el checklist. Considerar ajustar el límite calórico o la dieta durante la próxima cita.`;
-                                    return `Esta adherencia deficiente puede ralentizar la pérdida de medidas un 20%-35% y comprometer la regeneración cutánea. Es indispensable abordarlo en esta cita: revisar la dieta, identificar los obstáculos del ${peorDia.d} y motivar la rutina de cuidado en casa.`;
+                                    if (adherenciaReal.length === 0) return "Pendiente de evaluación.";
+                                    if (nivel === 'excelente') return `Resultados en trayectoria óptima.`;
+                                    if (nivel === 'moderado') return `Retraso estimado del 10%-15% en resultados.`;
+                                    return `Adherencia deficiente: compromete resultados entre 20%-35%. Abordar obstáculos del ${peorDia.d}.`;
                                 })();
 
                                 const panelColor = nivel === 'excelente'
-                                    ? { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', textSub: 'text-green-700', accent: 'bg-green-500/10', icon: '✅' }
+                                    ? { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', accent: 'bg-green-500/10', icon: '✅' }
                                     : nivel === 'moderado'
-                                        ? { bg: 'bg-yellow-50', border: 'border-yellow-200', text: 'text-yellow-800', textSub: 'text-yellow-700', accent: 'bg-yellow-500/10', icon: '⚠️' }
-                                        : { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-800', textSub: 'text-orange-700', accent: 'bg-orange-500/10', icon: '🚨' };
+                                        ? { bg: 'bg-yellow-50', border: 'border-yellow-200', text: 'text-yellow-800', accent: 'bg-yellow-500/10', icon: '⚠️' }
+                                        : { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-800', accent: 'bg-orange-500/10', icon: '🚨' };
 
-                                const checkLabel = promedioCheck >= 5
-                                    ? 'Excelente adherencia al protocolo de cuidado en casa.'
-                                    : promedioCheck >= 4
-                                        ? `Adherencia aceptable. El día ${peorCheck.d} fue el más incompleto (${peorCheck.check}/${maxCheck} pasos).`
-                                        : `Adherencia baja. El día ${peorCheck.d} tuvo la peor adherencia: solo ${peorCheck.check} de ${maxCheck} pasos completados. Requiere atención.`;
+                                const checkLabel = adherenciaReal.length === 0
+                                    ? "Sin registros de checklist."
+                                    : promedioCheck >= 5
+                                        ? 'Excelente adherencia al protocolo de cuidado en casa.'
+                                        : `Adherencia en ${promedioCheck.toFixed(1)}/6 pasos. El día ${peorCheck.d} fue el más bajo.`;
 
                                 return (
                                     <div className="space-y-6 animate-in fade-in duration-300">
                                         <Card className="shadow-sm border-gray-200">
-                                            <h3 className="text-xl font-bold flex items-center gap-2 text-acero mb-6 pb-3 border-b"><HeartPulse className="text-orange-500" /> Control Semanal y Pronóstico de Resultados</h3>
+                                            <h3 className="text-xl font-bold flex items-center gap-2 text-acero mb-6 pb-3 border-b"><HeartPulse className="text-orange-500" /> Control Nutricional y Diario de Alimentación</h3>
 
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                {/* Barras de calorías por día */}
-                                                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                                                    <h4 className="font-bold text-gray-800 flex items-center gap-2 mb-4"><Activity size={16} className="text-turquesa" /> Cumplimiento Diario (Últimos {totalDias} días)</h4>
-                                                    <div className="space-y-3">
-                                                        {mockAdherenciaDiaria.map((d, i) => {
-                                                            const excedido = d.cals > d.lim;
-                                                            return (
-                                                                <div key={i} className="flex justify-between items-center bg-white p-2 rounded-lg shadow-sm">
-                                                                    <span className="font-bold text-gray-600 w-10 text-center">{d.d}</span>
-                                                                    <div className="flex-1 px-4">
-                                                                        <div className="w-full bg-gray-100 rounded-full h-2">
-                                                                            <div className={`h-2 rounded-full transition-all ${excedido ? 'bg-red-400' : 'bg-turquesa'}`} style={{ width: `${Math.min((d.cals / d.lim) * 100, 100)}%` }} />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="text-right">
-                                                                        <span className={`text-xs font-bold ${excedido ? 'text-red-500' : 'text-gray-500'}`}>{d.cals}</span>
-                                                                        <span className="text-xs text-gray-300">/{d.lim}</span>
-                                                                    </div>
-                                                                </div>
-                                                            );
-                                                        })}
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                                <div className="bg-white/60 p-6 rounded-[2rem] border border-gray-100 shadow-sm">
+                                                    <h4 className="font-bold text-gray-800 flex items-center gap-2 mb-6 text-sm">
+                                                        <Activity size={18} className="text-turquesa" /> Evolución de Ingesta Calórica
+                                                    </h4>
+                                                    <div className="h-64 w-full">
+                                                        <ResponsiveContainer width="100%" height="100%">
+                                                            <BarChart data={statsSemanales}>
+                                                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
+                                                                <XAxis dataKey="d" axisLine={false} tickLine={false} tick={{ fill: '#9ca3af', fontSize: 10, fontWeight: 'bold' }} />
+                                                                <YAxis hide />
+                                                                <Tooltip contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }} cursor={{ fill: '#f3f4f6' }} />
+                                                                <ReferenceLine y={statsSemanales[0]?.lim || 1500} stroke="#ef4444" strokeDasharray="5 5" label={{ position: 'top', value: 'Meta', fill: '#ef4444', fontSize: 10 }} />
+                                                                <Bar dataKey="cals" radius={[6, 6, 0, 0]}>
+                                                                    {statsSemanales.map((entry, index) => (
+                                                                        <Cell key={`cell-${index}`} fill={entry.cals > entry.lim ? '#fb923c' : '#20b2aa'} />
+                                                                    ))}
+                                                                </Bar>
+                                                            </BarChart>
+                                                        </ResponsiveContainer>
                                                     </div>
                                                 </div>
 
-                                                {/* Panel dinámico */}
                                                 <div className="flex flex-col gap-4">
-                                                    <div className={`${panelColor.bg} border ${panelColor.border} p-5 rounded-xl shadow-sm relative overflow-hidden`}>
-                                                        <div className={`absolute top-0 right-0 w-16 h-16 ${panelColor.accent} rounded-bl-full pointer-events-none`} />
-                                                        <h4 className={`font-black ${panelColor.text} mb-2 flex items-center gap-2`}>
-                                                            <AlertCircle size={18} /> Impacto en el Tratamiento
+                                                    <div className={`${panelColor.bg} border ${panelColor.border} p-6 rounded-[2rem] shadow-sm relative overflow-hidden`}>
+                                                        <div className={`absolute top-0 right-0 w-24 h-24 ${panelColor.accent} rounded-bl-[4rem] pointer-events-none`} />
+                                                        <h4 className={`font-black uppercase tracking-widest text-[10px] ${panelColor.text} mb-4 flex items-center gap-2`}>
+                                                            <AlertCircle size={14} /> Impacto en el Tratamiento
                                                         </h4>
-                                                        <p className={`text-sm ${panelColor.textSub} leading-relaxed text-justify mb-2`}>
-                                                            <strong>Alerta de Eficacia {panelColor.icon}:</strong> {alertaTexto}
-                                                        </p>
-                                                        <p className={`text-sm ${panelColor.textSub} leading-relaxed text-justify`}>
-                                                            <strong>Pronóstico del Sistema:</strong> {pronosticoTexto}
-                                                        </p>
+                                                        <div className="space-y-4">
+                                                            <p className="text-sm font-medium leading-relaxed">
+                                                                <span className="font-black">Alerta de Eficacia {panelColor.icon}:</span> {alertaTexto}
+                                                            </p>
+                                                            <p className="text-sm font-medium leading-relaxed pt-3 border-t border-black/5">
+                                                                <span className="font-black">Pronóstico del Sistema:</span> {pronosticoTexto}
+                                                            </p>
+                                                        </div>
                                                     </div>
 
-                                                    <div className="bg-acero/5 border border-acero/10 p-4 rounded-xl shadow-sm text-sm">
-                                                        <h4 className="font-bold text-acero mb-2 flex items-center gap-2"><CheckCircle size={16} /> Checklist (Promedio Semanal)</h4>
-                                                        <div className="flex items-end gap-3 mt-4">
-                                                            <span className={`text-3xl font-black ${promedioCheck >= 5 ? 'text-turquesa' : promedioCheck >= 4 ? 'text-yellow-500' : 'text-red-500'}`}>
-                                                                {promedioCheck.toFixed(1)}<span className="text-base text-gray-400">/{maxCheck}</span>
+                                                    <div className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm flex-1">
+                                                        <h4 className="font-bold text-acero mb-4 flex items-center gap-2 text-xs uppercase tracking-widest"><CheckCircle size={14} /> Facial (Promedio)</h4>
+                                                        <div className="flex items-center gap-4">
+                                                            <span className={`text-4xl font-black ${promedioCheck >= 5 ? 'text-turquesa' : promedioCheck >= 4 ? 'text-yellow-500' : 'text-red-500'}`}>
+                                                                {promedioCheck.toFixed(1)}<span className="text-base text-gray-400 font-bold">/6</span>
                                                             </span>
-                                                            <span className="text-gray-500 pb-1 text-xs leading-snug">{checkLabel}</span>
                                                         </div>
-                                                        {/* Barra visual del check */}
-                                                        <div className="mt-3 w-full bg-gray-100 rounded-full h-2">
-                                                            <div
-                                                                className={`h-2 rounded-full transition-all ${promedioCheck >= 5 ? 'bg-turquesa' : promedioCheck >= 4 ? 'bg-yellow-400' : 'bg-red-400'}`}
-                                                                style={{ width: `${(promedioCheck / maxCheck) * 100}%` }}
-                                                            />
+                                                        <div className="mt-4 w-full bg-gray-100 rounded-full h-2">
+                                                            <div className={`h-2 rounded-full transition-all ${promedioCheck >= 5 ? 'bg-turquesa' : 'bg-yellow-400'}`} style={{ width: `${(promedioCheck / maxCheck) * 100}%` }} />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm flex-1">
+                                                        <h4 className="font-bold text-acero mb-4 flex items-center gap-2 text-xs uppercase tracking-widest"><Home size={14} /> Apoyo en Casa</h4>
+                                                        <div className="flex items-center gap-4">
+                                                            <span className={`text-4xl font-black ${promedioApoyo >= 1 ? 'text-turquesa' : 'text-gray-400'}`}>
+                                                                {promedioApoyo.toFixed(1)}
+                                                            </span>
+                                                            <p className="text-[10px] text-gray-400 font-bold uppercase leading-tight">Tareas<br />diarias</p>
+                                                        </div>
+                                                        <div className="mt-4 w-full bg-gray-100 rounded-full h-2">
+                                                            <div className="h-2 rounded-full bg-turquesa transition-all" style={{ width: `${Math.min(100, (promedioApoyo / 3) * 100)}%` }} />
                                                         </div>
                                                     </div>
                                                 </div>

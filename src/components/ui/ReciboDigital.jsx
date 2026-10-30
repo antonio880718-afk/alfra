@@ -2,6 +2,11 @@ import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 import { Download, Share2, X, CheckCircle2 } from 'lucide-react';
 import { Button } from './Button';
+import { Capacitor } from '@capacitor/core';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Share } from '@capacitor/share';
+import { abrirWhatsApp } from '../../services/whatsappService';
+import { LOGO_ALFRA_BASE64 } from '../../assets/logoAlfraBase64';
 
 export default function ReciboDigital({
     isOpen,
@@ -19,21 +24,37 @@ export default function ReciboDigital({
         concepto = '',
         monto = 0,
         metodoPago = 'Efectivo',
-        paqueteInfo = null, // e.g., "Sesión 2 de 5"
+        paqueteInfo = null,
         telefono = '',
     } = datosRecibo;
+
+    const paqueteTexto = typeof paqueteInfo === 'object' && paqueteInfo !== null
+        ? (paqueteInfo.nombre || paqueteInfo.objetivo || '')
+        : (paqueteInfo || '');
 
     const handleDownload = async () => {
         if (!reciboRef.current) return;
         try {
             const canvas = await html2canvas(reciboRef.current, {
-                scale: 2, // High resolution
-                backgroundColor: null,
+                scale: 3,
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#ffffff',
+                logging: false,
             });
-            const link = document.createElement('a');
-            link.download = `Recibo_ALFRA_${folio}.png`;
-            link.href = canvas.toDataURL('image/png');
-            link.click();
+            const base64Image = canvas.toDataURL('image/png');
+            const dataUrl = base64Image.split(',')[1];
+            const fileName = `Recibo_ALFRA_${folio}.png`;
+
+            if (Capacitor.isNativePlatform()) {
+                const result = await Filesystem.writeFile({ path: fileName, data: dataUrl, directory: Directory.Documents });
+                await Share.share({ title: 'Recibo Clínica ALFRA', text: 'Adjunto su recibo digital.', url: result.uri, dialogTitle: 'Compartir Recibo' });
+            } else {
+                const link = document.createElement('a');
+                link.download = fileName;
+                link.href = base64Image;
+                link.click();
+            }
         } catch (error) {
             console.error('Error generando PNG:', error);
             alert('Hubo un error al generar la imagen del recibo.');
@@ -41,16 +62,19 @@ export default function ReciboDigital({
     };
 
     const handleShareWhatsApp = () => {
-        // Enviar mensaje predeterminado. (WhatsApp Web no permite adjuntar imagen por url directamente, 
-        // pero podemos mandar los datos y pedirles que adjunten el recibo descargado).
-        const mensaje = encodeURIComponent(
-            `¡Hola ${pacienteNombre}! 🌿\n\nGracias por su visita a Clínica ALFRA. Adjuntamos en este chat su recibo digital de pago por el monto de $${monto.toLocaleString('es-MX')} MXN.\n\nConcepto: ${concepto}${paqueteInfo ? `\nPaquete: ${paqueteInfo}` : ''}\nFolio: #${folio}\n\nQuedamos a su disposición para cualquier duda. ¡Lindo día! ✨`
-        );
-        window.open(`https://wa.me/${telefono.replace(/\s+/g, '').replace('+', '')}?text=${mensaje}`, '_blank');
+        const montoStr = parseFloat(monto || 0).toLocaleString('es-MX', { minimumFractionDigits: 2 });
+        const lineas = [
+            `¡Hola ${pacienteNombre}! 🌿`,
+            `Gracias por su visita a Clínica ALFRA. Adjuntamos en este chat su recibo digital de pago por el monto de $${montoStr} MXN.`,
+            `Concepto: ${concepto}${paqueteTexto ? `\nPaquete/Plan: ${paqueteTexto}` : ''}`,
+            `Folio: #${folio}`,
+            `¡Quedamos a su disposición para cualquier duda. Lindo día! ✨`,
+        ];
+        abrirWhatsApp(telefono, lineas.join('\n\n'));
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4">
             <div className="w-full max-w-sm animate-in zoom-in-95 duration-300">
                 {/* Controles del Modal */}
                 <div className="flex justify-between items-center bg-white/10 backdrop-blur-md p-3 rounded-t-2xl border-b border-white/20">
@@ -77,7 +101,7 @@ export default function ReciboDigital({
                     </div>
 
                     <div className="text-center mb-6 flex flex-col items-center">
-                        <img src="/logo.png.png" alt="ALFRA Logo" className="w-32 h-auto object-contain mb-1" />
+                        <img src={LOGO_ALFRA_BASE64} alt="ALFRA Logo" className="w-48 max-w-[210px] h-auto object-contain mb-1.5" />
                         <p className="text-[10px] text-turquesa font-bold tracking-widest uppercase mt-1">Cirugía & Medicina Estética</p>
                     </div>
 
@@ -95,9 +119,9 @@ export default function ReciboDigital({
                         <div>
                             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Concepto</p>
                             <p className="text-sm font-bold text-acero">{concepto}</p>
-                            {paqueteInfo && (
+                            {paqueteTexto && (
                                 <span className="inline-block mt-1 px-2 py-0.5 bg-turquesa/10 text-turquesa text-[10px] rounded-full font-bold">
-                                    {paqueteInfo}
+                                    {paqueteTexto}
                                 </span>
                             )}
                         </div>
@@ -109,7 +133,7 @@ export default function ReciboDigital({
                             </div>
                             <div className="text-right">
                                 <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Total Pagado</p>
-                                <p className="text-2xl font-black text-turquesa">${parseFloat(monto).toLocaleString('es-MX', { minimumFractionDigits: 2 })}</p>
+                                <p className="text-2xl font-black text-turquesa">${parseFloat(monto || 0).toLocaleString('es-MX', { minimumFractionDigits: 2 })}</p>
                             </div>
                         </div>
                     </div>
@@ -123,7 +147,6 @@ export default function ReciboDigital({
 
                     {/* Borde dentado para efecto ticket */}
                     <div className="absolute bottom-0 left-0 w-full flex space-x-2 -mb-2 overflow-hidden pointer-events-none opacity-20">
-                        {/* Efecto visual ticket */}
                         {[...Array(20)].map((_, i) => (
                             <div key={i} className="w-4 h-4 rounded-full bg-gray-100 flex-shrink-0"></div>
                         ))}

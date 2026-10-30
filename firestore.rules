@@ -1,0 +1,254 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // --- HELPERS ---
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    // Check if user is a Master Admin by email
+    function isMasterAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email in [
+          'antonio880718@gmail.com', 
+          'alejandra291714@gmail.com', 
+          'aleja291714@gmail.com'
+        ]
+      );
+    }
+    
+    function getRole() {
+      return exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)) 
+        ? get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.role 
+        : 'Paciente';
+    }
+    
+    function hasRole(role) {
+      return isMasterAdmin() || (isSignedIn() && getRole() == role);
+    }
+    
+    function isStaff() {
+      return isMasterAdmin() || (isSignedIn() && (getRole() in ['Administrador', 'Recepcionista', 'Especialista', 'Doctor', 'Limpieza']));
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isPacienteOwner(pacienteId) {
+      let pacDoc = get(/databases/$(database)/documents/pacientes/$(pacienteId));
+      return pacDoc != null && (
+        pacDoc.data.uid == request.auth.uid || 
+        (pacDoc.data.email != null && request.auth.token.email != null && pacDoc.data.email == request.auth.token.email)
+      );
+    }
+
+    // --- COLLECTIONS ---
+
+    // User profiles and roles
+    match /usuarios/{userId} {
+      allow read: if isSignedIn() && (isOwner(userId) || isStaff());
+      allow write: if isMasterAdmin() || hasRole('Administrador') || (isSignedIn() && isOwner(userId));
+    }
+
+    // Patient records
+    match /pacientes/{pacienteId} {
+      allow read: if isStaff() || (isSignedIn() && (
+        resource.data.uid == request.auth.uid || 
+        (resource.data.email != null && request.auth.token.email != null && resource.data.email == request.auth.token.email)
+      )); 
+      allow create: if isSignedIn(); 
+      allow update: if isStaff() || (isSignedIn() && (
+        resource.data.uid == request.auth.uid || 
+        (resource.data.email != null && request.auth.token.email != null && resource.data.email == request.auth.token.email)
+      ));
+      allow delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Financial movements
+    match /finanzas/{docId} {
+      allow read, create, update: if isStaff();
+      allow delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Recibos
+    match /recibos/{docId} {
+      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+      allow create, update: if isStaff();
+      allow delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Treatment plans / Financing
+    match /pacientes_paquetes/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    match /planes/{planId} {
+      allow read, write: if isStaff();
+    }
+
+    // Staff / Empleados
+    match /staff/{staffId} {
+      allow read, update: if isStaff();
+      allow create, delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Services / Treatments
+    match /servicios/{servicioId} {
+      allow read: if isStaff();
+      allow write: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Tratamientos
+    match /tratamientos/{tratamientoId} {
+      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+      allow write: if isStaff();
+    }
+
+    // Sesiones
+    match /sesiones/{sesionId} {
+      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+      allow write: if isStaff();
+    }
+    
+    match /ahorros/{pacienteId} {
+      allow read, write: if isStaff() || (isSignedIn() && isPacienteOwner(pacienteId));
+    }
+
+    // Appointments
+    match /citas/{citaId} {
+      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+      allow create: if isStaff() || (isSignedIn() && isPacienteOwner(request.resource.data.pacienteId));
+      allow update: if isStaff();
+      allow delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Specialist Alerts
+    match /alertas_pacientes/{alertId} {
+      allow read: if isStaff();
+      allow create: if isStaff();
+      allow update: if isStaff();
+      allow delete: if isMasterAdmin();
+    }
+
+    // Inventory
+    match /inventario/{docId} {
+      allow read, update: if isStaff();
+      allow create, delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    match /solicitudesInsumos/{docId} {
+      allow read, create: if isStaff();
+      allow update: if isMasterAdmin() || hasRole('Administrador');
+      allow delete: if isMasterAdmin();
+    }
+
+    // Medical Progress
+    match /seguimiento/{docId} {
+      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+      allow create, update: if isStaff();
+      allow delete: if isMasterAdmin();
+    }
+
+    match /apoyoEnCasa/{tratamientoId} {
+      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+      allow write: if isStaff();
+    }
+
+    match /registrosDiarios/{docId} {
+      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+      allow write: if isStaff() || (isSignedIn() && isPacienteOwner(request.resource.data.pacienteId));
+    }
+
+    // Limpieza & Mantenimiento Collections
+    match /bitacora_limpieza/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    match /bitacora_diaria_general/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    match /bitacora_mantenimiento/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    match /solicitudes_insumos_limpieza/{docId} {
+      allow read, create: if isStaff();
+      allow update: if isMasterAdmin() || hasRole('Administrador');
+      allow delete: if isMasterAdmin();
+    }
+
+    match /tareas_limpieza/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    match /configuracion_limpieza/{docId} {
+      allow read: if isStaff();
+      allow write: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Caja Diaria de Recepcion (Fondo inicial, retiros parciales, arqueo)
+    match /cajas_diarias/{fechaId} {
+      allow read, create, update: if isStaff();
+      allow delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Configuracion general (catalogo de gastos): lectura para staff
+    match /configuracion/{docId} {
+      allow read: if isStaff();
+      allow write: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Config de Membresias (catalogo de servicios): lectura para staff
+    match /config/{docId} {
+      allow read: if isStaff();
+      allow write: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Dudas / Check-in post consulta (paciente crea, recepcion atiende)
+    match /seguimiento_post_consulta/{docId} {
+      allow read, update: if isStaff();
+      allow create: if isStaff() || (isSignedIn() && isPacienteOwner(request.resource.data.pacienteId));
+      allow delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Admin Controls
+    match /cortes_aprobados/{docId} {
+      allow read, write: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Membresías
+    match /recargas_membresia/{docId} {
+      allow read, write: if isStaff();
+    }
+    match /consumos_membresia/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    // Cupones Comerciales
+    match /cupones/{docId} {
+      allow read: if isStaff();
+      allow write: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Solicitudes de Eliminación
+    match /solicitudes_eliminacion_pacientes/{docId} {
+      allow read, create: if isStaff();
+      allow update, delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Anuncios y Novedades (Flyers)
+    match /flyers/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isMasterAdmin() || hasRole('Administrador');
+    }
+
+    // Catch-all
+    match /{document=**} {
+      allow read, write: if isMasterAdmin() || hasRole('Administrador');
+    }
+  }
+}

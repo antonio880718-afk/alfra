@@ -26,3 +26,115 @@
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 8px 15px -3px rgba(0, 0, 0, 0.03);
   }
 }
+
+/* ── ALFRA Loyalty Stamp Animations ─────────────────────────────── */
+@keyframes alfra-star-spin {
+  from { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.08); }
+  to   { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes alfra-shimmer-sweep {
+  0%   { transform: translateX(-150%) skewX(-20deg); opacity: 0; }
+  30%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { transform: translateX(250%) skewX(-20deg); opacity: 0; }
+}
+
+@keyframes alfra-stamp-pop {
+  0%   { transform: scale(0) rotate(-30deg); opacity: 0; }
+  60%  { transform: scale(1.15) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.alfra-stamp-filled {
+  animation: alfra-stamp-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.alfra-star {
+  animation: alfra-star-spin 8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.alfra-shimmer {
+  animation: alfra-shimmer-sweep 3.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* ============================================= */
+/* 4K / Ultra-Wide Display Optimizations         */
+/* ============================================= */
+
+/* Scale base font for larger screens - this makes ALL rem units scale */
+@media (min-width: 1920px) {
+  html { font-size: 17px; }
+}
+@media (min-width: 2560px) {
+  html { font-size: 20px; }
+  
+  /* Wider cards and more breathing room */
+  .p-6 { padding: 2rem; }
+  .gap-6 { gap: 2rem; }
+  .gap-8 { gap: 2.5rem; }
+  .rounded-2xl { border-radius: 1.25rem; }
+}
+@media (min-width: 3840px) {
+  html { font-size: 24px; }
+  
+  .p-6 { padding: 2.5rem; }
+  .gap-6 { gap: 2.5rem; }
+  .gap-8 { gap: 3rem; }
+}
+
+/* Make grids use more columns on ultra-wide */
+@media (min-width: 2560px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .md\:grid-cols-5 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 3840px) {
+  .lg\:grid-cols-2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .md\:grid-cols-2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .md\:grid-cols-5 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}
+
+/* Charts scale better on 4K */
+@media (min-width: 2560px) {
+  .recharts-wrapper { font-size: 14px !important; }
+  .h-40 { height: 14rem; }
+  .h-48 { height: 16rem; }
+  .h-64 { height: 20rem; }
+  .h-72 { height: 24rem; }
+  .h-80 { height: 28rem; }
+}
+
+@media (min-width: 3840px) {
+  .recharts-wrapper { font-size: 18px !important; }
+  .h-40 { height: 18rem; }
+  .h-48 { height: 22rem; }
+  .h-64 { height: 28rem; }
+  .h-72 { height: 32rem; }
+  .h-80 { height: 36rem; }
+}
+
+/* Buttons and inputs scale */
+@media (min-width: 2560px) {
+  button, input, select, textarea { font-size: inherit; }
+}
+
+/* Tables look better */
+@media (min-width: 2560px) {
+  table { font-size: 1rem; }
+  th, td { padding: 1rem 1.25rem; }
+}
+
+@media (min-width: 3840px) {
+  table { font-size: 1.1rem; }
+  th, td { padding: 1.25rem 1.5rem; }
+}

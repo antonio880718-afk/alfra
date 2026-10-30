@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Card = ({ children, className = '', title, subtitle, action, variant = 'default', noPadding = false }) => {
+export const Card = ({ children, className = '', title, subtitle, action, variant = 'default', noPadding = false, ...props }) => {
     const variants = {
         default: 'bg-white border-gray-100/80 premium-shadow hover:premium-shadow-hover',
         glass: 'glass-card',
@@ -9,11 +9,22 @@ export const Card = ({ children, className = '', title, subtitle, action, varian
     };
 
     return (
-        <div className={`
-            rounded-2xl border transition-all duration-300 transform-gpu
-            ${variants[variant] || variants.default} 
-            ${className}
-        `}>
+        <div 
+            className={`
+                rounded-2xl border transition-all duration-300 transform-gpu
+                ${variants[variant] || variants.default} 
+                ${className}
+            `} 
+            role={props.onClick ? "button" : undefined}
+            tabIndex={props.onClick ? 0 : undefined}
+            onKeyDown={(e) => {
+                if (props.onClick && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    props.onClick(e);
+                }
+            }}
+            {...props}
+        >
             {(title || subtitle || action) && (
                 <div className={`
                     flex justify-between items-start 
