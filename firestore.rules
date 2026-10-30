@@ -246,6 +246,12 @@ service cloud.firestore {
       allow write: if isMasterAdmin() || hasRole('Administrador');
     }
 
+    // Control de Asistencia Satelital GPS (Checador)
+    match /asistencia/{docId} {
+      allow read, create: if isStaff();
+      allow update, delete: if isMasterAdmin() || hasRole('Administrador');
+    }
+
     // Catch-all
     match /{document=**} {
       allow read, write: if isMasterAdmin() || hasRole('Administrador');
