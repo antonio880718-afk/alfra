@@ -19,6 +19,15 @@ service cloud.firestore {
       );
     }
     
+    function isUserActive() {
+      return !exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)) || (
+        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.activo != false &&
+        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.bloqueado != true &&
+        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.eliminado != true &&
+        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.role != 'Inactivo'
+      );
+    }
+
     function getRole() {
       return exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)) 
         ? get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.role 
@@ -26,11 +35,11 @@ service cloud.firestore {
     }
     
     function hasRole(role) {
-      return isMasterAdmin() || (isSignedIn() && getRole() == role);
+      return isMasterAdmin() || (isSignedIn() && isUserActive() && getRole() == role);
     }
     
     function isStaff() {
-      return isMasterAdmin() || (isSignedIn() && (getRole() in ['Administrador', 'Recepcionista', 'Especialista', 'Doctor', 'Limpieza']));
+      return isMasterAdmin() || (isSignedIn() && isUserActive() && (getRole() in ['Administrador', 'Recepcionista', 'Especialista', 'Doctor', 'Limpieza']));
     }
 
     function isOwner(uid) {

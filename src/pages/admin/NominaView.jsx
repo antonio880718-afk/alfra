@@ -12,7 +12,7 @@ import {
     UserCheck, Briefcase, AlertCircle, Eye, UploadCloud, MessageSquare, Download, PenTool, FileText
 } from 'lucide-react';
 import {
-    onStaffChange, createEmpleado, updateEmpleado, deleteEmpleado,
+    onStaffChange, createEmpleado, updateEmpleado, deleteEmpleado, sincronizarBajasStaff,
     liquidarNomina, ajustarComisionManual, eliminarComisionHistorial,
     editarComisionHistorial
 } from '../../services/staffService';
@@ -171,6 +171,9 @@ export default function NominaView() {
     const [formBonos, setFormBonos] = useState({ puntualidad: 0, productividad: 0 });
 
     useEffect(() => {
+        // Sincronizar bajas historicas para asegurar revocacion en /usuarios
+        sincronizarBajasStaff().catch(err => console.warn('Error sincronizando bajas staff:', err));
+
         const unsub = onStaffChange((data) => {
             setStaff(data);
             setLoading(false);
@@ -726,11 +729,12 @@ export default function NominaView() {
         if (!employeeToDelete) return;
         setConfirmingDelete(true);
         try {
-            await deleteEmpleado(employeeToDelete.id);
+            await deleteEmpleado(employeeToDelete.id, employeeToDelete);
             setEmployeeToDelete(null);
+            alert(`Colaborador ${employeeToDelete.nombre || ''} dado de baja exitosamente. Sus credenciales y accesos al sistema han sido revocados por completo.`);
         } catch (err) {
             console.error(err);
-            alert('Error al dar de baja al empleado');
+            alert('Error al dar de baja al empleado: ' + (err.message || ''));
         } finally {
             setConfirmingDelete(false);
         }
