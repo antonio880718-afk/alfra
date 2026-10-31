@@ -178,7 +178,9 @@ export default function NominaView() {
             setStaff(data);
             setLoading(false);
         });
-    
+        return () => unsub();
+    }, []);
+
     // ??? PENDIENTES FASE 2: WHATSAPP, SPEI, FIRMA Y CHECADOR GPS ???
     const [empleadoFirmaModal, setEmpleadoFirmaModal] = useState(null);
     const [guardandoFirma, setGuardandoFirma] = useState(false);
@@ -353,8 +355,6 @@ export default function NominaView() {
         checkAsistencia();
     }, [empleadoLiquidar, nominaForm.fechaInicio, nominaForm.fechaFin]);
 
-    return () => unsub();
-    }, []);
 
     // Compresión y carga de foto de perfil del colaborador
     const handleSubirFoto = async (e) => {
