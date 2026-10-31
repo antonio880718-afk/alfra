@@ -60,12 +60,18 @@ export default function RegistroPaciente() {
     };
 
     return (
-        <div className="h-screen w-full flex items-center justify-center bg-fondo relative overflow-hidden px-4">
+        <div 
+            className="min-h-screen w-full flex flex-col items-center justify-center bg-fondo relative overflow-y-auto px-4 py-8 sm:py-12"
+            style={{ 
+                paddingTop: 'max(env(safe-area-inset-top, 0px), 2rem)', 
+                paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 2rem)' 
+            }}
+        >
             {/* Fondo decorativo */}
             <div className="absolute top-10 left-10 w-64 h-64 bg-turquesa/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-10 right-10 w-96 h-96 bg-acero/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="bg-white p-8 sm:p-10 rounded-2xl shadow-xl border border-gray-100 w-full max-w-md relative z-10">
+            <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 w-full max-w-md relative z-10 my-auto">
                 {exito ? (
                     <div className="text-center py-8">
                         <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
@@ -76,7 +82,7 @@ export default function RegistroPaciente() {
                     <>
                         {/* Header */}
                         <div className="text-center mb-6">
-                            <img src="/logo.png" alt="ALFRA" className="h-24 w-auto mx-auto object-contain mb-4" />
+                            <img src="/logo.png" alt="ALFRA" className="h-24 sm:h-28 w-auto mx-auto object-contain mb-3 drop-shadow-sm hover:scale-105 transition-transform duration-300" />
                             <h1 className="text-2xl font-bold text-acero">Crea tu Cuenta de Paciente</h1>
                             <p className="text-gray-500 text-sm mt-1">Únete a Clínica ALFRA y lleva tu tratamiento en un solo lugar</p>
                         </div>

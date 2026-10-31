@@ -90,15 +90,27 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen w-full flex items-center justify-center bg-fondo relative overflow-hidden px-4">
-      <div className="absolute top-10 left-10 w-64 h-64 bg-turquesa/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-acero/10 rounded-full blur-3xl"></div>
+    <div 
+      className="min-h-screen w-full flex flex-col items-center justify-center bg-fondo relative overflow-y-auto px-4 py-8 sm:py-12"
+      style={{ 
+        paddingTop: 'max(env(safe-area-inset-top, 0px), 2rem)', 
+        paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 2rem)' 
+      }}
+    >
+      <div className="absolute top-10 left-10 w-64 h-64 bg-turquesa/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-acero/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="bg-blancoPuro p-8 sm:p-12 rounded-2xl shadow-xl border border-gray-100 w-full max-w-md text-center relative z-10">
-        <img src="/logo.png" alt="ALFRA" className="h-56 w-auto mx-auto object-contain mb-8 hover:scale-105 transition-transform duration-300" />
-        <h1 className="text-xl text-acero font-bold mb-2 tracking-tight uppercase">Bienvenido a ALFRA</h1>
+      <div className="bg-blancoPuro p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 w-full max-w-md text-center relative z-10 my-auto">
+        <div className="flex justify-center items-center mb-3 sm:mb-4">
+          <img 
+            src="/logo.png" 
+            alt="Clínica ALFRA" 
+            className="h-28 sm:h-36 w-auto object-contain hover:scale-105 transition-transform duration-300 drop-shadow-sm" 
+          />
+        </div>
+        <h1 className="text-xl sm:text-2xl text-acero font-black mb-1 tracking-tight uppercase">Bienvenido a ALFRA</h1>
         <p className="text-turquesa font-bold text-xs tracking-widest uppercase mb-1">Cirugía & Medicina Estética</p>
-        <p className="text-gray-400 font-medium text-[11px] italic mb-7">"Resaltando tu bienestar y belleza natural"</p>
+        <p className="text-gray-400 font-medium text-[11px] italic mb-6">"Resaltando tu bienestar y belleza natural"</p>
 
         {error && (
           <div className="mb-6 p-4 bg-red-50 border-2 border-red-300 text-red-700 rounded-2xl text-sm font-bold text-left flex items-start gap-3 shadow-lg animate-in fade-in slide-in-from-top-2">
@@ -177,7 +189,13 @@ const RoleSelector = () => {
   ];
 
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center bg-fondo p-4">
+    <div 
+      className="min-h-screen w-full flex flex-col items-center justify-center bg-fondo px-4 py-8 overflow-y-auto"
+      style={{ 
+        paddingTop: 'max(env(safe-area-inset-top, 0px), 2rem)', 
+        paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 2rem)' 
+      }}
+    >
       <h2 className="text-xl font-black text-acero mb-1 uppercase tracking-tight">Selecciona tu Perfil</h2>
       <p className="text-gray-400 mb-8 text-[10px] font-bold uppercase tracking-[0.2em]">Bienvenido {currentUser?.email}</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 w-full max-w-4xl px-4">
@@ -191,9 +209,7 @@ const RoleSelector = () => {
               <role.icon size={24} />
             </div>
             <span className="text-sm font-black text-acero uppercase tracking-widest">{role.label}</span>
-            <div className="absolute top-4 right-4 z-50 pointer-events-none">
-                <span className="bg-acero text-white text-[8px] font-black px-2 py-0.5 rounded-full opacity-50 uppercase tracking-widest">v18.15.1-PATCH</span>
-              </div>
+
           </button>
         ))}
       </div>

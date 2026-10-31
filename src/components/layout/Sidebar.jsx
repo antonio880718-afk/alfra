@@ -66,8 +66,8 @@ export default function Sidebar() {
 
     return (
         <aside className="hidden md:flex flex-col w-64 3xl:w-72 4xl:w-80 h-screen bg-blancoPuro border-r border-gray-200">
-            <div className="p-4 sm:p-6 flex flex-col items-center w-full">
-                <img src="/logo.png" alt="ALFRA" className="w-48 sm:w-56 h-auto object-contain mb-2 hover:scale-105 transition-transform duration-300" />
+            <div className="pt-6 pb-4 px-6 flex flex-col items-center w-full">
+                <img src="/logo.png" alt="ALFRA" className="w-36 max-w-[160px] h-auto object-contain mb-2 hover:scale-105 transition-transform duration-300 drop-shadow-sm" />
                 <p className="text-xs text-center text-turquesa font-bold uppercase tracking-wider">{userRole}</p>
             </div>
 
