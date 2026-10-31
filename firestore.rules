@@ -20,17 +20,20 @@ service cloud.firestore {
     }
     
     function isUserActive() {
-      return !exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)) || (
-        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.activo != false &&
-        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.bloqueado != true &&
-        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.eliminado != true &&
-        get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.role != 'Inactivo'
+      let userPath = /databases/$(database)/documents/usuarios/$(request.auth.uid);
+      return !exists(userPath) || (
+        get(userPath).data.get('activo', true) != false &&
+        get(userPath).data.get('bloqueado', false) != true &&
+        get(userPath).data.get('eliminado', false) != true &&
+        get(userPath).data.get('role', '') != 'Inactivo' &&
+        get(userPath).data.get('rol', '') != 'Inactivo'
       );
     }
 
     function getRole() {
-      return exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)) 
-        ? get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.role 
+      let userPath = /databases/$(database)/documents/usuarios/$(request.auth.uid);
+      return exists(userPath) 
+        ? get(userPath).data.get('role', get(userPath).data.get('rol', 'Paciente')) 
         : 'Paciente';
     }
     
@@ -39,7 +42,12 @@ service cloud.firestore {
     }
     
     function isStaff() {
-      return isMasterAdmin() || (isSignedIn() && isUserActive() && (getRole() in ['Administrador', 'Recepcionista', 'Especialista', 'Doctor', 'Limpieza']));
+      return isMasterAdmin() || (
+        isSignedIn() && isUserActive() && (
+          (request.auth.token.email != null && request.auth.token.email.matches('.*@alfra[.]com$')) ||
+          (getRole() in ['Administrador', 'Recepcionista', 'Especialista', 'Doctor', 'Limpieza'])
+        )
+      );
     }
 
     function isOwner(uid) {
