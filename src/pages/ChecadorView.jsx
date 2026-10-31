@@ -239,7 +239,7 @@ export default function ChecadorView() {
             alert('No hay registros de asistencia de hoy para exportar.');
             return;
         }
-        const headers = ['Nombre', 'Puesto/Rol', 'Tipo', 'Hora', 'Estado', 'Distancia (m)', 'Fecha', 'Latitud', 'Longitud'];
+        const headers = ['Nombre', 'Puesto/R?ol', 'Tipo', 'Hora', 'Estado', 'Distancia (m)', 'Fecha', 'Latitud', 'Longitud'];
         const rows = asistenciaHoyAdmin.map(a => [
             `"${a.nombre || ''}"`,
             `"${a.puesto || a.rol || ''}"`,
@@ -278,9 +278,7 @@ export default function ChecadorView() {
                             <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
                                 Checador Satelital GPS
                             </h1>
-                            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-700">
-                                100% Satelital - Sin QR
-                            </span>
+
                         </div>
                         <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                             Verificación de asistencia por presencia física dentro del perímetro de la clínica.
@@ -697,7 +695,7 @@ export default function ChecadorView() {
                                 <thead className="bg-slate-50 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 text-xs font-semibold uppercase tracking-wider">
                                     <tr>
                                         <th className="p-3.5">Colaborador</th>
-                                        <th className="p-3.5">Puesto / Rol</th>
+                                        <th className="p-3.5">Puesto / R?ol</th>
                                         <th className="p-3.5">Tipo</th>
                                         <th className="p-3.5">Hora</th>
                                         <th className="p-3.5">Distancia Satelital</th>
