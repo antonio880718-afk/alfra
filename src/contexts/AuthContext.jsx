@@ -82,17 +82,27 @@ export function AuthProvider({ children }) {
 
     // ── Registro de Notificaciones Push (Solo Especialistas / Móvil) ──────
     const registerPushNotifications = async (uid) => {
-        if (!Capacitor.isNativePlatform()) return; // Solo funciona en iOS/Android nativo
+        // En PC / Navegador Web: solicitar permisos de notificaciones del sistema
+        if (!Capacitor.isNativePlatform()) {
+            if (typeof window !== 'undefined' && 'Notification' in window) {
+                if (Notification.permission === 'default') {
+                    try {
+                        await Notification.requestPermission();
+                    } catch (_) {}
+                }
+            }
+            return;
+        }
 
         try {
-            // 1. Pedir permisos
+            // 1. Pedir permisos nativos
             let permStatus = await PushNotifications.checkPermissions();
             if (permStatus.receive === 'prompt') {
                 permStatus = await PushNotifications.requestPermissions();
             }
 
             if (permStatus.receive !== 'granted') {
-                throw new Error('Permisos de notificación denegados');
+                throw new Error('Permisos de notificacion denegados');
             }
 
             // 2. Registrar con Apple / Google
@@ -114,7 +124,10 @@ export function AuthProvider({ children }) {
 
             PushNotifications.addListener('pushNotificationReceived', (notification) => {
                 console.log('Push received: ' + JSON.stringify(notification));
-                // Aquí podrías mostrar una alerta local UI si la app está abierta
+                try {
+                    const audio = new Audio('/notification.mp3');
+                    audio.play().catch(() => {});
+                } catch (_) {}
             });
 
         } catch (error) {
@@ -122,7 +135,6 @@ export function AuthProvider({ children }) {
         }
     };
 
-    // ── Cambiar Rol de sesión (Para usuarios multi-rol) ─────────────────────
     const selectRole = (role) => {
         setUserRole(role);
         localStorage.setItem('selectedRole', role);

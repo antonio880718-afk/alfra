@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { emitirNotificacion, solicitarPermisoNotificaciones } from '../../services/notificationService';
 import { onAlertasAdminChange, onAlertasPacienteChange, onAlertasEspecialistaChange, markAlertAsRead } from '../../services/citasService';
 import { getPacienteByUid } from '../../services/pacientesService';
 import { getStaffDocByUid } from '../../services/staffService';
@@ -18,15 +19,39 @@ export default function AppLayout() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [alertas, setAlertas] = useState([]);
     const [showAlertas, setShowAlertas] = useState(false);
+    const prevAlertIds = React.useRef(new Set());
+    const isFirstAlertLoad = React.useRef(true);
+
+    const procesarAlertas = (alerts) => {
+        setAlertas(alerts);
+        // Si no es la primera carga inicial, emitir notificacion del sistema y sonido al llegar una alerta nueva
+        if (!isFirstAlertLoad.current) {
+            const nuevas = alerts.filter(a => !prevAlertIds.current.has(a.id));
+            if (nuevas.length > 0) {
+                const primera = nuevas[0];
+                emitirNotificacion('Clinica ALFRA', {
+                    body: primera.mensaje,
+                    tag: 'alerta-' + primera.id,
+                    onClick: () => setShowAlertas(true)
+                });
+            }
+        } else {
+            isFirstAlertLoad.current = false;
+        }
+        prevAlertIds.current = new Set(alerts.map(a => a.id));
+    };
 
     useEffect(() => {
         let active = true;
         let unsub = () => {};
 
+        // Solicitar permisos nativos y de navegador al montar la sesion
+        solicitarPermisoNotificaciones().catch(() => {});
+
         const setupAlerts = async () => {
-            if (userRole === 'Administrador') {
+            if (userRole === 'Administrador' || userRole === 'Recepcionista') {
                 unsub = onAlertasAdminChange((alerts) => {
-                    if (active) setAlertas(alerts);
+                    if (active) procesarAlertas(alerts);
                 });
             } else if (userRole === 'Especialista' || userRole === 'Doctor') {
                 const auth = getAuth();
@@ -36,7 +61,7 @@ export default function AppLayout() {
                     if (!active) return;
                     const docId = staffDoc ? staffDoc.id : uid;
                     unsub = onAlertasEspecialistaChange(docId, (alerts) => {
-                        if (active) setAlertas(alerts);
+                        if (active) procesarAlertas(alerts);
                     });
                 }
             } else if (userRole === 'Paciente' || userRole === 'Limpieza') {
@@ -47,7 +72,7 @@ export default function AppLayout() {
                     if (!active) return;
                     if (p?.id) {
                         unsub = onAlertasPacienteChange(p.id, (alerts) => {
-                            if (active) setAlertas(alerts);
+                            if (active) procesarAlertas(alerts);
                         });
                     }
                 }
@@ -181,7 +206,7 @@ export default function AppLayout() {
                                         <p className="text-gray-400 text-sm font-bold">Sin notificaciones pendientes</p>
                                     </div>
                                 ) : alertas.map(a => (
-                                    <div key={a.id} className="flex items-start gap-3 p-3 bg-turquesa/5 rounded-2xl border border-turquesa/10 hover:bg-turquesa/10 transition-all group">
+                                    <div key={a.id} onClick={() => handleDismissAlerta(a.id)} className="flex items-start gap-3 p-3 bg-turquesa/5 rounded-2xl border border-turquesa/10 hover:bg-turquesa/15 transition-all group cursor-pointer" title="Clic para descartar y marcar como leida">
                                         <div className="w-8 h-8 bg-turquesa/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
                                             <Bell size={14} className="text-turquesa" />
                                         </div>

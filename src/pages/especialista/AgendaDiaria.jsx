@@ -1,3 +1,4 @@
+import { reproducirSonidoNotificacion } from '../../services/notificationService';
 import React, { useState, useEffect, useMemo } from 'react';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
@@ -179,14 +180,11 @@ export default function AgendaDiaria() {
                 setLoading(false);
             });
 
-            // Escuchar alertas de sala de espera
+            // Escuchar alertas de sala de espera con sonido melodioso sintetizado
             unsubAlertas = onAlertasEspecialistaChange(identifiers, (nuevasAlertas) => {
                 setAlertas(nuevasAlertas);
                 if (nuevasAlertas.length > 0) {
-                    try {
-                        const audio = new Audio('/notification.mp3');
-                        audio.play().catch(() => {});
-                    } catch (e) {}
+                    reproducirSonidoNotificacion();
                 }
             });
         }).catch(() => {
