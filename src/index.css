@@ -138,3 +138,49 @@
   table { font-size: 1.1rem; }
   th, td { padding: 1.25rem 1.5rem; }
 }
+/* ??????????????????????????????????????????????????????
+   MOBILE HD & TOUCH RESPONSIVENESS OPTIMIZATIONS
+   ?????????????????????????????????????????????????????? */
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Crisp images & SVG icons on Retina / AMOLED screens */
+img, svg {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Native momentum touch scrolling for tables and lists */
+.touch-scroll, .overflow-x-auto, .overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Small mobile devices (< 640px) polish */
+@media (max-width: 639px) {
+  /* Prevent modals from clipping offscreen */
+  .modal-container {
+    max-height: calc(100vh - 2rem);
+  }
+  
+  /* Ensure comfortable tap targets */
+  button:not(.chip-btn):not(.icon-only), 
+  .btn-touch {
+    min-height: 40px;
+  }
+}

@@ -266,16 +266,16 @@ export default function ChecadorView() {
         return asistenciaHoyAdmin.filter(a => a.tipo === filtroTipoAdmin);
     }, [asistenciaHoyAdmin, filtroTipoAdmin]);
     return (
-        <div className="p-4 md:p-8 max-w-6xl mx-auto space-y-6 pb-24 text-slate-800 dark:text-slate-100">
+        <div className="p-3 sm:p-5 md:p-8 max-w-6xl mx-auto space-y-4 sm:space-y-6 pb-24 text-slate-800 dark:text-slate-100">
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 sm:gap-4 bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/20">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/20 shrink-0">
                         <Compass className="w-8 h-8" />
                     </div>
                     <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                            <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
                                 Checador Satelital GPS
                             </h1>
 
@@ -368,13 +368,13 @@ export default function ChecadorView() {
                 {/* Columna Izquierda: Radar y Acciones (7 cols) */}
                 <div className="lg:col-span-7 space-y-6">
                     {/* Radar Card */}
-                    <div className="bg-gradient-to-b from-slate-900 to-slate-800 text-white p-6 md:p-8 rounded-3xl shadow-xl relative overflow-hidden">
+                    <div className="bg-gradient-to-b from-slate-900 to-slate-800 text-white p-5 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl shadow-xl relative overflow-hidden">
                         <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-teal-500/10 blur-3xl pointer-events-none" />
                         <div className="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
 
                         <div className="relative z-10 flex flex-col items-center text-center space-y-5">
                             {/* Radar Visual */}
-                            <div className="relative w-36 h-36 flex items-center justify-center my-2">
+                            <div className="relative w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center my-1 sm:my-2">
                                 <div className={`absolute inset-0 rounded-full border border-dashed border-teal-500/40 ${gpsCargando ? 'animate-spin' : ''}`} />
                                 <div className={`absolute inset-3 rounded-full border border-teal-500/20 ${dentroDeLaClinica ? 'bg-emerald-500/10 animate-ping duration-1000' : ''}`} />
                                 <div className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-transform ${
@@ -382,7 +382,7 @@ export default function ChecadorView() {
                                         ? 'bg-gradient-to-tr from-emerald-500 to-teal-400 text-white scale-105'
                                         : 'bg-slate-700 text-slate-300'
                                 }`}>
-                                    <MapPin className="w-10 h-10" />
+                                    <MapPin className="w-8 h-8 sm:w-10 sm:h-10" />
                                 </div>
                             </div>
 
@@ -391,7 +391,7 @@ export default function ChecadorView() {
                                 <div className="text-xs uppercase tracking-wider text-teal-400 font-semibold mb-1">
                                     Distancia a Clínica ALFRA
                                 </div>
-                                <div className="text-4xl md:text-5xl font-black tracking-tight text-white">
+                                <div className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
                                     {gpsCargando ? (
                                         <span className="text-slate-400 text-3xl font-medium">Localizando satélite...</span>
                                     ) : distanciaMetros !== null ? (
@@ -426,7 +426,7 @@ export default function ChecadorView() {
                     </div>
 
                     {/* Botones de Acción: Entrada y Salida */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         {/* Botón Entrada */}
                         <button
                             onClick={() => handleChecar('Entrada')}

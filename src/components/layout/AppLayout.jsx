@@ -122,37 +122,38 @@ export default function AppLayout() {
             <main className="flex-1 flex flex-col h-full overflow-hidden relative">
 
                 {/* ── MOBILE HEADER ── */}
-                <header className="md:hidden flex items-center justify-between px-4 bg-white border-b border-gray-100 shadow-sm z-40"
-                    style={{ paddingTop: 'env(safe-area-inset-top, 0px)', minHeight: '110px' }}>
-                    {/* Logo grande 3x */}
+                {/* ??? MOBILE HEADER (Optimizada para pantalla m?vil HD) ??? */}
+                <header className="md:hidden flex items-center justify-between px-3.5 sm:px-4 bg-white border-b border-gray-100 shadow-sm z-40 sticky top-0"
+                    style={{ paddingTop: 'env(safe-area-inset-top, 0px)', minHeight: '64px' }}>
+                    {/* Logo elegante, n?tido y de alta definici?n */}
                     <img
                         src="/logo.png"
-                        alt="ALFRA Clínica"
-                        style={{ height: '96px', width: 'auto', objectFit: 'contain', maxWidth: '75%' }}
+                        alt="ALFRA Cl?nica"
+                        style={{ height: '44px', width: 'auto', objectFit: 'contain', maxWidth: '65%' }}
                     />
                     <div className="flex items-center gap-2">
                     {(userRole === 'Administrador' || userRole === 'Especialista' || userRole === 'Doctor' || userRole === 'Paciente' || userRole === 'Limpieza') && (
                         <button
                             onClick={() => setShowAlertas(!showAlertas)}
-                            className="relative p-3 rounded-2xl bg-turquesa/10 active:bg-turquesa/25"
-                            style={{ minWidth: '56px', minHeight: '56px' }}
+                            className="relative p-2.5 rounded-xl bg-turquesa/10 active:bg-turquesa/25 transition-colors flex items-center justify-center"
+                            style={{ minWidth: '44px', minHeight: '44px' }}
                         >
-                            <Bell size={26} className="text-turquesa" />
+                            <Bell size={22} className="text-turquesa" />
                             {alertas.length > 0 && (
-                                <span className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 text-white text-[10px] font-black rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                                <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-[10px] font-black rounded-full flex items-center justify-center shadow-lg animate-pulse">
                                     {alertas.length}
                                 </span>
                             )}
                         </button>
                     )}
-                    {/* Boton abrir menu lateral */}
+                    {/* Bot?n abrir men? lateral */}
                     <button
                         onClick={() => setDrawerOpen(true)}
-                        className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl bg-turquesa/10 active:bg-turquesa/25"
-                        style={{ minWidth: '56px', minHeight: '56px' }}
-                        aria-label="Abrir menú"
+                        className="flex items-center justify-center p-2.5 rounded-xl bg-turquesa/10 active:bg-turquesa/25 transition-colors"
+                        style={{ minWidth: '44px', minHeight: '44px' }}
+                        aria-label="Abrir men?"
                     >
-                        <Menu size={30} className="text-turquesa" strokeWidth={2.5} />
+                        <Menu size={26} className="text-turquesa" strokeWidth={2.5} />
                     </button>
                     </div>
                 </header>
@@ -211,14 +212,14 @@ export default function AppLayout() {
                 {/* ── DRAWER LATERAL (desde la IZQUIERDA) ── */}
                 <div
                     className={`md:hidden fixed top-0 left-0 h-full bg-white z-50 flex flex-col shadow-2xl transition-transform duration-300 ease-out ${drawerOpen ? 'translate-x-0' : '-translate-x-full'}`}
-                    style={{ width: '280px', paddingTop: 'env(safe-area-inset-top, 0px)' }}
+                    style={{ width: 'min(300px, 85vw)', paddingTop: 'env(safe-area-inset-top, 0px)' }}
                 >
                     {/* Encabezado del drawer — logo grande */}
                     <div className="flex items-center justify-between px-5 py-5 border-b border-gray-100 bg-gradient-to-r from-turquesa/5 to-transparent">
                         <img
                             src="/logo.png"
                             alt="ALFRA Clínica"
-                            style={{ height: '100px', width: 'auto', objectFit: 'contain', maxWidth: '70%' }}
+                            style={{ height: '52px', width: 'auto', objectFit: 'contain', maxWidth: '75%' }}
                         />
                         <button
                             onClick={() => setDrawerOpen(false)}
@@ -270,7 +271,7 @@ export default function AppLayout() {
 
                 {/* ── CONTENIDO DE LA PÁGINA ── */}
                 {/* paddingBottom con safe-area para que los botones del sistema no tapen nada */}
-                <div className="flex-1 overflow-y-auto p-4 md:p-8 3xl:p-12 4xl:p-16"
+                <div className="flex-1 overflow-y-auto p-3 sm:p-5 md:p-8 3xl:p-12 4xl:p-16"
                     style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom, 24px))' }}>
                     <Outlet />
                 </div>
