@@ -34,7 +34,7 @@ import InventarioView from './pages/inventario/InventarioView';
 import MiPerfilColaborador from './pages/staff/MiPerfilColaborador';
 import SolicitudesView from './pages/admin/SolicitudesView';
 import ChecadorView from './pages/ChecadorView';
-import { Activity, Calendar, DollarSign, Users as UsersIcon, Stethoscope, Sparkles } from 'lucide-react';
+import { Activity, Calendar, DollarSign, Users as UsersIcon, Stethoscope, Sparkles, AlertTriangle } from 'lucide-react';
 
 const Login = () => {
   const { login, resetPassword } = useAuth();
@@ -45,6 +45,15 @@ const Login = () => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Leer aviso de bloqueo si el usuario fue expulsado o revocado previamente
+  useEffect(() => {
+    const savedError = sessionStorage.getItem('loginError');
+    if (savedError) {
+      setError(savedError);
+      sessionStorage.removeItem('loginError');
+    }
+  }, []);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -53,7 +62,14 @@ const Login = () => {
       await login(email, password);
       navigate('/');
     } catch (err) {
-      setError('Credenciales incorrectas o usuario no encontrado.');
+      const msg = err.message || '';
+      if (msg.includes('ACCESO DENEGADO')) {
+        setError(msg);
+      } else if (err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
+        setError('Credenciales incorrectas o usuario no encontrado.');
+      } else {
+        setError(msg || 'Credenciales incorrectas o usuario no encontrado.');
+      }
       console.error(err);
     } finally {
       setIsSubmitting(false);
@@ -83,7 +99,17 @@ const Login = () => {
         <h1 className="text-xl text-acero font-bold mb-2 tracking-tight uppercase">Bienvenido a ALFRA</h1>
         <p className="text-gray-400 mb-8 font-black uppercase text-[10px] tracking-[0.3em]">v18.12-STABLE</p>
 
-        {error && <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-lg text-sm font-medium">{error}</div>}
+        {error && (
+          <div className="mb-6 p-4 bg-red-50 border-2 border-red-300 text-red-700 rounded-2xl text-sm font-bold text-left flex items-start gap-3 shadow-lg animate-in fade-in slide-in-from-top-2">
+            <div className="p-2 bg-red-600 text-white rounded-xl shrink-0 mt-0.5 shadow-md">
+              <AlertTriangle size={20} />
+            </div>
+            <div className="flex-1">
+              <p className="font-black text-red-900 uppercase text-xs tracking-wider mb-1">Aviso de Seguridad</p>
+              <p className="text-red-800 leading-snug">{error}</p>
+            </div>
+          </div>
+        )}
 
         <form onSubmit={handleLogin} className="space-y-4 text-left">
           <div>
