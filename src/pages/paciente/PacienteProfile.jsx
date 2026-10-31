@@ -25,7 +25,26 @@ import { getTratamientosPaciente, getSesionesPaciente, MEDIDAS_CORPORALES } from
 import Barcode39 from "../../components/ui/Barcode39";
 
 const auth = getAuth();
-const getMembresiaObj = (m) => { if (!m) return null; if (typeof m === "object" && m.nivel) return m; return null; };
+const getMembresiaObj = (m, pacienteId = null) => {
+  if (!m) return null;
+  if (typeof m === "object" && (m.nivel || m.activa)) {
+    let codigo = m.codigo || m.id;
+    if (!codigo || !String(codigo).startsWith("MEM-")) {
+      const pacPart = String(pacienteId || "ALF").replace(/[^a-zA-Z0-9]/g, "").slice(-4).toUpperCase() || "7024";
+      const randPart = Math.floor(1000 + Math.random() * 9000);
+      codigo = `MEM-${pacPart}-${randPart}`;
+    }
+    return {
+      ...m,
+      id: codigo,
+      codigo,
+      nivel: m.nivel || "Bronce",
+      horas: Number(m.horasDisponibles ?? m.horas ?? 0),
+      activa: m.activa !== false
+    };
+  }
+  return null;
+};
 
 // Componente interactivo Ultra HD para comparativa táctil de Antes y Después
 function BeforeAfterSlider({ beforeUrl, afterUrl, beforeLabel = "Día 1", afterLabel = "Hoy" }) {
@@ -1610,7 +1629,22 @@ export default function PacienteProfile() {
             fechaNacimiento: paciente.fechaNacimiento || "",
             fotoUrl: paciente.fotoUrl || null,
             tipoTratamiento: paciente.tipoTratamiento || "Mixto",
-            membresia: paciente.membresia || null,
+            membresia: (() => {
+            let m = paciente.membresia || null;
+            if (m && typeof m === "object" && (!m.codigo || !String(m.codigo).startsWith("MEM-"))) {
+              const pacPart = String(paciente.id).replace(/[^a-zA-Z0-9]/g, "").slice(-4).toUpperCase() || "7024";
+              const randPart = Math.floor(1000 + Math.random() * 9000);
+              const autoCode = `MEM-${pacPart}-${randPart}`;
+              m = { ...m, id: autoCode, codigo: autoCode };
+              try {
+                updateDoc(doc(db, "pacientes", paciente.id), {
+                  "membresia.codigo": autoCode,
+                  "membresia.id": autoCode
+                }).catch(() => {});
+              } catch (_) {}
+            }
+            return m;
+          })(),
             sellosLealtad: paciente.sellosLealtad || 0,
             recompensasDisponibles: paciente.recompensasDisponibles || 0,
             primerSelloFecha: paciente.primerSelloFecha || null,
@@ -1905,7 +1939,7 @@ export default function PacienteProfile() {
     }
   };
 
-  const membresiaObj = getMembresiaObj(perfilPaciente.membresia);
+  const membresiaObj = getMembresiaObj(perfilPaciente.membresia, pacienteDocId);
   const tabs = [ 
     {key:"progreso", label:"Resumen", icon: Activity},
     {key:"miprogreso", label:"Progreso", icon: Sparkles},
@@ -3262,146 +3296,244 @@ export default function PacienteProfile() {
         />
       )}
 
-      {/* MEMBRESIA CON FLIP CARD */}
-      {activeTab==="membresia"&&membresiaObj&&(
+      {/* MEMBRESIA CON FLIP CARD (CON ID UNICO Y CODIGO DE BARRAS) */}
+      {activeTab === "membresia" && membresiaObj && (
         <div className="space-y-4 animate-in fade-in">
-          <div className="text-center space-y-1 mb-2"><h2 className="text-xl font-black text-gray-800 uppercase tracking-tight">Mi Membresia</h2><p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Credencial exclusiva y beneficios</p></div>
+          <div className="text-center space-y-1 mb-2">
+            <h2 className="text-xl font-black text-gray-800 uppercase tracking-tight">Mi Membresía</h2>
+            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Credencial exclusiva y beneficios</p>
+          </div>
+
           <style>{`
-            .flip-card{background-color:transparent;perspective:1000px;height:220px;width:100%;max-width:480px;margin:0 auto;}
-            .flip-card-inner{position:relative;width:100%;height:100%;transition:transform 0.6s;transformástyle:preserve-3d;}
-            .flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
-            .flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:24px;overflow:hidden;}
-            .flip-card-back{transform:rotateY(180deg);}
+            .flip-card {
+              background-color: transparent;
+              perspective: 1200px;
+              height: 230px;
+              width: 100%;
+              max-width: 480px;
+              margin: 0 auto;
+            }
+            .flip-card-inner {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+              transform-style: preserve-3d;
+              -webkit-transform-style: preserve-3d;
+            }
+            .flip-card.flipped .flip-card-inner {
+              transform: rotateY(180deg);
+            }
+            .flip-card-front, .flip-card-back {
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              -webkit-backface-visibility: hidden !important;
+              backface-visibility: hidden !important;
+              border-radius: 24px;
+              overflow: hidden;
+            }
+            .flip-card-front {
+              transform: rotateY(0deg);
+              z-index: 2;
+            }
+            .flip-card-back {
+              transform: rotateY(180deg);
+              z-index: 1;
+            }
+            .flip-card.flipped .flip-card-front {
+              opacity: 0;
+              pointer-events: none;
+              visibility: hidden;
+              transition: opacity 0.2s 0.2s, visibility 0.2s 0.2s;
+            }
+            .flip-card.flipped .flip-card-back {
+              z-index: 3;
+            }
           `}</style>
-          <div className={`flip-card ${flipped?"flipped":""}`}>
+
+          <div className={`flip-card ${flipped ? "flipped" : ""}`}>
             <div className="flip-card-inner">
               {/* FRENTE */}
-              <div className={`flip-card-front bg-white border-2 flex h-full ${membresiaObj.nivel==="Platinum"?"border-gray-800":membresiaObj.nivel==="Oro"?"border-amber-400":membresiaObj.nivel==="Plata"?"border-gray-300":"border-orange-400"}`}>
-                <div className="absolute inset-0" style={{background:`linear-gradient(105deg, transparent 55%, ${membresiaObj.nivel==="Platinum"?"rgba(0,0,0,0.05)":membresiaObj.nivel==="Oro"?"rgba(251,191,36,0.05)":membresiaObj.nivel==="Plata"?"rgba(156,163,175,0.05)":"rgba(249,115,22,0.05)"} 55%)`}}/>
-                <div className="flex flex-col items-center justify-center px-3 gap-2" style={{width:"32%",borderRight:"1px solid rgba(0,0,0,0.05)"}}>
+              <div className={`flip-card-front bg-white border-2 flex h-full ${
+                membresiaObj.nivel === "Platinum" ? "border-gray-800" :
+                membresiaObj.nivel === "Oro" ? "border-amber-400" :
+                membresiaObj.nivel === "Plata" ? "border-gray-300" : "border-orange-400"
+              }`}>
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: `linear-gradient(105deg, transparent 55%, ${
+                      membresiaObj.nivel === "Platinum" ? "rgba(0,0,0,0.05)" :
+                      membresiaObj.nivel === "Oro" ? "rgba(251,191,36,0.05)" :
+                      membresiaObj.nivel === "Plata" ? "rgba(156,163,175,0.05)" : "rgba(249,115,22,0.05)"
+                    } 55%)`
+                  }}
+                />
+                <div className="flex flex-col items-center justify-center px-3 gap-1.5" style={{ width: "32%", borderRight: "1px solid rgba(0,0,0,0.05)" }}>
                   <div className="relative">
-                    <div className="absolute -inset-[2.5px] rounded-2xl" style={{background:membresiaObj.nivel==="Platinum"?"linear-gradient(135deg,#000,#4b5563)":membresiaObj.nivel==="Oro"?"linear-gradient(135deg,#fbbf24,#d97706)":membresiaObj.nivel==="Plata"?"linear-gradient(135deg,#9ca3af,#4b5563)":"linear-gradient(135deg,#f97316,#c2410c)"}}/>
-                    {perfilPaciente.fotoUrl?<img src={perfilPaciente.fotoUrl} alt={perfilPaciente.nombre} className="relative object-cover border-2 border-white shadow-lg rounded-2xl" style={{width:"100px",height:"125px"}}/>:<div className="relative border-2 border-white shadow-lg rounded-2xl flex items-center justify-center bg-gray-200" style={{width:"100px",height:"125px"}}><User size={40} className="text-gray-400"/></div>}
+                    <div
+                      className="absolute -inset-[2.5px] rounded-2xl"
+                      style={{
+                        background: membresiaObj.nivel === "Platinum" ? "linear-gradient(135deg,#000,#4b5563)" :
+                                    membresiaObj.nivel === "Oro" ? "linear-gradient(135deg,#fbbf24,#d97706)" :
+                                    membresiaObj.nivel === "Plata" ? "linear-gradient(135deg,#9ca3af,#4b5563)" : "linear-gradient(135deg,#f97316,#c2410c)"
+                      }}
+                    />
+                    {perfilPaciente.fotoUrl ? (
+                      <img src={perfilPaciente.fotoUrl} alt={perfilPaciente.nombre} className="relative object-cover border-2 border-white shadow-lg rounded-2xl" style={{ width: "100px", height: "120px" }} />
+                    ) : (
+                      <div className="relative border-2 border-white shadow-lg rounded-2xl flex items-center justify-center bg-gray-200" style={{ width: "100px", height: "120px" }}>
+                        <User size={40} className="text-gray-400" />
+                      </div>
+                    )}
                   </div>
-                  <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wider mt-1">Paciente</p>
-                  <p className="text-xs font-black text-gray-800 text-center leading-tight">{perfilPaciente.nombre}</p>
+                  <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">Paciente</p>
+                  <p className="text-xs font-black text-gray-800 text-center leading-tight line-clamp-2">{perfilPaciente.nombre}</p>
                 </div>
-                <div className="flex-1 flex flex-col justify-between p-4 relative z-10">
+
+                <div className="flex-1 flex flex-col justify-between p-3.5 relative z-10">
                   <div className="flex items-start justify-between">
-                    <img src="/logo.png" alt="ALFRA" className="h-14 object-contain"/>
-                    <span className="text-[8px] font-black uppercase tracking-[0.15em] bg-gradient-to-r from-gray-800 to-black text-white px-3 py-1 rounded-bl-2xl rounded-tr-2xl flex items-center gap-1"><Crown size={10}/> Miembro</span>
+                    <img src="/logo.png" alt="ALFRA" className="h-12 object-contain" />
+                    <span className="text-[8px] font-black uppercase tracking-[0.15em] bg-gradient-to-r from-gray-800 to-black text-white px-3 py-1 rounded-bl-2xl rounded-tr-2xl flex items-center gap-1 shadow-xs">
+                      <Crown size={10} /> Miembro
+                    </span>
                   </div>
+
                   <div>
-                    <div className="flex items-center gap-1.5 mb-0.5"><Crown size={14} className="text-yellow-400"/><p className="text-sm font-black uppercase tracking-wider" style={{color:membresiaObj.nivel==="Platinum"?"#1f2937":membresiaObj.nivel==="Oro"?"#d97706":membresiaObj.nivel==="Plata"?"#6b7280":"#ea580c"}}>Membresia {membresiaObj.nivel}</p></div>
-                    <p className="text-[9px] text-gray-500">Disfruta de tus beneficios exclusivos! 🌟</p>
-                    <p className="text-[9px] text-gray-400 italic">Eres nuestro paciente VIP!</p>
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <Crown size={14} className="text-yellow-400" />
+                      <p
+                        className="text-sm font-black uppercase tracking-wider"
+                        style={{
+                          color: membresiaObj.nivel === "Platinum" ? "#1f2937" :
+                                 membresiaObj.nivel === "Oro" ? "#d97706" :
+                                 membresiaObj.nivel === "Plata" ? "#6b7280" : "#ea580c"
+                        }}
+                      >
+                        Membresía {membresiaObj.nivel}
+                      </p>
+                    </div>
+                    <p className="text-[9px] text-gray-500">¡Disfruta de tus beneficios exclusivos! 🌟</p>
+                    <p className="text-[9px] text-gray-400 italic">Eres nuestro paciente VIP</p>
                   </div>
-                  <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 py-2.5 rounded-2xl flex items-center justify-between">
-                    <div><p className="text-[8px] font-bold uppercase tracking-widest opacity-60">Horas</p><p className="text-xl font-black">{membresiaObj.horas||0} <span className="text-xs font-medium opacity-60">hrs</span></p></div>
-                    <button onClick={()=>setFlipped(true)} className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" title="Ver reverso"><RotateCw size={16}/></button>
+
+                  <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-3.5 py-2 rounded-2xl flex items-center justify-between shadow-sm">
+                    <div>
+                      <p className="text-[8px] font-bold uppercase tracking-widest opacity-60">Horas Disponibles</p>
+                      <p className="text-lg font-black">{membresiaObj.horas || 0} <span className="text-xs font-medium opacity-60">hrs</span></p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setFlipped(true)}
+                      className="bg-white/10 hover:bg-white/25 active:scale-95 text-white px-3 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 transition-all shadow cursor-pointer"
+                      title="Ver reverso con código de barras"
+                    >
+                      <RotateCw size={12} />
+                      <span>Ver Código</span>
+                    </button>
                   </div>
                 </div>
-                {membresiaObj.codigo&&<div className="absolute bottom-2 left-0 right-0 text-center"><p className="text-gray-300 text-[8px] font-mono tracking-widest">{membresiaObj.codigo}</p></div>}
               </div>
-              {/* REVERSO */}
-              <div className={`flip-card-back bg-white border-2 flex flex-col justify-between p-4 ${membresiaObj.nivel==="Platinum"?"border-gray-800":membresiaObj.nivel==="Oro"?"border-amber-400":membresiaObj.nivel==="Plata"?"border-gray-300":"border-orange-400"}`} style={{position:"relative"}}>
-                <div className="absolute inset-0" style={{background:"linear-gradient(105deg, transparent 40%, rgba(0,0,0,0.03) 40%)"}}/>
-                <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-2xl bg-gradient-to-r from-gray-800 to-black text-white text-[10px] font-black uppercase tracking-[0.2em] shadow-lg flex items-center gap-1.5 z-10"><Crown size={12}/> {membresiaObj.codigo}</div>
-                <div className="relative z-10 flex flex-col items-center justify-between h-full">
-                  <Barcode39 value={membresiaObj.codigo} width={240} height={60} />
-                  <p className="text-xs font-black tracking-widest text-gray-800 mt-1">{membresiaObj.codigo}</p>
-                  <div style={{width:"200px",height:"70px",marginTop:"8px"}}><img src="/logo.png" alt="ALFRA" style={{width:"100%",height:"100%",objectFit:"contain"}}/></div>
-                  <div className="w-full flex justify-between items-center border-t pt-2 mt-auto" style={{borderColor:"rgba(0,0,0,0.05)"}}>
-                    <p className="text-[9px] text-gray-400 font-medium">Uso exclusivo en Clinica ALFRA</p>
-                    <button onClick={()=>setFlipped(false)} className="bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-full transition-colors" title="Ver frente"><RotateCw size={16}/></button>
+
+              {/* REVERSO: ID ÚNICO Y CÓDIGO DE BARRAS (TOTALMENTE INDEPENDIENTE) */}
+              <div
+                className={`flip-card-back bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white border-2 flex flex-col justify-between p-4 shadow-2xl relative ${
+                  membresiaObj.nivel === "Platinum" ? "border-cyan-400/50" :
+                  membresiaObj.nivel === "Oro" ? "border-amber-400/50" :
+                  membresiaObj.nivel === "Plata" ? "border-slate-300/50" : "border-orange-400/50"
+                }`}
+              >
+                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center gap-1.5">
+                    <Crown size={14} className="text-amber-400" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-gray-200">
+                      Credencial Digital VIP • ALFRA
+                    </span>
                   </div>
+                  <span className="px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-white/10 text-turquesa border border-turquesa/30">
+                    ID: {membresiaObj.codigo}
+                  </span>
+                </div>
+
+                <div className="bg-white rounded-2xl p-3 flex flex-col items-center justify-center shadow-inner my-auto">
+                  <Barcode39 value={membresiaObj.codigo} width={260} height={54} />
+                  <p className="text-[11px] font-mono font-black text-gray-900 tracking-[0.25em] mt-1 uppercase">
+                    {membresiaObj.codigo}
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between pt-2 border-t border-white/10">
+                  <p className="text-[8px] text-gray-400 tracking-wide font-medium leading-tight max-w-[280px]">
+                    ID único e intransferible. Presenta este código en recepción para tus sesiones y beneficios VIP.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setFlipped(false)}
+                    className="bg-turquesa hover:bg-turquesa/80 active:scale-95 text-white px-3 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-wider flex items-center gap-1 transition-all shadow-md cursor-pointer"
+                    title="Volver al frente"
+                  >
+                    <RotateCw size={12} />
+                    <span>Frente</span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+
           {/* Beneficios */}
-          <Card className="shadow-sm"><h3 className="text-base font-black text-gray-800 uppercase mb-3 flex items-center gap-2"><Crown size={18} className="text-turquesa"/>Beneficios de tu Nivel {membresiaObj.nivel}</h3>
-            <div className="grid grid-cols-1 gap-3">{(beneficiosPorNivel[membresiaObj.nivel]||[]).length===0?<p className="text-sm text-gray-400 text-center py-4">No hay beneficios especificos registrados para este nivel.</p>:(beneficiosPorNivel[membresiaObj.nivel]||[]).map((b,i)=><div key={i} className="flex items-start gap-3 p-3 bg-gray-50 rounded-2xl"><span className="text-turquesa text-xl">✨</span><p className="text-sm font-black text-gray-800">{b}</p></div>)}</div>
-            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-4 text-center">Recarga mas horas para subir de nivel</p>
-          </Card>
-          {/* Historial de Consumos */}
-          <Card className="shadow-sm"><h3 className="text-base font-black text-gray-800 uppercase mb-3 flex items-center gap-2"><Zap size={18} className="text-turquesa"/>Historial de Consumos</h3>
-            {loadingConsumos?<p className="text-gray-400 text-sm text-center">Cargando...</p>:consumos.length===0?<p className="text-sm text-gray-400 text-center py-4">No has realizado consumos aun.</p>:<div className="space-y-2">{consumos.map((c,i)=><div key={i} className="flex justify-between items-center p-3 bg-gray-50 rounded-xl"><div><p className="font-bold text-sm text-gray-800">{c.servicio||c.concepto||"Consumo"}</p><p className="text-[10px] text-gray-400">{c.fecha?.toDate?c.fecha.toDate().toLocaleDateString("es-MX"):c.fecha ? new Date(c.fecha).toLocaleDateString("es-MX"):"--"}</p></div><span className="font-black text-turquesa text-sm">{c.horas||0} hrs</span></div>)}</div>}
-          </Card>
-        </div>
-      )}
-
-
-{/* MEMBRESIA CON FLIP CARD */}
-      {activeTab==="membresia"&&membresiaObj&&(
-        <div className="space-y-4 animate-in fade-in">
-          <div className="text-center space-y-1 mb-2"><h2 className="text-xl font-black text-gray-800 uppercase tracking-tight">Mi Membresia</h2><p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Credencial exclusiva y beneficios</p></div>
-          <style>{`
-            .flip-card{background-color:transparent;perspective:1000px;height:220px;width:100%;max-width:480px;margin:0 auto;}
-            .flip-card-inner{position:relative;width:100%;height:100%;transition:transform 0.6s;transformástyle:preserve-3d;}
-            .flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
-            .flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:24px;overflow:hidden;}
-            .flip-card-back{transform:rotateY(180deg);}
-          `}</style>
-          <div className={`flip-card ${flipped?"flipped":""}`}>
-            <div className="flip-card-inner">
-              {/* FRENTE */}
-              <div className={`flip-card-front bg-white border-2 flex h-full ${membresiaObj.nivel==="Platinum"?"border-gray-800":membresiaObj.nivel==="Oro"?"border-amber-400":membresiaObj.nivel==="Plata"?"border-gray-300":"border-orange-400"}`}>
-                <div className="absolute inset-0" style={{background:`linear-gradient(105deg, transparent 55%, ${membresiaObj.nivel==="Platinum"?"rgba(0,0,0,0.05)":membresiaObj.nivel==="Oro"?"rgba(251,191,36,0.05)":membresiaObj.nivel==="Plata"?"rgba(156,163,175,0.05)":"rgba(249,115,22,0.05)"} 55%)`}}/>
-                <div className="flex flex-col items-center justify-center px-3 gap-2" style={{width:"32%",borderRight:"1px solid rgba(0,0,0,0.05)"}}>
-                  <div className="relative">
-                    <div className="absolute -inset-[2.5px] rounded-2xl" style={{background:membresiaObj.nivel==="Platinum"?"linear-gradient(135deg,#000,#4b5563)":membresiaObj.nivel==="Oro"?"linear-gradient(135deg,#fbbf24,#d97706)":membresiaObj.nivel==="Plata"?"linear-gradient(135deg,#9ca3af,#4b5563)":"linear-gradient(135deg,#f97316,#c2410c)"}}/>
-                    {perfilPaciente.fotoUrl?<img src={perfilPaciente.fotoUrl} alt={perfilPaciente.nombre} className="relative object-cover border-2 border-white shadow-lg rounded-2xl" style={{width:"100px",height:"125px"}}/>:<div className="relative border-2 border-white shadow-lg rounded-2xl flex items-center justify-center bg-gray-200" style={{width:"100px",height:"125px"}}><User size={40} className="text-gray-400"/></div>}
+          <Card className="shadow-sm">
+            <h3 className="text-base font-black text-gray-800 uppercase mb-3 flex items-center gap-2">
+              <Crown size={18} className="text-turquesa" />
+              Beneficios de tu Nivel {membresiaObj.nivel}
+            </h3>
+            <div className="grid grid-cols-1 gap-3">
+              {(beneficiosPorNivel[membresiaObj.nivel] || []).length === 0 ? (
+                <p className="text-sm text-gray-400 text-center py-4">No hay beneficios específicos registrados para este nivel.</p>
+              ) : (
+                (beneficiosPorNivel[membresiaObj.nivel] || []).map((b, i) => (
+                  <div key={i} className="flex items-start gap-3 p-3 bg-gray-50 rounded-2xl">
+                    <span className="text-turquesa text-xl">✨</span>
+                    <p className="text-sm font-black text-gray-800">{b}</p>
                   </div>
-                  <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wider mt-1">Paciente</p>
-                  <p className="text-xs font-black text-gray-800 text-center leading-tight">{perfilPaciente.nombre}</p>
-                </div>
-                <div className="flex-1 flex flex-col justify-between p-4 relative z-10">
-                  <div className="flex items-start justify-between">
-                    <img src="/logo.png" alt="ALFRA" className="h-14 object-contain"/>
-                    <span className="text-[8px] font-black uppercase tracking-[0.15em] bg-gradient-to-r from-gray-800 to-black text-white px-3 py-1 rounded-bl-2xl rounded-tr-2xl flex items-center gap-1"><Crown size={10}/> Miembro</span>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-1.5 mb-0.5"><Crown size={14} className="text-yellow-400"/><p className="text-sm font-black uppercase tracking-wider" style={{color:membresiaObj.nivel==="Platinum"?"#1f2937":membresiaObj.nivel==="Oro"?"#d97706":membresiaObj.nivel==="Plata"?"#6b7280":"#ea580c"}}>Membresia {membresiaObj.nivel}</p></div>
-                    <p className="text-[9px] text-gray-500">Disfruta de tus beneficios exclusivos! 🌟</p>
-                    <p className="text-[9px] text-gray-400 italic">Eres nuestro paciente VIP!</p>
-                  </div>
-                  <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 py-2.5 rounded-2xl flex items-center justify-between">
-                    <div><p className="text-[8px] font-bold uppercase tracking-widest opacity-60">Horas</p><p className="text-xl font-black">{membresiaObj.horas||0} <span className="text-xs font-medium opacity-60">hrs</span></p></div>
-                    <button onClick={()=>setFlipped(true)} className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" title="Ver reverso"><RotateCw size={16}/></button>
-                  </div>
-                </div>
-                {membresiaObj.codigo&&<div className="absolute bottom-2 left-0 right-0 text-center"><p className="text-gray-300 text-[8px] font-mono tracking-widest">{membresiaObj.codigo}</p></div>}
-              </div>
-              {/* REVERSO */}
-              <div className={`flip-card-back bg-white border-2 flex flex-col justify-between p-4 ${membresiaObj.nivel==="Platinum"?"border-gray-800":membresiaObj.nivel==="Oro"?"border-amber-400":membresiaObj.nivel==="Plata"?"border-gray-300":"border-orange-400"}`} style={{position:"relative"}}>
-                <div className="absolute inset-0" style={{background:"linear-gradient(105deg, transparent 40%, rgba(0,0,0,0.03) 40%)"}}/>
-                <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-2xl bg-gradient-to-r from-gray-800 to-black text-white text-[10px] font-black uppercase tracking-[0.2em] shadow-lg flex items-center gap-1.5 z-10"><Crown size={12}/> {membresiaObj.codigo}</div>
-                <div className="relative z-10 flex flex-col items-center justify-between h-full">
-                  <Barcode39 value={membresiaObj.codigo} width={240} height={60} />
-                  <p className="text-xs font-black tracking-widest text-gray-800 mt-1">{membresiaObj.codigo}</p>
-                  <div style={{width:"200px",height:"70px",marginTop:"8px"}}><img src="/logo.png" alt="ALFRA" style={{width:"100%",height:"100%",objectFit:"contain"}}/></div>
-                  <div className="w-full flex justify-between items-center border-t pt-2 mt-auto" style={{borderColor:"rgba(0,0,0,0.05)"}}>
-                    <p className="text-[9px] text-gray-400 font-medium">Uso exclusivo en Clinica ALFRA</p>
-                    <button onClick={()=>setFlipped(false)} className="bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-full transition-colors" title="Ver frente"><RotateCw size={16}/></button>
-                  </div>
-                </div>
-              </div>
+                ))
+              )}
             </div>
-          </div>
-          {/* Beneficios */}
-          <Card className="shadow-sm"><h3 className="text-base font-black text-gray-800 uppercase mb-3 flex items-center gap-2"><Crown size={18} className="text-turquesa"/>Beneficios de tu Nivel {membresiaObj.nivel}</h3>
-            <div className="grid grid-cols-1 gap-3">{(beneficiosPorNivel[membresiaObj.nivel]||[]).length===0?<p className="text-sm text-gray-400 text-center py-4">No hay beneficios especificos registrados para este nivel.</p>:(beneficiosPorNivel[membresiaObj.nivel]||[]).map((b,i)=><div key={i} className="flex items-start gap-3 p-3 bg-gray-50 rounded-2xl"><span className="text-turquesa text-xl">✨</span><p className="text-sm font-black text-gray-800">{b}</p></div>)}</div>
-            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-4 text-center">Recarga mas horas para subir de nivel</p>
+            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-4 text-center">
+              Recarga más horas para subir de nivel
+            </p>
           </Card>
+
           {/* Historial de Consumos */}
-          <Card className="shadow-sm"><h3 className="text-base font-black text-gray-800 uppercase mb-3 flex items-center gap-2"><Zap size={18} className="text-turquesa"/>Historial de Consumos</h3>
-            {loadingConsumos?<p className="text-gray-400 text-sm text-center">Cargando...</p>:consumos.length===0?<p className="text-sm text-gray-400 text-center py-4">No has realizado consumos aun.</p>:<div className="space-y-2">{consumos.map((c,i)=><div key={i} className="flex justify-between items-center p-3 bg-gray-50 rounded-xl"><div><p className="font-bold text-sm text-gray-800">{c.servicio||c.concepto||"Consumo"}</p><p className="text-[10px] text-gray-400">{c.fecha?.toDate?c.fecha.toDate().toLocaleDateString("es-MX"):c.fecha ? new Date(c.fecha).toLocaleDateString("es-MX"):"--"}</p></div><span className="font-black text-turquesa text-sm">{c.horas||0} hrs</span></div>)}</div>}
+          <Card className="shadow-sm">
+            <h3 className="text-base font-black text-gray-800 uppercase mb-3 flex items-center gap-2">
+              <Zap size={18} className="text-turquesa" />
+              Historial de Consumos
+            </h3>
+            {loadingConsumos ? (
+              <p className="text-gray-400 text-sm text-center">Cargando...</p>
+            ) : consumos.length === 0 ? (
+              <p className="text-sm text-gray-400 text-center py-4">No has realizado consumos aún.</p>
+            ) : (
+              <div className="space-y-2">
+                {consumos.map((c, i) => (
+                  <div key={i} className="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+                    <div>
+                      <p className="font-bold text-sm text-gray-800">{c.servicio || c.concepto || "Consumo"}</p>
+                      <p className="text-[10px] text-gray-400">
+                        {c.fecha?.toDate ? c.fecha.toDate().toLocaleDateString("es-MX") : c.fecha ? new Date(c.fecha).toLocaleDateString("es-MX") : "--"}
+                      </p>
+                    </div>
+                    <span className="font-black text-turquesa text-sm">{c.horas || 0} hrs</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </Card>
         </div>
       )}
 
-      {/* TAB CONFIG */}
       {activeTab === "config" && (
         <div className="space-y-4 animate-in fade-in">
           <Card className="shadow-sm">

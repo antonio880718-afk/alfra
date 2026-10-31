@@ -427,14 +427,14 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
 
     return (
         <div className="space-y-6">
-            <div className="flex justify-between items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3.5 sm:p-4 rounded-2xl shadow-sm border border-gray-100">
                 <div>
-                    <h2 className="text-lg font-black text-acero flex items-center gap-2 uppercase">
-                        <UsersIcon className="text-turquesa" size={22} /> Pacientes
+                    <h2 className="text-base sm:text-lg font-black text-acero flex items-center gap-2 uppercase">
+                        <UsersIcon className="text-turquesa" size={20} /> Pacientes
                     </h2>
                     <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Gestión de expedientes</p>
                 </div>
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                     <Button
                         variant="outline"
                         size="xs"
@@ -466,10 +466,10 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
             <Card className="p-0 overflow-hidden shadow-sm">
                 <div className="divide-y">
                     {pacientesFiltrados.map(p => (
-                        <div key={p.id} className="p-4 hover:bg-gray-50 transition-colors">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-turquesa/10 text-turquesa flex items-center justify-center font-black relative">
+                        <div key={p.id} className="p-3.5 sm:p-4 hover:bg-gray-50 transition-colors">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                <div className="flex items-start sm:items-center gap-3 min-w-0">
+                                    <div className="w-10 h-10 rounded-full bg-turquesa/10 text-turquesa flex items-center justify-center font-black shrink-0 relative mt-0.5 sm:mt-0">
                                         {(p.nombre || '?')[0].toUpperCase()}
                                         {/* Indicador de recompensa pendiente */}
                                         {(p.recompensasDisponibles || 0) > 0 && (
@@ -478,9 +478,9 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                                             </span>
                                         )}
                                     </div>
-                                    <div>
-                                        <p className="font-bold text-gray-800">{p.nombre}</p>
-                                        <p className="text-xs text-gray-400">{p.telefono} • {p.email || 'Sin correo'}</p>
+                                    <div className="min-w-0">
+                                        <p className="font-bold text-gray-800 text-sm sm:text-base leading-tight break-words">{p.nombre}</p>
+                                        <p className="text-xs text-gray-400 mt-0.5 truncate">{p.telefono} • {p.email || 'Sin correo'}</p>
                                         {/* Mini barra de sellos */}
                                         <div className="flex items-center gap-1 mt-1">
                                             {Array.from({ length: 7 }).map((_, i) => (
@@ -504,7 +504,7 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-end w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-0 border-gray-100">
                                     {getEstadoBadge(p.estado)}
                                     {/* Botón Canjear/Agendar – solo visible si tiene recompensas */}
                                     {(p.recompensasDisponibles || 0) > 0 && (

@@ -690,40 +690,40 @@ export default function SupervisionAgenda() {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-2 md:gap-3">
-                        <div className="flex bg-slate-100 p-1 rounded-2xl border border-slate-200 shadow-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 w-full lg:w-auto">
+                        <div className="flex overflow-x-auto no-scrollbar max-w-full bg-slate-100 p-1 rounded-2xl border border-slate-200 shadow-sm shrink-0">
                             <button
                                 onClick={() => setViewMode('tablero')}
-                                className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all ${
+                                className={`shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all ${
                                     viewMode === 'tablero' ? 'bg-white text-slate-900 shadow-md ring-1 ring-slate-950/5' : 'text-slate-500 hover:text-slate-900'
                                 }`}
                             >
-                                <LayoutGrid size={14} className={viewMode === 'tablero' ? 'text-turquesa' : 'text-slate-400'} />
-                                <span>Tablero Ejecutivo</span>
+                                <LayoutGrid size={13} className={viewMode === 'tablero' ? 'text-turquesa' : 'text-slate-400'} />
+                                <span>Tablero</span>
                             </button>
                             <button
                                 onClick={() => setViewMode('lista')}
-                                className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all ${
+                                className={`shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all ${
                                     viewMode === 'lista' ? 'bg-white text-slate-900 shadow-md ring-1 ring-slate-950/5' : 'text-slate-500 hover:text-slate-900'
                                 }`}
                             >
-                                <List size={14} className={viewMode === 'lista' ? 'text-turquesa' : 'text-slate-400'} />
-                                <span>Lista Detallada</span>
+                                <List size={13} className={viewMode === 'lista' ? 'text-turquesa' : 'text-slate-400'} />
+                                <span>Lista</span>
                             </button>
                             <button
                                 onClick={() => setViewMode('disponibilidad')}
-                                className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all ${
+                                className={`shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all ${
                                     viewMode === 'disponibilidad' ? 'bg-white text-slate-900 shadow-md ring-1 ring-slate-950/5' : 'text-slate-500 hover:text-slate-900'
                                 }`}
                             >
-                                <Clock size={14} className={viewMode === 'disponibilidad' ? 'text-turquesa' : 'text-slate-400'} />
+                                <Clock size={13} className={viewMode === 'disponibilidad' ? 'text-turquesa' : 'text-slate-400'} />
                                 <span>Disponibilidad</span>
                             </button>
                         </div>
                         <Button
                             variant="primary"
                             size="lg"
-                            className="flex-1 sm:flex-none rounded-xl md:rounded-2xl shadow-lg px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm font-black h-auto"
+                            className="w-full sm:w-auto rounded-xl md:rounded-2xl shadow-lg px-5 py-2.5 sm:px-7 sm:py-3 text-xs sm:text-sm font-black h-auto justify-center"
                             onClick={() => handleOpenModal()}
                         >
                             <PlusCircle size={18} className="mr-2" />
@@ -767,28 +767,30 @@ export default function SupervisionAgenda() {
                 ))}
             </div>
 
-            {/* CONTROLES DE FECHA */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 bg-white/40 backdrop-blur-sm p-2 md:p-3 rounded-2xl md:rounded-full border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-1 md:gap-2 bg-white rounded-full p-1 md:p-1.5 shadow-sm border border-gray-50 text-acero">
-                    <button onClick={() => setCurrentDate(subDays(currentDate, 1))} className="p-2 md:p-3 hover:bg-turquesa/5 rounded-full text-gray-400 hover:text-turquesa transition-all"><ChevronLeft size={24} className="md:size-[28px]" strokeWidth={3} /></button>
-                    <button onClick={() => setCurrentDate(new Date())} className="px-4 py-2 md:px-6 md:py-2.5 text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] text-turquesa hover:bg-turquesa/10 rounded-full transition-all border border-turquesa/20">Hoy</button>
-                    <button onClick={() => setCurrentDate(addDays(currentDate, 1))} className="p-2 md:p-3 hover:bg-turquesa/5 rounded-full text-gray-400 hover:text-turquesa transition-all"><ChevronRight size={24} className="md:size-[28px]" strokeWidth={3} /></button>
-                </div>
+            {/* CONTROLES DE FECHA (Oculto en modo tablero para evitar duplicar el selector que ya incluye la agenda ejecutiva) */}
+            {viewMode !== 'tablero' && (
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 bg-white/40 backdrop-blur-sm p-2 md:p-3 rounded-2xl md:rounded-full border border-gray-100 shadow-sm">
+                    <div className="flex items-center gap-1 md:gap-2 bg-white rounded-full p-1 md:p-1.5 shadow-sm border border-gray-50 text-acero">
+                        <button onClick={() => setCurrentDate(subDays(currentDate, 1))} className="p-2 md:p-3 hover:bg-turquesa/5 rounded-full text-gray-400 hover:text-turquesa transition-all"><ChevronLeft size={24} className="md:size-[28px]" strokeWidth={3} /></button>
+                        <button onClick={() => setCurrentDate(new Date())} className="px-4 py-2 md:px-6 md:py-2.5 text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] text-turquesa hover:bg-turquesa/10 rounded-full transition-all border border-turquesa/20">Hoy</button>
+                        <button onClick={() => setCurrentDate(addDays(currentDate, 1))} className="p-2 md:p-3 hover:bg-turquesa/5 rounded-full text-gray-400 hover:text-turquesa transition-all"><ChevronRight size={24} className="md:size-[28px]" strokeWidth={3} /></button>
+                    </div>
 
-                <h2 className="text-xl md:text-3xl font-black text-acero capitalize flex items-baseline gap-2">
-                    <span className="text-turquesa/20 text-3xl md:text-4xl leading-none">/</span>
-                    {format(currentDate, "EEEE, d 'de' MMMM", { locale: es })}
-                    <span className="text-gray-300 font-bold text-sm md:text-lg">{format(currentDate, "yyyy")}</span>
-                </h2>
+                    <h2 className="text-xl md:text-3xl font-black text-acero capitalize flex items-baseline gap-2">
+                        <span className="text-turquesa/20 text-3xl md:text-4xl leading-none">/</span>
+                        {format(currentDate, "EEEE, d 'de' MMMM", { locale: es })}
+                        <span className="text-gray-300 font-bold text-sm md:text-lg">{format(currentDate, "yyyy")}</span>
+                    </h2>
 
-                <div className="hidden xl:flex items-center gap-3 pr-6">
-                    <History size={20} className="text-gray-300" />
-                    <div>
-                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Auditoría</p>
-                        <p className="text-sm font-black text-acero">Sincronización Activa</p>
+                    <div className="hidden xl:flex items-center gap-3 pr-6">
+                        <History size={20} className="text-gray-300" />
+                        <div>
+                            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Auditoría</p>
+                            <p className="text-sm font-black text-acero">Sincronización Activa</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
 
             {loading ? (
                 <div className="flex flex-col items-center justify-center h-[500px] text-gray-400 bg-white/50 backdrop-blur-sm rounded-[3rem] border-2 border-dashed border-gray-200 animate-pulse">

@@ -782,9 +782,12 @@ export const updateAllPacientesLealtad = async (pacientes, activar) => {
 export const activarMembresia = async (pacienteId, nivel = 'Bronce') => {
     try {
         const docRef = doc(db, COLLECTION_NAME, pacienteId);
-        const codigo = 'MEM-' + Math.random().toString(36).substr(2, 5).toUpperCase();
+        const pacPart = String(pacienteId).replace(/[^a-zA-Z0-9]/g, '').slice(-4).toUpperCase() || '7024';
+        const randPart = Math.floor(1000 + Math.random() * 9000);
+        const codigo = `MEM-${pacPart}-${randPart}`;
         await updateDoc(docRef, {
             membresia: {
+                id: codigo,
                 codigo,
                 nivel,
                 horasDisponibles: 0,

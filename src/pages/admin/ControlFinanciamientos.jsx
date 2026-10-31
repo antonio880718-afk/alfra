@@ -632,25 +632,27 @@ export default function ControlFinanciamientos() {
                                 return matchesSearch && matchesFilter;
                             })
                             .map((plan) => (
-                            <div key={plan.id} className="p-4 hover:bg-gray-50 transition-colors">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-turquesa/10 text-turquesa flex items-center justify-center font-black relative">
+                            <div key={plan.id} className="p-3.5 sm:p-4 hover:bg-gray-50 transition-colors">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div className="flex items-start sm:items-center gap-3 min-w-0">
+                                        <div className="w-10 h-10 rounded-full bg-turquesa/10 text-turquesa flex items-center justify-center font-black shrink-0 mt-0.5 sm:mt-0">
                                             {(plan.paciente || '?')[0].toUpperCase()}
                                         </div>
-                                        <div>
-                                            <p className="font-bold text-gray-800">{plan.paciente}</p>
+                                        <div className="min-w-0">
+                                            <p className="font-bold text-gray-800 text-sm sm:text-base leading-tight break-words">{plan.paciente}</p>
                                             <p className="text-xs text-gray-500 font-normal flex items-center gap-1 mt-1">
-                                                <Wallet size={12} /> {plan.objetivo}
+                                                <Wallet size={12} className="text-turquesa shrink-0" /> <span className="truncate">{plan.objetivo}</span>
                                             </p>
-                                            <p className="text-xs text-gray-400 mt-1">
-                                                Meta: <span className="font-bold text-acero">{formatCurrency(plan.meta)}</span> | 
-                                                Acumulado: <span className="font-bold text-turquesa">{formatCurrency(plan.acumulado)}</span>
-                                                <span className="text-xs text-gray-400 font-normal ml-2">Falta: {formatCurrency(plan.faltante)}</span>
-                                            </p>
+                                            <div className="text-xs text-gray-400 mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                                                <span>Meta: <strong className="text-acero">{formatCurrency(plan.meta)}</strong></span>
+                                                <span>•</span>
+                                                <span>Acumulado: <strong className="text-turquesa">{formatCurrency(plan.acumulado)}</strong></span>
+                                                <span>•</span>
+                                                <span className="text-amber-700 font-bold">Falta: {formatCurrency(plan.faltante)}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-end w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-0 border-gray-100">
                                         <button
                                             onClick={async () => {
                                                 const nuevoEstado = plan.activo !== false ? false : true;
