@@ -97,7 +97,8 @@ const Login = () => {
       <div className="bg-blancoPuro p-8 sm:p-12 rounded-2xl shadow-xl border border-gray-100 w-full max-w-md text-center relative z-10">
         <img src="/logo.png" alt="ALFRA" className="h-56 w-auto mx-auto object-contain mb-8 hover:scale-105 transition-transform duration-300" />
         <h1 className="text-xl text-acero font-bold mb-2 tracking-tight uppercase">Bienvenido a ALFRA</h1>
-        <p className="text-gray-400 mb-8 font-black uppercase text-[10px] tracking-[0.3em]">v18.12-STABLE</p>
+        <p className="text-turquesa font-bold text-xs tracking-widest uppercase mb-1">Cirugía & Medicina Estética</p>
+        <p className="text-gray-400 font-medium text-[11px] italic mb-7">"Resaltando tu bienestar y belleza natural"</p>
 
         {error && (
           <div className="mb-6 p-4 bg-red-50 border-2 border-red-300 text-red-700 rounded-2xl text-sm font-bold text-left flex items-start gap-3 shadow-lg animate-in fade-in slide-in-from-top-2">
