@@ -15,6 +15,13 @@
     "StatusBar": {
       "style": "LIGHT",
       "backgroundColor": "#20B2AA"
+    },
+    "PushNotifications": {
+      "presentationOptions": [
+        "badge",
+        "sound",
+        "alert"
+      ]
     }
   },
   "android": {
@@ -24,6 +31,6 @@
     }
   },
   "ios": {
-    "scheme": "ALFRA Clínica"
+    "scheme": "com.clinica.alfra"
   }
 }

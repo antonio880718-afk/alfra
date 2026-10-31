@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "572433894677",
+    "project_id": "clinica-alfra",
+    "storage_bucket": "clinica-alfra.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572433894677:android:9b3993bea222a258a16d1c",
+        "android_client_info": {
+          "package_name": "com.clinica.alfra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlNkycQeCpx4HwXMolBRJ2t4R4hoTkuWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

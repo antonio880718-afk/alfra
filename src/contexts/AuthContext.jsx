@@ -6,12 +6,13 @@ import {
     onAuthStateChanged,
     sendPasswordResetEmail,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, updateDoc, onSnapshot } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, onSnapshot, collection, query, where, getDocs } from 'firebase/firestore';
 import { auth, db } from '../lib/firebase';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { Capacitor } from '@capacitor/core';
 
 import { sincronizarBajasStaff } from '../services/staffService';
+import { reproducirSonidoNotificacion } from '../services/notificationService';
 const AuthContext = createContext({});
 
 // ─── Colección 'usuarios' en Firestore ──────────────────────────────────────
@@ -135,6 +136,7 @@ export function AuthProvider({ children }) {
                     } else {
                         // El usuario existe en Auth pero no en /usuarios -> tratar como Paciente
                         setUserRole('Paciente');
+                        registerPushNotifications(user.uid);
                     }
                 }
             } else {
@@ -154,7 +156,7 @@ export function AuthProvider({ children }) {
         return () => unsubscribe();
     }, []);
 
-    // ── Registro de Notificaciones Push (Solo Especialistas / Móvil) ──────
+    // ── Registro de Notificaciones Push (Móvil y Escritorio) ──────
     const registerPushNotifications = async (uid) => {
         // En PC / Navegador Web: solicitar permisos de notificaciones del sistema
         if (!Capacitor.isNativePlatform()) {
@@ -176,40 +178,96 @@ export function AuthProvider({ children }) {
             }
 
             if (permStatus.receive !== 'granted') {
-                throw new Error('Permisos de notificacion denegados');
+                console.warn('[NOTIF] Permisos de notificación no otorgados');
+                return;
             }
 
-            // 2. Registrar con Apple / Google
+            // 2. Crear canal de notificación para Android 8.0+ (Oreo a Android 16)
+            if (Capacitor.getPlatform() === 'android') {
+                try {
+                    await PushNotifications.createChannel({
+                        id: 'alfra_citas_alertas',
+                        name: 'Citas y Alertas ALFRA',
+                        description: 'Notificaciones sobre citas médicas, recordatorios y avisos clínicos',
+                        importance: 5, // 5 = High/Heads-up pop-up banner con sonido y vibración
+                        visibility: 1, // 1 = Visible en pantalla de bloqueo
+                        vibration: true,
+                        lights: true,
+                        lightColor: '#20B2AA'
+                    });
+                } catch (chErr) {
+                    console.warn('[NOTIF] Aviso al crear canal de notificaciones:', chErr);
+                }
+            }
+
+            // 3. Registrar ante Firebase Cloud Messaging / APNs
             await PushNotifications.register();
 
-            // 3. Obtener el Token
+            // 4. Al recibir el Token FCM, guardarlo en Firestore
             PushNotifications.addListener('registration', async (token) => {
-                console.log('Push registration success, token: ' + token.value);
-                // 4. Guardarlo en Firestore (setDoc merge para crear o actualizar)
-                await setDoc(doc(db, 'usuarios', uid), {
+                console.log('[NOTIF] Push registration success, token:', token.value);
+                const tokenData = {
                     fcmToken: token.value,
-                    fcmTokenUpdatedAt: new Date().toISOString()
-                }, { merge: true });
+                    fcmTokenUpdatedAt: new Date().toISOString(),
+                    dispositivo: Capacitor.getPlatform()
+                };
+
+                // Guardar en /usuarios/{uid}
+                try {
+                    await setDoc(doc(db, 'usuarios', uid), tokenData, { merge: true });
+                } catch (e) {
+                    console.warn('[NOTIF] Error guardando token en usuarios:', e);
+                }
+
+                // Sincronizar en /staff/{uid} si es colaborador
+                try {
+                    const staffRef = doc(db, 'staff', uid);
+                    const staffDoc = await getDoc(staffRef);
+                    if (staffDoc.exists()) {
+                        await setDoc(staffRef, { fcmToken: token.value, fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
+                    }
+                } catch (_) {}
+
+                // Sincronizar en /pacientes si es paciente vinculado
+                try {
+                    const qPac = query(collection(db, 'pacientes'), where('uid', '==', uid));
+                    const pacSnap = await getDocs(qPac);
+                    pacSnap.forEach(async (d) => {
+                        await setDoc(d.ref, { fcmToken: token.value, fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
+                    });
+                } catch (_) {}
             });
 
             PushNotifications.addListener('registrationError', (error) => {
-                console.error('Error on registration: ' + JSON.stringify(error));
+                console.error('[NOTIF] Error en registro push:', error);
             });
 
+            // 5. Notificación entrante (mientras la app está en primer plano)
             PushNotifications.addListener('pushNotificationReceived', (notification) => {
-                console.log('Push received: ' + JSON.stringify(notification));
+                console.log('[NOTIF] Push recibido:', notification);
                 try {
-                    const audio = new Audio('/notification.mp3');
-                    audio.play().catch(() => {});
+                    reproducirSonidoNotificacion();
+                } catch (_) {}
+            });
+
+            // 6. Al tocar la notificación desde la barra de notificaciones del celular
+            PushNotifications.addListener('pushNotificationActionPerformed', (action) => {
+                console.log('[NOTIF] Acción de notificación tocada:', action);
+                try {
+                    const data = action.notification?.data || {};
+                    if (data.url) {
+                        window.location.hash = data.url;
+                    } else if (data.citaId) {
+                        window.location.hash = '/agenda';
+                    }
                 } catch (_) {}
             });
 
         } catch (error) {
-            console.error('Error registrando Push Notifications:', error);
+            console.error('[NOTIF] Error configurando Push Notifications nativas:', error);
         }
     };
 
-    
     // Escuchar en tiempo real si el admin revoca o da de baja la cuenta del colaborador
     useEffect(() => {
         if (!currentUser?.uid || currentUser.uid.startsWith('mock-') || currentUser.uid.startsWith('master-')) return;
