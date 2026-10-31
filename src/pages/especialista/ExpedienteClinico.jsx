@@ -27,7 +27,7 @@ import {
 } from 'recharts';
 import { auth, storage, db } from '../../lib/firebase';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp, doc, onSnapshot } from 'firebase/firestore';
 import { createCita, getCitasByPaciente, updateCitaStatus } from '../../services/citasService';
 import { createPlan, getPlanes } from '../../services/planesService';
 import { useAuth } from '../../contexts/AuthContext';
@@ -351,6 +351,7 @@ Al firmar este documento, certifico que he leído y comprendido a plenitud mi ni
                 auditoriaSemana: esCorporal ? { cumplioDieta: auditoriaDieta, cumplioEjercicio: auditoriaEjercicio } : null,
                 fotosSesion: fotos,
                 consentimientos,
+                pacienteNombre: paciente?.nombre || '',
                 ...(fechaSesion && { fechaOverride: fechaSesion }),
                 ...(citaVinculada && { citaVinculadaId: citaVinculada }),
             });
@@ -1299,8 +1300,10 @@ export default function ExpedienteClinico() {
     });
 
     const handleSaveAntecedentes = async () => {
+        const targetId = paciente?.id || pacienteId;
+        if (!targetId) return;
         try {
-            await updatePaciente(pacienteId, {
+            await updatePaciente(targetId, {
                 alergias: editAntecedentes.alergias,
                 condicionesMedicas: editAntecedentes.condicionesMedicas,
                 telefono: editAntecedentes.telefono,
@@ -1312,20 +1315,39 @@ export default function ExpedienteClinico() {
         } catch (e) { console.error('Error al guardar antecedentes:', e); }
     };
 
-    // Cargar paciente, tratamientos, citas y galería
+    // Cargar paciente reactivamente (onSnapshot), tratamientos, citas y galería usando siempre el realId
     useEffect(() => {
         if (!pacienteId) return;
-        getPacienteById(pacienteId).then(async p => {
+        let isMounted = true;
+        let unsubDoc = () => {};
+
+        (async () => {
+            setLoadingPaciente(true);
+            const p = await getPacienteById(pacienteId);
+            if (!isMounted) return;
+
             if (p) {
-                setPaciente({ ...p, id: p.id });
+                const realId = p.id;
+                setPaciente({ ...p, id: realId });
                 if (p.gallery) setGaleria(p.gallery);
+
+                // Listener en tiempo real del documento del paciente para reflejar
+                // instantáneamente cualquier cambio de nombre o datos hecho en Admin/Recepción
+                unsubDoc = onSnapshot(doc(db, 'pacientes', realId), (snap) => {
+                    if (snap.exists() && isMounted) {
+                        const fresh = { id: snap.id, ...snap.data() };
+                        setPaciente(fresh);
+                        if (fresh.gallery) setGaleria(fresh.gallery);
+                    }
+                });
+
                 if (!p.especialistaAsignado) {
                     const user = auth.currentUser;
                     if (user) {
                         try {
                             const staff = await getStaffDocByUid(user.uid, user.email, user.displayName);
-                            if (staff) {
-                                await updatePaciente(p.id, {
+                            if (staff && isMounted) {
+                                await updatePaciente(realId, {
                                     especialistaAsignado: staff.id,
                                     especialistaAsignadoNombre: staff.nombre
                                 });
@@ -1333,39 +1355,52 @@ export default function ExpedienteClinico() {
                         } catch (e) { console.error(e); }
                     }
                 }
+
+                // Cargar tratamientos utilizando SIEMPRE el realId del paciente
+                getTratamientosPaciente(realId).then(lista => {
+                    if (!isMounted) return;
+                    setTratamientos(lista);
+                    if (lista.length > 0) {
+                        setTratamientoActivo(lista[0]);
+                    } else if (searchParams.get('nuevaSesion') === '1') {
+                        setShowNuevoTratamiento(true);
+                    }
+                });
+
+                // Cargar seguimientos usando el realId del paciente
+                setLoadingSeg(true);
+                getSeguimientosPaciente(realId).then(s => {
+                    if (!isMounted) return;
+                    setSeguimientos(s);
+                    setLoadingSeg(false);
+                }).catch(() => { if (isMounted) setLoadingSeg(false); });
+
+                // Cargar citas usando el realId del paciente
+                getCitasByPaciente(realId).then(c => {
+                    if (isMounted) setCitasHistorial(c || []);
+                }).catch(() => {});
             }
             setLoadingPaciente(false);
-        });
+        })();
 
-        getTratamientosPaciente(pacienteId).then(lista => {
-            setTratamientos(lista);
-            if (lista.length > 0) {
-                setTratamientoActivo(lista[0]);
-            } else if (searchParams.get('nuevaSesion') === '1') {
-                setShowNuevoTratamiento(true);
-            }
-        });
-
-        setLoadingSeg(true);
-        getSeguimientosPaciente(pacienteId).then(s => {
-            setSeguimientos(s);
-            setLoadingSeg(false);
-        }).catch(() => setLoadingSeg(false));
-
-        getCitasByPaciente(pacienteId).then(c => setCitasHistorial(c || [])).catch(() => {});
+        return () => {
+            isMounted = false;
+            unsubDoc();
+        };
     }, [pacienteId]);
 
     // Listener de trackers diarios del paciente
     useEffect(() => {
-        if (!pacienteId) return;
+        const targetId = paciente?.id || pacienteId;
+        if (!targetId) return;
         let unsub = () => {};
         import('../../services/seguimientoService').then(({ onDailyTrackersChange }) => {
-            unsub = onDailyTrackersChange(pacienteId, (trackers) => {
+            unsub = onDailyTrackersChange(targetId, (trackers) => {
                 setTrackersDiarios(trackers || []);
             });
         });
         return () => unsub();
-    }, [pacienteId]);
+    }, [paciente?.id, pacienteId]);
 
     // Cargar sesiones cuando cambia el tratamiento activo
     useEffect(() => {
@@ -1508,16 +1543,20 @@ export default function ExpedienteClinico() {
             const user = auth.currentUser;
             let staff = null;
             if (user) staff = await getStaffDocByUid(user.uid, user.email, user.displayName).catch(() => null);
-            const id = await crearTratamiento(pacienteId, {
+            const targetId = paciente?.id || pacienteId;
+            const targetNombre = paciente?.nombre || '';
+            const id = await crearTratamiento(targetId, {
                 tipo: nuevoTrat.tipo,
                 nombre: nuevoTrat.nombre,
                 numSesionesTotal: parseInt(nuevoTrat.numSesiones) || 0,
                 especialistaId: staff?.id || user?.uid || '',
                 especialistaNombre: staff?.nombre || user?.displayName || '',
+                pacienteNombre: targetNombre,
             });
             const nuevo = {
                 id,
-                pacienteId,
+                pacienteId: targetId,
+                pacienteNombre: targetNombre,
                 tipo: nuevoTrat.tipo,
                 nombre: nuevoTrat.nombre,
                 numSesionesTotal: parseInt(nuevoTrat.numSesiones) || 0,
@@ -1526,24 +1565,25 @@ export default function ExpedienteClinico() {
                 fechaInicio: new Date().toISOString(),
             };
 
-            getPacienteById(pacienteId).then(async (pacienteData) => {
-                if (pacienteData && pacienteData.nombre) {
-                    // Evitar crear planes fantasma duplicados si ya existe un paquete o plan para este paciente
+            // Vincular de inmediato al plan de financiamiento con el nombre y pacienteId unificados
+            (async () => {
+                if (targetNombre) {
                     try {
                         const planesExistentes = await getPlanes();
                         const nombreTratNorm = (nuevoTrat.nombre || '').trim().toLowerCase();
                         const yaExiste = planesExistentes.some(p => {
-                            const pPacNorm = (p.paciente || '').trim().toLowerCase();
+                            const pPacNorm = (p.paciente || p.pacienteNombre || '').trim().toLowerCase();
                             const pObjNorm = (p.objetivo || '').trim().toLowerCase();
-                            const mismoPaciente = pPacNorm === (pacienteData.nombre || '').trim().toLowerCase();
+                            const mismoPaciente = (p.pacienteId && p.pacienteId === targetId) || pPacNorm === targetNombre.trim().toLowerCase();
                             const mismoObjetivo = pObjNorm === nombreTratNorm || pObjNorm.includes(nombreTratNorm) || nombreTratNorm.includes(pObjNorm);
                             return mismoPaciente && mismoObjetivo;
                         });
 
                         if (!yaExiste) {
                             await createPlan({
-                                paciente: pacienteData.nombre,
-                                pacienteId: pacienteId,
+                                paciente: targetNombre,
+                                pacienteNombre: targetNombre,
+                                pacienteId: targetId,
                                 objetivo: nuevoTrat.nombre,
                                 meta: 0,
                                 acumulado: 0,
@@ -1555,7 +1595,7 @@ export default function ExpedienteClinico() {
                         console.error('Error al verificar/crear plan auto:', err);
                     }
                 }
-            }).catch(() => {});
+            })();
 
             setTratamientos(prev => [nuevo, ...prev]);
             setTratamientoActivo(nuevo);
@@ -1771,12 +1811,13 @@ Al firmar este documento, certifico que he leído y comprendido a plenitud mi ni
 
     const handleGaleriaUpload = async (e) => {
         const files = Array.from(e.target.files);
-        if (!files.length || !pacienteId) return;
+        const targetId = paciente?.id || pacienteId;
+        if (!files.length || !targetId) return;
         setUploadingGaleria(true);
         try {
             const newFotos = [];
             for (const file of files) {
-                const path = `galeria_pacientes/${pacienteId}/${Date.now()}_${file.name}`;
+                const path = `galeria_pacientes/${targetId}/${Date.now()}_${file.name}`;
                 const storageRef = ref(storage, path);
                 await uploadBytes(storageRef, file);
                 const url = await getDownloadURL(storageRef);
@@ -1784,18 +1825,20 @@ Al firmar este documento, certifico que he leído y comprendido a plenitud mi ni
             }
             const updated = [...(galeria || []), ...newFotos];
             setGaleria(updated);
-            await updatePaciente(pacienteId, { gallery: updated });
+            await updatePaciente(targetId, { gallery: updated });
         } catch (err) { console.error('Error galería:', err); }
         finally { setUploadingGaleria(false); }
     };
 
     const handleDeleteGaleriaPhoto = async (foto) => {
         if (!window.confirm('¿Eliminar esta foto de la galería?')) return;
+        const targetId = paciente?.id || pacienteId;
+        if (!targetId) return;
         try {
             if (foto.path) await deleteObject(ref(storage, foto.path)).catch(() => {});
             const updated = galeria.filter(f => f.id !== foto.id);
             setGaleria(updated);
-            await updatePaciente(pacienteId, { gallery: updated });
+            await updatePaciente(targetId, { gallery: updated });
         } catch (err) { console.error(err); }
     };
 
@@ -2142,7 +2185,7 @@ Al firmar este documento, certifico que he leído y comprendido a plenitud mi ni
                     ) : showNuevaSesion ? (
                         <NuevaSesionForm
                             tratamiento={tratamientoActivo}
-                            pacienteId={pacienteId}
+                            pacienteId={paciente?.id || pacienteId}
                             onSaved={handleSesionGuardada}
                             onCancel={() => setShowNuevaSesion(false)}
                             esPrimeraSesion={sesiones.length === 0}

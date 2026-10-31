@@ -14,9 +14,10 @@ const SESIONES_COL = 'sesiones';
  * Crea un nuevo tratamiento para un paciente.
  * Un paciente puede tener múltiples tratamientos activos al mismo tiempo.
  */
-export const crearTratamiento = async (pacienteId, { tipo, nombre, especialistaId, especialistaNombre }) => {
+export const crearTratamiento = async (pacienteId, { tipo, nombre, especialistaId, especialistaNombre, pacienteNombre = '' }) => {
     const docRef = await addDoc(collection(db, TRATAMIENTOS_COL), {
         pacienteId,
+        pacienteNombre: pacienteNombre || '',
         tipo,            // 'Facial' | 'Corporal'
         nombre,          // Ej: 'Reducción de medidas', 'Limpieza profunda'
         especialistaId,
@@ -127,10 +128,12 @@ export const crearSesion = async (tratamientoId, pacienteId, tipo, {
     consentimientos,
     fechaOverride,
     citaVinculadaId,
+    pacienteNombre = '',
 }) => {
     const docRef = await addDoc(collection(db, SESIONES_COL), {
         tratamientoId,
         pacienteId,
+        pacienteNombre: pacienteNombre || '',
         tipo,
         protocolo: protocolo || '',
         notas: notas || '',

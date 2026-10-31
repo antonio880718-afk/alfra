@@ -198,19 +198,565 @@ export const getPacienteByUid = async (uid, optionalEmail = null) => {
     }
 };
 
-// Actualizar paciente (incluyendo asignación de especialista)
-export const updatePaciente = async (id, data) => {
+/**
+ * Ejecuta operaciones de escritura en Firestore en lotes de tamaño seguro (<= 400).
+ */
+async function commitInBatches(batchUpdates) {
+    if (!batchUpdates || batchUpdates.length === 0) return 0;
+    const CHUNK_SIZE = 400;
+    let committed = 0;
+    for (let i = 0; i < batchUpdates.length; i += CHUNK_SIZE) {
+        const chunk = batchUpdates.slice(i, i + CHUNK_SIZE);
+        const batch = writeBatch(db);
+        chunk.forEach(({ ref, data }) => {
+            batch.update(ref, data);
+        });
+        await batch.commit();
+        committed += chunk.length;
+    }
+    return committed;
+}
+
+/**
+ * Sincroniza en cascada el nuevo nombre (y opcionalmente teléfono/email)
+ * de un paciente en todas las colecciones vinculadas de Firestore:
+ * - citas
+ * - planes
+ * - tratamientos
+ * - sesiones
+ * - recibos
+ * - seguimiento_post_consulta
+ * - alertas_pacientes
+ * - consumos_membresia
+ * - recargas_membresia
+ * - solicitudes_eliminacion_pacientes
+ * - usuarios (perfil de cuenta de la app móvil del paciente)
+ */
+export const sincronizarNombrePacienteEnCascada = async (pacienteId, nuevoNombre, nombreAnterior = null, extraData = {}) => {
+    if (!pacienteId || !nuevoNombre) return { totalActualizados: 0 };
+
+    const normNuevo = String(nuevoNombre).trim();
+    const normAnterior = nombreAnterior ? String(nombreAnterior).trim() : null;
+    const batchUpdates = [];
+    const seenRefs = new Set();
+
+    const addUpdate = (docRef, data) => {
+        if (!docRef || !docRef.path) return;
+        if (!seenRefs.has(docRef.path)) {
+            seenRefs.add(docRef.path);
+            batchUpdates.push({ ref: docRef, data });
+        }
+    };
+
+    try {
+        const promises = [];
+
+        // 1. CITAS (paciente, pacienteNombre, pacienteId, telefono, pacienteEmail)
+        promises.push((async () => {
+            const col = collection(db, 'citas');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                queries.push(query(col, where('paciente', '==', normAnterior)));
+                queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.paciente !== normNuevo ||
+                                        dData.pacienteNombre !== normNuevo ||
+                                        dData.pacienteId !== pacienteId ||
+                                        (extraData.telefono && dData.telefono !== extraData.telefono) ||
+                                        (extraData.email && dData.pacienteEmail !== extraData.email);
+                    if (needsUpdate) {
+                        const upd = {
+                            paciente: normNuevo,
+                            pacienteNombre: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        };
+                        if (extraData.telefono) upd.telefono = extraData.telefono;
+                        if (extraData.email) upd.pacienteEmail = extraData.email;
+                        addUpdate(d.ref, upd);
+                    }
+                });
+            });
+        })());
+
+        // 2. PLANES (paciente, pacienteNombre, pacienteId, telefono)
+        promises.push((async () => {
+            const col = collection(db, 'planes');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                queries.push(query(col, where('paciente', '==', normAnterior)));
+                queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.paciente !== normNuevo ||
+                                        dData.pacienteNombre !== normNuevo ||
+                                        dData.pacienteId !== pacienteId ||
+                                        (extraData.telefono && dData.telefono !== extraData.telefono);
+                    if (needsUpdate) {
+                        const upd = {
+                            paciente: normNuevo,
+                            pacienteNombre: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        };
+                        if (extraData.telefono) upd.telefono = extraData.telefono;
+                        addUpdate(d.ref, upd);
+                    }
+                });
+            });
+        })());
+
+        // 3. TRATAMIENTOS (pacienteNombre, pacienteId)
+        promises.push((async () => {
+            const col = collection(db, 'tratamientos');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.pacienteNombre !== normNuevo || dData.pacienteId !== pacienteId;
+                    if (needsUpdate) {
+                        addUpdate(d.ref, {
+                            pacienteNombre: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        });
+                    }
+                });
+            });
+        })());
+
+        // 4. SESIONES (pacienteNombre, pacienteId)
+        promises.push((async () => {
+            const col = collection(db, 'sesiones');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.pacienteNombre !== normNuevo || dData.pacienteId !== pacienteId;
+                    if (needsUpdate) {
+                        addUpdate(d.ref, {
+                            pacienteNombre: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        });
+                    }
+                });
+            });
+        })());
+
+        // 5. RECIBOS (paciente, pacienteNombre, pacienteId, telefono)
+        promises.push((async () => {
+            const col = collection(db, 'recibos');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                queries.push(query(col, where('paciente', '==', normAnterior)));
+                queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.paciente !== normNuevo ||
+                                        dData.pacienteNombre !== normNuevo ||
+                                        dData.pacienteId !== pacienteId ||
+                                        (extraData.telefono && dData.telefono !== extraData.telefono);
+                    if (needsUpdate) {
+                        const upd = {
+                            paciente: normNuevo,
+                            pacienteNombre: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        };
+                        if (extraData.telefono) upd.telefono = extraData.telefono;
+                        addUpdate(d.ref, upd);
+                    }
+                });
+            });
+        })());
+
+        // 6. SEGUIMIENTO POST CONSULTA
+        promises.push((async () => {
+            const col = collection(db, 'seguimiento_post_consulta');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.pacienteNombre !== normNuevo ||
+                                        dData.pacienteId !== pacienteId ||
+                                        (extraData.telefono && dData.pacienteTelefono !== extraData.telefono);
+                    if (needsUpdate) {
+                        const upd = {
+                            pacienteNombre: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        };
+                        if (extraData.telefono) upd.pacienteTelefono = extraData.telefono;
+                        addUpdate(d.ref, upd);
+                    }
+                });
+            });
+        })());
+
+        // 7. ALERTAS PACIENTES
+        promises.push((async () => {
+            const col = collection(db, 'alertas_pacientes');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+                queries.push(query(col, where('paciente', '==', normAnterior)));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.pacienteNombre !== normNuevo ||
+                                        dData.paciente !== normNuevo ||
+                                        dData.pacienteId !== pacienteId;
+                    if (needsUpdate) {
+                        addUpdate(d.ref, {
+                            pacienteNombre: normNuevo,
+                            paciente: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        });
+                    }
+                });
+            });
+        })());
+
+        // 8. CONSUMOS Y RECARGAS MEMBRESIA
+        promises.push((async () => {
+            for (const colName of ['consumos_membresia', 'recargas_membresia']) {
+                const col = collection(db, colName);
+                const queries = [query(col, where('pacienteId', '==', pacienteId))];
+                if (normAnterior && normAnterior.toLowerCase() !== normNuevo.toLowerCase()) {
+                    queries.push(query(col, where('pacienteNombre', '==', normAnterior)));
+                }
+                const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+                snaps.forEach(snap => {
+                    snap.docs?.forEach(d => {
+                        const dData = d.data();
+                        if (dData.pacienteNombre !== normNuevo || dData.pacienteId !== pacienteId) {
+                            addUpdate(d.ref, {
+                                pacienteNombre: normNuevo,
+                                pacienteId: pacienteId,
+                                updatedAt: new Date().toISOString()
+                            });
+                        }
+                    });
+                });
+            }
+        })());
+
+        // 9. USUARIOS (Cuenta de acceso a la app móvil del paciente)
+        promises.push((async () => {
+            const col = collection(db, 'usuarios');
+            const queries = [query(col, where('pacienteId', '==', pacienteId))];
+            if (extraData.email) {
+                queries.push(query(col, where('email', '==', extraData.email.toLowerCase().trim())));
+            }
+            const snaps = await Promise.all(queries.map(q => getDocs(q).catch(() => ({ docs: [] }))));
+            snaps.forEach(snap => {
+                snap.docs?.forEach(d => {
+                    const dData = d.data();
+                    const needsUpdate = dData.nombre !== normNuevo ||
+                                        dData.pacienteId !== pacienteId ||
+                                        (extraData.telefono && dData.telefono !== extraData.telefono);
+                    if (needsUpdate) {
+                        const upd = {
+                            nombre: normNuevo,
+                            pacienteId: pacienteId,
+                            updatedAt: new Date().toISOString()
+                        };
+                        if (extraData.telefono) upd.telefono = extraData.telefono;
+                        addUpdate(d.ref, upd);
+                    }
+                });
+            });
+        })());
+
+        await Promise.all(promises);
+
+        const totalActualizados = await commitInBatches(batchUpdates);
+        console.log(`[CASCADA PACIENTE] Sincronizados ${totalActualizados} registros vinculados para "${normNuevo}" (${pacienteId})`);
+        return { totalActualizados };
+    } catch (error) {
+        console.error("Error en sincronizarNombrePacienteEnCascada:", error);
+        throw error;
+    }
+};
+
+/**
+ * Herramienta de auto-reparación general para la base de datos:
+ * Recorre todos los pacientes y sincroniza/normaliza citas, planes, tratamientos,
+ * sesiones, recibos y usuarios que tengan nombres antiguos o pacienteId huérfano.
+ */
+export const sincronizarTodosLosPacientes = async () => {
+    try {
+        const pacSnap = await getDocs(pacientesCol);
+        const pacientes = pacSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+        const pacById = new Map();
+        const pacByName = new Map();
+
+        pacientes.forEach(p => {
+            pacById.set(p.id, p);
+            if (p.nombre) {
+                pacByName.set(p.nombre.toLowerCase().trim(), p);
+            }
+        });
+
+        const batchUpdates = [];
+        const seenRefs = new Set();
+        const addUpdate = (docRef, data) => {
+            if (!docRef || !docRef.path) return;
+            if (!seenRefs.has(docRef.path)) {
+                seenRefs.add(docRef.path);
+                batchUpdates.push({ ref: docRef, data });
+            }
+        };
+
+        // 1. Citas
+        const citasSnap = await getDocs(collection(db, 'citas')).catch(() => ({ docs: [] }));
+        citasSnap.docs?.forEach(d => {
+            const data = d.data();
+            let matchedPac = null;
+            if (data.pacienteId && pacById.has(data.pacienteId)) {
+                matchedPac = pacById.get(data.pacienteId);
+            } else {
+                const normNom = (data.paciente || data.pacienteNombre || '').toLowerCase().trim();
+                if (normNom && pacByName.has(normNom)) {
+                    matchedPac = pacByName.get(normNom);
+                }
+            }
+
+            if (matchedPac) {
+                const needsUpdate = data.paciente !== matchedPac.nombre ||
+                                    data.pacienteNombre !== matchedPac.nombre ||
+                                    data.pacienteId !== matchedPac.id;
+                if (needsUpdate) {
+                    addUpdate(d.ref, {
+                        paciente: matchedPac.nombre,
+                        pacienteNombre: matchedPac.nombre,
+                        pacienteId: matchedPac.id,
+                        ...(matchedPac.telefono && !data.telefono ? { telefono: matchedPac.telefono } : {}),
+                        updatedAt: new Date().toISOString()
+                    });
+                }
+            }
+        });
+
+        // 2. Planes
+        const planesSnap = await getDocs(collection(db, 'planes')).catch(() => ({ docs: [] }));
+        planesSnap.docs?.forEach(d => {
+            const data = d.data();
+            let matchedPac = null;
+            if (data.pacienteId && pacById.has(data.pacienteId)) {
+                matchedPac = pacById.get(data.pacienteId);
+            } else {
+                const normNom = (data.paciente || data.pacienteNombre || '').toLowerCase().trim();
+                if (normNom && pacByName.has(normNom)) {
+                    matchedPac = pacByName.get(normNom);
+                }
+            }
+
+            if (matchedPac) {
+                const needsUpdate = data.paciente !== matchedPac.nombre ||
+                                    data.pacienteNombre !== matchedPac.nombre ||
+                                    data.pacienteId !== matchedPac.id;
+                if (needsUpdate) {
+                    addUpdate(d.ref, {
+                        paciente: matchedPac.nombre,
+                        pacienteNombre: matchedPac.nombre,
+                        pacienteId: matchedPac.id,
+                        ...(matchedPac.telefono && !data.telefono ? { telefono: matchedPac.telefono } : {}),
+                        updatedAt: new Date().toISOString()
+                    });
+                }
+            }
+        });
+
+        // 3. Tratamientos
+        const tratSnap = await getDocs(collection(db, 'tratamientos')).catch(() => ({ docs: [] }));
+        tratSnap.docs?.forEach(d => {
+            const data = d.data();
+            let matchedPac = null;
+            if (data.pacienteId && pacById.has(data.pacienteId)) {
+                matchedPac = pacById.get(data.pacienteId);
+            } else {
+                const normNom = (data.pacienteNombre || '').toLowerCase().trim();
+                if (normNom && pacByName.has(normNom)) {
+                    matchedPac = pacByName.get(normNom);
+                }
+            }
+
+            if (matchedPac) {
+                const needsUpdate = data.pacienteNombre !== matchedPac.nombre || data.pacienteId !== matchedPac.id;
+                if (needsUpdate) {
+                    addUpdate(d.ref, {
+                        pacienteNombre: matchedPac.nombre,
+                        pacienteId: matchedPac.id,
+                        updatedAt: new Date().toISOString()
+                    });
+                }
+            }
+        });
+
+        // 4. Sesiones
+        const sesSnap = await getDocs(collection(db, 'sesiones')).catch(() => ({ docs: [] }));
+        sesSnap.docs?.forEach(d => {
+            const data = d.data();
+            let matchedPac = null;
+            if (data.pacienteId && pacById.has(data.pacienteId)) {
+                matchedPac = pacById.get(data.pacienteId);
+            } else {
+                const normNom = (data.pacienteNombre || '').toLowerCase().trim();
+                if (normNom && pacByName.has(normNom)) {
+                    matchedPac = pacByName.get(normNom);
+                }
+            }
+
+            if (matchedPac) {
+                const needsUpdate = data.pacienteNombre !== matchedPac.nombre || data.pacienteId !== matchedPac.id;
+                if (needsUpdate) {
+                    addUpdate(d.ref, {
+                        pacienteNombre: matchedPac.nombre,
+                        pacienteId: matchedPac.id,
+                        updatedAt: new Date().toISOString()
+                    });
+                }
+            }
+        });
+
+        // 5. Recibos
+        const recSnap = await getDocs(collection(db, 'recibos')).catch(() => ({ docs: [] }));
+        recSnap.docs?.forEach(d => {
+            const data = d.data();
+            let matchedPac = null;
+            if (data.pacienteId && pacById.has(data.pacienteId)) {
+                matchedPac = pacById.get(data.pacienteId);
+            } else {
+                const normNom = (data.paciente || data.pacienteNombre || '').toLowerCase().trim();
+                if (normNom && pacByName.has(normNom)) {
+                    matchedPac = pacByName.get(normNom);
+                }
+            }
+
+            if (matchedPac) {
+                const needsUpdate = data.paciente !== matchedPac.nombre ||
+                                    data.pacienteNombre !== matchedPac.nombre ||
+                                    data.pacienteId !== matchedPac.id;
+                if (needsUpdate) {
+                    addUpdate(d.ref, {
+                        paciente: matchedPac.nombre,
+                        pacienteNombre: matchedPac.nombre,
+                        pacienteId: matchedPac.id,
+                        updatedAt: new Date().toISOString()
+                    });
+                }
+            }
+        });
+
+        // 6. Usuarios
+        const usrSnap = await getDocs(collection(db, 'usuarios')).catch(() => ({ docs: [] }));
+        usrSnap.docs?.forEach(d => {
+            const data = d.data();
+            let matchedPac = null;
+            if (data.pacienteId && pacById.has(data.pacienteId)) {
+                matchedPac = pacById.get(data.pacienteId);
+            } else if (data.email) {
+                const normEmail = data.email.toLowerCase().trim();
+                matchedPac = pacientes.find(p => (p.email || '').toLowerCase().trim() === normEmail) || null;
+            }
+
+            if (matchedPac && (data.role === 'Paciente' || !data.role)) {
+                const needsUpdate = data.nombre !== matchedPac.nombre || data.pacienteId !== matchedPac.id;
+                if (needsUpdate) {
+                    addUpdate(d.ref, {
+                        nombre: matchedPac.nombre,
+                        pacienteId: matchedPac.id,
+                        ...(matchedPac.telefono && !data.telefono ? { telefono: matchedPac.telefono } : {}),
+                        updatedAt: new Date().toISOString()
+                    });
+                }
+            }
+        });
+
+        const totalActualizados = await commitInBatches(batchUpdates);
+        console.log(`[SINCRONIZAR TODOS] Se revisaron ${pacientes.length} pacientes. Registros actualizados: ${totalActualizados}`);
+        return {
+            totalPacientes: pacientes.length,
+            totalActualizados
+        };
+    } catch (error) {
+        console.error("Error en sincronizarTodosLosPacientes:", error);
+        throw error;
+    }
+};
+
+// Actualizar paciente con sincronización en cascada a todos sus registros vinculados
+export const updatePaciente = async (id, data, nombreAnterior = null) => {
     try {
         const docRef = doc(db, COLLECTION_NAME, id);
+
+        // Obtener el nombre anterior si no se especificó y data contiene nombre
+        let prevNombre = nombreAnterior;
+        if (!prevNombre && data.nombre) {
+            try {
+                const snap = await getDoc(docRef);
+                if (snap.exists()) {
+                    prevNombre = snap.data().nombre || null;
+                }
+            } catch (e) {
+                console.warn('Aviso al obtener nombre previo de paciente:', e);
+            }
+        }
+
         await updateDoc(docRef, {
             ...data,
             updatedAt: new Date().toISOString()
         });
+
+        // Sincronización en cascada automática si cambió el nombre
+        if (data.nombre) {
+            const normNuevo = String(data.nombre).trim();
+            const normPrev = prevNombre ? String(prevNombre).trim() : null;
+            if (!normPrev || normPrev.toLowerCase() !== normNuevo.toLowerCase()) {
+                try {
+                    await sincronizarNombrePacienteEnCascada(id, normNuevo, normPrev, {
+                        telefono: data.telefono,
+                        email: data.email
+                    });
+                } catch (cascadaErr) {
+                    console.error("Error en sincronización en cascada al actualizar paciente:", cascadaErr);
+                }
+            }
+        }
     } catch (error) {
         console.error("Error updating paciente:", error);
         throw error;
     }
 };
+
 
 // Actualizar lealtad de todos los pacientes en batch
 export const updateAllPacientesLealtad = async (pacientes, activar) => {

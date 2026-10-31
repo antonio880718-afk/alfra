@@ -4,12 +4,12 @@ import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Modal } from '../../components/ui/Modal';
-import { Users as UsersIcon, Search, UserCog, CheckCircle, UserPlus, Trash2, Stamp, Gift, Calendar, Clock, History, X, ChevronDown, Receipt, DollarSign, Download, CreditCard, Sparkles, FileText } from 'lucide-react';
+import { Users as UsersIcon, Search, UserCog, CheckCircle, UserPlus, Trash2, Stamp, Gift, Calendar, Clock, History, X, ChevronDown, Receipt, DollarSign, Download, CreditCard, Sparkles, FileText, RefreshCw } from 'lucide-react';
 import ReciboDigital from '../../components/ui/ReciboDigital';
 import { getRecibosPaciente } from '../../services/recibosService';
 import { getDocs, query, collection, where, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos } from '../../services/pacientesService';
+import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos, sincronizarTodosLosPacientes } from '../../services/pacientesService';
 import { sellarVisita, canjearRecompensa } from '../../services/lealtadService';
 import { onStaffChange } from '../../services/staffService';
 import { createCita } from '../../services/citasService';
@@ -330,15 +330,34 @@ export default function AdminPacientes() {
         setExitoAsignacion(false);
     };
 
+    const [sincronizandoNombres, setSincronizandoNombres] = useState(false);
+
+    const handleSincronizarTodosNombres = async () => {
+        if (!window.confirm('¿Deseas verificar y sincronizar en cascada todos los nombres de pacientes con sus tratamientos, citas, planes y recibos? Esta acción repara cualquier inconsistencia histórica en la base de datos.')) return;
+        setSincronizandoNombres(true);
+        try {
+            const res = await sincronizarTodosLosPacientes();
+            alert(`¡Sincronización completada con éxito!
+
+Pacientes revisados: ${res.totalPacientes}
+Registros vinculados actualizados: ${res.totalActualizados}`);
+        } catch (err) {
+            console.error('Error al sincronizar pacientes:', err);
+            alert('Error al sincronizar: ' + (err.message || 'Error desconocido'));
+        } finally {
+            setSincronizandoNombres(false);
+        }
+    };
+
     const handleGuardar = async () => {
         if (!pacienteSeleccionado) return;
         if (!formAsignacion.nombre.trim()) { alert('El nombre del paciente es obligatorio.'); return; }
         if (!formAsignacion.telefono.trim()) { alert('El teléfono es obligatorio.'); return; }
         setSaving(true);
         try {
-            await updatePaciente(pacienteSeleccionado.id, formAsignacion);
+            await updatePaciente(pacienteSeleccionado.id, formAsignacion, pacienteSeleccionado.nombre);
             setExitoAsignacion(true);
-            setTimeout(() => { setModal(false); setExitoAsignacion(false); }, 1200);
+            setTimeout(() => { setModal(false); setExitoAsignacion(false); }, 1400);
         } catch (err) { alert('Error al guardar.'); console.error(err); }
         finally { setSaving(false); }
     };
@@ -415,7 +434,17 @@ export default function AdminPacientes() {
                     </h2>
                     <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Gestión de expedientes</p>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap items-center gap-2">
+                    <Button
+                        variant="outline"
+                        size="xs"
+                        onClick={handleSincronizarTodosNombres}
+                        disabled={sincronizandoNombres}
+                        className="border-turquesa/40 text-turquesa hover:bg-turquesa/5 font-bold"
+                        icon={RefreshCw}
+                    >
+                        {sincronizandoNombres ? "Sincronizando..." : "Sincronizar Nombres"}
+                    </Button>
                     <Button variant="outline" size="xs" onClick={() => handleToggleAllLealtad(true)}>Activar Tarjetas</Button>
                     <Button variant="outline" size="xs" onClick={() => handleToggleAllLealtad(false)}>Desactivar Tarjetas</Button>
                     <Button
@@ -616,7 +645,11 @@ export default function AdminPacientes() {
             {/* MODAL EDITAR PACIENTE */}
             <Modal isOpen={modal} onClose={() => setModal(false)} title="Editar Paciente">
                 {exitoAsignacion ? (
-                    <div className="text-center py-6"><CheckCircle size={40} className="text-green-500 mx-auto" /></div>
+                    <div className="text-center py-8 space-y-2">
+                        <CheckCircle size={48} className="text-emerald-500 mx-auto animate-bounce" />
+                        <h4 className="font-black text-gray-800 text-base">¡Expediente Actualizado!</h4>
+                        <p className="text-xs text-gray-500 font-medium">Nombre sincronizado en citas, planes, tratamientos y expediente clínico.</p>
+                    </div>
                 ) : (
                     <div className="space-y-4">
 
