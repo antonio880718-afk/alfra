@@ -82,7 +82,14 @@ export default function RegistroPaciente() {
                     <>
                         {/* Header */}
                         <div className="text-center mb-6">
-                            <img src="/logo.png" alt="ALFRA" className="h-24 sm:h-28 w-auto mx-auto object-contain mb-3 drop-shadow-sm hover:scale-105 transition-transform duration-300" />
+                            <div className="relative inline-flex items-center justify-center mb-3 mx-auto">
+                                <div className="absolute inset-0 bg-turquesa/15 rounded-full blur-xl transform scale-125 pointer-events-none" />
+                                <img 
+                                    src="/logo.png" 
+                                    alt="Clínica ALFRA" 
+                                    className="relative z-10 h-32 sm:h-40 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300" 
+                                />
+                            </div>
                             <h1 className="text-2xl font-bold text-acero">Crea tu Cuenta de Paciente</h1>
                             <p className="text-gray-500 text-sm mt-1">Únete a Clínica ALFRA y lleva tu tratamiento en un solo lugar</p>
                         </div>

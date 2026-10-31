@@ -100,17 +100,21 @@ const Login = () => {
       <div className="absolute top-10 left-10 w-64 h-64 bg-turquesa/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-acero/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="bg-blancoPuro p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 w-full max-w-md text-center relative z-10 my-auto">
-        <div className="flex justify-center items-center mb-3 sm:mb-4">
+      <div className="bg-blancoPuro p-6 sm:p-10 rounded-3xl shadow-2xl border border-gray-100/80 w-full max-w-md text-center relative z-10 my-auto backdrop-blur-sm">
+        {/* Presentación protagónica y de alta definición del logotipo ALFRA */}
+        <div className="relative inline-flex items-center justify-center mb-4">
+          <div className="absolute inset-0 bg-turquesa/15 rounded-full blur-2xl transform scale-125 pointer-events-none" />
           <img 
             src="/logo.png" 
             alt="Clínica ALFRA" 
-            className="h-28 sm:h-36 w-auto object-contain hover:scale-105 transition-transform duration-300 drop-shadow-sm" 
+            className="relative z-10 h-36 sm:h-44 md:h-48 w-auto object-contain drop-shadow-md hover:scale-[1.03] transition-all duration-300"
+            loading="eager"
+            decoding="async" 
           />
         </div>
         <h1 className="text-xl sm:text-2xl text-acero font-black mb-1 tracking-tight uppercase">Bienvenido a ALFRA</h1>
-        <p className="text-turquesa font-bold text-xs tracking-widest uppercase mb-1">Cirugía & Medicina Estética</p>
-        <p className="text-gray-400 font-medium text-[11px] italic mb-6">"Resaltando tu bienestar y belleza natural"</p>
+        <p className="text-turquesa font-bold text-xs sm:text-sm tracking-[0.2em] uppercase mb-1">Cirugía & Medicina Estética</p>
+        <p className="text-gray-400 font-medium text-[11px] sm:text-xs italic mb-6">"Resaltando tu bienestar y belleza natural"</p>
 
         {error && (
           <div className="mb-6 p-4 bg-red-50 border-2 border-red-300 text-red-700 rounded-2xl text-sm font-bold text-left flex items-start gap-3 shadow-lg animate-in fade-in slide-in-from-top-2">

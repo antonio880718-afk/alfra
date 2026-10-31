@@ -66,9 +66,18 @@ export default function Sidebar() {
 
     return (
         <aside className="hidden md:flex flex-col w-64 3xl:w-72 4xl:w-80 h-screen bg-blancoPuro border-r border-gray-200">
-            <div className="pt-6 pb-4 px-6 flex flex-col items-center w-full">
-                <img src="/logo.png" alt="ALFRA" className="w-36 max-w-[160px] h-auto object-contain mb-2 hover:scale-105 transition-transform duration-300 drop-shadow-sm" />
-                <p className="text-xs text-center text-turquesa font-bold uppercase tracking-wider">{userRole}</p>
+            <div className="pt-6 pb-4 px-5 flex flex-col items-center w-full border-b border-gray-100/80 mb-2">
+                <div className="relative flex items-center justify-center mb-2">
+                    <img 
+                        src="/logo.png" 
+                        alt="Clínica ALFRA" 
+                        className="w-44 max-w-[185px] h-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300" 
+                    />
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-turquesa/10 border border-turquesa/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-turquesa animate-pulse" />
+                    <p className="text-[10px] text-center text-turquesa font-black uppercase tracking-widest">{userRole}</p>
+                </div>
             </div>
 
             <nav className="flex-1 px-4 space-y-2 mt-4">

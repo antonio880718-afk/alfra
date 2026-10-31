@@ -148,13 +148,14 @@ export default function AppLayout() {
 
                 {/* ── MOBILE HEADER ── */}
                 {/* ??? MOBILE HEADER (Optimizada para pantalla m?vil HD) ??? */}
-                                <header className="md:hidden flex items-center justify-between px-3.5 sm:px-4 bg-white border-b border-gray-100 shadow-sm z-40 sticky top-0"
-                    style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)', paddingBottom: '8px', minHeight: 'calc(64px + env(safe-area-inset-top, 0px))' }}>
+                <header className="md:hidden flex items-center justify-between px-3.5 sm:px-4 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm z-40 sticky top-0"
+                    style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 6px)', paddingBottom: '6px', minHeight: 'calc(64px + env(safe-area-inset-top, 0px))' }}>
                     {/* Logo elegante, nítido y de alta definición */}
                     <img
                         src="/logo.png"
                         alt="ALFRA Clínica"
-                        style={{ height: '42px', width: 'auto', objectFit: 'contain', maxWidth: '55%' }}
+                        style={{ height: '44px', width: 'auto', objectFit: 'contain', maxWidth: '60%' }}
+                        className="drop-shadow-sm active:scale-95 transition-transform"
                     />
                     <div className="flex items-center gap-2">
                     {(userRole === 'Administrador' || userRole === 'Especialista' || userRole === 'Doctor' || userRole === 'Paciente' || userRole === 'Limpieza') && (
@@ -244,7 +245,7 @@ export default function AppLayout() {
                         <img
                             src="/logo.png"
                             alt="ALFRA Clínica"
-                            style={{ height: '52px', width: 'auto', objectFit: 'contain', maxWidth: '75%' }}
+                            style={{ height: '56px', width: 'auto', objectFit: 'contain', maxWidth: '75%' }} className="drop-shadow-sm"
                         />
                         <button
                             onClick={() => setDrawerOpen(false)}
