@@ -96,7 +96,7 @@ export default function ControlFinanciamientos() {
 
     const handleShareWA = () => {
         if (!selectedPlan) return;
-        const texto = `?Hola ${selectedPlan.paciente}! ??\n\nLe compartimos su Estado de Cuenta de su Paquete de Tratamiento (${selectedPlan.objetivo}).\n\nMeta Total: $${selectedPlan.meta?.toLocaleString('es-MX')}\nAcumulado: $${selectedPlan.acumulado?.toLocaleString('es-MX')}\nRestante: $${selectedPlan.faltante?.toLocaleString('es-MX')}\n\n?Lindo d?a! ?`;
+        const texto = `¡Hola ${selectedPlan.paciente}! 👋\n\nLe compartimos su Estado de Cuenta de su Paquete de Tratamiento (${selectedPlan.objetivo}).\n\nMeta Total: $${selectedPlan.meta?.toLocaleString('es-MX')}\nAcumulado: $${selectedPlan.acumulado?.toLocaleString('es-MX')}\nRestante: $${selectedPlan.faltante?.toLocaleString('es-MX')}\n\n¡Lindo día! ✨`;
         abrirWhatsApp(selectedPlan.telefono, texto);
     };
 

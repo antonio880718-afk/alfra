@@ -303,14 +303,14 @@ export const descontarInsumosLimpiezaCabina = async (espacioNombre) => {
                     await updateDoc(d.ref, {
                         stock: Math.max(0, stockActual - 1),
                         ultimoConsumo: new Date().toISOString(),
-                        motivoUltimoConsumo: `Limpieza y sanitizaci?n de ${espacioNombre}`
+                        motivoUltimoConsumo: `Limpieza y sanitización de ${espacioNombre}`
                     });
                     break;
                 }
             }
         }
     } catch (e) {
-        console.warn('Aviso: no se pudo descontar autom?ticamente el inventario:', e);
+        console.warn('Aviso: no se pudo descontar automáticamente el inventario:', e);
     }
 };
 

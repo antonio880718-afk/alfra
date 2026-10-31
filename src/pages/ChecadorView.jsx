@@ -19,7 +19,7 @@ export default function ChecadorView() {
     const { userRole, currentUser } = useAuth();
     const isClientAdmin = userRole === 'Administrador';
 
-    // Configuraci?n de Geocerca GPS de la Cl?nica
+    // Configuración de Geocerca GPS de la Clínica
     const [configClinica, setConfigClinica] = useState(CLINICA_COORDS_DEFAULT);
     const [editandoConfig, setEditandoConfig] = useState(false);
     const [nuevoRadio, setNuevoRadio] = useState(250);
@@ -31,7 +31,7 @@ export default function ChecadorView() {
     const [gpsCargando, setGpsCargando] = useState(true);
     const [gpsError, setGpsError] = useState(null);
 
-    // Acci?n y procesamiento de checado
+    // Acción y procesamiento de checado
     const [procesandoChecado, setProcesandoChecado] = useState(false);
     const [checadoExitoso, setChecadoExitoso] = useState(null);
     const [checadoError, setChecadoError] = useState(null);
@@ -69,7 +69,7 @@ export default function ChecadorView() {
         setGpsError(null);
 
         if (!navigator.geolocation) {
-            setGpsError('Tu navegador o dispositivo no soporta geolocalizaci?n GPS.');
+            setGpsError('Tu navegador o dispositivo no soporta geolocalización GPS.');
             setGpsCargando(false);
             return;
         }
@@ -92,11 +92,11 @@ export default function ChecadorView() {
                 setGpsCargando(false);
             },
             (error) => {
-                let msg = 'No se pudo obtener la ubicaci?n GPS.';
+                let msg = 'No se pudo obtener la ubicación GPS.';
                 if (error.code === error.PERMISSION_DENIED) {
-                    msg = 'Permiso de ubicaci?n denegado. Por favor activa el GPS de tu celular o navegador y autoriza la ubicaci?n para poder checar.';
+                    msg = 'Permiso de ubicación denegado. Por favor activa el GPS de tu celular o navegador y autoriza la ubicación para poder registrar asistencia.';
                 } else if (error.code === error.POSITION_UNAVAILABLE) {
-                    msg = 'Se?al de GPS no disponible en este momento. Intenta al aire libre o cerca de una ventana.';
+                    msg = 'Señal de GPS no disponible en este momento. Intenta al aire libre o cerca de una ventana.';
                 } else if (error.code === error.TIMEOUT) {
                     msg = 'Tiempo de espera de GPS agotado. Pulsa actualizar para reintentar.';
                 }
@@ -164,7 +164,7 @@ export default function ChecadorView() {
         if (!dentroDeLaClinica) {
             playBeep('error');
             const distTxt = distanciaMetros >= 1000 ? `${(distanciaMetros / 1000).toFixed(1)} km` : `${distanciaMetros} metros`;
-            setChecadoError(`Fallo de Verificaci?n GPS: Te encuentras a ${distTxt} de la cl?nica. Debes estar en las instalaciones para registrar asistencia.`);
+            setChecadoError(`Fallo de Verificación GPS: Te encuentras a ${distTxt} de la clínica. Debes estar en las instalaciones para registrar asistencia.`);
             return;
         }
 
@@ -208,10 +208,10 @@ export default function ChecadorView() {
 
     const handleCapturarUbicacionClinica = async () => {
         if (!gpsCoords) {
-            alert('Primero activa y detecta tu ubicaci?n GPS actual.');
+            alert('Primero activa y detecta tu ubicación GPS actual.');
             return;
         }
-        if (!confirm(`?Establecer tu ubicaci?n actual (${gpsCoords.lat.toFixed(5)}, ${gpsCoords.lng.toFixed(5)}) como las coordenadas oficiales de ALFRA Cl?nica?`)) {
+        if (!confirm(`¿Establecer tu ubicación actual (${gpsCoords.lat.toFixed(5)}, ${gpsCoords.lng.toFixed(5)}) como las coordenadas oficiales de ALFRA Clínica?`)) {
             return;
         }
 
@@ -226,7 +226,7 @@ export default function ChecadorView() {
             await saveConfigChecadorGPS(updated);
             setConfigClinica(updated);
             setEditandoConfig(false);
-            alert('? Coordenadas oficiales de la cl?nica actualizadas exitosamente.');
+            alert('✅ Coordenadas oficiales de la clínica actualizadas exitosamente.');
         } catch (e) {
             alert('Error al guardar: ' + e.message);
         } finally {
@@ -239,7 +239,7 @@ export default function ChecadorView() {
             alert('No hay registros de asistencia de hoy para exportar.');
             return;
         }
-        const headers = ['Nombre', 'Puesto/R?ol', 'Tipo', 'Hora', 'Estado', 'Distancia (m)', 'Fecha', 'Latitud', 'Longitud'];
+        const headers = ['Nombre', 'Puesto / Rol', 'Tipo', 'Hora', 'Estado', 'Distancia (m)', 'Fecha', 'Latitud', 'Longitud'];
         const rows = asistenciaHoyAdmin.map(a => [
             `"${a.nombre || ''}"`,
             `"${a.puesto || a.rol || ''}"`,
@@ -695,7 +695,7 @@ export default function ChecadorView() {
                                 <thead className="bg-slate-50 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 text-xs font-semibold uppercase tracking-wider">
                                     <tr>
                                         <th className="p-3.5">Colaborador</th>
-                                        <th className="p-3.5">Puesto / R?ol</th>
+                                        <th className="p-3.5">Puesto / Rol</th>
                                         <th className="p-3.5">Tipo</th>
                                         <th className="p-3.5">Hora</th>
                                         <th className="p-3.5">Distancia Satelital</th>

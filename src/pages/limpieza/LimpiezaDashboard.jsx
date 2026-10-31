@@ -295,7 +295,7 @@ export default function LimpiezaDashboard() {
                             Protocolo de Mantenimiento Preventivo Programado
                         </span>
                         <span className="text-[11px] text-amber-800 dark:text-amber-300">
-                            Supervisi?n de equipos cl?nicos, aires acondicionados y cabinas cada 30 d?as para cumplimiento COFEPRIS.
+                            Supervisión de equipos clínicos, aires acondicionados y cabinas cada 30 días para cumplimiento COFEPRIS.
                         </span>
                     </div>
                 </div>

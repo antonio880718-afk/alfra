@@ -181,7 +181,7 @@ export default function NominaView() {
         return () => unsub();
     }, []);
 
-    // ??? PENDIENTES FASE 2: WHATSAPP, SPEI, FIRMA Y CHECADOR GPS ???
+    // ── ACCIONES: WHATSAPP, SPEI, FIRMA Y CHECADOR GPS ──
     const [empleadoFirmaModal, setEmpleadoFirmaModal] = useState(null);
     const [guardandoFirma, setGuardandoFirma] = useState(false);
     const signatureCanvasRef = useRef(null);
@@ -203,16 +203,16 @@ export default function NominaView() {
             (emp.usaBonos ? ((Number(datosPago?.bonoPuntualidad !== undefined ? datosPago.bonoPuntualidad : emp.bonoPuntualidad) || 0) + (Number(datosPago?.bonoProductividad !== undefined ? datosPago.bonoProductividad : emp.bonoProductividad) || 0)) : 0)
         );
 
-        const mensaje = `*CL?NICA ALFRA - Recibo de N?mina*\n\n` +
-            `Hola *${nombre}*, te compartimos el resumen de tu liquidaci?n de n?mina:\n\n` +
-            `?? *Periodo:* ${periodo}\n` +
-            `?? *Puesto:* ${emp.puesto || emp.rol}\n` +
-            `?? *Sueldo Base:* ${sueldo}\n` +
-            `? *Comisiones:* ${comisiones}\n` +
-            (emp.usaBonos ? `?? *Bono Puntualidad:* ${bonoPunt}\n?? *Bono Productividad:* ${bonoProd}\n` : '') +
-            `?????????????????\n` +
-            `?? *TOTAL A COBRAR:* ${total}\n\n` +
-            `_Cl?nica ALFRA - Gracias por tu excelente dedicaci?n._`;
+        const mensaje = `*CLÍNICA ALFRA - Recibo de Nómina*\n\n` +
+            `Hola *${nombre}*, te compartimos el resumen de tu liquidación de nómina:\n\n` +
+            `📅 *Periodo:* ${periodo}\n` +
+            `👤 *Puesto:* ${emp.puesto || emp.rol}\n` +
+            `💵 *Sueldo Base:* ${sueldo}\n` +
+            `✨ *Comisiones:* ${comisiones}\n` +
+            (emp.usaBonos ? `🎁 *Bono Puntualidad:* ${bonoPunt}\n🎁 *Bono Productividad:* ${bonoProd}\n` : '') +
+            `━━━━━━━━━━━━━━━━━━\n` +
+            `💰 *TOTAL A COBRAR:* ${total}\n\n` +
+            `_Clínica ALFRA - Gracias por tu excelente dedicación._`;
 
         const url = cleanTel
             ? `https://api.whatsapp.com/send?phone=52${cleanTel.length === 10 ? cleanTel : cleanTel.slice(-10)}&text=${encodeURIComponent(mensaje)}`
@@ -222,7 +222,7 @@ export default function NominaView() {
 
     const handleExportarDispersionBancaria = () => {
         if (!staff || staff.length === 0) {
-            alert('No hay colaboradores registrados para dispersi?n.');
+            alert('No hay colaboradores registrados para dispersión.');
             return;
         }
         const rows = staff.map(emp => {
@@ -239,7 +239,7 @@ export default function NominaView() {
                 `"${emp.puesto || emp.rol || ''}"`
             ];
         });
-        const headers = ['Nombre Colaborador', 'Instituci?n Bancaria', 'Cuenta CLABE (18 d?gitos)', 'Monto a Pagar (MXN)', 'Concepto / Referencia', 'Puesto'];
+        const headers = ['Nombre Colaborador', 'Institución Bancaria', 'Cuenta CLABE (18 dígitos)', 'Monto a Pagar (MXN)', 'Concepto / Referencia', 'Puesto'];
         const csvContent = 'data:text/csv;charset=utf-8,\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement('a');
@@ -777,10 +777,10 @@ export default function NominaView() {
                     <button
                         onClick={handleExportarDispersionBancaria}
                         className="px-3.5 py-2 rounded-xl border border-teal-200 bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold transition flex items-center gap-2 shadow-sm"
-                        title="Exportar archivo CSV para dispersi?n bancaria masiva (SPEI / BBVA / Santander)"
+                        title="Exportar archivo CSV para dispersión bancaria masiva (SPEI / BBVA / Santander)"
                     >
                         <Download size={16} />
-                        <span>Dispersi?n Bancaria (SPEI)</span>
+                        <span>Dispersión Bancaria (SPEI)</span>
                     </button>
                     <Button variant="primary" icon={PlusCircle} onClick={() => handleOpenModal()}>
                         Dar de Alta Personal
@@ -924,7 +924,7 @@ export default function NominaView() {
                                             <td className="p-4">
                                                 <div className="flex justify-center gap-1 flex-wrap">
                                                     <button
-                                                        title="Enviar Recibo de N?mina por WhatsApp"
+                                                        title="Enviar Recibo de Nómina por WhatsApp"
                                                         onClick={() => handleEnviarWhatsApp(empleado)}
                                                         className="p-2 text-emerald-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
                                                     >
@@ -1086,20 +1086,20 @@ export default function NominaView() {
                                 </div>
                             )}
 
-                            {/* Expediente Digital de Documentaci?n */}
+                            {/* Expediente Digital de Documentación */}
                             <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-3 sm:col-span-2">
                                 <div className="flex items-center justify-between">
                                     <h4 className="font-black text-slate-700 flex items-center gap-1.5 uppercase text-[11px]">
-                                        <FileText size={14} className="text-teal-600" /> Expediente Digital de Documentaci?n
+                                        <FileText size={14} className="text-teal-600" /> Expediente Digital de Documentación
                                     </h4>
                                     <span className="text-[10px] text-slate-400 font-mono">Archivos del Personal</span>
                                 </div>
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                                     {[
-                                        { label: 'Contrato Laboral', key: 'contratoUrl', icon: '??' },
-                                        { label: 'Identificaci?n INE', key: 'ineUrl', icon: '??' },
-                                        { label: 'C?dula Prof.', key: 'cedulaUrl', icon: '??' },
-                                        { label: 'Comprobante Dom.', key: 'comprobanteUrl', icon: '??' }
+                                        { label: 'Contrato Laboral', key: 'contratoUrl', icon: '📑' },
+                                        { label: 'Identificación INE', key: 'ineUrl', icon: '🪪' },
+                                        { label: 'Cédula Prof.', key: 'cedulaUrl', icon: '📜' },
+                                        { label: 'Comprobante Dom.', key: 'comprobanteUrl', icon: '🏠' }
                                     ].map(docItem => {
                                         const docVal = empleadoFicha[docItem.key] || empleadoFicha.documentos?.[docItem.key];
                                         return (
@@ -1589,7 +1589,7 @@ export default function NominaView() {
                             </div>
                         </div>
 
-                        {/* Auditor?a Autom?tica de Checador GPS */}
+                        {/* Auditoría Automática de Checador GPS */}
                         <div className={`p-3.5 rounded-2xl border text-xs flex items-center justify-between gap-3 ${
                             retardosGpsPeriodo === 0
                                 ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
@@ -1844,7 +1844,7 @@ export default function NominaView() {
                 >
                     <div className="space-y-4">
                         <p className="text-xs text-slate-500 leading-relaxed">
-                            Firma en el recuadro con el dedo o l?piz t?ctil para confirmar la recepci?n conforme de tu pago de n?mina.
+                            Firma en el recuadro con el dedo o lápiz táctil para confirmar la recepción conforme de tu pago de nómina.
                         </p>
                         <div className="border-2 border-dashed border-teal-300 rounded-2xl bg-slate-50 p-3 flex flex-col items-center">
                             <canvas
@@ -1861,7 +1861,7 @@ export default function NominaView() {
                                 onTouchEnd={stopDrawing}
                             />
                             <div className="flex items-center justify-between w-full pt-2 px-1">
-                                <span className="text-[11px] text-slate-400">Trazo t?ctil digital</span>
+                                <span className="text-[11px] text-slate-400">Trazo táctil digital</span>
                                 <button
                                     type="button"
                                     onClick={clearSignature}

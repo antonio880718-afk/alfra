@@ -147,7 +147,7 @@ export default function AppLayout() {
             <main className="flex-1 flex flex-col h-full overflow-hidden relative">
 
                 {/* ── MOBILE HEADER ── */}
-                {/* ??? MOBILE HEADER (Optimizada para pantalla m?vil HD) ??? */}
+                {/* MOBILE HEADER (Optimizada para pantalla móvil HD) */}
                 <header className="md:hidden flex items-center justify-between px-3.5 sm:px-4 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm z-40 sticky top-0"
                     style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 6px)', paddingBottom: '6px', minHeight: 'calc(64px + env(safe-area-inset-top, 0px))' }}>
                     {/* Logo elegante, nítido y de alta definición */}
@@ -172,7 +172,7 @@ export default function AppLayout() {
                             )}
                         </button>
                     )}
-                    {/* Bot?n abrir men? lateral */}
+                    {/* Botón abrir menú lateral */}
                     <button
                         onClick={() => setDrawerOpen(true)}
                         className="flex items-center justify-center p-2.5 rounded-xl bg-turquesa/10 active:bg-turquesa/25 transition-colors"
