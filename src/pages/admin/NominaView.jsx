@@ -9,7 +9,7 @@ import {
     CheckCircle, Trash2, KeyRound, DollarSign, Banknote, ArrowRightLeft,
     Receipt, ChevronDown, List, Pencil, Check, X, Award, Camera, Phone,
     Calendar, CreditCard, Stethoscope, Copy, ExternalLink, ShieldCheck,
-    UserCheck, Briefcase, AlertCircle, Eye, UploadCloud
+    UserCheck, Briefcase, AlertCircle, Eye, UploadCloud, MessageSquare, Download, PenTool, FileText
 } from 'lucide-react';
 import {
     onStaffChange, createEmpleado, updateEmpleado, deleteEmpleado,
@@ -17,7 +17,7 @@ import {
     editarComisionHistorial
 } from '../../services/staffService';
 import { registrarMovimiento } from '../../services/finanzasService';
-import { doc, setDoc, getFirestore } from 'firebase/firestore';
+import { doc, setDoc, getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import { db, auth, storage, firebaseConfig } from '../../lib/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { initializeApp, deleteApp } from 'firebase/app';
@@ -175,7 +175,182 @@ export default function NominaView() {
             setStaff(data);
             setLoading(false);
         });
-        return () => unsub();
+    
+    // ??? PENDIENTES FASE 2: WHATSAPP, SPEI, FIRMA Y CHECADOR GPS ???
+    const [empleadoFirmaModal, setEmpleadoFirmaModal] = useState(null);
+    const [guardandoFirma, setGuardandoFirma] = useState(false);
+    const signatureCanvasRef = useRef(null);
+    const isDrawingRef = useRef(false);
+    const [retardosGpsPeriodo, setRetardosGpsPeriodo] = useState(null);
+
+    const handleEnviarWhatsApp = (emp, datosPago = null) => {
+        const tel = emp.telefono || emp.contactoEmergenciaTelefono || '';
+        const cleanTel = tel.replace(/\D/g, '');
+        const nombre = emp.nombre || 'Colaborador';
+        const periodo = datosPago?.periodo || 'Periodo actual';
+        const sueldo = formatCurrency(datosPago?.sueldoBase !== undefined ? datosPago.sueldoBase : (emp.sueldoBase || 0));
+        const comisiones = formatCurrency(emp.saldoComisiones || 0);
+        const bonoPunt = formatCurrency(datosPago?.bonoPuntualidad !== undefined ? datosPago.bonoPuntualidad : (emp.bonoPuntualidad || 0));
+        const bonoProd = formatCurrency(datosPago?.bonoProductividad !== undefined ? datosPago.bonoProductividad : (emp.bonoProductividad || 0));
+        const total = formatCurrency(
+            (Number(datosPago?.sueldoBase !== undefined ? datosPago.sueldoBase : emp.sueldoBase) || 0) +
+            (Number(emp.saldoComisiones) || 0) +
+            (emp.usaBonos ? ((Number(datosPago?.bonoPuntualidad !== undefined ? datosPago.bonoPuntualidad : emp.bonoPuntualidad) || 0) + (Number(datosPago?.bonoProductividad !== undefined ? datosPago.bonoProductividad : emp.bonoProductividad) || 0)) : 0)
+        );
+
+        const mensaje = `*CL?NICA ALFRA - Recibo de N?mina*\n\n` +
+            `Hola *${nombre}*, te compartimos el resumen de tu liquidaci?n de n?mina:\n\n` +
+            `?? *Periodo:* ${periodo}\n` +
+            `?? *Puesto:* ${emp.puesto || emp.rol}\n` +
+            `?? *Sueldo Base:* ${sueldo}\n` +
+            `? *Comisiones:* ${comisiones}\n` +
+            (emp.usaBonos ? `?? *Bono Puntualidad:* ${bonoPunt}\n?? *Bono Productividad:* ${bonoProd}\n` : '') +
+            `?????????????????\n` +
+            `?? *TOTAL A COBRAR:* ${total}\n\n` +
+            `_Cl?nica ALFRA - Gracias por tu excelente dedicaci?n._`;
+
+        const url = cleanTel
+            ? `https://api.whatsapp.com/send?phone=52${cleanTel.length === 10 ? cleanTel : cleanTel.slice(-10)}&text=${encodeURIComponent(mensaje)}`
+            : `https://api.whatsapp.com/send?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+    };
+
+    const handleExportarDispersionBancaria = () => {
+        if (!staff || staff.length === 0) {
+            alert('No hay colaboradores registrados para dispersi?n.');
+            return;
+        }
+        const rows = staff.map(emp => {
+            const monto = (Number(emp.sueldoBase) || 0) + (Number(emp.saldoComisiones) || 0) +
+                (emp.usaBonos ? ((Number(emp.bonoPuntualidad) || 0) + (Number(emp.bonoProductividad) || 0)) : 0);
+            const clabe = (emp.cuentaClabe || emp.datosBancarios?.clabe || '').trim();
+            const banco = emp.banco || emp.datosBancarios?.banco || 'BBVA';
+            return [
+                `"${emp.nombre || ''}"`,
+                `"${banco}"`,
+                `"${clabe || 'PENDIENTE'}"`,
+                monto.toFixed(2),
+                `"PAGO NOMINA ALFRA ${new Date().toLocaleDateString('es-MX')}"`,
+                `"${emp.puesto || emp.rol || ''}"`
+            ];
+        });
+        const headers = ['Nombre Colaborador', 'Instituci?n Bancaria', 'Cuenta CLABE (18 d?gitos)', 'Monto a Pagar (MXN)', 'Concepto / Referencia', 'Puesto'];
+        const csvContent = 'data:text/csv;charset=utf-8,\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement('a');
+        link.setAttribute('href', encodedUri);
+        link.setAttribute('download', `Layout_Dispersion_Bancaria_ALFRA_${new Date().toISOString().split('T')[0]}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    const getCanvasCoordinates = (e) => {
+        const canvas = signatureCanvasRef.current;
+        if (!canvas) return { x: 0, y: 0 };
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+            x: clientX - rect.left,
+            y: clientY - rect.top
+        };
+    };
+
+    const startDrawing = (e) => {
+        const canvas = signatureCanvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const { x, y } = getCanvasCoordinates(e);
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.strokeStyle = '#0f172a';
+        ctx.lineWidth = 2.5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        isDrawingRef.current = true;
+    };
+
+    const draw = (e) => {
+        if (!isDrawingRef.current) return;
+        if (e.cancelable && e.type.startsWith('touch')) e.preventDefault();
+        const canvas = signatureCanvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const { x, y } = getCanvasCoordinates(e);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    };
+
+    const stopDrawing = () => {
+        isDrawingRef.current = false;
+    };
+
+    const clearSignature = () => {
+        const canvas = signatureCanvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    };
+
+    const saveSignature = async () => {
+        if (!empleadoFirmaModal || !signatureCanvasRef.current) return;
+        setGuardandoFirma(true);
+        try {
+            const dataUrl = signatureCanvasRef.current.toDataURL('image/png');
+            await updateEmpleado(empleadoFirmaModal.id, {
+                ultimaFirmaNomina: {
+                    dataUrl,
+                    fecha: new Date().toISOString()
+                }
+            });
+            alert('? Firma de conformidad registrada exitosamente.');
+            setEmpleadoFirmaModal(null);
+        } catch (err) {
+            alert('Error al guardar firma: ' + err.message);
+        } finally {
+            setGuardandoFirma(false);
+        }
+    };
+
+    useEffect(() => {
+        if (!empleadoLiquidar) {
+            setRetardosGpsPeriodo(null);
+            return;
+        }
+        const checkAsistencia = async () => {
+            try {
+                const asistenciaCol = collection(db, 'asistencia');
+                const q = query(
+                    asistenciaCol,
+                    where('nombre', '==', empleadoLiquidar.nombre)
+                );
+                const snap = await getDocs(q);
+                if (snap.empty) {
+                    setRetardosGpsPeriodo(0);
+                    return;
+                }
+                const fInicio = nominaForm.fechaInicio || '2000-01-01';
+                const fFin = nominaForm.fechaFin || '2099-12-31';
+                let retardos = 0;
+                snap.forEach(d => {
+                    const data = d.data();
+                    if (data.fechaYMD >= fInicio && data.fechaYMD <= fFin) {
+                        if (data.estado === 'Retardo' || (data.demeritoMin && data.demeritoMin > 0)) {
+                            retardos++;
+                        }
+                    }
+                });
+                setRetardosGpsPeriodo(retardos);
+            } catch (e) {
+                console.warn('Error auditando asistencia GPS:', e);
+                setRetardosGpsPeriodo(0);
+            }
+        };
+        checkAsistencia();
+    }, [empleadoLiquidar, nominaForm.fechaInicio, nominaForm.fechaFin]);
+
+    return () => unsub();
     }, []);
 
     // Compresión y carga de foto de perfil del colaborador
@@ -594,9 +769,19 @@ export default function NominaView() {
                         Expediente de colaboradores con foto, datos bancarios, comisiones y sueldos.
                     </p>
                 </div>
-                <Button variant="primary" icon={PlusCircle} onClick={() => handleOpenModal()}>
-                    Dar de Alta Personal
-                </Button>
+                <div className="flex items-center gap-2 flex-wrap">
+                    <button
+                        onClick={handleExportarDispersionBancaria}
+                        className="px-3.5 py-2 rounded-xl border border-teal-200 bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold transition flex items-center gap-2 shadow-sm"
+                        title="Exportar archivo CSV para dispersi?n bancaria masiva (SPEI / BBVA / Santander)"
+                    >
+                        <Download size={16} />
+                        <span>Dispersi?n Bancaria (SPEI)</span>
+                    </button>
+                    <Button variant="primary" icon={PlusCircle} onClick={() => handleOpenModal()}>
+                        Dar de Alta Personal
+                    </Button>
+                </div>
             </div>
 
             {/* TABLA PRINCIPAL DE PERSONAL */}
@@ -734,6 +919,20 @@ export default function NominaView() {
                                             {/* ACCIONES */}
                                             <td className="p-4">
                                                 <div className="flex justify-center gap-1 flex-wrap">
+                                                    <button
+                                                        title="Enviar Recibo de N?mina por WhatsApp"
+                                                        onClick={() => handleEnviarWhatsApp(empleado)}
+                                                        className="p-2 text-emerald-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
+                                                    >
+                                                        <MessageSquare size={18} />
+                                                    </button>
+                                                    <button
+                                                        title="Firma Digital de Conformidad"
+                                                        onClick={() => setEmpleadoFirmaModal(empleado)}
+                                                        className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
+                                                    >
+                                                        <PenTool size={18} />
+                                                    </button>
                                                     <button
                                                         title="Ver Ficha / Expediente del Colaborador"
                                                         onClick={() => setEmpleadoFicha(empleado)}
@@ -882,6 +1081,46 @@ export default function NominaView() {
                                     </div>
                                 </div>
                             )}
+
+                            {/* Expediente Digital de Documentaci?n */}
+                            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-3 sm:col-span-2">
+                                <div className="flex items-center justify-between">
+                                    <h4 className="font-black text-slate-700 flex items-center gap-1.5 uppercase text-[11px]">
+                                        <FileText size={14} className="text-teal-600" /> Expediente Digital de Documentaci?n
+                                    </h4>
+                                    <span className="text-[10px] text-slate-400 font-mono">Archivos del Personal</span>
+                                </div>
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    {[
+                                        { label: 'Contrato Laboral', key: 'contratoUrl', icon: '??' },
+                                        { label: 'Identificaci?n INE', key: 'ineUrl', icon: '??' },
+                                        { label: 'C?dula Prof.', key: 'cedulaUrl', icon: '??' },
+                                        { label: 'Comprobante Dom.', key: 'comprobanteUrl', icon: '??' }
+                                    ].map(docItem => {
+                                        const docVal = empleadoFicha[docItem.key] || empleadoFicha.documentos?.[docItem.key];
+                                        return (
+                                            <div key={docItem.key} className="p-2.5 rounded-xl border border-slate-200 bg-white flex flex-col items-center text-center">
+                                                <span className="text-xl mb-1">{docItem.icon}</span>
+                                                <span className="text-[10px] font-bold text-slate-700">{docItem.label}</span>
+                                                {docVal ? (
+                                                    <a
+                                                        href={docVal}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="text-[9px] font-bold mt-1 px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition"
+                                                    >
+                                                        Ver PDF ?
+                                                    </a>
+                                                ) : (
+                                                    <span className="text-[9px] font-semibold mt-1 px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
+                                                        Pendiente
+                                                    </span>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
 
                             {/* Resumen Salarial Actual (Intacto) */}
                             <div className="bg-teal-500/10 p-4 rounded-2xl border border-teal-500/20 sm:col-span-2 flex justify-between items-center">
@@ -1346,6 +1585,44 @@ export default function NominaView() {
                             </div>
                         </div>
 
+                        {/* Auditor?a Autom?tica de Checador GPS */}
+                        <div className={`p-3.5 rounded-2xl border text-xs flex items-center justify-between gap-3 ${
+                            retardosGpsPeriodo === 0
+                                ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
+                                : retardosGpsPeriodo > 0
+                                    ? 'bg-amber-50 border-amber-200 text-amber-800'
+                                    : 'bg-slate-50 border-slate-200 text-slate-600'
+                        }`}>
+                            <div className="flex items-center gap-2">
+                                <CheckCircle size={16} className={retardosGpsPeriodo === 0 ? 'text-emerald-600' : 'text-amber-600'} />
+                                <div>
+                                    <span className="font-bold block">
+                                        {retardosGpsPeriodo === 0
+                                            ? '100% Asistencia a Tiempo (Checador GPS)'
+                                            : retardosGpsPeriodo > 0
+                                                ? `Alerta: ${retardosGpsPeriodo} Retardo(s) detectado(s) en Checador GPS`
+                                                : 'Consultando asistencias del Checador GPS...'}
+                                    </span>
+                                    <span className="text-[11px] opacity-80">
+                                        {retardosGpsPeriodo === 0
+                                            ? 'El colaborador califica para el Bono de Puntualidad completo.'
+                                            : retardosGpsPeriodo > 0
+                                                ? 'Registros satelitales indican llegadas posteriores a la hora de entrada.'
+                                                : 'Verificando puntualidad en base de datos satelital.'}
+                                    </span>
+                                </div>
+                            </div>
+                            {retardosGpsPeriodo > 0 && empleadoLiquidar.usaBonos && (
+                                <button
+                                    type="button"
+                                    onClick={() => setNominaForm(prev => ({ ...prev, bonoPuntualidad: 0 }))}
+                                    className="px-2.5 py-1 rounded-lg bg-amber-200 hover:bg-amber-300 text-amber-900 text-[10px] font-bold shrink-0 transition"
+                                >
+                                    Retirar Bono
+                                </button>
+                            )}
+                        </div>
+
                         <div>
                             <label className="text-xs font-bold text-gray-400 uppercase ml-1 block mb-1">Sueldo Base a Pagar</label>
                             <div className="relative">
@@ -1554,6 +1831,59 @@ export default function NominaView() {
                 onClose={() => setReciboNominaOpen(false)}
                 datosNomina={datosReciboNomina}
             />
+            {/* MODAL DE FIRMA DIGITAL DE CONFORMIDAD */}
+            {empleadoFirmaModal && (
+                <Modal
+                    isOpen={Boolean(empleadoFirmaModal)}
+                    onClose={() => setEmpleadoFirmaModal(null)}
+                    title={`Firma Digital de Conformidad - ${empleadoFirmaModal.nombre}`}
+                >
+                    <div className="space-y-4">
+                        <p className="text-xs text-slate-500 leading-relaxed">
+                            Firma en el recuadro con el dedo o l?piz t?ctil para confirmar la recepci?n conforme de tu pago de n?mina.
+                        </p>
+                        <div className="border-2 border-dashed border-teal-300 rounded-2xl bg-slate-50 p-3 flex flex-col items-center">
+                            <canvas
+                                ref={signatureCanvasRef}
+                                width={320}
+                                height={160}
+                                className="bg-white rounded-xl touch-none border border-slate-200 cursor-crosshair w-full max-w-sm h-40 shadow-inner"
+                                onMouseDown={startDrawing}
+                                onMouseMove={draw}
+                                onMouseUp={stopDrawing}
+                                onMouseLeave={stopDrawing}
+                                onTouchStart={startDrawing}
+                                onTouchMove={draw}
+                                onTouchEnd={stopDrawing}
+                            />
+                            <div className="flex items-center justify-between w-full pt-2 px-1">
+                                <span className="text-[11px] text-slate-400">Trazo t?ctil digital</span>
+                                <button
+                                    type="button"
+                                    onClick={clearSignature}
+                                    className="text-xs text-rose-500 hover:text-rose-700 font-bold"
+                                >
+                                    Limpiar trazo
+                                </button>
+                            </div>
+                        </div>
+                        {empleadoFirmaModal.ultimaFirmaNomina?.fecha && (
+                            <div className="p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2">
+                                <CheckCircle size={14} className="text-emerald-600 shrink-0" />
+                                <span>?ltima firma registrada: {new Date(empleadoFirmaModal.ultimaFirmaNomina.fecha).toLocaleString('es-MX')}</span>
+                            </div>
+                        )}
+                        <div className="flex justify-end gap-2 pt-2">
+                            <Button variant="ghost" onClick={() => setEmpleadoFirmaModal(null)}>
+                                Cancelar
+                            </Button>
+                            <Button variant="primary" icon={Check} onClick={saveSignature} disabled={guardandoFirma}>
+                                {guardandoFirma ? 'Guardando...' : 'Guardar Firma'}
+                            </Button>
+                        </div>
+                    </div>
+                </Modal>
+            )}
         </div>
     );
 }

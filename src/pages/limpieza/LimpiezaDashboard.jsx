@@ -284,6 +284,30 @@ export default function LimpiezaDashboard() {
                 </div>
             </div>
 
+            {/* ALERTA DE MANTENIMIENTO PREVENTIVO */}
+            <div className="bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-200 p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs shadow-sm">
+                <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                        <Wrench size={18} />
+                    </div>
+                    <div>
+                        <span className="font-bold text-sm block text-amber-950 dark:text-amber-100">
+                            Protocolo de Mantenimiento Preventivo Programado
+                        </span>
+                        <span className="text-[11px] text-amber-800 dark:text-amber-300">
+                            Supervisi?n de equipos cl?nicos, aires acondicionados y cabinas cada 30 d?as para cumplimiento COFEPRIS.
+                        </span>
+                    </div>
+                </div>
+                <button
+                    onClick={() => { setActiveTab('mantenimiento'); setModalNuevoReporte(true); }}
+                    className="px-3 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-xl text-xs shrink-0 transition flex items-center gap-1.5 shadow-sm"
+                >
+                    <Wrench size={14} />
+                    <span>Registrar Mantenimiento</span>
+                </button>
+            </div>
+
             {/* PESTAÑAS DE NAVEGACIÓN */}
             <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
                 {tabs.map(tab => (

@@ -281,7 +281,39 @@ export const marcarEspacioCompletoUnClic = async ({ espacioId, fecha, usuarioNom
     });
 
     await sincronizarBitacoraGeneralDia(fecha, usuarioNombre, usuarioUid);
+    try {
+        await descontarInsumosLimpiezaCabina(espacioDef.nombre);
+    } catch (_) {}
 };
+
+export const descontarInsumosLimpiezaCabina = async (espacioNombre) => {
+    try {
+        const invCol = collection(db, 'inventario');
+        const snap = await getDocs(invCol);
+        if (snap.empty) return;
+        for (const d of snap.docs) {
+            const item = d.data();
+            const nom = (item.nombre || '').toLowerCase();
+            if (
+                item.tipo === 'insumo' &&
+                (nom.includes('amonio') || nom.includes('alcohol') || nom.includes('sanitizante') || nom.includes('desinfectante') || item.categoria === 'Limpieza')
+            ) {
+                const stockActual = Number(item.stock) || 0;
+                if (stockActual > 0) {
+                    await updateDoc(d.ref, {
+                        stock: Math.max(0, stockActual - 1),
+                        ultimoConsumo: new Date().toISOString(),
+                        motivoUltimoConsumo: `Limpieza y sanitizaci?n de ${espacioNombre}`
+                    });
+                    break;
+                }
+            }
+        }
+    } catch (e) {
+        console.warn('Aviso: no se pudo descontar autom?ticamente el inventario:', e);
+    }
+};
+
 
 export const guardarFotoEvidenciaEspacio = async ({ espacioId, nombreEspacio, fecha, file, usuarioNombre, usuarioUid }) => {
     const fotoObj = await subirFotoEvidencia(file, 'evidencia_espacios/' + fecha + '/' + espacioId);
