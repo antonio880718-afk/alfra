@@ -34,19 +34,19 @@ export const getPacientes = async () => {
 };
 
 // Obtener un paciente específico por su ID de documento Firestore
-// Obtener un paciente espec�fico por su ID de documento Firestore
-// Con auto-resoluci�n ultra-resiliente por ID, Auth UID, o ID de Cita
+// Obtener un paciente específico por su ID de documento Firestore
+// Con auto-resolución ultra-resiliente por ID, Auth UID, o ID de Cita
 export const getPacienteById = async (id) => {
     if (!id) return null;
     try {
-        // 1. B�squeda directa por ID de documento
+        // 1. Búsqueda directa por ID de documento
         const docRef = doc(db, COLLECTION_NAME, String(id));
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             return { id: docSnap.id, ...docSnap.data() };
         }
 
-        // 2. Fallback: �Es un UID de Firebase Auth?
+        // 2. Fallback: ¿Es un UID de Firebase Auth?
         const qUid = query(pacientesCol, where('uid', '==', String(id)));
         const snapUid = await getDocs(qUid);
         if (!snapUid.empty) {
@@ -54,7 +54,7 @@ export const getPacienteById = async (id) => {
             return { id: d.id, ...d.data() };
         }
 
-        // 3. Fallback: �Es un ID de Cita? Recuperar su pacienteId o vincular por nombre
+        // 3. Fallback: ¿Es un ID de Cita? Recuperar su pacienteId o vincular por nombre
         try {
             const citaSnap = await getDoc(doc(db, 'citas', String(id)));
             if (citaSnap.exists()) {

@@ -39,7 +39,7 @@ export default function SupervisionAgenda() {
 
     const handleSellarDesdeCita = async (cita) => {
         if (!cita.pacienteId) {
-            setSelloMsg({ citaId: cita.id, msg: '?? Paciente sin ID vinculado. Vinc�la desde Pacientes.', ok: false });
+            setSelloMsg({ citaId: cita.id, msg: '?? Paciente sin ID vinculado. Vincúla desde Pacientes.', ok: false });
             setTimeout(() => setSelloMsg(null), 4000);
             return;
         }
@@ -831,12 +831,12 @@ export default function SupervisionAgenda() {
                     }}
                     onNotificarLlegada={handleNotificarLlegada}
                     onNoAsistio={async (citaId) => {
-                        if (confirm('�Marcar que el paciente no asisti�?')) {
-                            await updateCitaStatus(citaId, 'No Asisti�');
+                        if (confirm('¿Marcar que el paciente no asistió?')) {
+                            await updateCitaStatus(citaId, 'No Asistió');
                         }
                     }}
                     onCancelarCita={async (citaId) => {
-                        if (confirm('�Cancelar esta cita?')) {
+                        if (confirm('¿Cancelar esta cita?')) {
                             await updateCitaStatus(citaId, 'Cancelada');
                         }
                     }}
@@ -845,10 +845,10 @@ export default function SupervisionAgenda() {
                         if (!cita) return;
                         const tieneMovimientos = await verificarMovimientosExpediente(cita);
                         if (!tieneMovimientos) {
-                            const forzar = window.confirm('?? Atenci�n Administrador:\n\nNo se detectaron notas o sesiones registradas en el expediente cl�nico para esta cita.\n\n�Deseas completar la cita de todos modos con privilegios de Administrador?');
+                            const forzar = window.confirm('?? Atención Administrador:\n\nNo se detectaron notas o sesiones registradas en el expediente clínico para esta cita.\n\n¿Deseas completar la cita de todos modos con privilegios de Administrador?');
                             if (!forzar) return;
                         } else {
-                            if (!confirm('�Marcar esta cita como completada?')) return;
+                            if (!confirm('¿Marcar esta cita como completada?')) return;
                         }
                         try {
                             await updateCitaStatus(citaId, 'Completada', {
