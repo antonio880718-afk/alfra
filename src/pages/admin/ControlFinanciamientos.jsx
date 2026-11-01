@@ -4,9 +4,9 @@ import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Modal } from '../../components/ui/Modal';
 import { Badge } from '../../components/ui/Badge';
-import { Wallet, Edit3, AlertCircle, AlertTriangle, PlusCircle, Loader, FileText, Printer, Calendar, DollarSign, Download, Share2, Search, Trash2, GitMerge, Sparkles, ShieldCheck, ArrowUpDown } from 'lucide-react';
+import { Wallet, Edit3, AlertCircle, AlertTriangle, PlusCircle, Loader, FileText, Printer, Calendar, DollarSign, Download, Share2, Search, Trash2, GitMerge, Sparkles, RefreshCw, ShieldCheck, ArrowUpDown } from 'lucide-react';
 import { onPlanesChange, updatePlan, createPlan, deletePlan, fusionarPlanes, detectarPlanesDuplicados, sonTratamientosSimilares } from '../../services/planesService';
-import { onPacientesChange } from '../../services/pacientesService';
+import { onPacientesChange, sincronizarTodosLosPacientes, normalizeForMatch } from '../../services/pacientesService';
 import { getCitas } from '../../services/citasService';
 import { getAllRecibos, createRecibo, deleteRecibo } from '../../services/recibosService';
 import html2canvas from 'html2canvas';
@@ -16,6 +16,41 @@ import { abrirWhatsApp } from '../../services/whatsappService';
 
 export default function ControlFinanciamientos() {
     const { userRole } = useAuth();
+    const [sincronizando, setSincronizando] = useState(false);
+
+    const getNombrePacientePlan = (plan) => {
+        if (!plan) return 'Paciente';
+        if (plan.pacienteId) {
+            const p = pacientes.find(x => x.id === plan.pacienteId);
+            if (p?.nombre) return p.nombre;
+        }
+        const cleanTel = (plan.telefono || '').replace(/\D/g, '');
+        if (cleanTel && cleanTel.length >= 7) {
+            const p = pacientes.find(x => (x.telefono || '').replace(/\D/g, '') === cleanTel);
+            if (p?.nombre) return p.nombre;
+        }
+        const normP = normalizeForMatch(plan.paciente || plan.pacienteNombre || '');
+        if (normP) {
+            const p = pacientes.find(x => normalizeForMatch(x.nombre) === normP);
+            if (p?.nombre) return p.nombre;
+        }
+        return plan.paciente || plan.pacienteNombre || 'Paciente';
+    };
+
+    const handleSincronizarPlanes = async () => {
+        if (!window.confirm('?Deseas verificar y sincronizar en cascada todos los paquetes de tratamientos con los pacientes actuales?')) return;
+        setSincronizando(true);
+        try {
+            const res = await sincronizarTodosLosPacientes();
+            alert(`?Sincronizaci?n completada con ?xito!\n\nPacientes revisados: ${res.totalPacientes}\nRegistros vinculados actualizados: ${res.totalActualizados}`);
+        } catch (e) {
+            console.error('Error al sincronizar paquetes:', e);
+            alert('Error al sincronizar: ' + (e.message || 'Error desconocido'));
+        } finally {
+            setSincronizando(false);
+        }
+    };
+
     const esAdmin = userRole === 'Administrador';
     const [mostrarDetalleDuplicados, setMostrarDetalleDuplicados] = useState(true);
     const [planes, setPlanes] = useState([]);
@@ -416,11 +451,22 @@ export default function ControlFinanciamientos() {
 
             // Fetch recibos
             const allRecibos = await getAllRecibos();
-            const filteredRecibos = allRecibos.filter(r => 
-                r.pacienteNombre === plan.paciente && 
-                (r.concepto?.toLowerCase().includes(plan.objetivo?.toLowerCase()) || 
-                 r.paqueteInfo?.toLowerCase().includes(plan.objetivo?.toLowerCase()))
-            );
+            const nomResuelto = getNombrePacientePlan(plan);
+            const nNormTarget = normalizeForMatch(nomResuelto);
+            const nNormPlan = normalizeForMatch(plan.paciente);
+
+            const filteredRecibos = allRecibos.filter(r => {
+                const matchId = (plan.pacienteId && r.pacienteId && String(plan.pacienteId) === String(r.pacienteId));
+                const rNorm = normalizeForMatch(r.pacienteNombre || r.paciente || '');
+                const matchName = rNorm && (rNorm === nNormTarget || rNorm === nNormPlan || (nNormTarget && rNorm.includes(nNormTarget)) || (nNormTarget && nNormTarget.includes(rNorm)));
+                if (!matchId && !matchName) return false;
+
+                return (
+                    r.concepto?.toLowerCase().includes(plan.objetivo?.toLowerCase()) || 
+                    r.paqueteInfo?.toLowerCase().includes(plan.objetivo?.toLowerCase()) ||
+                    r.isPlanTratamiento
+                );
+            });
             setRecibosPlan(filteredRecibos);
         } catch (error) {
             console.error("Error al cargar estado de cuenta:", error);
@@ -455,8 +501,12 @@ export default function ControlFinanciamientos() {
         if (!nuevoPlan.paciente || !nuevoPlan.meta) { alert('Completa los campos.'); return; }
         setSaving(true);
         try {
+            const pacEncontrado = pacientes.find(p => (p.nombre || '').trim().toLowerCase() === nuevoPlan.paciente.trim().toLowerCase());
             await createPlan({
-                paciente: nuevoPlan.paciente,
+                paciente: pacEncontrado?.nombre || nuevoPlan.paciente,
+                pacienteNombre: pacEncontrado?.nombre || nuevoPlan.paciente,
+                pacienteId: pacEncontrado?.id || null,
+                telefono: pacEncontrado?.telefono || '',
                 objetivo: nuevoPlan.objetivo,
                 meta: parseFloat(nuevoPlan.meta),
                 acumulado: 0
@@ -477,7 +527,19 @@ export default function ControlFinanciamientos() {
                     <h2 className="text-2xl font-bold text-acero">Paquetes de Tratamientos</h2>
                     <p className="text-gray-500 text-sm">Supervisión de metas a pago de pacientes, condonaciones y ajustes de saldos</p>
                 </div>
-                <Button variant="primary" icon={PlusCircle} onClick={() => setIsNuevoOpen(true)}>Nuevo Plan</Button>
+                <div className="flex flex-wrap items-center gap-2">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        icon={RefreshCw}
+                        disabled={sincronizando}
+                        onClick={handleSincronizarPlanes}
+                        className="text-xs font-bold border-indigo-200 text-indigo-700 bg-indigo-50/50 hover:bg-indigo-100"
+                    >
+                        {sincronizando ? 'Sincronizando...' : 'Sincronizar Nombres'}
+                    </Button>
+                    <Button variant="primary" icon={PlusCircle} onClick={() => setIsNuevoOpen(true)}>Nuevo Plan</Button>
+                </div>
             </div>
 
             {/* ALERTA EXCLUSIVA PARA EL ADMINISTRADOR: DETECCIÓN DE TRATAMIENTOS DUPLICADOS */}
@@ -623,7 +685,8 @@ export default function ControlFinanciamientos() {
                         {planes
                             .filter(plan => {
                                 const q = busqueda.toLowerCase();
-                                const matchesSearch = !q || (plan.paciente || '').toLowerCase().includes(q) || (plan.objetivo || '').toLowerCase().includes(q);
+                                const nomPlanActual = getNombrePacientePlan(plan);
+                                const matchesSearch = !q || (plan.paciente || '').toLowerCase().includes(q) || nomPlanActual.toLowerCase().includes(q) || (plan.objetivo || '').toLowerCase().includes(q);
                                 
                                 const matchesFilter = filtroEstado === 'todos' || 
                                     (filtroEstado === 'activos' && plan.activo !== false) || 
@@ -636,10 +699,10 @@ export default function ControlFinanciamientos() {
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                     <div className="flex items-start sm:items-center gap-3 min-w-0">
                                         <div className="w-10 h-10 rounded-full bg-turquesa/10 text-turquesa flex items-center justify-center font-black shrink-0 mt-0.5 sm:mt-0">
-                                            {(plan.paciente || '?')[0].toUpperCase()}
+                                            {(getNombrePacientePlan(plan) || '?')[0].toUpperCase()}
                                         </div>
                                         <div className="min-w-0">
-                                            <p className="font-bold text-gray-800 text-sm sm:text-base leading-tight break-words">{plan.paciente}</p>
+                                            <p className="font-bold text-gray-800 text-sm sm:text-base leading-tight break-words">{getNombrePacientePlan(plan)}</p>
                                             <p className="text-xs text-gray-500 font-normal flex items-center gap-1 mt-1">
                                                 <Wallet size={12} className="text-turquesa shrink-0" /> <span className="truncate">{plan.objetivo}</span>
                                             </p>
@@ -704,7 +767,7 @@ export default function ControlFinanciamientos() {
             <Modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                title={`Ajuste de Saldo Maestro: ${selectedPlan?.paciente}`}
+                title={`Ajuste de Saldo Maestro: ${getNombrePacientePlan(selectedPlan)}`}
                 footer={
                     <div className="flex justify-end gap-3">
                         <Button variant="ghost" onClick={() => setIsModalOpen(false)}>Cancelar</Button>
@@ -789,7 +852,7 @@ export default function ControlFinanciamientos() {
             <Modal
                 isOpen={isAbonoPasadoOpen}
                 onClose={() => setIsAbonoPasadoOpen(false)}
-                title={`Registrar Abono Pasado: ${selectedPlan?.paciente}`}
+                title={`Registrar Abono Pasado: ${getNombrePacientePlan(selectedPlan)}`}
                 footer={
                     <div className="flex justify-end gap-3">
                         <Button variant="ghost" onClick={() => setIsAbonoPasadoOpen(false)}>Cancelar</Button>
@@ -823,7 +886,7 @@ export default function ControlFinanciamientos() {
             <Modal
                 isOpen={isEstadoCuentaOpen}
                 onClose={() => setIsEstadoCuentaOpen(false)}
-                title={`Estado de Cuenta: ${selectedPlan?.paciente}`}
+                title={`Estado de Cuenta: ${getNombrePacientePlan(selectedPlan)}`}
             >
                 {loadingEstado ? (
                     <div className="flex items-center justify-center py-12 gap-3 text-gray-400">
@@ -1211,7 +1274,7 @@ export default function ControlFinanciamientos() {
                                     ¿Estás seguro de eliminar el paquete "{planToDelete.objetivo}"?
                                 </p>
                                 <p className="text-xs text-rose-800">
-                                    Paciente: <strong>{planToDelete.paciente}</strong>
+                                    Paciente: <strong>{getNombrePacientePlan(planToDelete)}</strong>
                                 </p>
                                 {parseFloat(planToDelete.acumulado) > 0 ? (
                                     <div className="mt-2.5 p-3 bg-white/90 rounded-xl border border-rose-300 text-xs text-rose-900">

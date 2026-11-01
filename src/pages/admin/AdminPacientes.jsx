@@ -86,7 +86,7 @@ export default function AdminPacientes() {
             })();
 
             // CRUCIAL: Se envía paciente.nombre para detectar abonos a planes de tratamiento históricos o futuros
-            const pagosPromise = getRecibosPaciente(paciente.id, paciente.uid, paciente.nombre);
+            const pagosPromise = getRecibosPaciente(paciente.id, paciente.uid, paciente.nombre, paciente.telefono);
 
             // Consultar planes de tratamiento vinculados por ID y por nombre del paciente (con variantes de whitespace)
             const planesPromise = (async () => {

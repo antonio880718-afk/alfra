@@ -32,16 +32,37 @@ export const crearTratamiento = async (pacienteId, { tipo, nombre, especialistaI
 /**
  * Obtiene todos los tratamientos de un paciente (activos e históricos).
  */
-export const getTratamientosPaciente = async (pacienteId) => {
-    const q = query(
-        collection(db, TRATAMIENTOS_COL),
-        where('pacienteId', '==', pacienteId)
-    );
-    const snap = await getDocs(q);
-    return snap.docs
-        .map(d => ({ id: d.id, ...d.data() }))
-        .filter(d => !d.eliminado) // Filtro de soft delete
-        .sort((a, b) => new Date(b.fechaInicio) - new Date(a.fechaInicio));
+export const getTratamientosPaciente = async (pacienteId, pacienteNombre = null) => {
+    try {
+        const tratCol = collection(db, TRATAMIENTOS_COL);
+        const resultsMap = new Map();
+
+        if (pacienteId) {
+            const snapId = await getDocs(query(tratCol, where('pacienteId', '==', pacienteId)));
+            snapId.docs.forEach(d => resultsMap.set(d.id, { id: d.id, ...d.data() }));
+        }
+
+        if (pacienteNombre && typeof pacienteNombre === 'string' && pacienteNombre.trim()) {
+            const normTarget = pacienteNombre.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+            const snapAll = await getDocs(tratCol);
+            snapAll.docs.forEach(d => {
+                const data = d.data();
+                const dNorm = (data.pacienteNombre || data.paciente || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+                if (dNorm && (dNorm === normTarget || dNorm.includes(normTarget) || normTarget.includes(dNorm))) {
+                    if (!resultsMap.has(d.id)) {
+                        resultsMap.set(d.id, { id: d.id, ...data });
+                    }
+                }
+            });
+        }
+
+        return Array.from(resultsMap.values())
+            .filter(d => !d.eliminado)
+            .sort((a, b) => new Date(b.fechaInicio || b.creadoEn || 0) - new Date(a.fechaInicio || a.creadoEn || 0));
+    } catch (e) {
+        console.error('Error fetching tratamientos paciente:', e);
+        return [];
+    }
 };
 
 /**

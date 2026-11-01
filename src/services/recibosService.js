@@ -42,7 +42,7 @@ export const createRecibo = async (data) => {
  * Obtiene todos los recibos de un paciente, ordenados del más reciente al más antiguo.
  * @param {string} pacienteId
  */
-export const getRecibosPaciente = async (pacienteId, uid = null, pacienteNombre = null) => {
+export const getRecibosPaciente = async (pacienteId, uid = null, pacienteNombre = null, telefono = null) => {
     try {
         const resultsMap = new Map();
 
@@ -71,6 +71,8 @@ export const getRecibosPaciente = async (pacienteId, uid = null, pacienteNombre 
         // 3. Por nombre del paciente (CLAVE: incluye nombre exacto, trimmed, con espacios al final y variantes de mayúsculas/minúsculas)
         const nameVariantsSet = new Set();
         if (pacienteNombre && typeof pacienteNombre === 'string' && pacienteNombre.trim()) {
+            const unacc = pacienteNombre.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+            [unacc, unacc.toLowerCase(), unacc.toUpperCase()].forEach(v => nameVariantsSet.add(v));
             const exact = pacienteNombre;
             const trimmed = pacienteNombre.trim();
             const withSingleSpace = trimmed + ' ';
@@ -88,6 +90,13 @@ export const getRecibosPaciente = async (pacienteId, uid = null, pacienteNombre 
             });
         }
 
+        if (telefono) {
+            const tClean = String(telefono).replace(/\D/g, '');
+            if (tClean.length >= 7) {
+                queries.push(getDocs(query(recibosCol, where('telefono', '==', telefono))));
+                queries.push(getDocs(query(recibosCol, where('telefono', '==', tClean))));
+            }
+        }
         const snapshots = await Promise.all(queries);
         snapshots.forEach(addDocs);
 

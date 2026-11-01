@@ -1357,7 +1357,7 @@ export default function ExpedienteClinico() {
                 }
 
                 // Cargar tratamientos utilizando SIEMPRE el realId del paciente
-                getTratamientosPaciente(realId).then(lista => {
+                getTratamientosPaciente(realId, p.nombre).then(lista => {
                     if (!isMounted) return;
                     setTratamientos(lista);
                     if (lista.length > 0) {
