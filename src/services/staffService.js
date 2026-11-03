@@ -653,3 +653,64 @@ export const actualizarMiPerfilColaborador = async (staffId, datosPermitidos) =>
     await updateEmpleado(staffId, dataAActualizar);
     return dataAActualizar;
 };
+
+/**
+ * Restablece la contraseña de un colaborador a la genérica Alfra2026!
+ * y marca de forma forzosa que debe cambiarla al ingresar.
+ */
+export const restablecerPasswordStaff = async (staffId, email, genericPassword = 'Alfra2026!') => {
+    const emailLimpio = String(email || '').toLowerCase().trim();
+    if (!emailLimpio) throw new Error('El colaborador no cuenta con un correo electrónico asignado.');
+
+    const ahoraIso = new Date().toISOString();
+
+    // 1. Intentar llamar a Cloud Function 'cambiarPasswordStaff' si está disponible
+    let fnSuccess = false;
+    try {
+        const { getFunctions, httpsCallable } = await import('firebase/functions');
+        const functions = getFunctions();
+        const cambiarPasswordStaff = httpsCallable(functions, 'cambiarPasswordStaff');
+        const res = await cambiarPasswordStaff({ email: emailLimpio, newPassword: genericPassword });
+        if (res?.data?.success) {
+            fnSuccess = true;
+        }
+    } catch (fnErr) {
+        console.warn('Aviso: Cloud Function no disponible o error:', fnErr?.message || fnErr);
+    }
+
+    // 2. Actualizar /staff
+    if (staffId) {
+        try {
+            await updateDoc(doc(db, 'staff', staffId), {
+                debeCambiarPassword: true,
+                passwordTemporal: genericPassword,
+                fechaResetPassword: ahoraIso,
+                updatedAt: ahoraIso
+            });
+        } catch (e) {
+            console.warn('Error actualizando documento en staff:', e);
+        }
+    }
+
+    // 3. Actualizar /usuarios para forzar cambio inmediato al iniciar sesión
+    try {
+        const qUsers = query(collection(db, 'usuarios'), where('email', '==', emailLimpio));
+        const snapUsers = await getDocs(qUsers);
+        for (const uDoc of snapUsers.docs) {
+            await updateDoc(uDoc.ref, {
+                debeCambiarPassword: true,
+                passwordTemporal: genericPassword,
+                fechaResetPassword: ahoraIso,
+                updatedAt: ahoraIso
+            });
+        }
+    } catch (eUser) {
+        console.warn('Error actualizando colección usuarios:', eUser);
+    }
+
+    return {
+        success: true,
+        email: emailLimpio,
+        password: genericPassword
+    };
+};

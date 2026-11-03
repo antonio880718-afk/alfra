@@ -55,10 +55,16 @@ service cloud.firestore {
     }
 
     function isPacienteOwner(pacienteId) {
-      let pacDoc = get(/databases/$(database)/documents/pacientes/$(pacienteId));
-      return pacDoc != null && (
-        pacDoc.data.uid == request.auth.uid || 
-        (pacDoc.data.email != null && request.auth.token.email != null && pacDoc.data.email == request.auth.token.email)
+      let pacPath = /databases/$(database)/documents/pacientes/$(pacienteId);
+      let userPath = /databases/$(database)/documents/usuarios/$(request.auth.uid);
+      return (
+        exists(pacPath) && (
+          get(pacPath).data.get('uid', '') == request.auth.uid || 
+          (get(pacPath).data.get('email', '') != '' && request.auth.token.email != null && get(pacPath).data.get('email', '') == request.auth.token.email) ||
+          (get(pacPath).data.get('telefono', '') != '' && request.auth.token.email != null && request.auth.token.email == get(pacPath).data.get('telefono', '') + '@paciente.alfra.mx')
+        )
+      ) || (
+        exists(userPath) && get(userPath).data.get('pacienteId', '') == pacienteId
       );
     }
 
@@ -70,16 +76,30 @@ service cloud.firestore {
       allow write: if isMasterAdmin() || hasRole('Administrador') || (isSignedIn() && isOwner(userId));
     }
 
+    // Directorio seguro de resolución de teléfonos para Login de pacientes
+    // Permite consultar un documento específico por teléfono (get), pero NO listar la colección (list)
+    match /directorio_pacientes/{telefono} {
+      allow get: if true;
+      allow list: if isStaff();
+      allow create, update: if true;
+      allow delete: if isStaff();
+    }
+
     // Patient records
     match /pacientes/{pacienteId} {
       allow read: if isStaff() || (isSignedIn() && (
         resource.data.uid == request.auth.uid || 
-        (resource.data.email != null && request.auth.token.email != null && resource.data.email == request.auth.token.email)
+        (resource.data.email != null && request.auth.token.email != null && resource.data.email == request.auth.token.email) ||
+        (resource.data.telefono != null && request.auth.token.email != null && request.auth.token.email == resource.data.telefono + '@paciente.alfra.mx') ||
+        (exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)) && get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.get('pacienteId', '') == pacienteId)
       )); 
       allow create: if isSignedIn(); 
       allow update: if isStaff() || (isSignedIn() && (
         resource.data.uid == request.auth.uid || 
-        (resource.data.email != null && request.auth.token.email != null && resource.data.email == request.auth.token.email)
+        (resource.data.email != null && request.auth.token.email != null && resource.data.email == request.auth.token.email) ||
+        (resource.data.telefono != null && request.auth.token.email != null && request.auth.token.email == resource.data.telefono + '@paciente.alfra.mx') ||
+        (exists(/databases/$(database)/documents/usuarios/$(request.auth.uid)) && get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.get('pacienteId', '') == pacienteId) ||
+        (!('uid' in resource.data) || resource.data.uid == null || resource.data.uid == '')
       ));
       allow delete: if isMasterAdmin() || hasRole('Administrador');
     }
@@ -114,7 +134,7 @@ service cloud.firestore {
 
     // Services / Treatments
     match /servicios/{servicioId} {
-      allow read: if isStaff();
+      allow read: if true;
       allow write: if isMasterAdmin() || hasRole('Administrador');
     }
 
@@ -136,16 +156,26 @@ service cloud.firestore {
 
     // Appointments
     match /citas/{citaId} {
-      allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
-      allow create: if isStaff() || (isSignedIn() && isPacienteOwner(request.resource.data.pacienteId));
+        allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+        allow create: if isStaff() || isSignedIn();
       allow update: if isStaff();
       allow delete: if isMasterAdmin() || hasRole('Administrador');
     }
 
     // Specialist Alerts
+    match /alertas_recepcion/{docId} {
+      allow read, update, delete: if isStaff();
+      allow create: if isSignedIn();
+    }
+
+    match /alertas_admin/{docId} {
+      allow read, update, delete: if isStaff();
+      allow create: if isSignedIn();
+    }
+
     match /alertas_pacientes/{alertId} {
-      allow read: if isStaff();
-      allow create: if isStaff();
+        allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+        allow create: if isStaff() || isSignedIn();
       allow update: if isStaff();
       allow delete: if isMasterAdmin();
     }
@@ -247,7 +277,7 @@ service cloud.firestore {
 
     // Cupones Comerciales
     match /cupones/{docId} {
-      allow read: if isStaff();
+      allow read: if true;
       allow write: if isMasterAdmin() || hasRole('Administrador');
     }
 

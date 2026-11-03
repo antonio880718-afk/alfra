@@ -7,12 +7,14 @@ import { Input } from '../../components/ui/Input';
 import {
     Calendar as CalendarIcon, ChevronLeft, ChevronRight, Clock, User, FileText, AlertCircle, AlertTriangle, Building, Sparkles,
     MessageCircle, Plus, Info, X, CheckCircle, Loader, Bell, Search,
-    Filter, LayoutGrid, List, Navigation, History, Trash2, Edit, PlusCircle, MapPin, Stamp, Heart, MessageSquare
+    Filter, LayoutGrid, List, Navigation, History, Trash2, Edit, PlusCircle, MapPin, Stamp, Heart, MessageSquare, Gift
 } from 'lucide-react';
 import { format, addDays, subDays, startOfDay, isSameDay } from 'date-fns';
 import { es } from 'date-fns/locale';
 import ReciboDigital from '../../components/ui/ReciboDigital';
 import AgendaGlobalEjecutiva from '../../components/agenda/AgendaGlobalEjecutiva';
+import { obtenerProximosCumpleanos } from '../../utils/cumpleanosUtils';
+import ModalTarjetaCumpleanos from '../../components/cumpleanos/ModalTarjetaCumpleanos';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { onCitasChange, createCita, updateCitaStatus, crearAlertaPaciente, CABINAS_ALFRA, checkConflictoCabina, isStaffClinico, getTratamientosYPlanesActivosPaciente, verificarMovimientosExpediente } from '../../services/citasService';
@@ -58,6 +60,20 @@ export default function CalendarioCitas() {
     const [availView, setAvailView] = useState('dia'); // 'dia' | 'semana'
     const [citas, setCitas] = useState([]);
     const [loadingCitas, setLoadingCitas] = useState(true);
+    const [pacientesLista, setPacientesLista] = useState([]);
+    const [pacienteCumpleModal, setPacienteCumpleModal] = useState(null);
+    const [showCumpleanosModal, setShowCumpleanosModal] = useState(false);
+
+    useEffect(() => {
+        const unsubP = onPacientesChange((pList) => {
+            setPacientesLista(pList || []);
+        });
+        return () => { if (unsubP) unsubP(); };
+    }, []);
+
+    const cumpleanosProximos = useMemo(() => {
+        return obtenerProximosCumpleanos(pacientesLista, 30);
+    }, [pacientesLista]);
     const [saving, setSaving] = useState(false);
     const [isModaling, setIsModaling] = useState(false);
     const [editingCitaId, setEditingCitaId] = useState(null); // null = nueva cita, 'abc' = editando cita existente
@@ -1115,6 +1131,21 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                     </button>
                 </div>
 
+                <button 
+                    type="button"
+                    onClick={() => setShowCumpleanosModal(true)}
+                    className="h-9 px-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 shadow-md font-black text-[9px] uppercase tracking-widest flex items-center justify-center gap-1.5 whitespace-nowrap !flex-nowrap shrink-0 transition-all cursor-pointer relative"
+                    title="Ver próximos cumpleaños y diseñar tarjeta de regalo personalizada"
+                >
+                    <Gift size={14} className="shrink-0 text-slate-900" />
+                    <span>🎂 Cumpleaños</span>
+                    {cumpleanosProximos.length > 0 && (
+                        <span className="ml-1 px-1.5 py-0.2 bg-slate-950 text-white text-[9px] font-black rounded-full shadow-sm">
+                            {cumpleanosProximos.length}
+                        </span>
+                    )}
+                </button>
+
                 <Button 
                     variant="primary" 
                     className="h-9 px-4 rounded-xl bg-turquesa shadow-md shadow-turquesa/10 font-black text-[9px] uppercase tracking-widest flex items-center justify-center gap-1.5 whitespace-nowrap !flex-nowrap shrink-0 max-w-fit" 
@@ -1124,53 +1155,84 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                 </Button>
             </div>
 
-            {/* Alertas de Dudas / Molestias Post-Consulta Concierge */}
+            {/* Alertas Inteligentes Post-Consulta Concierge */}
             {dudasPostConsulta.length > 0 && (
-                <div className="bg-gradient-to-r from-rose-50 to-pink-50 border-2 border-rose-300 rounded-2xl p-4 space-y-3 shadow-md animate-in fade-in">
+                <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-pink-50 border-2 border-teal-300 rounded-2xl p-4 space-y-3 shadow-md animate-in fade-in">
                     <div className="flex items-start gap-3">
-                        <div className="p-2.5 bg-rose-500 text-white rounded-xl">
+                        <div className="p-2.5 bg-teal-600 text-white rounded-xl">
                             <Heart size={20} />
                         </div>
                         <div>
-                            <h4 className="text-sm font-black text-rose-950 uppercase tracking-wide">
-                                🛎️ {dudasPostConsulta.length} Seguimiento(s) Concierge Post-Consulta
+                            <h4 className="text-sm font-black text-slate-900 uppercase tracking-wide">
+                                🛎️ {dudasPostConsulta.length} Seguimiento(s) de Pacientes Post-Consulta
                             </h4>
-                            <p className="text-xs text-rose-800">
-                                Los siguientes pacientes completaron su micro check-in reportando dudas o molestias:
+                            <p className="text-xs text-slate-600">
+                                Check-ins completados por pacientes desde su App tras su sesión:
                             </p>
                         </div>
                     </div>
                     <div className="space-y-2">
-                        {dudasPostConsulta.map((duda) => (
-                            <div key={duda.id} className="bg-white p-3 rounded-xl border border-rose-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 shadow-sm">
-                                <div className="space-y-0.5">
-                                    <p className="text-xs font-black text-gray-900">
-                                        {duda.pacienteNombre} <span className="text-[10px] text-gray-500 font-bold">({duda.servicio || 'Tratamiento'} con {duda.especialistaNombre})</span>
-                                    </p>
-                                    <p className="text-xs text-rose-700 bg-rose-50 p-2 rounded-lg border border-rose-100">
-                                        "{duda.nota || 'Reportó tener dudas sobre su sesión.'}"
-                                    </p>
-                                </div>
-                                <div className="flex items-center gap-2 shrink-0">
-                                    {duda.pacienteTelefono && (
-                                        <a
-                                            href={`https://wa.me/${duda.pacienteTelefono.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hola ${duda.pacienteNombre}, te escribimos de Recepción Clínica ALFRA respecto a tu duda sobre tu sesión con ${duda.especialistaNombre}. ¿Cómo te podemos apoyar?`)}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-black cursor-pointer shadow-sm"
+                        {dudasPostConsulta.map((duda) => {
+                            const esExcelente = duda.estado === 'excelente';
+                            const esBien = duda.estado === 'bien' || (duda.nota || '').toLowerCase().includes('normal');
+                            const esDuda = duda.estado === 'duda';
+                            const nombre = (duda.pacienteNombre || 'Paciente').split(' ')[0];
+                            const esp = duda.especialistaNombre || 'Clínica ALFRA';
+
+                            let msgWhatsApp = '';
+                            if (esExcelente) {
+                                msgWhatsApp = `¡Hola ${nombre}! 🌟 En Clínica ALFRA nos alegra muchísimo saber que te sentiste de maravilla tras tu última sesión con ${esp}. Queremos felicitarte y recordarte que la constancia, la hidratación y la disciplina son el secreto de tus resultados. ¡Estamos contigo en cada paso de tu cambio! 💖✨`;
+                            } else if (esBien) {
+                                msgWhatsApp = `¡Hola ${nombre}! 🌿 En Clínica ALFRA nos da mucho gusto saber que tu evolución marcha muy bien tras tu sesión con ${esp}. Recuerda continuar con tus cuidados en casa y tomar suficiente agua. ¡Cualquier duda o inquietud estamos a tus órdenes! ✨`;
+                            } else {
+                                msgWhatsApp = `Hola ${nombre}, te escribimos de Recepción Clínica ALFRA respecto a la duda que nos compartiste sobre tu sesión con ${esp}. ¿Cómo te podemos apoyar?`;
+                            }
+
+                            return (
+                                <div key={duda.id} className="bg-white p-3 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 shadow-sm">
+                                    <div className="space-y-1">
+                                        <div className="flex items-center gap-2">
+                                            <p className="text-xs font-black text-gray-900">
+                                                {duda.pacienteNombre} <span className="text-[10px] text-gray-500 font-bold">({duda.servicio || 'Tratamiento'} con {duda.especialistaNombre})</span>
+                                            </p>
+                                            <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-full border ${
+                                                esExcelente
+                                                    ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                                                    : esBien
+                                                    ? 'bg-teal-100 text-teal-800 border-teal-300'
+                                                    : 'bg-rose-100 text-rose-800 border-rose-300'
+                                            }`}>
+                                                {esExcelente ? '🤩 Excelente' : esBien ? '🙂 Normal / Bien' : '🤔 Duda'}
+                                            </span>
+                                        </div>
+                                        <p className="text-xs text-gray-700 bg-gray-50 p-2 rounded-lg border border-gray-100 italic">
+                                            "{duda.nota || (esExcelente ? 'Se sintió excelente' : esBien ? 'Evolución normal' : 'Tiene una duda sobre sus cuidados')}"
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-2 shrink-0">
+                                        {duda.pacienteTelefono && (
+                                            <a
+                                                href={`https://wa.me/${duda.pacienteTelefono.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(msgWhatsApp)}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-black cursor-pointer shadow-sm text-white ${
+                                                    esExcelente || esBien ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-rose-600 hover:bg-rose-700'
+                                                }`}
+                                            >
+                                                <MessageSquare size={13} />
+                                                {esExcelente ? 'Felicitar por WhatsApp' : esBien ? 'WhatsApp Motivador' : 'Atender Duda'}
+                                            </a>
+                                        )}
+                                        <button
+                                            onClick={() => handleResolverDudaPostConsulta(duda.id)}
+                                            className="inline-flex items-center gap-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold cursor-pointer"
                                         >
-                                            <MessageSquare size={13} /> WhatsApp
-                                        </a>
-                                    )}
-                                    <button
-                                        onClick={() => handleResolverDudaPostConsulta(duda.id)}
-                                        className="inline-flex items-center gap-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold cursor-pointer"
-                                    >
-                                        ✓ Marcar Atendido
-                                    </button>
+                                            ✓ Marcar Atendido
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             )}
@@ -2342,6 +2404,157 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                         </div>
                     </div>
                 </div>
+            )}
+
+            {/* Modal de Próximos Cumpleaños para Recepción */}
+            {showCumpleanosModal && (
+                <div 
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-md p-4 animate-in fade-in"
+                    onClick={() => setShowCumpleanosModal(false)}
+                >
+                    <div 
+                        className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl overflow-hidden border border-amber-200/50 flex flex-col max-h-[85vh] animate-in zoom-in-95 duration-200"
+                        onClick={e => e.stopPropagation()}
+                    >
+                        {/* Cabecera */}
+                        <div className="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 p-5 text-slate-900 flex justify-between items-center">
+                            <div className="flex items-center gap-3">
+                                <div className="p-2.5 bg-white/30 backdrop-blur-sm rounded-2xl text-slate-900 shadow-sm">
+                                    <Gift size={24} />
+                                </div>
+                                <div>
+                                    <div className="flex items-center gap-2">
+                                        <h3 className="font-black text-xl tracking-tight text-slate-950">Próximos Cumpleaños</h3>
+                                        <span className="text-xs font-black bg-slate-950 text-amber-300 px-2.5 py-0.5 rounded-full">
+                                            {cumpleanosProximos.length} pacientes
+                                        </span>
+                                    </div>
+                                    <p className="text-xs font-bold text-slate-800 mt-0.5">
+                                        Fechas exactas calculadas para los próximos 30 días • Clínica ALFRA
+                                    </p>
+                                </div>
+                            </div>
+                            <button
+                                onClick={() => setShowCumpleanosModal(false)}
+                                className="p-2 text-slate-900 hover:bg-black/10 rounded-xl transition-colors cursor-pointer"
+                            >
+                                <X size={20} />
+                            </button>
+                        </div>
+
+                        {/* Contenido / Listado */}
+                        <div className="p-5 overflow-y-auto space-y-3 flex-1 bg-slate-50/50">
+                            {cumpleanosProximos.length === 0 ? (
+                                <div className="text-center py-12">
+                                    <div className="w-16 h-16 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <Gift size={32} />
+                                    </div>
+                                    <p className="text-sm font-bold text-slate-700">No hay cumpleaños en los próximos 30 días</p>
+                                    <p className="text-xs text-slate-400 mt-1">Los cumpleaños se calcularán automáticamente según la fecha de nacimiento de cada expediente.</p>
+                                </div>
+                            ) : (
+                                cumpleanosProximos.map((paciente) => {
+                                    const tel = String(paciente.telefono || paciente.phone || '').replace(/\D/g, '');
+                                    const esHoy = paciente.detalleCumple?.esHoy;
+                                    return (
+                                        <div 
+                                            key={paciente.id}
+                                            className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
+                                                esHoy 
+                                                    ? 'bg-gradient-to-r from-amber-50 via-white to-amber-50/50 border-amber-300 shadow-md ring-2 ring-amber-300/40' 
+                                                    : 'bg-white border-slate-200/80 hover:border-amber-200 hover:shadow-sm'
+                                            }`}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <div className={`p-3 rounded-2xl shrink-0 ${
+                                                    esHoy ? 'bg-amber-400 text-slate-950 animate-bounce' : 'bg-turquesa/10 text-turquesa'
+                                                }`}>
+                                                    <Gift size={20} />
+                                                </div>
+                                                <div>
+                                                    <div className="flex items-center gap-2 flex-wrap">
+                                                        <h4 className="text-sm font-black text-slate-900">{paciente.nombre}</h4>
+                                                        <span className={`text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full ${
+                                                            esHoy
+                                                                ? 'bg-amber-400 text-slate-950 font-black shadow-sm'
+                                                                : 'bg-indigo-50 text-indigo-700 border border-indigo-200'
+                                                        }`}>
+                                                            {paciente.detalleCumple?.textoProximidad}
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex items-center gap-3 mt-1 flex-wrap text-xs">
+                                                        <span className="font-bold text-turquesa flex items-center gap-1">
+                                                            📅 {paciente.detalleCumple?.textoFechaExacta}
+                                                        </span>
+                                                        {paciente.detalleCumple?.edadCumple && (
+                                                            <span className="text-slate-500 font-semibold">
+                                                                • Cumple {paciente.detalleCumple.edadCumple} años
+                                                            </span>
+                                                        )}
+                                                        {paciente.telefono && (
+                                                            <span className="text-slate-400 text-[11px]">
+                                                                📞 {paciente.telefono}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
+                                                {tel && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => {
+                                                            const saludo = esHoy
+                                                                ? `¡Feliz Cumpleaños ${paciente.nombre}! 🎉 De parte de todo el equipo de Clínica ALFRA te deseamos un día maravilloso.`
+                                                                : `¡Hola ${paciente.nombre}! En Clínica ALFRA sabemos que tu cumpleaños es el ${paciente.detalleCumple?.textoFechaExacta} 🎂 y queremos consentirte.`;
+                                                            window.open(`https://wa.me/52${tel}?text=${encodeURIComponent(saludo)}`, '_blank');
+                                                        }}
+                                                        className="px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold rounded-xl border border-emerald-200 transition-colors flex items-center gap-1.5 cursor-pointer"
+                                                        title="Enviar felicitación rápida por WhatsApp"
+                                                    >
+                                                        <MessageCircle size={14} className="text-emerald-600" /> WhatsApp
+                                                    </button>
+                                                )}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setPacienteCumpleModal(paciente)}
+                                                    className="px-3.5 py-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 text-xs font-black rounded-xl shadow-sm flex items-center gap-1.5 transition-all cursor-pointer"
+                                                    title="Diseñar tarjeta de regalo personalizada (PNG/JPEG) con regalo manual o sugerido"
+                                                >
+                                                    <Sparkles size={14} /> 🎁 Tarjeta & Regalo
+                                                </button>
+                                            </div>
+                                        </div>
+                                    );
+                                })
+                            )}
+                        </div>
+
+                        {/* Pie con recordatorio */}
+                        <div className="p-4 bg-white border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span className="text-[11px] text-turquesa font-bold">
+                                💡 Tip: Aplica el 20% de descuento o un regalo especial a los pacientes en su mes.
+                            </span>
+                            <Button 
+                                variant="ghost" 
+                                className="h-8 px-4 text-xs font-bold"
+                                onClick={() => setShowCumpleanosModal(false)}
+                            >
+                                Cerrar
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Modal de Tarjeta de Cumpleaños ALFRA VIP (Descargable PNG/JPEG con Regalo) */}
+            {pacienteCumpleModal && (
+                <ModalTarjetaCumpleanos
+                    isOpen={!!pacienteCumpleModal}
+                    onClose={() => setPacienteCumpleModal(null)}
+                    paciente={pacienteCumpleModal}
+                />
             )}
 
         </div>

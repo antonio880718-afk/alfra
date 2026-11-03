@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import ReciboDigital from "../../components/ui/ReciboDigital";
 import AutoAgendadoModal from "../../components/paciente/AutoAgendadoModal";
@@ -21,7 +21,7 @@ import { getPacienteByUid } from "../../services/pacientesService";
 import { getSeguimientosPaciente, getApoyoEnCasa, getDailyTrackers, saveDailyTracker } from "../../services/seguimientoService";
 import { getRecibosPaciente } from "../../services/recibosService";
 import { getCitasByPaciente, onCitasPacienteChange } from "../../services/citasService";
-import { getTratamientosPaciente, getSesionesPaciente, MEDIDAS_CORPORALES } from "../../services/tratamientosService";
+import { getTratamientosPaciente, onTratamientosPacienteChange, getSesionesPaciente, MEDIDAS_CORPORALES } from "../../services/tratamientosService";
 import Barcode39 from "../../components/ui/Barcode39";
 
 const auth = getAuth();
@@ -1050,7 +1050,7 @@ export default function PacienteProfile() {
     telefono: "", 
     fechaNacimiento: "", 
     fotoUrl: null, 
-    tipoTratamiento: "Mixto", 
+    tipoTratamiento: "", 
     membresia: null, 
     sellosLealtad: 0, 
     recompensasDisponibles: 0, 
@@ -1092,6 +1092,9 @@ export default function PacienteProfile() {
   const [vasosAguaHoy, setVasosAguaHoy] = useState(0);
   const [zoomFotoUrl, setZoomFotoUrl] = useState(null);
   const [faseInfoModal, setFaseInfoModal] = useState(null);
+  const [mostrarModalInfoBienestar, setMostrarModalInfoBienestar] = useState(false);
+    const [mostrarModalInfoRoadmap, setMostrarModalInfoRoadmap] = useState(false);
+  const [tipoRoadmapSeleccionado, setTipoRoadmapSeleccionado] = useState('auto');
 
   const handleFotoUpload = async (e) => {
     const file = e.target.files[0];
@@ -1369,8 +1372,42 @@ export default function PacienteProfile() {
     return hrs > 0 ? (hrs + ':' + m + ':' + s) : (m + ':' + s);
   };
 
+  // ==================== VALIDACIÓN DE TRATAMIENTOS ACTIVOS ====================
+  const tratamientosActivos = useMemo(() => {
+    return (tratamientos || []).filter(t => t.activo !== false && t.status !== 'Cancelado' && t.status !== 'Finalizado');
+  }, [tratamientos]);
+
+  const tieneTratamientosActivos = tratamientosActivos.length > 0;
+
+  const tieneCorporalActivo = useMemo(() => {
+    return tratamientosActivos.some(t => {
+      const txt = `${t.tipo || ''} ${t.nombre || ''}`.toLowerCase();
+      return txt.includes('corporal') || txt.includes('lipo') || txt.includes('reduct') || txt.includes('reafirm') || txt.includes('celulitis') || txt.includes('moldeo') || txt.includes('cavit') || txt.includes('radiofrecuencia');
+    });
+  }, [tratamientosActivos]);
+
+  const tieneFacialActivo = useMemo(() => {
+    return tratamientosActivos.some(t => {
+      const txt = `${t.tipo || ''} ${t.nombre || ''}`.toLowerCase();
+      return txt.includes('facial') || txt.includes('dermapen') || txt.includes('peeling') || txt.includes('limpieza') || txt.includes('hidra') || txt.includes('antiedad') || txt.includes('envejec') || txt.includes('arruga') || txt.includes('cutan') || txt.includes('botox') || txt.includes('armoniza') || txt.includes('acne') || txt.includes('acné') || txt.includes('melasma');
+    });
+  }, [tratamientosActivos]);
+
+  // Chequeo de si el paciente realmente tiene datos biométricos
+  const tieneDatosBiometricos = useMemo(() => {
+    if (perfilPaciente?.peso && parseFloat(perfilPaciente.peso) > 0) return true;
+    if (perfilPaciente?.metaCalorica && parseInt(perfilPaciente.metaCalorica) > 0) return true;
+    if (tratamientoActivo && sesionesPorTrat[tratamientoActivo.id]?.length > 0) {
+      return sesionesPorTrat[tratamientoActivo.id].some(s => s?.medidas?.peso || s?.metasPaciente?.metaCalorica);
+    }
+    if (progresoData?.length > 0 && progresoData[0]?.peso) return true;
+    return false;
+  }, [perfilPaciente, tratamientoActivo, sesionesPorTrat, progresoData]);
+
   // ==================== RECOMENDACIONES DE TU ESPECIALISTA (POINT 4) ====================
   const recomendacionesEspecialista = useMemo(() => {
+    if (!tieneTratamientosActivos) return [];
+
     const defaults = [
       { id: 'hidra_25l', texto: '💧 Hidratación Profunda', detalle: 'Tomar 2.5 L de agua natural al día para optimizar el drenaje linfático' },
       { id: 'evitar_calor', texto: '🚫 Cuidado Térmico Post-Tratamiento', detalle: 'Evitar saunas, vapor y exposición solar directa por 24 a 48 horas' },
@@ -1380,15 +1417,15 @@ export default function PacienteProfile() {
       { id: 'descanso_reparador', texto: '😴 Descanso Continuo de 7-8 Horas', detalle: 'Dormir las horas recomendadas para permitir reparación dérmica' }
     ];
     if (apoyoCuidados && apoyoCuidados.length > 0) {
-      const custom = apoyoCuidados.map(c => ({
-        id: c.id || cuidado_,
+      const custom = apoyoCuidados.map((c, idx) => ({
+        id: c.id || `cuidado_${idx}`,
         texto: c.texto || c.categoria || c.tipo || 'Indicación de Especialista',
-        detalle: c.instrucciones || 'Cuidado personalizado indicado en tu consulta'
+        detalle: c.instrucciones || c.detalle || 'Cuidado personalizado indicado en tu consulta'
       }));
       return [...custom, ...defaults.slice(custom.length)];
     }
     return defaults;
-  }, [apoyoCuidados]);
+  }, [tieneTratamientosActivos, apoyoCuidados]);
 
   const recomendacionesCumplidasCount = useMemo(() => {
     return recomendacionesEspecialista.filter(r => !!apoyoCompletadoHoy[r.id]).length;
@@ -1396,6 +1433,24 @@ export default function PacienteProfile() {
 
   // ==================== ALGORITMO METABÓLICO CLÍNICO CIENTÍFICO (MIFFLIN-ST JEOR + ALFRA) ====================
   const diagnosticoMetabolico = useMemo(() => {
+    if (!tieneDatosBiometricos) {
+      return {
+        tieneDatos: false,
+        peso: null,
+        estatura: null,
+        edad: null,
+        tmb: 0,
+        tdee: 0,
+        metaFinal: 0,
+        objetivoClinico: 'Pendiente de Valoración',
+        razonClinica: 'Tu meta calórica se calibrará en cabina cuando tu especialista registre tus datos biométricos.',
+        macros: {
+          proteina: { gramos: 0, kcal: 0, pct: 0 },
+          grasas: { gramos: 0, kcal: 0, pct: 0 },
+          carbs: { gramos: 0, kcal: 0, pct: 0 }
+        }
+      };
+    }
     // 1. Obtener peso actual (última sesión clínica o perfil)
     let peso = 65;
     if (tratamientoActivo && sesionesPorTrat[tratamientoActivo.id]?.length > 0) {
@@ -1461,7 +1516,7 @@ export default function PacienteProfile() {
     const tipoTrat = (perfilPaciente?.tipoTratamiento || tratamientoActivo?.tipo || tratamientoActivo?.nombre || 'Mixto').toLowerCase();
     let deficitKcal = -350;
     let objetivoClinico = "Quema de Grasa & Firmeza";
-    let razonClinica = "En tus sesiones en cabina aflojamos y destruimos la grasa acumulada. Con esta meta exacta de calorías, tu cuerpo usa esa grasa como energía y la elimina por completo, asegurando que tu piel se mantenga firme y no quede floja.";
+    let razonClinica = "En tus sesiones en cabina ablandamos y facilitamos la movilización de la grasa acumulada. Con esta meta de calorías, tu cuerpo aprovecha esa grasa como energía para eliminarla por completo, además de mantener la elasticidad cutánea.";
 
     if (tipoTrat.includes('reafirm') || tipoTrat.includes('tensado') || tipoTrat.includes('radiofrecuencia')) {
       deficitKcal = 0;
@@ -1598,7 +1653,8 @@ export default function PacienteProfile() {
 
   // ==================== ÍNDICE DE BIENESTAR DINÁMICO (POINT 6) ====================
   const indiceBienestar = useMemo(() => {
-    let score = 40; // Base por adherencia activa
+    if (!tieneTratamientosActivos) return 0;
+    let score = 20; // Base por tratamiento activo
     // Vasos de agua: +3 pts por cada vaso (hasta 30 pts)
     score += Math.min(30, (vasosAguaHoy || 0) * 3);
     // Recomendaciones cumplidas: +6 pts por cada recomendación completada
@@ -1606,11 +1662,10 @@ export default function PacienteProfile() {
     score += Math.min(30, checks * 6);
     // Alimentación registrada: +10 pts
     if (alimentosHoy && alimentosHoy.length > 0) score += 10;
-    // Ejercicio en segundo plano activo o terminado hoy: +15 pts
-    if (isTracking || historialEjercicio.length > 0) score += 15;
-    return Math.min(100, Math.max(30, score));
-  }, [vasosAguaHoy, apoyoCompletadoHoy, recomendacionesEspecialista, alimentosHoy, isTracking, historialEjercicio]);
-
+    // Ejercicio en segundo plano activo o terminado hoy: +10 pts
+    if (isTracking || historialEjercicio.length > 0) score += 10;
+    return Math.min(100, Math.max(0, score));
+  }, [tieneTratamientosActivos, vasosAguaHoy, apoyoCompletadoHoy, recomendacionesEspecialista, alimentosHoy, isTracking, historialEjercicio]);
 
   // Flip card membresía
   const [flipped, setFlipped] = useState(false);
@@ -1618,6 +1673,10 @@ export default function PacienteProfile() {
   useEffect(() => {
     if (!userAuth) return;
     let unsubCitas = null;
+    let unsubTrat = null;
+    const safetyTimer = setTimeout(() => {
+      setLoadingTrat(false);
+    }, 3500);
     const load = async () => {
       try {
         const paciente = await getPacienteByUid(userAuth.uid, userAuth.email);
@@ -1628,7 +1687,7 @@ export default function PacienteProfile() {
             telefono: paciente.telefono || paciente.phone || "",
             fechaNacimiento: paciente.fechaNacimiento || "",
             fotoUrl: paciente.fotoUrl || null,
-            tipoTratamiento: paciente.tipoTratamiento || "Mixto",
+            tipoTratamiento: paciente.tipoTratamiento || "",
             membresia: (() => {
             let m = paciente.membresia || null;
             if (m && typeof m === "object" && (!m.codigo || !String(m.codigo).startsWith("MEM-"))) {
@@ -1691,22 +1750,71 @@ export default function PacienteProfile() {
             setApoyoLoading(false);
           }
 
-          // 5. Tratamientos V2 y Sesiones
+          // 5. Tratamientos V2 y Sesiones (con escucha en tiempo real scoped e identificación multi-criterio)
           try {
-            const trList = await getTratamientosPaciente(paciente.id);
-            setTratamientos(trList || []);
-            if (trList?.length > 0) {
-              setTratamientoActivo(trList[0]);
-              const sesMap = {};
-              for (const tr of trList) {
-                const sList = await getSesionesPaciente(tr.id);
-                sesMap[tr.id] = (sList || []).sort((a,b) => new Date(a.fecha) - new Date(b.fecha));
-              }
-              setSesionesPorTrat(sesMap);
-            }
-            setLoadingTrat(false);
+            unsubTrat = onTratamientosPacienteChange(
+              paciente.id,
+              paciente.nombre,
+              async (trList) => {
+                try {
+                  const safeList = trList || [];
+                  setTratamientos(safeList);
+                  if (safeList.length > 0) {
+                    setTratamientoActivo(prev => {
+                      if (prev && safeList.some(t => t.id === prev.id)) {
+                        return safeList.find(t => t.id === prev.id);
+                      }
+                      return safeList[0];
+                    });
+                    try {
+                      const sList = await getSesionesPaciente(paciente.id);
+                      const sesMap = {};
+                      (sList || []).forEach(s => {
+                        const tId = s.tratamientoId || safeList[0].id;
+                        if (!sesMap[tId]) sesMap[tId] = [];
+                        sesMap[tId].push(s);
+                      });
+                      safeList.forEach(tr => {
+                        if (!sesMap[tr.id]) sesMap[tr.id] = [];
+                      });
+                      setSesionesPorTrat(sesMap);
+                    } catch (sesErr) {
+                      console.warn("Aviso cargando sesiones del paciente:", sesErr);
+                      setSesionesPorTrat({});
+                    }
+                  } else {
+                    setTratamientoActivo(null);
+                    setSesionesPorTrat({});
+                  }
+                } catch (innerErr) {
+                  console.warn("Error procesando tratamientos recibidos:", innerErr);
+                } finally {
+                  setLoadingTrat(false);
+                }
+              },
+              paciente.telefono
+            );
           } catch(e) {
-            console.warn("Aviso tratamientos v2:", e);
+            console.warn("Aviso tratamientos v2 listener:", e);
+            try {
+              const trList = await getTratamientosPaciente(paciente.id, paciente.nombre, paciente.telefono);
+              const safeList = trList || [];
+              setTratamientos(safeList);
+              if (safeList.length > 0) {
+                setTratamientoActivo(safeList[0]);
+                const sList = await getSesionesPaciente(paciente.id).catch(() => []);
+                const sesMap = {};
+                (sList || []).forEach(s => {
+                  const tId = s.tratamientoId || safeList[0].id;
+                  if (!sesMap[tId]) sesMap[tId] = [];
+                  sesMap[tId].push(s);
+                });
+                safeList.forEach(tr => {
+                  if (!sesMap[tr.id]) sesMap[tr.id] = [];
+                });
+                setSesionesPorTrat(sesMap);
+              }
+            } catch(eTr) { console.warn("Error fallback tratamientos:", eTr); }
             setLoadingTrat(false);
           }
 
@@ -1784,7 +1892,7 @@ export default function PacienteProfile() {
       }
     };
     load();
-    return () => { if (unsubCitas) unsubCitas(); };
+    return () => { clearTimeout(safetyTimer); if (unsubCitas) unsubCitas(); if (unsubTrat) unsubTrat(); };
   }, [userAuth?.uid]);
 
   const handlePhotoUpload = async (e) => {
@@ -1875,9 +1983,33 @@ export default function PacienteProfile() {
         ultimoCheckinPostConsulta: payloadCheckin
       });
 
+      
+      // Disparar alerta en tiempo real para Recepción
+      try {
+        await addDoc(collection(db, "alertas_recepcion"), {
+          ...payloadCheckin,
+          tipo: 'checkin_post_consulta',
+          mensaje: `El paciente ${payloadCheckin.pacienteNombre} respondió a su check-in post-sesión: ${estado.toUpperCase()} (${payloadCheckin.nota || 'Sin nota adicional'})`,
+          leida: false,
+          atendido: false,
+          creadoEn: new Date().toISOString()
+        });
+      } catch (errAlert) {
+        console.warn("Aviso alerta recepcion checkin:", errAlert);
+      }
       setCheckinEnviado(estado);
       setMostrarModalDuda(false);
       setCheckinNota("");
+      if (estado === 'duda') {
+        try {
+          const telClinica = '527535386018';
+          const notaTexto = (notaCustom || checkinNota || '').trim();
+          const textoDuda = `Hola Clínica ALFRA, soy ${(perfilPaciente.nombre || 'paciente de ALFRA').trim()}. Me comunico desde mi perfil en la app porque tengo una duda sobre mi tratamiento: "${notaTexto}".`;
+          window.open(`https://wa.me/${telClinica}?text=${encodeURIComponent(textoDuda)}`, '_blank');
+        } catch (eWa) {
+          console.warn('Aviso apertura WhatsApp duda:', eWa);
+        }
+      }
     } catch(err) {
       console.error("Error guardando checkin post-consulta:", err);
     } finally {
@@ -2001,13 +2133,48 @@ export default function PacienteProfile() {
     return all.sort((a,b) => new Date(b.fecha) - new Date(a.fecha))[0] || null;
   }, [sesionesPorTrat]);
 
-  // Roadmap de 4 fases clínicas
-  const roadmapFases = useMemo(() => {
-    let fActual = 1;
-    if (totalSesiones >= 9) fActual = 4;
-    else if (totalSesiones >= 6) fActual = 3;
-    else if (totalSesiones >= 3) fActual = 2;
-    else fActual = 1;
+  // Resuelve la fase activa del Roadmap considerando el control manual del Especialista en Expediente Clínico (Propuesta 4 - Punto 3)
+  const resolverFaseRoadmap = useCallback((tipoTarget) => {
+    const tratEspecifico = tratamientos.find(t => {
+      const tipo = (t.tipo || '').toLowerCase();
+      const nom = (t.nombre || '').toLowerCase();
+      if (tipoTarget === 'facial') {
+        return tipo.includes('facial') || nom.includes('facial') || nom.includes('envejec') || nom.includes('antiedad') || nom.includes('dermapen') || nom.includes('peeling') || nom.includes('limpieza') || nom.includes('hidra') || nom.includes('acne') || nom.includes('acné') || nom.includes('melasma');
+      }
+      return tipo.includes('corporal') || nom.includes('corporal') || nom.includes('lipo') || nom.includes('reduct') || nom.includes('reafirm') || nom.includes('cavit') || nom.includes('radiofrecuencia');
+    });
+    const trat = tratEspecifico || (tratamientoActivo && (() => {
+      const nom = (tratamientoActivo.nombre || '').toLowerCase();
+      const tip = (tratamientoActivo.tipo || '').toLowerCase();
+      if (tipoTarget === 'facial' && (tip.includes('facial') || nom.includes('facial') || nom.includes('envejec') || nom.includes('antiedad') || nom.includes('dermapen') || nom.includes('peeling') || nom.includes('limpieza') || nom.includes('hidra') || nom.includes('acne') || nom.includes('acné') || nom.includes('melasma'))) return tratamientoActivo;
+      if (tipoTarget === 'corporal' && (tip.includes('corporal') || nom.includes('corporal') || nom.includes('lipo') || nom.includes('reduct') || nom.includes('reafirm'))) return tratamientoActivo;
+      return null;
+    })());
+    const faseManual = trat?.faseRoadmapManual;
+
+    if (faseManual && faseManual !== 'auto') {
+      return {
+        fase: Number(faseManual) || 1,
+        esManual: true,
+        tratamientoNombre: trat?.nombre || ''
+      };
+    }
+
+    let fAuto = 1;
+    if (totalSesiones >= 9) fAuto = 4;
+    else if (totalSesiones >= 6) fAuto = 3;
+    else if (totalSesiones >= 3) fAuto = 2;
+
+    return {
+      fase: fAuto,
+      esManual: false,
+      tratamientoNombre: trat?.nombre || ''
+    };
+  }, [tratamientos, tratamientoActivo, totalSesiones]);
+
+  // Roadmap Corporal de 4 fases clínicas
+  const roadmapCorporalFases = useMemo(() => {
+    const { fase: fActual, esManual } = resolverFaseRoadmap('corporal');
 
     return [
       {
@@ -2016,8 +2183,9 @@ export default function PacienteProfile() {
         sub: "Sesiones 1 a 2",
         icono: Sparkles,
         explicacion: "Activamos tu sistema circulatorio y linfático. El tejido se descongestiona y se prepara para recibir la aparatología y nutrientes.",
-        completada: totalSesiones >= 3,
-        activa: fActual === 1
+        completada: fActual > 1,
+        activa: fActual === 1,
+        esManual
       },
       {
         num: 2,
@@ -2025,8 +2193,9 @@ export default function PacienteProfile() {
         sub: "Sesiones 3 a 5",
         icono: Flame,
         explicacion: "Fase de máxima quema y movilización de grasa localizada. Notarás ligereza corporal y descenso acelerado de centímetros.",
-        completada: totalSesiones >= 6,
-        activa: fActual === 2
+        completada: fActual > 2,
+        activa: fActual === 2,
+        esManual
       },
       {
         num: 3,
@@ -2034,8 +2203,9 @@ export default function PacienteProfile() {
         sub: "Sesiones 6 a 8",
         icono: Target,
         explicacion: "Reafirmación de fibras de colágeno y elastina. Compactación de tejidos y perfilado de silueta para resultados estéticos notables.",
-        completada: totalSesiones >= 9,
-        activa: fActual === 3
+        completada: fActual > 3,
+        activa: fActual === 3,
+        esManual
       },
       {
         num: 4,
@@ -2043,13 +2213,80 @@ export default function PacienteProfile() {
         sub: "Sesión 9+",
         icono: Trophy,
         explicacion: "Blindaje de resultados. Tu metabolismo basal se estabiliza para asegurar que el cambio permanezca en el tiempo.",
-        completada: totalSesiones >= 12,
-        activa: fActual === 4
+        completada: fActual === 4 && totalSesiones >= 12,
+        activa: fActual === 4,
+        esManual
       }
     ];
-  }, [totalSesiones]);
+  }, [resolverFaseRoadmap, totalSesiones]);
 
-  const progresoGlobalPct = Math.min(100, Math.max(15, Math.round((totalSesiones / 10) * 100)));
+  // Roadmap Facial Dermatológico de 4 fases clínicas
+  const roadmapFacialFases = useMemo(() => {
+    const { fase: fActual, esManual } = resolverFaseRoadmap('facial');
+
+    return [
+      {
+        num: 1,
+        nombre: "Preparación & Desintoxicación Epidérmica",
+        sub: "Sesiones 1 a 2",
+        icono: Sparkles,
+        explicacion: "Higiene facial profunda, balance del manto hidrolipídico y eliminación de células queratinizadas para oxigenar tu piel.",
+        completada: fActual > 1,
+        activa: fActual === 1,
+        esManual
+      },
+      {
+        num: 2,
+        nombre: "Renovación Celular & Regeneración",
+        sub: "Sesiones 3 a 5",
+        icono: Zap,
+        explicacion: "Estimulación de la capa basal y unificación del tono cutáneo. Suaviza la textura y desvanece imperfecciones.",
+        completada: fActual > 2,
+        activa: fActual === 2,
+        esManual
+      },
+      {
+        num: 3,
+        nombre: "Redensificación & Estímulo de Colágeno",
+        sub: "Sesiones 6 a 8",
+        icono: Target,
+        explicacion: "Reactivación de fibroblastos para la producción natural de colágeno y elastina. Mayor firmeza, turgencia y atenuación de líneas.",
+        completada: fActual > 3,
+        activa: fActual === 3,
+        esManual
+      },
+      {
+        num: 4,
+        nombre: "Luminosidad, Sellado & Blindaje Cutáneo",
+        sub: "Sesión 9+",
+        icono: Trophy,
+        explicacion: "Efecto glow duradero, nutrición intensiva y sellado protector contra el fotoenvejecimiento y radicales libres.",
+        completada: fActual === 4 && totalSesiones >= 12,
+        activa: fActual === 4,
+        esManual
+      }
+    ];
+  }, [resolverFaseRoadmap, totalSesiones]);
+
+  const esRoadmapFacialActivo = useMemo(() => {
+    if (tipoRoadmapSeleccionado === 'facial') return true;
+    if (tipoRoadmapSeleccionado === 'corporal') return false;
+    if (tieneFacialActivo && !tieneCorporalActivo) return true;
+    return false;
+  }, [tipoRoadmapSeleccionado, tieneFacialActivo, tieneCorporalActivo]);
+
+  const roadmapFases = esRoadmapFacialActivo ? roadmapFacialFases : roadmapCorporalFases;
+
+  const progresoGlobalPct = useMemo(() => {
+    if (totalSesiones > 0) {
+      return Math.min(100, Math.round((totalSesiones / 10) * 100));
+    }
+    const info = esRoadmapFacialActivo ? resolverFaseRoadmap('facial') : resolverFaseRoadmap('corporal');
+    if (info.esManual && info.fase > 1) {
+      return Math.min(100, Math.round(((info.fase - 1) / 4) * 100 + 10));
+    }
+    return 0;
+  }, [totalSesiones, esRoadmapFacialActivo, resolverFaseRoadmap]);
 
   // Cálculos de equivalencias humanas
   const equivalenciasProgreso = useMemo(() => {
@@ -2108,15 +2345,21 @@ export default function PacienteProfile() {
                 )}
               </div>
               <p className="text-teal-200/70 text-xs font-medium flex items-center gap-2">
-                <span className="bg-teal-500/20 text-teal-300 px-2 py-0.5 rounded-lg border border-teal-500/30 font-bold">{perfilPaciente.tipoTratamiento}</span>
+                {tieneTratamientosActivos && (
+                  <span className="bg-teal-500/20 text-teal-300 px-2 py-0.5 rounded-lg border border-teal-500/30 font-bold">
+                    {tieneCorporalActivo && tieneFacialActivo ? 'Tratamiento Integral' : tieneCorporalActivo ? 'Tratamiento Corporal' : 'Tratamiento Facial'}
+                  </span>
+                )}
                 <span>{perfilPaciente.telefono || 'Sin teléfono'}</span>
               </p>
-              <div className="pt-1 flex items-center gap-2">
+              {tieneTratamientosActivos && (
+                <div className="pt-1 flex items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 shadow-inner">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   Índice de Bienestar ALFRA: {indiceBienestar}% · {indiceBienestar >= 85 ? 'Nivel Óptimo' : indiceBienestar >= 70 ? 'Excelente Ritmo' : 'Activo'}
                 </span>
               </div>
+              )}
             </div>
           </div>
 
@@ -2129,7 +2372,7 @@ export default function PacienteProfile() {
               <Calendar size={15} /> Agendar Cita
             </button>
             <a
-              href={`https://wa.me/5214494125867?text=${encodeURIComponent(`Hola Clínica ALFRA, soy ${perfilPaciente.nombre}. Me comunico desde mi perfil para atención personalizada.`)}`}
+              href={`https://wa.me/527535386018?text=${encodeURIComponent(`Hola Clínica ALFRA, soy ${(perfilPaciente.nombre || 'paciente de ALFRA').trim()}. Me comunico desde mi perfil en la app para atención personalizada.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 md:flex-none px-4 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-black text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center justify-center gap-2 backdrop-blur-md cursor-pointer"
@@ -2222,42 +2465,345 @@ export default function PacienteProfile() {
 
 
           {/* POINT 6: ÍNDICE DE BIENESTAR ALFRA DINÁMICO */}
-          <Card className="shadow-lg border-2 border-teal-500/20 bg-gradient-to-br from-slate-900 via-slate-950 to-teal-950 text-white p-5 rounded-3xl overflow-hidden relative">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="relative w-20 h-20 rounded-2xl bg-teal-500/10 border-2 border-teal-400/40 flex flex-col items-center justify-center shrink-0 shadow-inner">
-                  <span className="text-3xl font-black text-teal-300 tracking-tight">{indiceBienestar}</span>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-teal-400/70">/ 100</span>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[10px] font-black uppercase tracking-widest bg-teal-500/20 text-teal-300 px-2.5 py-0.5 rounded-full border border-teal-500/30">
-                      {indiceBienestar >= 85 ? "✨ Nivel Óptimo ALFRA" : indiceBienestar >= 70 ? "🌟 Excelente Ritmo" : indiceBienestar >= 50 ? "👍 En Progreso Activo" : "🌱 Iniciando el Día"}
-                    </span>
+          {!tieneTratamientosActivos ? (
+            <Card className="shadow-lg border-2 border-teal-500/20 bg-gradient-to-br from-slate-900 via-slate-950 to-teal-950 text-white p-5 rounded-3xl overflow-hidden relative">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="relative w-16 h-16 rounded-2xl bg-teal-500/10 border-2 border-teal-400/40 flex items-center justify-center shrink-0 shadow-inner text-teal-300">
+                    <Sparkles size={28} />
                   </div>
-                  <h3 className="text-base font-black text-white">Índice de Bienestar ALFRA</h3>
-                  <p className="text-xs text-teal-200/70 mt-0.5">Se actualiza en tiempo real con tu agua, ejercicio y recomendaciones cumplidas.</p>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-black uppercase tracking-widest bg-teal-500/20 text-teal-300 px-2.5 py-0.5 rounded-full border border-teal-500/30">
+                        🌱 Pendiente de Activación
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-black text-white">Índice de Bienestar ALFRA</h3>
+                      <button 
+                        type="button" 
+                        onClick={() => setMostrarModalInfoBienestar(true)}
+                        className="text-teal-400 hover:text-teal-200 transition-colors cursor-pointer"
+                        title="¿Qué es el Índice de Bienestar ALFRA?"
+                      >
+                        <Info size={16} />
+                      </button>
+                    </div>
+                    <p className="text-xs text-teal-200/70 mt-0.5">Se activará de forma personalizada cuando inicies tu plan de tratamiento en cabina.</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setMostrarModalInfoBienestar(true)}
+                  className="px-4 py-2 rounded-2xl bg-white/10 hover:bg-white/20 text-teal-300 font-black text-xs uppercase tracking-wider border border-teal-500/30 transition-all cursor-pointer shrink-0"
+                >
+                  ¿Qué es y cómo funciona?
+                </button>
+              </div>
+            </Card>
+          ) : (
+            <Card className="shadow-lg border-2 border-teal-500/20 bg-gradient-to-br from-slate-900 via-slate-950 to-teal-950 text-white p-5 rounded-3xl overflow-hidden relative">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="relative w-20 h-20 rounded-2xl bg-teal-500/10 border-2 border-teal-400/40 flex flex-col items-center justify-center shrink-0 shadow-inner">
+                    <span className="text-3xl font-black text-teal-300 tracking-tight">{indiceBienestar}</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-teal-400/70">/ 100</span>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-black uppercase tracking-widest bg-teal-500/20 text-teal-300 px-2.5 py-0.5 rounded-full border border-teal-500/30">
+                        {indiceBienestar >= 85 ? "✨ Nivel Óptimo ALFRA" : indiceBienestar >= 70 ? "🌟 Excelente Ritmo" : indiceBienestar >= 50 ? "👍 En Progreso Activo" : "🌱 Iniciando el Día"}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-black text-white">Índice de Bienestar ALFRA</h3>
+                      <button 
+                        type="button" 
+                        onClick={() => setMostrarModalInfoBienestar(true)}
+                        className="text-teal-400 hover:text-teal-200 transition-colors cursor-pointer"
+                        title="¿Qué es el Índice de Bienestar ALFRA?"
+                      >
+                        <Info size={16} />
+                      </button>
+                    </div>
+                    <p className="text-xs text-teal-200/70 mt-0.5">Se actualiza en tiempo real con tu agua, ejercicio y recomendaciones cumplidas.</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2 w-full sm:w-auto">
+                  <div className="bg-white/5 border border-white/10 rounded-xl px-3 py-1.5 text-center">
+                    <p className="text-[10px] font-bold text-gray-400">💧 Agua</p>
+                    <p className="text-xs font-black text-cyan-300">+{Math.min(30, vasosAguaHoy * 3)} pts</p>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-xl px-3 py-1.5 text-center">
+                    <p className="text-[10px] font-bold text-gray-400">📋 Cuidados</p>
+                    <p className="text-xs font-black text-teal-300">+{Math.min(30, recomendacionesCumplidasCount * 6)} pts</p>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-2 w-full sm:w-auto">
-                <div className="bg-white/5 border border-white/10 rounded-xl px-3 py-1.5 text-center">
-                  <p className="text-[10px] font-bold text-gray-400">💧 Agua</p>
-                  <p className="text-xs font-black text-cyan-300">+{Math.min(30, vasosAguaHoy * 3)} pts</p>
+              <div className="w-full bg-white/10 rounded-full h-2 mt-4 overflow-hidden">
+                <div 
+                  className="h-full rounded-full bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400 transition-all duration-700 shadow-sm"
+                  style={{ width: `${indiceBienestar}%` }}
+                />
+              </div>
+            </Card>
+          )}
+
+          {/* Modal Informativo: ¿Qué es el Índice de Bienestar ALFRA? */}
+          {mostrarModalInfoBienestar && (
+            <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
+              <div className="bg-slate-900 border border-teal-500/30 rounded-3xl max-w-lg w-full p-6 text-white shadow-2xl space-y-4">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-300">
+                      <Sparkles size={18} />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-black uppercase tracking-wider text-white">¿Qué es el Índice de Bienestar ALFRA?</h3>
+                      <p className="text-[10px] text-teal-300/80">Tu métrica integral de salud, belleza y disciplina</p>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => setMostrarModalInfoBienestar(false)}
+                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center cursor-pointer"
+                  >
+                    ✕
+                  </button>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl px-3 py-1.5 text-center">
-                  <p className="text-[10px] font-bold text-gray-400">📋 Cuidados</p>
-                  <p className="text-xs font-black text-teal-300">+{Math.min(30, recomendacionesCumplidasCount * 6)} pts</p>
+
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  El <strong>Índice de Bienestar ALFRA</strong> es un indicador clínico inteligente (de 0 a 100%) que evalúa la sinergia entre tus sesiones en cabina y tus hábitos diarios en casa. Se actualiza en tiempo real con 4 pilares:
+                </p>
+
+                <div className="space-y-2.5 text-xs">
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3">
+                    <span className="text-lg">💧</span>
+                    <div>
+                      <p className="font-black text-cyan-300">1. Hidratación Celular (hasta 30 pts)</p>
+                      <p className="text-[11px] text-gray-400">Tomar 2.5 L diarios de agua natural para optimizar el drenaje linfático y la respuesta de la aparatología.</p>
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3">
+                    <span className="text-lg">📋</span>
+                    <div>
+                      <p className="font-black text-teal-300">2. Cuidados de la Especialista (hasta 30 pts)</p>
+                      <p className="text-[11px] text-gray-400">Cumplimiento de las recomendaciones post-sesión indicadas en tu expediente clínico.</p>
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3">
+                    <span className="text-lg">🥗</span>
+                    <div>
+                      <p className="font-black text-emerald-300">3. Nutrición Consciente (hasta 10 pts)</p>
+                      <p className="text-[11px] text-gray-400">Registro de alimentos en tu diario para mantener estabilidad metabólica sin picos de inflamación.</p>
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3">
+                    <span className="text-lg">🏃‍♀️</span>
+                    <div>
+                      <p className="font-black text-amber-300">4. Activación Física (hasta 10 pts)</p>
+                      <p className="text-[11px] text-gray-400">Movilidad diaria (caminata o entrenamiento) para movilizar toxinas y mejorar la firmeza dérmica.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setMostrarModalInfoBienestar(false)}
+                  className="w-full py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg cursor-pointer"
+                >
+                  Entendido, ¡gracias!
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ==================== ROADMAP CLÍNICO DE TRANSFORMACIÓN (POINT 3) ==================== */}
+          <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-xl space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-3">
+              <div>
+                <div className="flex items-center gap-2">
+                  <Compass size={18} className="text-turquesa" />
+                  <h3 className="text-sm font-black text-gray-800 uppercase tracking-wider">
+                    {esRoadmapFacialActivo ? 'Tu Roadmap Facial Dermatológico' : 'Tu Roadmap Corporal Clínico'}
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setMostrarModalInfoRoadmap(true)}
+                    className="text-turquesa hover:text-teal-700 transition-colors cursor-pointer"
+                    title="¿Cómo funciona tu Roadmap Clínico?"
+                  >
+                    <Info size={16} />
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500 font-medium">
+                  {esRoadmapFacialActivo ? 'Sigue de cerca en qué fase biológica se encuentra tu piel' : 'Sigue de cerca en qué fase biológica se encuentra tu cuerpo'}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2.5 flex-wrap">
+                {/* Selector para explorar Facial o Corporal */}
+                <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-2xl">
+                  <button
+                    type="button"
+                    onClick={() => setTipoRoadmapSeleccionado('corporal')}
+                    className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                      !esRoadmapFacialActivo ? 'bg-white text-turquesa shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    🌸 Corporal
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setTipoRoadmapSeleccionado('facial')}
+                    className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                      esRoadmapFacialActivo ? 'bg-white text-purple-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    ✨ Facial
+                  </button>
+                </div>
+
+                <div className="text-right">
+                  <span className="text-xs font-black text-turquesa bg-turquesa/10 px-3 py-1 rounded-full border border-turquesa/20">
+                    {totalSesiones > 0 ? `${totalSesiones} Sesiones • ${progresoGlobalPct}% del Plan` : (tratamientoActivo?.faseRoadmapManual && tratamientoActivo.faseRoadmapManual !== 'auto' ? `Fase ${tratamientoActivo.faseRoadmapManual} • Ajustada en Cabina` : '0 Sesiones • Pendiente de inicio')}
+                  </span>
                 </div>
               </div>
             </div>
-            <div className="w-full bg-white/10 rounded-full h-2 mt-4 overflow-hidden">
+
+            {/* Barra de progreso visual */}
+            <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
               <div 
-                className="h-full rounded-full bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400 transition-all duration-700 shadow-sm"
-                style={{ width: `${indiceBienestar}%` }}
+                className="bg-gradient-to-r from-teal-400 via-turquesa to-emerald-500 h-full rounded-full transition-all duration-1000 shadow-sm"
+                style={{ width: `${Math.max(totalSesiones > 0 ? 10 : 0, progresoGlobalPct)}%` }}
               />
             </div>
-          </Card>
 
+            {/* Grid de las 4 fases biológicas */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+              {roadmapFases.map((fase) => {
+                const Icon = fase.icono;
+                return (
+                  <div 
+                    key={fase.num}
+                    onClick={() => setFaseInfoModal(fase)}
+                    className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
+                      fase.activa
+                        ? 'bg-gradient-to-br from-teal-50 to-emerald-50 border-teal-400 shadow-md ring-2 ring-teal-400/20' 
+                        : fase.completada
+                        ? 'bg-gray-50/80 border-gray-200 opacity-90'
+                        : 'bg-white border-gray-150 hover:border-turquesa/40 hover:bg-gray-50/50'
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
+                          fase.activa ? 'bg-teal-600 text-white' : fase.completada ? 'bg-emerald-100 text-emerald-800' : 'bg-gray-100 text-gray-600'
+                        }`}>
+                          FASE {fase.num}
+                        </span>
+                        <Icon size={14} className={fase.activa ? 'text-teal-600' : 'text-gray-400'} />
+                      </div>
+                      <h4 className="text-xs font-black text-gray-800 leading-tight mb-1">{fase.nombre}</h4>
+                      <p className="text-[10px] text-gray-500 font-bold">{fase.sub}</p>
+                    </div>
+                    <div className="pt-2 flex items-center justify-between text-[9px] font-black uppercase text-teal-600">
+                      <span>{fase.activa ? '📍 En curso' : fase.completada ? '✅ Completada' : '⏳ Siguiente'}</span>
+                      <Info size={11} className="text-gray-400" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Aviso explicativo al pie de tarjeta */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1 border-t border-gray-100 text-[11px] text-gray-500">
+              <span className="italic">
+                {tratamientoActivo?.faseRoadmapManual && tratamientoActivo.faseRoadmapManual !== 'auto' ? '🩺 Fase clínica ajustada de manera personalizada por tu Especialista.' : (totalSesiones === 0 ? '💡 Tu especialista activará tu primera fase conforme asistas a tus sesiones en cabina.' : '🌿 Cada fase está sincronizada con la regeneración biológica de tu tejido.')}
+              </span>
+              <button
+                type="button"
+                onClick={() => setMostrarModalInfoRoadmap(true)}
+                className="text-turquesa font-bold hover:underline shrink-0 cursor-pointer"
+              >
+                ¿Cómo se controlan las fases? ➔
+              </button>
+            </div>
+          </div>
+
+          {/* Modal Informativo: ¿Cómo funciona tu Roadmap Clínico? */}
+          {mostrarModalInfoRoadmap && (
+            <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
+              <div className="bg-slate-900 border border-teal-500/30 rounded-3xl max-w-lg w-full p-6 text-white shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-300">
+                      <Compass size={18} />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-black uppercase tracking-wider text-white">¿Cómo funciona tu Roadmap Clínico?</h3>
+                      <p className="text-[10px] text-teal-300/80">Protocolo biológico de transformación paso a paso</p>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => setMostrarModalInfoRoadmap(false)}
+                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center cursor-pointer"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  En <strong>Clínica ALFRA</strong> no realizamos sesiones al azar. Tu tratamiento se organiza en un <strong>Roadmap de 4 Fases Biológicas</strong> adaptado al ritmo celular de tu cuerpo o piel:
+                </p>
+
+                <div className="space-y-3 text-xs">
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+                    <p className="font-black text-cyan-300 flex items-center gap-1.5">
+                      <span>🌸</span> Roadmap Corporal (Modelado & Reducción)
+                    </p>
+                    <p className="text-[11px] text-gray-300 leading-relaxed">
+                      <strong>Fase 1 (Desintoxicación):</strong> Se drena retención de líquidos y toxinas preparando el tejido circulatorio.<br/>
+                      <strong>Fase 2 (Reducción Profunda):</strong> Se moviliza grasa localizada mediante aparatología especializada.<br/>
+                      <strong>Fase 3 (Firmeza & Moldeo):</strong> Se reactiva la síntesis de colágeno y elastina para tensar la piel.<br/>
+                      <strong>Fase 4 (Consolidación):</strong> Se fija el resultado biológico evitando rebotes.
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+                    <p className="font-black text-purple-300 flex items-center gap-1.5">
+                      <span>✨</span> Roadmap Facial (Dermatológico & Rejuvenecimiento)
+                    </p>
+                    <p className="text-[11px] text-gray-300 leading-relaxed">
+                      <strong>Fase 1 (Higiene Profunda):</strong> Se desobstruyen poros, se oxigena la epidermis y se estabiliza el pH.<br/>
+                      <strong>Fase 2 (Regeneración Dérmica):</strong> Se bioestimula la dermis con activos puros y aparatología regenerativa.<br/>
+                      <strong>Fase 3 (Unificación de Tono & Firmeza):</strong> Se corrigen imperfecciones, manchas y textura cutánea.<br/>
+                      <strong>Fase 4 (Luminosidad & Protección):</strong> Se sella la barrera lipídica para un efecto radiante y duradero.
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-teal-500/10 border border-teal-500/30 text-teal-200">
+                    <p className="font-black text-[11px]">🩺 ¿Cómo se controla tu avance?</p>
+                    <p className="text-[11px] mt-0.5 leading-relaxed">
+                      En cada cita, tu especialista registra en tu <strong>Expediente Clínico</strong> las medidas, parámetros y evolución de cabina. El sistema actualiza en tiempo real tu fase activa y tu porcentaje de avance.
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setMostrarModalInfoRoadmap(false)}
+                  className="w-full py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg cursor-pointer"
+                >
+                  Entendido, ¡Muchas Gracias!
+                </button>
+              </div>
+            </div>
+          )}
+
+
+          {tieneTratamientosActivos && (
+          <>
           {/* POINT 4: RECOMENDACIONES DE TU ESPECIALISTA (100% INTERACTIVAS, 100% PERSONALIZADAS) */}
           <div className="bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-5 sm:p-6 shadow-xl border border-teal-500/20 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
@@ -2438,6 +2984,10 @@ export default function PacienteProfile() {
           </div>
 
           {/* POINT 2: ACTIVIDAD FÍSICA EN SEGUNDO PLANO (TRACKER RÁPIDO) */}
+          
+          </>
+          )}
+
           <Card className="shadow-xl border-2 border-orange-500/20 bg-gradient-to-br from-slate-900 via-slate-950 to-orange-950 text-white p-5 rounded-3xl relative overflow-hidden">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
               <div className="flex items-center gap-3">
@@ -2629,82 +3179,123 @@ export default function PacienteProfile() {
             <p className="text-xs text-gray-500 font-bold">Métricas clínicas, fotos de evolución y registro milimétrico</p>
           </div>
 
-{/* 3. ROADMAP DE TRANSFORMACIÓN CLÍNICA (TREATMENT JOURNEY) */}
+{/* 3. ROADMAP DE TRANSFORMACIÓN CLÍNICA (ÚNICAMENTE SI HAY TRATAMIENTO ACTIVO) */}
+      {tieneTratamientosActivos && (
       <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-xl space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 pb-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-3">
           <div>
             <div className="flex items-center gap-2">
               <Compass size={18} className="text-turquesa" />
-              <h3 className="text-sm font-black text-gray-800 uppercase tracking-wider">Tu Roadmap de Transformación Clínica</h3>
+              <h3 className="text-sm font-black text-gray-800 uppercase tracking-wider">
+                {esRoadmapFacialActivo ? 'Tu Roadmap Facial Dermatológico' : 'Tu Roadmap Corporal Clínico'}
+              </h3>
             </div>
-            <p className="text-xs text-gray-500 font-medium">Sigue de cerca en qué fase biológica se encuentra tu cuerpo</p>
+            <p className="text-xs text-gray-500 font-medium">
+              {esRoadmapFacialActivo ? 'Sigue de cerca en qué fase biológica se encuentra tu piel' : 'Sigue de cerca en qué fase biológica se encuentra tu cuerpo'}
+            </p>
           </div>
-          <div className="text-right">
-            <span className="text-xs font-black text-turquesa bg-turquesa/10 px-3 py-1 rounded-full border border-turquesa/20">
-              {totalSesiones} Sesiones Realizadas · {progresoGlobalPct}% del Plan Maestro
-            </span>
-          </div>
-        </div>
-
-        <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
-          <div 
-            className="bg-gradient-to-r from-teal-400 via-turquesa to-emerald-500 h-full rounded-full transition-all duration-1000 shadow-sm"
-            style={{ width: `${progresoGlobalPct}%` }}
-          />
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
-          {roadmapFases.map((fase) => {
-            const Icon = fase.icono;
-            return (
-              <div 
-                key={fase.num}
-                onClick={() => setFaseInfoModal(fase)}
-                className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
-                  fase.activa 
-                    ? 'bg-gradient-to-br from-teal-50 to-emerald-50 border-teal-400 shadow-md ring-2 ring-teal-400/20' 
-                    : fase.completada
-                    ? 'bg-gray-50/80 border-gray-200 opacity-90'
-                    : 'bg-white border-gray-100 opacity-60 hover:opacity-100'
-                }`}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
-                      fase.activa ? 'bg-teal-600 text-white' : fase.completada ? 'bg-emerald-100 text-emerald-800' : 'bg-gray-200 text-gray-600'
-                    }`}>
-                      FASE {fase.num}
-                    </span>
-                    <Icon size={14} className={fase.activa ? 'text-teal-600' : 'text-gray-400'} />
-                  </div>
-                  <h4 className="text-xs font-black text-gray-800 leading-tight mb-1">{fase.nombre}</h4>
-                  <p className="text-[10px] text-gray-500 font-bold">{fase.sub}</p>
-                </div>
-                <div className="pt-2 flex items-center justify-between text-[9px] font-black uppercase text-teal-600">
-                  <span>{fase.activa ? '📍 En curso' : fase.completada ? '✅ Completada' : '⏳ Siguiente'}</span>
-                  <Info size={11} className="text-gray-400" />
-                </div>
+          
+          <div className="flex items-center gap-3">
+            {tieneFacialActivo && tieneCorporalActivo && (
+              <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-2xl">
+                <button
+                  type="button"
+                  onClick={() => setTipoRoadmapSeleccionado('facial')}
+                  className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                    esRoadmapFacialActivo ? 'bg-white text-purple-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  💆‍♀️ Facial
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setTipoRoadmapSeleccionado('corporal')}
+                  className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                    !esRoadmapFacialActivo ? 'bg-white text-turquesa shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  ✨ Corporal
+                </button>
               </div>
-            );
-          })}
+            )}
+            <div className="text-right">
+              <span className="text-xs font-black text-turquesa bg-turquesa/10 px-3 py-1 rounded-full border border-turquesa/20">
+                {totalSesiones} Sesiones Realizadas · {progresoGlobalPct}% del Plan Maestro
+              </span>
+            </div>
+          </div>
         </div>
 
-        {faseInfoModal && (
-          <div className="p-3.5 rounded-2xl bg-teal-50/80 border border-teal-200/60 text-xs text-teal-900 flex items-start justify-between gap-3 animate-in fade-in">
-            <div className="space-y-1">
-              <p className="font-black uppercase tracking-wider text-[11px] text-teal-800">
-                💡 ¿Qué sucede en tu cuerpo durante la Fase {faseInfoModal.num} ({faseInfoModal.nombre})?
-              </p>
-              <p className="leading-relaxed">{faseInfoModal.explicacion}</p>
-            </div>
-            <button onClick={() => setFaseInfoModal(null)} className="text-teal-700 hover:text-teal-950 font-bold text-xs p-1">
-              ✕
-            </button>
+        {!tieneTratamientosActivos ? (
+          <div className="py-8 text-center bg-gray-50 rounded-2xl border border-dashed border-gray-200 space-y-1">
+            <Compass size={32} className="mx-auto text-turquesa/50 mb-1" />
+            <p className="text-xs font-bold text-gray-700">Tu Roadmap se activará con tu primera sesión</p>
+            <p className="text-[11px] text-gray-400">Una vez que la especialista inicie tu tratamiento, verás aquí el avance fase por fase.</p>
           </div>
+        ) : (
+          <>
+            <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+              <div 
+                className="bg-gradient-to-r from-teal-400 via-turquesa to-emerald-500 h-full rounded-full transition-all duration-1000 shadow-sm"
+                style={{ width: `${progresoGlobalPct}%` }}
+              />
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+              {roadmapFases.map((fase) => {
+                const Icon = fase.icono;
+                return (
+                  <div 
+                    key={fase.num}
+                    onClick={() => setFaseInfoModal(fase)}
+                    className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
+                      fase.activa 
+                        ? 'bg-gradient-to-br from-teal-50 to-emerald-50 border-teal-400 shadow-md ring-2 ring-teal-400/20' 
+                        : fase.completada
+                        ? 'bg-gray-50/80 border-gray-200 opacity-90'
+                        : 'bg-white border-gray-100 opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
+                          fase.activa ? 'bg-teal-600 text-white' : fase.completada ? 'bg-emerald-100 text-emerald-800' : 'bg-gray-200 text-gray-600'
+                        }`}>
+                          FASE {fase.num}
+                        </span>
+                        <Icon size={14} className={fase.activa ? 'text-teal-600' : 'text-gray-400'} />
+                      </div>
+                      <h4 className="text-xs font-black text-gray-800 leading-tight mb-1">{fase.nombre}</h4>
+                      <p className="text-[10px] text-gray-500 font-bold">{fase.sub}</p>
+                    </div>
+                    <div className="pt-2 flex items-center justify-between text-[9px] font-black uppercase text-teal-600">
+                      <span>{fase.activa ? '📍 En curso' : fase.completada ? '✅ Completada' : '⏳ Siguiente'}</span>
+                      <Info size={11} className="text-gray-400" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {faseInfoModal && (
+              <div className="p-3.5 rounded-2xl bg-teal-50/80 border border-teal-200/60 text-xs text-teal-900 flex items-start justify-between gap-3 animate-in fade-in">
+                <div className="space-y-1">
+                  <p className="font-black uppercase tracking-wider text-[11px] text-teal-800">
+                    💡 ¿Qué sucede durante la Fase {faseInfoModal.num} ({faseInfoModal.nombre})?
+                  </p>
+                  <p className="leading-relaxed">{faseInfoModal.explicacion}</p>
+                </div>
+                <button onClick={() => setFaseInfoModal(null)} className="text-teal-700 hover:text-teal-950 font-bold text-xs p-1 cursor-pointer">
+                  ✕
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
+      )}
 
-          {loadingTrat ? (
+      {loadingTrat ? (
             <div className="py-16 flex items-center justify-center gap-3 text-gray-300">
               <RefreshCw className="animate-spin" size={24} />
               <span className="text-sm font-bold">Cargando tu historial...</span>
@@ -2735,8 +3326,25 @@ export default function PacienteProfile() {
 
               {tratamientoActivo && (() => {
                 const sesiones = sesionesPorTrat[tratamientoActivo.id] || [];
-                const isCorporal = tratamientoActivo.tipo === "Corporal";
-                const chartData = sesiones
+                const tratTipoStr = String(tratamientoActivo.tipo || '').toLowerCase();
+                const tratNombreStr = String(tratamientoActivo.nombre || '').toLowerCase();
+                const isFacialTrat = tratTipoStr === 'facial' ||
+                                     tratTipoStr.includes('facial') ||
+                                     tratNombreStr.includes('facial') ||
+                                     tratNombreStr.includes('envejecimiento') ||
+                                     tratNombreStr.includes('antiedad') ||
+                                     tratNombreStr.includes('dermapen') ||
+                                     tratNombreStr.includes('peeling') ||
+                                     tratNombreStr.includes('limpieza') ||
+                                     tratNombreStr.includes('hidra') ||
+                                     tratNombreStr.includes('acné') ||
+                                     tratNombreStr.includes('acne') ||
+                                     tratNombreStr.includes('melasma') ||
+                                     tratNombreStr.includes('botox') ||
+                                     tratNombreStr.includes('arrugas');
+                const isCorporal = !isFacialTrat;
+
+                const chartData = isCorporal ? sesiones
                   .map((s, i) => ({
                     sesion: "#" + (i + 1),
                     peso: parseFloat(s.medidas?.peso) || null,
@@ -2746,74 +3354,216 @@ export default function PacienteProfile() {
                     brazo: parseFloat(s.medidas?.brazo) || null,
                     pierna: parseFloat(s.medidas?.pierna) || null
                   }))
-                  .filter((s) => s.peso || s.cintura || s.abdomen || s.cadera || s.brazo || s.pierna);
+                  .filter((s) => s.peso || s.cintura || s.abdomen || s.cadera || s.brazo || s.pierna) : [];
 
                 const sesionesConFoto = sesiones.filter((s) => s.fotosSesion?.length > 0);
                 const tieneFotosReales = sesionesConFoto.length >= 2;
-                const primeraFoto = tieneFotosReales ? sesionesConFoto[0].fotosSesion[0].url : "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80";
-                const ultimaFoto = tieneFotosReales ? sesionesConFoto[sesionesConFoto.length - 1].fotosSesion[0].url : "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80";
+                const primeraFoto = tieneFotosReales ? sesionesConFoto[0].fotosSesion[0].url : (sesionesConFoto[0]?.fotosSesion?.[0]?.url || null);
+                const ultimaFoto = tieneFotosReales ? sesionesConFoto[sesionesConFoto.length - 1].fotosSesion[0].url : null;
+
+                const fInfo = isFacialTrat ? resolverFaseRoadmap('facial') : resolverFaseRoadmap('corporal');
+                const nombreFaseFacial = fInfo.fase === 1 ? 'Higiene & Desintoxicación Epidérmica'
+                  : fInfo.fase === 2 ? 'Regeneración Celular & Colágeno'
+                  : fInfo.fase === 3 ? 'Redensificación Tisular'
+                  : 'Mantenimiento Preventivo';
+                const nombreFaseCorporal = fInfo.fase === 1 ? 'Desintoxicación & Drenaje Tisular'
+                  : fInfo.fase === 2 ? 'Reducción & Lipólisis Focalizada'
+                  : fInfo.fase === 3 ? 'Moldeo & Drenaje Linfático'
+                  : 'Tonificación & Mantenimiento';
+
+                const tieneReduccionCorporal = isCorporal && sesiones.length >= 2 && (equivalenciasProgreso.diffPeso > 0 || equivalenciasProgreso.diffCintura > 0);
 
                 return (
                   <div className="space-y-5">
-                    <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 rounded-3xl p-6 text-white border border-teal-500/20 shadow-xl space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-teal-400 flex items-center gap-1.5">
-                          <Trophy size={14} className="text-amber-400" /> Transformación Medida al Milímetro
-                        </span>
-                        <span className="text-xs font-bold text-gray-400">{sesiones.length} sesiones auditadas</span>
+                    {/* HERO CARD CLÍNICO DINÁMICO (DIFERENCIADO FACIAL VS CORPORAL) */}
+                    {isFacialTrat ? (
+                      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-purple-950 rounded-3xl p-6 text-white border border-purple-500/30 shadow-xl space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-black uppercase tracking-widest text-purple-300 flex items-center gap-1.5">
+                            <Sparkles size={14} className="text-purple-400" /> Protocolo Facial & Dermatológico Avanzado
+                          </span>
+                          <span className="text-xs font-bold text-gray-400">
+                            {sesiones.length} {sesiones.length === 1 ? "sesión registrada" : "sesiones registradas"}
+                          </span>
+                        </div>
+
+                        <div>
+                          <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                            ✨ Evolución Cutánea: <span className="text-purple-300">{tratamientoActivo.nombre}</span>
+                          </h3>
+                          <p className="text-xs text-gray-300 mt-1">
+                            Protocolo médico-estético enfocado en la bioestimulación celular, colágeno y tonicidad dérmica.
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-purple-300">Fase Biológica</p>
+                            <p className="text-lg font-black text-white mt-1">Fase {fInfo.fase}</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5 line-clamp-1">{nombreFaseFacial}</p>
+                          </div>
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-pink-300">Salud Dérmica</p>
+                            <p className="text-lg font-black text-white mt-1">{sesiones.length > 0 ? "En Evolución" : "Por Iniciar"}</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5">
+                              {sesiones.length > 0 ? "Respuesta cutánea activa" : "Evaluación inicial programada"}
+                            </p>
+                          </div>
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-emerald-300">Sesiones Cumplidas</p>
+                            <p className="text-lg font-black text-white mt-1">
+                              {sesiones.length} {tratamientoActivo.numSesionesTotal > 0 ? `/ ${tratamientoActivo.numSesionesTotal}` : "Visitas"}
+                            </p>
+                            <p className="text-[10px] text-gray-400 mt-0.5">Constancia en cabina</p>
+                          </div>
+                        </div>
                       </div>
-
-                      <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
-                        🎉 Has reducido <span className="text-teal-300">{equivalenciasProgreso.diffPeso} kg</span> y{" "}
-                        <span className="text-teal-300">{equivalenciasProgreso.diffCintura} cm de contorno</span> desde tu primera consulta.
-                      </h3>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                        <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-                          <p className="text-[10px] font-black uppercase tracking-widest text-teal-300">Tallas de Ropa</p>
-                          <p className="text-xl font-black text-white mt-1">-{equivalenciasProgreso.tallasAprox || 1} Talla(s)</p>
-                          <p className="text-[10px] text-gray-400 mt-0.5">Ajuste holgado en tu guardarropa</p>
+                    ) : tieneReduccionCorporal ? (
+                      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 rounded-3xl p-6 text-white border border-teal-500/20 shadow-xl space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-black uppercase tracking-widest text-teal-400 flex items-center gap-1.5">
+                            <Trophy size={14} className="text-amber-400" /> Transformación Medida al Milímetro
+                          </span>
+                          <span className="text-xs font-bold text-gray-400">{sesiones.length} sesiones auditadas</span>
                         </div>
-                        <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-                          <p className="text-[10px] font-black uppercase tracking-widest text-amber-300">Grasa Localizada</p>
-                          <p className="text-xl font-black text-white mt-1">~{equivalenciasProgreso.bloquesGrasa || 4} Bloques</p>
-                          <p className="text-[10px] text-gray-400 mt-0.5">Equivalente a paquetes de 250g movilizados</p>
-                        </div>
-                        <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
-                          <p className="text-[10px] font-black uppercase tracking-widest text-emerald-300">Racha de Constancia</p>
-                          <p className="text-xl font-black text-white mt-1">{totalSesiones} Visitas</p>
-                          <p className="text-[10px] text-gray-400 mt-0.5">Compromiso firme con tu salud</p>
+
+                        <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                          ?? Has reducido <span className="text-teal-300">{equivalenciasProgreso.diffPeso} kg</span> y{" "}
+                          <span className="text-teal-300">{equivalenciasProgreso.diffCintura} cm de contorno</span> desde tu primera consulta.
+                        </h3>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-teal-300">Tallas de Ropa</p>
+                            <p className="text-xl font-black text-white mt-1">-{equivalenciasProgreso.tallasAprox || 0} Talla(s)</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5">Ajuste holgado en tu guardarropa</p>
+                          </div>
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-amber-300">Grasa Localizada</p>
+                            <p className="text-xl font-black text-white mt-1">~{equivalenciasProgreso.bloquesGrasa || 0} Bloques</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5">Equivalente a paquetes de 250g movilizados</p>
+                          </div>
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-emerald-300">Racha de Constancia</p>
+                            <p className="text-xl font-black text-white mt-1">{totalSesiones} Visitas</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5">Compromiso firme con tu salud</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 rounded-3xl p-6 text-white border border-teal-500/20 shadow-xl space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-black uppercase tracking-widest text-teal-400 flex items-center gap-1.5">
+                            <Activity size={14} className="text-teal-400" /> Monitoreo y Evolución Corporal
+                          </span>
+                          <span className="text-xs font-bold text-gray-400">
+                            {sesiones.length} {sesiones.length === 1 ? "sesión registrada" : "sesiones registradas"}
+                          </span>
+                        </div>
 
-                    <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-xl space-y-3">
+                        <div>
+                          <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                            📍 Monitoreo Clínico: <span className="text-teal-300">{tratamientoActivo.nombre}</span>
+                          </h3>
+                          <p className="text-xs text-gray-300 mt-1">
+                            Protocolo enfocado en lipólisis, drenaje linfático y tonicidad tisular registrado con precisión en cada sesión.
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-teal-300">Fase Corporal</p>
+                            <p className="text-lg font-black text-white mt-1">Fase {fInfo.fase}</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5 line-clamp-1">{nombreFaseCorporal}</p>
+                          </div>
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-amber-300">Medición en Cabina</p>
+                            <p className="text-lg font-black text-white mt-1">{sesiones.length > 0 ? "Métricas en Curso" : "Línea Base Lista"}</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5">{sesiones.length > 0 ? "Seguimiento biométrico activo" : "Primera sesión de valoración"}</p>
+                          </div>
+                          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-emerald-300">Sesiones Cumplidas</p>
+                            <p className="text-lg font-black text-white mt-1">
+                              {sesiones.length} {tratamientoActivo.numSesionesTotal > 0 ? `/ ${tratamientoActivo.numSesionesTotal}` : "Visitas"}
+                            </p>
+                            <p className="text-[10px] text-gray-400 mt-0.5">Constancia en cabina</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* COMPARATIVA VISUAL ANTES VS DESPUÉS (HONESTA Y CLÍNICA - SIN FOTOS FALSAS) */}
+                    <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-xl space-y-4">
                       <div className="flex items-center justify-between">
                         <div>
                           <h4 className="text-sm font-black text-gray-800 uppercase tracking-wider flex items-center gap-2">
-                            <Sliders size={16} className="text-turquesa" />
-                            Comparativa Visual Táctil (Antes vs Después)
+                            <Sliders size={16} className={isFacialTrat ? "text-purple-600" : "text-turquesa"} />
+                            Comparativa Visual Clínica (Antes vs Después)
                           </h4>
-                          <p className="text-xs text-gray-500 font-medium">Desliza con tu dedo o ratón hacia los lados para comparar</p>
+                          <p className="text-xs text-gray-500 font-medium">
+                            {tieneFotosReales
+                              ? "Desliza con tu dedo o ratón horizontalmente para comparar"
+                              : "Documentación fotográfica de tu evolución clínica en cabina"}
+                          </p>
                         </div>
-                        {!tieneFotosReales && (
-                          <span className="text-[10px] font-black text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-200">
-                            Modo Demostración
+                        {tieneFotosReales ? (
+                          <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                            Expediente Real
+                          </span>
+                        ) : sesionesConFoto.length === 1 ? (
+                          <span className="text-[10px] font-black text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                            1 Foto en Expediente
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-black text-gray-600 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
+                            Pendiente de Cabina
                           </span>
                         )}
                       </div>
 
-                      <div className="max-w-xl mx-auto pt-2">
-                        <BeforeAfterSlider
-                          beforeUrl={primeraFoto}
-                          afterUrl={ultimaFoto}
-                          beforeLabel={tieneFotosReales ? "Día 1 (Inicial)" : "Inicial (Demo)"}
-                          afterLabel={tieneFotosReales ? `Sesión #${sesiones.length} (Actual)` : "Actual (Demo)"}
-                        />
-                      </div>
+                      {tieneFotosReales ? (
+                        <div className="max-w-xl mx-auto pt-2">
+                          <BeforeAfterSlider
+                            beforeUrl={primeraFoto}
+                            afterUrl={ultimaFoto}
+                            beforeLabel="Sesión 1 (Inicial)"
+                            afterLabel={`Sesión #${sesionesConFoto.length} (Evolución)`}
+                          />
+                        </div>
+                      ) : sesionesConFoto.length === 1 ? (
+                        <div className="max-w-md mx-auto pt-2 text-center space-y-3">
+                          <div 
+                            className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-gray-100 group cursor-pointer"
+                            onClick={() => setZoomFotoUrl(primeraFoto)}
+                          >
+                            <img src={primeraFoto} alt="Fotografía Inicial" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                            <span className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md text-amber-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-amber-500/30">
+                              Fotografía Inicial (Línea Base)
+                            </span>
+                          </div>
+                          <p className="text-xs text-gray-500 leading-relaxed px-4">
+                            📸 Tu fotografía inicial está registrada en tu expediente. En tu siguiente sesión en cabina tu especialista tomará la foto de evolución y se activará automáticamente el slider interactivo táctil de Antes y Después.
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="py-8 px-4 text-center bg-gray-50/80 rounded-2xl border border-dashed border-gray-200 max-w-xl mx-auto space-y-3">
+                          <div className={`w-12 h-12 mx-auto rounded-2xl flex items-center justify-center ${isFacialTrat ? 'bg-purple-100 text-purple-600' : 'bg-teal-100 text-teal-600'}`}>
+                            <Camera size={24} />
+                          </div>
+                          <div className="space-y-1">
+                            <p className="text-xs font-black text-gray-800 uppercase tracking-wider">
+                              Fotografías Clínicas en Cabina
+                            </p>
+                            <p className="text-xs text-gray-500 leading-relaxed max-w-md mx-auto">
+                              Para garantizar un seguimiento médico-estético honesto y estandarizado, las fotos se capturan directamente en cabina por tu especialista bajo condiciones controladas de luz y ángulo. En cuanto registres tus primeras sesiones fotográficas, aquí podrás comparar interactivamente tu evolución Antes y Después.
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
-                    {chartData.length > 0 && (
+                    
+{chartData.length > 0 && (
                       <Card className="shadow-lg p-5">
                         <h4 className="text-sm font-black text-gray-800 uppercase tracking-wider mb-3">Evolución de Medidas por Sesión</h4>
                         <div className="h-56">
@@ -3037,7 +3787,19 @@ export default function PacienteProfile() {
               </div>
             </div>
 
-            {/* FÓRMULA CLÍNICA PASO A PASO EXPLICADA SIMPLE */}
+            {!diagnosticoMetabolico.tieneDatos ? (
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center space-y-2.5">
+              <div className="w-12 h-12 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center mx-auto text-teal-300">
+                <Flame size={22} />
+              </div>
+              <h4 className="text-sm font-black text-white uppercase tracking-wider">Tu Plan Metabólico y Calórico Personalizado</h4>
+              <p className="text-xs text-gray-300 max-w-md mx-auto leading-relaxed">
+                Para calcular tu requerimiento energético exacto y asignarte una meta nutricional adaptada a tu cuerpo, tu especialista registrará tu peso, estatura y valoración corporal en cabina.
+              </p>
+            </div>
+          ) : (
+            <>
+              {/* FÓRMULA CLÍNICA PASO A PASO EXPLICADA SIMPLE */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-3.5 text-center">
                 <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">1. Lo que quemas en reposo</p>
@@ -3091,7 +3853,7 @@ export default function PacienteProfile() {
                       <div className="bg-emerald-400 h-full rounded-full transition-all duration-500" style={{ width: `${Math.min(100, Math.round((macrosHoy.proteina / Math.max(1, diagnosticoMetabolico.macros.proteina.gramos)) * 100))}%` }}/>
                     </div>
                   </div>
-                  <p className="text-[10px] text-gray-400 leading-tight">Pollo, pescado, huevo, queso panela. Clave para que la piel se pegue al músculo y no cuelgue.</p>
+                  <p className="text-[10px] text-gray-400 leading-tight">Pollo, pescado, huevo, queso panela. Clave para nutrir las fibras musculares y favorecer la tonicidad y elasticidad de tus tejidos.</p>
                 </div>
 
                 {/* Grasas Saludables */}
@@ -3127,10 +3889,12 @@ export default function PacienteProfile() {
                       <div className="bg-cyan-400 h-full rounded-full transition-all duration-500" style={{ width: `${Math.min(100, Math.round((macrosHoy.carbs / Math.max(1, diagnosticoMetabolico.macros.carbs.gramos)) * 100))}%` }}/>
                     </div>
                   </div>
-                  <p className="text-[10px] text-gray-400 leading-tight">Avena, verduras, fruta, arroz. Energía para tu día a día sin inflamación en el abdomen.</p>
+                  <p className="text-[10px] text-gray-400 leading-tight">Avena, verduras, fruta, arroz. Energía para tu día a día sin distensión abdominal.</p>
                 </div>
               </div>
             </div>
+            </>
+          )}
           </div>
 {/* POINT 3: GRÁFICA DE CALORÍAS COMPLETA EN ESTILO DE VIDA */}
             <div className="mb-5 bg-white p-5 rounded-3xl border border-gray-100 shadow-sm">

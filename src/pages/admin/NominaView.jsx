@@ -14,7 +14,7 @@ import {
 import {
     onStaffChange, createEmpleado, updateEmpleado, deleteEmpleado, sincronizarBajasStaff,
     liquidarNomina, ajustarComisionManual, eliminarComisionHistorial,
-    editarComisionHistorial
+    editarComisionHistorial, restablecerPasswordStaff
 } from '../../services/staffService';
 import { registrarMovimiento } from '../../services/finanzasService';
 import { doc, setDoc, getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
@@ -125,6 +125,24 @@ export default function NominaView() {
 
     // Modal de Ficha Rápida / Expediente del Empleado
     const [empleadoFicha, setEmpleadoFicha] = useState(null);
+    const [empleadoResetModal, setEmpleadoResetModal] = useState(null);
+    const [reseteandoPassword, setReseteandoPassword] = useState(false);
+    const [resetExitoso, setResetExitoso] = useState(false);
+    const [copiadoReset, setCopiadoReset] = useState(false);
+
+    const handleEjecutarResetPassword = async () => {
+        if (!empleadoResetModal) return;
+        try {
+            setReseteandoPassword(true);
+            await restablecerPasswordStaff(empleadoResetModal.id, empleadoResetModal.email, 'Alfra2026!');
+            setResetExitoso(true);
+        } catch (err) {
+            console.error(err);
+            alert('Error al restablecer contraseña: ' + (err.message || 'Error desconocido'));
+        } finally {
+            setReseteandoPassword(false);
+        }
+    };
 
     // ── Liquidación de Nómina ─────────────────────────────────────────────
     const [empleadoLiquidar, setEmpleadoLiquidar] = useState(null);
@@ -982,6 +1000,19 @@ export default function NominaView() {
                                                     >
                                                         <Receipt size={18} />
                                                     </button>
+                                                    {userRole === 'Administrador' && (
+                                                        <button
+                                                            title="Restablecer Contraseña (Alfra2026!)"
+                                                            onClick={() => {
+                                                                setEmpleadoResetModal(empleado);
+                                                                setResetExitoso(false);
+                                                                setCopiadoReset(false);
+                                                            }}
+                                                            className="p-2 text-amber-600 hover:text-amber-800 hover:bg-amber-50 rounded-lg transition-colors"
+                                                        >
+                                                            <KeyRound size={18} />
+                                                        </button>
+                                                    )}
                                                     <Button variant="ghost" size="sm" icon={Settings} onClick={() => handleOpenModal(empleado)} className="hover:bg-acero/5" />
                                                     <button onClick={() => setEmployeeToDelete(empleado)} className="p-2 text-red-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors">
                                                         <Trash2 size={18} />
@@ -1141,6 +1172,11 @@ export default function NominaView() {
 
                         <div className="flex justify-end gap-2 pt-2">
                             <Button variant="ghost" onClick={() => setEmpleadoFicha(null)}>Cerrar</Button>
+                            {userRole === 'Administrador' && (
+                                <Button variant="outline" onClick={() => { const emp = empleadoFicha; setEmpleadoFicha(null); setEmpleadoResetModal(emp); setResetExitoso(false); setCopiadoReset(false); }} className="border-amber-400 text-amber-800 hover:bg-amber-50 flex items-center gap-1.5">
+                                    <KeyRound size={14} className="text-amber-600" /> Restablecer Clave (Alfra2026!)
+                                </Button>
+                            )}
                             <Button variant="primary" onClick={() => {
                                 const emp = empleadoFicha;
                                 setEmpleadoFicha(null);
@@ -1153,7 +1189,57 @@ export default function NominaView() {
                 </Modal>
             )}
 
-            {/* MODAL ALTA / EDICIÓN CON FOTO Y EXPEDIENTE COMPLETO */}
+            {/* MODAL RESTABLECER CONTRASEÑA STAFF */}
+{empleadoResetModal && (
+    <Modal isOpen={!!empleadoResetModal} onClose={() => setEmpleadoResetModal(null)} title="Restablecer Contraseña de Personal" maxWidth="max-w-md">
+        {resetExitoso ? (
+            <div className="text-center space-y-5 py-3">
+                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle size={32} />
+                </div>
+                <div>
+                    <h3 className="text-lg font-black text-gray-900">¡Contraseña Restablecida!</h3>
+                    <p className="text-xs text-gray-500 mt-1">Se asignó la contraseña genérica provisional a <strong className="text-gray-800">{empleadoResetModal.nombre}</strong>.</p>
+                </div>
+                <div className="bg-amber-50 p-4 rounded-2xl border border-amber-200 text-left text-xs space-y-2">
+                    <div className="flex justify-between items-center"><span className="font-bold text-gray-500 uppercase text-[10px]">Usuario / Correo:</span><span className="font-mono font-bold text-gray-800">{empleadoResetModal.email}</span></div>
+                    <div className="flex justify-between items-center"><span className="font-bold text-gray-500 uppercase text-[10px]">Nueva Clave Provisional:</span><span className="font-mono font-black text-amber-800 text-sm bg-white px-2 py-0.5 rounded border border-amber-300">Alfra2026!</span></div>
+                    <p className="text-[10px] text-amber-700 italic pt-1">🔒 Al iniciar sesión con esta clave, el sistema le obligará inmediatamente a cambiarla por una propia.</p>
+                </div>
+                <div className="space-y-2">
+                    <Button variant="primary" fullWidth onClick={() => { navigator.clipboard.writeText("Hola " + empleadoResetModal.nombre + ", se ha restablecido tu acceso a la app de Clínica ALFRA.\n\nUsuario: " + empleadoResetModal.email + "\nContraseña provisional: Alfra2026!\n\nAl ingresar, el sistema te pedirá crear tu nueva contraseña personal."); setCopiadoReset(true); setTimeout(() => setCopiadoReset(false), 2000); }}>
+                        {copiadoReset ? "¡Credenciales Copiadas!" : "Copiar Credenciales para WhatsApp"}
+                    </Button>
+                    {empleadoResetModal.telefono && (
+                        <Button variant="outline" fullWidth onClick={() => { const tel = String(empleadoResetModal.telefono).replace(/\D/g, ""); const msg = encodeURIComponent("Hola " + empleadoResetModal.nombre + ", se ha restablecido tu acceso a la app de Clínica ALFRA.\n\nUsuario: " + empleadoResetModal.email + "\nContraseña provisional: Alfra2026!\n\nAl ingresar, el sistema te pedirá crear tu nueva contraseña personal."); window.open("https://wa.me/52" + tel + "?text=" + msg, "_blank"); }} className="border-emerald-500 text-emerald-700 hover:bg-emerald-50">
+                            <MessageSquare size={14} className="mr-1.5" /> Enviar por WhatsApp
+                        </Button>
+                    )}
+                    <Button variant="ghost" fullWidth onClick={() => setEmpleadoResetModal(null)}>Cerrar</Button>
+                </div>
+            </div>
+        ) : (
+            <div className="space-y-4 py-2">
+                <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 flex gap-3 items-start">
+                    <KeyRound size={22} className="text-amber-600 shrink-0 mt-0.5" />
+                    <div className="text-xs text-amber-900 leading-relaxed">
+                        <p className="font-bold">Restablecimiento Oficial de Contraseña</p>
+                        <p className="text-[11px] text-amber-800 mt-1">Se asignará la clave genérica <strong className="font-mono bg-white px-1.5 py-0.5 rounded border border-amber-300">Alfra2026!</strong> a <strong>{empleadoResetModal.nombre}</strong> ({empleadoResetModal.email}).</p>
+                        <p className="text-[10px] text-amber-700 mt-1.5 font-bold">⚠️ Cuando el colaborador ingrese, el sistema bloqueará su navegación y le exigirá crear su nueva contraseña personal antes de continuar.</p>
+                    </div>
+                </div>
+                <div className="flex justify-end gap-2 pt-2">
+                    <Button variant="ghost" onClick={() => setEmpleadoResetModal(null)} disabled={reseteandoPassword}>Cancelar</Button>
+                    <Button variant="primary" onClick={handleEjecutarResetPassword} disabled={reseteandoPassword} className="bg-amber-600 hover:bg-amber-500 text-white">
+                        {reseteandoPassword ? "Restableciendo..." : "Restablecer a Alfra2026!"}
+                    </Button>
+                </div>
+            </div>
+        )}
+    </Modal>
+)}
+
+{/* MODAL ALTA / EDICIÓN CON FOTO Y EXPEDIENTE COMPLETO */}
             <Modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}

@@ -9,7 +9,7 @@ import ReciboDigital from '../../components/ui/ReciboDigital';
 import { getRecibosPaciente } from '../../services/recibosService';
 import { getDocs, query, collection, where, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos, sincronizarTodosLosPacientes } from '../../services/pacientesService';
+import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos, sincronizarTodosLosPacientes, sincronizarDirectorioTelefonos } from '../../services/pacientesService';
 import { sellarVisita, canjearRecompensa } from '../../services/lealtadService';
 import { onStaffChange } from '../../services/staffService';
 import { createCita } from '../../services/citasService';
@@ -293,6 +293,7 @@ export default function AdminPacientes() {
             } else {
                 setPacientesError(null);
                 setPacientes(data);
+                sincronizarDirectorioTelefonos(data);
             }
         });
         const unsubStaff = onStaffChange(data => {

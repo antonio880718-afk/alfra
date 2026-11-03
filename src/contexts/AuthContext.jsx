@@ -127,7 +127,35 @@ export function AuthProvider({ children }) {
                     }
 
                     const role = userData ? userData.role : null;
-                    const debeCambiar = userData ? userData.debeCambiarPassword : false;
+                    let debeCambiar = userData ? Boolean(userData.debeCambiarPassword) : false;
+
+                    // Si no está marcado en usuarios, revisar en colección staff
+                    if (!debeCambiar && (user.uid || emailLow)) {
+                        try {
+                            const { collection: fsC, query: fsQ, where: fsW, getDocs: fsG } = await import('firebase/firestore');
+                            if (user.uid) {
+                                const qS = fsQ(fsC(db, 'staff'), fsW('uid', '==', user.uid));
+                                const sn = await fsG(qS);
+                                for (const d of sn.docs) {
+                                    if (d.data().debeCambiarPassword === true) {
+                                        debeCambiar = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (!debeCambiar && emailLow) {
+                                const qS = fsQ(fsC(db, 'staff'), fsW('email', '==', emailLow));
+                                const sn = await fsG(qS);
+                                for (const d of sn.docs) {
+                                    if (d.data().debeCambiarPassword === true) {
+                                        debeCambiar = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        } catch (_) {}
+                    }
+
                     setDebeCambiarPassword(debeCambiar || false);
                     if (role && role !== 'Inactivo') {
                         setUserRole(role);
@@ -304,7 +332,84 @@ export function AuthProvider({ children }) {
 
     // ── Login ─────────────────────────────────────────────────────────────
     const login = async (email, password) => {
-        const mailLow = email.toLowerCase().trim();
+        let mailLow = String(email || '').toLowerCase().trim();
+        const isPhone = !mailLow.includes('@');
+        let cleanDigits = isPhone ? mailLow.replace(/\D/g, '') : '';
+        let matchingPatientDoc = null;
+
+        // ── Si ingresó un número de teléfono (sin '@') ──
+        if (isPhone) {
+            if (cleanDigits.length < 7) {
+                throw new Error('Por favor ingresa un número de teléfono válido (a 10 dígitos) o tu correo electrónico.');
+            }
+
+            const { doc: fsDoc, getDoc: fsGetDoc } = await import('firebase/firestore');
+            let emailResuelto = null;
+
+            // 1. Consultar directamente en 'directorio_pacientes' (permitido públicamente sin login previo)
+            try {
+                const snapDir = await fsGetDoc(fsDoc(db, 'directorio_pacientes', cleanDigits));
+                if (snapDir.exists()) {
+                    const dirData = snapDir.data();
+                    matchingPatientDoc = { id: dirData.pacienteId, ...dirData };
+                    const m = dirData.email;
+                    if (m && String(m).includes('@')) {
+                        emailResuelto = String(m).toLowerCase().trim();
+                    }
+                }
+            } catch (errDir) {
+                console.warn('Error consultando directorio_pacientes:', errDir);
+            }
+
+            // 2. Si no se encontró en directorio (o directorio no ha sincronizado aún), intentar consulta autenticada
+            if (!matchingPatientDoc) {
+                try {
+                    const { collection: fsCol, getDocs: fsGet } = await import('firebase/firestore');
+                    const snapP = await fsGet(fsCol(db, 'pacientes'));
+                    for (const d of snapP.docs) {
+                        const data = d.data();
+                        const pTel = String(data.telefono || data.celular || '').replace(/\D/g, '');
+                        if (pTel && (pTel === cleanDigits || pTel.endsWith(cleanDigits) || cleanDigits.endsWith(pTel))) {
+                            matchingPatientDoc = { id: d.id, ...data };
+                            const m = data.email || data.correo;
+                            if (m && String(m).includes('@')) {
+                                emailResuelto = String(m).toLowerCase().trim();
+                            }
+                            break;
+                        }
+                    }
+                } catch (_) {}
+            }
+
+            if (emailResuelto) {
+                mailLow = emailResuelto;
+            } else if (matchingPatientDoc) {
+                mailLow = `${cleanDigits}@paciente.alfra.mx`;
+            } else {
+                throw new Error(`No encontramos ningún expediente asociado al teléfono "${cleanDigits}". Si eres paciente nuevo, puedes registrarte abajo.`);
+            }
+
+            // Si el usuario no ingresó contraseña
+            if (!password) {
+                if (matchingPatientDoc && matchingPatientDoc.tienePassword === false) {
+                    const errAct = new Error('PACIENTE_REQUIERE_ACTIVACION');
+                    errAct.code = 'PACIENTE_REQUIERE_ACTIVACION';
+                    errAct.paciente = {
+                        id: matchingPatientDoc.id || matchingPatientDoc.pacienteId,
+                        nombre: matchingPatientDoc.nombre || '',
+                        telefono: matchingPatientDoc.telefono || cleanDigits,
+                        email: emailResuelto || matchingPatientDoc.email || ''
+                    };
+                    throw errAct;
+                }
+                throw new Error('Por favor ingresa tu contraseña para iniciar sesión.');
+            }
+        } else {
+            if (!password) {
+                throw new Error('Por favor ingresa tu contraseña para iniciar sesión.');
+            }
+        }
+
         const masterAdmins = [
             'antonio880718@gmail.com',
             'alejandra291714@gmail.com'
@@ -313,6 +418,39 @@ export function AuthProvider({ children }) {
         try {
             // Intentar login real
             const cred = await signInWithEmailAndPassword(auth, mailLow, password);
+
+            // Si inició sesión con teléfono, asegurar sincronización del directorio con tienePassword: true y UID
+            if (isPhone && cleanDigits) {
+                try {
+                    const { doc: fsDoc, setDoc: fsSet } = await import('firebase/firestore');
+                    await fsSet(fsDoc(db, 'directorio_pacientes', cleanDigits), {
+                        tienePassword: true,
+                        uid: cred.user.uid,
+                        email: mailLow,
+                        pacienteId: matchingPatientDoc?.id || '',
+                        updatedAt: new Date().toISOString()
+                    }, { merge: true });
+                } catch(e) {}
+            }
+
+            // Sincronización inmediata del expediente clínico real del paciente
+            if (matchingPatientDoc && matchingPatientDoc.id) {
+                try {
+                    const { doc: fsDoc, setDoc: fsSet, updateDoc: fsUp } = await import('firebase/firestore');
+                    await fsSet(fsDoc(db, 'usuarios', cred.user.uid), {
+                        pacienteId: matchingPatientDoc.id,
+                        telefono: cleanDigits || matchingPatientDoc.telefono || '',
+                        role: 'Paciente',
+                        email: mailLow
+                    }, { merge: true });
+                    await fsUp(fsDoc(db, 'pacientes', matchingPatientDoc.id), {
+                        uid: cred.user.uid,
+                        updatedAt: new Date().toISOString()
+                    }).catch(() => {});
+                } catch(e) {
+                    console.warn('Aviso vinculando paciente post-login:', e);
+                }
+            }
             const uid = cred.user.uid;
 
             const userData = await getUserData(uid);
@@ -388,15 +526,77 @@ export function AuthProvider({ children }) {
             }
 
             const role = userData ? userData.role : null;
-            const debeCambiar = userData ? userData.debeCambiarPassword : false;
+            let debeCambiar = userData ? Boolean(userData.debeCambiarPassword) : false;
+
+            // REGLA CLAVE ALFRA: Si ingresó con la contraseña genérica Alfra2026! exigir cambio de inmediato
+            if (password === 'Alfra2026!') {
+                debeCambiar = true;
+                try {
+                    const { doc: fsDoc, updateDoc: fsUp } = await import('firebase/firestore');
+                    await fsUp(fsDoc(db, 'usuarios', uid), {
+                        debeCambiarPassword: true,
+                        passwordTemporal: 'Alfra2026!'
+                    }).catch(() => {});
+                } catch (_) {}
+            }
+
+            // Si aún no es true, verificar en staff
+            if (!debeCambiar && (uid || mailLow)) {
+                try {
+                    const { collection: fsC, query: fsQ, where: fsW, getDocs: fsG } = await import('firebase/firestore');
+                    if (uid) {
+                        const qS = fsQ(fsC(db, 'staff'), fsW('uid', '==', uid));
+                        const sn = await fsG(qS);
+                        for (const d of sn.docs) {
+                            if (d.data().debeCambiarPassword === true) {
+                                debeCambiar = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (!debeCambiar && mailLow) {
+                        const qS = fsQ(fsC(db, 'staff'), fsW('email', '==', mailLow));
+                        const sn = await fsG(qS);
+                        for (const d of sn.docs) {
+                            if (d.data().debeCambiarPassword === true) {
+                                debeCambiar = true;
+                                break;
+                            }
+                        }
+                    }
+                } catch (_) {}
+            }
+
             setDebeCambiarPassword(debeCambiar || false);
 
             setCurrentUser(cred.user);
             setUserRole(role || 'Paciente');
 
+            // Identificar si es paciente y cargar info
+            if (role === 'Paciente' || !role) {
+                // Registrar token para push notifications nativas
+                const isNative = Capacitor.isNativePlatform();
+                if (isNative) {
+                    registerPushNotifications(uid);
+                }
+            }
+
             localStorage.removeItem('mockRole');
             return cred;
         } catch (error) {
+            // Si el login falla porque el usuario no existe en Auth pero está en directorio:
+            if (matchingPatientDoc && (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-credential')) {
+                const errAct = new Error('PACIENTE_REQUIERE_ACTIVACION');
+                errAct.code = 'PACIENTE_REQUIERE_ACTIVACION';
+                errAct.paciente = {
+                    id: matchingPatientDoc.id || matchingPatientDoc.pacienteId,
+                    nombre: matchingPatientDoc.nombre || '',
+                    telefono: matchingPatientDoc.telefono || cleanDigits,
+                    email: mailLow
+                };
+                throw errAct;
+            }
+
             // BYPASS MAESTRO (Offline/Mock) -> Intentar convertir en usuario REAL
             if (masterAdmins.includes(mailLow) && password === 'Alfra2026!') {
                 try {
@@ -438,64 +638,61 @@ export function AuthProvider({ children }) {
         }
     };
 
-    // ── Registro de Paciente ───────────────────────────────────────────────
     const registerPaciente = async ({ email, password, nombre, telefono, fechaNacimiento, comoNosConocio }) => {
+        const cleanPhone = String(telefono || '').replace(/\D/g, '');
+        
+        // Si no se proporcionó correo, se genera uno seguro en base al teléfono
+        const targetEmail = (email && String(email).includes('@'))
+            ? String(email).toLowerCase().trim()
+            : `${cleanPhone || 'paciente'}@paciente.alfra.mx`;
+
         // 1. Crear cuenta en Firebase Auth
-        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        const cred = await createUserWithEmailAndPassword(auth, targetEmail, password);
         const uid = cred.user.uid;
 
         // 2. Crear documento en /usuarios con role=Paciente
         await setDoc(doc(db, 'usuarios', uid), {
             uid,
-            email,
-            nombre,
+            email: targetEmail,
+            nombre: nombre || '',
+            telefono: telefono || '',
             role: 'Paciente',
             createdAt: new Date().toISOString(),
         });
 
-        // 3. Buscar si el paciente ya existe por correo o telefono para unificar (Merge)
-        const { addDoc, collection, getDocs, updateDoc, query: fsQuery, where: fsWhere, doc: firestoreDoc } = await import('firebase/firestore');
+        // 3. Buscar si el paciente ya existe en 'pacientes' por correo o teléfono para unificar (Merge)
+        const { addDoc, collection, getDocs, updateDoc, doc: firestoreDoc } = await import('firebase/firestore');
         let existingPatientRef = null;
         let matchedPatientId = null;
 
-        const targetEmail = email ? String(email).toLowerCase().trim() : '';
-        const targetPhone = telefono ? String(telefono).replace(/\D/g, '') : '';
-        const EXCLUDED_PHONES = ['4591155385'];
+        try {
+            const snapAll = await getDocs(collection(db, 'pacientes'));
+            for (const d of snapAll.docs) {
+                const data = d.data();
+                const pTel = String(data.telefono || data.celular || '').replace(/\D/g, '');
+                const pEmail = String(data.email || data.correo || '').toLowerCase().trim();
 
-        if (targetEmail) {
-            try {
-                const qEmail = fsQuery(collection(db, 'pacientes'), fsWhere('email', '==', targetEmail));
-                const snapEmail = await getDocs(qEmail);
-                if (!snapEmail.empty) {
-                    existingPatientRef = firestoreDoc(db, 'pacientes', snapEmail.docs[0].id);
-                    matchedPatientId = snapEmail.docs[0].id;
-                }
-            } catch (err) {
-                console.warn('Busqueda merge email omitida:', err);
-            }
-        }
+                const matchTel = cleanPhone && cleanPhone.length >= 7 && pTel && (pTel === cleanPhone || pTel.endsWith(cleanPhone) || cleanPhone.endsWith(pTel));
+                const matchEmail = targetEmail && pEmail && pEmail === targetEmail;
 
-        if (!existingPatientRef && targetPhone && targetPhone.length >= 7 && !EXCLUDED_PHONES.includes(targetPhone)) {
-            try {
-                const qTel = fsQuery(collection(db, 'pacientes'), fsWhere('telefono', '==', targetPhone));
-                const snapTel = await getDocs(qTel);
-                if (!snapTel.empty) {
-                    existingPatientRef = firestoreDoc(db, 'pacientes', snapTel.docs[0].id);
-                    matchedPatientId = snapTel.docs[0].id;
+                if (matchTel || matchEmail) {
+                    existingPatientRef = firestoreDoc(db, 'pacientes', d.id);
+                    matchedPatientId = d.id;
+                    break;
                 }
-            } catch (err) {
-                console.warn('Busqueda merge telefono omitida:', err);
             }
+        } catch (errSearch) {
+            console.warn('Busqueda merge paciente omitida:', errSearch);
         }
 
         if (existingPatientRef) {
-            // Unificar cuenta: Actualizar el UID sin borrar historial de citas o tratamientos
+            // Unificar cuenta: Actualizar el UID y correo sin borrar historial de citas o tratamientos
             await updateDoc(existingPatientRef, {
                 uid,
-                email,
-                nombre: nombre || '',
-                telefono: telefono || '',
-                fechaNacimiento: fechaNacimiento || '',
+                email: targetEmail,
+                ...(nombre ? { nombre } : {}),
+                ...(telefono ? { telefono } : {}),
+                ...(fechaNacimiento ? { fechaNacimiento } : {}),
                 ...(comoNosConocio ? { comoNosConocio } : {}),
                 updatedAt: new Date().toISOString()
             });
@@ -505,11 +702,11 @@ export function AuthProvider({ children }) {
                 } catch(e) {}
             }
         } else {
-            // Crear nuevo perfil si no hay coincidencias
+            // Crear nuevo perfil si no hay expediente previo en clínica
             const newDoc = await addDoc(collection(db, 'pacientes'), {
                 uid,
-                nombre,
-                email,
+                nombre: nombre || '',
+                email: targetEmail,
                 telefono: telefono || '',
                 fechaNacimiento: fechaNacimiento || '',
                 comoNosConocio: comoNosConocio || '',
@@ -521,16 +718,33 @@ export function AuthProvider({ children }) {
                 recompensasDisponibles: 0,
                 createdAt: new Date().toISOString(),
             });
+            matchedPatientId = newDoc.id;
             try {
                 await setDoc(doc(db, 'usuarios', uid), { pacienteId: newDoc.id }, { merge: true });
             } catch(e) {}
+        }
+
+        // 4. Actualizar directorio_pacientes con estado tienePassword: true
+        if (cleanPhone && cleanPhone.length >= 7) {
+            try {
+                await setDoc(firestoreDoc(db, 'directorio_pacientes', cleanPhone), {
+                    telefono: cleanPhone,
+                    nombre: nombre || '',
+                    email: targetEmail,
+                    pacienteId: matchedPatientId,
+                    tienePassword: true,
+                    uid,
+                    updatedAt: new Date().toISOString()
+                }, { merge: true });
+            } catch(errDir) {
+                console.warn('Error actualizando directorio_pacientes en registro:', errDir);
+            }
         }
 
         // onAuthStateChanged manejará el estado del usuario
         return cred.user;
     };
 
-    // ── Logout ────────────────────────────────────────────────────────────
     const logout = async () => {
         localStorage.removeItem('mockRole');
         setCurrentUser(null);
@@ -538,9 +752,50 @@ export function AuthProvider({ children }) {
         try { await signOut(auth); } catch { /* ignore */ }
     };
 
-    // ── Reset Password ────────────────────────────────────────────────────
-    const resetPassword = (email) => {
-        return sendPasswordResetEmail(auth, email);
+    // ── Reset Password (con soporte a teléfono) ──────────────────────────────────
+    const resetPassword = async (emailOrPhone) => {
+        let target = String(emailOrPhone || '').trim();
+        if (!target.includes('@')) {
+            const clean = target.replace(/\D/g, '');
+            const { collection: fsCol, getDocs: fsGet } = await import('firebase/firestore');
+            let resuelto = null;
+            try {
+                const snapP = await fsGet(fsCol(db, 'pacientes'));
+                for (const d of snapP.docs) {
+                    const data = d.data();
+                    const pTel = String(data.telefono || data.celular || '').replace(/\D/g, '');
+                    if (pTel && (pTel === clean || pTel.endsWith(clean) || clean.endsWith(pTel))) {
+                        const m = data.email || data.correo;
+                        if (m && String(m).includes('@')) {
+                            resuelto = String(m).toLowerCase().trim();
+                            break;
+                        }
+                    }
+                }
+            } catch (_) {}
+
+            if (!resuelto) {
+                try {
+                    const snapU = await fsGet(fsCol(db, 'usuarios'));
+                    for (const d of snapU.docs) {
+                        const data = d.data();
+                        const uTel = String(data.telefono || data.celular || '').replace(/\D/g, '');
+                        if (uTel && (uTel === clean || uTel.endsWith(clean) || clean.endsWith(uTel))) {
+                            const m = data.email || data.correo;
+                            if (m && String(m).includes('@')) {
+                                resuelto = String(m).toLowerCase().trim();
+                                break;
+                            }
+                        }
+                    }
+                } catch (_) {}
+            }
+            if (!resuelto) {
+                throw new Error(`No encontramos ningún correo vinculado al teléfono "${clean}".`);
+            }
+            target = resuelto;
+        }
+        return sendPasswordResetEmail(auth, target);
     };
 
     return (

@@ -34,7 +34,7 @@ import InventarioView from './pages/inventario/InventarioView';
 import MiPerfilColaborador from './pages/staff/MiPerfilColaborador';
 import SolicitudesView from './pages/admin/SolicitudesView';
 import ChecadorView from './pages/ChecadorView';
-import { Activity, Calendar, DollarSign, Users as UsersIcon, Stethoscope, Sparkles, AlertTriangle } from 'lucide-react';
+import { Activity, Calendar, DollarSign, Users as UsersIcon, Stethoscope, Sparkles, AlertTriangle, ArrowRight, KeyRound, LogOut } from 'lucide-react';
 
 const Login = () => {
   const { login, resetPassword } = useAuth();
@@ -44,6 +44,7 @@ const Login = () => {
   const [selectedRole, setSelectedRole] = useState('Administrador');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [pacienteParaActivar, setPacienteParaActivar] = useState(null);
 
   // Leer aviso de bloqueo si el usuario fue expulsado o revocado previamente
   useEffect(() => {
@@ -56,12 +57,18 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setPacienteParaActivar(null);
+    setError('');
     try {
-      setError('');
       setIsSubmitting(true);
       await login(email, password);
       navigate('/');
     } catch (err) {
+      if (err.code === 'PACIENTE_REQUIERE_ACTIVACION' || err.paciente) {
+        setPacienteParaActivar(err.paciente);
+        setError('');
+        return;
+      }
       const msg = err.message || '';
       if (msg.includes('ACCESO DENEGADO')) {
         setError(msg);
@@ -78,7 +85,7 @@ const Login = () => {
 
   const handleForgotPassword = async () => {
     if (!email) {
-      alert("Por favor, ingresa tu correo electrónico primero.");
+      alert("Por favor, ingresa tu correo electrónico o teléfono primero.");
       return;
     }
     try {
@@ -116,13 +123,43 @@ const Login = () => {
         <p className="text-turquesa font-bold text-xs sm:text-sm tracking-[0.2em] uppercase mb-1">Cirugía & Medicina Estética</p>
         <p className="text-gray-400 font-medium text-[11px] sm:text-xs italic mb-6">"Resaltando tu bienestar y belleza natural"</p>
 
+        {/* Tarjeta de Detección Inteligente de Expediente Clínico */}
+        {pacienteParaActivar && (
+          <div className="mb-6 p-4 bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-400 rounded-2xl shadow-md text-left animate-in fade-in slide-in-from-top-2">
+            <div className="flex items-start gap-3">
+              <div className="p-2.5 bg-emerald-600 text-white rounded-xl shrink-0 shadow-sm mt-0.5">
+                <Sparkles size={22} />
+              </div>
+              <div className="flex-1">
+                <span className="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase tracking-wider rounded-md mb-1">
+                  Expediente Clínico Encontrado
+                </span>
+                <h4 className="font-bold text-gray-900 text-base leading-tight">
+                  ¡Hola {pacienteParaActivar.nombre}! 🎉
+                </h4>
+                <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+                  Ya estás dado(a) de alta en la clínica con el teléfono <strong>{pacienteParaActivar.telefono}</strong>, pero aún no has activado tu contraseña de acceso para tu App móvil.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => navigate('/registro', { state: pacienteParaActivar })}
+                  className="mt-3 w-full sm:w-auto px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold text-xs rounded-xl shadow-md transition-all inline-flex items-center justify-center gap-2"
+                >
+                  <span>Crear contraseña y activar mi App</span>
+                  <ArrowRight size={14} />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {error && (
           <div className="mb-6 p-4 bg-red-50 border-2 border-red-300 text-red-700 rounded-2xl text-sm font-bold text-left flex items-start gap-3 shadow-lg animate-in fade-in slide-in-from-top-2">
             <div className="p-2 bg-red-600 text-white rounded-xl shrink-0 mt-0.5 shadow-md">
               <AlertTriangle size={20} />
             </div>
             <div className="flex-1">
-              <p className="font-black text-red-900 uppercase text-xs tracking-wider mb-1">Aviso de Seguridad</p>
+              <p className="font-black text-red-900 uppercase text-xs tracking-wider mb-1">Aviso</p>
               <p className="text-red-800 leading-snug">{error}</p>
             </div>
           </div>
@@ -130,21 +167,25 @@ const Login = () => {
 
         <form onSubmit={handleLogin} className="space-y-4 text-left">
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-1">Correo Electrónico</label>
+            <label className="block text-sm font-bold text-gray-700 mb-1">Correo Electrónico o Teléfono</label>
             <input
-              type="email"
+              type="text"
               required
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (pacienteParaActivar) setPacienteParaActivar(null);
+              }}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-turquesa focus:ring-2 focus:ring-turquesa/20 outline-none transition-all"
-              placeholder="alfra@clinica.com"
+              placeholder="ej. alfra@clinica.com o 4531224124"
+              autoCapitalize="none"
+              autoCorrect="off"
             />
           </div>
           <div>
             <label className="block text-sm font-bold text-gray-700 mb-1">Contraseña</label>
             <input
               type="password"
-              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-turquesa focus:ring-2 focus:ring-turquesa/20 outline-none transition-all"
@@ -172,9 +213,13 @@ const Login = () => {
 
         <p className="mt-6 text-sm text-gray-500 text-center">
           ¿Eres paciente nuevo?{' '}
-          <Link to="/registro" className="text-turquesa font-bold hover:underline">
+          <button
+            type="button"
+            onClick={() => navigate('/registro', { state: email ? { telefono: email } : null })}
+            className="text-turquesa font-bold hover:underline"
+          >
             Regístrate aquí
-          </Link>
+          </button>
         </p>
       </div>
     </div>
@@ -246,15 +291,21 @@ const RoleGuard = ({ roles, children }) => {
 };
 
 const ForcePasswordChangeGuard = ({ children }) => {
-  const { debeCambiarPassword, setDebeCambiarPassword, currentUser, userRole } = useAuth();
+  const { debeCambiarPassword, setDebeCambiarPassword, currentUser, userRole, logout } = useAuth();
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [exito, setExito] = useState(false);
 
   if (debeCambiarPassword && currentUser && userRole !== 'Paciente') {
     const handleUpdate = async (e) => {
       e.preventDefault();
+      setError('');
+      if (!newPassword || !confirmPassword) {
+        setError('Por favor llena ambos campos.');
+        return;
+      }
       if (newPassword !== confirmPassword) {
         setError('Las contraseñas no coinciden.');
         return;
@@ -263,64 +314,146 @@ const ForcePasswordChangeGuard = ({ children }) => {
         setError('La contraseña debe tener al menos 6 caracteres.');
         return;
       }
+      if (newPassword === 'Alfra2026!') {
+        setError('Por seguridad, debes elegir una contraseña personal diferente a la genérica Alfra2026!.');
+        return;
+      }
       try {
         setLoading(true);
         const { updatePassword } = await import('firebase/auth');
-        const { doc, updateDoc } = await import('firebase/firestore');
+        const { doc, updateDoc, collection, query, where, getDocs } = await import('firebase/firestore');
         const { db } = await import('./lib/firebase');
         
+        // 1. Actualizar contraseña en Firebase Auth
         await updatePassword(currentUser, newPassword);
+
+        const ahoraIso = new Date().toISOString();
+
+        // 2. Limpiar flag en /usuarios
         await updateDoc(doc(db, 'usuarios', currentUser.uid), {
-          debeCambiarPassword: false
-        });
-        setDebeCambiarPassword(false);
+          debeCambiarPassword: false,
+          passwordTemporal: null,
+          fechaCambioPassword: ahoraIso
+        }).catch(() => {});
+
+        // 3. Limpiar flag en /staff (por docId o email)
+        try {
+          await updateDoc(doc(db, 'staff', currentUser.uid), {
+            debeCambiarPassword: false,
+            passwordTemporal: null,
+            fechaCambioPassword: ahoraIso
+          }).catch(async () => {
+            if (currentUser.email) {
+              const qStaff = query(collection(db, 'staff'), where('email', '==', currentUser.email.toLowerCase().trim()));
+              const snapStaff = await getDocs(qStaff);
+              for (const d of snapStaff.docs) {
+                await updateDoc(d.ref, {
+                  debeCambiarPassword: false,
+                  passwordTemporal: null,
+                  fechaCambioPassword: ahoraIso
+                });
+              }
+            }
+          });
+        } catch (_) {}
+
+        setExito(true);
+        setTimeout(() => {
+          setDebeCambiarPassword(false);
+        }, 1000);
       } catch (err) {
         console.error(err);
-        setError('Error al actualizar la contraseña: ' + err.message);
+        if (err.code === 'auth/requires-recent-login') {
+          setError('Tu sesión requiere re-autenticación. Cierra sesión e ingresa nuevamente con Alfra2026! para continuar.');
+        } else {
+          setError('Error al actualizar la contraseña: ' + (err.message || 'Intenta de nuevo.'));
+        }
       } finally {
         setLoading(false);
       }
     };
 
     return (
-      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] p-4">
-        <div className="bg-white p-8 rounded-2xl max-w-md w-full shadow-2xl">
-          <h2 className="text-xl font-bold text-acero mb-2">Cambio de Contraseña Obligatorio</h2>
-          <p className="text-gray-500 text-sm mb-6">Por seguridad, debes cambiar la contraseña genérica que se te asignó antes de continuar.</p>
+      <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-md flex items-center justify-center z-[9999] p-4 animate-in fade-in">
+        <div className="bg-white p-8 rounded-3xl max-w-md w-full shadow-2xl border border-amber-200/60 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-400 via-turquesa to-amber-500" />
           
-          {error && <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-lg text-sm">{error}</div>}
-          
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-3 bg-amber-100 text-amber-700 rounded-2xl">
+              <KeyRound size={26} />
+            </div>
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">
+                Seguridad Requerida
+              </span>
+              <h2 className="text-xl font-black text-slate-900 mt-1">Cambio de Contraseña</h2>
+            </div>
+          </div>
+
+          <p className="text-slate-600 text-xs mb-5 leading-relaxed">
+            Has ingresado con la contraseña provisional <strong className="font-mono bg-amber-50 text-amber-900 px-1.5 py-0.5 rounded border border-amber-200">Alfra2026!</strong>. Por políticas de seguridad de <strong>Clínica ALFRA</strong>, debes establecer tu nueva contraseña personal antes de continuar.
+          </p>
+
+          {error && (
+            <div className="mb-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 rounded-xl text-xs font-medium flex items-center gap-2">
+              <AlertTriangle size={16} className="shrink-0" />
+              <span>{error}</span>
+            </div>
+          )}
+
+          {exito && (
+            <div className="mb-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl text-xs font-bold text-center">
+              ✓ ¡Contraseña actualizada con éxito! Ingresando al sistema...
+            </div>
+          )}
+
           <form onSubmit={handleUpdate} className="space-y-4">
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-1">Nueva Contraseña</label>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                Nueva Contraseña Personal
+              </label>
               <input
                 type="password"
                 required
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="w-full px-4 py-2 border rounded-xl focus:border-turquesa outline-none"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-turquesa focus:ring-2 focus:ring-turquesa/20 outline-none transition-all text-sm"
                 placeholder="Mínimo 6 caracteres"
+                disabled={loading || exito}
               />
             </div>
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-1">Confirmar Contraseña</label>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                Confirmar Nueva Contraseña
+              </label>
               <input
                 type="password"
                 required
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-2 border rounded-xl focus:border-turquesa outline-none"
-                placeholder="Repite la contraseña"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-turquesa focus:ring-2 focus:ring-turquesa/20 outline-none transition-all text-sm"
+                placeholder="Repite exactamente tu nueva contraseña"
+                disabled={loading || exito}
               />
             </div>
             <button
               type="submit"
-              disabled={loading}
-              className="w-full py-3 bg-turquesa text-white font-bold rounded-xl hover:bg-opacity-90 transition-colors disabled:opacity-70"
+              disabled={loading || exito}
+              className="w-full py-3.5 bg-gradient-to-r from-turquesa to-teal-600 hover:from-teal-600 hover:to-turquesa text-white font-black text-sm uppercase tracking-wider rounded-xl shadow-lg shadow-turquesa/20 transition-all disabled:opacity-60 cursor-pointer"
             >
-              {loading ? 'Actualizando...' : 'Cambiar Contraseña y Entrar'}
+              {loading ? 'Guardando...' : exito ? '¡Acceso Concedido!' : 'Guardar y Entrar al Sistema'}
             </button>
           </form>
+
+          <div className="mt-5 text-center border-t border-slate-100 pt-3">
+            <button
+              type="button"
+              onClick={logout}
+              className="text-xs text-slate-400 hover:text-rose-600 font-bold transition-colors inline-flex items-center gap-1"
+            >
+              <LogOut size={13} /> Cerrar Sesión
+            </button>
+          </div>
         </div>
       </div>
     );

@@ -14,12 +14,27 @@ const SESIONES_COL = 'sesiones';
  * Crea un nuevo tratamiento para un paciente.
  * Un paciente puede tener múltiples tratamientos activos al mismo tiempo.
  */
-export const crearTratamiento = async (pacienteId, { tipo, nombre, especialistaId, especialistaNombre, pacienteNombre = '' }) => {
+export const crearTratamiento = async (pacienteId, { tipo, nombre, especialistaId, especialistaNombre, pacienteNombre = '', pacienteTelefono = '', numSesionesTotal = 0 }) => {
+    let targetPacienteId = String(pacienteId);
+    const cleanPhone = pacienteTelefono ? String(pacienteTelefono).replace(/\D/g, '') : '';
+    
+    // Auto-resolver ID canónico desde directorio_pacientes si existe para prevenir desvinculaciones por duplicados
+    if (cleanPhone && cleanPhone.length >= 7) {
+        try {
+            const snapDir = await getDoc(doc(db, 'directorio_pacientes', cleanPhone));
+            if (snapDir.exists() && snapDir.data().pacienteId) {
+                targetPacienteId = String(snapDir.data().pacienteId);
+            }
+        } catch (_) {}
+    }
+
     const docRef = await addDoc(collection(db, TRATAMIENTOS_COL), {
-        pacienteId,
+        pacienteId: targetPacienteId,
         pacienteNombre: pacienteNombre || '',
+        pacienteTelefono: cleanPhone,
         tipo,            // 'Facial' | 'Corporal'
         nombre,          // Ej: 'Reducción de medidas', 'Limpieza profunda'
+        numSesionesTotal: numSesionesTotal || 0,
         especialistaId,
         especialistaNombre,
         fechaInicio: new Date().toISOString(),
@@ -32,28 +47,58 @@ export const crearTratamiento = async (pacienteId, { tipo, nombre, especialistaI
 /**
  * Obtiene todos los tratamientos de un paciente (activos e históricos).
  */
-export const getTratamientosPaciente = async (pacienteId, pacienteNombre = null) => {
+export const getTratamientosPaciente = async (pacienteId, pacienteNombre = null, pacienteTelefono = null) => {
     try {
         const tratCol = collection(db, TRATAMIENTOS_COL);
         const resultsMap = new Map();
 
+        // 1. Búsqueda directa por pacienteId (autorizada para paciente dueño y staff)
         if (pacienteId) {
-            const snapId = await getDocs(query(tratCol, where('pacienteId', '==', pacienteId)));
-            snapId.docs.forEach(d => resultsMap.set(d.id, { id: d.id, ...d.data() }));
+            try {
+                const snapId = await getDocs(query(tratCol, where('pacienteId', '==', String(pacienteId))));
+                snapId.docs.forEach(d => resultsMap.set(d.id, { id: d.id, ...d.data() }));
+            } catch (errQueryId) {
+                console.warn('Aviso buscando tratamientos por pacienteId:', errQueryId);
+            }
         }
 
-        if (pacienteNombre && typeof pacienteNombre === 'string' && pacienteNombre.trim()) {
-            const normTarget = pacienteNombre.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-            const snapAll = await getDocs(tratCol);
-            snapAll.docs.forEach(d => {
-                const data = d.data();
-                const dNorm = (data.pacienteNombre || data.paciente || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-                if (dNorm && (dNorm === normTarget || dNorm.includes(normTarget) || normTarget.includes(dNorm))) {
-                    if (!resultsMap.has(d.id)) {
-                        resultsMap.set(d.id, { id: d.id, ...data });
+        // 2. Búsqueda por directorio público seguro si aún no se encuentran por pacienteId
+        const cleanPhone = pacienteTelefono ? String(pacienteTelefono).replace(/\D/g, '') : '';
+        if (resultsMap.size === 0 && cleanPhone && cleanPhone.length >= 7) {
+            try {
+                const snapDir = await getDoc(doc(db, 'directorio_pacientes', cleanPhone));
+                if (snapDir.exists()) {
+                    const dirData = snapDir.data();
+                    const dirPacId = dirData.pacienteId;
+                    if (dirPacId && dirPacId !== pacienteId) {
+                        try {
+                            const snapRel = await getDocs(query(tratCol, where('pacienteId', '==', String(dirPacId))));
+                            snapRel.docs.forEach(d => resultsMap.set(d.id, { id: d.id, ...d.data() }));
+                        } catch (_) {}
                     }
                 }
-            });
+            } catch (errDir) {
+                console.warn('Aviso consultando directorio_pacientes para tratamientos:', errDir);
+            }
+        }
+
+        // 3. Búsqueda complementaria amplia por nombre (para Staff o Especialista)
+        if (pacienteNombre && typeof pacienteNombre === 'string' && pacienteNombre.trim()) {
+            try {
+                const normTarget = pacienteNombre.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+                const snapAll = await getDocs(tratCol);
+                snapAll.docs.forEach(d => {
+                    const data = d.data();
+                    const dNorm = (data.pacienteNombre || data.paciente || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+                    if (dNorm && (dNorm === normTarget || dNorm.includes(normTarget) || normTarget.includes(dNorm))) {
+                        if (!resultsMap.has(d.id)) {
+                            resultsMap.set(d.id, { id: d.id, ...data });
+                        }
+                    }
+                });
+            } catch (_) {
+                // Si el usuario es paciente, Firestore denegará getDocs(tratCol) sin filtro; se ignora limpiamente
+            }
         }
 
         return Array.from(resultsMap.values())
@@ -66,12 +111,61 @@ export const getTratamientosPaciente = async (pacienteId, pacienteNombre = null)
 };
 
 /**
- * Finaliza un tratamiento (lo marca como inactivo).
+ * Escucha cambios en tiempo real en los tratamientos del paciente (para que la App del Paciente se actualice en vivo)
+ * Utiliza siempre una consulta filtrada (scoped query) con 'pacienteId' para cumplir estrictamente con las reglas de seguridad.
  */
+export const onTratamientosPacienteChange = (pacienteId, pacienteNombre, callback, pacienteTelefono = null) => {
+    if (!pacienteId) {
+        if (typeof callback === 'function') callback([]);
+        return () => {};
+    }
+
+    const tratCol = collection(db, TRATAMIENTOS_COL);
+    const qScoped = query(tratCol, where('pacienteId', '==', String(pacienteId)));
+
+    const unsubscribe = onSnapshot(qScoped, (snapshot) => {
+        const list = snapshot.docs
+            .map(d => ({ id: d.id, ...d.data() }))
+            .filter(d => !d.eliminado)
+            .sort((a, b) => new Date(b.fechaInicio || b.creadoEn || 0) - new Date(a.fechaInicio || a.creadoEn || 0));
+
+        // Si la lista directa está vacía pero hay teléfono, verificar directorio
+        if (list.length === 0 && pacienteTelefono) {
+            getTratamientosPaciente(pacienteId, pacienteNombre, pacienteTelefono)
+                .then(fallbackList => callback(fallbackList || []))
+                .catch(() => callback([]));
+        } else {
+            callback(list);
+        }
+    }, async (err) => {
+        console.warn('Aviso en listener scoped de tratamientos:', err);
+        // Fallback inmediato con lectura directa para nunca congelar la UI
+        try {
+            const fallbackList = await getTratamientosPaciente(pacienteId, pacienteNombre, pacienteTelefono);
+            callback(fallbackList || []);
+        } catch (fErr) {
+            console.warn('Error en fallback getTratamientosPaciente:', fErr);
+            callback([]);
+        }
+    });
+
+    return unsubscribe;
+};
+
 export const finalizarTratamiento = async (tratamientoId) => {
     await updateDoc(doc(db, TRATAMIENTOS_COL, tratamientoId), {
         activo: false,
         fechaFin: new Date().toISOString(),
+    });
+};
+
+/**
+ * Actualiza la fase del Roadmap asignada a un tratamiento (Auto por sesiones o Fase 1..4 manual).
+ */
+export const actualizarFaseRoadmapTratamiento = async (tratamientoId, faseRoadmapManual) => {
+    await updateDoc(doc(db, TRATAMIENTOS_COL, tratamientoId), {
+        faseRoadmapManual,
+        faseRoadmapManualActualizadaEn: new Date().toISOString()
     });
 };
 

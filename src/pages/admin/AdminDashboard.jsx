@@ -13,6 +13,8 @@ import { onMovimientosChange } from '../../services/finanzasService';
 import { onPacientesChange } from '../../services/pacientesService';
 import { onPlanesChange, detectarPlanesDuplicados } from '../../services/planesService';
 import { useNavigate } from 'react-router-dom';
+import { obtenerProximosCumpleanos } from '../../utils/cumpleanosUtils';
+import ModalTarjetaCumpleanos from '../../components/cumpleanos/ModalTarjetaCumpleanos';
 
 export default function AdminDashboard() {
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -28,6 +30,7 @@ export default function AdminDashboard() {
     const [loading, setLoading] = useState(true);
     const [planes, setPlanes] = useState([]);
     const [showIncidenciasModal, setShowIncidenciasModal] = useState(null);
+    const [pacienteCumpleModal, setPacienteCumpleModal] = useState(null);
     const [detalleModal, setDetalleModal] = useState(null);
     
     // Estados para reset de password de staff
@@ -370,15 +373,10 @@ export default function AdminDashboard() {
     }));
 
 
-    // Pacientes de cumpleaños esta semana
-    const cumpleanosPacientes = pacientes.filter(p => {
-        try {
-            const cumple = p.fechaNacimiento;
-            if (!cumple) return false;
-            const fecha = new Date(cumple);
-            return fecha.getMonth() === hoyDate.getMonth() && Math.abs(fecha.getDate() - hoyDate.getDate()) <= 3;
-        } catch { return false; }
-    });
+    // Pacientes de cumpleaños en los próximos 30 días calculados con día exacto
+    const cumpleanosPacientes = useMemo(() => {
+        return obtenerProximosCumpleanos(pacientes, 30, hoyDate);
+    }, [pacientes, hoyDate]);
 
     // --- KPIs REALES DEL DÍA (desde Firebase movimientos) ---
     const hoyRealActual = new Date(); // Fecha real de hoy para marcar "Hoy" en la UI si coincide
@@ -1141,20 +1139,49 @@ export default function AdminDashboard() {
                         </div>
                     </Card>
 
-                    <Card title="🎁 Próximos Cumpleaños" variant="subtle">
+﻿                    <Card title="🎂 Próximos Cumpleaños" subtitle="Próximos 30 días con fecha exacta" variant="subtle">
                         {cumpleanosPacientes.length === 0 ? (
-                            <p className="text-sm text-gray-400 italic text-center py-6">No hay cumpleaños cercanos.</p>
+                            <p className="text-sm text-gray-400 italic text-center py-6">No hay cumpleaños en los próximos 30 días.</p>
                         ) : (
-                            <div className="space-y-4">
+                            <div className="space-y-3 max-h-[380px] overflow-y-auto pr-1">
                                 {cumpleanosPacientes.map((paciente) => (
-                                    <div key={paciente.id} className="group flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all cursor-pointer">
-                                        <div className="flex items-center gap-4">
-                                            <div className="p-3 bg-turquesa/5 text-turquesa rounded-xl group-hover:scale-110 transition-transform"><Gift size={20} /></div>
+                                    <div 
+                                        key={paciente.id} 
+                                        className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all gap-2"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className={`p-2.5 rounded-xl transition-transform ${
+                                                paciente.detalleCumple?.esHoy
+                                                    ? 'bg-amber-400 text-slate-900 animate-bounce'
+                                                    : 'bg-turquesa/10 text-turquesa'
+                                            }`}>
+                                                <Gift size={18} />
+                                            </div>
                                             <div>
-                                                <p className="text-sm font-black text-gray-900 leading-tight">{paciente.nombre}</p>
-                                                <p className="text-[10px] font-bold text-turquesa uppercase tracking-wider">{paciente.tratamiento || 'Paciente VIP'}</p>
+                                                <div className="flex items-center gap-2 flex-wrap">
+                                                    <p className="text-sm font-black text-gray-900 leading-tight">{paciente.nombre}</p>
+                                                    <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-full ${
+                                                        paciente.detalleCumple?.esHoy
+                                                            ? 'bg-amber-100 text-amber-800 border border-amber-300'
+                                                            : 'bg-indigo-50 text-indigo-700 border border-indigo-200'
+                                                    }`}>
+                                                        {paciente.detalleCumple?.textoProximidad}
+                                                    </span>
+                                                </div>
+                                                <p className="text-xs font-bold text-turquesa mt-0.5">
+                                                    📅 {paciente.detalleCumple?.textoFechaExacta}
+                                                    {paciente.detalleCumple?.edadCumple ? ` (${paciente.detalleCumple.edadCumple} años)` : ''}
+                                                </p>
                                             </div>
                                         </div>
+                                        <button
+                                            type="button"
+                                            onClick={() => setPacienteCumpleModal(paciente)}
+                                            className="px-3 py-1.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 text-xs font-black rounded-xl shadow-sm flex items-center justify-center gap-1.5 transition-all cursor-pointer self-end sm:self-auto"
+                                            title="Diseñar y enviar tarjeta de regalo personalizada por WhatsApp"
+                                        >
+                                            <Sparkles size={13} /> Tarjeta & Regalo
+                                        </button>
                                     </div>
                                 ))}
                             </div>
@@ -1211,6 +1238,15 @@ export default function AdminDashboard() {
                     </Card>
                 </div>
             </div>
+
+            {/* Modal de Tarjeta de Cumpleaños ALFRA VIP */}
+            {pacienteCumpleModal && (
+                <ModalTarjetaCumpleanos
+                    isOpen={!!pacienteCumpleModal}
+                    onClose={() => setPacienteCumpleModal(null)}
+                    paciente={pacienteCumpleModal}
+                />
+            )}
 
             {/* Modal de Incidencias */}
             {showIncidenciasModal && (

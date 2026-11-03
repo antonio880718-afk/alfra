@@ -90,15 +90,7 @@ export const getPacienteById = async (id) => {
 export const getPacienteByUid = async (uid, optionalEmail = null) => {
     if (!uid) return null;
     try {
-        // 1. Busqueda directa por UID
-        const q = query(pacientesCol, where('uid', '==', uid));
-        const snapshot = await getDocs(q);
-        if (!snapshot.empty) {
-            const d = snapshot.docs[0];
-            return { ...d.data(), id: d.id };
-        }
-
-        // Si no se encontro por UID directo, buscar expediente por usuario/email/telefono
+        // 1. Verificar si /usuarios/{uid} ya tiene su pacienteId canónico asignado
         let userDocData = null;
         try {
             const userSnap = await getDoc(doc(db, 'usuarios', uid));
@@ -119,36 +111,47 @@ export const getPacienteByUid = async (uid, optionalEmail = null) => {
             console.warn("Aviso al verificar /usuarios/" + uid + ":", uErr);
         }
 
+        // 2. Extraer identificadores del usuario (email, teléfono y nombre)
         const targetEmail = (optionalEmail || userDocData?.email || auth?.currentUser?.email || '').trim().toLowerCase();
+        let cleanPhone = String(userDocData?.telefono || auth?.currentUser?.phoneNumber || '').replace(/\D/g, '');
+        
+        if (!cleanPhone && targetEmail && targetEmail.includes('@paciente.alfra.mx')) {
+            cleanPhone = targetEmail.split('@')[0].replace(/\D/g, '');
+        }
+        if (!cleanPhone && optionalEmail && optionalEmail.includes('@paciente.alfra.mx')) {
+            cleanPhone = optionalEmail.split('@')[0].replace(/\D/g, '');
+        }
 
-        // 2. Busqueda por email
-        if (targetEmail) {
+        // 3. Resolución canónica inmediata por teléfono en directorio_pacientes
+        if (cleanPhone && cleanPhone.length >= 7) {
+            try {
+                const snapDir = await getDoc(doc(db, 'directorio_pacientes', cleanPhone));
+                if (snapDir.exists() && snapDir.data().pacienteId) {
+                    const canId = snapDir.data().pacienteId;
+                    const snapCan = await getDoc(doc(db, COLLECTION_NAME, canId));
+                    if (snapCan.exists()) {
+                        const cData = snapCan.data();
+                        try {
+                            if (!cData.uid || cData.uid !== uid) {
+                                await updateDoc(doc(db, COLLECTION_NAME, canId), { uid, updatedAt: new Date().toISOString() });
+                            }
+                            await setDoc(doc(db, 'usuarios', uid), { pacienteId: canId, telefono: cleanPhone }, { merge: true });
+                        } catch (_) {}
+                        return { ...cData, uid, id: canId };
+                    }
+                }
+            } catch (dirErr) {
+                console.warn("Aviso resolviendo paciente por directorio:", dirErr);
+            }
+        }
+
+        // 4. Búsqueda por email
+        if (targetEmail && !targetEmail.includes('@paciente.alfra.mx')) {
             try {
                 const qEmail = query(pacientesCol, where('email', '==', targetEmail));
                 const snapEmail = await getDocs(qEmail);
                 if (!snapEmail.empty) {
                     const d = snapEmail.docs[0];
-                    const pData = d.data();
-                    try {
-                        await updateDoc(doc(db, COLLECTION_NAME, d.id), { uid, updatedAt: new Date().toISOString() });
-                        await setDoc(doc(db, 'usuarios', uid), { pacienteId: d.id }, { merge: true });
-                    } catch(linkErr) {
-                        console.warn("Aviso vinculando paciente UID:", linkErr);
-                    }
-                    return { ...pData, uid, id: d.id };
-                }
-            } catch(e) {}
-        }
-
-        // 3. Busqueda por telefono
-        const rawPhone = userDocData?.telefono || auth?.currentUser?.phoneNumber || '';
-        const cleanPhone = rawPhone ? String(rawPhone).replace(/\D/g, '') : '';
-        if (cleanPhone && cleanPhone.length >= 7) {
-            try {
-                const qTel = query(pacientesCol, where('telefono', '==', cleanPhone));
-                const snapTel = await getDocs(qTel);
-                if (!snapTel.empty) {
-                    const d = snapTel.docs[0];
                     const pData = d.data();
                     try {
                         await updateDoc(doc(db, COLLECTION_NAME, d.id), { uid, updatedAt: new Date().toISOString() });
@@ -159,9 +162,58 @@ export const getPacienteByUid = async (uid, optionalEmail = null) => {
             } catch(e) {}
         }
 
-        // 4. Si el paciente no existia en pacientes, inicializar su registro base
+        // 5. Búsqueda inteligente por teléfono normalizado (a 10 dígitos)
+        if (cleanPhone && cleanPhone.length >= 7) {
+            try {
+                const snapAll = await getDocs(pacientesCol);
+                const candidates = [];
+                snapAll.docs.forEach(d => {
+                    const pData = d.data();
+                    const pTel = String(pData.telefono || pData.celular || '').replace(/\D/g, '');
+                    if (pTel && (pTel === cleanPhone || pTel.endsWith(cleanPhone) || cleanPhone.endsWith(pTel))) {
+                        candidates.push({ id: d.id, ...pData });
+                    }
+                });
+
+                if (candidates.length > 0) {
+                    candidates.sort((a, b) => {
+                        const scoreA = (a.especialistaAsignado ? 10 : 0) + (a.tipoTratamiento && a.tipoTratamiento !== 'Mixto' ? 5 : 0) + (a.fechaNacimiento ? 2 : 0);
+                        const scoreB = (b.especialistaAsignado ? 10 : 0) + (b.tipoTratamiento && b.tipoTratamiento !== 'Mixto' ? 5 : 0) + (b.fechaNacimiento ? 2 : 0);
+                        return scoreB - scoreA;
+                    });
+                    const best = candidates[0];
+                    try {
+                        await updateDoc(doc(db, COLLECTION_NAME, best.id), { uid, updatedAt: new Date().toISOString() });
+                        await setDoc(doc(db, 'usuarios', uid), { pacienteId: best.id, telefono: cleanPhone }, { merge: true });
+                    } catch(linkErr) {}
+                    return { ...best, uid, id: best.id };
+                }
+            } catch(e) {}
+        }
+
+        // 6. Búsqueda por nombre de paciente (Insensible a mayúsculas y acentos)
+        const targetName = (userDocData?.nombre || auth?.currentUser?.displayName || '').trim();
+        if (targetName && targetName.length > 3) {
+            try {
+                const normTarget = targetName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+                const snapAll = await getDocs(pacientesCol);
+                for (const d of snapAll.docs) {
+                    const dData = d.data();
+                    const dNorm = (dData.nombre || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+                    if (dNorm && (dNorm === normTarget || dNorm.includes(normTarget) || normTarget.includes(dNorm))) {
+                        try {
+                            await updateDoc(doc(db, COLLECTION_NAME, d.id), { uid, updatedAt: new Date().toISOString() });
+                            await setDoc(doc(db, 'usuarios', uid), { pacienteId: d.id }, { merge: true });
+                        } catch(_) {}
+                        return { ...dData, uid, id: d.id };
+                    }
+                }
+            } catch (_) {}
+        }
+
+        // 7. Si definitivamente no existía en pacientes, inicializar su registro base
         const defaultNombre = userDocData?.nombre || auth?.currentUser?.displayName || (targetEmail ? targetEmail.split('@')[0] : 'Paciente');
-        const defaultTel = rawPhone || '';
+        const defaultTel = cleanPhone || '';
         try {
             const newDocRef = await addDoc(pacientesCol, {
                 uid,
@@ -175,7 +227,7 @@ export const getPacienteByUid = async (uid, optionalEmail = null) => {
                 createdAt: new Date().toISOString()
             });
             try {
-                await setDoc(doc(db, 'usuarios', uid), { pacienteId: newDocRef.id }, { merge: true });
+                await setDoc(doc(db, 'usuarios', uid), { pacienteId: newDocRef.id, telefono: defaultTel }, { merge: true });
             } catch(e){}
             return {
                 id: newDocRef.id,
@@ -188,18 +240,17 @@ export const getPacienteByUid = async (uid, optionalEmail = null) => {
                 recompensasDisponibles: 0
             };
         } catch (createErr) {
-            console.error("Error al auto-crear paciente:", createErr);
+            console.error("Error creando nuevo paciente base:", createErr);
+            return null;
         }
-
-        return null;
     } catch (error) {
-        console.error("Error getting paciente by uid:", error);
+        console.error("Error en getPacienteByUid:", error);
         return null;
     }
 };
 
 /**
- * Normaliza cadenas para comparaciones ultra-tolerantes (sin acentos, min?sculas, espacios colapsados)
+ * Normaliza cadenas para comparaciones ultra-tolerantes (sin acentos, minúsculas, espacios colapsados)
  */
 export const stripAccents = (str = '') => {
     return String(str || '')
@@ -1132,3 +1183,43 @@ export const resetAllSellos = async () => {
     return snap.size;
 };
 
+/**
+ * Sincroniza la colección pública segura 'directorio_pacientes'
+ * Permite que pacientes en login resuelvan su teléfono de forma instantánea sin requerir login previo
+ */
+export const sincronizarDirectorioTelefonos = async (pacientes = []) => {
+    try {
+        if (!pacientes || pacientes.length === 0) return;
+        const BATCH_LIMIT = 450;
+        let batch = writeBatch(db);
+        let count = 0;
+
+        for (const p of pacientes) {
+            const rawTel = p.telefono || p.celular || '';
+            const clean = String(rawTel).replace(/\D/g, '');
+            if (clean && clean.length >= 7) {
+                const ref = doc(db, 'directorio_pacientes', clean);
+                batch.set(ref, {
+                    telefono: clean,
+                    nombre: p.nombre || '',
+                    email: p.email || p.correo || '',
+                    pacienteId: p.id,
+                    tienePassword: Boolean(p.uid),
+                    updatedAt: new Date().toISOString()
+                }, { merge: true });
+                count++;
+                if (count >= BATCH_LIMIT) {
+                    await batch.commit();
+                    batch = writeBatch(db);
+                    count = 0;
+                }
+            }
+        }
+        if (count > 0) {
+            await batch.commit();
+            console.log(`[Directorio] Sincronizados ${count} pacientes en directorio_pacientes`);
+        }
+    } catch (err) {
+        console.warn('Error sincronizando directorio_pacientes:', err);
+    }
+};

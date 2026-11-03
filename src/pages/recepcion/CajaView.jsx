@@ -3,11 +3,13 @@ import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import {
-    DollarSign, Search, PlusCircle, CreditCard, Banknote, Bell, Gift,
+    DollarSign, Search, PlusCircle, CreditCard, Banknote, Bell, Gift, Sparkles,
     CheckCircle, Loader, ArrowRightLeft, Trash2, TrendingDown, Wallet,
     Calculator, AlertTriangle, FileText, Tag, ShieldCheck, Layers, ArrowDownCircle
 } from 'lucide-react';
 import ReciboDigital from '../../components/ui/ReciboDigital';
+import { obtenerProximosCumpleanos } from '../../utils/cumpleanosUtils';
+import ModalTarjetaCumpleanos from '../../components/cumpleanos/ModalTarjetaCumpleanos';
 import {
     registrarMovimiento,
     onMovimientosChange,
@@ -28,6 +30,7 @@ import { getPacientes, getPacienteById, updatePaciente } from '../../services/pa
 import { onInventarioChange, updateInventarioItem } from '../../services/inventarioService';
 import { getStaff, asignarComision } from '../../services/staffService';
 import { onPlanesChange, updatePlan } from '../../services/planesService';
+import { abrirWhatsApp } from '../../services/whatsappService';
 import { onServiciosChange } from '../../services/comercialService';
 import { onCitasChange, updateCitaStatus } from '../../services/citasService';
 import { useAuth } from '../../contexts/AuthContext';
@@ -125,6 +128,7 @@ export default function CajaView() {
 
     // Alertas cumpleaños
     const [cumpleanosPacientes, setCumpleanosPacientes] = useState([]);
+    const [pacienteTarjetaModal, setPacienteTarjetaModal] = useState(null);
 
     // Modal de Cancelación
     const [modalCancelacionOpen, setModalCancelacionOpen] = useState(false);
@@ -136,7 +140,63 @@ export default function CajaView() {
     const [recompensaDetalle, setRecompensaDetalle] = useState('');
 
     // Filtro de movimientos del día (Todos / Ingresos / Egresos)
-    const [filtroMovsDia, setFiltroMovsDia] = useState('Todos');
+        const [filtroMovsDia, setFiltroMovsDia] = useState('Todos');
+
+    // Sub-pestaña de alertas en caja (checkin / citas / cumples)
+    const [subTabAlertas, setSubTabAlertas] = useState('checkin');
+    const [alertasCheckinPost, setAlertasCheckinPost] = useState([]);
+    const [alertasCitasApp, setAlertasCitasApp] = useState([]);
+
+    // Escuchar alertas de check-in post consulta y citas app en tiempo real
+    useEffect(() => {
+        let unsubCheckin = () => {};
+        let unsubCitas = () => {};
+        import('firebase/firestore').then(({ collection, query, orderBy, limit, onSnapshot }) => {
+            import('../../lib/firebase').then(({ db }) => {
+                const qCheckin = query(collection(db, 'seguimiento_post_consulta'), orderBy('fecha', 'desc'), limit(30));
+                unsubCheckin = onSnapshot(qCheckin, (snap) => {
+                    setAlertasCheckinPost(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+                }, (err) => console.warn('Aviso seguimiento_post_consulta:', err));
+
+                const qCitas = query(collection(db, 'alertas_recepcion'), orderBy('creadoEn', 'desc'), limit(30));
+                unsubCitas = onSnapshot(qCitas, (snap) => {
+                    setAlertasCitasApp(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+                }, (err) => console.warn('Aviso alertas_recepcion:', err));
+            });
+        });
+        return () => {
+            unsubCheckin();
+            unsubCitas();
+        };
+    }, []);
+
+    const handleMarcarAlertaAtendida = async (id, col = 'seguimiento_post_consulta') => {
+        try {
+            const { doc, updateDoc } = await import('firebase/firestore');
+            const { db } = await import('../../lib/firebase');
+            await updateDoc(doc(db, col, id), { atendido: true });
+        } catch (e) {
+            console.error('Error marcando alerta atendida:', e);
+        }
+    };
+
+    const enviarWhatsAppMotivador = (alerta) => {
+        const tel = String(alerta?.pacienteTelefono || '').replace(/\D/g, '');
+        if (!tel) {
+            alert('Este paciente no tiene registrado su número de teléfono.');
+            return;
+        }
+        const nombre = (alerta?.pacienteNombre || 'Paciente').split(' ')[0];
+        let mensaje = '';
+        if (alerta.estado === 'excelente') {
+            mensaje = `¡Hola ${nombre}! ✨ En Clínica ALFRA nos alegra muchísimo saber que te sentiste excelente tras tu sesión. Recuerda que la constancia y la disciplina son la clave para que alcances tus mejores resultados. ¡Sigue así, estamos muy orgullosas de tu avance! 💖`;
+        } else if (alerta.estado === 'bien') {
+            mensaje = `¡Hola ${nombre}! 🌸 Nos alegra saber que tu evolución va normal y en orden. Mantén una buena hidratación y sigue cuidando tus hábitos para potenciar los resultados de tu tratamiento. ¡La disciplina hace la magia! ✨`;
+        } else {
+            mensaje = `¡Hola ${nombre}! 🌸 Recibimos tu comentario en tu App de ALFRA: "${alerta.nota || ''}". Con mucho gusto estamos aquí para resolver cualquier duda y asegurarnos de que estés cómoda y segura en cada paso. Cuéntanos, ¿en qué podemos apoyarte? 💕`;
+        }
+        abrirWhatsApp(tel, mensaje);
+    };
 
     useEffect(() => {
         obtenerCatalogoGastosCompleto().then((cats) => {
@@ -147,24 +207,8 @@ export default function CajaView() {
             const activos = pacs.filter((p) => !p.eliminado);
             setPacientesLista(activos);
 
-            // Detectar cumpleaños próximos (mes actual)
-            const hoy = new Date();
-            const mesActual = hoy.getMonth() + 1;
-            const cumples = activos
-                .filter((p) => {
-                    if (!p.fechaNacimiento) return false;
-                    const partes = String(p.fechaNacimiento).split('-');
-                    return partes.length >= 3 && Number(partes[1]) === mesActual;
-                })
-                .slice(0, 5)
-                .map((p) => {
-                    const partes = String(p.fechaNacimiento).split('-');
-                    return {
-                        nombre: p.nombre,
-                        telefono: p.telefono || p.phone || '',
-                        fechaTexto: `${partes[2]}/${partes[1]}`,
-                    };
-                });
+            // Detectar cumpleaños próximos (próximos 30 días sin desfases UTC)
+            const cumples = obtenerProximosCumpleanos(activos, 30);
             setCumpleanosPacientes(cumples);
         }).catch(console.error);
 
@@ -1835,33 +1879,225 @@ export default function CajaView() {
 
                 <div>
                     <Card title="Alertas de Recepción" className="h-full border-turquesa/20">
-                        <div className="space-y-4">
-                            <h4 className="text-sm font-bold text-gray-900 flex items-center gap-2 mb-2">
-                                <Bell className="text-turquesa" size={16} /> Cumpleaños del Mes
-                            </h4>
-                            {cumpleanosPacientes.length === 0 ? (
-                                <p className="text-xs text-gray-400 text-center py-4">Sin cumpleaños registrados este mes.</p>
-                            ) : (
-                                cumpleanosPacientes.map((c, i) => (
-                                    <div key={i} className="flex justify-between items-center p-3 bg-gray-50 rounded-xl border border-gray-100">
-                                        <div className="flex items-center gap-3">
-                                            <div className="bg-turquesa/10 p-2 rounded-lg text-turquesa">
-                                                <Gift size={16} />
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-bold text-gray-900">{c.nombre}</p>
-                                                <p className="text-xs text-gray-500">{c.telefono}</p>
-                                            </div>
-                                        </div>
-                                        <span className="text-xs font-bold px-2 py-1 rounded-full bg-turquesa text-white">
-                                            {c.fechaTexto}
+                        <div className="space-y-3">
+                            {/* Selector de Pestañas de Alertas */}
+                            <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-2xl overflow-x-auto">
+                                <button
+                                    type="button"
+                                    onClick={() => setSubTabAlertas('checkin')}
+                                    className={`flex-1 text-[11px] font-black uppercase tracking-wider py-1.5 px-2 rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                                        subTabAlertas === 'checkin'
+                                            ? 'bg-white text-emerald-700 shadow-sm'
+                                            : 'text-gray-500 hover:text-gray-700'
+                                    }`}
+                                >
+                                    <Heart size={13} className="text-emerald-500" />
+                                    Post-Consulta
+                                    {alertasCheckinPost.filter(a => !a.atendido).length > 0 && (
+                                        <span className="w-4 h-4 rounded-full bg-emerald-500 text-white text-[9px] flex items-center justify-center font-bold">
+                                            {alertasCheckinPost.filter(a => !a.atendido).length}
                                         </span>
-                                    </div>
-                                ))
+                                    )}
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setSubTabAlertas('citas')}
+                                    className={`flex-1 text-[11px] font-black uppercase tracking-wider py-1.5 px-2 rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                                        subTabAlertas === 'citas'
+                                            ? 'bg-white text-teal-700 shadow-sm'
+                                            : 'text-gray-500 hover:text-gray-700'
+                                    }`}
+                                >
+                                    <Calendar size={13} className="text-turquesa" />
+                                    Citas App
+                                    {alertasCitasApp.length > 0 && (
+                                        <span className="w-4 h-4 rounded-full bg-turquesa text-white text-[9px] flex items-center justify-center font-bold">
+                                            {alertasCitasApp.length}
+                                        </span>
+                                    )}
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setSubTabAlertas('cumples')}
+                                    className={`flex-1 text-[11px] font-black uppercase tracking-wider py-1.5 px-2 rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                                        subTabAlertas === 'cumples'
+                                            ? 'bg-white text-acero shadow-sm'
+                                            : 'text-gray-500 hover:text-gray-700'
+                                    }`}
+                                >
+                                    <Gift size={13} className="text-purple-500" />
+                                    Cumples
+                                    <span className="text-[10px] text-gray-400">({cumpleanosPacientes.length})</span>
+                                </button>
+                            </div>
+
+                            {/* PESTAÑA 1: CHECK-IN POST-CONSULTA (CON BOTÓN DE WHATSAPP MOTIVACIONAL) */}
+                            {subTabAlertas === 'checkin' && (
+                                <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
+                                    {alertasCheckinPost.length === 0 ? (
+                                        <p className="text-xs text-gray-400 text-center py-6">Sin respuestas de check-in recientes.</p>
+                                    ) : (
+                                        alertasCheckinPost.map((alerta) => (
+                                            <div
+                                                key={alerta.id}
+                                                className={`p-3 rounded-2xl border transition-all space-y-2 ${
+                                                    alerta.atendido
+                                                        ? 'bg-gray-50/70 border-gray-150 opacity-70'
+                                                        : 'bg-emerald-50/60 border-emerald-200 shadow-sm'
+                                                }`}
+                                            >
+                                                <div className="flex items-start justify-between gap-2">
+                                                    <div>
+                                                        <div className="flex items-center gap-1.5">
+                                                            <span className="text-sm">
+                                                                {alerta.estado === 'excelente' ? '🤩' : alerta.estado === 'duda' ? '🤔' : '🙂'}
+                                                            </span>
+                                                            <p className="text-xs font-black text-gray-900">{alerta.pacienteNombre}</p>
+                                                        </div>
+                                                        <p className="text-[10px] text-gray-500 mt-0.5">
+                                                            Tel: <span className="font-bold">{alerta.pacienteTelefono || 'Sin teléfono'}</span>
+                                                        </p>
+                                                    </div>
+                                                    <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-full border ${
+                                                        alerta.estado === 'excelente'
+                                                            ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                                                            : alerta.estado === 'duda'
+                                                            ? 'bg-amber-100 text-amber-800 border-amber-300'
+                                                            : 'bg-teal-100 text-teal-800 border-teal-300'
+                                                    }`}>
+                                                        {alerta.estado === 'excelente' ? 'Excelente' : alerta.estado === 'duda' ? 'Duda' : 'Bien / Normal'}
+                                                    </span>
+                                                </div>
+
+                                                {alerta.nota && (
+                                                    <p className="text-[11px] text-gray-600 bg-white/80 p-2 rounded-xl border border-gray-100 italic">
+                                                        "{alerta.nota}"
+                                                    </p>
+                                                )}
+
+                                                <div className="flex items-center justify-between gap-2 pt-1">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => enviarWhatsAppMotivador(alerta)}
+                                                        className="px-2.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-[10px] uppercase tracking-wider flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                                                    >
+                                                        <MessageSquare size={12} /> Enviar WhatsApp Motivador
+                                                    </button>
+                                                    {!alerta.atendido && (
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => handleMarcarAlertaAtendida(alerta.id)}
+                                                            className="text-[10px] font-bold text-gray-500 hover:text-gray-800 px-2 py-1 rounded-lg bg-white border border-gray-200 cursor-pointer"
+                                                        >
+                                                            ✓ Listo
+                                                        </button>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
                             )}
-                            <p className="text-xs text-turquesa font-medium mt-2 text-center">
-                                Aplica el <span className="font-bold">20% de descuento</span> en su visita de cumpleaños.
-                            </p>
+
+                            {/* PESTAÑA 2: CITAS AGENDADAS DESDE LA APP */}
+                            {subTabAlertas === 'citas' && (
+                                <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
+                                    {alertasCitasApp.length === 0 ? (
+                                        <p className="text-xs text-gray-400 text-center py-6">Sin citas auto-agendadas pendientes por revisar.</p>
+                                    ) : (
+                                        alertasCitasApp.map((cita) => (
+                                            <div
+                                                key={cita.id}
+                                                className="p-3 bg-teal-50/60 border border-teal-200 rounded-2xl space-y-2 shadow-sm"
+                                            >
+                                                <div className="flex items-start justify-between gap-2">
+                                                    <div>
+                                                        <span className="text-[9px] font-black uppercase text-turquesa bg-turquesa/10 px-2 py-0.5 rounded-md">
+                                                            App Paciente
+                                                        </span>
+                                                        <p className="text-xs font-black text-gray-900 mt-1">{cita.pacienteNombre}</p>
+                                                    </div>
+                                                    <span className="text-[10px] font-black text-teal-800 bg-white px-2 py-1 rounded-lg border border-teal-200">
+                                                        {cita.hora}
+                                                    </span>
+                                                </div>
+
+                                                <div className="bg-white/80 p-2 rounded-xl border border-teal-100 text-[11px] space-y-0.5">
+                                                    <p className="font-bold text-gray-800">{cita.servicio}</p>
+                                                    <p className="text-[10px] text-gray-500">
+                                                        Fecha: <strong className="text-gray-700">{cita.fecha}</strong> · Duración: <strong className="text-turquesa">{cita.duracionMin} min</strong>
+                                                    </p>
+                                                </div>
+
+                                                <div className="flex justify-end pt-1">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleMarcarAlertaAtendida(cita.id)}
+                                                        className="px-3 py-1 rounded-xl bg-slate-900 text-white font-bold text-[10px] hover:bg-black transition-all cursor-pointer"
+                                                    >
+                                                        ✓ Enterada Recepción
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            )}
+
+                            {/* PESTAÑA 3: CUMPLEAÑOS DEL MES / PRÓXIMOS 30 DÍAS */}
+                            {subTabAlertas === 'cumples' && (
+                                <div className="space-y-2.5 max-h-80 overflow-y-auto pr-1">
+                                    {cumpleanosPacientes.length === 0 ? (
+                                        <p className="text-xs text-gray-400 text-center py-6">Sin cumpleaños registrados en los próximos 30 días.</p>
+                                    ) : (
+                                        cumpleanosPacientes.map((c, i) => {
+                                            const esHoy = c.detalleCumple?.esHoy;
+                                            return (
+                                                <div key={c.id || i} className={`p-2.5 rounded-xl border transition-all flex flex-col gap-2 ${
+                                                    esHoy ? 'bg-amber-50/80 border-amber-300 shadow-sm' : 'bg-gray-50/80 border-gray-100 hover:border-amber-200'
+                                                }`}>
+                                                    <div className="flex justify-between items-start">
+                                                        <div className="flex items-center gap-2">
+                                                            <div className={`p-1.5 rounded-lg ${
+                                                                esHoy ? 'bg-amber-400 text-slate-900 animate-bounce' : 'bg-turquesa/10 text-turquesa'
+                                                            }`}>
+                                                                <Gift size={14} />
+                                                            </div>
+                                                            <div>
+                                                                <p className="text-xs font-bold text-gray-900 leading-tight">{c.nombre}</p>
+                                                                <p className="text-[10px] text-gray-500">{c.telefono || 'Sin teléfono'}</p>
+                                                            </div>
+                                                        </div>
+                                                        <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-full ${
+                                                            esHoy ? 'bg-amber-400 text-slate-950 font-black' : 'bg-turquesa text-white'
+                                                        }`}>
+                                                            {c.detalleCumple?.textoProximidad || 'Próximo'}
+                                                        </span>
+                                                    </div>
+
+                                                    <div className="flex justify-between items-center text-[10px] pt-1 border-t border-gray-100/80">
+                                                        <span className="font-bold text-turquesa">
+                                                            📅 {c.detalleCumple?.textoFechaExacta || c.fechaTexto}
+                                                            {c.detalleCumple?.edadCumple ? ` (${c.detalleCumple.edadCumple} años)` : ''}
+                                                        </span>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => setPacienteTarjetaModal(c)}
+                                                            className="px-2.5 py-1 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 text-[10px] font-black rounded-lg shadow-sm flex items-center gap-1 cursor-pointer transition-all"
+                                                            title="Diseñar tarjeta de regalo ALFRA"
+                                                        >
+                                                            <Sparkles size={11} /> 🎁 Tarjeta
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            );
+                                        })
+                                    )}
+                                    <p className="text-[10px] text-turquesa font-medium text-center pt-1">
+                                        Aplica el <span className="font-bold">20% de descuento</span> o regalo especial en su visita.
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </Card>
                 </div>
@@ -2204,6 +2440,15 @@ export default function CajaView() {
                     </div>
                 </div>
             )}
+            {/* Modal de Tarjeta de Cumpleaños ALFRA VIP */}
+            {pacienteTarjetaModal && (
+                <ModalTarjetaCumpleanos
+                    isOpen={!!pacienteTarjetaModal}
+                    onClose={() => setPacienteTarjetaModal(null)}
+                    paciente={pacienteTarjetaModal}
+                />
+            )}
+
         </div>
     );
 }
