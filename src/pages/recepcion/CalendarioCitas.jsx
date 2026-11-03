@@ -333,11 +333,25 @@ export default function CalendarioCitas() {
 
     const handleAbrirReagendarRapido = (cita) => {
         setCitaAReagendar(cita);
-        setReagendarFecha(cita.fechaYMD || new Date().toISOString().split('T')[0]);
+        const ymd = cita.fechaYMD || (cita.fechaHora ? String(cita.fechaHora).split('T')[0] : (cita.fecha || new Date().toISOString().split('T')[0]));
+        setReagendarFecha(ymd);
         setReagendarHora(cita.hora || '10:00');
         setReagendarCabina(cita.cabina || '');
-        setReagendarEspecialistaId(cita.especialistaId || '');
-        setReagendarEspecialistaNombre(cita.especialistaNombre || cita.especialista || '');
+
+        const espId = cita.especialistaId;
+        const espNom = cita.especialistaNombre || cita.especialista;
+        const sigueActivo = especialistas.some(e =>
+            (espId && e.id === espId) ||
+            (espNom && (e.nombre || '').toLowerCase().trim() === String(espNom).toLowerCase().trim())
+        );
+
+        if (sigueActivo) {
+            setReagendarEspecialistaId(espId || '');
+            setReagendarEspecialistaNombre(espNom || '');
+        } else {
+            setReagendarEspecialistaId('');
+            setReagendarEspecialistaNombre('');
+        }
     };
 
     const handleConfirmarReagendacionRapida = async () => {
@@ -1479,12 +1493,7 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                             }));
                             setIsModaling(true);
                         }}
-                        onReagendarCita={(cita) => {
-                            setCitaAReagendar(cita);
-                            setReagendarFecha(cita.fecha || '');
-                            setReagendarHora(cita.hora || '');
-                            setReagendarCabina(cita.cabina || '');
-                        }}
+                        onReagendarCita={handleAbrirReagendarRapido}
                         onEnviarWhatsApp={(cita) => {
                             const pac = pacientes.find(p => p.nombre?.toLowerCase() === cita.paciente?.toLowerCase());
                             enviarWhatsAppCita(cita, pac?.telefono || cita.telefono);

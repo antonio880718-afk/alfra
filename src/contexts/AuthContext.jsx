@@ -201,7 +201,7 @@ export function AuthProvider({ children }) {
         try {
             // 1. Pedir permisos nativos
             let permStatus = await PushNotifications.checkPermissions();
-            if (permStatus.receive === 'prompt') {
+            if (permStatus.receive !== 'granted') {
                 permStatus = await PushNotifications.requestPermissions();
             }
 
@@ -243,10 +243,12 @@ export function AuthProvider({ children }) {
                 }
             }
 
-            // 3. Registrar ante Firebase Cloud Messaging / APNs
-            await PushNotifications.register();
+            // 3. Limpiar y registrar listeners ANTES de solicitar el registro nativo FCM
+            try {
+                await PushNotifications.removeAllListeners();
+            } catch (_) {}
 
-            // 4. Al recibir el Token FCM, guardarlo en Firestore
+            // Listener: Token FCM recibido exitosamente
             PushNotifications.addListener('registration', async (token) => {
                 console.log('[NOTIF] Push registration success, token:', token.value);
                 const tokenData = {
@@ -262,13 +264,23 @@ export function AuthProvider({ children }) {
                     console.warn('[NOTIF] Error guardando token en usuarios:', e);
                 }
 
-                // Sincronizar en /staff/{uid} si es colaborador
+                // Guardar en localStorage para disponibilidad inmediata
+                try {
+                    localStorage.setItem('fcmToken', token.value);
+                } catch (_) {}
+
+                // Sincronizar en /staff (por ID directo o por campo uid)
                 try {
                     const staffRef = doc(db, 'staff', uid);
                     const staffDoc = await getDoc(staffRef);
                     if (staffDoc.exists()) {
                         await setDoc(staffRef, { fcmToken: token.value, fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
                     }
+                    const qStaff = query(collection(db, 'staff'), where('uid', '==', uid));
+                    const snapStaff = await getDocs(qStaff);
+                    snapStaff.forEach(async (d) => {
+                        await setDoc(d.ref, { fcmToken: token.value, fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
+                    });
                 } catch (_) {}
 
                 // Sincronizar en /pacientes si es paciente vinculado
@@ -284,6 +296,9 @@ export function AuthProvider({ children }) {
             PushNotifications.addListener('registrationError', (error) => {
                 console.error('[NOTIF] Error en registro push:', error);
             });
+
+            // 4. Registrar ante Firebase Cloud Messaging / APNs
+            await PushNotifications.register();
 
             // 5. Notificación entrante (mientras la app está en primer plano)
             PushNotifications.addListener('pushNotificationReceived', (notification) => {

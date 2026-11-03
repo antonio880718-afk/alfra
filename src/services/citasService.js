@@ -38,23 +38,39 @@ export const CABINAS_ALFRA = [
 
 export const isStaffClinico = (s) => {
     if (!s) return false;
-    if (s.eliminado === true) return false;
-    if (s.activo === false) return false;
-    const est = String(s.estatus || s.estado || '').toLowerCase().trim();
+    if (s.eliminado === true || s.activo === false) return false;
+    const est = String(s.estatus || s.estado || 'Activo').toLowerCase().trim();
     if (est === 'baja' || est === 'eliminado' || est === 'inactivo') return false;
-    const p = String(s.puesto || '').toLowerCase();
-    const r = String(s.rol || '').toLowerCase();
-    return (
+    const p = String(s.puesto || '').toLowerCase().trim();
+    const r = String(s.rol || s.role || '').toLowerCase().trim();
+    
+    // Excluir personal que NO atiende pacientes
+    if ((p.includes('recep') || r.includes('recep')) && !p.includes('especialista') && !r.includes('especialista')) return false;
+    if (p.includes('limpieza') || r.includes('limpieza') || p.includes('intendencia')) return false;
+
+    // Aceptar cualquier personal con rol clínico
+    if (
         p.includes('especialista') ||
         p.includes('cosmet') ||
         p.includes('cosmiat') ||
         p.includes('doctor') ||
+        p.includes('dra') ||
+        p.includes('dr.') ||
         p.includes('medic') ||
         p.includes('médic') ||
         p.includes('nutri') ||
+        p.includes('cabina') ||
+        p.includes('terapeuta') ||
+        p.includes('enferm') ||
         r.includes('doctor') ||
-        r.includes('especialista')
-    );
+        r.includes('especialista') ||
+        r.includes('médic') ||
+        r.includes('medic')
+    ) {
+        return true;
+    }
+
+    return !p.includes('admin') && !r.includes('admin') && !p.includes('recep') && !r.includes('recep');
 };
 
 export const normalizeCabinaKey = (cab) => {
@@ -73,21 +89,39 @@ export const checkConflictoCabina = (citas = [], { cabina, fechaYMD, hora, durac
     if (!targetCabKey) return null;
 
     const durMin = Number(duracionMin || 60);
-    const [h, m] = hora.split(':').map(Number);
-    if (isNaN(h) || isNaN(m)) return null;
-    const startM = h * 60 + m;
+    let startM = 0;
+    const match12Target = String(hora).match(/(\d{1,2}):(\d{2})\s*(am|pm)?/i);
+    if (match12Target) {
+        let th = parseInt(match12Target[1], 10);
+        const tm = parseInt(match12Target[2], 10);
+        const isPM = (match12Target[3] || '').toLowerCase() === 'pm';
+        const isAM = (match12Target[3] || '').toLowerCase() === 'am';
+        if (isPM && th < 12) th += 12;
+        if (isAM && th === 12) th = 0;
+        startM = th * 60 + tm;
+    } else {
+        const [h, m] = hora.split(':').map(Number);
+        if (isNaN(h) || isNaN(m)) return null;
+        startM = h * 60 + m;
+    }
     const endM = startM + durMin;
 
     const statusIgnorados = [
         'cancelada', 'cancelado', 'no asistio', 'no asistió', 'no_asistio',
-        'reagendada', 'reagendado', 'eliminada', 'eliminado'
+        'reagendada', 'reagendado', 'eliminada', 'eliminado', 'baja'
     ];
 
+    const targetIdClean = ignoreCitaId ? String(ignoreCitaId).trim() : null;
+
     return citas.find(c => {
-        if (ignoreCitaId && String(c.id || '') === String(ignoreCitaId)) return false;
+        // Ignorar la misma cita siendo reagendada / editada
+        if (targetIdClean) {
+            const cId = String(c.id || c.citaId || c._id || '').trim();
+            if (cId && cId === targetIdClean) return false;
+        }
         
-        const cStatus = String(c.status || '').toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g, '');
-        if (statusIgnorados.includes(cStatus)) return false;
+        const cStatus = String(c.status || '').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        if (statusIgnorados.some(s => cStatus.includes(s))) return false;
 
         const cFecha = c.fechaYMD || (c.fecha || (c.fechaHora ? String(c.fechaHora).split('T')[0] : ''));
         if (cFecha !== fechaYMD) return false;
@@ -102,8 +136,25 @@ export const checkConflictoCabina = (citas = [], { cabina, fechaYMD, hora, durac
         }
         if (!horaRaw) horaRaw = '09:00';
 
-        const [cH, cM] = horaRaw.split(':').map(Number);
-        if (isNaN(cH) || isNaN(cM)) return false;
+        let cH = 0, cM = 0;
+        const match12 = String(horaRaw).match(/(\d{1,2}):(\d{2})\s*(am|pm)?/i);
+        if (match12) {
+            cH = parseInt(match12[1], 10);
+            cM = parseInt(match12[2], 10);
+            const isPM = (match12[3] || '').toLowerCase() === 'pm';
+            const isAM = (match12[3] || '').toLowerCase() === 'am';
+            if (isPM && cH < 12) cH += 12;
+            if (isAM && cH === 12) cH = 0;
+        } else {
+            const parts = horaRaw.split(':').map(Number);
+            if (parts.length >= 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+                cH = parts[0];
+                cM = parts[1];
+            } else {
+                return false;
+            }
+        }
+
         const cStart = cH * 60 + cM;
         const cEnd = cStart + Number(c.duracionMin || c.duracionMinutos || 60);
 

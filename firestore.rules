@@ -128,7 +128,8 @@ service cloud.firestore {
 
     // Staff / Empleados
     match /staff/{staffId} {
-      allow read, update: if isStaff();
+      allow read: if true;
+      allow update: if isStaff();
       allow create, delete: if isMasterAdmin() || hasRole('Administrador');
     }
 

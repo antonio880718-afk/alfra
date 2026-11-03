@@ -1,4 +1,4 @@
-﻿import { Capacitor } from '@capacitor/core';
+import { Capacitor } from '@capacitor/core';
 
 // Web Audio API para reproducir un chime melodioso (2 tonos suaves) sin requerir archivos externos
 export const reproducirSonidoNotificacion = () => {
@@ -59,10 +59,23 @@ export const solicitarPermisoNotificaciones = async () => {
         try {
             const { PushNotifications } = await import('@capacitor/push-notifications');
             let perm = await PushNotifications.checkPermissions();
-            if (perm.receive === 'prompt') {
+            if (perm.receive !== 'granted') {
                 perm = await PushNotifications.requestPermissions();
             }
             if (perm.receive === 'granted') {
+                try {
+                    await PushNotifications.createChannel({
+                        id: 'alfra_citas_alertas',
+                        name: 'Citas y Alertas ALFRA',
+                        description: 'Notificaciones sobre citas médicas, recordatorios y avisos clínicos',
+                        importance: 5,
+                        visibility: 1,
+                        sound: 'default',
+                        vibration: true,
+                        lights: true,
+                        lightColor: '#20B2AA'
+                    });
+                } catch (_) {}
                 await PushNotifications.register();
                 return true;
             }
@@ -142,4 +155,28 @@ export const emitirNotificacion = (titulo, opciones = {}) => {
     }
 
     return null;
+};
+
+// Ejecutar prueba integral de Notificación, Sonido y Vibración Física (Local y Push FCM)
+export const probarNotificacionYVibracion = async () => {
+    // 1. Sonido y vibración háptica instantánea en el hardware del teléfono
+    reproducirSonidoNotificacion();
+    try {
+        if (typeof navigator !== 'undefined' && navigator.vibrate) {
+            navigator.vibrate([250, 150, 250, 150, 400]);
+        }
+    } catch (_) {}
+
+    // 2. Disparo de Notificación Push real desde Google Cloud FCM
+    try {
+        const { getFunctions, httpsCallable } = await import('firebase/functions');
+        const fns = getFunctions();
+        const callTest = httpsCallable(fns, 'enviarNotificacionPrueba');
+        const localToken = localStorage.getItem('fcmToken') || null;
+        const res = await callTest({ token: localToken });
+        return { success: true, res: res.data };
+    } catch (err) {
+        console.warn('Prueba FCM cloud:', err);
+        return { success: false, error: err.message };
+    }
 };

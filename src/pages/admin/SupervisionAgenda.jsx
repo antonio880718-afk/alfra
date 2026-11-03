@@ -229,11 +229,26 @@ const [savingReagendar, setSavingReagendar] = useState(false);
 
     const handleAbrirReagendarRapidoAdmin = (cita) => {
         setCitaAReagendar(cita);
-        setReagendarFecha(cita.fechaYMD || new Date().toISOString().split('T')[0]);
+        const ymd = cita.fechaYMD || (cita.fechaHora ? String(cita.fechaHora).split('T')[0] : (cita.fecha || new Date().toISOString().split('T')[0]));
+        setReagendarFecha(ymd);
         setReagendarHora(cita.hora || '10:00');
         setReagendarCabina(cita.cabina || '');
-        setReagendarEspecialistaId(cita.especialistaId || '');
-        setReagendarEspecialistaNombre(cita.especialistaNombre || cita.especialista || '');
+
+        const espId = cita.especialistaId;
+        const espNom = cita.especialistaNombre || cita.especialista;
+        const clinicosActivos = (staff || []).filter(isStaffClinico);
+        const sigueActivo = clinicosActivos.some(e =>
+            (espId && e.id === espId) ||
+            (espNom && (e.nombre || '').toLowerCase().trim() === String(espNom).toLowerCase().trim())
+        );
+
+        if (sigueActivo) {
+            setReagendarEspecialistaId(espId || '');
+            setReagendarEspecialistaNombre(espNom || '');
+        } else {
+            setReagendarEspecialistaId('');
+            setReagendarEspecialistaNombre('');
+        }
     };
 
     const handleConfirmarReagendacionRapidaAdmin = async () => {
@@ -823,7 +838,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
             ) : viewMode === 'tablero' ? (
                 <AgendaGlobalEjecutiva
                     citas={citas}
-                    especialistas={staff}
+                    especialistas={(staff || []).filter(isStaffClinico)}
                     pacientes={pacientes}
                     servicios={servicios}
                     currentDate={currentDate}

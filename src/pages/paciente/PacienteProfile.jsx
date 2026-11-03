@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { db } from "../../lib/firebase";
-import { doc, getDoc, collection, query, where, getDocs, updateDoc, addDoc } from "firebase/firestore";
+import { doc, getDoc, collection, query, where, getDocs, updateDoc, setDoc, addDoc } from "firebase/firestore";
 import { getPacienteByUid } from "../../services/pacientesService";
 import { getSeguimientosPaciente, getApoyoEnCasa, getDailyTrackers, saveDailyTracker } from "../../services/seguimientoService";
 import { getRecibosPaciente } from "../../services/recibosService";
@@ -1111,20 +1111,29 @@ export default function PacienteProfile() {
 
       const docId = pacienteDocId || perfilPaciente?.id;
       if (docId) {
-        await updateDoc(doc(db, "pacientes", docId), {
-          fotoUrl: base64Foto,
-          fotoPerfil: base64Foto,
-          updatedAt: new Date().toISOString()
-        });
+        try {
+          await setDoc(doc(db, "pacientes", docId), {
+            fotoUrl: base64Foto,
+            fotoPerfil: base64Foto,
+            foto: base64Foto,
+            updatedAt: new Date().toISOString()
+          }, { merge: true });
+        } catch (e1) {
+          console.warn("Aviso guardando foto en pacientes:", e1);
+        }
       }
 
       if (userAuth?.uid) {
         try {
-          await updateDoc(doc(db, "usuarios", userAuth.uid), {
+          await setDoc(doc(db, "usuarios", userAuth.uid), {
             fotoUrl: base64Foto,
             photoURL: base64Foto,
+            fotoPerfil: base64Foto,
             updatedAt: new Date().toISOString()
-          });
+          }, { merge: true });
+        } catch (_) {}
+        try {
+          localStorage.setItem("alfra_paciente_foto_" + userAuth.uid, base64Foto);
         } catch (_) {}
       }
 
@@ -1719,7 +1728,7 @@ export default function PacienteProfile() {
             nombre: paciente.nombre || userAuth.displayName || userAuth.email?.split('@')[0] || "Paciente",
             telefono: paciente.telefono || paciente.phone || "",
             fechaNacimiento: paciente.fechaNacimiento || "",
-            fotoUrl: paciente.fotoUrl || paciente.fotoPerfil || userAuth?.photoURL || null,
+            fotoUrl: paciente.fotoUrl || paciente.fotoPerfil || paciente.foto || (userAuth?.uid ? localStorage.getItem("alfra_paciente_foto_" + userAuth.uid) : null) || userAuth?.photoURL || null,
             tipoTratamiento: paciente.tipoTratamiento || "",
             membresia: (() => {
             let m = paciente.membresia || null;

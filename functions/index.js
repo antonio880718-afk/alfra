@@ -1,6 +1,33 @@
-﻿const functions = require("firebase-functions");
+const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 admin.initializeApp();
+
+// --- CONFIGURACION GLOBAL DE NOTIFICACIONES PUSH FCM (SONIDO Y VIBRACION) ---
+const ANDROID_NOTIFICATION_CONFIG = {
+    priority: 'high',
+    notification: {
+        channelId: 'alfra_citas_alertas',
+        sound: 'default',
+        defaultSound: true,
+        defaultVibrateTimings: true,
+        notificationPriority: 'PRIORITY_MAX',
+        visibility: 'PUBLIC'
+    }
+};
+
+const APNS_NOTIFICATION_CONFIG = {
+    headers: {
+        'apns-priority': '10'
+    },
+    payload: {
+        aps: {
+            sound: 'default',
+            badge: 1,
+            contentAvailable: true
+        }
+    }
+};
+
 
 exports.enviarNotificacionLlegada = functions.firestore
     .document("alertas_pacientes/{alertaId}")
@@ -324,30 +351,47 @@ exports.notificarEspecialistaAgenda = functions.firestore
 
 // --- UTILIDADES ---
 const obtenerTokensAdmins = async () => {
-    const tokens = [];
+    const tokens = new Set();
     try {
-        const usuariosSnap = await admin.firestore().collection("usuarios").where("role", "==", "Administrador").get();
-        usuariosSnap.forEach(doc => {
-            const token = doc.data().fcmToken;
-            if (token) tokens.push(token);
-        });
+        const roles = ['Administrador', 'Recepcionista', 'admin', 'Recepcion', 'recepcionista', 'administrador'];
+        for (const r of roles) {
+            try {
+                const snap = await admin.firestore().collection('usuarios').where('role', '==', r).get();
+                snap.forEach(doc => {
+                    const t = doc.data().fcmToken;
+                    if (t) tokens.add(t);
+                });
+            } catch (_) {}
+        }
 
         const masterEmails = [
             'antonio880718@gmail.com',
             'alejandra291714@gmail.com',
-            'aleja291714@gmail.com'
+            'aleja291714@gmail.com',
+            'recepcion@alfra.com'
         ];
-        const masterSnap = await admin.firestore().collection("usuarios").where("email", "in", masterEmails).get();
-        masterSnap.forEach(doc => {
-            const token = doc.data().fcmToken;
-            if (token && !tokens.includes(token)) {
-                tokens.push(token);
-            }
-        });
+        try {
+            const masterSnap = await admin.firestore().collection('usuarios').where('email', 'in', masterEmails).get();
+            masterSnap.forEach(doc => {
+                const t = doc.data().fcmToken;
+                if (t) tokens.add(t);
+            });
+        } catch (_) {}
+
+        try {
+            const staffSnap = await admin.firestore().collection('staff').get();
+            staffSnap.forEach(doc => {
+                const d = doc.data();
+                const rol = (d.rol || d.role || '').toLowerCase();
+                if (rol.includes('admin') || rol.includes('recep') || masterEmails.includes(String(d.email || '').toLowerCase())) {
+                    if (d.fcmToken) tokens.add(d.fcmToken);
+                }
+            });
+        } catch (_) {}
     } catch (e) {
-        console.error("[DEBUG_ADMIN_NOTIF] Error obteniendo tokens de administradores:", e);
+        console.error('[DEBUG_ADMIN_NOTIF] Error obteniendo tokens de administradores:', e);
     }
-    return tokens;
+    return Array.from(tokens);
 };
 
 // --- 1. NOTIFICACIÃ“N CANCELACIÃ“N DE CAJA ---
@@ -747,29 +791,6 @@ exports.getHorariosOcupados = functions.https.onCall(async (data, context) => {
     }
 });
 
-exports.notificarNuevaCitaPaciente = functions.https.onCall(async (data, context) => {
-    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
-    
-    const { citaId, pacienteNombre, fechaHora, especialistaId } = data;
-    
-    try {
-        const alertaRef = admin.firestore().collection('alertas_pacientes').doc();
-        await alertaRef.set({
-            tipo: 'urgente',
-            mensaje: `El paciente ${pacienteNombre} agendÃ³ una cita el ${new Date(fechaHora).toLocaleString('es-MX')}. ${!especialistaId ? 'Â¡Requiere asignaciÃ³n de Especialista!' : ''}`,
-            fecha: new Date().toISOString(),
-            estado: 'activa',
-            rolesDestino: ['Administrador', 'Recepcionista'],
-            referenciaId: citaId
-        });
-        
-        return { success: true };
-    } catch (error) {
-        console.error("Error creando alerta cita:", error);
-        throw new functions.https.HttpsError('internal', error.message);
-    }
-});
-
 exports.getMisCitas = functions.https.onCall(async (data, context) => {
     if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
     const uid = context.auth.uid;
@@ -825,3 +846,179 @@ exports.getMisRecibos = functions.https.onCall(async (data, context) => {
     }
 });
 
+
+exports.notificarNuevaCitaPaciente = functions.https.onCall(async (data, context) => {
+    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+    
+    const { citaId, pacienteNombre, fechaHora, especialistaId, especialistaNombre, servicio, fecha, hora } = data;
+    const ahoraStr = new Date().toISOString();
+    const fechaFormat = fecha || (fechaHora ? new Date(fechaHora).toLocaleDateString('es-MX') : 'próxima fecha');
+    const horaFormat = hora || (fechaHora ? new Date(fechaHora).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }) : '');
+    const nomEsp = especialistaNombre || 'Especialista ALFRA';
+    const nomServ = servicio || 'Tratamiento';
+    const nomPac = pacienteNombre || 'Paciente';
+
+    try {
+        // 1. Guardar en alertas de Firestore para panel web
+        const alertDoc = {
+            tipo: 'urgente',
+            titulo: '¡Nueva Cita desde App Móvil!',
+            mensaje: `${nomPac} agendó ${nomServ} para el ${fechaFormat} ${horaFormat} con ${nomEsp}.`,
+            fecha: ahoraStr,
+            estado: 'activa',
+            rolesDestino: ['Administrador', 'Recepcionista'],
+            referenciaId: citaId || '',
+            especialistaId: especialistaId || '',
+            servicio: nomServ,
+            pacienteNombre: nomPac,
+            creadoEn: ahoraStr
+        };
+
+        await Promise.all([
+            admin.firestore().collection('alertas_pacientes').add(alertDoc).catch(() => {}),
+            admin.firestore().collection('alertas_admin').add(alertDoc).catch(() => {}),
+            admin.firestore().collection('alertas_recepcion').add(alertDoc).catch(() => {})
+        ]);
+
+        // 2. Enviar PUSH NOTIFICATION CON SONIDO Y VIBRACIÓN A ADMINISTRADORES Y RECEPCIÓN
+        const adminTokens = await obtenerTokensAdmins();
+        if (adminTokens.length > 0) {
+            try {
+                const adminPayload = {
+                    tokens: adminTokens,
+                    notification: {
+                        title: "📅 ¡Nueva Cita Agendada en App!",
+                        body: `${nomPac} agendó cita de '${nomServ}' para el ${fechaFormat} ${horaFormat} con ${nomEsp}.`
+                    },
+                    android: ANDROID_NOTIFICATION_CONFIG,
+                    apns: APNS_NOTIFICATION_CONFIG,
+                    data: { tipo: 'NUEVA_CITA', citaId: String(citaId || '') }
+                };
+                const admRes = await admin.messaging().sendEachForMulticast(adminPayload);
+                console.log("[DEBUG_NOTIF] Push enviado a Administradores/Recepción:", admRes.successCount);
+            } catch (errAdm) {
+                console.error("[DEBUG_NOTIF] Error enviando push a admins:", errAdm);
+            }
+        }
+
+        // 3. Enviar PUSH NOTIFICATION AL ESPECIALISTA ASIGNADO
+        if (especialistaId) {
+            try {
+                let espToken = null;
+                const uSnap = await admin.firestore().collection("usuarios").doc(especialistaId).get();
+                if (uSnap.exists && uSnap.data().fcmToken) {
+                    espToken = uSnap.data().fcmToken;
+                } else {
+                    const stSnap = await admin.firestore().collection("staff").doc(especialistaId).get();
+                    if (stSnap.exists) {
+                        espToken = stSnap.data().fcmToken;
+                        if (!espToken && stSnap.data().email) {
+                            const uQ = await admin.firestore().collection("usuarios")
+                                .where("email", "==", String(stSnap.data().email).toLowerCase().trim())
+                                .limit(1).get();
+                            if (!uQ.empty) espToken = uQ.docs[0].data().fcmToken;
+                        }
+                    }
+                }
+
+                if (espToken) {
+                    const espPayload = {
+                        token: espToken,
+                        notification: {
+                            title: "📅 ¡Nueva Cita en tu Agenda!",
+                            body: `Hola ${nomEsp}, tienes una nueva cita de '${nomServ}' con el paciente ${nomPac} el ${fechaFormat} ${horaFormat}.`
+                        },
+                        android: ANDROID_NOTIFICATION_CONFIG,
+                        apns: APNS_NOTIFICATION_CONFIG,
+                        data: { tipo: 'NUEVA_CITA', citaId: String(citaId || '') }
+                    };
+                    await admin.messaging().send(espPayload);
+                    console.log(`[DEBUG_NOTIF] Push enviado al especialista ${nomEsp}`);
+                }
+            } catch (errEsp) {
+                console.error("[DEBUG_NOTIF] Error enviando push al especialista:", errEsp);
+            }
+        }
+
+        // 4. Enviar PUSH NOTIFICATION DE CONFIRMACIÓN AL PACIENTE
+        try {
+            const callerUid = context.auth.uid;
+            let pacToken = null;
+            const pacUserSnap = await admin.firestore().collection("usuarios").doc(callerUid).get();
+            if (pacUserSnap.exists && pacUserSnap.data().fcmToken) {
+                pacToken = pacUserSnap.data().fcmToken;
+            }
+
+            if (pacToken) {
+                const pacPayload = {
+                    token: pacToken,
+                    notification: {
+                        title: "✨ Cita Confirmada en Clínica ALFRA",
+                        body: `Tu cita de '${nomServ}' con ${nomEsp} quedó confirmada para el ${fechaFormat} a las ${horaFormat}. ¡Te esperamos!`
+                    },
+                    android: ANDROID_NOTIFICATION_CONFIG,
+                    apns: APNS_NOTIFICATION_CONFIG,
+                    data: { tipo: 'CONFIRMACION_CITA', citaId: String(citaId || '') }
+                };
+                await admin.messaging().send(pacPayload);
+                console.log("[DEBUG_NOTIF] Push de confirmación enviado al paciente");
+            }
+        } catch (_) {}
+
+        return { success: true };
+    } catch (error) {
+        console.error("Error creando alerta y notificando cita:", error);
+        throw new functions.https.HttpsError('internal', error.message);
+    }
+});
+
+// --- FUNCIÓN PARA PROBAR NOTIFICACIONES, SONIDO Y VIBRACIÓN EN EL CELULAR EN TIEMPO REAL ---
+exports.enviarNotificacionPrueba = functions.https.onCall(async (data, context) => {
+    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+    const uid = context.auth.uid;
+    
+    let token = data?.token || null;
+    if (!token) {
+        const uSnap = await admin.firestore().collection("usuarios").doc(uid).get();
+        if (uSnap.exists && uSnap.data().fcmToken) {
+            token = uSnap.data().fcmToken;
+        }
+    }
+    
+    if (!token) {
+        const sSnap = await admin.firestore().collection("staff").doc(uid).get();
+        if (sSnap.exists && sSnap.data().fcmToken) {
+            token = sSnap.data().fcmToken;
+        }
+    }
+
+    if (!token) {
+        // Fallback: buscar cualquier token de admin
+        const adminTokens = await obtenerTokensAdmins();
+        if (adminTokens.length > 0) token = adminTokens[0];
+    }
+    
+    if (!token) {
+        throw new functions.https.HttpsError('not-found', 'No se encontró un token FCM registrado para tu dispositivo. Asegúrate de tener la app abierta en el teléfono.');
+    }
+    
+    const payload = {
+        token,
+        notification: {
+            title: "🔔 ¡Alerta de Prueba Clínica ALFRA!",
+            body: "Tu celular está conectado y configurado con éxito. Sonido de timbre y vibración física funcionando al 100%."
+        },
+        android: ANDROID_NOTIFICATION_CONFIG,
+        apns: APNS_NOTIFICATION_CONFIG,
+        data: { tipo: 'TEST_ALERT', timestamp: String(Date.now()) }
+    };
+    
+    try {
+        const response = await admin.messaging().send(payload);
+        console.log("[DEBUG_NOTIF] Notificación de prueba enviada exitosamente:", response);
+        return { success: true, response };
+    } catch (e) {
+        console.error("[DEBUG_NOTIF] Error enviando notificación de prueba:", e);
+        throw new functions.https.HttpsError('internal', e.message);
+    }
+});
