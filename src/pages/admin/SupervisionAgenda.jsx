@@ -7,7 +7,7 @@ import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Badge } from '../../components/ui/Badge';
 import {
-    Calendar as CalendarIcon, User, PlusCircle, Edit, XCircle,
+    Calendar as CalendarIcon, User, PlusCircle, Edit, XCircle, Sparkles,
     CheckCircle, History, Loader, X, Bell, Search, Filter,
     LayoutGrid, List, Clock, ChevronLeft, ChevronRight, Navigation,
     MessageCircle, Trash2, MapPin

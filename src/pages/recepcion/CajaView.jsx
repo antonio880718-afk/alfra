@@ -3,7 +3,7 @@ import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import {
-    DollarSign, Search, PlusCircle, CreditCard, Banknote, Bell, Gift, Sparkles,
+    DollarSign, Search, PlusCircle, CreditCard, Banknote, Bell, Gift, Sparkles, Heart, Calendar,
     CheckCircle, Loader, ArrowRightLeft, Trash2, TrendingDown, Wallet,
     Calculator, AlertTriangle, FileText, Tag, ShieldCheck, Layers, ArrowDownCircle
 } from 'lucide-react';
