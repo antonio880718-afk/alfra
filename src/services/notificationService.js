@@ -34,6 +34,11 @@ export const reproducirSonidoNotificacion = () => {
             gain2.connect(ctx.destination);
             osc2.start(now + 0.1);
             osc2.stop(now + 0.55);
+            try {
+                if (typeof navigator !== 'undefined' && navigator.vibrate) {
+                    navigator.vibrate([200, 100, 250]);
+                }
+            } catch (_) {}
             return;
         }
     } catch (_) {

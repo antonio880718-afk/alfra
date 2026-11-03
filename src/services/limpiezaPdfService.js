@@ -1,5 +1,6 @@
 import { sanitizarObjetoFirmas } from './limpiezaService';
 import jsPDF from 'jspdf';
+import { guardarPdfNativo } from './nativeDownloadService';
 import autoTable from 'jspdf-autotable';
 import { LOGO_ALFRA_BASE64 } from '../assets/logoAlfraBase64';
 
@@ -322,7 +323,7 @@ export const generarBitacoraDiaPDF = async ({
 
     // Guardar archivo
     const fileName = 'Bitacora_COFEPRIS_ALFRA_' + fecha + '.pdf';
-    doc.save(fileName);
+    await guardarPdfNativo(doc, fileName, "Bitácora Diaria COFEPRIS ALFRA");
     return fileName;
 };
 
@@ -496,7 +497,7 @@ export const generarConcentradoMensualCOFEPRIS = async ({
     }
 
     const fileName = 'Concentrado_COFEPRIS_ALFRA_' + mesNombre + '_' + anio + '.pdf';
-    doc.save(fileName);
+    await guardarPdfNativo(doc, fileName, "Concentrado Mensual COFEPRIS ALFRA");
     return fileName;
 };
 
@@ -596,6 +597,6 @@ export const generarBitacoraMantenimientoPDF = async ({
     }
 
     const fileName = 'Bitacora_Mantenimiento_ALFRA_' + new Date().getFullYear() + '.pdf';
-    doc.save(fileName);
+    await guardarPdfNativo(doc, fileName, "Bitácora de Mantenimiento ALFRA");
     return fileName;
 };

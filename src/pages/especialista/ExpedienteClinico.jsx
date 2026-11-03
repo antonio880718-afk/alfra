@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 
 import { jsPDF } from 'jspdf';
+import { guardarPdfNativo } from '../../services/nativeDownloadService';
 import { getPacienteById, updatePaciente } from '../../services/pacientesService';
 import { getStaffDocByUid } from '../../services/staffService';
 import { saveApoyoEnCasa, getApoyoEnCasa, CUIDADOS_PRESET, getSeguimientosPaciente, getDailyTrackers } from '../../services/seguimientoService';
@@ -367,7 +368,7 @@ const generarPDFConsentimientoUniversal = (jsPDFLib, c, paciente, especialistaNo
 
     const safeName = (tmpl?.name || c?.name || 'Consentimiento_Informado').replace(/[^a-zA-Z0-9_-]/g, '_');
     const safePaciente = (paciente?.nombre || 'Paciente').replace(/\s+/g, '_');
-    doc.save(`${safeName}_${safePaciente}.pdf`);
+    guardarPdfNativo(doc, `${safeName}_${safePaciente}.pdf`, `Consentimiento Informado - ${tmpl?.name || "ALFRA"}`);
 };
 
 function NuevaSesionForm({ tratamiento, pacienteId, onSaved, onCancel, esPrimeraSesion, paciente, ultimaSesion, citaIdPreseleccionada }) {
@@ -2104,7 +2105,7 @@ export default function ExpedienteClinico() {
     };
 
     // Exportar Resumen Clínico Completo en PDF (Para Paciente, Especialista o Admin)
-    const handleExportarResumenClinicoPDF = () => {
+    const handleExportarResumenClinicoPDF = async () => {
         try {
             const PDFConstructor = typeof jsPDF === 'function' ? jsPDF : (jsPDF.jsPDF || jsPDF.default);
             const doc = new PDFConstructor();
@@ -2173,7 +2174,7 @@ export default function ExpedienteClinico() {
                 y += (protLines.length * 4.5) + 4;
             });
 
-            doc.save(`Expediente_Clinico_${(paciente?.nombre || 'Paciente').replace(/\s+/g, '_')}.pdf`);
+            await guardarPdfNativo(doc, `Expediente_Clinico_${(paciente?.nombre || 'Paciente').replace(/\s+/g, '_')}.pdf`, 'Expediente Clínico ALFRA');
         } catch (err) {
             console.error(err);
             alert('Error al exportar el resumen clínico PDF.');

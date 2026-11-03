@@ -10,6 +10,7 @@ import { onPacientesChange, sincronizarTodosLosPacientes, normalizeForMatch } fr
 import { getCitas } from '../../services/citasService';
 import { getAllRecibos, createRecibo, deleteRecibo } from '../../services/recibosService';
 import html2canvas from 'html2canvas';
+import { descargarArchivoNativo } from '../../services/nativeDownloadService';
 import { auth } from '../../lib/firebase';
 import { useAuth } from '../../contexts/AuthContext';
 import { abrirWhatsApp } from '../../services/whatsappService';

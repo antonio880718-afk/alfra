@@ -3,6 +3,7 @@ import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import jsPDF from 'jspdf';
+import { guardarPdfNativo } from '../../services/nativeDownloadService';
 import autoTable from 'jspdf-autotable';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
@@ -679,26 +680,10 @@ export default function ContabilidadView() {
         const baseFilename = `Estado_Resultados_ALFRA_${tipoReportePdf}_${fechaReferencia}.pdf`;
 
         const ejecutarExportacion = async () => {
-            if (Capacitor.isNativePlatform()) {
-                try {
-                    const dataUri = docPdf.output('datauristring');
-                    const base64Data = dataUri.split(',')[1];
-                    const result = await Filesystem.writeFile({
-                        path: baseFilename,
-                        data: base64Data,
-                        directory: Directory.Documents,
-                    });
-                    await Share.share({
-                        title: 'Estado de Resultados ALFRA PDF',
-                        text: 'Estado de resultados financiero ALFRA.',
-                        url: result.uri,
-                        dialogTitle: 'Exportar Reporte PDF',
-                    });
-                } catch (err) {
-                    alert('Fallo exportando el PDF en Android: ' + err.message);
-                }
-            } else {
-                docPdf.save(baseFilename);
+            try {
+                await guardarPdfNativo(docPdf, baseFilename, 'Estado de Resultados ALFRA');
+            } catch (err) {
+                alert('Fallo exportando el PDF: ' + err.message);
             }
         };
 

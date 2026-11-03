@@ -210,21 +210,36 @@ export function AuthProvider({ children }) {
                 return;
             }
 
-            // 2. Crear canal de notificación para Android 8.0+ (Oreo a Android 16)
+            // 2. Crear canales de notificación para Android 8.0+ (Oreo a Android 16)
             if (Capacitor.getPlatform() === 'android') {
                 try {
+                    // Canal principal con alta prioridad, sonido nativo y vibración
                     await PushNotifications.createChannel({
                         id: 'alfra_citas_alertas',
                         name: 'Citas y Alertas ALFRA',
                         description: 'Notificaciones sobre citas médicas, recordatorios y avisos clínicos',
-                        importance: 5, // 5 = High/Heads-up pop-up banner con sonido y vibración
+                        importance: 5, // 5 = IMPORTANCE_HIGH (banner emergente, sonido y vibración)
                         visibility: 1, // 1 = Visible en pantalla de bloqueo
+                        sound: 'default',
+                        vibration: true,
+                        lights: true,
+                        lightColor: '#20B2AA'
+                    });
+
+                    // Canal secundario fallback oficial de Firebase Cloud Messaging
+                    await PushNotifications.createChannel({
+                        id: 'fcm_fallback_notification_channel',
+                        name: 'Notificaciones ALFRA',
+                        description: 'Avisos y mensajes directos del sistema ALFRA',
+                        importance: 5,
+                        visibility: 1,
+                        sound: 'default',
                         vibration: true,
                         lights: true,
                         lightColor: '#20B2AA'
                     });
                 } catch (chErr) {
-                    console.warn('[NOTIF] Aviso al crear canal de notificaciones:', chErr);
+                    console.warn('[NOTIF] Aviso al crear canales de notificaciones:', chErr);
                 }
             }
 
@@ -272,9 +287,12 @@ export function AuthProvider({ children }) {
 
             // 5. Notificación entrante (mientras la app está en primer plano)
             PushNotifications.addListener('pushNotificationReceived', (notification) => {
-                console.log('[NOTIF] Push recibido:', notification);
+                console.log('[NOTIF] Push recibido en primer plano:', notification);
                 try {
                     reproducirSonidoNotificacion();
+                    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+                        navigator.vibrate([250, 150, 250, 150, 400]);
+                    }
                 } catch (_) {}
             });
 

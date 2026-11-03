@@ -61,14 +61,17 @@ Te adjuntamos tu Tarjeta Digital de Cumpleaños, válida durante todo este mes e
       const ext = formato === 'jpeg' ? 'jpg' : 'png';
       const dataUrl = canvas.toDataURL(mimeType, 0.95);
 
-      const link = document.createElement('a');
       const nombreArchivo = (paciente.nombre || 'Paciente')
         .trim()
         .replace(/\s+/g, '_')
         .replace(/[^a-zA-Z0-9_]/g, '');
-      link.download = `Tarjeta_Cumpleanos_ALFRA_${nombreArchivo}.${ext}`;
-      link.href = dataUrl;
-      link.click();
+      const fileName = `Tarjeta_Cumpleanos_ALFRA_${nombreArchivo}.${ext}`;
+      await descargarArchivoNativo({
+        fileName,
+        data: dataUrl,
+        mimeType,
+        title: `Tarjeta de Cumpleaños - ${paciente.nombre || 'Paciente'}`
+      });
     } catch (err) {
       console.error('Error al generar tarjeta de cumpleaños:', err);
       alert('Hubo un error al generar la imagen. Intenta de nuevo.');

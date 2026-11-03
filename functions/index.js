@@ -75,6 +75,8 @@ exports.enviarNotificacionLlegada = functions.firestore
                     title: "Â¡Paciente en Sala de Espera!",
                     body: mensaje
                 },
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG,
                 token: fcmToken
             };
 
@@ -150,6 +152,8 @@ exports.enviarRecordatorioCita = functions.pubsub
                         title: "â° Recordatorio de Cita",
                         body: `Hola ${cita.pacienteNombre}, te recordamos tu cita de ${cita.servicio} en 1 hora.`
                     },
+                    android: ANDROID_NOTIFICATION_CONFIG,
+                    apns: APNS_NOTIFICATION_CONFIG,
                     token: fcmToken
                 };
 
@@ -290,6 +294,8 @@ exports.notificarEspecialistaAgenda = functions.firestore
                     title: titulo,
                     body: cuerpo
                 },
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG,
                 token: fcmToken
             };
 
@@ -297,6 +303,8 @@ exports.notificarEspecialistaAgenda = functions.firestore
             console.log(`[DEBUG_AGENDA] NotificaciÃ³n ${tipoNotificacion} enviada a ${especialistaNombre}. Response: ${response}`);
 
             await admin.firestore().collection("notificaciones").add({
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG,
                 token: fcmToken,
                 title: titulo,
                 body: cuerpo,
@@ -366,7 +374,7 @@ exports.notificarCancelacionCaja = functions.firestore
             };
 
             try {
-                const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification });
+                const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
                 console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de cancelaciÃ³n de caja enviada. Response:", response);
                 return response;
             } catch(e) {
@@ -402,7 +410,7 @@ exports.notificarInventarioBajo = functions.firestore
             };
 
             try {
-                const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification });
+                const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
                 console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de inventario bajo enviada. Response:", response);
                 return response;
             } catch(e) {
@@ -455,7 +463,7 @@ exports.corteDiarioCaja = functions.pubsub
                 }
             };
 
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification });
+            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
             console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de corte diario enviada. Response:", response);
             return response;
         } catch (error) {
@@ -486,7 +494,7 @@ exports.notificarAdminCancelacionCita = functions.firestore
                 };
 
                 try {
-                    const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification });
+                    const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
                     console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n cancelaciÃ³n cita enviada. Response:", response);
                     return response;
                 } catch(e) {
@@ -530,7 +538,7 @@ exports.notificarAdminNuevoTratamiento = functions.firestore
         };
 
         try {
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification });
+            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
             console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n nuevo tratamiento enviada. Response:", response);
             return response;
         } catch(e) {
@@ -587,7 +595,7 @@ exports.notificarAdminNuevaSesion = functions.firestore
         };
 
         try {
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification });
+            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
             console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n nueva sesiÃ³n enviada. Response:", response);
             return response;
         } catch(e) {
@@ -615,7 +623,7 @@ exports.notificarSolicitudEliminacionPaciente = functions.firestore
         };
 
         try {
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification });
+            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
             console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de solicitud de eliminaciÃ³n enviada. Response:", response);
             return response;
         } catch(e) {

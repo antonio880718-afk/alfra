@@ -10,6 +10,7 @@ import { es } from 'date-fns/locale';
 import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
+import { descargarArchivoNativo, guardarPdfNativo } from './nativeDownloadService';
 
 const fmtMoney = (v) => `$${Number(v || 0).toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 const fmtPct = (v) => `${Number(v || 0).toFixed(1)}%`;

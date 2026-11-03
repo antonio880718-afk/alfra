@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
-import { Download, Share2, X, CheckCircle2 } from 'lucide-react';
+import { jsPDF } from 'jspdf';
+import { Download, FileText, Share2, X, CheckCircle2 } from 'lucide-react';
 import { Button } from './Button';
-import { Capacitor } from '@capacitor/core';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Share } from '@capacitor/share';
+import { descargarArchivoNativo, guardarPdfNativo } from '../../services/nativeDownloadService';
 import { abrirWhatsApp } from '../../services/whatsappService';
 import { LOGO_ALFRA_BASE64 } from '../../assets/logoAlfraBase64';
 
@@ -32,7 +31,8 @@ export default function ReciboDigital({
         ? (paqueteInfo.nombre || paqueteInfo.objetivo || '')
         : (paqueteInfo || '');
 
-    const handleDownload = async () => {
+    // Descarga nativa como imagen PNG
+    const handleDownloadPng = async () => {
         if (!reciboRef.current) return;
         try {
             const canvas = await html2canvas(reciboRef.current, {
@@ -43,21 +43,48 @@ export default function ReciboDigital({
                 logging: false,
             });
             const base64Image = canvas.toDataURL('image/png');
-            const dataUrl = base64Image.split(',')[1];
             const fileName = `Recibo_ALFRA_${folio}.png`;
 
-            if (Capacitor.isNativePlatform()) {
-                const result = await Filesystem.writeFile({ path: fileName, data: dataUrl, directory: Directory.Documents });
-                await Share.share({ title: 'Recibo Clínica ALFRA', text: 'Adjunto su recibo digital.', url: result.uri, dialogTitle: 'Compartir Recibo' });
-            } else {
-                const link = document.createElement('a');
-                link.download = fileName;
-                link.href = base64Image;
-                link.click();
-            }
+            await descargarArchivoNativo({
+                fileName,
+                data: base64Image,
+                mimeType: 'image/png',
+                title: `Recibo Clínica ALFRA #${folio}`
+            });
         } catch (error) {
             console.error('Error generando PNG:', error);
             alert('Hubo un error al generar la imagen del recibo.');
+        }
+    };
+
+    // Descarga nativa como documento PDF
+    const handleDownloadPdf = async () => {
+        if (!reciboRef.current) return;
+        try {
+            const canvas = await html2canvas(reciboRef.current, {
+                scale: 3,
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#ffffff',
+                logging: false,
+            });
+            const base64Image = canvas.toDataURL('image/png');
+            
+            // Proporciones exactas de ticket clínico ejecutivo en mm
+            const mmWidth = 90;
+            const mmHeight = (canvas.height * mmWidth) / canvas.width;
+            const doc = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: [mmWidth, mmHeight + 4]
+            });
+            doc.addImage(base64Image, 'PNG', 0, 0, mmWidth, mmHeight);
+            
+            const fileName = `Recibo_ALFRA_${folio}.pdf`;
+            await guardarPdfNativo(doc, fileName, `Recibo Clínica ALFRA #${folio}`);
+        } catch (error) {
+            console.error('Error generando PDF:', error);
+            alert('Hubo un error al generar el PDF del recibo.');
         }
     };
 
@@ -74,8 +101,8 @@ export default function ReciboDigital({
     };
 
     return (
-        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4">
-            <div className="w-full max-w-sm animate-in zoom-in-95 duration-300">
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4 overflow-y-auto">
+            <div className="w-full max-w-sm my-auto animate-in zoom-in-95 duration-300">
                 {/* Controles del Modal */}
                 <div className="flex justify-between items-center bg-white/10 backdrop-blur-md p-3 rounded-t-2xl border-b border-white/20">
                     <span className="text-white font-bold text-sm">Recibo Digital Generado</span>
@@ -84,7 +111,7 @@ export default function ReciboDigital({
                     </button>
                 </div>
 
-                {/* Área del Recibo (Solo esto se convierte a PNG) */}
+                {/* Área del Recibo (Solo esto se convierte a PNG/PDF) */}
                 <div
                     ref={reciboRef}
                     className="bg-white p-8 relative overflow-hidden"
@@ -153,29 +180,38 @@ export default function ReciboDigital({
                     </div>
                 </div>
 
-                {/* Acciones del Modal (Fuera del recibo PNG) */}
-                <div className="bg-gray-50 p-4 rounded-b-2xl flex flex-col sm:flex-row gap-3 border-t border-gray-200">
-                    <Button
-                        variant="primary"
-                        fullWidth
-                        icon={Download}
-                        onClick={handleDownload}
-                        className="shadow-md"
-                    >
-                        Descargar PNG
-                    </Button>
+                {/* Acciones del Modal */}
+                <div className="bg-gray-50 p-3 rounded-b-2xl flex flex-col gap-2 border-t border-gray-200">
+                    <div className="grid grid-cols-2 gap-2">
+                        <Button
+                            variant="primary"
+                            icon={FileText}
+                            onClick={handleDownloadPdf}
+                            className="shadow-sm py-2 text-xs"
+                        >
+                            Descargar PDF
+                        </Button>
+                        <Button
+                            variant="secondary"
+                            icon={Download}
+                            onClick={handleDownloadPng}
+                            className="shadow-sm py-2 text-xs"
+                        >
+                            Descargar PNG
+                        </Button>
+                    </div>
                     <Button
                         variant="outline"
                         fullWidth
                         icon={Share2}
                         onClick={handleShareWhatsApp}
-                        className="border-green-500 text-green-600 hover:bg-green-50"
+                        className="border-green-500 text-green-600 hover:bg-green-50 py-2 text-xs"
                     >
-                        Compartir WA
+                        Compartir por WhatsApp
                     </Button>
                 </div>
                 <div className="bg-acero/90 text-white text-[10px] text-center p-2 rounded-b-2xl">
-                    Nota: Para enviar por WhatsApp, descarga la imagen primero y adjúntala en el chat que se abrirá automáticamente.
+                    Compatible con celular y computadora. El PDF o PNG se guardará directamente en tu dispositivo.
                 </div>
             </div>
         </div>

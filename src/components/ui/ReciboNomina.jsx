@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
+import { FileText } from 'lucide-react';
+import { descargarArchivoNativo, guardarPdfNativo } from '../../services/nativeDownloadService';
 import { Download, X, Printer } from 'lucide-react';
 import { Button } from './Button';
 import { LOGO_ALFRA_BASE64 } from '../../assets/logoAlfraBase64';

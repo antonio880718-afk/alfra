@@ -39,6 +39,7 @@ import { onStaffChange } from '../../services/staffService';
 import { onPacientesChange } from '../../services/pacientesService';
 import { useAuth } from '../../contexts/AuthContext';
 import jsPDF from 'jspdf';
+import { guardarPdfNativo } from '../../services/nativeDownloadService';
 import autoTable from 'jspdf-autotable';
 import { LOGO_ALFRA_BASE64 } from '../../assets/logoAlfraBase64';
 
@@ -1197,7 +1198,7 @@ export default function CorteCajaGlobal() {
             pdf.text(`Pag. ${i} / ${totalPages}`, pageW - margin, pageH - 6, { align: 'right' });
         }
 
-        pdf.save(`corte-caja-${vista}-${format(fechaRef, 'yyyy-MM-dd')}.pdf`);
+        await guardarPdfNativo(pdf, `corte-caja-${vista}-${format(fechaRef, 'yyyy-MM-dd')}.pdf`, 'Corte de Caja ALFRA');
     };
 
     const navAnterior = () => {
