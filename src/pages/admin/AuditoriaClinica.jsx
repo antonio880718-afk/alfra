@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
+import { Input } from '../../components/ui/Input';
 import { useNavigate } from 'react-router-dom';
 import {
-    Search, FolderOpen, User, Calendar, X, AlertCircle,
+    Search, FolderOpen, User, Ruler, Calendar, X, AlertCircle,
     FileText, Activity, HeartPulse, Camera, Loader, Home,
     History, FileCheck as FileChecked, PlusCircle, Plus, CheckCircle,
     Copy, Check, AlertTriangle, ExternalLink
