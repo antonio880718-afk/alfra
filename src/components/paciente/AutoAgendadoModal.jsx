@@ -434,7 +434,16 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             try {
                 const fns = getFunctions();
                 const notificar = httpsCallable(fns, 'notificarNuevaCitaPaciente');
-                await notificar({ citaId, pacienteNombre: paciente.nombre, fechaHora: selectedTime, especialistaId: finalEspId });
+                await notificar({
+                    citaId,
+                    pacienteNombre: paciente.nombre || 'Paciente ALFRA',
+                    fechaHora: selectedTime,
+                    especialistaId: finalEspId,
+                    especialistaNombre: finalEspNombre,
+                    servicio: servicioSeleccionado.nombre,
+                    fecha: selectedDate,
+                    hora: horaCitaStr
+                });
             } catch (_) {}
 
             onAgendado && onAgendado();

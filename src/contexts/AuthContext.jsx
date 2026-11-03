@@ -213,7 +213,20 @@ export function AuthProvider({ children }) {
             // 2. Crear canales de notificación para Android 8.0+ (Oreo a Android 16)
             if (Capacitor.getPlatform() === 'android') {
                 try {
-                    // Canal principal con alta prioridad, sonido nativo y vibración
+                    // Canal prioritario v2 con vibración forzada y sonido nativo
+                    await PushNotifications.createChannel({
+                        id: 'alfra_citas_urgentes_v2',
+                        name: 'Citas y Alertas ALFRA (Vibración y Sonido)',
+                        description: 'Notificaciones sobre citas médicas con vibración física y sonido',
+                        importance: 5, // 5 = IMPORTANCE_HIGH (banner emergente, sonido y vibración)
+                        visibility: 1, // 1 = Visible en pantalla de bloqueo
+                        sound: 'default',
+                        vibration: true,
+                        lights: true,
+                        lightColor: '#20B2AA'
+                    });
+
+                    // Canal secundario alfra_citas_alertas
                     await PushNotifications.createChannel({
                         id: 'alfra_citas_alertas',
                         name: 'Citas y Alertas ALFRA',
@@ -306,7 +319,7 @@ export function AuthProvider({ children }) {
                 try {
                     reproducirSonidoNotificacion();
                     if (typeof navigator !== 'undefined' && navigator.vibrate) {
-                        navigator.vibrate([250, 150, 250, 150, 400]);
+                        navigator.vibrate([0, 500, 250, 500, 250, 500]);
                     }
                 } catch (_) {}
             });

@@ -6,12 +6,13 @@ admin.initializeApp();
 const ANDROID_NOTIFICATION_CONFIG = {
     priority: 'high',
     notification: {
-        channelId: 'alfra_citas_alertas',
+        channelId: 'alfra_citas_urgentes_v2',
         sound: 'default',
         defaultSound: true,
-        defaultVibrateTimings: true,
-        notificationPriority: 'PRIORITY_MAX',
-        visibility: 'PUBLIC'
+        defaultVibrateTimings: false,
+        vibrateTimingsMillis: [0, 500, 250, 500, 250, 500],
+        priority: 'high',
+        visibility: 'public'
     }
 };
 
@@ -852,11 +853,43 @@ exports.notificarNuevaCitaPaciente = functions.https.onCall(async (data, context
     
     const { citaId, pacienteNombre, fechaHora, especialistaId, especialistaNombre, servicio, fecha, hora } = data;
     const ahoraStr = new Date().toISOString();
-    const fechaFormat = fecha || (fechaHora ? new Date(fechaHora).toLocaleDateString('es-MX') : 'próxima fecha');
-    const horaFormat = hora || (fechaHora ? new Date(fechaHora).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }) : '');
-    const nomEsp = especialistaNombre || 'Especialista ALFRA';
-    const nomServ = servicio || 'Tratamiento';
-    const nomPac = pacienteNombre || 'Paciente';
+    let fechaFormat = fecha || (fechaHora ? new Date(fechaHora).toLocaleDateString('es-MX') : '');
+    let horaFormat = hora || (fechaHora ? new Date(fechaHora).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }) : '');
+    let nomEsp = especialistaNombre;
+    let nomServ = servicio;
+    let nomPac = pacienteNombre;
+
+    // CONSULTAR DIRECTAMENTE EN FIRESTORE LA CITA SI FALTA EL SERVICIO O ESPECIALISTA
+    if (citaId && (!nomServ || nomServ === 'Tratamiento' || !nomEsp || nomEsp === 'Especialista ALFRA' || !nomPac || !fechaFormat || !horaFormat)) {
+        try {
+            const citaSnap = await admin.firestore().collection('citas').doc(citaId).get();
+            if (citaSnap.exists) {
+                const cd = citaSnap.data();
+                if (!nomServ || nomServ === 'Tratamiento') {
+                    nomServ = cd.servicio || cd.tratamiento || cd.nombreServicio || cd.concepto;
+                }
+                if (!nomEsp || nomEsp === 'Especialista ALFRA') {
+                    nomEsp = cd.especialistaNombre || cd.especialista;
+                }
+                if (!nomPac) {
+                    nomPac = cd.pacienteNombre || cd.paciente;
+                }
+                if (!fechaFormat) {
+                    fechaFormat = cd.fecha || cd.fechaYMD || '';
+                }
+                if (!horaFormat) {
+                    horaFormat = cd.hora || '';
+                }
+            }
+        } catch (fetchErr) {
+            console.warn('[DEBUG_NOTIF] Error consultando cita en Firestore:', fetchErr);
+        }
+    }
+
+    nomServ = nomServ || 'Consulta / Tratamiento';
+    nomEsp = nomEsp || 'Especialista ALFRA';
+    nomPac = nomPac || 'Paciente';
+    if (!fechaFormat) fechaFormat = 'próxima fecha';
 
     try {
         // 1. Guardar en alertas de Firestore para panel web
