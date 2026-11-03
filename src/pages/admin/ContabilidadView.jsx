@@ -614,6 +614,8 @@ export default function ContabilidadView() {
         docPdf.setTextColor(255, 255, 255);
         docPdf.setFont('helvetica', 'bold');
         docPdf.text('Estado de Resultados Contable ALFRA', 14, 16);
+            docPdf.setFontSize(7);
+            docPdf.text('Clínica ALFRA • Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán • Tel: 753 538 6018', 14, 21);
         docPdf.setFontSize(10);
         docPdf.setFont('helvetica', 'normal');
         docPdf.text(`Periodo ${tituloPeriodo}`, 14, 24);

@@ -288,7 +288,7 @@ def build_manual_05():
   <div style="text-align: center; margin-top: 30px; padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
     <img src="{logo}" style="height: 44px; margin-bottom: 6px;" alt="ALFRA" /><br>
     <strong style="color: #0f172a; font-size: 11pt;">Clínica ALFRA • Medicina Estética & Spa Integral</strong><br>
-    <span style="color: #64748b; font-size: 8.5pt;">Citas & Concierge: (81) 1234-5678 • clinica-alfra.web.app</span>
+    <span style="color: #64748b; font-size: 8.5pt;">Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán • Citas & WhatsApp: 753 538 6018</span>
   </div>
 
   {render_footer(doc_title, "Página 5 de 5")}

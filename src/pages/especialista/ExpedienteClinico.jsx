@@ -227,7 +227,7 @@ const generarPDFConsentimientoUniversal = (jsPDFLib, c, paciente, especialistaNo
         doc.setFontSize(6);
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(...colorSlateMuted);
-        doc.text('Clínica ALFRA · Cirugía & Medicina Estética  |  Blvd. Principal #102  |  WhatsApp Citas: (33) 1234-5678', pageW / 2, 286, { align: 'center' });
+        doc.text('Clínica ALFRA · Cirugía & Medicina Estética  |  Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán  |  Citas & WhatsApp: 753 538 6018', pageW / 2, 286, { align: 'center' });
         doc.setFontSize(5.5);
         doc.text('Documento médico-legal oficial emitido conforme a la NOM-004-SSA3-2012 del Expediente Clínico. Confidencial.', margin, 289.5);
         doc.text(`Página ${pageIdx} de ${totalPages}`, pageW - margin, 289.5, { align: 'right' });

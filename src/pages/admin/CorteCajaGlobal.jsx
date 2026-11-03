@@ -1194,6 +1194,8 @@ export default function CorteCajaGlobal() {
             pdf.setFontSize(7);
             pdf.setTextColor(148, 163, 184);
             pdf.setFont('helvetica', 'normal');
+            pdf.setFontSize(7);
+            pdf.text('Clínica ALFRA • Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán • Tel: 753 538 6018', margin, pageH - 10);
             pdf.text('Documento generado automaticamente por el sistema ALFRA — Uso interno y confidencial', margin, pageH - 6);
             pdf.text(`Pag. ${i} / ${totalPages}`, pageW - margin, pageH - 6, { align: 'right' });
         }

@@ -21,7 +21,7 @@ export const getWhatsAppMensajeCita = (cita) => {
         `Continuar con tu ritmo de citas es fundamental para consolidar tu progreso y alcanzar tus metas. 🌸`,
         `⏰ _Te recordamos que contamos con 10 minutos de tolerancia para garantizar tu sesión completa._`,
         `📍 *UBICACIÓN:*
-Calle Río Fuerte #26, (esq. con calle Jaime Torres Bodet) Colonia: Lomas de Bella Vista, Lázaro Cárdenas, Mich.`,
+Calle Río Fuerte #26, (esq. con calle Jaime Torres Bodet) Colonia: Lomas de Bellavista, Lázaro Cárdenas, Mich.`,
         `📌 *REFERENCIA:*
 En la Av. Melchor Ocampo, a la altura de los edificios de Las Palmas, pasando los puestos de comida está la Farmacia del Ahorro; por esa calle (Jaime Torres Bodet) sube 2 cuadras en dirección a los edificios. Justo en la esquina, casa color blanco con herrería dorada y puerta café.`,
         `🗺️ *GOOGLE MAPS:*

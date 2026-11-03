@@ -18,6 +18,13 @@ def render_html_to_pdf(html_content, output_pdf_path):
     temp_user_dir = tempfile.mkdtemp(prefix="edge_pdf_")
     abs_pdf_path = os.path.abspath(output_pdf_path)
     
+    # Remove previous file if exists to ensure freshly minted PDF
+    if os.path.exists(abs_pdf_path):
+        try:
+            os.remove(abs_pdf_path)
+        except Exception as e:
+            print("Warning removing existing pdf:", e)
+
     cmd = [
         EDGE_PATH,
         "--headless=new",
@@ -29,13 +36,12 @@ def render_html_to_pdf(html_content, output_pdf_path):
         temp_html_path
     ]
     
-    try:
-        subprocess.run(cmd, capture_output=True, timeout=45)
-    except Exception as e:
-        pass
+    res = subprocess.run(cmd, capture_output=True, timeout=45)
+    if res.returncode != 0:
+        print("Edge returncode:", res.returncode, "stderr:", res.stderr.decode("utf-8", errors="ignore"))
         
     attempts = 0
-    while attempts < 15:
+    while attempts < 30:
         if os.path.exists(abs_pdf_path) and os.path.getsize(abs_pdf_path) > 1000:
             break
         time.sleep(0.5)

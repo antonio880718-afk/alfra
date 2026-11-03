@@ -166,6 +166,11 @@ export default function ReciboDigital({
                     </div>
 
                     {/* Mensaje de agradecimiento */}
+                    <div className="border-t border-dashed border-gray-200 pt-3 mt-4 text-center">
+                        <p className="text-[9px] font-bold text-gray-700">Clínica ALFRA · Cirugía & Medicina Estética</p>
+                        <p className="text-[8px] text-gray-500 mt-0.5">Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán</p>
+                        <p className="text-[8px] text-turquesa font-bold mt-0.5">Citas & WhatsApp: 753 538 6018</p>
+                    </div>
                     <div className="bg-gray-50 rounded-xl p-4 text-center mt-6 border border-gray-100 shadow-sm relative z-10">
                         <p className="text-xs text-acero font-medium italic">
                             "Gracias por confiar en nuestras manos para resaltar tu bienestar y belleza natural."

@@ -111,6 +111,8 @@ export const generarReporteEjecutivoPDF = async (rep, { autoPrint = false } = {}
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(9);
     doc.text('CLÍNICA ALFRA • DIRECCIÓN Y ADMINISTRACIÓN', leftTextX, y + 9.5);
+    doc.setFontSize(7);
+    doc.text('Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán | Tel: 753 538 6018', leftTextX, y + 13.5);
 
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(15.5);

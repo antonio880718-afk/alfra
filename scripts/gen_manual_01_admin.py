@@ -271,7 +271,7 @@ def build_manual_01():
         </div>
 
         <div style="font-size: 6.5pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 5px;">
-          Clínica ALFRA • Concierge & Reservas: (81) 1234-5678
+          Clínica ALFRA • Concierge & Reservas: 753 538 6018
         </div>
       </div>
 

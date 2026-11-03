@@ -334,7 +334,7 @@ def build_manual_maestro():
       <h4>Directorio de Soporte Técnico</h4>
       <p>
         <strong>Mesa de Ayuda TI:</strong> soporte@clinica-alfra.mx<br>
-        <strong>WhatsApp de Emergencia:</strong> (81) 1234-5678<br>
+        <strong>WhatsApp de Emergencia / Citas:</strong> 753 538 6018<br><strong>Dirección:</strong> Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán<br>
         <strong>Horario:</strong> Lunes a Sábado de 08:00 a 20:00 hrs.
       </p>
     </div>

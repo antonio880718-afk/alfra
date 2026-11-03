@@ -518,7 +518,7 @@ def render_cover(logo_b64, profile_title, manual_subtitle, summary_text, target_
       <div class="cover-footer">
         <div>
           <div><strong>Clínica ALFRA</strong> • Medicina Estética & Spa</div>
-          <div>Plataforma Integrada v1.5.0 (AAB Compilación 103)</div>
+          <div>Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán<br>Citas & WhatsApp: <strong>753 538 6018</strong> • Plataforma Digital ALFRA v1.5.2 (Build 105)</div>
         </div>
         <div style="text-align: right;">
           <div><strong>Fecha de Emisión:</strong> Noviembre 2026</div>
@@ -545,7 +545,7 @@ def render_header(logo_b64, doc_title, chapter_name):
 def render_footer(manual_name, page_info):
     return f"""
     <div class="doc-footer">
-      <div>Clínica ALFRA © 2026 • Documento Oficial Confidencial</div>
+      <div>Clínica ALFRA • Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán • Tel: 753 538 6018</div>
       <div>{manual_name} • {page_info}</div>
     </div>
     """

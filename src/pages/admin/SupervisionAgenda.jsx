@@ -691,7 +691,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
 
     const handleCopyUbicacion = async () => {
         const text = `📍 *UBICACIÓN:*\n` +
-            `Calle Rio Fuerte #26, (esq.con calle Jaime Torres Bodet) Colonia: Lomas de Bella Vista, Lázaro Cárdenas, Mich\n\n` +
+            `Calle Rio Fuerte #26, (esq.con calle Jaime Torres Bodet) Colonia: Lomas de Bellavista, Lázaro Cárdenas, Mich\n\n` +
             `🗺️ *REFERENCIA:*\n` +
             `En la Av Melchor Ocampo, a la altura de los edificios de las palmas, después de terminar los puestos de comida, está la farmacia del Ahorro, por esa calle (#Jaime Torres Bodet) va a subir en dirección a los edificios, 2 calles justo en la esquina, es color blanco, tiene herrería dorada y puerta café.\n\n` +
             `🔗 *GOOGLE MAPS:*\n` +

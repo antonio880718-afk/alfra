@@ -39,10 +39,10 @@ const CLINICA_DEFAULT = {
     subtitulo: 'Centro Especializado en Medicina Estética & Salud Integral',
     avisoFuncionamiento: 'COFEPRIS-AF-2024-ALFRA-01',
     licenciaSanitaria: 'En trámite / Aviso vigente',
-    domicilio: 'Av. Principal #100, Col. Médica, México',
+    domicilio: 'Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán',
     responsableSanitario: 'Dra. Alondra Frausto / Dirección Médica',
     cedulaProfesional: 'CED. PROF. 12849203 SSA',
-    telefono: '(449) 000-0000',
+    telefono: '7535386018',
     quimicosOficiales: 'Cuaternario de Amonio 5ta Gen. (0.5%), Alcohol Isopropílico 70%, Hipoclorito de Sodio 0.1%'
 };
 

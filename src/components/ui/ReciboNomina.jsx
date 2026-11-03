@@ -225,7 +225,7 @@ export default function ReciboNomina({ isOpen, onClose, datosNomina }) {
 
                     {/* Footer */}
                     <p style={{ textAlign: 'center', fontSize: '9px', color: '#d1d5db', marginTop: '14px', margin: '14px 0 0' }}>
-                        Clínica ALFRA · Documento generado electrónicamente · {new Date().getFullYear()}
+                        Clínica ALFRA · Calle Río Fuerte #26, Col. Lomas de Bellavista, Lázaro Cárdenas, Michoacán · Tel: 753 538 6018 · Documento generado electrónicamente · {new Date().getFullYear()}
                     </p>
                 </div>
 
