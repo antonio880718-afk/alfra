@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Button } from '../ui/Button';
 import { X, Calendar as CalendarIcon, Clock, Loader2, Info, Search, Sparkles, Check, ChevronRight, Package, HeartPulse, User } from 'lucide-react';
-import { collection, query, where, getDocs, addDoc } from 'firebase/firestore';
+import { collection, query, where, getDocs, addDoc, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { getStaff } from '../../services/staffService';
-import { createCita } from '../../services/citasService';
+import { createCita, isStaffClinico } from '../../services/citasService';
 import { onServiciosChange } from '../../services/comercialService';
 
 // Funciones de categorización inteligente basadas en el catálogo real de Clínica ALFRA
@@ -48,6 +48,15 @@ const toHHMM = (d) =>
 export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendado }) {
     const [step, setStep] = useState(1);
     const [diasDisponibles, setDiasDisponibles] = useState([]);
+    // Especialistas y gestión de expediente
+    const [staffList, setStaffList] = useState([]);
+    const [loadingStaff, setLoadingStaff] = useState(true);
+    const [especialistaAsignadoExpediente, setEspecialistaAsignadoExpediente] = useState(null);
+    const [especialistaDeBaja, setEspecialistaDeBaja] = useState(null);
+    const [selectedEspecialistaId, setSelectedEspecialistaId] = useState('');
+    const [selectedEspecialistaNombre, setSelectedEspecialistaNombre] = useState('');
+    const [modoEspecialista, setModoEspecialista] = useState('cargando'); // 'asignado' | 'baja_detectada' | 'sin_asignar'
+    const [mostrarCambioEspecialista, setMostrarCambioEspecialista] = useState(false);
 
     // Catálogo de servicios desde Firestore
     const [catalogoServicios, setCatalogoServicios] = useState([]);
@@ -104,7 +113,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
         return () => unsub && unsub();
     }, []);
 
-    // Reset al abrir/cerrar
+    // Carga de especialistas y expediente del paciente
     useEffect(() => {
         if (!isOpen) {
             setStep(1);
@@ -114,8 +123,75 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             setHasSearched(false);
             setHorariosDisponibles([]);
             setBusquedaServicio('');
+            setMostrarCambioEspecialista(false);
             return;
         }
+
+        let isMounted = true;
+        const cargarEspecialistasYExpediente = async () => {
+            setLoadingStaff(true);
+            try {
+                const todosStaff = await getStaff();
+                const clinicosActivos = (todosStaff || []).filter(isStaffClinico);
+                if (!isMounted) return;
+                setStaffList(clinicosActivos);
+
+                let assignedId = paciente?.medicoTratanteId || paciente?.especialistaId || null;
+                let assignedNombre = paciente?.medicoTratante || paciente?.especialista || null;
+
+                const pacId = paciente?.id || paciente?.docId;
+                if ((!assignedId && !assignedNombre) && pacId) {
+                    try {
+                        const planesSnap = await getDocs(query(collection(db, 'planes'), where('pacienteId', '==', pacId)));
+                        planesSnap.forEach(d => {
+                            const pData = d.data();
+                            if (!assignedId && pData.especialistaId) {
+                                assignedId = pData.especialistaId;
+                                assignedNombre = pData.especialistaNombre || pData.especialista || null;
+                            }
+                        });
+                    } catch (_) {}
+                }
+
+                if (assignedId || assignedNombre) {
+                    const encontradaActiva = clinicosActivos.find(s => 
+                        (assignedId && s.id === assignedId) ||
+                        (assignedNombre && (s.nombre || '').toLowerCase().trim() === String(assignedNombre).toLowerCase().trim())
+                    );
+
+                    if (encontradaActiva) {
+                        setEspecialistaAsignadoExpediente(encontradaActiva);
+                        setEspecialistaDeBaja(null);
+                        setSelectedEspecialistaId(encontradaActiva.id);
+                        setSelectedEspecialistaNombre(encontradaActiva.nombre);
+                        setModoEspecialista('asignado');
+                    } else {
+                        setEspecialistaAsignadoExpediente(null);
+                        setEspecialistaDeBaja({ id: assignedId, nombre: assignedNombre || 'Especialista anterior' });
+                        if (clinicosActivos.length > 0) {
+                            setSelectedEspecialistaId(clinicosActivos[0].id);
+                            setSelectedEspecialistaNombre(clinicosActivos[0].nombre);
+                        }
+                        setModoEspecialista('baja_detectada');
+                    }
+                } else {
+                    setEspecialistaAsignadoExpediente(null);
+                    setEspecialistaDeBaja(null);
+                    if (clinicosActivos.length > 0) {
+                        setSelectedEspecialistaId(clinicosActivos[0].id);
+                        setSelectedEspecialistaNombre(clinicosActivos[0].nombre);
+                    }
+                    setModoEspecialista('sin_asignar');
+                }
+            } catch (err) {
+                console.error('Error cargando especialistas:', err);
+                setModoEspecialista('sin_asignar');
+            } finally {
+                if (isMounted) setLoadingStaff(false);
+            }
+        };
+
+        cargarEspecialistasYExpediente();
 
         // Generar los próximos 14 días (excluyendo domingos)
         const dias = [];
@@ -133,7 +209,9 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             }
         }
         setDiasDisponibles(dias);
-    }, [isOpen]);
+
+        return () => { isMounted = false; };
+    }, [isOpen, paciente]);
 
     // Servicios filtrados por categoría y búsqueda sobre catálogo real de ALFRA
     const serviciosFiltrados = useMemo(() => {
@@ -157,9 +235,11 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
     const duracionEfectiva = servicioSeleccionado?.duracionMinutos || 60;
 
     // Buscar disponibilidad directa y confiable en Firestore
-    const buscarDisponibilidad = async (fechaStr, durMin) => {
+        // Buscar disponibilidad directa y confiable en Firestore considerando fecha y especialista
+    const buscarDisponibilidad = async (fechaStr, durMin, espId) => {
         const fecha = fechaStr || selectedDate;
         const dur = durMin || duracionEfectiva;
+        const espActivoId = espId !== undefined ? espId : selectedEspecialistaId;
         if (!fecha || !dur) return;
 
         setLoadingHorarios(true);
@@ -175,7 +255,23 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             const ocupados = [];
             snap.forEach(docSnap => {
                 const c = docSnap.data();
-                if (c.status !== 'Cancelada' && c.status !== 'Cancelado') {
+                const statusNorm = String(c.status || c.estado || '').toLowerCase().trim();
+                if (['cancelada', 'cancelado', 'no asistio', 'no_asistio', 'no asistió', 'reagendada'].includes(statusNorm)) {
+                    return;
+                }
+
+                let bloquea = false;
+                if (espActivoId) {
+                    if (c.especialistaId && c.especialistaId === espActivoId) {
+                        bloquea = true;
+                    } else if (!c.especialistaId && selectedEspecialistaNombre && (c.especialistaNombre || c.especialista || '').toLowerCase().trim() === selectedEspecialistaNombre.toLowerCase().trim()) {
+                        bloquea = true;
+                    }
+                } else {
+                    bloquea = true;
+                }
+
+                if (bloquea) {
                     const horaStr = c.hora || '10:00';
                     const fechaHora = c.fechaHora || `${fecha}T${horaStr.length === 5 ? horaStr + ':00' : horaStr}`;
                     ocupados.push({
@@ -230,7 +326,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
         setServicioSeleccionado(serv);
         setSelectedTime('');
         if (selectedDate) {
-            buscarDisponibilidad(selectedDate, serv.duracionMinutos);
+            buscarDisponibilidad(selectedDate, serv.duracionMinutos, selectedEspecialistaId);
         }
     };
 
@@ -238,52 +334,69 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
         setSelectedDate(fechaStr);
         setSelectedTime('');
         if (servicioSeleccionado) {
-            buscarDisponibilidad(fechaStr, servicioSeleccionado.duracionMinutos);
+            buscarDisponibilidad(fechaStr, servicioSeleccionado.duracionMinutos, selectedEspecialistaId);
+        }
+    };
+
+    const handleCambiarEspecialista = (espId) => {
+        const found = staffList.find(s => s.id === espId);
+        setSelectedEspecialistaId(espId);
+        setSelectedEspecialistaNombre(found ? found.nombre : '');
+        setSelectedTime('');
+        if (selectedDate && servicioSeleccionado) {
+            buscarDisponibilidad(selectedDate, servicioSeleccionado.duracionMinutos, espId);
         }
     };
 
     const handleAgendar = async () => {
-        if (!paciente || !selectedTime || !servicioSeleccionado) return;
+        const pacId = paciente?.id || paciente?.docId;
+        if (!pacId || !selectedTime || !servicioSeleccionado) {
+            alert('Por favor selecciona servicio, fecha y hora para continuar.');
+            return;
+        }
         setLoadingSubmit(true);
 
         try {
-            let especialistaAsignado = null;
-            let especialistaNombre = 'Especialista ALFRA';
-            if (paciente.medicoTratanteId) {
-                especialistaAsignado = paciente.medicoTratanteId;
-                especialistaNombre = paciente.medicoTratante || 'Especialista Asignada';
-            } else if (paciente.medicoTratante) {
-                try {
-                    const staff = await getStaff();
-                    const found = staff.find(s => s.nombre === paciente.medicoTratante);
-                    if (found) {
-                        especialistaAsignado = found.id;
-                        especialistaNombre = found.nombre;
+            const finalEspId = selectedEspecialistaId || null;
+            const finalEspNombre = selectedEspecialistaNombre || 'Especialista ALFRA';
+
+            // Actualizar expediente si la especialista anterior estaba de baja, o no tenía asignada, o la cambió
+            if (modoEspecialista === 'baja_detectada' || modoEspecialista === 'sin_asignar' || mostrarCambioEspecialista) {
+                if (finalEspId && pacId) {
+                    try {
+                        await updateDoc(doc(db, 'pacientes', pacId), {
+                            medicoTratanteId: finalEspId,
+                            medicoTratante: finalEspNombre,
+                            updatedAt: new Date().toISOString()
+                        });
+                    } catch (errUpd) {
+                        console.warn('Aviso actualizando médico tratante:', errUpd);
                     }
-                } catch (e) {
-                    console.warn('Aviso especialista staff:', e);
                 }
             }
 
             const horaCitaStr = new Date(selectedTime).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: false });
 
             const nuevaCita = {
-                pacienteId: paciente.id,
+                pacienteId: pacId,
                 pacienteNombre: paciente.nombre || 'Paciente ALFRA',
                 pacienteTelefono: paciente.telefono || '',
                 fecha: selectedDate,
+                fechaYMD: selectedDate,
                 hora: horaCitaStr,
                 fechaHora: selectedTime,
                 servicio: servicioSeleccionado.nombre,
                 servicioId: servicioSeleccionado.id || null,
                 duracionMin: duracionEfectiva,
                 duracionMinutos: duracionEfectiva,
-                especialistaId: especialistaAsignado,
-                especialistaNombre: especialistaNombre,
-                status: 'Agendada',
+                especialistaId: finalEspId,
+                especialistaNombre: finalEspNombre,
+                especialista: finalEspNombre,
+                status: 'Pendiente',
                 notas: 'Agendada directamente desde la App del Paciente.',
                 origen: 'App Paciente',
                 creadoEn: new Date().toISOString(),
+                createdAt: new Date().toISOString()
             };
 
             const citaId = await createCita(nuevaCita);
@@ -292,15 +405,16 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                 tipo: 'auto_agendado_paciente',
                 titulo: 'Cita Agendada desde App Móvil',
                 citaId: citaId || 'cita_app',
-                pacienteId: paciente.id,
+                pacienteId: pacId,
                 pacienteNombre: paciente.nombre || 'Paciente ALFRA',
                 pacienteTelefono: paciente.telefono || '',
                 fecha: selectedDate,
                 hora: horaCitaStr,
                 servicio: servicioSeleccionado.nombre,
                 duracionMin: duracionEfectiva,
-                especialistaNombre: especialistaNombre,
-                mensaje: `El paciente ${paciente.nombre} se agendó desde su App para el ${selectedDate} a las ${horaCitaStr} (${servicioSeleccionado.nombre}, ${duracionEfectiva} min).`,
+                especialistaId: finalEspId,
+                especialistaNombre: finalEspNombre,
+                mensaje: `El paciente ${paciente.nombre} se agendó desde su App para el ${selectedDate} a las ${horaCitaStr} (${servicioSeleccionado.nombre}, ${duracionEfectiva} min) con ${finalEspNombre}.`,
                 estado: 'pendiente',
                 leida: false,
                 atendido: false,
@@ -308,29 +422,23 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                 creadoEn: new Date().toISOString()
             };
 
-            // Notificar a alertas_pacientes (campana global en Recepción y Admin)
             try {
                 await addDoc(collection(db, 'alertas_pacientes'), alertPayload);
-            } catch (errAlertaP) {
-                console.warn('Aviso guardando en alertas_pacientes:', errAlertaP);
-            }
+            } catch (_) {}
 
-            // Notificar a alertas_recepcion y alertas_admin
             try {
                 await addDoc(collection(db, 'alertas_recepcion'), alertPayload);
                 await addDoc(collection(db, 'alertas_admin'), alertPayload);
-            } catch (errAlert) {
-                console.warn('Aviso guardando alertas en Firestore:', errAlert);
-            }
+            } catch (_) {}
 
             try {
                 const fns = getFunctions();
                 const notificar = httpsCallable(fns, 'notificarNuevaCitaPaciente');
-                await notificar({ citaId, pacienteNombre: paciente.nombre, fechaHora: selectedTime, especialistaId: especialistaAsignado });
-            } catch (e) {}
+                await notificar({ citaId, pacienteNombre: paciente.nombre, fechaHora: selectedTime, especialistaId: finalEspId });
+            } catch (_) {}
 
             onAgendado && onAgendado();
-            setStep(3); // Mostrar pantalla de éxito garantizado
+            setStep(3);
         } catch (error) {
             console.error('Error agendando cita:', error);
             alert('No se pudo confirmar tu cita. Por favor intenta nuevamente o comunícate vía WhatsApp con la clínica.');
@@ -452,10 +560,96 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                 </div>
                             </div>
 
+                            {/* PASO 2: Especialista Asignada a tu Expediente */}
+                            <div className="space-y-2 pt-2 border-t border-gray-100">
+                                <label className="text-xs font-black uppercase tracking-wider text-gray-700 flex items-center justify-between">
+                                    <span className="flex items-center gap-1.5">
+                                        <User size={14} className="text-turquesa" /> 2. Especialista Asignada
+                                    </span>
+                                    {modoEspecialista === 'asignado' && !mostrarCambioEspecialista && (
+                                        <button
+                                            type="button"
+                                            onClick={() => setMostrarCambioEspecialista(true)}
+                                            className="text-[10px] text-turquesa font-bold hover:underline cursor-pointer"
+                                        >
+                                            ¿Deseas cambiar especialista?
+                                        </button>
+                                    )}
+                                </label>
+
+                                {loadingStaff ? (
+                                    <div className="p-3 bg-gray-50 rounded-2xl flex items-center gap-2 text-xs text-gray-400">
+                                        <Loader2 size={16} className="animate-spin text-turquesa" />
+                                        <span>Consultando especialistas de tu expediente...</span>
+                                    </div>
+                                ) : modoEspecialista === 'baja_detectada' ? (
+                                    <div className="space-y-2">
+                                        <div className="p-3.5 bg-amber-50 border border-amber-200 rounded-2xl text-amber-900 text-xs space-y-1">
+                                            <div className="flex items-center gap-2 font-black">
+                                                <span className="text-base">⚠️</span>
+                                                <span>Reasignación de Especialista en tu Expediente</span>
+                                            </div>
+                                            <p className="text-[11px] text-amber-800 leading-relaxed">
+                                                Tu especialista previa <strong>({especialistaDeBaja?.nombre || 'Especialista anterior'})</strong> ya no labora en la clínica. Por favor elige a tu nueva especialista de confianza para atender tu cita y dar seguimiento a tu tratamiento:
+                                            </p>
+                                        </div>
+                                        <select
+                                            value={selectedEspecialistaId}
+                                            onChange={e => handleCambiarEspecialista(e.target.value)}
+                                            className="w-full h-12 px-3.5 bg-amber-50/50 border-2 border-amber-300 rounded-2xl font-bold text-acero text-xs outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm cursor-pointer"
+                                        >
+                                            {staffList.map(esp => (
+                                                <option key={esp.id} value={esp.id}>
+                                                    Dra./Lic. {esp.nombre} {esp.puesto ? '(' + esp.puesto + ')' : ''}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                ) : modoEspecialista === 'asignado' && !mostrarCambioEspecialista ? (
+                                    <div className="p-3.5 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 rounded-2xl flex items-center justify-between gap-3 shadow-sm">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-turquesa text-white flex items-center justify-center font-black text-sm shrink-0 shadow-md">
+                                                {selectedEspecialistaNombre?.charAt(0) || 'D'}
+                                            </div>
+                                            <div>
+                                                <span className="text-[9px] font-black uppercase text-teal-700 tracking-wider bg-teal-100/80 px-2 py-0.5 rounded-md">
+                                                    Tu Especialista de Cabecera
+                                                </span>
+                                                <h4 className="text-xs font-black text-slate-900 mt-0.5">{selectedEspecialistaNombre}</h4>
+                                                <p className="text-[10px] text-gray-500">Horarios calculados según la agenda de tu especialista.</p>
+                                            </div>
+                                        </div>
+                                        <span className="text-emerald-600 bg-emerald-100/70 p-1.5 rounded-full shrink-0">
+                                            <Check size={16} />
+                                        </span>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-2">
+                                        {mostrarCambioEspecialista && (
+                                            <p className="text-[11px] text-gray-500 font-medium">
+                                                Selecciona a tu especialista de preferencia para esta cita:
+                                            </p>
+                                        )}
+                                        <select
+                                            value={selectedEspecialistaId}
+                                            onChange={e => handleCambiarEspecialista(e.target.value)}
+                                            className="w-full h-12 px-3.5 bg-gray-50 border-2 border-gray-100 rounded-2xl font-bold text-acero text-xs outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm cursor-pointer"
+                                        >
+                                            <option value="">Selecciona especialista disponible...</option>
+                                            {staffList.map(esp => (
+                                                <option key={esp.id} value={esp.id}>
+                                                    Dra./Lic. {esp.nombre} {esp.puesto ? '(' + esp.puesto + ')' : ''}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                )}
+                            </div>
+
                             {/* PASO 2: Elegir Fecha */}
                             <div className="space-y-2 pt-2 border-t border-gray-100">
                                 <label className="text-xs font-black uppercase tracking-wider text-gray-700 flex items-center gap-1.5">
-                                    <CalendarIcon size={14} className="text-turquesa" /> 2. Elige el Día
+                                    <CalendarIcon size={14} className="text-turquesa" /> 3. Elige el Día
                                 </label>
                                 <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
                                     {diasDisponibles.map((d) => {
@@ -480,11 +674,11 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                 </div>
                             </div>
 
-                            {/* PASO 3: Horarios Disponibles */}
+                            {/* PASO 4: Horarios Disponibles */}
                             <div className="space-y-2 pt-2 border-t border-gray-100">
                                 <label className="text-xs font-black uppercase tracking-wider text-gray-700 flex items-center justify-between">
                                     <span className="flex items-center gap-1.5">
-                                        <Clock size={14} className="text-turquesa" /> 3. Selecciona tu Hora
+                                        <Clock size={14} className="text-turquesa" /> 4. Selecciona tu Hora
                                     </span>
                                     {selectedDate && servicioSeleccionado && (
                                         <span className="text-[10px] text-gray-500 font-bold">
@@ -551,6 +745,10 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                             <div className="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-4 text-left max-w-sm mx-auto space-y-2 text-xs">
                                 <p className="font-black text-emerald-900 text-sm">{servicioSeleccionado?.nombre}</p>
                                 <div className="flex justify-between text-emerald-800">
+                                    <span>Especialista:</span>
+                                    <strong>{selectedEspecialistaNombre}</strong>
+                                </div>
+                                <div className="flex justify-between text-emerald-800">
                                     <span>Fecha:</span>
                                     <strong className="capitalize">{new Date(selectedTime).toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'short' })}</strong>
                                 </div>
@@ -592,6 +790,10 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                     <div className="flex justify-between items-center border-b border-white/10 pb-2">
                                         <span className="text-[11px] text-gray-400 font-bold">Servicio Seleccionado:</span>
                                         <span className="text-xs font-black text-teal-300">{servicioSeleccionado?.nombre}</span>
+                                    </div>
+                                    <div className="flex justify-between items-center border-b border-white/10 pb-2">
+                                        <span className="text-[11px] text-gray-400 font-bold">Especialista:</span>
+                                        <span className="text-xs font-black text-emerald-300">{selectedEspecialistaNombre || 'Especialista ALFRA'}</span>
                                     </div>
                                     <div className="grid grid-cols-3 gap-2 text-center pt-1">
                                         <div className="bg-white/5 rounded-xl p-2">
@@ -641,7 +843,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                         <Button
                             variant="primary"
                             className="rounded-xl px-6 font-black bg-slate-900 text-white hover:bg-black text-xs cursor-pointer disabled:opacity-50"
-                            disabled={!selectedTime || !servicioSeleccionado}
+                            disabled={!selectedTime || !servicioSeleccionado || !selectedEspecialistaId}
                             onClick={() => setStep(2)}
                         >
                             Continuar a Confirmación →

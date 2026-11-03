@@ -22,6 +22,7 @@ import { getSeguimientosPaciente, getApoyoEnCasa, getDailyTrackers, saveDailyTra
 import { getRecibosPaciente } from "../../services/recibosService";
 import { getCitasByPaciente, onCitasPacienteChange } from "../../services/citasService";
 import { getTratamientosPaciente, onTratamientosPacienteChange, getSesionesPaciente, MEDIDAS_CORPORALES } from "../../services/tratamientosService";
+import { comprimirImagenBase64 } from "../../services/staffService";
 import Barcode39 from "../../components/ui/Barcode39";
 
 const auth = getAuth();
@@ -1096,16 +1097,44 @@ export default function PacienteProfile() {
     const [mostrarModalInfoRoadmap, setMostrarModalInfoRoadmap] = useState(false);
   const [tipoRoadmapSeleccionado, setTipoRoadmapSeleccionado] = useState('auto');
 
+  const [subiendoFoto, setSubiendoFoto] = useState(false);
+
   const handleFotoUpload = async (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files?.[0];
     if (!file) return;
+    setSubiendoFoto(true);
     try {
-      const localUrl = URL.createObjectURL(file);
-      setPerfilPaciente(prev => ({...prev, fotoUrl: localUrl}));
-      alert("¡Foto de perfil actualizada exitosamente!");
-    } catch(err) {
+      const base64Foto = await comprimirImagenBase64(file, 600, 600, 0.82);
+      if (!base64Foto) throw new Error("No se pudo comprimir la imagen.");
+
+      setPerfilPaciente(prev => ({ ...prev, fotoUrl: base64Foto }));
+
+      const docId = pacienteDocId || perfilPaciente?.id;
+      if (docId) {
+        await updateDoc(doc(db, "pacientes", docId), {
+          fotoUrl: base64Foto,
+          fotoPerfil: base64Foto,
+          updatedAt: new Date().toISOString()
+        });
+      }
+
+      if (userAuth?.uid) {
+        try {
+          await updateDoc(doc(db, "usuarios", userAuth.uid), {
+            fotoUrl: base64Foto,
+            photoURL: base64Foto,
+            updatedAt: new Date().toISOString()
+          });
+        } catch (_) {}
+      }
+
+      alert("¡Foto de perfil guardada con éxito!");
+    } catch (err) {
       console.error(err);
-      alert("Error al actualizar la foto.");
+      alert("Error al actualizar la foto de perfil: " + (err.message || ""));
+    } finally {
+      setSubiendoFoto(false);
+      if (e.target) e.target.value = "";
     }
   };
 
@@ -1683,10 +1712,14 @@ export default function PacienteProfile() {
         if (paciente) {
           setPacienteDocId(paciente.id);
           setPerfilPaciente({
+            id: paciente.id,
+            docId: paciente.id,
+            medicoTratanteId: paciente.medicoTratanteId || paciente.especialistaId || null,
+            medicoTratante: paciente.medicoTratante || paciente.especialista || null,
             nombre: paciente.nombre || userAuth.displayName || userAuth.email?.split('@')[0] || "Paciente",
             telefono: paciente.telefono || paciente.phone || "",
             fechaNacimiento: paciente.fechaNacimiento || "",
-            fotoUrl: paciente.fotoUrl || null,
+            fotoUrl: paciente.fotoUrl || paciente.fotoPerfil || userAuth?.photoURL || null,
             tipoTratamiento: paciente.tipoTratamiento || "",
             membresia: (() => {
             let m = paciente.membresia || null;
@@ -1908,12 +1941,17 @@ export default function PacienteProfile() {
     } catch(err) { console.error(err); }
   };
 
-  const handleSaveProfile = async () => { 
-    if (!pacienteDocId) return; 
-    try { 
-      await updateDoc(doc(db,"pacientes",pacienteDocId),{nombre:perfilPaciente.nombre,fechaNacimiento:perfilPaciente.fechaNacimiento}); 
-      alert("Perfil guardado."); 
-    } catch(err) { console.error(err); } 
+  const handleSaveProfile = async () => {
+    const docId = pacienteDocId || perfilPaciente?.id;
+    if (!docId) return;
+    try {
+      await updateDoc(doc(db, "pacientes", docId), {
+        nombre: perfilPaciente.nombre,
+        fechaNacimiento: perfilPaciente.fechaNacimiento,
+        fotoUrl: perfilPaciente.fotoUrl || null
+      });
+      alert("Perfil guardado con éxito.");
+    } catch(err) { console.error(err); alert("Error al guardar perfil: " + err.message); }
   };
 
   const handleResetEmail = async () => { 
@@ -2383,12 +2421,13 @@ export default function PacienteProfile() {
         </div>
       </div>
 
-      <input 
-        id="global-foto-upload" 
-        type="file" 
-        accept="image/*" 
-        className="hidden" 
-        onChange={handleFotoUpload} 
+      <input
+        id="global-foto-upload"
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={handleFotoUpload}
       />
 
       {/* 2. TABS DE NAVEGACIÓN ULTRA HD AL INICIO (POINT 7) */}
@@ -4337,7 +4376,7 @@ export default function PacienteProfile() {
       <AutoAgendadoModal
         isOpen={autoAgendadoOpen}
         onClose={() => setAutoAgendadoOpen(false)}
-        paciente={perfilPaciente}
+        paciente={{ ...perfilPaciente, id: pacienteDocId || perfilPaciente?.id, medicoTratanteId: perfilPaciente?.medicoTratanteId, medicoTratante: perfilPaciente?.medicoTratante }}
         onAgendado={() => {
           setAutoAgendadoOpen(false);
           alert("¡Tu cita ha sido agendada con éxito! Aparece ya en tu listado.");

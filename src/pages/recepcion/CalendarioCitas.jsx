@@ -55,6 +55,8 @@ export default function CalendarioCitas() {
     const [reagendarFecha, setReagendarFecha] = useState('');
     const [reagendarHora, setReagendarHora] = useState('');
     const [reagendarCabina, setReagendarCabina] = useState('');
+    const [reagendarEspecialistaId, setReagendarEspecialistaId] = useState('');
+    const [reagendarEspecialistaNombre, setReagendarEspecialistaNombre] = useState('');
     const [savingReagendar, setSavingReagendar] = useState(false);
     const [viewMode, setViewMode] = useState('tablero'); // 'tablero' | 'lista' | 'disponibilidad'
     const [availView, setAvailView] = useState('dia'); // 'dia' | 'semana'
@@ -209,6 +211,18 @@ export default function CalendarioCitas() {
         });
     }, [citas, citaAReagendar, reagendarCabina, reagendarFecha, reagendarHora]);
 
+    const especialistaEstaDeBaja = useMemo(() => {
+        if (!citaAReagendar) return false;
+        const espId = reagendarEspecialistaId || citaAReagendar.especialistaId;
+        const espNom = reagendarEspecialistaNombre || citaAReagendar.especialistaNombre || citaAReagendar.especialista;
+        if (!espId && !espNom) return false;
+        const esActivo = especialistas.some(e =>
+            (espId && e.id === espId) ||
+            (espNom && (e.nombre || '').toLowerCase().trim() === String(espNom).toLowerCase().trim())
+        );
+        return !esActivo;
+    }, [especialistas, citaAReagendar, reagendarEspecialistaId, reagendarEspecialistaNombre]);
+
     const handleSeleccionarPaciente = async (p) => {
         setNewCita(prev => ({
             ...prev,
@@ -322,6 +336,8 @@ export default function CalendarioCitas() {
         setReagendarFecha(cita.fechaYMD || new Date().toISOString().split('T')[0]);
         setReagendarHora(cita.hora || '10:00');
         setReagendarCabina(cita.cabina || '');
+        setReagendarEspecialistaId(cita.especialistaId || '');
+        setReagendarEspecialistaNombre(cita.especialistaNombre || cita.especialista || '');
     };
 
     const handleConfirmarReagendacionRapida = async () => {
@@ -336,12 +352,19 @@ export default function CalendarioCitas() {
             const fechaBase = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hh), parseInt(mm));
             const fechaHoraLocal = format(fechaBase, "yyyy-MM-dd'T'HH:mm:ss");
 
+            const finalEspId = reagendarEspecialistaId || citaAReagendar.especialistaId || null;
+            const finalEspNombre = reagendarEspecialistaNombre || citaAReagendar.especialistaNombre || citaAReagendar.especialista || 'Especialista ALFRA';
+
             await updateCitaStatus(citaAReagendar.id, 'Pendiente', {
                 fechaHora: fechaHoraLocal,
                 fechaYMD: reagendarFecha,
+                fecha: reagendarFecha,
                 hora: reagendarHora,
                 cabina: reagendarCabina || '',
-                log: `Reagendada para el ${reagendarFecha} a las ${reagendarHora}`,
+                especialistaId: finalEspId,
+                especialistaNombre: finalEspNombre,
+                especialista: finalEspNombre,
+                log: `Reagendada para el ${reagendarFecha} a las ${reagendarHora} con ${finalEspNombre}`,
                 updatedAt: new Date().toISOString()
             });
 
@@ -2325,6 +2348,43 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                                             <Clock size={20} />
                                         </div>
                                     </div>
+                                </div>
+
+                                                                <div className="space-y-1.5">
+                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest flex items-center justify-between">
+                                        <span>Especialista Asignada *</span>
+                                        {especialistaEstaDeBaja && (
+                                            <span className="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-md">
+                                                ⚠️ Especialista previa dada de baja
+                                            </span>
+                                        )}
+                                    </label>
+                                    <select
+                                        value={reagendarEspecialistaId || ''}
+                                        onChange={e => {
+                                            const esp = especialistas.find(s => s.id === e.target.value);
+                                            setReagendarEspecialistaId(e.target.value);
+                                            setReagendarEspecialistaNombre(esp ? esp.nombre : '');
+                                        }}
+                                        className={`w-full h-14 px-4 bg-gray-50 border-2 ${especialistaEstaDeBaja ? 'border-amber-300 bg-amber-50/50' : 'border-gray-100'} rounded-2xl font-bold text-acero text-sm outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm`}
+                                    >
+                                        <option value="">Selecciona especialista...</option>
+                                        {especialistas.map(esp => (
+                                            <option key={esp.id} value={esp.id}>
+                                                {esp.nombre} {esp.puesto ? `(${esp.puesto})` : ''}
+                                            </option>
+                                        ))}
+                                        {especialistaEstaDeBaja && (
+                                            <option value={reagendarEspecialistaId} disabled>
+                                                ❌ {reagendarEspecialistaNombre || 'Especialista anterior'} (DADA DE BAJA / INACTIVA)
+                                            </option>
+                                        )}
+                                    </select>
+                                    {especialistaEstaDeBaja && (
+                                        <p className="text-[11px] text-amber-700 font-bold bg-amber-50 p-2.5 rounded-xl border border-amber-200">
+                                            ℹ️ La especialista que atendía esta cita ya no labora en la clínica. Por favor selecciona una especialista activa de la lista superior para reasignar la cita.
+                                        </p>
+                                    )}
                                 </div>
 
                                 <div className="space-y-1.5">

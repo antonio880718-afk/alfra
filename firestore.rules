@@ -156,7 +156,7 @@ service cloud.firestore {
 
     // Appointments
     match /citas/{citaId} {
-        allow read: if isStaff() || (isSignedIn() && isPacienteOwner(resource.data.pacienteId));
+        allow read: if isStaff() || isSignedIn();
         allow create: if isStaff() || isSignedIn();
       allow update: if isStaff();
       allow delete: if isMasterAdmin() || hasRole('Administrador');
