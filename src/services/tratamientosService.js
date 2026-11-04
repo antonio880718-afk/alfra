@@ -362,10 +362,11 @@ export const auditarExpedientesPorDia = (
         const espNombre = resolverNombreEspecialistaCita(cita, staffList, pacientesList);
 
         // Verificar si el paciente tiene su expediente desactivado por Administración (paciente esporádico)
-        const pacNorm = normalizarTextoComparacion(pacNombre);
+        const normalizarTexto = (txt) => String(txt || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+        const pacNorm = normalizarTexto(pacNombre);
         const pacMatch = (pacientesList || []).find(p =>
             (pacId && p.id === pacId) ||
-            (pacNorm && normalizarTextoComparacion(p.nombre) === pacNorm)
+            (pacNorm && normalizarTexto(p.nombre) === pacNorm)
         );
         if (pacMatch?.expedienteActivo === false || cita.expedienteActivo === false) {
             exentos.push({
