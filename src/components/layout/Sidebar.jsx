@@ -5,11 +5,29 @@ import {
     Stethoscope, Tag, PiggyBank, TrendingUp, UserPlus, Archive, Megaphone, User,
     CreditCard, PieChart, ClipboardList, Bell, Clock, Sparkles
 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { getStaffDocByUid, onStaffDocChange } from '../../services/staffService';
 
 export default function Sidebar() {
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const { userRole, logout, currentUser } = useAuth();
+    const [staffPerfil, setStaffPerfil] = useState(null);
+
+    useEffect(() => {
+        let unsub = () => {};
+        if (currentUser?.uid && userRole && userRole !== 'Paciente') {
+            getStaffDocByUid(currentUser.uid, currentUser.email, currentUser.displayName).then(doc => {
+                if (doc) {
+                    setStaffPerfil(doc);
+                    unsub = onStaffDocChange(doc.id, (updated) => {
+                        if (updated) setStaffPerfil(updated);
+                    });
+                }
+            }).catch(() => {});
+        }
+        return () => unsub();
+    }, [currentUser, userRole]);
 
     let menuItems = [];
     if (userRole === 'Administrador') {
@@ -109,15 +127,15 @@ export default function Sidebar() {
                         }
                     >
                         <div className="w-9 h-9 rounded-xl bg-slate-900 text-teal-300 border border-teal-500/30 flex items-center justify-center overflow-hidden shrink-0 shadow-xs">
-                            {currentUser?.photoURL ? (
-                                <img src={currentUser.photoURL} alt="Avatar" className="w-full h-full object-cover" />
+                            {(staffPerfil?.fotoUrl || currentUser?.photoURL) ? (
+                                <img src={staffPerfil?.fotoUrl || currentUser?.photoURL} alt="Avatar" className="w-full h-full object-cover" />
                             ) : (
                                 <User size={16} />
                             )}
                         </div>
                         <div className="flex-1 min-w-0">
                             <p className="text-xs font-black text-slate-800 truncate">
-                                {currentUser?.displayName || currentUser?.email?.split('@')[0] || 'Mi Perfil'}
+                                {staffPerfil?.alias || staffPerfil?.nombre || currentUser?.displayName || currentUser?.email?.split('@')[0] || 'Mi Perfil'}
                             </p>
                             <p className="text-[10px] text-teal-700 font-bold uppercase truncate flex items-center gap-1">
                                 <Sparkles size={10} /> Personalizar Perfil

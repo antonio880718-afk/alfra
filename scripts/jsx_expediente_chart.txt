@@ -1,0 +1,54 @@
+﻿            {/* POINT 3: GRÁFICA DE CALORÍAS COMPLETA EN ESTILO DE VIDA */}
+            <div className="mb-5 bg-white p-5 rounded-3xl border border-gray-100 shadow-sm">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
+                <div>
+                  <h4 className="text-xs font-black uppercase tracking-wider text-gray-800">Historial de Calorías vs Meta Diaria (7 Días)</h4>
+                  <p className="text-[10px] text-gray-400">Monitoreo continuo de ingesta energética para potenciar resultados clínicos</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-black text-turquesa bg-turquesa/10 px-2.5 py-1 rounded-full border border-turquesa/20">
+                    Meta: {META_CALORIAS} kcal
+                  </span>
+                  <span className="text-[11px] font-black text-gray-700 bg-gray-100 px-2.5 py-1 rounded-full">
+                    Hoy: {caloriasHoy} kcal
+                  </span>
+                </div>
+              </div>
+              <div className="h-44 w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={caloriasChartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                    <defs>
+                      <linearGradient id="caloriasGradientExp" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#20B2AA" stopOpacity={0.8}/>
+                        <stop offset="95%" stopColor="#20B2AA" stopOpacity={0.05}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+                    <XAxis dataKey="fecha" stroke="#9ca3af" fontSize={10} tickLine={false} />
+                    <YAxis stroke="#9ca3af" fontSize={10} tickLine={false} domain={[0, 'dataMax + 400']} />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: "#0F172A", borderRadius: "12px", border: "none", color: "#fff", fontSize: "11px", padding: "8px 12px" }}
+                      formatter={(value, name) => [`${value} kcal`, name === "calorias" ? "Consumo" : "Meta"]}
+                    />
+                    <Area 
+                      type="monotone" 
+                      dataKey="calorias" 
+                      stroke="#20B2AA" 
+                      strokeWidth={3} 
+                      fillOpacity={1} 
+                      fill="url(#caloriasGradientExp)" 
+                      name="calorias"
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="meta" 
+                      stroke="#F59E0B" 
+                      strokeWidth={2} 
+                      strokeDasharray="4 4" 
+                      dot={false}
+                      name="meta"
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+            </div>

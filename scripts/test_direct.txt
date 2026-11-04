@@ -1,0 +1,3 @@
+﻿Hello!
+This is a raw literal here-string with "quotes" and `${variables}` and `backticks` and <> and && and ||!
+Nothing is parsed by PowerShell!

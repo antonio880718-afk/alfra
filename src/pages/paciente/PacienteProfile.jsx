@@ -1052,6 +1052,7 @@ export default function PacienteProfile() {
     fechaNacimiento: "", 
     fotoUrl: null, 
     tipoTratamiento: "", 
+    expedienteActivo: true,
     membresia: null, 
     sellosLealtad: 0, 
     recompensasDisponibles: 0, 
@@ -1427,7 +1428,21 @@ export default function PacienteProfile() {
   const tieneFacialActivo = useMemo(() => {
     return tratamientosActivos.some(t => {
       const txt = `${t.tipo || ''} ${t.nombre || ''}`.toLowerCase();
-      return txt.includes('facial') || txt.includes('dermapen') || txt.includes('peeling') || txt.includes('limpieza') || txt.includes('hidra') || txt.includes('antiedad') || txt.includes('envejec') || txt.includes('arruga') || txt.includes('cutan') || txt.includes('botox') || txt.includes('armoniza') || txt.includes('acne') || txt.includes('acné') || txt.includes('melasma');
+      return txt.includes('facial') || txt.includes('dermapen') || txt.includes('peeling') || txt.includes('limpieza') || txt.includes('hidra') || txt.includes('antiedad') || txt.includes('envejec') || txt.includes('arruga') || txt.includes('cutan') || txt.includes('botox') || txt.includes('armoniza') || txt.includes('acne') || txt.includes('acné');
+    });
+  }, [tratamientosActivos]);
+
+  const tieneLaserActivo = useMemo(() => {
+    return tratamientosActivos.some(t => {
+      const txt = `${t.tipo || ''} ${t.nombre || ''}`.toLowerCase();
+      return txt.includes('laser') || txt.includes('láser') || txt.includes('depilac') || txt.includes('diodo') || txt.includes('folic');
+    });
+  }, [tratamientosActivos]);
+
+  const tieneDespigmentacionActivo = useMemo(() => {
+    return tratamientosActivos.some(t => {
+      const txt = `${t.tipo || ''} ${t.nombre || ''}`.toLowerCase();
+      return txt.includes('despigment') || txt.includes('aclarad') || txt.includes('mancha') || txt.includes('melasma') || txt.includes('hiperpigment');
     });
   }, [tratamientosActivos]);
 
@@ -1752,6 +1767,7 @@ export default function PacienteProfile() {
             fechaRegistro: paciente.fechaRegistro || paciente.createdAt || null,
             recompensaElegida: paciente.recompensaElegida || null,
             lealtadActiva: true,
+            expedienteActivo: paciente.expedienteActivo !== false,
             metaCalorica: paciente.metaCalorica || null
           });
 
@@ -2180,23 +2196,24 @@ export default function PacienteProfile() {
     return all.sort((a,b) => new Date(b.fecha) - new Date(a.fecha))[0] || null;
   }, [sesionesPorTrat]);
 
-  // Resuelve la fase activa del Roadmap considerando el control manual del Especialista en Expediente Clínico (Propuesta 4 - Punto 3)
+  // Resuelve la fase activa del Roadmap considerando el control manual del Especialista en Expediente Clínico
   const resolverFaseRoadmap = useCallback((tipoTarget) => {
-    const tratEspecifico = tratamientos.find(t => {
-      const tipo = (t.tipo || '').toLowerCase();
-      const nom = (t.nombre || '').toLowerCase();
-      if (tipoTarget === 'facial') {
-        return tipo.includes('facial') || nom.includes('facial') || nom.includes('envejec') || nom.includes('antiedad') || nom.includes('dermapen') || nom.includes('peeling') || nom.includes('limpieza') || nom.includes('hidra') || nom.includes('acne') || nom.includes('acné') || nom.includes('melasma');
+    const matchTarget = (t) => {
+      const txt = `${t?.tipo || ''} ${t?.nombre || ''}`.toLowerCase();
+      if (tipoTarget === 'laser') {
+        return txt.includes('laser') || txt.includes('láser') || txt.includes('depilac') || txt.includes('diodo') || txt.includes('folic');
       }
-      return tipo.includes('corporal') || nom.includes('corporal') || nom.includes('lipo') || nom.includes('reduct') || nom.includes('reafirm') || nom.includes('cavit') || nom.includes('radiofrecuencia');
-    });
-    const trat = tratEspecifico || (tratamientoActivo && (() => {
-      const nom = (tratamientoActivo.nombre || '').toLowerCase();
-      const tip = (tratamientoActivo.tipo || '').toLowerCase();
-      if (tipoTarget === 'facial' && (tip.includes('facial') || nom.includes('facial') || nom.includes('envejec') || nom.includes('antiedad') || nom.includes('dermapen') || nom.includes('peeling') || nom.includes('limpieza') || nom.includes('hidra') || nom.includes('acne') || nom.includes('acné') || nom.includes('melasma'))) return tratamientoActivo;
-      if (tipoTarget === 'corporal' && (tip.includes('corporal') || nom.includes('corporal') || nom.includes('lipo') || nom.includes('reduct') || nom.includes('reafirm'))) return tratamientoActivo;
-      return null;
-    })());
+      if (tipoTarget === 'despigmentacion') {
+        return txt.includes('despigment') || txt.includes('aclarad') || txt.includes('mancha') || txt.includes('melasma') || txt.includes('hiperpigment');
+      }
+      if (tipoTarget === 'facial') {
+        return txt.includes('facial') || txt.includes('envejec') || txt.includes('antiedad') || txt.includes('dermapen') || txt.includes('peeling') || txt.includes('limpieza') || txt.includes('hidra') || txt.includes('acne') || txt.includes('acné');
+      }
+      return txt.includes('corporal') || txt.includes('lipo') || txt.includes('reduct') || txt.includes('reafirm') || txt.includes('cavit') || txt.includes('radiofrecuencia');
+    };
+
+    const tratEspecifico = tratamientos.find(matchTarget);
+    const trat = tratEspecifico || (tratamientoActivo && matchTarget(tratamientoActivo) ? tratamientoActivo : null);
     const faseManual = trat?.faseRoadmapManual;
 
     if (faseManual && faseManual !== 'auto') {
@@ -2208,9 +2225,22 @@ export default function PacienteProfile() {
     }
 
     let fAuto = 1;
-    if (totalSesiones >= 9) fAuto = 4;
-    else if (totalSesiones >= 6) fAuto = 3;
-    else if (totalSesiones >= 3) fAuto = 2;
+    if (tipoTarget === 'corporal') {
+      // Corporal (8 a 14 sesiones totales): Fase 1 (1-3), Fase 2 (4-7), Fase 3 (8-11), Fase 4 (12-14+)
+      if (totalSesiones >= 12) fAuto = 4;
+      else if (totalSesiones >= 8) fAuto = 3;
+      else if (totalSesiones >= 4) fAuto = 2;
+    } else if (tipoTarget === 'facial') {
+      // Facial (6 a 10 sesiones totales): Fase 1 (1-2), Fase 2 (3-5), Fase 3 (6-8), Fase 4 (9-10+)
+      if (totalSesiones >= 9) fAuto = 4;
+      else if (totalSesiones >= 6) fAuto = 3;
+      else if (totalSesiones >= 3) fAuto = 2;
+    } else {
+      // Depilación Láser y Despigmentación (8 a 12 sesiones totales): Fase 1 (1-3), Fase 2 (4-6), Fase 3 (7-9), Fase 4 (10-12+)
+      if (totalSesiones >= 10) fAuto = 4;
+      else if (totalSesiones >= 7) fAuto = 3;
+      else if (totalSesiones >= 4) fAuto = 2;
+    }
 
     return {
       fase: fAuto,
@@ -2219,15 +2249,14 @@ export default function PacienteProfile() {
     };
   }, [tratamientos, tratamientoActivo, totalSesiones]);
 
-  // Roadmap Corporal de 4 fases clínicas
+  // 1. Roadmap Corporal de 4 fases clínicas (8 a 14 sesiones totales)
   const roadmapCorporalFases = useMemo(() => {
     const { fase: fActual, esManual } = resolverFaseRoadmap('corporal');
-
     return [
       {
         num: 1,
-        nombre: "Preparación & Desintoxicación",
-        sub: "Sesiones 1 a 2",
+        nombre: "Desintoxicación Linfática & Drenaje Celular",
+        sub: "Sesiones 1 a 3",
         icono: Sparkles,
         explicacion: "Activamos tu sistema circulatorio y linfático. El tejido se descongestiona y se prepara para recibir la aparatología y nutrientes.",
         completada: fActual > 1,
@@ -2236,18 +2265,18 @@ export default function PacienteProfile() {
       },
       {
         num: 2,
-        nombre: "Activación & Reducción Profunda",
-        sub: "Sesiones 3 a 5",
+        nombre: "Lipo-activación & Reducción Intensiva",
+        sub: "Sesiones 4 a 7",
         icono: Flame,
-        explicacion: "Fase de máxima quema y movilización de grasa localizada. Notarás ligereza corporal y descenso acelerado de centímetros.",
+        explicacion: "Fase de máxima movilización de tejido adiposo localizado. Notarás ligereza corporal y descenso acelerado de centímetros.",
         completada: fActual > 2,
         activa: fActual === 2,
         esManual
       },
       {
         num: 3,
-        nombre: "Moldeo, Definición & Ajuste",
-        sub: "Sesiones 6 a 8",
+        nombre: "Compactación Muscular & Moldeo de Silueta",
+        sub: "Sesiones 8 a 11",
         icono: Target,
         explicacion: "Reafirmación de fibras de colágeno y elastina. Compactación de tejidos y perfilado de silueta para resultados estéticos notables.",
         completada: fActual > 3,
@@ -2256,25 +2285,24 @@ export default function PacienteProfile() {
       },
       {
         num: 4,
-        nombre: "Consolidación & Mantenimiento VIP",
-        sub: "Sesión 9+",
+        nombre: "Tonificación Profunda & Mantenimiento Escultórico",
+        sub: "Sesiones 12 a 14+",
         icono: Trophy,
         explicacion: "Blindaje de resultados. Tu metabolismo basal se estabiliza para asegurar que el cambio permanezca en el tiempo.",
-        completada: fActual === 4 && totalSesiones >= 12,
+        completada: fActual === 4 && totalSesiones >= 14,
         activa: fActual === 4,
         esManual
       }
     ];
   }, [resolverFaseRoadmap, totalSesiones]);
 
-  // Roadmap Facial Dermatológico de 4 fases clínicas
+  // 2. Roadmap Facial Dermatológico de 4 fases clínicas (6 a 10 sesiones totales)
   const roadmapFacialFases = useMemo(() => {
     const { fase: fActual, esManual } = resolverFaseRoadmap('facial');
-
     return [
       {
         num: 1,
-        nombre: "Preparación & Desintoxicación Epidérmica",
+        nombre: "Higiene Profunda & Balance Cutáneo",
         sub: "Sesiones 1 a 2",
         icono: Sparkles,
         explicacion: "Higiene facial profunda, balance del manto hidrolipídico y eliminación de células queratinizadas para oxigenar tu piel.",
@@ -2284,17 +2312,17 @@ export default function PacienteProfile() {
       },
       {
         num: 2,
-        nombre: "Renovación Celular & Regeneración",
+        nombre: "Renovación Tisular & Micro-estimulación",
         sub: "Sesiones 3 a 5",
         icono: Zap,
-        explicacion: "Estimulación de la capa basal y unificación del tono cutáneo. Suaviza la textura y desvanece imperfecciones.",
+        explicacion: "Estimulación de la capa basal y oxigenación profunda. Suaviza la textura y desvanece imperfecciones.",
         completada: fActual > 2,
         activa: fActual === 2,
         esManual
       },
       {
         num: 3,
-        nombre: "Redensificación & Estímulo de Colágeno",
+        nombre: "Redensificación & Síntesis de Colágeno",
         sub: "Sesiones 6 a 8",
         icono: Target,
         explicacion: "Reactivación de fibroblastos para la producción natural de colágeno y elastina. Mayor firmeza, turgencia y atenuación de líneas.",
@@ -2304,10 +2332,57 @@ export default function PacienteProfile() {
       },
       {
         num: 4,
-        nombre: "Luminosidad, Sellado & Blindaje Cutáneo",
-        sub: "Sesión 9+",
+        nombre: "Blindaje Antioxidante & Efecto Glow Duradero",
+        sub: "Sesiones 9 a 10+",
         icono: Trophy,
         explicacion: "Efecto glow duradero, nutrición intensiva y sellado protector contra el fotoenvejecimiento y radicales libres.",
+        completada: fActual === 4 && totalSesiones >= 10,
+        activa: fActual === 4,
+        esManual
+      }
+    ];
+  }, [resolverFaseRoadmap, totalSesiones]);
+
+  // 3. Roadmap Depilación Láser de 4 fases clínicas (8 a 12 sesiones totales)
+  const roadmapLaserFases = useMemo(() => {
+    const { fase: fActual, esManual } = resolverFaseRoadmap('laser');
+    return [
+      {
+        num: 1,
+        nombre: "Debilitamiento del Folículo Anágeno",
+        sub: "Sesiones 1 a 3",
+        icono: Zap,
+        explicacion: "El haz láser actúa directamente sobre la melanina del bulbo piloso en fase activa, retardando el crecimiento desde la primera sesión.",
+        completada: fActual > 1,
+        activa: fActual === 1,
+        esManual
+      },
+      {
+        num: 2,
+        nombre: "Reducción Drástica de Densidad",
+        sub: "Sesiones 4 a 6",
+        icono: Flame,
+        explicacion: "Disminución de más del 50% del vello. El vello restante nace mucho más fino, débil y espaciado, eliminando foliculitis.",
+        completada: fActual > 2,
+        activa: fActual === 2,
+        esManual
+      },
+      {
+        num: 3,
+        nombre: "Destrucción de Folículos Residuales",
+        sub: "Sesiones 7 a 9",
+        icono: Target,
+        explicacion: "Focalización en folículos de ciclo lento o latente (telógeno/catágeno) para lograr zonas limpias y uniformes.",
+        completada: fActual > 3,
+        activa: fActual === 3,
+        esManual
+      },
+      {
+        num: 4,
+        nombre: "Piel de Seda & Consolidación Permanente",
+        sub: "Sesiones 10 a 12+",
+        icono: Trophy,
+        explicacion: "Cierre de poros, suavidad total en la piel y erradicación definitiva del vello terminal.",
         completada: fActual === 4 && totalSesiones >= 12,
         activa: fActual === 4,
         esManual
@@ -2315,25 +2390,106 @@ export default function PacienteProfile() {
     ];
   }, [resolverFaseRoadmap, totalSesiones]);
 
-  const esRoadmapFacialActivo = useMemo(() => {
-    if (tipoRoadmapSeleccionado === 'facial') return true;
-    if (tipoRoadmapSeleccionado === 'corporal') return false;
-    if (tieneFacialActivo && !tieneCorporalActivo) return true;
-    return false;
-  }, [tipoRoadmapSeleccionado, tieneFacialActivo, tieneCorporalActivo]);
+  // 4. Roadmap Despigmentación de 4 fases clínicas (8 a 12 sesiones totales)
+  const roadmapDespigmentacionFases = useMemo(() => {
+    const { fase: fActual, esManual } = resolverFaseRoadmap('despigmentacion');
+    return [
+      {
+        num: 1,
+        nombre: "Preparación Epidérmica & Bloqueo de Pigmento",
+        sub: "Sesiones 1 a 3",
+        icono: Sparkles,
+        explicacion: "Renovación del estrato córneo e inhibición de la enzima tirosinasa para frenar la hiperproducción de melanina.",
+        completada: fActual > 1,
+        activa: fActual === 1,
+        esManual
+      },
+      {
+        num: 2,
+        nombre: "Aclarado Activo & Renovación Epidérmica",
+        sub: "Sesiones 4 a 6",
+        icono: Zap,
+        explicacion: "Degradación progresiva de los cúmulos de pigmento superficial. Disminución visible del contraste en la zona tratada.",
+        completada: fActual > 2,
+        activa: fActual === 2,
+        esManual
+      },
+      {
+        num: 3,
+        nombre: "Despigmentación Profunda & Unificación de Tono",
+        sub: "Sesiones 7 a 9",
+        icono: Target,
+        explicacion: "Acción despigmentante a nivel dérmico profundo, homogenizando el tono natural y devolviendo luminosidad a la piel.",
+        completada: fActual > 3,
+        activa: fActual === 3,
+        esManual
+      },
+      {
+        num: 4,
+        nombre: "Blindaje Antimanchas & Estabilización Celular",
+        sub: "Sesiones 10 a 12+",
+        icono: Trophy,
+        explicacion: "Memoria celular despigmentante y fortalecimiento de la barrera cutánea para prevenir hiperpigmentación post-inflamatoria.",
+        completada: fActual === 4 && totalSesiones >= 12,
+        activa: fActual === 4,
+        esManual
+      }
+    ];
+  }, [resolverFaseRoadmap, totalSesiones]);
 
-  const roadmapFases = esRoadmapFacialActivo ? roadmapFacialFases : roadmapCorporalFases;
+  const tipoRoadmapActivo = useMemo(() => {
+    if (['corporal', 'facial', 'laser', 'despigmentacion'].includes(tipoRoadmapSeleccionado)) {
+      return tipoRoadmapSeleccionado;
+    }
+    if (tieneLaserActivo) return 'laser';
+    if (tieneDespigmentacionActivo) return 'despigmentacion';
+    if (tieneFacialActivo && !tieneCorporalActivo) return 'facial';
+    const pref = (perfilPaciente?.tipoTratamiento || '').toLowerCase();
+    if (pref.includes('laser') || pref.includes('láser') || pref.includes('depil')) return 'laser';
+    if (pref.includes('despigment')) return 'despigmentacion';
+    if (pref.includes('facial')) return 'facial';
+    return 'corporal';
+  }, [tipoRoadmapSeleccionado, tieneLaserActivo, tieneDespigmentacionActivo, tieneFacialActivo, tieneCorporalActivo, perfilPaciente?.tipoTratamiento]);
+
+  const esRoadmapFacialActivo = tipoRoadmapActivo === 'facial';
+
+  const roadmapFases = useMemo(() => {
+    if (tipoRoadmapActivo === 'facial') return roadmapFacialFases;
+    if (tipoRoadmapActivo === 'laser') return roadmapLaserFases;
+    if (tipoRoadmapActivo === 'despigmentacion') return roadmapDespigmentacionFases;
+    return roadmapCorporalFases;
+  }, [tipoRoadmapActivo, roadmapFacialFases, roadmapLaserFases, roadmapDespigmentacionFases, roadmapCorporalFases]);
+
+  const roadmapMetaSesiones = useMemo(() => {
+    if (tipoRoadmapActivo === 'corporal') return 14;
+    if (tipoRoadmapActivo === 'facial') return 10;
+    return 12; // laser y despigmentacion (8 a 12 sesiones)
+  }, [tipoRoadmapActivo]);
+
+  const roadmapTituloTexto = useMemo(() => {
+    if (tipoRoadmapActivo === 'facial') return 'Tu Roadmap Facial Dermatológico (6 a 10 Sesiones)';
+    if (tipoRoadmapActivo === 'laser') return 'Tu Roadmap de Depilación Láser (8 a 12 Sesiones)';
+    if (tipoRoadmapActivo === 'despigmentacion') return 'Tu Roadmap de Despigmentación Clínica (8 a 12 Sesiones)';
+    return 'Tu Roadmap Corporal Clínico (8 a 14 Sesiones)';
+  }, [tipoRoadmapActivo]);
+
+  const roadmapSubtituloTexto = useMemo(() => {
+    if (tipoRoadmapActivo === 'facial') return 'Sigue de cerca en qué fase biológica se encuentra la regeneración de tu piel';
+    if (tipoRoadmapActivo === 'laser') return 'Avance progresivo de debilitamiento folicular hasta lograr una piel libre de vello';
+    if (tipoRoadmapActivo === 'despigmentacion') return 'Proceso dermo-aclarante por capas para unificar y recuperar el tono de tu piel';
+    return 'Sigue de cerca en qué fase biológica de reducción y moldeo se encuentra tu cuerpo';
+  }, [tipoRoadmapActivo]);
 
   const progresoGlobalPct = useMemo(() => {
     if (totalSesiones > 0) {
-      return Math.min(100, Math.round((totalSesiones / 10) * 100));
+      return Math.min(100, Math.round((totalSesiones / roadmapMetaSesiones) * 100));
     }
-    const info = esRoadmapFacialActivo ? resolverFaseRoadmap('facial') : resolverFaseRoadmap('corporal');
+    const info = resolverFaseRoadmap(tipoRoadmapActivo);
     if (info.esManual && info.fase > 1) {
       return Math.min(100, Math.round(((info.fase - 1) / 4) * 100 + 10));
     }
     return 0;
-  }, [totalSesiones, esRoadmapFacialActivo, resolverFaseRoadmap]);
+  }, [totalSesiones, roadmapMetaSesiones, tipoRoadmapActivo, resolverFaseRoadmap]);
 
   // Cálculos de equivalencias humanas
   const equivalenciasProgreso = useMemo(() => {
@@ -2666,13 +2822,14 @@ export default function PacienteProfile() {
           )}
 
           {/* ==================== ROADMAP CLÍNICO DE TRANSFORMACIÓN (POINT 3) ==================== */}
+          {perfilPaciente?.expedienteActivo !== false && (
           <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-xl space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-3">
               <div>
                 <div className="flex items-center gap-2">
                   <Compass size={18} className="text-turquesa" />
                   <h3 className="text-sm font-black text-gray-800 uppercase tracking-wider">
-                    {esRoadmapFacialActivo ? 'Tu Roadmap Facial Dermatológico' : 'Tu Roadmap Corporal Clínico'}
+                    {roadmapTituloTexto}
                   </h3>
                   <button
                     type="button"
@@ -2684,30 +2841,48 @@ export default function PacienteProfile() {
                   </button>
                 </div>
                 <p className="text-xs text-gray-500 font-medium">
-                  {esRoadmapFacialActivo ? 'Sigue de cerca en qué fase biológica se encuentra tu piel' : 'Sigue de cerca en qué fase biológica se encuentra tu cuerpo'}
+                  {roadmapSubtituloTexto}
                 </p>
               </div>
 
               <div className="flex items-center gap-2.5 flex-wrap">
-                {/* Selector para explorar Facial o Corporal */}
-                <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-2xl">
+                {/* Selector para explorar los 4 Roadmaps Clínicos */}
+                <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-2xl overflow-x-auto max-w-full">
                   <button
                     type="button"
                     onClick={() => setTipoRoadmapSeleccionado('corporal')}
-                    className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                      !esRoadmapFacialActivo ? 'bg-white text-turquesa shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                    className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                      tipoRoadmapActivo === 'corporal' ? 'bg-white text-turquesa shadow-sm' : 'text-gray-500 hover:text-gray-700'
                     }`}
                   >
-                    🌸 Corporal
+                    🌸 Corporal (8-14)
                   </button>
                   <button
                     type="button"
                     onClick={() => setTipoRoadmapSeleccionado('facial')}
-                    className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                      esRoadmapFacialActivo ? 'bg-white text-purple-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                    className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                      tipoRoadmapActivo === 'facial' ? 'bg-white text-purple-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
                     }`}
                   >
-                    ✨ Facial
+                    ✨ Facial (6-10)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setTipoRoadmapSeleccionado('laser')}
+                    className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                      tipoRoadmapActivo === 'laser' ? 'bg-white text-amber-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    ⚡ Depil. Láser (8-12)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setTipoRoadmapSeleccionado('despigmentacion')}
+                    className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                      tipoRoadmapActivo === 'despigmentacion' ? 'bg-white text-teal-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    💎 Despigmentación (8-12)
                   </button>
                 </div>
 
@@ -2778,6 +2953,7 @@ export default function PacienteProfile() {
               </button>
             </div>
           </div>
+          )}
 
           {/* Modal Informativo: ¿Cómo funciona tu Roadmap Clínico? */}
           {mostrarModalInfoRoadmap && (
@@ -2808,25 +2984,49 @@ export default function PacienteProfile() {
                 <div className="space-y-3 text-xs">
                   <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1">
                     <p className="font-black text-cyan-300 flex items-center gap-1.5">
-                      <span>🌸</span> Roadmap Corporal (Modelado & Reducción)
+                      <span>🌸</span> Roadmap Corporal (8 a 14 Sesiones Totales)
                     </p>
                     <p className="text-[11px] text-gray-300 leading-relaxed">
-                      <strong>Fase 1 (Desintoxicación):</strong> Se drena retención de líquidos y toxinas preparando el tejido circulatorio.<br/>
-                      <strong>Fase 2 (Reducción Profunda):</strong> Se moviliza grasa localizada mediante aparatología especializada.<br/>
-                      <strong>Fase 3 (Firmeza & Moldeo):</strong> Se reactiva la síntesis de colágeno y elastina para tensar la piel.<br/>
-                      <strong>Fase 4 (Consolidación):</strong> Se fija el resultado biológico evitando rebotes.
+                      <strong>Fase 1 (Sesiones 1-3):</strong> Desintoxicación Linfática y Drenaje Celular.<br/>
+                      <strong>Fase 2 (Sesiones 4-7):</strong> Lipo-activación y Reducción Intensiva.<br/>
+                      <strong>Fase 3 (Sesiones 8-11):</strong> Compactación Muscular y Moldeo de Silueta.<br/>
+                      <strong>Fase 4 (Sesiones 12-14+):</strong> Tonificación Profunda y Mantenimiento Escultórico.
                     </p>
                   </div>
 
                   <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1">
                     <p className="font-black text-purple-300 flex items-center gap-1.5">
-                      <span>✨</span> Roadmap Facial (Dermatológico & Rejuvenecimiento)
+                      <span>✨</span> Roadmap Facial (6 a 10 Sesiones Totales)
                     </p>
                     <p className="text-[11px] text-gray-300 leading-relaxed">
-                      <strong>Fase 1 (Higiene Profunda):</strong> Se desobstruyen poros, se oxigena la epidermis y se estabiliza el pH.<br/>
-                      <strong>Fase 2 (Regeneración Dérmica):</strong> Se bioestimula la dermis con activos puros y aparatología regenerativa.<br/>
-                      <strong>Fase 3 (Unificación de Tono & Firmeza):</strong> Se corrigen imperfecciones, manchas y textura cutánea.<br/>
-                      <strong>Fase 4 (Luminosidad & Protección):</strong> Se sella la barrera lipídica para un efecto radiante y duradero.
+                      <strong>Fase 1 (Sesiones 1-2):</strong> Higiene Profunda y Balance Cutáneo.<br/>
+                      <strong>Fase 2 (Sesiones 3-5):</strong> Renovación Tisular y Micro-estimulación.<br/>
+                      <strong>Fase 3 (Sesiones 6-8):</strong> Redensificación y Síntesis de Colágeno.<br/>
+                      <strong>Fase 4 (Sesiones 9-10+):</strong> Blindaje Antioxidante y Efecto Glow Duradero.
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+                    <p className="font-black text-amber-300 flex items-center gap-1.5">
+                      <span>⚡</span> Roadmap Depilación Láser (8 a 12 Sesiones Totales)
+                    </p>
+                    <p className="text-[11px] text-gray-300 leading-relaxed">
+                      <strong>Fase 1 (Sesiones 1-3):</strong> Debilitamiento del Folículo Anágeno.<br/>
+                      <strong>Fase 2 (Sesiones 4-6):</strong> Reducción Drástica de Densidad.<br/>
+                      <strong>Fase 3 (Sesiones 7-9):</strong> Destrucción de Folículos Residuales.<br/>
+                      <strong>Fase 4 (Sesiones 10-12+):</strong> Piel de Seda y Consolidación Permanente.
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+                    <p className="font-black text-emerald-300 flex items-center gap-1.5">
+                      <span>💎</span> Roadmap Despigmentación (8 a 12 Sesiones Totales)
+                    </p>
+                    <p className="text-[11px] text-gray-300 leading-relaxed">
+                      <strong>Fase 1 (Sesiones 1-3):</strong> Preparación Epidérmica y Bloqueo de Pigmento.<br/>
+                      <strong>Fase 2 (Sesiones 4-6):</strong> Aclarado Activo y Renovación Epidérmica.<br/>
+                      <strong>Fase 3 (Sesiones 7-9):</strong> Despigmentación Profunda y Unificación de Tono.<br/>
+                      <strong>Fase 4 (Sesiones 10-12+):</strong> Blindaje Antimanchas y Estabilización Celular.
                     </p>
                   </div>
 
@@ -3227,45 +3427,61 @@ export default function PacienteProfile() {
             <p className="text-xs text-gray-500 font-bold">Métricas clínicas, fotos de evolución y registro milimétrico</p>
           </div>
 
-{/* 3. ROADMAP DE TRANSFORMACIÓN CLÍNICA (ÚNICAMENTE SI HAY TRATAMIENTO ACTIVO) */}
-      {tieneTratamientosActivos && (
+{/* 3. ROADMAP DE TRANSFORMACIÓN CLÍNICA (ÚNICAMENTE SI HAY TRATAMIENTO ACTIVO Y EXPEDIENTE ACTIVO) */}
+      {tieneTratamientosActivos && perfilPaciente?.expedienteActivo !== false && (
       <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-xl space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-3">
           <div>
             <div className="flex items-center gap-2">
               <Compass size={18} className="text-turquesa" />
               <h3 className="text-sm font-black text-gray-800 uppercase tracking-wider">
-                {esRoadmapFacialActivo ? 'Tu Roadmap Facial Dermatológico' : 'Tu Roadmap Corporal Clínico'}
+                {roadmapTituloTexto}
               </h3>
             </div>
             <p className="text-xs text-gray-500 font-medium">
-              {esRoadmapFacialActivo ? 'Sigue de cerca en qué fase biológica se encuentra tu piel' : 'Sigue de cerca en qué fase biológica se encuentra tu cuerpo'}
+              {roadmapSubtituloTexto}
             </p>
           </div>
           
-          <div className="flex items-center gap-3">
-            {tieneFacialActivo && tieneCorporalActivo && (
-              <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-2xl">
-                <button
-                  type="button"
-                  onClick={() => setTipoRoadmapSeleccionado('facial')}
-                  className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                    esRoadmapFacialActivo ? 'bg-white text-purple-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  💆‍♀️ Facial
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setTipoRoadmapSeleccionado('corporal')}
-                  className={`px-3 py-1 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                    !esRoadmapFacialActivo ? 'bg-white text-turquesa shadow-sm' : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  ✨ Corporal
-                </button>
-              </div>
-            )}
+          <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-2xl overflow-x-auto max-w-full">
+              <button
+                type="button"
+                onClick={() => setTipoRoadmapSeleccionado('corporal')}
+                className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                  tipoRoadmapActivo === 'corporal' ? 'bg-white text-turquesa shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                🌸 Corporal
+              </button>
+              <button
+                type="button"
+                onClick={() => setTipoRoadmapSeleccionado('facial')}
+                className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                  tipoRoadmapActivo === 'facial' ? 'bg-white text-purple-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                ✨ Facial
+              </button>
+              <button
+                type="button"
+                onClick={() => setTipoRoadmapSeleccionado('laser')}
+                className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                  tipoRoadmapActivo === 'laser' ? 'bg-white text-amber-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                ⚡ Depil. Láser
+              </button>
+              <button
+                type="button"
+                onClick={() => setTipoRoadmapSeleccionado('despigmentacion')}
+                className={`px-2.5 py-1 rounded-xl text-[11px] font-black transition-all cursor-pointer whitespace-nowrap ${
+                  tipoRoadmapActivo === 'despigmentacion' ? 'bg-white text-teal-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                💎 Despigmentación
+              </button>
+            </div>
             <div className="text-right">
               <span className="text-xs font-black text-turquesa bg-turquesa/10 px-3 py-1 rounded-full border border-turquesa/20">
                 {totalSesiones} Sesiones Realizadas · {progresoGlobalPct}% del Plan Maestro

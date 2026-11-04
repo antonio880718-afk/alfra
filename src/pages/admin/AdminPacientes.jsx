@@ -9,14 +9,14 @@ import ReciboDigital from '../../components/ui/ReciboDigital';
 import { getRecibosPaciente } from '../../services/recibosService';
 import { getDocs, query, collection, where, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos, sincronizarTodosLosPacientes, sincronizarDirectorioTelefonos } from '../../services/pacientesService';
+import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos, sincronizarTodosLosPacientes, sincronizarDirectorioTelefonos, toggleExpedienteActivo } from '../../services/pacientesService';
 import { sellarVisita, canjearRecompensa } from '../../services/lealtadService';
 import { onStaffChange } from '../../services/staffService';
 import { createCita } from '../../services/citasService';
 import { useAuth } from '../../contexts/AuthContext';
 import { KeyRound, Mail } from 'lucide-react';
 
-const TIPOS = ['Por definir', 'Facial', 'Corporal', 'Mixto'];
+const TIPOS = ['Por definir', 'Facial', 'Corporal', 'Depilación Láser', 'Despigmentación', 'Mixto'];
 const ESTADOS = ['Activo', 'En pausa', 'Alta médica', 'Prospecto'];
 const CANALES_ORIGEN = ['Facebook', 'Instagram', 'TikTok', 'Google / Maps', 'Recomendación de un paciente', 'Volante / Publicidad impresa', 'Pasaba por aquí', 'WhatsApp', 'Otro'];
 
@@ -28,6 +28,7 @@ const emptyNuevo = {
     comoNosConocio: '',
     tipoTratamiento: 'Por definir',
     estado: 'Activo',
+    expedienteActivo: true,
     observaciones: '',
     ahorroMeta: 0,
     ahorroActual: 0,
@@ -325,6 +326,7 @@ export default function AdminPacientes() {
             ahorroActual: paciente.ahorroActual || 0,
             nombreTratamientoAhorro: paciente.nombreTratamientoAhorro || '',
             lealtadActiva: paciente.lealtadActiva !== false,
+            expedienteActivo: paciente.expedienteActivo !== false,
             membresia: paciente.membresia || null,
         });
         setModal(true);
@@ -480,7 +482,14 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                                         )}
                                     </div>
                                     <div className="min-w-0">
-                                        <p className="font-bold text-gray-800 text-sm sm:text-base leading-tight break-words">{p.nombre}</p>
+                                        <div className="flex flex-wrap items-center gap-1.5">
+                                            <p className="font-bold text-gray-800 text-sm sm:text-base leading-tight break-words">{p.nombre}</p>
+                                            {p.expedienteActivo === false && (
+                                                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-300">
+                                                    ⚪ Esporádico (Sin alerta expediente)
+                                                </span>
+                                            )}
+                                        </div>
                                         <p className="text-xs text-gray-400 mt-0.5 truncate">{p.telefono} • {p.email || 'Sin correo'}</p>
                                         {/* Mini barra de sellos */}
                                         <div className="flex items-center gap-1 mt-1">
@@ -569,6 +578,30 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                                     >
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={p.lealtadActiva !== false ? "white" : "#9CA3AF"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                                     </button>
+                                    {userRole === 'Administrador' && (
+                                        <button
+                                            type="button"
+                                            onClick={async (e) => {
+                                                e.stopPropagation();
+                                                const nuevoEstado = p.expedienteActivo === false ? true : false;
+                                                try {
+                                                    await toggleExpedienteActivo(p.id, nuevoEstado);
+                                                } catch (err) {
+                                                    console.error(err);
+                                                    alert('Error al cambiar estado del expediente');
+                                                }
+                                            }}
+                                            title={p.expedienteActivo !== false ? "Expediente Activo (Clic para desactivar alertas en paciente esporádico)" : "Expediente Desactivado / Esporádico (Clic para activar alertas de expediente)"}
+                                            className={`px-2.5 py-1.5 rounded-xl text-[11px] font-black uppercase tracking-wider transition-all hover:scale-105 active:scale-95 flex items-center gap-1 cursor-pointer border ${
+                                                p.expedienteActivo !== false
+                                                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
+                                                    : 'bg-slate-100 text-slate-500 border-slate-300 hover:bg-slate-200'
+                                            }`}
+                                        >
+                                            <span className={`w-2 h-2 rounded-full ${p.expedienteActivo !== false ? 'bg-emerald-500' : 'bg-slate-400'}`} />
+                                            <span>{p.expedienteActivo !== false ? 'Exp. Activo' : 'Exp. Inactivo'}</span>
+                                        </button>
+                                    )}
                                     <Button
                                         variant="outline"
                                         size="sm"
@@ -750,6 +783,32 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                                 <select value={formAsignacion.estado} onChange={e => setFormAsignacion(p => ({ ...p, estado: e.target.value }))} className={inputCls}>
                                     {ESTADOS.map(e => <option key={e}>{e}</option>)}
                                 </select>
+                            </div>
+                        </div>
+
+                        <div className="pt-4 border-t border-gray-100 space-y-2">
+                            <div className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-200">
+                                <div className="pr-3">
+                                    <p className="text-xs font-black text-acero uppercase tracking-wider">
+                                        Seguimiento y Alertas de Expediente
+                                    </p>
+                                    <p className="text-[11px] text-gray-500 leading-snug mt-0.5">
+                                        {formAsignacion.expedienteActivo !== false
+                                            ? '🟢 Activo: El sistema exige actualizar su expediente en cada cita y muestra su Roadmap.'
+                                            : '⚪ Desactivado (Paciente Esporádico): No genera alertas de expediente sin actualizar en Auditoría ni Corte de Caja.'}
+                                    </p>
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={() => setFormAsignacion(prev => ({ ...prev, expedienteActivo: prev.expedienteActivo === false ? true : false }))}
+                                    className={`px-3.5 py-2 rounded-xl text-[11px] font-black uppercase tracking-wider shrink-0 transition-all cursor-pointer ${
+                                        formAsignacion.expedienteActivo !== false
+                                            ? 'bg-emerald-600 text-white shadow-sm'
+                                            : 'bg-slate-200 text-slate-600'
+                                    }`}
+                                >
+                                    {formAsignacion.expedienteActivo !== false ? 'Expediente Activo' : 'Desactivado'}
+                                </button>
                             </div>
                         </div>
 

@@ -1,4 +1,5 @@
-import { collection, addDoc, updateDoc, deleteDoc, doc, getDocs, getDoc, query, orderBy, onSnapshot, where } from 'firebase/firestore';
+import { collection, addDoc, updateDoc, setDoc, deleteDoc, doc, getDocs, getDoc, query, orderBy, onSnapshot, where } from 'firebase/firestore';
+import { getAuth, updateProfile } from 'firebase/auth';
 import { db } from '../lib/firebase';
 
 const STAFF_COL = collection(db, 'staff');
@@ -651,6 +652,29 @@ export const actualizarMiPerfilColaborador = async (staffId, datosPermitidos) =>
     }
 
     await updateEmpleado(staffId, dataAActualizar);
+
+    // Sincronizar también en /usuarios/{uid} y en Firebase Auth para reflejar avatar y nombre en la barra lateral y móvil
+    try {
+        const auth = getAuth();
+        const currentUser = auth.currentUser;
+        if (currentUser?.uid) {
+            const userPayload = { updatedAt: dataAActualizar.updatedAt };
+            if (dataAActualizar.nombre) userPayload.nombre = dataAActualizar.nombre;
+            if (dataAActualizar.fotoUrl !== undefined) {
+                userPayload.fotoUrl = dataAActualizar.fotoUrl;
+                userPayload.photoURL = dataAActualizar.fotoUrl;
+            }
+            if (dataAActualizar.telefono !== undefined) userPayload.telefono = dataAActualizar.telefono;
+            await setDoc(doc(db, 'usuarios', currentUser.uid), userPayload, { merge: true });
+
+            if (dataAActualizar.nombre) {
+                await updateProfile(currentUser, { displayName: dataAActualizar.nombre }).catch(() => {});
+            }
+        }
+    } catch (syncErr) {
+        console.warn('No se pudo sincronizar perfil en /usuarios:', syncErr);
+    }
+
     return dataAActualizar;
 };
 

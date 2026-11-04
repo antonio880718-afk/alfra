@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // REGLAS FINALES: Acceso permitido únicamente a usuarios autenticados.
+    // Esto protege tus datos del público pero permite que tu app funcione.
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

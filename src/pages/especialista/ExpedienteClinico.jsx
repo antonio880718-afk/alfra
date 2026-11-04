@@ -1278,10 +1278,31 @@ function SesionesTratamiento({ tratamiento, sesiones, onNuevaSesion, onEliminarS
         setFaseRoadmapManual(tratamiento?.faseRoadmapManual || 'auto');
     }, [tratamiento?.id, tratamiento?.faseRoadmapManual]);
 
+    const catRoadmap = (() => {
+        const txt = `${tratamiento?.tipo || ''} ${tratamiento?.nombre || ''}`.toLowerCase();
+        if (txt.includes('laser') || txt.includes('láser') || txt.includes('depil')) return 'laser';
+        if (txt.includes('despigment') || txt.includes('aclarad') || txt.includes('mancha') || txt.includes('melasma')) return 'despigmentacion';
+        if (txt.includes('facial') || txt.includes('dermapen') || txt.includes('peeling') || txt.includes('limpieza') || txt.includes('hidra')) return 'facial';
+        return 'corporal';
+    })();
+
     const calcularFaseAuto = (num) => {
-        if (num >= 9) return 4;
-        if (num >= 6) return 3;
-        if (num >= 3) return 2;
+        if (catRoadmap === 'corporal') {
+            if (num >= 12) return 4;
+            if (num >= 8) return 3;
+            if (num >= 4) return 2;
+            return 1;
+        }
+        if (catRoadmap === 'facial') {
+            if (num >= 9) return 4;
+            if (num >= 6) return 3;
+            if (num >= 3) return 2;
+            return 1;
+        }
+        // laser o despigmentacion (8 a 12 sesiones)
+        if (num >= 10) return 4;
+        if (num >= 7) return 3;
+        if (num >= 4) return 2;
         return 1;
     };
 
@@ -1388,10 +1409,10 @@ function SesionesTratamiento({ tratamiento, sesiones, onNuevaSesion, onEliminarS
                             className="text-xs font-black bg-transparent text-gray-900 border-none outline-none cursor-pointer pr-1"
                         >
                             <option value="auto">⚡ Auto por Sesiones (Fase {calcularFaseAuto(sesiones.length)})</option>
-                            <option value="1">Fase 1: {esCorporal ? 'Preparación & Desintoxicación' : 'Higiene & Desintoxicación Epidérmica'}</option>
-                            <option value="2">Fase 2: {esCorporal ? 'Reducción Profunda & Activación' : 'Renovación Celular & Regeneración'}</option>
-                            <option value="3">Fase 3: {esCorporal ? 'Moldeo, Definición & Ajuste' : 'Redensificación & Colágeno'}</option>
-                            <option value="4">Fase 4: {esCorporal ? 'Consolidación & Mantenimiento VIP' : 'Luminosidad & Blindaje'}</option>
+                            <option value="1">Fase 1: {catRoadmap === 'laser' ? 'Debilitamiento Folicular (Ses. 1-3)' : catRoadmap === 'despigmentacion' ? 'Preparación & Bloqueo Pigmento (Ses. 1-3)' : catRoadmap === 'facial' ? 'Higiene Profunda & Balance (Ses. 1-2)' : 'Desintoxicación & Drenaje (Ses. 1-3)'}</option>
+                            <option value="2">Fase 2: {catRoadmap === 'laser' ? 'Reducción Drástica Densidad (Ses. 4-6)' : catRoadmap === 'despigmentacion' ? 'Aclarado Activo & Renovación (Ses. 4-6)' : catRoadmap === 'facial' ? 'Renovación Tisular (Ses. 3-5)' : 'Lipo-activación & Reducción (Ses. 4-7)'}</option>
+                            <option value="3">Fase 3: {catRoadmap === 'laser' ? 'Destrucción Folículos Residuales (Ses. 7-9)' : catRoadmap === 'despigmentacion' ? 'Despigmentación Profunda (Ses. 7-9)' : catRoadmap === 'facial' ? 'Redensificación & Colágeno (Ses. 6-8)' : 'Compactación & Moldeo (Ses. 8-11)'}</option>
+                            <option value="4">Fase 4: {catRoadmap === 'laser' ? 'Piel de Seda Permanente (Ses. 10-12+)' : catRoadmap === 'despigmentacion' ? 'Blindaje Antimanchas (Ses. 10-12+)' : catRoadmap === 'facial' ? 'Blindaje & Efecto Glow (Ses. 9-10+)' : 'Tonificación & Mantenimiento (Ses. 12-14+)'}</option>
                         </select>
                     </div>
                 </div>
@@ -1730,10 +1751,30 @@ export default function ExpedienteClinico() {
         }
     };
 
+    const categoriaRoadmapActivo = useMemo(() => {
+        const txt = `${tratamientoActivo?.tipo || ''} ${tratamientoActivo?.nombre || ''}`.toLowerCase();
+        if (txt.includes('laser') || txt.includes('láser') || txt.includes('depil')) return 'laser';
+        if (txt.includes('despigment') || txt.includes('aclarad') || txt.includes('mancha') || txt.includes('melasma')) return 'despigmentacion';
+        if (txt.includes('facial') || txt.includes('dermapen') || txt.includes('peeling') || txt.includes('limpieza') || txt.includes('hidra')) return 'facial';
+        return 'corporal';
+    }, [tratamientoActivo]);
+
     const calcularFaseAuto = (num) => {
-        if (num >= 9) return 4;
-        if (num >= 6) return 3;
-        if (num >= 3) return 2;
+        if (categoriaRoadmapActivo === 'corporal') {
+            if (num >= 12) return 4;
+            if (num >= 8) return 3;
+            if (num >= 4) return 2;
+            return 1;
+        }
+        if (categoriaRoadmapActivo === 'facial') {
+            if (num >= 9) return 4;
+            if (num >= 6) return 3;
+            if (num >= 3) return 2;
+            return 1;
+        }
+        if (num >= 10) return 4;
+        if (num >= 7) return 3;
+        if (num >= 4) return 2;
         return 1;
     };
 
@@ -1741,30 +1782,42 @@ export default function ExpedienteClinico() {
         if (tratamientoActivo?.faseRoadmapManual && tratamientoActivo.faseRoadmapManual !== 'auto') {
             return Number(tratamientoActivo.faseRoadmapManual) || 1;
         }
-        if (sesiones.length >= 9) return 4;
-        if (sesiones.length >= 6) return 3;
-        if (sesiones.length >= 3) return 2;
-        return 1;
-    }, [tratamientoActivo?.faseRoadmapManual, sesiones.length]);
+        return calcularFaseAuto(sesiones.length);
+    }, [tratamientoActivo?.faseRoadmapManual, sesiones.length, categoriaRoadmapActivo]);
 
     const esCorporal = tratamientoActivo?.tipo === 'Corporal' || tratamientoActivo?.tipo === 'Paquete Reductivo';
     const fasesRoadmapEspecialista = useMemo(() => {
-        if (esCorporal) {
+        if (categoriaRoadmapActivo === 'laser') {
             return [
-                { num: 1, nombre: 'Preparación & Drenaje', sub: 'Sesiones 1-2', desc: 'Desintoxicación del tejido linfático y circulatorio.' },
-                { num: 2, nombre: 'Reducción Profunda', sub: 'Sesiones 3-5', desc: 'Lisis de adipocitos con aparatología intensiva.' },
-                { num: 3, nombre: 'Moldeo & Reafirmación', sub: 'Sesiones 6-8', desc: 'Compactación dérmica y perfilado de silueta.' },
-                { num: 4, nombre: 'Consolidación VIP', sub: 'Sesión 9+', desc: 'Fijación de resultados metabólicos y mantenimiento.' }
-            ];
-        } else {
-            return [
-                { num: 1, nombre: 'Higiene & Desintoxicación', sub: 'Sesiones 1-2', desc: 'Limpieza profunda, regulación del pH y oxigenación.' },
-                { num: 2, nombre: 'Renovación Dérmica', sub: 'Sesiones 3-5', desc: 'Estimulación de capa basal y unificación de tono.' },
-                { num: 3, nombre: 'Redensificación & Colágeno', sub: 'Sesiones 6-8', desc: 'Reactivación de fibroblastos y firmeza dérmica.' },
-                { num: 4, nombre: 'Luminosidad & Blindaje', sub: 'Sesión 9+', desc: 'Efecto glow duradero y protección antioxidante.' }
+                { num: 1, nombre: 'Debilitamiento del Folículo Anágeno', sub: 'Sesiones 1-3', desc: 'Ataque térmico selectivo al bulbo piloso activo.' },
+                { num: 2, nombre: 'Reducción Drástica de Densidad', sub: 'Sesiones 4-6', desc: 'Disminución >50% del vello y eliminación de foliculitis.' },
+                { num: 3, nombre: 'Destrucción de Folículos Residuales', sub: 'Sesiones 7-9', desc: 'Erradicación de vello fino y folículos de ciclo lento.' },
+                { num: 4, nombre: 'Piel de Seda & Consolidación', sub: 'Sesiones 10-12+', desc: 'Cierre de poros y resultado permanente.' }
             ];
         }
-    }, [esCorporal]);
+        if (categoriaRoadmapActivo === 'despigmentacion') {
+            return [
+                { num: 1, nombre: 'Preparación & Bloqueo de Pigmento', sub: 'Sesiones 1-3', desc: 'Renovación epidérmica e inhibición de tirosinasa.' },
+                { num: 2, nombre: 'Aclarado Activo & Renovación', sub: 'Sesiones 4-6', desc: 'Degradación progresiva de cúmulos de melanina.' },
+                { num: 3, nombre: 'Despigmentación Profunda', sub: 'Sesiones 7-9', desc: 'Unificación de tono dérmico y luminosidad.' },
+                { num: 4, nombre: 'Blindaje Antimanchas', sub: 'Sesiones 10-12+', desc: 'Estabilización celular y memoria despigmentante.' }
+            ];
+        }
+        if (categoriaRoadmapActivo === 'facial') {
+            return [
+                { num: 1, nombre: 'Higiene Profunda & Balance Cutáneo', sub: 'Sesiones 1-2', desc: 'Limpieza profunda, regulación del pH y oxigenación.' },
+                { num: 2, nombre: 'Renovación Tisular & Micro-estimulación', sub: 'Sesiones 3-5', desc: 'Estimulación de capa basal y oxigenación celular.' },
+                { num: 3, nombre: 'Redensificación & Síntesis de Colágeno', sub: 'Sesiones 6-8', desc: 'Reactivación de fibroblastos y firmeza dérmica.' },
+                { num: 4, nombre: 'Blindaje Antioxidante & Efecto Glow', sub: 'Sesiones 9-10+', desc: 'Efecto glow duradero y protección antioxidante.' }
+            ];
+        }
+        return [
+            { num: 1, nombre: 'Desintoxicación Linfática & Drenaje', sub: 'Sesiones 1-3', desc: 'Desintoxicación del tejido linfático y circulatorio.' },
+            { num: 2, nombre: 'Lipo-activación & Reducción Intensiva', sub: 'Sesiones 4-7', desc: 'Movilización adiposa con aparatología intensiva.' },
+            { num: 3, nombre: 'Compactación & Moldeo de Silueta', sub: 'Sesiones 8-11', desc: 'Compactación dérmica y perfilado de silueta.' },
+            { num: 4, nombre: 'Tonificación & Mantenimiento Escultórico', sub: 'Sesiones 12-14+', desc: 'Fijación de resultados metabólicos y mantenimiento.' }
+        ];
+    }, [categoriaRoadmapActivo]);
 
     // Cargar paciente reactivamente (onSnapshot), tratamientos, citas y galería usando siempre el realId
     useEffect(() => {
@@ -2421,7 +2474,7 @@ export default function ExpedienteClinico() {
                                         : 'bg-white text-gray-600 border-gray-200 hover:border-acero/40'
                                 }`}
                             >
-                                <span>{t.tipo === 'Facial' ? '✨' : t.tipo === 'Paquete Reductivo' ? '🔥' : '💪'}</span>
+                                <span>{t.tipo === 'Facial' ? '✨' : t.tipo === 'Depilación Láser' ? '⚡' : t.tipo === 'Despigmentación' ? '💎' : t.tipo === 'Paquete Reductivo' ? '🔥' : '💪'}</span>
                                 <span>{t.nombre}</span>
                                 {(t.numSesionesTotal || t.numSesiones) > 0 && (
                                     <span className="text-[10px] opacity-80">({t.numSesionesTotal || t.numSesiones} ses.)</span>
@@ -2461,10 +2514,16 @@ export default function ExpedienteClinico() {
                                 <select
                                     className="w-full p-2.5 border border-gray-200 rounded-xl text-sm font-bold bg-white"
                                     value={nuevoTrat.tipo}
-                                    onChange={e => setNuevoTrat(prev => ({ ...prev, tipo: e.target.value, nombre: '' }))}
+                                    onChange={e => {
+                                        const tVal = e.target.value;
+                                        const defSes = tVal === 'Facial' ? '8' : (tVal === 'Depilación Láser' || tVal === 'Despigmentación') ? '10' : '12';
+                                        setNuevoTrat(prev => ({ ...prev, tipo: tVal, nombre: '', numSesiones: defSes }));
+                                    }}
                                 >
-                                    <option value="Corporal">💪 Corporal</option>
-                                    <option value="Facial">✨ Facial</option>
+                                    <option value="Corporal">💪 Corporal (8 a 14 ses.)</option>
+                                    <option value="Facial">✨ Facial (6 a 10 ses.)</option>
+                                    <option value="Depilación Láser">⚡ Depilación Láser (8 a 12 ses.)</option>
+                                    <option value="Despigmentación">💎 Despigmentación (8 a 12 ses.)</option>
                                     <option value="Paquete Reductivo">🔥 Paquete Reductivo</option>
                                 </select>
                             </div>
@@ -2532,7 +2591,7 @@ export default function ExpedienteClinico() {
             <div>
                 <div className="flex items-center gap-2 flex-wrap">
                     <h3 className="text-sm font-black uppercase tracking-wider text-teal-300">
-                        Roadmap Clínico ALFRA — {esCorporal ? '🌸 Corporal' : '✨ Facial'}
+                        Roadmap Clínico ALFRA — {categoriaRoadmapActivo === 'laser' ? '⚡ Depilación Láser (8-12 Ses.)' : categoriaRoadmapActivo === 'despigmentacion' ? '💎 Despigmentación (8-12 Ses.)' : categoriaRoadmapActivo === 'facial' ? '✨ Facial (6-10 Ses.)' : '🌸 Corporal (8-14 Ses.)'}
                     </h3>
                     <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30">
                         {tratamientoActivo?.nombre || 'Tratamiento Activo'}
@@ -2570,10 +2629,9 @@ export default function ExpedienteClinico() {
                 className="text-xs font-black bg-slate-800 text-white border border-teal-500/40 rounded-lg px-2.5 py-1 outline-none cursor-pointer focus:ring-2 focus:ring-teal-400"
             >
                 <option value="auto">⚡ Auto por Sesiones (Fase {calcularFaseAuto(sesiones.length)})</option>
-                <option value="1">Fase 1: {esCorporal ? 'Preparación & Drenaje' : 'Higiene & Desintoxicación'}</option>
-                <option value="2">Fase 2: {esCorporal ? 'Reducción Profunda' : 'Renovación Dérmica'}</option>
-                <option value="3">Fase 3: {esCorporal ? 'Moldeo & Reafirmación' : 'Redensificación & Colágeno'}</option>
-                <option value="4">Fase 4: {esCorporal ? 'Consolidación VIP' : 'Luminosidad & Blindaje'}</option>
+                {fasesRoadmapEspecialista.map(f => (
+                    <option key={f.num} value={String(f.num)}>Fase {f.num}: {f.nombre} ({f.sub})</option>
+                ))}
             </select>
         </div>
     </div>

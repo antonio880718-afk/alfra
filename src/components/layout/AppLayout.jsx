@@ -11,12 +11,28 @@ import { useAuth } from '../../contexts/AuthContext';
 import { emitirNotificacion, solicitarPermisoNotificaciones } from '../../services/notificationService';
 import { onAlertasAdminChange, onAlertasPacienteChange, onAlertasEspecialistaChange, markAlertAsRead } from '../../services/citasService';
 import { getPacienteByUid } from '../../services/pacientesService';
-import { getStaffDocByUid } from '../../services/staffService';
+import { getStaffDocByUid, onStaffDocChange } from '../../services/staffService';
 import { getAuth } from 'firebase/auth';
 
 export default function AppLayout() {
-    const { userRole, logout } = useAuth();
+    const { userRole, logout, currentUser } = useAuth();
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [staffPerfil, setStaffPerfil] = useState(null);
+
+    useEffect(() => {
+        let unsub = () => {};
+        if (currentUser?.uid && userRole && userRole !== 'Paciente') {
+            getStaffDocByUid(currentUser.uid, currentUser.email, currentUser.displayName).then(doc => {
+                if (doc) {
+                    setStaffPerfil(doc);
+                    unsub = onStaffDocChange(doc.id, (updated) => {
+                        if (updated) setStaffPerfil(updated);
+                    });
+                }
+            }).catch(() => {});
+        }
+        return () => unsub();
+    }, [currentUser, userRole]);
     const [alertas, setAlertas] = useState([]);
     const [showAlertas, setShowAlertas] = useState(false);
     const prevAlertIds = React.useRef(new Set());
@@ -105,9 +121,11 @@ export default function AppLayout() {
             { name: 'Paquetes de Tratamientos', icon: ClipboardList, path: '/financiamientos' },
             { name: 'Reportes', icon: PieChart, path: '/reportes' },
             { name: 'Auditoría Clínica', icon: Stethoscope, path: '/auditoria' },
+            { name: 'Solicitudes', icon: ClipboardList, path: '/solicitudes' },
             { name: 'Limpieza y Mant.', icon: Sparkles, path: '/admin-tareas-limpieza' },
             { name: 'Checador y Asistencia', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     } else if (userRole === 'Recepcionista') {
         menuItems = [
@@ -118,6 +136,7 @@ export default function AppLayout() {
             { name: 'Paquetes de Tratamientos', icon: ClipboardList, path: '/financiamientos' },
             { name: 'Checador Digital', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     } else if (userRole === 'Especialista' || userRole === 'Doctor') {
         menuItems = [
@@ -126,10 +145,13 @@ export default function AppLayout() {
             { name: 'Mis Pacientes', icon: UsersIcon, path: '/mis-pacientes' },
             { name: 'Checador Digital', icon: Clock, path: '/checador' },
             { name: 'Inventario', icon: Archive, path: '/inventario' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     } else if (userRole === 'Limpieza') {
         menuItems = [
             { name: 'Aseo y Limpieza', icon: Sparkles, path: '/limpieza' },
+            { name: 'Checador Digital', icon: Clock, path: '/checador' },
+            { name: 'Mi Perfil', icon: User, path: '/mi-perfil' },
         ];
     } else if (userRole === 'Paciente') {
         menuItems = [
@@ -158,7 +180,7 @@ export default function AppLayout() {
                         className="drop-shadow-sm active:scale-95 transition-transform"
                     />
                     <div className="flex items-center gap-2">
-                    {(userRole === 'Administrador' || userRole === 'Especialista' || userRole === 'Doctor' || userRole === 'Paciente' || userRole === 'Limpieza') && (
+                    {(userRole === 'Administrador' || userRole === 'Recepcionista' || userRole === 'Especialista' || userRole === 'Doctor' || userRole === 'Paciente' || userRole === 'Limpieza') && (
                         <button
                             onClick={() => setShowAlertas(!showAlertas)}
                             className="relative p-2.5 rounded-xl bg-turquesa/10 active:bg-turquesa/25 transition-colors flex items-center justify-center"
@@ -282,14 +304,43 @@ export default function AppLayout() {
                         ))}
                     </nav>
 
-                    {/* Cerrar sesión al fondo, encima de los botones del sistema */}
-                    <div className="px-4 pb-4 pt-2 border-t border-gray-100"
+                    {/* Personalizar Perfil y Cerrar sesión al fondo, encima de los botones del sistema */}
+                    <div className="px-4 pb-4 pt-2 border-t border-gray-100 space-y-2"
                         style={{ paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))' }}>
+                        {userRole !== 'Paciente' && (
+                            <NavLink
+                                to="/mi-perfil"
+                                onClick={() => setDrawerOpen(false)}
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 p-3 rounded-2xl transition-all ${
+                                        isActive
+                                            ? 'bg-turquesa/15 border border-turquesa/30 shadow-xs'
+                                            : 'bg-slate-50 hover:bg-slate-100 border border-slate-200/70'
+                                    }`
+                                }
+                            >
+                                <div className="w-10 h-10 rounded-xl bg-slate-900 text-teal-300 border border-teal-500/30 flex items-center justify-center overflow-hidden shrink-0 shadow-xs">
+                                    {(staffPerfil?.fotoUrl || currentUser?.photoURL) ? (
+                                        <img src={staffPerfil?.fotoUrl || currentUser?.photoURL} alt="Avatar" className="w-full h-full object-cover" />
+                                    ) : (
+                                        <User size={18} />
+                                    )}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-xs font-black text-slate-800 truncate">
+                                        {staffPerfil?.alias || staffPerfil?.nombre || currentUser?.displayName || currentUser?.email?.split('@')[0] || 'Mi Perfil'}
+                                    </p>
+                                    <p className="text-[10px] text-teal-700 font-bold uppercase truncate flex items-center gap-1 mt-0.5">
+                                        <Sparkles size={11} /> Personalizar Perfil
+                                    </p>
+                                </div>
+                            </NavLink>
+                        )}
                         <button
                             onClick={() => { logout(); setDrawerOpen(false); }}
-                            className="flex items-center gap-4 px-4 py-4 w-full text-red-500 bg-red-50 hover:bg-red-100 active:bg-red-200 rounded-2xl font-semibold text-[15px] transition-all"
+                            className="flex items-center gap-4 px-4 py-3.5 w-full text-red-500 bg-red-50 hover:bg-red-100 active:bg-red-200 rounded-2xl font-semibold text-[15px] transition-all"
                         >
-                            <LogOut size={22} />
+                            <LogOut size={20} />
                             <span>Cerrar Sesión</span>
                         </button>
                     </div>

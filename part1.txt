@@ -1,0 +1,65 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import {
+    MapPin, Clock, User, CheckCircle2, AlertTriangle, Shield,
+    RefreshCw, Download, Navigation, Map, Compass, Settings, Check, X,
+    Calendar, UserCheck, AlertCircle, Lock
+} from 'lucide-react';
+import {
+    getConfigChecadorGPS,
+    saveConfigChecadorGPS,
+    calcularDistanciaMetros,
+    registrarChecadoGPS,
+    onAsistenciaHoyChange,
+    onMisRegistrosAsistenciaChange,
+    CLINICA_COORDS_DEFAULT
+} from '../services/asistenciaService';
+
+export default function ChecadorView() {
+    const { userRole, currentUser } = useAuth();
+    const isClientAdmin = userRole === 'Administrador';
+
+    // Configuración de Geocerca GPS de la Clínica
+    const [configClinica, setConfigClinica] = useState(CLINICA_COORDS_DEFAULT);
+    const [editandoConfig, setEditandoConfig] = useState(false);
+    const [nuevoRadio, setNuevoRadio] = useState(150);
+    const [guardandoConfig, setGuardandoConfig] = useState(false);
+
+    // Estado del sensor GPS del dispositivo
+    const [gpsCoords, setGpsCoords] = useState(null);
+    const [distanciaMetros, setDistanciaMetros] = useState(null);
+    const [gpsCargando, setGpsCargando] = useState(true);
+    const [gpsError, setGpsError] = useState(null);
+
+    // Acción y procesamiento de checado
+    const [procesandoChecado, setProcesandoChecado] = useState(false);
+    const [checadoExitoso, setChecadoExitoso] = useState(null);
+    const [checadoError, setChecadoError] = useState(null);
+
+    // Registros de asistencia
+    const [misRegistros, setMisRegistros] = useState([]);
+    const [asistenciaHoyAdmin, setAsistenciaHoyAdmin] = useState([]);
+    const [filtroTipoAdmin, setFiltroTipoAdmin] = useState('todos');
+
+    useEffect(() => {
+        getConfigChecadorGPS().then(cfg => {
+            setConfigClinica(cfg);
+            setNuevoRadio(cfg.radioMetros || 150);
+        });
+    }, []);
+
+    useEffect(() => {
+        if (!currentUser?.uid) return;
+        const unsub = onMisRegistrosAsistenciaChange(currentUser.uid, (logs) => {
+            setMisRegistros(logs);
+        });
+        return () => unsub();
+    }, [currentUser?.uid]);
+
+    useEffect(() => {
+        if (!isClientAdmin) return;
+        const unsub = onAsistenciaHoyChange((logs) => {
+            setAsistenciaHoyAdmin(logs);
+        });
+        return () => unsub();
+    }, [isClientAdmin]);

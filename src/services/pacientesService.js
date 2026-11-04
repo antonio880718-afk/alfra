@@ -1223,3 +1223,19 @@ export const sincronizarDirectorioTelefonos = async (pacientes = []) => {
         console.warn('Error sincronizando directorio_pacientes:', err);
     }
 };
+
+
+/**
+ * Activa o desactiva el expediente clínico de un paciente.
+ * Cuando expedienteActivo === false (paciente esporádico o de servicio único),
+ * el sistema NO emite alertas de "Expediente sin actualizar" en Auditoría, Corte de Caja ni Dashboard.
+ */
+export const toggleExpedienteActivo = async (pacienteId, activo) => {
+    if (!pacienteId) throw new Error('ID de paciente requerido');
+    const estadoBool = Boolean(activo);
+    await updateDoc(doc(db, COLLECTION_NAME, pacienteId), {
+        expedienteActivo: estadoBool,
+        updatedAt: new Date().toISOString()
+    });
+    return estadoBool;
+};

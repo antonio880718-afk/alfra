@@ -354,11 +354,29 @@ export const auditarExpedientesPorDia = (
     const citasValidas = (citasDia || []).filter(c => c.status !== 'Cancelada');
     const actualizados = [];
     const sinActualizar = [];
+    const exentos = [];
 
     citasValidas.forEach((cita) => {
         const pacId = String(cita.pacienteId || '').trim();
         const pacNombre = String(cita.pacienteNombre || cita.paciente || 'Paciente').trim();
         const espNombre = resolverNombreEspecialistaCita(cita, staffList, pacientesList);
+
+        // Verificar si el paciente tiene su expediente desactivado por Administración (paciente esporádico)
+        const pacNorm = normalizarTextoComparacion(pacNombre);
+        const pacMatch = (pacientesList || []).find(p =>
+            (pacId && p.id === pacId) ||
+            (pacNorm && normalizarTextoComparacion(p.nombre) === pacNorm)
+        );
+        if (pacMatch?.expedienteActivo === false || cita.expedienteActivo === false) {
+            exentos.push({
+                ...cita,
+                pacienteNombreLimpio: pacNombre,
+                especialistaNombreLimpio: espNombre,
+                expedienteAlDia: true,
+                expedienteExento: true
+            });
+            return;
+        }
 
         const flagEnCita = Boolean(cita.expedienteActualizado) || Boolean(cita.sesionRegistradaId);
         const tieneSesionHoy = (sesiones || []).some((s) => {
@@ -431,6 +449,7 @@ export const auditarExpedientesPorDia = (
         totalCitas: citasValidas.length,
         actualizados,
         sinActualizar,
+        exentos,
         porEspecialista,
         todosPacientesFaltantes,
     };

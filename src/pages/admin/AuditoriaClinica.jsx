@@ -9,7 +9,7 @@ import {
     History, FileCheck as FileChecked, PlusCircle, Plus, CheckCircle,
     Copy, Check, AlertTriangle, ExternalLink
 } from 'lucide-react';
-import { onPacientesChange } from '../../services/pacientesService';
+import { onPacientesChange, toggleExpedienteActivo } from '../../services/pacientesService';
 import { onCitasChange } from '../../services/citasService';
 import { onStaffChange } from '../../services/staffService';
 import { getSeguimientosPaciente, getApoyoEnCasa, getDailyTrackers, onSeguimientosChange } from '../../services/seguimientoService';
@@ -228,6 +228,9 @@ export default function AuditoriaClinica() {
                                 </h3>
                                 <p className="text-xs text-gray-600 mt-0.5">
                                     Citas programadas en la fecha seleccionada: <strong>{reporteDiaExpedientes.totalCitas}</strong> • Actualizados: <strong className="text-emerald-700">{reporteDiaExpedientes.actualizados.length}</strong> • Sin actualizar: <strong className="text-red-600">{reporteDiaExpedientes.sinActualizar.length}</strong>
+                                    {(reporteDiaExpedientes.exentos?.length || 0) > 0 && (
+                                        <span> • Esporádicos (Exentos): <strong className="text-slate-600">{reporteDiaExpedientes.exentos.length}</strong></span>
+                                    )}
                                 </p>
                             </div>
                         </div>
@@ -289,6 +292,22 @@ export default function AuditoriaClinica() {
                                                         >
                                                             <ExternalLink size={12} /> Abrir expediente: {c.pacienteNombreLimpio} ({c.servicio || 'Cita'})
                                                         </button>
+                                                        {c.pacienteId && (
+                                                            <button
+                                                                type="button"
+                                                                onClick={async () => {
+                                                                    try {
+                                                                        await toggleExpedienteActivo(c.pacienteId, false);
+                                                                    } catch (err) {
+                                                                        alert('No se pudo desactivar el expediente');
+                                                                    }
+                                                                }}
+                                                                title="Desactivar alertas de expediente para este paciente (Paciente esporádico / servicio único)"
+                                                                className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300 cursor-pointer"
+                                                            >
+                                                                ⚪ Marcar Esporádico (Desactivar Alerta)
+                                                            </button>
+                                                        )}
                                                         {grupo.citas.length > 1 && c.mensajeIndividual && (
                                                             <button
                                                                 type="button"
@@ -411,9 +430,18 @@ export default function AuditoriaClinica() {
                                                     {paciente.nombre.charAt(0)}
                                                 </div>
                                                 <div>
-                                                    <div className="font-medium text-gray-900 flex items-center gap-2">
+                                                    <div className="font-medium text-gray-900 flex flex-wrap items-center gap-2">
                                                         {paciente.nombre}
-                                                        {paciente.requiereActualizacion && (
+                                                        {paciente.expedienteActivo === false ? (
+                                                            <span className="flex items-center gap-1 text-[10px] bg-slate-100 text-slate-600 border border-slate-300 px-2 py-0.5 rounded-full font-bold">
+                                                                ⚪ Expediente Desactivado (Esporádico)
+                                                            </span>
+                                                        ) : (
+                                                            <span className="flex items-center gap-1 text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full font-bold">
+                                                                🟢 Expediente Activo
+                                                            </span>
+                                                        )}
+                                                        {paciente.requiereActualizacion && paciente.expedienteActivo !== false && (
                                                             <span className="flex items-center gap-1 text-[10px] bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full font-bold">
                                                                 <AlertCircle size={10} /> Requiere Auditoría Hoy
                                                             </span>
@@ -427,7 +455,25 @@ export default function AuditoriaClinica() {
                                         <td className="py-4 px-4 text-gray-600 text-sm">{paciente.tratante}</td>
                                         <td className="py-4 px-4 text-gray-500 text-sm">{paciente.ultimaCita}</td>
                                         <td className="py-4 px-4 text-center">
-                                            <div className="flex justify-center gap-2">
+                                            <div className="flex flex-wrap justify-center gap-2">
+                                                <button
+                                                    type="button"
+                                                    onClick={async () => {
+                                                        const nuevo = paciente.expedienteActivo === false ? true : false;
+                                                        try {
+                                                            await toggleExpedienteActivo(paciente.id, nuevo);
+                                                        } catch (err) {
+                                                            alert('Error al cambiar estado del expediente');
+                                                        }
+                                                    }}
+                                                    className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer border ${
+                                                        paciente.expedienteActivo === false
+                                                            ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
+                                                            : 'bg-slate-100 text-slate-600 border-slate-300 hover:bg-slate-200'
+                                                    }`}
+                                                >
+                                                    {paciente.expedienteActivo === false ? 'Activar Expediente' : 'Desactivar (Esporádico)'}
+                                                </button>
                                                 <Button variant={paciente.requiereActualizacion ? "primary" : "outline"} size="sm" icon={FolderOpen} onClick={() => openEMR(paciente)}>
                                                     Resumen Modal
                                                 </Button>

@@ -129,8 +129,9 @@ service cloud.firestore {
     // Staff / Empleados
     match /staff/{staffId} {
       allow read: if true;
-      allow update: if isStaff();
-      allow create, delete: if isMasterAdmin() || hasRole('Administrador');
+      allow create: if isStaff() || isSignedIn();
+      allow update: if isStaff() || (isSignedIn() && (resource.data.uid == request.auth.uid || (resource.data.email != null && request.auth.token.email != null && resource.data.email == request.auth.token.email)));
+      allow delete: if isMasterAdmin() || hasRole('Administrador');
     }
 
     // Services / Treatments

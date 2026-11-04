@@ -295,7 +295,6 @@ export default function MiPerfilColaborador() {
                             ref={fileInputRef}
                             type="file"
                             accept="image/*"
-                            capture="user"
                             onChange={handleSubirFoto}
                             className="hidden"
                         />
@@ -341,12 +340,20 @@ export default function MiPerfilColaborador() {
                         </div>
                     </div>
 
-                    <div className="shrink-0 pt-2 sm:pt-0">
+                    <div className="shrink-0 pt-2 sm:pt-0 flex flex-wrap items-center justify-center gap-2 w-full sm:w-auto">
+                        <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            className="flex items-center justify-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/20 text-teal-200 border border-teal-400/30 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all active:scale-95 cursor-pointer flex-1 sm:flex-initial"
+                        >
+                            <Camera size={15} />
+                            <span>Cambiar Foto</span>
+                        </button>
                         <button
                             type="button"
                             onClick={handleGuardarPerfil}
                             disabled={guardando}
-                            className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 rounded-2xl text-xs font-black uppercase tracking-wider shadow-xl shadow-teal-900/30 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 cursor-pointer"
+                            className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 rounded-2xl text-xs font-black uppercase tracking-wider shadow-xl shadow-teal-900/30 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 cursor-pointer flex-1 sm:flex-initial"
                         >
                             <Save size={16} />
                             {guardando ? 'Guardando...' : 'Guardar Perfil'}
