@@ -12,6 +12,7 @@ import { onCitasChange } from '../../services/citasService';
 import { onMovimientosChange } from '../../services/finanzasService';
 import { onPacientesChange } from '../../services/pacientesService';
 import { onPlanesChange, detectarPlanesDuplicados } from '../../services/planesService';
+import { onControlFlyersMensualChange, marcarFlyersMesCompletado, getMesActualClave, getNombreMesActual } from '../../services/flyersService';
 import { useNavigate } from 'react-router-dom';
 import { obtenerProximosCumpleanos } from '../../utils/cumpleanosUtils';
 import ModalTarjetaCumpleanos from '../../components/cumpleanos/ModalTarjetaCumpleanos';
@@ -29,6 +30,8 @@ export default function AdminDashboard() {
     const [copiedEsp, setCopiedEsp] = useState(null);
     const [loading, setLoading] = useState(true);
     const [planes, setPlanes] = useState([]);
+    const [controlFlyersMes, setControlFlyersMes] = useState({ completadoEsteMes: true, mesActual: getMesActualClave(), nombreMesActual: getNombreMesActual() });
+    const [savingFlyerAlert, setSavingFlyerAlert] = useState(false);
     const [showIncidenciasModal, setShowIncidenciasModal] = useState(null);
     const [pacienteCumpleModal, setPacienteCumpleModal] = useState(null);
     const [detalleModal, setDetalleModal] = useState(null);
@@ -41,6 +44,7 @@ export default function AdminDashboard() {
 
     useEffect(() => {
         const unsubPlanes = onPlanesChange(setPlanes);
+        const unsubControlFlyers = onControlFlyersMensualChange((ctrl) => setControlFlyersMes(ctrl));
         const unsubCitas = onCitasChange((data) => setCitas(data));
         const unsubMovs = onMovimientosChange((data) => { setMovimientos(data); setLoading(false); });
         const unsubPac = onPacientesChange((data) => setPacientes(data));
@@ -51,6 +55,7 @@ export default function AdminDashboard() {
 
         return () => { 
             if (unsubPlanes) unsubPlanes();
+            if (unsubControlFlyers) unsubControlFlyers();
             unsubCitas(); 
             unsubMovs(); 
             unsubPac(); 
@@ -565,6 +570,55 @@ export default function AdminDashboard() {
                     </div>
                 </div>
             </div>
+
+            {/* ALERTA MENSUAL: CAMBIAR FLYERS DEL MES */}
+            {!controlFlyersMes?.completadoEsteMes && (
+                <div className="p-4 sm:p-5 rounded-2xl border-2 border-amber-300 bg-gradient-to-r from-amber-50 via-orange-50/70 to-amber-50/40 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div className="flex items-start sm:items-center gap-3.5">
+                        <div className="p-3 rounded-2xl bg-amber-500 text-white shadow-sm shrink-0">
+                            <Sparkles size={22} />
+                        </div>
+                        <div>
+                            <div className="flex items-center gap-2 flex-wrap">
+                                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-200/80 text-amber-900">
+                                    Recordatorio Mensual • {controlFlyersMes?.nombreMesActual}
+                                </span>
+                            </div>
+                            <h3 className="text-sm sm:text-base font-black text-gray-900 mt-1">
+                                Cambiar Flyers Promocionales del Mes ({controlFlyersMes?.nombreMesActual})
+                            </h3>
+                            <p className="text-xs text-gray-600 mt-0.5">
+                                Actualiza las promociones visibles en la App de Pacientes o marca esta tarea como completada si los flyers del mes ya están listos.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-2 w-full sm:w-auto justify-end shrink-0">
+                        <button
+                            onClick={() => navigate('/comercial')}
+                            className="px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-amber-800 border border-amber-300 hover:bg-amber-100 transition-colors cursor-pointer"
+                        >
+                            Ir a Flyers (/comercial)
+                        </button>
+                        <button
+                            disabled={savingFlyerAlert}
+                            onClick={async () => {
+                                try {
+                                    setSavingFlyerAlert(true);
+                                    await marcarFlyersMesCompletado({ completado: true });
+                                } catch (e) {
+                                    console.error(e);
+                                } finally {
+                                    setSavingFlyerAlert(false);
+                                }
+                            }}
+                            className="px-4 py-2 rounded-xl text-xs font-black bg-emerald-600 text-white hover:bg-emerald-700 transition-colors flex items-center gap-1.5 shadow-sm cursor-pointer disabled:opacity-50"
+                        >
+                            <CheckCircle2 size={15} />
+                            {savingFlyerAlert ? 'Guardando...' : 'Marcar Completado'}
+                        </button>
+                    </div>
+                </div>
+            )}
 
             {/* TIRA DE PULSO OPERATIVO EN VIVO (ALERTA EJECUTIVA RÁPIDA) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
