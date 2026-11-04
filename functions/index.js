@@ -9,7 +9,7 @@ const ANDROID_NOTIFICATION_CONFIG = {
         channelId: 'alfra_citas_urgentes_v2',
         sound: 'default',
         defaultSound: true,
-        defaultVibrateTimings: false,
+        defaultVibrateTimings: true,
         vibrateTimingsMillis: [0, 500, 250, 500, 250, 500],
         priority: 'high',
         visibility: 'public'
@@ -482,40 +482,179 @@ exports.corteDiarioCaja = functions.pubsub
             const formatter = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Mexico_City' }); 
             const hoyStr = formatter.format(new Date()); 
 
-            const movsSnap = await admin.firestore().collection("movimientos")
-                .where("fecha", ">=", `${hoyStr}T00:00:00.000Z`)
-                .where("fecha", "<=", `${hoyStr}T23:59:59.999Z`)
-                .get();
-
             let ingresos = 0;
             let egresos = 0;
+            let totalMovimientos = 0;
 
-            movsSnap.forEach(doc => {
-                const mov = doc.data();
-                if (mov.estado !== 'Cancelado') {
-                    if (mov.tipo === 'Ingreso') ingresos += Number(mov.monto) || 0;
-                    if (mov.tipo === 'Egreso') egresos += Number(mov.monto) || 0;
+            // 1. Consultar collection('finanzas') (fuente contable de la app)
+            try {
+                const finSnap = await admin.firestore().collection("finanzas")
+                    .orderBy("createdAt", "desc")
+                    .limit(300)
+                    .get();
+
+                finSnap.forEach(doc => {
+                    const mov = doc.data();
+                    const rawFecha = mov.fecha || mov.createdAt || '';
+                    const fechaDoc = String(rawFecha).substring(0, 10);
+                    if (fechaDoc === hoyStr && mov.estado !== 'Cancelado') {
+                        totalMovimientos++;
+                        const monto = Number(mov.monto) || 0;
+                        if (mov.tipo === 'Ingreso') ingresos += monto;
+                        if (mov.tipo === 'Egreso') egresos += monto;
+                    }
+                });
+            } catch (eFin) {
+                console.error("[DEBUG_ADMIN_NOTIF] Error leyendo finanzas:", eFin);
+            }
+
+            // 2. Si ingresos es 0, consultar 'recibos' de hoy como respaldo
+            if (ingresos === 0) {
+                try {
+                    const recibosSnap = await admin.firestore().collection("recibos")
+                        .orderBy("createdAt", "desc")
+                        .limit(100)
+                        .get();
+                    recibosSnap.forEach(doc => {
+                        const r = doc.data();
+                        const rawFecha = r.fecha || r.createdAt || '';
+                        const fechaDoc = String(rawFecha).substring(0, 10);
+                        if (fechaDoc === hoyStr && r.estado !== 'Cancelado') {
+                            const monto = Number(r.total || r.monto) || 0;
+                            ingresos += monto;
+                        }
+                    });
+                } catch (eRec) {
+                    console.error("[DEBUG_ADMIN_NOTIF] Error leyendo recibos:", eRec);
                 }
-            });
+            }
+
+            // 3. Consultar doc de 'cajas_diarias/{hoyStr}' como respaldo de totales
+            try {
+                const cajaDoc = await admin.firestore().collection("cajas_diarias").doc(hoyStr).get();
+                if (cajaDoc.exists) {
+                    const cData = cajaDoc.data() || {};
+                    if (ingresos === 0 && Number(cData.ingresosTotales) > 0) {
+                        ingresos = Number(cData.ingresosTotales);
+                    }
+                    if (egresos === 0 && Number(cData.egresosTotales) > 0) {
+                        egresos = Number(cData.egresosTotales);
+                    }
+                }
+            } catch (eCaja) {
+                console.error("[DEBUG_ADMIN_NOTIF] Error leyendo cajas_diarias:", eCaja);
+            }
 
             const utilidad = ingresos - egresos;
             const formatoMx = (num) => `$${Number(num).toLocaleString('es-MX', { minimumFractionDigits: 2 })}`;
 
             const payload = {
                 notification: {
-                    title: "ðŸ“Š Corte de Caja del DÃ­a",
+                    title: "📊 Corte de Caja del Día",
                     body: `Hoy (${hoyStr}): Ingresos ${formatoMx(ingresos)}, Egresos ${formatoMx(egresos)}. Utilidad: ${formatoMx(utilidad)}.`
                 }
             };
 
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-            console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de corte diario enviada. Response:", response);
+            const response = await admin.messaging().sendEachForMulticast({
+                tokens,
+                notification: payload.notification,
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG
+            });
+            console.log("[DEBUG_ADMIN_NOTIF] Notificación de corte diario enviada. Response:", response);
             return response;
         } catch (error) {
             console.error("[DEBUG_ADMIN_NOTIF] Error en corteDiarioCaja:", error);
             return null;
         }
     });
+
+// Endpoint HTTP de prueba para ejecutar y verificar el corte diario en cualquier momento
+exports.testCorteDiarioManual = functions.https.onRequest(async (req, res) => {
+    try {
+        const formatter = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Mexico_City' }); 
+        const hoyStr = req.query.fecha || formatter.format(new Date()); 
+
+        let ingresos = 0;
+        let egresos = 0;
+        let totalMovimientos = 0;
+
+        const finSnap = await admin.firestore().collection("finanzas")
+            .orderBy("createdAt", "desc")
+            .limit(300)
+            .get();
+
+        finSnap.forEach(doc => {
+            const mov = doc.data();
+            const rawFecha = mov.fecha || mov.createdAt || '';
+            const fechaDoc = String(rawFecha).substring(0, 10);
+            if (fechaDoc === hoyStr && mov.estado !== 'Cancelado') {
+                totalMovimientos++;
+                const monto = Number(mov.monto) || 0;
+                if (mov.tipo === 'Ingreso') ingresos += monto;
+                if (mov.tipo === 'Egreso') egresos += monto;
+            }
+        });
+
+        if (ingresos === 0) {
+            const recibosSnap = await admin.firestore().collection("recibos")
+                .orderBy("createdAt", "desc")
+                .limit(100)
+                .get();
+            recibosSnap.forEach(doc => {
+                const r = doc.data();
+                const rawFecha = r.fecha || r.createdAt || '';
+                const fechaDoc = String(rawFecha).substring(0, 10);
+                if (fechaDoc === hoyStr && r.estado !== 'Cancelado') {
+                    const monto = Number(r.total || r.monto) || 0;
+                    ingresos += monto;
+                }
+            });
+        }
+
+        const cajaDoc = await admin.firestore().collection("cajas_diarias").doc(hoyStr).get();
+        if (cajaDoc.exists) {
+            const cData = cajaDoc.data() || {};
+            if (ingresos === 0 && Number(cData.ingresosTotales) > 0) {
+                ingresos = Number(cData.ingresosTotales);
+            }
+            if (egresos === 0 && Number(cData.egresosTotales) > 0) {
+                egresos = Number(cData.egresosTotales);
+            }
+        }
+
+        const utilidad = ingresos - egresos;
+        const tokens = await obtenerTokensAdmins();
+        let notifRes = null;
+        if (tokens.length > 0 && req.query.enviarPush === '1') {
+            const formatoMx = (num) => `$${Number(num).toLocaleString('es-MX', { minimumFractionDigits: 2 })}`;
+            const payload = {
+                notification: {
+                    title: "📊 Corte de Caja del Día (Prueba)",
+                    body: `Hoy (${hoyStr}): Ingresos ${formatoMx(ingresos)}, Egresos ${formatoMx(egresos)}. Utilidad: ${formatoMx(utilidad)}.`
+                }
+            };
+            notifRes = await admin.messaging().sendEachForMulticast({
+                tokens,
+                notification: payload.notification,
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG
+            });
+        }
+
+        res.json({
+            fecha: hoyStr,
+            ingresos,
+            egresos,
+            utilidad,
+            totalMovimientos,
+            tokensAdminsCount: tokens.length,
+            pushEnviado: notifRes ? notifRes.successCount : 0
+        });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 // --- 4. CANCELACIÃ“N DE CITAS DE ALTO VALOR ---
 exports.notificarAdminCancelacionCita = functions.firestore

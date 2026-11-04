@@ -1385,45 +1385,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                         required 
                                     />
                                 </div>
-
-                                <div className="space-y-1.5">
-    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest flex items-center justify-between">
-        <span>Especialista Asignada *</span>
-        {especialistaEstaDeBaja && (
-            <span className="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-md">
-                ⚠️ Especialista previa dada de baja
-            </span>
-        )}
-    </label>
-    <select
-        value={reagendarEspecialistaId || ''}
-        onChange={e => {
-            const esp = staff.find(s => s.id === e.target.value);
-            setReagendarEspecialistaId(e.target.value);
-            setReagendarEspecialistaNombre(esp ? esp.nombre : '');
-        }}
-        className={['w-full h-14 px-4 bg-gray-50 border-2', especialistaEstaDeBaja ? 'border-amber-300 bg-amber-50/50' : 'border-gray-100', 'rounded-2xl font-bold text-acero text-sm outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm'].join(' ')}
-    >
-        <option value="">Selecciona especialista...</option>
-        {staff.map(esp => (
-            <option key={esp.id} value={esp.id}>
-                {esp.nombre} {esp.puesto ? '(' + esp.puesto + ')' : ''}
-            </option>
-        ))}
-        {especialistaEstaDeBaja && (
-            <option value={reagendarEspecialistaId} disabled>
-                ❌ {reagendarEspecialistaNombre || 'Especialista anterior'} (DADA DE BAJA / INACTIVA)
-            </option>
-        )}
-    </select>
-    {especialistaEstaDeBaja && (
-        <p className="text-[11px] text-amber-700 font-bold bg-amber-50 p-2.5 rounded-xl border border-amber-200">
-            ℹ️ La especialista que atendía esta cita ya no labora en la clínica. Por favor selecciona una especialista activa de la lista superior para reasignar la cita.
-        </p>
-    )}
-</div>
-
-                                <div className="space-y-3">
+<div className="space-y-3">
                                     <label className="text-[10px] font-black text-acero/30 uppercase tracking-[0.3em] px-1">Cabina / Espacio (Opcional)</label>
                                     <select 
                                         value={form.cabina || ''} 
@@ -1811,34 +1773,35 @@ const [savingReagendar, setSavingReagendar] = useState(false);
 
             {/* MODAL RÁPIDO DE REAGENDACIÓN (SOLO FECHA Y HORA) */}
             {citaAReagendar && (
-                <div className="fixed inset-0 z-[75] flex items-center justify-center bg-acero/70 backdrop-blur-xl p-4 animate-in fade-in">
-                    <div className="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border border-gray-100">
-                        {/* Cabecera */}
-                        <div className="bg-gradient-to-r from-turquesa to-teal-700 p-8 text-white relative">
+                <div className="fixed inset-0 z-[75] flex items-center justify-center bg-acero/70 backdrop-blur-xl p-3 sm:p-4 animate-in fade-in">
+                    <div className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[92vh] flex flex-col overflow-hidden border border-gray-100">
+                        {/* Cabecera Pinned / Shrink-0 */}
+                        <div className="bg-gradient-to-r from-turquesa to-teal-700 px-5 py-4 sm:px-6 sm:py-5 text-white relative shrink-0">
                             <button
                                 onClick={() => setCitaAReagendar(null)}
-                                className="absolute top-6 right-6 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all"
+                                className="absolute top-4 right-4 p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all"
                             >
                                 <X size={20} />
                             </button>
                             <div className="flex items-center gap-3 mb-2">
-                                <span className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
                                     <CalendarIcon size={20} className="text-white" />
                                 </span>
-                                <div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-white/70">Reagendación Rápida</span>
-                                    <h3 className="font-black text-2xl leading-none text-white">{citaAReagendar.paciente}</h3>
+                                <div className="min-w-0 pr-8">
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-white/80 block">Reagendación Rápida</span>
+                                    <h3 className="font-black text-lg sm:text-2xl leading-tight text-white truncate">{citaAReagendar.paciente}</h3>
                                 </div>
                             </div>
-                            <div className="mt-3 bg-white/10 rounded-xl p-3 text-xs text-white/90 flex flex-wrap items-center gap-3">
+                            <div className="mt-2 bg-white/10 rounded-xl px-3 py-2 text-xs text-white/90 flex flex-wrap items-center gap-x-4 gap-y-1">
                                 <span>💆‍♀️ <b>Servicio:</b> {citaAReagendar.servicio}</span>
-                                <span>👩‍⚕️ <b>Dr(a):</b> {citaAReagendar.especialista}</span>
+                                <span>👩‍⚕️ <b>Dr(a) previa:</b> {citaAReagendar.especialista}</span>
                             </div>
                         </div>
 
-                        {/* Formulario enfocado */}
-                        <div className="p-8 space-y-6">
-                            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-xs text-amber-900 font-bold flex items-center gap-3">
+                        {/* Formulario con Scroll Interno fluido */}
+                        <div className="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1">
+                            {/* Alerta de Horario Anterior */}
+                            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-3.5 text-xs text-amber-900 font-bold flex items-center gap-3">
                                 <Clock size={20} className="text-amber-600 flex-shrink-0" />
                                 <div>
                                     <span className="font-black uppercase tracking-wide block text-[10px] text-amber-700">Horario Anterior:</span>
@@ -1846,10 +1809,12 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                 </div>
                             </div>
 
-                            <div className="space-y-4">
-                                <div className="space-y-1.5">
-                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest">
-                                        ¿Para qué fecha desea reagendar? *
+                            {/* Grid 2 Columnas en tablet/desktop, 1 columna en móvil */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                                {/* Fecha */}
+                                <div className="space-y-1">
+                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">
+                                        ¿Para qué fecha? *
                                     </label>
                                     <div className="relative">
                                         <input
@@ -1857,16 +1822,17 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                             required
                                             value={reagendarFecha}
                                             onChange={e => setReagendarFecha(e.target.value)}
-                                            className="w-full h-14 pl-12 pr-4 bg-gray-50 border-2 border-gray-100 rounded-2xl font-bold text-acero text-base outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm"
+                                            className="w-full h-12 sm:h-13 pl-11 pr-3 bg-gray-50 border-2 border-gray-100 rounded-xl font-bold text-acero text-sm sm:text-base outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm"
                                         />
-                                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-turquesa">
-                                            <CalendarIcon size={20} />
+                                        <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-turquesa">
+                                            <CalendarIcon size={18} />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="space-y-1.5">
-                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest">
+                                {/* Hora */}
+                                <div className="space-y-1">
+                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">
                                         ¿A qué hora? *
                                     </label>
                                     <div className="relative">
@@ -1875,51 +1841,97 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                             required
                                             value={reagendarHora}
                                             onChange={e => setReagendarHora(e.target.value)}
-                                            className="w-full h-14 pl-12 pr-4 bg-gray-50 border-2 border-gray-100 rounded-2xl font-bold text-acero text-base outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm"
+                                            className="w-full h-12 sm:h-13 pl-11 pr-3 bg-gray-50 border-2 border-gray-100 rounded-xl font-bold text-acero text-sm sm:text-base outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm"
                                         />
-                                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-turquesa">
-                                            <Clock size={20} />
+                                        <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-turquesa">
+                                            <Clock size={18} />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="space-y-1.5">
-                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest">
+                                {/* Especialista Asignada */}
+                                <div className="space-y-1">
+                                    <div className="flex items-center justify-between">
+                                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">
+                                            Especialista Asignada *
+                                        </label>
+                                        {especialistaEstaDeBaja && (
+                                            <span className="text-[9px] font-bold text-rose-600 bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded">
+                                                Previa dada de baja
+                                            </span>
+                                        )}
+                                    </div>
+                                    <select
+                                        value={reagendarEspecialistaId || ''}
+                                        onChange={e => {
+                                            const esp = (staff || []).filter(isStaffClinico).find(s => s.id === e.target.value);
+                                            setReagendarEspecialistaId(e.target.value);
+                                            setReagendarEspecialistaNombre(esp ? esp.nombre : '');
+                                        }}
+                                        className={`w-full h-12 sm:h-13 px-3.5 bg-gray-50 border-2 ${especialistaEstaDeBaja && !reagendarEspecialistaId ? 'border-rose-400 bg-rose-50/50' : 'border-gray-100'} rounded-xl font-bold text-acero text-sm outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm`}
+                                    >
+                                        <option value="">Selecciona especialista...</option>
+                                        {(staff || []).filter(isStaffClinico).map(esp => (
+                                            <option key={esp.id} value={esp.id}>
+                                                {esp.nombre} {esp.puesto ? `(${esp.puesto})` : ''}
+                                            </option>
+                                        ))}
+                                        {especialistaEstaDeBaja && (
+                                            <option value="" disabled>
+                                                ❌ {citaAReagendar.especialista || 'Especialista anterior'} (DADA DE BAJA)
+                                            </option>
+                                        )}
+                                    </select>
+                                    {especialistaEstaDeBaja && !reagendarEspecialistaId && (
+                                        <p className="text-[11px] text-rose-700 font-bold bg-rose-50 p-2 rounded-lg border border-rose-200">
+                                            ⚠️ La especialista previa ya no labora en la clínica. Selecciona una nueva especialista activa.
+                                        </p>
+                                    )}
+                                </div>
+
+                                {/* Cabina / Espacio */}
+                                <div className="space-y-1">
+                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">
                                         Cabina / Espacio (Opcional)
                                     </label>
                                     <select
                                         value={reagendarCabina || ''}
                                         onChange={e => setReagendarCabina(e.target.value)}
-                                        className="w-full h-14 px-4 bg-gray-50 border-2 border-gray-100 rounded-2xl font-bold text-acero text-sm outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm"
+                                        className="w-full h-12 sm:h-13 px-3.5 bg-gray-50 border-2 border-gray-100 rounded-xl font-bold text-acero text-sm outline-none focus:border-turquesa focus:bg-white transition-all shadow-sm"
                                     >
                                         <option value="">Sin cabina fija</option>
                                         {CABINAS_ALFRA.map(c => (
                                             <option key={c.id} value={c.nombre}>{c.nombre}</option>
                                         ))}
                                     </select>
-                                    {conflictoCabinaReagendar && (
-                                        <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs font-bold flex items-start gap-2">
-                                            <span>⚠️</span>
-                                            <div>
-                                                <p className="font-black">Empalme de Cabina en nuevo horario:</p>
-                                                <p className="text-[11px] font-normal text-rose-700">{reagendarCabina} ya está ocupada por {conflictoCabinaReagendar.especialistaNombre || conflictoCabinaReagendar.especialista} ({conflictoCabinaReagendar.horaFormateada || conflictoCabinaReagendar.hora}).</p>
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
 
-                            <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                            {/* Alerta de Conflicto de Cabina */}
+                            {conflictoCabinaReagendar && (
+                                <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs font-bold flex items-start gap-2">
+                                    <span>⚠️</span>
+                                    <div>
+                                        <p className="font-black">Empalme de Cabina en nuevo horario:</p>
+                                        <p className="text-[11px] font-normal text-rose-700">{reagendarCabina} ya está ocupada por {conflictoCabinaReagendar.especialistaNombre || conflictoCabinaReagendar.especialista} ({conflictoCabinaReagendar.horaFormateada || conflictoCabinaReagendar.hora}).</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Footer Pinned / Shrink-0 */}
+                        <div className="px-5 py-3 sm:px-6 sm:py-4 bg-gray-50/90 border-t border-gray-100 shrink-0 space-y-2">
+                            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                                 <Button
                                     variant="ghost"
-                                    className="flex-1 h-14 rounded-2xl font-black uppercase text-xs text-gray-400"
+                                    className="flex-1 h-11 sm:h-12 rounded-xl font-black uppercase text-xs text-gray-500 hover:bg-gray-200/60"
                                     onClick={() => setCitaAReagendar(null)}
                                 >
                                     Cancelar
                                 </Button>
                                 <Button
                                     variant="primary"
-                                    className="flex-1 h-14 rounded-2xl font-black uppercase text-xs shadow-xl shadow-turquesa/20"
+                                    className="flex-1 h-11 sm:h-12 rounded-xl font-black uppercase text-xs shadow-lg shadow-turquesa/20"
                                     onClick={handleConfirmarReagendacionRapidaAdmin}
                                     disabled={savingReagendar}
                                 >
@@ -1927,7 +1939,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                 </Button>
                             </div>
 
-                            <div className="text-center pt-1 border-t border-gray-100">
+                            <div className="text-center pt-1">
                                 <button
                                     type="button"
                                     onClick={() => {
@@ -1935,7 +1947,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                         setCitaAReagendar(null);
                                         handleOpenModal(c);
                                     }}
-                                    className="text-xs text-gray-400 hover:text-turquesa font-bold transition-colors"
+                                    className="text-[11px] text-gray-400 hover:text-turquesa font-bold transition-colors"
                                 >
                                     ¿Deseas editar otros datos avanzados (monto, notas, etc.)? Haz clic aquí
                                 </button>
