@@ -5,7 +5,7 @@ import { collection, query, where, getDocs, addDoc, doc, updateDoc } from 'fireb
 import { db } from '../../lib/firebase';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { getStaff } from '../../services/staffService';
-import { createCita, isStaffClinico } from '../../services/citasService';
+import { createCita, isStaffClinico, citaMatchesEspecialista } from '../../services/citasService';
 import { onServiciosChange } from '../../services/comercialService';
 
 // Funciones de categorización inteligente basadas en el catálogo real de Clínica ALFRA
@@ -176,7 +176,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             setLoadingStaff(true);
             try {
                 const todosStaff = await getStaff();
-                const clinicosActivos = (todosStaff || []).filter(isStaffClinico);
+                const clinicosActivos = (todosStaff || []).filter(s => isStaffClinico(s) && s.disponibleAutoAgendado !== false);
                 if (!isMounted) return;
                 setStaffList(clinicosActivos);
 
@@ -361,9 +361,53 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
 
     // Buscar disponibilidad directa y confiable en Firestore
         // Buscar disponibilidad directa y confiable en Firestore considerando fecha y especialista
+    const extraerInicioFinCitaMinutos = (c, fechaObjetivo) => {
+        const cFecha = c.fechaYMD || c.fecha || (c.fechaHora ? String(c.fechaHora).split('T')[0] : '');
+        if (cFecha !== fechaObjetivo) return null;
+
+        const statusNorm = String(c.status || c.estado || '')
+            .toLowerCase()
+            .trim()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+
+        const statusIgnorados = ['cancelada', 'cancelado', 'no asistio', 'no_asistio', 'reagendada', 'reagendado', 'eliminada', 'eliminado', 'baja'];
+        if (statusIgnorados.some(st => statusNorm.includes(st))) return null;
+
+        let horaRaw = c.hora;
+        if (!horaRaw && c.fechaHora) {
+            const parts = String(c.fechaHora).split(/[T\s]/);
+            if (parts.length > 1) horaRaw = parts[1].slice(0, 5);
+        }
+        if (!horaRaw) return null;
+
+        let cH = 0, cM = 0;
+        const match12 = String(horaRaw).match(/(\d{1,2}):(\d{2})\s*(am|pm)?/i);
+        if (match12) {
+            cH = parseInt(match12[1], 10);
+            cM = parseInt(match12[2], 10);
+            const isPM = (match12[3] || '').toLowerCase() === 'pm';
+            const isAM = (match12[3] || '').toLowerCase() === 'am';
+            if (isPM && cH < 12) cH += 12;
+            if (isAM && cH === 12) cH = 0;
+        } else {
+            const parts = String(horaRaw).split(':').map(Number);
+            if (parts.length >= 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+                cH = parts[0];
+                cM = parts[1];
+            } else {
+                return null;
+            }
+        }
+
+        const startMin = cH * 60 + cM;
+        const durCita = Number(c.duracionMin || c.duracionMinutos || 60);
+        return { startMin, endMin: startMin + durCita };
+    };
+
     const buscarDisponibilidad = async (fechaStr, durMin, espId) => {
         const fecha = fechaStr || selectedDate;
-        const dur = durMin || duracionEfectiva;
+        const dur = Number(durMin || duracionEfectiva || 60);
         const espActivoId = espId !== undefined ? espId : selectedEspecialistaId;
         if (!fecha || !dur) return;
 
@@ -373,74 +417,58 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
         setHorariosDisponibles([]);
 
         try {
-            const citasCol = collection(db, 'citas');
-            const q = query(citasCol, where('fecha', '==', fecha));
-            const snap = await getDocs(q);
+            const espObj = staffList.find(s => s.id === espActivoId) || null;
+            const espIdentificadores = {
+                id: espActivoId,
+                staffId: espActivoId,
+                uid: espObj?.uid || null,
+                email: espObj?.email || null,
+                nombre: espObj?.nombre || selectedEspecialistaNombre || ''
+            };
 
-            const ocupados = [];
+            const citasCol = collection(db, 'citas');
+            const snap = await getDocs(citasCol);
+
+            const ocupadosMinutos = [];
             snap.forEach(docSnap => {
-                const c = docSnap.data();
-                const statusNorm = String(c.status || c.estado || '').toLowerCase().trim();
-                if (['cancelada', 'cancelado', 'no asistio', 'no_asistio', 'no asistió', 'reagendada'].includes(statusNorm)) {
-                    return;
-                }
+                const c = { id: docSnap.id, ...docSnap.data() };
+                const rango = extraerInicioFinCitaMinutos(c, fecha);
+                if (!rango) return;
 
                 let bloquea = false;
-                if (espActivoId) {
-                    if (c.especialistaId && c.especialistaId === espActivoId) {
-                        bloquea = true;
-                    } else if (!c.especialistaId && selectedEspecialistaNombre && (c.especialistaNombre || c.especialista || '').toLowerCase().trim() === selectedEspecialistaNombre.toLowerCase().trim()) {
-                        bloquea = true;
-                    }
+                if (espActivoId || espIdentificadores.nombre) {
+                    bloquea = citaMatchesEspecialista(c, espIdentificadores);
                 } else {
                     bloquea = true;
                 }
 
                 if (bloquea) {
-                    const horaStr = c.hora || '10:00';
-                    const fechaHora = c.fechaHora || `${fecha}T${horaStr.length === 5 ? horaStr + ':00' : horaStr}`;
-                    ocupados.push({
-                        fechaHora,
-                        duracionMin: Number(c.duracionMin || c.duracionMinutos || 60)
-                    });
+                    ocupadosMinutos.push(rango);
                 }
             });
 
             const bloques = [];
-            const baseStart = new Date(`${fecha}T09:30:00`);
-            const limitEnd = new Date(`${fecha}T17:00:00`);
+            const startOfDayMin = 9 * 60 + 30; // 09:30
+            const limitEndMin = 17 * 60;       // 17:00
 
-            let current = new Date(baseStart);
-            while (current < limitEnd) {
-                const slotStart = new Date(current);
-                const slotEnd = new Date(slotStart.getTime() + dur * 60000);
-
-                if (slotEnd > limitEnd) break;
-
-                const choca = ocupados.some(oc => {
-                    const ocStart = new Date(oc.fechaHora);
-                    const ocEnd = new Date(ocStart.getTime() + (oc.duracionMin || 60) * 60000);
-                    return slotStart < ocEnd && slotEnd > ocStart;
-                });
-
+            for (let slotStartMin = startOfDayMin; slotStartMin + dur <= limitEndMin; slotStartMin += 30) {
+                const slotEndMin = slotStartMin + dur;
+                const choca = ocupadosMinutos.some(oc => slotStartMin < oc.endMin && slotEndMin > oc.startMin);
                 if (!choca) {
+                    const hh = String(Math.floor(slotStartMin / 60)).padStart(2, '0');
+                    const mm = String(slotStartMin % 60).padStart(2, '0');
+                    const horaStr = `${hh}:${mm}`;
                     bloques.push({
-                        horaStr: toHHMM(slotStart),
-                        isoStr: `${fecha}T${toHHMM(slotStart)}:00`,
+                        horaStr,
+                        isoStr: `${fecha}T${horaStr}:00`,
                     });
                 }
-
-                current.setMinutes(current.getMinutes() + 30);
             }
 
             setHorariosDisponibles(bloques);
         } catch (error) {
             console.error('Error buscando disponibilidad:', error);
-            const fallbackHoras = ['10:00', '11:00', '12:00', '13:30', '15:00', '16:00'].map(h => ({
-                horaStr: h,
-                isoStr: `${fecha}T${h}:00`
-            }));
-            setHorariosDisponibles(fallbackHoras);
+            setHorariosDisponibles([]);
         } finally {
             setLoadingHorarios(false);
             setHasSearched(true);
@@ -501,6 +529,40 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             }
 
             const horaCitaStr = new Date(selectedTime).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+            // Doble verificación en tiempo real antes de guardar para evitar empalmes con Recepción
+            const espObjConfirm = staffList.find(s => s.id === finalEspId) || null;
+            const espIdentConfirm = {
+                id: finalEspId,
+                staffId: finalEspId,
+                uid: espObjConfirm?.uid || null,
+                email: espObjConfirm?.email || null,
+                nombre: finalEspNombre
+            };
+            const snapCheck = await getDocs(collection(db, 'citas'));
+            const [selH, selM] = horaCitaStr.split(':').map(Number);
+            const targetStartMin = selH * 60 + selM;
+            const targetEndMin = targetStartMin + Number(duracionEfectiva || 60);
+            let horarioOcupadoAhora = false;
+            snapCheck.forEach(dSnap => {
+                if (horarioOcupadoAhora) return;
+                const c = { id: dSnap.id, ...dSnap.data() };
+                const r = extraerInicioFinCitaMinutos(c, selectedDate);
+                if (!r) return;
+                if (citaMatchesEspecialista(c, espIdentConfirm)) {
+                    if (targetStartMin < r.endMin && targetEndMin > r.startMin) {
+                        horarioOcupadoAhora = true;
+                    }
+                }
+            });
+
+            if (horarioOcupadoAhora) {
+                alert('⚠️ Este horario acaba de ser ocupado para la especialista seleccionada. Por favor elige otro horario disponible.');
+                setStep(1);
+                await buscarDisponibilidad(selectedDate, duracionEfectiva, finalEspId);
+                setLoadingSubmit(false);
+                return;
+            }
 
             const nuevaCita = {
                 pacienteId: pacId,
@@ -756,7 +818,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                                 <span>Reasignación de Especialista en tu Expediente</span>
                                             </div>
                                             <p className="text-[11px] text-amber-800 leading-relaxed">
-                                                Tu especialista previa <strong>({especialistaDeBaja?.nombre || 'Especialista anterior'})</strong> ya no labora en la clínica. Por favor elige a tu nueva especialista de confianza para atender tu cita y dar seguimiento a tu tratamiento:
+                                                Tu especialista <strong>({especialistaDeBaja?.nombre || 'Especialista anterior'})</strong> no se encuentra disponible para auto-agendado en este momento. Por favor elige a una especialista disponible de la lista para atender tu cita:
                                             </p>
                                         </div>
                                         <select

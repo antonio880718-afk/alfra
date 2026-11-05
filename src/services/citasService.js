@@ -226,8 +226,13 @@ export const citaMatchesEspecialista = (cita, identifiers) => {
 export const createCita = async (data) => {
     try {
         const fechaHora = data.fechaHora || (data.fecha ? `${data.fecha}T${data.hora || '09:00'}:00` : new Date().toISOString());
+        const fechaExtraida = data.fecha || data.fechaYMD || (String(fechaHora).includes('T') ? String(fechaHora).split('T')[0] : '');
+        const horaExtraida = data.hora || (String(fechaHora).includes('T') ? String(fechaHora).split('T')[1].slice(0, 5) : '09:00');
         const docRef = await addDoc(citasCol, {
             ...data,
+            fecha: fechaExtraida,
+            fechaYMD: fechaExtraida,
+            hora: horaExtraida,
             fechaHora,
             status: data.status || 'Pendiente',
             createdAt: new Date().toISOString()

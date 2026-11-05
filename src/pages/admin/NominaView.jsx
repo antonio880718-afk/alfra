@@ -535,6 +535,16 @@ export default function NominaView() {
         }
     };
 
+    const handleToggleAutoAgendado = async (id, currentStatus) => {
+        try {
+            const nextStatus = currentStatus === false ? true : false;
+            await updateEmpleado(id, { disponibleAutoAgendado: nextStatus });
+        } catch (error) {
+            console.error(error);
+            alert('Error al actualizar disponibilidad de auto-agendado');
+        }
+    };
+
     const handleGuardarBonos = async () => {
         try {
             await updateEmpleado(empleadoBonos.id, {
@@ -820,14 +830,15 @@ export default function NominaView() {
                                 <th className="p-4 text-turquesa">Saldo Comisiones</th>
                                 <th className="p-4 text-center">Bonos</th>
                                 <th className="p-4 text-center">Activar Com.</th>
+                                <th className="p-4 text-center">Auto-Agendado App</th>
                                 <th className="p-4 text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50">
                             {loading ? (
-                                <tr><td colSpan="9" className="p-10 text-center text-gray-400">Cargando personal...</td></tr>
+                                <tr><td colSpan="10" className="p-10 text-center text-gray-400">Cargando personal...</td></tr>
                             ) : staff.length === 0 ? (
-                                <tr><td colSpan="9" className="p-10 text-center text-gray-400">No hay personal registrado</td></tr>
+                                <tr><td colSpan="10" className="p-10 text-center text-gray-400">No hay personal registrado</td></tr>
                             ) : (
                                 staff.map((empleado) => {
                                     const esDoctor = (empleado.puesto || '').toLowerCase().includes('doctor');
@@ -936,6 +947,37 @@ export default function NominaView() {
                                                 <button onClick={() => handleToggleComisiones(empleado.id, empleado.usaComisiones)} className="transition-transform active:scale-95">
                                                     {empleado.usaComisiones ? <ToggleRight className="text-turquesa" size={32} /> : <ToggleLeft className="text-gray-300" size={32} />}
                                                 </button>
+                                            </td>
+
+                                            {/* SWITCH AUTO-AGENDADO EN APP DE PACIENTES */}
+                                            <td className="p-4 text-center">
+                                                {(() => {
+                                                    const pNorm = String(empleado.puesto || empleado.rol || '').toLowerCase();
+                                                    const esNoClinico = pNorm.includes('admin') || pNorm.includes('recep') || pNorm.includes('limpieza') || pNorm.includes('intendencia');
+                                                    if (esNoClinico) {
+                                                        return <span className="text-[10px] text-gray-400 italic">No aplica</span>;
+                                                    }
+                                                    const activoEnApp = empleado.disponibleAutoAgendado !== false;
+                                                    return (
+                                                        <div className="flex flex-col items-center justify-center">
+                                                            <button
+                                                                type="button"
+                                                                title={activoEnApp ? 'Disponible para auto-agendado de pacientes (Clic para desactivar)' : 'Oculta en auto-agendado de pacientes (Clic para activar)'}
+                                                                onClick={() => handleToggleAutoAgendado(empleado.id, empleado.disponibleAutoAgendado)}
+                                                                className="transition-transform active:scale-95 cursor-pointer"
+                                                            >
+                                                                {activoEnApp ? (
+                                                                    <ToggleRight className="text-emerald-500" size={32} />
+                                                                ) : (
+                                                                    <ToggleLeft className="text-gray-300" size={32} />
+                                                                )}
+                                                            </button>
+                                                            <span className={`text-[9px] font-black uppercase tracking-wider mt-0.5 ${activoEnApp ? 'text-emerald-600' : 'text-gray-400'}`}>
+                                                                {activoEnApp ? 'Visible en App' : 'Pausada en App'}
+                                                            </span>
+                                                        </div>
+                                                    );
+                                                })()}
                                             </td>
 
                                             {/* ACCIONES */}
