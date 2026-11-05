@@ -5,7 +5,7 @@ import { collection, query, where, getDocs, addDoc, doc, updateDoc } from 'fireb
 import { db } from '../../lib/firebase';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { getStaff } from '../../services/staffService';
-import { createCita, isStaffClinico, citaMatchesEspecialista } from '../../services/citasService';
+import { createCita, isStaffClinico, citaMatchesEspecialista, resolverDuracionCitaMinutos, extraerRangoCitaLocal } from '../../services/citasService';
 import { onServiciosChange } from '../../services/comercialService';
 
 // Funciones de categorización inteligente basadas en el catálogo real de Clínica ALFRA
@@ -108,6 +108,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
     const [hasSearched, setHasSearched] = useState(false);
     const [loadingHorarios, setLoadingHorarios] = useState(false);
     const [horariosDisponibles, setHorariosDisponibles] = useState([]);
+    const [bloquesOcupadosEspecialista, setBloquesOcupadosEspecialista] = useState([]);
 
     const [loadingSubmit, setLoadingSubmit] = useState(false);
 
@@ -166,6 +167,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             setSelectedTime('');
             setHasSearched(false);
             setHorariosDisponibles([]);
+            setBloquesOcupadosEspecialista([]);
             setBusquedaServicio('');
             setMostrarCambioEspecialista(false);
             return;
@@ -294,7 +296,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
         });
     }, [catalogoServicios, categoriaFiltro, busquedaServicio]);
 
-    const duracionEfectiva = servicioSeleccionado?.duracionMinutos || 60;
+    const duracionEfectiva = useMemo(() => servicioSeleccionado ? resolverDuracionCitaMinutos(servicioSeleccionado, catalogoServicios) : 60, [servicioSeleccionado, catalogoServicios]);
 
     // Detectar automáticamente si el paciente inicia el paquete (Sesión 1 - Anticipo 20%) o ya lo tiene activo (Sesión 2 a la última)
     const estadoPagoSeleccionado = useMemo(() => {
@@ -362,47 +364,9 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
     // Buscar disponibilidad directa y confiable en Firestore
         // Buscar disponibilidad directa y confiable en Firestore considerando fecha y especialista
     const extraerInicioFinCitaMinutos = (c, fechaObjetivo) => {
-        const cFecha = c.fechaYMD || c.fecha || (c.fechaHora ? String(c.fechaHora).split('T')[0] : '');
-        if (cFecha !== fechaObjetivo) return null;
-
-        const statusNorm = String(c.status || c.estado || '')
-            .toLowerCase()
-            .trim()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '');
-
-        const statusIgnorados = ['cancelada', 'cancelado', 'no asistio', 'no_asistio', 'reagendada', 'reagendado', 'eliminada', 'eliminado', 'baja'];
-        if (statusIgnorados.some(st => statusNorm.includes(st))) return null;
-
-        let horaRaw = c.hora;
-        if (!horaRaw && c.fechaHora) {
-            const parts = String(c.fechaHora).split(/[T\s]/);
-            if (parts.length > 1) horaRaw = parts[1].slice(0, 5);
-        }
-        if (!horaRaw) return null;
-
-        let cH = 0, cM = 0;
-        const match12 = String(horaRaw).match(/(\d{1,2}):(\d{2})\s*(am|pm)?/i);
-        if (match12) {
-            cH = parseInt(match12[1], 10);
-            cM = parseInt(match12[2], 10);
-            const isPM = (match12[3] || '').toLowerCase() === 'pm';
-            const isAM = (match12[3] || '').toLowerCase() === 'am';
-            if (isPM && cH < 12) cH += 12;
-            if (isAM && cH === 12) cH = 0;
-        } else {
-            const parts = String(horaRaw).split(':').map(Number);
-            if (parts.length >= 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
-                cH = parts[0];
-                cM = parts[1];
-            } else {
-                return null;
-            }
-        }
-
-        const startMin = cH * 60 + cM;
-        const durCita = Number(c.duracionMin || c.duracionMinutos || 60);
-        return { startMin, endMin: startMin + durCita };
+        const rango = extraerRangoCitaLocal(c, catalogoServicios);
+        if (!rango || rango.fechaYMD !== fechaObjetivo) return null;
+        return rango;
     };
 
     const buscarDisponibilidad = async (fechaStr, durMin, espId) => {
@@ -415,6 +379,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
         setHasSearched(false);
         setSelectedTime('');
         setHorariosDisponibles([]);
+        setBloquesOcupadosEspecialista([]);
 
         try {
             const espObj = staffList.find(s => s.id === espActivoId) || null;
@@ -447,19 +412,39 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                 }
             });
 
-            const bloques = [];
-            const startOfDayMin = 9 * 60 + 30; // 09:30
-            const limitEndMin = 17 * 60;       // 17:00
+            ocupadosMinutos.sort((a, b) => a.startMin - b.startMin);
+            setBloquesOcupadosEspecialista(ocupadosMinutos);
 
-            for (let slotStartMin = startOfDayMin; slotStartMin + dur <= limitEndMin; slotStartMin += 30) {
+            const startOfDayMin = 9 * 60; // 09:00
+            const limitEndMin = 19 * 60;  // 19:00
+
+            // Generar inicios candidatos cada 30 min + los minutos exactos en los que termina cualquier tratamiento de la especialista
+            const candidatosSet = new Set();
+            for (let m = startOfDayMin; m + dur <= limitEndMin; m += 30) {
+                candidatosSet.add(m);
+            }
+            ocupadosMinutos.forEach(oc => {
+                if (oc.endMin >= startOfDayMin && oc.endMin + dur <= limitEndMin) {
+                    candidatosSet.add(oc.endMin);
+                }
+            });
+
+            const candidatosOrdenados = Array.from(candidatosSet).sort((a, b) => a - b);
+            const bloques = [];
+            const pad = (n) => String(n).padStart(2, '0');
+
+            for (const slotStartMin of candidatosOrdenados) {
                 const slotEndMin = slotStartMin + dur;
+                if (slotEndMin > limitEndMin) continue;
+
                 const choca = ocupadosMinutos.some(oc => slotStartMin < oc.endMin && slotEndMin > oc.startMin);
                 if (!choca) {
-                    const hh = String(Math.floor(slotStartMin / 60)).padStart(2, '0');
-                    const mm = String(slotStartMin % 60).padStart(2, '0');
-                    const horaStr = `${hh}:${mm}`;
+                    const horaStr = `${pad(Math.floor(slotStartMin / 60))}:${pad(slotStartMin % 60)}`;
+                    const horaFinStr = `${pad(Math.floor(slotEndMin / 60))}:${pad(slotEndMin % 60)}`;
                     bloques.push({
                         horaStr,
+                        horaFinStr,
+                        duracionMin: dur,
                         isoStr: `${fecha}T${horaStr}:00`,
                     });
                 }
@@ -469,11 +454,19 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
         } catch (error) {
             console.error('Error buscando disponibilidad:', error);
             setHorariosDisponibles([]);
+            setBloquesOcupadosEspecialista([]);
         } finally {
             setLoadingHorarios(false);
             setHasSearched(true);
         }
     };
+
+    // Recalcular automáticamente si cambia el catálogo de servicios, especialista, fecha o duración del tratamiento
+    useEffect(() => {
+        if (isOpen && step === 1 && selectedDate && servicioSeleccionado) {
+            buscarDisponibilidad(selectedDate, duracionEfectiva, selectedEspecialistaId);
+        }
+    }, [catalogoServicios.length, duracionEfectiva, selectedEspecialistaId]);
 
     const handleSelectServicio = (serv) => {
         setServicioSeleccionado(serv);
@@ -903,17 +896,36 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                             </div>
 
                             {/* PASO 4: Horarios Disponibles */}
-                            <div className="space-y-2 pt-2 border-t border-gray-100">
+                            <div className="space-y-2.5 pt-2 border-t border-gray-100">
                                 <label className="text-xs font-black uppercase tracking-wider text-gray-700 flex items-center justify-between">
                                     <span className="flex items-center gap-1.5">
                                         <Clock size={14} className="text-turquesa" /> 4. Selecciona tu Hora
                                     </span>
                                     {selectedDate && servicioSeleccionado && (
-                                        <span className="text-[10px] text-gray-500 font-bold">
-                                            Duración: {duracionEfectiva} min
+                                        <span className="text-[10px] text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-0.5 rounded-full font-black">
+                                            ⏱️ Tiempo de tu tratamiento: {duracionEfectiva} min
                                         </span>
                                     )}
                                 </label>
+
+                                {selectedDate && servicioSeleccionado && !loadingHorarios && bloquesOcupadosEspecialista.length > 0 && (
+                                    <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5">
+                                        <p className="text-[10px] font-black uppercase tracking-wider text-slate-600 flex items-center gap-1">
+                                            <Clock size={11} className="text-amber-600" />
+                                            Tiempos en cabina ya ocupados con {selectedEspecialistaNombre || 'tu especialista'} este día:
+                                        </p>
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {bloquesOcupadosEspecialista.map((oc, idx) => (
+                                                <span
+                                                    key={idx}
+                                                    className="text-[10px] font-bold bg-amber-50 text-amber-900 border border-amber-200 px-2 py-0.5 rounded-lg"
+                                                >
+                                                    🔒 {oc.horaInicioStr} - {oc.horaFinStr} ({oc.duracionMin} min)
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
 
                                 {!servicioSeleccionado ? (
                                     <p className="text-xs text-gray-400 italic py-3 text-center bg-gray-50 rounded-2xl">
@@ -926,10 +938,10 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                 ) : loadingHorarios ? (
                                     <div className="py-6 flex flex-col items-center justify-center gap-2 text-gray-400">
                                         <Loader2 size={24} className="animate-spin text-turquesa" />
-                                        <span className="text-xs font-bold">Consultando disponibilidad en vivo...</span>
+                                        <span className="text-xs font-bold">Calculando tiempos de tratamientos de la especialista...</span>
                                     </div>
                                 ) : hasSearched && horariosDisponibles.length > 0 ? (
-                                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 max-h-44 overflow-y-auto p-1">
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-48 overflow-y-auto p-1">
                                         {horariosDisponibles.map((h) => {
                                             const isSelected = selectedTime === h.isoStr;
                                             return (
@@ -937,13 +949,16 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                                     key={h.isoStr}
                                                     type="button"
                                                     onClick={() => setSelectedTime(h.isoStr)}
-                                                    className={`py-2 px-3 rounded-xl border text-xs font-black transition-all cursor-pointer ${
+                                                    className={`py-2 px-2.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
                                                         isSelected
                                                             ? 'bg-turquesa border-turquesa text-white shadow-md'
                                                             : 'bg-white border-gray-200 text-gray-700 hover:border-turquesa hover:bg-turquesa/5'
                                                     }`}
                                                 >
-                                                    {h.horaStr}
+                                                    <span className="text-xs font-black">{h.horaStr} - {h.horaFinStr}</span>
+                                                    <span className={`text-[9px] font-bold ${isSelected ? 'text-teal-50' : 'text-gray-400'}`}>
+                                                        ({h.duracionMin || duracionEfectiva} min)
+                                                    </span>
                                                 </button>
                                             );
                                         })}

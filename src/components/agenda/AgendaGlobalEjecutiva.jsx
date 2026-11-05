@@ -10,7 +10,7 @@ import {
     format, addDays, subDays, isToday 
 } from 'date-fns';
 import { es } from 'date-fns/locale';
-import { CABINAS_ALFRA } from '../../services/citasService';
+import { CABINAS_ALFRA, extraerRangoCitaLocal, resolverDuracionCitaMinutos } from '../../services/citasService';
 
 // Paleta distinguida de colores para especialistas
 const COLORES_ESPECIALISTAS = [
@@ -249,17 +249,21 @@ export default function AgendaGlobalEjecutiva({
             >
                 {/* Cabecera de la Cita: Hora, Cabina y Estado */}
                 <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-1.5">
-                        <span className="px-2.5 py-1 bg-slate-900 text-white rounded-xl text-xs font-black tracking-tight flex items-center gap-1.5 shadow-sm">
-                            <Clock size={12} className="text-turquesa" />
-                            {getCitaHoraDisplay(cita)}
-                        </span>
-                        {cita.duracionMin && (
-                            <span className="text-[11px] font-bold text-slate-400">
-                                {cita.duracionMin} min
-                            </span>
-                        )}
-                    </div>
+                    {(() => {
+                        const rangoCita = extraerRangoCitaLocal(cita, servicios);
+                        const durReal = rangoCita ? rangoCita.duracionMin : resolverDuracionCitaMinutos(cita, servicios);
+                        return (
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                                <span className="px-2.5 py-1 bg-slate-900 text-white rounded-xl text-xs font-black tracking-tight flex items-center gap-1.5 shadow-sm">
+                                    <Clock size={12} className="text-turquesa" />
+                                    {rangoCita ? `${rangoCita.horaInicioStr} - ${rangoCita.horaFinStr}` : getCitaHoraDisplay(cita)}
+                                </span>
+                                <span className="text-[11px] font-black text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-lg">
+                                    {durReal} min
+                                </span>
+                            </div>
+                        );
+                    })()}
 
                     <div className="flex items-center gap-1.5">
                         {/* Badge de Cabina */}

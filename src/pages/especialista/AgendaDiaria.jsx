@@ -13,7 +13,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { auth } from '../../lib/firebase';
 import {
     onCitasEspecialistaChange, updateCitaStatus, onAlertasEspecialistaChange,
-    markAlertAsRead, createCita
+    markAlertAsRead, createCita, resolverDuracionCitaMinutos, extraerRangoCitaLocal
 } from '../../services/citasService';
 import { getStaffDocByUid, onStaffDocChange } from '../../services/staffService';
 import { getPacientes } from '../../services/pacientesService';
@@ -388,7 +388,7 @@ export default function AgendaDiaria() {
                         fecha: paseProximaFecha,
                         hora: paseProximaHora,
                         fechaHora: fechaHoraISO,
-                        duracionMin: Number(modalPaseCaja.duracionMin) || 60,
+                        duracionMin: resolverDuracionCitaMinutos({ servicio: paseProximoServicio || modalPaseCaja.servicio, duracionMin: modalPaseCaja.duracionMin }, serviciosList),
                         notas: `Próxima cita agendada al dar Pase a Caja (${modalPaseCaja.servicio || 'Tratamiento'})`,
                         status: 'Confirmada'
                     });
@@ -470,7 +470,7 @@ export default function AgendaDiaria() {
                 fecha: nuevaCitaForm.fecha,
                 hora: nuevaCitaForm.hora,
                 fechaHora: fechaHoraISO,
-                duracionMin: Number(nuevaCitaForm.duracionMin) || 60,
+                duracionMin: resolverDuracionCitaMinutos({ servicio: nuevaCitaForm.servicio, duracionMin: nuevaCitaForm.duracionMin }, serviciosList),
                 notas: nuevaCitaForm.notas.trim(),
                 status: 'Confirmada'
             });
@@ -1230,7 +1230,12 @@ export default function AgendaDiaria() {
                         <select
                             required
                             value={nuevaCitaForm.servicio}
-                            onChange={(e) => setNuevaCitaForm(prev => ({ ...prev, servicio: e.target.value }))}
+                            onChange={(e) => {
+                                const val = e.target.value;
+                                const servObj = serviciosList.find(s => s.nombre === val);
+                                const durCalc = resolverDuracionCitaMinutos(servObj || { servicio: val }, serviciosList);
+                                setNuevaCitaForm(prev => ({ ...prev, servicio: val, duracionMin: durCalc }));
+                            }}
                             className="w-full p-2.5 rounded-xl border border-gray-200 text-sm font-medium focus:outline-none focus:border-turquesa"
                         >
                             <option value="">— Seleccionar servicio —</option>

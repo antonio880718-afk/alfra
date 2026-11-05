@@ -17,7 +17,7 @@ import { obtenerProximosCumpleanos } from '../../utils/cumpleanosUtils';
 import ModalTarjetaCumpleanos from '../../components/cumpleanos/ModalTarjetaCumpleanos';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { onCitasChange, createCita, updateCitaStatus, crearAlertaPaciente, CABINAS_ALFRA, checkConflictoCabina, isStaffClinico, getTratamientosYPlanesActivosPaciente, verificarMovimientosExpediente } from '../../services/citasService';
+import { onCitasChange, createCita, updateCitaStatus, crearAlertaPaciente, CABINAS_ALFRA, checkConflictoCabina, checkConflictoEspecialista, citaMatchesEspecialista, resolverDuracionCitaMinutos, extraerRangoCitaLocal, isStaffClinico, getTratamientosYPlanesActivosPaciente, verificarMovimientosExpediente } from '../../services/citasService';
 import { onServiciosChange } from '../../services/comercialService';
 import { createRecibo } from '../../services/recibosService';
 import { onStaffChange } from '../../services/staffService';
@@ -303,10 +303,12 @@ export default function CalendarioCitas() {
         const t = tratamientoSeleccionado;
         const montoFinal = sesionYaPagada ? '0' : (montoSesionPropuesto || '0');
 
+        const durRealTrat = resolverDuracionCitaMinutos(t, servicios);
         setSelectedServicios([{
             id: t.id || ('trat_activo_' + Date.now()),
             nombre: t.nombre,
             precio: montoFinal,
+            duracionMin: durRealTrat,
             esTratamientoActivo: true
         }]);
         setServicioFiltro('');
@@ -314,7 +316,7 @@ export default function CalendarioCitas() {
         setNewCita(prev => ({
             ...prev,
             servicio: t.nombre,
-            duracionMin: t.duracionMin || prev.duracionMin || 60,
+            duracionMin: durRealTrat,
             especialistaId: t.especialistaId || prev.especialistaId || '',
             especialistaNombre: t.especialistaNombre || prev.especialistaNombre || '',
             citaPagada: sesionYaPagada,
@@ -426,6 +428,25 @@ export default function CalendarioCitas() {
             ignoreCitaId: editingCitaId
         });
     }, [citas, newCita.cabina, newCita.fecha, newCita.hora, newCita.duracionMin, editingCitaId]);
+
+    const conflictoEspecialista = useMemo(() => {
+        if (!newCita.especialistaId && !newCita.especialistaNombre) return null;
+        const espObj = especialistas.find(e => e.id === newCita.especialistaId);
+        return checkConflictoEspecialista(citas, {
+            especialistaIdent: {
+                id: newCita.especialistaId,
+                staffId: newCita.especialistaId,
+                uid: espObj?.uid || null,
+                email: espObj?.email || null,
+                nombre: espObj?.nombre || newCita.especialistaNombre || ''
+            },
+            fechaYMD: newCita.fecha,
+            hora: newCita.hora,
+            duracionMin: newCita.duracionMin,
+            ignoreCitaId: editingCitaId,
+            catalogoServicios: servicios
+        });
+    }, [citas, especialistas, servicios, newCita.especialistaId, newCita.especialistaNombre, newCita.fecha, newCita.hora, newCita.duracionMin, editingCitaId]);
 
     const citasEncontradas = useMemo(() => {
         const q = busquedaGlobal.trim().toLowerCase();
@@ -878,56 +899,63 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
     // ── Lógica de Disponibilidad (Huecos de 1.5h) ──────────────────────────
     const getHorasDisponibles = (fecha, espIds, duracionSolicitada = 90) => {
         const startH = 9, endH = 19;
-        const duracionBloque = Number(duracionSolicitada);
+        const duracionBloque = Number(duracionSolicitada || 90);
         const slots = [];
-        
+
         const dayStr = format(fecha, 'yyyy-MM-dd');
-        
-        // Determinar qué especialistas estamos evaluando
-        const idsAEvaluar = espIds.includes('todos') 
-            ? especialistas.map(e => e.id) 
+
+        const idsAEvaluar = espIds.includes('todos')
+            ? especialistas.map(e => e.id)
             : espIds;
 
-        // Generar todos los posibles inicios cada 30 min
-        for (let h = startH; h <= endH; h++) {
-            for (let m of [0, 30]) {
-                if (h === endH && m > 0) break;
-                
-                const sStart = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), h, m, 0, 0).getTime();
-                const sEnd = sStart + (duracionBloque * 60000);
-                
-                const endDate = new Date(sEnd);
-                if (endDate.getHours() > endH || (endDate.getHours() === endH && endDate.getMinutes() > 0)) continue;
-                
-                // UN SLOT ES VÁLIDO SI AL MENOS UNO DE LOS ESPECIALISTAS SELECCIONADOS ESTÁ LIBRE
-                const hayAlMenosUnoLibre = idsAEvaluar.some(eid => {
-                    const esp = especialistas.find(e => e.id === eid);
-                    const citasEsp = citas.filter(c => 
-                        (c.especialistaId === eid || (esp && c.especialistaNombre === esp.nombre)) && 
-                        c.fechaYMD === dayStr && 
-                        c.status !== 'Cancelada'
-                    );
-
-                    const estaOcupado = citasEsp.some(c => {
-                        let cStart;
-                        try {
-                            cStart = new Date(c.fechaHora).getTime();
-                            if (isNaN(cStart)) throw new Error();
-                        } catch {
-                            const [y, mon, d] = c.fechaYMD.split('-');
-                            const [hh, mm] = c.hora.split(':');
-                            cStart = new Date(y, mon - 1, d, hh, mm).getTime();
-                        }
-                        const cEnd = cStart + ((c.duracionMin || 90) * 60000);
-                        return (sStart < cEnd && sEnd > cStart);
-                    });
-
-                    return !estaOcupado;
-                });
-
-                if (hayAlMenosUnoLibre) {
-                    slots.push(format(new Date(sStart), 'hh:mm a'));
+        const rangosPorEsp = {};
+        const candidatosExtra = new Set();
+        idsAEvaluar.forEach(eid => {
+            const esp = especialistas.find(e => e.id === eid);
+            const ident = {
+                id: eid,
+                staffId: eid,
+                uid: esp?.uid || null,
+                email: esp?.email || null,
+                nombre: esp?.nombre || ''
+            };
+            const rangos = [];
+            citas.forEach(c => {
+                if (!citaMatchesEspecialista(c, ident)) return;
+                const r = extraerRangoCitaLocal(c, servicios);
+                if (r && r.fechaYMD === dayStr) {
+                    rangos.push(r);
+                    if (r.endMin >= startH * 60 && r.endMin + duracionBloque <= endH * 60) {
+                        candidatosExtra.add(r.endMin);
+                    }
                 }
+            });
+            rangosPorEsp[eid] = rangos;
+        });
+
+        const candidatosMin = new Set();
+        for (let m = startH * 60; m + duracionBloque <= endH * 60; m += 30) {
+            candidatosMin.add(m);
+        }
+        candidatosExtra.forEach(m => candidatosMin.add(m));
+
+        const sortedCandidatos = Array.from(candidatosMin).sort((a, b) => a - b);
+
+        for (const slotStartMin of sortedCandidatos) {
+            const slotEndMin = slotStartMin + duracionBloque;
+            if (slotEndMin > endH * 60) continue;
+
+            const hayAlMenosUnoLibre = idsAEvaluar.some(eid => {
+                const rangosEsp = rangosPorEsp[eid] || [];
+                const estaOcupado = rangosEsp.some(r => slotStartMin < r.endMin && slotEndMin > r.startMin);
+                return !estaOcupado;
+            });
+
+            if (hayAlMenosUnoLibre) {
+                const h = Math.floor(slotStartMin / 60);
+                const m = slotStartMin % 60;
+                const sStart = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), h, m, 0, 0).getTime();
+                slots.push(format(new Date(sStart), 'hh:mm a'));
             }
         }
         return slots;
@@ -1007,7 +1035,7 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                 <div className="flex flex-col md:flex-row md:items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
                     <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Duración del Tratamiento:</span>
                     <div className="flex flex-wrap gap-2">
-                        {[30, 60, 90, 120, 150, 180].map(dur => (
+                        {[30, 45, 60, 90, 120, 150, 180].map(dur => (
                             <button 
                                 key={dur} 
                                 onClick={() => setDuracionFiltro(dur)} 
@@ -1807,9 +1835,13 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                                                                 const filtered = selectedServicios.filter(item => item.id !== s.id);
                                                                 setSelectedServicios(filtered);
                                                                 const total = filtered.reduce((sum, item) => sum + Number(item.precio), 0);
-                                                                setNewCita(prev => ({ 
-                                                                    ...prev, 
+                                                                const totalDur = filtered.length > 0
+                                                                    ? filtered.reduce((sum, item) => sum + Number(item.duracionMin || resolverDuracionCitaMinutos(item, servicios)), 0)
+                                                                    : 60;
+                                                                setNewCita(prev => ({
+                                                                    ...prev,
                                                                     monto: total.toString(),
+                                                                    duracionMin: totalDur,
                                                                     servicio: filtered.map(item => item.nombre).join(', '),
                                                                     citaPagada: filtered.length === 0 ? false : prev.citaPagada
                                                                 }));
@@ -1862,16 +1894,18 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                                                             if (alreadySelected) { alert('Este servicio ya fue agregado.'); return; }
                                                             
                                                             const precio = s.precioVenta || s.precio || 0;
-                                                            const updated = [...selectedServicios, { id: s.id, nombre: s.nombre, precio }];
+                                                            const durServ = resolverDuracionCitaMinutos(s, servicios);
+                                                            const updated = [...selectedServicios, { id: s.id, nombre: s.nombre, precio, duracionMin: durServ }];
                                                             setSelectedServicios(updated);
-                                                            
+
                                                             const total = updated.reduce((sum, item) => sum + Number(item.precio), 0);
-                                                            
-                                                            setNewCita(prev => ({ 
-                                                                ...prev, 
+                                                            const totalDur = updated.reduce((sum, item) => sum + Number(item.duracionMin || resolverDuracionCitaMinutos(item, servicios)), 0);
+
+                                                            setNewCita(prev => ({
+                                                                ...prev,
                                                                 monto: total.toString(),
                                                                 servicio: updated.map(item => item.nombre).join(', '),
-                                                                duracionMin: s.duracionMin || prev.duracionMin || 90
+                                                                duracionMin: totalDur
                                                             })); 
                                                             
                                                             setServicioFiltro(''); 
@@ -1881,7 +1915,7 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                                                         <div className="w-10 h-10 rounded-full bg-turquesa/10 flex items-center justify-center font-black text-turquesa">{s.nombre[0]}</div>
                                                         <div>
                                                             <p className="font-semibold text-acero text-sm">{s.nombre}</p>
-                                                            <p className="text-xs text-gray-400">${s.precioVenta || s.precio} • {s.duracionMin || 90} min</p>
+                                                            <p className="text-xs text-gray-400">${s.precioVenta || s.precio} • {resolverDuracionCitaMinutos(s, servicios)} min</p>
                                                         </div>
                                                     </button>
                                                 ))}
@@ -1935,6 +1969,17 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                                         <input type="time" value={newCita.hora} onChange={e => setNewCita({ ...newCita, hora: e.target.value })} className="w-full h-14 pl-12 pr-4 bg-gray-50 border-2 border-transparent rounded-2xl font-bold outline-none focus:border-turquesa/30" />
                                         <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><Clock size={20} /></div>
                                     </div>
+                                    {conflictoEspecialista && (
+                                        <div className="p-3 bg-amber-50 border border-amber-300 rounded-xl text-amber-900 text-xs font-bold flex items-start gap-2">
+                                            <span>⏱️</span>
+                                            <div>
+                                                <p className="font-black">Especialista en tratamiento en ese horario:</p>
+                                                <p className="text-[11px] font-normal text-amber-800">
+                                                    {conflictoEspecialista.especialistaNombre || conflictoEspecialista.especialista} tiene <strong>{conflictoEspecialista.servicio}</strong> de <strong>{conflictoEspecialista.horaInicioStr} a {conflictoEspecialista.horaFinStr}</strong> ({conflictoEspecialista.duracionRealMin} min) con {conflictoEspecialista.paciente || conflictoEspecialista.pacienteNombre}.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Cabina / Espacio (Opcional)</label>
@@ -2473,7 +2518,7 @@ El cobro y emisión de recibos se gestionan directamente desde el módulo de CAJ
                                             especialistaId: c.especialistaId,
                                             especialistaNombre: c.especialista,
                                             hora: c.hora,
-                                            duracionMin: c.duracionMin || 30,
+                                            duracionMin: resolverDuracionCitaMinutos(c, servicios),
                                             fecha: c.fechaYMD,
                                             cabina: c.cabina || '',
                                             anticipo: c.anticipo || '',

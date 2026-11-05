@@ -670,9 +670,10 @@ function NuevaSesionForm({ tratamiento, pacienteId, onSaved, onCancel, esPrimera
                         especialistaEmail: staff?.email || user?.email || '',
                         servicio: tratamiento.nombre || tratamiento.tipo,
                         fecha: siguienteFecha,
+                        fechaYMD: siguienteFecha,
                         hora: siguienteHora,
-                        fechaHora: fechaBase.toISOString(),
-                        duracionMin: siguienteDuracion,
+                        fechaHora: `${siguienteFecha}T${siguienteHora.length === 5 ? siguienteHora + ':00' : siguienteHora}`,
+                        duracionMin: Number(siguienteDuracion || 60),
                         status: 'Confirmada',
                         notas: 'Agendada desde expediente clínico tras sesión de ' + tratamiento.nombre,
                     });

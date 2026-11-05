@@ -15,7 +15,7 @@ import {
 import { format, addDays, subDays } from 'date-fns';
 import { es } from 'date-fns/locale';
 import AgendaGlobalEjecutiva from '../../components/agenda/AgendaGlobalEjecutiva';
-import { onCitasChange, updateCitaStatus, verificarMovimientosExpediente, createCita, CABINAS_ALFRA, checkConflictoCabina, isStaffClinico, getTratamientosYPlanesActivosPaciente } from '../../services/citasService';
+import { onCitasChange, updateCitaStatus, verificarMovimientosExpediente, createCita, CABINAS_ALFRA, checkConflictoCabina, checkConflictoEspecialista, citaMatchesEspecialista, resolverDuracionCitaMinutos, extraerRangoCitaLocal, isStaffClinico, getTratamientosYPlanesActivosPaciente } from '../../services/citasService';
 import { onServiciosChange } from '../../services/comercialService';
 import { onStaffChange } from '../../services/staffService';
 import { onPacientesChange } from '../../services/pacientesService';
@@ -26,6 +26,7 @@ export default function SupervisionAgenda() {
     const [currentDate, setCurrentDate] = useState(new Date());
     const [viewMode, setViewMode] = useState('tablero'); // 'tablero' | 'lista' | 'disponibilidad' 
     const [selectedEspIds, setSelectedEspIds] = useState(['todos']);
+    const [duracionFiltro, setDuracionFiltro] = useState(90);
     const [isCopied, setIsCopied] = useState(false);
     const [isUbicacionCopied, setIsUbicacionCopied] = useState(false);
     const [citas, setCitas] = useState([]);
@@ -203,10 +204,12 @@ const [savingReagendar, setSavingReagendar] = useState(false);
         const t = tratamientoSeleccionado;
         const montoFinal = sesionYaPagada ? '0' : (montoSesionPropuesto || '0');
 
+        const durRealTrat = resolverDuracionCitaMinutos(t, servicios);
         setSelectedServicios([{
             id: t.id || ('trat_activo_' + Date.now()),
             nombre: t.nombre,
             precio: montoFinal,
+            duracionMin: durRealTrat,
             esTratamientoActivo: true
         }]);
         setServicioFiltro('');
@@ -214,7 +217,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
         setForm(prev => ({
             ...prev,
             servicio: t.nombre,
-            duracionMin: t.duracionMin || prev.duracionMin || 60,
+            duracionMin: durRealTrat,
             especialistaId: t.especialistaId || prev.especialistaId || '',
             especialistaNombre: t.especialistaNombre || prev.especialistaNombre || '',
             citaPagada: sesionYaPagada,
@@ -318,6 +321,25 @@ const [savingReagendar, setSavingReagendar] = useState(false);
             ignoreCitaId: editingCita?.id
         });
     }, [citas, form.cabina, form.fecha, form.hora, form.duracionMin, editingCita]);
+
+    const conflictoEspecialista = useMemo(() => {
+        if (!form.especialistaId && !form.especialistaNombre) return null;
+        const espObj = staff.find(e => e.id === form.especialistaId);
+        return checkConflictoEspecialista(citas, {
+            especialistaIdent: {
+                id: form.especialistaId,
+                staffId: form.especialistaId,
+                uid: espObj?.uid || null,
+                email: espObj?.email || null,
+                nombre: espObj?.nombre || form.especialistaNombre || ''
+            },
+            fechaYMD: form.fecha,
+            hora: form.hora,
+            duracionMin: form.duracionMin,
+            ignoreCitaId: editingCita?.id,
+            catalogoServicios: servicios
+        });
+    }, [citas, staff, servicios, form.especialistaId, form.especialistaNombre, form.fecha, form.hora, form.duracionMin, editingCita]);
     const [isNuevoPacienteModalOpen, setIsNuevoPacienteModalOpen] = useState(false);
     const [nuevoPaciente, setNuevoPaciente] = useState({ nombre: '', telefono: '', correo: '' });
     const [isConfirmDuracionOpen, setIsConfirmDuracionOpen] = useState(false);
@@ -431,7 +453,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                 servicio: cita.servicio || '',
                 fecha: cita.fecha || new Date().toISOString().split('T')[0],
                 hora: cita.hora || '09:00',
-                duracionMin: cita.duracionMin || 30,
+                duracionMin: resolverDuracionCitaMinutos(cita, servicios),
                 notas: cita.notas || '',
                 monto: '',
                 estadoPago: 'Pendiente',
@@ -444,7 +466,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                 pacienteId: '', pacienteNombre: '', telefono: '',
                 especialistaId: staff[0]?.id || '', especialistaNombre: staff[0]?.nombre || '',
                 servicio: '', fecha: new Date().toISOString().split('T')[0],
-                hora: '09:00', duracionMin: 30, notas: '',
+                hora: '09:00', duracionMin: 90, notas: '',
                 monto: '',
                 estadoPago: 'Pendiente',
                 cabina: '',
@@ -590,56 +612,65 @@ const [savingReagendar, setSavingReagendar] = useState(false);
         }
     };
 
-    const getHorasDisponibles = (fecha, espIds) => {
+    const getHorasDisponibles = (fecha, espIds, duracionSolicitada = duracionFiltro) => {
         const startH = 9, endH = 19;
-        const duracionBloque = 90;
+        const duracionBloque = Number(duracionSolicitada || duracionFiltro || 90);
         const slots = [];
-        
+
         const dayStr = format(fecha, 'yyyy-MM-dd');
-        
-        const idsAEvaluar = espIds.includes('todos') 
-            ? staff.map(e => e.id) 
+
+        const idsAEvaluar = espIds.includes('todos')
+            ? staff.map(e => e.id)
             : espIds;
 
-        for (let h = startH; h <= endH; h++) {
-            for (let m of [0, 30]) {
-                if (h === endH && m > 0) break;
-                
-                const sStart = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), h, m, 0, 0).getTime();
-                const sEnd = sStart + (duracionBloque * 60000);
-                
-                const endDate = new Date(sEnd);
-                if (endDate.getHours() > endH || (endDate.getHours() === endH && endDate.getMinutes() > 0)) continue;
-                
-                const hayAlMenosUnoLibre = idsAEvaluar.some(eid => {
-                    const esp = staff.find(e => e.id === eid);
-                    const citasEsp = citas.filter(c => 
-                        (c.especialistaId === eid || (esp && c.especialistaNombre === esp.nombre)) && 
-                        c.fechaYMD === dayStr && 
-                        c.status !== 'Cancelada'
-                    );
-
-                    const estaOcupado = citasEsp.some(c => {
-                        let cStart;
-                        try {
-                            cStart = new Date(c.fechaHora).getTime();
-                            if (isNaN(cStart)) throw new Error();
-                        } catch {
-                            const [y, mon, d] = c.fechaYMD.split('-');
-                            const [hh, mm] = c.hora.split(':');
-                            cStart = new Date(y, mon - 1, d, hh, mm).getTime();
-                        }
-                        // Bloqueamos el tiempo real de la cita (o 90 min por defecto)
-                        const cEnd = cStart + ((c.duracionMin || 90) * 60000);
-                        return (sStart < cEnd && sEnd > cStart);
-                    });
-
-                    return !estaOcupado;
-                });
-
-                if (hayAlMenosUnoLibre) {
-                    slots.push(format(new Date(sStart), 'hh:mm a'));
+        const rangosPorEsp = {};
+        const candidatosExtra = new Set();
+        idsAEvaluar.forEach(eid => {
+            const esp = staff.find(e => e.id === eid);
+            const ident = {
+                id: eid,
+                staffId: eid,
+                uid: esp?.uid || null,
+                email: esp?.email || null,
+                nombre: esp?.nombre || ''
+            };
+            const rangos = [];
+            citas.forEach(c => {
+                if (!citaMatchesEspecialista(c, ident)) return;
+                const r = extraerRangoCitaLocal(c, servicios);
+                if (r && r.fechaYMD === dayStr) {
+                    rangos.push(r);
+                    if (r.endMin >= startH * 60 && r.endMin + duracionBloque <= endH * 60) {
+                        candidatosExtra.add(r.endMin);
+                    }
                 }
+            });
+            rangosPorEsp[eid] = rangos;
+        });
+
+        const candidatosMin = new Set();
+        for (let m = startH * 60; m + duracionBloque <= endH * 60; m += 30) {
+            candidatosMin.add(m);
+        }
+        candidatosExtra.forEach(m => candidatosMin.add(m));
+
+        const sortedCandidatos = Array.from(candidatosMin).sort((a, b) => a - b);
+
+        for (const slotStartMin of sortedCandidatos) {
+            const slotEndMin = slotStartMin + duracionBloque;
+            if (slotEndMin > endH * 60) continue;
+
+            const hayAlMenosUnoLibre = idsAEvaluar.some(eid => {
+                const rangosEsp = rangosPorEsp[eid] || [];
+                const estaOcupado = rangosEsp.some(r => slotStartMin < r.endMin && slotEndMin > r.startMin);
+                return !estaOcupado;
+            });
+
+            if (hayAlMenosUnoLibre) {
+                const h = Math.floor(slotStartMin / 60);
+                const m = slotStartMin % 60;
+                const sStart = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), h, m, 0, 0).getTime();
+                slots.push(format(new Date(sStart), 'hh:mm a'));
             }
         }
         return slots;
@@ -907,6 +938,21 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                 />
             ) : viewMode === 'disponibilidad' ? (
                 <div className="space-y-6">
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                        <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Duración del Tratamiento:</span>
+                        <div className="flex flex-wrap gap-2">
+                            {[30, 45, 60, 90, 120, 150, 180].map(dur => (
+                                <button
+                                    key={dur}
+                                    type="button"
+                                    onClick={() => setDuracionFiltro(dur)}
+                                    className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${duracionFiltro === dur ? 'bg-turquesa text-white shadow-md' : 'bg-gray-50 text-gray-400 hover:bg-gray-100'}`}
+                                >
+                                    {dur} min
+                                </button>
+                            ))}
+                        </div>
+                    </div>
                     <Card className="p-10 md:p-16 rounded-[3.5rem] border-none shadow-2xl bg-white/70 backdrop-blur-xl relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-turquesa/5 rounded-full blur-[100px] -mr-48 -mt-48 transition-transform duration-1000 group-hover:scale-110"></div>
 
@@ -1259,9 +1305,13 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                                                 const filtered = selectedServicios.filter(item => item.id !== s.id);
                                                                 setSelectedServicios(filtered);
                                                                 const total = filtered.reduce((sum, item) => sum + Number(item.precio), 0);
-                                                                setForm(prev => ({ 
-                                                                    ...prev, 
+                                                                const totalDur = filtered.length > 0
+                                                                    ? filtered.reduce((sum, item) => sum + Number(item.duracionMin || resolverDuracionCitaMinutos(item, servicios)), 0)
+                                                                    : 60;
+                                                                setForm(prev => ({
+                                                                    ...prev,
                                                                     monto: total.toString(),
+                                                                    duracionMin: totalDur,
                                                                     servicio: filtered.map(item => item.nombre).join(', '),
                                                                     citaPagada: filtered.length === 0 ? false : prev.citaPagada
                                                                 }));
@@ -1314,16 +1364,18 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                                             if (alreadySelected) { alert('Este servicio ya fue agregado.'); return; }
                                                             
                                                             const precio = s.precioVenta || s.precio || 0;
-                                                            const updated = [...selectedServicios, { id: s.id, nombre: s.nombre, precio }];
+                                                            const durServ = resolverDuracionCitaMinutos(s, servicios);
+                                                            const updated = [...selectedServicios, { id: s.id, nombre: s.nombre, precio, duracionMin: durServ }];
                                                             setSelectedServicios(updated);
-                                                            
+
                                                             const total = updated.reduce((sum, item) => sum + Number(item.precio), 0);
-                                                            
-                                                            setForm(prev => ({ 
-                                                                ...prev, 
+                                                            const totalDur = updated.reduce((sum, item) => sum + Number(item.duracionMin || resolverDuracionCitaMinutos(item, servicios)), 0);
+
+                                                            setForm(prev => ({
+                                                                ...prev,
                                                                 monto: total.toString(),
                                                                 servicio: updated.map(item => item.nombre).join(', '),
-                                                                duracionMin: s.duracionMin || prev.duracionMin || 90
+                                                                duracionMin: totalDur
                                                             }));
                                                             
                                                             setServicioFiltro('');
@@ -1333,7 +1385,7 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                                         <div className="w-10 h-10 rounded-full bg-turquesa/10 flex items-center justify-center font-black text-turquesa">{s.nombre[0]}</div>
                                                         <div>
                                                             <p className="font-semibold text-acero text-sm">{s.nombre}</p>
-                                                            <p className="text-xs text-gray-400">${s.precioVenta || s.precio} • {s.duracionMin || 90} min</p>
+                                                            <p className="text-xs text-gray-400">${s.precioVenta || s.precio} • {resolverDuracionCitaMinutos(s, servicios)} min</p>
                                                         </div>
                                                     </button>
                                                 ))}
@@ -1372,6 +1424,17 @@ const [savingReagendar, setSavingReagendar] = useState(false);
                                 <div className="space-y-3">
                                     <label className="text-[10px] font-black text-acero/30 uppercase tracking-[0.3em] px-1">Hora *</label>
                                     <input type="time" required value={form.hora} onChange={e => setForm(prev => ({ ...prev, hora: e.target.value }))} className={inputCls} />
+                                    {conflictoEspecialista && (
+                                        <div className="p-3 bg-amber-50 border border-amber-300 rounded-xl text-amber-900 text-xs font-bold flex items-start gap-2">
+                                            <span>⏱️</span>
+                                            <div>
+                                                <p className="font-black">Especialista en tratamiento en ese horario:</p>
+                                                <p className="text-[11px] font-normal text-amber-800">
+                                                    {conflictoEspecialista.especialistaNombre || conflictoEspecialista.especialista} tiene <strong>{conflictoEspecialista.servicio}</strong> de <strong>{conflictoEspecialista.horaInicioStr} a {conflictoEspecialista.horaFinStr}</strong> ({conflictoEspecialista.duracionRealMin} min) con {conflictoEspecialista.paciente || conflictoEspecialista.pacienteNombre}.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="space-y-3">

@@ -12,6 +12,184 @@ const normStr = (str) =>
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '');
 
+// Calcula la duración real en minutos de una cita o tratamiento cruzando con el catálogo de servicios
+export const resolverDuracionCitaMinutos = (citaOrTrat, catalogoServicios = []) => {
+    if (!citaOrTrat) return 60;
+
+    const rawExplicita = citaOrTrat.duracionMin ?? citaOrTrat.duracionMinutos ?? citaOrTrat.duracion ?? 0;
+    const durExplicita = parseInt(String(rawExplicita).replace(/[^0-9]/g, ''), 10) || 0;
+
+    // Buscar en el catálogo de servicios por servicioId o por nombres de servicios (soporta múltiples separados por coma o +)
+    let durCatalogo = 0;
+    const nombreServicioRaw = String(citaOrTrat.servicio || citaOrTrat.nombre || citaOrTrat.objetivo || '').trim();
+
+    if (Array.isArray(catalogoServicios) && catalogoServicios.length > 0) {
+        if (citaOrTrat.servicioId) {
+            const foundById = catalogoServicios.find(s => s.id === citaOrTrat.servicioId);
+            if (foundById) {
+                durCatalogo = parseInt(String(foundById.duracionMinutos || foundById.duracionMin || foundById.duracion || 0), 10) || 0;
+            }
+        }
+        if (!durCatalogo && nombreServicioRaw) {
+            const partes = nombreServicioRaw.split(/[,+]/).map(p => normStr(p)).filter(Boolean);
+            let sumaPartes = 0;
+            partes.forEach(parteNorm => {
+                const matchServ = catalogoServicios.find(s => {
+                    const sNorm = normStr(s.nombre || '');
+                    return sNorm && (sNorm === parteNorm || sNorm.includes(parteNorm) || parteNorm.includes(sNorm));
+                });
+                if (matchServ) {
+                    const d = parseInt(String(matchServ.duracionMinutos || matchServ.duracionMin || matchServ.duracion || 0), 10) || 0;
+                    sumaPartes += d;
+                }
+            });
+            if (sumaPartes > 0) {
+                durCatalogo = sumaPartes;
+            }
+        }
+    }
+
+    // Inferencia clínica por tipo de tratamiento si no hay catálogo o el catálogo no tenía duración
+    let durInferida = 60;
+    const nNorm = normStr(nombreServicioRaw);
+    if (/paquete|reductiv|lipo|corporal|cavitaci|post\s*op|molde/i.test(nNorm)) {
+        durInferida = 90;
+    } else if (/valoraci/i.test(nNorm)) {
+        durInferida = 30;
+    } else if (/laser|depilaci/i.test(nNorm)) {
+        durInferida = 45;
+    }
+
+    // Si el catálogo indica una duración real y la cita tenía un genérico (30 o 60) o no tenía, priorizar la duración real del tratamiento
+    if (durCatalogo > 0) {
+        if (!durExplicita) return durCatalogo;
+        if ((durExplicita === 60 || durExplicita === 30) && durCatalogo !== durExplicita) {
+            return durCatalogo;
+        }
+        return Math.max(durExplicita, durCatalogo);
+    }
+
+    if (durExplicita > 0) return durExplicita;
+    return durInferida;
+};
+
+// Extrae fecha local YYYY-MM-DD y el rango exacto [startMin, endMin] en minutos del día para una cita
+export const extraerRangoCitaLocal = (cita, catalogoServicios = []) => {
+    if (!cita) return null;
+
+    const statusNorm = normStr(cita.status || cita.estado || '');
+    const statusIgnorados = [
+        'cancelada', 'cancelado', 'no asistio', 'no_asistio',
+        'reagendada', 'reagendado', 'eliminada', 'eliminado', 'baja'
+    ];
+    if (statusIgnorados.some(st => statusNorm.includes(st))) return null;
+
+    let fechaYMD = '';
+    let startH = null;
+    let startM = null;
+
+    // 1. Evaluar fechaHora ISO primero para fechas reagendadas, respetando conversión UTC si termina en Z
+    if (cita.fechaHora) {
+        const fhStr = String(cita.fechaHora).trim();
+        if (fhStr.endsWith('Z') || /[+-]\d{2}:\d{2}$/.test(fhStr)) {
+            const dObj = new Date(fhStr);
+            if (!isNaN(dObj.getTime())) {
+                const pad = (n) => String(n).padStart(2, '0');
+                fechaYMD = `${dObj.getFullYear()}-${pad(dObj.getMonth() + 1)}-${pad(dObj.getDate())}`;
+                startH = dObj.getHours();
+                startM = dObj.getMinutes();
+            }
+        } else if (fhStr.includes('T')) {
+            const [fPart, tPart] = fhStr.split('T');
+            if (fPart && /^\d{4}-\d{2}-\d{2}/.test(fPart)) {
+                fechaYMD = fPart.slice(0, 10);
+            }
+            if (tPart) {
+                const [hh, mm] = tPart.split(':').map(Number);
+                if (!isNaN(hh) && !isNaN(mm)) {
+                    startH = hh;
+                    startM = mm;
+                }
+            }
+        }
+    }
+
+    // 2. Respaldo o prioridad con fechaYMD / fecha y hora explícita
+    if (!fechaYMD) {
+        fechaYMD = cita.fechaYMD || cita.fecha || '';
+    }
+    if (cita.hora && (startH === null || startM === null)) {
+        const horaClean = String(cita.hora)
+            .toLowerCase()
+            .replace(/a\.?\s*m\.?/g, 'am')
+            .replace(/p\.?\s*m\.?/g, 'pm')
+            .trim();
+        const match = horaClean.match(/(\d{1,2}):(\d{2})\s*(am|pm)?/i);
+        if (match) {
+            let h = parseInt(match[1], 10);
+            const m = parseInt(match[2], 10);
+            const ampm = (match[3] || '').toLowerCase();
+            if (ampm === 'pm' && h < 12) h += 12;
+            if (ampm === 'am' && h === 12) h = 0;
+            startH = h;
+            startM = m;
+        }
+    }
+
+    if (!fechaYMD || startH === null || startM === null) return null;
+
+    const duracionMin = resolverDuracionCitaMinutos(cita, catalogoServicios);
+    const startMin = startH * 60 + startM;
+    const endMin = startMin + duracionMin;
+
+    const pad = (n) => String(n).padStart(2, '0');
+    const horaInicioStr = `${pad(Math.floor(startMin / 60))}:${pad(startMin % 60)}`;
+    const horaFinStr = `${pad(Math.floor(endMin / 60))}:${pad(endMin % 60)}`;
+
+    return {
+        fechaYMD,
+        startMin,
+        endMin,
+        duracionMin,
+        horaInicioStr,
+        horaFinStr,
+        servicio: cita.servicio || 'Tratamiento'
+    };
+};
+
+// Verifica si un especialista tiene empalme con otro tratamiento en la fecha/hora indicada considerando la duración real de sus tratamientos
+export const checkConflictoEspecialista = (citas = [], { especialistaIdent, fechaYMD, hora, duracionMin = 60, ignoreCitaId = null, catalogoServicios = [] }) => {
+    if (!especialistaIdent || !fechaYMD || !hora) return null;
+
+    const rangoTarget = extraerRangoCitaLocal({ fecha: fechaYMD, fechaYMD, hora, duracionMin }, catalogoServicios);
+    if (!rangoTarget) return null;
+
+    const startM = rangoTarget.startMin;
+    const endM = startM + (Number(duracionMin) || rangoTarget.duracionMin || 60);
+    const targetIdClean = ignoreCitaId ? String(ignoreCitaId).trim() : null;
+
+    for (const c of citas) {
+        if (targetIdClean) {
+            const cId = String(c.id || c.citaId || c._id || '').trim();
+            if (cId && cId === targetIdClean) continue;
+        }
+        if (!citaMatchesEspecialista(c, especialistaIdent)) continue;
+
+        const r = extraerRangoCitaLocal(c, catalogoServicios);
+        if (!r || r.fechaYMD !== fechaYMD) continue;
+
+        if (startM < r.endMin && endM > r.startMin) {
+            return {
+                ...c,
+                duracionRealMin: r.duracionMin,
+                horaInicioStr: r.horaInicioStr,
+                horaFinStr: r.horaFinStr
+            };
+        }
+    }
+    return null;
+};
+
 // Asegura que toda cita tenga fechaHora ISO válida incluso si fue creada solo con fecha + hora
 export const normalizeCitaDoc = (rawDoc) => {
     const data = typeof rawDoc.data === 'function' ? { id: rawDoc.id, ...rawDoc.data() } : { ...rawDoc };
@@ -320,10 +498,25 @@ export const descartarAlertasPorCita = async (citaId) => {
 // Actualizar status o datos de la cita
 export const updateCitaStatus = async (id, newStatus, extraData = {}) => {
     try {
+        const syncFields = { ...extraData };
+        if (syncFields.fechaHora && String(syncFields.fechaHora).includes('T')) {
+            const fhStr = String(syncFields.fechaHora).trim();
+            if (!syncFields.fecha && !syncFields.fechaYMD) {
+                const fPart = fhStr.split('T')[0];
+                if (/^\d{4}-\d{2}-\d{2}$/.test(fPart)) {
+                    syncFields.fecha = fPart;
+                    syncFields.fechaYMD = fPart;
+                }
+            }
+            if (!syncFields.hora) {
+                const tPart = fhStr.split('T')[1];
+                if (tPart) syncFields.hora = tPart.slice(0, 5);
+            }
+        }
         const docRef = doc(db, COLLECTION_NAME, id);
         await updateDoc(docRef, {
             status: newStatus,
-            ...extraData,
+            ...syncFields,
             updatedAt: new Date().toISOString()
         });
 
@@ -461,6 +654,11 @@ export const onCitasPacienteChange = (pacienteId, callback) => {
 export const getTratamientosYPlanesActivosPaciente = async (pacienteId) => {
     if (!pacienteId) return [];
     const resultados = [];
+    let catalogoServicios = [];
+    try {
+        const snapServ = await getDocs(collection(db, 'servicios'));
+        catalogoServicios = snapServ.docs.map(d => ({ id: d.id, ...d.data() }));
+    } catch (_) {}
 
     // 1. Obtener planes y pagos del paciente
     const planesPaciente = [];
@@ -508,7 +706,7 @@ export const getTratamientosYPlanesActivosPaciente = async (pacienteId) => {
                     especialistaNombre: data.especialistaNombre || '',
                     especialistaPuesto: data.especialistaPuesto || '',
                     fechaInicio: data.fechaInicio || data.creadoEn,
-                    duracionMin: 60,
+                    duracionMin: resolverDuracionCitaMinutos({ nombre: data.nombre || data.tipo, duracionMin: data.duracionMin || data.duracionMinutos }, catalogoServicios),
                     // Datos financieros cruzados del plan
                     planId: planAsoc?.id || null,
                     tienePlan: !!planAsoc,
@@ -550,7 +748,7 @@ export const getTratamientosYPlanesActivosPaciente = async (pacienteId) => {
                     acumulado: acumNum,
                     meta: metaNum,
                     faltante: faltanteNum,
-                    duracionMin: 60,
+                    duracionMin: resolverDuracionCitaMinutos({ nombre: p.objetivo || p.servicio || p.tratamiento, duracionMin: p.duracionMin }, catalogoServicios),
                     tienePlan: true,
                     sesionesTotales: Number(p.sesiones || p.numSesiones || 0),
                 });
