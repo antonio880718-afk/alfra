@@ -100,6 +100,14 @@ export default function ControlFinanciamientos() {
     const [planToDelete, setPlanToDelete] = useState(null);
     const [deletingPlan, setDeletingPlan] = useState(false);
 
+    // Estados para Modalidad "Paciente Recuperado" (nuevo precio por sesión + sesiones faltantes)
+    const [isRecuperadoModalOpen, setIsRecuperadoModalOpen] = useState(false);
+    const [planRecuperado, setPlanRecuperado] = useState(null);
+    const [precioSesionAcordado, setPrecioSesionAcordado] = useState('');
+    const [sesionesFaltantes, setSesionesFaltantes] = useState('');
+    const [notaRecuperacion, setNotaRecuperacion] = useState('Acuerdo de recuperación de paciente');
+    const [savingRecuperado, setSavingRecuperado] = useState(false);
+
     // Auditoría de tratamientos duplicados exclusiva para el Administrador
     const pacientesConDuplicados = useMemo(() => {
         if (!esAdmin) return [];
@@ -499,6 +507,48 @@ export default function ControlFinanciamientos() {
         }
     };
 
+    const handleOpenRecuperadoModal = (plan) => {
+        setPlanRecuperado(plan);
+        setPrecioSesionAcordado(plan.costoPorSesion > 0 ? String(plan.costoPorSesion) : '');
+        setSesionesFaltantes(plan.sesionesFaltantesAcordadas > 0 ? String(plan.sesionesFaltantesAcordadas) : '');
+        setNotaRecuperacion('Acuerdo de recuperación de paciente');
+        setIsRecuperadoModalOpen(true);
+    };
+
+    const handleGuardarAcuerdoRecuperado = async () => {
+        if (!planRecuperado) return;
+        const precioSes = parseFloat(precioSesionAcordado);
+        const faltantes = parseInt(sesionesFaltantes, 10);
+        if (isNaN(precioSes) || precioSes <= 0 || isNaN(faltantes) || faltantes <= 0) {
+            alert('Por favor ingresa el monto acordado por sesión y cuántas sesiones le faltan.');
+            return;
+        }
+        setSavingRecuperado(true);
+        try {
+            const acumuladoActual = parseFloat(planRecuperado.acumulado) || 0;
+            const saldoRestanteAcordado = Math.round((precioSes * faltantes) * 100) / 100;
+            const nuevaMetaTotal = Math.round((acumuladoActual + saldoRestanteAcordado) * 100) / 100;
+
+            await updatePlan(planRecuperado.id, {
+                meta: nuevaMetaTotal,
+                costoPorSesion: precioSes,
+                sesionesFaltantesAcordadas: faltantes,
+                esPacienteRecuperado: true,
+                fechaRecuperacion: new Date().toISOString(),
+                activo: true,
+                morosidad: false,
+                ultimoAjuste: `${notaRecuperacion || 'Paciente Recuperado'}: ${faltantes} sesiones faltantes a $${precioSes.toLocaleString('es-MX')} c/u`
+            });
+            setIsRecuperadoModalOpen(false);
+            setPlanRecuperado(null);
+        } catch (err) {
+            console.error('Error guardando acuerdo de recuperación:', err);
+            alert('Error al guardar el acuerdo: ' + (err.message || err));
+        } finally {
+            setSavingRecuperado(false);
+        }
+    };
+
     const handleCrearPlan = async () => {
         if (!nuevoPlan.paciente || !nuevoPlan.meta) { alert('Completa los campos.'); return; }
         setSaving(true);
@@ -714,6 +764,16 @@ export default function ControlFinanciamientos() {
                                                 <span>Acumulado: <strong className="text-turquesa">{formatCurrency(plan.acumulado)}</strong></span>
                                                 <span>•</span>
                                                 <span className="text-amber-700 font-bold">Falta: {formatCurrency(plan.faltante)}</span>
+                                                {plan.costoPorSesion > 0 && (
+                                                    <>
+                                                        <span>•</span>
+                                                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-black ${plan.esPacienteRecuperado ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-teal-50 text-teal-700 border border-teal-200'}`}>
+                                                            {plan.esPacienteRecuperado ? '🎯 Recuperado: ' : '💳 Cuota: '}
+                                                            {formatCurrency(plan.costoPorSesion)}/sesión
+                                                            {plan.sesionesFaltantesAcordadas > 0 ? ` (${plan.sesionesFaltantesAcordadas} restantes)` : ''}
+                                                        </span>
+                                                    </>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -739,6 +799,15 @@ export default function ControlFinanciamientos() {
                                         </button>
                                         <Button variant="outline" size="xs" icon={FileText} onClick={() => handleVerEstadoCuenta(plan)}>Edo. Cta</Button>
                                         <Button variant="outline" size="xs" icon={DollarSign} onClick={() => handleOpenAbonoPasado(plan)}>Abono</Button>
+                                        <Button
+                                            variant="outline"
+                                            size="xs"
+                                            onClick={() => handleOpenRecuperadoModal(plan)}
+                                            className="border-amber-300 text-amber-800 bg-amber-50 hover:bg-amber-100 font-bold"
+                                            title="Configurar precio acordado por sesión y sesiones faltantes para paciente recuperado"
+                                        >
+                                            🎯 Recuperado
+                                        </Button>
                                         <Button variant="outline" size="xs" icon={Edit3} onClick={() => handleOpenModal(plan)}>Ajustar</Button>
                                         <Button 
                                             variant="outline" 
@@ -812,6 +881,109 @@ export default function ControlFinanciamientos() {
                     <div>
                         <label className="text-xs font-bold text-gray-500 mb-1 block">Razón / Concepto del Ajuste</label>
                         <input className="w-full p-3 border rounded-xl text-sm" placeholder="Ej. Actualización de paquete clínico" value={razon} onChange={e => setRazon(e.target.value)} />
+                    </div>
+                </div>
+            </Modal>
+
+            {/* Modal: Acuerdo de Paciente Recuperado */}
+            <Modal
+                isOpen={isRecuperadoModalOpen}
+                onClose={() => setIsRecuperadoModalOpen(false)}
+                title={`🎯 Paciente Recuperado: ${getNombrePacientePlan(planRecuperado)}`}
+                footer={
+                    <div className="flex justify-end gap-3">
+                        <Button variant="ghost" onClick={() => setIsRecuperadoModalOpen(false)}>Cancelar</Button>
+                        <Button
+                            variant="primary"
+                            onClick={handleGuardarAcuerdoRecuperado}
+                            disabled={savingRecuperado}
+                            className="bg-amber-600 hover:bg-amber-700 text-white font-black"
+                        >
+                            {savingRecuperado ? 'Guardando...' : '✓ Guardar Acuerdo de Recuperación'}
+                        </Button>
+                    </div>
+                }
+            >
+                <div className="space-y-4">
+                    <div className="p-3.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 space-y-1">
+                        <p className="font-black">Configuración directa de regreso al tratamiento</p>
+                        <p className="text-[11px] text-amber-800">
+                            Ingresa el <strong>nuevo monto acordado por sesión</strong> y <strong>cuántas sesiones le faltan</strong>. El sistema recalculará su saldo restante y le mostrará esta tarifa preferencial tanto en Caja como cuando el paciente agende desde su App.
+                        </p>
+                    </div>
+
+                    <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs flex justify-between items-center">
+                        <div>
+                            <span className="text-gray-500 block">Tratamiento / Paquete:</span>
+                            <strong className="text-slate-900 text-sm">{planRecuperado?.objetivo}</strong>
+                        </div>
+                        <div className="text-right">
+                            <span className="text-gray-500 block">Ya abonado (Acumulado):</span>
+                            <strong className="text-emerald-700 text-sm">{formatCurrency(planRecuperado?.acumulado || 0)}</strong>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label className="text-xs font-black text-gray-700 mb-1 block">
+                                1. Nuevo Precio Acordado por Sesión ($) *
+                            </label>
+                            <input
+                                type="number"
+                                min="1"
+                                step="any"
+                                placeholder="Ej. 650"
+                                className="w-full p-3 border-2 border-amber-300 rounded-xl text-base font-black text-gray-900 focus:ring-2 focus:ring-amber-500 outline-none"
+                                value={precioSesionAcordado}
+                                onChange={e => setPrecioSesionAcordado(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label className="text-xs font-black text-gray-700 mb-1 block">
+                                2. ¿Cuántas Sesiones le Faltan? *
+                            </label>
+                            <input
+                                type="number"
+                                min="1"
+                                step="1"
+                                placeholder="Ej. 5"
+                                className="w-full p-3 border-2 border-amber-300 rounded-xl text-base font-black text-gray-900 focus:ring-2 focus:ring-amber-500 outline-none"
+                                value={sesionesFaltantes}
+                                onChange={e => setSesionesFaltantes(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    {Number(precioSesionAcordado) > 0 && Number(sesionesFaltantes) > 0 && (
+                        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-1.5 text-xs">
+                            <p className="text-[10px] font-black uppercase tracking-wider text-emerald-700">
+                                Resumen Automático del Acuerdo
+                            </p>
+                            <div className="flex justify-between text-gray-700">
+                                <span>Pagos futuros ({sesionesFaltantes} sesiones × {formatCurrency(precioSesionAcordado)}):</span>
+                                <strong className="text-emerald-800">{formatCurrency(Number(precioSesionAcordado) * Number(sesionesFaltantes))}</strong>
+                            </div>
+                            <div className="flex justify-between text-gray-700">
+                                <span>Saldo ya pagado anteriormente:</span>
+                                <strong>{formatCurrency(planRecuperado?.acumulado || 0)}</strong>
+                            </div>
+                            <div className="flex justify-between text-gray-900 font-black pt-1.5 border-t border-emerald-200 text-sm">
+                                <span>Nueva Meta Total Ajustada:</span>
+                                <span className="text-emerald-700">
+                                    {formatCurrency((Number(planRecuperado?.acumulado) || 0) + (Number(precioSesionAcordado) * Number(sesionesFaltantes)))}
+                                </span>
+                            </div>
+                        </div>
+                    )}
+
+                    <div>
+                        <label className="text-xs font-bold text-gray-500 mb-1 block">Nota en Bitácora (Opcional)</label>
+                        <input
+                            className="w-full p-3 border rounded-xl text-sm"
+                            placeholder="Ej. Promoción de regreso acordada con Administración"
+                            value={notaRecuperacion}
+                            onChange={e => setNotaRecuperacion(e.target.value)}
+                        />
                     </div>
                 </div>
             </Modal>

@@ -1018,9 +1018,13 @@ export default function CajaView() {
             });
 
             try {
-                await updatePlan(planSeleccionadoAbono.id, {
+                const payloadPlanUpdate = {
                     acumulado: parseFloat(planSeleccionadoAbono.acumulado || 0) + parseFloat(montoAbono),
-                });
+                };
+                if (Number(planSeleccionadoAbono.sesionesFaltantesAcordadas || 0) > 0) {
+                    payloadPlanUpdate.sesionesFaltantesAcordadas = Math.max(0, Number(planSeleccionadoAbono.sesionesFaltantesAcordadas) - 1);
+                }
+                await updatePlan(planSeleccionadoAbono.id, payloadPlanUpdate);
             } catch (errPlan) {
                 console.error('Error al actualizar acumulado del plan:', errPlan);
             }
@@ -1557,6 +1561,11 @@ export default function CajaView() {
                                                         setPacienteAbono(`${plan.paciente} - ${plan.objetivo}`);
                                                         setPlanSeleccionadoAbono(plan);
                                                         setMostrarSugerenciasPlan(false);
+                                                        if (Number(plan.costoPorSesion || 0) > 0 && (Number(plan.acumulado || 0) > 0 || plan.esPacienteRecuperado)) {
+                                                            setMontoAbono(String(plan.costoPorSesion));
+                                                        } else if (Number(plan.acumulado || 0) === 0 && Number(plan.anticipo || 0) > 0) {
+                                                            setMontoAbono(String(plan.anticipo));
+                                                        }
                                                     }}
                                                 >
                                                     <div>
@@ -1577,6 +1586,33 @@ export default function CajaView() {
                                 )}
                             </div>
                         </div>
+
+                        {planSeleccionadoAbono && (Number(planSeleccionadoAbono.costoPorSesion || 0) > 0 || Number(planSeleccionadoAbono.anticipo || 0) > 0) && (
+                            <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-xs flex items-center justify-between gap-2">
+                                <div>
+                                    <span className="font-black text-amber-900 block">
+                                        {planSeleccionadoAbono.esPacienteRecuperado ? '🎯 Paciente Recuperado (Precio Acordado)' : '💳 Esquema del Paquete'}
+                                    </span>
+                                    <span className="text-[11px] text-amber-800">
+                                        {Number(planSeleccionadoAbono.acumulado || 0) === 0 && !planSeleccionadoAbono.esPacienteRecuperado && Number(planSeleccionadoAbono.anticipo || 0) > 0
+                                            ? `1ª Sesión (Anticipo 20%): $${Number(planSeleccionadoAbono.anticipo).toLocaleString('es-MX')}`
+                                            : `Cuota por sesión: $${Number(planSeleccionadoAbono.costoPorSesion || 0).toLocaleString('es-MX')}${planSeleccionadoAbono.sesionesFaltantesAcordadas > 0 ? ` (${planSeleccionadoAbono.sesionesFaltantesAcordadas} restantes)` : ''}`}
+                                    </span>
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        const sugerido = (Number(planSeleccionadoAbono.acumulado || 0) === 0 && !planSeleccionadoAbono.esPacienteRecuperado && Number(planSeleccionadoAbono.anticipo || 0) > 0)
+                                            ? planSeleccionadoAbono.anticipo
+                                            : planSeleccionadoAbono.costoPorSesion;
+                                        if (sugerido > 0) setMontoAbono(String(sugerido));
+                                    }}
+                                    className="px-2.5 py-1 rounded-lg bg-amber-600 text-white font-black text-[10px] hover:bg-amber-700 shrink-0 cursor-pointer"
+                                >
+                                    Aplicar Cuota
+                                </button>
+                            </div>
+                        )}
 
                         <Input
                             label="Monto del Abono ($)"

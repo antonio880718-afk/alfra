@@ -338,15 +338,23 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             ? Number(planExistente.costoPorSesion)
             : esquema.pagoPorSesionRestante;
 
+        const esRecuperado = Boolean(planExistente?.esPacienteRecuperado);
+        const tieneCuotaEspecial = Number(planExistente?.costoPorSesion || 0) > 0;
+        const faltantesAcordadas = Number(planExistente?.sesionesFaltantesAcordadas || 0);
+
         return {
             esPaquete: true,
-            yaTienePaqueteActivo: yaActivo,
+            yaTienePaqueteActivo: yaActivo || esRecuperado || tieneCuotaEspecial,
+            esPacienteRecuperado: esRecuperado,
+            tieneCuotaEspecial,
+            sesionesFaltantesAcordadas: faltantesAcordadas,
             numeroSesiones: esquema.numeroSesiones,
             sesionesRestantes: esquema.sesionesRestantes,
             precioTotal: esquema.precioTotal,
             anticipoSesion1: esquema.anticipoSesion1,
+            pagoCatalogoNormal: esquema.pagoPorSesionRestante,
             pagoPorSesionRestante: cuotaPersonalizada,
-            montoACubrirHoy: yaActivo ? cuotaPersonalizada : esquema.anticipoSesion1,
+            montoACubrirHoy: (yaActivo || esRecuperado || tieneCuotaEspecial) ? cuotaPersonalizada : esquema.anticipoSesion1,
             planActivoId: planExistente?.id || null
         };
     }, [servicioSeleccionado, planesPaciente, tratamientosPaciente]);
@@ -923,11 +931,18 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                     <div className="mt-2 pt-2.5 border-t border-emerald-200/80 space-y-1">
                                         {estadoPagoSeleccionado.esPaquete ? (
                                             estadoPagoSeleccionado.yaTienePaqueteActivo ? (
-                                                <div className="bg-white/90 border border-emerald-300 rounded-xl p-2.5 text-emerald-950">
-                                                    <p className="text-[10px] font-black uppercase text-teal-700">Paquete Activo en Curso</p>
+                                                <div className="bg-white/90 border border-emerald-300 rounded-xl p-2.5 text-emerald-950 space-y-0.5">
+                                                    <p className="text-[10px] font-black uppercase text-teal-700">
+                                                        {estadoPagoSeleccionado.esPacienteRecuperado ? '🎯 Acuerdo Preferencial Activo' : 'Paquete Activo en Curso'}
+                                                    </p>
                                                     <p className="text-xs font-black mt-0.5">
                                                         Abono por sesión de tu paquete: <span className="text-emerald-700">${Number(estadoPagoSeleccionado.pagoPorSesionRestante).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
                                                     </p>
+                                                    {estadoPagoSeleccionado.sesionesFaltantesAcordadas > 0 && (
+                                                        <p className="text-[10px] font-bold text-amber-700">
+                                                            Sesiones restantes por tomar: {estadoPagoSeleccionado.sesionesFaltantesAcordadas}
+                                                        </p>
+                                                    )}
                                                 </div>
                                             ) : (
                                                 <div className="bg-white/90 border border-emerald-300 rounded-xl p-2.5 text-emerald-950 space-y-1">
@@ -1008,11 +1023,16 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                                 estadoPagoSeleccionado.yaTienePaqueteActivo ? (
                                                     <div className="bg-teal-500/15 border border-teal-400/30 rounded-xl p-3 space-y-1">
                                                         <span className="text-[10px] font-black uppercase tracking-wider text-teal-300 block">
-                                                            💳 Paquete Activo Detectado
+                                                            {estadoPagoSeleccionado.esPacienteRecuperado ? '🎯 Tarifa Especial Acordada en tu Plan' : '💳 Paquete Activo Detectado'}
                                                         </span>
                                                         <p className="text-xs font-black text-white">
                                                             Abono por sesión de tu paquete: <span className="text-emerald-300 text-sm">${Number(estadoPagoSeleccionado.pagoPorSesionRestante).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
                                                         </p>
+                                                        {estadoPagoSeleccionado.sesionesFaltantesAcordadas > 0 && (
+                                                            <p className="text-[11px] text-amber-200 font-bold">
+                                                                ✨ Sesiones restantes en tu acuerdo: {estadoPagoSeleccionado.sesionesFaltantesAcordadas}
+                                                            </p>
+                                                        )}
                                                     </div>
                                                 ) : (
                                                     <div className="bg-amber-500/15 border border-amber-400/30 rounded-xl p-3 space-y-1.5">
