@@ -831,21 +831,21 @@ export default function NominaView() {
                                 <th className="p-4 text-center">Bonos</th>
                                 <th className="p-4 text-center">Activar Com.</th>
                                 <th className="p-4 text-center">Auto-Agendado App</th>
-                                <th className="p-4 text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50">
                             {loading ? (
-                                <tr><td colSpan="10" className="p-10 text-center text-gray-400">Cargando personal...</td></tr>
+                                <tr><td colSpan="9" className="p-10 text-center text-gray-400">Cargando personal...</td></tr>
                             ) : staff.length === 0 ? (
-                                <tr><td colSpan="10" className="p-10 text-center text-gray-400">No hay personal registrado</td></tr>
+                                <tr><td colSpan="9" className="p-10 text-center text-gray-400">No hay personal registrado</td></tr>
                             ) : (
                                 staff.map((empleado) => {
                                     const esDoctor = (empleado.puesto || '').toLowerCase().includes('doctor');
                                     const esEspecialista = (empleado.puesto || '').toLowerCase().includes('especialista');
 
                                     return (
-                                        <tr key={empleado.id} className="hover:bg-gray-50/50 transition-colors">
+                                        <React.Fragment key={empleado.id}>
+                                        <tr className="hover:bg-gray-50/40 transition-colors border-b-0">
                                             {/* COLABORADOR CON FOTO Y ROL */}
                                             <td className="p-4">
                                                 <div className="flex items-center gap-3">
@@ -980,88 +980,124 @@ export default function NominaView() {
                                                 })()}
                                             </td>
 
-                                            {/* ACCIONES */}
-                                            <td className="p-4">
-                                                <div className="flex justify-center gap-1 flex-wrap">
-                                                    <button
-                                                        title="Enviar Recibo de Nómina por WhatsApp"
-                                                        onClick={() => handleEnviarWhatsApp(empleado)}
-                                                        className="p-2 text-emerald-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
-                                                    >
-                                                        <MessageSquare size={18} />
-                                                    </button>
-                                                    <button
-                                                        title="Firma Digital de Conformidad"
-                                                        onClick={() => setEmpleadoFirmaModal(empleado)}
-                                                        className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
-                                                    >
-                                                        <PenTool size={18} />
-                                                    </button>
-                                                    <button
-                                                        title="Ver Ficha / Expediente del Colaborador"
-                                                        onClick={() => setEmpleadoFicha(empleado)}
-                                                        className="p-2 text-teal-600 hover:text-teal-800 hover:bg-teal-50 rounded-lg transition-colors"
-                                                    >
-                                                        <Eye size={18} />
-                                                    </button>
-                                                    <button
-                                                        title="Ver Detalle de Comisiones"
-                                                        onClick={() => setEmpleadoDetalle(empleado)}
-                                                        className="p-2 text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 rounded-lg transition-colors"
-                                                    >
-                                                        <List size={18} />
-                                                    </button>
-                                                    {userRole === 'Administrador' && (
+                                        </tr>
+                                        {/* BARRA HORIZONTAL DE ACCIONES A LO LARGO DE LOS DATOS (WEB Y CELULAR) */}
+                                        <tr className="bg-slate-50/70 border-b-2 border-gray-100">
+                                            <td colSpan="9" className="px-4 py-2.5">
+                                                <div className="flex items-center justify-start sm:justify-between gap-2 overflow-x-auto no-scrollbar">
+                                                    <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 shrink-0 mr-1 hidden md:inline">
+                                                        Acciones:
+                                                    </span>
+                                                    <div className="flex items-center gap-1.5 sm:gap-2 flex-nowrap sm:flex-wrap w-full">
                                                         <button
-                                                            title="Ajuste Manual de Comisión"
-                                                            onClick={() => {
-                                                                setEmpleadoAjuste(empleado);
-                                                                setFormAjuste({ monto: '', motivo: '' });
-                                                            }}
-                                                            className="p-2 text-amber-500 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors"
+                                                            type="button"
+                                                            title="Enviar Recibo de Nómina por WhatsApp"
+                                                            onClick={() => handleEnviarWhatsApp(empleado)}
+                                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-emerald-700 bg-white border border-emerald-200 hover:bg-emerald-50 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
                                                         >
-                                                            <DollarSign size={18} />
+                                                            <MessageSquare size={14} />
+                                                            <span>WhatsApp</span>
                                                         </button>
-                                                    )}
-                                                    <button
-                                                        title="Liquidar Nómina"
-                                                        onClick={() => {
-                                                            const rango = getRangoSemana(0);
-                                                            setEmpleadoLiquidar(empleado);
-                                                            setNominaForm({
-                                                                fechaInicio: rango.fechaInicio,
-                                                                fechaFin: rango.fechaFin,
-                                                                periodo: formatearTextoPeriodo(rango.fechaInicio, rango.fechaFin),
-                                                                metodoPago: 'Transferencia',
-                                                                sueldoBase: empleado.sueldoBase || '',
-                                                                bonoPuntualidad: empleado.bonoPuntualidad || 0,
-                                                                bonoProductividad: empleado.bonoProductividad || 0
-                                                            });
-                                                        }}
-                                                        className="p-2 text-emerald-500 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors"
-                                                    >
-                                                        <Receipt size={18} />
-                                                    </button>
-                                                    {userRole === 'Administrador' && (
                                                         <button
-                                                            title="Restablecer Contraseña (Alfra2026!)"
-                                                            onClick={() => {
-                                                                setEmpleadoResetModal(empleado);
-                                                                setResetExitoso(false);
-                                                                setCopiadoReset(false);
-                                                            }}
-                                                            className="p-2 text-amber-600 hover:text-amber-800 hover:bg-amber-50 rounded-lg transition-colors"
+                                                            type="button"
+                                                            title="Firma Digital de Conformidad"
+                                                            onClick={() => setEmpleadoFirmaModal(empleado)}
+                                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-blue-700 bg-white border border-blue-200 hover:bg-blue-50 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
                                                         >
-                                                            <KeyRound size={18} />
+                                                            <PenTool size={14} />
+                                                            <span>Firma</span>
                                                         </button>
-                                                    )}
-                                                    <Button variant="ghost" size="sm" icon={Settings} onClick={() => handleOpenModal(empleado)} className="hover:bg-acero/5" />
-                                                    <button onClick={() => setEmployeeToDelete(empleado)} className="p-2 text-red-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors">
-                                                        <Trash2 size={18} />
-                                                    </button>
+                                                        <button
+                                                            type="button"
+                                                            title="Ver Ficha / Expediente del Colaborador"
+                                                            onClick={() => setEmpleadoFicha(empleado)}
+                                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-teal-700 bg-white border border-teal-200 hover:bg-teal-50 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
+                                                        >
+                                                            <Eye size={14} />
+                                                            <span>Ficha</span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            title="Ver Detalle de Comisiones"
+                                                            onClick={() => setEmpleadoDetalle(empleado)}
+                                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-indigo-700 bg-white border border-indigo-200 hover:bg-indigo-50 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
+                                                        >
+                                                            <List size={14} />
+                                                            <span>Historial Com.</span>
+                                                        </button>
+                                                        {userRole === 'Administrador' && (
+                                                            <button
+                                                                type="button"
+                                                                title="Ajuste Manual de Comisión"
+                                                                onClick={() => {
+                                                                    setEmpleadoAjuste(empleado);
+                                                                    setFormAjuste({ monto: '', motivo: '' });
+                                                                }}
+                                                                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-amber-700 bg-white border border-amber-200 hover:bg-amber-50 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
+                                                            >
+                                                                <DollarSign size={14} />
+                                                                <span>Ajustar Com.</span>
+                                                            </button>
+                                                        )}
+                                                        <button
+                                                            type="button"
+                                                            title="Liquidar Nómina"
+                                                            onClick={() => {
+                                                                const rango = getRangoSemana(0);
+                                                                setEmpleadoLiquidar(empleado);
+                                                                setNominaForm({
+                                                                    fechaInicio: rango.fechaInicio,
+                                                                    fechaFin: rango.fechaFin,
+                                                                    periodo: formatearTextoPeriodo(rango.fechaInicio, rango.fechaFin),
+                                                                    metodoPago: 'Transferencia',
+                                                                    sueldoBase: empleado.sueldoBase || '',
+                                                                    bonoPuntualidad: empleado.bonoPuntualidad || 0,
+                                                                    bonoProductividad: empleado.bonoProductividad || 0
+                                                                });
+                                                            }}
+                                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-black text-white bg-emerald-600 border border-emerald-600 hover:bg-emerald-700 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
+                                                        >
+                                                            <Receipt size={14} />
+                                                            <span>Liquidar Nómina</span>
+                                                        </button>
+                                                        {userRole === 'Administrador' && (
+                                                            <button
+                                                                type="button"
+                                                                title="Restablecer Contraseña (Alfra2026!)"
+                                                                onClick={() => {
+                                                                    setEmpleadoResetModal(empleado);
+                                                                    setResetExitoso(false);
+                                                                    setCopiadoReset(false);
+                                                                }}
+                                                                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-amber-800 bg-white border border-amber-300 hover:bg-amber-50 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
+                                                            >
+                                                                <KeyRound size={14} />
+                                                                <span>Reset Clave</span>
+                                                            </button>
+                                                        )}
+                                                        <button
+                                                            type="button"
+                                                            title="Editar Datos del Colaborador"
+                                                            onClick={() => handleOpenModal(empleado)}
+                                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-slate-700 bg-white border border-slate-200 hover:bg-slate-100 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer"
+                                                        >
+                                                            <Settings size={14} />
+                                                            <span>Editar</span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            title="Dar de Baja Colaborador"
+                                                            onClick={() => setEmployeeToDelete(empleado)}
+                                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-rose-600 bg-white border border-rose-200 hover:bg-rose-50 rounded-xl transition-colors shadow-sm shrink-0 cursor-pointer ml-auto"
+                                                        >
+                                                            <Trash2 size={14} />
+                                                            <span>Baja</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>
+                                        </React.Fragment>
                                     );
                                 })
                             )}
