@@ -1342,7 +1342,7 @@ export default function GestionComercial() {
                                             </div>
                                         </div>
 
-                                        <img src={flyer.imageUrl} alt={flyer.title} className="w-full h-64 object-cover" />
+                                        <div className="bg-slate-950/5 flex items-center justify-center"><img src={flyer.imageUrl} alt={flyer.title} className="w-full h-auto max-h-96 object-contain mx-auto block" /></div>
                                         <div className="p-3 bg-white border-t border-gray-100 flex items-center justify-between gap-2">
                                             <div className="min-w-0">
                                                 <p className="text-slate-800 font-bold text-xs truncate">{flyer.title}</p>
@@ -2019,7 +2019,7 @@ export default function GestionComercial() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {batchFlyersQueue.map((item, idx) => (
                                     <div key={item.id} className="flex items-center gap-3 p-2.5 rounded-2xl border border-gray-200 bg-gray-50">
-                                        <img src={item.preview} alt="Preview" className="w-16 h-16 rounded-xl object-cover shrink-0 border border-gray-200" />
+                                        <img src={item.preview} alt="Preview" className="w-16 h-16 rounded-xl object-contain bg-white shrink-0 border border-gray-200" />
                                         <div className="flex-1 min-w-0">
                                             <label className="text-[10px] font-bold text-gray-400 uppercase block">Título Flyer #{idx + 1}</label>
                                             <input

@@ -63,3 +63,40 @@ export const enviarWhatsAppCita = (cita) => {
     const mensaje = getWhatsAppMensajeCita(cita);
     abrirWhatsApp(cita.telefono, mensaje);
 };
+
+export const TELEFONO_CLINICA_ALFRA = '527535386018';
+
+/**
+ * Envía un mensaje directo por WhatsApp a la Clínica ALFRA cuando el paciente
+ * solicita información en un Flyer promocional, Paquete o Servicio desde su App.
+ */
+export const enviarWhatsAppQuieroEsto = ({
+    tipo = 'promocion', // 'flyer' | 'paquete' | 'servicio'
+    titulo = '',
+    pacienteNombre = '',
+    precioTotal = 0,
+    esPaquete = false,
+    numeroSesiones = 1,
+    anticipoSesion1 = 0,
+    pagoPorSesionRestante = 0
+} = {}) => {
+    const nombreLimpio = String(pacienteNombre || '').trim();
+    const presentacion = nombreLimpio ? `Mi nombre es *${nombreLimpio}*. ` : '';
+    const nombreItem = String(titulo || 'una de sus promociones').trim();
+    const fmt = (n) => Number(n || 0).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+
+    let detalleItem = '';
+    if (tipo === 'flyer') {
+        detalleItem = `Me interesa la promoción *"${nombreItem}"* que vi en la aplicación de la clínica. ¿Podrían brindarme más información y disponibilidad para agendar?`;
+    } else if (esPaquete || tipo === 'paquete') {
+        const precioFmt = precioTotal > 0 ? ` (inversión total de $${fmt(precioTotal)} por ${numeroSesiones} sesiones, con anticipo de $${fmt(anticipoSesion1 || (precioTotal * 0.2))} en la primera sesión)` : '';
+        detalleItem = `Me interesa el paquete *"${nombreItem}"*${precioFmt}. ¿Podrían brindarme más información y disponibilidad para iniciar mi tratamiento?`;
+    } else {
+        const precioFmt = precioTotal > 0 ? ` (inversión de $${fmt(precioTotal)} por sesión)` : '';
+        detalleItem = `Me interesa el tratamiento *"${nombreItem}"*${precioFmt}. ¿Podrían brindarme más información y disponibilidad para agendar?`;
+    }
+
+    const mensaje = `Buen día, Clínica ALFRA. ${presentacion}${detalleItem}\n\nQuedo atenta(o) a su respuesta. Muchas gracias.`;
+    const url = `https://wa.me/${TELEFONO_CLINICA_ALFRA}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+};

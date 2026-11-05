@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Button } from '../ui/Button';
-import { X, Calendar as CalendarIcon, Clock, Loader2, Info, Search, Sparkles, Check, ChevronRight, Package, HeartPulse, User } from 'lucide-react';
+import { X, Calendar as CalendarIcon, Clock, Loader2, Info, Search, Sparkles, Check, ChevronRight, Package, HeartPulse, User, MessageSquare } from 'lucide-react';
+import { enviarWhatsAppQuieroEsto } from '../../services/whatsappService';
 import { collection, query, where, getDocs, addDoc, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { getFunctions, httpsCallable } from 'firebase/functions';
@@ -79,7 +80,7 @@ const SERVICIOS_FALLBACK = [
 const toHHMM = (d) =>
     `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 
-export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendado }) {
+export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendado, initialServicio = null }) {
     const [step, setStep] = useState(1);
     const [diasDisponibles, setDiasDisponibles] = useState([]);
     // Especialistas y gestión de expediente
@@ -171,6 +172,9 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
             setBusquedaServicio('');
             setMostrarCambioEspecialista(false);
             return;
+        }
+        if (initialServicio) {
+            setServicioSeleccionado(initialServicio);
         }
 
         let isMounted = true;
@@ -708,74 +712,103 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                     {serviciosFiltrados.map((s) => {
                                         const seleccionado = servicioSeleccionado?.id === s.id;
                                         return (
-                                            <button
+                                            <div
                                                 key={s.id}
-                                                type="button"
+                                                role="button"
+                                                tabIndex={0}
                                                 onClick={() => handleSelectServicio(s)}
+                                                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleSelectServicio(s); }}
                                                 className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer relative ${
                                                     seleccionado
                                                         ? 'bg-gradient-to-br from-teal-50 to-emerald-50 border-teal-500 shadow-md ring-2 ring-teal-500/20'
                                                         : 'bg-white border-gray-150 hover:border-turquesa/50 hover:bg-gray-50/50'
                                                 }`}
                                             >
-                                                <div className="flex items-start justify-between gap-2">
-                                                    <div>
-                                                        <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-md ${
-                                                            s.tipo?.toLowerCase().includes('facial')
-                                                                ? 'bg-purple-100 text-purple-700'
-                                                                : s.tipo?.toLowerCase().includes('paquet')
-                                                                ? 'bg-amber-100 text-amber-800'
-                                                                : 'bg-teal-100 text-teal-800'
-                                                        }`}>
-                                                            {s.tipo || 'Servicio'}
-                                                        </span>
-                                                        <h4 className="text-xs font-black text-gray-900 mt-1 line-clamp-1">{s.nombre}</h4>
-                                                    </div>
-                                                    {seleccionado && (
-                                                        <span className="w-5 h-5 rounded-full bg-turquesa text-white flex items-center justify-center shrink-0">
-                                                            <Check size={12} />
-                                                        </span>
-                                                    )}
-                                                </div>
-                                                {s.descripcion && (
-                                                    <p className="text-[10px] text-gray-500 line-clamp-2 mt-1 leading-tight">{s.descripcion}</p>
-                                                )}
-                                                {s.esPaquete && s.precioVenta > 0 ? (
-                                                    <div className="mt-2.5 pt-2 border-t border-amber-200/70 space-y-1.5">
-                                                        <div className="flex items-center justify-between text-[10px] font-bold text-gray-700">
-                                                            <span className="flex items-center gap-1 text-turquesa">
-                                                                <Clock size={11} /> {s.duracionMinutos} min • {s.numeroSesiones || 10} sesiones
+                                                <div>
+                                                    <div className="flex items-start justify-between gap-2">
+                                                        <div>
+                                                            <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-md ${
+                                                                s.tipo?.toLowerCase().includes('facial')
+                                                                    ? 'bg-purple-100 text-purple-700'
+                                                                    : s.tipo?.toLowerCase().includes('paquet')
+                                                                    ? 'bg-amber-100 text-amber-800'
+                                                                    : 'bg-teal-100 text-teal-800'
+                                                            }`}>
+                                                                {s.tipo || 'Servicio'}
                                                             </span>
-                                                            <span className="font-black text-gray-900">
-                                                                Total: ${Number(s.precioVenta).toLocaleString('es-MX')}
+                                                            <h4 className="text-xs font-black text-gray-900 mt-1 line-clamp-1">{s.nombre}</h4>
+                                                        </div>
+                                                        {seleccionado && (
+                                                            <span className="w-5 h-5 rounded-full bg-turquesa text-white flex items-center justify-center shrink-0">
+                                                                <Check size={12} />
                                                             </span>
-                                                        </div>
-                                                        <div className="bg-amber-50/90 border border-amber-200/80 rounded-xl p-2 space-y-1 text-[10px]">
-                                                            <p className="font-bold text-gray-700 flex justify-between">
-                                                                <span>Total del Paquete ({s.numeroSesiones || 10} sesiones):</span>
-                                                                <strong className="text-gray-900">${Number(s.precioVenta).toLocaleString('es-MX')}</strong>
-                                                            </p>
-                                                            <p className="font-black text-emerald-700 flex justify-between">
-                                                                <span>✨ Inicia en tu 1ª Sesión con el 20%:</span>
-                                                                <span>${Number(s.anticipoSesion1 || (s.precioVenta * 0.2)).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
-                                                            </p>
-                                                            <p className="font-bold text-teal-800 flex justify-between">
-                                                                <span>💳 Sesiones 2 a la {s.numeroSesiones || 10} ({s.sesionesRestantes || ((s.numeroSesiones || 10) - 1)} pagos):</span>
-                                                                <span>${Number(s.pagoPorSesionRestante || ((s.precioVenta * 0.8) / Math.max(1, (s.numeroSesiones || 10) - 1))).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })} por sesión</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                ) : (
-                                                    <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100 text-[10px] font-bold text-gray-600">
-                                                        <span className="flex items-center gap-1 text-turquesa">
-                                                            <Clock size={11} /> {s.duracionMinutos} min • 1 sesión
-                                                        </span>
-                                                        {s.precioVenta > 0 && (
-                                                            <span className="font-black text-gray-900">${Number(s.precioVenta).toLocaleString('es-MX')} / sesión</span>
                                                         )}
                                                     </div>
-                                                )}
-                                            </button>
+                                                    {s.descripcion && (
+                                                        <p className="text-[10px] text-gray-500 line-clamp-2 mt-1 leading-tight">{s.descripcion}</p>
+                                                    )}
+                                                </div>
+
+                                                <div>
+                                                    {s.esPaquete && s.precioVenta > 0 ? (
+                                                        <div className="mt-2.5 pt-2 border-t border-amber-200/70 space-y-1.5">
+                                                            <div className="flex items-center justify-between text-[10px] font-bold text-gray-700">
+                                                                <span className="flex items-center gap-1 text-turquesa">
+                                                                    <Clock size={11} /> {s.duracionMinutos} min • {s.numeroSesiones || 10} sesiones
+                                                                </span>
+                                                                <span className="font-black text-gray-900">
+                                                                    Total: ${Number(s.precioVenta).toLocaleString('es-MX')}
+                                                                </span>
+                                                            </div>
+                                                            <div className="bg-amber-50/90 border border-amber-200/80 rounded-xl p-2 space-y-1 text-[10px]">
+                                                                <p className="font-bold text-gray-700 flex justify-between">
+                                                                    <span>Total del Paquete ({s.numeroSesiones || 10} sesiones):</span>
+                                                                    <strong className="text-gray-900">${Number(s.precioVenta).toLocaleString('es-MX')}</strong>
+                                                                </p>
+                                                                <p className="font-black text-emerald-700 flex justify-between">
+                                                                    <span>✨ Inicia en tu 1ª Sesión con el 20%:</span>
+                                                                    <span>${Number(s.anticipoSesion1 || (s.precioVenta * 0.2)).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
+                                                                </p>
+                                                                <p className="font-bold text-teal-800 flex justify-between">
+                                                                    <span>💳 Sesiones 2 a la {s.numeroSesiones || 10} ({s.sesionesRestantes || ((s.numeroSesiones || 10) - 1)} pagos):</span>
+                                                                    <span>${Number(s.pagoPorSesionRestante || ((s.precioVenta * 0.8) / Math.max(1, (s.numeroSesiones || 10) - 1))).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })} por sesión</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100 text-[10px] font-bold text-gray-600">
+                                                            <span className="flex items-center gap-1 text-turquesa">
+                                                                <Clock size={11} /> {s.duracionMinutos} min • 1 sesión
+                                                            </span>
+                                                            {s.precioVenta > 0 && (
+                                                                <span className="font-black text-gray-900">${Number(s.precioVenta).toLocaleString('es-MX')} / sesión</span>
+                                                            )}
+                                                        </div>
+                                                    )}
+
+                                                    <div className="mt-2 pt-2 border-t border-gray-100">
+                                                        <button
+                                                            type="button"
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                enviarWhatsAppQuieroEsto({
+                                                                    tipo: s.esPaquete ? 'paquete' : 'servicio',
+                                                                    titulo: s.nombre,
+                                                                    pacienteNombre: paciente?.nombre || '',
+                                                                    precioTotal: s.precioVenta,
+                                                                    esPaquete: s.esPaquete,
+                                                                    numeroSesiones: s.numeroSesiones,
+                                                                    anticipoSesion1: s.anticipoSesion1,
+                                                                    pagoPorSesionRestante: s.pagoPorSesionRestante
+                                                                });
+                                                            }}
+                                                            className="w-full py-1.5 px-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-[10px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer active:scale-95"
+                                                        >
+                                                            <MessageSquare size={12} /> Solicitar Información
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         );
                                     })}
                                 </div>

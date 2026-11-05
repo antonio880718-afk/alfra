@@ -24,6 +24,8 @@ import { getCitasByPaciente, onCitasPacienteChange } from "../../services/citasS
 import { getTratamientosPaciente, onTratamientosPacienteChange, getSesionesPaciente, MEDIDAS_CORPORALES } from "../../services/tratamientosService";
 import { comprimirImagenBase64 } from "../../services/staffService";
 import Barcode39 from "../../components/ui/Barcode39";
+import { getFlyers } from "../../services/flyersService";
+import { enviarWhatsAppQuieroEsto } from "../../services/whatsappService";
 
 const auth = getAuth();
 const getMembresiaObj = (m, pacienteId = null) => {
@@ -2134,6 +2136,17 @@ export default function PacienteProfile() {
     }
   };
 
+  const [flyersActivos, setFlyersActivos] = useState([]);
+  const [flyerZoomPerfil, setFlyerZoomPerfil] = useState(null);
+
+  useEffect(() => {
+    let mounted = true;
+    getFlyers().then(data => {
+      if (mounted && Array.isArray(data)) setFlyersActivos(data);
+    }).catch(() => {});
+    return () => { mounted = false; };
+  }, []);
+
   const membresiaObj = getMembresiaObj(perfilPaciente.membresia, pacienteDocId);
   const tabs = [ 
     {key:"progreso", label:"Resumen", icon: Activity},
@@ -2665,6 +2678,104 @@ export default function PacienteProfile() {
               <p className="text-[8px] text-gray-400 font-bold uppercase tracking-wider">Acumula 7 visitas - desbloquea beneficios exclusivos</p>
             </div>
           </Card>
+
+          {/* PROMOCIONES Y FLYERS DEL MES A TAMAÑO COMPLETO CON BOTÓN DE SOLICITUD DE INFORMACIÓN */}
+          {flyersActivos.length > 0 && (
+            <div className="space-y-3">
+              <div className="flex items-center justify-between px-1">
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-turquesa flex items-center gap-1">
+                    <Sparkles size={12} /> Promociones Exclusivas ALFRA
+                  </span>
+                  <h3 className="text-sm sm:text-base font-black text-slate-800">
+                    Promociones vigentes para ti
+                  </h3>
+                </div>
+              </div>
+
+              <div className={`grid gap-4 ${flyersActivos.length === 1 ? 'grid-cols-1 max-w-xl mx-auto' : 'grid-cols-1 md:grid-cols-2'}`}>
+                {flyersActivos.map((flyer) => (
+                  <div
+                    key={flyer.id}
+                    className="rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white flex flex-col justify-between"
+                  >
+                    <div
+                      onClick={() => setFlyerZoomPerfil(flyer)}
+                      className="relative bg-slate-950/5 flex items-center justify-center cursor-pointer"
+                    >
+                      <img
+                        src={flyer.imageUrl}
+                        alt={flyer.title}
+                        className="w-full h-auto max-h-[75vh] object-contain mx-auto block"
+                      />
+                    </div>
+                    <div className="p-4 bg-white border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div>
+                        <span className="text-[9px] font-black uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full">
+                          Promoción Vigente
+                        </span>
+                        <h4 className="text-sm font-black text-slate-900 mt-1">{flyer.title}</h4>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => enviarWhatsAppQuieroEsto({
+                          tipo: 'flyer',
+                          titulo: flyer.title,
+                          pacienteNombre: perfilPaciente.nombre || ''
+                        })}
+                        className="py-2.5 px-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 shrink-0"
+                      >
+                        <MessageSquare size={14} /> Solicitar Información
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {flyerZoomPerfil && (
+            <div
+              onClick={() => setFlyerZoomPerfil(null)}
+              className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200"
+            >
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="relative max-w-2xl w-full flex flex-col items-center bg-slate-950 rounded-3xl overflow-hidden border border-white/15 shadow-2xl max-h-[92vh]"
+              >
+                <div className="w-full flex-1 overflow-y-auto flex items-center justify-center p-2 sm:p-4">
+                  <img
+                    src={flyerZoomPerfil.imageUrl}
+                    alt={flyerZoomPerfil.title}
+                    className="w-auto max-w-full max-h-[74vh] object-contain mx-auto rounded-2xl"
+                  />
+                </div>
+                <div className="w-full p-4 bg-slate-900 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <h4 className="text-white font-black text-sm sm:text-base">{flyerZoomPerfil.title}</h4>
+                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <button
+                      type="button"
+                      onClick={() => enviarWhatsAppQuieroEsto({
+                        tipo: 'flyer',
+                        titulo: flyerZoomPerfil.title,
+                        pacienteNombre: perfilPaciente.nombre || ''
+                      })}
+                      className="flex-1 sm:flex-none py-2.5 px-5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <MessageSquare size={14} /> Solicitar Información
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setFlyerZoomPerfil(null)}
+                      className="py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs cursor-pointer"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
 
 
