@@ -25,10 +25,44 @@ export const inferCategoriaServicio = (nombre = '', catExistente = '') => {
 export const detectEsPaqueteServicio = (item) => {
     if (!item) return false;
     if (item.esPaquete === true) return true;
-    if (item.tipo === 'Paquete / Plan Tratamiento') return true;
+    if (item.tipo === 'Paquete / Plan Tratamiento' || (item.tipo || '').toLowerCase().includes('paquete')) return true;
     const n = String(item.nombre || '').toLowerCase();
     return /\(\s*paq|\bpaquete\b|efecto lipo sin bisturi/i.test(n);
 };
+
+export const inferNumeroSesionesPaquete = (item, cat = '') => {
+    const explicito = Number(item?.numeroSesiones || item?.sesiones || 0);
+    if (explicito > 1) return explicito;
+    const nombre = String(item?.nombre || '');
+    const matchNombre = nombre.match(/(\d+)\s*sesi/i);
+    if (matchNombre && Number(matchNombre[1]) > 1) {
+        return Number(matchNombre[1]);
+    }
+    const c = (cat || item?.categoria || '').toLowerCase();
+    if (c.includes('facial')) return 8;
+    if (c.includes('láser') || c.includes('laser') || c.includes('despigment')) return 10;
+    return 10;
+};
+
+export const calcularEsquemaPagoPaquete = (precioTotalInput, numSesionesInput, anticipoPctInput = 20) => {
+    const precioTotal = Number(precioTotalInput || 0);
+    const numeroSesiones = Math.max(2, Number(numSesionesInput || 10));
+    const anticipoPct = Number(anticipoPctInput || 20);
+    const anticipoSesion1 = Math.round((precioTotal * (anticipoPct / 100)) * 100) / 100;
+    const sesionesRestantes = Math.max(1, numeroSesiones - 1);
+    const pagoPorSesionRestante = Math.round(((precioTotal - anticipoSesion1) / sesionesRestantes) * 100) / 100;
+    return {
+        precioTotal,
+        numeroSesiones,
+        anticipoPct,
+        anticipoSesion1,
+        sesionesRestantes,
+        pagoPorSesionRestante
+    };
+};
+
+const normalizarTextoComparacion = (txt = '') =>
+    String(txt || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
 // Catálogo base de respaldo si la base de datos de servicios estuviera vacía
 const SERVICIOS_FALLBACK = [
@@ -38,7 +72,7 @@ const SERVICIOS_FALLBACK = [
     { id: 'fb_4', nombre: 'Efecto Lipo Sin Cirugía', tipo: 'Corporal', duracionMinutos: 90, precioVenta: 1400, descripcion: 'Cavitación, radiofrecuencia y lipoláser para movilización de grasa.' },
     { id: 'fb_5', nombre: 'Reductivo & Drenaje Linfático', tipo: 'Corporal', duracionMinutos: 60, precioVenta: 850, descripcion: 'Modelado de silueta, desinflamación y depuración linfática.' },
     { id: 'fb_6', nombre: 'Reafirmante y Tensado Cutáneo', tipo: 'Corporal', duracionMinutos: 60, precioVenta: 900, descripcion: 'Radiofrecuencia multipolar para tonificación y elasticidad.' },
-    { id: 'fb_7', nombre: 'Paquete Silueta Perfecta (Sesión)', tipo: 'Paquetes', duracionMinutos: 90, precioVenta: 1100, descripcion: 'Sesión integral de aparatología combinada facial y corporal.' },
+    { id: 'fb_7', nombre: 'Paquete Silueta Perfecta (10 Sesiones)', tipo: 'Paquetes', esPaquete: true, numeroSesiones: 10, duracionMinutos: 90, precioVenta: 10000, anticipoSesion1: 2000, sesionesRestantes: 9, pagoPorSesionRestante: 888.89, descripcion: 'Plan integral de 10 sesiones de aparatología combinada facial y corporal.' },
     { id: 'fb_8', nombre: 'Valoración y Diagnóstico Clínico', tipo: 'Valoración', duracionMinutos: 30, precioVenta: 350, descripcion: 'Diagnóstico biométrico y diseño del plan de tratamiento.' },
 ];
 
@@ -60,6 +94,8 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
 
     // Catálogo de servicios desde Firestore
     const [catalogoServicios, setCatalogoServicios] = useState([]);
+    const [planesPaciente, setPlanesPaciente] = useState([]);
+    const [tratamientosPaciente, setTratamientosPaciente] = useState([]);
     const [categoriaFiltro, setCategoriaFiltro] = useState('todos'); // 'todos' | 'Facial' | 'Corporal' | 'Paquetes'
     const [busquedaServicio, setBusquedaServicio] = useState('');
     const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
@@ -94,13 +130,21 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                     if (!dur || dur <= 0) {
                         dur = esPaq ? 90 : (cat === 'Facial' ? 60 : cat === 'Depilación Láser' ? 30 : 60);
                     }
+                    const precioTotal = Number(s.precioVenta || s.precio || 0);
+                    const numSes = esPaq ? inferNumeroSesionesPaquete(s, cat) : 1;
+                    const esquema = esPaq ? calcularEsquemaPagoPaquete(precioTotal, numSes, s.anticipoPct || 20) : null;
                     return {
                         id: s.id,
                         nombre: s.nombre || 'Servicio ALFRA',
                         categoria: cat,
                         tipo: s.tipo || (esPaq ? 'Paquete / Plan Tratamiento' : 'Servicio Individual'),
                         duracionMinutos: dur,
-                        precioVenta: Number(s.precioVenta || s.precio || 0),
+                        precioVenta: precioTotal,
+                        numeroSesiones: numSes,
+                        anticipoPct: esquema ? esquema.anticipoPct : 0,
+                        anticipoSesion1: esquema ? esquema.anticipoSesion1 : 0,
+                        sesionesRestantes: esquema ? esquema.sesionesRestantes : 0,
+                        pagoPorSesionRestante: esquema ? esquema.pagoPorSesionRestante : precioTotal,
                         descripcion: s.descripcion || s.beneficios || '',
                         esPaquete: esPaq
                     };
@@ -140,16 +184,34 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                 let assignedNombre = paciente?.medicoTratante || paciente?.especialista || null;
 
                 const pacId = paciente?.id || paciente?.docId;
-                if ((!assignedId && !assignedNombre) && pacId) {
+                const pacNombreNorm = normalizarTextoComparacion(paciente?.nombre || '');
+                if (pacId || pacNombreNorm) {
                     try {
-                        const planesSnap = await getDocs(query(collection(db, 'planes'), where('pacienteId', '==', pacId)));
-                        planesSnap.forEach(d => {
-                            const pData = d.data();
+                        const planesLoaded = [];
+                        if (pacId) {
+                            const planesSnap = await getDocs(query(collection(db, 'planes'), where('pacienteId', '==', pacId)));
+                            planesSnap.forEach(d => planesLoaded.push({ id: d.id, ...d.data() }));
+                        }
+                        if (planesLoaded.length === 0 && paciente?.nombre) {
+                            const planesByNameSnap = await getDocs(query(collection(db, 'planes'), where('paciente', '==', paciente.nombre)));
+                            planesByNameSnap.forEach(d => planesLoaded.push({ id: d.id, ...d.data() }));
+                        }
+                        if (isMounted) setPlanesPaciente(planesLoaded);
+                        planesLoaded.forEach(pData => {
                             if (!assignedId && pData.especialistaId) {
                                 assignedId = pData.especialistaId;
                                 assignedNombre = pData.especialistaNombre || pData.especialista || null;
                             }
                         });
+                    } catch (_) {}
+
+                    try {
+                        if (pacId) {
+                            const tratSnap = await getDocs(query(collection(db, 'tratamientos'), where('pacienteId', '==', pacId)));
+                            const tratsLoaded = [];
+                            tratSnap.forEach(d => tratsLoaded.push({ id: d.id, ...d.data() }));
+                            if (isMounted) setTratamientosPaciente(tratsLoaded);
+                        }
                     } catch (_) {}
                 }
 
@@ -233,6 +295,61 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
     }, [catalogoServicios, categoriaFiltro, busquedaServicio]);
 
     const duracionEfectiva = servicioSeleccionado?.duracionMinutos || 60;
+
+    // Detectar automáticamente si el paciente inicia el paquete (Sesión 1 - Anticipo 20%) o ya lo tiene activo (Sesión 2 a la última)
+    const estadoPagoSeleccionado = useMemo(() => {
+        if (!servicioSeleccionado) return null;
+        const precioTotal = Number(servicioSeleccionado.precioVenta || 0);
+        if (!servicioSeleccionado.esPaquete) {
+            return {
+                esPaquete: false,
+                yaTienePaqueteActivo: false,
+                montoACubrirHoy: precioTotal,
+                precioTotal,
+                etiquetaHoy: 'Precio por sesión individual'
+            };
+        }
+
+        const numSesiones = Number(servicioSeleccionado.numeroSesiones || inferNumeroSesionesPaquete(servicioSeleccionado));
+        const esquema = calcularEsquemaPagoPaquete(precioTotal, numSesiones, servicioSeleccionado.anticipoPct || 20);
+        const servNorm = normalizarTextoComparacion(servicioSeleccionado.nombre);
+
+        // Buscar si el paciente ya tiene un plan activo para este paquete con abonos/anticipo previo o sesiones registradas
+        const planExistente = (planesPaciente || []).find(p => {
+            const objNorm = normalizarTextoComparacion(p.objetivo || p.tratamiento || p.nombre || '');
+            if (!objNorm || !servNorm) return false;
+            const coincideNombre = objNorm === servNorm || objNorm.includes(servNorm) || servNorm.includes(objNorm);
+            if (!coincideNombre) return false;
+            const tieneAvance = Number(p.acumulado || 0) > 0 || (Array.isArray(p.sesionesManuales) && p.sesionesManuales.length > 0);
+            const noLiquidado = Number(p.meta || 0) === 0 || Number(p.acumulado || 0) < Number(p.meta || 0);
+            return tieneAvance && noLiquidado;
+        });
+
+        const tratExistente = (tratamientosPaciente || []).find(t => {
+            if ((t.estado || '').toLowerCase() === 'alta' || (t.estado || '').toLowerCase() === 'finalizado') return false;
+            const tNorm = normalizarTextoComparacion(t.nombre || '');
+            if (!tNorm || !servNorm) return false;
+            const coincide = tNorm === servNorm || tNorm.includes(servNorm) || servNorm.includes(tNorm);
+            return coincide && Number(t.sesionesRealizadas || t.sesionesCount || 0) >= 1;
+        });
+
+        const yaActivo = Boolean(planExistente || tratExistente);
+        const cuotaPersonalizada = Number(planExistente?.costoPorSesion || 0) > 0
+            ? Number(planExistente.costoPorSesion)
+            : esquema.pagoPorSesionRestante;
+
+        return {
+            esPaquete: true,
+            yaTienePaqueteActivo: yaActivo,
+            numeroSesiones: esquema.numeroSesiones,
+            sesionesRestantes: esquema.sesionesRestantes,
+            precioTotal: esquema.precioTotal,
+            anticipoSesion1: esquema.anticipoSesion1,
+            pagoPorSesionRestante: cuotaPersonalizada,
+            montoACubrirHoy: yaActivo ? cuotaPersonalizada : esquema.anticipoSesion1,
+            planActivoId: planExistente?.id || null
+        };
+    }, [servicioSeleccionado, planesPaciente, tratamientosPaciente]);
 
     // Buscar disponibilidad directa y confiable en Firestore
         // Buscar disponibilidad directa y confiable en Firestore considerando fecha y especialista
@@ -387,6 +504,11 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                 fechaHora: selectedTime,
                 servicio: servicioSeleccionado.nombre,
                 servicioId: servicioSeleccionado.id || null,
+                esPaquete: Boolean(servicioSeleccionado.esPaquete),
+                precio: estadoPagoSeleccionado?.montoACubrirHoy || servicioSeleccionado.precioVenta || 0,
+                monto: estadoPagoSeleccionado?.montoACubrirHoy || servicioSeleccionado.precioVenta || 0,
+                anticipo: (estadoPagoSeleccionado?.esPaquete && !estadoPagoSeleccionado?.yaTienePaqueteActivo) ? estadoPagoSeleccionado.anticipoSesion1 : 0,
+                costoPorSesionPaquete: estadoPagoSeleccionado?.esPaquete ? estadoPagoSeleccionado.pagoPorSesionRestante : 0,
                 duracionMin: duracionEfectiva,
                 duracionMinutos: duracionEfectiva,
                 especialistaId: finalEspId,
@@ -519,7 +641,7 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                 </div>
 
                                 {/* Grid de tarjetas de servicios */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-52 overflow-y-auto p-1">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-64 overflow-y-auto p-1">
                                     {serviciosFiltrados.map((s) => {
                                         const seleccionado = servicioSeleccionado?.id === s.id;
                                         return (
@@ -555,14 +677,41 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                                 {s.descripcion && (
                                                     <p className="text-[10px] text-gray-500 line-clamp-2 mt-1 leading-tight">{s.descripcion}</p>
                                                 )}
-                                                <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100 text-[10px] font-bold text-gray-600">
-                                                    <span className="flex items-center gap-1 text-turquesa">
-                                                        <Clock size={11} /> {s.duracionMinutos} min
-                                                    </span>
-                                                    {s.precioVenta > 0 && (
-                                                        <span className="font-black text-gray-900">${s.precioVenta.toLocaleString('es-MX')}</span>
-                                                    )}
-                                                </div>
+                                                {s.esPaquete && s.precioVenta > 0 ? (
+                                                    <div className="mt-2.5 pt-2 border-t border-amber-200/70 space-y-1.5">
+                                                        <div className="flex items-center justify-between text-[10px] font-bold text-gray-700">
+                                                            <span className="flex items-center gap-1 text-turquesa">
+                                                                <Clock size={11} /> {s.duracionMinutos} min • {s.numeroSesiones || 10} sesiones
+                                                            </span>
+                                                            <span className="font-black text-gray-900">
+                                                                Total: ${Number(s.precioVenta).toLocaleString('es-MX')}
+                                                            </span>
+                                                        </div>
+                                                        <div className="bg-amber-50/90 border border-amber-200/80 rounded-xl p-2 space-y-1 text-[10px]">
+                                                            <p className="font-bold text-gray-700 flex justify-between">
+                                                                <span>Total del Paquete ({s.numeroSesiones || 10} sesiones):</span>
+                                                                <strong className="text-gray-900">${Number(s.precioVenta).toLocaleString('es-MX')}</strong>
+                                                            </p>
+                                                            <p className="font-black text-emerald-700 flex justify-between">
+                                                                <span>✨ Inicia en tu 1ª Sesión con el 20%:</span>
+                                                                <span>${Number(s.anticipoSesion1 || (s.precioVenta * 0.2)).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
+                                                            </p>
+                                                            <p className="font-bold text-teal-800 flex justify-between">
+                                                                <span>💳 Sesiones 2 a la {s.numeroSesiones || 10} ({s.sesionesRestantes || ((s.numeroSesiones || 10) - 1)} pagos):</span>
+                                                                <span>${Number(s.pagoPorSesionRestante || ((s.precioVenta * 0.8) / Math.max(1, (s.numeroSesiones || 10) - 1))).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })} por sesión</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100 text-[10px] font-bold text-gray-600">
+                                                        <span className="flex items-center gap-1 text-turquesa">
+                                                            <Clock size={11} /> {s.duracionMinutos} min • 1 sesión
+                                                        </span>
+                                                        {s.precioVenta > 0 && (
+                                                            <span className="font-black text-gray-900">${Number(s.precioVenta).toLocaleString('es-MX')} / sesión</span>
+                                                        )}
+                                                    </div>
+                                                )}
                                             </button>
                                         );
                                     })}
@@ -769,6 +918,36 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                     <span>Duración estimada:</span>
                                     <strong>{duracionEfectiva} min</strong>
                                 </div>
+
+                                {estadoPagoSeleccionado && estadoPagoSeleccionado.precioTotal > 0 && (
+                                    <div className="mt-2 pt-2.5 border-t border-emerald-200/80 space-y-1">
+                                        {estadoPagoSeleccionado.esPaquete ? (
+                                            estadoPagoSeleccionado.yaTienePaqueteActivo ? (
+                                                <div className="bg-white/90 border border-emerald-300 rounded-xl p-2.5 text-emerald-950">
+                                                    <p className="text-[10px] font-black uppercase text-teal-700">Paquete Activo en Curso</p>
+                                                    <p className="text-xs font-black mt-0.5">
+                                                        Abono por sesión de tu paquete: <span className="text-emerald-700">${Number(estadoPagoSeleccionado.pagoPorSesionRestante).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
+                                                    </p>
+                                                </div>
+                                            ) : (
+                                                <div className="bg-white/90 border border-emerald-300 rounded-xl p-2.5 text-emerald-950 space-y-1">
+                                                    <p className="text-[10px] font-black uppercase text-amber-700">Inicio de Paquete ({estadoPagoSeleccionado.numeroSesiones} sesiones • Total ${Number(estadoPagoSeleccionado.precioTotal).toLocaleString('es-MX')})</p>
+                                                    <p className="text-xs font-black text-emerald-800">
+                                                        Monto a cubrir en tu 1ª sesión (Anticipo 20%): ${Number(estadoPagoSeleccionado.anticipoSesion1).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}
+                                                    </p>
+                                                    <p className="text-[11px] text-gray-600 font-semibold">
+                                                        💳 Tus sesiones 2 a la {estadoPagoSeleccionado.numeroSesiones} ({estadoPagoSeleccionado.sesionesRestantes} pagos) quedarán de <strong>${Number(estadoPagoSeleccionado.pagoPorSesionRestante).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })} c/u</strong>.
+                                                    </p>
+                                                </div>
+                                            )
+                                        ) : (
+                                            <div className="flex justify-between text-emerald-900 font-black pt-1">
+                                                <span>Inversión de tu sesión:</span>
+                                                <span>${Number(estadoPagoSeleccionado.precioTotal).toLocaleString('es-MX')}</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
 
                             <button
@@ -822,6 +1001,41 @@ export default function AutoAgendadoModal({ isOpen, onClose, paciente, onAgendad
                                             <p className="text-xs font-black text-emerald-400 mt-0.5">{duracionEfectiva} min</p>
                                         </div>
                                     </div>
+
+                                    {estadoPagoSeleccionado && estadoPagoSeleccionado.precioTotal > 0 && (
+                                        <div className="pt-2 border-t border-white/10">
+                                            {estadoPagoSeleccionado.esPaquete ? (
+                                                estadoPagoSeleccionado.yaTienePaqueteActivo ? (
+                                                    <div className="bg-teal-500/15 border border-teal-400/30 rounded-xl p-3 space-y-1">
+                                                        <span className="text-[10px] font-black uppercase tracking-wider text-teal-300 block">
+                                                            💳 Paquete Activo Detectado
+                                                        </span>
+                                                        <p className="text-xs font-black text-white">
+                                                            Abono por sesión de tu paquete: <span className="text-emerald-300 text-sm">${Number(estadoPagoSeleccionado.pagoPorSesionRestante).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
+                                                        </p>
+                                                    </div>
+                                                ) : (
+                                                    <div className="bg-amber-500/15 border border-amber-400/30 rounded-xl p-3 space-y-1.5">
+                                                        <div className="flex items-center justify-between text-[10px] font-bold text-amber-200">
+                                                            <span>Total del Paquete ({estadoPagoSeleccionado.numeroSesiones} sesiones):</span>
+                                                            <strong className="text-white">${Number(estadoPagoSeleccionado.precioTotal).toLocaleString('es-MX')}</strong>
+                                                        </div>
+                                                        <p className="text-xs font-black text-emerald-300">
+                                                            ✨ Monto a cubrir en tu 1ª sesión (Anticipo 20%): ${Number(estadoPagoSeleccionado.anticipoSesion1).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}
+                                                        </p>
+                                                        <p className="text-[11px] text-gray-300">
+                                                            💳 Tus sesiones 2 a la {estadoPagoSeleccionado.numeroSesiones} ({estadoPagoSeleccionado.sesionesRestantes} pagos) quedarán de <strong className="text-white">${Number(estadoPagoSeleccionado.pagoPorSesionRestante).toLocaleString('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 })} c/u</strong>.
+                                                        </p>
+                                                    </div>
+                                                )
+                                            ) : (
+                                                <div className="flex items-center justify-between bg-white/5 rounded-xl px-3 py-2">
+                                                    <span className="text-[11px] text-gray-300 font-bold">Costo de la sesión:</span>
+                                                    <span className="text-sm font-black text-emerald-300">${Number(estadoPagoSeleccionado.precioTotal).toLocaleString('es-MX')}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="text-[11px] text-gray-400 flex items-center justify-center gap-1.5">

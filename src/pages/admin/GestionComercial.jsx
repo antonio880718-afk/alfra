@@ -102,7 +102,9 @@ const CSV_HEADERS = [
     'Cupon_Codigo',
     'Cupon_Descuento',
     'Cupon_Tipo',
-    'Cupon_Vigencia'
+    'Cupon_Vigencia',
+    'Anticipo_20_Sesion_1',
+    'Pago_Sesion_2_a_Fin'
 ];
 
 // Parser CSV/TSV robusto con soporte para comillas y pegado desde Excel
@@ -342,6 +344,9 @@ export default function GestionComercial() {
             const cupTipo = cup ? (cup.tipo || 'Porcentaje') : '';
             const cupVigencia = cup ? (cup.fechaFin || cup.vigenciaTexto || '') : '';
 
+            const anticipo20 = esPaq ? Math.round((precio * 0.20) * 100) / 100 : '';
+            const pagoRestante = esPaq ? Math.round(((precio * 0.80) / Math.max(1, numSes - 1)) * 100) / 100 : '';
+
             rows.push([
                 escapeCell(item.nombre || ''),
                 escapeCell(esPaq ? 'Paquete' : 'Servicio Individual'),
@@ -357,7 +362,9 @@ export default function GestionComercial() {
                 escapeCell(cupCodigo),
                 escapeCell(cupDescuento),
                 escapeCell(cupTipo),
-                escapeCell(cupVigencia)
+                escapeCell(cupVigencia),
+                escapeCell(anticipo20),
+                escapeCell(pagoRestante)
             ].join(','));
         });
 
@@ -1180,8 +1187,18 @@ export default function GestionComercial() {
                                                 <td className="py-3 px-3 text-right text-amber-700 font-semibold">
                                                     {formatCurrency(comMonto)} <span className="text-[10px] text-slate-400">({comPct}%)</span>
                                                 </td>
-                                                <td className="py-3 px-3 text-right text-slate-900 font-black text-sm">
-                                                    {formatCurrency(precio)}
+                                                <td className="py-3 px-3 text-right">
+                                                    <div className="text-slate-900 font-black text-sm">{formatCurrency(precio)}</div>
+                                                    {esPaq && precio > 0 && (
+                                                        <div className="mt-1 text-[10px] space-y-0.5 text-right">
+                                                            <div className="text-emerald-700 font-bold">
+                                                                ✨ 1ª Ses (20%): {formatCurrency(precio * 0.20)}
+                                                            </div>
+                                                            <div className="text-indigo-700 font-semibold">
+                                                                💳 Ses 2 a {Number(item.numeroSesiones) || 10}: {formatCurrency((precio * 0.80) / Math.max(1, (Number(item.numeroSesiones) || 10) - 1))} c/u
+                                                            </div>
+                                                        </div>
+                                                    )}
                                                 </td>
                                                 <td className="py-3 px-3 text-right">
                                                     <div className="flex flex-col items-end">
@@ -1479,15 +1496,31 @@ export default function GestionComercial() {
                         </div>
 
                         {formData.esPaquete && (
-                            <div className="pt-2">
-                                <label className="font-bold text-indigo-700 block mb-1">Número Total de Sesiones del Paquete</label>
-                                <input
-                                    type="number"
-                                    min="1"
-                                    value={formData.numeroSesiones}
-                                    onChange={(e) => setFormData({ ...formData, numeroSesiones: e.target.value })}
-                                    className="w-36 px-3 py-1.5 border border-indigo-200 rounded-xl bg-white font-black text-indigo-700"
-                                />
+                            <div className="pt-2 space-y-2">
+                                <div>
+                                    <label className="font-bold text-indigo-700 block mb-1">Número Total de Sesiones del Paquete</label>
+                                    <input
+                                        type="number"
+                                        min="2"
+                                        value={formData.numeroSesiones}
+                                        onChange={(e) => setFormData({ ...formData, numeroSesiones: e.target.value })}
+                                        className="w-36 px-3 py-1.5 border border-indigo-200 rounded-xl bg-white font-black text-indigo-700"
+                                    />
+                                </div>
+                                {Number(formData.precioVenta) > 0 && (
+                                    <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs space-y-1">
+                                        <p className="font-black text-amber-900 uppercase text-[10px]">Esquema Automático de Pagos (App Paciente y Caja)</p>
+                                        <p className="font-bold text-gray-800">
+                                            • Total del Paquete ({Number(formData.numeroSesiones) || 10} sesiones): <strong>{formatCurrency(Number(formData.precioVenta))}</strong>
+                                        </p>
+                                        <p className="font-black text-emerald-700">
+                                            • ✨ Inicia en 1ª Sesión con el 20%: <strong>{formatCurrency(Number(formData.precioVenta) * 0.20)}</strong>
+                                        </p>
+                                        <p className="font-bold text-indigo-800">
+                                            • 💳 Sesiones 2 a la {Number(formData.numeroSesiones) || 10} ({Math.max(1, (Number(formData.numeroSesiones) || 10) - 1)} pagos): <strong>{formatCurrency((Number(formData.precioVenta) * 0.80) / Math.max(1, (Number(formData.numeroSesiones) || 10) - 1))} por sesión</strong>
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         )}
 

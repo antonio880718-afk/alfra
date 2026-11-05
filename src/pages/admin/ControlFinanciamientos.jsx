@@ -165,7 +165,8 @@ export default function ControlFinanciamientos() {
             setNuevoAnticipo(anticipo.toString());
             
             if (sesiones > 0) {
-                const sugerido = (meta - anticipo) / sesiones;
+                const divisor = sesiones > 1 ? (sesiones - 1) : 1;
+                const sugerido = (meta - anticipo) / divisor;
                 setNuevoCostoSesion(sugerido.toFixed(2));
                 setCostoSugerido(sugerido);
             } else {
@@ -795,11 +796,11 @@ export default function ControlFinanciamientos() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label className="text-xs font-bold text-gray-500 mb-1 block">Anticipo (Sugerido 20%) ($)</label>
+                            <label className="text-xs font-bold text-gray-500 mb-1 block">1ª Sesión: Anticipo (20%) ($)</label>
                             <input type="number" className="w-full p-3 border rounded-xl text-sm" value={nuevoAnticipo} onChange={e => setNuevoAnticipo(e.target.value)} />
                         </div>
                         <div>
-                            <label className="text-xs font-bold text-gray-500 mb-1 block">Costo Por Sesión ($)</label>
+                            <label className="text-xs font-bold text-gray-500 mb-1 block">Sesión 2 a la Última ($ c/u)</label>
                             <input type="number" className="w-full p-3 border rounded-xl text-sm" value={nuevoCostoSesion} onChange={e => setNuevoCostoSesion(e.target.value)} />
                             {costoSugerido > 0 && <span className="text-[10px] text-gray-400">Sugerido: {formatCurrency(costoSugerido)}</span>}
                         </div>
