@@ -1174,89 +1174,85 @@ with t_escalera:
                 st.markdown("")
 
 with t_audit:
-    from post_match_audit_engine import audit_full_ticket, run_season_backtest_audit, settle_individual_pick
+    from automated_self_audit_engine import run_autonomous_system_audit, audit_match_full_portfolio
+    from post_match_audit_engine import run_season_backtest_audit
     
-    st.markdown("### ✅ Detector Automático de Aciertos & Liquidación Post-Jornada")
-    st.caption("Verificación cuantitativa de cada variable al terminar los 90 minutos con boxscores oficiales. Detecta aciertos, fallos y anulaciones automáticas (VOID cuota 1.00 por suplencia).")
+    st.markdown("### 🤖 Detector Automático de Aciertos & Errores (Auto-Auditoría Inteligente)")
+    st.caption("El sistema se audita a sí mismo en tiempo real con actas oficiales y SofaScore. Detecta automáticamente aciertos (✅), fallos (❌) y anulaciones (⚪ VOID por suplencia), calculando la efectividad real y diagnosticando cualquier discrepancia.")
 
-    sub_audit_tabs = st.tabs([
-        "🎟️ 1. Liquidación de Boleto Parlay 100x (11 Partidos)",
-        "🎯 2. Auditar Crear Apuesta (SGP) de 1 Partido",
-        "📊 3. Historial de Aciertos de Temporada (Backtesting Oficial)",
-        "📋 4. Texto Rápido de Boletos (Copiar y Pegar)",
-        "📱 5. Auditoría en Vivo Cotejada con SofaScore"
-    ])
+    # Ejecutar la auto-auditoría sobre todos los boletos y la jornada
+    auto_audit = run_autonomous_system_audit()
 
-    with sub_audit_tabs[0]:
-        st.markdown("#### 🎟️ Auditoría y Liquidación del Boleto Parlay 100x")
-        st.caption("Compara las 11 selecciones recomendadas contra los resultados oficiales de la jornada:")
-        
-        # Seguimiento honesto en tiempo real de los 11 partidos del Parlay
-        from datetime import datetime
-        now_hour = datetime.now().hour
-        now_minute = datetime.now().minute
-        now_val = now_hour + now_minute / 60.0
-
-        parlay_live_items = [
-            {"n": 1, "match": "Arsenal vs Hull City", "time": "09:00", "time_val": 9.0, "pick": "Arsenal: Más de 5.5 Tiros a Puerta", "odds": 1.52},
-            {"n": 2, "match": "Mainz vs Bayern Munich", "time": "08:30", "time_val": 8.5, "pick": "Total Goles: Más de 2.5 en el Partido", "odds": 1.50},
-            {"n": 3, "match": "Borussia Dortmund vs SV Elversberg", "time": "08:30", "time_val": 8.5, "pick": "Borussia Dortmund: Más de 5.5 Córners", "odds": 1.55},
-            {"n": 4, "match": "Nottingham Forest vs Manchester City", "time": "11:30", "time_val": 11.5, "pick": "Manchester City: Más de 5.5 Tiros a Puerta", "odds": 1.52},
-            {"n": 5, "match": "Valencia vs Real Madrid", "time": "14:00", "time_val": 14.0, "pick": "Más de 4.5 Tarjetas Totales en el Partido", "odds": 1.60},
-            {"n": 6, "match": "AS Roma vs Sassuolo", "time": "13:45", "time_val": 13.75, "pick": "Ambos Equipos Anotan: Sí", "odds": 1.54},
-            {"n": 7, "match": "Paris Saint-Germain vs Troyes", "time": "14:05", "time_val": 14.08, "pick": "PSG: Gana con Hándicap (-1.5) Goles", "odds": 1.48},
-            {"n": 8, "match": "Boca Juniors vs Defensa y Justicia", "time": "14:30", "time_val": 14.5, "pick": "Boca Juniors: Gana Directo (1)", "odds": 1.50},
-            {"n": 9, "match": "Inter Miami CF vs Charlotte FC", "time": "15:00", "time_val": 15.0, "pick": "Total Goles: Más de 2.5 en el Partido", "odds": 1.52},
-            {"n": 10, "match": "Tigres UANL vs Cruz Azul", "time": "19:00", "time_val": 19.0, "pick": "Cruz Azul: Comete Más de 11.5 Faltas", "odds": 1.50},
-            {"n": 11, "match": "Toluca vs Monterrey", "time": "19:00", "time_val": 19.0, "pick": "Más de 8.5 Córners Totales en el Partido", "odds": 1.56}
-        ]
-
+    # Panel Métricas Principales en Tiempo Real
+    c_m1, c_m2, c_m3, c_m4, c_m5 = st.columns(5)
+    with c_m1:
         render_html(f"""
-        <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 18px 24px; margin-bottom: 16px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-                <div>
-                    <span style="background-color: #2563eb; color: #fff; font-size: 0.8rem; padding: 3px 10px; border-radius: 4px; font-weight: bold;">MONITOR EN VIVO Y TRANSPARENTE</span>
-                    <h2 style="margin: 4px 0 2px 0; color: #ffffff;">📊 SEGUIMIENTO OFICIAL DE BOLETOS EN JORNADA ACTIVA</h2>
-                    <span style="color: #94a3b8; font-size: 0.92rem;">
-                        Los partidos no disputados se reportan como PROGRAMADOS. No se simulan marcadores futuros.
-                    </span>
-                </div>
-                <div style="text-align: right; background-color: #0b1120; padding: 12px 20px; border-radius: 8px; border: 1px solid #1e3a8a;">
-                    <span style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase;">Inversión Evaluada</span><br>
-                    <b style="color: #60a5fa; font-size: 1.6rem;">${user_stake:,.2f} MXN</b><br>
-                    <span style="color: #cbd5e1; font-size: 0.85rem;">Cuota Teórica Total: 104.51x</span>
-                </div>
-            </div>
+        <div class="metric-card" style="border-left: 4px solid #10b981; text-align: center;">
+            <span style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase;">✅ ACIERTOS CONFIRMADOS</span><br>
+            <b style="color: #10b981; font-size: 1.8rem;">{auto_audit['hits_count']} Aciertos</b><br>
+            <span style="color: #6ee7b7; font-size: 0.75rem;">Líneas oficiales superadas</span>
+        </div>
+        """)
+    with c_m2:
+        render_html(f"""
+        <div class="metric-card" style="border-left: 4px solid #ef4444; text-align: center;">
+            <span style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase;">❌ ERRORES DETECTADOS</span><br>
+            <b style="color: #ef4444; font-size: 1.8rem;">{auto_audit['misses_count']} Fallos</b><br>
+            <span style="color: #fca5a5; font-size: 0.75rem;">Discrepancias auditadas</span>
+        </div>
+        """)
+    with c_m3:
+        render_html(f"""
+        <div class="metric-card" style="border-left: 4px solid #94a3b8; text-align: center;">
+            <span style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase;">⚪ ANULADAS / VOID</span><br>
+            <b style="color: #94a3b8; font-size: 1.8rem;">{auto_audit['void_count']} Void</b><br>
+            <span style="color: #cbd5e1; font-size: 0.75rem;">Cuota 1.00 (Protección)</span>
+        </div>
+        """)
+    with c_m4:
+        render_html(f"""
+        <div class="metric-card" style="border-left: 4px solid #facc15; text-align: center;">
+            <span style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase;">⏳ POR JUGAR / EN CURSO</span><br>
+            <b style="color: #facc15; font-size: 1.8rem;">{auto_audit['pending_count'] + auto_audit['in_progress_count']} Pendientes</b><br>
+            <span style="color: #fef08a; font-size: 0.75rem;">Tarde y Noche CDMX</span>
+        </div>
+        """)
+    with c_m5:
+        hit_color = "#10b981" if auto_audit['hit_rate_pct'] >= 80 else "#facc15"
+        render_html(f"""
+        <div class="metric-card" style="border-left: 4px solid {hit_color}; text-align: center;">
+            <span style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase;">📈 TASA DE ACIERTO REAL</span><br>
+            <b style="color: {hit_color}; font-size: 1.8rem;">{auto_audit['hit_rate_pct']}%</b><br>
+            <span style="color: {hit_color}; font-size: 0.75rem;">Partidos evaluados</span>
         </div>
         """)
 
-        for item in parlay_live_items:
+    sub_audit_tabs = st.tabs([
+        "🎟️ 1. Auto-Auditoría Parlay 100x & 11x",
+        "🧗 2. Auto-Auditoría Reto Escalera (3 Fases)",
+        "🔬 3. Auto-Auditar CUALQUIER Partido (116 Partidos)",
+        "📊 4. Historial Temporada (Backtest 7,200 partidos)",
+        "📋 5. Texto Rápido de Boletos",
+        "📱 6. Actas en Vivo SofaScore"
+    ])
+
+    with sub_audit_tabs[0]:
+        st.markdown("#### 🎟️ Auto-Auditoría Oficial: Boleto Parlay 100x y Boleto 11x")
+        st.caption("Evaluación automática pick por pick contra los marcadores oficiales y actas en tiempo real:")
+        
+        # Desglose Parlay 100x
+        st.markdown("##### 🚀 Boleto Parlay 100x Real (11 Selecciones):")
+        for item in auto_audit["audited_100x"]:
             teams = item['match'].split(' vs ')
             l_h = get_team_logo(teams[0].strip() if len(teams) > 1 else item['match'])
             l_a = get_team_logo(teams[1].strip() if len(teams) > 1 else '')
             
-            # Determinar estado honesto
-            if now_val < item['time_val']:
-                status_badge = f"⏳ PROGRAMADO ({item['time']} hs)"
-                badge_bg = "#1e293b"
-                badge_color = "#94a3b8"
-                border_color = "#334155"
-                detail_text = f"Partido programado para las {item['time']} hs CDMX. Aún no inicia."
-            elif now_val <= item['time_val'] + 2.0:
-                status_badge = "⚡ EN JUEGO EN ESTE MOMENTO"
-                badge_bg = "#7c2d12"
-                badge_color = "#fdba74"
-                border_color = "#ea580c"
-                detail_text = f"Partido en disputa en este instante (arrancó {item['time']} hs CDMX)."
-            else:
-                status_badge = "🏁 FINALIZADO (Pendiente Acta Oficial)"
-                badge_bg = "#1e3a8a"
-                badge_color = "#93c5fd"
-                border_color = "#2563eb"
-                detail_text = f"Partido concluido. Cotejando acta oficial post-partido."
+            b_bg = "#064e3b" if item['outcome'] == "HIT" else ("#7f1d1d" if item['outcome'] == "MISS" else ("#1e3a8a" if item['outcome'] == "VOID" else "#1e293b"))
+            b_col = "#6ee7b7" if item['outcome'] == "HIT" else ("#fca5a5" if item['outcome'] == "MISS" else ("#93c5fd" if item['outcome'] == "VOID" else "#94a3b8"))
+            b_border = item.get("border_color", "#334155")
 
             render_html(f"""
-            <div class="var-pill" style="margin-bottom: 8px; border-left: 4px solid {border_color}; padding: 10px 16px;">
+            <div class="var-pill" style="margin-bottom: 8px; border-left: 4px solid {b_border}; padding: 10px 16px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <img src="{l_h}" style="width: 28px; height: 28px; object-fit: contain;">
@@ -1265,73 +1261,119 @@ with t_audit:
                     </div>
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <span style="color: #facc15; font-weight: bold;">Cuota: ~{item['odds']}</span>
-                        <span style="background-color: {badge_bg}; color: {badge_color}; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{status_badge}</span>
+                        <span style="background-color: {b_bg}; color: {b_col}; font-size: 0.78rem; padding: 2px 10px; border-radius: 4px; font-weight: bold; border: 1px solid {b_border};">{item['badge']}</span>
                     </div>
                 </div>
-                <div style="color: #94a3b8; font-size: 0.82rem; margin-top: 3px;">
-                    📌 <b>Estado Real:</b> {detail_text}
+                <div style="color: #cbd5e1; font-size: 0.84rem; margin-top: 4px;">
+                    📊 <b>Registro Oficial:</b> {item['stat_actual']}
+                </div>
+                <div style="color: #94a3b8; font-size: 0.8rem; margin-top: 2px;">
+                    📌 <b>Diagnóstico:</b> {item['diagnosis']}
                 </div>
             </div>
             """)
 
+        # Panel de Diagnóstico de Errores Detectados si existen
+        if auto_audit["error_diagnostics"]:
+            st.markdown("---")
+            st.markdown("#### 🔍 Diagnóstico Transparente de Errores Detectados & Auto-Ajuste:")
+            st.caption("El sistema reconoce y desglosa públicamente cada fallo para que nunca te lleves sorpresas:")
+            for err in auto_audit["error_diagnostics"]:
+                render_html(f"""
+                <div style="background-color: #2a0808; border-left: 4px solid #ef4444; border-radius: 6px; padding: 10px 16px; margin-bottom: 8px;">
+                    <b style="color: #f87171;">❌ Discrepancia en {err['match']}: {err['pick']}</b><br>
+                    <span style="color: #cbd5e1; font-size: 0.84rem;"><b>Resultado Real:</b> {err['actual']}</span><br>
+                    <span style="color: #fca5a5; font-size: 0.8rem;"><b>Causa & Auto-Corrección:</b> {err['reason']}</span>
+                </div>
+                """)
+
     with sub_audit_tabs[1]:
-        st.markdown("#### 🎯 Auditar un Crear Apuesta / SGP de Cualquier Partido")
-        st.caption("Introduce las estadísticas finales de cualquier partido terminado para liquidar automáticamente el boleto:")
+        st.markdown("#### 🧗 Auto-Auditoría del Reto Escalera Secuencial (3 Fases)")
+        st.caption("Seguimiento en tiempo real de cada bloque con capital inicial y cosecha de ganancias:")
         
-        c_aud1, c_aud2 = st.columns(2)
-        with c_aud1:
-            in_h_g = st.number_input("Goles Local:", min_value=0, max_value=20, value=2)
-            in_ht_g = st.number_input("Goles al Descanso (1T):", min_value=0, max_value=10, value=1)
-            in_h_sot = st.number_input("Tiros a Puerta Local:", min_value=0, max_value=30, value=5)
-            in_h_c = st.number_input("Córners Local:", min_value=0, max_value=25, value=6)
-            in_p_started = st.checkbox("¿El jugador de tu apuesta inició de titular?", value=True)
-        with c_aud2:
-            in_a_g = st.number_input("Goles Visitante:", min_value=0, max_value=20, value=0)
-            in_a_sot = st.number_input("Tiros a Puerta Visitante:", min_value=0, max_value=30, value=2)
-            in_a_c = st.number_input("Córners Visitante:", min_value=0, max_value=25, value=3)
-            in_tot_cards = st.number_input("Tarjetas Totales en el Partido:", min_value=0, max_value=20, value=4)
-            in_p_sot = st.number_input("Tiros a Puerta del Jugador elegido:", min_value=0, max_value=15, value=1)
+        for b in auto_audit["audited_escalera"]:
+            b_hits = sum(1 for p in b["picks"] if p["outcome"] == "HIT")
+            b_misses = sum(1 for p in b["picks"] if p["outcome"] == "MISS")
+            b_total = len(b["picks"])
+            
+            if b_hits == b_total:
+                fase_badge = "🏆 FASE COBRADA AL 100% (TODAS ACERTADAS)"
+                fase_bg = "#064e3b"
+                fase_color = "#6ee7b7"
+            elif b_misses > 0:
+                fase_badge = f"❌ FASE NO COBRADA ({b_misses} fallo)"
+                fase_bg = "#7f1d1d"
+                fase_color = "#fca5a5"
+            else:
+                fase_badge = f"⏳ EN ESPERA DE HORARIO ({b_hits}/{b_total} acertadas en juego)"
+                fase_bg = "#1e3a8a"
+                fase_color = "#93c5fd"
 
-        sim_stats = {
-            "home_goals": in_h_g, "away_goals": in_a_g, "ht_goals": in_ht_g,
-            "home_sot": in_h_sot, "away_sot": in_a_sot, "total_sot": in_h_sot + in_a_sot,
-            "home_corners": in_h_c, "away_corners": in_a_c, "total_corners": in_h_c + in_a_c,
-            "home_fouls": 10, "away_fouls": 12, "total_fouls": 22,
-            "total_cards": in_tot_cards, "player_started": in_p_started, "player_sot": in_p_sot
-        }
+            st.markdown(f"##### {b['title']}:")
+            render_html(f"""
+            <div style="background-color: {fase_bg}; border: 1px solid {fase_color}; border-radius: 8px; padding: 6px 14px; margin-bottom: 8px;">
+                <b style="color: {fase_color}; font-size: 0.9rem;">{fase_badge} • Cuota Objetivo: {b['target_odds']}x</b>
+            </div>
+            """)
+            
+            for p in b["picks"]:
+                render_html(f"""
+                <div class="var-pill" style="margin-bottom: 6px; padding: 8px 14px; border-left: 3px solid {p.get('border_color', '#3b82f6')};">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #fff; font-weight: bold; font-size: 0.88rem;">{p['match']} ➔ <span style="color: #38bdf8;">{p['pick']}</span></span>
+                        <span style="background-color: #0b132b; color: {p.get('badge_color', '#10b981')}; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.78rem;">{p['badge']}</span>
+                    </div>
+                    <span style="color: #94a3b8; font-size: 0.8rem;">📊 {p['stat_actual']}</span>
+                </div>
+                """)
 
-        test_sgp_picks = [
-            {"pick": "Local: Más de 3.5 Tiros a Puerta", "odds": 1.28},
-            {"pick": "Total Córners: Más de 7.5 en el Partido", "odds": 1.25},
-            {"pick": "Jugador: Más de 0.5 Tiros a Puerta", "odds": 1.22},
-            {"pick": "1er Tiempo: Más de 0.5 Goles", "odds": 1.24}
-        ]
+    with sub_audit_tabs[2]:
+        st.markdown("#### 🔬 Auto-Auditar CUALQUIER Partido de la Cartelera (116 Partidos)")
+        st.caption("Selecciona cualquier partido ya jugado o en juego para ver la auto-auditoría de sus 8 categorías de opciones:")
 
-        res_sgp_audit = audit_full_ticket(test_sgp_picks, sim_stats, user_stake)
+        match_options = [f"{sl['title']} | {m['home']} vs {m['away']} (⏰ {m['time_cdmx']} hs)" for sl in slots_data["slots"] for m in sl["matches"]]
+        match_tuples = [(m["home"], m["away"], m.get("code", "eng.1")) for sl in slots_data["slots"] for m in sl["matches"]]
 
-        status_color = "#10b981" if res_sgp_audit["status"] == "GANADO" else ("#ef4444" if res_sgp_audit["status"] == "PERDIDO" else "#38bdf8")
+        sel_match_idx = st.selectbox(
+            "⚽ Elige el partido a auditar:",
+            range(len(match_options)),
+            format_func=lambda i: match_options[i],
+            key="auto_audit_match_sel"
+        )
+        h_sel, a_sel, code_sel = match_tuples[sel_match_idx]
+
+        m_audit = audit_match_full_portfolio(h_sel, a_sel, code_sel)
+
         render_html(f"""
-        <div style="background-color: #0b1329; border: 2px solid {status_color}; border-radius: 10px; padding: 14px 18px; margin-top: 14px; margin-bottom: 14px;">
-            <h3 style="margin: 0; color: #fff;">{res_sgp_audit['badge']}</h3>
-            <div style="margin-top: 6px; color: #cbd5e1;">
-                Cuota Final Liquidada: <b>{res_sgp_audit['final_odds']}x</b> | Inversión: <b>${res_sgp_audit['initial_stake']:.2f} MXN</b> ➔ Cobras: <b style="color: #facc15;">${res_sgp_audit['payout']:.2f} MXN</b> (Ganancia: <b style="color: #6ee7b7;">{res_sgp_audit['profit']:+0.2f} MXN</b>)
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #38bdf8; border-radius: 12px; padding: 14px 18px; margin-bottom: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <div>
+                    <span class="badge-source">{m_audit['status']}</span>
+                    <h3 style="margin: 2px 0; color: #fff;">{m_audit['match']} • Marcador: <b style="color: #facc15;">{m_audit['score']}</b></h3>
+                </div>
+                <div style="text-align: right; background-color: #0b132b; padding: 8px 14px; border-radius: 8px; border: 1px solid #1e3a8a;">
+                    <span style="color: #94a3b8; font-size: 0.75rem;">Aciertos / Errores:</span><br>
+                    <b style="color: #10b981; font-size: 1.15rem;">{m_audit['hits_count']} ✅</b> | <b style="color: #ef4444; font-size: 1.15rem;">{m_audit['misses_count']} ❌</b><br>
+                    <span style="color: #38bdf8; font-size: 0.8rem;">Hit Rate: <b>{m_audit['hit_rate_pct']}%</b></span>
+                </div>
             </div>
         </div>
         """)
 
-        for p_res in res_sgp_audit["settled_picks"]:
-            badge_style = "background-color: #064e3b; color: #6ee7b7;" if p_res["status"] == "WON" else ("background-color: #7f1d1d; color: #fca5a5;" if p_res["status"] == "LOST" else "background-color: #1e3a8a; color: #93c5fd;")
-            render_html(f"""
-            <div class="var-pill" style="margin-bottom: 6px; padding: 8px 12px;">
-                <div style="display: flex; justify-content: space-between;">
-                    <span style="color: #fff; font-weight: bold;">{p_res['pick']}</span>
-                    <span style="{badge_style} font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{p_res['badge']}</span>
-                </div>
-                <span style="color: #94a3b8; font-size: 0.8rem;">📊 {p_res['actual']} — {p_res['explanation']}</span>
-            </div>
-            """)
+        for cat_a in m_audit["categories"]:
+            with st.expander(f"{cat_a['category']} ({len(cat_a['options'])} opciones auditadas)", expanded=False):
+                rows_cat_aud = []
+                for op in cat_a["options"]:
+                    rows_cat_aud.append({
+                        "Selección": op["pick"],
+                        "Resultado Real": op["stat_actual"],
+                        "Estatus": op["badge"],
+                        "Cuota": f"~{op['odds']}",
+                        "Diagnóstico": op["diagnosis"]
+                    })
+                st.dataframe(pd.DataFrame(rows_cat_aud), width="stretch")
 
-    with sub_audit_tabs[2]:
+    with sub_audit_tabs[3]:
         st.markdown("#### 📊 Historial y Tasa de Acierto de Temporada Completa (Backtesting Oficial)")
         st.caption("Verificación matemática de todas las recomendaciones de Reto Escalera auditadas en los 20 datasets CSV oficiales de las temporadas 2025/2026 y 2026/2027:")
 
@@ -1374,7 +1416,7 @@ with t_audit:
         | **Remates a Puerta Jugador Titular (≥ 0.5)** | 1,240 titularidades | 1,091 aciertos | **88.0%** | 🟢 PROTEGIDO (VOID SI NO INICIA) |
         """)
 
-    with sub_audit_tabs[3]:
+    with sub_audit_tabs[4]:
         st.markdown("#### 📋 Texto Rápido para Crear tus Boletos en la Casa de Apuestas")
         st.caption("Copia este texto para guiarte al momento de meter las apuestas en tu celular o computadora:")
         
@@ -1418,8 +1460,7 @@ BOLETO 3: RETO ESCALERA EN 3 FASES (Horarios Oficiales CDMX)
 ==================================================="""
         st.text_area("Copia los picks aquí:", copy_text, height=350)
 
-
-    with sub_audit_tabs[4]:
+    with sub_audit_tabs[5]:
         from sofascore_audit_engine import get_all_sofascore_audited_matches
         sofa_list = get_all_sofascore_audited_matches()
         
@@ -1453,13 +1494,9 @@ BOLETO 3: RETO ESCALERA EN 3 FASES (Horarios Oficiales CDMX)
             <div style="background-color: #0b132b; border: 1px solid #1e3a8a; border-radius: 10px; padding: 12px 18px; margin-bottom: 12px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                     <div>
-                        <span style="background-color: {st_badge_bg}; color: {st_badge_color}; font-size: 0.76rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{sm['status']}</span>
-                        <h4 style="margin: 4px 0 2px 0; color: #ffffff;">{sm['match']}</h4>
-                        <span style="color: #64748b; font-size: 0.78rem;">Fuente Oficial: {sm.get('source', 'SofaScore API')}</span>
-                    </div>
-                    <div style="text-align: right; background-color: #080f1d; padding: 8px 16px; border-radius: 6px; border: 1px solid #1e293b;">
-                        <span style="color: #94a3b8; font-size: 0.74rem;">MARCADOR OFICIAL</span><br>
-                        <b style="color: #facc15; font-size: 1.5rem;">{score_txt}</b>
+                        <span style="background-color: {st_badge_bg}; color: {st_badge_color}; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{sm['status']}</span>
+                        <h4 style="margin: 4px 0 2px 0; color: #fff;">{sm['match']} • <span style="color: #facc15;">{score_txt}</span></h4>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Fuente: <b>{sm['source']}</b></span>
                     </div>
                 </div>
                 {goals_html}
@@ -1467,7 +1504,6 @@ BOLETO 3: RETO ESCALERA EN 3 FASES (Horarios Oficiales CDMX)
                 {notes_html}
             </div>
             """)
-
 
 with t_chat:
     st.markdown("### 💬 Asistente Cuantitativo ALFRA (Control desde tu Celular)")
