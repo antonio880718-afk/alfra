@@ -6,9 +6,7 @@
       "Alex Iwobi",
       "Adama Traoré",
       "Emile Smith Rowe",
-      "Andreas Pereira",
-      "Antonee Robinson",
-      "Bernd Leno"
+      "Antonee Robinson"
     ],
     "out": [
       {
@@ -28,17 +26,13 @@
     ]
   },
   "newcastle united": {
-    "manager": "Matthias Jaissle",
+    "manager": "Eddie Howe",
     "starters_ready": [
-      "Alexander Isak",
       "Yoane Wissa",
-      "Anthony Elanga",
+      "Nick Woltemade",
+      "Anthony Gordon",
       "Harvey Barnes",
-      "Bruno Guimarães",
-      "Sandro Tonali",
-      "Jacob Murphy",
-      "Fabian Schär",
-      "Nick Pope"
+      "Bruno Guimarães"
     ],
     "out": [
       {
@@ -76,17 +70,13 @@
     ]
   },
   "newcastle": {
-    "manager": "Matthias Jaissle",
+    "manager": "Eddie Howe",
     "starters_ready": [
-      "Alexander Isak",
       "Yoane Wissa",
-      "Anthony Elanga",
+      "Nick Woltemade",
+      "Anthony Gordon",
       "Harvey Barnes",
-      "Bruno Guimarães",
-      "Sandro Tonali",
-      "Jacob Murphy",
-      "Fabian Schär",
-      "Nick Pope"
+      "Bruno Guimarães"
     ],
     "out": [
       {
@@ -126,12 +116,11 @@
   "arsenal": {
     "manager": "Mikel Arteta",
     "starters_ready": [
-      "Bukayo Saka",
+      "Viktor Gyökeres",
       "Kai Havertz",
+      "Bukayo Saka",
       "Martin Ødegaard",
-      "Declan Rice",
-      "William Saliba",
-      "David Raya"
+      "Declan Rice"
     ],
     "out": [
       {
@@ -623,18 +612,18 @@
   "eintracht frankfurt": {
     "manager": "Dino Toppmöller",
     "starters_ready": [
-      "Omar Marmoush",
       "Hugo Ekitiké",
-      "Mario Götze",
-      "Ellyes Skhiri",
+      "Igor Matanović",
+      "Fares Chaibi",
+      "Robin Koch",
       "Kevin Trapp"
     ],
     "out": [
       {
-        "player": "Oscar Højlund",
-        "pos": "Centrocampista",
-        "type": "🚑 Metatarso",
-        "desc": "Baja médica."
+        "player": "Omar Marmoush",
+        "pos": "Delantero",
+        "type": "Traspaso",
+        "desc": "Traspasado a la Premier League"
       }
     ],
     "questionable": []
@@ -661,11 +650,11 @@
   "rb leipzig": {
     "manager": "Marco Rose",
     "starters_ready": [
-      "Loïs Openda",
-      "Benjamin Šeško",
-      "Xavi Simons",
-      "Willi Orbán",
-      "Péter Gulácsi"
+      "Conrad Harder",
+      "Johan Bakayoko",
+      "Antonio Nusa",
+      "Christoph Baumgartner",
+      "Willi Orbán"
     ],
     "out": [
       {
@@ -705,11 +694,11 @@
   "werder bremen": {
     "manager": "Ole Werner",
     "starters_ready": [
+      "Victor Boniface",
       "Marvin Ducksch",
-      "Keke Topp",
+      "Justin Njinmah",
       "Mitchell Weiser",
-      "Jens Stage",
-      "Michael Zetterer"
+      "Marco Friedl"
     ],
     "out": [
       {
@@ -1286,10 +1275,9 @@
     "starters_ready": [
       "Bradley Barcola",
       "Ousmane Dembélé",
-      "Marco Asensio",
-      "Vitinha",
-      "Achraf Hakimi",
-      "Gianluigi Donnarumma"
+      "Khvicha Kvaratskhelia",
+      "Désiré Doué",
+      "Vitinha"
     ],
     "out": [
       {
@@ -1312,10 +1300,9 @@
     "starters_ready": [
       "Bradley Barcola",
       "Ousmane Dembélé",
-      "Marco Asensio",
-      "Vitinha",
-      "Achraf Hakimi",
-      "Gianluigi Donnarumma"
+      "Khvicha Kvaratskhelia",
+      "Désiré Doué",
+      "Vitinha"
     ],
     "out": [
       {
@@ -1336,12 +1323,11 @@
   "paris sg": {
     "manager": "Luis Enrique",
     "starters_ready": [
-      "Ousmane Dembélé",
       "Bradley Barcola",
-      "Marco Asensio",
-      "Vitinha",
-      "Achraf Hakimi",
-      "Gianluigi Donnarumma"
+      "Ousmane Dembélé",
+      "Khvicha Kvaratskhelia",
+      "Désiré Doué",
+      "Vitinha"
     ],
     "out": [
       {
@@ -2020,11 +2006,11 @@
   "wolverhampton wanderers": {
     "manager": "Gary O'Neil",
     "starters_ready": [
+      "Raúl Jiménez",
       "Matheus Cunha",
-      "Jørgen Strand Larsen",
       "Hwang Hee-chan",
-      "Mario Lemina",
-      "José Sá"
+      "João Gomes",
+      "Nélson Semedo"
     ],
     "out": [
       {
@@ -2039,11 +2025,11 @@
   "wolves": {
     "manager": "Gary O'Neil",
     "starters_ready": [
+      "Raúl Jiménez",
       "Matheus Cunha",
-      "Jørgen Strand Larsen",
       "Hwang Hee-chan",
-      "Mario Lemina",
-      "José Sá"
+      "João Gomes",
+      "Nélson Semedo"
     ],
     "out": [
       {
@@ -4922,11 +4908,11 @@
   "wolverhampton": {
     "manager": "Gary O'Neil",
     "starters_ready": [
+      "Raúl Jiménez",
       "Matheus Cunha",
-      "Jørgen Strand Larsen",
       "Hwang Hee-chan",
-      "Mario Lemina",
-      "José Sá"
+      "João Gomes",
+      "Nélson Semedo"
     ],
     "out": [
       {
@@ -6587,9 +6573,13 @@
   "chelsea": {
     "team": "Chelsea",
     "starters_ready": [
-      "Cole Palmer"
+      "João Pedro",
+      "Cole Palmer",
+      "Pedro Neto",
+      "Enzo Fernández",
+      "Levi Colwill"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Enzo Maresca"
   },
   "crystal palace": {
     "team": "Crystal Palace",
@@ -6636,23 +6626,35 @@
   "liverpool": {
     "team": "Liverpool",
     "starters_ready": [
-      "Mohamed Salah"
+      "Florian Wirtz",
+      "Alexander Isak",
+      "Mohamed Salah",
+      "Cody Gakpo",
+      "Virgil van Dijk"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Arne Slot"
   },
   "manchester united": {
     "team": "Manchester United",
     "starters_ready": [
-      "Rasmus Højlund"
+      "Benjamin Šeško",
+      "Marcus Rashford",
+      "Bruno Fernandes",
+      "Alejandro Garnacho",
+      "Lisandro Martínez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Ruben Amorim"
   },
   "man united": {
     "team": "Man United",
     "starters_ready": [
-      "Rasmus Højlund"
+      "Benjamin Šeško",
+      "Marcus Rashford",
+      "Bruno Fernandes",
+      "Alejandro Garnacho",
+      "Lisandro Martínez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Ruben Amorim"
   },
   "alavés": {
     "team": "Alavés",
@@ -6748,16 +6750,40 @@
   "real betis": {
     "team": "Real Betis",
     "starters_ready": [
-      "Vitor Roque"
+      "Cucho Hernández",
+      "Cédric Bakambu",
+      "Antony",
+      "Abde Ezzalzouli",
+      "Pablo Fornals"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Manuel Pellegrini",
+    "out": [
+      {
+        "player": "Vitor Roque",
+        "pos": "Delantero",
+        "type": "Traspaso",
+        "desc": "Traspasado al Palmeiras"
+      }
+    ]
   },
   "betis": {
     "team": "Betis",
     "starters_ready": [
-      "Vitor Roque"
+      "Cucho Hernández",
+      "Cédric Bakambu",
+      "Antony",
+      "Abde Ezzalzouli",
+      "Pablo Fornals"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Manuel Pellegrini",
+    "out": [
+      {
+        "player": "Vitor Roque",
+        "pos": "Delantero",
+        "type": "Traspaso",
+        "desc": "Traspasado al Palmeiras"
+      }
+    ]
   },
   "real sociedad": {
     "team": "Real Sociedad",
@@ -6860,16 +6886,40 @@
   "ac milan": {
     "team": "Ac Milan",
     "starters_ready": [
-      "Álvaro Morata"
+      "Santiago Gimenez",
+      "Rafael Leão",
+      "Christian Pulisic",
+      "Christopher Nkunku",
+      "Theo Hernández"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Massimiliano Allegri",
+    "out": [
+      {
+        "player": "Álvaro Morata",
+        "pos": "Delantero",
+        "type": "Traspaso/Cesión",
+        "desc": "Salida a Como 1907 / Leganés"
+      }
+    ]
   },
   "milan": {
     "team": "Milan",
     "starters_ready": [
-      "Álvaro Morata"
+      "Santiago Gimenez",
+      "Rafael Leão",
+      "Christian Pulisic",
+      "Christopher Nkunku",
+      "Theo Hernández"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Massimiliano Allegri",
+    "out": [
+      {
+        "player": "Álvaro Morata",
+        "pos": "Delantero",
+        "type": "Traspaso/Cesión",
+        "desc": "Salida a Como 1907 / Leganés"
+      }
+    ]
   },
   "monza": {
     "team": "Monza",
@@ -6902,16 +6952,52 @@
   "bayer leverkusen": {
     "team": "Bayer Leverkusen",
     "starters_ready": [
-      "Victor Boniface"
+      "Patrik Schick",
+      "Martin Terrier",
+      "Jonas Hofmann",
+      "Granit Xhaka",
+      "Edmond Tapsoba"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Carles Martínez Novell",
+    "out": [
+      {
+        "player": "Victor Boniface",
+        "pos": "Delantero",
+        "type": "Cedido",
+        "desc": "Cedido al SV Werder Bremen"
+      },
+      {
+        "player": "Florian Wirtz",
+        "pos": "Centrocampista",
+        "type": "Traspaso",
+        "desc": "Traspasado al Liverpool FC"
+      }
+    ]
   },
   "leverkusen": {
-    "team": "Leverkusen",
+    "team": "Bayer Leverkusen",
     "starters_ready": [
-      "Victor Boniface"
+      "Patrik Schick",
+      "Martin Terrier",
+      "Jonas Hofmann",
+      "Granit Xhaka",
+      "Edmond Tapsoba"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Carles Martínez Novell",
+    "out": [
+      {
+        "player": "Victor Boniface",
+        "pos": "Delantero",
+        "type": "Cedido",
+        "desc": "Cedido al SV Werder Bremen"
+      },
+      {
+        "player": "Florian Wirtz",
+        "pos": "Centrocampista",
+        "type": "Traspaso",
+        "desc": "Traspasado al Liverpool FC"
+      }
+    ]
   },
   "bochum": {
     "team": "Bochum",

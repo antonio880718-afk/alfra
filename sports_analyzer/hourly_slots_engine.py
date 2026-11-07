@@ -130,12 +130,12 @@ if os.path.exists(_ROSTER_CACHE_PATH):
 # Diccionario exhaustivo de delanteros titulares oficiales 2026/2027 por equipo
 VERIFIED_FORWARDS_DB = {
     "arsenal": {
-        "name": "Bukayo Saka",
-        "jersey": "7",
-        "pos": "Extremo Referente",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "name": "Viktor Gyökeres",
+        "jersey": "14",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.9,
+        "prob": 89.5,
+        "odds": 1.16
     },
     "aston villa": {
         "name": "Ollie Watkins",
@@ -178,9 +178,9 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.25
     },
     "chelsea": {
-        "name": "Cole Palmer",
-        "jersey": "20",
-        "pos": "Mediapunta Referente",
+        "name": "João Pedro",
+        "jersey": "9",
+        "pos": "Delantero Centro",
         "sot_avg": 1.7,
         "prob": 87.0,
         "odds": 1.2
@@ -205,9 +205,9 @@ VERIFIED_FORWARDS_DB = {
         "name": "Rodrigo Muniz",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.7,
+        "prob": 86.5,
+        "odds": 1.21
     },
     "ipswich town": {
         "name": "Liam Delap",
@@ -242,12 +242,12 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.28
     },
     "liverpool": {
-        "name": "Mohamed Salah",
-        "jersey": "11",
-        "pos": "Extremo Referente",
-        "sot_avg": 1.8,
-        "prob": 88.0,
-        "odds": 1.18
+        "name": "Florian Wirtz",
+        "jersey": "10",
+        "pos": "Mediapunta / Atacante",
+        "sot_avg": 1.9,
+        "prob": 89.0,
+        "odds": 1.17
     },
     "manchester city": {
         "name": "Erling Haaland",
@@ -266,36 +266,36 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.14
     },
     "manchester united": {
-        "name": "Rasmus Højlund",
+        "name": "Benjamin Šeško",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "man united": {
-        "name": "Rasmus Højlund",
+        "name": "Benjamin Šeško",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "newcastle united": {
-        "name": "Alexander Isak",
-        "jersey": "14",
+        "name": "Yoane Wissa",
+        "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "newcastle": {
-        "name": "Alexander Isak",
-        "jersey": "14",
+        "name": "Yoane Wissa",
+        "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "nottingham forest": {
         "name": "Chris Wood",
@@ -317,17 +317,17 @@ VERIFIED_FORWARDS_DB = {
         "name": "Dominic Solanke",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 85.5,
-        "odds": 1.24
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "tottenham": {
         "name": "Dominic Solanke",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 85.5,
-        "odds": 1.24
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "west ham united": {
         "name": "Jarrod Bowen",
@@ -346,20 +346,20 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.24
     },
     "wolverhampton wanderers": {
-        "name": "Matheus Cunha",
-        "jersey": "10",
-        "pos": "Delantero Referente",
+        "name": "Raúl Jiménez",
+        "jersey": "9",
+        "pos": "Delantero Centro",
         "sot_avg": 1.6,
         "prob": 85.0,
-        "odds": 1.24
+        "odds": 1.25
     },
     "wolves": {
-        "name": "Matheus Cunha",
-        "jersey": "10",
-        "pos": "Delantero Referente",
+        "name": "Raúl Jiménez",
+        "jersey": "9",
+        "pos": "Delantero Centro",
         "sot_avg": 1.6,
         "prob": 85.0,
-        "odds": 1.24
+        "odds": 1.25
     },
     "alavés": {
         "name": "Kike García",
@@ -514,20 +514,20 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.3
     },
     "real betis": {
-        "name": "Vitor Roque",
-        "jersey": "8",
+        "name": "Cucho Hernández",
+        "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "betis": {
-        "name": "Vitor Roque",
-        "jersey": "8",
+        "name": "Cucho Hernández",
+        "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "real madrid": {
         "name": "Vinícius Júnior",
@@ -698,20 +698,20 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.26
     },
     "ac milan": {
-        "name": "Álvaro Morata",
+        "name": "Santiago Gimenez",
         "jersey": "7",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "milan": {
-        "name": "Álvaro Morata",
+        "name": "Santiago Gimenez",
         "jersey": "7",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "monza": {
         "name": "Milan Đurić",
@@ -794,20 +794,20 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.28
     },
     "bayer leverkusen": {
-        "name": "Victor Boniface",
-        "jersey": "22",
+        "name": "Patrik Schick",
+        "jersey": "14",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "leverkusen": {
-        "name": "Victor Boniface",
-        "jersey": "22",
+        "name": "Patrik Schick",
+        "jersey": "14",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "bayern munich": {
         "name": "Harry Kane",
@@ -858,12 +858,12 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.25
     },
     "eintracht frankfurt": {
-        "name": "Omar Marmoush",
-        "jersey": "7",
-        "pos": "Delantero Referente",
-        "sot_avg": 1.8,
-        "prob": 88.0,
-        "odds": 1.18
+        "name": "Hugo Ekitiké",
+        "jersey": "11",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.7,
+        "prob": 86.5,
+        "odds": 1.21
     },
     "freiburg": {
         "name": "Junior Adamu",
@@ -914,12 +914,12 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.25
     },
     "rb leipzig": {
-        "name": "Loïs Openda",
-        "jersey": "11",
+        "name": "Conrad Harder",
+        "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.26
     },
     "st. pauli": {
         "name": "Johannes Eggestein",
@@ -954,12 +954,12 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.3
     },
     "werder bremen": {
-        "name": "Marvin Ducksch",
-        "jersey": "7",
+        "name": "Victor Boniface",
+        "jersey": "22",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.7,
+        "prob": 86.5,
+        "odds": 1.2
     },
     "vfl wolfsburg": {
         "name": "Mohamed Amoura",
@@ -1292,18 +1292,18 @@ VERIFIED_FORWARDS_DB = {
     "paris saint-germain": {
         "name": "Bradley Barcola",
         "jersey": "29",
-        "pos": "Extremo Referente",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "pos": "Extremo / Delantero",
+        "sot_avg": 1.9,
+        "prob": 89.0,
+        "odds": 1.17
     },
     "psg": {
         "name": "Bradley Barcola",
         "jersey": "29",
-        "pos": "Extremo Referente",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "pos": "Extremo / Delantero",
+        "sot_avg": 1.9,
+        "prob": 89.0,
+        "odds": 1.17
     },
     "marseille": {
         "name": "Mason Greenwood",
@@ -1680,6 +1680,30 @@ VERIFIED_FORWARDS_DB = {
         "sot_avg": 1.7,
         "prob": 87.0,
         "odds": 1.2
+    },
+    "bremen": {
+        "name": "Victor Boniface",
+        "jersey": "22",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.7,
+        "prob": 86.5,
+        "odds": 1.2
+    },
+    "wolverhampton": {
+        "name": "Raúl Jiménez",
+        "jersey": "9",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.6,
+        "prob": 85.0,
+        "odds": 1.25
+    },
+    "leipzig": {
+        "name": "Conrad Harder",
+        "jersey": "9",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.26
     }
 }
 

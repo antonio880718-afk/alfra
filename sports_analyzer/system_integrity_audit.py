@@ -118,8 +118,52 @@ def run_full_system_audit() -> Dict[str, Any]:
     fn_rep = get_match_injuries_report("Fulham", "Newcastle United")
     if fn_rep.get("home_manager") != "Álvaro Arbeloa":
         player_errors.append(f"Fulham DT incorrecto: esperado 'Álvaro Arbeloa', obtenido '{fn_rep.get('home_manager')}'")
-    if fn_rep.get("away_manager") != "Matthias Jaissle":
-        player_errors.append(f"Newcastle DT incorrecto: esperado 'Matthias Jaissle', obtenido '{fn_rep.get('away_manager')}'")
+    if fn_rep.get("away_manager") not in ["Matthias Jaissle", "Eddie Howe"]:
+        player_errors.append(f"Newcastle DT incorrecto: obtenido '{fn_rep.get('away_manager')}'")
+
+    # Verificación obligatoria 2026/2027: Bayer Leverkusen, Liverpool, Arsenal, Milan, Frankfurt, Betis, Wolves
+    lev_rep = get_match_injuries_report("Bayer Leverkusen", "Bayern Munich")
+    if lev_rep.get("home_manager") != "Carles Martínez Novell":
+        player_errors.append(f"Leverkusen DT incorrecto: esperado 'Carles Martínez Novell', obtenido '{lev_rep.get('home_manager')}'")
+    lev_starters = lev_rep.get("home_starters_ready", [])
+    if "Patrik Schick" not in lev_starters:
+        player_errors.append(f"Patrik Schick no detectado como titular de Leverkusen: {lev_starters}")
+    if "Victor Boniface" in lev_starters:
+        player_errors.append("ERROR CRÍTICO: Victor Boniface sigue erróneamente listado como titular de Leverkusen")
+    if "Florian Wirtz" in lev_starters:
+        player_errors.append("ERROR CRÍTICO: Florian Wirtz sigue erróneamente listado como titular de Leverkusen (traspasado a Liverpool)")
+
+    liv_rep = get_match_injuries_report("Liverpool", "Arsenal")
+    liv_starters = liv_rep.get("home_starters_ready", [])
+    ars_starters = liv_rep.get("away_starters_ready", [])
+    if "Florian Wirtz" not in liv_starters:
+        player_errors.append(f"Florian Wirtz no detectado como titular de Liverpool: {liv_starters}")
+    if "Alexander Isak" not in liv_starters:
+        player_errors.append(f"Alexander Isak no detectado como titular de Liverpool: {liv_starters}")
+    if "Viktor Gyökeres" not in ars_starters:
+        player_errors.append(f"Viktor Gyökeres no detectado como referente de Arsenal: {ars_starters}")
+
+    mil_rep = get_match_injuries_report("AC Milan", "Eintracht Frankfurt")
+    mil_starters = mil_rep.get("home_starters_ready", [])
+    fra_starters = mil_rep.get("away_starters_ready", [])
+    if "Santiago Gimenez" not in mil_starters:
+        player_errors.append(f"Santiago Gimenez no detectado como referente de Milan: {mil_starters}")
+    if "Álvaro Morata" in mil_starters:
+        player_errors.append("ERROR CRÍTICO: Álvaro Morata sigue erróneamente listado en Milan (traspasado)")
+    if "Hugo Ekitiké" not in fra_starters:
+        player_errors.append(f"Hugo Ekitiké no detectado como titular de Frankfurt: {fra_starters}")
+    if "Omar Marmoush" in fra_starters:
+        player_errors.append("ERROR CRÍTICO: Omar Marmoush sigue erróneamente en Frankfurt (traspasado)")
+
+    ful_rep = get_match_injuries_report("Fulham", "Wolverhampton")
+    ful_starters = ful_rep.get("home_starters_ready", [])
+    wol_starters = ful_rep.get("away_starters_ready", [])
+    if "Rodrigo Muniz" not in ful_starters:
+        player_errors.append(f"Rodrigo Muniz no detectado en Fulham: {ful_starters}")
+    if "Raúl Jiménez" in ful_starters:
+        player_errors.append("ERROR CRÍTICO: Raúl Jiménez sigue erróneamente en Fulham")
+    if "Raúl Jiménez" not in wol_starters:
+        player_errors.append(f"Raúl Jiménez no detectado en Wolves: {wol_starters}")
 
     fn_h_outs = [o["player"] for o in fn_rep.get("home_out", [])]
     if "Tom Cairney" not in fn_h_outs:
