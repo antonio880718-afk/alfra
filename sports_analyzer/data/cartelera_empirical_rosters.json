@@ -425,11 +425,10 @@
   "athletic club": {
     "manager": "Ernesto Valverde",
     "starters_ready": [
+      "Gorka Guruzeta",
       "Iñaki Williams",
       "Nico Williams",
-      "Gorka Guruzeta",
-      "Oihan Sancet",
-      "Julen Agirrezabala"
+      "Oihan Sancet"
     ],
     "out": [
       {
@@ -588,10 +587,9 @@
     "manager": "Nuri Şahin",
     "starters_ready": [
       "Serhou Guirassy",
+      "Maximilian Beier",
       "Julian Brandt",
-      "Marcel Sabitzer",
-      "Nico Schlotterbeck",
-      "Gregor Kobel"
+      "Karim Adeyemi"
     ],
     "out": [
       {
@@ -677,9 +675,8 @@
     "starters_ready": [
       "Deniz Undav",
       "Ermedin Demirović",
-      "Enzo Millot",
-      "Angelo Stiller",
-      "Alexander Nübel"
+      "Chris Führich",
+      "Enzo Millot"
     ],
     "out": [
       {
@@ -3088,10 +3085,10 @@
   "hellas verona": {
     "manager": "Paolo Zanetti",
     "starters_ready": [
-      "Daniel Mosquera",
       "Casper Tengstedt",
+      "Daniel Mosquera",
       "Darko Lazović",
-      "Lorenzo Montipò"
+      "Tomáš Suslov"
     ],
     "out": [
       {
@@ -6538,37 +6535,53 @@
   "aston villa": {
     "team": "Aston Villa",
     "starters_ready": [
-      "Ollie Watkins"
+      "Ollie Watkins",
+      "Morgan Rogers",
+      "Leon Bailey",
+      "John McGinn",
+      "Youri Tielemans"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Unai Emery"
   },
   "bournemouth": {
     "team": "Bournemouth",
     "starters_ready": [
-      "Evanilson"
+      "Evanilson",
+      "Antoine Semenyo",
+      "Justin Kluivert",
+      "Marcus Tavernier"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Andoni Iraola"
   },
   "brentford": {
     "team": "Brentford",
     "starters_ready": [
-      "Bryan Mbeumo"
+      "Bryan Mbeumo",
+      "Igor Thiago",
+      "Kevin Schade",
+      "Mikkel Damsgaard"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Thomas Frank"
   },
   "brighton": {
     "team": "Brighton",
     "starters_ready": [
-      "Danny Welbeck"
+      "Danny Welbeck",
+      "Georginio Rutter",
+      "Kaoru Mitoma",
+      "Carlos Baleba"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Fabian Hürzeler"
   },
   "brighton & hove albion": {
     "team": "Brighton & Hove Albion",
     "starters_ready": [
-      "Danny Welbeck"
+      "Danny Welbeck",
+      "Georginio Rutter",
+      "Kaoru Mitoma",
+      "Carlos Baleba"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Fabian Hürzeler"
   },
   "chelsea": {
     "team": "Chelsea",
@@ -6584,44 +6597,62 @@
   "crystal palace": {
     "team": "Crystal Palace",
     "starters_ready": [
-      "Jean-Philippe Mateta"
+      "Jean-Philippe Mateta",
+      "Eberechi Eze",
+      "Eddie Nketiah",
+      "Daichi Kamada"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Oliver Glasner"
   },
   "everton": {
     "team": "Everton",
     "starters_ready": [
-      "Dominic Calvert-Lewin"
+      "Dominic Calvert-Lewin",
+      "Dwight McNeil",
+      "Iliman Ndiaye",
+      "Jack Harrison"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Sean Dyche"
   },
   "ipswich town": {
     "team": "Ipswich Town",
     "starters_ready": [
-      "Liam Delap"
+      "Liam Delap",
+      "Omari Hutchinson",
+      "Sammie Szmodics",
+      "Leif Davis"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Kieran McKenna"
   },
   "ipswich": {
     "team": "Ipswich",
     "starters_ready": [
-      "Liam Delap"
+      "Liam Delap",
+      "Omari Hutchinson",
+      "Sammie Szmodics",
+      "Leif Davis"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Kieran McKenna"
   },
   "leicester city": {
     "team": "Leicester City",
     "starters_ready": [
-      "Jamie Vardy"
+      "Jamie Vardy",
+      "Stephy Mavididi",
+      "Abdul Fatawu",
+      "Facundo Buonanotte"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Steve Cooper"
   },
   "leicester": {
     "team": "Leicester",
     "starters_ready": [
-      "Jamie Vardy"
+      "Jamie Vardy",
+      "Stephy Mavididi",
+      "Abdul Fatawu",
+      "Facundo Buonanotte"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Steve Cooper"
   },
   "liverpool": {
     "team": "Liverpool",
@@ -6659,93 +6690,133 @@
   "alavés": {
     "team": "Alavés",
     "starters_ready": [
-      "Kike García"
+      "Kike García",
+      "Carlos Martín",
+      "Carlos Vicente",
+      "Jon Guridi"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Luis García Plaza"
   },
   "alaves": {
     "team": "Alaves",
     "starters_ready": [
-      "Kike García"
+      "Kike García",
+      "Carlos Martín",
+      "Carlos Vicente",
+      "Jon Guridi"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Luis García Plaza"
   },
   "athletic bilbao": {
     "team": "Athletic Bilbao",
     "starters_ready": [
-      "Iñaki Williams"
+      "Gorka Guruzeta",
+      "Iñaki Williams",
+      "Nico Williams",
+      "Oihan Sancet"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Ernesto Valverde"
   },
   "atletico madrid": {
     "team": "Atletico Madrid",
     "starters_ready": [
-      "Julián Álvarez"
+      "Julián Álvarez",
+      "Antoine Griezmann",
+      "Alexander Sørloth",
+      "Rodrigo De Paul"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Diego Simeone"
   },
   "atlético madrid": {
     "team": "Atlético Madrid",
     "starters_ready": [
-      "Julián Álvarez"
+      "Julián Álvarez",
+      "Antoine Griezmann",
+      "Alexander Sørloth",
+      "Rodrigo De Paul"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Diego Simeone"
   },
   "barcelona": {
     "team": "Barcelona",
     "starters_ready": [
-      "Robert Lewandowski"
+      "Robert Lewandowski",
+      "Lamine Yamal",
+      "Raphinha",
+      "Dani Olmo",
+      "Pedri"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Hansi Flick"
   },
   "celta vigo": {
     "team": "Celta Vigo",
     "starters_ready": [
-      "Iago Aspas"
+      "Iago Aspas",
+      "Borja Iglesias",
+      "Williot Swedberg",
+      "Óscar Mingueza"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Claudio Giráldez"
   },
   "celta de vigo": {
     "team": "Celta De Vigo",
     "starters_ready": [
-      "Iago Aspas"
+      "Iago Aspas",
+      "Borja Iglesias",
+      "Williot Swedberg",
+      "Óscar Mingueza"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Claudio Giráldez"
   },
   "getafe": {
     "team": "Getafe",
     "starters_ready": [
-      "Borja Mayoral"
+      "Borja Mayoral",
+      "Bertuğ Yıldırım",
+      "Mauro Arambarri",
+      "Carles Pérez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "José Bordalás"
   },
   "girona": {
     "team": "Girona",
     "starters_ready": [
-      "Cristhian Stuani"
+      "Bojan Miovski",
+      "Abel Ruiz",
+      "Viktor Tsygankov",
+      "Yáser Asprilla"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Míchel"
   },
   "las palmas": {
     "team": "Las Palmas",
     "starters_ready": [
-      "Sandro Ramírez"
+      "Fábio Silva",
+      "Sandro Ramírez",
+      "Alberto Moleiro",
+      "Kirian Rodríguez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Diego Martínez"
   },
   "mallorca": {
     "team": "Mallorca",
     "starters_ready": [
-      "Vedat Muriqi"
+      "Vedat Muriqi",
+      "Cyle Larin",
+      "Sergi Darder",
+      "Dani Rodríguez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Jagoba Arrasate"
   },
   "rayo vallecano": {
     "team": "Rayo Vallecano",
     "starters_ready": [
-      "Sergio Camello"
+      "Sergio Camello",
+      "Randy Nteka",
+      "Jorge de Frutos",
+      "Isi Palazón"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Iñigo Pérez"
   },
   "real betis": {
     "team": "Real Betis",
@@ -6788,100 +6859,142 @@
   "real sociedad": {
     "team": "Real Sociedad",
     "starters_ready": [
-      "Mikel Oyarzabal"
+      "Mikel Oyarzabal",
+      "Takefusa Kubo",
+      "Orri Óskarsson",
+      "Brais Méndez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Imanol Alguacil"
   },
   "real valladolid": {
     "team": "Real Valladolid",
     "starters_ready": [
-      "Raúl Moro"
+      "Juanmi Latasa",
+      "Raúl Moro",
+      "Mamadou Sylla",
+      "Kike Pérez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Paulo Pezzolano"
   },
   "valladolid": {
     "team": "Valladolid",
     "starters_ready": [
-      "Raúl Moro"
+      "Juanmi Latasa",
+      "Raúl Moro",
+      "Mamadou Sylla",
+      "Kike Pérez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Paulo Pezzolano"
   },
   "sevilla": {
     "team": "Sevilla",
     "starters_ready": [
-      "Isaac Romero"
+      "Isaac Romero",
+      "Dodi Lukébakio",
+      "Kelechi Iheanacho",
+      "Djibril Sow"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "García Pimienta"
   },
   "villarreal": {
     "team": "Villarreal",
     "starters_ready": [
-      "Ayoze Pérez"
+      "Ayoze Pérez",
+      "Nicolas Pépé",
+      "Álex Baena",
+      "Gerard Moreno"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Marcelino García Toral"
   },
   "atalanta": {
     "team": "Atalanta",
     "starters_ready": [
-      "Mateo Retegui"
+      "Mateo Retegui",
+      "Ademola Lookman",
+      "Charles De Ketelaere",
+      "Mario Pašalić"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Gian Piero Gasperini"
   },
   "como": {
     "team": "Como",
     "starters_ready": [
-      "Patrick Cutrone"
+      "Álvaro Morata",
+      "Nico Paz",
+      "Patrick Cutrone",
+      "Gabriel Strefezza"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Cesc Fàbregas"
   },
   "fiorentina": {
     "team": "Fiorentina",
     "starters_ready": [
-      "Moise Kean"
+      "Moise Kean",
+      "Albert Guðmundsson",
+      "Andrea Colpani",
+      "Edoardo Bove"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Raffaele Palladino"
   },
   "genoa": {
     "team": "Genoa",
     "starters_ready": [
-      "Andrea Pinamonti"
+      "Andrea Pinamonti",
+      "Mario Balotelli",
+      "Morten Frendrup",
+      "Milan Badelj"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Alberto Gilardino"
   },
   "verona": {
     "team": "Verona",
     "starters_ready": [
-      "Daniel Mosquera"
+      "Casper Tengstedt",
+      "Daniel Mosquera",
+      "Darko Lazović",
+      "Tomáš Suslov"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Paolo Zanetti"
   },
   "inter milan": {
     "team": "Inter Milan",
     "starters_ready": [
-      "Lautaro Martínez"
+      "Lautaro Martínez",
+      "Marcus Thuram",
+      "Nicolò Barella",
+      "Hakan Çalhanoğlu"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Simone Inzaghi"
   },
   "inter": {
     "team": "Inter",
     "starters_ready": [
-      "Lautaro Martínez"
+      "Lautaro Martínez",
+      "Marcus Thuram",
+      "Nicolò Barella",
+      "Hakan Çalhanoğlu"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Simone Inzaghi"
   },
   "juventus": {
     "team": "Juventus",
     "starters_ready": [
-      "Dušan Vlahović"
+      "Dušan Vlahović",
+      "Kenan Yıldız",
+      "Francisco Conceição",
+      "Teun Koopmeiners"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Thiago Motta"
   },
   "lazio": {
     "team": "Lazio",
     "starters_ready": [
-      "Valentín Castellanos"
+      "Valentín Castellanos",
+      "Boulaye Dia",
+      "Mattia Zaccagni",
+      "Gustav Isaksen"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Marco Baroni"
   },
   "ac milan": {
     "team": "Ac Milan",
@@ -6924,30 +7037,42 @@
   "monza": {
     "team": "Monza",
     "starters_ready": [
-      "Milan Đurić"
+      "Milan Đurić",
+      "Daniel Maldini",
+      "Dany Mota",
+      "Matteo Pessina"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Alessandro Nesta"
   },
   "napoli": {
     "team": "Napoli",
     "starters_ready": [
-      "Romelu Lukaku"
+      "Romelu Lukaku",
+      "Khvicha Kvaratskhelia",
+      "Scott McTominay",
+      "Matteo Politano"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Antonio Conte"
   },
   "udinese": {
     "team": "Udinese",
     "starters_ready": [
-      "Lorenzo Lucca"
+      "Lorenzo Lucca",
+      "Florian Thauvin",
+      "Brenner",
+      "Sandi Lovrić"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Kosta Runjaić"
   },
   "venezia": {
     "team": "Venezia",
     "starters_ready": [
-      "Joel Pohjanpalo"
+      "Joel Pohjanpalo",
+      "Gaetano Oristanio",
+      "Gianluca Busio",
+      "Mikael Ellertsson"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Eusebio Di Francesco"
   },
   "bayer leverkusen": {
     "team": "Bayer Leverkusen",
@@ -7002,288 +7127,432 @@
   "bochum": {
     "team": "Bochum",
     "starters_ready": [
-      "Philipp Hofmann"
+      "Philipp Hofmann",
+      "Myron Boadu",
+      "Dani de Wit",
+      "Matus Bero"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Dieter Hecking"
   },
   "dortmund": {
     "team": "Dortmund",
     "starters_ready": [
-      "Serhou Guirassy"
+      "Serhou Guirassy",
+      "Maximilian Beier",
+      "Julian Brandt",
+      "Karim Adeyemi"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Nuri Şahin"
   },
   "borussia mönchengladbach": {
     "team": "Borussia Mönchengladbach",
     "starters_ready": [
-      "Tim Kleindienst"
+      "Tim Kleindienst",
+      "Alassane Pléa",
+      "Franck Honorat",
+      "Kevin Stöger"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Gerardo Seoane"
   },
   "monchengladbach": {
     "team": "Monchengladbach",
     "starters_ready": [
-      "Tim Kleindienst"
+      "Tim Kleindienst",
+      "Alassane Pléa",
+      "Franck Honorat",
+      "Kevin Stöger"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Gerardo Seoane"
   },
   "freiburg": {
     "team": "Freiburg",
     "starters_ready": [
-      "Junior Adamu"
+      "Junior Adamu",
+      "Lucas Höler",
+      "Vincenzo Grifo",
+      "Ritsu Doan"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Julian Schuster"
   },
   "heidenheim": {
     "team": "Heidenheim",
     "starters_ready": [
-      "Marvin Pieringer"
+      "Marvin Pieringer",
+      "Paul Wanner",
+      "Leo Scienza",
+      "Jan Schöppner"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Frank Schmidt"
   },
   "hoffenheim": {
     "team": "Hoffenheim",
     "starters_ready": [
-      "Andrej Kramarić"
+      "Andrej Kramarić",
+      "Marius Bülter",
+      "Adam Hložek",
+      "Tom Bischof"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Pellegrino Matarazzo"
   },
   "mainz 05": {
     "team": "Mainz 05",
     "starters_ready": [
-      "Jonathan Burkardt"
+      "Jonathan Burkardt",
+      "Paul Nebel",
+      "Jae-sung Lee",
+      "Nadiem Amiri"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Bo Henriksen"
   },
   "st. pauli": {
     "team": "St. Pauli",
     "starters_ready": [
-      "Johannes Eggestein"
+      "Johannes Eggestein",
+      "Morgan Guilavogui",
+      "Oladapo Afolayan",
+      "Jackson Irvine"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Alexander Blessin"
   },
   "stuttgart": {
     "team": "Stuttgart",
     "starters_ready": [
-      "Deniz Undav"
+      "Deniz Undav",
+      "Ermedin Demirović",
+      "Chris Führich",
+      "Enzo Millot"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Sebastian Hoeneß"
   },
   "union berlin": {
     "team": "Union Berlin",
     "starters_ready": [
-      "Benedict Hollerbach"
+      "Benedict Hollerbach",
+      "Jordan Siebatcheu",
+      "Yorbe Vertessen",
+      "Tom Rothe"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Bo Svensson"
   },
   "hannover 96": {
     "team": "Hannover 96",
     "starters_ready": [
-      "Jessic Ngankam"
+      "Nicolò Tresoldi",
+      "Jessic Ngankam",
+      "Havard Nielsen",
+      "Enzo Leopold"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Stefan Leitl"
   },
   "karlsruher sc": {
     "team": "Karlsruher Sc",
     "starters_ready": [
-      "Budu Zivzivadze"
+      "Budu Zivzivadze",
+      "Fabian Schleusener",
+      "Marvin Wanitzek",
+      "Dženis Burnić"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Christian Eichner"
   },
   "fortuna düsseldorf": {
     "team": "Fortuna Düsseldorf",
     "starters_ready": [
-      "Dawid Kownacki"
+      "Dawid Kownacki",
+      "Vincent Vermeij",
+      "Felix Klaus",
+      "Ísak Jóhannesson"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Daniel Thioune"
   },
   "fortuna dusseldorf": {
     "team": "Fortuna Dusseldorf",
     "starters_ready": [
-      "Dawid Kownacki"
+      "Dawid Kownacki",
+      "Vincent Vermeij",
+      "Felix Klaus",
+      "Ísak Jóhannesson"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Daniel Thioune"
   },
   "preußen münster": {
     "team": "Preußen Münster",
     "starters_ready": [
-      "Malik Batmaz"
+      "Joshua Mees",
+      "Babis Makridis",
+      "András Németh",
+      "Jorrit Hendrix"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Sascha Hildmann"
   },
   "preussen munster": {
     "team": "Preussen Munster",
     "starters_ready": [
-      "Malik Batmaz"
+      "Joshua Mees",
+      "Babis Makridis",
+      "András Németh",
+      "Jorrit Hendrix"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Sascha Hildmann"
   },
   "schalke 04": {
     "team": "Schalke 04",
     "starters_ready": [
-      "Moussa Sylla"
+      "Moussa Sylla",
+      "Kenan Karaman",
+      "Amin Younes",
+      "Paul Seguin"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Kees van Wonderen"
   },
   "hertha bsc": {
     "team": "Hertha Bsc",
     "starters_ready": [
-      "Luca Schuler"
+      "Derry Scherhant",
+      "Florian Niederlechner",
+      "Michael Cuisance",
+      "Fabian Reese"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Cristian Fiél"
   },
   "hamburger sv": {
     "team": "Hamburger Sv",
     "starters_ready": [
-      "Robert Glatzel"
+      "Robert Glatzel",
+      "Davie Selke",
+      "Ransford Königsdörffer",
+      "Jean-Luc Dompé"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Steffen Baumgart"
   },
   "1. fc kaiserslautern": {
     "team": "1. Fc Kaiserslautern",
     "starters_ready": [
-      "Ragnar Ache"
+      "Ragnar Ache",
+      "Daniel Hanslik",
+      "Richmond Tachie",
+      "Marlon Ritter"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Markus Anfang"
   },
   "1. fc köln": {
     "team": "1. Fc Köln",
     "starters_ready": [
-      "Tim Lemperle"
+      "Tim Lemperle",
+      "Damion Downs",
+      "Linton Maina",
+      "Luca Waldschmidt"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Gerhard Struber"
   },
   "sunderland": {
     "team": "Sunderland",
     "starters_ready": [
-      "Wilson Isidor"
+      "Wilson Isidor",
+      "Patrick Roberts",
+      "Romaine Mundle",
+      "Jobe Bellingham"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Régis Le Bris"
   },
   "marseille": {
     "team": "Marseille",
     "starters_ready": [
-      "Mason Greenwood"
+      "Mason Greenwood",
+      "Elye Wahi",
+      "Jonathan Rowe",
+      "Amine Harit"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Roberto De Zerbi"
   },
   "monaco": {
     "team": "Monaco",
     "starters_ready": [
-      "Breel Embolo"
+      "Breel Embolo",
+      "George Ilenikhena",
+      "Maghnes Akliouche",
+      "Aleksandr Golovin"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Adi Hütter"
   },
   "lille": {
     "team": "Lille",
     "starters_ready": [
-      "Jonathan David"
+      "Jonathan David",
+      "Mohamed Bayo",
+      "Edon Zhegrova",
+      "Osame Sahraoui"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Bruno Génésio"
   },
   "lyon": {
     "team": "Lyon",
     "starters_ready": [
-      "Alexandre Lacazette"
+      "Alexandre Lacazette",
+      "Georges Mikautadze",
+      "Malick Fofana",
+      "Rayan Cherki"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Pierre Sage"
   },
   "lens": {
     "team": "Lens",
     "starters_ready": [
-      "M'Bala Nzola"
+      "M'Bala Nzola",
+      "Florian Sotoca",
+      "Wesley Saïd",
+      "Adrien Thomasson"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Will Still"
   },
   "club américa": {
     "team": "Club América",
     "starters_ready": [
-      "Henry Martín"
+      "Henry Martín",
+      "Brian Rodríguez",
+      "Álvaro Fidalgo",
+      "Alejandro Zendejas"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "André Jardine"
   },
   "chivas": {
     "team": "Chivas",
     "starters_ready": [
-      "Roberto Alvarado"
+      "Armando González",
+      "Ricardo Marín",
+      "Roberto Alvarado",
+      "Cade Cowell"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Arturo Ortega"
   },
   "guadalajara": {
     "team": "Guadalajara",
     "starters_ready": [
-      "Roberto Alvarado"
+      "Armando González",
+      "Ricardo Marín",
+      "Roberto Alvarado",
+      "Cade Cowell"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Arturo Ortega"
   },
   "river plate": {
     "team": "River Plate",
     "starters_ready": [
-      "Miguel Borja"
+      "Miguel Borja",
+      "Facundo Colidio",
+      "Franco Mastantuono",
+      "Manuel Lanzini"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Marcelo Gallardo"
   },
   "racing club": {
     "team": "Racing Club",
     "starters_ready": [
-      "Adrián Martínez"
+      "Adrián Martínez",
+      "Maximiliano Salas",
+      "Juan Fernando Quintero",
+      "Roger Martínez"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Gustavo Costas"
   },
   "fenerbahce": {
     "team": "Fenerbahce",
     "starters_ready": [
-      "Edin Dzeko"
+      "Edin Džeko",
+      "Youssef En-Nesyri",
+      "Dušan Tadić",
+      "Allan Saint-Maximin"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "José Mourinho"
   },
   "besiktas": {
     "team": "Besiktas",
     "starters_ready": [
-      "Ciro Immobile"
+      "Ciro Immobile",
+      "Semih Kılıçsoy",
+      "Rafa Silva",
+      "Milot Rashica"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Giovanni van Bronckhorst"
   },
   "sporting cp": {
     "team": "Sporting Cp",
     "starters_ready": [
-      "Viktor Gyökeres"
+      "Viktor Gyökeres",
+      "Trincão",
+      "Pedro Gonçalves",
+      "Geovany Quenda"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "João Pereira"
   },
   "benfica": {
     "team": "Benfica",
     "starters_ready": [
-      "Vangelis Pavlidis"
+      "Vangelis Pavlidis",
+      "Kerem Aktürkoğlu",
+      "Ángel Di María",
+      "Orkun Kökçü"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Bruno Lage"
   },
   "porto": {
     "team": "Porto",
     "starters_ready": [
-      "Samu Omorodion"
+      "Samu Omorodion",
+      "Galeno",
+      "Pepê",
+      "Nico González"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Vítor Bruno"
   },
   "ajax": {
     "team": "Ajax",
     "starters_ready": [
-      "Wout Weghorst"
+      "Wout Weghorst",
+      "Brian Brobbey",
+      "Bertrand Traoré",
+      "Mika Godts"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Francesco Farioli"
   },
   "psv": {
     "team": "Psv",
     "starters_ready": [
-      "Luuk de Jong"
+      "Luuk de Jong",
+      "Ricardo Pepi",
+      "Johan Bakayoko",
+      "Noa Lang"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Peter Bosz"
   },
   "feyenoord": {
     "team": "Feyenoord",
     "starters_ready": [
-      "Santiago Giménez"
+      "Ayase Ueda",
+      "Igor Paixão",
+      "Calvin Stengs",
+      "Quinten Timber"
     ],
-    "manager": "Director Técnico Oficial"
+    "manager": "Brian Priske"
+  },
+  "fc barcelona": {
+    "team": "Fc Barcelona",
+    "manager": "Hansi Flick",
+    "starters_ready": [
+      "Robert Lewandowski",
+      "Lamine Yamal",
+      "Raphinha",
+      "Dani Olmo",
+      "Pedri"
+    ]
+  },
+  "sevilla fc": {
+    "team": "Sevilla Fc",
+    "manager": "García Pimienta",
+    "starters_ready": [
+      "Isaac Romero",
+      "Dodi Lukébakio",
+      "Kelechi Iheanacho",
+      "Djibril Sow"
+    ]
   }
 }

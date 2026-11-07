@@ -141,41 +141,41 @@ VERIFIED_FORWARDS_DB = {
         "name": "Ollie Watkins",
         "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 85.5,
-        "odds": 1.23
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "bournemouth": {
         "name": "Evanilson",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.0,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.26
     },
     "brentford": {
         "name": "Bryan Mbeumo",
         "jersey": "19",
-        "pos": "Delantero Referente",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.25
+        "pos": "Delantero Centro",
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "brighton": {
         "name": "Danny Welbeck",
         "jersey": "18",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "brighton & hove albion": {
         "name": "Danny Welbeck",
         "jersey": "18",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "chelsea": {
         "name": "João Pedro",
@@ -189,17 +189,17 @@ VERIFIED_FORWARDS_DB = {
         "name": "Jean-Philippe Mateta",
         "jersey": "14",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.6,
+        "prob": 85.0,
+        "odds": 1.24
     },
     "everton": {
         "name": "Dominic Calvert-Lewin",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "fulham": {
         "name": "Rodrigo Muniz",
@@ -213,33 +213,33 @@ VERIFIED_FORWARDS_DB = {
         "name": "Liam Delap",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 81.5,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.26
     },
     "ipswich": {
         "name": "Liam Delap",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 81.5,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.26
     },
     "leicester city": {
         "name": "Jamie Vardy",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "leicester": {
         "name": "Jamie Vardy",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "liverpool": {
         "name": "Florian Wirtz",
@@ -365,73 +365,73 @@ VERIFIED_FORWARDS_DB = {
         "name": "Kike García",
         "jersey": "17",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 80.5,
-        "odds": 1.3
+        "sot_avg": 1.4,
+        "prob": 83.0,
+        "odds": 1.28
     },
     "alaves": {
         "name": "Kike García",
         "jersey": "17",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 80.5,
-        "odds": 1.3
+        "sot_avg": 1.4,
+        "prob": 83.0,
+        "odds": 1.28
     },
     "athletic club": {
-        "name": "Iñaki Williams",
-        "jersey": "9",
-        "pos": "Delantero Referente",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "name": "Gorka Guruzeta",
+        "jersey": "12",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "athletic bilbao": {
-        "name": "Iñaki Williams",
-        "jersey": "9",
-        "pos": "Delantero Referente",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "name": "Gorka Guruzeta",
+        "jersey": "12",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "atletico madrid": {
         "name": "Julián Álvarez",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "atlético madrid": {
         "name": "Julián Álvarez",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "barcelona": {
         "name": "Robert Lewandowski",
         "jersey": "9",
         "pos": "Delantero Centro",
         "sot_avg": 1.9,
-        "prob": 89.0,
-        "odds": 1.18
+        "prob": 90.0,
+        "odds": 1.15
     },
     "celta vigo": {
         "name": "Iago Aspas",
         "jersey": "10",
         "pos": "Delantero Referente",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "celta de vigo": {
         "name": "Iago Aspas",
         "jersey": "10",
         "pos": "Delantero Referente",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "espanyol": {
         "name": "Javi Puado",
@@ -453,25 +453,25 @@ VERIFIED_FORWARDS_DB = {
         "name": "Borja Mayoral",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.0,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "girona": {
-        "name": "Cristhian Stuani",
-        "jersey": "7",
-        "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.0,
-        "odds": 1.28
-    },
-    "las palmas": {
-        "name": "Sandro Ramírez",
+        "name": "Bojan Miovski",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.5,
+        "odds": 1.25
+    },
+    "las palmas": {
+        "name": "Fábio Silva",
+        "jersey": "37",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.26
     },
     "leganés": {
         "name": "Juan Cruz",
@@ -493,9 +493,9 @@ VERIFIED_FORWARDS_DB = {
         "name": "Vedat Muriqi",
         "jersey": "7",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "osasuna": {
         "name": "Ante Budimir",
@@ -509,9 +509,9 @@ VERIFIED_FORWARDS_DB = {
         "name": "Sergio Camello",
         "jersey": "14",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "real betis": {
         "name": "Cucho Hernández",
@@ -541,33 +541,33 @@ VERIFIED_FORWARDS_DB = {
         "name": "Mikel Oyarzabal",
         "jersey": "10",
         "pos": "Delantero Referente",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "real valladolid": {
         "name": "Raúl Moro",
         "jersey": "11",
-        "pos": "Extremo Referente",
-        "sot_avg": 1.3,
-        "prob": 80.0,
-        "odds": 1.32
+        "pos": "Extremo / Delantero",
+        "sot_avg": 1.4,
+        "prob": 83.0,
+        "odds": 1.28
     },
     "valladolid": {
         "name": "Raúl Moro",
         "jersey": "11",
-        "pos": "Extremo Referente",
-        "sot_avg": 1.3,
-        "prob": 80.0,
-        "odds": 1.32
+        "pos": "Extremo / Delantero",
+        "sot_avg": 1.4,
+        "prob": 83.0,
+        "odds": 1.28
     },
     "sevilla": {
         "name": "Isaac Romero",
         "jersey": "7",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "valencia": {
         "name": "Hugo Duro",
@@ -581,17 +581,17 @@ VERIFIED_FORWARDS_DB = {
         "name": "Ayoze Pérez",
         "jersey": "22",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "atalanta": {
         "name": "Mateo Retegui",
         "jersey": "32",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "bologna": {
         "name": "Santiago Castro",
@@ -610,12 +610,12 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.3
     },
     "como": {
-        "name": "Patrick Cutrone",
-        "jersey": "10",
+        "name": "Álvaro Morata",
+        "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "empoli": {
         "name": "Lorenzo Colombo",
@@ -629,65 +629,65 @@ VERIFIED_FORWARDS_DB = {
         "name": "Moise Kean",
         "jersey": "20",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 85.5,
-        "odds": 1.23
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "genoa": {
         "name": "Andrea Pinamonti",
         "jersey": "19",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.0,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "hellas verona": {
-        "name": "Daniel Mosquera",
-        "jersey": "35",
+        "name": "Casper Tengstedt",
+        "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 80.5,
-        "odds": 1.3
+        "sot_avg": 1.4,
+        "prob": 83.5,
+        "odds": 1.27
     },
     "verona": {
-        "name": "Daniel Mosquera",
-        "jersey": "35",
+        "name": "Casper Tengstedt",
+        "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 80.5,
-        "odds": 1.3
+        "sot_avg": 1.4,
+        "prob": 83.5,
+        "odds": 1.27
     },
     "inter milan": {
         "name": "Lautaro Martínez",
         "jersey": "10",
         "pos": "Delantero Centro",
-        "sot_avg": 1.8,
-        "prob": 88.0,
-        "odds": 1.18
+        "sot_avg": 1.9,
+        "prob": 89.0,
+        "odds": 1.16
     },
     "inter": {
         "name": "Lautaro Martínez",
         "jersey": "10",
         "pos": "Delantero Centro",
-        "sot_avg": 1.8,
-        "prob": 88.0,
-        "odds": 1.18
+        "sot_avg": 1.9,
+        "prob": 89.0,
+        "odds": 1.16
     },
     "juventus": {
         "name": "Dušan Vlahović",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 86.5,
-        "odds": 1.21
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "lazio": {
         "name": "Valentín Castellanos",
         "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "lecce": {
         "name": "Nikola Krstović",
@@ -717,17 +717,17 @@ VERIFIED_FORWARDS_DB = {
         "name": "Milan Đurić",
         "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.26
     },
     "napoli": {
         "name": "Romelu Lukaku",
         "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "parma": {
         "name": "Ange-Yoan Bonny",
@@ -765,17 +765,17 @@ VERIFIED_FORWARDS_DB = {
         "name": "Lorenzo Lucca",
         "jersey": "17",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 85.0,
+        "odds": 1.24
     },
     "venezia": {
         "name": "Joel Pohjanpalo",
         "jersey": "20",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "fc augsburg": {
         "name": "Samuel Essende",
@@ -821,41 +821,41 @@ VERIFIED_FORWARDS_DB = {
         "name": "Philipp Hofmann",
         "jersey": "33",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 80.0,
-        "odds": 1.32
+        "sot_avg": 1.4,
+        "prob": 83.0,
+        "odds": 1.28
     },
     "borussia dortmund": {
         "name": "Serhou Guirassy",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "dortmund": {
         "name": "Serhou Guirassy",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "borussia mönchengladbach": {
         "name": "Tim Kleindienst",
         "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "monchengladbach": {
         "name": "Tim Kleindienst",
         "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "eintracht frankfurt": {
         "name": "Hugo Ekitiké",
@@ -869,25 +869,25 @@ VERIFIED_FORWARDS_DB = {
         "name": "Junior Adamu",
         "jersey": "20",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "heidenheim": {
         "name": "Marvin Pieringer",
         "jersey": "18",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "hoffenheim": {
         "name": "Andrej Kramarić",
         "jersey": "27",
-        "pos": "Delantero Referente",
+        "pos": "Delantero Centro",
         "sot_avg": 1.6,
-        "prob": 85.5,
-        "odds": 1.24
+        "prob": 86.0,
+        "odds": 1.22
     },
     "holstein kiel": {
         "name": "Shuto Machino",
@@ -909,9 +909,9 @@ VERIFIED_FORWARDS_DB = {
         "name": "Jonathan Burkardt",
         "jersey": "29",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "rb leipzig": {
         "name": "Conrad Harder",
@@ -925,33 +925,33 @@ VERIFIED_FORWARDS_DB = {
         "name": "Johannes Eggestein",
         "jersey": "11",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 80.5,
-        "odds": 1.3
+        "sot_avg": 1.4,
+        "prob": 83.0,
+        "odds": 1.28
     },
     "vfb stuttgart": {
         "name": "Deniz Undav",
         "jersey": "26",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "stuttgart": {
         "name": "Deniz Undav",
         "jersey": "26",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "union berlin": {
         "name": "Benedict Hollerbach",
         "jersey": "16",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "werder bremen": {
         "name": "Victor Boniface",
@@ -1034,76 +1034,76 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.28
     },
     "hannover 96": {
-        "name": "Jessic Ngankam",
+        "name": "Nicolò Tresoldi",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 83.0,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "karlsruher sc": {
         "name": "Budu Zivzivadze",
         "jersey": "11",
         "pos": "Delantero Centro",
         "sot_avg": 1.6,
-        "prob": 85.5,
-        "odds": 1.24
+        "prob": 86.0,
+        "odds": 1.22
     },
     "fortuna düsseldorf": {
         "name": "Dawid Kownacki",
         "jersey": "24",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 83.0,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.5,
+        "odds": 1.25
     },
     "fortuna dusseldorf": {
         "name": "Dawid Kownacki",
         "jersey": "24",
         "pos": "Delantero Centro",
+        "sot_avg": 1.5,
+        "prob": 84.5,
+        "odds": 1.25
+    },
+    "preußen münster": {
+        "name": "Joshua Mees",
+        "jersey": "7",
+        "pos": "Delantero Centro",
         "sot_avg": 1.4,
         "prob": 83.0,
         "odds": 1.28
     },
-    "preußen münster": {
-        "name": "Malik Batmaz",
-        "jersey": "9",
-        "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
-    },
     "preussen munster": {
-        "name": "Malik Batmaz",
-        "jersey": "9",
+        "name": "Joshua Mees",
+        "jersey": "7",
         "pos": "Delantero Centro",
-        "sot_avg": 1.3,
-        "prob": 81.0,
-        "odds": 1.3
+        "sot_avg": 1.4,
+        "prob": 83.0,
+        "odds": 1.28
     },
     "schalke 04": {
         "name": "Moussa Sylla",
         "jersey": "9",
         "pos": "Delantero Centro",
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
+    },
+    "hertha bsc": {
+        "name": "Derry Scherhant",
+        "jersey": "39",
+        "pos": "Delantero Centro",
         "sot_avg": 1.5,
         "prob": 84.5,
         "odds": 1.25
-    },
-    "hertha bsc": {
-        "name": "Luca Schuler",
-        "jersey": "9",
-        "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
     },
     "hamburger sv": {
         "name": "Robert Glatzel",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "kaiserslautern": {
         "name": "Ragnar Ache",
@@ -1117,17 +1117,17 @@ VERIFIED_FORWARDS_DB = {
         "name": "Ragnar Ache",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "1. fc köln": {
         "name": "Tim Lemperle",
         "jersey": "19",
         "pos": "Delantero Centro",
         "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "prob": 84.5,
+        "odds": 1.25
     },
     "sc paderborn 07": {
         "name": "Adriano Grimaldi",
@@ -1158,8 +1158,8 @@ VERIFIED_FORWARDS_DB = {
         "jersey": "18",
         "pos": "Delantero Centro",
         "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "prob": 84.0,
+        "odds": 1.26
     },
     "sheffield united": {
         "name": "Kieffer Moore",
@@ -1308,42 +1308,42 @@ VERIFIED_FORWARDS_DB = {
     "marseille": {
         "name": "Mason Greenwood",
         "jersey": "10",
-        "pos": "Extremo Referente",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "pos": "Extremo / Delantero",
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "monaco": {
         "name": "Breel Embolo",
         "jersey": "36",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.0,
-        "odds": 1.26
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "lille": {
         "name": "Jonathan David",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.8,
+        "prob": 88.0,
+        "odds": 1.18
     },
     "lyon": {
         "name": "Alexandre Lacazette",
         "jersey": "10",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 85.5,
-        "odds": 1.24
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "lens": {
         "name": "M'Bala Nzola",
         "jersey": "8",
         "pos": "Delantero Centro",
-        "sot_avg": 1.4,
-        "prob": 82.5,
-        "odds": 1.28
+        "sot_avg": 1.5,
+        "prob": 84.0,
+        "odds": 1.25
     },
     "troyes": {
         "name": "Renaud Ripart",
@@ -1373,9 +1373,9 @@ VERIFIED_FORWARDS_DB = {
         "name": "Henry Martín",
         "jersey": "21",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "cruz azul": {
         "name": "Ángel Sepúlveda",
@@ -1450,20 +1450,20 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.3
     },
     "chivas": {
-        "name": "Roberto Alvarado",
-        "jersey": "25",
-        "pos": "Extremo Referente",
+        "name": "Armando González",
+        "jersey": "34",
+        "pos": "Delantero Centro",
         "sot_avg": 1.5,
         "prob": 84.0,
-        "odds": 1.26
+        "odds": 1.25
     },
     "guadalajara": {
-        "name": "Roberto Alvarado",
-        "jersey": "25",
-        "pos": "Extremo Referente",
+        "name": "Armando González",
+        "jersey": "34",
+        "pos": "Delantero Centro",
         "sot_avg": 1.5,
         "prob": 84.0,
-        "odds": 1.26
+        "odds": 1.25
     },
     "inter miami cf": {
         "name": "Lionel Messi",
@@ -1517,17 +1517,17 @@ VERIFIED_FORWARDS_DB = {
         "name": "Miguel Borja",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "racing club": {
         "name": "Adrián Martínez",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "defensa y justicia": {
         "name": "Juan Miritello",
@@ -1586,20 +1586,20 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.2
     },
     "fenerbahce": {
-        "name": "Edin Dzeko",
+        "name": "Edin Džeko",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "besiktas": {
         "name": "Ciro Immobile",
-        "jersey": "9",
+        "jersey": "17",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "eyupspor": {
         "name": "Yusuf Barasi",
@@ -1638,32 +1638,32 @@ VERIFIED_FORWARDS_DB = {
         "jersey": "9",
         "pos": "Delantero Centro",
         "sot_avg": 1.9,
-        "prob": 90.0,
+        "prob": 89.0,
         "odds": 1.16
     },
     "benfica": {
         "name": "Vangelis Pavlidis",
         "jersey": "14",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "porto": {
         "name": "Samu Omorodion",
         "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.6,
-        "prob": 86.0,
-        "odds": 1.22
+        "sot_avg": 1.7,
+        "prob": 87.0,
+        "odds": 1.2
     },
     "ajax": {
         "name": "Wout Weghorst",
         "jersey": "25",
         "pos": "Delantero Centro",
-        "sot_avg": 1.5,
-        "prob": 84.5,
-        "odds": 1.25
+        "sot_avg": 1.6,
+        "prob": 86.0,
+        "odds": 1.22
     },
     "psv": {
         "name": "Luuk de Jong",
@@ -1674,12 +1674,12 @@ VERIFIED_FORWARDS_DB = {
         "odds": 1.2
     },
     "feyenoord": {
-        "name": "Santiago Giménez",
-        "jersey": "29",
+        "name": "Ayase Ueda",
+        "jersey": "9",
         "pos": "Delantero Centro",
-        "sot_avg": 1.7,
-        "prob": 87.0,
-        "odds": 1.2
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     },
     "bremen": {
         "name": "Victor Boniface",
@@ -1704,6 +1704,22 @@ VERIFIED_FORWARDS_DB = {
         "sot_avg": 1.5,
         "prob": 84.0,
         "odds": 1.26
+    },
+    "fc barcelona": {
+        "name": "Robert Lewandowski",
+        "jersey": "9",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.9,
+        "prob": 90.0,
+        "odds": 1.15
+    },
+    "sevilla fc": {
+        "name": "Isaac Romero",
+        "jersey": "7",
+        "pos": "Delantero Centro",
+        "sot_avg": 1.6,
+        "prob": 85.5,
+        "odds": 1.23
     }
 }
 
