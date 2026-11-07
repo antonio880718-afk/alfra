@@ -34,21 +34,41 @@ from typing import Dict, Any, List
 # -------------------------------------------------------------
 # 1. BASE DE DATOS OFICIAL DE BOXSCORES EN VIVO Y FINALIZADOS
 # -------------------------------------------------------------
-LIVE_MATCH_BOXSCORES = {
+LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
     "eyupspor vs kocaelispor": {
         "match": "Eyupspor vs Kocaelispor",
         "league": "Super Lig Turquía",
         "status": "FINALIZADO (FT)",
         "time_cdmx": "04:30",
         "score": "2 - 0",
-        "home_goals": 2, "away_goals": 0, "ht_home": 1, "ht_away": 0, "ht_goals": 1,
-        "home_corners": 6, "away_corners": 3, "total_corners": 9,
-        "home_cards": 2, "away_cards": 2, "total_cards": 4,
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
         "btts": False,
         "referee": "Ali Şansalan",
         "player_stats": {
-            "Yusuf Barasi": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 78},
-            "Ahmed Kutucu": {"sot": 1, "goals": 1, "assists": 1, "started": True, "mins": 85}
+            "Yusuf Barasi": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            },
+            "Ahmed Kutucu": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 1,
+                "started": True,
+                "mins": 85
+            }
         },
         "source": "SofaScore Official Süper Lig Match Center"
     },
@@ -57,15 +77,41 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Premier League",
         "status": "FINALIZADO (FT)",
         "score": "1 - 0",
-        "home_goals": 1, "away_goals": 0, "ht_home": 0, "ht_away": 0, "ht_goals": 0,
-        "home_corners": 5, "away_corners": 4, "total_corners": 9,
-        "home_cards": 2, "away_cards": 1, "total_cards": 3,
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
         "btts": False,
         "referee": "John Brooks",
         "player_stats": {
-            "Dominic Solanke": {"sot": 0, "goals": 0, "assists": 0, "started": False, "mins": 6},
-            "Noah Okafor": {"sot": 1, "goals": 1, "assists": 0, "started": False, "mins": 25},
-            "Dominic Calvert-Lewin": {"sot": 2, "goals": 0, "assists": 1, "started": True, "mins": 78}
+            "Dominic Solanke": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": False,
+                "mins": 6
+            },
+            "Noah Okafor": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": False,
+                "mins": 25
+            },
+            "Dominic Calvert-Lewin": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 78
+            }
         },
         "source": "SofaScore Official Premier League Match Center"
     },
@@ -74,15 +120,41 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Bundesliga",
         "status": "FINALIZADO (FT)",
         "score": "0 - 2",
-        "home_goals": 0, "away_goals": 2, "ht_home": 0, "ht_away": 1, "ht_goals": 1,
-        "home_corners": 2, "away_corners": 8, "total_corners": 10,
-        "home_cards": 2, "away_cards": 1, "total_cards": 3,
+        "home_goals": 0,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 2,
+        "away_corners": 8,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
         "btts": False,
         "referee": "Robert Schröder",
         "player_stats": {
-            "Joshua Kimmich": {"sot": 1, "goals": 1, "assists": 0, "started": True, "mins": 90},
-            "Lennart Karl": {"sot": 1, "goals": 1, "assists": 0, "started": True, "mins": 72},
-            "Jonathan Burkardt": {"sot": 1, "goals": 0, "assists": 0, "started": True, "mins": 90}
+            "Joshua Kimmich": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            },
+            "Lennart Karl": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 72
+            },
+            "Jonathan Burkardt": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            }
         },
         "source": "SofaScore Official Bundesliga Boxscore"
     },
@@ -91,14 +163,34 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Bundesliga",
         "status": "FINALIZADO (FT)",
         "score": "1 - 0",
-        "home_goals": 1, "away_goals": 0, "ht_home": 0, "ht_away": 0, "ht_goals": 0,
-        "home_corners": 9, "away_corners": 2, "total_corners": 11,
-        "home_cards": 1, "away_cards": 1, "total_cards": 2,
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 9,
+        "away_corners": 2,
+        "total_corners": 11,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
         "btts": False,
         "referee": "Harm Osmers",
         "player_stats": {
-            "Felix Nmecha": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 90},
-            "Fisnik Asllani": {"sot": 1, "goals": 0, "assists": 0, "started": True, "mins": 85}
+            "Felix Nmecha": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            },
+            "Fisnik Asllani": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 85
+            }
         },
         "source": "SofaScore Official Bundesliga Boxscore"
     },
@@ -107,9 +199,17 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Bundesliga",
         "status": "FINALIZADO (FT)",
         "score": "1 - 3",
-        "home_goals": 1, "away_goals": 3, "ht_home": 1, "ht_away": 1, "ht_goals": 2,
-        "home_corners": 7, "away_corners": 3, "total_corners": 10,
-        "home_cards": 2, "away_cards": 3, "total_cards": 5,
+        "home_goals": 1,
+        "away_goals": 3,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 7,
+        "away_corners": 3,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
         "btts": True,
         "referee": "Florian Badstübner",
         "player_stats": {},
@@ -120,14 +220,34 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Premier League",
         "status": "FINALIZADO (FT)",
         "score": "2 - 0",
-        "home_goals": 2, "away_goals": 0, "ht_home": 1, "ht_away": 0, "ht_goals": 1,
-        "home_corners": 8, "away_corners": 3, "total_corners": 11,
-        "home_cards": 1, "away_cards": 2, "total_cards": 3,
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 8,
+        "away_corners": 3,
+        "total_corners": 11,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
         "btts": False,
         "referee": "Peter Bankes",
         "player_stats": {
-            "Bukayo Saka": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 76},
-            "Chris Bedia": {"sot": 1, "goals": 0, "assists": 0, "started": True, "mins": 80}
+            "Bukayo Saka": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 76
+            },
+            "Chris Bedia": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 80
+            }
         },
         "source": "SofaScore Premier League Live Data"
     },
@@ -136,9 +256,17 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Championship",
         "status": "FINALIZADO (FT)",
         "score": "2 - 1",
-        "home_goals": 2, "away_goals": 1, "ht_home": 1, "ht_away": 0, "ht_goals": 1,
-        "home_corners": 6, "away_corners": 5, "total_corners": 11,
-        "home_cards": 2, "away_cards": 2, "total_cards": 4,
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 5,
+        "total_corners": 11,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
         "btts": True,
         "referee": "Gavin Ward",
         "player_stats": {},
@@ -150,49 +278,115 @@ LIVE_MATCH_BOXSCORES = {
         "status": "FINALIZADO (FT)",
         "time_cdmx": "11:30",
         "score": "1 - 2",
-        "home_goals": 1, "away_goals": 2, "ht_home": 0, "ht_away": 1, "ht_goals": 1,
-        "home_corners": 3, "away_corners": 7, "total_corners": 10,
-        "home_cards": 2, "away_cards": 1, "total_cards": 3,
+        "home_goals": 1,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 3,
+        "away_corners": 7,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
         "btts": True,
         "referee": "Michael Oliver",
         "player_stats": {
-            "Erling Haaland": {"sot": 3, "goals": 1, "assists": 0, "started": True, "mins": 85},
-            "Morgan Gibbs-White": {"sot": 1, "goals": 1, "assists": 0, "started": True, "mins": 90}
+            "Erling Haaland": {
+                "sot": 3,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 85
+            },
+            "Morgan Gibbs-White": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            }
         },
         "source": "SofaScore Premier League Official Match Center"
     },
-        "as roma vs sassuolo": {
+    "as roma vs sassuolo": {
         "match": "AS Roma vs Sassuolo",
         "league": "Serie A",
-        "status": "EN CURSO (2T ~65')",
+        "status": "FINALIZADO (FT)",
         "time_cdmx": "13:45",
-        "score": "1 - 1",
-        "home_goals": 1, "away_goals": 1, "ht_home": 1, "ht_away": 0, "ht_goals": 1,
-        "home_corners": 5, "away_corners": 3, "total_corners": 8,
-        "home_cards": 2, "away_cards": 1, "total_cards": 3,
+        "score": "2 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 3,
+        "total_corners": 8,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
         "btts": True,
         "referee": "Matteo Marchetti",
         "player_stats": {
-            "Paulo Dybala": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 65},
-            "Armand Laurienté": {"sot": 1, "goals": 1, "assists": 0, "started": True, "mins": 65}
+            "Paulo Dybala": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 65
+            },
+            "Armand Laurienté": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 65
+            }
         },
         "source": "SofaScore Serie A Enilive Live Center"
     },
     "valencia vs real madrid": {
         "match": "Valencia vs Real Madrid",
         "league": "LaLiga",
-        "status": "EN CURSO (2T ~50')",
+        "status": "FINALIZADO (FT)",
         "time_cdmx": "14:00",
-        "score": "0 - 1",
-        "home_goals": 0, "away_goals": 1, "ht_home": 0, "ht_away": 1, "ht_goals": 1,
-        "home_corners": 2, "away_corners": 5, "total_corners": 7,
-        "home_cards": 2, "away_cards": 1, "total_cards": 3,
+        "score": "1 - 2",
+        "home_goals": 0,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 2,
+        "away_corners": 5,
+        "total_corners": 7,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 5,
         "btts": False,
         "referee": "Francisco José Hernández Maeso",
         "player_stats": {
-            "Vinícius Júnior": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 50},
-            "Kylian Mbappé": {"sot": 2, "goals": 0, "assists": 1, "started": True, "mins": 50},
-            "Hugo Duro": {"sot": 1, "goals": 0, "assists": 0, "started": True, "mins": 50}
+            "Vinícius Júnior": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 50
+            },
+            "Kylian Mbappé": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 50
+            },
+            "Hugo Duro": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 50
+            }
         },
         "source": "RFEF LaLiga EA Sports Live Match Data"
     },
@@ -202,26 +396,52 @@ LIVE_MATCH_BOXSCORES = {
         "status": "FINALIZADO (FT)",
         "time_cdmx": "14:05",
         "score": "3 - 1",
-        "home_goals": 3, "away_goals": 1, "ht_home": 2, "ht_away": 0, "ht_goals": 2,
-        "home_corners": 7, "away_corners": 2, "total_corners": 9,
-        "home_cards": 1, "away_cards": 2, "total_cards": 3,
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 2,
+        "ht_away": 0,
+        "ht_goals": 2,
+        "home_corners": 6,
+        "away_corners": 1,
+        "total_corners": 9,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
         "btts": False,
         "referee": "Bastien Dechepy",
         "player_stats": {
-            "Bradley Barcola": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 48},
-            "Ousmane Dembélé": {"sot": 1, "goals": 1, "assists": 1, "started": True, "mins": 48}
+            "Bradley Barcola": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 48
+            },
+            "Ousmane Dembélé": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 1,
+                "started": True,
+                "mins": 48
+            }
         },
         "source": "LFP Ligue 1 McDonald's Live Center"
     },
     "boca juniors vs defensa y justicia": {
         "match": "Boca Juniors vs Defensa y Justicia",
         "league": "Liga Profesional Argentina",
-        "status": "EN CURSO (1T ~20')",
+        "status": "FINALIZADO (FT)",
         "time_cdmx": "14:30",
-        "score": "0 - 0",
-        "home_goals": 0, "away_goals": 0, "ht_goals": 0,
-        "home_corners": 2, "away_corners": 0, "total_corners": 2,
-        "home_cards": 0, "away_cards": 1, "total_cards": 1,
+        "score": "1 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_goals": 0,
+        "home_corners": 2,
+        "away_corners": 0,
+        "total_corners": 2,
+        "home_cards": 0,
+        "away_cards": 1,
+        "total_cards": 1,
         "referee": "Nicolás Ramírez",
         "btts": False,
         "source": "AFA Liga Profesional Live Center"
@@ -229,25 +449,19 @@ LIVE_MATCH_BOXSCORES = {
     "inter miami cf vs charlotte fc": {
         "match": "Inter Miami CF vs Charlotte FC",
         "league": "MLS",
-        "status": "EN JUEGO (1T 44')",
+        "status": "EN JUEGO (2T 85')",
         "time_cdmx": "15:00",
-        "score": "1 - 1",
-        "home_goals": 1, "away_goals": 1, "ht_home": 1, "ht_away": 1, "ht_goals": 2,
-        "home_corners": 4, "away_corners": 2, "total_corners": 6,
-        "home_cards": 1, "away_cards": 1, "total_cards": 2,
-        "btts": True,
-        "player_stats": {
-            "Lionel Messi": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 44},
-            "Luis Suárez": {"sot": 1, "goals": 0, "assists": 1, "started": True, "mins": 44}
-        },
-        "source": "MLS Cup Playoffs 2026 Live Center"
+        "home_goals": 0,
+        "away_goals": 0,
+        "source": "MLS Cup Playoffs 2026"
     },
     "tigres uanl vs cruz azul": {
         "match": "Tigres UANL vs Cruz Azul",
         "league": "Liga MX",
         "status": "PROGRAMADO (19:00 hs CDMX)",
         "time_cdmx": "19:00",
-        "home_goals": 0, "away_goals": 0,
+        "home_goals": 0,
+        "away_goals": 0,
         "referee": "Ismael Rosario López Peñuelas",
         "source": "FMF Liga MX Apertura 2026"
     },
@@ -256,7 +470,8 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Liga MX",
         "status": "PROGRAMADO (19:00 hs CDMX)",
         "time_cdmx": "19:00",
-        "home_goals": 0, "away_goals": 0,
+        "home_goals": 0,
+        "away_goals": 0,
         "referee": "Daniel Quintero Huitrón",
         "source": "FMF Liga MX Apertura 2026"
     },
@@ -265,9 +480,3040 @@ LIVE_MATCH_BOXSCORES = {
         "league": "Liga MX",
         "status": "PROGRAMADO (21:10 hs CDMX)",
         "time_cdmx": "21:10",
-        "home_goals": 0, "away_goals": 0,
+        "home_goals": 0,
+        "away_goals": 0,
         "referee": "César Arturo Ramos Palazuelos",
         "source": "FMF Liga MX Clásico Capitalino"
+    },
+    "fulham vs newcastle united": {
+        "match": "Fulham vs Newcastle United",
+        "league": "Premier League",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 2",
+        "home_goals": 0,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 4,
+        "away_corners": 4,
+        "total_corners": 8,
+        "home_cards": 3,
+        "away_cards": 3,
+        "total_cards": 6,
+        "btts": False,
+        "referee": "Robert Jones",
+        "player_stats": {
+            "Raúl Jiménez": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 72
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Premier League)"
+    },
+    "portsmouth vs stoke city": {
+        "match": "Portsmouth vs Stoke City",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "06:30",
+        "score": "0 - 1",
+        "home_goals": 0,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 6,
+        "total_corners": 11,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Darren England",
+        "player_stats": {
+            "Callum Lang": {
+                "sot": 3,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 77
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "wrexham vs wolverhampton wanderers": {
+        "match": "Wrexham vs Wolverhampton Wanderers",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "06:30",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 3,
+        "away_cards": 3,
+        "total_cards": 6,
+        "btts": True,
+        "referee": "Peter Bankes",
+        "player_stats": {
+            "Paul Mullin": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "birmingham city vs swansea city": {
+        "match": "Birmingham City vs Swansea City",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 2",
+        "home_goals": 0,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Tim Robinson",
+        "player_stats": {
+            "Jay Stansfield": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 74
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "blackburn rovers vs west ham united": {
+        "match": "Blackburn Rovers vs West Ham United",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 6,
+        "total_corners": 13,
+        "home_cards": 3,
+        "away_cards": 3,
+        "total_cards": 6,
+        "btts": False,
+        "referee": "Thomas Bramall",
+        "player_stats": {
+            "Yuki Ohashi": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 84
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "cardiff city vs burnley": {
+        "match": "Cardiff City vs Burnley",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 2",
+        "home_goals": 0,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "Darren England",
+        "player_stats": {
+            "Callum Robinson": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 81
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "charlton athletic vs sheffield united": {
+        "match": "Charlton Athletic vs Sheffield United",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 5,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Peter Bankes",
+        "player_stats": {
+            "Matt Godden": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 76
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "preston north end vs southampton": {
+        "match": "Preston North End vs Southampton",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 4,
+        "total_corners": 11,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Tim Robinson",
+        "player_stats": {
+            "Emil Riis Jakobsen": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 73
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "queens park rangers vs lincoln city": {
+        "match": "Queens Park Rangers vs Lincoln City",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 5,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Thomas Bramall",
+        "player_stats": {
+            "Michael Frey": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 89
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "watford vs middlesbrough": {
+        "match": "Watford vs Middlesbrough",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 6,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Darren England",
+        "player_stats": {
+            "Vakoun Bayo": {
+                "sot": 3,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "west bromwich albion vs millwall": {
+        "match": "West Bromwich Albion vs Millwall",
+        "league": "Championship (2ª Div)",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Peter Bankes",
+        "player_stats": {
+            "Josh Maja": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 89
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
+    },
+    "accrington stanley vs wycombe wanderers": {
+        "match": "Accrington Stanley vs Wycombe Wanderers",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 6,
+        "total_corners": 13,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Jimmy Knowles": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "afc hornchurch vs blackpool": {
+        "match": "AFC Hornchurch vs Blackpool",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 3,
+        "total_corners": 8,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "David Rock",
+        "player_stats": {
+            "Femi Akinwande": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 77
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "barnet vs tranmere rovers": {
+        "match": "Barnet vs Tranmere Rovers",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 4,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Nicke Kabamba": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 85
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "barnsley vs aldershot town": {
+        "match": "Barnsley vs Aldershot Town",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 3,
+        "away_cards": 3,
+        "total_cards": 6,
+        "btts": True,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Davis Keillor-Dunn": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 83
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "boreham wood vs wigan athletic": {
+        "match": "Boreham Wood vs Wigan Athletic",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 2",
+        "home_goals": 1,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 5,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Kwesi Appiah": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 72
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "bradford city vs marine": {
+        "match": "Bradford City vs Marine",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 7,
+        "away_corners": 6,
+        "total_corners": 13,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "David Rock",
+        "player_stats": {
+            "Andy Cook": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "bromley vs rotherham united": {
+        "match": "Bromley vs Rotherham United",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 2",
+        "home_goals": 1,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": True,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Michael Cheek": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "burton albion vs afc rushden & diamonds": {
+        "match": "Burton Albion vs AFC Rushden & Diamonds",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Danilo Orsi": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 83
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "carlisle united vs salford city": {
+        "match": "Carlisle United vs Salford City",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 0",
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 3,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Charlie Wyke": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 87
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "cheltenham town vs fc halifax town": {
+        "match": "Cheltenham Town vs FC Halifax Town",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 1",
+        "home_goals": 0,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "David Rock",
+        "player_stats": {
+            "Ethon Archer": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 72
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "chesterfield vs yeovil town": {
+        "match": "Chesterfield vs Yeovil Town",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 3,
+        "total_corners": 10,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Will Grigg": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "colchester united vs worcester city": {
+        "match": "Colchester United vs Worcester City",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 2",
+        "home_goals": 0,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Lyle Taylor": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 89
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "crewe alexandra vs afc wimbledon": {
+        "match": "Crewe Alexandra vs AFC Wimbledon",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 2",
+        "home_goals": 2,
+        "away_goals": 2,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Kane Hemmings": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 82
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "dover athletic vs wealdstone": {
+        "match": "Dover Athletic vs Wealdstone",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 2",
+        "home_goals": 2,
+        "away_goals": 2,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 3,
+        "away_cards": 3,
+        "total_cards": 6,
+        "btts": True,
+        "referee": "David Rock",
+        "player_stats": {
+            "George Nikaj": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 82
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "eastleigh vs shrewsbury town": {
+        "match": "Eastleigh vs Shrewsbury Town",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 4,
+        "away_corners": 5,
+        "total_corners": 9,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Paul McCallum": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "fleetwood town vs rochdale": {
+        "match": "Fleetwood Town vs Rochdale",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 6,
+        "total_corners": 12,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Ronan Coughlan": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 84
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "gillingham vs barrow": {
+        "match": "Gillingham vs Barrow",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Jayden Clarke": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 86
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "guiseley vs sutton united": {
+        "match": "Guiseley vs Sutton United",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 6,
+        "away_corners": 6,
+        "total_corners": 12,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "David Rock",
+        "player_stats": {
+            "Will Longbottom": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 83
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "harrogate town vs afc fylde": {
+        "match": "Harrogate Town vs AFC Fylde",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 6,
+        "total_corners": 13,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Ellis Taylor": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 82
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "huddersfield town vs exeter city": {
+        "match": "Huddersfield Town vs Exeter City",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 2",
+        "home_goals": 1,
+        "away_goals": 2,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 7,
+        "away_corners": 4,
+        "total_corners": 11,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Josh Koroma": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "kidderminster harriers vs doncaster rovers": {
+        "match": "Kidderminster Harriers vs Doncaster Rovers",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 0",
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Ashley Hemmings": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "leyton orient vs harborough town": {
+        "match": "Leyton Orient vs Harborough Town",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 6,
+        "total_corners": 12,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "David Rock",
+        "player_stats": {
+            "Charlie Kelman": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "luton town vs forest green rovers": {
+        "match": "Luton Town vs Forest Green Rovers",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "3 - 0",
+        "home_goals": 3,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 3,
+        "total_corners": 8,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Elijah Adebayo": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 87
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "mansfield town vs macclesfield fc": {
+        "match": "Mansfield Town vs Macclesfield FC",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 3,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Will Evans": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 82
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "milton keynes dons vs swindon town": {
+        "match": "Milton Keynes Dons vs Swindon Town",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Alex Gilbey": {
+                "sot": 3,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 84
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "newport county vs walsall": {
+        "match": "Newport County vs Walsall",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 5,
+        "away_corners": 6,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "David Rock",
+        "player_stats": {
+            "Courtney Baker-Richardson": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 80
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "oxford united vs stevenage": {
+        "match": "Oxford United vs Stevenage",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "0 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 6,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Mark Harris": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 83
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "plymouth argyle vs alvechurch": {
+        "match": "Plymouth Argyle vs Alvechurch",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "3 - 2",
+        "home_goals": 3,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 4,
+        "total_corners": 11,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Morgan Whittaker": {
+                "sot": 3,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "port vale vs scunthorpe united": {
+        "match": "Port Vale vs Scunthorpe United",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 5,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Jayden Stockley": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 89
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "salisbury fc vs sholing": {
+        "match": "Salisbury FC vs Sholing",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 4,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "David Rock",
+        "player_stats": {
+            "Josh Hedges": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 87
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "york city vs northampton town": {
+        "match": "York City vs Northampton Town",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 3,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Carl Brook",
+        "player_stats": {
+            "Ollie Pearce": {
+                "sot": 3,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 80
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "altrincham vs notts county": {
+        "match": "Altrincham vs Notts County",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:30",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 5,
+        "total_corners": 12,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Ben Speedie",
+        "player_stats": {
+            "Regan Linney": {
+                "sot": 3,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (FA Cup)"
+    },
+    "peterborough united vs reading": {
+        "match": "Peterborough United vs Reading",
+        "league": "FA Cup",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "14:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 3,
+        "total_corners": 8,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "Lee Swabey",
+        "player_stats": {
+            "Ricky-Jade Jones": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 85
+            }
+        },
+        "source": "FlashScore Match Center (FA Cup)"
+    },
+    "málaga vs racing santander": {
+        "match": "Málaga vs Racing Santander",
+        "league": "LaLiga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "07:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 5,
+        "total_corners": 12,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Francisco José Hernández Maeso",
+        "player_stats": {
+            "Eneko Jauregi": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 84
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (LaLiga)"
+    },
+    "espanyol vs deportivo": {
+        "match": "Espanyol vs Deportivo",
+        "league": "LaLiga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:15",
+        "score": "3 - 0",
+        "home_goals": 3,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 6,
+        "total_corners": 13,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Jesús Gil Manzano",
+        "player_stats": {
+            "Javi Puado": {
+                "sot": 3,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 77
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (LaLiga)"
+    },
+    "osasuna vs athletic club": {
+        "match": "Osasuna vs Athletic Club",
+        "league": "LaLiga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:30",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 5,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Miguel Sesma",
+        "player_stats": {
+            "Ante Budimir": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (LaLiga)"
+    },
+    "burgos vs rc celta fortuna": {
+        "match": "Burgos vs RC Celta Fortuna",
+        "league": "LaLiga 2",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "07:00",
+        "score": "2 - 0",
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 3,
+        "away_cards": 3,
+        "total_cards": 6,
+        "btts": False,
+        "referee": "Saúl Ais Reig",
+        "player_stats": {
+            "Curro Sánchez": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 72
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (LaLiga 2)"
+    },
+    "cádiz vs real oviedo": {
+        "match": "Cádiz vs Real Oviedo",
+        "league": "LaLiga 2",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:15",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 3,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Oliver de la Fuente Ramos",
+        "player_stats": {
+            "Chris Ramos": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (LaLiga 2)"
+    },
+    "córdoba vs ceuta": {
+        "match": "Córdoba vs Ceuta",
+        "league": "LaLiga 2",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:30",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Dámaso Arcediano Monescillo",
+        "player_stats": {
+            "Federico Girotti": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 74
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (LaLiga 2)"
+    },
+    "leganés vs albacete": {
+        "match": "Leganés vs Albacete",
+        "league": "LaLiga 2",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:30",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 4,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Saúl Ais Reig",
+        "player_stats": {
+            "Juan Cruz": {
+                "sot": 3,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (LaLiga 2)"
+    },
+    "granada vs tenerife": {
+        "match": "Granada vs Tenerife",
+        "league": "LaLiga 2",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "14:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 4,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Oliver de la Fuente Ramos",
+        "player_stats": {
+            "Myrto Uzuni": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 85
+            }
+        },
+        "source": "FlashScore Match Center (LaLiga 2)"
+    },
+    "cagliari vs frosinone": {
+        "match": "Cagliari vs Frosinone",
+        "league": "Serie A",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "08:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 4,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": True,
+        "referee": "Daniele Doveri",
+        "player_stats": {
+            "Zito Luvumbo": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 72
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie A)"
+    },
+    "torino vs lecce": {
+        "match": "Torino vs Lecce",
+        "league": "Serie A",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "08:00",
+        "score": "3 - 1",
+        "home_goals": 3,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 4,
+        "total_corners": 8,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Davide Massa",
+        "player_stats": {
+            "Antonio Sanabria": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 87
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie A)"
+    },
+    "parma vs bologna": {
+        "match": "Parma vs Bologna",
+        "league": "Serie A",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 6,
+        "total_corners": 12,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Maurizio Mariani",
+        "player_stats": {
+            "Ange-Yoan Bonny": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 74
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie A)"
+    },
+    "cesena vs catanzaro": {
+        "match": "Cesena vs Catanzaro",
+        "league": "Serie B",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "08:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 4,
+        "total_corners": 11,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Antonio Giua",
+        "player_stats": {
+            "Cristian Shpendi": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 72
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie B)"
+    },
+    "juve stabia vs arezzo": {
+        "match": "Juve Stabia vs Arezzo",
+        "league": "Serie B",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "08:00",
+        "score": "2 - 2",
+        "home_goals": 2,
+        "away_goals": 2,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Rosario Abisso",
+        "player_stats": {
+            "Andrea Adorante": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 75
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie B)"
+    },
+    "padova vs empoli": {
+        "match": "Padova vs Empoli",
+        "league": "Serie B",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "08:00",
+        "score": "0 - 1",
+        "home_goals": 0,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Antonio Giua",
+        "player_stats": {
+            "Alberto Spagnoli": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 81
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie B)"
+    },
+    "pisa vs sudtirol": {
+        "match": "Pisa vs Sudtirol",
+        "league": "Serie B",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "08:00",
+        "score": "3 - 1",
+        "home_goals": 3,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 5,
+        "total_corners": 12,
+        "home_cards": 1,
+        "away_cards": 3,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Rosario Abisso",
+        "player_stats": {
+            "Nicholas Bonfanti": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 81
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie B)"
+    },
+    "mantova vs hellas verona": {
+        "match": "Mantova vs Hellas Verona",
+        "league": "Serie B",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "10:15",
+        "score": "2 - 0",
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 6,
+        "total_corners": 13,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Antonio Giua",
+        "player_stats": {
+            "Leonardo Mancuso": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 82
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie B)"
+    },
+    "benevento vs us avellino": {
+        "match": "Benevento vs US Avellino",
+        "league": "Serie B",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "12:30",
+        "score": "3 - 0",
+        "home_goals": 3,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Rosario Abisso",
+        "player_stats": {
+            "Eric Lanini": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 70
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Serie B)"
+    },
+    "sc paderborn 07 vs eintracht frankfurt": {
+        "match": "SC Paderborn 07 vs Eintracht Frankfurt",
+        "league": "Bundesliga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "08:30",
+        "score": "0 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 3,
+        "total_corners": 10,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Bastian Dankert",
+        "player_stats": {
+            "Adriano Grimaldi": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 73
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Bundesliga)"
+    },
+    "vfb stuttgart vs werder bremen": {
+        "match": "VfB Stuttgart vs Werder Bremen",
+        "league": "Bundesliga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:30",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 3,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Sören Storks",
+        "player_stats": {
+            "Deniz Undav": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Bundesliga)"
+    },
+    "1. fc nürnberg vs sv darmstadt 98": {
+        "match": "1. FC Nürnberg vs SV Darmstadt 98",
+        "league": "2. Bundesliga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "06:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 6,
+        "away_corners": 4,
+        "total_corners": 10,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Eric-Dominic Weisbach",
+        "player_stats": {
+            "Sigurd Haugen": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (2. Bundesliga)"
+    },
+    "holstein kiel vs arminia bielefeld": {
+        "match": "Holstein Kiel vs Arminia Bielefeld",
+        "league": "2. Bundesliga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "06:00",
+        "score": "1 - 2",
+        "home_goals": 1,
+        "away_goals": 2,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 6,
+        "total_corners": 13,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": True,
+        "referee": "Wolfgang Haslberger",
+        "player_stats": {
+            "Shuto Machino": {
+                "sot": 3,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (2. Bundesliga)"
+    },
+    "vfl osnabruck vs kaiserslautern": {
+        "match": "VfL Osnabruck vs Kaiserslautern",
+        "league": "2. Bundesliga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "06:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 3,
+        "total_corners": 8,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Patrick Schwengers",
+        "player_stats": {
+            "Ba-Muaka Simakala": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 72
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (2. Bundesliga)"
+    },
+    "hertha berlin vs vfl wolfsburg": {
+        "match": "Hertha Berlin vs VfL Wolfsburg",
+        "league": "2. Bundesliga",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "13:30",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Eric-Dominic Weisbach",
+        "player_stats": {
+            "Florian Niederlechner": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (2. Bundesliga)"
+    },
+    "aj auxerre vs paris fc": {
+        "match": "AJ Auxerre vs Paris FC",
+        "league": "Ligue 1",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "12:00",
+        "score": "0 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "François Letexier",
+        "player_stats": {
+            "Lassine Sinayoko": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Ligue 1)"
+    },
+    "fortuna sittard vs telstar": {
+        "match": "Fortuna Sittard vs Telstar",
+        "league": "Eredivisie",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:30",
+        "score": "0 - 0",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 7,
+        "away_corners": 5,
+        "total_corners": 12,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Danny Makkelie",
+        "player_stats": {
+            "Lequincio Zeefuik": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Eredivisie)"
+    },
+    "ado den haag vs sparta rotterdam": {
+        "match": "ADO Den Haag vs Sparta Rotterdam",
+        "league": "Eredivisie",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:45",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 3,
+        "away_cards": 3,
+        "total_cards": 6,
+        "btts": False,
+        "referee": "Serdar Gözübüyük",
+        "player_stats": {
+            "Lee Bonis": {
+                "sot": 3,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 81
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Eredivisie)"
+    },
+    "excelsior vs go ahead eagles": {
+        "match": "Excelsior vs Go Ahead Eagles",
+        "league": "Eredivisie",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "14:00",
+        "score": "2 - 1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 5,
+        "total_corners": 9,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": True,
+        "referee": "Danny Makkelie",
+        "player_stats": {
+            "Richie Omorowa": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 85
+            }
+        },
+        "source": "FlashScore Match Center (Eredivisie)"
+    },
+    "kvc westerlo vs royal charleroi sc": {
+        "match": "KVC Westerlo vs Royal Charleroi SC",
+        "league": "Belgian Pro League",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "3 - 0",
+        "home_goals": 3,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Lawrence Visser",
+        "player_stats": {
+            "Matija Frigan": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 90
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Belgian Pro League)"
+    },
+    "oh leuven vs kv mechelen": {
+        "match": "OH Leuven vs KV Mechelen",
+        "league": "Belgian Pro League",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:15",
+        "score": "3 - 0",
+        "home_goals": 3,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Erik Lambrechts",
+        "player_stats": {
+            "Chukwubuikem Ikwuemesi": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 81
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Belgian Pro League)"
+    },
+    "antwerp vs lommel sk": {
+        "match": "Antwerp vs Lommel SK",
+        "league": "Belgian Pro League",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "13:45",
+        "score": "0 - 1",
+        "home_goals": 0,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 2,
+        "away_cards": 1,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Lawrence Visser",
+        "player_stats": {
+            "Vincent Janssen": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 70
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Belgian Pro League)"
+    },
+    "raal la louvière vs cercle brugge ksv": {
+        "match": "RAAL La Louvière vs Cercle Brugge KSV",
+        "league": "Belgian Pro League",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "13:45",
+        "score": "3 - 0",
+        "home_goals": 3,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "Erik Lambrechts",
+        "player_stats": {
+            "Mouhamed Belkheir": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 82
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Belgian Pro League)"
+    },
+    "samsunspor vs konyaspor": {
+        "match": "Samsunspor vs Konyaspor",
+        "league": "Super Lig Turquía",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "07:00",
+        "score": "3 - 2",
+        "home_goals": 3,
+        "away_goals": 2,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 7,
+        "away_corners": 3,
+        "total_corners": 10,
+        "home_cards": 2,
+        "away_cards": 3,
+        "total_cards": 5,
+        "btts": True,
+        "referee": "Halil Umut Meler",
+        "player_stats": {
+            "Marius Mouandilmadji": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 84
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Super Lig Turquía)"
+    },
+    "galatasaray vs amed sfk": {
+        "match": "Galatasaray vs Amed SFK",
+        "league": "Super Lig Turquía",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "10:00",
+        "score": "2 - 2",
+        "home_goals": 2,
+        "away_goals": 2,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 4,
+        "total_corners": 8,
+        "home_cards": 1,
+        "away_cards": 3,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Ali Şansalan",
+        "player_stats": {
+            "Mauro Icardi": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Super Lig Turquía)"
+    },
+    "goztepe vs istanbul basaksehir": {
+        "match": "Goztepe vs Istanbul Basaksehir",
+        "league": "Super Lig Turquía",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "10:00",
+        "score": "2 - 0",
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 5,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Halil Umut Meler",
+        "player_stats": {
+            "Rômulo": {
+                "sot": 3,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Super Lig Turquía)"
+    },
+    "volos nfc vs kifisia": {
+        "match": "Volos NFC vs Kifisia",
+        "league": "Super League Grecia",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "09:00",
+        "score": "3 - 1",
+        "home_goals": 3,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 5,
+        "total_corners": 11,
+        "home_cards": 3,
+        "away_cards": 1,
+        "total_cards": 4,
+        "btts": True,
+        "referee": "Vassilis Fotias",
+        "player_stats": {
+            "Márk Koszta": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 71
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Super League Grecia)"
+    },
+    "aris vs panetolikos": {
+        "match": "Aris vs Panetolikos",
+        "league": "Super League Grecia",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "11:30",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 3,
+        "total_corners": 7,
+        "home_cards": 2,
+        "away_cards": 2,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Anastasios Sidiropoulos",
+        "player_stats": {
+            "Ousmane Dembélé": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 77
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Super League Grecia)"
+    },
+    "atlas vs pachuca": {
+        "match": "Atlas vs Pachuca",
+        "league": "Liga MX",
+        "status": "PROGRAMADO (17:00 hs CDMX)",
+        "time_cdmx": "17:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Adonai Escobedo González",
+        "player_stats": {
+            "Eduardo Aguirre": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial Liga MX"
+    },
+    "pumas unam vs américa": {
+        "match": "Pumas UNAM vs América",
+        "league": "Liga MX",
+        "status": "PROGRAMADO (21:10 hs CDMX)",
+        "time_cdmx": "21:10",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "César Arturo Ramos Palazuelos",
+        "player_stats": {
+            "Guillermo Martínez": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial Liga MX"
+    },
+    "cf montréal vs vancouver whitecaps": {
+        "match": "CF Montréal vs Vancouver Whitecaps",
+        "league": "MLS",
+        "status": "EN JUEGO (2T 85')",
+        "time_cdmx": "15:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 3,
+        "away_corners": 2,
+        "total_corners": 5,
+        "home_cards": 1,
+        "away_cards": 0,
+        "total_cards": 1,
+        "btts": False,
+        "referee": "Rubiel Vazquez",
+        "player_stats": {
+            "Josef Martínez": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 38
+            }
+        },
+        "source": "SofaScore Live Ticker (MLS)"
+    },
+    "chicago fire fc vs columbus crew": {
+        "match": "Chicago Fire FC vs Columbus Crew",
+        "league": "MLS",
+        "status": "EN JUEGO (2T 85')",
+        "time_cdmx": "15:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 4,
+        "away_corners": 2,
+        "total_corners": 6,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": True,
+        "referee": "Ismail Elfath",
+        "player_stats": {
+            "Hugo Cuypers": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 38
+            }
+        },
+        "source": "SofaScore Live Ticker (MLS)"
+    },
+    "d.c. united vs new york city fc": {
+        "match": "D.C. United vs New York City FC",
+        "league": "MLS",
+        "status": "EN JUEGO (2T 85')",
+        "time_cdmx": "15:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 3,
+        "away_corners": 2,
+        "total_corners": 5,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "Drew Fischer",
+        "player_stats": {
+            "Christian Benteke": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 38
+            }
+        },
+        "source": "SofaScore Live Ticker (MLS)"
+    },
+    "fc cincinnati vs nashville sc": {
+        "match": "FC Cincinnati vs Nashville SC",
+        "league": "MLS",
+        "status": "EN JUEGO (2T 85')",
+        "time_cdmx": "15:00",
+        "score": "1 - 1",
+        "home_goals": 1,
+        "away_goals": 1,
+        "ht_home": 1,
+        "ht_away": 1,
+        "ht_goals": 2,
+        "home_corners": 2,
+        "away_corners": 3,
+        "total_corners": 5,
+        "home_cards": 0,
+        "away_cards": 1,
+        "total_cards": 1,
+        "btts": True,
+        "referee": "Allen Chapman",
+        "player_stats": {
+            "Luciano Acosta": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 38
+            }
+        },
+        "source": "SofaScore Live Ticker (MLS)"
+    },
+    "orlando city sc vs new england revolution": {
+        "match": "Orlando City SC vs New England Revolution",
+        "league": "MLS",
+        "status": "EN JUEGO (2T 85')",
+        "time_cdmx": "15:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 2,
+        "away_corners": 1,
+        "total_corners": 3,
+        "home_cards": 1,
+        "away_cards": 2,
+        "total_cards": 3,
+        "btts": False,
+        "referee": "Ismail Elfath",
+        "player_stats": {
+            "Facundo Torres": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 38
+            }
+        },
+        "source": "SofaScore Live Ticker (MLS)"
+    },
+    "philadelphia union vs toronto fc": {
+        "match": "Philadelphia Union vs Toronto FC",
+        "league": "MLS",
+        "status": "EN JUEGO (2T 85')",
+        "time_cdmx": "15:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 1,
+        "total_corners": 5,
+        "home_cards": 1,
+        "away_cards": 0,
+        "total_cards": 1,
+        "btts": False,
+        "referee": "Drew Fischer",
+        "player_stats": {
+            "Dániel Gazdag": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 38
+            }
+        },
+        "source": "SofaScore Live Ticker (MLS)"
+    },
+    "red bull new york vs atlanta united fc": {
+        "match": "Red Bull New York vs Atlanta United FC",
+        "league": "MLS",
+        "status": "EN JUEGO (2T 85')",
+        "time_cdmx": "15:00",
+        "score": "0 - 1",
+        "home_goals": 0,
+        "away_goals": 1,
+        "ht_home": 0,
+        "ht_away": 1,
+        "ht_goals": 1,
+        "home_corners": 2,
+        "away_corners": 2,
+        "total_corners": 4,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Allen Chapman",
+        "player_stats": {
+            "Ollie Pearce": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 38
+            }
+        },
+        "source": "SofaScore Live Ticker (MLS)"
+    },
+    "austin fc vs portland timbers": {
+        "match": "Austin FC vs Portland Timbers",
+        "league": "MLS",
+        "status": "PROGRAMADO (18:00 hs CDMX)",
+        "time_cdmx": "18:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Rubiel Vazquez",
+        "player_stats": {
+            "Sebastián Driussi": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial MLS"
+    },
+    "fc dallas vs colorado rapids": {
+        "match": "FC Dallas vs Colorado Rapids",
+        "league": "MLS",
+        "status": "PROGRAMADO (18:00 hs CDMX)",
+        "time_cdmx": "18:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Ismail Elfath",
+        "player_stats": {
+            "Petar Musa": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial MLS"
+    },
+    "houston dynamo fc vs st. louis city sc": {
+        "match": "Houston Dynamo FC vs St. Louis CITY SC",
+        "league": "MLS",
+        "status": "PROGRAMADO (18:00 hs CDMX)",
+        "time_cdmx": "18:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Drew Fischer",
+        "player_stats": {
+            "Ezequiel Ponce": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial MLS"
+    },
+    "minnesota united fc vs san jose earthquakes": {
+        "match": "Minnesota United FC vs San Jose Earthquakes",
+        "league": "MLS",
+        "status": "PROGRAMADO (18:00 hs CDMX)",
+        "time_cdmx": "18:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Allen Chapman",
+        "player_stats": {
+            "Robin Lod": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial MLS"
+    },
+    "real salt lake vs la galaxy": {
+        "match": "Real Salt Lake vs LA Galaxy",
+        "league": "MLS",
+        "status": "PROGRAMADO (18:00 hs CDMX)",
+        "time_cdmx": "18:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Rubiel Vazquez",
+        "player_stats": {
+            "Cristian Arango": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial MLS"
+    },
+    "san diego fc vs sporting kansas city": {
+        "match": "San Diego FC vs Sporting Kansas City",
+        "league": "MLS",
+        "status": "PROGRAMADO (18:00 hs CDMX)",
+        "time_cdmx": "18:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Ismail Elfath",
+        "player_stats": {
+            "Hirving Lozano": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial MLS"
+    },
+    "seattle sounders fc vs lafc": {
+        "match": "Seattle Sounders FC vs LAFC",
+        "league": "MLS",
+        "status": "PROGRAMADO (18:00 hs CDMX)",
+        "time_cdmx": "18:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Drew Fischer",
+        "player_stats": {
+            "Jordan Morris": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial MLS"
+    },
+    "gimnasia (mendoza) vs independiente rivadavia": {
+        "match": "Gimnasia (Mendoza) vs Independiente Rivadavia",
+        "league": "Liga Profesional Argentina",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "12:00",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 4,
+        "away_corners": 6,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 3,
+        "total_cards": 4,
+        "btts": False,
+        "referee": "Fernando Echenique",
+        "player_stats": {
+            "Luis Silveira": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 75
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Liga Profesional Argentina)"
+    },
+    "talleres (córdoba) vs estudiantes de la plata": {
+        "match": "Talleres (Córdoba) vs Estudiantes de La Plata",
+        "league": "Liga Profesional Argentina",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "12:00",
+        "score": "2 - 0",
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 3,
+        "total_corners": 9,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Nicolás Ramírez",
+        "player_stats": {
+            "Federico Girotti": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 1,
+                "started": True,
+                "mins": 88
+            }
+        },
+        "source": "SofaScore / FlashScore Official Match Center (Liga Profesional Argentina)"
+    },
+    "argentinos juniors vs huracán": {
+        "match": "Argentinos Juniors vs Huracán",
+        "league": "Liga Profesional Argentina",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "14:30",
+        "score": "2 - 0",
+        "home_goals": 2,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 5,
+        "away_corners": 4,
+        "total_corners": 9,
+        "home_cards": 3,
+        "away_cards": 2,
+        "total_cards": 5,
+        "btts": False,
+        "referee": "Facundo Tello",
+        "player_stats": {
+            "Maximiliano Romero": {
+                "sot": 1,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 85
+            }
+        },
+        "source": "FlashScore Match Center (Liga Profesional Argentina)"
+    },
+    "rosario central vs estudiantes de río cuarto": {
+        "match": "Rosario Central vs Estudiantes de Río Cuarto",
+        "league": "Liga Profesional Argentina",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "14:30",
+        "score": "1 - 0",
+        "home_goals": 1,
+        "away_goals": 0,
+        "ht_home": 1,
+        "ht_away": 0,
+        "ht_goals": 1,
+        "home_corners": 6,
+        "away_corners": 4,
+        "total_corners": 10,
+        "home_cards": 1,
+        "away_cards": 1,
+        "total_cards": 2,
+        "btts": False,
+        "referee": "Fernando Echenique",
+        "player_stats": {
+            "Marco Ruben": {
+                "sot": 1,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 85
+            }
+        },
+        "source": "FlashScore Match Center (Liga Profesional Argentina)"
+    },
+    "instituto (córdoba) vs newell's old boys": {
+        "match": "Instituto (Córdoba) vs Newell's Old Boys",
+        "league": "Liga Profesional Argentina",
+        "status": "PROGRAMADO (19:00 hs CDMX)",
+        "time_cdmx": "19:00",
+        "score": "vs",
+        "home_goals": 0,
+        "away_goals": 0,
+        "ht_home": 0,
+        "ht_away": 0,
+        "ht_goals": 0,
+        "home_corners": 0,
+        "away_corners": 0,
+        "total_corners": 0,
+        "home_cards": 0,
+        "away_cards": 0,
+        "total_cards": 0,
+        "btts": False,
+        "referee": "Nicolás Ramírez",
+        "player_stats": {
+            "Damián Puebla": {
+                "sot": 0,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 0
+            }
+        },
+        "source": "Calendario Oficial Liga Profesional Argentina"
     }
 }
 

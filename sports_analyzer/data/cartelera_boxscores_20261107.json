@@ -276,9 +276,9 @@
   "as roma vs sassuolo": {
     "match": "AS Roma vs Sassuolo",
     "league": "Serie A",
-    "status": "EN CURSO (2T ~65')",
+    "status": "FINALIZADO (FT)",
     "time_cdmx": "13:45",
-    "score": "1 - 1",
+    "score": "2 - 1",
     "home_goals": 1,
     "away_goals": 1,
     "ht_home": 1,
@@ -313,9 +313,9 @@
   "valencia vs real madrid": {
     "match": "Valencia vs Real Madrid",
     "league": "LaLiga",
-    "status": "EN CURSO (2T ~50')",
+    "status": "FINALIZADO (FT)",
     "time_cdmx": "14:00",
-    "score": "0 - 1",
+    "score": "1 - 2",
     "home_goals": 0,
     "away_goals": 1,
     "ht_home": 0,
@@ -326,7 +326,7 @@
     "total_corners": 7,
     "home_cards": 2,
     "away_cards": 1,
-    "total_cards": 3,
+    "total_cards": 5,
     "btts": false,
     "referee": "Francisco José Hernández Maeso",
     "player_stats": {
@@ -357,9 +357,9 @@
   "paris saint-germain vs troyes": {
     "match": "Paris Saint-Germain vs Troyes",
     "league": "Ligue 1",
-    "status": "EN CURSO (2T ~48')",
+    "status": "FINALIZADO (FT)",
     "time_cdmx": "14:05",
-    "score": "2 - 0",
+    "score": "3 - 1",
     "home_goals": 2,
     "away_goals": 0,
     "ht_home": 2,
@@ -367,7 +367,7 @@
     "ht_goals": 2,
     "home_corners": 6,
     "away_corners": 1,
-    "total_corners": 7,
+    "total_corners": 9,
     "home_cards": 1,
     "away_cards": 2,
     "total_cards": 3,
@@ -394,9 +394,9 @@
   "boca juniors vs defensa y justicia": {
     "match": "Boca Juniors vs Defensa y Justicia",
     "league": "Liga Profesional Argentina",
-    "status": "EN CURSO (1T ~20')",
+    "status": "FINALIZADO (FT)",
     "time_cdmx": "14:30",
-    "score": "0 - 0",
+    "score": "1 - 0",
     "home_goals": 0,
     "away_goals": 0,
     "ht_goals": 0,
@@ -413,7 +413,7 @@
   "inter miami cf vs charlotte fc": {
     "match": "Inter Miami CF vs Charlotte FC",
     "league": "MLS",
-    "status": "PROGRAMADO (15:00 hs CDMX)",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "home_goals": 0,
     "away_goals": 0,
@@ -2912,7 +2912,7 @@
   "cf montréal vs vancouver whitecaps": {
     "match": "CF Montréal vs Vancouver Whitecaps",
     "league": "MLS",
-    "status": "EN JUEGO (1T 38')",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
@@ -2942,7 +2942,7 @@
   "chicago fire fc vs columbus crew": {
     "match": "Chicago Fire FC vs Columbus Crew",
     "league": "MLS",
-    "status": "EN JUEGO (1T 38')",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "score": "1 - 1",
     "home_goals": 1,
@@ -2972,7 +2972,7 @@
   "d.c. united vs new york city fc": {
     "match": "D.C. United vs New York City FC",
     "league": "MLS",
-    "status": "EN JUEGO (1T 38')",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
@@ -3002,7 +3002,7 @@
   "fc cincinnati vs nashville sc": {
     "match": "FC Cincinnati vs Nashville SC",
     "league": "MLS",
-    "status": "EN JUEGO (1T 38')",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "score": "1 - 1",
     "home_goals": 1,
@@ -3032,7 +3032,7 @@
   "orlando city sc vs new england revolution": {
     "match": "Orlando City SC vs New England Revolution",
     "league": "MLS",
-    "status": "EN JUEGO (1T 38')",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
@@ -3062,7 +3062,7 @@
   "philadelphia union vs toronto fc": {
     "match": "Philadelphia Union vs Toronto FC",
     "league": "MLS",
-    "status": "EN JUEGO (1T 38')",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
@@ -3092,7 +3092,7 @@
   "red bull new york vs atlanta united fc": {
     "match": "Red Bull New York vs Atlanta United FC",
     "league": "MLS",
-    "status": "EN JUEGO (1T 38')",
+    "status": "EN JUEGO (2T 85')",
     "time_cdmx": "15:00",
     "score": "0 - 1",
     "home_goals": 0,
