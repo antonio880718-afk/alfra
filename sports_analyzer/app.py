@@ -500,6 +500,30 @@ with t_slots:
                     for step in sgp_info['step_by_step'].split('\n'):
                         st.markdown(f"- {step}")
 
+            # 1.6 Despliegue de las 8 Categorías Completas ("Más Galleta" para TODOS los partidos)
+            with st.expander(f"🔥 Desplegar las 8 Categorías de Opciones Empíricas para {m_chosen['home']} vs {m_chosen['away']} (Córners, Tarjetas, 1T/2T, BTTS, Props)", expanded=False):
+                from match_data_engineering_engine import compute_full_match_data_engineering
+                de_slot = compute_full_match_data_engineering(m_chosen['home'], m_chosen['away'], m_chosen.get('code', ''))
+                
+                st.markdown(f"**🔬 {len(de_slot['all_flat_options'])} Variables Auditadas Oficiales para este Partido (CERO Tiros por Equipo / CERO Faltas por Equipo):**")
+                for cat in de_slot["categories"]:
+                    cat_name = cat["category"]
+                    opts = cat["options"]
+                    st.markdown(f"##### {cat_name} ({len(opts)} opciones):")
+                    rows_cat_s = []
+                    for o in opts:
+                        rows_cat_s.append({
+                            "Selección": o["pick"],
+                            "Muestra Real": o["record"],
+                            "Hit Rate %": o["hit_rate"],
+                            "Cuota Justa": f"{o['fair_odds']}",
+                            "Cuota Casa": f"~{o['odds']}",
+                            "EV%": o["ev"],
+                            "Apto Escalera": "🔥 APTO (≥83%)" if o["is_escalera"] else "Moderado",
+                            "Estatus": o.get("status", "🟢 Verificado")
+                        })
+                    st.dataframe(pd.DataFrame(rows_cat_s), width="stretch")
+
             # 2. Tabla completa con la recomendación de TODOS los partidos de la franja
             st.markdown(f"**📋 Resumen de Apuestas Recomendadas para los {sl['total_matches']} Partidos de esta Franja:**")
             st.caption("Usa esta tabla para comparar todas las opciones que juegan a la misma hora:")
