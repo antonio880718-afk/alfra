@@ -197,8 +197,8 @@ STAR_PLAYERS = {
     ],
 
     "fulham": [
-        {"name": "Raúl Jiménez", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.28, "goals_avg": 0.44, "assists_avg": 0.16, "goal_hit_rate": 40.0, "assist_hit_rate": 16.0, "ga_hit_rate": 52.0, "goal_odds": 2.65, "assist_odds": 5.80, "ga_odds": 1.88},
-        {"name": "Rodrigo Muniz", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.40, "assists_avg": 0.12, "goal_hit_rate": 36.0, "assist_hit_rate": 12.0, "ga_hit_rate": 46.0, "goal_odds": 2.90, "assist_odds": 7.00, "ga_odds": 2.10}
+        {"name": "Rodrigo Muniz", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.45, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 54.0, "goal_odds": 2.60, "assist_odds": 6.00, "ga_odds": 1.85},
+        {"name": "Emile Smith Rowe", "pos": "Mediapunta", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.35, "assists_avg": 0.30, "goal_hit_rate": 32.0, "assist_hit_rate": 28.0, "ga_hit_rate": 50.0, "goal_odds": 3.10, "assist_odds": 3.60, "ga_odds": 1.95}
     ],
     "newcastle united": [
         {"name": "Yoane Wissa", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.25, "goals_avg": 0.48, "assists_avg": 0.18, "goal_hit_rate": 44.0, "assist_hit_rate": 18.0, "ga_hit_rate": 56.0, "goal_odds": 2.45, "assist_odds": 5.40, "ga_odds": 1.78},

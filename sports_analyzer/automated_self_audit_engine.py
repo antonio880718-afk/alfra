@@ -505,7 +505,7 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "btts": False,
         "referee": "Robert Jones",
         "player_stats": {
-            "Raúl Jiménez": {
+            "Rodrigo Muniz": {
                 "sot": 1,
                 "goals": 1,
                 "assists": 0,

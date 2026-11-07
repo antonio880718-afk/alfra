@@ -485,7 +485,7 @@ INJURIES_SUSPENSIONS_DB = {
         "questionable": [
             {"player": "Kenny Tete", "pos": "Defensa", "type": "⚠️ Sobrecarga Muscular", "desc": "En duda para el lateral derecho tras fatiga muscular en la semana."}
         ],
-        "starters_ready": ["Raúl Jiménez", "Rodrigo Muniz", "Alex Iwobi", "Adama Traoré", "Emile Smith Rowe", "Andreas Pereira", "Antonee Robinson", "Bernd Leno"]
+        "starters_ready": ["Rodrigo Muniz", "Alex Iwobi", "Alex Iwobi", "Adama Traoré", "Emile Smith Rowe", "Andreas Pereira", "Antonee Robinson", "Bernd Leno"]
     },
     "newcastle united": {
         "manager": "Matthias Jaissle",

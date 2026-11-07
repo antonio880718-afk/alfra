@@ -142,7 +142,7 @@ VERIFIED_FORWARDS_DB = {
     "espanyol": {"name": "Javi Puado", "jersey": "7", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 82.5, "odds": 1.29},
     "rcd espanyol": {"name": "Javi Puado", "jersey": "7", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 82.5, "odds": 1.29},
 
-    "fulham": {"name": "Raúl Jiménez", "jersey": "7", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 83.5, "odds": 1.28},
+    "fulham": {"name": "Rodrigo Muniz", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.0, "odds": 1.26},
     "newcastle united": {"name": "Yoane Wissa", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.5, "odds": 1.25},
     "newcastle": {"name": "Yoane Wissa", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.5, "odds": 1.25},
     "tottenham hotspur": {"name": "Dominic Solanke", "jersey": "19", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.0, "odds": 1.26},

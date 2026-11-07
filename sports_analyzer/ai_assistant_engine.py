@@ -214,7 +214,7 @@ def answer_user_instruction(prompt: str) -> str:
             ("Dominic Solanke", "Tottenham Hotspur", "Más de 0.5 Tiros a Puerta", 1.26, 84.0, "0.46 goles/p"),
             ("Yoane Wissa", "Newcastle United", "Más de 0.5 Tiros a Puerta", 1.25, 84.5, "0.48 goles/p"),
             ("Zakaria Eddahchouri", "Deportivo de La Coruña", "Más de 0.5 Tiros a Puerta", 1.26, 84.0, "Pichichi Dépor 12 goles"),
-            ("Raúl Jiménez", "Fulham", "Más de 0.5 Tiros a Puerta", 1.28, 83.5, "0.44 goles/p")
+            ("Rodrigo Muniz", "Fulham", "Más de 0.5 Tiros a Puerta", 1.26, 84.0, "0.45 goles/p")
         ]
         for name, club, market_p, odds, hit, stat in featured:
             res += f"• **{name}** ({club})\n"
