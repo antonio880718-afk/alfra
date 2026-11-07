@@ -1159,7 +1159,8 @@ with t_audit:
         "🎟️ 1. Liquidación de Boleto Parlay 100x (11 Partidos)",
         "🎯 2. Auditar Crear Apuesta (SGP) de 1 Partido",
         "📊 3. Historial de Aciertos de Temporada (Backtesting Oficial)",
-        "📋 4. Texto Rápido de Boletos (Copiar y Pegar)"
+        "📋 4. Texto Rápido de Boletos (Copiar y Pegar)",
+        "📱 5. Auditoría en Vivo Cotejada con SofaScore"
     ])
 
     with sub_audit_tabs[0]:
@@ -1391,6 +1392,56 @@ BOLETO 3: RETO ESCALERA EN 3 FASES (Horarios Oficiales CDMX)
 • FASE 3 (14:30 a 21:00 hs CDMX): Re-invertir ganancia neta en picks 8, 9, 10 y 11 -> Cobra ${round(user_stake * 10.92, 2)} MXN.
 ==================================================="""
         st.text_area("Copia los picks aquí:", copy_text, height=350)
+
+
+    with sub_audit_tabs[4]:
+        from sofascore_audit_engine import get_all_sofascore_audited_matches
+        sofa_list = get_all_sofascore_audited_matches()
+        
+        st.markdown("#### 📱 Auditoría en Vivo y Cotejo de Actas con SofaScore")
+        st.caption("Validación de marcadores oficiales, xG, remates y alineaciones directamente contra las actas de SofaScore para la jornada activa:")
+
+        for sm in sofa_list:
+            st_badge_bg = "#064e3b" if "FINALIZADO" in sm["status"] else ("#1e3a8a" if "EN JUEGO" in sm["status"] else "#1e293b")
+            st_badge_color = "#6ee7b7" if "FINALIZADO" in sm["status"] else ("#93c5fd" if "EN JUEGO" in sm["status"] else "#94a3b8")
+            
+            score_txt = sm.get("score", "vs")
+            goals_list = sm.get("goals", [])
+            goals_html = "".join([f"<div style='color: #cbd5e1; font-size: 0.8rem; margin-top: 2px;'>⚽ <b>{g['player']}</b> ({g['minute']}) - {g.get('team', '')}</div>" for g in goals_list])
+            
+            stats_d = sm.get("stats", {})
+            stats_html = ""
+            if "xg" in stats_d:
+                stats_html = f"""
+                <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; font-size: 0.8rem; color: #94a3b8; border-top: 1px dashed #1e293b; padding-top: 6px;">
+                    <span>Posesión: <b style="color: #ffffff;">{stats_d.get('possession', 'N/D')}</b></span>
+                    <span>Tiros (Arco): <b style="color: #38bdf8;">{stats_d.get('total_shots', 'N/D')} ({stats_d.get('shots_on_target', 'N/D')})</b></span>
+                    <span>xG SofaScore: <b style="color: #10b981;">{stats_d.get('xg', 'N/D')}</b></span>
+                    <span>Córners: <b style="color: #facc15;">{stats_d.get('corners', 'N/D')}</b></span>
+                    <span>Faltas: <b style="color: #cbd5e1;">{stats_d.get('fouls', 'N/D')}</b></span>
+                </div>
+                """
+            
+            notes_html = f"<div style='color: #a78bfa; font-size: 0.78rem; margin-top: 4px;'>🛡️ <b>Regla VOID:</b> {sm['notes']}</div>" if "notes" in sm else ""
+
+            render_html(f"""
+            <div style="background-color: #0b132b; border: 1px solid #1e3a8a; border-radius: 10px; padding: 12px 18px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <span style="background-color: {st_badge_bg}; color: {st_badge_color}; font-size: 0.76rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{sm['status']}</span>
+                        <h4 style="margin: 4px 0 2px 0; color: #ffffff;">{sm['match']}</h4>
+                        <span style="color: #64748b; font-size: 0.78rem;">Fuente Oficial: {sm.get('source', 'SofaScore API')}</span>
+                    </div>
+                    <div style="text-align: right; background-color: #080f1d; padding: 8px 16px; border-radius: 6px; border: 1px solid #1e293b;">
+                        <span style="color: #94a3b8; font-size: 0.74rem;">MARCADOR OFICIAL</span><br>
+                        <b style="color: #facc15; font-size: 1.5rem;">{score_txt}</b>
+                    </div>
+                </div>
+                {goals_html}
+                {stats_html}
+                {notes_html}
+            </div>
+            """)
 
 
 with t_chat:
