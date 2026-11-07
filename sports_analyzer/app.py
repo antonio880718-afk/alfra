@@ -1053,8 +1053,8 @@ with t_parlay:
                     st.markdown(f"- {step.strip()}")
 
 with t_escalera:
-    st.markdown("### ⚡ Algoritmo QUANT-EDGE V3: Estrategia Matemática para Ganar")
-    st.caption("Modelo cuantitativo bivariado Dixon-Coles, contracción Bayesiana y criterio de Kelly regularizado. 100% datos empíricos de 32 datasets oficiales.")
+    st.markdown("### ⚡ Algoritmo QUANT-EDGE V4: Motor de Ultra-Certeza Matemática & Radar Anti-Trampas")
+    st.caption("Modelo cuantitativo bivariado Dixon-Coles con corrección Binomial Negativa (r=4.2), filtro de trampas asimétricas y pisos inquebrantables (88% - 95% de certeza). 100% datos empíricos de 32 datasets oficiales.")
     
     q_data = scan_all_cartelera_for_winning_picks()
     

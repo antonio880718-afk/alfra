@@ -278,22 +278,29 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any]) -> Dict[str, An
     if "córner" in p_lower or "corner" in p_lower:
         line = extract_numeric_line(pick_str, 5.5)
         
-        # Determinar si es total o de equipo
+        # Determinar si es total o de equipo con resolucion dinamica
+        m_parts = bs.get("match", "").split(" vs ")
+        h_name = m_parts[0].strip().lower() if len(m_parts) > 1 else ""
+        a_name = m_parts[1].strip().lower() if len(m_parts) > 1 else ""
+
         if "total" in p_lower or "totales" in p_lower:
             actual_c = bs.get("total_corners", 0)
             subject = "Totales del partido"
-        elif any(t in p_lower for t in ["dortmund", "borussia"]):
-            actual_c = bs.get("home_corners", 0) if "dortmund" in bs.get("match", "").lower().split(" vs ")[0] else bs.get("away_corners", 0)
-            subject = "Borussia Dortmund"
+        elif "bayern" in p_lower:
+            actual_c = bs.get("away_corners", 0) if "bayern" in a_name else bs.get("home_corners", 0)
+            subject = "Bayern Munich"
         elif "arsenal" in p_lower:
-            actual_c = bs.get("home_corners", 0) if "arsenal" in bs.get("match", "").lower().split(" vs ")[0] else bs.get("away_corners", 0)
+            actual_c = bs.get("home_corners", 0) if "arsenal" in h_name else bs.get("away_corners", 0)
             subject = "Arsenal"
-        elif "cruz azul" in p_lower:
-            actual_c = bs.get("away_corners", 0)
-            subject = "Cruz Azul"
-        elif "toluca" in p_lower:
+        elif any(t in p_lower for t in ["dortmund", "borussia"]):
+            actual_c = bs.get("home_corners", 0) if "dortmund" in h_name else bs.get("away_corners", 0)
+            subject = "Borussia Dortmund"
+        elif h_name and any(w in p_lower for w in h_name.split() if len(w) > 3):
             actual_c = bs.get("home_corners", 0)
-            subject = "Toluca"
+            subject = m_parts[0].strip()
+        elif a_name and any(w in p_lower for w in a_name.split() if len(w) > 3):
+            actual_c = bs.get("away_corners", 0)
+            subject = m_parts[1].strip()
         else:
             actual_c = bs.get("home_corners", 0)
             subject = "Equipo"
