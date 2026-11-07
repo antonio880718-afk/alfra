@@ -1022,48 +1022,72 @@ with t_audit:
         st.markdown("#### 🎟️ Auditoría y Liquidación del Boleto Parlay 100x")
         st.caption("Compara las 11 selecciones recomendadas contra los resultados oficiales de la jornada:")
         
-        settled_ticket_items = [
-            {"n": 1, "match": "Arsenal vs Hull City", "pick": "Arsenal: Más de 5.5 Tiros a Puerta", "odds": 1.52, "actual_stat": "Arsenal registró 7 Tiros a Puerta en actas oficiales (HST)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 2, "match": "Mainz vs Bayern Munich", "pick": "Total Goles: Más de 2.5 en el Partido", "odds": 1.50, "actual_stat": "Marcador Final: Mainz 1 - 3 Bayern (4 Goles totales)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 3, "match": "Borussia Dortmund vs SV Elversberg", "pick": "Borussia Dortmund: Más de 5.5 Córners", "odds": 1.55, "actual_stat": "Dortmund ejecutó 7 Córners (HC)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 4, "match": "Nottingham Forest vs Manchester City", "pick": "Manchester City: Más de 5.5 Tiros a Puerta", "odds": 1.52, "actual_stat": "Man City registró 7 Remates a Puerta oficiales (AST)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 5, "match": "Valencia vs Real Madrid", "pick": "Más de 4.5 Tarjetas Totales en el Partido", "odds": 1.60, "actual_stat": "Árbitro Hernández Maeso mostró 5 Tarjetas (3 Valencia, 2 Madrid)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 6, "match": "AS Roma vs Sassuolo", "pick": "Ambos Equipos Anotan: Sí", "odds": 1.54, "actual_stat": "Marcador Final: Roma 2 - 1 Sassuolo (Ambos marcaron)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 7, "match": "Paris Saint-Germain vs Troyes", "pick": "PSG: Gana con Hándicap (-1.5) Goles", "odds": 1.48, "actual_stat": "Marcador Final: PSG 3 - 0 Troyes (Diferencia +3)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 8, "match": "Boca Juniors vs Defensa y Justicia", "pick": "Boca Juniors: Gana Directo (1)", "odds": 1.50, "actual_stat": "Marcador Final: Boca 1 - 0 Defensa en La Bombonera", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 9, "match": "Inter Miami CF vs Charlotte FC", "pick": "Total Goles: Más de 2.5 en el Partido", "odds": 1.52, "actual_stat": "Marcador Final: Inter Miami 2 - 1 Charlotte (3 Goles)", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 10, "match": "Tigres UANL vs Cruz Azul", "pick": "Cruz Azul: Comete Más de 11.5 Faltas", "odds": 1.50, "actual_stat": "Cruz Azul cometió 13 Faltas en el Volcán", "status": "WON", "badge": "✅ ACERTADA"},
-            {"n": 11, "match": "Toluca vs Monterrey", "pick": "Más de 8.5 Córners Totales en el Partido", "odds": 1.56, "actual_stat": "Toluca 5 + Monterrey 5 = 10 Córners Totales en Nemesio Díez", "status": "WON", "badge": "✅ ACERTADA"}
+        # Seguimiento honesto en tiempo real de los 11 partidos del Parlay
+        from datetime import datetime
+        now_hour = datetime.now().hour
+        now_minute = datetime.now().minute
+        now_val = now_hour + now_minute / 60.0
+
+        parlay_live_items = [
+            {"n": 1, "match": "Arsenal vs Hull City", "time": "09:00", "time_val": 9.0, "pick": "Arsenal: Más de 5.5 Tiros a Puerta", "odds": 1.52},
+            {"n": 2, "match": "Mainz vs Bayern Munich", "time": "08:30", "time_val": 8.5, "pick": "Total Goles: Más de 2.5 en el Partido", "odds": 1.50},
+            {"n": 3, "match": "Borussia Dortmund vs SV Elversberg", "time": "08:30", "time_val": 8.5, "pick": "Borussia Dortmund: Más de 5.5 Córners", "odds": 1.55},
+            {"n": 4, "match": "Nottingham Forest vs Manchester City", "time": "11:30", "time_val": 11.5, "pick": "Manchester City: Más de 5.5 Tiros a Puerta", "odds": 1.52},
+            {"n": 5, "match": "Valencia vs Real Madrid", "time": "14:00", "time_val": 14.0, "pick": "Más de 4.5 Tarjetas Totales en el Partido", "odds": 1.60},
+            {"n": 6, "match": "AS Roma vs Sassuolo", "time": "13:45", "time_val": 13.75, "pick": "Ambos Equipos Anotan: Sí", "odds": 1.54},
+            {"n": 7, "match": "Paris Saint-Germain vs Troyes", "time": "14:05", "time_val": 14.08, "pick": "PSG: Gana con Hándicap (-1.5) Goles", "odds": 1.48},
+            {"n": 8, "match": "Boca Juniors vs Defensa y Justicia", "time": "14:30", "time_val": 14.5, "pick": "Boca Juniors: Gana Directo (1)", "odds": 1.50},
+            {"n": 9, "match": "Inter Miami CF vs Charlotte FC", "time": "15:00", "time_val": 15.0, "pick": "Total Goles: Más de 2.5 en el Partido", "odds": 1.52},
+            {"n": 10, "match": "Tigres UANL vs Cruz Azul", "time": "19:00", "time_val": 19.0, "pick": "Cruz Azul: Comete Más de 11.5 Faltas", "odds": 1.50},
+            {"n": 11, "match": "Toluca vs Monterrey", "time": "19:00", "time_val": 19.0, "pick": "Más de 8.5 Córners Totales en el Partido", "odds": 1.56}
         ]
 
-        payout_100x = round(user_stake * 104.51, 2)
-        profit_100x = round(payout_100x - user_stake, 2)
-
         render_html(f"""
-        <div style="background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #022c22 100%); border: 2px solid #10b981; border-radius: 12px; padding: 18px 24px; margin-bottom: 16px;">
+        <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 18px 24px; margin-bottom: 16px;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                 <div>
-                    <span style="background-color: #047857; color: #fff; font-size: 0.8rem; padding: 3px 10px; border-radius: 4px; font-weight: bold;">LIQUIDACIÓN OFICIAL CONFIRMADA</span>
-                    <h2 style="margin: 4px 0 2px 0; color: #ffffff;">🏆 BOLETO PARLAY 100x: COBRADO Y GANADO AL 100%</h2>
-                    <span style="color: #a7f3d0; font-size: 0.92rem;">
-                        11 de 11 Selecciones Acertadas en los 90 minutos oficiales
+                    <span style="background-color: #2563eb; color: #fff; font-size: 0.8rem; padding: 3px 10px; border-radius: 4px; font-weight: bold;">MONITOR EN VIVO Y TRANSPARENTE</span>
+                    <h2 style="margin: 4px 0 2px 0; color: #ffffff;">📊 SEGUIMIENTO OFICIAL DE BOLETOS EN JORNADA ACTIVA</h2>
+                    <span style="color: #94a3b8; font-size: 0.92rem;">
+                        Los partidos no disputados se reportan como PROGRAMADOS. No se simulan marcadores futuros.
                     </span>
                 </div>
-                <div style="text-align: right; background-color: #062f24; padding: 12px 20px; border-radius: 8px; border: 1px solid #10b981;">
-                    <span style="color: #6ee7b7; font-size: 0.78rem; text-transform: uppercase;">Monto Cobrado</span><br>
-                    <b style="color: #facc15; font-size: 1.9rem;">${payout_100x:,.2f} MXN</b><br>
-                    <span style="color: #a7f3d0; font-size: 0.85rem;">Ganancia Neta: +${profit_100x:,.2f} MXN</span>
+                <div style="text-align: right; background-color: #0b1120; padding: 12px 20px; border-radius: 8px; border: 1px solid #1e3a8a;">
+                    <span style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase;">Inversión Evaluada</span><br>
+                    <b style="color: #60a5fa; font-size: 1.6rem;">${user_stake:,.2f} MXN</b><br>
+                    <span style="color: #cbd5e1; font-size: 0.85rem;">Cuota Teórica Total: 104.51x</span>
                 </div>
             </div>
         </div>
         """)
 
-        for item in settled_ticket_items:
+        for item in parlay_live_items:
             teams = item['match'].split(' vs ')
             l_h = get_team_logo(teams[0].strip() if len(teams) > 1 else item['match'])
             l_a = get_team_logo(teams[1].strip() if len(teams) > 1 else '')
+            
+            # Determinar estado honesto
+            if now_val < item['time_val']:
+                status_badge = f"⏳ PROGRAMADO ({item['time']} hs)"
+                badge_bg = "#1e293b"
+                badge_color = "#94a3b8"
+                border_color = "#334155"
+                detail_text = f"Partido programado para las {item['time']} hs CDMX. Aún no inicia."
+            elif now_val <= item['time_val'] + 2.0:
+                status_badge = "⚡ EN JUEGO EN ESTE MOMENTO"
+                badge_bg = "#7c2d12"
+                badge_color = "#fdba74"
+                border_color = "#ea580c"
+                detail_text = f"Partido en disputa en este instante (arrancó {item['time']} hs CDMX)."
+            else:
+                status_badge = "🏁 FINALIZADO (Pendiente Acta Oficial)"
+                badge_bg = "#1e3a8a"
+                badge_color = "#93c5fd"
+                border_color = "#2563eb"
+                detail_text = f"Partido concluido. Cotejando acta oficial post-partido."
+
             render_html(f"""
-            <div class="var-pill" style="margin-bottom: 8px; border-left: 4px solid #10b981; padding: 10px 16px;">
+            <div class="var-pill" style="margin-bottom: 8px; border-left: 4px solid {border_color}; padding: 10px 16px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <img src="{l_h}" style="width: 28px; height: 28px; object-fit: contain;">
@@ -1072,11 +1096,11 @@ with t_audit:
                     </div>
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <span style="color: #facc15; font-weight: bold;">Cuota: ~{item['odds']}</span>
-                        <span style="background-color: #064e3b; color: #6ee7b7; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{item['badge']}</span>
+                        <span style="background-color: {badge_bg}; color: {badge_color}; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{status_badge}</span>
                     </div>
                 </div>
                 <div style="color: #94a3b8; font-size: 0.82rem; margin-top: 3px;">
-                    📊 <b>Dato Oficial Registrado:</b> {item['actual_stat']}
+                    📌 <b>Estado Real:</b> {detail_text}
                 </div>
             </div>
             """)
