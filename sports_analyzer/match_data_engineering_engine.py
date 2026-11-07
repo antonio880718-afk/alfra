@@ -164,228 +164,4207 @@ def normalize_name(name: str) -> str:
 # Sincronizado con traspasos y préstamos oficiales (ej. Joël Piroe en West Ham, Calvert-Lewin en Leeds)
 STAR_PLAYERS = {
     "telstar": [
-        {"name": "Sem van Duijn", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.30, "goals_avg": 0.38, "assists_avg": 0.12, "goal_hit_rate": 35.0, "assist_hit_rate": 12.0, "ga_hit_rate": 45.0, "goal_odds": 2.95, "assist_odds": 6.50, "ga_odds": 2.10},
-        {"name": "Patrick Brouwer", "pos": "Delantero", "sot_avg": 1.2, "hit_rate": 77.0, "odds": 1.35, "goals_avg": 0.32, "assists_avg": 0.22, "goal_hit_rate": 30.0, "assist_hit_rate": 20.0, "ga_hit_rate": 48.0, "goal_odds": 3.20, "assist_odds": 4.80, "ga_odds": 2.05}
+        {
+            "name": "Sem van Duijn",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.3,
+            "goals_avg": 0.38,
+            "assists_avg": 0.12,
+            "goal_hit_rate": 35.0,
+            "assist_hit_rate": 12.0,
+            "ga_hit_rate": 45.0,
+            "goal_odds": 2.95,
+            "assist_odds": 6.5,
+            "ga_odds": 2.1
+        },
+        {
+            "name": "Patrick Brouwer",
+            "pos": "Delantero",
+            "sot_avg": 1.2,
+            "hit_rate": 77.0,
+            "odds": 1.35,
+            "goals_avg": 0.32,
+            "assists_avg": 0.22,
+            "goal_hit_rate": 30.0,
+            "assist_hit_rate": 20.0,
+            "ga_hit_rate": 48.0,
+            "goal_odds": 3.2,
+            "assist_odds": 4.8,
+            "ga_odds": 2.05
+        }
     ],
     "sc telstar": [
-        {"name": "Sem van Duijn", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.30, "goals_avg": 0.38, "assists_avg": 0.12, "goal_hit_rate": 35.0, "assist_hit_rate": 12.0, "ga_hit_rate": 45.0, "goal_odds": 2.95, "assist_odds": 6.50, "ga_odds": 2.10}
+        {
+            "name": "Sem van Duijn",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.3,
+            "goals_avg": 0.38,
+            "assists_avg": 0.12,
+            "goal_hit_rate": 35.0,
+            "assist_hit_rate": 12.0,
+            "ga_hit_rate": 45.0,
+            "goal_odds": 2.95,
+            "assist_odds": 6.5,
+            "ga_odds": 2.1
+        }
     ],
     "deportivo": [
-        {"name": "Zakaria Eddahchouri", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.14, "goal_hit_rate": 42.0, "assist_hit_rate": 14.0, "ga_hit_rate": 54.0, "goal_odds": 2.50, "assist_odds": 6.20, "ga_odds": 1.82},
-        {"name": "Lucas Pérez", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 81.0, "odds": 1.31, "goals_avg": 0.38, "assists_avg": 0.30, "goal_hit_rate": 36.0, "assist_hit_rate": 28.0, "ga_hit_rate": 56.0, "goal_odds": 2.90, "assist_odds": 3.80, "ga_odds": 1.80}
+        {
+            "name": "Zakaria Eddahchouri",
+            "pos": "Delantero",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.46,
+            "assists_avg": 0.14,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 14.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.5,
+            "assist_odds": 6.2,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Lucas Pérez",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.31,
+            "goals_avg": 0.38,
+            "assists_avg": 0.3,
+            "goal_hit_rate": 36.0,
+            "assist_hit_rate": 28.0,
+            "ga_hit_rate": 56.0,
+            "goal_odds": 2.9,
+            "assist_odds": 3.8,
+            "ga_odds": 1.8
+        }
     ],
     "rc deportivo": [
-        {"name": "Zakaria Eddahchouri", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.14, "goal_hit_rate": 42.0, "assist_hit_rate": 14.0, "ga_hit_rate": 54.0, "goal_odds": 2.50, "assist_odds": 6.20, "ga_odds": 1.82}
+        {
+            "name": "Zakaria Eddahchouri",
+            "pos": "Delantero",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.46,
+            "assists_avg": 0.14,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 14.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.5,
+            "assist_odds": 6.2,
+            "ga_odds": 1.82
+        }
     ],
     "deportivo de la coruña": [
-        {"name": "Zakaria Eddahchouri", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.14, "goal_hit_rate": 42.0, "assist_hit_rate": 14.0, "ga_hit_rate": 54.0, "goal_odds": 2.50, "assist_odds": 6.20, "ga_odds": 1.82}
+        {
+            "name": "Zakaria Eddahchouri",
+            "pos": "Delantero",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.46,
+            "assists_avg": 0.14,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 14.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.5,
+            "assist_odds": 6.2,
+            "ga_odds": 1.82
+        }
     ],
     "fortuna sittard": [
-        {"name": "Lequincio Zeefuik", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 79.0, "odds": 1.33, "goals_avg": 0.35, "assists_avg": 0.15, "goal_hit_rate": 33.0, "assist_hit_rate": 15.0, "ga_hit_rate": 45.0, "goal_odds": 3.10, "assist_odds": 6.00, "ga_odds": 2.15},
-        {"name": "Ole Romeny", "pos": "Delantero", "sot_avg": 1.2, "hit_rate": 78.0, "odds": 1.34, "goals_avg": 0.33, "assists_avg": 0.20, "goal_hit_rate": 31.0, "assist_hit_rate": 18.0, "ga_hit_rate": 47.0, "goal_odds": 3.25, "assist_odds": 5.20, "ga_odds": 2.05}
+        {
+            "name": "Lequincio Zeefuik",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 79.0,
+            "odds": 1.33,
+            "goals_avg": 0.35,
+            "assists_avg": 0.15,
+            "goal_hit_rate": 33.0,
+            "assist_hit_rate": 15.0,
+            "ga_hit_rate": 45.0,
+            "goal_odds": 3.1,
+            "assist_odds": 6.0,
+            "ga_odds": 2.15
+        },
+        {
+            "name": "Ole Romeny",
+            "pos": "Delantero",
+            "sot_avg": 1.2,
+            "hit_rate": 78.0,
+            "odds": 1.34,
+            "goals_avg": 0.33,
+            "assists_avg": 0.2,
+            "goal_hit_rate": 31.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 47.0,
+            "goal_odds": 3.25,
+            "assist_odds": 5.2,
+            "ga_odds": 2.05
+        }
     ],
     "málaga": [
-        {"name": "Eneko Jauregi", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 79.5, "odds": 1.32, "goals_avg": 0.36, "assists_avg": 0.14, "goal_hit_rate": 34.0, "assist_hit_rate": 14.0, "ga_hit_rate": 46.0, "goal_odds": 3.00, "assist_odds": 6.20, "ga_odds": 2.10},
-        {"name": "Julen Lobete", "pos": "Delantero", "sot_avg": 1.2, "hit_rate": 77.0, "odds": 1.36, "goals_avg": 0.30, "assists_avg": 0.22, "goal_hit_rate": 28.0, "assist_hit_rate": 20.0, "ga_hit_rate": 46.0, "goal_odds": 3.40, "assist_odds": 4.90, "ga_odds": 2.10}
+        {
+            "name": "Eneko Jauregi",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 79.5,
+            "odds": 1.32,
+            "goals_avg": 0.36,
+            "assists_avg": 0.14,
+            "goal_hit_rate": 34.0,
+            "assist_hit_rate": 14.0,
+            "ga_hit_rate": 46.0,
+            "goal_odds": 3.0,
+            "assist_odds": 6.2,
+            "ga_odds": 2.1
+        },
+        {
+            "name": "Julen Lobete",
+            "pos": "Delantero",
+            "sot_avg": 1.2,
+            "hit_rate": 77.0,
+            "odds": 1.36,
+            "goals_avg": 0.3,
+            "assists_avg": 0.22,
+            "goal_hit_rate": 28.0,
+            "assist_hit_rate": 20.0,
+            "ga_hit_rate": 46.0,
+            "goal_odds": 3.4,
+            "assist_odds": 4.9,
+            "ga_odds": 2.1
+        }
     ],
     "malaga": [
-        {"name": "Eneko Jauregi", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 79.5, "odds": 1.32, "goals_avg": 0.36, "assists_avg": 0.14, "goal_hit_rate": 34.0, "assist_hit_rate": 14.0, "ga_hit_rate": 46.0, "goal_odds": 3.00, "assist_odds": 6.20, "ga_odds": 2.10}
+        {
+            "name": "Eneko Jauregi",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 79.5,
+            "odds": 1.32,
+            "goals_avg": 0.36,
+            "assists_avg": 0.14,
+            "goal_hit_rate": 34.0,
+            "assist_hit_rate": 14.0,
+            "ga_hit_rate": 46.0,
+            "goal_odds": 3.0,
+            "assist_odds": 6.2,
+            "ga_odds": 2.1
+        }
     ],
     "espanyol": [
-        {"name": "Javi Puado", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.29, "goals_avg": 0.42, "assists_avg": 0.18, "goal_hit_rate": 39.0, "assist_hit_rate": 17.0, "ga_hit_rate": 53.0, "goal_odds": 2.70, "assist_odds": 5.50, "ga_odds": 1.86},
-        {"name": "Roberto Fernández", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.38, "assists_avg": 0.12, "goal_hit_rate": 35.0, "assist_hit_rate": 12.0, "ga_hit_rate": 45.0, "goal_odds": 2.95, "assist_odds": 6.80, "ga_odds": 2.10}
+        {
+            "name": "Javi Puado",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.29,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        },
+        {
+            "name": "Roberto Fernández",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.32,
+            "goals_avg": 0.38,
+            "assists_avg": 0.12,
+            "goal_hit_rate": 35.0,
+            "assist_hit_rate": 12.0,
+            "ga_hit_rate": 45.0,
+            "goal_odds": 2.95,
+            "assist_odds": 6.8,
+            "ga_odds": 2.1
+        }
     ],
-
     "fulham": [
-        {"name": "Rodrigo Muniz", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.45, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 54.0, "goal_odds": 2.60, "assist_odds": 6.00, "ga_odds": 1.85},
-        {"name": "Emile Smith Rowe", "pos": "Mediapunta", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.35, "assists_avg": 0.30, "goal_hit_rate": 32.0, "assist_hit_rate": 28.0, "ga_hit_rate": 50.0, "goal_odds": 3.10, "assist_odds": 3.60, "ga_odds": 1.95}
+        {
+            "name": "Rodrigo Muniz",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        },
+        {
+            "name": "Emile Smith Rowe",
+            "pos": "Mediapunta",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.32,
+            "goals_avg": 0.35,
+            "assists_avg": 0.3,
+            "goal_hit_rate": 32.0,
+            "assist_hit_rate": 28.0,
+            "ga_hit_rate": 50.0,
+            "goal_odds": 3.1,
+            "assist_odds": 3.6,
+            "ga_odds": 1.95
+        }
     ],
     "newcastle united": [
-        {"name": "Alexander Isak", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 86.0, "odds": 1.22, "goals_avg": 0.55, "assists_avg": 0.18, "goal_hit_rate": 48.0, "assist_hit_rate": 18.0, "ga_hit_rate": 60.0, "goal_odds": 2.20, "assist_odds": 5.20, "ga_odds": 1.68},
-        {"name": "Anthony Gordon", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.28, "goals_avg": 0.38, "assists_avg": 0.28, "goal_hit_rate": 35.0, "assist_hit_rate": 26.0, "ga_hit_rate": 52.0, "goal_odds": 2.90, "assist_odds": 3.80, "ga_odds": 1.90}
+        {
+            "name": "Alexander Isak",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Anthony Gordon",
+            "pos": "Extremo",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.38,
+            "assists_avg": 0.28,
+            "goal_hit_rate": 35.0,
+            "assist_hit_rate": 26.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.9,
+            "assist_odds": 3.8,
+            "ga_odds": 1.9
+        }
     ],
     "newcastle": [
-        {"name": "Yoane Wissa", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.25, "goals_avg": 0.48, "assists_avg": 0.18, "goal_hit_rate": 44.0, "assist_hit_rate": 18.0, "ga_hit_rate": 56.0, "goal_odds": 2.45, "assist_odds": 5.40, "ga_odds": 1.78},
-        {"name": "Anthony Elanga", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.5, "odds": 1.30, "goals_avg": 0.36, "assists_avg": 0.32, "goal_hit_rate": 34.0, "assist_hit_rate": 30.0, "ga_hit_rate": 54.0, "goal_odds": 3.10, "assist_odds": 3.40, "ga_odds": 1.85}
+        {
+            "name": "Alexander Isak",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Anthony Gordon",
+            "pos": "Extremo",
+            "sot_avg": 1.2,
+            "hit_rate": 78.0,
+            "odds": 1.32,
+            "goals_avg": 0.35,
+            "assists_avg": 0.35,
+            "goal_hit_rate": 34.0,
+            "assist_hit_rate": 34.0,
+            "ga_hit_rate": 56.0,
+            "goal_odds": 3.1,
+            "assist_odds": 3.1,
+            "ga_odds": 1.78
+        }
     ],
     "tottenham hotspur": [
-        {"name": "Dominic Solanke", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 52.0, "goal_odds": 2.55, "assist_odds": 6.20, "ga_odds": 1.88},
-        {"name": "Dejan Kulusevski", "pos": "Extremo", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.31, "goals_avg": 0.35, "assists_avg": 0.32, "goal_hit_rate": 32.0, "assist_hit_rate": 30.0, "ga_hit_rate": 52.0, "goal_odds": 3.10, "assist_odds": 3.40, "ga_odds": 1.85}
+        {
+            "name": "Dominic Solanke",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.24,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        },
+        {
+            "name": "Dejan Kulusevski",
+            "pos": "Extremo",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.31,
+            "goals_avg": 0.35,
+            "assists_avg": 0.32,
+            "goal_hit_rate": 32.0,
+            "assist_hit_rate": 30.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 3.1,
+            "assist_odds": 3.4,
+            "ga_odds": 1.85
+        }
     ],
     "tottenham": [
-        {"name": "Dominic Solanke", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 52.0, "goal_odds": 2.55, "assist_odds": 6.20, "ga_odds": 1.88},
-        {"name": "Dejan Kulusevski", "pos": "Extremo", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.31, "goals_avg": 0.35, "assists_avg": 0.32, "goal_hit_rate": 32.0, "assist_hit_rate": 30.0, "ga_hit_rate": 52.0, "goal_odds": 3.10, "assist_odds": 3.40, "ga_odds": 1.85}
+        {
+            "name": "Dominic Solanke",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.24,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        },
+        {
+            "name": "Son Heung-min",
+            "pos": "Extremo",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.25,
+            "goals_avg": 0.52,
+            "assists_avg": 0.4,
+            "goal_hit_rate": 46.0,
+            "assist_hit_rate": 38.0,
+            "ga_hit_rate": 66.0,
+            "goal_odds": 2.3,
+            "assist_odds": 2.8,
+            "ga_odds": 1.58
+        },
+        {
+            "name": "Dejan Kulusevski",
+            "pos": "Mediapunta",
+            "sot_avg": 1.1,
+            "hit_rate": 76.0,
+            "odds": 1.38,
+            "goals_avg": 0.28,
+            "assists_avg": 0.38,
+            "goal_hit_rate": 28.0,
+            "assist_hit_rate": 38.0,
+            "ga_hit_rate": 55.0,
+            "goal_odds": 3.8,
+            "assist_odds": 2.85,
+            "ga_odds": 1.82
+        }
     ],
     "hull city": [
-        {"name": "Chris Bedia", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.38, "assists_avg": 0.14, "goal_hit_rate": 35.0, "assist_hit_rate": 14.0, "ga_hit_rate": 46.0, "goal_odds": 3.00, "assist_odds": 6.80, "ga_odds": 2.15}
+        {
+            "name": "Chris Bedia",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
     ],
     "hull": [
-        {"name": "Chris Bedia", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.38, "assists_avg": 0.14, "goal_hit_rate": 35.0, "assist_hit_rate": 14.0, "ga_hit_rate": 46.0, "goal_odds": 3.00, "assist_odds": 6.80, "ga_odds": 2.15}
+        {
+            "name": "Chris Bedia",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
     ],
     "mainz": [
-        {"name": "Jonathan Burkardt", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.28, "goals_avg": 0.44, "assists_avg": 0.18, "goal_hit_rate": 40.0, "assist_hit_rate": 18.0, "ga_hit_rate": 54.0, "goal_odds": 2.65, "assist_odds": 5.40, "ga_odds": 1.82}
+        {
+            "name": "Jonathan Burkardt",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
     ],
     "sv elversberg": [
-        {"name": "Fisnik Asllani", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 81.0, "odds": 1.30, "goals_avg": 0.42, "assists_avg": 0.20, "goal_hit_rate": 38.0, "assist_hit_rate": 20.0, "ga_hit_rate": 52.0, "goal_odds": 2.80, "assist_odds": 5.00, "ga_odds": 1.90}
+        {
+            "name": "Fisnik Asllani",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
     ],
     "elversberg": [
-        {"name": "Fisnik Asllani", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 81.0, "odds": 1.30, "goals_avg": 0.42, "assists_avg": 0.20, "goal_hit_rate": 38.0, "assist_hit_rate": 20.0, "ga_hit_rate": 52.0, "goal_odds": 2.80, "assist_odds": 5.00, "ga_odds": 1.90}
+        {
+            "name": "Fisnik Asllani",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
     ],
     "as roma": [
-        {"name": "Artem Dovbyk", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.48, "assists_avg": 0.15, "goal_hit_rate": 44.0, "assist_hit_rate": 15.0, "ga_hit_rate": 54.0, "goal_odds": 2.45, "assist_odds": 6.20, "ga_odds": 1.82},
-        {"name": "Paulo Dybala", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.0, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.32, "goal_hit_rate": 38.0, "assist_hit_rate": 30.0, "ga_hit_rate": 58.0, "goal_odds": 2.75, "assist_odds": 3.40, "ga_odds": 1.72}
+        {
+            "name": "Artem Dovbyk",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        },
+        {
+            "name": "Paulo Dybala",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.32,
+            "goal_hit_rate": 38.0,
+            "assist_hit_rate": 30.0,
+            "ga_hit_rate": 58.0,
+            "goal_odds": 2.75,
+            "assist_odds": 3.4,
+            "ga_odds": 1.72
+        }
     ],
     "roma": [
-        {"name": "Artem Dovbyk", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.48, "assists_avg": 0.15, "goal_hit_rate": 44.0, "assist_hit_rate": 15.0, "ga_hit_rate": 54.0, "goal_odds": 2.45, "assist_odds": 6.20, "ga_odds": 1.82},
-        {"name": "Paulo Dybala", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.0, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.32, "goal_hit_rate": 38.0, "assist_hit_rate": 30.0, "ga_hit_rate": 58.0, "goal_odds": 2.75, "assist_odds": 3.40, "ga_odds": 1.72}
+        {
+            "name": "Artem Dovbyk",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        },
+        {
+            "name": "Paulo Dybala",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.32,
+            "goal_hit_rate": 38.0,
+            "assist_hit_rate": 30.0,
+            "ga_hit_rate": 58.0,
+            "goal_odds": 2.75,
+            "assist_odds": 3.4,
+            "ga_odds": 1.72
+        }
     ],
     "sassuolo": [
-        {"name": "Armand Laurienté", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.28, "goals_avg": 0.40, "assists_avg": 0.28, "goal_hit_rate": 36.0, "assist_hit_rate": 26.0, "ga_hit_rate": 54.0, "goal_odds": 2.90, "assist_odds": 3.90, "ga_odds": 1.82}
+        {
+            "name": "Armand Laurienté",
+            "pos": "Extremo",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.4,
+            "assists_avg": 0.28,
+            "goal_hit_rate": 36.0,
+            "assist_hit_rate": 26.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.9,
+            "assist_odds": 3.9,
+            "ga_odds": 1.82
+        }
     ],
     "paris saint-germain": [
-        {"name": "Ousmane Dembélé", "pos": "Extremo", "sot_avg": 1.5, "hit_rate": 85.0, "odds": 1.24, "goals_avg": 0.44, "assists_avg": 0.40, "goal_hit_rate": 40.0, "assist_hit_rate": 36.0, "ga_hit_rate": 66.0, "goal_odds": 2.65, "assist_odds": 2.80, "ga_odds": 1.55},
-        {"name": "Bradley Barcola", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.28, "goal_hit_rate": 38.0, "assist_hit_rate": 26.0, "ga_hit_rate": 56.0, "goal_odds": 2.75, "assist_odds": 3.80, "ga_odds": 1.78}
+        {
+            "name": "Bradley Barcola",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Ousmane Dembélé",
+            "pos": "Extremo",
+            "sot_avg": 1.5,
+            "hit_rate": 85.0,
+            "odds": 1.24,
+            "goals_avg": 0.44,
+            "assists_avg": 0.4,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 36.0,
+            "ga_hit_rate": 66.0,
+            "goal_odds": 2.65,
+            "assist_odds": 2.8,
+            "ga_odds": 1.55
+        }
     ],
     "psg": [
-        {"name": "Ousmane Dembélé", "pos": "Extremo", "sot_avg": 1.5, "hit_rate": 85.0, "odds": 1.24, "goals_avg": 0.44, "assists_avg": 0.40, "goal_hit_rate": 40.0, "assist_hit_rate": 36.0, "ga_hit_rate": 66.0, "goal_odds": 2.65, "assist_odds": 2.80, "ga_odds": 1.55},
-        {"name": "Bradley Barcola", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.28, "goal_hit_rate": 38.0, "assist_hit_rate": 26.0, "ga_hit_rate": 56.0, "goal_odds": 2.75, "assist_odds": 3.80, "ga_odds": 1.78}
+        {
+            "name": "Bradley Barcola",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Ousmane Dembélé",
+            "pos": "Extremo",
+            "sot_avg": 1.5,
+            "hit_rate": 85.0,
+            "odds": 1.24,
+            "goals_avg": 0.44,
+            "assists_avg": 0.4,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 36.0,
+            "ga_hit_rate": 66.0,
+            "goal_odds": 2.65,
+            "assist_odds": 2.8,
+            "ga_odds": 1.55
+        }
     ],
     "troyes": [
-        {"name": "Renaud Ripart", "pos": "Delantero", "sot_avg": 1.2, "hit_rate": 78.5, "odds": 1.34, "goals_avg": 0.34, "assists_avg": 0.16, "goal_hit_rate": 32.0, "assist_hit_rate": 16.0, "ga_hit_rate": 45.0, "goal_odds": 3.20, "assist_odds": 6.20, "ga_odds": 2.15}
+        {
+            "name": "Renaud Ripart",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.32,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.5,
+            "assist_odds": 5.2,
+            "ga_odds": 1.92
+        }
     ],
-
     "1. fc nürnberg": [
-        {"name": "Sigurd Haugen", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.28, "goals_avg": 0.44, "assists_avg": 0.18, "goal_hit_rate": 40.0, "assist_hit_rate": 18.0, "ga_hit_rate": 54.0, "goal_odds": 2.65, "assist_odds": 5.40, "ga_odds": 1.82}
+        {
+            "name": "Stefanos Tzimas",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Sigurd Haugen",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.5,
+            "odds": 1.28,
+            "goals_avg": 0.44,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.65,
+            "assist_odds": 5.4,
+            "ga_odds": 1.82
+        }
     ],
     "nürnberg": [
-        {"name": "Sigurd Haugen", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.28, "goals_avg": 0.44, "assists_avg": 0.18, "goal_hit_rate": 40.0, "assist_hit_rate": 18.0, "ga_hit_rate": 54.0, "goal_odds": 2.65, "assist_odds": 5.40, "ga_odds": 1.82}
+        {
+            "name": "Stefanos Tzimas",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Sigurd Haugen",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.5,
+            "odds": 1.28,
+            "goals_avg": 0.44,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.65,
+            "assist_odds": 5.4,
+            "ga_odds": 1.82
+        }
     ],
     "sv darmstadt 98": [
-        {"name": "Fynn Lakenmacher", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.0, "odds": 1.28, "goals_avg": 0.45, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 16.0, "ga_hit_rate": 52.0, "goal_odds": 2.60, "assist_odds": 6.00, "ga_odds": 1.88}
+        {
+            "name": "Isac Lidberg",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        },
+        {
+            "name": "Fynn Lakenmacher",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.45,
+            "assists_avg": 0.15,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 16.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.6,
+            "assist_odds": 6.0,
+            "ga_odds": 1.88
+        }
     ],
     "nurnberg": [
-        {"name": "Sigurd Haugen", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.28, "goals_avg": 0.44, "assists_avg": 0.18, "goal_hit_rate": 40.0, "assist_hit_rate": 18.0, "ga_hit_rate": 54.0, "goal_odds": 2.65, "assist_odds": 5.40, "ga_odds": 1.82},
-        {"name": "Rayan Ghrieb", "pos": "Extremo", "sot_avg": 1.2, "hit_rate": 78.0, "odds": 1.34, "goals_avg": 0.35, "assists_avg": 0.30, "goal_hit_rate": 32.0, "assist_hit_rate": 28.0, "ga_hit_rate": 50.0, "goal_odds": 3.10, "assist_odds": 3.60, "ga_odds": 2.00}
+        {
+            "name": "Stefanos Tzimas",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Sigurd Haugen",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.5,
+            "odds": 1.28,
+            "goals_avg": 0.44,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.65,
+            "assist_odds": 5.4,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Rayan Ghrieb",
+            "pos": "Extremo",
+            "sot_avg": 1.2,
+            "hit_rate": 78.0,
+            "odds": 1.34,
+            "goals_avg": 0.35,
+            "assists_avg": 0.3,
+            "goal_hit_rate": 32.0,
+            "assist_hit_rate": 28.0,
+            "ga_hit_rate": 50.0,
+            "goal_odds": 3.1,
+            "assist_odds": 3.6,
+            "ga_odds": 2.0
+        }
     ],
     "darmstadt": [
-        {"name": "Fynn Lakenmacher", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.0, "odds": 1.28, "goals_avg": 0.45, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 16.0, "ga_hit_rate": 52.0, "goal_odds": 2.60, "assist_odds": 5.80, "ga_odds": 1.88},
-        {"name": "Luca Marseiler", "pos": "Mediapunta", "sot_avg": 1.2, "hit_rate": 78.5, "odds": 1.32, "goals_avg": 0.32, "assists_avg": 0.38, "goal_hit_rate": 30.0, "assist_hit_rate": 35.0, "ga_hit_rate": 55.0, "goal_odds": 3.25, "assist_odds": 2.85, "ga_odds": 1.82}
-    ],
-    "mainz": [
-        {"name": "Jonathan Burkardt", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.24, "goals_avg": 0.52, "assists_avg": 0.22, "goal_hit_rate": 48.0, "assist_hit_rate": 22.0, "ga_hit_rate": 62.0, "goal_odds": 2.30, "assist_odds": 4.50, "ga_odds": 1.62}
-    ],
-    "elversberg": [
-        {"name": "Fisnik Asllani", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.25, "goal_hit_rate": 38.0, "assist_hit_rate": 24.0, "ga_hit_rate": 54.0, "goal_odds": 2.75, "assist_odds": 4.20, "ga_odds": 1.85}
+        {
+            "name": "Isac Lidberg",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        },
+        {
+            "name": "Fynn Lakenmacher",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.45,
+            "assists_avg": 0.15,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 16.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.6,
+            "assist_odds": 5.8,
+            "ga_odds": 1.88
+        },
+        {
+            "name": "Luca Marseiler",
+            "pos": "Mediapunta",
+            "sot_avg": 1.2,
+            "hit_rate": 78.5,
+            "odds": 1.32,
+            "goals_avg": 0.32,
+            "assists_avg": 0.38,
+            "goal_hit_rate": 30.0,
+            "assist_hit_rate": 35.0,
+            "ga_hit_rate": 55.0,
+            "goal_odds": 3.25,
+            "assist_odds": 2.85,
+            "ga_odds": 1.82
+        }
     ],
     "rb leipzig": [
-        {"name": "Benjamin Šeško", "pos": "Delantero", "sot_avg": 1.7, "hit_rate": 87.0, "odds": 1.20, "goals_avg": 0.62, "assists_avg": 0.20, "goal_hit_rate": 55.0, "assist_hit_rate": 20.0, "ga_hit_rate": 68.0, "goal_odds": 1.95, "assist_odds": 5.00, "ga_odds": 1.48},
-        {"name": "Loïs Openda", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 86.0, "odds": 1.22, "goals_avg": 0.58, "assists_avg": 0.25, "goal_hit_rate": 52.0, "assist_hit_rate": 24.0, "ga_hit_rate": 66.0, "goal_odds": 2.05, "assist_odds": 4.20, "ga_odds": 1.52}
+        {
+            "name": "Loïs Openda",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Benjamin Šeško",
+            "pos": "Delantero",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.62,
+            "assists_avg": 0.2,
+            "goal_hit_rate": 55.0,
+            "assist_hit_rate": 20.0,
+            "ga_hit_rate": 68.0,
+            "goal_odds": 1.95,
+            "assist_odds": 5.0,
+            "ga_odds": 1.48
+        }
     ],
     "augsburg": [
-        {"name": "Phillip Tietz", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 81.5, "odds": 1.30, "goals_avg": 0.38, "assists_avg": 0.18, "goal_hit_rate": 35.0, "assist_hit_rate": 18.0, "ga_hit_rate": 48.0, "goal_odds": 2.95, "assist_odds": 5.50, "ga_odds": 2.05}
+        {
+            "name": "Samuel Essende",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.3,
+            "goal_odds": 2.44,
+            "assist_odds": 5.2,
+            "ga_odds": 1.88
+        },
+        {
+            "name": "Phillip Tietz",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 81.5,
+            "odds": 1.3,
+            "goals_avg": 0.38,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 35.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 48.0,
+            "goal_odds": 2.95,
+            "assist_odds": 5.5,
+            "ga_odds": 2.05
+        }
     ],
     "stuttgart": [
-        {"name": "Ermedin Demirović", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 85.5, "odds": 1.22, "goals_avg": 0.55, "assists_avg": 0.25, "goal_hit_rate": 50.0, "assist_hit_rate": 25.0, "ga_hit_rate": 65.0, "goal_odds": 2.15, "assist_odds": 4.00, "ga_odds": 1.55},
-        {"name": "Deniz Undav", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.25, "goals_avg": 0.50, "assists_avg": 0.32, "goal_hit_rate": 46.0, "assist_hit_rate": 30.0, "ga_hit_rate": 64.0, "goal_odds": 2.35, "assist_odds": 3.40, "ga_odds": 1.58}
+        {
+            "name": "Deniz Undav",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        },
+        {
+            "name": "Ermedin Demirović",
+            "pos": "Delantero",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.22,
+            "goals_avg": 0.55,
+            "assists_avg": 0.25,
+            "goal_hit_rate": 50.0,
+            "assist_hit_rate": 25.0,
+            "ga_hit_rate": 65.0,
+            "goal_odds": 2.15,
+            "assist_odds": 4.0,
+            "ga_odds": 1.55
+        }
     ],
     "werder bremen": [
-        {"name": "Marvin Ducksch", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.0, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.35, "goal_hit_rate": 38.0, "assist_hit_rate": 32.0, "ga_hit_rate": 60.0, "goal_odds": 2.70, "assist_odds": 3.20, "ga_odds": 1.68}
+        {
+            "name": "Marvin Ducksch",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
     ],
     "cruz azul": [
-        {"name": "Ángel Sepúlveda", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 86.5, "odds": 1.20, "goals_avg": 0.56, "assists_avg": 0.18, "goal_hit_rate": 50.0, "assist_hit_rate": 20.0, "ga_hit_rate": 62.5, "goal_odds": 2.20, "assist_odds": 5.00, "ga_odds": 1.60},
-        {"name": "Carlos Rotondi", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 83.0, "odds": 1.26, "goals_avg": 0.44, "assists_avg": 0.31, "goal_hit_rate": 40.0, "assist_hit_rate": 30.0, "ga_hit_rate": 58.0, "goal_odds": 2.65, "assist_odds": 3.40, "ga_odds": 1.72}
+        {
+            "name": "Ángel Sepúlveda",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        },
+        {
+            "name": "Carlos Rotondi",
+            "pos": "Extremo",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.26,
+            "goals_avg": 0.44,
+            "assists_avg": 0.31,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 30.0,
+            "ga_hit_rate": 58.0,
+            "goal_odds": 2.65,
+            "assist_odds": 3.4,
+            "ga_odds": 1.72
+        }
     ],
     "monterrey": [
-        {"name": "Germán Berterame", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 85.5, "odds": 1.22, "goals_avg": 0.50, "assists_avg": 0.20, "goal_hit_rate": 45.0, "assist_hit_rate": 22.0, "ga_hit_rate": 58.0, "goal_odds": 2.35, "assist_odds": 4.60, "ga_odds": 1.72},
-        {"name": "Sergio Canales", "pos": "Mediapunta", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.25, "goals_avg": 0.44, "assists_avg": 0.40, "goal_hit_rate": 40.0, "assist_hit_rate": 38.0, "ga_hit_rate": 65.0, "goal_odds": 2.60, "assist_odds": 2.75, "ga_odds": 1.55}
+        {
+            "name": "Germán Berterame",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Sergio Canales",
+            "pos": "Mediapunta",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.25,
+            "goals_avg": 0.44,
+            "assists_avg": 0.4,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 38.0,
+            "ga_hit_rate": 65.0,
+            "goal_odds": 2.6,
+            "assist_odds": 2.75,
+            "ga_odds": 1.55
+        }
     ],
     "club america": [
-        {"name": "Henry Martín", "pos": "Delantero", "sot_avg": 1.7, "hit_rate": 87.0, "odds": 1.20, "goals_avg": 0.56, "assists_avg": 0.35, "goal_hit_rate": 52.0, "assist_hit_rate": 35.0, "ga_hit_rate": 68.0, "goal_odds": 2.10, "assist_odds": 3.00, "ga_odds": 1.48}
+        {
+            "name": "Henry Martín",
+            "pos": "Delantero",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.56,
+            "assists_avg": 0.35,
+            "goal_hit_rate": 52.0,
+            "assist_hit_rate": 35.0,
+            "ga_hit_rate": 68.0,
+            "goal_odds": 2.1,
+            "assist_odds": 3.0,
+            "ga_odds": 1.48
+        }
     ],
     "pumas unam": [
-        {"name": "Guillermo Martínez", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 82.0, "odds": 1.28, "goals_avg": 0.40, "assists_avg": 0.15, "goal_hit_rate": 38.0, "assist_hit_rate": 15.0, "ga_hit_rate": 48.0, "goal_odds": 2.80, "assist_odds": 6.50, "ga_odds": 2.05}
+        {
+            "name": "Guillermo Martínez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
     ],
-
     "arsenal": [
-        {"name": "Bukayo Saka", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 84.5, "odds": 1.22, "goals_avg": 0.48, "assists_avg": 0.52, "goal_hit_rate": 44.0, "assist_hit_rate": 48.0, "ga_hit_rate": 68.5, "goal_odds": 2.60, "assist_odds": 2.25, "ga_odds": 1.52},
-        {"name": "Kai Havertz", "pos": "Delantero", "sot_avg": 1.2, "hit_rate": 78.5, "odds": 1.30, "goals_avg": 0.45, "assists_avg": 0.25, "goal_hit_rate": 41.0, "assist_hit_rate": 26.0, "ga_hit_rate": 55.0, "goal_odds": 2.50, "assist_odds": 4.10, "ga_odds": 1.82}
+        {
+            "name": "Bukayo Saka",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        },
+        {
+            "name": "Kai Havertz",
+            "pos": "Delantero",
+            "sot_avg": 1.2,
+            "hit_rate": 78.5,
+            "odds": 1.3,
+            "goals_avg": 0.45,
+            "assists_avg": 0.25,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 26.0,
+            "ga_hit_rate": 55.0,
+            "goal_odds": 2.5,
+            "assist_odds": 4.1,
+            "ga_odds": 1.82
+        }
     ],
     "man city": [
-        {"name": "Erling Haaland", "pos": "Delantero", "sot_avg": 2.2, "hit_rate": 91.5, "odds": 1.15, "goals_avg": 1.05, "assists_avg": 0.18, "goal_hit_rate": 68.0, "assist_hit_rate": 18.0, "ga_hit_rate": 75.0, "goal_odds": 1.55, "assist_odds": 5.50, "ga_odds": 1.35},
-        {"name": "Phil Foden", "pos": "Mediapunta", "sot_avg": 1.3, "hit_rate": 81.0, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.38, "goal_hit_rate": 38.0, "assist_hit_rate": 35.0, "ga_hit_rate": 62.0, "goal_odds": 2.75, "assist_odds": 3.10, "ga_odds": 1.68}
+        {
+            "name": "Erling Haaland",
+            "pos": "Delantero Centro",
+            "sot_avg": 2.1,
+            "hit_rate": 92.0,
+            "odds": 1.14,
+            "goals_avg": 0.63,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 46.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 59.8,
+            "goal_odds": 2.17,
+            "assist_odds": 5.2,
+            "ga_odds": 1.67
+        },
+        {
+            "name": "Phil Foden",
+            "pos": "Mediapunta",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.38,
+            "goal_hit_rate": 38.0,
+            "assist_hit_rate": 35.0,
+            "ga_hit_rate": 62.0,
+            "goal_odds": 2.75,
+            "assist_odds": 3.1,
+            "ga_odds": 1.68
+        }
     ],
     "liverpool": [
-        {"name": "Mohamed Salah", "pos": "Extremo", "sot_avg": 1.8, "hit_rate": 88.5, "odds": 1.18, "goals_avg": 0.72, "assists_avg": 0.48, "goal_hit_rate": 58.0, "assist_hit_rate": 44.0, "ga_hit_rate": 75.0, "goal_odds": 1.85, "assist_odds": 2.45, "ga_odds": 1.38},
-        {"name": "Luis Díaz", "pos": "Extremo", "sot_avg": 1.3, "hit_rate": 79.5, "odds": 1.32, "goals_avg": 0.40, "assists_avg": 0.28, "goal_hit_rate": 38.0, "assist_hit_rate": 28.0, "ga_hit_rate": 56.0, "goal_odds": 2.80, "assist_odds": 3.80, "ga_odds": 1.80}
+        {
+            "name": "Mohamed Salah",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.8,
+            "hit_rate": 88.0,
+            "odds": 1.18,
+            "goals_avg": 0.54,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.2,
+            "goal_odds": 2.27,
+            "assist_odds": 5.2,
+            "ga_odds": 1.75
+        },
+        {
+            "name": "Luis Díaz",
+            "pos": "Extremo",
+            "sot_avg": 1.3,
+            "hit_rate": 79.5,
+            "odds": 1.32,
+            "goals_avg": 0.4,
+            "assists_avg": 0.28,
+            "goal_hit_rate": 38.0,
+            "assist_hit_rate": 28.0,
+            "ga_hit_rate": 56.0,
+            "goal_odds": 2.8,
+            "assist_odds": 3.8,
+            "ga_odds": 1.8
+        }
     ],
     "chelsea": [
-        {"name": "Cole Palmer", "pos": "Mediapunta", "sot_avg": 1.6, "hit_rate": 86.0, "odds": 1.20, "goals_avg": 0.65, "assists_avg": 0.45, "goal_hit_rate": 54.0, "assist_hit_rate": 42.0, "ga_hit_rate": 71.0, "goal_odds": 2.10, "assist_odds": 2.60, "ga_odds": 1.45},
-        {"name": "Nicolas Jackson", "pos": "Delantero", "sot_avg": 1.2, "hit_rate": 77.0, "odds": 1.35, "goals_avg": 0.45, "assists_avg": 0.20, "goal_hit_rate": 42.0, "assist_hit_rate": 20.0, "ga_hit_rate": 54.0, "goal_odds": 2.50, "assist_odds": 5.20, "ga_odds": 1.85}
-    ],
-    "tottenham": [
-        {"name": "Son Heung-min", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.25, "goals_avg": 0.52, "assists_avg": 0.40, "goal_hit_rate": 46.0, "assist_hit_rate": 38.0, "ga_hit_rate": 66.0, "goal_odds": 2.30, "assist_odds": 2.80, "ga_odds": 1.58},
-        {"name": "Dejan Kulusevski", "pos": "Mediapunta", "sot_avg": 1.1, "hit_rate": 76.0, "odds": 1.38, "goals_avg": 0.28, "assists_avg": 0.38, "goal_hit_rate": 28.0, "assist_hit_rate": 38.0, "ga_hit_rate": 55.0, "goal_odds": 3.80, "assist_odds": 2.85, "ga_odds": 1.82}
+        {
+            "name": "Cole Palmer",
+            "pos": "Mediapunta Referente",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Nicolas Jackson",
+            "pos": "Delantero",
+            "sot_avg": 1.2,
+            "hit_rate": 77.0,
+            "odds": 1.35,
+            "goals_avg": 0.45,
+            "assists_avg": 0.2,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 20.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.5,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
     ],
     "man united": [
-        {"name": "Bruno Fernandes", "pos": "Mediapunta", "sot_avg": 1.5, "hit_rate": 83.5, "odds": 1.24, "goals_avg": 0.35, "assists_avg": 0.48, "goal_hit_rate": 34.0, "assist_hit_rate": 45.0, "ga_hit_rate": 64.0, "goal_odds": 3.10, "assist_odds": 2.40, "ga_odds": 1.62},
-        {"name": "Marcus Rashford", "pos": "Extremo", "sot_avg": 1.2, "hit_rate": 77.0, "odds": 1.35, "goals_avg": 0.38, "assists_avg": 0.22, "goal_hit_rate": 36.0, "assist_hit_rate": 22.0, "ga_hit_rate": 50.0, "goal_odds": 2.90, "assist_odds": 4.60, "ga_odds": 1.95}
+        {
+            "name": "Rasmus Højlund",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        },
+        {
+            "name": "Bruno Fernandes",
+            "pos": "Mediapunta",
+            "sot_avg": 1.5,
+            "hit_rate": 83.5,
+            "odds": 1.24,
+            "goals_avg": 0.35,
+            "assists_avg": 0.48,
+            "goal_hit_rate": 34.0,
+            "assist_hit_rate": 45.0,
+            "ga_hit_rate": 64.0,
+            "goal_odds": 3.1,
+            "assist_odds": 2.4,
+            "ga_odds": 1.62
+        },
+        {
+            "name": "Marcus Rashford",
+            "pos": "Extremo",
+            "sot_avg": 1.2,
+            "hit_rate": 77.0,
+            "odds": 1.35,
+            "goals_avg": 0.38,
+            "assists_avg": 0.22,
+            "goal_hit_rate": 36.0,
+            "assist_hit_rate": 22.0,
+            "ga_hit_rate": 50.0,
+            "goal_odds": 2.9,
+            "assist_odds": 4.6,
+            "ga_odds": 1.95
+        }
     ],
     "aston villa": [
-        {"name": "Ollie Watkins", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 83.0, "odds": 1.24, "goals_avg": 0.58, "assists_avg": 0.38, "goal_hit_rate": 50.0, "assist_hit_rate": 36.0, "ga_hit_rate": 66.0, "goal_odds": 2.15, "assist_odds": 3.00, "ga_odds": 1.55},
-        {"name": "Leon Bailey", "pos": "Extremo", "sot_avg": 1.1, "hit_rate": 75.0, "odds": 1.40, "goals_avg": 0.32, "assists_avg": 0.35, "goal_hit_rate": 30.0, "assist_hit_rate": 34.0, "ga_hit_rate": 53.0, "goal_odds": 3.40, "assist_odds": 3.20, "ga_odds": 1.88}
-    ],
-    "newcastle": [
-        {"name": "Alexander Isak", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 85.0, "odds": 1.22, "goals_avg": 0.65, "assists_avg": 0.20, "goal_hit_rate": 55.0, "assist_hit_rate": 20.0, "ga_hit_rate": 63.0, "goal_odds": 2.05, "assist_odds": 5.20, "ga_odds": 1.62},
-        {"name": "Anthony Gordon", "pos": "Extremo", "sot_avg": 1.2, "hit_rate": 78.0, "odds": 1.32, "goals_avg": 0.35, "assists_avg": 0.35, "goal_hit_rate": 34.0, "assist_hit_rate": 34.0, "ga_hit_rate": 56.0, "goal_odds": 3.10, "assist_odds": 3.10, "ga_odds": 1.78}
+        {
+            "name": "Ollie Watkins",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        },
+        {
+            "name": "Leon Bailey",
+            "pos": "Extremo",
+            "sot_avg": 1.1,
+            "hit_rate": 75.0,
+            "odds": 1.4,
+            "goals_avg": 0.32,
+            "assists_avg": 0.35,
+            "goal_hit_rate": 30.0,
+            "assist_hit_rate": 34.0,
+            "ga_hit_rate": 53.0,
+            "goal_odds": 3.4,
+            "assist_odds": 3.2,
+            "ga_odds": 1.88
+        }
     ],
     "leeds": [
-        {"name": "Dominic Calvert-Lewin", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.22, "goals_avg": 0.45, "assists_avg": 0.18, "goal_hit_rate": 42.0, "assist_hit_rate": 18.0, "ga_hit_rate": 52.0, "goal_odds": 2.50, "assist_odds": 5.80, "ga_odds": 1.95},
-        {"name": "Daniel James", "pos": "Extremo", "sot_avg": 1.2, "hit_rate": 79.0, "odds": 1.30, "goals_avg": 0.30, "assists_avg": 0.32, "goal_hit_rate": 28.0, "assist_hit_rate": 30.0, "ga_hit_rate": 48.0, "goal_odds": 3.60, "assist_odds": 3.50, "ga_odds": 2.05}
+        {
+            "name": "Mateo Joseph",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Dominic Calvert-Lewin",
+            "pos": "Delantero",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.22,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.5,
+            "assist_odds": 5.8,
+            "ga_odds": 1.95
+        },
+        {
+            "name": "Daniel James",
+            "pos": "Extremo",
+            "sot_avg": 1.2,
+            "hit_rate": 79.0,
+            "odds": 1.3,
+            "goals_avg": 0.3,
+            "assists_avg": 0.32,
+            "goal_hit_rate": 28.0,
+            "assist_hit_rate": 30.0,
+            "ga_hit_rate": 48.0,
+            "goal_odds": 3.6,
+            "assist_odds": 3.5,
+            "ga_odds": 2.05
+        }
     ],
     "west ham": [
-        {"name": "Joël Piroe", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.24, "goals_avg": 0.42, "assists_avg": 0.16, "goal_hit_rate": 40.0, "assist_hit_rate": 16.0, "ga_hit_rate": 50.0, "goal_odds": 2.65, "assist_odds": 6.20, "ga_odds": 2.00},
-        {"name": "Jarrod Bowen", "pos": "Extremo", "sot_avg": 1.5, "hit_rate": 85.0, "odds": 1.22, "goals_avg": 0.48, "assists_avg": 0.35, "goal_hit_rate": 45.0, "assist_hit_rate": 35.0, "ga_hit_rate": 64.0, "goal_odds": 2.45, "assist_odds": 3.10, "ga_odds": 1.62}
+        {
+            "name": "Jarrod Bowen",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 85.0,
+            "odds": 1.24,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.2,
+            "goal_odds": 2.35,
+            "assist_odds": 5.2,
+            "ga_odds": 1.81
+        },
+        {
+            "name": "Joël Piroe",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.5,
+            "odds": 1.24,
+            "goals_avg": 0.42,
+            "assists_avg": 0.16,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 16.0,
+            "ga_hit_rate": 50.0,
+            "goal_odds": 2.65,
+            "assist_odds": 6.2,
+            "ga_odds": 2.0
+        }
     ],
     "brighton": [
-        {"name": "Stefanos Tzimas", "pos": "Delantero", "sot_avg": 1.4, "hit_rate": 83.5, "odds": 1.24, "goals_avg": 0.44, "assists_avg": 0.18, "goal_hit_rate": 41.0, "assist_hit_rate": 18.0, "ga_hit_rate": 51.0, "goal_odds": 2.55, "assist_odds": 5.80, "ga_odds": 1.95},
-        {"name": "Georginio Rutter", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.5, "odds": 1.30, "goals_avg": 0.35, "assists_avg": 0.30, "goal_hit_rate": 33.0, "assist_hit_rate": 28.0, "ga_hit_rate": 52.0, "goal_odds": 3.15, "assist_odds": 3.70, "ga_odds": 1.90},
-        {"name": "Evan Ferguson", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 81.0, "odds": 1.28, "goals_avg": 0.42, "assists_avg": 0.15, "goal_hit_rate": 39.0, "assist_hit_rate": 15.0, "ga_hit_rate": 48.0, "goal_odds": 2.70, "assist_odds": 6.50, "ga_odds": 2.05}
+        {
+            "name": "Danny Welbeck",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        },
+        {
+            "name": "Stefanos Tzimas",
+            "pos": "Delantero",
+            "sot_avg": 1.4,
+            "hit_rate": 83.5,
+            "odds": 1.24,
+            "goals_avg": 0.44,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 51.0,
+            "goal_odds": 2.55,
+            "assist_odds": 5.8,
+            "ga_odds": 1.95
+        },
+        {
+            "name": "Georginio Rutter",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.35,
+            "assists_avg": 0.3,
+            "goal_hit_rate": 33.0,
+            "assist_hit_rate": 28.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 3.15,
+            "assist_odds": 3.7,
+            "ga_odds": 1.9
+        },
+        {
+            "name": "Evan Ferguson",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.15,
+            "goal_hit_rate": 39.0,
+            "assist_hit_rate": 15.0,
+            "ga_hit_rate": 48.0,
+            "goal_odds": 2.7,
+            "assist_odds": 6.5,
+            "ga_odds": 2.05
+        }
     ],
     "real madrid": [
-        {"name": "Vinícius Júnior", "pos": "Extremo", "sot_avg": 1.8, "hit_rate": 88.0, "odds": 1.18, "goals_avg": 0.62, "assists_avg": 0.48, "goal_hit_rate": 52.0, "assist_hit_rate": 45.0, "ga_hit_rate": 71.0, "goal_odds": 2.15, "assist_odds": 2.40, "ga_odds": 1.45},
-        {"name": "Kylian Mbappé", "pos": "Delantero", "sot_avg": 2.1, "hit_rate": 90.5, "odds": 1.16, "goals_avg": 0.85, "assists_avg": 0.30, "goal_hit_rate": 64.0, "assist_hit_rate": 28.0, "ga_hit_rate": 72.0, "goal_odds": 1.65, "assist_odds": 3.80, "ga_odds": 1.40}
+        {
+            "name": "Vinícius Júnior",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.8,
+            "hit_rate": 88.0,
+            "odds": 1.18,
+            "goals_avg": 0.54,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.2,
+            "goal_odds": 2.27,
+            "assist_odds": 5.2,
+            "ga_odds": 1.75
+        },
+        {
+            "name": "Kylian Mbappé",
+            "pos": "Delantero",
+            "sot_avg": 2.1,
+            "hit_rate": 90.5,
+            "odds": 1.16,
+            "goals_avg": 0.85,
+            "assists_avg": 0.3,
+            "goal_hit_rate": 64.0,
+            "assist_hit_rate": 28.0,
+            "ga_hit_rate": 72.0,
+            "goal_odds": 1.65,
+            "assist_odds": 3.8,
+            "ga_odds": 1.4
+        }
     ],
     "barcelona": [
-        {"name": "Lamine Yamal", "pos": "Extremo", "sot_avg": 1.5, "hit_rate": 85.0, "odds": 1.22, "goals_avg": 0.38, "assists_avg": 0.58, "goal_hit_rate": 35.0, "assist_hit_rate": 52.0, "ga_hit_rate": 67.0, "goal_odds": 3.10, "assist_odds": 2.10, "ga_odds": 1.55},
-        {"name": "Robert Lewandowski", "pos": "Delantero", "sot_avg": 1.9, "hit_rate": 89.0, "odds": 1.17, "goals_avg": 0.90, "assists_avg": 0.22, "goal_hit_rate": 66.0, "assist_hit_rate": 22.0, "ga_hit_rate": 73.0, "goal_odds": 1.60, "assist_odds": 4.80, "ga_odds": 1.38}
+        {
+            "name": "Robert Lewandowski",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.9,
+            "hit_rate": 89.0,
+            "odds": 1.18,
+            "goals_avg": 0.57,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.9,
+            "goal_odds": 2.25,
+            "assist_odds": 5.2,
+            "ga_odds": 1.73
+        },
+        {
+            "name": "Lamine Yamal",
+            "pos": "Extremo",
+            "sot_avg": 1.5,
+            "hit_rate": 85.0,
+            "odds": 1.22,
+            "goals_avg": 0.38,
+            "assists_avg": 0.58,
+            "goal_hit_rate": 35.0,
+            "assist_hit_rate": 52.0,
+            "ga_hit_rate": 67.0,
+            "goal_odds": 3.1,
+            "assist_odds": 2.1,
+            "ga_odds": 1.55
+        }
     ],
     "bayern munich": [
-        {"name": "Harry Kane", "pos": "Delantero", "sot_avg": 2.3, "hit_rate": 92.5, "odds": 1.14, "goals_avg": 1.15, "assists_avg": 0.35, "goal_hit_rate": 72.0, "assist_hit_rate": 32.0, "ga_hit_rate": 78.5, "goal_odds": 1.50, "assist_odds": 3.30, "ga_odds": 1.30},
-        {"name": "Jamal Musiala", "pos": "Mediapunta", "sot_avg": 1.4, "hit_rate": 83.0, "odds": 1.25, "goals_avg": 0.45, "assists_avg": 0.42, "goal_hit_rate": 42.0, "assist_hit_rate": 40.0, "ga_hit_rate": 65.0, "goal_odds": 2.65, "assist_odds": 2.70, "ga_odds": 1.58}
+        {
+            "name": "Harry Kane",
+            "pos": "Delantero Centro",
+            "sot_avg": 2.0,
+            "hit_rate": 91.0,
+            "odds": 1.15,
+            "goals_avg": 0.6,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 45.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 59.1,
+            "goal_odds": 2.2,
+            "assist_odds": 5.2,
+            "ga_odds": 1.69
+        },
+        {
+            "name": "Jamal Musiala",
+            "pos": "Mediapunta",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.42,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 40.0,
+            "ga_hit_rate": 65.0,
+            "goal_odds": 2.65,
+            "assist_odds": 2.7,
+            "ga_odds": 1.58
+        }
     ],
     "dortmund": [
-        {"name": "Serhou Guirassy", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 86.0, "odds": 1.20, "goals_avg": 0.70, "assists_avg": 0.20, "goal_hit_rate": 58.0, "assist_hit_rate": 20.0, "ga_hit_rate": 66.0, "goal_odds": 1.95, "assist_odds": 5.20, "ga_odds": 1.55},
-        {"name": "Julian Brandt", "pos": "Mediapunta", "sot_avg": 1.2, "hit_rate": 77.0, "odds": 1.35, "goals_avg": 0.30, "assists_avg": 0.45, "goal_hit_rate": 28.0, "assist_hit_rate": 42.0, "ga_hit_rate": 58.0, "goal_odds": 3.60, "assist_odds": 2.60, "ga_odds": 1.75}
+        {
+            "name": "Serhou Guirassy",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Julian Brandt",
+            "pos": "Mediapunta",
+            "sot_avg": 1.2,
+            "hit_rate": 77.0,
+            "odds": 1.35,
+            "goals_avg": 0.3,
+            "assists_avg": 0.45,
+            "goal_hit_rate": 28.0,
+            "assist_hit_rate": 42.0,
+            "ga_hit_rate": 58.0,
+            "goal_odds": 3.6,
+            "assist_odds": 2.6,
+            "ga_odds": 1.75
+        }
     ],
     "leverkusen": [
-        {"name": "Florian Wirtz", "pos": "Mediapunta", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.22, "goals_avg": 0.45, "assists_avg": 0.55, "goal_hit_rate": 42.0, "assist_hit_rate": 50.0, "ga_hit_rate": 68.0, "goal_odds": 2.70, "assist_odds": 2.15, "ga_odds": 1.52},
-        {"name": "Victor Boniface", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 85.0, "odds": 1.20, "goals_avg": 0.65, "assists_avg": 0.22, "goal_hit_rate": 55.0, "assist_hit_rate": 22.0, "ga_hit_rate": 64.0, "goal_odds": 2.05, "assist_odds": 4.80, "ga_odds": 1.60}
+        {
+            "name": "Victor Boniface",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Florian Wirtz",
+            "pos": "Mediapunta",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.22,
+            "goals_avg": 0.45,
+            "assists_avg": 0.55,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 50.0,
+            "ga_hit_rate": 68.0,
+            "goal_odds": 2.7,
+            "assist_odds": 2.15,
+            "ga_odds": 1.52
+        }
     ],
     "inter miami cf": [
-        {"name": "Lionel Messi", "pos": "Mediapunta", "sot_avg": 2.1, "hit_rate": 92.0, "odds": 1.15, "goals_avg": 0.88, "assists_avg": 0.72, "goal_hit_rate": 65.0, "assist_hit_rate": 60.0, "ga_hit_rate": 82.0, "goal_odds": 1.60, "assist_odds": 1.80, "ga_odds": 1.25},
-        {"name": "Luis Suárez", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 86.0, "odds": 1.20, "goals_avg": 0.62, "assists_avg": 0.32, "goal_hit_rate": 52.0, "assist_hit_rate": 32.0, "ga_hit_rate": 68.0, "goal_odds": 2.10, "assist_odds": 3.40, "ga_odds": 1.50}
+        {
+            "name": "Lionel Messi",
+            "pos": "Delantero Referente",
+            "sot_avg": 2.0,
+            "hit_rate": 90.0,
+            "odds": 1.16,
+            "goals_avg": 0.6,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 45.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 58.5,
+            "goal_odds": 2.22,
+            "assist_odds": 5.2,
+            "ga_odds": 1.71
+        },
+        {
+            "name": "Luis Suárez",
+            "pos": "Delantero",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.2,
+            "goals_avg": 0.62,
+            "assists_avg": 0.32,
+            "goal_hit_rate": 52.0,
+            "assist_hit_rate": 32.0,
+            "ga_hit_rate": 68.0,
+            "goal_odds": 2.1,
+            "assist_odds": 3.4,
+            "ga_odds": 1.5
+        }
     ],
     "boca juniors": [
-        {"name": "Edinson Cavani", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.22, "goals_avg": 0.55, "assists_avg": 0.15, "goal_hit_rate": 48.0, "assist_hit_rate": 15.0, "ga_hit_rate": 56.0, "goal_odds": 2.20, "assist_odds": 6.50, "ga_odds": 1.82},
-        {"name": "Miguel Merentiel", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 81.0, "odds": 1.28, "goals_avg": 0.45, "assists_avg": 0.22, "goal_hit_rate": 40.0, "assist_hit_rate": 22.0, "ga_hit_rate": 52.0, "goal_odds": 2.50, "assist_odds": 4.80, "ga_odds": 1.90}
+        {
+            "name": "Edinson Cavani",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 85.0,
+            "odds": 1.24,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.2,
+            "goal_odds": 2.35,
+            "assist_odds": 5.2,
+            "ga_odds": 1.81
+        },
+        {
+            "name": "Miguel Merentiel",
+            "pos": "Delantero",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.28,
+            "goals_avg": 0.45,
+            "assists_avg": 0.22,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 22.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.5,
+            "assist_odds": 4.8,
+            "ga_odds": 1.9
+        }
     ],
     "tigres uanl": [
-        {"name": "André-Pierre Gignac", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 86.0, "odds": 1.20, "goals_avg": 0.58, "assists_avg": 0.22, "goal_hit_rate": 50.0, "assist_hit_rate": 22.0, "ga_hit_rate": 59.0, "goal_odds": 2.10, "assist_odds": 4.80, "ga_odds": 1.72},
-        {"name": "Juan Brunetta", "pos": "Mediapunta", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.30, "goals_avg": 0.32, "assists_avg": 0.38, "goal_hit_rate": 30.0, "assist_hit_rate": 36.0, "ga_hit_rate": 54.0, "goal_odds": 3.30, "assist_odds": 2.85, "ga_odds": 1.85}
+        {
+            "name": "André-Pierre Gignac",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        },
+        {
+            "name": "Juan Brunetta",
+            "pos": "Mediapunta",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.3,
+            "goals_avg": 0.32,
+            "assists_avg": 0.38,
+            "goal_hit_rate": 30.0,
+            "assist_hit_rate": 36.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 3.3,
+            "assist_odds": 2.85,
+            "ga_odds": 1.85
+        }
     ],
     "toluca": [
-        {"name": "Paulinho", "pos": "Delantero", "sot_avg": 1.7, "hit_rate": 87.5, "odds": 1.18, "goals_avg": 0.75, "assists_avg": 0.25, "goal_hit_rate": 60.0, "assist_hit_rate": 25.0, "ga_hit_rate": 69.0, "goal_odds": 1.80, "assist_odds": 4.20, "ga_odds": 1.50},
-        {"name": "Alexis Vega", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.25, "goals_avg": 0.38, "assists_avg": 0.42, "goal_hit_rate": 36.0, "assist_hit_rate": 40.0, "ga_hit_rate": 62.0, "goal_odds": 2.90, "assist_odds": 2.65, "ga_odds": 1.65}
+        {
+            "name": "Paulinho",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        },
+        {
+            "name": "Alexis Vega",
+            "pos": "Extremo",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.25,
+            "goals_avg": 0.38,
+            "assists_avg": 0.42,
+            "goal_hit_rate": 36.0,
+            "assist_hit_rate": 40.0,
+            "ga_hit_rate": 62.0,
+            "goal_odds": 2.9,
+            "assist_odds": 2.65,
+            "ga_odds": 1.65
+        }
+    ],
+    "bournemouth": [
+        {
+            "name": "Evanilson",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.3,
+            "goal_odds": 2.44,
+            "assist_odds": 5.2,
+            "ga_odds": 1.88
+        }
+    ],
+    "brentford": [
+        {
+            "name": "Bryan Mbeumo",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "brighton & hove albion": [
+        {
+            "name": "Danny Welbeck",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "crystal palace": [
+        {
+            "name": "Jean-Philippe Mateta",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "everton": [
+        {
+            "name": "Dominic Calvert-Lewin",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "ipswich town": [
+        {
+            "name": "Liam Delap",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 81.5,
+            "odds": 1.3,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.0,
+            "goal_odds": 2.45,
+            "assist_odds": 5.2,
+            "ga_odds": 1.89
+        }
+    ],
+    "ipswich": [
+        {
+            "name": "Liam Delap",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 81.5,
+            "odds": 1.3,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.0,
+            "goal_odds": 2.45,
+            "assist_odds": 5.2,
+            "ga_odds": 1.89
+        }
+    ],
+    "leicester city": [
+        {
+            "name": "Jamie Vardy",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "leicester": [
+        {
+            "name": "Jamie Vardy",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "manchester city": [
+        {
+            "name": "Erling Haaland",
+            "pos": "Delantero Centro",
+            "sot_avg": 2.1,
+            "hit_rate": 92.0,
+            "odds": 1.14,
+            "goals_avg": 0.63,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 46.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 59.8,
+            "goal_odds": 2.17,
+            "assist_odds": 5.2,
+            "ga_odds": 1.67
+        }
+    ],
+    "manchester united": [
+        {
+            "name": "Rasmus Højlund",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "nottingham forest": [
+        {
+            "name": "Chris Wood",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "southampton": [
+        {
+            "name": "Cameron Archer",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.32,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.5,
+            "assist_odds": 5.2,
+            "ga_odds": 1.92
+        }
+    ],
+    "west ham united": [
+        {
+            "name": "Jarrod Bowen",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 85.0,
+            "odds": 1.24,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.2,
+            "goal_odds": 2.35,
+            "assist_odds": 5.2,
+            "ga_odds": 1.81
+        }
+    ],
+    "wolverhampton wanderers": [
+        {
+            "name": "Matheus Cunha",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.6,
+            "hit_rate": 85.0,
+            "odds": 1.24,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.2,
+            "goal_odds": 2.35,
+            "assist_odds": 5.2,
+            "ga_odds": 1.81
+        }
+    ],
+    "wolves": [
+        {
+            "name": "Matheus Cunha",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.6,
+            "hit_rate": 85.0,
+            "odds": 1.24,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.2,
+            "goal_odds": 2.35,
+            "assist_odds": 5.2,
+            "ga_odds": 1.81
+        }
+    ],
+    "alavés": [
+        {
+            "name": "Kike García",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "alaves": [
+        {
+            "name": "Kike García",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "athletic club": [
+        {
+            "name": "Iñaki Williams",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "athletic bilbao": [
+        {
+            "name": "Iñaki Williams",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "atletico madrid": [
+        {
+            "name": "Julián Álvarez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "atlético madrid": [
+        {
+            "name": "Julián Álvarez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "celta vigo": [
+        {
+            "name": "Iago Aspas",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "celta de vigo": [
+        {
+            "name": "Iago Aspas",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "rcd espanyol": [
+        {
+            "name": "Javi Puado",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.29,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "getafe": [
+        {
+            "name": "Borja Mayoral",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.3,
+            "goal_odds": 2.44,
+            "assist_odds": 5.2,
+            "ga_odds": 1.88
+        }
+    ],
+    "girona": [
+        {
+            "name": "Cristhian Stuani",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.3,
+            "goal_odds": 2.44,
+            "assist_odds": 5.2,
+            "ga_odds": 1.88
+        }
+    ],
+    "las palmas": [
+        {
+            "name": "Sandro Ramírez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "leganés": [
+        {
+            "name": "Juan Cruz",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "leganes": [
+        {
+            "name": "Juan Cruz",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "mallorca": [
+        {
+            "name": "Vedat Muriqi",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "osasuna": [
+        {
+            "name": "Ante Budimir",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "rayo vallecano": [
+        {
+            "name": "Sergio Camello",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "real betis": [
+        {
+            "name": "Vitor Roque",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "betis": [
+        {
+            "name": "Vitor Roque",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "real sociedad": [
+        {
+            "name": "Mikel Oyarzabal",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "real valladolid": [
+        {
+            "name": "Raúl Moro",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.32,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.5,
+            "assist_odds": 5.2,
+            "ga_odds": 1.92
+        }
+    ],
+    "valladolid": [
+        {
+            "name": "Raúl Moro",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.32,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.5,
+            "assist_odds": 5.2,
+            "ga_odds": 1.92
+        }
+    ],
+    "sevilla": [
+        {
+            "name": "Isaac Romero",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "valencia": [
+        {
+            "name": "Hugo Duro",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "villarreal": [
+        {
+            "name": "Ayoze Pérez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "atalanta": [
+        {
+            "name": "Mateo Retegui",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
+    ],
+    "bologna": [
+        {
+            "name": "Santiago Castro",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "cagliari": [
+        {
+            "name": "Roberto Piccoli",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "como": [
+        {
+            "name": "Patrick Cutrone",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "empoli": [
+        {
+            "name": "Lorenzo Colombo",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "fiorentina": [
+        {
+            "name": "Moise Kean",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "genoa": [
+        {
+            "name": "Andrea Pinamonti",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.3,
+            "goal_odds": 2.44,
+            "assist_odds": 5.2,
+            "ga_odds": 1.88
+        }
+    ],
+    "hellas verona": [
+        {
+            "name": "Daniel Mosquera",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "verona": [
+        {
+            "name": "Daniel Mosquera",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "inter milan": [
+        {
+            "name": "Lautaro Martínez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.8,
+            "hit_rate": 88.0,
+            "odds": 1.18,
+            "goals_avg": 0.54,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.2,
+            "goal_odds": 2.27,
+            "assist_odds": 5.2,
+            "ga_odds": 1.75
+        }
+    ],
+    "inter": [
+        {
+            "name": "Lautaro Martínez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.8,
+            "hit_rate": 88.0,
+            "odds": 1.18,
+            "goals_avg": 0.54,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.2,
+            "goal_odds": 2.27,
+            "assist_odds": 5.2,
+            "ga_odds": 1.75
+        }
+    ],
+    "juventus": [
+        {
+            "name": "Dušan Vlahović",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 86.5,
+            "odds": 1.21,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.2,
+            "goal_odds": 2.31,
+            "assist_odds": 5.2,
+            "ga_odds": 1.78
+        }
+    ],
+    "lazio": [
+        {
+            "name": "Valentín Castellanos",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "lecce": [
+        {
+            "name": "Nikola Krstović",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "ac milan": [
+        {
+            "name": "Álvaro Morata",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "milan": [
+        {
+            "name": "Álvaro Morata",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "monza": [
+        {
+            "name": "Milan Đurić",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "napoli": [
+        {
+            "name": "Romelu Lukaku",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "parma": [
+        {
+            "name": "Ange-Yoan Bonny",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "torino": [
+        {
+            "name": "Antonio Sanabria",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.3,
+            "goal_odds": 2.44,
+            "assist_odds": 5.2,
+            "ga_odds": 1.88
+        }
+    ],
+    "udinese": [
+        {
+            "name": "Lorenzo Lucca",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "venezia": [
+        {
+            "name": "Joel Pohjanpalo",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "fc augsburg": [
+        {
+            "name": "Samuel Essende",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.3,
+            "goal_odds": 2.44,
+            "assist_odds": 5.2,
+            "ga_odds": 1.88
+        }
+    ],
+    "bayer leverkusen": [
+        {
+            "name": "Victor Boniface",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
+    ],
+    "bochum": [
+        {
+            "name": "Philipp Hofmann",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.0,
+            "odds": 1.32,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.0,
+            "goal_odds": 2.5,
+            "assist_odds": 5.2,
+            "ga_odds": 1.92
+        }
+    ],
+    "borussia dortmund": [
+        {
+            "name": "Serhou Guirassy",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
+    ],
+    "borussia mönchengladbach": [
+        {
+            "name": "Tim Kleindienst",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "monchengladbach": [
+        {
+            "name": "Tim Kleindienst",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "eintracht frankfurt": [
+        {
+            "name": "Omar Marmoush",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.8,
+            "hit_rate": 88.0,
+            "odds": 1.18,
+            "goals_avg": 0.54,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.2,
+            "goal_odds": 2.27,
+            "assist_odds": 5.2,
+            "ga_odds": 1.75
+        }
+    ],
+    "freiburg": [
+        {
+            "name": "Junior Adamu",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "heidenheim": [
+        {
+            "name": "Marvin Pieringer",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "hoffenheim": [
+        {
+            "name": "Andrej Kramarić",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.24,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "holstein kiel": [
+        {
+            "name": "Shuto Machino",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "mainz 05": [
+        {
+            "name": "Jonathan Burkardt",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "st. pauli": [
+        {
+            "name": "Johannes Eggestein",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "vfb stuttgart": [
+        {
+            "name": "Deniz Undav",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "union berlin": [
+        {
+            "name": "Benedict Hollerbach",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "vfl wolfsburg": [
+        {
+            "name": "Mohamed Amoura",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "wolfsburg": [
+        {
+            "name": "Mohamed Amoura",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "vfl osnabruck": [
+        {
+            "name": "Ba-Muaka Simakala",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.3,
+            "goal_odds": 2.4,
+            "assist_odds": 5.2,
+            "ga_odds": 1.84
+        }
+    ],
+    "osnabruck": [
+        {
+            "name": "Ba-Muaka Simakala",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.3,
+            "goal_odds": 2.4,
+            "assist_odds": 5.2,
+            "ga_odds": 1.84
+        }
+    ],
+    "hannover 96": [
+        {
+            "name": "Jessic Ngankam",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "karlsruher sc": [
+        {
+            "name": "Budu Zivzivadze",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.24,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "fortuna düsseldorf": [
+        {
+            "name": "Dawid Kownacki",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "fortuna dusseldorf": [
+        {
+            "name": "Dawid Kownacki",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "preußen münster": [
+        {
+            "name": "Malik Batmaz",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "preussen munster": [
+        {
+            "name": "Malik Batmaz",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "schalke 04": [
+        {
+            "name": "Moussa Sylla",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "hertha bsc": [
+        {
+            "name": "Luca Schuler",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "hamburger sv": [
+        {
+            "name": "Robert Glatzel",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "kaiserslautern": [
+        {
+            "name": "Ragnar Ache",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "1. fc kaiserslautern": [
+        {
+            "name": "Ragnar Ache",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "1. fc köln": [
+        {
+            "name": "Tim Lemperle",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "sc paderborn 07": [
+        {
+            "name": "Adriano Grimaldi",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "sunderland": [
+        {
+            "name": "Wilson Isidor",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "sheffield united": [
+        {
+            "name": "Kieffer Moore",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "burnley": [
+        {
+            "name": "Lyle Foster",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "leeds united": [
+        {
+            "name": "Mateo Joseph",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "west bromwich albion": [
+        {
+            "name": "Josh Maja",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "west brom": [
+        {
+            "name": "Josh Maja",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "watford": [
+        {
+            "name": "Vakoun Bayo",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "blackburn rovers": [
+        {
+            "name": "Yuki Ohashi",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "blackburn": [
+        {
+            "name": "Yuki Ohashi",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "norwich city": [
+        {
+            "name": "Josh Sargent",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "norwich": [
+        {
+            "name": "Josh Sargent",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "bristol city": [
+        {
+            "name": "Sinclair Armstrong",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "middlesbrough": [
+        {
+            "name": "Tommy Conway",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "luton town": [
+        {
+            "name": "Elijah Adebayo",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "marseille": [
+        {
+            "name": "Mason Greenwood",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
+    ],
+    "monaco": [
+        {
+            "name": "Breel Embolo",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "lille": [
+        {
+            "name": "Jonathan David",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
+    ],
+    "lyon": [
+        {
+            "name": "Alexandre Lacazette",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.24,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "lens": [
+        {
+            "name": "M'Bala Nzola",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "américa": [
+        {
+            "name": "Henry Martín",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "america": [
+        {
+            "name": "Henry Martín",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "club américa": [
+        {
+            "name": "Henry Martín",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "tigres": [
+        {
+            "name": "André-Pierre Gignac",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "pumas": [
+        {
+            "name": "Guillermo Martínez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "pachuca": [
+        {
+            "name": "Salomón Rondón",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 85.5,
+            "odds": 1.23,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.8,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.6,
+            "goal_odds": 2.34,
+            "assist_odds": 5.2,
+            "ga_odds": 1.8
+        }
+    ],
+    "atlas": [
+        {
+            "name": "Eduardo Aguirre",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "chivas": [
+        {
+            "name": "Roberto Alvarado",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "guadalajara": [
+        {
+            "name": "Roberto Alvarado",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "inter miami": [
+        {
+            "name": "Lionel Messi",
+            "pos": "Delantero Referente",
+            "sot_avg": 2.0,
+            "hit_rate": 90.0,
+            "odds": 1.16,
+            "goals_avg": 0.6,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 45.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 58.5,
+            "goal_odds": 2.22,
+            "assist_odds": 5.2,
+            "ga_odds": 1.71
+        }
+    ],
+    "charlotte fc": [
+        {
+            "name": "Patrick Agyemang",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 83.0,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.0,
+            "goal_odds": 2.41,
+            "assist_odds": 5.2,
+            "ga_odds": 1.85
+        }
+    ],
+    "lafc": [
+        {
+            "name": "Denis Bouanga",
+            "pos": "Delantero Referente",
+            "sot_avg": 1.8,
+            "hit_rate": 88.0,
+            "odds": 1.18,
+            "goals_avg": 0.54,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.2,
+            "goal_odds": 2.27,
+            "assist_odds": 5.2,
+            "ga_odds": 1.75
+        }
+    ],
+    "columbus crew": [
+        {
+            "name": "Cucho Hernández",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.8,
+            "hit_rate": 88.0,
+            "odds": 1.18,
+            "goals_avg": 0.54,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 44.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 57.2,
+            "goal_odds": 2.27,
+            "assist_odds": 5.2,
+            "ga_odds": 1.75
+        }
+    ],
+    "river plate": [
+        {
+            "name": "Miguel Borja",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "racing club": [
+        {
+            "name": "Adrián Martínez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "defensa y justicia": [
+        {
+            "name": "Juan Miritello",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "gimnasia (mendoza)": [
+        {
+            "name": "Luis Silveira",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "independiente rivadavia": [
+        {
+            "name": "Sebastián Villa",
+            "pos": "Extremo Referente",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "rosario central": [
+        {
+            "name": "Marco Ruben",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "estudiantes de la plata": [
+        {
+            "name": "Guido Carrillo",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "talleres (córdoba)": [
+        {
+            "name": "Federico Girotti",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "galatasaray": [
+        {
+            "name": "Mauro Icardi",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
+    ],
+    "fenerbahce": [
+        {
+            "name": "Edin Dzeko",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "besiktas": [
+        {
+            "name": "Ciro Immobile",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "eyupspor": [
+        {
+            "name": "Yusuf Barasi",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.4,
+            "hit_rate": 82.5,
+            "odds": 1.28,
+            "goals_avg": 0.42,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 41.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 53.6,
+            "goal_odds": 2.42,
+            "assist_odds": 5.2,
+            "ga_odds": 1.86
+        }
+    ],
+    "kocaelispor": [
+        {
+            "name": "Markão",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 81.0,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.6,
+            "goal_odds": 2.47,
+            "assist_odds": 5.2,
+            "ga_odds": 1.9
+        }
+    ],
+    "aris": [
+        {
+            "name": "Loren Morón",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.0,
+            "odds": 1.26,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.6,
+            "goal_odds": 2.38,
+            "assist_odds": 5.2,
+            "ga_odds": 1.83
+        }
+    ],
+    "panetolikos": [
+        {
+            "name": "Sergio Díaz",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.3,
+            "hit_rate": 80.5,
+            "odds": 1.3,
+            "goals_avg": 0.39,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 40.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 52.3,
+            "goal_odds": 2.48,
+            "assist_odds": 5.2,
+            "ga_odds": 1.91
+        }
+    ],
+    "sporting cp": [
+        {
+            "name": "Viktor Gyökeres",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.9,
+            "hit_rate": 90.0,
+            "odds": 1.16,
+            "goals_avg": 0.57,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 45.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 58.5,
+            "goal_odds": 2.22,
+            "assist_odds": 5.2,
+            "ga_odds": 1.71
+        }
+    ],
+    "benfica": [
+        {
+            "name": "Vangelis Pavlidis",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "porto": [
+        {
+            "name": "Samu Omorodion",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.6,
+            "hit_rate": 86.0,
+            "odds": 1.22,
+            "goals_avg": 0.48,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.0,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 55.9,
+            "goal_odds": 2.33,
+            "assist_odds": 5.2,
+            "ga_odds": 1.79
+        }
+    ],
+    "ajax": [
+        {
+            "name": "Wout Weghorst",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.5,
+            "hit_rate": 84.5,
+            "odds": 1.25,
+            "goals_avg": 0.45,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 42.2,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 54.9,
+            "goal_odds": 2.37,
+            "assist_odds": 5.2,
+            "ga_odds": 1.82
+        }
+    ],
+    "psv": [
+        {
+            "name": "Luuk de Jong",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
+    ],
+    "feyenoord": [
+        {
+            "name": "Santiago Giménez",
+            "pos": "Delantero Centro",
+            "sot_avg": 1.7,
+            "hit_rate": 87.0,
+            "odds": 1.2,
+            "goals_avg": 0.51,
+            "assists_avg": 0.18,
+            "goal_hit_rate": 43.5,
+            "assist_hit_rate": 18.0,
+            "ga_hit_rate": 56.6,
+            "goal_odds": 2.3,
+            "assist_odds": 5.2,
+            "ga_odds": 1.77
+        }
     ]
 }
 
