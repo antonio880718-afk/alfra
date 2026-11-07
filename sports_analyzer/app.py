@@ -1084,7 +1084,7 @@ with t_parlay:
                     <div style="color: #93c5fd; font-size: 0.8rem; margin-top: 4px;">{item['block']}</div>
                 </div>
             </div>
-            {live_status_html}"""
+            {live_status_html}
             <div class="var-pill" style="margin-top: 8px; border-left: 4px solid #10b981; background: #0c1527; padding: 12px 16px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
                     <span style="color: #7ee787; font-weight: bold; font-size: 1.05rem;">🎯 Selección: {item['pick']}</span>
