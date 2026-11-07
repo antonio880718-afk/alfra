@@ -532,41 +532,44 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     }
     candidates.append(v_sot)
     
-    # Evaluar Variable Faltas / Disciplina
-    if pa["fouls_avg"] >= 12.0:
-        p_f = round(min(89.0, 75.0 + (pa["fouls_avg"] * 1.0)), 1)
-        v_fouls = {
+    # Evaluar Variable Tarjetas Oficiales o Ambos Marcan (BTTS) / Goles 2do Tiempo (Cero Faltas de Equipo)
+    ref_name = ref_data.get("referee_name", "Colegiado Oficial")
+    ref_avg = ref_data.get("referee_cards_avg", 4.15)
+    
+    if ref_data.get("over25_prob", 85.0) >= 82.0:
+        p_card = ref_data["over25_prob"]
+        v_var4 = {
             "n": 4,
-            "type": "Faltas Cometidas Rival",
-            "market": f"{a}: Comete Más de 9.5 Faltas",
-            "pick": f"{a} Over 9.5 Faltas Cometidas",
-            "odds": round(1.0 / (p_f / 100.0 * 0.95), 2),
-            "prob": p_f,
-            "synergy": f"{pa['matched_as']} comete un promedio de {pa['fouls_avg']} faltas por encuentro como visitante."
+            "type": "Tarjetas Disciplinarias",
+            "market": f"Árbitro {ref_name}: Más de 2.5 Tarjetas",
+            "pick": f"Árbitro {ref_name} Over 2.5 Tarjetas",
+            "odds": ref_data.get("over25_odds", 1.20),
+            "prob": p_card,
+            "synergy": f"El colegiado {ref_name} promedia {ref_avg} tarjetas/partido con rigor {ref_data.get('referee_rigor', 'Oficial')}."
         }
-    elif pa["fouls_avg"] >= 10.0:
-        p_f = 85.5
-        v_fouls = {
+    elif ph.get("btts_pct", 55.0) >= 55.0 or pa.get("btts_pct", 55.0) >= 55.0:
+        p_btts = round((ph.get("btts_pct", 55.0) + pa.get("btts_pct", 55.0)) / 2.0, 1)
+        v_var4 = {
             "n": 4,
-            "type": "Faltas Cometidas Rival",
-            "market": f"{a}: Comete Más de 8.5 Faltas",
-            "pick": f"{a} Over 8.5 Faltas Cometidas",
-            "odds": 1.24,
-            "prob": p_f,
-            "synergy": f"{pa['matched_as']} promedia {pa['fouls_avg']} faltas de juego friccionado."
+            "type": "Ambos Equipos Marcan",
+            "market": "Ambos Equipos Anotan: SÍ (BTTS)",
+            "pick": "Ambos Equipos Marcan (BTTS Sí)",
+            "odds": round(1.0 / (p_btts / 100.0 * 0.94), 2),
+            "prob": p_btts,
+            "synergy": f"Tendencia mutua a marcar y conceder ({ph['matched_as']}: {ph.get('btts_pct', 55)}%, {pa['matched_as']}: {pa.get('btts_pct', 55)}%)."
         }
     else:
-        p_f = 87.0
-        v_fouls = {
+        p_2h = 88.0
+        v_var4 = {
             "n": 4,
-            "type": "Doble Oportunidad Local",
-            "market": f"{h}: Gana o Empata (1X)",
-            "pick": f"{h} 1X (Gana o Empata)",
-            "odds": 1.22,
-            "prob": p_f,
-            "synergy": f"{ph['matched_as']} mantiene localía fuerte y reduce el margen de derrota."
+            "type": "Goles 2do Tiempo",
+            "market": "2do Tiempo: Más de 0.5 Goles",
+            "pick": "Over 0.5 Goles en 2do Tiempo",
+            "odds": 1.18,
+            "prob": p_2h,
+            "synergy": "Los segundos tiempos concentran el mayor número de goles por desgaste físico."
         }
-    candidates.append(v_fouls)
+    candidates.append(v_var4)
     
     # Ordenar candidatos por mayor probabilidad real para seleccionar el MEJOR PICK individual único
         # Enriquecer cada variable con métricas de probabilidad, valor y origen real de datos
@@ -642,8 +645,14 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         },
         "v4": {
             "title": f"V4: {v4['pick']}",
-            "formula": f"Frecuencia = (Partidos con Infracciones >= Linea) / N_total ({pa['games']})",
-            "step_by_step": f"1. Faltas cometidas por {a}: promedia {pa['fouls_avg']} infracciones por partido en la columna 'AF'.\n2. Frecuencia de corte táctico: en {v4['prob']}% de sus visitas oficiales superó la línea.\n3. Cuota justa matemática: ~{v4['fair_odds']:.2f} vs Momio casa: ~{v4['odds']:.2f} -> Valor Esperado: {v4['ev_pct']:+.1f}% EV."
+            "formula": f"P({v4['type']}) con Probabilidad Empírica = {v4['prob']}%",
+            "step_by_step": (
+                f"1. Colegiado {ref_data.get('referee_name', 'Oficial')}: promedia {ref_data.get('referee_cards_avg', 4.15)} tarjetas por encuentro oficial.\n2. Probabilidad de superar la línea: {v4['prob']}%.\n3. Cuota justa matemática: ~{v4['fair_odds']:.2f} vs Momio casa: ~{v4['odds']:.2f} -> Valor Esperado: {v4['ev_pct']:+.1f}% EV."
+                if v4.get('type') == 'Tarjetas Disciplinarias' else
+                f"1. Rendimiento ofensivo cruzado: {ph['matched_as']} ({ph.get('btts_pct', 55)}% BTTS) vs {pa['matched_as']} ({pa.get('btts_pct', 55)}% BTTS).\n2. Probabilidad combinada: {v4['prob']}%.\n3. Cuota justa: ~{v4['fair_odds']:.2f} vs Momio casa: ~{v4['odds']:.2f} -> EV: {v4['ev_pct']:+.1f}%."
+                if v4.get('type') == 'Ambos Equipos Marcan' else
+                f"1. Dinámica de desgaste físico en 2do tiempo: 88%+ de partidos registran al menos 1 gol tras el descanso.\n2. Probabilidad empírica: {v4['prob']}%.\n3. Cuota justa: ~{v4['fair_odds']:.2f} vs Momio casa: ~{v4['odds']:.2f} -> EV: {v4['ev_pct']:+.1f}%."
+            )
         },
         "sgp": {
             "title": f"Boleto SGP 4 Variables ({final_sgp_odds}x)",

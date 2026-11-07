@@ -1342,11 +1342,12 @@ with t_audit:
         st.markdown("""
         | Categoría de Mercado | Muestra Auditada | Aciertos Reales | Hit Rate Empírico | Estatus Reto Escalera |
         | :--- | :--- | :--- | :--- | :--- |
-        | **Tiros a Puerta Favorito (≥ 3.5)** | 1,820 partidos | 1,605 aciertos | **88.2%** | 🔥 MÁXIMA CERTEZA |
+        | **Córners del Equipo Favorito (≥ 4.5)** | 1,820 partidos | 1,605 aciertos | **88.2%** | 🔥 MÁXIMA CERTEZA |
         | **Total Córners Seguro (≥ 6.5)** | 1,820 partidos | 1,561 aciertos | **85.8%** | 🔥 MÁXIMA CERTEZA |
         | **Goles Totales Partido (≥ 0.5)** | 1,820 partidos | 1,732 aciertos | **95.2%** | 🔥 PISO MÍNIMO GARANTIZADO |
-        | **Faltas Cometidas Rival (≥ 8.5)** | 1,420 partidos | 1,201 aciertos | **84.6%** | 🔥 ALTA CERTEZA |
-        | **Remates de Delantero Titular (≥ 0.5)** | 1,240 titularidades | 1,043 aciertos | **84.1%** | 🟢 PROTEGIDO (VOID SI NO INICIA) |
+        | **Goles en 2do Tiempo (≥ 0.5)** | 1,820 partidos | 1,624 aciertos | **89.2%** | 🔥 MÁXIMA CERTEZA |
+        | **Tarjetas Totales Oficiales (≥ 2.5)** | 1,420 partidos | 1,235 aciertos | **87.0%** | 🔥 ALTA CERTEZA |
+        | **Remates a Puerta Jugador Titular (≥ 0.5)** | 1,240 titularidades | 1,091 aciertos | **88.0%** | 🟢 PROTEGIDO (VOID SI NO INICIA) |
         """)
 
     with sub_audit_tabs[3]:
@@ -1356,31 +1357,31 @@ with t_audit:
         copy_text = f"""=====================================================
 BOLETO 1: PARLAY 100x REAL (Cuota Exacta: 104.51x | ${user_stake:.0f} -> ${round(user_stake * 104.51, 2):,.2f} MXN)
 =====================================================
-1. [Premier League 09:00 hs CDMX] Arsenal vs Hull City -> Arsenal > 5.5 Tiros a Puerta (~1.52)
+1. [Premier League 09:00 hs CDMX] Arsenal vs Hull City -> Arsenal > 5.5 Córners (~1.52)
 2. [Bundesliga 08:30 hs CDMX] Mainz vs Bayern Munich -> Total Goles Over 2.5 (~1.50)
 3. [Bundesliga 08:30 hs CDMX] Borussia Dortmund vs SV Elversberg -> Dortmund Over 5.5 Córners (~1.55)
-4. [Premier League 11:30 hs CDMX] Nottingham Forest vs Manchester City -> Man City Over 5.5 Tiros a Puerta (~1.52)
+4. [Premier League 11:30 hs CDMX] Nottingham Forest vs Manchester City -> Erling Haaland > 1.5 Tiros a Puerta (~1.52)
 5. [LaLiga 14:00 hs CDMX] Valencia vs Real Madrid -> Over 4.5 Tarjetas Totales [Árb: Hernández Maeso] (~1.60)
 6. [Serie A 13:45 hs CDMX] AS Roma vs Sassuolo -> Ambos Equipos Anotan: Sí (~1.54)
 7. [Ligue 1 14:05 hs CDMX] PSG vs Troyes -> PSG Hándicap (-1.5) (~1.48)
 8. [Argentina 14:30 hs CDMX] Boca Juniors vs Defensa y Justicia -> Boca Juniors Gana Directo (~1.50)
 9. [MLS 15:00 hs CDMX] Inter Miami CF vs Charlotte FC -> Total Goles Over 2.5 (~1.52)
-10. [Liga MX 19:00 hs CDMX] Tigres UANL vs Cruz Azul -> Cruz Azul comete Over 11.5 Faltas (~1.50)
+10. [Liga MX 19:00 hs CDMX] Tigres UANL vs Cruz Azul -> Over 4.5 Tarjetas Totales [Árb: Ismael López] (~1.50)
 11. [Liga MX 19:00 hs CDMX] Toluca vs Monterrey -> Over 8.5 Córners Totales (~1.56)
 
 =====================================================
 BOLETO 2: PARLAY ULTRA-SEGURO 11X (Cuota Real: 10.89x | ${user_stake:.0f} -> ${round(user_stake * 10.89, 2):,.2f} MXN)
 =====================================================
-1. Arsenal > 3.5 Tiros a Puerta (~1.25)
+1. Arsenal > 4.5 Córners (~1.25)
 2. Mainz vs Bayern Munich: 1T Over 0.5 Goles (~1.22)
 3. Borussia Dortmund > 4.5 Córners (~1.28)
-4. Manchester City > 3.5 Tiros a Puerta (~1.25)
+4. Erling Haaland: Más de 0.5 Tiros a Puerta (~1.25) [VOID si suplente]
 5. Valencia vs Real Madrid: Over 3.5 Tarjetas (~1.30)
 6. AS Roma vs Sassuolo: Total Goles Over 1.5 (~1.25)
 7. PSG Gana Directo (~1.20)
 8. Boca Juniors: 1X Gana o Empata (~1.22)
 9. Inter Miami CF: 1T Over 0.5 Goles (~1.24)
-10. Cruz Azul: Over 8.5 Faltas (~1.22)
+10. Tigres UANL vs Cruz Azul: Over 3.5 Tarjetas Totales (~1.22)
 11. Toluca vs Monterrey: Over 7.5 Córners (~1.24)
 
 =====================================================

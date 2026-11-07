@@ -110,18 +110,18 @@ def build_single_match_sgp(home: str, away: str, league_name: str, exp_stats: Di
         "synergy": f"Si {home} ataca y genera córners, su delantero titular tiene garantizados remates."
     }
     
-    # 4. Variable Disciplina / Faltas
-    v_fouls = {
+    # 4. Variable Tarjetas Disciplinarias del Partido
+    v_cards = {
         "n": 4,
-        "type": "Faltas / Corte Táctico",
-        "market": f"{away}: Comete Más de 8.5 Faltas",
-        "pick": f"{away} Over 8.5 Faltas Cometidas",
-        "odds": 1.24,
-        "prob": 85.0,
-        "synergy": f"{away} se ve forzado a cortar las transiciones de {home} con faltas tácticas."
+        "type": "Tarjetas Disciplinarias",
+        "market": "Total Tarjetas: Más de 2.5 en el Partido",
+        "pick": "Más de 2.5 Tarjetas Totales",
+        "odds": 1.25,
+        "prob": 86.0,
+        "synergy": "La intensidad del asedio por bandas y las disputas divididas generan amonestaciones oficiales del colegiado."
     }
     
-    variables = [v_goals, v_corners, v_player, v_fouls]
+    variables = [v_goals, v_corners, v_player, v_cards]
     
     # Cuota combinada total con correlación
     raw_odds = 1.0

@@ -100,24 +100,34 @@ def calculate_single_match_markets(home_team: str, away_team: str, league_code: 
         "safety": "🔥 ALTA CERTEZA"
     })
     
-    # 3. Tiros a Puerta de Jugador / Equipo
-    p_sot = 0.85
+    # 3. Remates a Puerta por Jugador (Player Prop con Regla VOID)
+    p_sot = 0.86
     markets.append({
-        "market": f"{home_team}: Más de 3.5 Tiros a Puerta Totales",
+        "market": f"Referente Ofensivo de {home_team}: ≥ 1 Tiro a Puerta (VOID si no inicia)",
         "prob_real": f"{round(p_sot * 100, 1)}%",
         "odds_est": round(1.0 / (p_sot * 0.93), 2),
-        "category": "Tiros a Puerta",
-        "safety": "🔥 ALTA CERTEZA"
+        "category": "Remates por Jugador",
+        "safety": "🔥 ALTA CERTEZA (PROTEGIDO VOID)"
     })
     
-    # 4. Faltas Cometidas
-    p_f = 0.83
+    # 4. Tarjetas Disciplinarias del Partido
+    p_cards = 0.85
     markets.append({
-        "market": f"{away_team}: Comete Más de 8.5 Faltas",
-        "prob_real": f"{round(p_f * 100, 1)}%",
-        "odds_est": round(1.0 / (p_f * 0.95), 2),
-        "category": "Disciplina",
+        "market": "Total Tarjetas: Más de 2.5 en el Partido",
+        "prob_real": f"{round(p_cards * 100, 1)}%",
+        "odds_est": round(1.0 / (p_cards * 0.95), 2),
+        "category": "Tarjetas Disciplinarias",
         "safety": "🔥 ALTA CERTEZA"
+    })
+
+    # 5. Goles 2do Tiempo
+    p_2h = 0.88
+    markets.append({
+        "market": "2do Tiempo: Más de 0.5 Goles",
+        "prob_real": f"{round(p_2h * 100, 1)}%",
+        "odds_est": round(1.0 / (p_2h * 0.96), 2),
+        "category": "Goles por Mitad",
+        "safety": "🔥 MÁXIMA CERTEZA"
     })
     
     return {
