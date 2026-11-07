@@ -98,7 +98,7 @@ def answer_user_instruction(prompt: str) -> str:
         featured = [
             ("Erling Haaland", "Manchester City", 1.15, 91.5, "0.85 goles/p"),
             ("Vinícius Júnior", "Real Madrid", 1.18, 88.0, "0.52 goles/p"),
-            ("Son Heung-min", "Tottenham Hotspur", 1.22, 86.5, "0.52 goles/p"),
+            ("Dominic Solanke", "Tottenham Hotspur", 1.26, 84.0, "0.46 goles/p"),
             ("Yoane Wissa", "Newcastle United", 1.25, 84.5, "0.48 goles/p"),
             ("Zakaria Eddahchouri", "Deportivo de La Coruña", 1.26, 84.0, "Pichichi Dépor 12 goles"),
             ("Raúl Jiménez", "Fulham", 1.28, 83.5, "0.44 goles/p")

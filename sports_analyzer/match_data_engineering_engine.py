@@ -209,12 +209,12 @@ STAR_PLAYERS = {
         {"name": "Anthony Elanga", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.5, "odds": 1.30, "goals_avg": 0.36, "assists_avg": 0.32, "goal_hit_rate": 34.0, "assist_hit_rate": 30.0, "ga_hit_rate": 54.0, "goal_odds": 3.10, "assist_odds": 3.40, "ga_odds": 1.85}
     ],
     "tottenham hotspur": [
-        {"name": "Son Heung-min", "pos": "Extremo", "sot_avg": 1.7, "hit_rate": 86.5, "odds": 1.22, "goals_avg": 0.52, "assists_avg": 0.35, "goal_hit_rate": 48.0, "assist_hit_rate": 32.0, "ga_hit_rate": 65.0, "goal_odds": 2.25, "assist_odds": 3.20, "ga_odds": 1.60},
-        {"name": "Dominic Solanke", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 52.0, "goal_odds": 2.55, "assist_odds": 6.20, "ga_odds": 1.88}
+        {"name": "Dominic Solanke", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 52.0, "goal_odds": 2.55, "assist_odds": 6.20, "ga_odds": 1.88},
+        {"name": "Dejan Kulusevski", "pos": "Extremo", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.31, "goals_avg": 0.35, "assists_avg": 0.32, "goal_hit_rate": 32.0, "assist_hit_rate": 30.0, "ga_hit_rate": 52.0, "goal_odds": 3.10, "assist_odds": 3.40, "ga_odds": 1.85}
     ],
     "tottenham": [
-        {"name": "Son Heung-min", "pos": "Extremo", "sot_avg": 1.7, "hit_rate": 86.5, "odds": 1.22, "goals_avg": 0.52, "assists_avg": 0.35, "goal_hit_rate": 48.0, "assist_hit_rate": 32.0, "ga_hit_rate": 65.0, "goal_odds": 2.25, "assist_odds": 3.20, "ga_odds": 1.60},
-        {"name": "Dominic Solanke", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 52.0, "goal_odds": 2.55, "assist_odds": 6.20, "ga_odds": 1.88}
+        {"name": "Dominic Solanke", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.0, "odds": 1.26, "goals_avg": 0.46, "assists_avg": 0.15, "goal_hit_rate": 42.0, "assist_hit_rate": 15.0, "ga_hit_rate": 52.0, "goal_odds": 2.55, "assist_odds": 6.20, "ga_odds": 1.88},
+        {"name": "Dejan Kulusevski", "pos": "Extremo", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.31, "goals_avg": 0.35, "assists_avg": 0.32, "goal_hit_rate": 32.0, "assist_hit_rate": 30.0, "ga_hit_rate": 52.0, "goal_odds": 3.10, "assist_odds": 3.40, "ga_odds": 1.85}
     ],
     "hull city": [
         {"name": "Chris Bedia", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.38, "assists_avg": 0.14, "goal_hit_rate": 35.0, "assist_hit_rate": 14.0, "ga_hit_rate": 46.0, "goal_odds": 3.00, "assist_odds": 6.80, "ga_odds": 2.15}

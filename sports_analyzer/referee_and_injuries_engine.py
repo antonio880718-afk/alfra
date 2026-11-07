@@ -522,7 +522,7 @@ INJURIES_SUSPENSIONS_DB = {
         "questionable": [
             {"player": "Cristian Romero", "pos": "Defensa", "type": "⚠️ Molestia de Tobillo", "desc": "Duda hasta último momento tras prueba médica matutina."}
         ],
-        "starters_ready": ["Son Heung-min", "Dominic Solanke", "Dejan Kulusevski", "James Maddison", "Guglielmo Vicario"]
+        "starters_ready": ["Dominic Solanke", "Dejan Kulusevski", "Brennan Johnson", "James Maddison", "Guglielmo Vicario"]
     },
     "tottenham": {
         "manager": "Ange Postecoglou",
@@ -533,7 +533,7 @@ INJURIES_SUSPENSIONS_DB = {
         "questionable": [
             {"player": "Cristian Romero", "pos": "Defensa", "type": "⚠️ Molestia de Tobillo", "desc": "Duda hasta último momento tras prueba médica matutina."}
         ],
-        "starters_ready": ["Son Heung-min", "Dominic Solanke", "Dejan Kulusevski", "James Maddison", "Guglielmo Vicario"]
+        "starters_ready": ["Dominic Solanke", "Dejan Kulusevski", "Brennan Johnson", "James Maddison", "Guglielmo Vicario"]
     },
     "hull city": {
         "manager": "Tim Walter",

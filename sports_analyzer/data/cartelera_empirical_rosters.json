@@ -248,9 +248,9 @@
   "tottenham hotspur": {
     "manager": "Ange Postecoglou",
     "starters_ready": [
-      "Son Heung-min",
       "Dominic Solanke",
       "Dejan Kulusevski",
+      "Brennan Johnson",
       "James Maddison",
       "Guglielmo Vicario"
     ],
@@ -280,9 +280,9 @@
   "tottenham": {
     "manager": "Ange Postecoglou",
     "starters_ready": [
-      "Son Heung-min",
       "Dominic Solanke",
       "Dejan Kulusevski",
+      "Brennan Johnson",
       "James Maddison",
       "Guglielmo Vicario"
     ],
@@ -5467,6 +5467,7 @@
   "lafc": {
     "manager": "Steve Cherundolo",
     "starters_ready": [
+      "Son Heung-min",
       "Denis Bouanga",
       "Olivier Giroud",
       "Mateusz Bogusz",
