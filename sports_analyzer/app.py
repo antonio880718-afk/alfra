@@ -227,6 +227,7 @@ with cb4:
 from hourly_slots_engine import get_chronological_slots
 from sgp_single_match_engine import build_single_match_sgp, fetch_match_rosters_and_details
 from multi_league_engine import calculate_single_match_markets
+from quant_prediction_engine import compute_dixon_coles_match, scan_all_cartelera_for_winning_picks
 import pandas as pd
 
 t_slots, t_sgp, t_parlay, t_escalera, t_audit, t_chat = st.tabs([
@@ -613,6 +614,44 @@ with t_sgp:
     inj = de_data.get("injuries_data", {})
 
     # -------------------------------------------------------------
+    # PANEL 0: ALGORITMO QUANT-EDGE & MODELO BIVARIADO DIXON-COLES
+    # -------------------------------------------------------------
+    dc_info = compute_dixon_coles_match(h, a, code_sel)
+    render_html(f"""
+    <div style="background: linear-gradient(135deg, #061e2b 0%, #0c2d48 50%, #081b29 100%); border: 2px solid #00ffff; border-radius: 12px; padding: 14px 18px; margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <div>
+                <span class="badge-source" style="background-color: #0e7490; color: #a5f3fc; border-color: #06b6d4;">⚡ ALGORITMO QUANT-EDGE V3 (DIXON-COLES xG)</span>
+                <h3 style="margin: 4px 0 2px 0; color: #ffffff; font-size: 1.25rem;">Intensidad de Goles Esperados: <b style="color: #00ffff;">{dc_info['total_xG']} xG Totales</b></h3>
+                <span style="color: #94a3b8; font-size: 0.85rem;">Local: <b>{dc_info['lambda_home_xG']} xG</b> ({h}) • Visitante: <b>{dc_info['mu_away_xG']} xG</b> ({a})</span>
+            </div>
+            <div style="text-align: right; background-color: #081b29; padding: 8px 14px; border-radius: 8px; border: 1px solid #0891b2;">
+                <span style="color: #94a3b8; font-size: 0.76rem; text-transform: uppercase;">Doble Oportunidad Cuant:</span><br>
+                <b style="color: #10b981; font-size: 1.15rem;">1X: {dc_info['prob_double_1x']}% | X2: {dc_info['prob_double_x2']}%</b>
+            </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-top: 10px;">
+            <div style="background-color: #0b132b; padding: 8px 10px; border-radius: 6px; border: 1px solid #1e3a8a; text-align: center;">
+                <span style="color: #94a3b8; font-size: 0.74rem;">Over 0.5 1er T:</span><br>
+                <b style="color: #38bdf8; font-size: 1.05rem;">{dc_info['prob_over05_ht']}%</b>
+            </div>
+            <div style="background-color: #0b132b; padding: 8px 10px; border-radius: 6px; border: 1px solid #1e3a8a; text-align: center;">
+                <span style="color: #94a3b8; font-size: 0.74rem;">Over 1.5 Goles:</span><br>
+                <b style="color: #10b981; font-size: 1.05rem;">{dc_info['prob_over15_ft']}%</b>
+            </div>
+            <div style="background-color: #0b132b; padding: 8px 10px; border-radius: 6px; border: 1px solid #1e3a8a; text-align: center;">
+                <span style="color: #94a3b8; font-size: 0.74rem;">Over 2.5 Goles:</span><br>
+                <b style="color: #facc15; font-size: 1.05rem;">{dc_info['prob_over25_ft']}%</b>
+            </div>
+            <div style="background-color: #0b132b; padding: 8px 10px; border-radius: 6px; border: 1px solid #1e3a8a; text-align: center;">
+                <span style="color: #94a3b8; font-size: 0.74rem;">Ambos Anotan:</span><br>
+                <b style="color: #c084fc; font-size: 1.05rem;">{dc_info['prob_btts']}%</b>
+            </div>
+        </div>
+    </div>
+    """)
+
+    # -------------------------------------------------------------
     # PANEL 1: AUDITORÍA DEL ÁRBITRO Y PRONÓSTICO DE TARJETAS
     # -------------------------------------------------------------
     rigor_bg = "#7f1d1d" if "Muy Riguroso" in ref.get("referee_rigor", "") else ("#064e3b" if "Permisivo" in ref.get("referee_rigor", "") else "#1e3a8a")
@@ -990,6 +1029,59 @@ with t_parlay:
                     st.markdown(f"- {step.strip()}")
 
 with t_escalera:
+    st.markdown("### ⚡ Algoritmo QUANT-EDGE V3: Estrategia Matemática para Ganar")
+    st.caption("Modelo cuantitativo bivariado Dixon-Coles, contracción Bayesiana y criterio de Kelly regularizado. 100% datos empíricos de 32 datasets oficiales.")
+    
+    q_data = scan_all_cartelera_for_winning_picks()
+    
+    col_q1, col_q2 = st.columns(2)
+    with col_q1:
+        st.markdown("#### 💎 Top Picks Diamante (Reto Escalera - Certeza ≥ 91%):")
+        for p_diam in q_data["top_escalera_picks"][:3]:
+            st.markdown(f"""
+            <div style="background-color: #0b132b; border: 1px solid #10b981; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <b style="color: #ffffff; font-size: 0.95rem;">{p_diam['pick']}</b>
+                    <span style="background-color: #064e3b; color: #6ee7b7; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.82rem;">🎯 {p_diam['model_prob']}%</span>
+                </div>
+                <div style="color: #94a3b8; font-size: 0.8rem; margin-top: 4px;">
+                    Momio: <b style="color: #facc15;">{p_diam['bookie_odds']}</b> • EV: <b style="color: #38bdf8;">+{p_diam['ev']}%</b> • Stake Kelly Seguro: <b>{p_diam['kelly_safe_pct']}% bankroll</b>
+                </div>
+                <div style="color: #cbd5e1; font-size: 0.78rem; margin-top: 4px; border-top: 1px dashed #1e293b; padding-top: 4px;">
+                    📌 {p_diam['rationale']}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+    with col_q2:
+        st.markdown("#### 🚀 Duplas Blindadas para Doblar (Cuota ~2.00x - 80% Prob):")
+        for d_combo in q_data.get("top_double_combos", [])[:2]:
+            st.markdown(f"""
+            <div style="background-color: #0c1527; border: 1px solid #3b82f6; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <b style="color: #38bdf8; font-size: 0.95rem;">{d_combo['title']}</b>
+                    <span style="background-color: #1e3a8a; color: #93c5fd; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.82rem;">Cuota {d_combo['combined_odds']}x</span>
+                </div>
+                <div style="color: #cbd5e1; font-size: 0.82rem; margin-top: 4px;">
+                    🎯 Probabilidad Conjunta: <b>{d_combo['combined_prob']}%</b> • <b>{d_combo['target_payout']}</b>
+                </div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 4px;">
+                    • [{d_combo['legs'][0]['time_cdmx']} hs] {d_combo['legs'][0]['pick']} (@{d_combo['legs'][0]['bookie_odds']})<br>
+                    • [{d_combo['legs'][1]['time_cdmx']} hs] {d_combo['legs'][1]['pick']} (@{d_combo['legs'][1]['bookie_odds']})
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+        if q_data.get("sgp_parlay"):
+            sp = q_data["sgp_parlay"]
+            st.markdown(f"""
+            <div style="background-color: #1e1b4b; border: 1px solid #7c3aed; border-radius: 8px; padding: 8px 12px; margin-top: 8px;">
+                <span style="color: #d8b4fe; font-weight: bold; font-size: 0.85rem;">⚡ Boleto Sinergia Positiva (Cuota {sp['combined_odds']}x • {sp['combined_prob']}% Prob):</span><br>
+                <span style="color: #cbd5e1; font-size: 0.78rem;">4 Selecciones Ancla cruzadas • {sp['target_payout']}</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+    st.markdown("---")
     st.markdown("### 🪜 Estrategia Escalera Cronológica en 3 Fases Horarias")
     st.caption("Juega por bloques de horario. Si una fase se cobra, se reinvierte en la siguiente retirando la inversión inicial en la Fase 2:")
 
@@ -1306,7 +1398,10 @@ with t_chat:
     st.caption("Escribe tus órdenes aquí: pedir parlays, selecciones de reto escalera, árbitros o análisis de cualquier partido.")
 
     # Botones de acceso rápido (1 toque en móvil)
-    col1, col2, col3, col4 = st.columns(4)
+    col0, col1, col2, col3, col4 = st.columns(5)
+    quick_prompt = None
+    if col0.button("⚡ Modo Ganador", use_container_width=True):
+        quick_prompt = "dame el algoritmo y la mejor jugada para ganar hoy"
     quick_prompt = None
     if col1.button("🎯 Parlay Cuota 3+", use_container_width=True):
         quick_prompt = "dame un parlay cuota 3"

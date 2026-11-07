@@ -518,11 +518,11 @@ def get_team_raw_matches(team_name: str, preferred_league: str = "") -> pd.DataF
     for df in dfs_to_search:
         if df is None or len(df) == 0:
             continue
-        h_mask = df["HomeTeam"].astype(str).str.lower().str.contains(norm)
-        a_mask = df["AwayTeam"].astype(str).str.lower().str.contains(norm)
+        h_mask = df["HomeTeam"].astype(str).str.lower().str.contains(norm, regex=False)
+        a_mask = df["AwayTeam"].astype(str).str.lower().str.contains(norm, regex=False)
         sub = df[h_mask | a_mask].copy()
         if len(sub) >= 8:
-            sub["_IsHome"] = df["HomeTeam"].astype(str).str.lower().str.contains(norm)
+            sub["_IsHome"] = df["HomeTeam"].astype(str).str.lower().str.contains(norm, regex=False)
             return sub
             
     return pd.DataFrame()

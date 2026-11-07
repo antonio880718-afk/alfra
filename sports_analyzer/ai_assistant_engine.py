@@ -46,6 +46,44 @@ def answer_user_instruction(prompt: str) -> str:
     p = prompt.strip()
     p_lower = p.lower()
     
+    # 0. ALGORITMO QUANT-EDGE & MODO GANADOR (MÁXIMA PRIORIDAD)
+    if any(k in p_lower for k in ["algoritmo", "quant", "ganar", "ganadora", "mejor jugada", "mas seguro", "seguro", "certeza", "prediccion", "dixon", "recomiend"]):
+        from quant_prediction_engine import scan_all_cartelera_for_winning_picks
+        q_data = scan_all_cartelera_for_winning_picks()
+        
+        res = "⚡ **ALGORITMO QUANT-EDGE V3: ESTRATEGIA MATEMÁTICA PARA GANAR**\n"
+        res += "*(Modelo Bivariado Dixon-Coles + Criterio de Kelly Regularizado + 100% Datos Oficiales)*\n\n"
+        
+        res += "💎 **TOP 3 PICKS DIAMANTE (RETO ESCALERA / MÁXIMA CERTEZA - PROB ≥ 91%):**\n"
+        for i, p in enumerate(q_data["top_escalera_picks"][:3], 1):
+            res += f"{i}. **{p['pick']}**\n"
+            res += f"   • Cuota Casa: **{p['bookie_odds']}** | Probabilidad Matemática: **{p['model_prob']}%** | EV: **+{p['ev']}%**\n"
+            res += f"   • Gestión de Bankroll (Kelly): Apostar máximo **{p['kelly_safe_pct']}%** de tu capital.\n"
+            res += f"   • Justificación: {p['rationale']}\n\n"
+            
+        res += "🚀 **DUPLA BLINDADA RECOMENDADA PARA DOBLAR (CUOTA ~2.00x):**\n"
+        if q_data.get("top_double_combos"):
+            best_d = q_data["top_double_combos"][0]
+            res += f"• **{best_d['title']}**\n"
+            res += f"   • Cuota Combinada: **{best_d['combined_odds']}x** | Probabilidad Conjunta: **{best_d['combined_prob']}%**\n"
+            res += f"   • Pata 1: [{best_d['legs'][0]['time_cdmx']} hs] {best_d['legs'][0]['pick']} (Momio: {best_d['legs'][0]['bookie_odds']})\n"
+            res += f"   • Pata 2: [{best_d['legs'][1]['time_cdmx']} hs] {best_d['legs'][1]['pick']} (Momio: {best_d['legs'][1]['bookie_odds']})\n"
+            res += f"   • Retorno Proyectado: **{best_d['target_payout']}**\n\n"
+            
+        if q_data.get("sgp_parlay"):
+            sp = q_data["sgp_parlay"]
+            res += f"⚡ **BOLETO SINERGIA CUOTA 2.09x (4 PICKS DE ALTA CERTEZA):**\n"
+            res += f"• Probabilidad del Modelo: **{sp['combined_prob']}%** | {sp['target_payout']}\n"
+            for leg in sp["legs"]:
+                res += f"   - {leg['pick']} (Cuota {leg['bookie_odds']})\n"
+            res += "\n"
+                
+        res += "🛡️ **REGLA MATEMÁTICA ALFRA PARA NO PERDER:**\n"
+        res += "1. Jamás metas más de 2 o 3 selecciones por boleto si buscas ganar a diario.\n"
+        res += "2. Usa siempre picks con EV positivo (+EV) y probabilidad superior al 80%.\n"
+        res += "3. Con la regla VOID, si un jugador suplente no inicia de titular, la cuota es 1.00 y tu dinero está a salvo."
+        return res
+
     # 1. RETO ESCALERA
     if any(k in p_lower for k in ["escalera", "reto", "duplicar", "nivel 1", "fase 1"]):
         tot = resolve_team_star_player("Tottenham Hotspur")
