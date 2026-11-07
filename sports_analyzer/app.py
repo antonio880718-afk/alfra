@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 SISTEMA DE INTELIGENCIA DEPORTIVA & EXPLORADOR HISTÓRICO DE EQUIPOS & ÁRBITROS
 Dos Modos de Operación Integrados:
@@ -229,12 +229,13 @@ from sgp_single_match_engine import build_single_match_sgp, fetch_match_rosters_
 from multi_league_engine import calculate_single_match_markets
 import pandas as pd
 
-t_slots, t_sgp, t_parlay, t_escalera, t_audit = st.tabs([
+t_slots, t_sgp, t_parlay, t_escalera, t_audit, t_chat = st.tabs([
     "⏰ 1. Cartelera por Rangos de Horario (Desde 06:00 AM CDMX)",
     "🎯 2. Ingeniería de Datos & Creador de Apuesta ('Tú Eliges')",
     "🎟️ 3. Boleto Parlay Directo 100x ($5,210 MXN)",
     "🪜 4. Reto Escalera en 3 Fases Horarias",
-    "✅ 5. Detector Automático de Aciertos & Auditoría Post-Jornada"
+    "✅ 5. Detector Automático de Aciertos & Auditoría Post-Jornada",
+    "💬 6. Asistente IA en Vivo (Órdenes desde Celular)"
 ])
 
 # Cargar franjas horarias
@@ -1222,3 +1223,46 @@ BOLETO 3: RETO ESCALERA EN 3 FASES (Horarios Oficiales CDMX)
 • FASE 3 (14:30 a 21:00 hs CDMX): Re-invertir ganancia neta en picks 8, 9, 10 y 11 -> Cobra ${round(user_stake * 10.92, 2)} MXN.
 ==================================================="""
         st.text_area("Copia los picks aquí:", copy_text, height=350)
+
+
+with t_chat:
+    st.markdown("### 💬 Asistente Cuantitativo ALFRA (Control desde tu Celular)")
+    st.caption("Escribe tus órdenes aquí: pedir parlays, selecciones de reto escalera, árbitros o análisis de cualquier partido.")
+
+    # Botones de acceso rápido (1 toque en móvil)
+    col1, col2, col3, col4 = st.columns(4)
+    quick_prompt = None
+    if col1.button("🎯 Parlay Cuota 3+", use_container_width=True):
+        quick_prompt = "dame un parlay cuota 3"
+    if col2.button("🪜 Reto Escalera", use_container_width=True):
+        quick_prompt = "mejor pick de reto escalera"
+    if col3.button("🟨 Árbitros Rigurosos", use_container_width=True):
+        quick_prompt = "cuáles son los árbitros más tarjeteros"
+    if col4.button("⚽ Goleadores Top", use_container_width=True):
+        quick_prompt = "top goleadores y tiros a puerta"
+
+    # Inicializar historial de chat en session_state
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = [
+            {"role": "assistant", "content": "👋 **¡Hola! Soy tu Asistente Cuantitativo ALFRA.**\n\nPuedes darme órdenes o pedirme análisis directamente desde tu celular las 24 horas del día. Prueba tocando uno de los botones de arriba o escribiendo en la barra de abajo (ej. *'analiza Fulham vs Newcastle'* o *'dame un parlay'*)."}
+        ]
+
+    for msg in st.session_state.chat_history:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+
+    user_input = st.chat_input("Escribe tu instrucción (ej. 'analiza Fulham vs Newcastle' o 'dame un parlay')...")
+    if quick_prompt:
+        user_input = quick_prompt
+
+    if user_input:
+        st.session_state.chat_history.append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        from ai_assistant_engine import answer_user_instruction
+        response = answer_user_instruction(user_input)
+        st.session_state.chat_history.append({"role": "assistant", "content": response})
+        with st.chat_message("assistant"):
+            st.markdown(response)
+        st.rerun()
