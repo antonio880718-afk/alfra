@@ -143,8 +143,8 @@ VERIFIED_FORWARDS_DB = {
     "rcd espanyol": {"name": "Javi Puado", "jersey": "7", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 82.5, "odds": 1.29},
 
     "fulham": {"name": "Rodrigo Muniz", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.0, "odds": 1.26},
-    "newcastle united": {"name": "Yoane Wissa", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.5, "odds": 1.25},
-    "newcastle": {"name": "Yoane Wissa", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.5, "odds": 1.25},
+    "newcastle united": {"name": "Alexander Isak", "jersey": "14", "pos": "Delantero Centro", "sot_avg": 1.6, "prob": 86.0, "odds": 1.22},
+    "newcastle": {"name": "Alexander Isak", "jersey": "14", "pos": "Delantero Centro", "sot_avg": 1.6, "prob": 86.0, "odds": 1.22},
     "tottenham hotspur": {"name": "Dominic Solanke", "jersey": "19", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.0, "odds": 1.26},
     "tottenham": {"name": "Dominic Solanke", "jersey": "19", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.0, "odds": 1.26},
     "hull city": {"name": "Chris Bedia", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.3, "prob": 80.0, "odds": 1.32},
@@ -179,8 +179,8 @@ VERIFIED_FORWARDS_DB = {
     # Inglaterra
     "brighton & hove albion": {"name": "Stefanos Tzimas", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 83.5, "odds": 1.28},
     "brighton": {"name": "Stefanos Tzimas", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 83.5, "odds": 1.28},
-    "leeds united": {"name": "Dominic Calvert-Lewin", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.5, "odds": 1.24},
-    "leeds": {"name": "Dominic Calvert-Lewin", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.5, "prob": 84.5, "odds": 1.24},
+    "leeds united": {"name": "Mateo Joseph", "jersey": "19", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 83.0, "odds": 1.27},
+    "leeds": {"name": "Mateo Joseph", "jersey": "19", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 83.0, "odds": 1.27},
     "west ham united": {"name": "Joël Piroe", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 83.5, "odds": 1.26},
     "west ham": {"name": "Joël Piroe", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.4, "prob": 83.5, "odds": 1.26},
     "arsenal": {"name": "Bukayo Saka", "jersey": "7", "pos": "Extremo Referente", "sot_avg": 1.5, "prob": 85.0, "odds": 1.22},

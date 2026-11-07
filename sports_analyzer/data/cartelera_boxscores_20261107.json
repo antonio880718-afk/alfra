@@ -55,6 +55,13 @@
     "btts": false,
     "referee": "John Brooks",
     "player_stats": {
+      "Mateo Joseph": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 78
+      },
       "Dominic Solanke": {
         "sot": 0,
         "goals": 0,
@@ -64,17 +71,10 @@
       },
       "Noah Okafor": {
         "sot": 1,
-        "goals": 1,
+        "goals": 0,
         "assists": 0,
         "started": false,
         "mins": 25
-      },
-      "Dominic Calvert-Lewin": {
-        "sot": 2,
-        "goals": 0,
-        "assists": 1,
-        "started": true,
-        "mins": 78
       }
     },
     "source": "SofaScore Official Premier League Match Center"
@@ -471,10 +471,17 @@
     "player_stats": {
       "Rodrigo Muniz": {
         "sot": 1,
-        "goals": 1,
+        "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 72
+      },
+      "Alexander Isak": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 85
       }
     },
     "source": "SofaScore / FlashScore Official Match Center (Premier League)"
@@ -595,6 +602,13 @@
         "assists": 1,
         "started": true,
         "mins": 84
+      },
+      "Jarrod Bowen": {
+        "sot": 2,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
       }
     },
     "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
@@ -2359,6 +2373,13 @@
     "btts": true,
     "referee": "Eric-Dominic Weisbach",
     "player_stats": {
+      "Stefanos Tzimas": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 78
+      },
       "Sigurd Haugen": {
         "sot": 1,
         "goals": 0,
@@ -2839,12 +2860,12 @@
     "btts": false,
     "referee": "Anastasios Sidiropoulos",
     "player_stats": {
-      "Ousmane Dembélé": {
-        "sot": 0,
-        "goals": 0,
+      "Loren Morón": {
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
-        "mins": 77
+        "mins": 85
       }
     },
     "source": "SofaScore / FlashScore Official Match Center (Super League Grecia)"

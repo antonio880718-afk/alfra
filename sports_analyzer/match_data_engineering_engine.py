@@ -201,8 +201,8 @@ STAR_PLAYERS = {
         {"name": "Emile Smith Rowe", "pos": "Mediapunta", "sot_avg": 1.3, "hit_rate": 80.0, "odds": 1.32, "goals_avg": 0.35, "assists_avg": 0.30, "goal_hit_rate": 32.0, "assist_hit_rate": 28.0, "ga_hit_rate": 50.0, "goal_odds": 3.10, "assist_odds": 3.60, "ga_odds": 1.95}
     ],
     "newcastle united": [
-        {"name": "Yoane Wissa", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.25, "goals_avg": 0.48, "assists_avg": 0.18, "goal_hit_rate": 44.0, "assist_hit_rate": 18.0, "ga_hit_rate": 56.0, "goal_odds": 2.45, "assist_odds": 5.40, "ga_odds": 1.78},
-        {"name": "Anthony Elanga", "pos": "Delantero", "sot_avg": 1.3, "hit_rate": 80.5, "odds": 1.30, "goals_avg": 0.36, "assists_avg": 0.32, "goal_hit_rate": 34.0, "assist_hit_rate": 30.0, "ga_hit_rate": 54.0, "goal_odds": 3.10, "assist_odds": 3.40, "ga_odds": 1.85}
+        {"name": "Alexander Isak", "pos": "Delantero", "sot_avg": 1.6, "hit_rate": 86.0, "odds": 1.22, "goals_avg": 0.55, "assists_avg": 0.18, "goal_hit_rate": 48.0, "assist_hit_rate": 18.0, "ga_hit_rate": 60.0, "goal_odds": 2.20, "assist_odds": 5.20, "ga_odds": 1.68},
+        {"name": "Anthony Gordon", "pos": "Extremo", "sot_avg": 1.4, "hit_rate": 82.5, "odds": 1.28, "goals_avg": 0.38, "assists_avg": 0.28, "goal_hit_rate": 35.0, "assist_hit_rate": 26.0, "ga_hit_rate": 52.0, "goal_odds": 2.90, "assist_odds": 3.80, "ga_odds": 1.90}
     ],
     "newcastle": [
         {"name": "Yoane Wissa", "pos": "Delantero", "sot_avg": 1.5, "hit_rate": 84.5, "odds": 1.25, "goals_avg": 0.48, "assists_avg": 0.18, "goal_hit_rate": 44.0, "assist_hit_rate": 18.0, "ga_hit_rate": 56.0, "goal_odds": 2.45, "assist_odds": 5.40, "ga_odds": 1.78},

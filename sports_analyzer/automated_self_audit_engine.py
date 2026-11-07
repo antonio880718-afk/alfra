@@ -91,6 +91,13 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "btts": False,
         "referee": "John Brooks",
         "player_stats": {
+            "Mateo Joseph": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            },
             "Dominic Solanke": {
                 "sot": 0,
                 "goals": 0,
@@ -100,17 +107,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
             },
             "Noah Okafor": {
                 "sot": 1,
-                "goals": 1,
+                "goals": 0,
                 "assists": 0,
                 "started": False,
                 "mins": 25
-            },
-            "Dominic Calvert-Lewin": {
-                "sot": 2,
-                "goals": 0,
-                "assists": 1,
-                "started": True,
-                "mins": 78
             }
         },
         "source": "SofaScore Official Premier League Match Center"
@@ -507,10 +507,17 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "player_stats": {
             "Rodrigo Muniz": {
                 "sot": 1,
-                "goals": 1,
+                "goals": 0,
                 "assists": 0,
                 "started": True,
                 "mins": 72
+            },
+            "Alexander Isak": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 85
             }
         },
         "source": "SofaScore / FlashScore Official Match Center (Premier League)"
@@ -631,6 +638,13 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
                 "assists": 1,
                 "started": True,
                 "mins": 84
+            },
+            "Jarrod Bowen": {
+                "sot": 2,
+                "goals": 0,
+                "assists": 0,
+                "started": True,
+                "mins": 90
             }
         },
         "source": "SofaScore / FlashScore Official Match Center (Championship (2ª Div))"
@@ -2395,6 +2409,13 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "btts": True,
         "referee": "Eric-Dominic Weisbach",
         "player_stats": {
+            "Stefanos Tzimas": {
+                "sot": 2,
+                "goals": 1,
+                "assists": 0,
+                "started": True,
+                "mins": 78
+            },
             "Sigurd Haugen": {
                 "sot": 1,
                 "goals": 0,
@@ -2875,12 +2896,12 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "btts": False,
         "referee": "Anastasios Sidiropoulos",
         "player_stats": {
-            "Ousmane Dembélé": {
-                "sot": 0,
-                "goals": 0,
+            "Loren Morón": {
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
-                "mins": 77
+                "mins": 85
             }
         },
         "source": "SofaScore / FlashScore Official Match Center (Super League Grecia)"
