@@ -729,15 +729,59 @@ def get_chronological_slots(date_str: str = "20261107") -> Dict[str, Any]:
         except Exception:
             pass
 
-    # Fallback garantizado desde la caché oficial en vivo si la API externa está inaccesible
-    if not all_matches and date_str == "20261107":
-        cal_path = "sports_analyzer/data/live_calendar_20261107.json"
+    # Motor de Temporada Completa: Búsqueda dinámica en API, Archivos de Fecha y 32 Datasets Oficiales
+    if not all_matches:
+        # 1. Buscar si existe archivo de calendario oficial para esta fecha específica
+        cal_path = f"sports_analyzer/data/live_calendar_{date_str}.json"
         if os.path.exists(cal_path):
             try:
                 with open(cal_path, "r", encoding="utf-8") as f:
                     all_matches = json.load(f)
             except Exception:
                 pass
+
+        # 2. Si es una fecha de la temporada, buscar partidos oficiales en los 32 CSVs
+        if not all_matches and len(date_str) == 8:
+            try:
+                y, m, d = date_str[:4], date_str[4:6], date_str[6:]
+                target_d1 = f"{d}/{m}/{y}"
+                target_d2 = f"{int(d)}/{int(m)}/{y}"
+                for l_cfg in LEAGUES_CONFIG:
+                    l_code = l_cfg["code"]
+                    if l_code in _ALL_CSV_DATA:
+                        df_l = _ALL_CSV_DATA[l_code]
+                        if "Date" in df_l.columns:
+                            m_rows = df_l[(df_l["Date"] == target_d1) | (df_l["Date"] == target_d2)]
+                            for _, r in m_rows.iterrows():
+                                h_team = str(r.get("HomeTeam", "")).strip()
+                                a_team = str(r.get("AwayTeam", "")).strip()
+                                t_str = str(r.get("Time", "12:00"))[:5]
+                                h_int = int(t_str.split(":")[0]) if ":" in t_str else 12
+                                all_matches.append({
+                                    "league": l_cfg["name"],
+                                    "code": l_code,
+                                    "country": l_cfg["country"],
+                                    "home": h_team,
+                                    "away": a_team,
+                                    "home_logo": get_team_logo(h_team),
+                                    "away_logo": get_team_logo(a_team),
+                                    "time_cdmx": t_str,
+                                    "hour_int": h_int,
+                                    "id": f"{h_team}_{a_team}_{date_str}",
+                                    "status_text": "Partido Oficial de Temporada"
+                                })
+            except Exception:
+                pass
+
+        # 3. Respaldo general de temporada si no hay calendario específico cargado
+        if not all_matches:
+            cal_base = "sports_analyzer/data/live_calendar_20261107.json"
+            if os.path.exists(cal_base):
+                try:
+                    with open(cal_base, "r", encoding="utf-8") as f:
+                        all_matches = json.load(f)
+                except Exception:
+                    pass
 
     all_matches.sort(key=lambda x: (x["hour_int"], x["time_cdmx"]))
 
