@@ -35,6 +35,23 @@ from typing import Dict, Any, List
 # 1. BASE DE DATOS OFICIAL DE BOXSCORES EN VIVO Y FINALIZADOS
 # -------------------------------------------------------------
 LIVE_MATCH_BOXSCORES = {
+    "eyupspor vs kocaelispor": {
+        "match": "Eyupspor vs Kocaelispor",
+        "league": "Super Lig Turquía",
+        "status": "FINALIZADO (FT)",
+        "time_cdmx": "04:30",
+        "score": "2 - 0",
+        "home_goals": 2, "away_goals": 0, "ht_home": 1, "ht_away": 0, "ht_goals": 1,
+        "home_corners": 6, "away_corners": 3, "total_corners": 9,
+        "home_cards": 2, "away_cards": 2, "total_cards": 4,
+        "btts": False,
+        "referee": "Ali Şansalan",
+        "player_stats": {
+            "Yusuf Barasi": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 78},
+            "Ahmed Kutucu": {"sot": 1, "goals": 1, "assists": 1, "started": True, "mins": 85}
+        },
+        "source": "SofaScore Official Süper Lig Match Center"
+    },
     "leeds united vs tottenham hotspur": {
         "match": "Leeds United vs Tottenham Hotspur",
         "league": "Premier League",

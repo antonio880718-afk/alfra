@@ -419,16 +419,32 @@ with t_slots:
             l_h1 = get_team_logo(m_chosen['home'])
             l_a1 = get_team_logo(m_chosen['away'])
 
+            # Auditoría y Marcador Oficial en Vivo
+            from automated_self_audit_engine import get_match_boxscore, audit_individual_pick_empirically
+            bs_match_sel = get_match_boxscore(f"{m_chosen['home']} vs {m_chosen['away']}")
+            m_status_str = bs_match_sel.get("status", "PROGRAMADO")
+            m_score_str = bs_match_sel.get("score", "vs")
+            
+            if "FINALIZADO" in m_status_str:
+                m_header_badge = f'<span style="background-color: #064e3b; color: #6ee7b7; border: 1px solid #10b981; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.82rem;">🏁 FINALIZADO: {m_score_str} (Cotejado SofaScore)</span>'
+            elif "EN CURSO" in m_status_str or "EN JUEGO" in m_status_str:
+                m_header_badge = f'<span style="background-color: #1e3a8a; color: #93c5fd; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.82rem;">⚡ EN VIVO: {m_score_str} ({m_status_str})</span>'
+            else:
+                m_header_badge = f'<span style="background-color: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.82rem;">⏳ PROGRAMADO ({m_chosen["time_cdmx"]} hs CDMX)</span>'
+
             render_html(f"""
             <div style="background: linear-gradient(135deg, #090e1a 0%, #172554 50%, #0d1527 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 18px 22px; margin-bottom: 16px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
                     <div style="display: flex; align-items: center; gap: 14px;">
                         <img src="{l_h1}" style="width: 54px; height: 54px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));">
                         <div>
-                            <span class="badge-source">{m_chosen['league']} • ⏰ {m_chosen['time_cdmx']} hs</span>
+                            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 3px;">
+                                <span class="badge-source">{m_chosen['league']} • ⏰ {m_chosen['time_cdmx']} hs</span>
+                                {m_header_badge}
+                            </div>
                             <h2 style="margin: 3px 0 2px 0; color: #fff; font-size: 1.45rem;">{m_chosen['home']} <span style="color: #ef4444; font-size: 0.95rem; margin: 0 4px;">VS</span> {m_chosen['away']}</h2>
                             <span style="color: #93c5fd; font-size: 0.88rem;">
-                                Análisis de 4 Variables Correlacionadas (Crear Apuesta / SGP)
+                                Análisis de 4 Variables Correlacionadas (Crear Apuesta / SGP) • Marcador: <b style="color: #facc15;">{m_score_str}</b>
                             </span>
                         </div>
                         <img src="{l_a1}" style="width: 54px; height: 54px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));">
@@ -482,6 +498,49 @@ with t_slots:
                         seal_html = '<span style="color: #fbbf24; font-size: 0.78rem; font-weight: 700;">⚠️ RIESGO MEDIO (Prioriza cuota más alta)</span>'
                         bar_grad = "linear-gradient(90deg, #d97706 0%, #f59e0b 100%)"
 
+                    # Auditoría empírica individual en tiempo real de cada variable
+                    aud_v = audit_individual_pick_empirically({
+                        "match": f"{m_chosen['home']} vs {m_chosen['away']}",
+                        "pick": v["market"],
+                        "odds": v["odds"]
+                    })
+                    
+                    if aud_v["outcome"] == "HIT":
+                        aud_bg = "#064e3b"
+                        aud_col = "#6ee7b7"
+                        aud_border = "#10b981"
+                    elif aud_v["outcome"] == "MISS":
+                        aud_bg = "#7f1d1d"
+                        aud_col = "#fca5a5"
+                        aud_border = "#ef4444"
+                    elif aud_v["outcome"] == "VOID":
+                        aud_bg = "#1e3a8a"
+                        aud_col = "#93c5fd"
+                        aud_border = "#64748b"
+                    elif aud_v["outcome"] == "IN_PROGRESS":
+                        aud_bg = "#451a03"
+                        aud_col = "#fde047"
+                        aud_border = "#f59e0b"
+                    else:
+                        aud_bg = "#111827"
+                        aud_col = "#94a3b8"
+                        aud_border = "#374151"
+
+                    audit_pill_html = f"""
+                    <div style="background-color: {aud_bg}; border: 1px solid {aud_border}; border-radius: 6px; padding: 8px 12px; margin: 8px 0 8px 0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px;">
+                            <span style="font-weight: 900; color: {aud_col}; font-size: 0.88rem;">{aud_v['badge']}</span>
+                            <span style="color: #cbd5e1; font-size: 0.74rem; background: #0b132b; padding: 2px 6px; border-radius: 4px; border: 1px solid #1e293b;">{aud_v['match_status']}</span>
+                        </div>
+                        <div style="color: #ffffff; font-size: 0.82rem; margin-top: 4px;">
+                            📊 <b>Resultado Real:</b> {aud_v['stat_actual']}
+                        </div>
+                        <div style="color: {aud_col}; font-size: 0.78rem; margin-top: 2px;">
+                            📌 <b>Auditoría Oficial:</b> {aud_v['diagnosis']}
+                        </div>
+                    </div>
+                    """
+
                     render_html(f"""
                     <div class="var-pill" style="margin-bottom: 12px; padding: 12px 16px; border-left: 5px solid {border_prob}; background: #0c1527; border-radius: 8px; border-top: 1px solid #1e293b; border-right: 1px solid #1e293b; border-bottom: 1px solid #1e293b;">
                         <!-- Fila 1: Título y Cuota de la Casa -->
@@ -511,6 +570,9 @@ with t_slots:
                         <div style="background-color: #1e293b; border-radius: 6px; height: 6px; width: 100%; margin-bottom: 8px; overflow: hidden;">
                             <div style="background: {bar_grad}; width: {min(100.0, v_prob)}%; height: 100%; border-radius: 6px;"></div>
                         </div>
+
+                        <!-- Fila 3.5: AUDITORÍA EN TIEMPO REAL: ACIERTO / FALLO -->
+                        {audit_pill_html}
 
                         <!-- Fila 4: Mercado y Sello -->
                         <div style="font-size: 0.84rem; color: #cbd5e1; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
