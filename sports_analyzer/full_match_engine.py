@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR EXHAUSTIVO DE 50+ MERCADOS POR PARTIDO
 Calcula con nombres dinámicos de los dos equipos ({Home} y {Away}):

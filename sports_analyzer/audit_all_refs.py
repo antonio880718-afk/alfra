@@ -1,4 +1,4 @@
-﻿import sys
+import sys
 sys.stdout.reconfigure(encoding="utf-8")
 sys.path.insert(0, 'sports_analyzer')
 from hourly_slots_engine import get_chronological_slots

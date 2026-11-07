@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 CONSORCIO COMPLETO DE LOS MOTORES CUANTITATIVOS (SINDICATO ÉLITE + EXPERT SENTIMENT)
 Integra todos los modelos investigados de GitHub + Inteligencia de Medios y Analistas:

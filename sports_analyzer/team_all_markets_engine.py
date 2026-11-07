@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR DE LOS 50+ MERCADOS HISTÓRICOS POR EQUIPO (PLAYDOIT / ALTENAR SPORTSBOOK TREE)
 Calcula la tasa de acierto empírica real (%) en los 45+ partidos oficiales de la base de datos:

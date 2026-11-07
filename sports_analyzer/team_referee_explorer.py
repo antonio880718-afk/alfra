@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR ESPECIALIZADO DE EXPLORACIÓN HISTÓRICA POR EQUIPO Y ÁRBITRO
 Permite al usuario seleccionar cualquier club de cualquier liga oficial y desglosar:

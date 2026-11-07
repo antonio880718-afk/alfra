@@ -1,0 +1,692 @@
+{
+  "leeds united": {
+    "stadium": "Elland Road",
+    "city": "Leeds, West Yorkshire",
+    "capacity": 37890
+  },
+  "arsenal": {
+    "stadium": "Emirates Stadium",
+    "city": "Londres",
+    "capacity": 60704
+  },
+  "fulham": {
+    "stadium": "Craven Cottage",
+    "city": "Londres",
+    "capacity": 29600
+  },
+  "nottingham forest": {
+    "stadium": "The City Ground",
+    "city": "Nottingham",
+    "capacity": 30445
+  },
+  "tottenham hotspur": {
+    "stadium": "Tottenham Hotspur Stadium",
+    "city": "Londres",
+    "capacity": 62850
+  },
+  "manchester city": {
+    "stadium": "Etihad Stadium",
+    "city": "Manchester",
+    "capacity": 53400
+  },
+  "newcastle united": {
+    "stadium": "St James' Park",
+    "city": "Newcastle",
+    "capacity": 52305
+  },
+  "hull city": {
+    "stadium": "MKM Stadium",
+    "city": "Kingston upon Hull",
+    "capacity": 25586
+  },
+  "bristol city": {
+    "stadium": "Ashton Gate Stadium",
+    "city": "Bristol",
+    "capacity": 27000
+  },
+  "portsmouth": {
+    "stadium": "Fratton Park",
+    "city": "Portsmouth",
+    "capacity": 20899
+  },
+  "wrexham": {
+    "stadium": "Racecourse Ground (STōK Cae Ras)",
+    "city": "Wrexham, Gales",
+    "capacity": 13341
+  },
+  "birmingham city": {
+    "stadium": "St Andrew's @ Knighthead Park",
+    "city": "Birmingham",
+    "capacity": 29409
+  },
+  "blackburn rovers": {
+    "stadium": "Ewood Park",
+    "city": "Blackburn",
+    "capacity": 31367
+  },
+  "cardiff city": {
+    "stadium": "Cardiff City Stadium",
+    "city": "Cardiff, Gales",
+    "capacity": 33280
+  },
+  "charlton athletic": {
+    "stadium": "The Valley",
+    "city": "Londres",
+    "capacity": 27111
+  },
+  "preston north end": {
+    "stadium": "Deepdale",
+    "city": "Preston",
+    "capacity": 23408
+  },
+  "queens park rangers": {
+    "stadium": "MATRADE Loftus Road Stadium",
+    "city": "Londres",
+    "capacity": 18439
+  },
+  "watford": {
+    "stadium": "Vicarage Road",
+    "city": "Watford",
+    "capacity": 22200
+  },
+  "west bromwich albion": {
+    "stadium": "The Hawthorns",
+    "city": "West Bromwich",
+    "capacity": 26850
+  },
+  "accrington stanley": {
+    "stadium": "Wham Stadium (Crown Ground)",
+    "city": "Accrington",
+    "capacity": 5450
+  },
+  "afc hornchurch": {
+    "stadium": "Hornchurch Stadium (Bridge Avenue)",
+    "city": "Upminster, Londres",
+    "capacity": 3500
+  },
+  "barnet": {
+    "stadium": "The Hive Stadium",
+    "city": "Canons Park, Londres",
+    "capacity": 6500
+  },
+  "barnsley": {
+    "stadium": "Oakwell",
+    "city": "Barnsley",
+    "capacity": 23287
+  },
+  "boreham wood": {
+    "stadium": "Meadow Park",
+    "city": "Borehamwood",
+    "capacity": 4500
+  },
+  "bradford city": {
+    "stadium": "University of Bradford Stadium (Valley Parade)",
+    "city": "Bradford",
+    "capacity": 25136
+  },
+  "bromley": {
+    "stadium": "Hayes Lane",
+    "city": "Bromley, Londres",
+    "capacity": 5000
+  },
+  "burton albion": {
+    "stadium": "Pirelli Stadium",
+    "city": "Burton upon Trent",
+    "capacity": 6912
+  },
+  "carlisle united": {
+    "stadium": "Brunton Park",
+    "city": "Carlisle",
+    "capacity": 17949
+  },
+  "cheltenham town": {
+    "stadium": "Completely-Suzuki Stadium (Whaddon Road)",
+    "city": "Cheltenham",
+    "capacity": 7066
+  },
+  "chesterfield": {
+    "stadium": "SMH Group Stadium (Proact)",
+    "city": "Chesterfield",
+    "capacity": 10504
+  },
+  "colchester united": {
+    "stadium": "JobServe Community Stadium",
+    "city": "Colchester",
+    "capacity": 10105
+  },
+  "crewe alexandra": {
+    "stadium": "Mornflake Stadium (Gresty Road)",
+    "city": "Crewe",
+    "capacity": 10153
+  },
+  "dover athletic": {
+    "stadium": "Crabble Athletic Ground",
+    "city": "River, Dover",
+    "capacity": 5745
+  },
+  "eastleigh": {
+    "stadium": "Silverlake Stadium",
+    "city": "Eastleigh",
+    "capacity": 5192
+  },
+  "fleetwood town": {
+    "stadium": "Highbury Stadium",
+    "city": "Fleetwood",
+    "capacity": 5327
+  },
+  "gillingham": {
+    "stadium": "Priestfield Stadium",
+    "city": "Gillingham",
+    "capacity": 11582
+  },
+  "guiseley": {
+    "stadium": "Nethermoor Park",
+    "city": "Guiseley, Leeds",
+    "capacity": 4000
+  },
+  "harrogate town": {
+    "stadium": "EnviroVent Stadium (Wetherby Road)",
+    "city": "Harrogate",
+    "capacity": 5000
+  },
+  "huddersfield town": {
+    "stadium": "John Smith's Stadium (Kirklees)",
+    "city": "Huddersfield",
+    "capacity": 24121
+  },
+  "kidderminster harriers": {
+    "stadium": "Aggborough Stadium",
+    "city": "Kidderminster",
+    "capacity": 6238
+  },
+  "leyton orient": {
+    "stadium": "Gaughan Group Stadium (Brisbane Road)",
+    "city": "Londres",
+    "capacity": 9271
+  },
+  "luton town": {
+    "stadium": "Kenilworth Road",
+    "city": "Luton",
+    "capacity": 11500
+  },
+  "mansfield town": {
+    "stadium": "One Call Stadium (Field Mill)",
+    "city": "Mansfield",
+    "capacity": 9186
+  },
+  "milton keynes dons": {
+    "stadium": "Stadium MK",
+    "city": "Milton Keynes",
+    "capacity": 30500
+  },
+  "newport county": {
+    "stadium": "Rodney Parade",
+    "city": "Newport, Gales",
+    "capacity": 8700
+  },
+  "oxford united": {
+    "stadium": "Kassam Stadium",
+    "city": "Oxford",
+    "capacity": 12500
+  },
+  "plymouth argyle": {
+    "stadium": "Home Park",
+    "city": "Plymouth",
+    "capacity": 17900
+  },
+  "port vale": {
+    "stadium": "Vale Park",
+    "city": "Burslem, Stoke-on-Trent",
+    "capacity": 15695
+  },
+  "salisbury fc": {
+    "stadium": "Raymond McEnhill Stadium",
+    "city": "Salisbury",
+    "capacity": 5000
+  },
+  "york city": {
+    "stadium": "LNER Community Stadium",
+    "city": "York",
+    "capacity": 8500
+  },
+  "altrincham": {
+    "stadium": "The J. Davidson Stadium (Moss Lane)",
+    "city": "Altrincham",
+    "capacity": 7798
+  },
+  "peterborough united": {
+    "stadium": "Weston Homes Stadium (London Road)",
+    "city": "Peterborough",
+    "capacity": 15314
+  },
+  "málaga": {
+    "stadium": "Estadio La Rosaleda",
+    "city": "Málaga",
+    "capacity": 30044
+  },
+  "espanyol": {
+    "stadium": "Stage Front Stadium (RCDE Stadium)",
+    "city": "Cornellà de Llobregat, Barcelona",
+    "capacity": 40000
+  },
+  "osasuna": {
+    "stadium": "Estadio El Sadar",
+    "city": "Pamplona, Navarra",
+    "capacity": 23576
+  },
+  "valencia": {
+    "stadium": "Estadio de Mestalla",
+    "city": "Valencia",
+    "capacity": 49430
+  },
+  "burgos": {
+    "stadium": "Estadio Municipal El Plantío",
+    "city": "Burgos",
+    "capacity": 12194
+  },
+  "cádiz": {
+    "stadium": "Estadio Nuevo Mirandilla",
+    "city": "Cádiz",
+    "capacity": 25033
+  },
+  "córdoba": {
+    "stadium": "Estadio Nuevo Arcángel",
+    "city": "Córdoba",
+    "capacity": 21822
+  },
+  "leganés": {
+    "stadium": "Estadio Municipal Butarque",
+    "city": "Leganés, Madrid",
+    "capacity": 12454
+  },
+  "granada": {
+    "stadium": "Estadio Nuevo Los Cármenes",
+    "city": "Granada",
+    "capacity": 19336
+  },
+  "real madrid": {
+    "stadium": "Estadio Santiago Bernabéu",
+    "city": "Madrid",
+    "capacity": 84744
+  },
+  "barcelona": {
+    "stadium": "Estadi Olímpic Lluís Companys",
+    "city": "Barcelona",
+    "capacity": 54367
+  },
+  "athletic club": {
+    "stadium": "Estadio de San Mamés",
+    "city": "Bilbao",
+    "capacity": 53289
+  },
+  "racing santander": {
+    "stadium": "Campos de Sport de El Sardinero",
+    "city": "Santander",
+    "capacity": 22222
+  },
+  "deportivo": {
+    "stadium": "Estadio Abanca-Riazor",
+    "city": "A Coruña, Galicia",
+    "capacity": 32490
+  },
+  "cagliari": {
+    "stadium": "Unipol Domus",
+    "city": "Cagliari, Cerdeña",
+    "capacity": 16416
+  },
+  "torino": {
+    "stadium": "Stadio Olimpico Grande Torino",
+    "city": "Turín",
+    "capacity": 28177
+  },
+  "parma": {
+    "stadium": "Stadio Ennio Tardini",
+    "city": "Parma",
+    "capacity": 22352
+  },
+  "as roma": {
+    "stadium": "Stadio Olimpico",
+    "city": "Roma",
+    "capacity": 70634
+  },
+  "cesena": {
+    "stadium": "Orogel Stadium-Dino Manuzzi",
+    "city": "Cesena",
+    "capacity": 23860
+  },
+  "juve stabia": {
+    "stadium": "Stadio Romeo Menti",
+    "city": "Castellammare di Stabia, Nápoles",
+    "capacity": 13000
+  },
+  "padova": {
+    "stadium": "Stadio Euganeo",
+    "city": "Padova",
+    "capacity": 18060
+  },
+  "pisa": {
+    "stadium": "Arena Garibaldi - Stadio Romeo Anconetani",
+    "city": "Pisa",
+    "capacity": 25000
+  },
+  "mantova": {
+    "stadium": "Stadio Danilo Martelli",
+    "city": "Mantova",
+    "capacity": 14884
+  },
+  "benevento": {
+    "stadium": "Stadio Ciro Vigorito",
+    "city": "Benevento",
+    "capacity": 16867
+  },
+  "juventus": {
+    "stadium": "Allianz Stadium",
+    "city": "Turín",
+    "capacity": 41507
+  },
+  "inter milan": {
+    "stadium": "Stadio Giuseppe Meazza (San Siro)",
+    "city": "Milán",
+    "capacity": 75923
+  },
+  "ac milan": {
+    "stadium": "Stadio Giuseppe Meazza (San Siro)",
+    "city": "Milán",
+    "capacity": 75923
+  },
+  "napoli": {
+    "stadium": "Stadio Diego Armando Maradona",
+    "city": "Nápoles",
+    "capacity": 54726
+  },
+  "borussia dortmund": {
+    "stadium": "Signal Iduna Park (Westfalenstadion)",
+    "city": "Dortmund",
+    "capacity": 81365
+  },
+  "mainz": {
+    "stadium": "Mewa Arena",
+    "city": "Mainz",
+    "capacity": 33305
+  },
+  "rb leipzig": {
+    "stadium": "Red Bull Arena",
+    "city": "Leipzig",
+    "capacity": 47069
+  },
+  "sc paderborn 07": {
+    "stadium": "Home Deluxe Arena",
+    "city": "Paderborn",
+    "capacity": 15000
+  },
+  "vfb stuttgart": {
+    "stadium": "MHPArena",
+    "city": "Stuttgart",
+    "capacity": 60449
+  },
+  "1. fc nürnberg": {
+    "stadium": "Max-Morlock-Stadion",
+    "city": "Núremberg",
+    "capacity": 50000
+  },
+  "holstein kiel": {
+    "stadium": "Holstein-Stadion",
+    "city": "Kiel",
+    "capacity": 15034
+  },
+  "vfl osnabruck": {
+    "stadium": "Bremer Brücke",
+    "city": "Osnabrück",
+    "capacity": 16100
+  },
+  "hertha berlin": {
+    "stadium": "Olympiastadion Berlin",
+    "city": "Berlín",
+    "capacity": 74475
+  },
+  "bayern munich": {
+    "stadium": "Allianz Arena",
+    "city": "Múnich",
+    "capacity": 75024
+  },
+  "aj auxerre": {
+    "stadium": "Stade de l'Abbé-Deschamps",
+    "city": "Auxerre",
+    "capacity": 18541
+  },
+  "paris saint-germain": {
+    "stadium": "Parc des Princes",
+    "city": "París",
+    "capacity": 47929
+  },
+  "fortuna sittard": {
+    "stadium": "Fortuna Sittard Stadion",
+    "city": "Sittard",
+    "capacity": 12800
+  },
+  "ado den haag": {
+    "stadium": "Bingoal Stadion",
+    "city": "La Haya",
+    "capacity": 15000
+  },
+  "excelsior": {
+    "stadium": "Van Donge & De Roo Stadion",
+    "city": "Róterdam",
+    "capacity": 4500
+  },
+  "kvc westerlo": {
+    "stadium": "Het Kuipje",
+    "city": "Westerlo",
+    "capacity": 8035
+  },
+  "oh leuven": {
+    "stadium": "King Power at Den Dreef Stadion",
+    "city": "Lovaina",
+    "capacity": 10020
+  },
+  "antwerp": {
+    "stadium": "Bosuilstadion",
+    "city": "Amberes",
+    "capacity": 16649
+  },
+  "raal la louvière": {
+    "stadium": "Stade du Tivoli",
+    "city": "La Louvière",
+    "capacity": 12500
+  },
+  "eyupspor": {
+    "stadium": "Recep Tayyip Erdoğan Stadyumu",
+    "city": "Estambul",
+    "capacity": 14232
+  },
+  "samsunspor": {
+    "stadium": "Samsun 19 Mayıs Stadyumu",
+    "city": "Samsun",
+    "capacity": 33919
+  },
+  "galatasaray": {
+    "stadium": "RAMS Park (Ali Sami Yen)",
+    "city": "Estambul",
+    "capacity": 52280
+  },
+  "goztepe": {
+    "stadium": "Gürsel Aksel Stadyumu",
+    "city": "Esmirna",
+    "capacity": 20040
+  },
+  "volos nfc": {
+    "stadium": "Panthessaliko Stadium",
+    "city": "Volos",
+    "capacity": 22700
+  },
+  "aris": {
+    "stadium": "Kleanthis Vikelidis Stadium",
+    "city": "Tesalónica",
+    "capacity": 22800
+  },
+  "atlas": {
+    "stadium": "Estadio Jalisco",
+    "city": "Guadalajara, Jalisco",
+    "capacity": 55110
+  },
+  "tigres uanl": {
+    "stadium": "Estadio Universitario 'El Volcán'",
+    "city": "San Nicolás de los Garza, NL",
+    "capacity": 41615
+  },
+  "toluca": {
+    "stadium": "Estadio Nemesio Díez 'La Bombonera'",
+    "city": "Toluca, Edo. de México",
+    "capacity": 30000
+  },
+  "pumas unam": {
+    "stadium": "Estadio Olímpico Universitario (C.U.)",
+    "city": "Ciudad de México",
+    "capacity": 72000
+  },
+  "américa": {
+    "stadium": "Estadio Ciudad de los Deportes / Azteca",
+    "city": "Ciudad de México",
+    "capacity": 35000
+  },
+  "cruz azul": {
+    "stadium": "Estadio Ciudad de los Deportes",
+    "city": "Ciudad de México",
+    "capacity": 35000
+  },
+  "chivas": {
+    "stadium": "Estadio Akron",
+    "city": "Zapopan, Jalisco",
+    "capacity": 46355
+  },
+  "monterrey": {
+    "stadium": "Estadio BBVA 'El Gigante de Acero'",
+    "city": "Guadalupe, NL",
+    "capacity": 53500
+  },
+  "cf montréal": {
+    "stadium": "Stade Saputo",
+    "city": "Montreal, Canadá",
+    "capacity": 19619
+  },
+  "chicago fire fc": {
+    "stadium": "Soldier Field",
+    "city": "Chicago, Illinois",
+    "capacity": 61500
+  },
+  "d.c. united": {
+    "stadium": "Audi Field",
+    "city": "Washington, D.C.",
+    "capacity": 20000
+  },
+  "fc cincinnati": {
+    "stadium": "TQL Stadium",
+    "city": "Cincinnati, Ohio",
+    "capacity": 26000
+  },
+  "inter miami cf": {
+    "stadium": "Chase Stadium",
+    "city": "Fort Lauderdale, Florida",
+    "capacity": 21550
+  },
+  "orlando city sc": {
+    "stadium": "Inter&Co Stadium",
+    "city": "Orlando, Florida",
+    "capacity": 25500
+  },
+  "philadelphia union": {
+    "stadium": "Subaru Park",
+    "city": "Chester, Pennsylvania",
+    "capacity": 18500
+  },
+  "red bull new york": {
+    "stadium": "Red Bull Arena",
+    "city": "Harrison, New Jersey",
+    "capacity": 25000
+  },
+  "austin fc": {
+    "stadium": "Q2 Stadium",
+    "city": "Austin, Texas",
+    "capacity": 20738
+  },
+  "fc dallas": {
+    "stadium": "Toyota Stadium",
+    "city": "Frisco, Texas",
+    "capacity": 20500
+  },
+  "houston dynamo fc": {
+    "stadium": "Shell Energy Stadium",
+    "city": "Houston, Texas",
+    "capacity": 22039
+  },
+  "minnesota united fc": {
+    "stadium": "Allianz Field",
+    "city": "Saint Paul, Minnesota",
+    "capacity": 19400
+  },
+  "real salt lake": {
+    "stadium": "America First Field",
+    "city": "Sandy, Utah",
+    "capacity": 20213
+  },
+  "san diego fc": {
+    "stadium": "Snapdragon Stadium",
+    "city": "San Diego, California",
+    "capacity": 35000
+  },
+  "seattle sounders fc": {
+    "stadium": "Lumen Field",
+    "city": "Seattle, Washington",
+    "capacity": 37722
+  },
+  "la galaxy": {
+    "stadium": "Dignity Health Sports Park",
+    "city": "Carson, California",
+    "capacity": 27000
+  },
+  "lafc": {
+    "stadium": "BMO Stadium",
+    "city": "Los Ángeles, California",
+    "capacity": 22000
+  },
+  "gimnasia (mendoza)": {
+    "stadium": "Estadio Víctor Antonio Legrotaglie",
+    "city": "Mendoza",
+    "capacity": 14000
+  },
+  "talleres (córdoba)": {
+    "stadium": "Estadio Mario Alberto Kempes",
+    "city": "Córdoba",
+    "capacity": 57000
+  },
+  "argentinos juniors": {
+    "stadium": "Estadio Diego Armando Maradona",
+    "city": "Buenos Aires",
+    "capacity": 26000
+  },
+  "boca juniors": {
+    "stadium": "Estadio Alberto J. Armando 'La Bombonera'",
+    "city": "Buenos Aires",
+    "capacity": 54000
+  },
+  "rosario central": {
+    "stadium": "Estadio Gigante de Arroyito",
+    "city": "Rosario, Santa Fe",
+    "capacity": 41654
+  },
+  "instituto (córdoba)": {
+    "stadium": "Estadio Juan Domingo Perón 'Monumental de Alta Córdoba'",
+    "city": "Córdoba",
+    "capacity": 26000
+  },
+  "river plate": {
+    "stadium": "Estadio Más Monumental",
+    "city": "Buenos Aires",
+    "capacity": 84567
+  },
+  "racing club": {
+    "stadium": "Estadio Presidente Perón 'El Cilindro'",
+    "city": "Avellaneda, Buenos Aires",
+    "capacity": 51000
+  }
+}

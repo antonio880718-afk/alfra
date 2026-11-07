@@ -1,4 +1,4 @@
-﻿import math
+import math
 from typing import Dict, Any, List
 
 def american_to_decimal(american: float) -> float:

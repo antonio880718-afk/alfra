@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR DE ASISTENCIA INTELIGENTE & CHAT INTERACTIVO (ALFRA AI)
 Permite al usuario interactuar desde su celular o cualquier dispositivo,

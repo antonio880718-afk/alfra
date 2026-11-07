@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR DE CREAR APUESTA (SAME GAME PARLAYS - SGP) Y ALINEACIONES OFICIALES
 Genera combinadas de 3 a 4 variables correlacionadas para UN SOLO PARTIDO.

@@ -1,4 +1,4 @@
-﻿import sys
+import sys
 sys.path.append('sports_analyzer')
 from multi_league_engine import fetch_league_games_by_date, LEAGUES_CONFIG
 

@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Motor de Reto Escalera Semanal (Meta: 100k)
 Generador de Selecciones de Altísima Probabilidad (80% - 95%) y Combinadas Cuota 2.00 (Doblar)

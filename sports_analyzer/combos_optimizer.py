@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 OPTIMIZADOR CUANTITATIVO DE COMBINADAS (MÁXIMO 4 VARIABLES PARA DUPLICAR)
 Objetivo matemático estricto:

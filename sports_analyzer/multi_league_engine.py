@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR DE MÚLTIPLES LIGAS Y COPAS INTERNACIONALES (ESPN & OFICIALES)
 Cubre:

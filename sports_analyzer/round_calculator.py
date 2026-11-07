@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Calculador de Probabilidades Matemáticas para la Próxima Jornada
 Analiza cada partido programado de la jornada en Fútbol, NFL, NBA y Béisbol,

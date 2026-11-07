@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR DE FRANJAS HORARIAS CRONOLÓGICAS (HORA CDMX / MÉXICO)
 Cálculo dinámico y empírico 100% individualizado para CADA partido.
@@ -11,7 +11,7 @@ from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Any
 from multi_league_engine import fetch_league_games_by_date, LEAGUES_CONFIG
 from match_data_engineering_engine import get_team_logo
-from referee_and_injuries_engine import get_referee_for_match, compute_card_expectations
+from referee_and_injuries_engine import get_referee_for_match, compute_card_expectations, get_stadium_for_match, get_match_injuries_report
 
 CDMX_TZ = timezone(timedelta(hours=-6)) # Hora Centro de México (UTC-6)
 
@@ -678,6 +678,8 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         "away_stats": pa,
         "referee_data": ref_data,
         "star_player": star_h,
+        "stadium_data": get_stadium_for_match(h),
+        "injuries_data": get_match_injuries_report(h, a),
         "provenance": provenance,
         "math_breakdown": math_breakdown
     }

@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 MOTOR DE NOTICIAS DE ÚLTIMA HORA, LESIONES Y CONSENSO DE ANALISTAS EXPERTOS (V2 - AUDITORÍA TRANSPARENTE)
 Rastrea múltiples fuentes globales en tiempo real y calcula con total trazabilidad:

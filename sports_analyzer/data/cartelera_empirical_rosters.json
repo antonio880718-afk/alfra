@@ -1897,7 +1897,10 @@
     "starters_ready": [
       "Luis Silba",
       "Mauro Valiente",
-      "Tomás González"
+      "Tomás González",
+      "Nahuel Cainelli",
+      "Gonzalo Maffini",
+      "Joaquín Bigo"
     ],
     "out": [],
     "questionable": []
@@ -1907,7 +1910,10 @@
     "starters_ready": [
       "Luis Silveira",
       "Nazareno Solís",
-      "Jeremías Puch"
+      "Jeremías Puch",
+      "Fermín Antonini",
+      "Matías Recalde",
+      "Lautaro Petruchi"
     ],
     "out": [],
     "questionable": []
@@ -1917,7 +1923,10 @@
     "starters_ready": [
       "Sebastián Villa",
       "Victorio Ramis",
-      "Ezequiel Ham"
+      "Ezequiel Ham",
+      "Franco Romero",
+      "Sheyko Studer",
+      "Ezequiel Centurión"
     ],
     "out": [],
     "questionable": []
@@ -1927,7 +1936,10 @@
     "starters_ready": [
       "Damián Puebla",
       "Facundo Suárez",
-      "Gastón Lodico"
+      "Gastón Lodico",
+      "Jonás Acevedo",
+      "Fernando Alarcón",
+      "Manuel Roffo"
     ],
     "out": [],
     "questionable": []
@@ -3555,7 +3567,10 @@
     "starters_ready": [
       "Jimmy Knowles",
       "Kelsey Mooney",
-      "Shaun Whalley"
+      "Shaun Whalley",
+      "Donald Love",
+      "Seamus Conneely",
+      "Michael Kelly"
     ],
     "out": [],
     "questionable": []
@@ -3565,7 +3580,10 @@
     "starters_ready": [
       "Femi Akinwande",
       "Angelo Balanta",
-      "Liam Nash"
+      "Liam Nash",
+      "Tom Wraight",
+      "Ryan Scott",
+      "Mason Terry"
     ],
     "out": [],
     "questionable": []
@@ -3575,7 +3593,10 @@
     "starters_ready": [
       "Nicke Kabamba",
       "Callum Stead",
-      "Harry Chapman"
+      "Harry Chapman",
+      "Anthony Hartigan",
+      "Danny Collinge",
+      "Nick Hayes"
     ],
     "out": [],
     "questionable": []
@@ -3583,9 +3604,12 @@
   "barnsley": {
     "manager": "Darrell Clarke",
     "starters_ready": [
+      "Davis Keillor-Dunn",
       "Stephen Humphrys",
-      "Sam Cosgrove",
-      "Davis Keillor-Dunn"
+      "Adam Phillips",
+      "Luca Connell",
+      "Marc Roberts",
+      "Gabriel Slonina"
     ],
     "out": [],
     "questionable": []
@@ -3594,8 +3618,11 @@
     "manager": "Luke Garrard",
     "starters_ready": [
       "Kwesi Appiah",
-      "Matt Robinson",
-      "Femi Ilesanmi"
+      "Lee Ndlovu",
+      "Erico Sousa",
+      "Jack Payne",
+      "Femi Ilesanmi",
+      "Nathan Ashmore"
     ],
     "out": [],
     "questionable": []
@@ -3605,7 +3632,10 @@
     "starters_ready": [
       "Andy Cook",
       "Calum Kavanagh",
-      "Bobby Pointon"
+      "Bobby Pointon",
+      "Richie Smallwood",
+      "Ciaran Kelly",
+      "Sam Walker"
     ],
     "out": [],
     "questionable": []
@@ -3615,7 +3645,10 @@
     "starters_ready": [
       "Michael Cheek",
       "Corey Whitely",
-      "Cameron Congreve"
+      "Cameron Congreve",
+      "Jude Arthurs",
+      "Byron Webster",
+      "Grant Smith"
     ],
     "out": [],
     "questionable": []
@@ -3625,7 +3658,10 @@
     "starters_ready": [
       "Danilo Orsi",
       "Billy Bodin",
-      "Ben Whitfield"
+      "Tomas Kalinauskas",
+      "Elliot Watt",
+      "Ryan Sweeney",
+      "Max Crocombe"
     ],
     "out": [],
     "questionable": []
@@ -3635,7 +3671,10 @@
     "starters_ready": [
       "Charlie Wyke",
       "Luke Armstrong",
-      "Daniel Adu-Adjei"
+      "Dominic Sadi",
+      "Callum Guy",
+      "Aaron Hayden",
+      "Harry Lewis"
     ],
     "out": [],
     "questionable": []
@@ -3645,7 +3684,10 @@
     "starters_ready": [
       "Ethon Archer",
       "George Miller",
-      "Jordan Thomas"
+      "Joel Colwill",
+      "Luke Young",
+      "Tom Bradbury",
+      "Joe Day"
     ],
     "out": [],
     "questionable": []
@@ -3654,8 +3696,11 @@
     "manager": "Paul Cook",
     "starters_ready": [
       "Will Grigg",
+      "Armando Dobra",
       "James Berry",
-      "Armando Dobra"
+      "Darren Oldaker",
+      "Chey Dunkley",
+      "Ryan Boot"
     ],
     "out": [],
     "questionable": []
@@ -3665,7 +3710,10 @@
     "starters_ready": [
       "Lyle Taylor",
       "Samson Tovide",
-      "Jack Payne"
+      "Owura Edwards",
+      "Arthur Read",
+      "Ellis Iandolo",
+      "Matt Macey"
     ],
     "out": [],
     "questionable": []
@@ -3675,7 +3723,10 @@
     "starters_ready": [
       "Kane Hemmings",
       "Shilow Tracey",
-      "Matus Holicek"
+      "Jack Lankester",
+      "Max Sanders",
+      "Mickey Demetriou",
+      "Filip Marschall"
     ],
     "out": [],
     "questionable": []
@@ -3683,9 +3734,12 @@
   "doncaster rovers": {
     "manager": "Grant McCann",
     "starters_ready": [
-      "Billy Sharp",
       "Luke Molyneux",
-      "Joe Ironside"
+      "Billy Sharp",
+      "Jordan Gibson",
+      "Owen Bailey",
+      "Tom Anderson",
+      "Teddy Sharman-Lowe"
     ],
     "out": [],
     "questionable": []
@@ -3695,7 +3749,10 @@
     "starters_ready": [
       "George Nikaj",
       "Ruben Soares-Junior",
-      "Harrison Pont"
+      "Alfies Matthews",
+      "Luke Baptiste",
+      "Roman Charles-Cook",
+      "Matt Walker"
     ],
     "out": [],
     "questionable": []
@@ -3705,7 +3762,10 @@
     "starters_ready": [
       "Paul McCallum",
       "Chris Maguire",
-      "Scott Quigley"
+      "Scott Quigley",
+      "Solomon Nwabuokei",
+      "Luis Fernandez",
+      "Joe McDonnell"
     ],
     "out": [],
     "questionable": []
@@ -3714,8 +3774,11 @@
     "manager": "Gary Caldwell",
     "starters_ready": [
       "Josh Magennis",
-      "Ilmari Niskanen",
-      "Millenic Alli"
+      "Millenic Alli",
+      "Kami Doyle",
+      "Jack McMillan",
+      "Tristan Crama",
+      "Joe Whitworth"
     ],
     "out": [],
     "questionable": []
@@ -3725,7 +3788,10 @@
     "starters_ready": [
       "Billy Waters",
       "Angelo Cappello",
-      "Florent Hoti"
+      "Florent Hoti",
+      "Kane Thomson-Sommers",
+      "Adam Senior",
+      "Sam Johnson"
     ],
     "out": [],
     "questionable": []
@@ -3733,9 +3799,12 @@
   "fleetwood town": {
     "manager": "Charlie Adam",
     "starters_ready": [
-      "Ryan Graydon",
       "Ronan Coughlan",
-      "Danny Mayor"
+      "Mark Helm",
+      "Phoenix Patterson",
+      "Danny Mayor",
+      "Brendan Wiredu",
+      "David Harrington"
     ],
     "out": [],
     "questionable": []
@@ -3745,7 +3814,10 @@
     "starters_ready": [
       "Christian Doidge",
       "Kyle McAllister",
-      "Teddy Jenks"
+      "Harry Cardwell",
+      "Emmanuel Osadebe",
+      "Ben Tozer",
+      "Jed Ward"
     ],
     "out": [],
     "questionable": []
@@ -3754,8 +3826,11 @@
     "manager": "Mark Bonner",
     "starters_ready": [
       "Jayden Clarke",
-      "Oliver Hawkins",
-      "Elliott Nevitt"
+      "Elliott Nevitt",
+      "Remao Hutton",
+      "Timothée Dieng",
+      "Max Ehmer",
+      "Jake Turner"
     ],
     "out": [],
     "questionable": []
@@ -3765,7 +3840,10 @@
     "starters_ready": [
       "Will Longbottom",
       "Jordan Thewlis",
-      "John Lufudu"
+      "John Lufudu",
+      "Joe Ackroyd",
+      "Jameel Ible",
+      "Joe Cracknell"
     ],
     "out": [],
     "questionable": []
@@ -3774,8 +3852,11 @@
     "manager": "Mitch Austin",
     "starters_ready": [
       "Tendai Daire",
-      "Ben Williams",
-      "Connor Kennedy"
+      "Ben Stephens",
+      "Connor Kennedy",
+      "Alex Morris",
+      "Paul Malone",
+      "Elliott Taylor"
     ],
     "out": [],
     "questionable": []
@@ -3785,7 +3866,10 @@
     "starters_ready": [
       "Ellis Taylor",
       "Stephen Duke-McKenna",
-      "Jack Muldoon"
+      "James Daly",
+      "Stephen Dooley",
+      "Anthony O'Connor",
+      "James Belshaw"
     ],
     "out": [],
     "questionable": []
@@ -3794,8 +3878,11 @@
     "manager": "Michael Duff",
     "starters_ready": [
       "Josh Koroma",
-      "Bojan Radulovic",
-      "Callum Marshall"
+      "Callum Marshall",
+      "Bojan Radulović",
+      "Ben Wiles",
+      "Michal Helik",
+      "Lee Nicholls"
     ],
     "out": [],
     "questionable": []
@@ -3803,9 +3890,12 @@
   "kidderminster harriers": {
     "manager": "Phil Brown",
     "starters_ready": [
-      "Amari Morgan-Smith",
       "Ashley Hemmings",
-      "Maliq Cadogan"
+      "Maliq Cadogan",
+      "Amari Morgan-Smith",
+      "Joe Leesley",
+      "Alex Penny",
+      "Christian Dibble"
     ],
     "out": [],
     "questionable": []
@@ -3813,9 +3903,12 @@
   "leyton orient": {
     "manager": "Richie Wellens",
     "starters_ready": [
-      "Dan Agyei",
       "Charlie Kelman",
-      "Ethan Galbraith"
+      "Dan Agyei",
+      "Ethan Galbraith",
+      "Jordan Graham",
+      "Omar Beckles",
+      "Zach Hemming"
     ],
     "out": [],
     "questionable": []
@@ -3823,9 +3916,12 @@
   "luton town": {
     "manager": "Rob Edwards",
     "starters_ready": [
-      "Carlton Morris",
       "Elijah Adebayo",
-      "Tahith Chong"
+      "Carlton Morris",
+      "Tahith Chong",
+      "Jordan Clark",
+      "Mark McGuinness",
+      "Thomas Kaminski"
     ],
     "out": [],
     "questionable": []
@@ -3833,9 +3929,12 @@
   "macclesfield fc": {
     "manager": "Robbie Savage",
     "starters_ready": [
-      "Paul Dawson",
+      "Danny Elliott",
       "John Rooney",
-      "Neil Kengni"
+      "Paul Dawson",
+      "Neil Kengni",
+      "Laurent Mendy",
+      "Max Dearnley"
     ],
     "out": [],
     "questionable": []
@@ -3843,9 +3942,12 @@
   "mansfield town": {
     "manager": "Nigel Clough",
     "starters_ready": [
-      "Lee Gregory",
       "Will Evans",
-      "Keanu Baccus"
+      "Lee Gregory",
+      "Stephen Quinn",
+      "Keanu Baccus",
+      "Adedeji Oshilaja",
+      "Christy Pym"
     ],
     "out": [],
     "questionable": []
@@ -3854,8 +3956,11 @@
     "manager": "Neil Young",
     "starters_ready": [
       "Finlay Sinclair-Smith",
-      "Solomon Solomon",
-      "Kristian Bell"
+      "Chibueze Babalola",
+      "Harvey Gregson",
+      "James Butler",
+      "Kristian Bell",
+      "Luke Hutchinson"
     ],
     "out": [],
     "questionable": []
@@ -3864,8 +3969,11 @@
     "manager": "Scott Lindsey",
     "starters_ready": [
       "Alex Gilbey",
-      "Joe Tomlinson",
-      "Callum Hendry"
+      "Scott Hogan",
+      "Joe White",
+      "Connor Lemonheigh-Evans",
+      "Laurence Maguire",
+      "Tom McGill"
     ],
     "out": [],
     "questionable": []
@@ -3874,8 +3982,11 @@
     "manager": "Nelson Jardim",
     "starters_ready": [
       "Courtney Baker-Richardson",
-      "Aaron Wildig",
-      "Bobby Kamwa"
+      "Bobby Kamwa",
+      "Kieron Evans",
+      "Bryn Morris",
+      "Matt Baker",
+      "Nick Townsend"
     ],
     "out": [],
     "questionable": []
@@ -3885,7 +3996,10 @@
     "starters_ready": [
       "Cameron McGeehan",
       "Sam Hoskins",
-      "Tyler Roberts"
+      "Tyler Roberts",
+      "Mitch Pinnock",
+      "Jon Guthrie",
+      "Lee Burge"
     ],
     "out": [],
     "questionable": []
@@ -3895,7 +4009,10 @@
     "starters_ready": [
       "Alassana Jatta",
       "David McGoldrick",
-      "Dan Crowley"
+      "Dan Crowley",
+      "Matt Palmer",
+      "Jacob Bedeau",
+      "Alex Bass"
     ],
     "out": [],
     "questionable": []
@@ -3904,8 +4021,11 @@
     "manager": "Des Buckingham",
     "starters_ready": [
       "Mark Harris",
+      "Siriki Dembélé",
       "Tyler Goodrham",
-      "Siriki Dembélé"
+      "Will Vaulks",
+      "Ciaron Brown",
+      "Jamie Cumming"
     ],
     "out": [],
     "questionable": []
@@ -3913,9 +4033,12 @@
   "peterborough united": {
     "manager": "Darren Ferguson",
     "starters_ready": [
+      "Ricky-Jade Jones",
       "Kwame Poku",
       "Malik Mothersille",
-      "Ricky-Jade Jones"
+      "Archie Collins",
+      "Emmanuel Fernandez",
+      "Jed Steer"
     ],
     "out": [],
     "questionable": []
@@ -3923,9 +4046,12 @@
   "plymouth argyle": {
     "manager": "Wayne Rooney",
     "starters_ready": [
-      "Mustapha Bundu",
       "Morgan Whittaker",
-      "Rami Al Hajj"
+      "Mustapha Bundu",
+      "Rami Al Hajj",
+      "Darko Gyabi",
+      "Lewis Gibson",
+      "Daniel Grimshaw"
     ],
     "out": [],
     "questionable": []
@@ -3935,7 +4061,10 @@
     "starters_ready": [
       "Jayden Stockley",
       "Ruari Paton",
-      "Ben Garrity"
+      "Ethan Chislett",
+      "Ben Garrity",
+      "Connor Hall",
+      "Connor Ripley"
     ],
     "out": [],
     "questionable": []
@@ -3945,7 +4074,10 @@
     "starters_ready": [
       "Sam Smith",
       "Kelvin Ehibhatiomhan",
-      "Harvey Knibbs"
+      "Harvey Knibbs",
+      "Lewis Wing",
+      "Amadou Mbengue",
+      "David Button"
     ],
     "out": [],
     "questionable": []
@@ -3955,7 +4087,10 @@
     "starters_ready": [
       "Kairo Mitchell",
       "Devante Rodney",
-      "Ian Henderson"
+      "Tobi Adebayo-Rowling",
+      "Ryan East",
+      "Sam Beckwith",
+      "Luke McNicholas"
     ],
     "out": [],
     "questionable": []
@@ -3964,8 +4099,11 @@
     "manager": "Steve Evans",
     "starters_ready": [
       "Jonson Clarke-Harris",
+      "Mallik Wilks",
       "Sam Nombe",
-      "Mallik Wilks"
+      "Christ Tiehi",
+      "Cameron Humphreys",
+      "Cameron Dawson"
     ],
     "out": [],
     "questionable": []
@@ -3973,9 +4111,12 @@
   "salford city": {
     "manager": "Karl Robinson",
     "starters_ready": [
-      "Kole Hall",
+      "Cole Stockton",
       "Kylian Kouassi",
-      "Hakeeb Adelakun"
+      "Conor McAleny",
+      "Tyrese Fornah",
+      "Curtis Tilt",
+      "Jamie Jones"
     ],
     "out": [],
     "questionable": []
@@ -3985,7 +4126,10 @@
     "starters_ready": [
       "Josh Hedges",
       "Noah Coppin",
-      "Dan Fitchett"
+      "Dan Fitchett",
+      "Callum Watts",
+      "Tom Leggett",
+      "Ryan Gosney"
     ],
     "out": [],
     "questionable": []
@@ -3994,8 +4138,11 @@
     "manager": "Andy Butler",
     "starters_ready": [
       "Danny Whitehall",
-      "Carlton Ubaezuonu",
-      "Callum Roberts"
+      "Callum Roberts",
+      "Alfie Beestin",
+      "Michael Clunan",
+      "Will Evans",
+      "Ross Fitzsimons"
     ],
     "out": [],
     "questionable": []
@@ -4005,17 +4152,23 @@
     "starters_ready": [
       "Dan Mason",
       "Brad Targett",
-      "Lee Wort"
+      "Charlie Davis",
+      "Owen Roundell",
+      "Dan Miller",
+      "Ryan Hall"
     ],
     "out": [],
     "questionable": []
   },
   "shrewsbury town": {
-    "manager": "Gareth Ainsworth",
+    "manager": "Paul Hurst",
     "starters_ready": [
       "John Marquis",
       "George Lloyd",
-      "Tom Bloxham"
+      "Tom Bloxham",
+      "Carl Winchester",
+      "Toto Nsiala",
+      "Toby Savin"
     ],
     "out": [],
     "questionable": []
@@ -4025,7 +4178,10 @@
     "starters_ready": [
       "Jamie Reid",
       "Elliott List",
-      "Dan Kemp"
+      "Dan Kemp",
+      "Louis Thompson",
+      "Carl Piergianni",
+      "Murphy Cooper"
     ],
     "out": [],
     "questionable": []
@@ -4035,7 +4191,10 @@
     "starters_ready": [
       "Will Davies",
       "Ashley Nadesan",
-      "Lewis Simper"
+      "Jayden Harris",
+      "Lewis Simper",
+      "Harry Ransom",
+      "Steve Arnold"
     ],
     "out": [],
     "questionable": []
@@ -4045,7 +4204,10 @@
     "starters_ready": [
       "Harry Smith",
       "Kabongo Tshimanga",
-      "Paul Glatzel"
+      "Paul Glatzel",
+      "Gavin Kilkenny",
+      "Will Wright",
+      "Jack Bycroft"
     ],
     "out": [],
     "questionable": []
@@ -4055,7 +4217,10 @@
     "starters_ready": [
       "Omari Patrick",
       "Kristian Dennis",
-      "Connor Jennings"
+      "Connor Jennings",
+      "Regan Hendry",
+      "Tom Davies",
+      "Luke McGee"
     ],
     "out": [],
     "questionable": []
@@ -4065,7 +4230,10 @@
     "starters_ready": [
       "Nathan Lowe",
       "Jamille Matt",
-      "Taylor Allen"
+      "Taylor Allen",
+      "Ryan Stirk",
+      "David Okagbue",
+      "Tommy Simkin"
     ],
     "out": [],
     "questionable": []
@@ -4073,9 +4241,12 @@
   "wealdstone": {
     "manager": "Matthew Taylor",
     "starters_ready": [
-      "Enzio Boldewijn",
+      "Sean Adarkwa",
       "Micah Obiero",
-      "Sean Adarkwa"
+      "Max Kretzschmar",
+      "Craig Eastmond",
+      "Jack Cook",
+      "Sam Howes"
     ],
     "out": [],
     "questionable": []
@@ -4083,9 +4254,12 @@
   "wigan athletic": {
     "manager": "Shaun Maloney",
     "starters_ready": [
+      "Joe Hugill",
       "Thelo Aasgaard",
-      "Dale Taylor",
-      "Joe Hugill"
+      "Callum McManaman",
+      "Matt Smith",
+      "Jason Kerr",
+      "Sam Tickle"
     ],
     "out": [],
     "questionable": []
@@ -4095,7 +4269,10 @@
     "starters_ready": [
       "Liam Lockett",
       "Kyle Belmonte",
-      "Dylan Hart"
+      "Elliott Hartley",
+      "Calvin Dinsley",
+      "Adam Mace",
+      "Haydn Whitcombe"
     ],
     "out": [],
     "questionable": []
@@ -4105,7 +4282,10 @@
     "starters_ready": [
       "Richard Kone",
       "Garath McCleary",
-      "Cameron Humphreys"
+      "Cameron Humphreys",
+      "Josh Scowen",
+      "Jack Grimmer",
+      "Franco Ravizzoli"
     ],
     "out": [],
     "questionable": []
@@ -4115,7 +4295,10 @@
     "starters_ready": [
       "Brett McGavin",
       "Aaron Jarvis",
-      "Frank Nouble"
+      "Jordan Young",
+      "Charlie Cooper",
+      "Morgan Williams",
+      "Ollie Wright"
     ],
     "out": [],
     "questionable": []
@@ -4124,8 +4307,11 @@
     "manager": "Adam Hinshelwood",
     "starters_ready": [
       "Ollie Pearce",
-      "Dipo Akinyemi",
-      "Ricky Aguiar"
+      "Lenell John-Lewis",
+      "Ashley Nathaniel-George",
+      "Alex Hunt",
+      "Callum Howe",
+      "Harrison Male"
     ],
     "out": [],
     "questionable": []
@@ -4135,7 +4321,10 @@
     "starters_ready": [
       "Kyle Joseph",
       "Ashley Fletcher",
-      "CJ Hamilton"
+      "CJ Hamilton",
+      "Lee Evans",
+      "James Husband",
+      "Harry Tyrer"
     ],
     "out": [],
     "questionable": []
@@ -4145,7 +4334,10 @@
     "starters_ready": [
       "Regan Linney",
       "Justin Amaluzor",
-      "Alex Newby"
+      "Alex Newby",
+      "Elliot Osborne",
+      "Lewis Baines",
+      "Ethan Ross"
     ],
     "out": [],
     "questionable": []
@@ -4153,19 +4345,25 @@
   "alvechurch": {
     "manager": "James Fry",
     "starters_ready": [
-      "Kobe Chong",
-      "Daniele Ricketts",
-      "Tyrone Burton"
+      "Kobe Hall",
+      "Dylan Allen-Hadley",
+      "Amari Miller",
+      "Richard Batchelor",
+      "Daniele Reka",
+      "Dan Jezeph"
     ],
     "out": [],
     "questionable": []
   },
   "afc fylde": {
-    "manager": "Kevin Phillips",
+    "manager": "Chris Beech",
     "starters_ready": [
       "Nick Haughton",
+      "Offrande Zanzala",
       "Charlie Jolley",
-      "Jon Ustabasi"
+      "Owen Evans",
+      "Harry Davis",
+      "Ben Winterbottom"
     ],
     "out": [],
     "questionable": []
@@ -4173,9 +4371,12 @@
   "afc rushden & diamonds": {
     "manager": "Michael Harriman",
     "starters_ready": [
+      "Will Jones",
+      "Charlie Green",
+      "Joel Gyasi",
+      "Ben Heath",
       "Ryan Inman",
-      "Joel Anker",
-      "Tevin Fagan"
+      "George Ball"
     ],
     "out": [],
     "questionable": []
@@ -4183,9 +4384,12 @@
   "afc wimbledon": {
     "manager": "Johnnie Jackson",
     "starters_ready": [
-      "Matty Stevens",
+      "Mathew Stevens",
       "Omar Bugiel",
-      "James Tilley"
+      "James Tilley",
+      "Alistair Smith",
+      "Joe Lewis",
+      "Owen Goodman"
     ],
     "out": [],
     "questionable": []
@@ -4193,9 +4397,12 @@
   "aldershot town": {
     "manager": "Tommy Widdrington",
     "starters_ready": [
+      "Hady Ghandour",
       "James Henry",
       "Jack Barham",
-      "Hady Ghandour"
+      "Theo Widdrington",
+      "Christian Maghoma",
+      "Marcus Dewhurst"
     ],
     "out": [],
     "questionable": []
@@ -4205,7 +4412,10 @@
     "starters_ready": [
       "Gerard Garner",
       "Kian Spence",
-      "Elliot Newby"
+      "Elliot Newby",
+      "Dean Campbell",
+      "Theo Vassell",
+      "Paul Farman"
     ],
     "out": [],
     "questionable": []

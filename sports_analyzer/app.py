@@ -429,6 +429,42 @@ with t_slots:
                 </div>
                 """)
 
+            # Panel 1.4: Estadio Oficial y Plantillas Confirmadas del Partido
+            stad_s = sgp.get("stadium_data", {})
+            inj_s = sgp.get("injuries_data", {})
+            if stad_s or inj_s:
+                render_html(f"""
+                <div style="background-color: #0b132b; border: 1px solid #1e3a8a; border-radius: 8px; padding: 10px 16px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <span style="color: #38bdf8; font-weight: bold; font-size: 0.92rem;">🏟️ Estadio Oficial: {stad_s.get('stadium', 'Estadio Oficial')}</span>
+                        <span style="color: #94a3b8; font-size: 0.82rem; margin-left: 6px;">({stad_s.get('city', 'Sede Oficial')})</span>
+                        <span style="color: #cbd5e1; font-size: 0.82rem; margin-left: 8px;">• Aforo: <b>{stad_s.get('capacity', 0):,}</b> espectadores</span>
+                    </div>
+                    <div>
+                        <span style="color: #a78bfa; font-size: 0.82rem;">👨‍💼 <b>DTs:</b> {inj_s.get('home_manager', 'Cuerpo Técnico')} vs {inj_s.get('away_manager', 'Cuerpo Técnico')}</span>
+                    </div>
+                </div>
+                """)
+
+                with st.expander(f"🏥 Plantilla Oficial, Bajas y Titulares Confirmados ({m_chosen['home']} vs {m_chosen['away']})", expanded=False):
+                    c_h, c_a = st.columns(2)
+                    with c_h:
+                        st.markdown(f"**🟢 Titulares Confirmados {m_chosen['home']}:** {', '.join(inj_s.get('home_starters_ready', [])[:6])}")
+                        h_bajas = inj_s.get("home_out", [])
+                        if h_bajas:
+                            for b in h_bajas:
+                                st.markdown(f"- 🔴 **{b['player']}** ({b['pos']}): *{b['type']}* — {b['desc']}")
+                        else:
+                            st.markdown("🟢 Sin bajas médicas de consideración.")
+                    with c_a:
+                        st.markdown(f"**🟢 Titulares Confirmados {m_chosen['away']}:** {', '.join(inj_s.get('away_starters_ready', [])[:6])}")
+                        a_bajas = inj_s.get("away_out", [])
+                        if a_bajas:
+                            for b in a_bajas:
+                                st.markdown(f"- 🔴 **{b['player']}** ({b['pos']}): *{b['type']}* — {b['desc']}")
+                        else:
+                            st.markdown("🟢 Sin bajas médicas de consideración.")
+
             # 1.5 Panel Desplegable de Trazabilidad de Datos & Justificación Matemática
             prov = sgp.get("provenance", {})
             mb = sgp.get("math_breakdown", {})
@@ -634,6 +670,22 @@ with t_sgp:
     # PANEL 2: REPORTE MÉDICO OFICIAL DE BAJAS, LESIONADOS Y DUDAS
     # -------------------------------------------------------------
     with st.expander(f"🏥 Reporte Oficial de Plantilla: Bajas, Lesionados y Titulares Confirmados ({h} vs {a})", expanded=True):
+        stad_info = inj.get("stadium_info", {})
+        ref_info = inj.get("referee_info", {})
+        
+        render_html(f"""
+        <div style="background-color: #0d1527; border: 1px solid #1e3a8a; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <div>
+                <span style="color: #38bdf8; font-weight: bold; font-size: 0.95rem;">🏟️ Sede Oficial: {stad_info.get('stadium', 'Estadio Oficial')}</span>
+                <span style="color: #94a3b8; font-size: 0.84rem; margin-left: 6px;">({stad_info.get('city', 'Sede')})</span>
+            </div>
+            <div>
+                <span style="background-color: #1e293b; color: #facc15; font-size: 0.8rem; padding: 3px 8px; border-radius: 4px; font-weight: bold;">👥 Aforo: {stad_info.get('capacity', 0):,} espectadores</span>
+                <span style="background-color: #3b0764; color: #d8b4fe; font-size: 0.8rem; padding: 3px 8px; border-radius: 4px; font-weight: bold; margin-left: 6px;">⚖️ Árbitro: {ref_info.get('name', 'Colegiado Oficial')}</span>
+            </div>
+        </div>
+        """)
+
         col_inj_h, col_inj_a = st.columns(2)
         
         with col_inj_h:
