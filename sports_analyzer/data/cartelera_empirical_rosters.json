@@ -1,0 +1,6333 @@
+{
+  "fulham": {
+    "manager": "Álvaro Arbeloa",
+    "starters_ready": [
+      "Raúl Jiménez",
+      "Rodrigo Muniz",
+      "Alex Iwobi",
+      "Adama Traoré",
+      "Emile Smith Rowe",
+      "Andreas Pereira",
+      "Antonee Robinson",
+      "Bernd Leno"
+    ],
+    "out": [
+      {
+        "player": "Tom Cairney",
+        "pos": "Centrocampista",
+        "type": "🚑 Lesionado Rodilla",
+        "desc": "Baja médica oficial por lesión en la articulación de la rodilla."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Kenny Tete",
+        "pos": "Defensa",
+        "type": "⚠️ Sobrecarga Muscular",
+        "desc": "En duda para el lateral derecho."
+      }
+    ]
+  },
+  "newcastle united": {
+    "manager": "Matthias Jaissle",
+    "starters_ready": [
+      "Yoane Wissa",
+      "Anthony Elanga",
+      "Harvey Barnes",
+      "Bruno Guimarães",
+      "Sandro Tonali",
+      "Jacob Murphy",
+      "Fabian Schär",
+      "Nick Pope"
+    ],
+    "out": [
+      {
+        "player": "Jacob Ramsey",
+        "pos": "Centrocampista",
+        "type": "🟥 Tarjeta roja (2.ª am.)",
+        "desc": "Suspensión oficial por doble amonestación en la jornada anterior."
+      },
+      {
+        "player": "Ewen Jaouen",
+        "pos": "Portero",
+        "type": "🚑 Lesionado Isquiotibiales",
+        "desc": "Baja médica en fase de readaptación muscular."
+      },
+      {
+        "player": "Joelinton",
+        "pos": "Centrocampista",
+        "type": "🚑 Lesionado Golpe",
+        "desc": "Baja confirmada por fuerte traumatismo en el último partido."
+      },
+      {
+        "player": "Tino Livramento",
+        "pos": "Defensa",
+        "type": "🚑 Lesionado Golpe",
+        "desc": "Fuera de convocatoria por contusión física."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Lewis Miley",
+        "pos": "Centrocampista",
+        "type": "⚠️ Fatiga Muscular",
+        "desc": "Prueba física previa al encuentro."
+      }
+    ]
+  },
+  "newcastle": {
+    "manager": "Matthias Jaissle",
+    "starters_ready": [
+      "Yoane Wissa",
+      "Anthony Elanga",
+      "Harvey Barnes",
+      "Bruno Guimarães",
+      "Sandro Tonali",
+      "Jacob Murphy",
+      "Fabian Schär",
+      "Nick Pope"
+    ],
+    "out": [
+      {
+        "player": "Jacob Ramsey",
+        "pos": "Centrocampista",
+        "type": "🟥 Tarjeta roja (2.ª am.)",
+        "desc": "Suspensión oficial por doble amonestación en la jornada anterior."
+      },
+      {
+        "player": "Ewen Jaouen",
+        "pos": "Portero",
+        "type": "🚑 Lesionado Isquiotibiales",
+        "desc": "Baja médica en fase de readaptación muscular."
+      },
+      {
+        "player": "Joelinton",
+        "pos": "Centrocampista",
+        "type": "🚑 Lesionado Golpe",
+        "desc": "Baja confirmada por fuerte traumatismo en el último partido."
+      },
+      {
+        "player": "Tino Livramento",
+        "pos": "Defensa",
+        "type": "🚑 Lesionado Golpe",
+        "desc": "Fuera de convocatoria por contusión física."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Lewis Miley",
+        "pos": "Centrocampista",
+        "type": "⚠️ Fatiga Muscular",
+        "desc": "Prueba física previa al encuentro."
+      }
+    ]
+  },
+  "arsenal": {
+    "manager": "Mikel Arteta",
+    "starters_ready": [
+      "Bukayo Saka",
+      "Kai Havertz",
+      "Martin Ødegaard",
+      "Declan Rice",
+      "William Saliba",
+      "David Raya"
+    ],
+    "out": [
+      {
+        "player": "Gabriel Jesus",
+        "pos": "Delantero",
+        "type": "🚑 Lesión Muscular",
+        "desc": "Rehabilitación en gemelo."
+      },
+      {
+        "player": "Jurriën Timber",
+        "pos": "Defensa",
+        "type": "🚑 Molestia de Tobillo",
+        "desc": "Fuera por precaución médica."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Takehiro Tomiyasu",
+        "pos": "Defensa",
+        "type": "⚠️ Duda Física",
+        "desc": "Evaluación médica previa."
+      }
+    ]
+  },
+  "hull city": {
+    "manager": "Tim Walter",
+    "starters_ready": [
+      "Chris Bedia",
+      "João Pedro",
+      "Mohamed Belloumi",
+      "Regan Slater",
+      "Ivor Pandur"
+    ],
+    "out": [
+      {
+        "player": "Liam Millar",
+        "pos": "Extremo",
+        "type": "🚑 Ligamento Cruzado Anterior",
+        "desc": "Baja de larga duración en recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "hull": {
+    "manager": "Tim Walter",
+    "starters_ready": [
+      "Chris Bedia",
+      "João Pedro",
+      "Mohamed Belloumi",
+      "Regan Slater",
+      "Ivor Pandur"
+    ],
+    "out": [
+      {
+        "player": "Liam Millar",
+        "pos": "Extremo",
+        "type": "🚑 Ligamento Cruzado Anterior",
+        "desc": "Baja de larga duración en recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "leeds united": {
+    "manager": "Daniel Farke",
+    "starters_ready": [
+      "Dominic Calvert-Lewin",
+      "Daniel James",
+      "Lukas Nmecha",
+      "Ethan Ampadu",
+      "Illan Meslier"
+    ],
+    "out": [
+      {
+        "player": "Mateo Joseph",
+        "pos": "Delantero",
+        "type": "🚑 Lesión de Rodilla",
+        "desc": "Rehabilitación ligamentaria."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Joe Rodon",
+        "pos": "Defensa",
+        "type": "⚠️ Sobrecarga Muscular",
+        "desc": "Duda física."
+      }
+    ]
+  },
+  "leeds": {
+    "manager": "Daniel Farke",
+    "starters_ready": [
+      "Dominic Calvert-Lewin",
+      "Daniel James",
+      "Lukas Nmecha",
+      "Ethan Ampadu",
+      "Illan Meslier"
+    ],
+    "out": [
+      {
+        "player": "Mateo Joseph",
+        "pos": "Delantero",
+        "type": "🚑 Lesión de Rodilla",
+        "desc": "Rehabilitación ligamentaria."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Joe Rodon",
+        "pos": "Defensa",
+        "type": "⚠️ Sobrecarga Muscular",
+        "desc": "Duda física."
+      }
+    ]
+  },
+  "tottenham hotspur": {
+    "manager": "Ange Postecoglou",
+    "starters_ready": [
+      "Son Heung-min",
+      "Dominic Solanke",
+      "Dejan Kulusevski",
+      "James Maddison",
+      "Guglielmo Vicario"
+    ],
+    "out": [
+      {
+        "player": "Richarlison",
+        "pos": "Delantero",
+        "type": "🚑 Lesión de Isquiotibiales",
+        "desc": "Rehabilitación médica."
+      },
+      {
+        "player": "Wilson Odobert",
+        "pos": "Extremo",
+        "type": "🚑 Lesión Muscular",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Cristian Romero",
+        "pos": "Defensa",
+        "type": "⚠️ Molestia de Tobillo",
+        "desc": "En evaluación matutina."
+      }
+    ]
+  },
+  "tottenham": {
+    "manager": "Ange Postecoglou",
+    "starters_ready": [
+      "Son Heung-min",
+      "Dominic Solanke",
+      "Dejan Kulusevski",
+      "James Maddison",
+      "Guglielmo Vicario"
+    ],
+    "out": [
+      {
+        "player": "Richarlison",
+        "pos": "Delantero",
+        "type": "🚑 Lesión de Isquiotibiales",
+        "desc": "Rehabilitación médica."
+      },
+      {
+        "player": "Wilson Odobert",
+        "pos": "Extremo",
+        "type": "🚑 Lesión Muscular",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Cristian Romero",
+        "pos": "Defensa",
+        "type": "⚠️ Molestia de Tobillo",
+        "desc": "En evaluación matutina."
+      }
+    ]
+  },
+  "manchester city": {
+    "manager": "Pep Guardiola",
+    "starters_ready": [
+      "Erling Haaland",
+      "Phil Foden",
+      "Bernardo Silva",
+      "Rúben Dias",
+      "Ederson"
+    ],
+    "out": [
+      {
+        "player": "Rodri",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica posquirúrgica."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Kevin De Bruyne",
+        "pos": "Centrocampista",
+        "type": "⚠️ Gestión de Cargas",
+        "desc": "Probable rotación táctica."
+      }
+    ]
+  },
+  "man city": {
+    "manager": "Pep Guardiola",
+    "starters_ready": [
+      "Erling Haaland",
+      "Phil Foden",
+      "Bernardo Silva",
+      "Rúben Dias",
+      "Ederson"
+    ],
+    "out": [
+      {
+        "player": "Rodri",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica posquirúrgica."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Kevin De Bruyne",
+        "pos": "Centrocampista",
+        "type": "⚠️ Gestión de Cargas",
+        "desc": "Probable rotación táctica."
+      }
+    ]
+  },
+  "nottingham forest": {
+    "manager": "Nuno Espírito Santo",
+    "starters_ready": [
+      "Chris Wood",
+      "Callum Hudson-Odoi",
+      "Morgan Gibbs-White",
+      "Murillo",
+      "Matz Sels"
+    ],
+    "out": [
+      {
+        "player": "Danilo",
+        "pos": "Centrocampista",
+        "type": "🚑 Lesión de Tobillo",
+        "desc": "Baja en recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "real madrid": {
+    "manager": "Carlo Ancelotti",
+    "starters_ready": [
+      "Vinícius Júnior",
+      "Kylian Mbappé",
+      "Jude Bellingham",
+      "Federico Valverde",
+      "Thibaut Courtois"
+    ],
+    "out": [
+      {
+        "player": "David Alaba",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Rehabilitación física."
+      },
+      {
+        "player": "Dani Carvajal",
+        "pos": "Defensa",
+        "type": "🚑 Rotura de Ligamento",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "valencia": {
+    "manager": "Rubén Baraja",
+    "starters_ready": [
+      "Diego López",
+      "Hugo Duro",
+      "Javi Guerra",
+      "Pepelu",
+      "Giorgi Mamardashvili"
+    ],
+    "out": [
+      {
+        "player": "Mouctar Diakhaby",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Rehabilitación en curso."
+      },
+      {
+        "player": "Rafa Mir",
+        "pos": "Delantero",
+        "type": "🚑 Molestia Muscular",
+        "desc": "Fuera de convocatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "athletic club": {
+    "manager": "Ernesto Valverde",
+    "starters_ready": [
+      "Iñaki Williams",
+      "Nico Williams",
+      "Gorka Guruzeta",
+      "Oihan Sancet",
+      "Julen Agirrezabala"
+    ],
+    "out": [
+      {
+        "player": "Unai Simón",
+        "pos": "Portero",
+        "type": "🚑 Muñeca",
+        "desc": "En fase final de recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "osasuna": {
+    "manager": "Vicente Moreno",
+    "starters_ready": [
+      "Ante Budimir",
+      "Bryan Zaragoza",
+      "Rubén García",
+      "Moi Gómez",
+      "Sergio Herrera"
+    ],
+    "out": [
+      {
+        "player": "Kike Barja",
+        "pos": "Extremo",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "espanyol": {
+    "manager": "Manolo González",
+    "starters_ready": [
+      "Javi Puado",
+      "Roberto Fernández",
+      "Alejo Véliz",
+      "Jofre Carreras",
+      "Álvaro Tejero",
+      "Joan García"
+    ],
+    "out": [
+      {
+        "player": "Edu Expósito",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "málaga": {
+    "manager": "Sergio Pellicer",
+    "starters_ready": [
+      "Eneko Jauregi",
+      "Julen Lobete",
+      "Adrián Niño",
+      "David Larrubia",
+      "Kevin Medina",
+      "Alfonso Herrero"
+    ],
+    "out": [
+      {
+        "player": "Haitam Abaida",
+        "pos": "Extremo",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "malaga": {
+    "manager": "Sergio Pellicer",
+    "starters_ready": [
+      "Eneko Jauregi",
+      "Julen Lobete",
+      "Adrián Niño",
+      "David Larrubia",
+      "Kevin Medina",
+      "Alfonso Herrero"
+    ],
+    "out": [
+      {
+        "player": "Haitam Abaida",
+        "pos": "Extremo",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "racing santander": {
+    "manager": "José Alberto López",
+    "starters_ready": [
+      "Juan Carlos Arana",
+      "Andrés Martín",
+      "Íñigo Vicente",
+      "Unai Vencedor",
+      "Jokin Ezkieta"
+    ],
+    "out": [
+      {
+        "player": "Álvaro Mantilla",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "deportivo": {
+    "manager": "Antonio Hidalgo",
+    "starters_ready": [
+      "Zakaria Eddahchouri",
+      "Lucas Pérez",
+      "Yeremay Hernández",
+      "David Mella",
+      "Diego Villares",
+      "Germán Parreño"
+    ],
+    "out": [
+      {
+        "player": "Sergio Escudero",
+        "pos": "Defensa",
+        "type": "🚑 Codo",
+        "desc": "En recuperación posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "bayern munich": {
+    "manager": "Vincent Kompany",
+    "starters_ready": [
+      "Harry Kane",
+      "Jamal Musiala",
+      "Michael Olise",
+      "Joshua Kimmich",
+      "Manuel Neuer"
+    ],
+    "out": [
+      {
+        "player": "Hiroki Ito",
+        "pos": "Defensa",
+        "type": "🚑 Metatarso",
+        "desc": "Baja médica."
+      },
+      {
+        "player": "Sacha Boey",
+        "pos": "Defensa",
+        "type": "🚑 Menisco",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "borussia dortmund": {
+    "manager": "Nuri Şahin",
+    "starters_ready": [
+      "Serhou Guirassy",
+      "Julian Brandt",
+      "Marcel Sabitzer",
+      "Nico Schlotterbeck",
+      "Gregor Kobel"
+    ],
+    "out": [
+      {
+        "player": "Karim Adeyemi",
+        "pos": "Extremo",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja confirmada."
+      },
+      {
+        "player": "Yan Couto",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Fuera por lesión."
+      }
+    ],
+    "questionable": []
+  },
+  "eintracht frankfurt": {
+    "manager": "Dino Toppmöller",
+    "starters_ready": [
+      "Omar Marmoush",
+      "Hugo Ekitiké",
+      "Mario Götze",
+      "Ellyes Skhiri",
+      "Kevin Trapp"
+    ],
+    "out": [
+      {
+        "player": "Oscar Højlund",
+        "pos": "Centrocampista",
+        "type": "🚑 Metatarso",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "mainz": {
+    "manager": "Bo Henriksen",
+    "starters_ready": [
+      "Jonathan Burkardt",
+      "Paul Nebel",
+      "Nadiem Amiri",
+      "Jae-sung Lee",
+      "Robin Zentner"
+    ],
+    "out": [
+      {
+        "player": "Andreas Hanche-Olsen",
+        "pos": "Defensa",
+        "type": "🚑 Dedo del Pie",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "rb leipzig": {
+    "manager": "Marco Rose",
+    "starters_ready": [
+      "Loïs Openda",
+      "Benjamin Šeško",
+      "Xavi Simons",
+      "Willi Orbán",
+      "Péter Gulácsi"
+    ],
+    "out": [
+      {
+        "player": "Xaver Schlager",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Rehabilitación."
+      },
+      {
+        "player": "David Raum",
+        "pos": "Defensa",
+        "type": "🚑 Tobillo",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "vfb stuttgart": {
+    "manager": "Sebastian Hoeneß",
+    "starters_ready": [
+      "Deniz Undav",
+      "Ermedin Demirović",
+      "Enzo Millot",
+      "Angelo Stiller",
+      "Alexander Nübel"
+    ],
+    "out": [
+      {
+        "player": "Dan-Axel Zagadou",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "werder bremen": {
+    "manager": "Ole Werner",
+    "starters_ready": [
+      "Marvin Ducksch",
+      "Keke Topp",
+      "Mitchell Weiser",
+      "Jens Stage",
+      "Michael Zetterer"
+    ],
+    "out": [
+      {
+        "player": "Marco Friedl",
+        "pos": "Defensa",
+        "type": "🚑 Sobrecarga",
+        "desc": "Duda médica."
+      }
+    ],
+    "questionable": []
+  },
+  "fc augsburg": {
+    "manager": "Jess Thorup",
+    "starters_ready": [
+      "Samuel Essende",
+      "Phillip Tietz",
+      "Elvis Rexhbecaj",
+      "Nediljko Labrović"
+    ],
+    "out": [
+      {
+        "player": "Robert Gumny",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "sv elversberg": {
+    "manager": "Horst Steffen",
+    "starters_ready": [
+      "Fisnik Asllani",
+      "Luca Schnellbacher",
+      "Muhammed Damar",
+      "Nicolas Kristof"
+    ],
+    "out": [
+      {
+        "player": "Florian Le Joncour",
+        "pos": "Defensa",
+        "type": "🚑 Luxación de Codo",
+        "desc": "Baja posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "elversberg": {
+    "manager": "Horst Steffen",
+    "starters_ready": [
+      "Fisnik Asllani",
+      "Luca Schnellbacher",
+      "Muhammed Damar",
+      "Nicolas Kristof"
+    ],
+    "out": [
+      {
+        "player": "Florian Le Joncour",
+        "pos": "Defensa",
+        "type": "🚑 Luxación de Codo",
+        "desc": "Baja posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "sc paderborn 07": {
+    "manager": "Lukas Kwasniok",
+    "starters_ready": [
+      "Adriano Grimaldi",
+      "Filip Bilbija",
+      "Raphael Obermair",
+      "Pelle Boevink"
+    ],
+    "out": [
+      {
+        "player": "Mattes Hansen",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "paderborn": {
+    "manager": "Lukas Kwasniok",
+    "starters_ready": [
+      "Adriano Grimaldi",
+      "Filip Bilbija",
+      "Raphael Obermair",
+      "Pelle Boevink"
+    ],
+    "out": [
+      {
+        "player": "Mattes Hansen",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "1. fc nürnberg": {
+    "manager": "Miroslav Klose",
+    "starters_ready": [
+      "Sigurd Haugen",
+      "Rayan Ghrieb",
+      "Julian Justvan",
+      "Jens Castrop",
+      "Robin Knoche",
+      "Jan Reichert"
+    ],
+    "out": [
+      {
+        "player": "Tim Handwerker",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Fase final de rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "nürnberg": {
+    "manager": "Miroslav Klose",
+    "starters_ready": [
+      "Sigurd Haugen",
+      "Rayan Ghrieb",
+      "Julian Justvan",
+      "Jens Castrop",
+      "Robin Knoche",
+      "Jan Reichert"
+    ],
+    "out": [
+      {
+        "player": "Tim Handwerker",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Fase final de rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "nurnberg": {
+    "manager": "Miroslav Klose",
+    "starters_ready": [
+      "Sigurd Haugen",
+      "Rayan Ghrieb",
+      "Julian Justvan",
+      "Jens Castrop",
+      "Robin Knoche",
+      "Jan Reichert"
+    ],
+    "out": [
+      {
+        "player": "Tim Handwerker",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Fase final de rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "sv darmstadt 98": {
+    "manager": "Florian Kohfeldt",
+    "starters_ready": [
+      "Fynn Lakenmacher",
+      "Isac Lidberg",
+      "Fraser Hornby",
+      "Tobias Kempe",
+      "Marcel Schuhen"
+    ],
+    "out": [
+      {
+        "player": "Fabian Holland",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      },
+      {
+        "player": "Paul Will",
+        "pos": "Centrocampista",
+        "type": "🚑 Rotura de Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "darmstadt": {
+    "manager": "Florian Kohfeldt",
+    "starters_ready": [
+      "Fynn Lakenmacher",
+      "Isac Lidberg",
+      "Fraser Hornby",
+      "Tobias Kempe",
+      "Marcel Schuhen"
+    ],
+    "out": [
+      {
+        "player": "Fabian Holland",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      },
+      {
+        "player": "Paul Will",
+        "pos": "Centrocampista",
+        "type": "🚑 Rotura de Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "hertha berlin": {
+    "manager": "Cristian Fiél",
+    "starters_ready": [
+      "Florian Niederlechner",
+      "Derry Scherhant",
+      "Michaël Cuisance",
+      "Tjark Ernst"
+    ],
+    "out": [
+      {
+        "player": "Fabian Reese",
+        "pos": "Extremo",
+        "type": "🚑 Tobillo",
+        "desc": "Rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "hertha": {
+    "manager": "Cristian Fiél",
+    "starters_ready": [
+      "Florian Niederlechner",
+      "Derry Scherhant",
+      "Michaël Cuisance",
+      "Tjark Ernst"
+    ],
+    "out": [
+      {
+        "player": "Fabian Reese",
+        "pos": "Extremo",
+        "type": "🚑 Tobillo",
+        "desc": "Rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "holstein kiel": {
+    "manager": "Marcel Rapp",
+    "starters_ready": [
+      "Shuto Machino",
+      "Benedikt Pichler",
+      "Steven Skrzybski",
+      "Timon Weiner"
+    ],
+    "out": [
+      {
+        "player": "Colin Kleine-Bekel",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "arminia bielefeld": {
+    "manager": "Mitch Kniat",
+    "starters_ready": [
+      "André Becker",
+      "Merveille Biankadi",
+      "Kaito Mizuta",
+      "Jonas Kersken"
+    ],
+    "out": [
+      {
+        "player": "Jeredy Hilterman",
+        "pos": "Delantero",
+        "type": "🚑 Pie",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "bielefeld": {
+    "manager": "Mitch Kniat",
+    "starters_ready": [
+      "André Becker",
+      "Merveille Biankadi",
+      "Kaito Mizuta",
+      "Jonas Kersken"
+    ],
+    "out": [
+      {
+        "player": "Jeredy Hilterman",
+        "pos": "Delantero",
+        "type": "🚑 Pie",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "kaiserslautern": {
+    "manager": "Markus Anfang",
+    "starters_ready": [
+      "Ragnar Ache",
+      "Richmond Tachie",
+      "Marlon Ritter",
+      "Julian Krahl"
+    ],
+    "out": [
+      {
+        "player": "Hendrick Zuck",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "vfl osnabruck": {
+    "manager": "Pit Reimers",
+    "starters_ready": [
+      "Ba-Muaka Simakala",
+      "Erik Engelhardt",
+      "Dave Gnaase",
+      "David Richter"
+    ],
+    "out": [
+      {
+        "player": "Timo Beermann",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "osnabruck": {
+    "manager": "Pit Reimers",
+    "starters_ready": [
+      "Ba-Muaka Simakala",
+      "Erik Engelhardt",
+      "Dave Gnaase",
+      "David Richter"
+    ],
+    "out": [
+      {
+        "player": "Timo Beermann",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "vfl wolfsburg": {
+    "manager": "Ralph Hasenhüttl",
+    "starters_ready": [
+      "Mohamed Amoura",
+      "Jonas Wind",
+      "Tiago Tomás",
+      "Maximilian Arnold",
+      "Kamil Grabara"
+    ],
+    "out": [
+      {
+        "player": "Lovro Majer",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "wolfsburg": {
+    "manager": "Ralph Hasenhüttl",
+    "starters_ready": [
+      "Mohamed Amoura",
+      "Jonas Wind",
+      "Tiago Tomás",
+      "Maximilian Arnold",
+      "Kamil Grabara"
+    ],
+    "out": [
+      {
+        "player": "Lovro Majer",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "as roma": {
+    "manager": "Ivan Jurić",
+    "starters_ready": [
+      "Artem Dovbyk",
+      "Paulo Dybala",
+      "Lorenzo Pellegrini",
+      "Bryan Cristante",
+      "Mile Svilar"
+    ],
+    "out": [
+      {
+        "player": "Alexis Saelemaekers",
+        "pos": "Extremo",
+        "type": "🚑 Fractura de Tobillo",
+        "desc": "Rehabilitación en curso."
+      }
+    ],
+    "questionable": []
+  },
+  "roma": {
+    "manager": "Ivan Jurić",
+    "starters_ready": [
+      "Artem Dovbyk",
+      "Paulo Dybala",
+      "Lorenzo Pellegrini",
+      "Bryan Cristante",
+      "Mile Svilar"
+    ],
+    "out": [
+      {
+        "player": "Alexis Saelemaekers",
+        "pos": "Extremo",
+        "type": "🚑 Fractura de Tobillo",
+        "desc": "Rehabilitación en curso."
+      }
+    ],
+    "questionable": []
+  },
+  "bologna": {
+    "manager": "Vincenzo Italiano",
+    "starters_ready": [
+      "Santiago Castro",
+      "Riccardo Orsolini",
+      "Jens Odgaard",
+      "Dan Ndoye",
+      "Łukasz Skorupski"
+    ],
+    "out": [
+      {
+        "player": "Lewis Ferguson",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja en fase de readaptación."
+      }
+    ],
+    "questionable": []
+  },
+  "cagliari": {
+    "manager": "Davide Nicola",
+    "starters_ready": [
+      "Zito Luvumbo",
+      "Roberto Piccoli",
+      "Gianluca Gaetano",
+      "Răzvan Marin",
+      "Simone Scuffet"
+    ],
+    "out": [
+      {
+        "player": "Jakub Jankto",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "frosinone": {
+    "manager": "Vincenzo Vivarini",
+    "starters_ready": [
+      "Giuseppe Ambrosino",
+      "Anthony Partipilo",
+      "Francesco Gelli",
+      "Michele Cerofolini"
+    ],
+    "out": [
+      {
+        "player": "Giorgio Cittadini",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "lecce": {
+    "manager": "Luca Gotti",
+    "starters_ready": [
+      "Nikola Krstović",
+      "Ante Rebić",
+      "Lameck Banda",
+      "Ylber Ramadani",
+      "Wladimiro Falcone"
+    ],
+    "out": [
+      {
+        "player": "Medon Berisha",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "parma": {
+    "manager": "Fabio Pecchia",
+    "starters_ready": [
+      "Ange-Yoan Bonny",
+      "Dennis Man",
+      "Valentin Mihăilă",
+      "Adrián Bernabé",
+      "Zion Suzuki"
+    ],
+    "out": [
+      {
+        "player": "Adrian Benedyczak",
+        "pos": "Delantero",
+        "type": "🚑 Tobillo",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "sassuolo": {
+    "manager": "Fabio Grosso",
+    "starters_ready": [
+      "Armand Laurienté",
+      "Samuele Mulattieri",
+      "Kristian Thorstvedt",
+      "Giacomo Satalino"
+    ],
+    "out": [
+      {
+        "player": "Domenico Berardi",
+        "pos": "Extremo",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Reincorporación progresiva."
+      }
+    ],
+    "questionable": []
+  },
+  "torino": {
+    "manager": "Paolo Vanoli",
+    "starters_ready": [
+      "Antonio Sanabria",
+      "Ché Adams",
+      "Samuele Ricci",
+      "Valentino Lazaro",
+      "Vanja Milinković-Savić"
+    ],
+    "out": [
+      {
+        "player": "Duván Zapata",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      },
+      {
+        "player": "Perr Schuurs",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "En rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "paris saint-germain": {
+    "manager": "Luis Enrique",
+    "starters_ready": [
+      "Ousmane Dembélé",
+      "Bradley Barcola",
+      "Marco Asensio",
+      "Vitinha",
+      "Achraf Hakimi",
+      "Gianluigi Donnarumma"
+    ],
+    "out": [
+      {
+        "player": "Gonçalo Ramos",
+        "pos": "Delantero",
+        "type": "🚑 Tobillo",
+        "desc": "Recuperación posquirúrgica."
+      },
+      {
+        "player": "Presnel Kimpembe",
+        "pos": "Defensa",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Readaptación física."
+      }
+    ],
+    "questionable": []
+  },
+  "psg": {
+    "manager": "Luis Enrique",
+    "starters_ready": [
+      "Ousmane Dembélé",
+      "Bradley Barcola",
+      "Marco Asensio",
+      "Vitinha",
+      "Achraf Hakimi",
+      "Gianluigi Donnarumma"
+    ],
+    "out": [
+      {
+        "player": "Gonçalo Ramos",
+        "pos": "Delantero",
+        "type": "🚑 Tobillo",
+        "desc": "Recuperación posquirúrgica."
+      },
+      {
+        "player": "Presnel Kimpembe",
+        "pos": "Defensa",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Readaptación física."
+      }
+    ],
+    "questionable": []
+  },
+  "paris sg": {
+    "manager": "Luis Enrique",
+    "starters_ready": [
+      "Ousmane Dembélé",
+      "Bradley Barcola",
+      "Marco Asensio",
+      "Vitinha",
+      "Achraf Hakimi",
+      "Gianluigi Donnarumma"
+    ],
+    "out": [
+      {
+        "player": "Gonçalo Ramos",
+        "pos": "Delantero",
+        "type": "🚑 Tobillo",
+        "desc": "Recuperación posquirúrgica."
+      },
+      {
+        "player": "Presnel Kimpembe",
+        "pos": "Defensa",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Readaptación física."
+      }
+    ],
+    "questionable": []
+  },
+  "aj auxerre": {
+    "manager": "Christophe Pélissier",
+    "starters_ready": [
+      "Lassine Sinayoko",
+      "Ado Onaiwu",
+      "Gaëtan Perrin",
+      "Donovan Léon"
+    ],
+    "out": [
+      {
+        "player": "Lasso Coulibaly",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "auxerre": {
+    "manager": "Christophe Pélissier",
+    "starters_ready": [
+      "Lassine Sinayoko",
+      "Ado Onaiwu",
+      "Gaëtan Perrin",
+      "Donovan Léon"
+    ],
+    "out": [
+      {
+        "player": "Lasso Coulibaly",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "paris fc": {
+    "manager": "Stéphane Gilli",
+    "starters_ready": [
+      "Jean-Philippe Krasso",
+      "Alimami Gory",
+      "Ilan Kebbal",
+      "Obed Nkambadio"
+    ],
+    "out": [
+      {
+        "player": "Lamine Gueye",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "troyes": {
+    "manager": "Stéphane Dumont",
+    "starters_ready": [
+      "Renaud Ripart",
+      "Cyriaque Irié",
+      "Rafiki Saïd",
+      "Mouhamed Diop",
+      "Nicolas Lemaître"
+    ],
+    "out": [
+      {
+        "player": "Thierno Baldé",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "En rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "tigres uanl": {
+    "manager": "Veljko Paunović",
+    "starters_ready": [
+      "André-Pierre Gignac",
+      "Juan Brunetta",
+      "Diego Lainez",
+      "Fernando Gorriarán",
+      "Nahuel Guzmán"
+    ],
+    "out": [
+      {
+        "player": "Samir Caetano",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "tigres": {
+    "manager": "Veljko Paunović",
+    "starters_ready": [
+      "André-Pierre Gignac",
+      "Juan Brunetta",
+      "Diego Lainez",
+      "Fernando Gorriarán",
+      "Nahuel Guzmán"
+    ],
+    "out": [
+      {
+        "player": "Samir Caetano",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "cruz azul": {
+    "manager": "Martín Anselmi",
+    "starters_ready": [
+      "Ángel Sepúlveda",
+      "Carlos Rotondi",
+      "Ignacio Rivero",
+      "Luis Romo",
+      "Kevin Mier"
+    ],
+    "out": [
+      {
+        "player": "Gabriel Fernández",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Fase final de recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "toluca": {
+    "manager": "Renato Paiva",
+    "starters_ready": [
+      "Paulinho",
+      "Alexis Vega",
+      "Jesús Angulo",
+      "Marcel Ruiz",
+      "Tiago Volpi"
+    ],
+    "out": [
+      {
+        "player": "Federico Pereira",
+        "pos": "Defensa",
+        "type": "🚑 Menisco",
+        "desc": "Rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "monterrey": {
+    "manager": "Martín Demichelis",
+    "starters_ready": [
+      "Germán Berterame",
+      "Sergio Canales",
+      "Lucas Ocampos",
+      "Óliver Torres",
+      "Esteban Andrada"
+    ],
+    "out": [
+      {
+        "player": "Stefan Medina",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "club america": {
+    "manager": "André Jardine",
+    "starters_ready": [
+      "Henry Martín",
+      "Brian Rodríguez",
+      "Álvaro Fidalgo",
+      "Alejandro Zendejas",
+      "Luis Malagón"
+    ],
+    "out": [
+      {
+        "player": "Igor Lichnovsky",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "america": {
+    "manager": "André Jardine",
+    "starters_ready": [
+      "Henry Martín",
+      "Brian Rodríguez",
+      "Álvaro Fidalgo",
+      "Alejandro Zendejas",
+      "Luis Malagón"
+    ],
+    "out": [
+      {
+        "player": "Igor Lichnovsky",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "américa": {
+    "manager": "André Jardine",
+    "starters_ready": [
+      "Henry Martín",
+      "Brian Rodríguez",
+      "Álvaro Fidalgo",
+      "Alejandro Zendejas",
+      "Luis Malagón"
+    ],
+    "out": [
+      {
+        "player": "Igor Lichnovsky",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "atlas": {
+    "manager": "Beñat San José",
+    "starters_ready": [
+      "Eduardo Aguirre",
+      "Jhon Murillo",
+      "Raymundo Fulgencio",
+      "Aldo Rocha",
+      "Camilo Vargas"
+    ],
+    "out": [
+      {
+        "player": "Mauro Manotas",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "pachuca": {
+    "manager": "Guillermo Almada",
+    "starters_ready": [
+      "Salomón Rondón",
+      "Oussama Idrissi",
+      "Nelson Deossa",
+      "Carlos Moreno"
+    ],
+    "out": [
+      {
+        "player": "Israel Luna",
+        "pos": "Delantero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja en curso."
+      }
+    ],
+    "questionable": []
+  },
+  "pumas unam": {
+    "manager": "Gustavo Lema",
+    "starters_ready": [
+      "Guillermo Martínez",
+      "Ignacio Pussetto",
+      "César Huerta",
+      "Piero Quispe",
+      "Julio González"
+    ],
+    "out": [
+      {
+        "player": "Leo Suárez",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "pumas": {
+    "manager": "Gustavo Lema",
+    "starters_ready": [
+      "Guillermo Martínez",
+      "Ignacio Pussetto",
+      "César Huerta",
+      "Piero Quispe",
+      "Julio González"
+    ],
+    "out": [
+      {
+        "player": "Leo Suárez",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "boca juniors": {
+    "manager": "Fernando Gago",
+    "starters_ready": [
+      "Edinson Cavani",
+      "Miguel Merentiel",
+      "Kevin Zenón",
+      "Cristian Medina",
+      "Sergio Romero"
+    ],
+    "out": [
+      {
+        "player": "Lucas Blondel",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Fase final de recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "boca": {
+    "manager": "Fernando Gago",
+    "starters_ready": [
+      "Edinson Cavani",
+      "Miguel Merentiel",
+      "Kevin Zenón",
+      "Cristian Medina",
+      "Sergio Romero"
+    ],
+    "out": [
+      {
+        "player": "Lucas Blondel",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Fase final de recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "defensa y justicia": {
+    "manager": "Pablo De Muner",
+    "starters_ready": [
+      "Abiel Osorio",
+      "Juan Miritello",
+      "Kevin López",
+      "Cristopher Fiermarin"
+    ],
+    "out": [
+      {
+        "player": "Gastón Togni",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "estudiantes de la plata": {
+    "manager": "Eduardo Domínguez",
+    "starters_ready": [
+      "Guido Carrillo",
+      "Edwuin Cetré",
+      "José Sosa",
+      "Enzo Pérez",
+      "Matías Mansilla"
+    ],
+    "out": [
+      {
+        "player": "Javier Altamirano",
+        "pos": "Centrocampista",
+        "type": "🚑 Tratamiento Clínico",
+        "desc": "Reincorporación paulatina."
+      }
+    ],
+    "questionable": []
+  },
+  "estudiantes": {
+    "manager": "Eduardo Domínguez",
+    "starters_ready": [
+      "Guido Carrillo",
+      "Edwuin Cetré",
+      "José Sosa",
+      "Enzo Pérez",
+      "Matías Mansilla"
+    ],
+    "out": [
+      {
+        "player": "Javier Altamirano",
+        "pos": "Centrocampista",
+        "type": "🚑 Tratamiento Clínico",
+        "desc": "Reincorporación paulatina."
+      }
+    ],
+    "questionable": []
+  },
+  "newell's old boys": {
+    "manager": "Ricardo Lunari",
+    "starters_ready": [
+      "Juan Ignacio Ramírez",
+      "Mateo Silvetti",
+      "Éver Banega",
+      "Ramiro Macagno"
+    ],
+    "out": [
+      {
+        "player": "Ian Glavinovich",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "newell's": {
+    "manager": "Ricardo Lunari",
+    "starters_ready": [
+      "Juan Ignacio Ramírez",
+      "Mateo Silvetti",
+      "Éver Banega",
+      "Ramiro Macagno"
+    ],
+    "out": [
+      {
+        "player": "Ian Glavinovich",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "rosario central": {
+    "manager": "Matías Lequi",
+    "starters_ready": [
+      "Marco Ruben",
+      "Enzo Copetti",
+      "Jaminton Campaz",
+      "Ignacio Malcorra",
+      "Jorge Broun"
+    ],
+    "out": [
+      {
+        "player": "Agustín Módica",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "talleres (córdoba)": {
+    "manager": "Alexander Medina",
+    "starters_ready": [
+      "Federico Girotti",
+      "Bruno Barticciotto",
+      "Rubén Botta",
+      "Guido Herrera"
+    ],
+    "out": [
+      {
+        "player": "Matías Catalán",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "talleres": {
+    "manager": "Alexander Medina",
+    "starters_ready": [
+      "Federico Girotti",
+      "Bruno Barticciotto",
+      "Rubén Botta",
+      "Guido Herrera"
+    ],
+    "out": [
+      {
+        "player": "Matías Catalán",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "huracán": {
+    "manager": "Frank Kudelka",
+    "starters_ready": [
+      "Ramón Ábila",
+      "Walter Mazzantti",
+      "Rodrigo Cabral",
+      "Hernán Galíndez"
+    ],
+    "out": [
+      {
+        "player": "Lucas Carrizo",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "huracan": {
+    "manager": "Frank Kudelka",
+    "starters_ready": [
+      "Ramón Ábila",
+      "Walter Mazzantti",
+      "Rodrigo Cabral",
+      "Hernán Galíndez"
+    ],
+    "out": [
+      {
+        "player": "Lucas Carrizo",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "argentinos juniors": {
+    "manager": "Cristian Zermatten",
+    "starters_ready": [
+      "Maximiliano Romero",
+      "Alan Lescano",
+      "Gastón Verón",
+      "Diego Rodríguez"
+    ],
+    "out": [
+      {
+        "player": "Luciano Sánchez",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "estudiantes de río cuarto": {
+    "manager": "Iván Delfino",
+    "starters_ready": [
+      "Luis Silba",
+      "Mauro Valiente",
+      "Tomás González"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "gimnasia (mendoza)": {
+    "manager": "Ezequiel Medrán",
+    "starters_ready": [
+      "Luis Silveira",
+      "Nazareno Solís",
+      "Jeremías Puch"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "independiente rivadavia": {
+    "manager": "Alfredo Berti",
+    "starters_ready": [
+      "Sebastián Villa",
+      "Victorio Ramis",
+      "Ezequiel Ham"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "instituto (córdoba)": {
+    "manager": "Diego Dabove",
+    "starters_ready": [
+      "Damián Puebla",
+      "Facundo Suárez",
+      "Gastón Lodico"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "instituto": {
+    "manager": "Diego Dabove",
+    "starters_ready": [
+      "Damián Puebla",
+      "Facundo Suárez",
+      "Gastón Lodico"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "burnley": {
+    "manager": "Scott Parker",
+    "starters_ready": [
+      "Lyle Foster",
+      "Luca Koleosho",
+      "Jaidon Anthony",
+      "Josh Brownhill",
+      "James Trafford"
+    ],
+    "out": [
+      {
+        "player": "Jordan Beyer",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "west ham united": {
+    "manager": "Julen Lopetegui",
+    "starters_ready": [
+      "Jarrod Bowen",
+      "Michail Antonio",
+      "Mohammed Kudus",
+      "Lucas Paquetá",
+      "Alphonse Areola"
+    ],
+    "out": [
+      {
+        "player": "Niclas Füllkrug",
+        "pos": "Delantero",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "west ham": {
+    "manager": "Julen Lopetegui",
+    "starters_ready": [
+      "Jarrod Bowen",
+      "Michail Antonio",
+      "Mohammed Kudus",
+      "Lucas Paquetá",
+      "Alphonse Areola"
+    ],
+    "out": [
+      {
+        "player": "Niclas Füllkrug",
+        "pos": "Delantero",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "wolverhampton wanderers": {
+    "manager": "Gary O'Neil",
+    "starters_ready": [
+      "Matheus Cunha",
+      "Jørgen Strand Larsen",
+      "Hwang Hee-chan",
+      "Mario Lemina",
+      "José Sá"
+    ],
+    "out": [
+      {
+        "player": "Saša Kalajdžić",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "wolves": {
+    "manager": "Gary O'Neil",
+    "starters_ready": [
+      "Matheus Cunha",
+      "Jørgen Strand Larsen",
+      "Hwang Hee-chan",
+      "Mario Lemina",
+      "José Sá"
+    ],
+    "out": [
+      {
+        "player": "Saša Kalajdžić",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "southampton": {
+    "manager": "Russell Martin",
+    "starters_ready": [
+      "Cameron Archer",
+      "Adam Armstrong",
+      "Tyler Dibling",
+      "Mateus Fernandes",
+      "Aaron Ramsdale"
+    ],
+    "out": [
+      {
+        "player": "Gavin Bazunu",
+        "pos": "Portero",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Baja de larga duración."
+      },
+      {
+        "player": "Ross Stewart",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "norwich city": {
+    "manager": "Johannes Hoff Thorup",
+    "starters_ready": [
+      "Josh Sargent",
+      "Borja Sainz",
+      "Ante Crnac",
+      "Marcelino Núñez",
+      "Angus Gunn"
+    ],
+    "out": [
+      {
+        "player": "Christian Fassnacht",
+        "pos": "Extremo",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "norwich": {
+    "manager": "Johannes Hoff Thorup",
+    "starters_ready": [
+      "Josh Sargent",
+      "Borja Sainz",
+      "Ante Crnac",
+      "Marcelino Núñez",
+      "Angus Gunn"
+    ],
+    "out": [
+      {
+        "player": "Christian Fassnacht",
+        "pos": "Extremo",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "bristol city": {
+    "manager": "Liam Manning",
+    "starters_ready": [
+      "Sinclair Armstrong",
+      "Yu Hirakawa",
+      "Scott Twine",
+      "Jason Knight",
+      "Max O'Leary"
+    ],
+    "out": [
+      {
+        "player": "Rob Dickie",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "middlesbrough": {
+    "manager": "Michael Carrick",
+    "starters_ready": [
+      "Emmanuel Latte Lath",
+      "Tommy Conway",
+      "Finn Azaz",
+      "Hayden Hackney",
+      "Seny Dieng"
+    ],
+    "out": [
+      {
+        "player": "Darragh Lenihan",
+        "pos": "Defensa",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "watford": {
+    "manager": "Tom Cleverley",
+    "starters_ready": [
+      "Vakoun Bayo",
+      "Giorgi Chakvetadze",
+      "Edo Kayembe",
+      "Moussa Sissoko",
+      "Daniel Bachmann"
+    ],
+    "out": [
+      {
+        "player": "Angelo Ogbonna",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "wrexham": {
+    "manager": "Phil Parkinson",
+    "starters_ready": [
+      "Paul Mullin",
+      "Jack Marriott",
+      "Ollie Palmer",
+      "James McClean",
+      "Arthur Okonkwo"
+    ],
+    "out": [
+      {
+        "player": "George Evans",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "stoke city": {
+    "manager": "Narcís Pèlach",
+    "starters_ready": [
+      "Thomas Cannon",
+      "Million Manhoef",
+      "Bae Jun-ho",
+      "Wouter Burger",
+      "Viktor Johansson"
+    ],
+    "out": [
+      {
+        "player": "Lynden Gooch",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "stoke": {
+    "manager": "Narcís Pèlach",
+    "starters_ready": [
+      "Thomas Cannon",
+      "Million Manhoef",
+      "Bae Jun-ho",
+      "Wouter Burger",
+      "Viktor Johansson"
+    ],
+    "out": [
+      {
+        "player": "Lynden Gooch",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "millwall": {
+    "manager": "Neil Harris",
+    "starters_ready": [
+      "Mihailo Ivanović",
+      "Duncan Watmore",
+      "George Saville",
+      "Lukas Jensen"
+    ],
+    "out": [
+      {
+        "player": "Josh Coburn",
+        "pos": "Delantero",
+        "type": "🚑 Pantorrilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "queens park rangers": {
+    "manager": "Martí Cifuentes",
+    "starters_ready": [
+      "Michael Frey",
+      "Nicolas Madsen",
+      "Karamoko Dembélé",
+      "Paul Nardi"
+    ],
+    "out": [
+      {
+        "player": "Ilias Chair",
+        "pos": "Centrocampista",
+        "type": "🚑 Espalda",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "qpr": {
+    "manager": "Martí Cifuentes",
+    "starters_ready": [
+      "Michael Frey",
+      "Nicolas Madsen",
+      "Karamoko Dembélé",
+      "Paul Nardi"
+    ],
+    "out": [
+      {
+        "player": "Ilias Chair",
+        "pos": "Centrocampista",
+        "type": "🚑 Espalda",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "cardiff city": {
+    "manager": "Omer Riza",
+    "starters_ready": [
+      "Callum Robinson",
+      "Anwar El Ghazi",
+      "Rubin Colwill",
+      "Jak Alnwick"
+    ],
+    "out": [
+      {
+        "player": "Aaron Ramsey",
+        "pos": "Centrocampista",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "cardiff": {
+    "manager": "Omer Riza",
+    "starters_ready": [
+      "Callum Robinson",
+      "Anwar El Ghazi",
+      "Rubin Colwill",
+      "Jak Alnwick"
+    ],
+    "out": [
+      {
+        "player": "Aaron Ramsey",
+        "pos": "Centrocampista",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "blackburn rovers": {
+    "manager": "John Eustace",
+    "starters_ready": [
+      "Yuki Ohashi",
+      "Makhtar Gueye",
+      "Tyrhys Dolan",
+      "Aynsley Pears"
+    ],
+    "out": [
+      {
+        "player": "Scott Wharton",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "blackburn": {
+    "manager": "John Eustace",
+    "starters_ready": [
+      "Yuki Ohashi",
+      "Makhtar Gueye",
+      "Tyrhys Dolan",
+      "Aynsley Pears"
+    ],
+    "out": [
+      {
+        "player": "Scott Wharton",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "swansea city": {
+    "manager": "Luke Williams",
+    "starters_ready": [
+      "Žan Vipotnik",
+      "Ronald",
+      "Liam Cullen",
+      "Lawrence Vigouroux"
+    ],
+    "out": [
+      {
+        "player": "Joe Allen",
+        "pos": "Centrocampista",
+        "type": "🚑 Dedo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "swansea": {
+    "manager": "Luke Williams",
+    "starters_ready": [
+      "Žan Vipotnik",
+      "Ronald",
+      "Liam Cullen",
+      "Lawrence Vigouroux"
+    ],
+    "out": [
+      {
+        "player": "Joe Allen",
+        "pos": "Centrocampista",
+        "type": "🚑 Dedo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "birmingham city": {
+    "manager": "Chris Davies",
+    "starters_ready": [
+      "Jay Stansfield",
+      "Alfie May",
+      "Emil Hansson",
+      "Ryan Allsop"
+    ],
+    "out": [
+      {
+        "player": "Lee Buchanan",
+        "pos": "Defensa",
+        "type": "🚑 Pantorrilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "birmingham": {
+    "manager": "Chris Davies",
+    "starters_ready": [
+      "Jay Stansfield",
+      "Alfie May",
+      "Emil Hansson",
+      "Ryan Allsop"
+    ],
+    "out": [
+      {
+        "player": "Lee Buchanan",
+        "pos": "Defensa",
+        "type": "🚑 Pantorrilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "portsmouth": {
+    "manager": "John Mousinho",
+    "starters_ready": [
+      "Callum Lang",
+      "Elias Sørensen",
+      "Paddy Lane",
+      "Will Norris"
+    ],
+    "out": [
+      {
+        "player": "Colby Bishop",
+        "pos": "Delantero",
+        "type": "🚑 Procedimiento Médico",
+        "desc": "En fase de recuperación."
+      }
+    ],
+    "questionable": []
+  },
+  "preston north end": {
+    "manager": "Paul Heckingbottom",
+    "starters_ready": [
+      "Emil Riis Jakobsen",
+      "Sam Greenwood",
+      "Mads Frøkjær-Jensen",
+      "Freddie Woodman"
+    ],
+    "out": [
+      {
+        "player": "Will Keane",
+        "pos": "Delantero",
+        "type": "🚑 Tendón",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "preston": {
+    "manager": "Paul Heckingbottom",
+    "starters_ready": [
+      "Emil Riis Jakobsen",
+      "Sam Greenwood",
+      "Mads Frøkjær-Jensen",
+      "Freddie Woodman"
+    ],
+    "out": [
+      {
+        "player": "Will Keane",
+        "pos": "Delantero",
+        "type": "🚑 Tendón",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "charlton athletic": {
+    "manager": "Nathan Jones",
+    "starters_ready": [
+      "Matt Godden",
+      "Tyreece Campbell",
+      "Luke Berry",
+      "Will Mannion"
+    ],
+    "out": [
+      {
+        "player": "Chuks Aneke",
+        "pos": "Delantero",
+        "type": "🚑 Ingle",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "charlton": {
+    "manager": "Nathan Jones",
+    "starters_ready": [
+      "Matt Godden",
+      "Tyreece Campbell",
+      "Luke Berry",
+      "Will Mannion"
+    ],
+    "out": [
+      {
+        "player": "Chuks Aneke",
+        "pos": "Delantero",
+        "type": "🚑 Ingle",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "sheffield united": {
+    "manager": "Chris Wilder",
+    "starters_ready": [
+      "Kieffer Moore",
+      "Tyrese Campbell",
+      "Callum O'Hare",
+      "Michael Cooper"
+    ],
+    "out": [
+      {
+        "player": "Tom Davies",
+        "pos": "Centrocampista",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "sheffield utd": {
+    "manager": "Chris Wilder",
+    "starters_ready": [
+      "Kieffer Moore",
+      "Tyrese Campbell",
+      "Callum O'Hare",
+      "Michael Cooper"
+    ],
+    "out": [
+      {
+        "player": "Tom Davies",
+        "pos": "Centrocampista",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "west bromwich albion": {
+    "manager": "Carlos Corberán",
+    "starters_ready": [
+      "Josh Maja",
+      "Karlan Grant",
+      "Grady Diangana",
+      "Alex Palmer"
+    ],
+    "out": [
+      {
+        "player": "Daryl Dike",
+        "pos": "Delantero",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "west brom": {
+    "manager": "Carlos Corberán",
+    "starters_ready": [
+      "Josh Maja",
+      "Karlan Grant",
+      "Grady Diangana",
+      "Alex Palmer"
+    ],
+    "out": [
+      {
+        "player": "Daryl Dike",
+        "pos": "Delantero",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "lincoln city": {
+    "manager": "Michael Skubala",
+    "starters_ready": [
+      "Ben House",
+      "Jovon Makama",
+      "Dom Jefferies",
+      "George Wickens"
+    ],
+    "out": [
+      {
+        "player": "Reeco Hackett",
+        "pos": "Extremo",
+        "type": "🚑 Hombro",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "lincoln": {
+    "manager": "Michael Skubala",
+    "starters_ready": [
+      "Ben House",
+      "Jovon Makama",
+      "Dom Jefferies",
+      "George Wickens"
+    ],
+    "out": [
+      {
+        "player": "Reeco Hackett",
+        "pos": "Extremo",
+        "type": "🚑 Hombro",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "galatasaray": {
+    "manager": "Okan Buruk",
+    "starters_ready": [
+      "Victor Osimhen",
+      "Mauro Icardi",
+      "Dries Mertens",
+      "Barış Alper Yılmaz",
+      "Fernando Muslera"
+    ],
+    "out": [
+      {
+        "player": "Ismail Jakobs",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "eyupspor": {
+    "manager": "Arda Turan",
+    "starters_ready": [
+      "Mame Thiam",
+      "Ahmed Kutucu",
+      "Emre Akbaba",
+      "Samu Sáiz",
+      "Berke Özer"
+    ],
+    "out": [
+      {
+        "player": "Recep Niyaz",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "kocaelispor": {
+    "manager": "Ertuğrul Sağlam",
+    "starters_ready": [
+      "Oğulcan Çağlayan",
+      "Ryan Mendes",
+      "Josip Vuković",
+      "Gökhan Değirmenci"
+    ],
+    "out": [
+      {
+        "player": "Markão",
+        "pos": "Delantero",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "samsunspor": {
+    "manager": "Thomas Reis",
+    "starters_ready": [
+      "Marius Mouandilmadji",
+      "Carlo Holse",
+      "Olivier Ntcham",
+      "Okan Kocuk"
+    ],
+    "out": [
+      {
+        "player": "Lubomir Satka",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "konyaspor": {
+    "manager": "Ali Çamdalı",
+    "starters_ready": [
+      "Umut Nayir",
+      "Alassane Ndao",
+      "Pedrinho",
+      "Jakub Slowik"
+    ],
+    "out": [
+      {
+        "player": "Josip Calusic",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "istanbul basaksehir": {
+    "manager": "Çağdaş Atan",
+    "starters_ready": [
+      "Krzysztof Piątek",
+      "Deniz Türüç",
+      "Miguel Crespo",
+      "Volkan Babacan"
+    ],
+    "out": [
+      {
+        "player": "Léo Duarte",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "basaksehir": {
+    "manager": "Çağdaş Atan",
+    "starters_ready": [
+      "Krzysztof Piątek",
+      "Deniz Türüç",
+      "Miguel Crespo",
+      "Volkan Babacan"
+    ],
+    "out": [
+      {
+        "player": "Léo Duarte",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "goztepe": {
+    "manager": "Stanimir Stoilov",
+    "starters_ready": [
+      "Rômulo",
+      "David Fofana",
+      "Anthony Dennis",
+      "Mateusz Lis"
+    ],
+    "out": [
+      {
+        "player": "Kubilay Kanatsızkuş",
+        "pos": "Delantero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "amed sfk": {
+    "manager": "Ersun Yanal",
+    "starters_ready": [
+      "Britt Assombalonga",
+      "Max Gradel",
+      "Adama Traoré",
+      "Nurullah Aslan"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "go ahead eagles": {
+    "manager": "Paul Simonis",
+    "starters_ready": [
+      "Victor Edvardsen",
+      "Oliver Valaker Edvardsen",
+      "Bobby Adekanye",
+      "Luca Plogmann"
+    ],
+    "out": [
+      {
+        "player": "Soren Tengstedt",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "sparta rotterdam": {
+    "manager": "Jeroen Rijsdijk",
+    "starters_ready": [
+      "Tobias Lauritsen",
+      "Camiel Neghli",
+      "Arno Verschueren",
+      "Nick Olij"
+    ],
+    "out": [
+      {
+        "player": "Jonathan de Guzmán",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "fortuna sittard": {
+    "manager": "Danny Buijs",
+    "starters_ready": [
+      "Lequincio Zeefuik",
+      "Ole Romeny",
+      "Mohammed Ihattaren",
+      "Édouard Michut",
+      "Rodrigo Guth",
+      "Mattijs Branderhorst"
+    ],
+    "out": [
+      {
+        "player": "Kaj Sierhuis",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "excelsior": {
+    "manager": "Ruben den Uil",
+    "starters_ready": [
+      "Richie Omorowa",
+      "Jacky Donkor",
+      "Noah Naujoks",
+      "Calvin Raatsie"
+    ],
+    "out": [
+      {
+        "player": "Kik Pierie",
+        "pos": "Defensa",
+        "type": "🚑 Pie",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "ado den haag": {
+    "manager": "Darije Kalezić",
+    "starters_ready": [
+      "Lee Bonis",
+      "Jari Vlak",
+      "Daryl van Mieghem",
+      "Kilian Nikiema"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "telstar": {
+    "manager": "Henk Brugge",
+    "starters_ready": [
+      "Sem van Duijn",
+      "Patrick Brouwer",
+      "Jochem Ritmeester van de Kamp",
+      "Jeff Hardeveld",
+      "Danny Bakker",
+      "Guus Offerhaus",
+      "Ronald Koeman Jr."
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "antwerp": {
+    "manager": "Jonas De Roeck",
+    "starters_ready": [
+      "Vincent Janssen",
+      "Gyrano Kerk",
+      "Tjaronn Chery",
+      "Senne Lammens"
+    ],
+    "out": [
+      {
+        "player": "Denis Odoi",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "cercle brugge ksv": {
+    "manager": "Miron Muslic",
+    "starters_ready": [
+      "Kévin Denkey",
+      "Abdoul Kader Ouattara",
+      "Alan Minda",
+      "Maxime Delanghe"
+    ],
+    "out": [
+      {
+        "player": "Warleson",
+        "pos": "Portero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "cercle brugge": {
+    "manager": "Miron Muslic",
+    "starters_ready": [
+      "Kévin Denkey",
+      "Abdoul Kader Ouattara",
+      "Alan Minda",
+      "Maxime Delanghe"
+    ],
+    "out": [
+      {
+        "player": "Warleson",
+        "pos": "Portero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "kvc westerlo": {
+    "manager": "Timmy Simons",
+    "starters_ready": [
+      "Matija Frigan",
+      "Josimar Alcócer",
+      "Allahyar Sayyadmanesh",
+      "Sinan Bolat"
+    ],
+    "out": [
+      {
+        "player": "Griffin Yow",
+        "pos": "Extremo",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "westerlo": {
+    "manager": "Timmy Simons",
+    "starters_ready": [
+      "Matija Frigan",
+      "Josimar Alcócer",
+      "Allahyar Sayyadmanesh",
+      "Sinan Bolat"
+    ],
+    "out": [
+      {
+        "player": "Griffin Yow",
+        "pos": "Extremo",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "oh leuven": {
+    "manager": "Óscar García",
+    "starters_ready": [
+      "Chukwubuikem Ikwuemesi",
+      "Youssef Maziz",
+      "Mathieu Maertens",
+      "Tobe Leysen"
+    ],
+    "out": [
+      {
+        "player": "Ewoud Pletinckx",
+        "pos": "Defensa",
+        "type": "🚑 Peroné",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "kv mechelen": {
+    "manager": "Besnik Hasi",
+    "starters_ready": [
+      "Benito Raman",
+      "Lion Lauberbach",
+      "Nikola Storm",
+      "Ortwin De Wolf"
+    ],
+    "out": [
+      {
+        "player": "Mory Konaté",
+        "pos": "Centrocampista",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "royal charleroi sc": {
+    "manager": "Rik De Mil",
+    "starters_ready": [
+      "Daan Heymans",
+      "Antoine Bernier",
+      "Guiagon Parfait",
+      "Mohamed Koné"
+    ],
+    "out": [
+      {
+        "player": "Raymond Asante",
+        "pos": "Extremo",
+        "type": "🚑 Ingle",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "charleroi": {
+    "manager": "Rik De Mil",
+    "starters_ready": [
+      "Daan Heymans",
+      "Antoine Bernier",
+      "Guiagon Parfait",
+      "Mohamed Koné"
+    ],
+    "out": [
+      {
+        "player": "Raymond Asante",
+        "pos": "Extremo",
+        "type": "🚑 Ingle",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "lommel sk": {
+    "manager": "Steve Bould",
+    "starters_ready": [
+      "Jason van Duiven",
+      "Lucas Schoofs",
+      "Karim Dermane",
+      "Nikola Ivezic"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "raal la louvière": {
+    "manager": "Frédéric Taquin",
+    "starters_ready": [
+      "Mouhamed Belkheir",
+      "Fadel Gobitaka",
+      "Samuel Gueulette",
+      "Marcos Peano"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "la louviere": {
+    "manager": "Frédéric Taquin",
+    "starters_ready": [
+      "Mouhamed Belkheir",
+      "Fadel Gobitaka",
+      "Samuel Gueulette",
+      "Marcos Peano"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "empoli": {
+    "manager": "Roberto D'Aversa",
+    "starters_ready": [
+      "Lorenzo Colombo",
+      "Sebastiano Esposito",
+      "Jacopo Fazzini",
+      "Devis Vásquez"
+    ],
+    "out": [
+      {
+        "player": "Saba Sazonov",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "hellas verona": {
+    "manager": "Paolo Zanetti",
+    "starters_ready": [
+      "Casper Tengstedt",
+      "Daniel Mosquera",
+      "Darko Lazović",
+      "Lorenzo Montipò"
+    ],
+    "out": [
+      {
+        "player": "Juan Manuel Cruz",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "pisa": {
+    "manager": "Filippo Inzaghi",
+    "starters_ready": [
+      "Nicholas Bonfanti",
+      "Matteo Tramoni",
+      "Stefano Moreo",
+      "Adrian Semper"
+    ],
+    "out": [
+      {
+        "player": "Tomás Esteves",
+        "pos": "Defensa",
+        "type": "🚑 Tendón rotuliano",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "cesena": {
+    "manager": "Michele Mignani",
+    "starters_ready": [
+      "Cristian Shpendi",
+      "Augustus Kargbo",
+      "Emanuele Adamo",
+      "Jonathan Klinsmann"
+    ],
+    "out": [
+      {
+        "player": "Marco Curto",
+        "pos": "Defensa",
+        "type": "🟥 Suspensión",
+        "desc": "Sanción oficial."
+      }
+    ],
+    "questionable": []
+  },
+  "catanzaro": {
+    "manager": "Fabio Caserta",
+    "starters_ready": [
+      "Pietro Iemmello",
+      "Tommaso Biasci",
+      "Jari Vandeputte",
+      "Mirko Pigliacelli"
+    ],
+    "out": [
+      {
+        "player": "Mario Situm",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "sudtirol": {
+    "manager": "Federico Valente",
+    "starters_ready": [
+      "Raphael Odogwu",
+      "Daniele Casiraghi",
+      "Matteo Rover",
+      "Giacomo Poluzzi"
+    ],
+    "out": [
+      {
+        "player": "Andrea Masiello",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "juve stabia": {
+    "manager": "Guido Pagliuca",
+    "starters_ready": [
+      "Andrea Adorante",
+      "Leonardo Candellone",
+      "Marco Bellich",
+      "Demba Thiam"
+    ],
+    "out": [
+      {
+        "player": "Kevin Piscopo",
+        "pos": "Delantero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "mantova": {
+    "manager": "Davide Possanzini",
+    "starters_ready": [
+      "Leonardo Mancuso",
+      "Davis Mensah",
+      "Antonio Fiori",
+      "Marco Festa"
+    ],
+    "out": [
+      {
+        "player": "Alex Redolfi",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "padova": {
+    "manager": "Matteo Andreoletti",
+    "starters_ready": [
+      "Alberto Spagnoli",
+      "Mattia Bortolussi",
+      "Kevin Varas",
+      "Mattia Fortin"
+    ],
+    "out": [
+      {
+        "player": "Filippo Delli Carri",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "arezzo": {
+    "manager": "Emanuele Troise",
+    "starters_ready": [
+      "Niccolò Gucci",
+      "Emiliano Pattarello",
+      "Mattia Gaddini",
+      "Luca Trombini"
+    ],
+    "out": [
+      {
+        "player": "Marco Chiosa",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "benevento": {
+    "manager": "Gaetano Auteri",
+    "starters_ready": [
+      "Eric Lanini",
+      "Jacopo Manconi",
+      "Angelo Talia",
+      "Alessandro Nunziante"
+    ],
+    "out": [
+      {
+        "player": "Filippo Nardi",
+        "pos": "Centrocampista",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "us avellino": {
+    "manager": "Raffaele Biancolino",
+    "starters_ready": [
+      "Cosimo Patierno",
+      "Michele D'Ausilio",
+      "Dimitrios Sounas",
+      "Antony Iannarilli"
+    ],
+    "out": [
+      {
+        "player": "Michele Rocca",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "avellino": {
+    "manager": "Raffaele Biancolino",
+    "starters_ready": [
+      "Cosimo Patierno",
+      "Michele D'Ausilio",
+      "Dimitrios Sounas",
+      "Antony Iannarilli"
+    ],
+    "out": [
+      {
+        "player": "Michele Rocca",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "aris": {
+    "manager": "Apostolos Mantzios",
+    "starters_ready": [
+      "Loren Morón",
+      "Pione Sisto",
+      "Manu García",
+      "Julián Cuesta"
+    ],
+    "out": [
+      {
+        "player": "Fran Vélez",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "volos nfc": {
+    "manager": "Savvas Poursaitidis",
+    "starters_ready": [
+      "Márk Koszta",
+      "Jasin Assehnoun",
+      "Nemanja Mladenović",
+      "Dániel Kovács"
+    ],
+    "out": [
+      {
+        "player": "Maximiliano Comba",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "volos": {
+    "manager": "Savvas Poursaitidis",
+    "starters_ready": [
+      "Márk Koszta",
+      "Jasin Assehnoun",
+      "Nemanja Mladenović",
+      "Dániel Kovács"
+    ],
+    "out": [
+      {
+        "player": "Maximiliano Comba",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "panetolikos": {
+    "manager": "Giannis Petrakis",
+    "starters_ready": [
+      "Sergio Díaz",
+      "Sebastian Lomónaco",
+      "Georgios Liavas",
+      "Lucas Chaves"
+    ],
+    "out": [
+      {
+        "player": "Nikola Stajić",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "kifisia": {
+    "manager": "Sebastian Leto",
+    "starters_ready": [
+      "Andrews Tetteh",
+      "Alberto Botía",
+      "Jorge Pombo",
+      "Alexandros Anagnostopoulos"
+    ],
+    "out": [
+      {
+        "player": "Antonis Papasavvas",
+        "pos": "Centrocampista",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "albacete": {
+    "manager": "Alberto González",
+    "starters_ready": [
+      "Higinio Marín",
+      "Fidel Chaves",
+      "Jon Morcillo",
+      "Raúl Lizoain"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "burgos": {
+    "manager": "Jon Pérez Bolo",
+    "starters_ready": [
+      "Curro Sánchez",
+      "Fer Niño",
+      "Álex Sancris",
+      "Ander Cantero"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "ceuta": {
+    "manager": "José Juan Romero",
+    "starters_ready": [
+      "Rodri Ríos",
+      "Sofiane El Ftouhi",
+      "Aisar Ahmed",
+      "Pedro López"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "cádiz": {
+    "manager": "Paco López",
+    "starters_ready": [
+      "Chris Ramos",
+      "Roger Martí",
+      "Brian Ocampo",
+      "David Gil"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "cadiz": {
+    "manager": "Paco López",
+    "starters_ready": [
+      "Chris Ramos",
+      "Roger Martí",
+      "Brian Ocampo",
+      "David Gil"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "córdoba": {
+    "manager": "Iván Ania",
+    "starters_ready": [
+      "Antonio Casas",
+      "Jacobo González",
+      "Cristian Carracedo",
+      "Carlos Marín"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "cordoba": {
+    "manager": "Iván Ania",
+    "starters_ready": [
+      "Antonio Casas",
+      "Jacobo González",
+      "Cristian Carracedo",
+      "Carlos Marín"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "granada": {
+    "manager": "Fran Escribá",
+    "starters_ready": [
+      "Myrto Uzuni",
+      "Lucas Boyé",
+      "Tsitaishvili",
+      "Diego Mariño"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "leganés": {
+    "manager": "Borja Jiménez",
+    "starters_ready": [
+      "Juan Cruz",
+      "Miguel de la Fuente",
+      "Munir El Haddadi",
+      "Marko Dmitrović"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "leganes": {
+    "manager": "Borja Jiménez",
+    "starters_ready": [
+      "Juan Cruz",
+      "Miguel de la Fuente",
+      "Munir El Haddadi",
+      "Marko Dmitrović"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "rc celta fortuna": {
+    "manager": "Fredi Álvarez",
+    "starters_ready": [
+      "Jordi Escobar",
+      "Fer López",
+      "Damián Rodríguez",
+      "César Fernández"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "celta fortuna": {
+    "manager": "Fredi Álvarez",
+    "starters_ready": [
+      "Jordi Escobar",
+      "Fer López",
+      "Damián Rodríguez",
+      "César Fernández"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "real oviedo": {
+    "manager": "Javi Calleja",
+    "starters_ready": [
+      "Alemao",
+      "Hassan",
+      "Santi Cazorla",
+      "Aaron Escandell"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "oviedo": {
+    "manager": "Javi Calleja",
+    "starters_ready": [
+      "Alemao",
+      "Hassan",
+      "Santi Cazorla",
+      "Aaron Escandell"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "tenerife": {
+    "manager": "Pepe Mel",
+    "starters_ready": [
+      "Enric Gallego",
+      "Ángel Rodríguez",
+      "Luismi Cruz",
+      "Salvi Carrasco"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "accrington stanley": {
+    "manager": "John Doolan",
+    "starters_ready": [
+      "Jimmy Knowles",
+      "Kelsey Mooney",
+      "Shaun Whalley"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "afc hornchurch": {
+    "manager": "Daryl McMahon",
+    "starters_ready": [
+      "Femi Akinwande",
+      "Angelo Balanta",
+      "Liam Nash"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "barnet": {
+    "manager": "Dean Brennan",
+    "starters_ready": [
+      "Nicke Kabamba",
+      "Callum Stead",
+      "Harry Chapman"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "barnsley": {
+    "manager": "Darrell Clarke",
+    "starters_ready": [
+      "Stephen Humphrys",
+      "Sam Cosgrove",
+      "Davis Keillor-Dunn"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "boreham wood": {
+    "manager": "Luke Garrard",
+    "starters_ready": [
+      "Kwesi Appiah",
+      "Matt Robinson",
+      "Femi Ilesanmi"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "bradford city": {
+    "manager": "Graham Alexander",
+    "starters_ready": [
+      "Andy Cook",
+      "Calum Kavanagh",
+      "Bobby Pointon"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "bromley": {
+    "manager": "Andy Woodman",
+    "starters_ready": [
+      "Michael Cheek",
+      "Corey Whitely",
+      "Cameron Congreve"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "burton albion": {
+    "manager": "Mark Robinson",
+    "starters_ready": [
+      "Danilo Orsi",
+      "Billy Bodin",
+      "Ben Whitfield"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "carlisle united": {
+    "manager": "Mike Williamson",
+    "starters_ready": [
+      "Charlie Wyke",
+      "Luke Armstrong",
+      "Daniel Adu-Adjei"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "cheltenham town": {
+    "manager": "Michael Flynn",
+    "starters_ready": [
+      "Ethon Archer",
+      "George Miller",
+      "Jordan Thomas"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "chesterfield": {
+    "manager": "Paul Cook",
+    "starters_ready": [
+      "Will Grigg",
+      "James Berry",
+      "Armando Dobra"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "colchester united": {
+    "manager": "Danny Cowley",
+    "starters_ready": [
+      "Lyle Taylor",
+      "Samson Tovide",
+      "Jack Payne"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "crewe alexandra": {
+    "manager": "Lee Bell",
+    "starters_ready": [
+      "Kane Hemmings",
+      "Shilow Tracey",
+      "Matus Holicek"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "doncaster rovers": {
+    "manager": "Grant McCann",
+    "starters_ready": [
+      "Billy Sharp",
+      "Luke Molyneux",
+      "Joe Ironside"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "dover athletic": {
+    "manager": "Jake Leberl",
+    "starters_ready": [
+      "George Nikaj",
+      "Ruben Soares-Junior",
+      "Harrison Pont"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "eastleigh": {
+    "manager": "Kelvin Davis",
+    "starters_ready": [
+      "Paul McCallum",
+      "Chris Maguire",
+      "Scott Quigley"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "exeter city": {
+    "manager": "Gary Caldwell",
+    "starters_ready": [
+      "Josh Magennis",
+      "Ilmari Niskanen",
+      "Millenic Alli"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "fc halifax town": {
+    "manager": "Chris Millington",
+    "starters_ready": [
+      "Billy Waters",
+      "Angelo Cappello",
+      "Florent Hoti"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "fleetwood town": {
+    "manager": "Charlie Adam",
+    "starters_ready": [
+      "Ryan Graydon",
+      "Ronan Coughlan",
+      "Danny Mayor"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "forest green rovers": {
+    "manager": "Steve Cotterill",
+    "starters_ready": [
+      "Christian Doidge",
+      "Kyle McAllister",
+      "Teddy Jenks"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "gillingham": {
+    "manager": "Mark Bonner",
+    "starters_ready": [
+      "Jayden Clarke",
+      "Oliver Hawkins",
+      "Elliott Nevitt"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "guiseley": {
+    "manager": "Mark Bower",
+    "starters_ready": [
+      "Will Longbottom",
+      "Jordan Thewlis",
+      "John Lufudu"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "harborough town": {
+    "manager": "Mitch Austin",
+    "starters_ready": [
+      "Tendai Daire",
+      "Ben Williams",
+      "Connor Kennedy"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "harrogate town": {
+    "manager": "Simon Weaver",
+    "starters_ready": [
+      "Ellis Taylor",
+      "Stephen Duke-McKenna",
+      "Jack Muldoon"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "huddersfield town": {
+    "manager": "Michael Duff",
+    "starters_ready": [
+      "Josh Koroma",
+      "Bojan Radulovic",
+      "Callum Marshall"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "kidderminster harriers": {
+    "manager": "Phil Brown",
+    "starters_ready": [
+      "Amari Morgan-Smith",
+      "Ashley Hemmings",
+      "Maliq Cadogan"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "leyton orient": {
+    "manager": "Richie Wellens",
+    "starters_ready": [
+      "Dan Agyei",
+      "Charlie Kelman",
+      "Ethan Galbraith"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "luton town": {
+    "manager": "Rob Edwards",
+    "starters_ready": [
+      "Carlton Morris",
+      "Elijah Adebayo",
+      "Tahith Chong"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "macclesfield fc": {
+    "manager": "Robbie Savage",
+    "starters_ready": [
+      "Paul Dawson",
+      "John Rooney",
+      "Neil Kengni"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "mansfield town": {
+    "manager": "Nigel Clough",
+    "starters_ready": [
+      "Lee Gregory",
+      "Will Evans",
+      "Keanu Baccus"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "marine": {
+    "manager": "Neil Young",
+    "starters_ready": [
+      "Finlay Sinclair-Smith",
+      "Solomon Solomon",
+      "Kristian Bell"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "milton keynes dons": {
+    "manager": "Scott Lindsey",
+    "starters_ready": [
+      "Alex Gilbey",
+      "Joe Tomlinson",
+      "Callum Hendry"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "newport county": {
+    "manager": "Nelson Jardim",
+    "starters_ready": [
+      "Courtney Baker-Richardson",
+      "Aaron Wildig",
+      "Bobby Kamwa"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "northampton town": {
+    "manager": "Jon Brady",
+    "starters_ready": [
+      "Cameron McGeehan",
+      "Sam Hoskins",
+      "Tyler Roberts"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "notts county": {
+    "manager": "Stuart Maynard",
+    "starters_ready": [
+      "Alassana Jatta",
+      "David McGoldrick",
+      "Dan Crowley"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "oxford united": {
+    "manager": "Des Buckingham",
+    "starters_ready": [
+      "Mark Harris",
+      "Tyler Goodrham",
+      "Siriki Dembélé"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "peterborough united": {
+    "manager": "Darren Ferguson",
+    "starters_ready": [
+      "Kwame Poku",
+      "Malik Mothersille",
+      "Ricky-Jade Jones"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "plymouth argyle": {
+    "manager": "Wayne Rooney",
+    "starters_ready": [
+      "Mustapha Bundu",
+      "Morgan Whittaker",
+      "Rami Al Hajj"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "port vale": {
+    "manager": "Darren Moore",
+    "starters_ready": [
+      "Jayden Stockley",
+      "Ruari Paton",
+      "Ben Garrity"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "reading": {
+    "manager": "Rubén Sellés",
+    "starters_ready": [
+      "Sam Smith",
+      "Kelvin Ehibhatiomhan",
+      "Harvey Knibbs"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "rochdale": {
+    "manager": "Jimmy McNulty",
+    "starters_ready": [
+      "Kairo Mitchell",
+      "Devante Rodney",
+      "Ian Henderson"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "rotherham united": {
+    "manager": "Steve Evans",
+    "starters_ready": [
+      "Jonson Clarke-Harris",
+      "Sam Nombe",
+      "Mallik Wilks"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "salford city": {
+    "manager": "Karl Robinson",
+    "starters_ready": [
+      "Kole Hall",
+      "Kylian Kouassi",
+      "Hakeeb Adelakun"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "salisbury fc": {
+    "manager": "Brian Dutton",
+    "starters_ready": [
+      "Josh Hedges",
+      "Noah Coppin",
+      "Dan Fitchett"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "scunthorpe united": {
+    "manager": "Andy Butler",
+    "starters_ready": [
+      "Danny Whitehall",
+      "Carlton Ubaezuonu",
+      "Callum Roberts"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "sholing": {
+    "manager": "Paul Doswell",
+    "starters_ready": [
+      "Dan Mason",
+      "Brad Targett",
+      "Lee Wort"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "shrewsbury town": {
+    "manager": "Gareth Ainsworth",
+    "starters_ready": [
+      "John Marquis",
+      "George Lloyd",
+      "Tom Bloxham"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "stevenage": {
+    "manager": "Alex Revell",
+    "starters_ready": [
+      "Jamie Reid",
+      "Elliott List",
+      "Dan Kemp"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "sutton united": {
+    "manager": "Steve Morison",
+    "starters_ready": [
+      "Will Davies",
+      "Ashley Nadesan",
+      "Lewis Simper"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "swindon town": {
+    "manager": "Ian Holloway",
+    "starters_ready": [
+      "Harry Smith",
+      "Kabongo Tshimanga",
+      "Paul Glatzel"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "tranmere rovers": {
+    "manager": "Nigel Adkins",
+    "starters_ready": [
+      "Omari Patrick",
+      "Kristian Dennis",
+      "Connor Jennings"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "walsall": {
+    "manager": "Mat Sadler",
+    "starters_ready": [
+      "Nathan Lowe",
+      "Jamille Matt",
+      "Taylor Allen"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "wealdstone": {
+    "manager": "Matthew Taylor",
+    "starters_ready": [
+      "Enzio Boldewijn",
+      "Micah Obiero",
+      "Sean Adarkwa"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "wigan athletic": {
+    "manager": "Shaun Maloney",
+    "starters_ready": [
+      "Thelo Aasgaard",
+      "Dale Taylor",
+      "Joe Hugill"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "worcester city": {
+    "manager": "Chris Cornes",
+    "starters_ready": [
+      "Liam Lockett",
+      "Kyle Belmonte",
+      "Dylan Hart"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "wycombe wanderers": {
+    "manager": "Matt Bloomfield",
+    "starters_ready": [
+      "Richard Kone",
+      "Garath McCleary",
+      "Cameron Humphreys"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "yeovil town": {
+    "manager": "Mark Cooper",
+    "starters_ready": [
+      "Brett McGavin",
+      "Aaron Jarvis",
+      "Frank Nouble"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "york city": {
+    "manager": "Adam Hinshelwood",
+    "starters_ready": [
+      "Ollie Pearce",
+      "Dipo Akinyemi",
+      "Ricky Aguiar"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "blackpool": {
+    "manager": "Steve Bruce",
+    "starters_ready": [
+      "Kyle Joseph",
+      "Ashley Fletcher",
+      "CJ Hamilton"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "altrincham": {
+    "manager": "Phil Parkinson",
+    "starters_ready": [
+      "Regan Linney",
+      "Justin Amaluzor",
+      "Alex Newby"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "alvechurch": {
+    "manager": "James Fry",
+    "starters_ready": [
+      "Kobe Chong",
+      "Daniele Ricketts",
+      "Tyrone Burton"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "afc fylde": {
+    "manager": "Kevin Phillips",
+    "starters_ready": [
+      "Nick Haughton",
+      "Charlie Jolley",
+      "Jon Ustabasi"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "afc rushden & diamonds": {
+    "manager": "Michael Harriman",
+    "starters_ready": [
+      "Ryan Inman",
+      "Joel Anker",
+      "Tevin Fagan"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "afc wimbledon": {
+    "manager": "Johnnie Jackson",
+    "starters_ready": [
+      "Matty Stevens",
+      "Omar Bugiel",
+      "James Tilley"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "aldershot town": {
+    "manager": "Tommy Widdrington",
+    "starters_ready": [
+      "James Henry",
+      "Jack Barham",
+      "Hady Ghandour"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "barrow": {
+    "manager": "Stephen Clemence",
+    "starters_ready": [
+      "Gerard Garner",
+      "Kian Spence",
+      "Elliot Newby"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "manchester": {
+    "manager": "Pep Guardiola",
+    "starters_ready": [
+      "Erling Haaland",
+      "Phil Foden",
+      "Bernardo Silva",
+      "Rúben Dias",
+      "Ederson"
+    ],
+    "out": [
+      {
+        "player": "Rodri",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica posquirúrgica."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Kevin De Bruyne",
+        "pos": "Centrocampista",
+        "type": "⚠️ Gestión de Cargas",
+        "desc": "Probable rotación táctica."
+      }
+    ]
+  },
+  "man": {
+    "manager": "Pep Guardiola",
+    "starters_ready": [
+      "Erling Haaland",
+      "Phil Foden",
+      "Bernardo Silva",
+      "Rúben Dias",
+      "Ederson"
+    ],
+    "out": [
+      {
+        "player": "Rodri",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica posquirúrgica."
+      }
+    ],
+    "questionable": [
+      {
+        "player": "Kevin De Bruyne",
+        "pos": "Centrocampista",
+        "type": "⚠️ Gestión de Cargas",
+        "desc": "Probable rotación táctica."
+      }
+    ]
+  },
+  "ma ga": {
+    "manager": "Sergio Pellicer",
+    "starters_ready": [
+      "Roberto Fernández",
+      "Dioni",
+      "Kevin Medina",
+      "Manu Molina",
+      "Alfonso Herrero"
+    ],
+    "out": [
+      {
+        "player": "Haitam Abaida",
+        "pos": "Extremo",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "racing santan r": {
+    "manager": "José Alberto López",
+    "starters_ready": [
+      "Juan Carlos Arana",
+      "Andrés Martín",
+      "Íñigo Vicente",
+      "Unai Vencedor",
+      "Jokin Ezkieta"
+    ],
+    "out": [
+      {
+        "player": "Álvaro Mantilla",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "portivo": {
+    "manager": "Imanol Idiakez",
+    "starters_ready": [
+      "Lucas Pérez",
+      "David Mella",
+      "Yeremay Hernández",
+      "Diego Villares",
+      "Germán Parreño"
+    ],
+    "out": [
+      {
+        "player": "Sergio Escudero",
+        "pos": "Defensa",
+        "type": "🚑 Codo",
+        "desc": "En recuperación posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "wer r bremen": {
+    "manager": "Ole Werner",
+    "starters_ready": [
+      "Marvin Ducksch",
+      "Keke Topp",
+      "Mitchell Weiser",
+      "Jens Stage",
+      "Michael Zetterer"
+    ],
+    "out": [
+      {
+        "player": "Marco Friedl",
+        "pos": "Defensa",
+        "type": "🚑 Sobrecarga",
+        "desc": "Duda médica."
+      }
+    ],
+    "questionable": []
+  },
+  "augsburg": {
+    "manager": "Jess Thorup",
+    "starters_ready": [
+      "Samuel Essende",
+      "Phillip Tietz",
+      "Elvis Rexhbecaj",
+      "Nediljko Labrović"
+    ],
+    "out": [
+      {
+        "player": "Robert Gumny",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Rehabilitación."
+      }
+    ],
+    "questionable": []
+  },
+  "versberg": {
+    "manager": "Horst Steffen",
+    "starters_ready": [
+      "Fisnik Asllani",
+      "Luca Schnellbacher",
+      "Muhammed Damar",
+      "Nicolas Kristof"
+    ],
+    "out": [
+      {
+        "player": "Florian Le Joncour",
+        "pos": "Defensa",
+        "type": "🚑 Luxación de Codo",
+        "desc": "Baja posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "pa rborn 07": {
+    "manager": "Lukas Kwasniok",
+    "starters_ready": [
+      "Adriano Grimaldi",
+      "Filip Bilbija",
+      "Raphael Obermair",
+      "Pelle Boevink"
+    ],
+    "out": [
+      {
+        "player": "Mattes Hansen",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "pa rborn": {
+    "manager": "Lukas Kwasniok",
+    "starters_ready": [
+      "Adriano Grimaldi",
+      "Filip Bilbija",
+      "Raphael Obermair",
+      "Pelle Boevink"
+    ],
+    "out": [
+      {
+        "player": "Mattes Hansen",
+        "pos": "Centrocampista",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "darmstadt 98": {
+    "manager": "Florian Kohfeldt",
+    "starters_ready": [
+      "Fynn Lakenmacher",
+      "Isac Lidberg",
+      "Fraser Hornby",
+      "Tobias Kempe",
+      "Marcel Schuhen"
+    ],
+    "out": [
+      {
+        "player": "Fabian Holland",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      },
+      {
+        "player": "Paul Will",
+        "pos": "Centrocampista",
+        "type": "🚑 Rotura de Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "holstein ki": {
+    "manager": "Marcel Rapp",
+    "starters_ready": [
+      "Shuto Machino",
+      "Benedikt Pichler",
+      "Steven Skrzybski",
+      "Timon Weiner"
+    ],
+    "out": [
+      {
+        "player": "Colin Kleine-Bekel",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "arminia bi ef d": {
+    "manager": "Mitch Kniat",
+    "starters_ready": [
+      "André Becker",
+      "Merveille Biankadi",
+      "Kaito Mizuta",
+      "Jonas Kersken"
+    ],
+    "out": [
+      {
+        "player": "Jeredy Hilterman",
+        "pos": "Delantero",
+        "type": "🚑 Pie",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "bi ef d": {
+    "manager": "Mitch Kniat",
+    "starters_ready": [
+      "André Becker",
+      "Merveille Biankadi",
+      "Kaito Mizuta",
+      "Jonas Kersken"
+    ],
+    "out": [
+      {
+        "player": "Jeredy Hilterman",
+        "pos": "Delantero",
+        "type": "🚑 Pie",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "kaisers utern": {
+    "manager": "Markus Anfang",
+    "starters_ready": [
+      "Ragnar Ache",
+      "Richmond Tachie",
+      "Marlon Ritter",
+      "Julian Krahl"
+    ],
+    "out": [
+      {
+        "player": "Hendrick Zuck",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "paris saintgermain": {
+    "manager": "Luis Enrique",
+    "starters_ready": [
+      "Ousmane Dembélé",
+      "Bradley Barcola",
+      "Marco Asensio",
+      "Vitinha",
+      "Achraf Hakimi",
+      "Gianluigi Donnarumma"
+    ],
+    "out": [
+      {
+        "player": "Gonçalo Ramos",
+        "pos": "Delantero",
+        "type": "🚑 Tobillo",
+        "desc": "Recuperación posquirúrgica."
+      },
+      {
+        "player": "Presnel Kimpembe",
+        "pos": "Defensa",
+        "type": "🚑 Tendón de Aquiles",
+        "desc": "Readaptación física."
+      }
+    ],
+    "questionable": []
+  },
+  "paris": {
+    "manager": "Stéphane Gilli",
+    "starters_ready": [
+      "Jean-Philippe Krasso",
+      "Alimami Gory",
+      "Ilan Kebbal",
+      "Obed Nkambadio"
+    ],
+    "out": [
+      {
+        "player": "Lamine Gueye",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "at s": {
+    "manager": "Beñat San José",
+    "starters_ready": [
+      "Eduardo Aguirre",
+      "Jhon Murillo",
+      "Raymundo Fulgencio",
+      "Aldo Rocha",
+      "Camilo Vargas"
+    ],
+    "out": [
+      {
+        "player": "Mauro Manotas",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "fensa y justicia": {
+    "manager": "Pablo De Muner",
+    "starters_ready": [
+      "Abiel Osorio",
+      "Juan Miritello",
+      "Kevin López",
+      "Cristopher Fiermarin"
+    ],
+    "out": [
+      {
+        "player": "Gastón Togni",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "estudiantes p ta": {
+    "manager": "Eduardo Domínguez",
+    "starters_ready": [
+      "Guido Carrillo",
+      "Edwuin Cetré",
+      "José Sosa",
+      "Enzo Pérez",
+      "Matías Mansilla"
+    ],
+    "out": [
+      {
+        "player": "Javier Altamirano",
+        "pos": "Centrocampista",
+        "type": "🚑 Tratamiento Clínico",
+        "desc": "Reincorporación paulatina."
+      }
+    ],
+    "questionable": []
+  },
+  "new ls old boys": {
+    "manager": "Ricardo Lunari",
+    "starters_ready": [
+      "Juan Ignacio Ramírez",
+      "Mateo Silvetti",
+      "Éver Banega",
+      "Ramiro Macagno"
+    ],
+    "out": [
+      {
+        "player": "Ian Glavinovich",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "new ls": {
+    "manager": "Ricardo Lunari",
+    "starters_ready": [
+      "Juan Ignacio Ramírez",
+      "Mateo Silvetti",
+      "Éver Banega",
+      "Ramiro Macagno"
+    ],
+    "out": [
+      {
+        "player": "Ian Glavinovich",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "talleres cordoba": {
+    "manager": "Alexander Medina",
+    "starters_ready": [
+      "Federico Girotti",
+      "Bruno Barticciotto",
+      "Rubén Botta",
+      "Guido Herrera"
+    ],
+    "out": [
+      {
+        "player": "Matías Catalán",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "estudiantes rio cuarto": {
+    "manager": "Iván Delfino",
+    "starters_ready": [
+      "Luis Silba",
+      "Mauro Valiente",
+      "Tomás González"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "gimnasia mendoza": {
+    "manager": "Ezequiel Medrán",
+    "starters_ready": [
+      "Luis Silveira",
+      "Nazareno Solís",
+      "Jeremías Puch"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "in pendiente rivadavia": {
+    "manager": "Alfredo Berti",
+    "starters_ready": [
+      "Sebastián Villa",
+      "Victorio Ramis",
+      "Ezequiel Ham"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "instituto cordoba": {
+    "manager": "Diego Dabove",
+    "starters_ready": [
+      "Damián Puebla",
+      "Facundo Suárez",
+      "Gastón Lodico"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "wolverhampton": {
+    "manager": "Gary O'Neil",
+    "starters_ready": [
+      "Matheus Cunha",
+      "Jørgen Strand Larsen",
+      "Hwang Hee-chan",
+      "Mario Lemina",
+      "José Sá"
+    ],
+    "out": [
+      {
+        "player": "Saša Kalajdžić",
+        "pos": "Delantero",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "bristol": {
+    "manager": "Liam Manning",
+    "starters_ready": [
+      "Sinclair Armstrong",
+      "Yu Hirakawa",
+      "Scott Twine",
+      "Jason Knight",
+      "Max O'Leary"
+    ],
+    "out": [
+      {
+        "player": "Rob Dickie",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "b ckburn rovers": {
+    "manager": "John Eustace",
+    "starters_ready": [
+      "Yuki Ohashi",
+      "Makhtar Gueye",
+      "Tyrhys Dolan",
+      "Aynsley Pears"
+    ],
+    "out": [
+      {
+        "player": "Scott Wharton",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "b ckburn": {
+    "manager": "John Eustace",
+    "starters_ready": [
+      "Yuki Ohashi",
+      "Makhtar Gueye",
+      "Tyrhys Dolan",
+      "Aynsley Pears"
+    ],
+    "out": [
+      {
+        "player": "Scott Wharton",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "sheffi d": {
+    "manager": "Chris Wilder",
+    "starters_ready": [
+      "Kieffer Moore",
+      "Tyrese Campbell",
+      "Callum O'Hare",
+      "Michael Cooper"
+    ],
+    "out": [
+      {
+        "player": "Tom Davies",
+        "pos": "Centrocampista",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "sheffi d utd": {
+    "manager": "Chris Wilder",
+    "starters_ready": [
+      "Kieffer Moore",
+      "Tyrese Campbell",
+      "Callum O'Hare",
+      "Michael Cooper"
+    ],
+    "out": [
+      {
+        "player": "Tom Davies",
+        "pos": "Centrocampista",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "ga tasaray": {
+    "manager": "Okan Buruk",
+    "starters_ready": [
+      "Victor Osimhen",
+      "Mauro Icardi",
+      "Dries Mertens",
+      "Barış Alper Yılmaz",
+      "Fernando Muslera"
+    ],
+    "out": [
+      {
+        "player": "Ismail Jakobs",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "koca ispor": {
+    "manager": "Ertuğrul Sağlam",
+    "starters_ready": [
+      "Oğulcan Çağlayan",
+      "Ryan Mendes",
+      "Josip Vuković",
+      "Gökhan Değirmenci"
+    ],
+    "out": [
+      {
+        "player": "Markão",
+        "pos": "Delantero",
+        "type": "🚑 Tobillo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "exc sior": {
+    "manager": "Ruben den Uil",
+    "starters_ready": [
+      "Richie Omorowa",
+      "Jacky Donkor",
+      "Noah Naujoks",
+      "Calvin Raatsie"
+    ],
+    "out": [
+      {
+        "player": "Kik Pierie",
+        "pos": "Defensa",
+        "type": "🚑 Pie",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "ado n haag": {
+    "manager": "Darije Kalezić",
+    "starters_ready": [
+      "Lee Bonis",
+      "Jari Vlak",
+      "Daryl van Mieghem",
+      "Kilian Nikiema"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "t star": {
+    "manager": "Anthony Correia",
+    "starters_ready": [
+      "Zakaria Eddahchouri",
+      "Youssef El Kachati",
+      "Mees Kaandorp",
+      "Ronald Koeman Jr."
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "cercle brugge k": {
+    "manager": "Miron Muslic",
+    "starters_ready": [
+      "Kévin Denkey",
+      "Abdoul Kader Ouattara",
+      "Alan Minda",
+      "Maxime Delanghe"
+    ],
+    "out": [
+      {
+        "player": "Warleson",
+        "pos": "Portero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "kv mech en": {
+    "manager": "Besnik Hasi",
+    "starters_ready": [
+      "Benito Raman",
+      "Lion Lauberbach",
+      "Nikola Storm",
+      "Ortwin De Wolf"
+    ],
+    "out": [
+      {
+        "player": "Mory Konaté",
+        "pos": "Centrocampista",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "royal charleroi": {
+    "manager": "Rik De Mil",
+    "starters_ready": [
+      "Daan Heymans",
+      "Antoine Bernier",
+      "Guiagon Parfait",
+      "Mohamed Koné"
+    ],
+    "out": [
+      {
+        "player": "Raymond Asante",
+        "pos": "Extremo",
+        "type": "🚑 Ingle",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "lomm sk": {
+    "manager": "Steve Bould",
+    "starters_ready": [
+      "Jason van Duiven",
+      "Lucas Schoofs",
+      "Karim Dermane",
+      "Nikola Ivezic"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "raal louviere": {
+    "manager": "Frédéric Taquin",
+    "starters_ready": [
+      "Mouhamed Belkheir",
+      "Fadel Gobitaka",
+      "Samuel Gueulette",
+      "Marcos Peano"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "louviere": {
+    "manager": "Frédéric Taquin",
+    "starters_ready": [
+      "Mouhamed Belkheir",
+      "Fadel Gobitaka",
+      "Samuel Gueulette",
+      "Marcos Peano"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "h s verona": {
+    "manager": "Paolo Zanetti",
+    "starters_ready": [
+      "Casper Tengstedt",
+      "Daniel Mosquera",
+      "Darko Lazović",
+      "Lorenzo Montipò"
+    ],
+    "out": [
+      {
+        "player": "Juan Manuel Cruz",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "us av lino": {
+    "manager": "Raffaele Biancolino",
+    "starters_ready": [
+      "Cosimo Patierno",
+      "Michele D'Ausilio",
+      "Dimitrios Sounas",
+      "Antony Iannarilli"
+    ],
+    "out": [
+      {
+        "player": "Michele Rocca",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "av lino": {
+    "manager": "Raffaele Biancolino",
+    "starters_ready": [
+      "Cosimo Patierno",
+      "Michele D'Ausilio",
+      "Dimitrios Sounas",
+      "Antony Iannarilli"
+    ],
+    "out": [
+      {
+        "player": "Michele Rocca",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "volos n": {
+    "manager": "Savvas Poursaitidis",
+    "starters_ready": [
+      "Márk Koszta",
+      "Jasin Assehnoun",
+      "Nemanja Mladenović",
+      "Dániel Kovács"
+    ],
+    "out": [
+      {
+        "player": "Maximiliano Comba",
+        "pos": "Delantero",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "rc c ta fortuna": {
+    "manager": "Fredi Álvarez",
+    "starters_ready": [
+      "Jordi Escobar",
+      "Fer López",
+      "Damián Rodríguez",
+      "César Fernández"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "c ta fortuna": {
+    "manager": "Fredi Álvarez",
+    "starters_ready": [
+      "Jordi Escobar",
+      "Fer López",
+      "Damián Rodríguez",
+      "César Fernández"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "a hornchurch": {
+    "manager": "Daryl McMahon",
+    "starters_ready": [
+      "Femi Akinwande",
+      "Angelo Balanta",
+      "Liam Nash"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "bradford": {
+    "manager": "Graham Alexander",
+    "starters_ready": [
+      "Andy Cook",
+      "Calum Kavanagh",
+      "Bobby Pointon"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "carlisle": {
+    "manager": "Mike Williamson",
+    "starters_ready": [
+      "Charlie Wyke",
+      "Luke Armstrong",
+      "Daniel Adu-Adjei"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "ch tenham town": {
+    "manager": "Michael Flynn",
+    "starters_ready": [
+      "Ethon Archer",
+      "George Miller",
+      "Jordan Thomas"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "chesterfi d": {
+    "manager": "Paul Cook",
+    "starters_ready": [
+      "Will Grigg",
+      "James Berry",
+      "Armando Dobra"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "colchester": {
+    "manager": "Danny Cowley",
+    "starters_ready": [
+      "Lyle Taylor",
+      "Samson Tovide",
+      "Jack Payne"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "dover": {
+    "manager": "Jake Leberl",
+    "starters_ready": [
+      "George Nikaj",
+      "Ruben Soares-Junior",
+      "Harrison Pont"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "exeter": {
+    "manager": "Gary Caldwell",
+    "starters_ready": [
+      "Josh Magennis",
+      "Ilmari Niskanen",
+      "Millenic Alli"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "halifax town": {
+    "manager": "Chris Millington",
+    "starters_ready": [
+      "Billy Waters",
+      "Angelo Cappello",
+      "Florent Hoti"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "guis ey": {
+    "manager": "Mark Bower",
+    "starters_ready": [
+      "Will Longbottom",
+      "Jordan Thewlis",
+      "John Lufudu"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "hud rsfi d town": {
+    "manager": "Michael Duff",
+    "starters_ready": [
+      "Josh Koroma",
+      "Bojan Radulovic",
+      "Callum Marshall"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "kid rminster harriers": {
+    "manager": "Phil Brown",
+    "starters_ready": [
+      "Amari Morgan-Smith",
+      "Ashley Hemmings",
+      "Maliq Cadogan"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "macclesfi d": {
+    "manager": "Robbie Savage",
+    "starters_ready": [
+      "Paul Dawson",
+      "John Rooney",
+      "Neil Kengni"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "mansfi d town": {
+    "manager": "Nigel Clough",
+    "starters_ready": [
+      "Lee Gregory",
+      "Will Evans",
+      "Keanu Baccus"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "oxford": {
+    "manager": "Des Buckingham",
+    "starters_ready": [
+      "Mark Harris",
+      "Tyler Goodrham",
+      "Siriki Dembélé"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "peterborough": {
+    "manager": "Darren Ferguson",
+    "starters_ready": [
+      "Kwame Poku",
+      "Malik Mothersille",
+      "Ricky-Jade Jones"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "ro rham": {
+    "manager": "Steve Evans",
+    "starters_ready": [
+      "Jonson Clarke-Harris",
+      "Sam Nombe",
+      "Mallik Wilks"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "salford": {
+    "manager": "Karl Robinson",
+    "starters_ready": [
+      "Kole Hall",
+      "Kylian Kouassi",
+      "Hakeeb Adelakun"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "salisbury": {
+    "manager": "Brian Dutton",
+    "starters_ready": [
+      "Josh Hedges",
+      "Noah Coppin",
+      "Dan Fitchett"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "unthorpe": {
+    "manager": "Andy Butler",
+    "starters_ready": [
+      "Danny Whitehall",
+      "Carlton Ubaezuonu",
+      "Callum Roberts"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "sutton": {
+    "manager": "Steve Morison",
+    "starters_ready": [
+      "Will Davies",
+      "Ashley Nadesan",
+      "Lewis Simper"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "wigan": {
+    "manager": "Shaun Maloney",
+    "starters_ready": [
+      "Thelo Aasgaard",
+      "Dale Taylor",
+      "Joe Hugill"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "worcester": {
+    "manager": "Chris Cornes",
+    "starters_ready": [
+      "Liam Lockett",
+      "Kyle Belmonte",
+      "Dylan Hart"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "wycombe": {
+    "manager": "Matt Bloomfield",
+    "starters_ready": [
+      "Richard Kone",
+      "Garath McCleary",
+      "Cameron Humphreys"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "york": {
+    "manager": "Adam Hinshelwood",
+    "starters_ready": [
+      "Ollie Pearce",
+      "Dipo Akinyemi",
+      "Ricky Aguiar"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "b ckpool": {
+    "manager": "Steve Bruce",
+    "starters_ready": [
+      "Kyle Joseph",
+      "Ashley Fletcher",
+      "CJ Hamilton"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "a fyl": {
+    "manager": "Kevin Phillips",
+    "starters_ready": [
+      "Nick Haughton",
+      "Charlie Jolley",
+      "Jon Ustabasi"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "a rush n diamonds": {
+    "manager": "Michael Harriman",
+    "starters_ready": [
+      "Ryan Inman",
+      "Joel Anker",
+      "Tevin Fagan"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "a wimbledon": {
+    "manager": "Johnnie Jackson",
+    "starters_ready": [
+      "Matty Stevens",
+      "Omar Bugiel",
+      "James Tilley"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "al rshot town": {
+    "manager": "Tommy Widdrington",
+    "starters_ready": [
+      "James Henry",
+      "Jack Barham",
+      "Hady Ghandour"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "inter miami cf": {
+    "manager": "Gerardo Martino",
+    "starters_ready": [
+      "Lionel Messi",
+      "Luis Suárez",
+      "Sergio Busquets",
+      "Jordi Alba",
+      "Drake Callender"
+    ],
+    "out": [
+      {
+        "player": "Facundo Farías",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "inter miami": {
+    "manager": "Gerardo Martino",
+    "starters_ready": [
+      "Lionel Messi",
+      "Luis Suárez",
+      "Sergio Busquets",
+      "Jordi Alba",
+      "Drake Callender"
+    ],
+    "out": [
+      {
+        "player": "Facundo Farías",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "charlotte fc": {
+    "manager": "Dean Smith",
+    "starters_ready": [
+      "Patrick Agyemang",
+      "Karol Swiderski",
+      "Liel Abada",
+      "Pep Biel",
+      "Kristijan Kahlina"
+    ],
+    "out": [
+      {
+        "player": "Jere Uronen",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "charlotte": {
+    "manager": "Dean Smith",
+    "starters_ready": [
+      "Patrick Agyemang",
+      "Karol Swiderski",
+      "Liel Abada",
+      "Pep Biel",
+      "Kristijan Kahlina"
+    ],
+    "out": [
+      {
+        "player": "Jere Uronen",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "la galaxy": {
+    "manager": "Greg Vanney",
+    "starters_ready": [
+      "Riqui Puig",
+      "Gabriel Pec",
+      "Dejan Joveljić",
+      "Joseph Paintsil",
+      "John McCarthy"
+    ],
+    "out": [
+      {
+        "player": "Gastón Brugman",
+        "pos": "Centrocampista",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "lafc": {
+    "manager": "Steve Cherundolo",
+    "starters_ready": [
+      "Denis Bouanga",
+      "Olivier Giroud",
+      "Mateusz Bogusz",
+      "Eduard Atuesta",
+      "Hugo Lloris"
+    ],
+    "out": [
+      {
+        "player": "Lorenzo Dellavalle",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "columbus crew": {
+    "manager": "Wilfried Nancy",
+    "starters_ready": [
+      "Cucho Hernández",
+      "Christian Ramirez",
+      "Diego Rossi",
+      "Darlington Nagbe",
+      "Patrick Schulte"
+    ],
+    "out": [
+      {
+        "player": "Evan Bush",
+        "pos": "Portero",
+        "type": "🚑 Brazo",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "fc cincinnati": {
+    "manager": "Pat Noonan",
+    "starters_ready": [
+      "Luciano Acosta",
+      "Kevin Kelsy",
+      "Luca Orellano",
+      "Yuya Kubo",
+      "Roman Celentano"
+    ],
+    "out": [
+      {
+        "player": "Matt Miazga",
+        "pos": "Defensa",
+        "type": "🚑 Ligamento",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "atlanta united fc": {
+    "manager": "Rob Valentino",
+    "starters_ready": [
+      "Saba Lobjanidze",
+      "Daniel Ríos",
+      "Alexey Miranchuk",
+      "Brad Guzan"
+    ],
+    "out": [
+      {
+        "player": "Ronald Hernández",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "atlanta": {
+    "manager": "Rob Valentino",
+    "starters_ready": [
+      "Saba Lobjanidze",
+      "Daniel Ríos",
+      "Alexey Miranchuk",
+      "Brad Guzan"
+    ],
+    "out": [
+      {
+        "player": "Ronald Hernández",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "seattle sounders fc": {
+    "manager": "Brian Schmetzer",
+    "starters_ready": [
+      "Jordan Morris",
+      "Albert Rusnák",
+      "Raúl Ruidíaz",
+      "Cristian Roldan",
+      "Stefan Frei"
+    ],
+    "out": [
+      {
+        "player": "João Paulo",
+        "pos": "Centrocampista",
+        "type": "🚑 Cadera",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "seattle sounders": {
+    "manager": "Brian Schmetzer",
+    "starters_ready": [
+      "Jordan Morris",
+      "Albert Rusnák",
+      "Raúl Ruidíaz",
+      "Cristian Roldan",
+      "Stefan Frei"
+    ],
+    "out": [
+      {
+        "player": "João Paulo",
+        "pos": "Centrocampista",
+        "type": "🚑 Cadera",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "portland timbers": {
+    "manager": "Phil Neville",
+    "starters_ready": [
+      "Evander",
+      "Jonathan Rodríguez",
+      "Felipe Mora",
+      "Santiago Moreno",
+      "Maxime Crépeau"
+    ],
+    "out": [
+      {
+        "player": "David Ayala",
+        "pos": "Centrocampista",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "new york city fc": {
+    "manager": "Nick Cushing",
+    "starters_ready": [
+      "Alonso Martínez",
+      "Santiago Rodríguez",
+      "Hannes Wolf",
+      "Matt Freese"
+    ],
+    "out": [
+      {
+        "player": "Malachi Jones",
+        "pos": "Delantero",
+        "type": "🚑 Pierna",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "new york city": {
+    "manager": "Nick Cushing",
+    "starters_ready": [
+      "Alonso Martínez",
+      "Santiago Rodríguez",
+      "Hannes Wolf",
+      "Matt Freese"
+    ],
+    "out": [
+      {
+        "player": "Malachi Jones",
+        "pos": "Delantero",
+        "type": "🚑 Pierna",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "red bull new york": {
+    "manager": "Sandro Schwarz",
+    "starters_ready": [
+      "Lewis Morgan",
+      "Dante Vanzeir",
+      "Emil Forsberg",
+      "Carlos Coronel"
+    ],
+    "out": [
+      {
+        "player": "Roald Mitchell",
+        "pos": "Delantero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "orlando city sc": {
+    "manager": "Oscar Pareja",
+    "starters_ready": [
+      "Facundo Torres",
+      "Duncan McGuire",
+      "Martín Ojeda",
+      "Pedro Gallese"
+    ],
+    "out": [
+      {
+        "player": "Mason Stajduhar",
+        "pos": "Portero",
+        "type": "🚑 Pierna",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "orlando city": {
+    "manager": "Oscar Pareja",
+    "starters_ready": [
+      "Facundo Torres",
+      "Duncan McGuire",
+      "Martín Ojeda",
+      "Pedro Gallese"
+    ],
+    "out": [
+      {
+        "player": "Mason Stajduhar",
+        "pos": "Portero",
+        "type": "🚑 Pierna",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "philadelphia union": {
+    "manager": "Jim Curtin",
+    "starters_ready": [
+      "Dániel Gazdag",
+      "Mikael Uhre",
+      "Tai Baribo",
+      "Andre Blake"
+    ],
+    "out": [
+      {
+        "player": "Isaiah LeFlore",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "houston dynamo fc": {
+    "manager": "Ben Olsen",
+    "starters_ready": [
+      "Ezequiel Ponce",
+      "Ibrahim Aliyu",
+      "Héctor Herrera",
+      "Steve Clark"
+    ],
+    "out": [
+      {
+        "player": "Lawrence Ennali",
+        "pos": "Extremo",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "houston dynamo": {
+    "manager": "Ben Olsen",
+    "starters_ready": [
+      "Ezequiel Ponce",
+      "Ibrahim Aliyu",
+      "Héctor Herrera",
+      "Steve Clark"
+    ],
+    "out": [
+      {
+        "player": "Lawrence Ennali",
+        "pos": "Extremo",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  },
+  "austin fc": {
+    "manager": "Josh Wolff",
+    "starters_ready": [
+      "Sebastián Driussi",
+      "Gyasi Zardes",
+      "Jon Gallagher",
+      "Brad Stuver"
+    ],
+    "out": [
+      {
+        "player": "Žan Kolmanič",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "austin": {
+    "manager": "Josh Wolff",
+    "starters_ready": [
+      "Sebastián Driussi",
+      "Gyasi Zardes",
+      "Jon Gallagher",
+      "Brad Stuver"
+    ],
+    "out": [
+      {
+        "player": "Žan Kolmanič",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "fc dallas": {
+    "manager": "Peter Luccin",
+    "starters_ready": [
+      "Petar Musa",
+      "Paul Arriola",
+      "Jesus Ferreira",
+      "Maarten Paes"
+    ],
+    "out": [
+      {
+        "player": "Geovane Jesus",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "real salt lake": {
+    "manager": "Pablo Mastroeni",
+    "starters_ready": [
+      "Cristian Arango",
+      "Diego Luna",
+      "Anderson Julio",
+      "Zac MacMath"
+    ],
+    "out": [
+      {
+        "player": "Kevin Bonilla",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "colorado rapids": {
+    "manager": "Chris Armas",
+    "starters_ready": [
+      "Rafael Navarro",
+      "Djordje Mihailovic",
+      "Cole Bassett",
+      "Zack Steffen"
+    ],
+    "out": [
+      {
+        "player": "Daniel Chacon",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "minnesota united fc": {
+    "manager": "Eric Ramsay",
+    "starters_ready": [
+      "Robin Lod",
+      "Kelvin Yeboah",
+      "Bongokuhle Hlongwane",
+      "Dayne St. Clair"
+    ],
+    "out": [
+      {
+        "player": "DJ Taylor",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "minnesota": {
+    "manager": "Eric Ramsay",
+    "starters_ready": [
+      "Robin Lod",
+      "Kelvin Yeboah",
+      "Bongokuhle Hlongwane",
+      "Dayne St. Clair"
+    ],
+    "out": [
+      {
+        "player": "DJ Taylor",
+        "pos": "Defensa",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "vancouver whitecaps": {
+    "manager": "Vanni Sartini",
+    "starters_ready": [
+      "Brian White",
+      "Ryan Gauld",
+      "Fafà Picault",
+      "Yohei Takaoka"
+    ],
+    "out": [
+      {
+        "player": "Sam Adekugbe",
+        "pos": "Defensa",
+        "type": "🚑 Pantorrilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "cf montréal": {
+    "manager": "Laurent Courtois",
+    "starters_ready": [
+      "Josef Martínez",
+      "Kwadwo Opoku",
+      "Bryce Duke",
+      "Jonathan Sirois"
+    ],
+    "out": [
+      {
+        "player": "Lassi Lappalainen",
+        "pos": "Extremo",
+        "type": "🚑 Ingle",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "toronto fc": {
+    "manager": "John Herdman",
+    "starters_ready": [
+      "Federico Bernardeschi",
+      "Lorenzo Insigne",
+      "Prince Owusu",
+      "Sean Johnson"
+    ],
+    "out": [
+      {
+        "player": "Nicksoen Gomis",
+        "pos": "Defensa",
+        "type": "🚑 Muñeca",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "toronto": {
+    "manager": "John Herdman",
+    "starters_ready": [
+      "Federico Bernardeschi",
+      "Lorenzo Insigne",
+      "Prince Owusu",
+      "Sean Johnson"
+    ],
+    "out": [
+      {
+        "player": "Nicksoen Gomis",
+        "pos": "Defensa",
+        "type": "🚑 Muñeca",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "chicago fire fc": {
+    "manager": "Frank Klopas",
+    "starters_ready": [
+      "Hugo Cuypers",
+      "Brian Gutiérrez",
+      "Maren Haile-Selassie",
+      "Chris Brady"
+    ],
+    "out": [
+      {
+        "player": "Chase Gasper",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "chicago fire": {
+    "manager": "Frank Klopas",
+    "starters_ready": [
+      "Hugo Cuypers",
+      "Brian Gutiérrez",
+      "Maren Haile-Selassie",
+      "Chris Brady"
+    ],
+    "out": [
+      {
+        "player": "Chase Gasper",
+        "pos": "Defensa",
+        "type": "🚑 Isquiotibiales",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "d.c. united": {
+    "manager": "Troy Lesesne",
+    "starters_ready": [
+      "Christian Benteke",
+      "Gabriel Pirani",
+      "Mateusz Klich",
+      "Alex Bono"
+    ],
+    "out": [
+      {
+        "player": "Conner Antley",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "dc": {
+    "manager": "Troy Lesesne",
+    "starters_ready": [
+      "Christian Benteke",
+      "Gabriel Pirani",
+      "Mateusz Klich",
+      "Alex Bono"
+    ],
+    "out": [
+      {
+        "player": "Conner Antley",
+        "pos": "Defensa",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "nashville sc": {
+    "manager": "B.J. Callaghan",
+    "starters_ready": [
+      "Hany Mukhtar",
+      "Sam Surridge",
+      "Jacob Shaffelburg",
+      "Joe Willis"
+    ],
+    "out": [
+      {
+        "player": "Randall Leal",
+        "pos": "Centrocampista",
+        "type": "🚑 Cadera",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "nashville": {
+    "manager": "B.J. Callaghan",
+    "starters_ready": [
+      "Hany Mukhtar",
+      "Sam Surridge",
+      "Jacob Shaffelburg",
+      "Joe Willis"
+    ],
+    "out": [
+      {
+        "player": "Randall Leal",
+        "pos": "Centrocampista",
+        "type": "🚑 Cadera",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "new england revolution": {
+    "manager": "Caleb Porter",
+    "starters_ready": [
+      "Carles Gil",
+      "Giacomo Vrioni",
+      "Dylan Borrero",
+      "Aljaž Ivačič"
+    ],
+    "out": [
+      {
+        "player": "Tomás Chancalay",
+        "pos": "Extremo",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "sporting kansas city": {
+    "manager": "Peter Vermes",
+    "starters_ready": [
+      "Alan Pulido",
+      "Dániel Sallói",
+      "William Agada",
+      "Tim Melia"
+    ],
+    "out": [
+      {
+        "player": "Nemanja Radoja",
+        "pos": "Centrocampista",
+        "type": "🚑 Ingle",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "st. louis city sc": {
+    "manager": "John Hackworth",
+    "starters_ready": [
+      "João Klauss",
+      "Eduard Löwen",
+      "Marcel Hartel",
+      "Roman Bürki"
+    ],
+    "out": [
+      {
+        "player": "Rasmus Alm",
+        "pos": "Extremo",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "st louis city": {
+    "manager": "John Hackworth",
+    "starters_ready": [
+      "João Klauss",
+      "Eduard Löwen",
+      "Marcel Hartel",
+      "Roman Bürki"
+    ],
+    "out": [
+      {
+        "player": "Rasmus Alm",
+        "pos": "Extremo",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "san diego fc": {
+    "manager": "Mikey Varas",
+    "starters_ready": [
+      "Hirving Lozano",
+      "Marcus Ingvartsen",
+      "Jeppe Tverskov",
+      "Pablo Sisniega"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "san diego": {
+    "manager": "Mikey Varas",
+    "starters_ready": [
+      "Hirving Lozano",
+      "Marcus Ingvartsen",
+      "Jeppe Tverskov",
+      "Pablo Sisniega"
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "san jose earthquakes": {
+    "manager": "Ian Russell",
+    "starters_ready": [
+      "Cristian Espinoza",
+      "Amahl Pellegrino",
+      "Hernán López",
+      "Daniel"
+    ],
+    "out": [
+      {
+        "player": "JT Marcinkowski",
+        "pos": "Portero",
+        "type": "🚑 Rodilla",
+        "desc": "Baja médica."
+      }
+    ],
+    "questionable": []
+  },
+  "sc telstar": {
+    "manager": "Henk Brugge",
+    "starters_ready": [
+      "Sem van Duijn",
+      "Patrick Brouwer",
+      "Jochem Ritmeester van de Kamp",
+      "Jeff Hardeveld",
+      "Danny Bakker",
+      "Guus Offerhaus",
+      "Ronald Koeman Jr."
+    ],
+    "out": [],
+    "questionable": []
+  },
+  "rc deportivo": {
+    "manager": "Antonio Hidalgo",
+    "starters_ready": [
+      "Zakaria Eddahchouri",
+      "Lucas Pérez",
+      "Yeremay Hernández",
+      "David Mella",
+      "Diego Villares",
+      "Germán Parreño"
+    ],
+    "out": [
+      {
+        "player": "Sergio Escudero",
+        "pos": "Defensa",
+        "type": "🚑 Codo",
+        "desc": "En recuperación posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "deportivo de la coruña": {
+    "manager": "Antonio Hidalgo",
+    "starters_ready": [
+      "Zakaria Eddahchouri",
+      "Lucas Pérez",
+      "Yeremay Hernández",
+      "David Mella",
+      "Diego Villares",
+      "Germán Parreño"
+    ],
+    "out": [
+      {
+        "player": "Sergio Escudero",
+        "pos": "Defensa",
+        "type": "🚑 Codo",
+        "desc": "En recuperación posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "deportivo la coruña": {
+    "manager": "Antonio Hidalgo",
+    "starters_ready": [
+      "Zakaria Eddahchouri",
+      "Lucas Pérez",
+      "Yeremay Hernández",
+      "David Mella",
+      "Diego Villares",
+      "Germán Parreño"
+    ],
+    "out": [
+      {
+        "player": "Sergio Escudero",
+        "pos": "Defensa",
+        "type": "🚑 Codo",
+        "desc": "En recuperación posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "deportivo de la coruna": {
+    "manager": "Antonio Hidalgo",
+    "starters_ready": [
+      "Zakaria Eddahchouri",
+      "Lucas Pérez",
+      "Yeremay Hernández",
+      "David Mella",
+      "Diego Villares",
+      "Germán Parreño"
+    ],
+    "out": [
+      {
+        "player": "Sergio Escudero",
+        "pos": "Defensa",
+        "type": "🚑 Codo",
+        "desc": "En recuperación posoperatoria."
+      }
+    ],
+    "questionable": []
+  },
+  "málaga cf": {
+    "manager": "Sergio Pellicer",
+    "starters_ready": [
+      "Eneko Jauregi",
+      "Julen Lobete",
+      "Adrián Niño",
+      "David Larrubia",
+      "Kevin Medina",
+      "Alfonso Herrero"
+    ],
+    "out": [
+      {
+        "player": "Haitam Abaida",
+        "pos": "Extremo",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "malaga cf": {
+    "manager": "Sergio Pellicer",
+    "starters_ready": [
+      "Eneko Jauregi",
+      "Julen Lobete",
+      "Adrián Niño",
+      "David Larrubia",
+      "Kevin Medina",
+      "Alfonso Herrero"
+    ],
+    "out": [
+      {
+        "player": "Haitam Abaida",
+        "pos": "Extremo",
+        "type": "🚑 Muscular",
+        "desc": "Baja médica confirmada."
+      }
+    ],
+    "questionable": []
+  },
+  "rcd espanyol": {
+    "manager": "Manolo González",
+    "starters_ready": [
+      "Javi Puado",
+      "Roberto Fernández",
+      "Alejo Véliz",
+      "Jofre Carreras",
+      "Álvaro Tejero",
+      "Joan García"
+    ],
+    "out": [
+      {
+        "player": "Edu Expósito",
+        "pos": "Centrocampista",
+        "type": "🚑 Ligamento Cruzado",
+        "desc": "Baja de larga duración."
+      }
+    ],
+    "questionable": []
+  }
+}

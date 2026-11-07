@@ -1,4 +1,4 @@
-node_modules
+﻿node_modules
 .DS_Store
 dist
 dist-ssr
@@ -14,3 +14,9 @@ dist-ssr
 capturas_playstore/
 scratch/
 *.log
+__pycache__/
+*.pyc
+cloudflared.exe
+*.bak
+sports_analyzer/test_*.py
+sports_analyzer/scratch/

@@ -1,0 +1,4738 @@
+{
+  "leeds united": [
+    {
+      "name": "Ilia Gruev",
+      "jersey": "44",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ethan Ampadu",
+      "jersey": "4",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Sean Longstaff",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ao Tanaka",
+      "jersey": "22",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Brenden Aaronson",
+      "jersey": "11",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Anton Stach",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Rhys Chadwick",
+      "jersey": "47",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alfie Cresswell",
+      "jersey": "50",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Callum Mills",
+      "jersey": "72",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Harry Wilson",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Dominic Calvert-Lewin",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Daniel James",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lukas Nmecha",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Noah Okafor",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jean-Mattéo Bahoya",
+      "jersey": "23",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "west ham united": [
+    {
+      "name": "Tomás Soucek",
+      "jersey": "28",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Edson Álvarez",
+      "jersey": "4",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Arne Engels",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Soungoutou Magassa",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Keiber Lamadrid",
+      "jersey": "21",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lewis Orford",
+      "jersey": "61",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Divine Mukasa",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mohamadou Kanté",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Maxwel Cornet",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jarrod Bowen",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Joël Piroe",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Valentín Castellanos",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Manor Solomon",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Pablo",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Edvin Austbø",
+      "jersey": "35",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Joshua Ajala",
+      "jersey": "66",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "sunderland": [
+    {
+      "name": "Jack Colback",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Cafú",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ryan Yates",
+      "jersey": "22",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Braian Ojeda",
+      "jersey": "21",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "James Garner",
+      "jersey": "37",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ateef Konate",
+      "jersey": "42",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Oliver Hammond",
+      "jersey": "41",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lewis Grabban",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Philip Zinckernagel",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Joe Lolley",
+      "jersey": "23",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Xande Silva",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Sam Surridge",
+      "jersey": "16",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Keinan Davis",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Brennan Johnson",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Alex Mighten",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Will Swan",
+      "jersey": "48",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Dale Taylor",
+      "jersey": "36",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "arsenal": [
+    {
+      "name": "Martin Ødegaard",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mikel Merino",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Bruno Guimarães",
+      "jersey": "39",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Declan Rice",
+      "jersey": "41",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Eberechi Eze",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Martín Zubimendi",
+      "jersey": "36",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Theo Julienne",
+      "jersey": "45",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Maalik Hashi",
+      "jersey": "74",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ife Ibrahim",
+      "jersey": "44",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Kai Havertz",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Viktor Gyökeres",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Bukayo Saka",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Noni Madueke",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Christos Tzolis",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ceadach O’Neill",
+      "jersey": "53",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Andre Annous",
+      "jersey": "43",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Max Dowman",
+      "jersey": "56",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "chelsea": [
+    {
+      "name": "Jordan Henderson",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Morgan Rogers",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Moisés Caicedo",
+      "jersey": "25",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Cole Palmer",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Romeo Lavia",
+      "jersey": "45",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Valentín Barco",
+      "jersey": "4",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Geovany Quenda",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mahdi Nicoll-Jazuli",
+      "jersey": "32",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Reggie Watson",
+      "jersey": "31",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Danny Welbeck",
+      "jersey": "18",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Pedro Neto",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "João Pedro",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Emmanuel Emegha",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jamie Gittens",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Estêvão",
+      "jersey": "41",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "manchester city": [
+    {
+      "name": "Mateo Kovacic",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Elliot Anderson",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Phil Foden",
+      "jersey": "47",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Enzo Fernández",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Rayan Cherki",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Matheus Nunes",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ayyoub Bouaddi",
+      "jersey": "32",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Floyd Samba",
+      "jersey": "75",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Dexter Oliver",
+      "jersey": "",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Erling Haaland",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Iliman Ndiaye",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Antoine Semenyo",
+      "jersey": "42",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jérémy Doku",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Allan Elias",
+      "jersey": "37",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ryan McAidoo",
+      "jersey": "56",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "liverpool": [
+    {
+      "name": "Wataru Endo",
+      "jersey": "3",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alexis Mac Allister",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Dominik Szoboszlai",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ryan Gravenberch",
+      "jersey": "38",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Florian Wirtz",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "James McConnell",
+      "jersey": "53",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Trey Nyoni",
+      "jersey": "42",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Michael Laffey",
+      "jersey": "94",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Federico Chiesa",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Alexander Isak",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Cody Gakpo",
+      "jersey": "18",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Hugo Ekitike",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Bradley Barcola",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lewis Koumas",
+      "jersey": "67",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jayden Danns",
+      "jersey": "76",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Rio Ngumoha",
+      "jersey": "73",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Joshua Lambie",
+      "jersey": "82",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Víctor Muñoz",
+      "jersey": "23",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "manchester united": [
+    {
+      "name": "Bruno Fernandes",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Youri Tielemans",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jack Fletcher",
+      "jersey": "38",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mason Mount",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Manuel Ugarte",
+      "jersey": "25",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Andrey Santos",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Kobbie Mainoo",
+      "jersey": "37",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Carlos Baleba",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Tyler Fletcher",
+      "jersey": "39",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Marcus Rashford",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Matheus Cunha",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Bryan Mbeumo",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Joshua Zirkzee",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Benjamin Sesko",
+      "jersey": "30",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Amad Diallo",
+      "jersey": "16",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Shea Lacey",
+      "jersey": "31",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Tynan Thompson",
+      "jersey": "27",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "tottenham hotspur": [
+    {
+      "name": "James Maddison",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Rodrigo Bentancur",
+      "jersey": "30",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Sandro Tonali",
+      "jersey": "16",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mohammed Kudus",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Conor Gallagher",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Dejan Kulusevski",
+      "jersey": "21",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mykhailo Mudryk",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Archie Gray",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Xavi Simons",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mateus Fernandes",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lucas Bergvall",
+      "jersey": "15",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Callum Olusesi",
+      "jersey": "52",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Luca Williams-Barnett",
+      "jersey": "68",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Richarlison",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Dominic Solanke",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Omar Marmoush",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Sávio",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Mathys Tel",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Wilson Odobert",
+      "jersey": "28",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "aston villa": [
+    {
+      "name": "Ross Barkley",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "John McGinn",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Leon Goretzka",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Emiliano Buendía",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Boubacar Kamara",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "João Gomes",
+      "jersey": "35",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Amadou Onana",
+      "jersey": "24",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lamare Bogarde",
+      "jersey": "26",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "George Hemmings",
+      "jersey": "53",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Johan Manzambi",
+      "jersey": "44",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Tammy Abraham",
+      "jersey": "18",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Nicolas Jackson",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Alejandro Garnacho",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Alysson",
+      "jersey": "47",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ibrahim Mbaye",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Brian Madjo",
+      "jersey": "39",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "newcastle united": [
+    {
+      "name": "Jacob Murphy",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Joelinton",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Harvey Barnes",
+      "jersey": "11",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Joe Willock",
+      "jersey": "28",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jacob Ramsey",
+      "jersey": "41",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Nico González",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lewis Miley",
+      "jersey": "67",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Sean Steur",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Aladji Bamba",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mason Miley",
+      "jersey": "76",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Yoane Wissa",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Anthony Elanga",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "William Osula",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Bazoumana Touré",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Matias Fernandez-Pardo",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Vakho Salia",
+      "jersey": "49",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Kyran Thompson",
+      "jersey": "44",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Michael Mills",
+      "jersey": "77",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "real madrid": [
+    {
+      "name": "Bernardo Silva",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Federico Valverde",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Brahim Díaz",
+      "jersey": "21",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Aurélien Tchouaméni",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Eduardo Camavinga",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jude Bellingham",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Arda Güler",
+      "jersey": "15",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Thiago Pitarch",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Sergio Martínez",
+      "jersey": "38",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jorge Cestero",
+      "jersey": "29",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alexis Ciria",
+      "jersey": "36",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Kylian Mbappé",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Vinícius Júnior",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Rodrygo",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Endrick",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Daniel Yañez",
+      "jersey": "35",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Carlos Espí",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Yan Diomande",
+      "jersey": "25",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "barcelona": [
+    {
+      "name": "Frenkie de Jong",
+      "jersey": "21",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Dani Olmo",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Rodri",
+      "jersey": "16",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Pedri",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Gavi",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Fermín López",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Marc Bernal",
+      "jersey": "22",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Brian Fariñas",
+      "jersey": "4",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Orian Goren",
+      "jersey": "32",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ebrima Tunkara",
+      "jersey": "30",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Gabriel Jesus",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Raphinha",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Anthony Gordon",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Karim Adeyemi",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Roony Bardghji",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lamine Yamal",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jesse Bisiwu",
+      "jersey": "27",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Hamza Abdelkarim",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "atletico madrid": [
+    {
+      "name": "Rodrigo Mendoza",
+      "jersey": "4",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Koke",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jorge Castillo",
+      "jersey": "46",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Marcos Llorente",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lee Kang-In",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Morten Hjulmand",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Johnny Cardoso",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Álex Baena",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Obed Vargas",
+      "jersey": "3",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Pablo Barrios",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alexander Sørloth",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ademola Lookman",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jonathan David",
+      "jersey": "15",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Julián Álvarez",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Giuliano Simeone",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Arnau Ortiz",
+      "jersey": "16",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Miguel Cubo",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "athletic club": [
+    {
+      "name": "Pablo Ibáñez",
+      "jersey": "19",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Denis Suárez",
+      "jersey": "4",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Carles Aleñá",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Carlos Protesoni",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ander Guevara",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Antonio Blanco",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Selu Diallo",
+      "jersey": "24",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mikel Rodriguez",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Miguel Rodríguez",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Toni Martínez",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Mariano Díaz",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lucas Boyé",
+      "jersey": "15",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Hugo Novoa",
+      "jersey": "12",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Abde Rebbach",
+      "jersey": "21",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Aitor Mañas",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Izei Hernandez",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "bayern munich": [
+    {
+      "name": "Konrad Laimer",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Joshua Kimmich",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Michael Olise",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jamal Musiala",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ismael Saibari",
+      "jersey": "34",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Tom Bischof",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Aleksandar Pavlovic",
+      "jersey": "45",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lennart Karl",
+      "jersey": "42",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "David Daiber",
+      "jersey": "47",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Bara Sapoko Ndiaye",
+      "jersey": "39",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Maycon Cardozo",
+      "jersey": "49",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Harry Kane",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Serge Gnabry",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Luis Díaz",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Tim Binder",
+      "jersey": "46",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "borussia dortmund": [
+    {
+      "name": "Emre Can",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Marcel Sabitzer",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Joey Veerman",
+      "jersey": "25",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Felix Nmecha",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Carney Chukwuemeka",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Giannis Konstantelias",
+      "jersey": "45",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jobe Bellingham",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ethan Nwaneri",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Konstantinos Karetsas",
+      "jersey": "19",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Justin Lerma",
+      "jersey": "28",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Enzo De Pina Duarte Dos Santos",
+      "jersey": "44",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Mussa Kaba",
+      "jersey": "48",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Serhou Guirassy",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Maximilian Beier",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Fábio Silva",
+      "jersey": "21",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Mathis Albert",
+      "jersey": "41",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Samuele Inácio",
+      "jersey": "40",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "bayer leverkusen": [
+    {
+      "name": "Jonas Hofmann",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Robert Andrich",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Aleix García",
+      "jersey": "24",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Malik Tillman",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ibrahim Maza",
+      "jersey": "30",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ezequiel Fernández",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Kennet Eichhorn",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Montrell Culbreath",
+      "jersey": "42",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Kenan Doganay",
+      "jersey": "39",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Gabriel Minutillo",
+      "jersey": "45",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Patrik Schick",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Martin Terrier",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Nathan Tella",
+      "jersey": "23",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Moussa Diaby",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Victor Boniface",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Eliesse Ben Seghir",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Afonso Moreira",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Christian Kofane",
+      "jersey": "35",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Dustin Buck",
+      "jersey": "37",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "paris saint-germain": [
+    {
+      "name": "Fabián Ruiz",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Vitinha",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Maghnes Akliouche",
+      "jersey": "11",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Warren Zaïre-Emery",
+      "jersey": "33",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "João Neves",
+      "jersey": "87",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Senny Mayulu",
+      "jersey": "24",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Dro Fernández",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ferran Torres",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Khvicha Kvaratskhelia",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Désiré Doué",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Mika Godts",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Quentin Ndjantou",
+      "jersey": "47",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "inter milan": [
+    {
+      "name": "Henrikh Mkhitaryan",
+      "jersey": "22",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Hakan Çalhanoglu",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Piotr Zielinski",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Curtis Jones",
+      "jersey": "21",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Nicolò Barella",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Aleksandar Stankovic",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Andy Diouf",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Petar Sucic",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Marcus Thuram",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lautaro Martínez",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Luis Henrique",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ange-Yoan Bonny",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Pio Esposito",
+      "jersey": "94",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Matteo Lavelli",
+      "jersey": "53",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Mattia Mosconi",
+      "jersey": "48",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jamal Iddrissou",
+      "jersey": "52",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "juventus": [
+    {
+      "name": "Manuel Locatelli",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Weston McKennie",
+      "jersey": "22",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Teun Koopmeiners",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Khéphren Thuram",
+      "jersey": "19",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Pape Matar Sarr",
+      "jersey": "29",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Douglas Luiz",
+      "jersey": "12",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Filippo Pagnucco",
+      "jersey": "43",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Augusto Owusu",
+      "jersey": "41",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Grady Makiobo Makiobo",
+      "jersey": "49",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Nico González",
+      "jersey": "31",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Arkadiusz Milik",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jérémie Boga",
+      "jersey": "13",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Randal Kolo Muani",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Edon Zhegrova",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Nick Woltemade",
+      "jersey": "27",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Francisco Conceição",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Justin Oboavwoduo",
+      "jersey": "45",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Kenan Yildiz",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Jeff Ekhator",
+      "jersey": "18",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Kerim Alajbegovic",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Destiny Elimoghale",
+      "jersey": "48",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Arman Durmiši",
+      "jersey": "47",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Antonio Stefano Merola",
+      "jersey": "51",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "ac milan": [
+    {
+      "name": "Luka Modric",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Adrien Rabiot",
+      "jersey": "12",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ruben Loftus-Cheek",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Christian Pulisic",
+      "jersey": "11",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ardon Jashari",
+      "jersey": "30",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Yunus Musah",
+      "jersey": "80",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Silvano Vos",
+      "jersey": "55",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alphadjo Cissè",
+      "jersey": "70",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Christian Comotto",
+      "jersey": "28",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lorenzo Ossola",
+      "jersey": "40",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Samuel Chukwueze",
+      "jersey": "21",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Alexis Saelemaekers",
+      "jersey": "56",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Gonçalo Ramos",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Omari Hutchinson",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Diego Moreira",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Francesco Camarda",
+      "jersey": "73",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Luca Menon",
+      "jersey": "49",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "as roma": [
+    {
+      "name": "Marten de Roon",
+      "jersey": "15",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Bryan Cristante",
+      "jersey": "4",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lorenzo Pellegrini",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Manu Koné",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Niccolò Pisilli",
+      "jersey": "61",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Rodrigo Mora",
+      "jersey": "86",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alessandro Di Nunzio",
+      "jersey": "63",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Paulo Dybala",
+      "jersey": "21",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Santiago Castro",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Donyell Malen",
+      "jersey": "14",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Matìas Soulè",
+      "jersey": "18",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Mandjou Camara",
+      "jersey": "78",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Antonio Arena",
+      "jersey": "68",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lorenzo Paratici",
+      "jersey": "72",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "tigres uanl": [
+    {
+      "name": "William Paredes",
+      "jersey": "3",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Diego de la Torre",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Christian Bermúdez",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Marcelo Estigarribia",
+      "jersey": "32",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Wilder Guisao",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Luis Miño",
+      "jersey": "12",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Edwin Sandez",
+      "jersey": "105",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alejandro Duran Trejo",
+      "jersey": "30",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "José Cobián",
+      "jersey": "297",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Baruch Luna",
+      "jersey": "294",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Franco Arizala",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Julio Nava",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Luís Leal",
+      "jersey": "35",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Enrique Esqueda",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Derley",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Cristian Haro",
+      "jersey": "281",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Osvaldo Ramírez",
+      "jersey": "292",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "cruz azul": [
+    {
+      "name": "César Gómez",
+      "jersey": "17",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Francisco Bravo",
+      "jersey": "5",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Roberto Nurse",
+      "jersey": "39",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "club america": [
+    {
+      "name": "Aldo Rocha",
+      "jersey": "26",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Edgar Zaldivar",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Kevin Zenón",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Luís Esteves",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Elías Montiel",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Víctor Ríos",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jesús Serrato",
+      "jersey": "192",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Sergio Hernandez",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jesús Guillén",
+      "jersey": "208",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Dominic Román Espinosa",
+      "jersey": "197",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Luis Antonio Suárez López",
+      "jersey": "188",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alfonso González",
+      "jersey": "58",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ryan Mmaee",
+      "jersey": "8",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Florián Monzón",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Duk",
+      "jersey": "11",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Luis Gamboa",
+      "jersey": "251",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "José Martín",
+      "jersey": "203",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "monterrey": [
+    {
+      "name": "Jorge Rodríguez",
+      "jersey": "30",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Jesús Corona",
+      "jersey": "17",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lucas Ocampos",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Óliver Torres",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Érick Aguirre",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Orbelín Pineda",
+      "jersey": "25",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Diego Rossi",
+      "jersey": "9",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Fidel Ambríz",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Iker Fimbres",
+      "jersey": "11",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Cesar Garza",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Cristian Reyes",
+      "jersey": "194",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Sebastian Rodriguez",
+      "jersey": "35",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Omar Gálvez",
+      "jersey": "246",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Paxon Levi Ruffin Tamez",
+      "jersey": "244",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Aldo De Nigris",
+      "jersey": "203",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Uros Djurdjevic",
+      "jersey": "32",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Hugo Cuypers",
+      "jersey": "99",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Roberto de la Rosa",
+      "jersey": "27",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Luca Orellano",
+      "jersey": "10",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "toluca": [
+    {
+      "name": "Francisco Villalba",
+      "jersey": "21",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Diego Medina",
+      "jersey": "24",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Javier Güemez",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Efraín Orona",
+      "jersey": "14",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Aldo López",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ezequiel Bullaude",
+      "jersey": "10",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Ramiro Sordo",
+      "jersey": "26",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Facundo Cáseres",
+      "jersey": "23",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Salvador Mariscal",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Kevin Palacios",
+      "jersey": "77",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Joshua Mancha",
+      "jersey": "15",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Luis Gómez",
+      "jersey": "193",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Nelson Cedillo",
+      "jersey": "195",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "José Alfonso Ulloa Naranjo",
+      "jersey": "192",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Eduardo Aguirre",
+      "jersey": "19",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lucas Di Yorio",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Esteban Lozano",
+      "jersey": "20",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Diego González",
+      "jersey": "7",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Tahiel Jiménez",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lucca Vuoso",
+      "jersey": "254",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Magnus Francisco López Gustavsen",
+      "jersey": "188",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "boca juniors": [
+    {
+      "name": "Camilo Rey",
+      "jersey": "38",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Rodrigo Battaglia",
+      "jersey": "6",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Leandro Paredes",
+      "jersey": "5",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Carlos Palacios",
+      "jersey": "7",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Santiago Ascacibar",
+      "jersey": "25",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Tomás Belmonte",
+      "jersey": "8",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Malcom Braida",
+      "jersey": "27",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "William Alarcón",
+      "jersey": "15",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Alan Velasco",
+      "jersey": "20",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Milton Delgado",
+      "jersey": "18",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Dante Gonzalez",
+      "jersey": "50",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Tomás Aranda",
+      "jersey": "36",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Gonzalo Tomás Márquez",
+      "jersey": "31",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Matias Calegari",
+      "jersey": "39",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Lautaro Mendieta",
+      "jersey": "33",
+      "pos": "Midfielder",
+      "pos_es": "Centrocampista"
+    },
+    {
+      "name": "Sebastián Villa",
+      "jersey": "22",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Enner Valencia",
+      "jersey": "13",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Ángel Romero",
+      "jersey": "29",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Adam Bareiro",
+      "jersey": "28",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Miguel Merentiel",
+      "jersey": "16",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Milton Gimenez",
+      "jersey": "9",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Juan Payal",
+      "jersey": "34",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Joaquín Ruíz",
+      "jersey": "53",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Leonel Flores",
+      "jersey": "44",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Joaquín Piñeyro",
+      "jersey": "49",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Kevin Ferreira",
+      "jersey": "54",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Rodrigo Bacidalupe",
+      "jersey": "44",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Silvio Miguel Ventos",
+      "jersey": "",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Juan Augusto Pussetto Schramm",
+      "jersey": "",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Franco Sebastián Pérez",
+      "jersey": "35",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    },
+    {
+      "name": "Lautaro Facundo Bianco",
+      "jersey": "40",
+      "pos": "Forward",
+      "pos_es": "Delantero"
+    }
+  ],
+  "brighton & hove albion": {
+    "team_name": "Brighton & Hove Albion",
+    "league": "eng.1",
+    "forwards": [
+      {
+        "name": "Stefanos Tzimas",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Georginio Rutter",
+        "jersey": "14",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Danny Welbeck",
+        "jersey": "18",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Evan Ferguson",
+        "jersey": "28",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Kaoru Mitoma",
+        "jersey": "22",
+        "position": "Winger",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yankuba Minteh",
+        "jersey": "17",
+        "position": "Winger",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Carlos Baleba",
+        "jersey": "20",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Jack Hinshelwood",
+        "jersey": "41",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yasin Ayari",
+        "jersey": "26",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "brighton": {
+    "team_name": "Brighton & Hove Albion",
+    "league": "eng.1",
+    "forwards": [
+      {
+        "name": "Stefanos Tzimas",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Georginio Rutter",
+        "jersey": "14",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Danny Welbeck",
+        "jersey": "18",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Evan Ferguson",
+        "jersey": "28",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Kaoru Mitoma",
+        "jersey": "22",
+        "position": "Winger",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yankuba Minteh",
+        "jersey": "17",
+        "position": "Winger",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Carlos Baleba",
+        "jersey": "20",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Jack Hinshelwood",
+        "jersey": "41",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yasin Ayari",
+        "jersey": "26",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "eyupspor": {
+    "team_name": "Eyupspor",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Bilal Boutobba",
+        "jersey": "98",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Konrad Michalak",
+        "jersey": "77",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mete Demir",
+        "jersey": "70",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Lenny Pintor",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yusuf Barasi",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ahmed Abdullahi",
+        "jersey": "29",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ömer Ceyhan",
+        "jersey": "44",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Halil İbrahim Balta",
+        "jersey": "56",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Tashkin Ilter",
+        "jersey": "28",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Abdelhamid Sabiri",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Chandrel Géraud Massanga",
+        "jersey": "88",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Hamza Akman",
+        "jersey": "18",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "David Costa",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Charles-Andre Raux Yao",
+        "jersey": "15",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Christ Sadia",
+        "jersey": "84",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Abdou Sy",
+        "jersey": "25",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kocaelispor": {
+    "team_name": "Kocaelispor",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Daniel Agyei",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Bruno Petkovic",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Florian Ayé",
+        "jersey": "97",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Rigoberto Rivas",
+        "jersey": "99",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Metehan Altunbas",
+        "jersey": "26",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Gonçalo Santos Sousa",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Bedirhan Yildiz",
+        "jersey": "89",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Arda Özyar",
+        "jersey": "17",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Fati̇Hhan Demi̇R",
+        "jersey": "29",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Makana Baku",
+        "jersey": "32",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Show",
+        "jersey": "14",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Berkan Kutlu",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Tobias Gulliksen",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mahamadou Susoho",
+        "jersey": "20",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ege Bilim",
+        "jersey": "27",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Haydar Karatas",
+        "jersey": "19",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Hulisi Destici",
+        "jersey": "18",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "fenerbahce": {
+    "team_name": "Fenerbahce",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Romelu Lukaku",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Vedat Muriqi",
+        "jersey": "19",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mason Greenwood",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Kerem Aktürkoglu",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Oguz Aydin",
+        "jersey": "70",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Nene Dorgeles",
+        "jersey": "45",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Alaettin Ekici",
+        "jersey": "54",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "N'Golo Kanté",
+        "jersey": "91",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Marco Asensio",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Irfan Can Kahveci",
+        "jersey": "17",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Matteo Guendouzi",
+        "jersey": "6",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mert Yandas",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ismail Yüksek",
+        "jersey": "5",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Bartug Elmaz",
+        "jersey": "28",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "galatasaray": {
+    "team_name": "Galatasaray",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Leroy Sané",
+        "jersey": "10",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Roland Sallai",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Victor Osimhen",
+        "jersey": "45",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Rafael Leão",
+        "jersey": "27",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yunus Akgün",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Baris Alper Yilmaz",
+        "jersey": "53",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Deniz Gül",
+        "jersey": "21",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Berat Lus",
+        "jersey": "76",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Can Güner",
+        "jersey": "29",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ada Yüzgec",
+        "jersey": "",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Ilkay Gündogan",
+        "jersey": "20",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mario Lemina",
+        "jersey": "99",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Lucas Torreira",
+        "jersey": "34",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Lesley Ugochukwu",
+        "jersey": "18",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Eyüp Aydin",
+        "jersey": "5",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Alexey Batrakov",
+        "jersey": "83",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Furkan Koçak",
+        "jersey": "",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Renato Nhaga",
+        "jersey": "74",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Eyüp Karasu",
+        "jersey": "",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "besiktas": {
+    "team_name": "Besiktas",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Leandro Trossard",
+        "jersey": "19",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Václav Cerný",
+        "jersey": "18",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Dusan Vlahovic",
+        "jersey": "28",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Oh Hyeon-Gyu",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ernest Poku",
+        "jersey": "17",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Semih Kiliçsoy",
+        "jersey": "90",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mustafa Hekimoglu",
+        "jersey": "23",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ilhan Fakili",
+        "jersey": "29",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ahmet Bircan",
+        "jersey": "70",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Wilfred Ndidi",
+        "jersey": "4",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Milot Rashica",
+        "jersey": "7",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Salih Özcan",
+        "jersey": "6",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Orkun Kökçü",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Kartal Kayra Yilmaz",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Junior Olaitan",
+        "jersey": "15",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Fabio Miretti",
+        "jersey": "21",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ozan Sevim",
+        "jersey": "66",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "trabzonspor": {
+    "team_name": "Trabzonspor",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Mohamed Salah",
+        "jersey": "10",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Paul Onuachu",
+        "jersey": "30",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mehmet Umut Nayir",
+        "jersey": "14",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Cihan Canak",
+        "jersey": "61",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Metehan Mimaroglu",
+        "jersey": "77",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Franculino Djú",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ali Habesoglu",
+        "jersey": "99",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Noah Saviolo",
+        "jersey": "70",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ahmet Cemi̇L Güren",
+        "jersey": "89",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Hakan Yılmaz",
+        "jersey": "92",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Okay Yokuslu",
+        "jersey": "5",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Fabinho",
+        "jersey": "6",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ozan Tufan",
+        "jersey": "11",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ruslan Malinovskyi",
+        "jersey": "17",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Batista Mendy",
+        "jersey": "3",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Aral Simsir",
+        "jersey": "58",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Benjamin Bouchouari",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ernest Muçi",
+        "jersey": "7",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Melih Kabasakal",
+        "jersey": "57",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Tim Jabol-Folcarelli",
+        "jersey": "26",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yigithan Çubukcu",
+        "jersey": "82",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Oguzhan Ertem",
+        "jersey": "90",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "istanbul basaksehir": {
+    "team_name": "Istanbul Basaksehir",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Davie Selke",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Eldor Shomurodov",
+        "jersey": "14",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Umut Bozok",
+        "jersey": "17",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yusuf Sari",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ivan Brnic",
+        "jersey": "77",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Bertug Yildirim",
+        "jersey": "91",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Edin Visca",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Omer Sahiner",
+        "jersey": "42",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Olivier Kemen",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Berkay Özcan",
+        "jersey": "19",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Andreas Skov Olsen",
+        "jersey": "70",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Umut Günes",
+        "jersey": "20",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Onur Ergün",
+        "jersey": "4",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Abbosbek Fayzullaev",
+        "jersey": "11",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Jakub Kaluzinski",
+        "jersey": "18",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "goztepe": {
+    "team_name": "Goztepe",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Gökdeniz Bayrakdar",
+        "jersey": "17",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Juan",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Arda Okan Kurtulan",
+        "jersey": "2",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Sinclair Armstrong",
+        "jersey": "22",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Janderson",
+        "jersey": "39",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "André Henrique",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ibrahim Sabra",
+        "jersey": "27",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Turaç Böke",
+        "jersey": "14",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Efkan Bekiroglu",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Faustino Anjorin",
+        "jersey": "18",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Alexis Antunes",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Rhaldney",
+        "jersey": "5",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Alex Matos",
+        "jersey": "6",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kasimpasa": {
+    "team_name": "Kasimpasa",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Fousseni Diabate",
+        "jersey": "34",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Guven Yalcin",
+        "jersey": "50",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ali Yavuz Kol",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Adrian Benedyczak",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Jesurun Rak-Sakyi",
+        "jersey": "17",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Sinan Alkas",
+        "jersey": "23",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Thiemoko Diarra",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mecit Sercan Deniz",
+        "jersey": "35",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Muhammed Emin Bektaş",
+        "jersey": "99",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Kerem Demirbay",
+        "jersey": "26",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Haris Hajradinovic",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mortadha Ben Ouanes",
+        "jersey": "12",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Andri Fannar Baldursson",
+        "jersey": "16",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Atakan Mujde",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Marcus Rafferty",
+        "jersey": "19",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Elson Mendes Da Silva",
+        "jersey": "51",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Emi̇Rhan Boz",
+        "jersey": "66",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "konyaspor": {
+    "team_name": "Konyaspor",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Deniz Turuc",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Jean-Luc Dompé",
+        "jersey": "91",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mostafa Mohamed",
+        "jersey": "42",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Jackson Muleka",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ebrima Colley",
+        "jersey": "19",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Enis Destan",
+        "jersey": "94",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Emir Bars",
+        "jersey": "45",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Enis Bardhi",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Marko Jevtovic",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Diogo Gonçalves",
+        "jersey": "7",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Melih Ibrahimoglu",
+        "jersey": "77",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Rajmund Tóth",
+        "jersey": "66",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mücahit Ibrahimoglu",
+        "jersey": "24",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Omer Çobanoglu",
+        "jersey": "25",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "alanyaspor": {
+    "team_name": "Alanyaspor",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Meschack Elia",
+        "jersey": "12",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Hwang Ui-Jo",
+        "jersey": "16",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ruan",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Iván Cédric",
+        "jersey": "19",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ibrahim Kaya",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Arda Usluoglu",
+        "jersey": "17",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Omar Ben Ali",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Emre Demir",
+        "jersey": "14",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ianis Hagi",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Paolo Fernandes",
+        "jersey": "22",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Enes Keskin",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Gaïus Makouta",
+        "jersey": "42",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Maestro",
+        "jersey": "58",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yusuf Ozdemir",
+        "jersey": "88",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Izzet Celik",
+        "jersey": "26",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Baran Gezek",
+        "jersey": "55",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Arouna Kigbafory Soro",
+        "jersey": "32",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "caykur rizespor": {
+    "team_name": "Caykur Rizespor",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Ali Sowe",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ahmed Kutucu",
+        "jersey": "23",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Valentin Mihaila",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Gennaro Borrelli",
+        "jersey": "29",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ibrahim Olawoyin",
+        "jersey": "10",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Adedire Mebude",
+        "jersey": "11",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Emrecan Bulut",
+        "jersey": "99",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Emirhan Yilmaz",
+        "jersey": "47",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Iustin Doicaru",
+        "jersey": "79",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mustafa Coşkun Tosun",
+        "jersey": "80",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Taylan Antalyali",
+        "jersey": "14",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Qazim Laçi",
+        "jersey": "20",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Moussa Diakité",
+        "jersey": "6",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Dal Varesanovic",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Can Bozdogan",
+        "jersey": "70",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mithat Pala",
+        "jersey": "54",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yakup Ayan",
+        "jersey": "94",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "samsunspor": {
+    "team_name": "Samsunspor",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Mohamed Bayo",
+        "jersey": "18",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Fatih Kaya",
+        "jersey": "14",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Elayis Tavsan",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Tanguy Coulibaly",
+        "jersey": "10",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Kouadou Assoumou",
+        "jersey": "15",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Oskar Øhlenschlaeger",
+        "jersey": "19",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Saikuba Jarju",
+        "jersey": "30",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Elliot Watt",
+        "jersey": "4",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Emre Kilinc",
+        "jersey": "11",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Celil Yuksel",
+        "jersey": "5",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Yalcin Kayan",
+        "jersey": "20",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Afonso Sousa",
+        "jersey": "77",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Samed Onur",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Antoine Sekongo",
+        "jersey": "42",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "gaziantep fk": {
+    "team_name": "Gaziantep FK",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Serdar Dursun",
+        "jersey": "19",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Halil Dervisoglu",
+        "jersey": "28",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Fuat Bavuk",
+        "jersey": "97",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Sontje Hansen",
+        "jersey": "22",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Enver Kulasin",
+        "jersey": "27",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Trivante Stewart",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ali Osman Kalin",
+        "jersey": "46",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Juninho Bacuna",
+        "jersey": "7",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ulrich Meleke",
+        "jersey": "6",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Drissa Camara",
+        "jersey": "3",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mirza Cihan",
+        "jersey": "11",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Kacper Kozlowski",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ogün Özçiçek",
+        "jersey": "61",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Victor Gidado",
+        "jersey": "8",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Karamba Gassama",
+        "jersey": "17",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mervan Müjdeci",
+        "jersey": "83",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Mehmet Ali Genç",
+        "jersey": "93",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "genclerbirligi": {
+    "team_name": "Genclerbirligi",
+    "league": "tur.1",
+    "forwards": [
+      {
+        "name": "Sekou Koita",
+        "jersey": "20",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Adama Traoré",
+        "jersey": "14",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Tiago Gouveia",
+        "jersey": "7",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Pedro Mendes",
+        "jersey": "9",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Victor Orakpo",
+        "jersey": "12",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Furkan Ayaz",
+        "jersey": "99",
+        "position": "Forward",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Prince Martor",
+        "jersey": "45",
+        "position": "Forward",
+        "status": "ACTIVE"
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Salih Ucan",
+        "jersey": "48",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Peter Etebo",
+        "jersey": "5",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ousmane Diabate",
+        "jersey": "42",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Cheikh Niasse",
+        "jersey": "19",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Franco Tongya",
+        "jersey": "10",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Ogulcan Ülgün",
+        "jersey": "35",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Goktug Erdem",
+        "jersey": "52",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Rafael Luís",
+        "jersey": "83",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      },
+      {
+        "name": "Erk Aslan",
+        "jersey": "17",
+        "position": "Midfielder",
+        "status": "ACTIVE"
+      }
+    ]
+  }
+}
