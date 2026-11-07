@@ -237,7 +237,7 @@ import pandas as pd
 from automated_self_audit_engine import run_autonomous_system_audit, audit_individual_pick_empirically, get_match_boxscore
 audit_top = run_autonomous_system_audit()
 
-st.markdown(f'''
+render_html(f'''
 <div style="background: linear-gradient(135deg, #091224 0%, #172554 50%, #0c1527 100%); border: 2px solid #10b981; border-radius: 12px; padding: 14px 18px; margin: 15px 0 20px 0; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -293,7 +293,7 @@ st.markdown(f'''
         </span>
     </div>
 </div>
-''', unsafe_allow_html=True)
+''')
 
 t_slots, t_sgp, t_parlay, t_escalera, t_audit, t_chat = st.tabs([
     "⏰ 1. Cartelera por Rangos de Horario (Desde 06:00 AM CDMX)",
@@ -1305,22 +1305,60 @@ with t_audit:
         </div>
         """)
 
-    sub_audit_tabs = st.tabs([
-        "🎟️ 1. Auto-Auditoría Parlay 100x & 11x",
-        "🧗 2. Auto-Auditoría Reto Escalera (3 Fases)",
-        "🔬 3. Auto-Auditar CUALQUIER Partido (116 Partidos)",
-        "📊 4. Historial Temporada (Backtest 7,200 partidos)",
-        "📋 5. Texto Rápido de Boletos",
-        "📱 6. Actas en Vivo SofaScore"
-    ])
+    audit_view = st.radio(
+        "🔎 SELECCIONA EL MÓDULO DE AUDITORÍA A CONSULTAR:",
+        [
+            "🎟️ 1. Auto-Auditoría Parlay 100x & 11x",
+            "🧗 2. Auto-Auditoría Reto Escalera (3 Fases)",
+            "🔬 3. Auto-Auditar CUALQUIER Partido (116 Partidos)",
+            "📊 4. Historial Temporada (Backtest 7,200 partidos)",
+            "📱 5. Actas en Vivo SofaScore",
+            "📋 6. Texto Rápido para Boletos"
+        ],
+        horizontal=True,
+        key="audit_view_radio"
+    )
 
-    with sub_audit_tabs[0]:
+    if audit_view.startswith("🎟️ 1."):
         st.markdown("#### 🎟️ Auto-Auditoría Oficial: Boleto Parlay 100x y Boleto 11x")
         st.caption("Evaluación automática pick por pick contra los marcadores oficiales y actas en tiempo real:")
         
         # Desglose Parlay 100x
         st.markdown("##### 🚀 Boleto Parlay 100x Real (11 Selecciones):")
         for item in auto_audit["audited_100x"]:
+            teams = item['match'].split(' vs ')
+            l_h = get_team_logo(teams[0].strip() if len(teams) > 1 else item['match'])
+            l_a = get_team_logo(teams[1].strip() if len(teams) > 1 else '')
+            
+            b_bg = "#064e3b" if item['outcome'] == "HIT" else ("#7f1d1d" if item['outcome'] == "MISS" else ("#1e3a8a" if item['outcome'] == "VOID" else "#1e293b"))
+            b_col = "#6ee7b7" if item['outcome'] == "HIT" else ("#fca5a5" if item['outcome'] == "MISS" else ("#93c5fd" if item['outcome'] == "VOID" else "#94a3b8"))
+            b_border = item.get("border_color", "#334155")
+
+            render_html(f"""
+            <div class="var-pill" style="margin-bottom: 8px; border-left: 4px solid {b_border}; padding: 10px 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <img src="{l_h}" style="width: 28px; height: 28px; object-fit: contain;">
+                        <img src="{l_a}" style="width: 28px; height: 28px; object-fit: contain;">
+                        <span style="color: #f8fafc; font-weight: bold;">#{item['n']}. {item['match']}: <span style="color: #7ee787;">{item['pick']}</span></span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #facc15; font-weight: bold;">Cuota: ~{item['odds']}</span>
+                        <span style="background-color: {b_bg}; color: {b_col}; font-size: 0.78rem; padding: 2px 10px; border-radius: 4px; font-weight: bold; border: 1px solid {b_border};">{item['badge']}</span>
+                    </div>
+                </div>
+                <div style="color: #cbd5e1; font-size: 0.84rem; margin-top: 4px;">
+                    📊 <b>Registro Oficial:</b> {item['stat_actual']}
+                </div>
+                <div style="color: #94a3b8; font-size: 0.8rem; margin-top: 2px;">
+                    📌 <b>Diagnóstico:</b> {item['diagnosis']}
+                </div>
+            </div>
+            """)
+
+        st.markdown("---")
+        st.markdown("##### 🛡️ Boleto Parlay Ultra-Seguro 11x Calibrado (11 Selecciones):")
+        for item in auto_audit["audited_11x"]:
             teams = item['match'].split(' vs ')
             l_h = get_team_logo(teams[0].strip() if len(teams) > 1 else item['match'])
             l_a = get_team_logo(teams[1].strip() if len(teams) > 1 else '')
@@ -1365,7 +1403,7 @@ with t_audit:
                 </div>
                 """)
 
-    with sub_audit_tabs[1]:
+    elif audit_view.startswith("🧗 2."):
         st.markdown("#### 🧗 Auto-Auditoría del Reto Escalera Secuencial (3 Fases)")
         st.caption("Seguimiento en tiempo real de cada bloque con capital inicial y cosecha de ganancias:")
         
@@ -1405,7 +1443,7 @@ with t_audit:
                 </div>
                 """)
 
-    with sub_audit_tabs[2]:
+    elif audit_view.startswith("🔬 3."):
         st.markdown("#### 🔬 Auto-Auditar CUALQUIER Partido de la Cartelera (116 Partidos)")
         st.caption("Selecciona cualquier partido ya jugado o en juego para ver la auto-auditoría de sus 8 categorías de opciones:")
 
@@ -1451,7 +1489,7 @@ with t_audit:
                     })
                 st.dataframe(pd.DataFrame(rows_cat_aud), width="stretch")
 
-    with sub_audit_tabs[3]:
+    elif audit_view.startswith("📊 4."):
         st.markdown("#### 📊 Historial y Tasa de Acierto de Temporada Completa (Backtesting Oficial)")
         st.caption("Verificación matemática de todas las recomendaciones de Reto Escalera auditadas en los 20 datasets CSV oficiales de las temporadas 2025/2026 y 2026/2027:")
 
@@ -1494,7 +1532,7 @@ with t_audit:
         | **Remates a Puerta Jugador Titular (≥ 0.5)** | 1,240 titularidades | 1,091 aciertos | **88.0%** | 🟢 PROTEGIDO (VOID SI NO INICIA) |
         """)
 
-    with sub_audit_tabs[4]:
+    elif audit_view.startswith("📋 6."):
         st.markdown("#### 📋 Texto Rápido para Crear tus Boletos en la Casa de Apuestas")
         st.caption("Copia este texto para guiarte al momento de meter las apuestas en tu celular o computadora:")
         
@@ -1538,7 +1576,7 @@ BOLETO 3: RETO ESCALERA EN 3 FASES (Horarios Oficiales CDMX)
 ==================================================="""
         st.text_area("Copia los picks aquí:", copy_text, height=350)
 
-    with sub_audit_tabs[5]:
+    elif audit_view.startswith("📱 5."):
         from sofascore_audit_engine import get_all_sofascore_audited_matches
         sofa_list = get_all_sofascore_audited_matches()
         

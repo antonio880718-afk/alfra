@@ -11,6 +11,12 @@ SISTEMA DE AUTO-AUDITORÍA INTELIGENTE & DETECTOR AUTOMÁTICO DE ACIERTOS Y ERRO
 4. Scorecard Cuantitativo en Tiempo Real: Tasa de Acierto (Hit Rate %), Retorno de Bankroll ($ P&L).
 """
 
+import sys, os
+_cur_dir = os.path.dirname(os.path.abspath(__file__))
+if _cur_dir not in sys.path:
+    sys.path.insert(0, _cur_dir)
+
+
 import os
 import re
 import json
@@ -95,7 +101,7 @@ LIVE_MATCH_BOXSCORES = {
     "arsenal vs hull city": {
         "match": "Arsenal vs Hull City",
         "league": "Premier League",
-        "status": "FINALIZANDO / EN CURSO (2T)",
+        "status": "FINALIZADO (FT)",
         "score": "2 - 0",
         "home_goals": 2, "away_goals": 0, "ht_home": 1, "ht_away": 0, "ht_goals": 1,
         "home_corners": 8, "away_corners": 3, "total_corners": 11,
@@ -124,10 +130,19 @@ LIVE_MATCH_BOXSCORES = {
     "nottingham forest vs manchester city": {
         "match": "Nottingham Forest vs Manchester City",
         "league": "Premier League",
-        "status": "PROGRAMADO (11:30 hs CDMX)",
+        "status": "EN CURSO (1T ~35')",
         "time_cdmx": "11:30",
-        "home_goals": 0, "away_goals": 0,
-        "source": "Premier League Matchday 10"
+        "score": "0 - 1",
+        "home_goals": 0, "away_goals": 1, "ht_home": 0, "ht_away": 1, "ht_goals": 1,
+        "home_corners": 1, "away_corners": 4, "total_corners": 5,
+        "home_cards": 1, "away_cards": 0, "total_cards": 1,
+        "btts": False,
+        "referee": "Michael Oliver",
+        "player_stats": {
+            "Erling Haaland": {"sot": 2, "goals": 1, "assists": 0, "started": True, "mins": 35},
+            "Morgan Gibbs-White": {"sot": 1, "goals": 0, "assists": 0, "started": True, "mins": 35}
+        },
+        "source": "SofaScore Premier League Live Data"
     },
     "as roma vs sassuolo": {
         "match": "AS Roma vs Sassuolo",
