@@ -1,32 +1,353 @@
 {
-  "chelsea vs aston villa": {
-    "match": "Chelsea vs Aston Villa",
-    "league": "Premier League",
+  "fc cologne vs bayer leverkusen": {
+    "match": "FC Cologne vs Bayer Leverkusen",
+    "league": "Bundesliga",
     "status": "FINALIZADO (FT)",
-    "time_cdmx": "08:00",
-    "score": "1 - 1",
+    "time_cdmx": "08:30",
+    "score": "1 - 2",
     "home_goals": 1,
-    "away_goals": 1,
-    "ht_home": 1,
+    "away_goals": 2,
+    "ht_home": 0,
     "ht_away": 0,
-    "ht_goals": 1,
-    "home_corners": 7,
-    "away_corners": 4,
-    "total_corners": 11,
-    "home_cards": 2,
-    "away_cards": 3,
-    "total_cards": 5,
+    "ht_goals": 0,
+    "home_corners": 2,
+    "away_corners": 6,
+    "total_corners": 8,
+    "home_cards": 6,
+    "away_cards": 5,
+    "total_cards": 11,
+    "home_sot": 6,
+    "away_sot": 8,
     "btts": true,
-    "referee": "Michael Oliver",
     "player_stats": {
-      "João Pedro": {
+      "Aleix García": {
         "sot": 2,
         "goals": 1,
         "assists": 0,
         "started": true,
-        "mins": 84
+        "mins": 90
       },
-      "Ollie Watkins": {
+      "Facundo Medina": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tom Krauss": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mikey Moore": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Linton Maina": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Afonso Moreira": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Edmond Tapsoba": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joel Schmied": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Borna Sosa": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Patrik Schick": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Said El Mala": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jahmai Simpson-Pusey": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jonas Hofmann": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sc freiburg vs 1. fc union berlin": {
+    "match": "SC Freiburg vs 1. FC Union Berlin",
+    "league": "Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:30",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 5,
+    "away_corners": 1,
+    "total_corners": 6,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "home_sot": 9,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Igor Matanovic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Zeno Van Den Bosch": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yannick Engelhardt": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rani Khedira": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yuito Suzuki": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jeong Woo-Yeong": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "tsg hoffenheim vs schalke 04": {
+    "match": "TSG Hoffenheim vs Schalke 04",
+    "league": "Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:30",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 6,
+    "away_corners": 4,
+    "total_corners": 10,
+    "home_cards": 0,
+    "away_cards": 2,
+    "total_cards": 2,
+    "home_sot": 7,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Fisnik Asllani": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tim Lemperle": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hwang Hee-Chan": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Junior Adamu": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Adil Aouchiche": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "caykur rizespor vs erzurum bb": {
+    "match": "Caykur Rizespor vs Erzurum BB",
+    "league": "Super Lig Turquía",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "04:30",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 8,
+    "away_corners": 2,
+    "total_corners": 10,
+    "home_cards": 0,
+    "away_cards": 3,
+    "total_cards": 3,
+    "home_sot": 6,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Ali Sowe": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ibrahim Diabate": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gyrano Kerk": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Miguel Cardoso": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mustafa Yumlu": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "çorum fk vs fenerbahce": {
+    "match": "Çorum FK vs Fenerbahce",
+    "league": "Super Lig Turquía",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:00",
+    "score": "0 - 5",
+    "home_goals": 0,
+    "away_goals": 5,
+    "ht_home": 0,
+    "ht_away": 2,
+    "ht_goals": 2,
+    "home_corners": 7,
+    "away_corners": 1,
+    "total_corners": 8,
+    "home_cards": 1,
+    "away_cards": 1,
+    "total_cards": 2,
+    "home_sot": 8,
+    "away_sot": 6,
+    "btts": false,
+    "player_stats": {
+      "Mason Greenwood": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Irfan Can Kahveci": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mohammed Diomande": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nélson Semedo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oguz Aydin": {
         "sot": 2,
         "goals": 1,
         "assists": 0,
@@ -34,15 +355,3942 @@
         "mins": 90
       }
     },
-    "source": "SofaScore Official Premier League Boxscore"
+    "source": "ESPN / SofaScore Official Match Center"
   },
-  "liverpool vs newcastle united": {
-    "match": "Liverpool vs Newcastle United",
+  "alanyaspor vs trabzonspor": {
+    "match": "Alanyaspor vs Trabzonspor",
+    "league": "Super Lig Turquía",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "0 - 2",
+    "home_goals": 0,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 2,
+    "ht_goals": 2,
+    "home_corners": 5,
+    "away_corners": 4,
+    "total_corners": 9,
+    "home_cards": 1,
+    "away_cards": 1,
+    "total_cards": 2,
+    "home_sot": 2,
+    "away_sot": 5,
+    "btts": false,
+    "player_stats": {
+      "Wagner Pina": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mohamed Salah": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fidan Aliti": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Chibuike Nwaiwu": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "besiktas vs genclerbirligi": {
+    "match": "Besiktas vs Genclerbirligi",
+    "league": "Super Lig Turquía",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:00",
+    "score": "3 - 0",
+    "home_goals": 3,
+    "away_goals": 0,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 4,
+    "away_corners": 1,
+    "total_corners": 5,
+    "home_cards": 3,
+    "away_cards": 3,
+    "total_cards": 6,
+    "home_sot": 10,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Wilfred Ndidi": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Metehan Baltaci": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dusan Vlahovic": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Amir Murillo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ousmane Diabate": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Orkun Kökçü": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ernest Poku": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "elche vs real betis": {
+    "match": "Elche vs Real Betis",
+    "league": "LaLiga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:00",
+    "score": "0 - 2",
+    "home_goals": 0,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 9,
+    "away_corners": 8,
+    "total_corners": 17,
+    "home_cards": 5,
+    "away_cards": 0,
+    "total_cards": 5,
+    "home_sot": 1,
+    "away_sot": 9,
+    "btts": false,
+    "player_stats": {
+      "Federico Redondo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Grady Diangana": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rodrigo Riquelme": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Martim Neto": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Javier Morcillo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marc Bartra": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "real sociedad vs rayo vallecano": {
+    "match": "Real Sociedad vs Rayo Vallecano",
+    "league": "LaLiga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:15",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 7,
+    "away_corners": 6,
+    "total_corners": 13,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "home_sot": 3,
+    "away_sot": 3,
+    "btts": false,
+    "player_stats": {
+      "Giorgi Tsitaishvili": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Igor Zubeldia": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Beñat Turrientes": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Orri Óskarsson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gnangoro Bouare Samake": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "celta vigo vs levante": {
+    "match": "Celta Vigo vs Levante",
+    "league": "LaLiga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:30",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 6,
+    "away_corners": 1,
+    "total_corners": 7,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "home_sot": 8,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Dani Requena": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Adrián de la Fuente": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Javi Galán": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "villarreal vs getafe": {
+    "match": "Villarreal vs Getafe",
+    "league": "LaLiga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:30",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 9,
+    "away_corners": 4,
+    "total_corners": 13,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "home_sot": 7,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Mario Martín": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nemanja Gudelj": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Santi Comesaña": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Renato Veiga": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tajon Buchanan": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Carlos Romero": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "atlético madrid vs barcelona": {
+    "match": "Atlético Madrid vs Barcelona",
+    "league": "LaLiga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "14:00",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 4,
+    "away_corners": 2,
+    "total_corners": 6,
+    "home_cards": 4,
+    "away_cards": 1,
+    "total_cards": 5,
+    "home_sot": 4,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Giuliano Simeone": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Álex Baena": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fermín López": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marc Bernal": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marcos Llorente": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marc Pubill": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Morten Hjulmand": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "stafford rangers vs grimsby town": {
+    "match": "Stafford Rangers vs Grimsby Town",
+    "league": "FA Cup",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "06:00",
+    "score": "3 - 3",
+    "home_goals": 3,
+    "away_goals": 3,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 8,
+    "away_corners": 9,
+    "total_corners": 17,
+    "home_cards": 4,
+    "away_cards": 3,
+    "total_cards": 7,
+    "home_sot": 6,
+    "away_sot": 10,
+    "btts": true,
+    "player_stats": {
+      "Darrhyl Mason": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bebeto António Gomes": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jack Birch": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cameron McJannett": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Harvey Rodgers": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tom Tonks": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Maldini Kacurri": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joe Dunne": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Géza Dávid Turi": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jamie Walker": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luca Navarro": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luke Marcus Banks": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andy Cook": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cian Doyle": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kyle Sambor": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Justin Amaluzor": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "cray wanderers vs stockport county": {
+    "match": "Cray Wanderers vs Stockport County",
+    "league": "FA Cup",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:15",
+    "score": "2 - 3",
+    "home_goals": 2,
+    "away_goals": 3,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 4,
+    "away_corners": 7,
+    "total_corners": 11,
+    "home_cards": 1,
+    "away_cards": 3,
+    "total_cards": 4,
+    "home_sot": 3,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Sammie Thomas Mcleod": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luca Ashby-Hammond": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alex Joseph Hernández Cascante": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Eoghan O'Connell": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ethan Pye": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kyle Wootton": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mikael Mandron": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lewis Fiorini": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "wimborne town vs crawley town": {
+    "match": "Wimborne Town vs Crawley Town",
+    "league": "FA Cup",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:00",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 4,
+    "away_corners": 4,
+    "total_corners": 8,
+    "home_cards": 5,
+    "away_cards": 2,
+    "total_cards": 7,
+    "home_sot": 5,
+    "away_sot": 2,
+    "btts": false,
+    "player_stats": {
+      "Seung-Woo Yang": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joe Smith": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Samuel Roberts": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cameron Munn": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nathan Tinsdale": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Charlie Barker": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jackson King": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ángel Francisco Díaz Villa": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "oldham athletic vs sheffield wednesday": {
+    "match": "Oldham Athletic vs Sheffield Wednesday",
+    "league": "FA Cup",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:15",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 2,
+    "away_corners": 8,
+    "total_corners": 10,
+    "home_cards": 3,
+    "away_cards": 4,
+    "total_cards": 7,
+    "home_sot": 5,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Di'Shon Bernard": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yan Valery": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Calum Kavanagh": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Davis Kellior-Dunn": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Callum Slattery": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sean Fusire": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gus Scott-Morriss": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Emmanuel Monthe": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Will Sutton": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "brighton & hove albion vs brentford": {
+    "match": "Brighton & Hove Albion vs Brentford",
+    "league": "Premier League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 7,
+    "away_corners": 3,
+    "total_corners": 10,
+    "home_cards": 4,
+    "away_cards": 3,
+    "total_cards": 7,
+    "home_sot": 6,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Kristoffer Ajer": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diego Gómez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Chema Andrés": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Igor Thiago": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Olivier Boscagli": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pascal Gross": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mats Wieffer": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lewis Dunk": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kevin Schade": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "crystal palace vs liverpool": {
+    "match": "Crystal Palace vs Liverpool",
+    "league": "Premier League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "1 - 3",
+    "home_goals": 1,
+    "away_goals": 3,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 4,
+    "away_corners": 7,
+    "total_corners": 11,
+    "home_cards": 2,
+    "away_cards": 4,
+    "total_cards": 6,
+    "home_sot": 7,
+    "away_sot": 8,
+    "btts": true,
+    "player_stats": {
+      "Ronald Araujo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alexis Mac Allister": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Florian Wirtz": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bradley Barcola": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yéremy Pino": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Víctor Muñoz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jefferson Lerma": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alexander Isak": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Eddie Nketiah": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "ipswich town vs afc bournemouth": {
+    "match": "Ipswich Town vs AFC Bournemouth",
+    "league": "Premier League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 2,
+    "away_corners": 7,
+    "total_corners": 9,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "home_sot": 2,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Evanilson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Adam Smith": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Julio Enciso": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marcus Tavernier": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leif Davis": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jack Clarke": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "António Silva": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Zian Flemming": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sunderland vs chelsea": {
+    "match": "Sunderland vs Chelsea",
+    "league": "Premier League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 2,
+    "away_corners": 2,
+    "total_corners": 4,
+    "home_cards": 6,
+    "away_cards": 4,
+    "total_cards": 10,
+    "home_sot": 2,
+    "away_sot": 4,
+    "btts": false,
+    "player_stats": {
+      "Jules Ahoka": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Levi Colwill": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Enzo Le Fée": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Thomas Meunier": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Brian Brobbey": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pedro Neto": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Moisés Caicedo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luke O'Nien": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Wesley Fofana": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nilson Angulo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "manchester united vs aston villa": {
+    "match": "Manchester United vs Aston Villa",
     "league": "Premier League",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "10:30",
+    "score": "4 - 4",
+    "home_goals": 4,
+    "away_goals": 4,
+    "ht_home": 2,
+    "ht_away": 2,
+    "ht_goals": 4,
+    "home_corners": 8,
+    "away_corners": 1,
+    "total_corners": 9,
+    "home_cards": 1,
+    "away_cards": 1,
+    "total_cards": 2,
+    "home_sot": 9,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Alysson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nicolas Jackson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bruno Fernandes": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Youri Tielemans": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "John McGinn": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leon Goretzka": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ayden Heaven": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joshua Zirkzee": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Patrick Dorgu": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Zion Suzuki": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "fc andorra vs mallorca": {
+    "match": "FC Andorra vs Mallorca",
+    "league": "LaLiga 2",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:00",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
+    "home_cards": 0,
+    "away_cards": 0,
+    "total_cards": 0,
+    "home_sot": 0,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {},
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "girona vs almería": {
+    "match": "Girona vs Almería",
+    "league": "LaLiga 2",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:15",
+    "score": "0 - 1",
+    "home_goals": 0,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 7,
+    "away_corners": 2,
+    "total_corners": 9,
+    "home_cards": 5,
+    "away_cards": 3,
+    "total_cards": 8,
+    "home_sot": 3,
+    "away_sot": 3,
+    "btts": false,
+    "player_stats": {
+      "Álex Moreno": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fran Beltrán": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Izan González": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stefan Dzodic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marcos Luna Marcos Ruiz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Miguel de la Fuente": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mateu Morey": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Álex Muñoz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oleksandr Pishchur": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sporting gijón vs real valladolid": {
+    "match": "Sporting Gijón vs Real Valladolid",
+    "league": "LaLiga 2",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:30",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 2,
+    "ht_goals": 2,
+    "home_corners": 9,
+    "away_corners": 6,
+    "total_corners": 15,
+    "home_cards": 6,
+    "away_cards": 3,
+    "total_cards": 9,
+    "home_sot": 6,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Julien Ponceau": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hugo Guillamón": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jorge": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stanko Juric": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tai Abed": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "David Torres": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Iván Alejo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gaspar Campos": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Miguel Conde": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Guillermo Rosas": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Otero": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "heerenveen vs feyenoord rotterdam": {
+    "match": "Heerenveen vs Feyenoord Rotterdam",
+    "league": "Eredivisie",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "05:15",
+    "score": "5 - 3",
+    "home_goals": 5,
+    "away_goals": 3,
+    "ht_home": 1,
+    "ht_away": 2,
+    "ht_goals": 3,
+    "home_corners": 4,
+    "away_corners": 1,
+    "total_corners": 5,
+    "home_cards": 2,
+    "away_cards": 0,
+    "total_cards": 2,
+    "home_sot": 9,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Anis Hadj Moussa": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nacho Ferri": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Maas Willemsen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Levi Smans": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ringo Meerveld": {
+        "sot": 4,
+        "goals": 3,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sem Steijn": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "fc twente vs ajax amsterdam": {
+    "match": "FC Twente vs Ajax Amsterdam",
+    "league": "Eredivisie",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:30",
+    "score": "2 - 2",
+    "home_goals": 2,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 9,
+    "away_corners": 2,
+    "total_corners": 11,
+    "home_cards": 3,
+    "away_cards": 5,
+    "total_cards": 8,
+    "home_sot": 5,
+    "away_sot": 2,
+    "btts": true,
+    "player_stats": {
+      "Tolu Arokodare": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lucas Rosa": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Robin Pröpper": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Aaron Bouwman": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rayane Bounida": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dies Janse": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oscar Gloukh": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Daouda Weidmann": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ramiz Zerrouki": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Owen Wijndal": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Wout Weghorst": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "az alkmaar vs fc groningen": {
+    "match": "AZ Alkmaar vs FC Groningen",
+    "league": "Eredivisie",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:45",
+    "score": "4 - 3",
+    "home_goals": 4,
+    "away_goals": 3,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 7,
+    "away_corners": 0,
+    "total_corners": 7,
+    "home_cards": 1,
+    "away_cards": 5,
+    "total_cards": 6,
+    "home_sot": 5,
+    "away_sot": 5,
+    "btts": true,
+    "player_stats": {
+      "Jacob Ondrejka": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mexx Meerdink": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Brynjólfur Willumsson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Thom Van Bergen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marco Rente": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pelle Clement": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ayoub Oufkir": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mateo Chávez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Etienne Vaessen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Peer Koopmeiners": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hans Hateboer": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sc cambuur vs psv eindhoven": {
+    "match": "SC Cambuur vs PSV Eindhoven",
+    "league": "Eredivisie",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:45",
+    "score": "2 - 5",
+    "home_goals": 2,
+    "away_goals": 5,
+    "ht_home": 1,
+    "ht_away": 3,
+    "ht_goals": 4,
+    "home_corners": 1,
+    "away_corners": 1,
+    "total_corners": 2,
+    "home_cards": 3,
+    "away_cards": 2,
+    "total_cards": 5,
+    "home_sot": 3,
+    "away_sot": 7,
+    "btts": true,
+    "player_stats": {
+      "Sven Mijnans": {
+        "sot": 4,
+        "goals": 3,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ruben Van Bommel": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nicky Souren": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mathieu Maertens": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Morgan Costarelli": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rafik El Arguioui": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sergiño Dest": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Iwan Henstra": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ayoni Santos": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "fc utrecht vs nec nijmegen": {
+    "match": "FC Utrecht vs NEC Nijmegen",
+    "league": "Eredivisie",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "13:00",
+    "score": "2 - 3",
+    "home_goals": 2,
+    "away_goals": 3,
+    "ht_home": 0,
+    "ht_away": 2,
+    "ht_goals": 2,
+    "home_corners": 3,
+    "away_corners": 8,
+    "total_corners": 11,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "home_sot": 5,
+    "away_sot": 7,
+    "btts": true,
+    "player_stats": {
+      "Kevin Kers": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dusan Tadic": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yoann Cathline": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dani de Wit": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nordin Amrabat": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bryan Linssen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Clement Bischoff": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Willum Thór Willumsson": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "querétaro vs puebla": {
+    "match": "Querétaro vs Puebla",
+    "league": "Liga MX",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "18:00",
+    "score": "0 - 2",
+    "home_goals": 0,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 9,
+    "away_corners": 0,
+    "total_corners": 9,
+    "home_cards": 3,
+    "away_cards": 3,
+    "total_cards": 6,
+    "home_sot": 5,
+    "away_sot": 3,
+    "btts": false,
+    "player_stats": {
+      "Kevin Velasco": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Omar Moreno": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oscar Villa": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Iker Moreno": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ali Avila": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Eduardo Pérez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alonso Ramirez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Santiago Homenchenko": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "león vs guadalajara": {
+    "match": "León vs Guadalajara",
+    "league": "Liga MX",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "20:10",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 2,
+    "away_corners": 6,
+    "total_corners": 8,
+    "home_cards": 3,
+    "away_cards": 1,
+    "total_cards": 4,
+    "home_sot": 5,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Richard Ledezma": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Guevara": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diber Cambindo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "José Rodríguez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ricardo Marín": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Paul Saracho": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "napoli vs lazio": {
+    "match": "Napoli vs Lazio",
+    "league": "Serie A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "05:30",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 6,
+    "total_corners": 12,
+    "home_cards": 3,
+    "away_cards": 1,
+    "total_cards": 4,
+    "home_sot": 6,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Davide Frattesi": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Noa Lang": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alfonso Pedraza": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Billy Gilmour": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Antonio Vergara": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "genoa vs ac milan": {
+    "match": "Genoa vs AC Milan",
+    "league": "Serie A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 2,
+    "ht_goals": 2,
+    "home_corners": 3,
+    "away_corners": 0,
+    "total_corners": 3,
+    "home_cards": 2,
+    "away_cards": 4,
+    "total_cards": 6,
+    "home_sot": 5,
+    "away_sot": 2,
+    "btts": true,
+    "player_stats": {
+      "Alphadjo Cissè": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Christian Pulisic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sankhoun Diawara": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alessandro Marcandalli": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Adrien Rabiot": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mario Gila": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mikael Ellertsson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kingsley Ehizibue": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "monza vs atalanta": {
+    "match": "Monza vs Atalanta",
+    "league": "Serie A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "0 - 1",
+    "home_goals": 0,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 7,
+    "away_corners": 2,
+    "total_corners": 9,
+    "home_cards": 6,
+    "away_cards": 2,
+    "total_cards": 8,
+    "home_sot": 7,
+    "away_sot": 7,
+    "btts": false,
+    "player_stats": {
+      "Eddy Kouadio": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leonardo Colombo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nikola Krstovic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Éderson": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Charles De Ketelaere": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andrea Carboni": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andrea Colpani": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "internazionale vs como": {
+    "match": "Internazionale vs Como",
+    "league": "Serie A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:00",
     "score": "2 - 0",
     "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 4,
+    "away_corners": 2,
+    "total_corners": 6,
+    "home_cards": 1,
+    "away_cards": 0,
+    "total_cards": 1,
+    "home_sot": 4,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Pio Esposito": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marcus Thuram": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "fiorentina vs juventus": {
+    "match": "Fiorentina vs Juventus",
+    "league": "Serie A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "13:45",
+    "score": "2 - 2",
+    "home_goals": 2,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 5,
+    "away_corners": 12,
+    "total_corners": 17,
+    "home_cards": 1,
+    "away_cards": 3,
+    "total_cards": 4,
+    "home_sot": 6,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Mateo Pellegrino": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Cabal": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bremer": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nick Woltemade": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Christ Inao Oulaï": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alieu Njie": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Randal Kolo Muani": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "virtus entella vs modena": {
+    "match": "Virtus Entella vs Modena",
+    "league": "Serie B",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "0 - 2",
+    "home_goals": 0,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 3,
+    "away_corners": 3,
+    "total_corners": 6,
+    "home_cards": 6,
+    "away_cards": 1,
+    "total_cards": 7,
+    "home_sot": 2,
+    "away_sot": 7,
+    "btts": false,
+    "player_stats": {
+      "Daniele Montevago": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luigi Cuppone": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Giacomo Olzer": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luca Vignali": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stefano Di Mario": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andrea Franzoni": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andrea Tiritiello": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "carrarese vs sampdoria": {
+    "match": "Carrarese vs Sampdoria",
+    "league": "Serie B",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:15",
+    "score": "0 - 1",
+    "home_goals": 0,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 2,
+    "total_corners": 8,
+    "home_cards": 1,
+    "away_cards": 4,
+    "total_cards": 5,
+    "home_sot": 1,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Gennaro Tutino": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tommaso Rubino": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lorenzo Mezzotero": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tjas Begic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yann Karamoh": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "vicenza vs cremonese": {
+    "match": "Vicenza vs Cremonese",
+    "league": "Serie B",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:30",
+    "score": "1 - 4",
+    "home_goals": 1,
+    "away_goals": 4,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 4,
+    "away_corners": 3,
+    "total_corners": 7,
+    "home_cards": 3,
+    "away_cards": 0,
+    "total_cards": 3,
+    "home_sot": 5,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Federico Bonazzoli": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Silvio Merkaj": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Giuseppe Pezzella": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Niccolò Brighenti": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Loris Zonta": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "David Stuckler": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "aek athens vs levadiakos": {
+    "match": "AEK Athens vs Levadiakos",
+    "league": "Super League Grecia",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:00",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 10,
+    "away_corners": 6,
+    "total_corners": 16,
+    "home_cards": 4,
+    "away_cards": 0,
+    "total_cards": 4,
+    "home_sot": 5,
+    "away_sot": 2,
+    "btts": true,
+    "player_stats": {
+      "Moses Cobnan": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luka Jovic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Barnabás Varga": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mijat Gacinovic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Razvan Marin": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Aboubakary Koita": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "asteras tripoli vs kalamata": {
+    "match": "Asteras Tripoli vs Kalamata",
+    "league": "Super League Grecia",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:00",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 3,
+    "total_corners": 9,
+    "home_cards": 5,
+    "away_cards": 2,
+    "total_cards": 7,
+    "home_sot": 1,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Jordan Silva": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rodrigues": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Federico Macheda": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Giannis Bouzoukis": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jovanny Bolívar": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Giannis Kotsiras": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Franco Orozco": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "iraklis vs panathinaikos": {
+    "match": "Iraklis vs Panathinaikos",
+    "league": "Super League Grecia",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 1,
+    "away_corners": 4,
+    "total_corners": 5,
+    "home_cards": 4,
+    "away_cards": 5,
+    "total_cards": 9,
+    "home_sot": 3,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Davide Calabria": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pedro Marques": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Etienne Camara": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Vasilis Sourlis": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cyriel Dessers": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Santino Andino": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yohan Roche": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sotiris Kontouris": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stefan de Vrij": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Édgar Yoel Bárcenas": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sofian Chakla": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "ofi crete vs atromitos": {
+    "match": "OFI Crete vs Atromitos",
+    "league": "Super League Grecia",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:30",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 9,
+    "away_corners": 5,
+    "total_corners": 14,
+    "home_cards": 3,
+    "away_cards": 3,
+    "total_cards": 6,
+    "home_sot": 2,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Taxiarchis Fountas": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Thanasis Androutsos": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andreas Bouchalakis": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Serginho": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Perea": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stavros Pnevmonidis": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "olympiacos vs paok": {
+    "match": "Olympiacos vs PAOK",
+    "league": "Super League Grecia",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "13:00",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 5,
+    "away_corners": 4,
+    "total_corners": 9,
+    "home_cards": 2,
+    "away_cards": 5,
+    "total_cards": 7,
+    "home_sot": 5,
+    "away_sot": 2,
+    "btts": true,
+    "player_stats": {
+      "Panagiotis Retsos": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diego Costa": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cherif Ndiaye": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dimitris Giannoulis": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Armando González": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andrija Zivkovic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kostas Fortounis": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pantelis Hatzidiakos": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "stade rennais vs lille": {
+    "match": "Stade Rennais vs Lille",
+    "league": "Ligue 1",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 7,
+    "away_corners": 2,
+    "total_corners": 9,
+    "home_cards": 0,
+    "away_cards": 3,
+    "total_cards": 3,
+    "home_sot": 2,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Soriba Diaoune": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Boulaye Dia": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Calvin Verdonk": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nathan Ngoy": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Maurits Kjaergaard": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "angers vs nice": {
+    "match": "Angers vs Nice",
+    "league": "Ligue 1",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:15",
+    "score": "0 - 2",
+    "home_goals": 0,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 4,
+    "total_corners": 10,
+    "home_cards": 3,
+    "away_cards": 1,
+    "total_cards": 4,
+    "home_sot": 4,
+    "away_sot": 8,
+    "btts": false,
+    "player_stats": {
+      "Sofiane Diop": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Carlens Arcus": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ousmane Camara": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Branco van den Boomen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jonathan Clauss": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "brest vs lyon": {
+    "match": "Brest vs Lyon",
+    "league": "Ligue 1",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:15",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 1,
+    "away_corners": 8,
+    "total_corners": 9,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "home_sot": 6,
+    "away_sot": 2,
+    "btts": false,
+    "player_stats": {
+      "Noah Edjouma": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Corentin Tolisso": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kail Boudache": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ludovic Ajorque": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "le havre ac vs lorient": {
+    "match": "Le Havre AC vs Lorient",
+    "league": "Ligue 1",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:15",
+    "score": "0 - 2",
+    "home_goals": 0,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 5,
+    "away_corners": 0,
+    "total_corners": 5,
+    "home_cards": 1,
+    "away_cards": 3,
+    "total_cards": 4,
+    "home_sot": 5,
+    "away_sot": 3,
+    "btts": false,
+    "player_stats": {
+      "Isaak Touré": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Souleymane Faye": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Noah Cadiou": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jean-Victor Makengo": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ahmed Touba": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "le mans vs as monaco": {
+    "match": "Le Mans vs AS Monaco",
+    "league": "Ligue 1",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:15",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 8,
+    "away_corners": 7,
+    "total_corners": 15,
+    "home_cards": 0,
+    "away_cards": 0,
+    "total_cards": 0,
+    "home_sot": 5,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Mamadou Coulibaly": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Erwan Colas": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "lens vs marseille": {
+    "match": "Lens vs Marseille",
+    "league": "Ligue 1",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "13:45",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 4,
+    "away_corners": 6,
+    "total_corners": 10,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "home_sot": 6,
+    "away_sot": 5,
+    "btts": true,
+    "player_stats": {
+      "Amine Gouiri": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Florian Thauvin": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yassine Titraoui": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Keyliane Abdallah": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jeffrey de Lange": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "1. fc heidenheim 1846 vs hannover 96": {
+    "match": "1. FC Heidenheim 1846 vs Hannover 96",
+    "league": "2. Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "06:30",
+    "score": "2 - 2",
+    "home_goals": 2,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 7,
+    "away_corners": 9,
+    "total_corners": 16,
+    "home_cards": 0,
+    "away_cards": 3,
+    "total_cards": 3,
+    "home_sot": 3,
+    "away_sot": 5,
+    "btts": true,
+    "player_stats": {
+      "Franz Roggow": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tim Siersleben": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stefán Teitur Thórdarson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jean Hugonet": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Budu Zivzivadze": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marcel Hartel": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "1. fc magdeburg vs st. pauli": {
+    "match": "1. FC Magdeburg vs St. Pauli",
+    "league": "2. Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "06:30",
+    "score": "4 - 1",
+    "home_goals": 4,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 3,
+    "away_corners": 7,
+    "total_corners": 10,
+    "home_cards": 2,
+    "away_cards": 5,
+    "total_cards": 7,
+    "home_sot": 6,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Mateusz Zukowski": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Anselmo Garcia MacNulty": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dávid Németh": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tobias Müller": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Eric Smith": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joel Chima Fujita": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Louis Oppie": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Herbert Bockhorn": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Roko Simic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Samuel Klein": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "vfl bochum vs karlsruher sc": {
+    "match": "VfL Bochum vs Karlsruher SC",
+    "league": "2. Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "06:30",
+    "score": "3 - 2",
+    "home_goals": 3,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 4,
+    "away_corners": 1,
+    "total_corners": 5,
+    "home_cards": 1,
+    "away_cards": 1,
+    "total_cards": 2,
+    "home_sot": 10,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Christian Rasmussen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kevin Wiethaup": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Santeri Vaananen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tim Civeja": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Philipp Hofmann": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sean Klaiber": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "club brugge vs anderlecht": {
+    "match": "Club Brugge vs Anderlecht",
+    "league": "Belgian Pro League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "06:30",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 9,
+    "away_corners": 1,
+    "total_corners": 10,
+    "home_cards": 5,
+    "away_cards": 5,
+    "total_cards": 10,
+    "home_sot": 8,
+    "away_sot": 1,
+    "btts": true,
+    "player_stats": {
+      "Jorne Spileers": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jayden Onia-Seke": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hans Vanaken": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joaquin Seys": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mihajlo Cvetkovic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nicolo Tresoldi": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Giulian Biancone": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Enric Llansana": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "kaa gent vs kv kortrijk": {
+    "match": "KAA Gent vs KV Kortrijk",
+    "league": "Belgian Pro League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:00",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 4,
+    "away_corners": 1,
+    "total_corners": 5,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "home_sot": 4,
+    "away_sot": 7,
+    "btts": false,
+    "player_stats": {
+      "Siebe van der Heyden": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Abdelkahar Kadri": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Brecht Dejaegere": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Axel Drouhin": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "union st.-gilloise vs racing genk": {
+    "match": "Union St.-Gilloise vs Racing Genk",
+    "league": "Belgian Pro League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:30",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 10,
+    "away_corners": 3,
+    "total_corners": 13,
+    "home_cards": 1,
+    "away_cards": 1,
+    "total_cards": 2,
+    "home_sot": 4,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Massiré Sylla": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ross Sykes": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yaimar Medina": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sint-truidense vs zulte-waregem": {
+    "match": "Sint-Truidense vs Zulte-Waregem",
+    "league": "Belgian Pro League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:15",
+    "score": "4 - 1",
+    "home_goals": 4,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 5,
+    "away_corners": 4,
+    "total_corners": 9,
+    "home_cards": 0,
+    "away_cards": 4,
+    "total_cards": 4,
+    "home_sot": 9,
+    "away_sot": 2,
+    "btts": true,
+    "player_stats": {
+      "Shion Shinkawa": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nelson Ishiwatari": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "István Átrok": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Franz Tangala": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Enrique Lofolomo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ilias Sebaoui": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kaito Matsuzawa": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Youssoupha Mbodji": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "central córdoba (santiago del estero) vs lanús": {
+    "match": "Central Córdoba (Santiago del Estero) vs Lanús",
+    "league": "Liga Profesional Argentina",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "16:30",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 3,
+    "away_corners": 8,
+    "total_corners": 11,
+    "home_cards": 3,
+    "away_cards": 1,
+    "total_cards": 4,
+    "home_sot": 2,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Tomás Guidara": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Felipe Peña": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Eduardo Salvio": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nicolás Garrido": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diego Barrera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Enzo Tiziano Ramirez Suarez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "heart of midlothian vs falkirk": {
+    "match": "Heart of Midlothian vs Falkirk",
+    "league": "Scottish Premiership",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:00",
+    "score": "2 - 5",
+    "home_goals": 2,
+    "away_goals": 5,
+    "ht_home": 0,
+    "ht_away": 4,
+    "ht_goals": 4,
+    "home_corners": 4,
+    "away_corners": 5,
+    "total_corners": 9,
+    "home_cards": 1,
+    "away_cards": 6,
+    "total_cards": 7,
+    "home_sot": 6,
+    "away_sot": 7,
+    "btts": true,
+    "player_stats": {
+      "Finley Barbrook": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Owen Eames": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jacob Murrell": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Liam Henderson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Severin Sabri Guendouz": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cláudio Braga": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "CJ Fodrey": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Deniss Melniks": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leart Kabashi": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ben Parkinson": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "celtic vs kilmarnock": {
+    "match": "Celtic vs Kilmarnock",
+    "league": "Scottish Premiership",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:00",
+    "score": "1 - 0",
+    "home_goals": 1,
     "away_goals": 0,
     "ht_home": 1,
     "ht_away": 0,
@@ -51,320 +4299,3494 @@
     "away_corners": 3,
     "total_corners": 11,
     "home_cards": 1,
-    "away_cards": 2,
-    "total_cards": 3,
-    "btts": false,
-    "referee": "Anthony Taylor",
-    "player_stats": {
-      "Florian Wirtz": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 1,
-        "started": true,
-        "mins": 88
-      },
-      "Alexander Isak": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 79
-      },
-      "Yoane Wissa": {
-        "sot": 1,
-        "goals": 0,
-        "assists": 0,
-        "started": true,
-        "mins": 75
-      }
-    },
-    "source": "SofaScore Official Premier League Boxscore"
-  },
-  "barcelona vs celta vigo": {
-    "match": "Barcelona vs Celta Vigo",
-    "league": "LaLiga",
-    "status": "FINALIZADO (FT)",
-    "time_cdmx": "14:00",
-    "score": "3 - 1",
-    "home_goals": 3,
-    "away_goals": 1,
-    "ht_home": 2,
-    "ht_away": 0,
-    "ht_goals": 2,
-    "home_corners": 7,
-    "away_corners": 2,
-    "total_corners": 9,
-    "home_cards": 1,
-    "away_cards": 3,
-    "total_cards": 4,
-    "btts": true,
-    "referee": "Jesús Gil Manzano",
-    "player_stats": {
-      "Robert Lewandowski": {
-        "sot": 3,
-        "goals": 2,
-        "assists": 0,
-        "started": true,
-        "mins": 90
-      },
-      "Lamine Yamal": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 1,
-        "started": true,
-        "mins": 85
-      },
-      "Iago Aspas": {
-        "sot": 1,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 72
-      }
-    },
-    "source": "SofaScore Official LaLiga Boxscore"
-  },
-  "atletico madrid vs sevilla": {
-    "match": "Atlético Madrid vs Sevilla",
-    "league": "LaLiga",
-    "status": "FINALIZADO (FT)",
-    "time_cdmx": "09:15",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
-    "ht_home": 1,
-    "ht_away": 1,
-    "ht_goals": 2,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
-    "home_cards": 3,
-    "away_cards": 3,
+    "away_cards": 5,
     "total_cards": 6,
-    "btts": true,
-    "referee": "Alejandro Hernández Hernández",
-    "player_stats": {
-      "Julián Álvarez": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 1,
-        "started": true,
-        "mins": 88
-      },
-      "Antoine Griezmann": {
-        "sot": 1,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 90
-      },
-      "Isaac Romero": {
-        "sot": 1,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 80
-      }
-    },
-    "source": "SofaScore Official LaLiga Boxscore"
-  },
-  "inter milan vs juventus": {
-    "match": "Inter Milan vs Juventus",
-    "league": "Serie A",
-    "status": "FINALIZADO (FT)",
-    "time_cdmx": "13:45",
-    "score": "1 - 1",
-    "home_goals": 1,
-    "away_goals": 1,
-    "ht_home": 0,
-    "ht_away": 1,
-    "ht_goals": 1,
-    "home_corners": 6,
-    "away_corners": 5,
-    "total_corners": 11,
-    "home_cards": 2,
-    "away_cards": 2,
-    "total_cards": 4,
-    "btts": true,
-    "referee": "Daniele Doveri",
-    "player_stats": {
-      "Lautaro Martínez": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 90
-      },
-      "Dušan Vlahović": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 85
-      }
-    },
-    "source": "SofaScore Official Serie A Boxscore"
-  },
-  "ac milan vs fiorentina": {
-    "match": "AC Milan vs Fiorentina",
-    "league": "Serie A",
-    "status": "FINALIZADO (FT)",
-    "time_cdmx": "11:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
-    "ht_home": 1,
-    "ht_away": 0,
-    "ht_goals": 1,
-    "home_corners": 5,
-    "away_corners": 4,
-    "total_corners": 9,
-    "home_cards": 2,
-    "away_cards": 3,
-    "total_cards": 5,
-    "btts": true,
-    "referee": "Maurizio Mariani",
-    "player_stats": {
-      "Santiago Gimenez": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 82
-      },
-      "Rafael Leão": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 1,
-        "started": true,
-        "mins": 90
-      },
-      "Moise Kean": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 85
-      }
-    },
-    "source": "SofaScore Official Serie A Boxscore"
-  },
-  "bayer leverkusen vs eintracht frankfurt": {
-    "match": "Bayer Leverkusen vs Eintracht Frankfurt",
-    "league": "Bundesliga",
-    "status": "FINALIZADO (FT)",
-    "time_cdmx": "10:30",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
-    "ht_home": 1,
-    "ht_away": 1,
-    "ht_goals": 2,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
-    "home_cards": 1,
-    "away_cards": 2,
-    "total_cards": 3,
-    "btts": true,
-    "referee": "Felix Zwayer",
-    "player_stats": {
-      "Patrik Schick": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 1,
-        "started": true,
-        "mins": 85
-      },
-      "Hugo Ekitiké": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 82
-      }
-    },
-    "source": "SofaScore Official Bundesliga Boxscore"
-  },
-  "club américa vs guadalajara": {
-    "match": "Club América vs Guadalajara",
-    "league": "Liga MX",
-    "status": "FINALIZADO (FT)",
-    "time_cdmx": "19:00",
-    "score": "2 - 0",
-    "home_goals": 2,
-    "away_goals": 0,
-    "ht_home": 1,
-    "ht_away": 0,
-    "ht_goals": 1,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
-    "home_cards": 3,
-    "away_cards": 4,
-    "total_cards": 7,
+    "home_sot": 5,
+    "away_sot": 3,
     "btts": false,
-    "referee": "César Arturo Ramos",
     "player_stats": {
-      "Henry Martín": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 1,
-        "started": true,
-        "mins": 86
-      },
-      "Brian Rodríguez": {
-        "sot": 2,
-        "goals": 1,
-        "assists": 0,
-        "started": true,
-        "mins": 78
-      },
-      "Armando González": {
-        "sot": 1,
+      "Tom Lowery": {
+        "sot": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 70
+        "mins": 90
+      },
+      "Liam Scales": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joe Hugill": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cathal McCarthy": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jamie Brandon": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tyreece John-Jules": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yang Hyun-Jun": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
       }
     },
-    "source": "SofaScore Official Liga MX Boxscore"
+    "source": "ESPN / SofaScore Official Match Center"
   },
-  "river plate vs racing club": {
-    "match": "River Plate vs Racing Club",
-    "league": "Liga Profesional Argentina",
+  "c.d. nacional vs académico de viseu": {
+    "match": "C.D. Nacional vs Académico de Viseu",
+    "league": "Primeira Liga Portugal",
     "status": "FINALIZADO (FT)",
-    "time_cdmx": "17:30",
+    "time_cdmx": "09:30",
     "score": "1 - 0",
     "home_goals": 1,
     "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 5,
+    "home_corners": 6,
     "away_corners": 4,
-    "total_corners": 9,
-    "home_cards": 2,
-    "away_cards": 3,
-    "total_cards": 5,
+    "total_corners": 10,
+    "home_cards": 3,
+    "away_cards": 4,
+    "total_cards": 7,
+    "home_sot": 6,
+    "away_sot": 6,
     "btts": false,
-    "referee": "Facundo Tello",
     "player_stats": {
-      "Miguel Borja": {
+      "Cihan Kahraman": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stavros Gavriel": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "João Guilherme": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Robinho": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Anthony Correia": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Zé Vitor": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Matchoi Djoló": {
         "sot": 2,
         "goals": 1,
         "assists": 0,
         "started": true,
-        "mins": 88
+        "mins": 90
       },
-      "Adrián Martínez": {
-        "sot": 1,
+      "Matheus Dias": {
+        "sot": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 85
+        "mins": 90
       }
     },
-    "source": "SofaScore Official Argentina Boxscore"
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "estoril vs maritimo": {
+    "match": "Estoril vs Maritimo",
+    "league": "Primeira Liga Portugal",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
+    "home_cards": 0,
+    "away_cards": 0,
+    "total_cards": 0,
+    "home_sot": 0,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {},
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "santa clara vs gil vicente": {
+    "match": "Santa Clara vs Gil Vicente",
+    "league": "Primeira Liga Portugal",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 1,
+    "away_corners": 9,
+    "total_corners": 10,
+    "home_cards": 5,
+    "away_cards": 2,
+    "total_cards": 7,
+    "home_sot": 0,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Lucas Soares": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diogo Prioste": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Antonio Espigares": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fernando": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Walace França": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Emanuel Moreira": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pedro Pacheco": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kamika": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Murilo": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mohamed Kaba": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "vitória de guimaraes vs fc porto": {
+    "match": "Vitória de Guimaraes vs FC Porto",
+    "league": "Primeira Liga Portugal",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:00",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 4,
+    "away_corners": 5,
+    "total_corners": 9,
+    "home_cards": 3,
+    "away_cards": 4,
+    "total_cards": 7,
+    "home_sot": 6,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Toni Borevkovic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "João Mendes": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Borja Sainz": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pablo Rosario": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hwang In-Beom": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alan": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Martim Fernandes": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alan Varela": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "estrela vs benfica": {
+    "match": "Estrela vs Benfica",
+    "league": "Primeira Liga Portugal",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "14:30",
+    "score": "2 - 3",
+    "home_goals": 2,
+    "away_goals": 3,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 1,
+    "away_corners": 10,
+    "total_corners": 11,
+    "home_cards": 3,
+    "away_cards": 1,
+    "total_cards": 4,
+    "home_sot": 2,
+    "away_sot": 5,
+    "btts": true,
+    "player_stats": {
+      "Gianluca Prestianni": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lovro Zvonarek": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bernardo Schappo": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leandro Antonetti": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alisson Souza": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Vangelis Pavlidis": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "rio ave vs braga": {
+    "match": "Rio Ave vs Braga",
+    "league": "Primeira Liga Portugal",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "14:30",
+    "score": "0 - 1",
+    "home_goals": 0,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 0,
+    "away_corners": 8,
+    "total_corners": 8,
+    "home_cards": 2,
+    "away_cards": 1,
+    "total_cards": 3,
+    "home_sot": 3,
+    "away_sot": 2,
+    "btts": false,
+    "player_stats": {
+      "Diogo Nascimento": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diogo Bezerra": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ricardo Horta": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fran Navarro": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "leones negros vs durango": {
+    "match": "Leones Negros vs Durango",
+    "league": "Liga Expansión MX",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:00",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 3,
+    "away_corners": 8,
+    "total_corners": 11,
+    "home_cards": 3,
+    "away_cards": 2,
+    "total_cards": 5,
+    "home_sot": 4,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Jesús González": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sergio Hernandez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leonardo Sepulveda": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Brigido": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "José Luis Osmar Múñoz Villagómez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Pablo Cázares": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "piratas vs cancún fc": {
+    "match": "Piratas vs Cancún FC",
+    "league": "Liga Expansión MX",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "19:00",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 1,
+    "away_corners": 4,
+    "total_corners": 5,
+    "home_cards": 2,
+    "away_cards": 0,
+    "total_cards": 2,
+    "home_sot": 4,
+    "away_sot": 1,
+    "btts": true,
+    "player_stats": {
+      "Jesús Venegas": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Christian Vladimir Fernández García": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Humberto Hernández": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Christopher Trejo": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "independiente santa fe vs deportivo pasto": {
+    "match": "Independiente Santa Fe vs Deportivo Pasto",
+    "league": "Categoría Primera A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "13:00",
+    "score": "5 - 0",
+    "home_goals": 5,
+    "away_goals": 0,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 3,
+    "away_corners": 3,
+    "total_corners": 6,
+    "home_cards": 0,
+    "away_cards": 2,
+    "total_cards": 2,
+    "home_sot": 8,
+    "away_sot": 2,
+    "btts": false,
+    "player_stats": {
+      "Franco Fagúndez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hervin Goyes": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luis Enrique Medina Lucumi": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Samuel Andres Portes Cardozo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hugo Rodallega": {
+        "sot": 4,
+        "goals": 3,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "jaguares de córdoba vs atlético bucaramanga": {
+    "match": "Jaguares de Córdoba vs Atlético Bucaramanga",
+    "league": "Categoría Primera A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "15:05",
+    "score": "0 - 4",
+    "home_goals": 0,
+    "away_goals": 4,
+    "ht_home": 0,
+    "ht_away": 2,
+    "ht_goals": 2,
+    "home_corners": 5,
+    "away_corners": 6,
+    "total_corners": 11,
+    "home_cards": 1,
+    "away_cards": 3,
+    "total_cards": 4,
+    "home_sot": 1,
+    "away_sot": 7,
+    "btts": false,
+    "player_stats": {
+      "Franklin Mosquera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Brandon Caicedo": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rafael Bustamante": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Aldair Zárate": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Carlos Romaña": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fabián Sambueza": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "deportes tolima vs millonarios": {
+    "match": "Deportes Tolima vs Millonarios",
+    "league": "Categoría Primera A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "17:10",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 3,
+    "away_corners": 3,
+    "total_corners": 6,
+    "home_cards": 6,
+    "away_cards": 4,
+    "total_cards": 10,
+    "home_sot": 2,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Juan Cuadrado": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Homer Martínez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mateo García": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stiven Vega": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ever Valencia": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kelvin Florez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Junior Hernández": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sergio Mosquera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jherson Mosquera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luis Sandoval": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sergio Aguayo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "alianza fc vs llaneros fc": {
+    "match": "Alianza FC vs Llaneros FC",
+    "league": "Categoría Primera A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "19:15",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 2,
+    "ht_goals": 3,
+    "home_corners": 8,
+    "away_corners": 6,
+    "total_corners": 14,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "home_sot": 3,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Juan Pertúz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Castilla": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Misael Martínez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jhon Vásquez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dennis Quintero": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jair Castillo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marlon Sierra": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Josy Pérez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "américa de cali vs deportivo cali": {
+    "match": "América de Cali vs Deportivo Cali",
+    "league": "Categoría Primera A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "19:45",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 7,
+    "away_corners": 2,
+    "total_corners": 9,
+    "home_cards": 3,
+    "away_cards": 3,
+    "total_cards": 6,
+    "home_sot": 3,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Yani Quintero": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Daniel Giraldo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Josen Escobar": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yeison Guzmán": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fernando Álvarez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "José Caldera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "cerro porteño vs deportivo recoleta": {
+    "match": "Cerro Porteño vs Deportivo Recoleta",
+    "league": "Primera División Paraguay",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "14:00",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 11,
+    "away_corners": 0,
+    "total_corners": 11,
+    "home_cards": 0,
+    "away_cards": 2,
+    "total_cards": 2,
+    "home_sot": 7,
+    "away_sot": 1,
+    "btts": true,
+    "player_stats": {
+      "Alejandro Silva": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Paul Charpentier": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jorge Morel": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luis Mendoza": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sportivo trinidense vs sportivo ameliano": {
+    "match": "Sportivo Trinidense vs Sportivo Ameliano",
+    "league": "Primera División Paraguay",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "16:30",
+    "score": "3 - 0",
+    "home_goals": 3,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 4,
+    "away_corners": 1,
+    "total_corners": 5,
+    "home_cards": 1,
+    "away_cards": 3,
+    "total_cards": 4,
+    "home_sot": 4,
+    "away_sot": 5,
+    "btts": false,
+    "player_stats": {
+      "Clementino González": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Alan Morinigo": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luis Ortiz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jonathan Benítez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oscar Guillermo Giménez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "los chankas vs alianza lima": {
+    "match": "Los Chankas vs Alianza Lima",
+    "league": "Liga 1 Perú",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:00",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 5,
+    "away_corners": 2,
+    "total_corners": 7,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "home_sot": 6,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "D'Alessandro Montenegro": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Erick Castillo": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nicolás Diaz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kelvin Sánchez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jarlín Quintero": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hector González": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sport boys vs utc": {
+    "match": "Sport Boys vs UTC",
+    "league": "Liga 1 Perú",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "14:30",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 7,
+    "away_corners": 7,
+    "total_corners": 14,
+    "home_cards": 3,
+    "away_cards": 4,
+    "total_cards": 7,
+    "home_sot": 3,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Manuel Ganoza": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Francesco Cavagna": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mathias Llontop": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "David Dioses": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rolando Diaz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Pablo Erustes": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "deportivo garcilaso vs comerciantes unidos": {
+    "match": "Deportivo Garcilaso vs Comerciantes Unidos",
+    "league": "Liga 1 Perú",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "17:00",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 9,
+    "away_corners": 0,
+    "total_corners": 9,
+    "home_cards": 4,
+    "away_cards": 7,
+    "total_cards": 11,
+    "home_sot": 5,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Carlos Ramos": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "José Parodi": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jean Carlo Olivares Uccelli": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Patrick Zubczuk": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Rodríguez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rodrigo Vilca": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Matías Sen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Erick Canales": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juniors Barbieri": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Thiago Salinas": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Flavio Alcedo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "universitario vs deportivo moquegua": {
+    "match": "Universitario vs Deportivo Moquegua",
+    "league": "Liga 1 Perú",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "19:30",
+    "score": "2 - 2",
+    "home_goals": 2,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 11,
+    "away_corners": 6,
+    "total_corners": 17,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "home_sot": 5,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Edgar Lastre": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Williams Riveros": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Juan Lojas": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Aldair Perleche": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ricardo Chipao": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gianluca Lapadula": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jorge Murrugarra": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Brayan Angulo": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "audax italiano vs coquimbo unido": {
+    "match": "Audax Italiano vs Coquimbo Unido",
+    "league": "Primera División Chile",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "0 - 1",
+    "home_goals": 0,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 4,
+    "away_corners": 2,
+    "total_corners": 6,
+    "home_cards": 3,
+    "away_cards": 3,
+    "total_cards": 6,
+    "home_sot": 8,
+    "away_sot": 3,
+    "btts": false,
+    "player_stats": {
+      "Felipe Salomoni": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Benjamin Gazzolo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Guido Vadalá": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luis Riveros": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Manuel Fernández": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ariel Uribe": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cesar Pinares": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "universidad católica vs deportes limache": {
+    "match": "Universidad Católica vs Deportes Limache",
+    "league": "Primera División Chile",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "3 - 0",
+    "home_goals": 3,
+    "away_goals": 0,
+    "ht_home": 3,
+    "ht_away": 0,
+    "ht_goals": 3,
+    "home_corners": 4,
+    "away_corners": 10,
+    "total_corners": 14,
+    "home_cards": 2,
+    "away_cards": 1,
+    "total_cards": 3,
+    "home_sot": 7,
+    "away_sot": 3,
+    "btts": false,
+    "player_stats": {
+      "Fernando Zampedri": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leonardo Valencia": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tomas Astaburuaga": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jhojan Valencia": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diego Corral": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "ñublense vs colo colo": {
+    "match": "Ñublense vs Colo Colo",
+    "league": "Primera División Chile",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:00",
+    "score": "1 - 2",
+    "home_goals": 1,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 1,
+    "away_corners": 7,
+    "total_corners": 8,
+    "home_cards": 4,
+    "away_cards": 3,
+    "total_cards": 7,
+    "home_sot": 3,
+    "away_sot": 7,
+    "btts": true,
+    "player_stats": {
+      "Arturo Vidal": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diego Ulloa": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lucas Molina": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lolo Reyes": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ignacio Jeraldino": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Osvaldo Bosso": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jonathan Villagra": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hernán Muñoz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marco Bolados": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "universidad de chile vs cobresal": {
+    "match": "Universidad de Chile vs Cobresal",
+    "league": "Primera División Chile",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:00",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 1,
+    "total_corners": 7,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "home_sot": 5,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Stefan Pino": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lucas Barrera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Felipe Villagrán": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Christian Moreno": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Igor Lichnovsky": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Benjamin Valenzuela": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "unión la calera vs huachipato": {
+    "match": "Unión La Calera vs Huachipato",
+    "league": "Primera División Chile",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "14:30",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 5,
+    "total_corners": 11,
+    "home_cards": 4,
+    "away_cards": 1,
+    "total_cards": 5,
+    "home_sot": 5,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Brian Nicolas Ferreyra": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bayron Oyarzo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Camilo Moya": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rodrigo Pérez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Carlos Herrera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "universidad de concepción vs o'higgins": {
+    "match": "Universidad de Concepción vs O'Higgins",
+    "league": "Primera División Chile",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "17:00",
+    "score": "3 - 2",
+    "home_goals": 3,
+    "away_goals": 2,
+    "ht_home": 2,
+    "ht_away": 1,
+    "ht_goals": 3,
+    "home_corners": 2,
+    "away_corners": 5,
+    "total_corners": 7,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "home_sot": 7,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Osvaldo González": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cristopher Mesías": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Harol Salgado": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Esteban Moreira": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tomás Avilés": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Santiago Toloza": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Benjamín Pérez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Moises Torres": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "athletic vs atlético goianiense": {
+    "match": "Athletic vs Atlético Goianiense",
+    "league": "Brasileirão Serie B",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "13:00",
+    "score": "2 - 3",
+    "home_goals": 2,
+    "away_goals": 3,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 0,
+    "away_corners": 12,
+    "total_corners": 12,
+    "home_cards": 3,
+    "away_cards": 1,
+    "total_cards": 4,
+    "home_sot": 4,
+    "away_sot": 5,
+    "btts": true,
+    "player_stats": {
+      "Max": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bruno José": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gustavo Silva": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "João Pedro": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gustavo Coutinho": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Philipe Sampaio": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "ceará vs américa mineiro": {
+    "match": "Ceará vs América Mineiro",
+    "league": "Brasileirão Serie B",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "16:15",
+    "score": "0 - 1",
+    "home_goals": 0,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 9,
+    "away_corners": 1,
+    "total_corners": 10,
+    "home_cards": 4,
+    "away_cards": 3,
+    "total_cards": 7,
+    "home_sot": 6,
+    "away_sot": 6,
+    "btts": false,
+    "player_stats": {
+      "Ryan Bonfim De Santana": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Matías Segovia": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lenny Lobato": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luidy": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Barreto": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lucca": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Richard": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "goiás vs ponte preta": {
+    "match": "Goiás vs Ponte Preta",
+    "league": "Brasileirão Serie B",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "16:15",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 10,
+    "away_corners": 4,
+    "total_corners": 14,
+    "home_cards": 5,
+    "away_cards": 1,
+    "total_cards": 6,
+    "home_sot": 1,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Tadeu": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lucas Ribeiro": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Karl": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kadu": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Nicolas": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Anselmo Ramon": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "macará vs universidad católica (quito)": {
+    "match": "Macará vs Universidad Católica (Quito)",
+    "league": "LigaPro Ecuador",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:15",
+    "score": "2 - 2",
+    "home_goals": 2,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 3,
+    "away_corners": 8,
+    "total_corners": 11,
+    "home_cards": 1,
+    "away_cards": 0,
+    "total_cards": 1,
+    "home_sot": 5,
+    "away_sot": 5,
+    "btts": true,
+    "player_stats": {
+      "José Fajardo": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Santiago Etchebarne": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Franco Posse": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mateo Viera": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "deportivo cuenca vs orense": {
+    "match": "Deportivo Cuenca vs Orense",
+    "league": "LigaPro Ecuador",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:30",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 3,
+    "away_corners": 3,
+    "total_corners": 6,
+    "home_cards": 2,
+    "away_cards": 4,
+    "total_cards": 6,
+    "home_sot": 7,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Sixto Mina": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Cristhian Alexander Benalcazar Folleco": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "David González": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mateo Maccari": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Melvin Díaz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Miguel Parrales": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jhon Valencia": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "aucas vs independiente del valle": {
+    "match": "Aucas vs Independiente del Valle",
+    "league": "LigaPro Ecuador",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:45",
+    "score": "2 - 4",
+    "home_goals": 2,
+    "away_goals": 4,
+    "ht_home": 1,
+    "ht_away": 3,
+    "ht_goals": 4,
+    "home_corners": 7,
+    "away_corners": 4,
+    "total_corners": 11,
+    "home_cards": 2,
+    "away_cards": 1,
+    "total_cards": 3,
+    "home_sot": 6,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Mateo Carabajal": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Carlos González": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Santiago Morales": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Junior Sornoza": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Agostino Spina": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Luis Gustavino": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jhegson Méndez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Michael Carcelen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "barcelona sc vs liga de quito": {
+    "match": "Barcelona SC vs Liga de Quito",
+    "league": "LigaPro Ecuador",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "15:30",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 5,
+    "away_corners": 3,
+    "total_corners": 8,
+    "home_cards": 6,
+    "away_cards": 5,
+    "total_cards": 11,
+    "home_sot": 1,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Sebastián Emmanuel González": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yerlin Quiñonez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bryan Carabalí": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Michael Estrada": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gian Franco Allala": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Damián Díaz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gonzalo Lugo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Washington Olvera": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tomás Rodríguez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gustavo Vallecilla": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "tsv hartberg vs sc rheindorf altach": {
+    "match": "TSV Hartberg vs SC Rheindorf Altach",
+    "league": "Austrian Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:30",
+    "score": "3 - 0",
+    "home_goals": 3,
+    "away_goals": 0,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
+    "home_cards": 0,
+    "away_cards": 2,
+    "total_cards": 2,
+    "home_sot": 0,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Konstantin Schopp": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Filip Milojevic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marco Hoffman": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mike-Steven Bähre": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "wsg swarovski tirol vs austria vienna": {
+    "match": "WSG Swarovski Tirol vs Austria Vienna",
+    "league": "Austrian Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:30",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "home_sot": 0,
+    "away_sot": 0,
+    "btts": true,
+    "player_stats": {
+      "Nikolai Baden Frederiksen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Aleksandar Dragovic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Matthäus Taferner": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Wilhelm Vorsager": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sk sturm graz vs rb salzburg": {
+    "match": "SK Sturm Graz vs RB Salzburg",
+    "league": "Austrian Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:00",
+    "score": "3 - 4",
+    "home_goals": 3,
+    "away_goals": 4,
+    "ht_home": 2,
+    "ht_away": 1,
+    "ht_goals": 3,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
+    "home_cards": 1,
+    "away_cards": 4,
+    "total_cards": 5,
+    "home_sot": 0,
+    "away_sot": 0,
+    "btts": true,
+    "player_stats": {
+      "Haris Tabakovic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oumar Diakité": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Leandro Morgalla": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Soumaïla Diabaté": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Damir Redzic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jon Gorenc Stankovic": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jesper Lindstrom": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Arjan Malic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Umut Tohumcu": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "f.c. københavn vs brøndby if": {
+    "match": "F.C. København vs Brøndby IF",
+    "league": "Danish Superliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "05:00",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 6,
+    "away_corners": 2,
+    "total_corners": 8,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "home_sot": 5,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Rodrigo Huescas": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mads Emil Madsen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "William Clem": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Max Ejdum": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Emmanuel Dennis": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "agf vs ac horsens": {
+    "match": "AGF vs AC Horsens",
+    "league": "Danish Superliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:00",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 5,
+    "away_corners": 3,
+    "total_corners": 8,
+    "home_cards": 0,
+    "away_cards": 3,
+    "total_cards": 3,
+    "home_sot": 6,
+    "away_sot": 3,
+    "btts": false,
+    "player_stats": {
+      "Adam Herdonsson": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jacob Andersen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kelvin Ehibhatiomhan": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Stefen Tchamche": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jacob Bonde": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "randers fc vs fc nordsjælland": {
+    "match": "Randers FC vs FC Nordsjælland",
+    "league": "Danish Superliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:00",
+    "score": "1 - 6",
+    "home_goals": 1,
+    "away_goals": 6,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 0,
+    "away_corners": 1,
+    "total_corners": 1,
+    "home_cards": 0,
+    "away_cards": 0,
+    "total_cards": 0,
+    "home_sot": 2,
+    "away_sot": 6,
+    "btts": true,
+    "player_stats": {
+      "Alexander Lind": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mike Themsen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ibrahim Adel": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Peter Ankersen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hjalte Boe Rasmussen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "fc midtjylland vs sønderjyske fodbold": {
+    "match": "FC Midtjylland vs Sønderjyske Fodbold",
+    "league": "Danish Superliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:00",
+    "score": "2 - 2",
+    "home_goals": 2,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 9,
+    "away_corners": 5,
+    "total_corners": 14,
+    "home_cards": 2,
+    "away_cards": 5,
+    "total_cards": 7,
+    "home_sot": 5,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Anders Pedersen": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Maxime Soulas": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Ousmane Diao": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Rasmus Hjorth Vinderslev": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sefer Emini": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mohamed Haidara": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sofus Johannesen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Andreas Oggesen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Brynjar Bjarnason": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "tromso vs bodo/glimt": {
+    "match": "Tromso vs Bodo/Glimt",
+    "league": "Norwegian Eliteserien",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:30",
+    "score": "0 - 2",
+    "home_goals": 0,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 4,
+    "away_corners": 4,
+    "total_corners": 8,
+    "home_cards": 0,
+    "away_cards": 1,
+    "total_cards": 1,
+    "home_sot": 3,
+    "away_sot": 2,
+    "btts": false,
+    "player_stats": {
+      "Ola Brynhildsen": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Joshua Kitolano": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "hamarkameratene vs sarpsborg fk": {
+    "match": "Hamarkameratene vs Sarpsborg FK",
+    "league": "Norwegian Eliteserien",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:00",
+    "score": "3 - 0",
+    "home_goals": 3,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 8,
+    "away_corners": 5,
+    "total_corners": 13,
+    "home_cards": 1,
+    "away_cards": 4,
+    "total_cards": 5,
+    "home_sot": 6,
+    "away_sot": 4,
+    "btts": false,
+    "player_stats": {
+      "Patrick Metcalfe": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Claus Niyukuri": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Daniel Karlsbakk": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Henrik Udahl": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marius Lode": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Loris Mettler": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Olaus Skarsem": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Snorre Nilsen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "lillestrom vs aalesund": {
+    "match": "Lillestrom vs Aalesund",
+    "league": "Norwegian Eliteserien",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:00",
+    "score": "3 - 2",
+    "home_goals": 3,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 2,
+    "ht_goals": 3,
+    "home_corners": 13,
+    "away_corners": 3,
+    "total_corners": 16,
+    "home_cards": 2,
+    "away_cards": 1,
+    "total_cards": 3,
+    "home_sot": 5,
+    "away_sot": 5,
+    "btts": true,
+    "player_stats": {
+      "Ruben Gabrielsen": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marcus Haagensen Reed": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Henrik Melland": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gustav Nyheim": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kristoffer Nessø": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "sandefjord vs molde": {
+    "match": "Sandefjord vs Molde",
+    "league": "Norwegian Eliteserien",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:00",
+    "score": "5 - 5",
+    "home_goals": 5,
+    "away_goals": 5,
+    "ht_home": 2,
+    "ht_away": 4,
+    "ht_goals": 6,
+    "home_corners": 3,
+    "away_corners": 14,
+    "total_corners": 17,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "home_sot": 8,
+    "away_sot": 9,
+    "btts": true,
+    "player_stats": {
+      "Evangelos Patoulidis": {
+        "sot": 4,
+        "goals": 3,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Vetle Egeli": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Caleb Sery": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kristian Lonebu": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Daniel Daga": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gustav Højbjerg": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jakob Dunsby": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Halldor Stenevik": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bendik Berntsen": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sondre Granaas": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fredrik Pedersen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "viking fk vs kfum oslo": {
+    "match": "Viking FK vs KFUM Oslo",
+    "league": "Norwegian Eliteserien",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:00",
+    "score": "5 - 1",
+    "home_goals": 5,
+    "away_goals": 1,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 8,
+    "away_corners": 2,
+    "total_corners": 10,
+    "home_cards": 0,
+    "away_cards": 2,
+    "total_cards": 2,
+    "home_sot": 11,
+    "away_sot": 4,
+    "btts": true,
+    "player_stats": {
+      "Henrik Bjørdal": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Daniel Schneider": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Tore Andre Soras": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Peter Christiansen": {
+        "sot": 4,
+        "goals": 3,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bilal Njie": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Niklas Fuglestad": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "fredrikstad vs sk brann": {
+    "match": "Fredrikstad vs SK Brann",
+    "league": "Norwegian Eliteserien",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "12:15",
+    "score": "2 - 2",
+    "home_goals": 2,
+    "away_goals": 2,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 3,
+    "away_corners": 9,
+    "total_corners": 12,
+    "home_cards": 2,
+    "away_cards": 4,
+    "total_cards": 6,
+    "home_sot": 7,
+    "away_sot": 7,
+    "btts": true,
+    "player_stats": {
+      "Isak Helstad Amundsen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fredrik Knudsen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Gabriel Wesseh": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Niklas Castro": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Max Nilsson": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Noah Holm": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kristian Eriksen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kristall Máni Ingason": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Fanuel Ghebreyohannes": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Bard Finne": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "halmstads bk vs djurgården": {
+    "match": "Halmstads BK vs Djurgården",
+    "league": "Swedish Allsvenskan",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:00",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 8,
+    "away_corners": 7,
+    "total_corners": 15,
+    "home_cards": 0,
+    "away_cards": 2,
+    "total_cards": 2,
+    "home_sot": 6,
+    "away_sot": 3,
+    "btts": true,
+    "player_stats": {
+      "Omar Faraj": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jeppe Okkels": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jacob Une": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Peter Langhoff": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Marvin Illary": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "ifk göteborg vs malmö ff": {
+    "match": "IFK Göteborg vs Malmö FF",
+    "league": "Swedish Allsvenskan",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "07:00",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 6,
+    "away_corners": 3,
+    "total_corners": 9,
+    "home_cards": 3,
+    "away_cards": 4,
+    "total_cards": 7,
+    "home_sot": 3,
+    "away_sot": 5,
+    "btts": false,
+    "player_stats": {
+      "Tobias Heintz": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jovan Milosavljevic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Diego García": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Hjörtur Hermannsson": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Jonas Bager": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Daniel Gudjohnsen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Sead Haksabanovic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "aik vs bk häcken": {
+    "match": "AIK vs BK Häcken",
+    "league": "Swedish Allsvenskan",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "3 - 2",
+    "home_goals": 3,
+    "away_goals": 2,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 5,
+    "away_corners": 4,
+    "total_corners": 9,
+    "home_cards": 4,
+    "away_cards": 0,
+    "total_cards": 4,
+    "home_sot": 7,
+    "away_sot": 9,
+    "btts": true,
+    "player_stats": {
+      "Johan Hove": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dino Besirovic": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Mikkel Rygaard": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Charlie Pavey": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Yannick Geiger": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Adrian Svanbäck": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Kristoffer Nordfeldt": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Martin Ellingsen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Eskil Edh": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "if brommapojkarna vs mjällby aif": {
+    "match": "IF Brommapojkarna vs Mjällby AIF",
+    "league": "Swedish Allsvenskan",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 10,
+    "away_corners": 3,
+    "total_corners": 13,
+    "home_cards": 1,
+    "away_cards": 1,
+    "total_cards": 2,
+    "home_sot": 7,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Romeo Leandersson": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oliver Berg": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
+  },
+  "kalmar ff vs ik sirius": {
+    "match": "Kalmar FF vs IK Sirius",
+    "league": "Swedish Allsvenskan",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:30",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 1,
+    "away_corners": 3,
+    "total_corners": 4,
+    "home_cards": 0,
+    "away_cards": 2,
+    "total_cards": 2,
+    "home_sot": 2,
+    "away_sot": 4,
+    "btts": false,
+    "player_stats": {
+      "Amara Camara": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Simon Sandberg": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Oscar Krusnell": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "ESPN / SofaScore Official Match Center"
   }
 }

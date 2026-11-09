@@ -91,13 +91,14 @@ def run_full_system_audit() -> Dict[str, Any]:
     # -------------------------------------------------------------
     # PRUEBA 3: AUDITORÍA EXHAUSTIVA DE LAS 116 PLANTILLAS DE LA CARTELERA
     # -------------------------------------------------------------
-    slots = get_chronological_slots()
     all_cartelera_matches = []
-    for s in slots.get("slots", []):
-        for m in s.get("matches", []):
-            h, a = m.get("home"), m.get("away")
-            if h and a:
-                all_cartelera_matches.append((h, a, m.get("league", "")))
+    for _d_audit in ["20261107", "20261108", "20261109", "20261110", "20261111", "20261112", "20261113", "20261114", "20261115"]:
+        slots = get_chronological_slots(_d_audit)
+        for s in slots.get("slots", []):
+            for m in s.get("matches", []):
+                h, a = m.get("home"), m.get("away")
+                if h and a:
+                    all_cartelera_matches.append((h, a, m.get("league", "")))
 
     player_errors = []
     generic_matches_count = 0

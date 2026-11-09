@@ -1101,10 +1101,14 @@ def _lookup_team_injuries(team_name: str) -> Dict[str, Any]:
     norm = norm.strip()
     raw = team_name.lower().strip()
 
-    # 1. Prioridad: Base Oficial de Cartelera Empírica (257 equipos mapeados)
+    # 1. Prioridad: Base Oficial de Cartelera Empírica (Exact Match First)
     c_db = _get_cartelera_rosters()
+    if raw in c_db:
+        return dict(c_db[raw])
+    if norm in c_db:
+        return dict(c_db[norm])
     for k, v in c_db.items():
-        if k == raw or k == norm or k in raw or raw in k or k in norm or norm in k:
+        if len(k) >= 4 and (k in raw or raw in k or k in norm or norm in k):
             return dict(v)
 
     # 2. Buscar en INJURIES_SUSPENSIONS_DB

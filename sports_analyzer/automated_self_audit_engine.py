@@ -3726,6 +3726,24 @@ def get_match_boxscore(match_name: str, match_date: Optional[str] = None, match_
 
     # 3. PARTIDOS YA JUGADOS (Fechas pasadas o partidos de hoy ya concluidos):
     m_clean = match_name.lower().strip()
+    if eff_date:
+        date_bs_path = os.path.join(os.path.dirname(__file__), "data", f"cartelera_boxscores_{eff_date}.json")
+        if os.path.exists(date_bs_path):
+            try:
+                with open(date_bs_path, "r", encoding="utf-8") as _dfp:
+                    date_db = json.load(_dfp)
+                if m_clean in date_db:
+                    return date_db[m_clean]
+                if " vs " in m_clean:
+                    h_d, a_d = m_clean.split(" vs ", 1)
+                    hn_d, an_d = _normalize_team_str(h_d), _normalize_team_str(a_d)
+                    for k_d, v_d in date_db.items():
+                        if " vs " in k_d:
+                            kh_d, ka_d = k_d.split(" vs ", 1)
+                            if (hn_d in _normalize_team_str(kh_d) or _normalize_team_str(kh_d) in hn_d) and (an_d in _normalize_team_str(ka_d) or _normalize_team_str(ka_d) in an_d):
+                                return v_d
+            except Exception:
+                pass
     db = _load_cartelera_boxscores()
     
     if m_clean in db:

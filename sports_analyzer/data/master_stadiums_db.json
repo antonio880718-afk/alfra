@@ -1853,5 +1853,1489 @@
     "stadium": "Allianz Field",
     "city": "Saint Paul, EE.UU.",
     "capacity": 19400
+  },
+  "caykur rizespor": {
+    "stadium": "Estadio Caykur Didi",
+    "city": "Rize, Turquía",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "f.c. københavn": {
+    "stadium": "Parken Stadium",
+    "city": "Copenhagen, Dinamarca",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "heerenveen": {
+    "stadium": "Abe Lenstra Stadion",
+    "city": "Heerenveen, Países Bajos",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "stafford rangers": {
+    "stadium": "The Stan Robinson Stadium",
+    "city": "Stafford, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "1. fc heidenheim 1846": {
+    "stadium": "Voith-Arena",
+    "city": "Heidenheim, Alemania",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "vfl bochum": {
+    "stadium": "Vonovia Ruhrstadion",
+    "city": "Bochum, Alemania",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "club brugge": {
+    "stadium": "Jan Breydel Stadium",
+    "city": "Brugge, Bélgica",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "agf": {
+    "stadium": "Vejlby Stadion",
+    "city": "Risskov, Dinamarca",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "fc andorra": {
+    "stadium": "Estadi de la FAF d'Encamp",
+    "city": "Encamp, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "çorum fk": {
+    "stadium": "Çorum Sehir Stadyumu",
+    "city": "Çorum, Turquía",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "halmstads bk": {
+    "stadium": "Örjans Vall",
+    "city": "Halmstads, Suecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "ifk göteborg": {
+    "stadium": "Gamla Ullevi",
+    "city": "Göteborg, Suecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "tsv hartberg": {
+    "stadium": "Profertil Arena",
+    "city": "Hartberg, Austria",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "wsg swarovski tirol": {
+    "stadium": "Tivoli Stadion Tirol",
+    "city": "Innsbruck, Austria",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "fc twente": {
+    "stadium": "De Grolsch Veste",
+    "city": "Enschede, Países Bajos",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "tromso": {
+    "stadium": "Romssa Arena",
+    "city": "Tromsø, Noruega",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "stade rennais": {
+    "stadium": "Roazhon Park",
+    "city": "Rennes, Francia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "brighton & hove albion": {
+    "stadium": "American Express Stadium",
+    "city": "Falmer, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "ipswich town": {
+    "stadium": "Portman Road",
+    "city": "Ipswich, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "monza": {
+    "stadium": "U-Power Stadium",
+    "city": "Monza, Italia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "virtus entella": {
+    "stadium": "Comunale Aldo Gastaldi",
+    "city": "Chiavari, Italia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cray wanderers": {
+    "stadium": "Flamingo Park",
+    "city": "Chislehurst, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "fc cologne": {
+    "stadium": "RheinEnergieStadion",
+    "city": "Cologne, Alemania",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "kaa gent": {
+    "stadium": "Ghelamco Arena",
+    "city": "Ghent, Bélgica",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "randers fc": {
+    "stadium": "Cepheus Park Randers",
+    "city": "Randers, Dinamarca",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "wimborne town": {
+    "stadium": "The Wyatt Homes Stadium",
+    "city": "Somerset, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "heart of midlothian": {
+    "stadium": "Tynecastle Park",
+    "city": "Edinburgh, Escocia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "aek athens": {
+    "stadium": "OPAP Arena",
+    "city": "Athens, Grecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "asteras tripoli": {
+    "stadium": "Theodoros Kolokotronis Stadium",
+    "city": "Tripoli, Grecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "c.d. nacional": {
+    "stadium": "Estádio da Madeira",
+    "city": "Funchal, Portugal",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "estoril": {
+    "stadium": "Estádio António Coimbra da Mota",
+    "city": "Estoril, Portugal",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "santa clara": {
+    "stadium": "Estádio de São Miguel",
+    "city": "Ponta Delgada, Portugal",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "audax italiano": {
+    "stadium": "Estadio Municipal de La Florida",
+    "city": "Santiago, Chile",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "universidad católica": {
+    "stadium": "Estadio San Carlos de Apoquindo",
+    "city": "Santiago, Chile",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "iraklis": {
+    "stadium": "Kaftanzoglio Ethniko Stadio",
+    "city": "Thessaloniki, Grecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "alanyaspor": {
+    "stadium": "Kirbiyik Holding Stadyumu",
+    "city": "Antalya, Turquía",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "aik": {
+    "stadium": "Friends Arena",
+    "city": "Stockholm, Suecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "if brommapojkarna": {
+    "stadium": "Grimsta IP",
+    "city": "Stockholm, Suecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "kalmar ff": {
+    "stadium": "Guldfageln Arena",
+    "city": "Kalmar, Suecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "az alkmaar": {
+    "stadium": "AFAS Stadion",
+    "city": "Alkmaar, Países Bajos",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sc cambuur": {
+    "stadium": "Kooi Stadium",
+    "city": "Leeuwarden, Países Bajos",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sk sturm graz": {
+    "stadium": "Merkur Arena",
+    "city": "Graz, Austria",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "hamarkameratene": {
+    "stadium": "Briskeby Stadion",
+    "city": "Hamar, Noruega",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "lillestrom": {
+    "stadium": "Arasen Stadion",
+    "city": "Lillestrøm, Noruega",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sandefjord": {
+    "stadium": "Jotun Arena",
+    "city": "Sandefjord, Noruega",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "viking fk": {
+    "stadium": "Viking Stadion",
+    "city": "Stavanger, Noruega",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "celtic": {
+    "stadium": "Celtic Park",
+    "city": "Glasgow, Escocia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "macará": {
+    "stadium": "Estadio Bellavista",
+    "city": "Ambato, Ecuador",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 2577
+  },
+  "angers": {
+    "stadium": "Stade Raymond Kopa",
+    "city": "Angers, Francia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "brest": {
+    "stadium": "Stade Francis-Le Blé",
+    "city": "Brest, Francia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "le havre ac": {
+    "stadium": "Stade Océane",
+    "city": "Le Havre, Francia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "le mans": {
+    "stadium": "Stade Marie-Marvingt",
+    "city": "Le Mans, Francia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "carrarese": {
+    "stadium": "Dei Marmi",
+    "city": "Carrara, Italia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sc freiburg": {
+    "stadium": "Europa-Park Stadion",
+    "city": "Freiburg im Breisgau, Alemania",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo cuenca": {
+    "stadium": "Banco del Austro Alejandro Serrano Aguil",
+    "city": "Cuenca, Ecuador",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "manchester united": {
+    "stadium": "Old Trafford",
+    "city": "Manchester, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "fc midtjylland": {
+    "stadium": "MCH Arena",
+    "city": "Herning, Dinamarca",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "internazionale": {
+    "stadium": "San Siro",
+    "city": "Milano, Italia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "oldham athletic": {
+    "stadium": "Boundary Park",
+    "city": "Oldham, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "union st.-gilloise": {
+    "stadium": "Stade Joseph Marien",
+    "city": "Saint-Gilles, Brussels, Bélgica",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "villarreal": {
+    "stadium": "Estadio de la Cerámica",
+    "city": "Villarreal, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "los chankas": {
+    "stadium": "Estadio Los Chankas",
+    "city": "Apurímac, Perú",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "vitória de guimaraes": {
+    "stadium": "Estádio D. Afonso Henriques",
+    "city": "Guimarães, Portugal",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "ñublense": {
+    "stadium": "Estadio Municipal Oyarzún Arenas",
+    "city": "Chillán, Chile",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "universidad de chile": {
+    "stadium": "Estadio El Teniente",
+    "city": "Rancagua, Chile",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "besiktas": {
+    "stadium": "Vodafone Park",
+    "city": "Istanbul, Turquía",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sint-truidense": {
+    "stadium": "Daio Wasabi Stayen Stadium",
+    "city": "Sint-Truiden, Bélgica",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "fredrikstad": {
+    "stadium": "Fredrikstad Stadion",
+    "city": "Fredrikstad, Noruega",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "tsg hoffenheim": {
+    "stadium": "PreZero Arena",
+    "city": "Sinsheim, Alemania",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "vicenza": {
+    "stadium": "Romeo Menti di Vicenza",
+    "city": "Vicenza, Italia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "aucas": {
+    "stadium": "Estadio Gonzalo Pozo Ripalda",
+    "city": "Quito, Ecuador",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "athletic": {
+    "stadium": "Estádio Joaquim Portugal",
+    "city": "Sao Joao del Rei, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "independiente santa fe": {
+    "stadium": "Estadio Nemesio Camacho El Campín",
+    "city": "Bogota, Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "fc utrecht": {
+    "stadium": "Stadion Galgenwaard",
+    "city": "Utrecht, Países Bajos",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "olympiacos": {
+    "stadium": "Georgios Karaiskakis Stadium",
+    "city": "Piraeus, Grecia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "lens": {
+    "stadium": "Stade Bollaert-Delelis",
+    "city": "Lens, Francia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cerro porteño": {
+    "stadium": "Estadio ueno La Nueva Olla",
+    "city": "Asunción, Paraguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sport boys": {
+    "stadium": "Estadio Miguel Grau del Callao",
+    "city": "Callao, Perú",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "estrela": {
+    "stadium": "Estádio José Gomes",
+    "city": "Amadora, Portugal",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "rio ave": {
+    "stadium": "Estádio do Rio Ave",
+    "city": "Vila do Conde, Portugal",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "unión la calera": {
+    "stadium": "Estadio Municipal Nicolás Chahuán",
+    "city": "La Calera, Chile",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "jaguares de córdoba": {
+    "stadium": "Estadio Jaraguay (Municipal de Montería)",
+    "city": "Montería, Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "barcelona sc": {
+    "stadium": "Estadio Banco Pichincha",
+    "city": "Quito, Ecuador",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "ceará": {
+    "stadium": "Arena Castelão",
+    "city": "Fortaleza, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "goiás": {
+    "stadium": "Estádio da Serrinha",
+    "city": "Goiãnia, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "central córdoba (santiago del estero)": {
+    "stadium": "Alfredo Terrera",
+    "city": "Santiago del Estero, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sportivo trinidense": {
+    "stadium": "Estadio Martín Torres",
+    "city": "Asunción, Paraguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo garcilaso": {
+    "stadium": "Estadio Inca Garcilaso de la Vega",
+    "city": "Cusco, Perú",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "universidad de concepción": {
+    "stadium": "Estadio Municipal Alcaldesa Ester Roa Rebolledo",
+    "city": "Concepción, Chile",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "querétaro": {
+    "stadium": "Estadio Corregidora",
+    "city": "Santiago de Querétaro, México",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "piratas": {
+    "stadium": "Estadio Luis de la Fuente",
+    "city": "Veracruz, México",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "alianza fc": {
+    "stadium": "Armando Maestre Pavajeau",
+    "city": "Valledupar, Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "universitario": {
+    "stadium": "Estadio Monumental de Lima",
+    "city": "Lima, Perú",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "américa de cali": {
+    "stadium": "Pascual Guerrero",
+    "city": "Cali, Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "mushuc runa": {
+    "stadium": "Estadio COAC Mushuc Runa",
+    "city": "Ambato, Ecuador",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 2577
+  },
+  "kristiansund bk": {
+    "stadium": "Nordmore Stadion",
+    "city": "Kristiansund, Noruega",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "plymouth parkway": {
+    "stadium": "Manadon Sports Hub",
+    "city": "Plymouth, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cd sabadell": {
+    "stadium": "Estadi Municipal de la Nova Creu Alta",
+    "city": "Sabadell, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sportivo san lorenzo": {
+    "stadium": "Estadio Gunther Vogel",
+    "city": "San Lorenzo, Paraguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "técnico universitario": {
+    "stadium": "Estadio Bellavista",
+    "city": "Ambato, Ecuador",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 2577
+  },
+  "sportivo luqueño": {
+    "stadium": "Estadio Luis Alberto Salinas Tanasio",
+    "city": "Itagua, Paraguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "atlético junior": {
+    "stadium": "Romelio Martínez",
+    "city": "Barranquilla, Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "anaitasuna": {
+    "stadium": "Txerloia",
+    "city": "Azkoitia, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cd pamplona": {
+    "stadium": "Polideportivo Valle Aranguren",
+    "city": "Valle de Aranguren, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "amorebieta": {
+    "stadium": "Urritxe",
+    "city": "Amorebieta, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "mijas las lagunas": {
+    "stadium": "Francisco Muñoz Pérez",
+    "city": "Estepona, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "trival valderas": {
+    "stadium": "Estadio Municipal de Butarque",
+    "city": "Leganés, Madrid, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "bristol rovers": {
+    "stadium": "Memorial Stadium",
+    "city": "Bristol, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "grimsby town": {
+    "stadium": "Blundell Park",
+    "city": "Grimsby, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "leicester city": {
+    "stadium": "King Power Stadium",
+    "city": "Leicester, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "crawley town": {
+    "stadium": "Broadfield Stadium",
+    "city": "Crawley, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "tavernes de la valldigna": {
+    "stadium": "Mestalla Stadium",
+    "city": "Manises, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sheffield wednesday": {
+    "stadium": "Hillsborough",
+    "city": "Sheffield, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "club atlético morelia": {
+    "stadium": "Estadio Morelos",
+    "city": "Morelia, México",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "londrina": {
+    "stadium": "Estadio VGD",
+    "city": "Londrina, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "armenia": {
+    "stadium": "Vazgen Sargsyan Republican Stadium",
+    "city": "Yerevan, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "türkiye": {
+    "stadium": "Göztepe Gürsel Aksel Stadi",
+    "city": "Izmir, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "calvo sotelo": {
+    "stadium": "Estadio Ciudad de Puertollano",
+    "city": "Ciudad Real, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cd artistico navalcarnero": {
+    "stadium": "Municipal de Santo Domingo",
+    "city": "Madrid, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cd tarancon": {
+    "stadium": "Polideportivo Estadio Municipal Tarancón",
+    "city": "Cuenca, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "barbados": {
+    "stadium": "Stade Roger Zami",
+    "city": "Stade Roger Zami, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cayman islands": {
+    "stadium": "Leonora National Track and Field Facility",
+    "city": "Leonora, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "albania": {
+    "stadium": "Air Albania Stadium",
+    "city": "Tirana, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "czechia": {
+    "stadium": "Generali Arena",
+    "city": "Prague, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "england": {
+    "stadium": "Wembley Stadium",
+    "city": "London, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "italy": {
+    "stadium": "San Siro",
+    "city": "Milano, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "montenegro": {
+    "stadium": "Podgorica City Stadium",
+    "city": "Podgorica, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "san marino": {
+    "stadium": "San Marino Stadium",
+    "city": "Serravalle, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "bonaire": {
+    "stadium": "Estadio La Polar",
+    "city": "Havana, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "águilas doradas": {
+    "stadium": "Estadio Oficial de Águilas Doradas",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "atlético bucaramanga": {
+    "stadium": "Estadio Oficial de Atlético Bucaramanga",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cúcuta deportivo": {
+    "stadium": "Estadio Oficial de Cúcuta Deportivo",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo cali": {
+    "stadium": "Estadio Oficial de Deportivo Cali",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo pasto": {
+    "stadium": "Estadio Oficial de Deportivo Pasto",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo pereira": {
+    "stadium": "Estadio Oficial de Deportivo Pereira",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "internacional de bogotá": {
+    "stadium": "Estadio Oficial de Internacional de Bogotá",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "llaneros fc": {
+    "stadium": "Estadio Oficial de Llaneros FC",
+    "city": "Colombia",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "aruba": {
+    "stadium": "Guillermo Prospero Trinidad Stadium",
+    "city": "Oranjestad, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "antigua and barbuda": {
+    "stadium": "Sir Vivian Richards Stadium",
+    "city": "North Sound, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cerro largo": {
+    "stadium": "Estadio Arquitecto Antonio Eleuterio Ubilla",
+    "city": "Melo, Uruguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "curaçao": {
+    "stadium": "Stadion Ergilio Hato",
+    "city": "Willemstad, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "moldova": {
+    "stadium": "Stadionul Zimbru",
+    "city": "Chisinau, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "bermuda": {
+    "stadium": "Stade Roger Zami",
+    "city": "Stade Roger Zami, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "puerto rico": {
+    "stadium": "Leonora National Track and Field Facility",
+    "city": "Leonora, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "andorra": {
+    "stadium": "Estadi de la FAF d'Encamp",
+    "city": "Encamp, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "bulgaria": {
+    "stadium": "Hristo Botev Stadium, Plovdiv",
+    "city": "Plovdiv, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "liechtenstein": {
+    "stadium": "Rheinpark Stadion",
+    "city": "Vaduz, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "luxembourg": {
+    "stadium": "Stade de Luxembourg",
+    "city": "Luxembourg City, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "netherlands": {
+    "stadium": "Johan Cruijff Arena",
+    "city": "Amsterdam, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "scotland": {
+    "stadium": "Hampden Park",
+    "city": "Glasgow, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "serbia": {
+    "stadium": "Rajko Mitic Stadium",
+    "city": "Belgrade, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "slovakia": {
+    "stadium": "Košická futbalová aréna (KFA)",
+    "city": "Kosice, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "slovenia": {
+    "stadium": "Ljudski vrt",
+    "city": "Maribor, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "grenada": {
+    "stadium": "Estadio La Polar",
+    "city": "Havana, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "salamanca uds": {
+    "stadium": "Estadio Helmántico",
+    "city": "Villares de la Reina, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "montevideo city torque": {
+    "stadium": "Estadio Luis Franzini",
+    "city": "Montevideo, Uruguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "st. martin": {
+    "stadium": "SKNFA Technical Centre",
+    "city": "Basseterre, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "montserrat": {
+    "stadium": "Estadio Cibao",
+    "city": "Santiago, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "guatemala": {
+    "stadium": "Estadio El Trébol",
+    "city": "Estadio Cementos Progreso, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "real valladolid": {
+    "stadium": "Estadio José Zorrilla",
+    "city": "Valladolid, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "central español fútbol club": {
+    "stadium": "Estadio Parque Palermo",
+    "city": "Montevideo, Uruguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "kosovo": {
+    "stadium": "Stadiumi Fadil Vokrri",
+    "city": "Prishtina, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "gateshead": {
+    "stadium": "Gateshead International Stadium",
+    "city": "Gateshead, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "hartlepool united": {
+    "stadium": "The Suit Direct Stadium",
+    "city": "Hartlepool, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "southend united": {
+    "stadium": "Roots Hall",
+    "city": "Southend, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "woking": {
+    "stadium": "The Laithwaite Community Stadium",
+    "city": "Wokingham, Inglaterra",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "real sociedad ii": {
+    "stadium": "Instalaciones de Zubieta",
+    "city": "San Sebastian, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "georgia": {
+    "stadium": "Mikheil Meskhi Stadioni",
+    "city": "Tbilisi, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "norway": {
+    "stadium": "Ullevaal Stadion",
+    "city": "Oslo, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "atlanta": {
+    "stadium": "Don León Kolbovsky",
+    "city": "Buenos Aires, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sint maarten": {
+    "stadium": "Arnos Vale Stadium",
+    "city": "Arnos Vale Stadium, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "temperley": {
+    "stadium": "Alfredo Beranger",
+    "city": "Temperley, Pcia. de Buenos Aires, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "américa mineiro": {
+    "stadium": "Estádio Raimundo Sampaio (Independência)",
+    "city": "Belo Horizonte, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "atlético goianiense": {
+    "stadium": "Estádio Antônio Accioly",
+    "city": "Goiãnia, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "crb": {
+    "stadium": "Estádio Rei Pelé",
+    "city": "Maceio, Alagoas, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "criciúma": {
+    "stadium": "Heriberto Hülse",
+    "city": "Criciúma, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "juventude": {
+    "stadium": "Alfredo Jaconi",
+    "city": "Caxias do Sul, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "ponte preta": {
+    "stadium": "Moisés Lucarelli",
+    "city": "Ponte Preta, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "são bernardo": {
+    "stadium": "Estádio Primeiro de Maio",
+    "city": "São Bernardo do Campo , Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sport": {
+    "stadium": "Ilha do Retiro",
+    "city": "Recife, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo maldonado": {
+    "stadium": "Estadio Domingo Burgueño Miguel",
+    "city": "Maldonado, Uruguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "austria": {
+    "stadium": "Raiffeisen Arena (Linz)",
+    "city": "Linz, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "northern ireland": {
+    "stadium": "Windsor Park",
+    "city": "Belfast, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "portugal": {
+    "stadium": "Estádio Municipal de Braga",
+    "city": "Braga, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "romania": {
+    "stadium": "National Arena",
+    "city": "Bucuresti, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "sweden": {
+    "stadium": "Friends Arena",
+    "city": "Stockholm, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "club atlético la paz": {
+    "stadium": "Estadio Guaycura",
+    "city": "La Paz, México",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "colón (santa fe)": {
+    "stadium": "Brigadier Gral. Estanislao López",
+    "city": "Rosario, Santa Fe, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "mirassol": {
+    "stadium": "Estadio Municipal José Maria de Campos Maia",
+    "city": "Mirassol, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "haiti": {
+    "stadium": "Nu Stadium",
+    "city": "Miami, Florida, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "banfield": {
+    "stadium": "Malvinas Argentinas (Mendoza)",
+    "city": "Mendoza, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo madryn": {
+    "stadium": "Coliseo del Golfo",
+    "city": "Puerto Madryn, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "gimnasia y esgrima (jujuy)": {
+    "stadium": "23 de Agosto",
+    "city": "San Salvador de Jujuy, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "chapecoense": {
+    "stadium": "Arena Condá",
+    "city": "Chapecó, Brasil",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "st. vincent and the grenadines": {
+    "stadium": "Arnos Vale Stadium",
+    "city": "Arnos Vale Stadium, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "jamaica": {
+    "stadium": "Independence Park",
+    "city": "Sabina Park, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "cyprus": {
+    "stadium": "Alphamega Stadium",
+    "city": "Kolossi, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "latvia": {
+    "stadium": "Skonto Stadions",
+    "city": "Riga, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "belarus": {
+    "stadium": "Illovszky Rudolf Stadion",
+    "city": "Budapest, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "finland": {
+    "stadium": "Bolt Arena",
+    "city": "Helsinki, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "eldense": {
+    "stadium": "Estadio Municipal Nuevo Pepico Amat",
+    "city": "Elda, España",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "comerciantes unidos": {
+    "stadium": "Juan Maldonado Gamarra",
+    "city": "Cutervo, Cajamarca, Perú",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "deportivo morón": {
+    "stadium": "Estadio Nuevo Francisco Urbano",
+    "city": "Morón, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "danubio": {
+    "stadium": "Jardines del Hipódromo",
+    "city": "Montevideo, Uruguay",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "belgium": {
+    "stadium": "King Baudouin Stadium",
+    "city": "Brussels, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "croatia": {
+    "stadium": "Opus Arena",
+    "city": "Osijek, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "france": {
+    "stadium": "Stade Atlantique",
+    "city": "Bordeaux, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "spain": {
+    "stadium": "Riyadh Air Metropolitano",
+    "city": "Madrid, Europa",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "godoy cruz antonio tomba": {
+    "stadium": "El Gigante de Alberdi",
+    "city": "Córdoba, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "juan pablo ii": {
+    "stadium": "Complejo Deportivo Juan Pablo II",
+    "city": "Chongoyape, Perú",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "panama": {
+    "stadium": "Estadio Rommel Fernández Gutiérrez",
+    "city": "Panama City, CONCACAF",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
+  },
+  "ferro carril oeste": {
+    "stadium": "Estadio Arquitecto Ricardo Etcheverri",
+    "city": "Buenos Aires, Argentina",
+    "capacity": 28500,
+    "surface": "Césped Natural Híbrido",
+    "altitude_m": 150
   }
 }

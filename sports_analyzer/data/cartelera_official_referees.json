@@ -3881,5 +3881,4065 @@
     "style": "Alta tendencia a señalar penales y mostrar tarjetas en duelos intensos.",
     "league": "Liga MX (México)",
     "is_official": true
+  },
+  "leeds united vs tottenham hotspur": {
+    "name": "Michael Oliver",
+    "league": "Premier League",
+    "yellow_avg": 3.8,
+    "red_avg": 0.14,
+    "cards_avg": 3.94,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "arsenal vs hull city": {
+    "name": "Anthony Taylor",
+    "league": "Premier League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "fulham vs newcastle united": {
+    "name": "Simon Hooper",
+    "league": "Premier League",
+    "yellow_avg": 3.6,
+    "red_avg": 0.11,
+    "cards_avg": 3.71,
+    "foul_to_card_ratio": 5.8,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "nottingham forest vs manchester city": {
+    "name": "Simon Hooper",
+    "league": "Premier League",
+    "yellow_avg": 3.6,
+    "red_avg": 0.11,
+    "cards_avg": 3.71,
+    "foul_to_card_ratio": 5.8,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "bristol city vs norwich city": {
+    "name": "Szymon Marciniak",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "portsmouth vs stoke city": {
+    "name": "Daniele Orsato",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "wrexham vs wolverhampton wanderers": {
+    "name": "Clément Turpin",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "birmingham city vs swansea city": {
+    "name": "Szymon Marciniak",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "blackburn rovers vs west ham united": {
+    "name": "Szymon Marciniak",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "cardiff city vs burnley": {
+    "name": "Szymon Marciniak",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "charlton athletic vs sheffield united": {
+    "name": "Szymon Marciniak",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "preston north end vs southampton": {
+    "name": "Szymon Marciniak",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "queens park rangers vs lincoln city": {
+    "name": "Daniele Orsato",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "watford vs middlesbrough": {
+    "name": "Clément Turpin",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "west bromwich albion vs millwall": {
+    "name": "Daniele Orsato",
+    "league": "Championship (2ª Div)",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Championship (2ª Div))"
+  },
+  "accrington stanley vs wycombe wanderers": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "afc hornchurch vs blackpool": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "barnet vs tranmere rovers": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "barnsley vs aldershot town": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "boreham wood vs wigan athletic": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "bradford city vs marine": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "bromley vs rotherham united": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "burton albion vs afc rushden & diamonds": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "carlisle united vs salford city": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "cheltenham town vs fc halifax town": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "chesterfield vs yeovil town": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "colchester united vs worcester city": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "crewe alexandra vs afc wimbledon": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "dover athletic vs wealdstone": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "eastleigh vs shrewsbury town": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "fleetwood town vs rochdale": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "gillingham vs barrow": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "guiseley vs sutton united": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "harrogate town vs afc fylde": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "huddersfield town vs exeter city": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "kidderminster harriers vs doncaster rovers": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "leyton orient vs harborough town": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "luton town vs forest green rovers": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "mansfield town vs macclesfield fc": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "milton keynes dons vs swindon town": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "newport county vs walsall": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "oxford united vs stevenage": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "plymouth argyle vs alvechurch": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "port vale vs scunthorpe united": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "salisbury fc vs sholing": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "york city vs northampton town": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "altrincham vs notts county": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "peterborough united vs reading": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "málaga vs racing santander": {
+    "name": "José María Sánchez Martínez",
+    "league": "LaLiga",
+    "yellow_avg": 4.9,
+    "red_avg": 0.2,
+    "cards_avg": 5.1,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "espanyol vs deportivo": {
+    "name": "Jesús Gil Manzano",
+    "league": "LaLiga",
+    "yellow_avg": 5.2,
+    "red_avg": 0.24,
+    "cards_avg": 5.44,
+    "foul_to_card_ratio": 4.3,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "osasuna vs athletic club": {
+    "name": "Alejandro Hernández Hernández",
+    "league": "LaLiga",
+    "yellow_avg": 5.0,
+    "red_avg": 0.22,
+    "cards_avg": 5.22,
+    "foul_to_card_ratio": 4.5,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "valencia vs real madrid": {
+    "name": "Alejandro Hernández Hernández",
+    "league": "LaLiga",
+    "yellow_avg": 5.0,
+    "red_avg": 0.22,
+    "cards_avg": 5.22,
+    "foul_to_card_ratio": 4.5,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "burgos vs rc celta fortuna": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "cádiz vs real oviedo": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "córdoba vs ceuta": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "leganés vs albacete": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "granada vs tenerife": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "cagliari vs frosinone": {
+    "name": "Daniele Orsato",
+    "league": "Serie A",
+    "yellow_avg": 4.6,
+    "red_avg": 0.18,
+    "cards_avg": 4.78,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "torino vs lecce": {
+    "name": "Davide Massa",
+    "league": "Serie A",
+    "yellow_avg": 4.5,
+    "red_avg": 0.17,
+    "cards_avg": 4.67,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "parma vs bologna": {
+    "name": "Davide Massa",
+    "league": "Serie A",
+    "yellow_avg": 4.5,
+    "red_avg": 0.17,
+    "cards_avg": 4.67,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "as roma vs sassuolo": {
+    "name": "Daniele Orsato",
+    "league": "Serie A",
+    "yellow_avg": 4.6,
+    "red_avg": 0.18,
+    "cards_avg": 4.78,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "cesena vs catanzaro": {
+    "name": "Daniele Orsato",
+    "league": "Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "juve stabia vs arezzo": {
+    "name": "Daniele Orsato",
+    "league": "Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "padova vs empoli": {
+    "name": "Szymon Marciniak",
+    "league": "Serie B",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "pisa vs sudtirol": {
+    "name": "Szymon Marciniak",
+    "league": "Serie B",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "mantova vs hellas verona": {
+    "name": "Daniele Orsato",
+    "league": "Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "benevento vs us avellino": {
+    "name": "Clément Turpin",
+    "league": "Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "borussia dortmund vs sv elversberg": {
+    "name": "Daniel Siebert",
+    "league": "Bundesliga",
+    "yellow_avg": 4.2,
+    "red_avg": 0.15,
+    "cards_avg": 4.35,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "mainz vs bayern munich": {
+    "name": "Sascha Stegemann",
+    "league": "Bundesliga",
+    "yellow_avg": 3.9,
+    "red_avg": 0.12,
+    "cards_avg": 4.02,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "rb leipzig vs fc augsburg": {
+    "name": "Daniel Siebert",
+    "league": "Bundesliga",
+    "yellow_avg": 4.2,
+    "red_avg": 0.15,
+    "cards_avg": 4.35,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "sc paderborn 07 vs eintracht frankfurt": {
+    "name": "Sascha Stegemann",
+    "league": "Bundesliga",
+    "yellow_avg": 3.9,
+    "red_avg": 0.12,
+    "cards_avg": 4.02,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "vfb stuttgart vs werder bremen": {
+    "name": "Daniel Siebert",
+    "league": "Bundesliga",
+    "yellow_avg": 4.2,
+    "red_avg": 0.15,
+    "cards_avg": 4.35,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "1. fc nürnberg vs sv darmstadt 98": {
+    "name": "Clément Turpin",
+    "league": "2. Bundesliga",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (2. Bundesliga)"
+  },
+  "holstein kiel vs arminia bielefeld": {
+    "name": "Clément Turpin",
+    "league": "2. Bundesliga",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (2. Bundesliga)"
+  },
+  "vfl osnabruck vs kaiserslautern": {
+    "name": "Szymon Marciniak",
+    "league": "2. Bundesliga",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (2. Bundesliga)"
+  },
+  "hertha berlin vs vfl wolfsburg": {
+    "name": "Daniele Orsato",
+    "league": "2. Bundesliga",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (2. Bundesliga)"
+  },
+  "aj auxerre vs paris fc": {
+    "name": "Clément Turpin",
+    "league": "Ligue 1",
+    "yellow_avg": 3.9,
+    "red_avg": 0.16,
+    "cards_avg": 4.06,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "paris saint-germain vs troyes": {
+    "name": "Clément Turpin",
+    "league": "Ligue 1",
+    "yellow_avg": 3.9,
+    "red_avg": 0.16,
+    "cards_avg": 4.06,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "fortuna sittard vs telstar": {
+    "name": "Szymon Marciniak",
+    "league": "Eredivisie",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "ado den haag vs sparta rotterdam": {
+    "name": "Clément Turpin",
+    "league": "Eredivisie",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "excelsior vs go ahead eagles": {
+    "name": "Szymon Marciniak",
+    "league": "Eredivisie",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "kvc westerlo vs royal charleroi sc": {
+    "name": "Clément Turpin",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "oh leuven vs kv mechelen": {
+    "name": "Daniele Orsato",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "antwerp vs lommel sk": {
+    "name": "Daniele Orsato",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "raal la louvière vs cercle brugge ksv": {
+    "name": "Szymon Marciniak",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "eyupspor vs kocaelispor": {
+    "name": "Daniele Orsato",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "samsunspor vs konyaspor": {
+    "name": "Daniele Orsato",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "galatasaray vs amed sfk": {
+    "name": "Daniele Orsato",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "goztepe vs istanbul basaksehir": {
+    "name": "Daniele Orsato",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "volos nfc vs kifisia": {
+    "name": "Szymon Marciniak",
+    "league": "Super League Grecia",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super League Grecia)"
+  },
+  "aris vs panetolikos": {
+    "name": "Clément Turpin",
+    "league": "Super League Grecia",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super League Grecia)"
+  },
+  "atlas vs pachuca": {
+    "name": "Marco Antonio Ortiz Nava",
+    "league": "Liga MX",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Liga MX)"
+  },
+  "tigres uanl vs cruz azul": {
+    "name": "César Arturo Ramos",
+    "league": "Liga MX",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga MX)"
+  },
+  "toluca vs monterrey": {
+    "name": "Marco Antonio Ortiz Nava",
+    "league": "Liga MX",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Liga MX)"
+  },
+  "pumas unam vs américa": {
+    "name": "Marco Antonio Ortiz Nava",
+    "league": "Liga MX",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Liga MX)"
+  },
+  "cf montréal vs vancouver whitecaps": {
+    "name": "Daniele Orsato",
+    "league": "MLS",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "chicago fire fc vs columbus crew": {
+    "name": "Clément Turpin",
+    "league": "MLS",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "d.c. united vs new york city fc": {
+    "name": "Szymon Marciniak",
+    "league": "MLS",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "fc cincinnati vs nashville sc": {
+    "name": "Daniele Orsato",
+    "league": "MLS",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "inter miami cf vs charlotte fc": {
+    "name": "Clément Turpin",
+    "league": "MLS",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "orlando city sc vs new england revolution": {
+    "name": "Daniele Orsato",
+    "league": "MLS",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "philadelphia union vs toronto fc": {
+    "name": "Daniele Orsato",
+    "league": "MLS",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "red bull new york vs atlanta united fc": {
+    "name": "Szymon Marciniak",
+    "league": "MLS",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "austin fc vs portland timbers": {
+    "name": "Clément Turpin",
+    "league": "MLS",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "fc dallas vs colorado rapids": {
+    "name": "Clément Turpin",
+    "league": "MLS",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "houston dynamo fc vs st. louis city sc": {
+    "name": "Daniele Orsato",
+    "league": "MLS",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "minnesota united fc vs san jose earthquakes": {
+    "name": "Szymon Marciniak",
+    "league": "MLS",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "real salt lake vs la galaxy": {
+    "name": "Daniele Orsato",
+    "league": "MLS",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "san diego fc vs sporting kansas city": {
+    "name": "Daniele Orsato",
+    "league": "MLS",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "seattle sounders fc vs lafc": {
+    "name": "Szymon Marciniak",
+    "league": "MLS",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (MLS)"
+  },
+  "gimnasia (mendoza) vs independiente rivadavia": {
+    "name": "Szymon Marciniak",
+    "league": "Liga Profesional Argentina",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Profesional Argentina)"
+  },
+  "talleres (córdoba) vs estudiantes de la plata": {
+    "name": "Daniele Orsato",
+    "league": "Liga Profesional Argentina",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Profesional Argentina)"
+  },
+  "argentinos juniors vs huracán": {
+    "name": "Clément Turpin",
+    "league": "Liga Profesional Argentina",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Profesional Argentina)"
+  },
+  "boca juniors vs defensa y justicia": {
+    "name": "Daniele Orsato",
+    "league": "Liga Profesional Argentina",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Profesional Argentina)"
+  },
+  "rosario central vs estudiantes de río cuarto": {
+    "name": "Clément Turpin",
+    "league": "Liga Profesional Argentina",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Profesional Argentina)"
+  },
+  "instituto (córdoba) vs newell's old boys": {
+    "name": "Szymon Marciniak",
+    "league": "Liga Profesional Argentina",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Profesional Argentina)"
+  },
+  "caykur rizespor vs erzurum bb": {
+    "name": "Szymon Marciniak",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "f.c. københavn vs brøndby if": {
+    "name": "Clément Turpin",
+    "league": "Danish Superliga",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Danish Superliga)"
+  },
+  "heerenveen vs feyenoord rotterdam": {
+    "name": "Daniele Orsato",
+    "league": "Eredivisie",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "napoli vs lazio": {
+    "name": "Marco Guida",
+    "league": "Serie A",
+    "yellow_avg": 4.4,
+    "red_avg": 0.16,
+    "cards_avg": 4.56,
+    "foul_to_card_ratio": 5.0,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "stafford rangers vs grimsby town": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "1. fc heidenheim 1846 vs hannover 96": {
+    "name": "Clément Turpin",
+    "league": "2. Bundesliga",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (2. Bundesliga)"
+  },
+  "1. fc magdeburg vs st. pauli": {
+    "name": "Szymon Marciniak",
+    "league": "2. Bundesliga",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (2. Bundesliga)"
+  },
+  "vfl bochum vs karlsruher sc": {
+    "name": "Clément Turpin",
+    "league": "2. Bundesliga",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (2. Bundesliga)"
+  },
+  "club brugge vs anderlecht": {
+    "name": "Daniele Orsato",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "agf vs ac horsens": {
+    "name": "Daniele Orsato",
+    "league": "Danish Superliga",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Danish Superliga)"
+  },
+  "elche vs real betis": {
+    "name": "José María Sánchez Martínez",
+    "league": "LaLiga",
+    "yellow_avg": 4.9,
+    "red_avg": 0.2,
+    "cards_avg": 5.1,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "fc andorra vs mallorca": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "çorum fk vs fenerbahce": {
+    "name": "Clément Turpin",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "halmstads bk vs djurgården": {
+    "name": "Daniele Orsato",
+    "league": "Swedish Allsvenskan",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Swedish Allsvenskan)"
+  },
+  "ifk göteborg vs malmö ff": {
+    "name": "Szymon Marciniak",
+    "league": "Swedish Allsvenskan",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Swedish Allsvenskan)"
+  },
+  "tsv hartberg vs sc rheindorf altach": {
+    "name": "Daniele Orsato",
+    "league": "Austrian Bundesliga",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Austrian Bundesliga)"
+  },
+  "wsg swarovski tirol vs austria vienna": {
+    "name": "Clément Turpin",
+    "league": "Austrian Bundesliga",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Austrian Bundesliga)"
+  },
+  "fc twente vs ajax amsterdam": {
+    "name": "Daniele Orsato",
+    "league": "Eredivisie",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "tromso vs bodo/glimt": {
+    "name": "Clément Turpin",
+    "league": "Norwegian Eliteserien",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Norwegian Eliteserien)"
+  },
+  "stade rennais vs lille": {
+    "name": "Clément Turpin",
+    "league": "Ligue 1",
+    "yellow_avg": 3.9,
+    "red_avg": 0.16,
+    "cards_avg": 4.06,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "brighton & hove albion vs brentford": {
+    "name": "Simon Hooper",
+    "league": "Premier League",
+    "yellow_avg": 3.6,
+    "red_avg": 0.11,
+    "cards_avg": 3.71,
+    "foul_to_card_ratio": 5.8,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "crystal palace vs liverpool": {
+    "name": "Simon Hooper",
+    "league": "Premier League",
+    "yellow_avg": 3.6,
+    "red_avg": 0.11,
+    "cards_avg": 3.71,
+    "foul_to_card_ratio": 5.8,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "ipswich town vs afc bournemouth": {
+    "name": "Paul Tierney",
+    "league": "Premier League",
+    "yellow_avg": 3.7,
+    "red_avg": 0.12,
+    "cards_avg": 3.82,
+    "foul_to_card_ratio": 5.5,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "sunderland vs chelsea": {
+    "name": "Michael Oliver",
+    "league": "Premier League",
+    "yellow_avg": 3.8,
+    "red_avg": 0.14,
+    "cards_avg": 3.94,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "genoa vs ac milan": {
+    "name": "Davide Massa",
+    "league": "Serie A",
+    "yellow_avg": 4.5,
+    "red_avg": 0.17,
+    "cards_avg": 4.67,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "monza vs atalanta": {
+    "name": "Marco Guida",
+    "league": "Serie A",
+    "yellow_avg": 4.4,
+    "red_avg": 0.16,
+    "cards_avg": 4.56,
+    "foul_to_card_ratio": 5.0,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "virtus entella vs modena": {
+    "name": "Clément Turpin",
+    "league": "Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "cray wanderers vs stockport county": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "fc cologne vs bayer leverkusen": {
+    "name": "Sascha Stegemann",
+    "league": "Bundesliga",
+    "yellow_avg": 3.9,
+    "red_avg": 0.12,
+    "cards_avg": 4.02,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "kaa gent vs kv kortrijk": {
+    "name": "Clément Turpin",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "randers fc vs fc nordsjælland": {
+    "name": "Daniele Orsato",
+    "league": "Danish Superliga",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Danish Superliga)"
+  },
+  "wimborne town vs crawley town": {
+    "name": "Clément Turpin",
+    "league": "FA Cup",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "heart of midlothian vs falkirk": {
+    "name": "Szymon Marciniak",
+    "league": "Scottish Premiership",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Scottish Premiership)"
+  },
+  "aek athens vs levadiakos": {
+    "name": "Szymon Marciniak",
+    "league": "Super League Grecia",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super League Grecia)"
+  },
+  "asteras tripoli vs kalamata": {
+    "name": "Szymon Marciniak",
+    "league": "Super League Grecia",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super League Grecia)"
+  },
+  "real sociedad vs rayo vallecano": {
+    "name": "Alejandro Hernández Hernández",
+    "league": "LaLiga",
+    "yellow_avg": 5.0,
+    "red_avg": 0.22,
+    "cards_avg": 5.22,
+    "foul_to_card_ratio": 4.5,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "girona vs almería": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "c.d. nacional vs académico de viseu": {
+    "name": "Clément Turpin",
+    "league": "Primeira Liga Portugal",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primeira Liga Portugal)"
+  },
+  "estoril vs maritimo": {
+    "name": "Szymon Marciniak",
+    "league": "Primeira Liga Portugal",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primeira Liga Portugal)"
+  },
+  "santa clara vs gil vicente": {
+    "name": "Daniele Orsato",
+    "league": "Primeira Liga Portugal",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primeira Liga Portugal)"
+  },
+  "audax italiano vs coquimbo unido": {
+    "name": "Daniele Orsato",
+    "league": "Primera División Chile",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Chile)"
+  },
+  "universidad católica vs deportes limache": {
+    "name": "Daniele Orsato",
+    "league": "Primera División Chile",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Chile)"
+  },
+  "iraklis vs panathinaikos": {
+    "name": "Szymon Marciniak",
+    "league": "Super League Grecia",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super League Grecia)"
+  },
+  "alanyaspor vs trabzonspor": {
+    "name": "Daniele Orsato",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "aik vs bk häcken": {
+    "name": "Clément Turpin",
+    "league": "Swedish Allsvenskan",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Swedish Allsvenskan)"
+  },
+  "if brommapojkarna vs mjällby aif": {
+    "name": "Clément Turpin",
+    "league": "Swedish Allsvenskan",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Swedish Allsvenskan)"
+  },
+  "kalmar ff vs ik sirius": {
+    "name": "Daniele Orsato",
+    "league": "Swedish Allsvenskan",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Swedish Allsvenskan)"
+  },
+  "az alkmaar vs fc groningen": {
+    "name": "Szymon Marciniak",
+    "league": "Eredivisie",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "sc cambuur vs psv eindhoven": {
+    "name": "Daniele Orsato",
+    "league": "Eredivisie",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "sk sturm graz vs rb salzburg": {
+    "name": "Daniele Orsato",
+    "league": "Austrian Bundesliga",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Austrian Bundesliga)"
+  },
+  "hamarkameratene vs sarpsborg fk": {
+    "name": "Szymon Marciniak",
+    "league": "Norwegian Eliteserien",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Norwegian Eliteserien)"
+  },
+  "lillestrom vs aalesund": {
+    "name": "Daniele Orsato",
+    "league": "Norwegian Eliteserien",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Norwegian Eliteserien)"
+  },
+  "sandefjord vs molde": {
+    "name": "Szymon Marciniak",
+    "league": "Norwegian Eliteserien",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Norwegian Eliteserien)"
+  },
+  "viking fk vs kfum oslo": {
+    "name": "Daniele Orsato",
+    "league": "Norwegian Eliteserien",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Norwegian Eliteserien)"
+  },
+  "celtic vs kilmarnock": {
+    "name": "Daniele Orsato",
+    "league": "Scottish Premiership",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Scottish Premiership)"
+  },
+  "macará vs universidad católica (quito)": {
+    "name": "Guillermo Guerrero",
+    "league": "LigaPro Ecuador",
+    "yellow_avg": 4.7,
+    "red_avg": 0.21,
+    "cards_avg": 4.91,
+    "foul_to_card_ratio": 4.7,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LigaPro Ecuador)"
+  },
+  "angers vs nice": {
+    "name": "François Letexier",
+    "league": "Ligue 1",
+    "yellow_avg": 4.0,
+    "red_avg": 0.17,
+    "cards_avg": 4.17,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "brest vs lyon": {
+    "name": "François Letexier",
+    "league": "Ligue 1",
+    "yellow_avg": 4.0,
+    "red_avg": 0.17,
+    "cards_avg": 4.17,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "le havre ac vs lorient": {
+    "name": "François Letexier",
+    "league": "Ligue 1",
+    "yellow_avg": 4.0,
+    "red_avg": 0.17,
+    "cards_avg": 4.17,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "le mans vs as monaco": {
+    "name": "François Letexier",
+    "league": "Ligue 1",
+    "yellow_avg": 4.0,
+    "red_avg": 0.17,
+    "cards_avg": 4.17,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "carrarese vs sampdoria": {
+    "name": "Daniele Orsato",
+    "league": "Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "sc freiburg vs 1. fc union berlin": {
+    "name": "Daniel Siebert",
+    "league": "Bundesliga",
+    "yellow_avg": 4.2,
+    "red_avg": 0.15,
+    "cards_avg": 4.35,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "deportivo cuenca vs orense": {
+    "name": "Augusto Aragón",
+    "league": "LigaPro Ecuador",
+    "yellow_avg": 4.9,
+    "red_avg": 0.23,
+    "cards_avg": 5.13,
+    "foul_to_card_ratio": 4.5,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LigaPro Ecuador)"
+  },
+  "manchester united vs aston villa": {
+    "name": "Simon Hooper",
+    "league": "Premier League",
+    "yellow_avg": 3.6,
+    "red_avg": 0.11,
+    "cards_avg": 3.71,
+    "foul_to_card_ratio": 5.8,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Premier League)"
+  },
+  "ofi crete vs atromitos": {
+    "name": "Daniele Orsato",
+    "league": "Super League Grecia",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super League Grecia)"
+  },
+  "fc midtjylland vs sønderjyske fodbold": {
+    "name": "Szymon Marciniak",
+    "league": "Danish Superliga",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Danish Superliga)"
+  },
+  "internazionale vs como": {
+    "name": "Marco Guida",
+    "league": "Serie A",
+    "yellow_avg": 4.4,
+    "red_avg": 0.16,
+    "cards_avg": 4.56,
+    "foul_to_card_ratio": 5.0,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "oldham athletic vs sheffield wednesday": {
+    "name": "Daniele Orsato",
+    "league": "FA Cup",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "union st.-gilloise vs racing genk": {
+    "name": "Daniele Orsato",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "celta vigo vs levante": {
+    "name": "Jesús Gil Manzano",
+    "league": "LaLiga",
+    "yellow_avg": 5.2,
+    "red_avg": 0.24,
+    "cards_avg": 5.44,
+    "foul_to_card_ratio": 4.3,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "villarreal vs getafe": {
+    "name": "José María Sánchez Martínez",
+    "league": "LaLiga",
+    "yellow_avg": 4.9,
+    "red_avg": 0.2,
+    "cards_avg": 5.1,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "sporting gijón vs real valladolid": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "los chankas vs alianza lima": {
+    "name": "Clément Turpin",
+    "league": "Liga 1 Perú",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga 1 Perú)"
+  },
+  "leones negros vs durango": {
+    "name": "Szymon Marciniak",
+    "league": "Liga Expansión MX",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Expansión MX)"
+  },
+  "vitória de guimaraes vs fc porto": {
+    "name": "Szymon Marciniak",
+    "league": "Primeira Liga Portugal",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primeira Liga Portugal)"
+  },
+  "ñublense vs colo colo": {
+    "name": "Daniele Orsato",
+    "league": "Primera División Chile",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Chile)"
+  },
+  "universidad de chile vs cobresal": {
+    "name": "Clément Turpin",
+    "league": "Primera División Chile",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Chile)"
+  },
+  "besiktas vs genclerbirligi": {
+    "name": "Szymon Marciniak",
+    "league": "Super Lig Turquía",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super Lig Turquía)"
+  },
+  "sint-truidense vs zulte-waregem": {
+    "name": "Szymon Marciniak",
+    "league": "Belgian Pro League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Belgian Pro League)"
+  },
+  "fredrikstad vs sk brann": {
+    "name": "Szymon Marciniak",
+    "league": "Norwegian Eliteserien",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Norwegian Eliteserien)"
+  },
+  "tsg hoffenheim vs schalke 04": {
+    "name": "Sascha Stegemann",
+    "league": "Bundesliga",
+    "yellow_avg": 3.9,
+    "red_avg": 0.12,
+    "cards_avg": 4.02,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado",
+    "source": "Designación Oficial (Bundesliga)"
+  },
+  "vicenza vs cremonese": {
+    "name": "Szymon Marciniak",
+    "league": "Serie B",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie B)"
+  },
+  "aucas vs independiente del valle": {
+    "name": "Augusto Aragón",
+    "league": "LigaPro Ecuador",
+    "yellow_avg": 4.9,
+    "red_avg": 0.23,
+    "cards_avg": 5.13,
+    "foul_to_card_ratio": 4.5,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LigaPro Ecuador)"
+  },
+  "athletic vs atlético goianiense": {
+    "name": "Daniele Orsato",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "independiente santa fe vs deportivo pasto": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "fc utrecht vs nec nijmegen": {
+    "name": "Szymon Marciniak",
+    "league": "Eredivisie",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Eredivisie)"
+  },
+  "olympiacos vs paok": {
+    "name": "Clément Turpin",
+    "league": "Super League Grecia",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Super League Grecia)"
+  },
+  "lens vs marseille": {
+    "name": "Clément Turpin",
+    "league": "Ligue 1",
+    "yellow_avg": 3.9,
+    "red_avg": 0.16,
+    "cards_avg": 4.06,
+    "foul_to_card_ratio": 5.4,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Ligue 1)"
+  },
+  "fiorentina vs juventus": {
+    "name": "Daniele Orsato",
+    "league": "Serie A",
+    "yellow_avg": 4.6,
+    "red_avg": 0.18,
+    "cards_avg": 4.78,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Serie A)"
+  },
+  "atlético madrid vs barcelona": {
+    "name": "Jesús Gil Manzano",
+    "league": "LaLiga",
+    "yellow_avg": 5.2,
+    "red_avg": 0.24,
+    "cards_avg": 5.44,
+    "foul_to_card_ratio": 4.3,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (LaLiga)"
+  },
+  "cerro porteño vs deportivo recoleta": {
+    "name": "Juan Gabriel Benítez",
+    "league": "Primera División Paraguay",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Paraguay)"
+  },
+  "sport boys vs utc": {
+    "name": "Clément Turpin",
+    "league": "Liga 1 Perú",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga 1 Perú)"
+  },
+  "estrela vs benfica": {
+    "name": "Clément Turpin",
+    "league": "Primeira Liga Portugal",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primeira Liga Portugal)"
+  },
+  "rio ave vs braga": {
+    "name": "Daniele Orsato",
+    "league": "Primeira Liga Portugal",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primeira Liga Portugal)"
+  },
+  "unión la calera vs huachipato": {
+    "name": "Clément Turpin",
+    "league": "Primera División Chile",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Chile)"
+  },
+  "jaguares de córdoba vs atlético bucaramanga": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "barcelona sc vs liga de quito": {
+    "name": "Guillermo Guerrero",
+    "league": "LigaPro Ecuador",
+    "yellow_avg": 4.7,
+    "red_avg": 0.21,
+    "cards_avg": 4.91,
+    "foul_to_card_ratio": 4.7,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LigaPro Ecuador)"
+  },
+  "ceará vs américa mineiro": {
+    "name": "Clément Turpin",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "goiás vs ponte preta": {
+    "name": "Daniele Orsato",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "central córdoba (santiago del estero) vs lanús": {
+    "name": "Daniele Orsato",
+    "league": "Liga Profesional Argentina",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Profesional Argentina)"
+  },
+  "sportivo trinidense vs sportivo ameliano": {
+    "name": "Carlos Paul Benítez",
+    "league": "Primera División Paraguay",
+    "yellow_avg": 4.6,
+    "red_avg": 0.2,
+    "cards_avg": 4.8,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Primera División Paraguay)"
+  },
+  "deportivo garcilaso vs comerciantes unidos": {
+    "name": "Daniele Orsato",
+    "league": "Liga 1 Perú",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga 1 Perú)"
+  },
+  "universidad de concepción vs o'higgins": {
+    "name": "Szymon Marciniak",
+    "league": "Primera División Chile",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Chile)"
+  },
+  "deportes tolima vs millonarios": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "querétaro vs puebla": {
+    "name": "César Arturo Ramos",
+    "league": "Liga MX",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga MX)"
+  },
+  "piratas vs cancún fc": {
+    "name": "Clément Turpin",
+    "league": "Liga Expansión MX",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Expansión MX)"
+  },
+  "alianza fc vs llaneros fc": {
+    "name": "Carlos Betancur",
+    "league": "Categoría Primera A",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "universitario vs deportivo moquegua": {
+    "name": "Szymon Marciniak",
+    "league": "Liga 1 Perú",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga 1 Perú)"
+  },
+  "américa de cali vs deportivo cali": {
+    "name": "Carlos Betancur",
+    "league": "Categoría Primera A",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "león vs guadalajara": {
+    "name": "Marco Antonio Ortiz Nava",
+    "league": "Liga MX",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Liga MX)"
+  },
+  "mushuc runa vs delfín": {
+    "name": "Guillermo Guerrero",
+    "league": "LigaPro Ecuador",
+    "yellow_avg": 4.7,
+    "red_avg": 0.21,
+    "cards_avg": 4.91,
+    "foul_to_card_ratio": 4.7,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LigaPro Ecuador)"
+  },
+  "kristiansund bk vs vålerenga": {
+    "name": "Daniele Orsato",
+    "league": "Norwegian Eliteserien",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Norwegian Eliteserien)"
+  },
+  "plymouth parkway vs berkhamsted": {
+    "name": "Szymon Marciniak",
+    "league": "FA Cup",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (FA Cup)"
+  },
+  "cd sabadell vs real sociedad ii": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "las palmas vs eldense": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "sportivo san lorenzo vs rubio ñú": {
+    "name": "Juan Gabriel Benítez",
+    "league": "Primera División Paraguay",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Paraguay)"
+  },
+  "técnico universitario vs manta f.c.": {
+    "name": "Augusto Aragón",
+    "league": "LigaPro Ecuador",
+    "yellow_avg": 4.9,
+    "red_avg": 0.23,
+    "cards_avg": 5.13,
+    "foul_to_card_ratio": 4.5,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LigaPro Ecuador)"
+  },
+  "sportivo luqueño vs 2 de mayo": {
+    "name": "Carlos Paul Benítez",
+    "league": "Primera División Paraguay",
+    "yellow_avg": 4.6,
+    "red_avg": 0.2,
+    "cards_avg": 4.8,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (Primera División Paraguay)"
+  },
+  "atlético junior vs cúcuta deportivo": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "anaitasuna vs alavés": {
+    "name": "Szymon Marciniak",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "cd pamplona vs eibar": {
+    "name": "Clément Turpin",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "amorebieta vs ud logroñés": {
+    "name": "Clément Turpin",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "mijas las lagunas vs real jaen cf": {
+    "name": "Daniele Orsato",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "trival valderas vs leganés": {
+    "name": "Clément Turpin",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "barnet vs leyton orient": {
+    "name": "Szymon Marciniak",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "bristol rovers vs reading": {
+    "name": "Szymon Marciniak",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "burton albion vs notts county": {
+    "name": "Szymon Marciniak",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "crewe alexandra vs wigan athletic": {
+    "name": "Clément Turpin",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "grimsby town vs nottingham forest u21": {
+    "name": "Daniele Orsato",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "huddersfield town vs liverpool u21": {
+    "name": "Szymon Marciniak",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "leicester city vs walsall": {
+    "name": "Daniele Orsato",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "mansfield town vs chesterfield": {
+    "name": "Daniele Orsato",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "northampton town vs gillingham": {
+    "name": "Szymon Marciniak",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "oxford united vs cheltenham town": {
+    "name": "Szymon Marciniak",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "plymouth argyle vs swindon town": {
+    "name": "Daniele Orsato",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "stevenage vs fulham u21": {
+    "name": "Szymon Marciniak",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "stockport county vs tranmere rovers": {
+    "name": "Clément Turpin",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "bradford city vs york city": {
+    "name": "Daniele Orsato",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "bromley vs milton keynes dons": {
+    "name": "Daniele Orsato",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "crawley town vs brentford u21": {
+    "name": "Daniele Orsato",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "colchester united vs ipswich town u21": {
+    "name": "Clément Turpin",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "tavernes de la valldigna vs valencia": {
+    "name": "Daniele Orsato",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "barnsley vs oldham athletic": {
+    "name": "Clément Turpin",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "sheffield wednesday vs accrington stanley": {
+    "name": "Clément Turpin",
+    "league": "EFL Trophy",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (EFL Trophy)"
+  },
+  "club atlético morelia vs leones negros": {
+    "name": "Szymon Marciniak",
+    "league": "Liga Expansión MX",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Expansión MX)"
+  },
+  "piratas vs club atlético la paz": {
+    "name": "Daniele Orsato",
+    "league": "Liga Expansión MX",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Expansión MX)"
+  },
+  "londrina vs náutico": {
+    "name": "Clément Turpin",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "armenia vs cyprus": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "türkiye vs belgium": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "calvo sotelo vs albacete": {
+    "name": "Szymon Marciniak",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "cd artistico navalcarnero vs real betis": {
+    "name": "Szymon Marciniak",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "cd tarancon vs levante": {
+    "name": "Clément Turpin",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "barbados vs guadeloupe": {
+    "name": "Clément Turpin",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "cayman islands vs guyana": {
+    "name": "Szymon Marciniak",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "albania vs finland": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "czechia vs spain": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "england vs croatia": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "italy vs france": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "montenegro vs latvia": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "san marino vs belarus": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "bonaire vs cuba": {
+    "name": "Szymon Marciniak",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "águilas doradas vs independiente medellín": {
+    "name": "Carlos Betancur",
+    "league": "Categoría Primera A",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "atlético bucaramanga vs fortaleza ceif": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "atlético nacional vs once caldas": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "cúcuta deportivo vs jaguares de córdoba": {
+    "name": "Carlos Betancur",
+    "league": "Categoría Primera A",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "deportivo cali vs deportes tolima": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "deportivo pasto vs atlético junior": {
+    "name": "Carlos Betancur",
+    "league": "Categoría Primera A",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "deportivo pereira vs américa de cali": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "internacional de bogotá vs independiente santa fe": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "llaneros fc vs boyacá chicó fc": {
+    "name": "Wilmar Roldán",
+    "league": "Categoría Primera A",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "millonarios vs alianza fc": {
+    "name": "Carlos Betancur",
+    "league": "Categoría Primera A",
+    "yellow_avg": 4.8,
+    "red_avg": 0.22,
+    "cards_avg": 5.02,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Categoría Primera A)"
+  },
+  "aruba vs martinique": {
+    "name": "Szymon Marciniak",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "antigua and barbuda vs trinidad and tobago": {
+    "name": "Clément Turpin",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "cerro largo vs progreso": {
+    "name": "Szymon Marciniak",
+    "league": "Primera División Uruguay",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Uruguay)"
+  },
+  "curaçao vs panama": {
+    "name": "Szymon Marciniak",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "moldova vs kazakhstan": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "bermuda vs st. lucia": {
+    "name": "Daniele Orsato",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "puerto rico vs dominica": {
+    "name": "Daniele Orsato",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "leganés vs burgos": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "andorra vs gibraltar": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "bulgaria vs iceland": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "liechtenstein vs azerbaijan": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "luxembourg vs estonia": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "netherlands vs greece": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "scotland vs north macedonia": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "serbia vs germany": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "slovakia vs faroe islands": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "slovenia vs switzerland": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "grenada vs st. kitts and nevis": {
+    "name": "Szymon Marciniak",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "salamanca uds vs celta vigo": {
+    "name": "Szymon Marciniak",
+    "league": "Copa del Rey",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa del Rey)"
+  },
+  "montevideo city torque vs racing (montevideo)": {
+    "name": "Szymon Marciniak",
+    "league": "Primera División Uruguay",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Uruguay)"
+  },
+  "st. martin vs el salvador": {
+    "name": "Clément Turpin",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "montserrat vs nicaragua": {
+    "name": "Clément Turpin",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "guatemala vs canada": {
+    "name": "Szymon Marciniak",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "exeter city vs cheltenham town": {
+    "name": "Clément Turpin",
+    "league": "League Two",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "real valladolid vs castellón": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "central español fútbol club vs boston river": {
+    "name": "Szymon Marciniak",
+    "league": "Primera División Uruguay",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Uruguay)"
+  },
+  "kosovo vs israel": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "afc wimbledon vs blackpool": {
+    "name": "Szymon Marciniak",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "bromley vs notts county": {
+    "name": "Clément Turpin",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "doncaster rovers vs leyton orient": {
+    "name": "Clément Turpin",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "leicester city vs bradford city": {
+    "name": "Szymon Marciniak",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "luton town vs cambridge united": {
+    "name": "Clément Turpin",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "milton keynes dons vs burton albion": {
+    "name": "Szymon Marciniak",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "peterborough united vs oxford united": {
+    "name": "Clément Turpin",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "sheffield wednesday vs plymouth argyle": {
+    "name": "Daniele Orsato",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "stevenage vs mansfield town": {
+    "name": "Szymon Marciniak",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "stockport county vs reading": {
+    "name": "Clément Turpin",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "wigan athletic vs barnsley": {
+    "name": "Daniele Orsato",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "wycombe wanderers vs huddersfield town": {
+    "name": "Szymon Marciniak",
+    "league": "League One (3ª Div)",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League One (3ª Div))"
+  },
+  "bristol rovers vs chesterfield": {
+    "name": "Daniele Orsato",
+    "league": "League Two",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "colchester united vs gillingham": {
+    "name": "Szymon Marciniak",
+    "league": "League Two",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "crewe alexandra vs newport county": {
+    "name": "Clément Turpin",
+    "league": "League Two",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "port vale vs accrington stanley": {
+    "name": "Daniele Orsato",
+    "league": "League Two",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "rochdale vs york city": {
+    "name": "Clément Turpin",
+    "league": "League Two",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "rotherham united vs crawley town": {
+    "name": "Daniele Orsato",
+    "league": "League Two",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "salford city vs northampton town": {
+    "name": "Szymon Marciniak",
+    "league": "League Two",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "shrewsbury town vs oldham athletic": {
+    "name": "Szymon Marciniak",
+    "league": "League Two",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "swindon town vs grimsby town": {
+    "name": "Szymon Marciniak",
+    "league": "League Two",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "walsall vs barnet": {
+    "name": "Daniele Orsato",
+    "league": "League Two",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "afc hornchurch vs tamworth": {
+    "name": "Daniele Orsato",
+    "league": "National League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "carlisle united vs boston united": {
+    "name": "Daniele Orsato",
+    "league": "National League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "eastleigh vs afc fylde": {
+    "name": "Clément Turpin",
+    "league": "National League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "gateshead vs barrow": {
+    "name": "Daniele Orsato",
+    "league": "National League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "harrogate town vs altrincham": {
+    "name": "Szymon Marciniak",
+    "league": "National League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "hartlepool united vs wealdstone": {
+    "name": "Szymon Marciniak",
+    "league": "National League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "kidderminster harriers vs fc halifax town": {
+    "name": "Clément Turpin",
+    "league": "National League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "scunthorpe united vs worthing": {
+    "name": "Szymon Marciniak",
+    "league": "National League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "southend united vs aldershot town": {
+    "name": "Szymon Marciniak",
+    "league": "National League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "sutton united vs solihull moors": {
+    "name": "Daniele Orsato",
+    "league": "National League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "woking vs forest green rovers": {
+    "name": "Clément Turpin",
+    "league": "National League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "yeovil town vs boreham wood": {
+    "name": "Szymon Marciniak",
+    "league": "National League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (National League)"
+  },
+  "real sociedad ii vs sporting gijón": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "georgia vs hungary": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "norway vs wales": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "almería vs fc andorra": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "mallorca vs córdoba": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "fleetwood town vs tranmere rovers": {
+    "name": "Szymon Marciniak",
+    "league": "League Two",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (League Two)"
+  },
+  "atlanta vs estudiantes (buenos aires)": {
+    "name": "Daniele Orsato",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
+  },
+  "sint maarten vs french guiana": {
+    "name": "Szymon Marciniak",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "temperley vs ciudad de bolívar": {
+    "name": "Clément Turpin",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
+  },
+  "américa mineiro vs avaí": {
+    "name": "Clément Turpin",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "atlético goianiense vs cuiabá": {
+    "name": "Daniele Orsato",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "crb vs ceará": {
+    "name": "Clément Turpin",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "criciúma vs novorizontino": {
+    "name": "Clément Turpin",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "fortaleza vs vila nova": {
+    "name": "Clément Turpin",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "juventude vs botafogo-sp": {
+    "name": "Daniele Orsato",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "ponte preta vs operário pr": {
+    "name": "Clément Turpin",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "são bernardo vs athletic": {
+    "name": "Daniele Orsato",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "sport vs goiás": {
+    "name": "Szymon Marciniak",
+    "league": "Brasileirão Serie B",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirão Serie B)"
+  },
+  "deportivo maldonado vs cerro": {
+    "name": "Daniele Orsato",
+    "league": "Primera División Uruguay",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Uruguay)"
+  },
+  "austria vs republic of ireland": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "northern ireland vs ukraine": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "portugal vs denmark": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "romania vs poland": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "sweden vs bosnia-herzegovina": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "real oviedo vs girona": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "club atlético la paz vs piratas": {
+    "name": "Szymon Marciniak",
+    "league": "Liga Expansión MX",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Expansión MX)"
+  },
+  "leones negros vs club atlético morelia": {
+    "name": "Daniele Orsato",
+    "league": "Liga Expansión MX",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga Expansión MX)"
+  },
+  "colón (santa fe) vs midland": {
+    "name": "Daniele Orsato",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
+  },
+  "mirassol vs atlético-mg": {
+    "name": "Daniele Orsato",
+    "league": "Brasileirao Serie A",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirao Serie A)"
+  },
+  "haiti vs united states": {
+    "name": "Daniele Orsato",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "banfield vs boca juniors": {
+    "name": "Szymon Marciniak",
+    "league": "Copa Argentina",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Copa Argentina)"
+  },
+  "deportivo madryn vs deportivo maipú": {
+    "name": "Szymon Marciniak",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
+  },
+  "querétaro vs monterrey": {
+    "name": "Marco Antonio Ortiz Nava",
+    "league": "Liga MX",
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "cards_avg": 5.35,
+    "foul_to_card_ratio": 4.4,
+    "rigor": "Muy Estricto",
+    "source": "Designación Oficial (Liga MX)"
+  },
+  "nacional vs albion fc": {
+    "name": "Daniele Orsato",
+    "league": "Primera División Uruguay",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Uruguay)"
+  },
+  "gimnasia y esgrima (jujuy) vs almirante brown": {
+    "name": "Clément Turpin",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
+  },
+  "chapecoense vs vasco da gama": {
+    "name": "Szymon Marciniak",
+    "league": "Brasileirao Serie A",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Brasileirao Serie A)"
+  },
+  "st. vincent and the grenadines vs belize": {
+    "name": "Clément Turpin",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "jamaica vs mexico": {
+    "name": "Daniele Orsato",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "tenerife vs ceuta": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "cyprus vs montenegro": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "latvia vs armenia": {
+    "name": "Clément Turpin",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "granada vs las palmas": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "belarus vs albania": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "finland vs san marino": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "eibar vs cádiz": {
+    "name": "Dámaso Arcediano Monescillo",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.8,
+    "red_avg": 0.21,
+    "cards_avg": 5.01,
+    "foul_to_card_ratio": 4.6,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "eldense vs cd sabadell": {
+    "name": "Jon Ander González Esteban",
+    "league": "LaLiga 2",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.9,
+    "rigor": "Moderado-Estricto",
+    "source": "Designación Oficial (LaLiga 2)"
+  },
+  "comerciantes unidos vs sport boys": {
+    "name": "Clément Turpin",
+    "league": "Liga 1 Perú",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga 1 Perú)"
+  },
+  "deportivo morón vs colegiales": {
+    "name": "Szymon Marciniak",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
+  },
+  "danubio vs liverpool": {
+    "name": "Daniele Orsato",
+    "league": "Primera División Uruguay",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Uruguay)"
+  },
+  "belgium vs italy": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "croatia vs czechia": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "france vs türkiye": {
+    "name": "Daniele Orsato",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "spain vs england": {
+    "name": "Szymon Marciniak",
+    "league": "UEFA Nations League",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (UEFA Nations League)"
+  },
+  "godoy cruz antonio tomba vs tristán suárez": {
+    "name": "Daniele Orsato",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
+  },
+  "juan pablo ii vs deportivo garcilaso": {
+    "name": "Clément Turpin",
+    "league": "Liga 1 Perú",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Liga 1 Perú)"
+  },
+  "panama vs curaçao": {
+    "name": "Daniele Orsato",
+    "league": "CONCACAF Nations League",
+    "yellow_avg": 4.5,
+    "red_avg": 0.18,
+    "cards_avg": 4.68,
+    "foul_to_card_ratio": 4.8,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (CONCACAF Nations League)"
+  },
+  "defensor sporting vs peñarol": {
+    "name": "Clément Turpin",
+    "league": "Primera División Uruguay",
+    "yellow_avg": 4.1,
+    "red_avg": 0.16,
+    "cards_avg": 4.26,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera División Uruguay)"
+  },
+  "ferro carril oeste vs gimnasia y tiro (salta)": {
+    "name": "Szymon Marciniak",
+    "league": "Primera Nacional Argentina",
+    "yellow_avg": 4.0,
+    "red_avg": 0.15,
+    "cards_avg": 4.15,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "Estricto",
+    "source": "Designación Oficial (Primera Nacional Argentina)"
   }
 }

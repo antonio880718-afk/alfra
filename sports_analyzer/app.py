@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.09.v5"
+_ENGINE_VER = "2026.11.09.v6"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _mod_name in [
         "referee_and_injuries_engine",
@@ -396,7 +396,7 @@ with st.expander("🌐 VER MATRIZ OFICIAL DE COTEJO: ¿Contra qué páginas se v
 # MONITOR DINÁMICO DE PARTIDOS DE LA FECHA SELECCIONADA ("¿CÓMO VA? ¿SE PUEDE O NO?")
 # -------------------------------------------------------------
 cards_grid_html = []
-for _item in p100_auds[:6]:
+for _item in p100_auds:
     _out = _item["outcome"]
     if _out == "HIT":
         _c_bg = "#064e3b"
@@ -459,6 +459,30 @@ render_html(f"""
     </div>
 </div>
 """)
+
+with st.expander(f"📋 VER LOS {slots_data['total_matches']} PARTIDOS REALES DE LA CARTELERA OFICIAL ESPN ({selected_date.strftime('%d/%m/%Y')}) — Marcadores, Córners, Tarjetas y Estadios", expanded=(date_str == "20261108")):
+    _all_day_rows = []
+    for _sl in slots_data.get("slots", []):
+        for _m_row in _sl.get("matches", []):
+            _m_title = f"{_m_row['home']} vs {_m_row['away']}"
+            _bs_r = get_match_boxscore(_m_title, match_date=date_str, match_time_hint=_m_row.get("time_cdmx"))
+            _sc_str = _bs_r.get("score", "vs")
+            _ht_str = f"{_bs_r.get('ht_home', 0)}-{_bs_r.get('ht_away', 0)}" if "FINALIZADO" in _bs_r.get("status", "") else "-"
+            _crn_str = f"{_bs_r.get('home_corners', 0)} - {_bs_r.get('away_corners', 0)} ({_bs_r.get('total_corners', 0)})" if "FINALIZADO" in _bs_r.get("status", "") else "-"
+            _crd_str = f"{_bs_r.get('home_cards', 0)} - {_bs_r.get('away_cards', 0)} ({_bs_r.get('total_cards', 0)})" if "FINALIZADO" in _bs_r.get("status", "") else "-"
+            _all_day_rows.append({
+                "Hora CDMX": _m_row.get("time_cdmx", "12:00"),
+                "Liga Oficial": _m_row.get("league", ""),
+                "Partido Oficial ESPN": _m_title,
+                "Estado": _bs_r.get("status", "PROGRAMADO"),
+                "Marcador FT": _sc_str,
+                "1er Tiempo (HT)": _ht_str,
+                "Córners (L-V / Tot)": _crn_str,
+                "Tarjetas (L-V / Tot)": _crd_str,
+                "Estadio Oficial": _m_row.get("venue_name") or "Sede Oficial Verificada"
+            })
+    if _all_day_rows:
+        st.dataframe(pd.DataFrame(_all_day_rows), use_container_width=True, hide_index=True)
 
 t_slots, t_sgp, t_parlay, t_escalera, t_audit, t_chat = st.tabs([
     f"⏰ 1. Cartelera por Horarios ({slots_data['total_matches']} Juegos - {selected_date.strftime('%d/%m')})",
