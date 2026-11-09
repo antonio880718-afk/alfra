@@ -688,5 +688,1170 @@
     "stadium": "Estadio Presidente Perón 'El Cilindro'",
     "city": "Avellaneda, Buenos Aires",
     "capacity": 51000
+  },
+  "1. fc heidenheim": {
+    "stadium": "Voith-Arena",
+    "city": "Heidenheim, Alemania",
+    "capacity": 15000
+  },
+  "1. fc kaiserslautern": {
+    "stadium": "Fritz-Walter-Stadion",
+    "city": "Kaiserslautern, Alemania",
+    "capacity": 49327
+  },
+  "kaiserslautern": {
+    "stadium": "Fritz-Walter-Stadion",
+    "city": "Kaiserslautern, Alemania",
+    "capacity": 49327
+  },
+  "1. fc köln": {
+    "stadium": "RheinEnergieStadion",
+    "city": "Colonia, Alemania",
+    "capacity": 50000
+  },
+  "1. fc magdeburg": {
+    "stadium": "Avnet Arena",
+    "city": "Magdeburgo, Alemania",
+    "capacity": 30098
+  },
+  "1860 munich": {
+    "stadium": "Grünwalder Stadion",
+    "city": "Múnich, Alemania",
+    "capacity": 15000
+  },
+  "afc fylde": {
+    "stadium": "Mill Farm",
+    "city": "Wesham, Inglaterra",
+    "capacity": 6000
+  },
+  "afc rushden & diamonds": {
+    "stadium": "Hayden Road",
+    "city": "Rushden, Inglaterra",
+    "capacity": 2000
+  },
+  "afc wimbledon": {
+    "stadium": "Plough Lane",
+    "city": "Londres, Inglaterra",
+    "capacity": 9215
+  },
+  "ajax": {
+    "stadium": "Johan Cruijff ArenA",
+    "city": "Ámsterdam, Países Bajos",
+    "capacity": 55865
+  },
+  "alavés": {
+    "stadium": "Estadio de Mendizorroza",
+    "city": "Vitoria-Gasteiz, España",
+    "capacity": 19840
+  },
+  "albacete": {
+    "stadium": "Estadio Carlos Belmonte",
+    "city": "Albacete, España",
+    "capacity": 17524
+  },
+  "aldershot town": {
+    "stadium": "EBB Stadium",
+    "city": "Aldershot, Inglaterra",
+    "capacity": 7100
+  },
+  "almere city": {
+    "stadium": "Yanmar Stadion",
+    "city": "Almere, Países Bajos",
+    "capacity": 4501
+  },
+  "almería": {
+    "stadium": "UD Almería Stadium",
+    "city": "Almería, España",
+    "capacity": 18331
+  },
+  "alvechurch": {
+    "stadium": "Lye Meadow",
+    "city": "Alvechurch, Inglaterra",
+    "capacity": 3000
+  },
+  "amed sfk": {
+    "stadium": "Diyarbakır Stadyumu",
+    "city": "Diyarbakır, Turquía",
+    "capacity": 33000
+  },
+  "annecy": {
+    "stadium": "Parc des Sports d'Annecy",
+    "city": "Annecy, Francia",
+    "capacity": 15714
+  },
+  "antalyaspor": {
+    "stadium": "Corendon Airlines Park",
+    "city": "Antalya, Turquía",
+    "capacity": 29307
+  },
+  "arezzo": {
+    "stadium": "Stadio Città di Arezzo",
+    "city": "Arezzo, Italia",
+    "capacity": 13128
+  },
+  "arminia bielefeld": {
+    "stadium": "SchücoArena",
+    "city": "Bielefeld, Alemania",
+    "capacity": 27332
+  },
+  "asteras tripolis": {
+    "stadium": "Theodoros Kolokotronis Stadium",
+    "city": "Trípoli, Grecia",
+    "capacity": 7442
+  },
+  "aston villa": {
+    "stadium": "Villa Park",
+    "city": "Birmingham, Inglaterra",
+    "capacity": 42640
+  },
+  "atalanta": {
+    "stadium": "Gewiss Stadium",
+    "city": "Bérgamo, Italia",
+    "capacity": 24950
+  },
+  "athletico paranaense": {
+    "stadium": "Ligga Arena",
+    "city": "Curitiba, Brasil",
+    "capacity": 42372
+  },
+  "atlanta united fc": {
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta, EE.UU.",
+    "capacity": 42500
+  },
+  "atlante": {
+    "stadium": "Estadio Ciudad de los Deportes",
+    "city": "Ciudad de México",
+    "capacity": 34253
+  },
+  "atlético madrid": {
+    "stadium": "Riyadh Air Metropolitano",
+    "city": "Madrid, España",
+    "capacity": 70460
+  },
+  "atlético mineiro": {
+    "stadium": "Arena MRV",
+    "city": "Belo Horizonte, Brasil",
+    "capacity": 46000
+  },
+  "atlético nacional": {
+    "stadium": "Estadio Atanasio Girardot",
+    "city": "Medellín, Colombia",
+    "capacity": 44826
+  },
+  "bari": {
+    "stadium": "Stadio San Nicola",
+    "city": "Bari, Italia",
+    "capacity": 58270
+  },
+  "barracas central": {
+    "stadium": "Estadio Claudio Chiqui Tapia",
+    "city": "Buenos Aires, Argentina",
+    "capacity": 4400
+  },
+  "barrow": {
+    "stadium": "Holker Street",
+    "city": "Barrow, Inglaterra",
+    "capacity": 6500
+  },
+  "bayer leverkusen": {
+    "stadium": "BayArena",
+    "city": "Leverkusen, Alemania",
+    "capacity": 30210
+  },
+  "leverkusen": {
+    "stadium": "BayArena",
+    "city": "Leverkusen, Alemania",
+    "capacity": 30210
+  },
+  "belgrano": {
+    "stadium": "Estadio Julio César Villagra (Gigante de Alberdi)",
+    "city": "Córdoba, Argentina",
+    "capacity": 34830
+  },
+  "benfica": {
+    "stadium": "Estádio da Luz",
+    "city": "Lisboa, Portugal",
+    "capacity": 64642
+  },
+  "blackpool": {
+    "stadium": "Bloomfield Road",
+    "city": "Blackpool, Inglaterra",
+    "capacity": 16616
+  },
+  "bologna": {
+    "stadium": "Stadio Renato Dall'Ara",
+    "city": "Bolonia, Italia",
+    "capacity": 36462
+  },
+  "bolton wanderers": {
+    "stadium": "Toughsheet Community Stadium",
+    "city": "Bolton, Inglaterra",
+    "capacity": 28723
+  },
+  "boston river": {
+    "stadium": "Estadio Campeones Olímpicos",
+    "city": "Florida, Uruguay",
+    "capacity": 7000
+  },
+  "botafogo": {
+    "stadium": "Estádio Olímpico Nilton Santos",
+    "city": "Río de Janeiro, Brasil",
+    "capacity": 44661
+  },
+  "braga": {
+    "stadium": "Estádio Municipal de Braga",
+    "city": "Braga, Portugal",
+    "capacity": 30286
+  },
+  "brentford": {
+    "stadium": "Gtech Community Stadium",
+    "city": "Londres, Inglaterra",
+    "capacity": 17250
+  },
+  "burnley": {
+    "stadium": "Turf Moor",
+    "city": "Burnley, Inglaterra",
+    "capacity": 21944
+  },
+  "catanzaro": {
+    "stadium": "Stadio Nicola Ceravolo",
+    "city": "Catanzaro, Italia",
+    "capacity": 14650
+  },
+  "celaya": {
+    "stadium": "Estadio Miguel Alemán Valdés",
+    "city": "Celaya, México",
+    "capacity": 23182
+  },
+  "celta vigo": {
+    "stadium": "Estadio Abanca-Balaídos",
+    "city": "Vigo, España",
+    "capacity": 24791
+  },
+  "cercle brugge ksv": {
+    "stadium": "Jan Breydelstadion",
+    "city": "Brujas, Bélgica",
+    "capacity": 29062
+  },
+  "ceuta": {
+    "stadium": "Estadio Alfonso Murube",
+    "city": "Ceuta, España",
+    "capacity": 6500
+  },
+  "charlotte fc": {
+    "stadium": "Bank of America Stadium",
+    "city": "Charlotte, EE.UU.",
+    "capacity": 38000
+  },
+  "chelsea": {
+    "stadium": "Stamford Bridge",
+    "city": "Londres, Inglaterra",
+    "capacity": 40343
+  },
+  "cittadella": {
+    "stadium": "Stadio Pier Cesare Tombolato",
+    "city": "Cittadella, Italia",
+    "capacity": 7623
+  },
+  "colorado rapids": {
+    "stadium": "Dick's Sporting Goods Park",
+    "city": "Commerce City, EE.UU.",
+    "capacity": 18061
+  },
+  "columbus crew": {
+    "stadium": "Lower.com Field",
+    "city": "Columbus, EE.UU.",
+    "capacity": 20371
+  },
+  "como": {
+    "stadium": "Stadio Giuseppe Sinigaglia",
+    "city": "Como, Italia",
+    "capacity": 13602
+  },
+  "corinthians": {
+    "stadium": "Neo Química Arena",
+    "city": "São Paulo, Brasil",
+    "capacity": 49205
+  },
+  "coventry city": {
+    "stadium": "CBS Arena",
+    "city": "Coventry, Inglaterra",
+    "capacity": 32609
+  },
+  "cremonese": {
+    "stadium": "Stadio Giovanni Zini",
+    "city": "Cremona, Italia",
+    "capacity": 15191
+  },
+  "cruzeiro": {
+    "stadium": "Estádio Mineirão",
+    "city": "Belo Horizonte, Brasil",
+    "capacity": 61927
+  },
+  "crystal palace": {
+    "stadium": "Selhurst Park",
+    "city": "Londres, Inglaterra",
+    "capacity": 25486
+  },
+  "cuiabá": {
+    "stadium": "Arena Pantanal",
+    "city": "Cuiabá, Brasil",
+    "capacity": 44097
+  },
+  "defensa y justicia": {
+    "stadium": "Estadio Norberto Tito Tomaghello",
+    "city": "Florencio Varela, Argentina",
+    "capacity": 20000
+  },
+  "defensor sporting": {
+    "stadium": "Estadio Luis Franzini",
+    "city": "Montevideo, Uruguay",
+    "capacity": 16000
+  },
+  "deportes tolima": {
+    "stadium": "Estadio Manuel Murillo Toro",
+    "city": "Ibagué, Colombia",
+    "capacity": 28100
+  },
+  "doncaster rovers": {
+    "stadium": "Eco-Power Stadium",
+    "city": "Doncaster, Inglaterra",
+    "capacity": 15231
+  },
+  "eibar": {
+    "stadium": "Estadio Municipal de Ipurua",
+    "city": "Éibar, España",
+    "capacity": 8164
+  },
+  "eintracht braunschweig": {
+    "stadium": "Eintracht-Stadion",
+    "city": "Braunschweig, Alemania",
+    "capacity": 23325
+  },
+  "eintracht frankfurt": {
+    "stadium": "Deutsche Bank Park",
+    "city": "Fráncfort, Alemania",
+    "capacity": 58000
+  },
+  "elche": {
+    "stadium": "Estadio Martínez Valero",
+    "city": "Elche, España",
+    "capacity": 31388
+  },
+  "empoli": {
+    "stadium": "Stadio Carlo Castellani",
+    "city": "Empoli, Italia",
+    "capacity": 16284
+  },
+  "estudiantes lp": {
+    "stadium": "Estadio Jorge Luis Hirschi (UNO)",
+    "city": "La Plata, Argentina",
+    "capacity": 32530
+  },
+  "estudiantes de la plata": {
+    "stadium": "Estadio Jorge Luis Hirschi (UNO)",
+    "city": "La Plata, Argentina",
+    "capacity": 32530
+  },
+  "estudiantes de río cuarto": {
+    "stadium": "Estadio Ciudad de Río Cuarto",
+    "city": "Río Cuarto, Argentina",
+    "capacity": 15000
+  },
+  "everton": {
+    "stadium": "Goodison Park",
+    "city": "Liverpool, Inglaterra",
+    "capacity": 39572
+  },
+  "exeter city": {
+    "stadium": "St James Park",
+    "city": "Exeter, Inglaterra",
+    "capacity": 8720
+  },
+  "fc augsburg": {
+    "stadium": "WWK Arena",
+    "city": "Augsburgo, Alemania",
+    "capacity": 30660
+  },
+  "fc halifax town": {
+    "stadium": "The Shay",
+    "city": "Halifax, Inglaterra",
+    "capacity": 10401
+  },
+  "feyenoord": {
+    "stadium": "Stadion Feijenoord (De Kuip)",
+    "city": "Róterdam, Países Bajos",
+    "capacity": 47500
+  },
+  "fiorentina": {
+    "stadium": "Stadio Artemio Franchi",
+    "city": "Florencia, Italia",
+    "capacity": 43147
+  },
+  "flamengo": {
+    "stadium": "Estádio do Maracanã",
+    "city": "Río de Janeiro, Brasil",
+    "capacity": 78838
+  },
+  "fluminense": {
+    "stadium": "Estádio do Maracanã",
+    "city": "Río de Janeiro, Brasil",
+    "capacity": 78838
+  },
+  "forest green rovers": {
+    "stadium": "The New Lawn",
+    "city": "Nailsworth, Inglaterra",
+    "capacity": 5147
+  },
+  "fortaleza": {
+    "stadium": "Arena Castelão",
+    "city": "Fortaleza, Brasil",
+    "capacity": 63903
+  },
+  "fortuna düsseldorf": {
+    "stadium": "Merkur Spiel-Arena",
+    "city": "Düsseldorf, Alemania",
+    "capacity": 54600
+  },
+  "frosinone": {
+    "stadium": "Stadio Benito Stirpe",
+    "city": "Frosinone, Italia",
+    "capacity": 16227
+  },
+  "gaziantep": {
+    "stadium": "Gaziantep Stadyumu",
+    "city": "Gaziantep, Turquía",
+    "capacity": 33502
+  },
+  "genoa": {
+    "stadium": "Stadio Luigi Ferraris",
+    "city": "Génova, Italia",
+    "capacity": 33205
+  },
+  "girona": {
+    "stadium": "Estadi Montilivi",
+    "city": "Girona, España",
+    "capacity": 14624
+  },
+  "go ahead eagles": {
+    "stadium": "De Adelaarshorst",
+    "city": "Deventer, Países Bajos",
+    "capacity": 10000
+  },
+  "godoy cruz": {
+    "stadium": "Estadio Malvinas Argentinas",
+    "city": "Mendoza, Argentina",
+    "capacity": 42500
+  },
+  "greuther fürth": {
+    "stadium": "Sportpark Ronhof",
+    "city": "Fürth, Alemania",
+    "capacity": 16626
+  },
+  "grêmio": {
+    "stadium": "Arena do Grêmio",
+    "city": "Porto Alegre, Brasil",
+    "capacity": 55662
+  },
+  "guadalajara": {
+    "stadium": "Estadio Akron",
+    "city": "Zapopan, Jalisco, México",
+    "capacity": 46232
+  },
+  "guingamp": {
+    "stadium": "Stade de Roudourou",
+    "city": "Guingamp, Francia",
+    "capacity": 19060
+  },
+  "hamburger sv": {
+    "stadium": "Volksparkstadion",
+    "city": "Hamburgo, Alemania",
+    "capacity": 57000
+  },
+  "hannover 96": {
+    "stadium": "Heinz von Heiden Arena",
+    "city": "Hannover, Alemania",
+    "capacity": 49000
+  },
+  "harborough town": {
+    "stadium": "Bowden Park",
+    "city": "Market Harborough, Inglaterra",
+    "capacity": 2500
+  },
+  "hellas verona": {
+    "stadium": "Stadio Marcantonio Bentegodi",
+    "city": "Verona, Italia",
+    "capacity": 31045
+  },
+  "huracán": {
+    "stadium": "Estadio Tomás Adolfo Ducó",
+    "city": "Buenos Aires, Argentina",
+    "capacity": 48314
+  },
+  "independiente": {
+    "stadium": "Estadio Libertadores de América",
+    "city": "Avellaneda, Argentina",
+    "capacity": 42069
+  },
+  "independiente medellín": {
+    "stadium": "Estadio Atanasio Girardot",
+    "city": "Medellín, Colombia",
+    "capacity": 44826
+  },
+  "independiente rivadavia": {
+    "stadium": "Estadio Bautista Gargantini",
+    "city": "Mendoza, Argentina",
+    "capacity": 24000
+  },
+  "internacional": {
+    "stadium": "Estádio Beira-Rio",
+    "city": "Porto Alegre, Brasil",
+    "capacity": 50842
+  },
+  "istanbul basaksehir": {
+    "stadium": "Başakşehir Fatih Terim Stadyumu",
+    "city": "Estambul, Turquía",
+    "capacity": 17156
+  },
+  "jahn regensburg": {
+    "stadium": "Jahnstadion Regensburg",
+    "city": "Ratisbona, Alemania",
+    "capacity": 15210
+  },
+  "juárez": {
+    "stadium": "Estadio Olímpico Benito Juárez",
+    "city": "Ciudad Juárez, México",
+    "capacity": 19703
+  },
+  "kv mechelen": {
+    "stadium": "AFAS Stadion",
+    "city": "Malinas, Bélgica",
+    "capacity": 16672
+  },
+  "karlsruher sc": {
+    "stadium": "BBBank Wildpark",
+    "city": "Karlsruhe, Alemania",
+    "capacity": 34302
+  },
+  "kayserispor": {
+    "stadium": "RHG Enertürk Enerji Stadyumu",
+    "city": "Kayseri, Turquía",
+    "capacity": 32864
+  },
+  "kifisia": {
+    "stadium": "Michalis Kritikopoulos Stadium",
+    "city": "Atenas, Grecia",
+    "capacity": 4851
+  },
+  "kocaelispor": {
+    "stadium": "Kocaeli Stadyumu",
+    "city": "İzmit, Turquía",
+    "capacity": 34712
+  },
+  "konyaspor": {
+    "stadium": "Konya Büyükşehir Stadyumu",
+    "city": "Konya, Turquía",
+    "capacity": 42000
+  },
+  "lanús": {
+    "stadium": "Estadio Ciudad de Lanús (La Fortaleza)",
+    "city": "Lanús, Argentina",
+    "capacity": 47027
+  },
+  "las palmas": {
+    "stadium": "Estadio Gran Canaria",
+    "city": "Las Palmas, España",
+    "capacity": 32400
+  },
+  "lazio": {
+    "stadium": "Stadio Olimpico",
+    "city": "Roma, Italia",
+    "capacity": 70634
+  },
+  "lecce": {
+    "stadium": "Stadio Via del Mare",
+    "city": "Lecce, Italia",
+    "capacity": 31533
+  },
+  "leones negros": {
+    "stadium": "Estadio Jalisco",
+    "city": "Guadalajara, México",
+    "capacity": 55020
+  },
+  "levante": {
+    "stadium": "Estadi Ciutat de València",
+    "city": "Valencia, España",
+    "capacity": 26354
+  },
+  "león": {
+    "stadium": "Estadio León (Nou Camp)",
+    "city": "León, Guanajuato, México",
+    "capacity": 31297
+  },
+  "lille": {
+    "stadium": "Stade Pierre-Mauroy",
+    "city": "Lille, Francia",
+    "capacity": 50186
+  },
+  "lincoln city": {
+    "stadium": "LNER Stadium",
+    "city": "Lincoln, Inglaterra",
+    "capacity": 10780
+  },
+  "liverpool": {
+    "stadium": "Anfield",
+    "city": "Liverpool, Inglaterra",
+    "capacity": 61276
+  },
+  "lommel sk": {
+    "stadium": "Soevereinstadion",
+    "city": "Lommel, Bélgica",
+    "capacity": 8000
+  },
+  "lorient": {
+    "stadium": "Stade du Moustoir",
+    "city": "Lorient, Francia",
+    "capacity": 18890
+  },
+  "lyon": {
+    "stadium": "Groupama Stadium",
+    "city": "Lyon, Francia",
+    "capacity": 59186
+  },
+  "mk dons": {
+    "stadium": "Stadium MK",
+    "city": "Milton Keynes, Inglaterra",
+    "capacity": 30500
+  },
+  "macclesfield fc": {
+    "stadium": "Moss Rose",
+    "city": "Macclesfield, Inglaterra",
+    "capacity": 5300
+  },
+  "mallorca": {
+    "stadium": "Estadi Mallorca Son Moix",
+    "city": "Palma de Mallorca, España",
+    "capacity": 23142
+  },
+  "marine": {
+    "stadium": "Rossett Park",
+    "city": "Crosby, Inglaterra",
+    "capacity": 3185
+  },
+  "marseille": {
+    "stadium": "Stade Vélodrome",
+    "city": "Marsella, Francia",
+    "capacity": 67394
+  },
+  "metz": {
+    "stadium": "Stade Saint-Symphorien",
+    "city": "Metz, Francia",
+    "capacity": 28786
+  },
+  "middlesbrough": {
+    "stadium": "Riverside Stadium",
+    "city": "Middlesbrough, Inglaterra",
+    "capacity": 34742
+  },
+  "millonarios": {
+    "stadium": "Estadio El Campín",
+    "city": "Bogotá, Colombia",
+    "capacity": 36343
+  },
+  "millwall": {
+    "stadium": "The Den",
+    "city": "Londres, Inglaterra",
+    "capacity": 20146
+  },
+  "monaco": {
+    "stadium": "Stade Louis-II",
+    "city": "Mónaco",
+    "capacity": 16360
+  },
+  "moreirense": {
+    "stadium": "Parque Joaquim de Almeida Freitas",
+    "city": "Moreira de Cónegos, Portugal",
+    "capacity": 6150
+  },
+  "nacional": {
+    "stadium": "Gran Parque Central",
+    "city": "Montevideo, Uruguay",
+    "capacity": 34000
+  },
+  "nashville sc": {
+    "stadium": "GEODIS Park",
+    "city": "Nashville, EE.UU.",
+    "capacity": 30000
+  },
+  "necaxa": {
+    "stadium": "Estadio Victoria",
+    "city": "Aguascalientes, México",
+    "capacity": 23851
+  },
+  "new england revolution": {
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, EE.UU.",
+    "capacity": 20000
+  },
+  "newell's old boys": {
+    "stadium": "Estadio Marcelo Bielsa",
+    "city": "Rosario, Argentina",
+    "capacity": 42000
+  },
+  "northampton town": {
+    "stadium": "Sixfields Stadium",
+    "city": "Northampton, Inglaterra",
+    "capacity": 7798
+  },
+  "norwich city": {
+    "stadium": "Carrow Road",
+    "city": "Norwich, Inglaterra",
+    "capacity": 27359
+  },
+  "notts county": {
+    "stadium": "Meadow Lane",
+    "city": "Nottingham, Inglaterra",
+    "capacity": 19841
+  },
+  "ofi crete": {
+    "stadium": "Theodoros Vardinogiannis Stadium",
+    "city": "Heraclión, Grecia",
+    "capacity": 9088
+  },
+  "once caldas": {
+    "stadium": "Estadio Palogrande",
+    "city": "Manizales, Colombia",
+    "capacity": 28678
+  },
+  "pachuca": {
+    "stadium": "Estadio Hidalgo",
+    "city": "Pachuca, Hidalgo, México",
+    "capacity": 25922
+  },
+  "palermo": {
+    "stadium": "Stadio Renzo Barbera",
+    "city": "Palermo, Italia",
+    "capacity": 36365
+  },
+  "palmeiras": {
+    "stadium": "Allianz Parque",
+    "city": "São Paulo, Brasil",
+    "capacity": 43713
+  },
+  "panetolikos": {
+    "stadium": "Panetolikos Stadium",
+    "city": "Agrinio, Grecia",
+    "capacity": 7321
+  },
+  "peñarol": {
+    "stadium": "Estadio Campeón del Siglo",
+    "city": "Montevideo, Uruguay",
+    "capacity": 40700
+  },
+  "platense": {
+    "stadium": "Estadio Ciudad de Vicente López",
+    "city": "Vicente López, Argentina",
+    "capacity": 34530
+  },
+  "portland timbers": {
+    "stadium": "Providence Park",
+    "city": "Portland, EE.UU.",
+    "capacity": 25218
+  },
+  "porto": {
+    "stadium": "Estádio do Dragão",
+    "city": "Oporto, Portugal",
+    "capacity": 50033
+  },
+  "preußen münster": {
+    "stadium": "Preußenstadion",
+    "city": "Münster, Alemania",
+    "capacity": 14300
+  },
+  "puebla": {
+    "stadium": "Estadio Cuauhtémoc",
+    "city": "Puebla, México",
+    "capacity": 51726
+  },
+  "rc celta fortuna": {
+    "stadium": "Estadio de Barreiro",
+    "city": "Vigo, España",
+    "capacity": 4500
+  },
+  "rayo vallecano": {
+    "stadium": "Estadio de Vallecas",
+    "city": "Madrid, España",
+    "capacity": 14708
+  },
+  "reading": {
+    "stadium": "Select Car Leasing Stadium",
+    "city": "Reading, Inglaterra",
+    "capacity": 24161
+  },
+  "real betis": {
+    "stadium": "Estadio Benito Villamarín",
+    "city": "Sevilla, España",
+    "capacity": 60721
+  },
+  "real oviedo": {
+    "stadium": "Estadio Carlos Tartiere",
+    "city": "Oviedo, España",
+    "capacity": 30500
+  },
+  "real sociedad": {
+    "stadium": "Reale Arena (Anoeta)",
+    "city": "San Sebastián, España",
+    "capacity": 39500
+  },
+  "real zaragoza": {
+    "stadium": "Estadio de La Romareda",
+    "city": "Zaragoza, España",
+    "capacity": 33608
+  },
+  "rennes": {
+    "stadium": "Roazhon Park",
+    "city": "Rennes, Francia",
+    "capacity": 29778
+  },
+  "rochdale": {
+    "stadium": "Crown Oil Arena",
+    "city": "Rochdale, Inglaterra",
+    "capacity": 10249
+  },
+  "rotherham united": {
+    "stadium": "New York Stadium",
+    "city": "Rotherham, Inglaterra",
+    "capacity": 12021
+  },
+  "royal charleroi sc": {
+    "stadium": "Stade du Pays de Charleroi",
+    "city": "Charleroi, Bélgica",
+    "capacity": 15000
+  },
+  "ssv ulm 1846": {
+    "stadium": "Donaustadion",
+    "city": "Ulm, Alemania",
+    "capacity": 19500
+  },
+  "sv darmstadt 98": {
+    "stadium": "Merck-Stadion am Böllenfalltor",
+    "city": "Darmstadt, Alemania",
+    "capacity": 17810
+  },
+  "sv elversberg": {
+    "stadium": "URSAPHARM-Arena",
+    "city": "Spiesen-Elversberg, Alemania",
+    "capacity": 10000
+  },
+  "sv sandhausen": {
+    "stadium": "GP Stadion am Hardtwald",
+    "city": "Sandhausen, Alemania",
+    "capacity": 15414
+  },
+  "salernitana": {
+    "stadium": "Stadio Arechi",
+    "city": "Salerno, Italia",
+    "capacity": 26500
+  },
+  "salford city": {
+    "stadium": "Peninsula Stadium",
+    "city": "Salford, Inglaterra",
+    "capacity": 5108
+  },
+  "sampdoria": {
+    "stadium": "Stadio Luigi Ferraris",
+    "city": "Génova, Italia",
+    "capacity": 33205
+  },
+  "san jose earthquakes": {
+    "stadium": "PayPal Park",
+    "city": "San José, EE.UU.",
+    "capacity": 18000
+  },
+  "san lorenzo": {
+    "stadium": "Estadio Pedro Bidegain",
+    "city": "Buenos Aires, Argentina",
+    "capacity": 47964
+  },
+  "san luis": {
+    "stadium": "Estadio Alfonso Lastras",
+    "city": "San Luis Potosí, México",
+    "capacity": 25709
+  },
+  "santa fe": {
+    "stadium": "Estadio El Campín",
+    "city": "Bogotá, Colombia",
+    "capacity": 36343
+  },
+  "santos laguna": {
+    "stadium": "Estadio Corona (TSM)",
+    "city": "Torreón, Coahuila, México",
+    "capacity": 29101
+  },
+  "sarmiento": {
+    "stadium": "Estadio Eva Perón",
+    "city": "Junín, Argentina",
+    "capacity": 22000
+  },
+  "sassuolo": {
+    "stadium": "Mapei Stadium",
+    "city": "Reggio Emilia, Italia",
+    "capacity": 21525
+  },
+  "schalke 04": {
+    "stadium": "VELTINS-Arena",
+    "city": "Gelsenkirchen, Alemania",
+    "capacity": 62271
+  },
+  "scunthorpe united": {
+    "stadium": "Glanford Park",
+    "city": "Scunthorpe, Inglaterra",
+    "capacity": 9088
+  },
+  "sevilla": {
+    "stadium": "Estadio Ramón Sánchez-Pizjuán",
+    "city": "Sevilla, España",
+    "capacity": 42714
+  },
+  "sheffield united": {
+    "stadium": "Bramall Lane",
+    "city": "Sheffield, Inglaterra",
+    "capacity": 32050
+  },
+  "sholing": {
+    "stadium": "Mackoy Stadium",
+    "city": "Southampton, Inglaterra",
+    "capacity": 2200
+  },
+  "shrewsbury town": {
+    "stadium": "Croud Meadow",
+    "city": "Shrewsbury, Inglaterra",
+    "capacity": 9875
+  },
+  "southampton": {
+    "stadium": "St Mary's Stadium",
+    "city": "Southampton, Inglaterra",
+    "capacity": 32384
+  },
+  "sparta rotterdam": {
+    "stadium": "Het Kasteel",
+    "city": "Róterdam, Países Bajos",
+    "capacity": 11000
+  },
+  "spezia": {
+    "stadium": "Stadio Alberto Picco",
+    "city": "La Spezia, Italia",
+    "capacity": 11968
+  },
+  "sporting cp": {
+    "stadium": "Estádio José Alvalade",
+    "city": "Lisboa, Portugal",
+    "capacity": 50095
+  },
+  "sporting gijón": {
+    "stadium": "Estadio El Molinón",
+    "city": "Gijón, España",
+    "capacity": 29371
+  },
+  "sporting kansas city": {
+    "stadium": "Children's Mercy Park",
+    "city": "Kansas City, EE.UU.",
+    "capacity": 18467
+  },
+  "st. louis city sc": {
+    "stadium": "CITYPARK",
+    "city": "St. Louis, EE.UU.",
+    "capacity": 22423
+  },
+  "stevenage": {
+    "stadium": "Lamex Stadium",
+    "city": "Stevenage, Inglaterra",
+    "capacity": 7800
+  },
+  "stockport county": {
+    "stadium": "Edgeley Park",
+    "city": "Stockport, Inglaterra",
+    "capacity": 10852
+  },
+  "stoke city": {
+    "stadium": "bet365 Stadium",
+    "city": "Stoke-on-Trent, Inglaterra",
+    "capacity": 30089
+  },
+  "sudtirol": {
+    "stadium": "Stadio Druso",
+    "city": "Bolzano, Italia",
+    "capacity": 5539
+  },
+  "sunderland": {
+    "stadium": "Stadium of Light",
+    "city": "Sunderland, Inglaterra",
+    "capacity": 49000
+  },
+  "sutton united": {
+    "stadium": "VBS Community Stadium",
+    "city": "Londres, Inglaterra",
+    "capacity": 5032
+  },
+  "swansea city": {
+    "stadium": "Swansea.com Stadium",
+    "city": "Swansea, Gales",
+    "capacity": 21088
+  },
+  "swindon town": {
+    "stadium": "County Ground",
+    "city": "Swindon, Inglaterra",
+    "capacity": 15728
+  },
+  "são paulo": {
+    "stadium": "Estádio do MorumBIS",
+    "city": "São Paulo, Brasil",
+    "capacity": 66795
+  },
+  "tapatío": {
+    "stadium": "Estadio Akron",
+    "city": "Zapopan, Jalisco, México",
+    "capacity": 46232
+  },
+  "telstar": {
+    "stadium": "711 Stadion",
+    "city": "Velsen-Zuid, Países Bajos",
+    "capacity": 5200
+  },
+  "tenerife": {
+    "stadium": "Estadio Heliodoro Rodríguez López",
+    "city": "Santa Cruz de Tenerife, España",
+    "capacity": 22824
+  },
+  "tigres femenil": {
+    "stadium": "Estadio Universitario (El Volcán)",
+    "city": "San Nicolás de los Garza, México",
+    "capacity": 41886
+  },
+  "tijuana": {
+    "stadium": "Estadio Caliente",
+    "city": "Tijuana, México",
+    "capacity": 27333
+  },
+  "toronto fc": {
+    "stadium": "BMO Field",
+    "city": "Toronto, Canadá",
+    "capacity": 28351
+  },
+  "toulouse": {
+    "stadium": "Stadium de Toulouse",
+    "city": "Toulouse, Francia",
+    "capacity": 33150
+  },
+  "tranmere rovers": {
+    "stadium": "Prenton Park",
+    "city": "Birkenhead, Inglaterra",
+    "capacity": 16587
+  },
+  "troyes": {
+    "stadium": "Stade de l'Aube",
+    "city": "Troyes, Francia",
+    "capacity": 20400
+  },
+  "twente": {
+    "stadium": "De Grolsch Veste",
+    "city": "Enschede, Países Bajos",
+    "capacity": 30205
+  },
+  "us avellino": {
+    "stadium": "Stadio Partenio",
+    "city": "Avellino, Italia",
+    "capacity": 10215
+  },
+  "udinese": {
+    "stadium": "Bluenergy Stadium",
+    "city": "Údine, Italia",
+    "capacity": 25144
+  },
+  "vancouver whitecaps": {
+    "stadium": "BC Place",
+    "city": "Vancouver, Canadá",
+    "capacity": 22120
+  },
+  "vasco da gama": {
+    "stadium": "Estádio São Januário",
+    "city": "Río de Janeiro, Brasil",
+    "capacity": 21880
+  },
+  "vfl wolfsburg": {
+    "stadium": "Volkswagen Arena",
+    "city": "Wolfsburgo, Alemania",
+    "capacity": 30000
+  },
+  "vélez sarsfield": {
+    "stadium": "Estadio José Amalfitani",
+    "city": "Buenos Aires, Argentina",
+    "capacity": 49540
+  },
+  "walsall": {
+    "stadium": "Bescot Stadium",
+    "city": "Walsall, Inglaterra",
+    "capacity": 11300
+  },
+  "wealdstone": {
+    "stadium": "Grosvenor Vale",
+    "city": "Ruislip, Inglaterra",
+    "capacity": 4085
+  },
+  "werder bremen": {
+    "stadium": "Weserstadion",
+    "city": "Bremen, Alemania",
+    "capacity": 42100
+  },
+  "west ham united": {
+    "stadium": "London Stadium",
+    "city": "Londres, Inglaterra",
+    "capacity": 62500
+  },
+  "west ham": {
+    "stadium": "London Stadium",
+    "city": "Londres, Inglaterra",
+    "capacity": 62500
+  },
+  "wigan athletic": {
+    "stadium": "Brick Community Stadium",
+    "city": "Wigan, Inglaterra",
+    "capacity": 25138
+  },
+  "wolverhampton": {
+    "stadium": "Molineux Stadium",
+    "city": "Wolverhampton, Inglaterra",
+    "capacity": 31750
+  },
+  "wolverhampton wanderers": {
+    "stadium": "Molineux Stadium",
+    "city": "Wolverhampton, Inglaterra",
+    "capacity": 31750
+  },
+  "wolves": {
+    "stadium": "Molineux Stadium",
+    "city": "Wolverhampton, Inglaterra",
+    "capacity": 31750
+  },
+  "worcester city": {
+    "stadium": "Sixways Stadium",
+    "city": "Worcester, Inglaterra",
+    "capacity": 11499
+  },
+  "wycombe wanderers": {
+    "stadium": "Adams Park",
+    "city": "High Wycombe, Inglaterra",
+    "capacity": 10137
+  },
+  "yeovil town": {
+    "stadium": "Huish Park",
+    "city": "Yeovil, Inglaterra",
+    "capacity": 9565
+  },
+  "minnesota united": {
+    "stadium": "Allianz Field",
+    "city": "Saint Paul, EE.UU.",
+    "capacity": 19400
   }
 }

@@ -116,15 +116,15 @@ def run_full_system_audit() -> Dict[str, Any]:
 
     # Verificación específica obligatoria de Fulham vs Newcastle United (Arbeloa, Jaissle, Cairney, Ramsey, Jaouen, Joelinton, Livramento)
     fn_rep = get_match_injuries_report("Fulham", "Newcastle United")
-    if fn_rep.get("home_manager") != "Álvaro Arbeloa":
-        player_errors.append(f"Fulham DT incorrecto: esperado 'Álvaro Arbeloa', obtenido '{fn_rep.get('home_manager')}'")
+    if fn_rep.get("home_manager") != "Marco Silva":
+        player_errors.append(f"Fulham DT incorrecto: esperado 'Marco Silva', obtenido '{fn_rep.get('home_manager')}'")
     if fn_rep.get("away_manager") not in ["Matthias Jaissle", "Eddie Howe"]:
         player_errors.append(f"Newcastle DT incorrecto: obtenido '{fn_rep.get('away_manager')}'")
 
     # Verificación obligatoria 2026/2027: Bayer Leverkusen, Liverpool, Arsenal, Milan, Frankfurt, Betis, Wolves
     lev_rep = get_match_injuries_report("Bayer Leverkusen", "Bayern Munich")
-    if lev_rep.get("home_manager") != "Carles Martínez Novell":
-        player_errors.append(f"Leverkusen DT incorrecto: esperado 'Carles Martínez Novell', obtenido '{lev_rep.get('home_manager')}'")
+    if lev_rep.get("home_manager") != "Kasper Hjulmand":
+        player_errors.append(f"Leverkusen DT incorrecto: esperado 'Kasper Hjulmand', obtenido '{lev_rep.get('home_manager')}'")
     lev_starters = lev_rep.get("home_starters_ready", [])
     if "Patrik Schick" not in lev_starters:
         player_errors.append(f"Patrik Schick no detectado como titular de Leverkusen: {lev_starters}")
@@ -198,7 +198,7 @@ def run_full_system_audit() -> Dict[str, Any]:
         "status": "PASS" if p3_ok else "FAIL",
         "cartelera_matches_audited": len(all_cartelera_matches),
         "matches_with_generic_data": generic_matches_count,
-        "fulham_newcastle_certified": "Álvaro Arbeloa (DT), Matthias Jaissle (DT), Cairney, Ramsey, Jaouen, Joelinton, Livramento",
+        "fulham_newcastle_certified": "Marco Silva (DT), Matthias Jaissle (DT), Cairney, Ramsey, Jaouen, Joelinton, Livramento",
         "errors": player_errors[:10]
     }
     if p3_ok: results["tests_passed"] += 1

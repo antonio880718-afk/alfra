@@ -1,0 +1,122 @@
+[
+  {
+    "league": "LaLiga Hypermotion (España 2)",
+    "code": "esp.2",
+    "country": "España",
+    "home": "Deportivo La Coruña",
+    "away": "Eibar",
+    "time_cdmx": "13:30",
+    "hour_int": 13,
+    "home_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3752.png",
+    "id": "Deportivo La Coruña_Eibar_20261112_1"
+  },
+  {
+    "league": "LaLiga Hypermotion (España 2)",
+    "code": "esp.2",
+    "country": "España",
+    "home": "Almería",
+    "away": "Elche",
+    "time_cdmx": "14:00",
+    "hour_int": 14,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/6832.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3751.png",
+    "id": "Almería_Elche_20261112_2"
+  },
+  {
+    "league": "Liga Profesional Argentina",
+    "code": "arg.1",
+    "country": "Argentina",
+    "home": "Talleres Córdoba",
+    "away": "Godoy Cruz",
+    "time_cdmx": "16:30",
+    "hour_int": 16,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/8447.png",
+    "away_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png",
+    "id": "Talleres Córdoba_Godoy Cruz_20261112_3"
+  },
+  {
+    "league": "Liga Profesional Argentina",
+    "code": "arg.1",
+    "country": "Argentina",
+    "home": "Estudiantes LP",
+    "away": "Rosario Central",
+    "time_cdmx": "18:30",
+    "hour_int": 18,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/8.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+    "id": "Estudiantes LP_Rosario Central_20261112_4"
+  },
+  {
+    "league": "Brasileirão Série A",
+    "code": "bra.1",
+    "country": "Brasil",
+    "home": "Internacional",
+    "away": "Fluminense",
+    "time_cdmx": "16:00",
+    "hour_int": 16,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1936.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3445.png",
+    "id": "Internacional_Fluminense_20261112_5"
+  },
+  {
+    "league": "Brasileirão Série A",
+    "code": "bra.1",
+    "country": "Brasil",
+    "home": "Cruzeiro",
+    "away": "Corinthians",
+    "time_cdmx": "18:00",
+    "hour_int": 18,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/874.png",
+    "id": "Cruzeiro_Corinthians_20261112_6"
+  },
+  {
+    "league": "Categoría Primera A (Colombia)",
+    "code": "col.1",
+    "country": "Colombia",
+    "home": "Atlético Nacional",
+    "away": "Independiente Medellín",
+    "time_cdmx": "19:30",
+    "hour_int": 19,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11.png",
+    "id": "Atlético Nacional_Independiente Medellín_20261112_7"
+  },
+  {
+    "league": "Categoría Primera A (Colombia)",
+    "code": "col.1",
+    "country": "Colombia",
+    "home": "Millonarios",
+    "away": "América de Cali",
+    "time_cdmx": "20:30",
+    "hour_int": 20,
+    "home_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
+    "id": "Millonarios_América de Cali_20261112_8"
+  },
+  {
+    "league": "Liga de Expansión MX",
+    "code": "mex.2",
+    "country": "México",
+    "home": "Leones Negros",
+    "away": "Tapatío",
+    "time_cdmx": "19:00",
+    "hour_int": 19,
+    "home_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png",
+    "away_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png",
+    "id": "Leones Negros_Tapatío_20261112_9"
+  },
+  {
+    "league": "Liga MX Femenil",
+    "code": "mex.w",
+    "country": "México",
+    "home": "Tigres Femenil",
+    "away": "América Femenil",
+    "time_cdmx": "21:00",
+    "hour_int": 21,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
+    "id": "Tigres Femenil_América Femenil_20261112_10"
+  }
+]

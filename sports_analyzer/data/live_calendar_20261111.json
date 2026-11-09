@@ -1,0 +1,122 @@
+[
+  {
+    "league": "Championship (Inglaterra)",
+    "code": "eng.2",
+    "country": "Inglaterra",
+    "home": "Leeds United",
+    "away": "Millwall",
+    "time_cdmx": "13:45",
+    "hour_int": 13,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/357.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/391.png",
+    "id": "Leeds United_Millwall_20261111_1"
+  },
+  {
+    "league": "Championship (Inglaterra)",
+    "code": "eng.2",
+    "country": "Inglaterra",
+    "home": "Sunderland",
+    "away": "West Bromwich Albion",
+    "time_cdmx": "14:00",
+    "hour_int": 14,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/383.png",
+    "id": "Sunderland_West Bromwich Albion_20261111_2"
+  },
+  {
+    "league": "LaLiga Hypermotion (España 2)",
+    "code": "esp.2",
+    "country": "España",
+    "home": "Real Zaragoza",
+    "away": "Málaga",
+    "time_cdmx": "13:30",
+    "hour_int": 13,
+    "home_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png",
+    "away_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png",
+    "id": "Real Zaragoza_Málaga_20261111_3"
+  },
+  {
+    "league": "Serie B (Italia)",
+    "code": "ita.2",
+    "country": "Italia",
+    "home": "Palermo",
+    "away": "Sampdoria",
+    "time_cdmx": "13:30",
+    "hour_int": 13,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2923.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2734.png",
+    "id": "Palermo_Sampdoria_20261111_4"
+  },
+  {
+    "league": "Liga Profesional Argentina",
+    "code": "arg.1",
+    "country": "Argentina",
+    "home": "Vélez Sarsfield",
+    "away": "Deportivo Riestra",
+    "time_cdmx": "15:00",
+    "hour_int": 15,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/21.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17702.png",
+    "id": "Vélez Sarsfield_Deportivo Riestra_20261111_5"
+  },
+  {
+    "league": "Liga Profesional Argentina",
+    "code": "arg.1",
+    "country": "Argentina",
+    "home": "Boca Juniors",
+    "away": "Sarmiento",
+    "time_cdmx": "18:30",
+    "hour_int": 18,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/10158.png",
+    "id": "Boca Juniors_Sarmiento_20261111_6"
+  },
+  {
+    "league": "Brasileirão Série A",
+    "code": "bra.1",
+    "country": "Brasil",
+    "home": "Flamengo",
+    "away": "Atlético Mineiro",
+    "time_cdmx": "17:00",
+    "hour_int": 17,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/819.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+    "id": "Flamengo_Atlético Mineiro_20261111_7"
+  },
+  {
+    "league": "Brasileirão Série A",
+    "code": "bra.1",
+    "country": "Brasil",
+    "home": "São Paulo",
+    "away": "Athletico Paranaense",
+    "time_cdmx": "18:30",
+    "hour_int": 18,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2026.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/93.png",
+    "id": "São Paulo_Athletico Paranaense_20261111_8"
+  },
+  {
+    "league": "Liga MX (México)",
+    "code": "mex.1",
+    "country": "México",
+    "home": "Monterrey",
+    "away": "Pumas UNAM",
+    "time_cdmx": "19:00",
+    "hour_int": 19,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/220.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "id": "Monterrey_Pumas UNAM_20261111_9"
+  },
+  {
+    "league": "Liga MX (México)",
+    "code": "mex.1",
+    "country": "México",
+    "home": "Guadalajara",
+    "away": "Atlas",
+    "time_cdmx": "21:05",
+    "hour_int": 21,
+    "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+    "id": "Guadalajara_Atlas_20261111_10"
+  }
+]
