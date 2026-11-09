@@ -1047,15 +1047,15 @@ def compute_card_expectations(home_team: str, away_team: str, home_fouls_avg: fl
     }
 
     return {
-        "referee_name": ref_info["name"],
+        "referee_name": ref_info.get("name", "Árbitro Oficial"),
         "referee_league": ref_info.get("league", "Oficial"),
         "referee_cards_avg": ref_cards,
         "referee_yellow_avg": ref_yellows,
         "referee_red_avg": ref_reds,
         "referee_fouls_avg": ref_fouls,
         "foul_to_card_ratio": foul_card_ratio,
-        "referee_rigor": ref_info["rigor"],
-        "referee_style": ref_info["style"],
+        "referee_rigor": ref_info.get("rigor", "⚖️ Moderado-Estricto"),
+        "referee_style": ref_info.get("style", "Control disciplinario reglamentario."),
         "expected_cards": exp_cards,
         "expected_fouls": exp_fouls,
         "expected_yellows": round(exp_cards * (ref_yellows / max(0.1, ref_cards)), 2),
