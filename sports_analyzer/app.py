@@ -391,6 +391,11 @@ from match_data_engineering_engine import compute_full_match_data_engineering
 
 @st.cache_data(ttl=300, show_spinner=False)
 def _cached_complete_match_by_match_pdf(d_str, _ver=_ENGINE_VER):
+    import os
+    pre_path = os.path.join(os.path.dirname(__file__), "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{d_str}.pdf")
+    if os.path.exists(pre_path):
+        with open(pre_path, "rb") as fp:
+            return fp.read()
     return generate_complete_match_by_match_all_picks_pdf(d_str)
 
 @st.cache_data(ttl=300, show_spinner=False)

@@ -4124,7 +4124,7 @@ STAR_PLAYERS = {
 }
 
 def get_team_star_players(team_name: str) -> List[Dict[str, Any]]:
-    import os, json
+    import os, json, re
     raw = team_name.lower().strip()
     norm = normalize_name(team_name)
     
