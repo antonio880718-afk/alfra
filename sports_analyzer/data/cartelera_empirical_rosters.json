@@ -6812,10 +6812,12 @@
   "las palmas": {
     "team": "Las Palmas",
     "starters_ready": [
-      "Fábio Silva",
-      "Sandro Ramírez",
-      "Alberto Moleiro",
-      "Kirian Rodríguez"
+      "Manu Fuster",
+      "Jesé",
+      "Caro",
+      "Andrés Rodríguez",
+      "Juanma Herzog",
+      "Valentín Pezzolesi"
     ],
     "manager": "Diego Martínez"
   },
@@ -10798,12 +10800,12 @@
   "mushuc runa": {
     "manager": "Ever Hugo Almeida",
     "starters_ready": [
-      "Jonathan Dos Santos",
-      "Stiven Tapiero",
-      "Ángel Gracia",
-      "Mauricio Alonso",
-      "Jerry Parrales",
-      "Adonnis Pabón"
+      "Elián Caicedo",
+      "Wilman Pabón",
+      "Jeremy Cusme",
+      "Ronny Biojo",
+      "José Hernández",
+      "Cristopher Angulo"
     ],
     "out": [],
     "questionable": []
@@ -10811,12 +10813,12 @@
   "delfín": {
     "manager": "Javier Carvajal",
     "starters_ready": [
-      "José Angulo",
-      "Maikel Reyes",
-      "Juan Manuel Elordi",
-      "Luis Castro",
-      "Nicolás Goitea",
-      "Brian Heras"
+      "Brian Heras",
+      "Ober Medina",
+      "Anthony Bedoya",
+      "Erick Zúñiga",
+      "Bryan Hernández",
+      "Jonathan Morocho Basurto"
     ],
     "out": [],
     "questionable": []
@@ -10824,12 +10826,12 @@
   "kristiansund bk": {
     "manager": "Amund Skiri",
     "starters_ready": [
-      "Oskar Sivertsen",
-      "Ruben Alte",
-      "David Tufekcic",
-      "Wilfred George Igor",
-      "Dan Peter Ulvestad",
-      "Michael Lansing"
+      "Sander Svendsen",
+      "Leander Alvheim",
+      "Adrian Sæther",
+      "Max Normann Williamsen",
+      "Jesper Isaksen",
+      "John Kitolano"
     ],
     "out": [],
     "questionable": []
@@ -10837,12 +10839,12 @@
   "vålerenga": {
     "manager": "Geir Bakke",
     "starters_ready": [
-      "Muamer Brajanac",
-      "Henrik Bjørdal",
-      "Elias Hagen",
-      "Christian Borchgrevink",
-      "Aaron Kiil Olsen",
-      "Magnus Sjøeng"
+      "Oscar Hedvall",
+      "Kevin Tshiembe",
+      "Aaron Olsen",
+      "Dennis Gjengaar",
+      "Vegar Hedenstad",
+      "Carl Lange"
     ],
     "out": [],
     "questionable": []
@@ -10876,12 +10878,12 @@
   "cd sabadell": {
     "manager": "David Català",
     "starters_ready": [
-      "Rubén Martínez",
-      "Javi Delgado",
-      "Peque Polo",
-      "Sergio Cortés",
-      "Toni Herrero",
-      "Gianni Cassaro"
+      "Diego Fuoli",
+      "Edgar González",
+      "José Luis Català Vázquez",
+      "Gerard Fornés",
+      "Ton Ripoll",
+      "Pere Pons"
     ],
     "out": [],
     "questionable": []
@@ -10889,12 +10891,12 @@
   "real sociedad ii": {
     "manager": "Sergio Francisco",
     "starters_ready": [
-      "Arkaitz Mariezkurrena",
-      "Mikel Goti",
-      "Jon Balda",
-      "Iñaki Rupérez",
+      "Lander Olasagasti",
+      "Kazunari Kita",
       "Luken Beitia",
-      "Aitor Fraga"
+      "Unax Agote",
+      "Iñaki Rupérez",
+      "Alex Lebarbier"
     ],
     "out": [],
     "questionable": []
@@ -10902,12 +10904,12 @@
   "eldense": {
     "manager": "Dani Ponz",
     "starters_ready": [
-      "Juanto Ortuño",
-      "Sergio Ortuño",
-      "Iván Chapela",
-      "David Timor",
-      "Dario Đumić",
-      "Ian Mackay"
+      "Mariano Carmona",
+      "Ramon Vila",
+      "Iker Ortega",
+      "Álex Serra",
+      "Juan Larios",
+      "Jesus Clemente"
     ],
     "out": [],
     "questionable": []

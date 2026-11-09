@@ -3696,7 +3696,7 @@ def get_match_boxscore(match_name: str, match_date: Optional[str] = None, match_
             "source": "Calendario Oficial 2026/2027 (Abierto en Playdoit / Altenar)"
         }
 
-    # 2. SI ES HOY (== HOY): Verificar si ya inició según la hora actual en CDMX
+    # 2. SI ES HOY (== HOY): Si aún no inicia, devolver PROGRAMADO; si ya inició, buscar en cartelera_boxscores_YYYYMMDD.json real de ESPN
     if eff_date == today_str:
         now_mins = now_cdmx.hour * 60 + now_cdmx.minute
         kickoff_mins = m_hour * 60 + m_min
@@ -3709,23 +3709,7 @@ def get_match_boxscore(match_name: str, match_date: Optional[str] = None, match_
                 "home_goals": 0, "away_goals": 0,
                 "home_corners": 0, "away_corners": 0, "total_corners": 0,
                 "home_cards": 0, "away_cards": 0, "total_cards": 0,
-                "source": "Calendario Oficial de Hoy (Disponible para Apostar)"
-            }
-        elif now_mins <= kickoff_mins + 115:
-            elapsed = max(1, min(90, now_mins - kickoff_mins))
-            return {
-                "match": match_name,
-                "status": f"EN JUEGO ({elapsed}' min)",
-                "time_cdmx": clean_time_str,
-                "score": "1 - 0" if elapsed < 55 else "1 - 1",
-                "home_goals": 1, "away_goals": 0 if elapsed < 55 else 1,
-                "ht_home": 1, "ht_away": 0, "ht_goals": 1,
-                "home_corners": 4, "away_corners": 2, "total_corners": 6,
-                "home_cards": 1, "away_cards": 2, "total_cards": 3,
-                "btts": (elapsed >= 55),
-                "referee": "Árbitro Oficial en Cancha",
-                "player_stats": {},
-                "source": "En Vivo SofaScore Live Center"
+                "source": "Calendario Oficial ESPN de Hoy (Abierto en Playdoit / Altenar)"
             }
 
     # 3. PARTIDOS YA JUGADOS (Fechas pasadas o partidos de hoy ya concluidos):

@@ -1,0 +1,638 @@
+{
+  "mushuc runa vs delfín": {
+    "match": "Mushuc Runa vs Delfín",
+    "league": "LigaPro Ecuador",
+    "status": "EN JUEGO (HT)",
+    "time_cdmx": "12:00",
+    "score": "0 - 0",
+    "home_goals": 0,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 3,
+    "away_corners": 3,
+    "total_corners": 6,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "home_sot": 1,
+    "away_sot": 0,
+    "btts": false,
+    "player_stats": {
+      "Wilman Pabón": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Jeremy Cusme": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Ronny Biojo": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "José Hernández": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Cristopher Angulo": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Jackson González": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Bryan Corozo": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Esteban Dávila": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Elián Caicedo": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Miguel Perea": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Nazareno Bazán": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Felix Collaguazo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Franklin Carabalí": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "José Flor": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Lucas Lemos": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Derlys Gómez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Arnaldo Zambrano": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Renso Aldahir Tufiño Quintero": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "José Quiñones": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Jeremy David Braye Vasquez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Tomson Minda": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Brian Heras": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Ober Medina": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Anthony Bedoya": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Erick Zúñiga": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Bryan Hernández": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Jonathan Morocho Basurto": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Gerónimo Heredia": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Thiago Ozaeta": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Brayan Joel Peña Preciado": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Danny Luna": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Eber Caicedo": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Leao Tenorio": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "José Cárdenas": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Kevin Ushiña": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Kliver Moreno": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Lucas Cornejo": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Emerson Espinoza": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Anthony Álvarez": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Enzo Rubio": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Jefferson Arce": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Darío Aimar": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Luis Castro": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Carlos Eduardo Banguera Carreño": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      }
+    },
+    "source": "ESPN Live Match Center (Tiempo Real)"
+  },
+  "kristiansund bk vs vålerenga": {
+    "match": "Kristiansund BK vs Vålerenga",
+    "league": "Norwegian Eliteserien",
+    "status": "EN JUEGO (HT)",
+    "time_cdmx": "12:00",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 2,
+    "away_corners": 0,
+    "total_corners": 2,
+    "home_cards": 0,
+    "away_cards": 0,
+    "total_cards": 0,
+    "home_sot": 5,
+    "away_sot": 1,
+    "btts": false,
+    "player_stats": {
+      "Adrian Sæther": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Max Normann Williamsen": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Jesper Isaksen": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "John Kitolano": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Marius Elvius": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Sander Svendsen": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Heine Gikling Bruseth": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Syver Skeide": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Leander Alvheim": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Zymer Bytyqi": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Gustav Christensen": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Adrian Rønning": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Tobias Hammer Svendsen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Eron Isufi": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Anders Börset": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Michael Lansing": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Dan Peter Ulvestad": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Haakon Haugen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Júlíus Júlíusson": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Wilfred Igor": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Oscar Hedvall": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Kevin Tshiembe": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Aaron Olsen": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Dennis Gjengaar": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Vegar Hedenstad": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Carl Lange": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Fidele Brice Ambina": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Lucas Haren": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Petter Strand": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Ole Saeter": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Mathias Grundetjern": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 45
+      },
+      "Magnus Westergaard": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Magnus Bjørnstad": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Havard Nielsen": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Sander Åke Andreas Lønning": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Håkon Sjåtil": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Sebastian Jarl": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Gabriel Oddvar Opsahl": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Odin Holm": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      },
+      "Ghayas Zahid": {
+        "sot": 0,
+        "goals": 0,
+        "assists": 0,
+        "started": false,
+        "mins": 0
+      }
+    },
+    "source": "ESPN Live Match Center (Tiempo Real)"
+  }
+}
