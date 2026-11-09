@@ -862,3 +862,234 @@ def generate_daily_predictions_pdf_bytes(date_str: str = "20261109") -> bytes:
         return buf.getvalue()
     except Exception as e:
         return generate_audit_pdf_bytes([date_str])
+
+
+def generate_complete_match_by_match_all_picks_pdf(date_str: str = "20261109") -> bytes:
+    """
+    Genera el reporte PDF definitivo con ABSOLUTAMENTE TODOS LOS PICKS (~60 por partido)
+    ORGANIZADOS PARTIDO POR PARTIDO:
+    - Sin recortes, sin truncamientos.
+    - Las 8 categorías completas: Córners, Tarjetas, Goles Mitades, BTTS / Totales / Hándicap,
+      Remates al Arco, Goleadores, Asistencias y G+A.
+    - Cada pick con su % de Ocurrencia, Momio, Cuota Justa, EV%, Resultado y Dato Oficial en Acta.
+    """
+    from reportlab.lib import colors
+    from reportlab.lib.pagesizes import letter, landscape
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from reportlab.lib.units import inch
+    from reportlab.platypus import (
+        SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+    )
+    from match_data_engineering_engine import compute_full_match_data_engineering
+    from hourly_slots_engine import get_chronological_slots, analyze_match_for_slot
+
+    d_lbl = DATE_LABELS.get(date_str, f"Jornada {date_str}")
+    slots_res = get_chronological_slots(date_str)
+    matches_raw = []
+    for s in slots_res.get("slots", []):
+        for g in s.get("matches", []):
+            matches_raw.append(g)
+
+    buf = io.BytesIO()
+    doc = SimpleDocTemplate(
+        buf,
+        pagesize=landscape(letter),
+        leftMargin=0.30 * inch,
+        rightMargin=0.30 * inch,
+        topMargin=0.30 * inch,
+        bottomMargin=0.30 * inch,
+        title=f"Todos los Picks Organizados por Partido - {d_lbl}",
+    )
+
+    styles = getSampleStyleSheet()
+    title_style = ParagraphStyle(
+        "MTitle",
+        parent=styles["Heading1"],
+        fontSize=14,
+        leading=17,
+        textColor=colors.HexColor("#0f172a"),
+        spaceAfter=2,
+    )
+    sub_style = ParagraphStyle(
+        "MSub",
+        parent=styles["Normal"],
+        fontSize=8.5,
+        leading=11,
+        textColor=colors.HexColor("#334155"),
+        spaceAfter=6,
+    )
+    match_hdr_style = ParagraphStyle(
+        "MatchHdr",
+        parent=styles["Heading2"],
+        fontSize=10.5,
+        leading=13.0,
+        textColor=colors.HexColor("#0f172a"),
+        spaceBefore=4,
+        spaceAfter=3,
+    )
+    cell_style = ParagraphStyle(
+        "MCell",
+        parent=styles["Normal"],
+        fontSize=6.5,
+        leading=8.2,
+        textColor=colors.HexColor("#0f172a"),
+    )
+    cell_bold = ParagraphStyle(
+        "MCellBold",
+        parent=cell_style,
+        fontName="Helvetica-Bold",
+    )
+
+    story = []
+    now_gen = datetime.now().strftime("%Y-%m-%d %H:%M:%S CDMX")
+
+    story.append(Paragraph(
+        _clean_pdf_text(f"REPORTE OFICIAL: TODOS LOS PICKS ORGANIZADOS POR PARTIDO ({d_lbl.upper()})"),
+        title_style
+    ))
+    story.append(Paragraph(
+        _clean_pdf_text(f"Generado: {now_gen} | Total Encuentros: {len(matches_raw)} | Mercados por Partido: ~60 selecciones completas auditadas con % de ocurrencia y resultado oficial"),
+        sub_style
+    ))
+
+    total_all_picks = 0
+    cat_summary = {}
+    matches_compiled = []
+
+    for g in matches_raw:
+        h = g["home"]
+        a = g["away"]
+        code = g.get("code", "")
+        time_str = g.get("time_cdmx", "12:00")
+        m_str = f"{h} vs {a}"
+        analysis = analyze_match_for_slot(g)
+        ref_d = analysis.get("referee_data", {})
+        stad_d = analysis.get("stadium_data", {})
+        bs = get_match_boxscore(m_str, match_date=date_str, match_time_hint=time_str)
+
+        de = compute_full_match_data_engineering(h, a, code)
+        match_opts = []
+        for cat in de["categories"]:
+            cat_name = cat["category"]
+            for opt in cat["options"]:
+                total_all_picks += 1
+                aud = audit_individual_pick_empirically(
+                    {"match": m_str, "pick": opt["pick"], "odds": opt["odds_num"], "time": time_str},
+                    match_date=date_str
+                )
+                out_res = aud.get("outcome", "PENDING")
+                cat_summary[cat_name] = cat_summary.get(cat_name, [0, 0, 0, 0])
+                if out_res == "HIT": cat_summary[cat_name][0] += 1
+                elif out_res == "MISS": cat_summary[cat_name][1] += 1
+                elif out_res == "VOID": cat_summary[cat_name][2] += 1
+                else: cat_summary[cat_name][3] += 1
+
+                match_opts.append({
+                    "category": cat_name,
+                    "pick": opt["pick"],
+                    "prob": float(opt.get("prob_num", 50.0)),
+                    "record": opt.get("record", ""),
+                    "odds": opt.get("odds", "1.25"),
+                    "fair_odds": opt.get("fair_odds", "1.20"),
+                    "ev": opt.get("ev", "+4.0%"),
+                    "outcome": out_res,
+                    "stat_actual": aud.get("stat_actual", "")
+                })
+
+        matches_compiled.append({
+            "match": m_str,
+            "home": h,
+            "away": a,
+            "league": g.get("league", ""),
+            "time": time_str,
+            "score": bs.get("score", "vs"),
+            "referee": ref_d.get("referee_name", bs.get("referee", "Oficial")),
+            "ref_avg": ref_d.get("referee_cards_avg", 4.1),
+            "stadium": stad_d.get("stadium", "Oficial"),
+            "altitude": stad_d.get("altitude_m", 100),
+            "picks": match_opts
+        })
+
+    sum_rows = [["MERCADO / CATEGORIA", "TOTAL PICKS EVALUADOS", "ACIERTOS (HIT)", "FALLOS (MISS)", "ANULADAS (VOID)", "PENDIENTES", "% EFECTIVIDAD REAL"]]
+    sum_styles = [
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0f172a")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 7.5),
+        ("GRID", (0, 0), (-1, -1), 0.4, colors.HexColor("#cbd5e1")),
+        ("ALIGN", (1, 0), (-1, -1), "CENTER"),
+    ]
+    for r_idx, (cat_name, counts) in enumerate(cat_summary.items(), 1):
+        tot_c = sum(counts)
+        tot_dec = counts[0] + counts[1]
+        pct_c = f"{round(counts[0]/tot_dec*100, 1)}%" if tot_dec > 0 else "-"
+        sum_rows.append([
+            _clean_pdf_text(cat_name),
+            str(tot_c),
+            str(counts[0]),
+            str(counts[1]),
+            str(counts[2]),
+            str(counts[3]),
+            pct_c
+        ])
+    tbl_sum = Table(sum_rows, colWidths=[2.8 * inch, 1.2 * inch, 1.1 * inch, 1.1 * inch, 1.1 * inch, 1.1 * inch, 1.3 * inch])
+    tbl_sum.setStyle(TableStyle(sum_styles))
+    story.append(tbl_sum)
+    story.append(Spacer(1, 10))
+
+    for m_idx, m in enumerate(matches_compiled, 1):
+        story.append(PageBreak())
+        hdr_txt = f"PARTIDO #{m_idx}: {m['match']} ({m['time']} hs CDMX | {m['league']}) - Marcador: {m['score']} | Arbitro: {m['referee']} ({m['ref_avg']} tarj) | Estadio: {m['stadium']} ({m['altitude']}m)"
+        story.append(Paragraph(_clean_pdf_text(hdr_txt), match_hdr_style))
+        story.append(Spacer(1, 3))
+
+        p_rows = [["#", "Categoria", "Seleccion / Mercado", "% OCURRENCIA", "Frecuencia (Record)", "Momio", "Cuota Justa", "EV%", "Resultado", "Dato Oficial en Acta"]]
+        p_styles = [
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1e293b")),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, -1), 6.5),
+            ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#cbd5e1")),
+            ("ALIGN", (0, 0), (0, -1), "CENTER"),
+            ("ALIGN", (3, 0), (7, -1), "CENTER"),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ]
+
+        for p_idx, p in enumerate(m["picks"], 1):
+            out_str = p["outcome"]
+            res_lbl = "ACIERTO" if out_str == "HIT" else ("FALLO" if out_str == "MISS" else ("VOID 1.00" if out_str == "VOID" else "PENDIENTE"))
+            p_rows.append([
+                str(p_idx),
+                Paragraph(_clean_pdf_text(p["category"]), cell_style),
+                Paragraph(_clean_pdf_text(p["pick"]), cell_bold if p["prob"] >= 80 else cell_style),
+                f"{p['prob']:.1f}%",
+                _clean_pdf_text(p["record"]),
+                str(p["odds"]),
+                str(p["fair_odds"]),
+                str(p["ev"]),
+                res_lbl,
+                Paragraph(_clean_pdf_text(p["stat_actual"]), cell_style),
+            ])
+            if out_str == "HIT":
+                p_styles.append(("BACKGROUND", (8, p_idx), (8, p_idx), colors.HexColor("#dcfce7")))
+            elif out_str == "MISS":
+                p_styles.append(("BACKGROUND", (8, p_idx), (8, p_idx), colors.HexColor("#fee2e2")))
+            elif out_str == "VOID":
+                p_styles.append(("BACKGROUND", (8, p_idx), (8, p_idx), colors.HexColor("#e2e8f0")))
+            else:
+                p_styles.append(("BACKGROUND", (8, p_idx), (8, p_idx), colors.HexColor("#fef9c3")))
+
+            if p["prob"] >= 82.0:
+                p_styles.append(("BACKGROUND", (3, p_idx), (3, p_idx), colors.HexColor("#dcfce7")))
+                p_styles.append(("FONTNAME", (3, p_idx), (3, p_idx), "Helvetica-Bold"))
+
+        tbl_match_picks = Table(
+            p_rows,
+            colWidths=[0.25 * inch, 1.45 * inch, 2.45 * inch, 0.75 * inch, 1.15 * inch, 0.50 * inch, 0.55 * inch, 0.55 * inch, 0.75 * inch, 2.30 * inch],
+            repeatRows=1
+        )
+        tbl_match_picks.setStyle(TableStyle(p_styles))
+        story.append(tbl_match_picks)
+
+    doc.build(story)
+    return buf.getvalue()

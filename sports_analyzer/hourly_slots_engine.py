@@ -2147,16 +2147,12 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             if c["n"] in (1, 3):
                 c["prob"] = round(min(93.5, c["prob"] + 1.8), 1)
 
-    # Priorizar mercados con protección VOID (Jugador >= 1 SOT) o Goles Totales cuando hay empate técnico (<2.5% diff)
+    # Ranking equilibrado según probabilidad matemática y valor esperado (+EV%), sin sesgos artificiales
     def _consensus_rank_score(cand: Dict[str, Any]) -> float:
         base_p = float(cand.get("prob", 80.0))
-        # Bono de blindaje VOID para remates a puerta de titular verificado (Opta / SofaScore)
-        if cand.get("n") == 3 and base_p >= 83.5:
-            return base_p + 2.2
-        # Bono de estabilidad Poisson para Over 1.5 Goles / 2do Tiempo
-        if cand.get("n") == 1 and "1.5" in cand.get("pick", "") and (ph["goals_avg"] + pa["goals_avg"]) >= 2.65:
-            return base_p + 1.5
-        return base_p
+        ev = float(cand.get("ev_pct", 0.0))
+        # Bonificación justa proporcional al valor esperado real (+EV)
+        return round(base_p + min(2.5, max(0.0, ev * 0.15)), 2)
 
     candidates_sorted = sorted(candidates, key=_consensus_rank_score, reverse=True)
     best_pick = candidates_sorted[0]
