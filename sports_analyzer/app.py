@@ -381,12 +381,16 @@ with cb4:
 # -------------------------------------------------------------
 # DESCARGA DIRECTA EN PDF Y REPORTE DE TODOS LOS PICKS SUGERIDOS
 # -------------------------------------------------------------
-from pdf_audit_report_engine import (
-    generate_audit_pdf_bytes,
-    generate_daily_predictions_pdf_bytes,
-    generate_complete_match_by_match_all_picks_pdf,
-    collect_full_picks_audit_data,
-)
+import importlib
+import pdf_audit_report_engine
+try:
+    importlib.reload(pdf_audit_report_engine)
+except Exception:
+    pass
+generate_audit_pdf_bytes = getattr(pdf_audit_report_engine, "generate_audit_pdf_bytes", None)
+generate_daily_predictions_pdf_bytes = getattr(pdf_audit_report_engine, "generate_daily_predictions_pdf_bytes", None)
+generate_complete_match_by_match_all_picks_pdf = getattr(pdf_audit_report_engine, "generate_complete_match_by_match_all_picks_pdf", generate_daily_predictions_pdf_bytes)
+collect_full_picks_audit_data = getattr(pdf_audit_report_engine, "collect_full_picks_audit_data", None)
 from match_data_engineering_engine import compute_full_match_data_engineering
 
 @st.cache_data(ttl=300, show_spinner=False)
