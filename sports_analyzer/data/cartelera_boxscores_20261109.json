@@ -21,312 +21,488 @@
     "btts": false,
     "player_stats": {
       "Wilman Pabón": {
-        "sot": 1,
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Jeremy Cusme": {
-        "sot": 1,
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Ronny Biojo": {
-        "sot": 1,
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 2,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "José Hernández": {
-        "sot": 1,
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Cristopher Angulo": {
-        "sot": 1,
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Jackson González": {
+        "team": "Mushuc Runa",
         "sot": 1,
+        "total_shots": 3,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
-      },
-      "Bryan Corozo": {
-        "sot": 1,
-        "goals": 0,
-        "assists": 0,
-        "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Esteban Dávila": {
+        "team": "Mushuc Runa",
         "sot": 1,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
-      },
-      "Elián Caicedo": {
-        "sot": 1,
-        "goals": 0,
-        "assists": 0,
-        "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Miguel Perea": {
-        "sot": 1,
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
+      },
+      "Bryan Corozo": {
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
+      },
+      "Elián Caicedo": {
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Nazareno Bazán": {
-        "sot": 1,
+        "team": "Mushuc Runa",
+        "sot": 0,
+        "total_shots": 3,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Felix Collaguazo": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Franklin Carabalí": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "José Flor": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Lucas Lemos": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Derlys Gómez": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Arnaldo Zambrano": {
-        "sot": 0,
+        "team": "Mushuc Runa",
+        "sot": 1,
+        "total_shots": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Renso Aldahir Tufiño Quintero": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "José Quiñones": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Jeremy David Braye Vasquez": {
+        "team": "Mushuc Runa",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Tomson Minda": {
-        "sot": 0,
-        "goals": 0,
+        "team": "Mushuc Runa",
+        "sot": 1,
+        "total_shots": 1,
+        "goals": 1,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Brian Heras": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Ober Medina": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Anthony Bedoya": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Erick Zúñiga": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Bryan Hernández": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Jonathan Morocho Basurto": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Gerónimo Heredia": {
+        "team": "Delfín",
         "sot": 1,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Thiago Ozaeta": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Brayan Joel Peña Preciado": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Danny Luna": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Eber Caicedo": {
-        "sot": 1,
+        "team": "Delfín",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Leao Tenorio": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "José Cárdenas": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Kevin Ushiña": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Kliver Moreno": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Lucas Cornejo": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Emerson Espinoza": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Anthony Álvarez": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Enzo Rubio": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Jefferson Arce": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Darío Aimar": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Luis Castro": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Carlos Eduardo Banguera Carreño": {
+        "team": "Delfín",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       }
     },
     "source": "ESPN Live Match Center (Tiempo Real)"
@@ -353,284 +529,444 @@
     "btts": false,
     "player_stats": {
       "Adrian Sæther": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Max Normann Williamsen": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Jesper Isaksen": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "John Kitolano": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Marius Elvius": {
+        "team": "Kristiansund BK",
         "sot": 1,
+        "total_shots": 1,
         "goals": 1,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Sander Svendsen": {
+        "team": "Kristiansund BK",
         "sot": 1,
+        "total_shots": 3,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Heine Gikling Bruseth": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Syver Skeide": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Leander Alvheim": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 2,
+        "total_shots": 5,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Zymer Bytyqi": {
-        "sot": 1,
+        "team": "Kristiansund BK",
+        "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Gustav Christensen": {
+        "team": "Kristiansund BK",
         "sot": 2,
+        "total_shots": 2,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Adrian Rønning": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Tobias Hammer Svendsen": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Eron Isufi": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Anders Börset": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Michael Lansing": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Dan Peter Ulvestad": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Haakon Haugen": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Júlíus Júlíusson": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Wilfred Igor": {
+        "team": "Kristiansund BK",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Oscar Hedvall": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Kevin Tshiembe": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Aaron Olsen": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Dennis Gjengaar": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Vegar Hedenstad": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Carl Lange": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Fidele Brice Ambina": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Lucas Haren": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 2,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Petter Strand": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 3,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Ole Saeter": {
-        "sot": 1,
+        "team": "Vålerenga",
+        "sot": 0,
+        "total_shots": 3,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Mathias Grundetjern": {
+        "team": "Vålerenga",
         "sot": 1,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
-        "mins": 90
+        "played": true,
+        "mins": 90,
+        "opta_tracked": true
       },
       "Magnus Westergaard": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Magnus Bjørnstad": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Havard Nielsen": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 1,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Sander Åke Andreas Lønning": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Håkon Sjåtil": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Sebastian Jarl": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Gabriel Oddvar Opsahl": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": false,
+        "mins": 0,
+        "opta_tracked": true
       },
       "Odin Holm": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       },
       "Ghayas Zahid": {
+        "team": "Vålerenga",
         "sot": 0,
+        "total_shots": 0,
         "goals": 0,
         "assists": 0,
         "started": false,
-        "mins": 15
+        "played": true,
+        "mins": 20,
+        "opta_tracked": true
       }
     },
     "source": "ESPN Live Match Center (Tiempo Real)"
