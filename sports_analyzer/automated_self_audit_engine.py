@@ -4242,6 +4242,10 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
             actual_cards = ht_cards
             won = (actual_cards > line)
             stat_lbl = f"{actual_cards} tarjetas en 1ª Mitad (Línea: {line})"
+        elif "total" in p_lower or "totales" in p_lower:
+            actual_cards = tot_cards
+            won = (actual_cards > line)
+            stat_lbl = f"{actual_cards} tarjetas totales mostradas (Línea: {line})"
         elif h_name and (h_name in p_lower or any(w in p_lower for w in h_name.split() if len(w) > 3)) and "árbitro" not in p_lower:
             actual_cards = h_cards
             won = (actual_cards > line)

@@ -2040,14 +2040,21 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     ref_info = get_referee_for_match(h, a, code)
     ref_data = compute_card_expectations(h, a, ph["fouls_avg"], pa["fouls_avg"], ref_info)
 
-    # Evaluar Variable Tiros / Delantero REAL AUDITADO DE PLANTILLA CON GOLES Y ASISTENCIAS
+    # Evaluar Variable Tiros / Delantero REAL AUDITADO DE PLANTILLA CON GOLES Y ASISTENCIAS (Comparando Local vs Visitante)
     star_h = dict(resolve_team_star_player(h, code))
-    p_name = star_h["name"]
-    p_jrsy = star_h.get("jersey", "")
+    star_a = dict(resolve_team_star_player(a, code))
+    if float(star_a.get("prob", 80.0)) > float(star_h.get("prob", 80.0)):
+        star_sel = star_a
+        star_team = a
+    else:
+        star_sel = star_h
+        star_team = h
+    p_name = star_sel["name"]
+    p_jrsy = star_sel.get("jersey", "")
     j_tag = f" #{p_jrsy}" if p_jrsy else ""
-    p_pos = star_h.get("pos", "Delantero Centro")
-    p_sot_val = star_h.get("prob", 83.5)
-    odds_sot_val = star_h.get("odds", 1.28)
+    p_pos = star_sel.get("pos", "Delantero Centro")
+    p_sot_val = star_sel.get("prob", 83.5)
+    odds_sot_val = star_sel.get("odds", 1.28)
     
     # Enriquecer métricas de Goles y Asistencias
     star_h["goals_avg"] = star_h.get("goals_avg", round(0.48 if p_sot_val >= 85 else 0.40, 2))
@@ -2063,11 +2070,11 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         "n": 3,
         "type": "Remates de Jugador",
         "market": f"{p_name}: Más de 0.5 Tiros a Puerta",
-        "pick": f"{p_name} ({h}{j_tag}) ≥ 1 Tiro a Puerta",
+        "pick": f"{p_name} ({star_team}{j_tag}) ≥ 1 Tiro a Puerta",
         "odds": odds_sot_val,
         "prob": p_sot_val,
         "status": f"🟢 Titular Verificado ({p_pos}{j_tag})",
-        "synergy": f"{p_name} es el referente de ataque titular de {h} ({p_pos}{j_tag}). Goles: {star_h['goals_avg']}/90m | Asistencias: {star_h['assists_avg']}/90m | G+A: {star_h['ga_hit_rate']}%."
+        "synergy": f"{p_name} es el referente de ataque titular de {star_team} ({p_pos}{j_tag}). Goles: {star_h['goals_avg']}/90m | Asistencias: {star_h['assists_avg']}/90m | G+A: {star_h['ga_hit_rate']}%."
     }
     candidates.append(v_sot)
     

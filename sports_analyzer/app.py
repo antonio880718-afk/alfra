@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.09.v11"
+_ENGINE_VER = "2026.11.09.v12"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _mod_name in [
         "referee_and_injuries_engine",
@@ -377,6 +377,65 @@ with cb4:
         <span style="color: #6ee7b7; font-size: 0.8rem;">Efectividad: {audit_top['hit_rate_pct']}% • Regla VOID Activa</span>
     </div>
     """)
+
+# -------------------------------------------------------------
+# DESCARGA DIRECTA EN PDF Y REPORTE DE TODOS LOS PICKS SUGERIDOS
+# -------------------------------------------------------------
+from pdf_audit_report_engine import generate_audit_pdf_bytes, collect_full_picks_audit_data
+
+@st.cache_data(ttl=300, show_spinner=False)
+def _cached_pdf_bytes(dates_tuple, _ver=_ENGINE_VER):
+    return generate_audit_pdf_bytes(list(dates_tuple))
+
+@st.cache_data(ttl=300, show_spinner=False)
+def _cached_audit_table_data(dates_tuple, _ver=_ENGINE_VER):
+    return collect_full_picks_audit_data(list(dates_tuple))
+
+pdf_col1, pdf_col2 = st.columns(2)
+with pdf_col1:
+    st.download_button(
+        label=f"📄 DESCARGAR PDF DE JORNADA ({selected_date.strftime('%d/%m/%Y')}) — TODOS LOS PICKS (ACIERTO / FALLO)",
+        data=_cached_pdf_bytes((date_str,)),
+        file_name=f"Reporte_Picks_Alfra_{date_str}.pdf",
+        mime="application/pdf",
+        use_container_width=True,
+        key=f"dl_pdf_day_{date_str}"
+    )
+with pdf_col2:
+    st.download_button(
+        label="📑 DESCARGAR PDF CONSOLIDADO COMPLETO (Sáb 7 + Dom 8 + Lun 9 Nov — 235 Partidos)",
+        data=_cached_pdf_bytes(("20261107", "20261108", "20261109")),
+        file_name="Reporte_Auditoria_Picks_Alfra_Completo.pdf",
+        mime="application/pdf",
+        use_container_width=True,
+        key="dl_pdf_all_weekend"
+    )
+
+with st.expander(f"📋 VER REPORTE COMPLETO EN PANTALLA DE TODOS LOS PICKS SUGERIDOS ({selected_date.strftime('%d/%m/%Y')}) — ACIERTOS, FALLOS, VOID Y DATO OFICIAL", expanded=False):
+    _day_rep = _cached_audit_table_data((date_str,))["days"][0]
+    st.markdown(
+        f"**Resumen de Cartelera ({_day_rep['date_label']}):** "
+        f"`{_day_rep['best_hits']} Aciertos (✅)` | `{_day_rep['best_misses']} Fallos (❌)` | "
+        f"`{_day_rep['best_voids']} Anuladas VOID (⚪)` | `{_day_rep['best_pending']} Por Jugar (🟢)` — "
+        f"**Efectividad Pick Principal:** `{_day_rep['best_hit_rate']}%` | "
+        f"**Las 4 Variables SGP ({_day_rep['vars_hits'] + _day_rep['vars_misses']} evaluadas):** `{_day_rep['vars_hits']} Aciertos / {_day_rep['vars_misses']} Fallos ({_day_rep['vars_hit_rate']}%)`"
+    )
+    _df_rows = []
+    for _idx_m, _mr in enumerate(_day_rep["matches"], 1):
+        _out_icon = "✅ ACIERTO" if _mr["best_outcome"] == "HIT" else ("❌ FALLO" if _mr["best_outcome"] == "MISS" else ("⚪ VOID 1.00" if _mr["best_outcome"] == "VOID" else "🟢 POR JUGAR"))
+        _v_summary = " | ".join([f"V{i+1}: {'✅' if v['outcome']=='HIT' else ('❌' if v['outcome']=='MISS' else ('⚪' if v['outcome']=='VOID' else '🟢'))} {v['pick']}" for i, v in enumerate(_mr["variables"])])
+        _df_rows.append({
+            "#": _idx_m,
+            "Hora": _mr["time"],
+            "Liga": _mr["league"],
+            "Partido": f"{_mr['match']} ({_mr['score']})",
+            "Pick Principal Sugerido (#1)": f"{_mr['best_pick']} (@{_mr['best_odds']:.2f})",
+            "Resultado #1": _out_icon,
+            "Dato Oficial en Acta": _mr["best_stat"],
+            "Las 4 Variables SGP del Partido": _v_summary,
+        })
+    if _df_rows:
+        st.dataframe(pd.DataFrame(_df_rows), use_container_width=True, hide_index=True)
 
 with st.expander("🌐 VER MATRIZ OFICIAL DE COTEJO: ¿Contra qué páginas se verifica cada dato? (SofaScore, Playdoit, etc.)", expanded=False):
     st.markdown("""

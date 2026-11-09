@@ -4,47 +4,47 @@
     "jersey": "17",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Mattia Tirelli",
+      "Andrea Tiritiello",
       "Luigi Cuppone",
-      "Andrea Franzoni",
       "Luca Vignali",
-      "Lucas Felippe Martello Nascimento",
-      "Stefano Di Mario"
+      "Andrea Franzoni",
+      "Lucas Felippe Martello Nascimento"
     ]
   },
   "modena": {
     "name": "Daniele Montevago",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Daniele Montevago",
       "Giuseppe Ambrosino",
-      "Giacomo Olzer",
-      "Gastón Brugman",
       "Alessandro Bianco",
-      "Simone Santoro"
+      "Simone Santoro",
+      "Giacomo Olzer",
+      "Gastón Brugman"
     ]
   },
   "halmstads bk": {
-    "name": "Omar Faraj",
+    "name": "Hussein Carneil",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Hussein Carneil",
       "Omar Faraj",
       "Tom Trybull",
-      "Joel Allansson",
+      "Erik Arvidsson",
       "Rocco Ascone",
-      "Hussein Carneil",
-      "Erik Arvidsson"
+      "Joel Allansson"
     ]
   },
   "djurgården": {
@@ -52,107 +52,107 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Kristian Stromland Lien",
+      "Jeppe Okkels",
+      "Miro Tenho",
       "Bo Hegland",
       "Matias Siltanen",
-      "Peter Langhoff",
-      "Jeppe Okkels",
-      "Charlie Rosenquist"
+      "Peter Langhoff"
     ]
   },
   "wimborne town": {
-    "name": "Ángel Francisco Díaz Villa",
+    "name": "Cameron Munn",
     "jersey": "22",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Ángel Francisco Díaz Villa",
-      "Joe Smith",
-      "Owen Roundell-Price",
-      "Seung-Woo Yang",
       "Cameron Munn",
+      "Seung-Woo Yang",
+      "Joe Smith",
+      "Ángel Francisco Díaz Villa",
+      "Owen Roundell-Price",
       "Cameron Sullivan"
     ]
   },
   "crawley town": {
-    "name": "Danilo Orsi-Dadomo",
+    "name": "Jonathan Russell",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Danilo Orsi-Dadomo",
+      "Jonathan Russell",
       "Kai Jennings",
-      "Jude Arthurs",
       "Charlie Barker",
+      "Jude Arthurs",
       "Dylan Morgan",
       "Stephen Duke-McKenna"
     ]
   },
   "1. fc magdeburg": {
-    "name": "Mateusz Zukowski",
+    "name": "Anselmo Garcia MacNulty",
     "jersey": "22",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Anselmo Garcia MacNulty",
       "Mateusz Zukowski",
-      "Baris Atik",
       "Emmanuel Iyoha",
-      "Luka Hyryläinen",
+      "Pierre Nadjombe",
       "Leon Noel Mergner",
-      "Torben Müsel"
+      "Baris Atik"
     ]
   },
   "st. pauli": {
-    "name": "Connor Metcalfe",
+    "name": "Branimir Hrgota",
     "jersey": "24",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Connor Metcalfe",
-      "Abdoulie Ceesay",
       "Branimir Hrgota",
-      "Mathias Rasmussen",
-      "Joel Chima Fujita",
-      "Eric Smith"
+      "Eric Smith",
+      "Lars Ritzka",
+      "Abdoulie Ceesay",
+      "Connor Metcalfe",
+      "Mathias Rasmussen"
     ]
   },
   "club brugge": {
-    "name": "Nicolo Tresoldi",
+    "name": "Hans Vanaken",
     "jersey": "7",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Hans Vanaken",
+      "Carlos Forbs",
       "Nicolo Tresoldi",
       "Romeo Vermant",
-      "Hans Vanaken",
-      "Cheveyo Tsawa",
       "Felix Lemarechal",
-      "Carlos Forbs"
+      "Cheveyo Tsawa"
     ]
   },
   "anderlecht": {
-    "name": "Danylo Sikan",
+    "name": "Mihajlo Cvetkovic",
     "jersey": "14",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Danylo Sikan",
       "Mihajlo Cvetkovic",
+      "Danylo Sikan",
       "Enric Llansana",
       "Mario Stroeykens",
       "Jayden Onia-Seke",
@@ -164,7 +164,7 @@
     "jersey": "8",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Nikolai Baden Frederiksen",
@@ -176,35 +176,35 @@
     ]
   },
   "austria vienna": {
-    "name": "Johannes Eggestein",
+    "name": "Aleksandar Dragovic",
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Aleksandar Dragovic",
       "Johannes Eggestein",
       "Vasilije Markovic",
       "Sanel Saljic",
       "Valentino Müller",
-      "Manfred Fischer",
-      "Daniel Nnodim"
+      "Manfred Fischer"
     ]
   },
   "caykur rizespor": {
     "name": "Ali Sowe",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Ali Sowe",
-      "Moussa Diakité",
+      "Ahmed Kutucu",
+      "Zakaria Ariss",
       "Qazim Laçi",
       "Ibrahim Olawoyin",
-      "Ahmed Kutucu",
-      "Adedire Mebude"
+      "Moussa Diakité"
     ]
   },
   "erzurum bb": {
@@ -212,63 +212,63 @@
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Ibrahim Diabate",
-      "Elisha Owusu",
+      "Gyrano Kerk",
       "Brandon Baiye",
       "Miguel Cardoso",
-      "Gyrano Kerk",
+      "Elisha Owusu",
       "Ertugrul Taskiran"
     ]
   },
   "stafford rangers": {
-    "name": "Remi Efunnuga",
+    "name": "Jack Birch",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Jack Birch",
+      "Darrhyl Mason",
+      "Todd Ferrier",
       "Remi Efunnuga",
       "Scott Bakkor",
-      "Todd Ferrier",
-      "Tom Tonks",
-      "Darrhyl Mason",
-      "Jack Birch"
+      "Tom Tonks"
     ]
   },
   "grimsby town": {
-    "name": "Josh Andrews",
+    "name": "Harvey Rodgers",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Josh Andrews",
+      "Harvey Rodgers",
+      "Joe Foulkes",
+      "Maldini Kacurri",
       "Iwan Morgan",
-      "Mark Shelton",
-      "Géza Dávid Turi",
-      "Finley Cartwright",
-      "Charles Vernam"
+      "Josh Andrews",
+      "Géza Dávid Turi"
     ]
   },
   "heerenveen": {
-    "name": "Dylan Vente",
+    "name": "Levi Smans",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Dylan Vente",
       "Levi Smans",
+      "Jacob Trenskow",
+      "Maas Willemsen",
       "Nolhan Courtens",
-      "Marcus Linday",
       "Maxence Rivera",
-      "Jacob Trenskow"
+      "Dylan Vente"
     ]
   },
   "feyenoord rotterdam": {
@@ -276,72 +276,72 @@
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Nacho Ferri",
-      "Luciano Valente",
       "Anis Hadj Moussa",
+      "Gjivai Zechiël",
       "Charles Vanhoutte",
-      "Oussama Targhaline",
-      "Gjivai Zechiël"
+      "Luciano Valente",
+      "Oussama Targhaline"
     ]
   },
   "cray wanderers": {
-    "name": "John Ufuah",
+    "name": "Sammie Thomas Mcleod",
     "jersey": "23",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "John Ufuah",
-      "Ade Yusuff",
-      "Frankie Raymond",
       "Sammie Thomas Mcleod",
+      "Ade Yusuff",
       "Alex Joseph Hernández Cascante",
+      "John Ufuah",
+      "Frankie Raymond",
       "Frankie Del Morgan"
     ]
   },
   "stockport county": {
-    "name": "Mikael Mandron",
+    "name": "Harry Wood",
     "jersey": "22",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Mikael Mandron",
-      "Jason Adigun",
-      "Benoný Andrésson",
-      "Lewis Fiorini",
       "Harry Wood",
-      "Che Gardner"
+      "Mikael Mandron",
+      "Lewis Fiorini",
+      "Tayo Edun",
+      "Jason Adigun",
+      "Benoný Andrésson"
     ]
   },
   "tsv hartberg": {
     "name": "Marco Hoffman",
     "jersey": "22",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Marco Hoffman",
+      "Konstantin Schopp",
       "Oliver Lukic",
       "Angelo Gattermayer",
       "Nikolaus Feldhofer",
-      "Magnus Dalpiaz",
-      "Youba Diarra"
+      "Magnus Dalpiaz"
     ]
   },
   "sc rheindorf altach": {
     "name": "Ousmane Diawara",
     "jersey": "10",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Ousmane Diawara",
       "Rodney Elongo-Yombo",
@@ -352,19 +352,19 @@
     ]
   },
   "agf": {
-    "name": "James Bogere",
+    "name": "Jacob Andersen",
     "jersey": "28",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Jacob Andersen",
+      "Tobias Bech",
+      "Frederik Emmery",
       "James Bogere",
       "Callum McCowatt",
-      "Tobias Bech",
-      "Magnus Knudsen",
-      "Markus Solbakken",
-      "Frederik Emmery"
+      "Magnus Knudsen"
     ]
   },
   "ac horsens": {
@@ -372,126 +372,126 @@
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Kelvin Ehibhatiomhan",
       "Julius Madsen",
-      "Karlo Lusavec",
-      "Adam Herdonsson",
       "Adrian Justinussen",
-      "John Batigi"
+      "Adam Herdonsson",
+      "John Batigi",
+      "Karlo Lusavec"
     ]
   },
   "tromso": {
-    "name": "Daniel Braut",
+    "name": "Vegard Østraat Erlien",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Daniel Braut",
       "Vegard Østraat Erlien",
-      "Ruben Jenssen",
-      "Morten Bjorlo",
+      "Isak Dahlqvist",
+      "Daniel Braut",
       "David Edvardsson",
-      "Jakob Haugaard"
+      "Ruben Jenssen",
+      "Morten Bjorlo"
     ]
   },
   "bodo/glimt": {
-    "name": "Andreas Helmersen",
+    "name": "Patrick Berg",
     "jersey": "21",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
+      "Patrick Berg",
       "Andreas Helmersen",
+      "Jens Petter Hauge",
       "Ole Didrik Blomberg",
       "Ulrik Saltnes",
-      "Patrick Berg",
-      "Jens Petter Hauge",
       "Sondre Brunstad Fet"
     ]
   },
   "brighton & hove albion": {
-    "name": "Charalambos Kostoulas",
+    "name": "Yasin Ayari",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Charalambos Kostoulas",
       "Yasin Ayari",
-      "Chema Andrés",
+      "Charalambos Kostoulas",
+      "Diego Gómez",
       "Pascal Gross",
       "Maxim De Cuyper",
-      "Diego Gómez"
+      "Chema Andrés"
     ]
   },
   "brentford": {
     "name": "Kevin Schade",
     "jersey": "7",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Kevin Schade",
       "Igor Thiago",
+      "Keane Lewis-Potter",
       "Vitaly Janelt",
       "Mamadou Sangare",
-      "Keane Lewis-Potter",
       "Dango Ouattara"
     ]
   },
   "ifk göteborg": {
-    "name": "Kevin Ackermann",
+    "name": "David Kruse",
     "jersey": "4",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Kevin Ackermann",
-      "Alexander Simmelhack",
       "David Kruse",
-      "Oliver Månsson",
+      "Alexander Simmelhack",
+      "Kevin Ackermann",
       "Tobias Heintz",
+      "Oliver Månsson",
       "Nino Zugelj"
     ]
   },
   "malmö ff": {
-    "name": "Diego García",
+    "name": "Otto Rosengren",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Otto Rosengren",
       "Diego García",
+      "Stian Gregersen",
+      "Jens Stryger Larsen",
       "Sead Haksabanovic",
-      "Anton Höög",
-      "Adrian Skogmar",
-      "Theodor Lundbergh",
-      "Otto Rosengren"
+      "Anton Höög"
     ]
   },
   "randers fc": {
-    "name": "Mohamed Sankoh",
+    "name": "Mike Themsen",
     "jersey": "30",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Mike Themsen",
+      "Amady Camara",
       "Mohamed Sankoh",
       "Mathias Greve",
       "Axel Henriksson",
-      "Mike Themsen",
-      "Amady Camara",
       "Paul Izzo"
     ]
   },
@@ -499,73 +499,73 @@
     "name": "Alexander Lind",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Alexander Lind",
       "Ibrahim Adel",
       "Hjalte Boe Rasmussen",
-      "Nicklas Rojkjaer",
+      "Peter Ankersen",
       "Justin Janssen",
-      "Runar Norheim"
+      "Nicklas Rojkjaer"
     ]
   },
   "çorum fk": {
-    "name": "Jesús Ramírez",
+    "name": "Alexandros Kyziridis",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Alexandros Kyziridis",
       "Jesús Ramírez",
-      "Mohammed Diomande",
       "Ermin Mahmic",
       "Ylber Ramadani",
-      "Alexandros Kyziridis",
+      "Mohammed Diomande",
       "Cengiz Ünder"
     ]
   },
   "fenerbahce": {
-    "name": "Romelu Lukaku",
+    "name": "Mason Greenwood",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Romelu Lukaku",
+      "Mason Greenwood",
       "Irfan Can Kahveci",
-      "Ismail Yüksek",
-      "Matteo Guendouzi",
       "Oguz Aydin",
-      "Mason Greenwood"
+      "Matteo Guendouzi",
+      "Romelu Lukaku",
+      "Ismail Yüksek"
     ]
   },
   "f.c. københavn": {
-    "name": "Andreas Cornelius",
+    "name": "Mohamed Elyounoussi",
     "jersey": "14",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Andreas Cornelius",
-      "Robert",
       "Mohamed Elyounoussi",
-      "William Clem",
+      "Robert",
       "Mads Emil Madsen",
-      "Birger Meling"
+      "Birger Meling",
+      "William Clem",
+      "Andreas Cornelius"
     ]
   },
   "brøndby if": {
     "name": "Jacob Ambæk",
     "jersey": "38",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Jacob Ambæk",
       "Mads Frökjaer",
@@ -580,79 +580,79 @@
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Budu Zivzivadze",
       "Marcel Costly",
-      "Mikkel Kaufmann",
+      "Tim Siersleben",
+      "Paul Hennrich",
       "Jan Schöppner",
-      "Jonas Föhrenbach",
-      "Paul Hennrich"
+      "Mikkel Kaufmann"
     ]
   },
   "hannover 96": {
-    "name": "Benjamin Kallman",
+    "name": "Husseyn Chakroun",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Benjamin Kallman",
-      "Stefán Teitur Thórdarson",
       "Husseyn Chakroun",
-      "Marcel Hartel",
-      "Hayate Matsuda",
-      "Waniss Taibi"
+      "Stefán Teitur Thórdarson",
+      "Jean Hugonet",
+      "Franz Roggow",
+      "Benjamin Kallman",
+      "Hayate Matsuda"
     ]
   },
   "kaa gent": {
     "name": "Josué Yamir Vergara Ortega",
     "jersey": "47",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Josué Yamir Vergara Ortega",
-      "Momodou Sonko",
       "Abdelkahar Kadri",
+      "Hyllarion",
       "Mathias Delorge-Knieper",
       "Tibe De Vlieger",
-      "Tiago Araújo"
+      "Momodou Sonko"
     ]
   },
   "kv kortrijk": {
     "name": "Goduine Koyalipou",
     "jersey": "10",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Goduine Koyalipou",
-      "Thierry Ambrose",
       "Shandre Campbell",
+      "Thierry Ambrose",
       "Harrison Murray-Campbell",
-      "Anthony Philips",
-      "Boris Lambert"
+      "Mohamed Fofana",
+      "Anthony Philips"
     ]
   },
   "fc twente": {
-    "name": "Wout Weghorst",
+    "name": "Daan Rots",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Wout Weghorst",
-      "Younes Taha",
+      "Daan Rots",
       "Daouda Weidmann",
-      "Ramiz Zerrouki",
       "Sondre Ørjasaeter",
-      "Daan Rots"
+      "Younes Taha",
+      "Wout Weghorst",
+      "Ramiz Zerrouki"
     ]
   },
   "ajax amsterdam": {
@@ -660,7 +660,7 @@
     "jersey": "99",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Tolu Arokodare",
@@ -672,31 +672,31 @@
     ]
   },
   "sunderland": {
-    "name": "Brian Brobbey",
+    "name": "Enzo Le Fée",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Brian Brobbey",
       "Enzo Le Fée",
-      "Noah Sadiki",
-      "Granit Xhaka",
+      "Brian Brobbey",
       "Chemsdine Talbi",
-      "Trai Hume"
+      "Trai Hume",
+      "Noah Sadiki",
+      "Granit Xhaka"
     ]
   },
   "chelsea": {
-    "name": "Pedro Neto",
+    "name": "Morgan Rogers",
     "jersey": "7",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Pedro Neto",
       "Morgan Rogers",
+      "Pedro Neto",
       "Cole Palmer",
       "Romeo Lavia",
       "Jordan Henderson",
@@ -704,82 +704,82 @@
     ]
   },
   "elche": {
-    "name": "Fer Niño",
+    "name": "Germán Valera",
     "jersey": "14",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
-      "Fer Niño",
       "Germán Valera",
       "Lucas Cepeda",
-      "Javier Morcillo",
+      "Fer Niño",
       "Ali Houary",
-      "Martim Neto"
+      "Martim Neto",
+      "Javier Morcillo"
     ]
   },
   "real betis": {
-    "name": "Troy Parrott",
+    "name": "Isco",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Troy Parrott",
       "Isco",
-      "Marc Roca",
       "Pablo Fornals",
+      "Antony",
       "Abde Ezzalzouli",
-      "Antony"
+      "Marc Bartra",
+      "Fran García"
     ]
   },
   "fc cologne": {
-    "name": "Said El Mala",
+    "name": "Borna Sosa",
     "jersey": "10",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Borna Sosa",
       "Said El Mala",
-      "Marius Bulter",
-      "Mikey Moore",
       "Linton Maina",
-      "Paul Okon-Engstler",
-      "Borna Sosa"
+      "Mikey Moore",
+      "Sebastian Sebulonsen",
+      "Marius Bulter"
     ]
   },
   "bayer leverkusen": {
     "name": "Patrik Schick",
     "jersey": "14",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Patrik Schick",
       "Malik Tillman",
-      "Aleix García",
-      "Ezequiel Fernández",
       "Ibrahim Maza",
-      "Afonso Moreira"
+      "Afonso Moreira",
+      "Aleix García",
+      "Miguel Gutiérrez"
     ]
   },
   "ipswich town": {
-    "name": "Emersonn",
+    "name": "Jaden Philogene",
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Emersonn",
+      "Jaden Philogene",
       "Julio Enciso",
+      "Emersonn",
       "Florentino",
       "Exequiel Palacios",
-      "Jaden Philogene",
       "Daizen Maeda"
     ]
   },
@@ -788,172 +788,172 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Evanilson",
       "Justin Kluivert",
-      "Ryan Christie",
-      "Tyler Adams",
       "Marcus Tavernier",
-      "Rayan"
+      "Ryan Christie",
+      "Rayan",
+      "Tyler Adams"
     ]
   },
   "vfl bochum": {
-    "name": "Christian Rasmussen",
+    "name": "Philipp Hofmann",
     "jersey": "7",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Christian Rasmussen",
       "Philipp Hofmann",
-      "Mats Pannewig",
-      "Tom Meyer",
+      "Christian Rasmussen",
       "Berkan Taz",
-      "Jarne Steuckers"
+      "Jarne Steuckers",
+      "Mats Pannewig",
+      "Tom Meyer"
     ]
   },
   "karlsruher sc": {
-    "name": "Shio Fukuda",
+    "name": "Tim Civeja",
     "jersey": "13",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Shio Fukuda",
-      "Marvin Wanitzek",
       "Tim Civeja",
       "Kevin Wiethaup",
+      "Marvin Wanitzek",
+      "Shio Fukuda",
       "Santeri Vaananen",
       "Deniz Ofli"
     ]
   },
   "crystal palace": {
-    "name": "Jørgen Strand Larsen",
+    "name": "Yéremy Pino",
     "jersey": "22",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Jørgen Strand Larsen",
       "Yéremy Pino",
-      "Daichi Kamada",
       "Quinten Timber",
+      "Daichi Kamada",
       "Adam Wharton",
-      "Tyrick Mitchell"
+      "Jefferson Lerma",
+      "Jørgen Strand Larsen"
     ]
   },
   "liverpool": {
-    "name": "Alexander Isak",
+    "name": "Florian Wirtz",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Alexander Isak",
       "Florian Wirtz",
+      "Alexander Isak",
       "Alexis Mac Allister",
-      "Dominik Szoboszlai",
+      "Ronald Araujo",
       "Bradley Barcola",
-      "Cody Gakpo"
+      "Dominik Szoboszlai"
     ]
   },
   "stade rennais": {
-    "name": "Eliezer Mayenda",
+    "name": "Boulaye Dia",
     "jersey": "12",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Eliezer Mayenda",
       "Boulaye Dia",
-      "Mahdi Camara",
-      "Adrien Thomasson",
       "Valentin Rongier",
-      "Mahamadou Nagida"
+      "Mahamadou Nagida",
+      "Eliezer Mayenda",
+      "Mahdi Camara",
+      "Adrien Thomasson"
     ]
   },
   "lille": {
-    "name": "Hákon Haraldsson",
+    "name": "Soriba Diaoune",
     "jersey": "10",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Hákon Haraldsson",
       "Soriba Diaoune",
-      "Ethan Mbappé",
-      "Nabil Bentaleb",
+      "Nathan Ngoy",
+      "Calvin Verdonk",
       "Benjamin André",
-      "Ngal'ayel Mukau"
+      "Ngal'ayel Mukau",
+      "Hákon Haraldsson"
     ]
   },
   "monza": {
-    "name": "Jay Robinson",
+    "name": "Gustavo Varela",
     "jersey": "46",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Jay Robinson",
       "Gustavo Varela",
-      "Mathis Mout",
+      "Jay Robinson",
+      "Lorenzo Lucchesi",
+      "Eddy Kouadio",
       "Ebenezer Akinsanmiro",
-      "Leonardo Colombo",
-      "Ricardo Mangas"
+      "Leonardo Colombo"
     ]
   },
   "atalanta": {
     "name": "Nikola Krstovic",
     "jersey": "90",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Nikola Krstovic",
+      "Éderson",
       "Charles De Ketelaere",
       "Mario Pasalic",
-      "Éderson",
       "Nicola Zalewski",
       "Eljif Elmas"
     ]
   },
   "genoa": {
-    "name": "Milutin Osmajic",
+    "name": "Leo Østigard",
     "jersey": "18",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Milutin Osmajic",
-      "Vitinha",
-      "Junior Messias",
-      "Hamed Traoré",
+      "Leo Østigard",
       "Samuel Wiafe",
-      "Mikael Ellertsson"
+      "Mikael Ellertsson",
+      "Vitinha",
+      "Milutin Osmajic",
+      "Junior Messias"
     ]
   },
   "ac milan": {
-    "name": "Gonçalo Ramos",
+    "name": "Alphadjo Cissè",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Gonçalo Ramos",
       "Alphadjo Cissè",
       "Christian Pulisic",
+      "Gonçalo Ramos",
       "Adrien Rabiot",
       "Luka Modric",
       "Yunus Musah"
@@ -964,31 +964,31 @@
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Rasmus Højlund",
+      "Scott McTominay",
       "Noa Lang",
       "Kevin De Bruyne",
-      "Scott McTominay",
-      "Billy Gilmour",
+      "Amir Rrahmani",
       "Mathías Olivera"
     ]
   },
   "lazio": {
-    "name": "Andrea Pinamonti",
+    "name": "Gustav Isaksen",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Andrea Pinamonti",
-      "Tijjani Noslin",
       "Gustav Isaksen",
-      "Reda Belahyane",
+      "Tijjani Noslin",
+      "Davide Frattesi",
+      "Josip Sutalo",
       "Kenneth Taylor",
-      "Davide Frattesi"
+      "Andrea Pinamonti"
     ]
   },
   "asteras tripoli": {
@@ -996,29 +996,29 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Federico Macheda",
       "Giannis Bouzoukis",
-      "Eder Gonzalez",
-      "Dimitrios Kourbelis",
       "Benjamin Mgunga-Kimpioka",
-      "Franco Orozco"
+      "Franco Orozco",
+      "Eder Gonzalez",
+      "Dimitrios Kourbelis"
     ]
   },
   "kalamata": {
-    "name": "Dawid Kurminowski",
+    "name": "Erik Hamza",
     "jersey": "91",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Erik Hamza",
       "Dawid Kurminowski",
       "Djibril Diarra",
       "Juan Cataldi",
-      "Erik Hamza",
       "Ahmad Mendes Moreira",
       "Arnór Sigurdsson"
     ]
@@ -1028,63 +1028,63 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Abel Ruiz",
+      "Carles Pérez",
       "Vladyslav Vanat",
       "Fran Beltrán",
       "Izan González",
-      "Unai Hernandez",
-      "Carles Pérez"
+      "Unai Hernandez"
     ]
   },
   "almería": {
     "name": "Miguel de la Fuente",
     "jersey": "24",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Miguel de la Fuente",
       "Brian Cipenga",
-      "Quim Junyent",
       "Javi Muñoz",
       "Stefan Dzodic",
+      "Quim Junyent",
       "Sergio Arribas"
     ]
   },
   "aek athens": {
-    "name": "Luka Jovic",
+    "name": "Barnabás Varga",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Luka Jovic",
       "Barnabás Varga",
+      "Luka Jovic",
+      "Aboubakary Koita",
       "Razvan Marin",
-      "Lovro Majer",
       "Petros Mantalos",
-      "Aboubakary Koita"
+      "Lovro Majer"
     ]
   },
   "levadiakos": {
-    "name": "Octavian Popescu",
+    "name": "Moses Cobnan",
     "jersey": "30",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Octavian Popescu",
       "Moses Cobnan",
-      "Adrian Sut",
-      "Ioannis Kosti",
+      "Alexandru Pantea",
+      "Octavian Popescu",
       "Giorgos Nikas",
-      "Niv Eliasi"
+      "Adrian Sut",
+      "Ioannis Kosti"
     ]
   },
   "real sociedad": {
@@ -1092,78 +1092,78 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Orri Óskarsson",
-      "Luka Sucic",
-      "Carlos Soler",
       "Beñat Turrientes",
+      "Luka Sucic",
       "Ander Barrenetxea",
-      "Takefusa Kubo"
+      "Takefusa Kubo",
+      "Carlos Soler"
     ]
   },
   "rayo vallecano": {
-    "name": "Sergio Camello",
+    "name": "Giorgi Tsitaishvili",
     "jersey": "10",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Sergio Camello",
-      "Pedro Díaz",
-      "Pathé Ciss",
-      "Unai López",
       "Giorgi Tsitaishvili",
-      "Jorge de Frutos"
+      "Jorge de Frutos",
+      "Florian Lejeune",
+      "Pedro Díaz",
+      "Sergio Camello",
+      "Pathé Ciss"
     ]
   },
   "heart of midlothian": {
-    "name": "Pierre Landry Kabore",
+    "name": "Cláudio Braga",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Pierre Landry Kabore",
       "Cláudio Braga",
+      "Sabah Kerjota",
+      "Pierre Landry Kabore",
+      "Jordi Altena",
       "Yan Dhanda",
-      "Laurent Mendy",
-      "Joshua McPake",
-      "Sabah Kerjota"
+      "Laurent Mendy"
     ]
   },
   "falkirk": {
     "name": "Jacob Murrell",
     "jersey": "24",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Jacob Murrell",
       "Finley Barbrook",
-      "Deniss Melniks",
-      "Brad Spencer",
       "Owen Eames",
+      "Liam Henderson",
+      "Deniss Melniks",
       "Ethan Ross"
     ]
   },
   "c.d. nacional": {
-    "name": "Njoya Kader",
+    "name": "Song Min-Kyu",
     "jersey": "29",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Njoya Kader",
       "Song Min-Kyu",
+      "Chiheb Labidi",
+      "Njoya Kader",
       "Stavros Gavriel",
       "Matheus Dias",
-      "Chiheb Labidi",
       "Miguel Baeza"
     ]
   },
@@ -1171,47 +1171,47 @@
     "name": "André Clóvis",
     "jersey": "33",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "André Clóvis",
-      "João Guilherme",
+      "Niklaos Michelis",
       "Nils Mortimer",
+      "João Guilherme",
       "Luís Silva",
-      "Cihan Kahraman",
-      "Soufiane Messeguem"
+      "Cihan Kahraman"
     ]
   },
   "if brommapojkarna": {
-    "name": "Oliver Berg",
+    "name": "Oliver Zandén",
     "jersey": "10",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 5.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Oliver Berg",
-      "Wilmer Odefalk",
-      "Simon Strand",
-      "Anton Kurochkin",
+      "Oliver Zandén",
       "Mads Hansen",
-      "Leo Cavallius"
+      "Rasmus Örqvist",
+      "Wilmer Odefalk",
+      "Anton Kurochkin",
+      "Oliver Berg"
     ]
   },
   "mjällby aif": {
     "name": "Ali Youssef",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Ali Youssef",
-      "Jesper Gustavsson",
-      "Viktor Gustafson",
       "Olle Lindberg",
       "Mads Enggård",
+      "Jesper Gustavsson",
+      "Viktor Gustafson",
       "Sebastian Hansen"
     ]
   },
@@ -1219,47 +1219,47 @@
     "name": "Fernando Zampedri",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Fernando Zampedri",
-      "Jhojan Valencia",
       "Juan Rossel",
-      "Jimmy Martínez",
+      "Tomas Astaburuaga",
       "Cristian Cuevas",
-      "Clemente Montes"
+      "Clemente Montes",
+      "Jhojan Valencia"
     ]
   },
   "deportes limache": {
-    "name": "Gonzalo Sosa",
+    "name": "Jean Meneses",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Gonzalo Sosa",
-      "Leonardo Valencia",
-      "Misael Llantén",
-      "Cesar Fuentes",
+      "Jean Meneses",
+      "Dylan Escobar",
       "Daniel Castro",
-      "Jean Meneses"
+      "Leonardo Valencia",
+      "Gonzalo Sosa",
+      "Misael Llantén"
     ]
   },
   "santa clara": {
-    "name": "Fernando",
+    "name": "Brenner",
     "jersey": "7",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
-      "Fernando",
       "Brenner",
       "Vinícius Lopes",
-      "Daniel Borges",
+      "Fernando",
       "Djé",
+      "Daniel Borges",
       "João Gonçalves"
     ]
   },
@@ -1267,16 +1267,16 @@
     "name": "Walace França",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Walace França",
+      "Murilo",
       "Santi García",
-      "Diogo Prioste",
       "Andreas Lausen",
       "Gil Martins",
-      "Murilo"
+      "Diogo Prioste"
     ]
   },
   "iraklis": {
@@ -1284,318 +1284,318 @@
     "jersey": "43",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Pedro Marques",
+      "Yohan Roche",
       "Xande Silva",
-      "Ivi",
-      "Vasilis Sourlis",
       "Marco Krainz",
-      "Nanu"
+      "Ivi",
+      "Vasilis Sourlis"
     ]
   },
   "panathinaikos": {
     "name": "Cyriel Dessers",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Cyriel Dessers",
-      "Santino Andino",
-      "Andrews Tetteh",
-      "Etienne Camara",
+      "Davide Calabria",
       "Imran Louza",
-      "Vicente Taborda"
+      "Vicente Taborda",
+      "Santino Andino",
+      "Andrews Tetteh"
     ]
   },
   "aik": {
-    "name": "Sixten Gustafsson",
+    "name": "Johan Hove",
     "jersey": "16",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Sixten Gustafsson",
       "Johan Hove",
-      "Dino Besirovic",
+      "Eskil Edh",
+      "Charlie Pavey",
       "Yannick Geiger",
-      "Lucas Assadi",
-      "Axel Kouame"
+      "Fredrik Nissen",
+      "Sixten Gustafsson"
     ]
   },
   "bk häcken": {
-    "name": "Gustav Lindgren",
+    "name": "Mikkel Rygaard",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Gustav Lindgren",
       "Mikkel Rygaard",
+      "Adrian Svanbäck",
+      "Gustav Lindgren",
       "David Seger",
-      "Abdoulaye Doumbia",
       "Julius Lindberg",
-      "Adrian Svanbäck"
+      "Abdoulaye Doumbia"
     ]
   },
   "kalmar ff": {
-    "name": "Vilmer Tyren",
+    "name": "Amara Camara",
     "jersey": "6",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Amara Camara",
       "Vilmer Tyren",
-      "Marius Söderbäck",
-      "Carl Gustafsson",
       "Robert Gojani",
+      "Carl Gustafsson",
       "Charles Sagoe Junior",
-      "Amara Camara"
+      "Marius Söderbäck"
     ]
   },
   "ik sirius": {
-    "name": "Isak Bjerkebo",
+    "name": "Joakim Persson",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Isak Bjerkebo",
+      "Joakim Persson",
       "Victor Svensson",
-      "Marcus Lindberg",
-      "Melker Heier",
       "Zalán Vancsa",
-      "Joakim Persson"
+      "Isak Bjerkebo",
+      "Marcus Lindberg",
+      "Melker Heier"
     ]
   },
   "alanyaspor": {
-    "name": "Arda Usluoglu",
+    "name": "Hwang Ui-Jo",
     "jersey": "17",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
-      "Arda Usluoglu",
       "Hwang Ui-Jo",
+      "Arda Usluoglu",
       "Ruan",
-      "Baran Gezek",
       "Maestro",
+      "Baran Gezek",
       "Yusuf Ozdemir"
     ]
   },
   "trabzonspor": {
-    "name": "Paul Onuachu",
+    "name": "Mohamed Salah",
     "jersey": "30",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Paul Onuachu",
-      "Noah Saviolo",
       "Mohamed Salah",
-      "Fabinho",
-      "Ernest Muçi",
-      "Ozan Tufan"
+      "Noah Saviolo",
+      "Ozan Tufan",
+      "Wagner Pina",
+      "Paul Onuachu",
+      "Ernest Muçi"
     ]
   },
   "lillestrom": {
-    "name": "Thomas Lehne Olsen",
+    "name": "Ruben Gabrielsen",
     "jersey": "10",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Thomas Lehne Olsen",
-      "Filip Ottosson",
-      "Gustav Nyheim",
+      "Ruben Gabrielsen",
       "Henrik Melland",
       "Gustav Nordh",
-      "Camil Jebara"
+      "Thomas Lehne Olsen",
+      "Filip Ottosson",
+      "Gustav Nyheim"
     ]
   },
   "aalesund": {
     "name": "Marcus Haagensen Reed",
     "jersey": "27",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Marcus Haagensen Reed",
       "Elias Myrlid",
-      "Elias Hagen",
       "Endre Osenbroch",
-      "Mathias Christensen",
-      "Tor Erik Larsen"
+      "Aleksander Hammer Kjelsen",
+      "Elias Hagen",
+      "Mathias Christensen"
     ]
   },
   "hamarkameratene": {
     "name": "Henrik Udahl",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Henrik Udahl",
+      "Snorre Nilsen",
       "David Benjamin",
       "Luc Mares",
       "Aksel Potur",
-      "Patrick Metcalfe",
-      "Markus Sandberg"
+      "Patrick Metcalfe"
     ]
   },
   "sarpsborg fk": {
-    "name": "Victor Halvorsen",
+    "name": "Daniel Karlsbakk",
     "jersey": "22",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Victor Halvorsen",
       "Daniel Karlsbakk",
-      "Aimar Sher",
-      "Sander Christiansen",
-      "Olaus Skarsem",
-      "Sondre Sörli"
+      "Sondre Sörli",
+      "Anders Hiim",
+      "Claus Niyukuri",
+      "Victor Halvorsen",
+      "Sander Christiansen"
     ]
   },
   "sandefjord": {
-    "name": "Oscar Kapskarmo",
+    "name": "Evangelos Patoulidis",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Oscar Kapskarmo",
-      "Sander Mork",
-      "Edvard Pettersen",
-      "Jakob Dunsby",
       "Evangelos Patoulidis",
-      "Elias Hadaya"
+      "Jakob Dunsby",
+      "Vetle Egeli",
+      "Oscar Kapskarmo",
+      "Edvard Pettersen",
+      "Sander Mork"
     ]
   },
   "molde": {
-    "name": "Kristian Lonebu",
+    "name": "Sander Kilen",
     "jersey": "20",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Kristian Lonebu",
-      "Niklas Odegard",
-      "Daniel Daga",
-      "Sondre Granaas",
       "Sander Kilen",
-      "Caleb Sery"
+      "Kristian Lonebu",
+      "Caleb Sery",
+      "Sondre Granaas",
+      "Daniel Daga",
+      "Niklas Odegard"
     ]
   },
   "audax italiano": {
-    "name": "Franco Troyansky",
+    "name": "Enzo Ferrario",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Franco Troyansky",
+      "Enzo Ferrario",
       "Federico Mateos",
-      "Marco Collao Ramos",
-      "Cesar Pinares",
       "Vicente Zenteno",
-      "Paolo Guajardo"
+      "Marcelo Ortiz",
+      "Paolo Guajardo",
+      "Franco Troyansky"
     ]
   },
   "coquimbo unido": {
-    "name": "Luis Riveros",
+    "name": "Guido Vadalá",
     "jersey": "27",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Luis Riveros",
       "Guido Vadalá",
+      "Luis Riveros",
       "Salvador Cordero",
-      "Sebastián Galani",
       "Dixon Pereira",
-      "Benjamín Chandía"
+      "Benjamín Chandía",
+      "Sebastián Galani"
     ]
   },
   "az alkmaar": {
-    "name": "Mexx Meerdink",
+    "name": "Ayoub Oufkir",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Ayoub Oufkir",
       "Mexx Meerdink",
-      "Valdemar Byskov",
-      "Peer Koopmeiners",
-      "Dave Kwakman",
+      "Mateo Chávez",
       "Ro-Zangelo Daal",
-      "Ayoub Oufkir"
+      "Dave Kwakman",
+      "Peer Koopmeiners"
     ]
   },
   "fc groningen": {
-    "name": "Brynjólfur Willumsson",
+    "name": "Thom Van Bergen",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Brynjólfur Willumsson",
       "Thom Van Bergen",
+      "Jacob Ondrejka",
+      "Brynjólfur Willumsson",
       "Pelle Clement",
       "Tika De Jonge",
-      "Jacob Ondrejka",
       "Jorg Schreuders"
     ]
   },
   "viking fk": {
-    "name": "Erik Botheim",
+    "name": "Peter Christiansen",
     "jersey": "22",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Erik Botheim",
-      "Amin Cosic",
       "Peter Christiansen",
-      "Joe Bell",
       "Simen Kvia-Egeskog",
-      "Henrik Bjørdal"
+      "Erik Botheim",
+      "Vetle Auklend",
+      "Henrik Bjørdal",
+      "Amin Cosic"
     ]
   },
   "kfum oslo": {
-    "name": "Magnus Retsius Grødem",
+    "name": "Robin Rasch",
     "jersey": "28",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Magnus Retsius Grødem",
+      "Robin Rasch",
       "Rasmus Vinge",
+      "Magnus Retsius Grødem",
       "Ola Visted",
       "Martin Vinjor",
-      "Robin Rasch",
       "Jonas Hjorth"
     ]
   },
@@ -1603,14 +1603,14 @@
     "name": "Oumar Diakité",
     "jersey": "14",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Oumar Diakité",
+      "Jon Gorenc Stankovic",
       "Jacob Peter Hödl",
       "Simon Seidl",
-      "Jon Gorenc Stankovic",
       "Luca Weinhandl",
       "Luís Balbo"
     ]
@@ -1620,78 +1620,78 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Haris Tabakovic",
-      "Bartosz Mazurek",
-      "Soumaïla Diabaté",
-      "Abubakr Barry",
       "Jesper Lindstrom",
-      "Damir Redzic"
+      "Damir Redzic",
+      "Leandro Morgalla",
+      "Bartosz Mazurek",
+      "Soumaïla Diabaté"
     ]
   },
   "sc cambuur": {
-    "name": "Nicolas Binder",
+    "name": "Nicky Souren",
     "jersey": "13",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Nicolas Binder",
+      "Nicky Souren",
+      "Ismaël Baouf",
       "Ilyes Hamache",
       "Jason Ceka",
-      "Nicky Souren",
       "Rafik El Arguioui",
-      "Mathieu Maertens"
+      "Nicolas Binder"
     ]
   },
   "psv eindhoven": {
-    "name": "Guus Til",
+    "name": "Sven Mijnans",
     "jersey": "20",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Guus Til",
       "Sven Mijnans",
-      "Mauro Júnior",
-      "Kodai Sano",
       "Ruben Van Bommel",
-      "Esmir Bajraktarevic"
+      "Guus Til",
+      "Esmir Bajraktarevic",
+      "Mauro Júnior",
+      "Kodai Sano"
     ]
   },
   "deportivo cuenca": {
-    "name": "Cristhian Alexander Benalcazar Folleco",
+    "name": "David González",
     "jersey": "88",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "David González",
       "Cristhian Alexander Benalcazar Folleco",
+      "Yeltzin Erique",
       "Melvin Díaz",
       "Édison Vega",
-      "Mateo Maccari",
-      "David González",
-      "Lucas Mancinelli"
+      "Mateo Maccari"
     ]
   },
   "orense": {
-    "name": "Walter Herrera",
+    "name": "Ángel Mena",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Walter Herrera",
+      "Ángel Mena",
       "Renny Jaramillo",
+      "Walter Herrera",
       "Gonzalo Rostagno",
       "Michael Bermúdez",
-      "Ángel Mena",
       "Rolando Silva"
     ]
   },
@@ -1699,62 +1699,62 @@
     "name": "Franco Posse",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Franco Posse",
+      "Agustín Campana",
+      "Mateo Viera",
       "Martín Tello",
       "Jose Cazares",
-      "Jean Carlos Estacio",
-      "Mateo Viera",
-      "Agustín Campana"
+      "Jean Carlos Estacio"
     ]
   },
   "universidad católica (quito)": {
     "name": "José Fajardo",
     "jersey": "7",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "José Fajardo",
-      "Daniel Clavijo",
-      "Luis Moreno",
-      "Facundo Martinez",
+      "José García",
       "Mauricio Alonso",
-      "Azarias Londoño"
+      "Azarias Londoño",
+      "Luis Moreno",
+      "Daniel Clavijo"
     ]
   },
   "celtic": {
-    "name": "Kasper Høgh",
+    "name": "Benjamin Nygren",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Kasper Høgh",
       "Benjamin Nygren",
+      "Kasper Høgh",
+      "Camilo Durán",
+      "Liam Scales",
       "Mika Baur",
-      "Callum McGregor",
-      "Jota",
-      "Camilo Durán"
+      "Jota"
     ]
   },
   "kilmarnock": {
-    "name": "Tyreece John-Jules",
+    "name": "Tom Lowery",
     "jersey": "10",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Tom Lowery",
+      "Michael Schjonning-Larsen",
       "Tyreece John-Jules",
       "Greg Kiltie",
-      "Tom Lowery",
-      "Aaron Tshibola",
       "Ieuan Owen",
       "Joe Hugill"
     ]
@@ -1763,47 +1763,47 @@
     "name": "Ludovic Ajorque",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Ludovic Ajorque",
+      "Noah Edjouma",
       "Kamory Doumbia",
       "Hugo Magnetti",
       "Joris Chotard",
-      "Mama Baldé",
-      "Noah Edjouma"
+      "Mama Baldé"
     ]
   },
   "lyon": {
-    "name": "Khalis Merah",
+    "name": "Ruben Kluivert",
     "jersey": "18",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Khalis Merah",
-      "Keito Nakamura",
-      "Kail Boudache",
-      "Tanner Tessmann",
+      "Ruben Kluivert",
+      "Nicolás Tagliafico",
       "Corentin Tolisso",
-      "Noah Nartey"
+      "Keito Nakamura",
+      "Khalis Merah",
+      "Tanner Tessmann"
     ]
   },
   "carrarese": {
-    "name": "Fabio Abiuso",
+    "name": "Tommaso Rubino",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
-      "Fabio Abiuso",
       "Tommaso Rubino",
+      "Fabio Abiuso",
       "Nicholas Schiavi",
-      "Jacopo Martini",
       "Jonas Rouhi",
+      "Jacopo Martini",
       "Gabriele Parlanti"
     ]
   },
@@ -1812,136 +1812,136 @@
     "jersey": "99",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Gennaro Tutino",
+      "Oliver Abildgaard",
+      "Liam Henderson",
       "Tjas Begic",
       "Lorenzo Mezzotero",
-      "Oliver Abildgaard",
-      "Antoine Makoumbou",
-      "Liam Henderson"
+      "Antoine Makoumbou"
     ]
   },
   "le havre ac": {
     "name": "Josh Maja",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Josh Maja",
-      "Kaito Mizuta",
       "Rayan Fofana",
+      "Kaito Mizuta",
+      "Mbwana Samatta",
       "Junior Mwanga",
-      "Simon Ebonog",
-      "Mbwana Samatta"
+      "Simon Ebonog"
     ]
   },
   "lorient": {
-    "name": "Tosin Aiyegun",
+    "name": "Jean-Victor Makengo",
     "jersey": "15",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Tosin Aiyegun",
-      "Gabin Bernardeau",
       "Jean-Victor Makengo",
+      "Isaak Touré",
+      "Arsène Kouassi",
+      "Tosin Aiyegun",
       "Arthur Avom",
-      "Noah Cadiou",
-      "Arsène Kouassi"
+      "Gabin Bernardeau"
     ]
   },
   "le mans": {
     "name": "Dame Guèye",
     "jersey": "25",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Dame Guèye",
-      "Louis Mafouta",
-      "Jean Vercruysse",
+      "Lucas Buades",
+      "Samuel Yohou",
       "Daouda Traoré",
       "Lucas Calodat",
-      "Lucas Buades"
+      "Louis Mafouta"
     ]
   },
   "as monaco": {
-    "name": "Matthis Abline",
+    "name": "Vanderson",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Matthis Abline",
-      "Aleksandr Golovin",
+      "Vanderson",
+      "Mamadou Coulibaly",
       "Lamine Camara",
-      "Denis Zakaria",
       "Mathys Detourbet",
-      "Mamadou Coulibaly"
+      "Matthis Abline",
+      "Aleksandr Golovin"
     ]
   },
   "angers": {
-    "name": "Prosper Peter",
+    "name": "Joseph Kalulu Kyatengwa",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Prosper Peter",
-      "Branco van den Boomen",
-      "Haris Belkebla",
+      "Joseph Kalulu Kyatengwa",
       "Yassin Belkhdim",
       "Amine Sbaï",
-      "Jim Allevinah"
+      "Jim Allevinah",
+      "Branco van den Boomen",
+      "Prosper Peter"
     ]
   },
   "nice": {
-    "name": "Elye Wahi",
+    "name": "Mohamed Amoura",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Elye Wahi",
       "Mohamed Amoura",
+      "Elye Wahi",
+      "Niels Nkounkou",
+      "Jonathan Clauss",
       "Sofiane Diop",
-      "Hicham Boudaoui",
-      "Djibril Coulibaly",
-      "Niels Nkounkou"
+      "Hicham Boudaoui"
     ]
   },
   "sc freiburg": {
-    "name": "Igor Matanovic",
+    "name": "Derry Scherhant",
     "jersey": "31",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Derry Scherhant",
       "Igor Matanovic",
       "Yuito Suzuki",
-      "Yannick Engelhardt",
+      "Niklas Beste",
       "Maximilian Eggestein",
-      "Derry Scherhant",
-      "Niklas Beste"
+      "Yannick Engelhardt"
     ]
   },
   "1. fc union berlin": {
     "name": "Livan Burcu",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Livan Burcu",
       "Tim Skarke",
@@ -1952,99 +1952,99 @@
     ]
   },
   "manchester united": {
-    "name": "Bryan Mbeumo",
+    "name": "Matheus Cunha",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Bryan Mbeumo",
-      "Bruno Fernandes",
-      "Kobbie Mainoo",
-      "Youri Tielemans",
       "Matheus Cunha",
-      "Amad Diallo"
+      "Bruno Fernandes",
+      "Youri Tielemans",
+      "Bryan Mbeumo",
+      "Amad Diallo",
+      "Kobbie Mainoo"
     ]
   },
   "aston villa": {
-    "name": "Nicolas Jackson",
+    "name": "Alysson",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Alysson",
       "Nicolas Jackson",
       "John McGinn",
       "Leon Goretzka",
       "Boubacar Kamara",
-      "Johan Manzambi",
-      "Alysson"
+      "Johan Manzambi"
     ]
   },
   "ofi crete": {
-    "name": "Kenan Kodro",
+    "name": "Thiago Thomas Nuss",
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Kenan Kodro",
       "Thiago Thomas Nuss",
+      "Kenan Kodro",
       "Taxiarchis Fountas",
-      "Thanasis Androutsos",
       "Andreas Bouchalakis",
+      "Thanasis Androutsos",
       "Nicolaos Athanasiou"
     ]
   },
   "atromitos": {
-    "name": "Juan Perea",
+    "name": "Steven Zuber",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
-      "Juan Perea",
       "Steven Zuber",
       "Samuel Moutoussamy",
       "Thanasis Karamanis",
+      "Juan Perea",
       "Serginho",
       "Kelvin Ofori"
     ]
   },
   "fc midtjylland": {
-    "name": "Friday Etim",
+    "name": "Sofus Johannesen",
     "jersey": "90",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Sofus Johannesen",
       "Friday Etim",
-      "Mileta Rajovic",
-      "Pedro Bravo",
-      "Philip Billing",
       "Kjell-Arik Wätjen",
-      "Viktor Bak"
+      "Mileta Rajovic",
+      "Viktor Bak",
+      "Pedro Bravo"
     ]
   },
   "sønderjyske fodbold": {
-    "name": "Osaze De Rosario",
+    "name": "Anders Pedersen",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Osaze De Rosario",
       "Anders Pedersen",
+      "Stefan Velkov",
+      "Maxime Soulas",
+      "Osaze De Rosario",
       "Mohamed Haidara",
-      "Mathias Olesen",
-      "Sefer Emini",
-      "Anders Hoeg"
+      "Mathias Olesen"
     ]
   },
   "union st.-gilloise": {
@@ -2052,40 +2052,40 @@
     "jersey": "13",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Kevin Rodríguez",
-      "Besfort Zeneli",
       "Raul Florucz",
+      "Ross Sykes",
       "Adem Zorgane",
-      "Kamiel Van De Perre",
-      "Guilherme Smith"
+      "Guilherme Smith",
+      "Besfort Zeneli"
     ]
   },
   "racing genk": {
-    "name": "Rafiu Durosinmi",
+    "name": "Daan Heymans",
     "jersey": "17",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
+      "Daan Heymans",
       "Rafiu Durosinmi",
+      "Joris Kayembe",
       "Aaron Bibout",
       "Bryan Heynen",
-      "Benjamin Tahirovic",
-      "Daan Heymans",
-      "Joris Kayembe"
+      "Benjamin Tahirovic"
     ]
   },
   "leones negros": {
     "name": "Luis Razo",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Luis Razo",
       "Óscar Gil",
@@ -2099,9 +2099,9 @@
     "name": "Jose Reyes",
     "jersey": "17",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Jose Reyes",
       "Juan David Angulo Ortíz",
@@ -2116,62 +2116,62 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Marcus Thuram",
+      "Federico Dimarco",
+      "Carlos Augusto",
       "Pio Esposito",
-      "Piotr Zielinski",
       "Nicolò Barella",
-      "Hakan Çalhanoglu",
-      "Federico Dimarco"
+      "Piotr Zielinski"
     ]
   },
   "como": {
-    "name": "Tasos Douvikas",
+    "name": "Jacobo Ramón",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Tasos Douvikas",
+      "Jacobo Ramón",
       "Nico Paz",
+      "Tasos Douvikas",
       "Luis Milla",
       "Máximo Perrone",
-      "Martin Baturina",
-      "Lucas Da Cunha"
+      "Martin Baturina"
     ]
   },
   "los chankas": {
-    "name": "Marlon Torres",
+    "name": "Jarlín Quintero",
     "jersey": "20",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Marlon Torres",
       "Jarlín Quintero",
       "Franco Torres",
+      "Hector González",
       "Jorge Palomino",
-      "Christian Velarde",
+      "Marlon Torres",
       "Brayan Guevara"
     ]
   },
   "alianza lima": {
-    "name": "Federico Girotti",
+    "name": "Erick Castillo",
     "jersey": "99",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Federico Girotti",
       "Erick Castillo",
-      "Esteban Pavez",
+      "Federico Girotti",
       "Fernando Gaibor",
       "Gaspar Gentile",
+      "Esteban Pavez",
       "Alejandro Duarte"
     ]
   },
@@ -2180,30 +2180,30 @@
     "jersey": "10",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Calum Kavanagh",
       "Mike Fondop-Talom",
       "Thomas Pett",
-      "Oliver Norburn",
-      "Noah Chilvers",
-      "Jamie Robson"
+      "Will Sutton",
+      "Gus Scott-Morriss",
+      "Noah Chilvers"
     ]
   },
   "sheffield wednesday": {
-    "name": "Jamal Lowe",
+    "name": "Callum Slattery",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Jamal Lowe",
-      "Davis Kellior-Dunn",
       "Callum Slattery",
       "Barry Bannan",
+      "Davis Kellior-Dunn",
       "Jaden Heskey",
+      "Jamal Lowe",
       "Jordi Liongola"
     ]
   },
@@ -2211,95 +2211,95 @@
     "name": "Pablo Durán",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 5.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Pablo Durán",
-      "Couhaib Driouech",
       "Iago Aspas",
-      "Ilaix Moriba",
       "Andrés Antañón",
-      "Sergio Carreira"
+      "Sergio Carreira",
+      "Couhaib Driouech",
+      "Ilaix Moriba"
     ]
   },
   "levante": {
-    "name": "Etta Eyong",
+    "name": "Roger Brugué",
     "jersey": "21",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
-      "Etta Eyong",
+      "Roger Brugué",
       "Dani Requena",
-      "Hugo Sotelo",
       "Jon Ander Olasagasti",
-      "Thiago Fernández",
-      "Roger Brugué"
+      "Etta Eyong",
+      "Hugo Sotelo",
+      "Thiago Fernández"
     ]
   },
   "sporting gijón": {
-    "name": "Miguel Conde",
+    "name": "Guillermo Rosas",
     "jersey": "28",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Miguel Conde",
+      "Guillermo Rosas",
       "Juan Otero",
-      "Enol Prendes",
+      "Miguel Conde",
       "Àlex Corredera",
       "Gaspar Campos",
-      "Hugo Guillamón"
+      "Enol Prendes"
     ]
   },
   "real valladolid": {
-    "name": "Adrián Arnun",
+    "name": "Víctor Fernández",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Adrián Arnun",
       "Víctor Fernández",
       "Tai Abed",
-      "Stanko Juric",
       "Julien Ponceau",
+      "Adrián Arnun",
+      "Stanko Juric",
       "Thiago Ojeda"
     ]
   },
   "villarreal": {
-    "name": "Georges Mikautadze",
+    "name": "Tajon Buchanan",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Georges Mikautadze",
-      "Alberto Moleiro",
-      "Pape Gueye",
-      "Carlos Macià",
+      "Tajon Buchanan",
       "Tani Oluwaseyi",
-      "Tajon Buchanan"
+      "Pape Gueye",
+      "Carlos Romero",
+      "Logan Costa",
+      "Santiago Mouriño"
     ]
   },
   "getafe": {
-    "name": "Enes Ünal",
+    "name": "Nemanja Gudelj",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
-      "Enes Ünal",
       "Nemanja Gudelj",
       "Mario Martín",
       "Orel Mangala",
       "Martín Satriano",
+      "Enes Ünal",
       "Andrés García"
     ]
   },
@@ -2308,79 +2308,79 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Arnel Jakupovic",
       "Samu",
-      "Beni Mukendi",
-      "Gonçalo Nogueira",
       "Gustavo da Silva",
-      "Oumar Tourad Camara"
+      "Oumar Tourad Camara",
+      "Toni Borevkovic",
+      "Beni Mukendi"
     ]
   },
   "fc porto": {
-    "name": "Samu Aghehowa",
+    "name": "Borja Sainz",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Samu Aghehowa",
       "Borja Sainz",
       "Pepê",
-      "Pablo Rosario",
+      "Samu Aghehowa",
       "Gabri Veiga",
+      "Pablo Rosario",
       "Victor Froholdt"
     ]
   },
   "fredrikstad": {
-    "name": "Henrik Skogvold",
+    "name": "Max Nilsson",
     "jersey": "23",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Henrik Skogvold",
-      "Johannes Hummelvoll-Nuñez",
-      "Gabriel Wesseh",
       "Max Nilsson",
+      "Daniel Eid",
+      "Gabriel Wesseh",
+      "Fanuel Ghebreyohannes",
       "Samuel Leach Holm",
-      "Fanuel Ghebreyohannes"
+      "Henrik Skogvold"
     ]
   },
   "sk brann": {
     "name": "Noah Holm",
     "jersey": "29",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Noah Holm",
-      "Niklas Castro",
       "Kristall Máni Ingason",
-      "Niklas Jensen",
-      "Kristian Eriksen",
-      "Saevar Atli Magnússon"
+      "Niklas Castro",
+      "Joachim Soltvedt",
+      "Leo Cornic",
+      "Niklas Jensen"
     ]
   },
   "besiktas": {
     "name": "Dusan Vlahovic",
     "jersey": "28",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Dusan Vlahovic",
-      "Salih Özcan",
       "Orkun Kökçü",
-      "Wilfred Ndidi",
+      "Leandro Trossard",
       "Ilhan Fakili",
-      "Leandro Trossard"
+      "Wilfred Ndidi",
+      "Salih Özcan"
     ]
   },
   "genclerbirligi": {
@@ -2388,14 +2388,14 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Pedro Mendes",
+      "Tiago Gouveia",
       "Franco Tongya",
       "Ogulcan Ülgün",
       "Cheikh Niasse",
-      "Tiago Gouveia",
       "Adama Traoré"
     ]
   },
@@ -2404,270 +2404,270 @@
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Eduardo Vargas",
-      "Octavio Rivero",
+      "Matías Zaldivia",
+      "Igor Lichnovsky",
       "Agustin Arce",
-      "Charles Aránguiz",
-      "Lucas Barrera",
-      "Marcelo Morales"
+      "Octavio Rivero",
+      "Charles Aránguiz"
     ]
   },
   "cobresal": {
-    "name": "Stefan Pino",
+    "name": "Julián Brea",
     "jersey": "8",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Julián Brea",
+      "Janpol Morales",
+      "Antonio Castillo",
       "Stefan Pino",
       "Felipe Villagrán",
-      "Aaron Astullido",
-      "Janpol Morales",
-      "Julián Brea",
-      "Alejandro Santander"
+      "Aaron Astullido"
     ]
   },
   "sint-truidense": {
-    "name": "Samed Bazdar",
+    "name": "Shion Shinkawa",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Samed Bazdar",
       "Shion Shinkawa",
-      "Nelson Ishiwatari",
-      "Abdoulage Sissako",
       "Ilias Sebaoui",
+      "Nelson Ishiwatari",
+      "Samed Bazdar",
+      "Joederik Pupe",
       "Nathanaël Mbuku"
     ]
   },
   "zulte-waregem": {
-    "name": "Anosike Ementa",
+    "name": "István Átrok",
     "jersey": "18",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "István Átrok",
+      "Marley Aké",
       "Anosike Ementa",
       "Tobias Hedl",
-      "Enrique Lofolomo",
       "Thomas Claes",
-      "Marley Aké",
-      "István Átrok"
+      "Enrique Lofolomo"
     ]
   },
   "ñublense": {
-    "name": "Franco Rami",
+    "name": "Lucas Molina",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Franco Rami",
-      "Matías Plaza",
-      "Manuel Rivera",
-      "Lolo Reyes",
       "Lucas Molina",
-      "Gabriel Graciani"
+      "Osvaldo Bosso",
+      "Franco Rami",
+      "Gabriel Graciani",
+      "Matías Plaza",
+      "Manuel Rivera"
     ]
   },
   "colo colo": {
-    "name": "Marcelo Correa",
+    "name": "Francisco Marchant",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Marcelo Correa",
-      "G Díaz",
       "Francisco Marchant",
       "Arturo Vidal",
+      "G Díaz",
+      "Marcelo Correa",
       "Víctor Méndez",
       "Álvaro Madrid"
     ]
   },
   "aucas": {
-    "name": "Rafael Monti",
+    "name": "Santiago Morales",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Rafael Monti",
+      "Santiago Morales",
       "Thiago Serpa",
-      "Agostino Spina",
       "Piero Guzman",
-      "Robino Quinónez",
-      "Braian Oyola"
+      "Rafael Monti",
+      "Agostino Spina",
+      "Robino Quinónez"
     ]
   },
   "independiente del valle": {
-    "name": "Carlos González",
+    "name": "Junior Sornoza",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Carlos González",
-      "Jordy Alcívar",
       "Junior Sornoza",
-      "Ronald Briones",
-      "Arón Rodríguez",
-      "Yandri Vásquez"
+      "Carlos González",
+      "Mateo Carabajal",
+      "Yandri Vásquez",
+      "Jordy Alcívar",
+      "Ronald Briones"
     ]
   },
   "tsg hoffenheim": {
-    "name": "Tim Lemperle",
+    "name": "Fisnik Asllani",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Tim Lemperle",
       "Fisnik Asllani",
-      "Wouter Burger",
-      "Leon Avdullahu",
+      "Tim Lemperle",
       "Alexander Prass",
+      "Ozan Kabak",
+      "Mats Rots",
       "Andrej Kramaric"
     ]
   },
   "schalke 04": {
-    "name": "Hwang Hee-Chan",
+    "name": "Adil Aouchiche",
     "jersey": "7",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Hwang Hee-Chan",
-      "Kenan Karaman",
-      "Satoshi Tanaka",
-      "Soufian El-Faouzi",
       "Adil Aouchiche",
-      "Dejan Ljubicic"
+      "Kenan Karaman",
+      "Hwang Hee-Chan",
+      "Dejan Ljubicic",
+      "Soufian El-Faouzi",
+      "Satoshi Tanaka"
     ]
   },
   "olympiacos": {
     "name": "Marius Mouandilmadji",
     "jersey": "99",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Marius Mouandilmadji",
+      "Joel Roca",
       "Chiquinho",
       "Santiago Hezze",
       "Remo Freuler",
-      "Joel Roca",
       "Jota Silva"
     ]
   },
   "paok": {
-    "name": "Simon Banza",
+    "name": "Andrija Zivkovic",
     "jersey": "24",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Andrija Zivkovic",
+      "Diego Costa",
+      "Christos Zafeiris",
       "Simon Banza",
       "Cherif Ndiaye",
-      "Baptiste Santamaria",
-      "Kristijan Jakic",
-      "Christos Zafeiris",
-      "Andrija Zivkovic"
+      "Baptiste Santamaria"
     ]
   },
   "independiente santa fe": {
     "name": "Hugo Rodallega",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Hugo Rodallega",
       "Franco Fagúndez",
       "Johan Torres",
-      "Daniel Torres",
       "Emerson Rodríguez",
+      "Daniel Torres",
       "Jáder Obrian"
     ]
   },
   "deportivo pasto": {
-    "name": "Patrick Preciado",
+    "name": "Heiler Moreno",
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Heiler Moreno",
+      "Kevin Daniel Santacruz Andrade",
       "Patrick Preciado",
       "Michael Steven Mosquera Madrid",
-      "Frank Martínez",
-      "Kevin Daniel Santacruz Andrade",
       "Jonathan Perlaza",
-      "Heiler Moreno"
+      "Frank Martínez"
     ]
   },
   "vicenza": {
     "name": "Silvio Merkaj",
     "jersey": "33",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Silvio Merkaj",
-      "Nicola Rauti",
-      "Armand Rada",
-      "Marco Carraro",
       "Alessandro Bellemo",
-      "Filippo Costa"
+      "Filippo Costa",
+      "Marco Carraro",
+      "Nicola Rauti",
+      "Armand Rada"
     ]
   },
   "cremonese": {
     "name": "Federico Bonazzoli",
     "jersey": "90",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Federico Bonazzoli",
       "Morten Thorsby",
-      "Tommaso Berti",
+      "Giuseppe Pezzella",
       "Simone Lottici Tessadri",
-      "Jari Vandeputte",
-      "Adin Licina"
+      "Adin Licina",
+      "Tommaso Berti"
     ]
   },
   "athletic": {
-    "name": "Max",
+    "name": "Yarlen",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Yarlen",
       "Max",
       "João Miguel Da Costa Pereira",
-      "Yago Santos",
       "Kauan",
-      "Yarlen",
+      "Yago Santos",
       "Antonio Eduardo Furquim de Freitas Batista"
     ]
   },
@@ -2675,15 +2675,15 @@
     "name": "Gustavo Coutinho",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Gustavo Coutinho",
-      "David Terans",
       "José Domingo Moraes Neto",
+      "Adriano Martins",
       "Henrique",
-      "Geovany Soares",
+      "David Terans",
       "Bruno José"
     ]
   },
@@ -2691,15 +2691,15 @@
     "name": "Pablo Vegetti",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Pablo Vegetti",
-      "Sergio Araujo",
-      "Gastón Giménez",
-      "Ariel Gamarra",
       "Cesar Bobadilla",
+      "Gastón Giménez",
+      "Sergio Araujo",
+      "Ariel Gamarra",
       "Manuel Roffo"
     ]
   },
@@ -2708,143 +2708,143 @@
     "jersey": "30",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Paul Charpentier",
-      "Thiago Vidal",
-      "Alejandro Silva",
+      "Marcelo Cañete",
       "José Espínola",
       "Mathías Masi",
-      "Marcelo Cañete"
+      "Thiago Vidal",
+      "Alejandro Silva"
     ]
   },
   "sport boys": {
     "name": "Carlos Liza",
     "jersey": "30",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Carlos Liza",
-      "Federico Illanes",
       "Jostin Alarcón",
+      "Yuriel Celi",
       "Oslimg Mora",
       "Christian Cueva",
-      "Yuriel Celi"
+      "Federico Illanes"
     ]
   },
   "utc": {
-    "name": "Marlon de Jesús",
+    "name": "Marcos Lliuya",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Marlon de Jesús",
       "Marcos Lliuya",
-      "Luis Arce",
       "David Dioses",
       "Adolfo Muñoz",
-      "David Camacho"
+      "David Camacho",
+      "Marlon de Jesús",
+      "Luis Arce"
     ]
   },
   "lens": {
-    "name": "Thorgan Hazard",
+    "name": "Florian Thauvin",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Thorgan Hazard",
-      "Florian Sotoca",
       "Florian Thauvin",
-      "Amadou Haidara",
       "Yassine Titraoui",
-      "Matthieu Udol"
+      "Matthieu Udol",
+      "Amadou Haidara",
+      "Thorgan Hazard",
+      "Florian Sotoca"
     ]
   },
   "marseille": {
     "name": "Amine Gouiri",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Amine Gouiri",
-      "Himad Abdelli",
-      "Tochukwu Nnadi",
-      "Pierre-Emile Højbjerg",
       "Igor Paixão",
-      "Amine Harit"
+      "Amine Harit",
+      "Pierre-Emile Højbjerg",
+      "Himad Abdelli",
+      "Tochukwu Nnadi"
     ]
   },
   "fc utrecht": {
-    "name": "Artem Stepanov",
+    "name": "Yoann Cathline",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Artem Stepanov",
       "Yoann Cathline",
-      "Ángel Alarcón",
-      "Joris van Overeem",
       "Dani de Wit",
-      "Marius Broholm"
+      "Matisse Didden",
+      "Artem Stepanov",
+      "Marius Broholm",
+      "Ángel Alarcón"
     ]
   },
   "nec nijmegen": {
-    "name": "Bryan Linssen",
+    "name": "Dusan Tadic",
     "jersey": "30",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Bryan Linssen",
       "Dusan Tadic",
-      "Tjaronn Chery",
-      "Noé Lebreton",
+      "Kevin Kers",
+      "Ahmetcan Kaplan",
+      "Deveron Fonville",
       "Darko Nejasmic",
-      "Mitchel Bakker"
+      "Bryan Linssen"
     ]
   },
   "fiorentina": {
-    "name": "Mateo Pellegrino",
+    "name": "Franco Mastantuono",
     "jersey": "32",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Franco Mastantuono",
       "Mateo Pellegrino",
-      "Pedro Gonçalves",
-      "Christ Inao Oulaï",
-      "Cher Ndour",
       "Alieu Njie",
-      "Franco Mastantuono"
+      "Pedro Gonçalves",
+      "Cher Ndour",
+      "Christ Inao Oulaï"
     ]
   },
   "juventus": {
     "name": "Nick Woltemade",
     "jersey": "27",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Nick Woltemade",
-      "Randal Kolo Muani",
+      "Juan Cabal",
+      "Bremer",
       "Douglas Luiz",
-      "Teun Koopmeiners",
-      "Jérémie Boga",
-      "Weston McKennie"
+      "Randal Kolo Muani",
+      "Teun Koopmeiners"
     ]
   },
   "atlético madrid": {
@@ -2852,47 +2852,47 @@
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Julián Álvarez",
+      "Álex Baena",
+      "Giuliano Simeone",
       "Lee Kang-In",
       "Pablo Barrios",
-      "Koke",
-      "Álex Baena",
-      "Giuliano Simeone"
+      "Koke"
     ]
   },
   "barcelona": {
-    "name": "Raphinha",
+    "name": "Fermín López",
     "jersey": "11",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Raphinha",
-      "Marc Bernal",
-      "Pedri",
       "Fermín López",
       "Anthony Gordon",
-      "Lamine Yamal"
+      "Lamine Yamal",
+      "Raphinha",
+      "Pedri",
+      "Marc Bernal"
     ]
   },
   "unión la calera": {
     "name": "Brian Nicolas Ferreyra",
     "jersey": "32",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 5.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Brian Nicolas Ferreyra",
-      "Sebastián Sáez",
-      "Camilo Moya",
       "Rodrigo Pérez",
       "Bayron Oyarzo",
-      "Martín Hiriart"
+      "Martín Hiriart",
+      "Sebastián Sáez",
+      "Camilo Moya"
     ]
   },
   "huachipato": {
@@ -2900,7 +2900,7 @@
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Sergio Ñúñez",
@@ -2912,17 +2912,17 @@
     ]
   },
   "jaguares de córdoba": {
-    "name": "Johar Mejía",
+    "name": "Jose Yanez",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
+      "Jose Yanez",
       "Johar Mejía",
       "Cristian Alvarez",
       "Rafael Bustamante",
-      "Jose Yanez",
       "Wilfrido De La Rosa",
       "Faber Gil"
     ]
@@ -2931,47 +2931,47 @@
     "name": "Brandon Caicedo",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Brandon Caicedo",
-      "Fabián Sambueza",
-      "Enmerson Batalla",
       "Felix Charrupí",
-      "Aldair Zárate",
-      "Leonardo Flores"
+      "Fabián Sambueza",
+      "José Ortiz",
+      "Leonardo Flores",
+      "Enmerson Batalla"
     ]
   },
   "rio ave": {
-    "name": "Jalen Blesa",
+    "name": "Diogo Bezerra",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Diogo Bezerra",
       "Jalen Blesa",
       "Miguel Patrício",
       "Diogo Nascimento",
       "Georgios Liavas",
-      "Diogo Bezerra",
       "Sebastian Clemmensen"
     ]
   },
   "braga": {
-    "name": "Fran Navarro",
+    "name": "Pau Víctor",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Fran Navarro",
-      "Ricardo Horta",
       "Pau Víctor",
-      "Gorby",
+      "Ricardo Horta",
+      "Fran Navarro",
       "João Moutinho",
+      "Gorby",
       "Gabri Martínez"
     ]
   },
@@ -2980,143 +2980,143 @@
     "jersey": "37",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Leandro Antonetti",
       "Lovro Zvonarek",
       "Santiago Serra",
-      "Kevin Höög Jansson",
       "Ianis Stoica",
-      "Abraham Marcus"
+      "Abraham Marcus",
+      "Kevin Höög Jansson"
     ]
   },
   "benfica": {
-    "name": "Vangelis Pavlidis",
+    "name": "Gianluca Prestianni",
     "jersey": "14",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Gianluca Prestianni",
       "Vangelis Pavlidis",
+      "Rafa Silva",
       "Claudio Echeverri",
       "João Palhinha",
-      "Georgiy Sudakov",
-      "Gianluca Prestianni",
-      "Rafa Silva"
+      "Georgiy Sudakov"
     ]
   },
   "barcelona sc": {
-    "name": "Tomás Rodríguez",
+    "name": "Bryan Carabalí",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Bryan Carabalí",
       "Tomás Rodríguez",
       "Damián Díaz",
       "Gonzalo Lugo",
       "Jefferson Intriago",
-      "Johan García",
-      "Jefferson Wila"
+      "Johan García"
     ]
   },
   "liga de quito": {
-    "name": "Michael Estrada",
+    "name": "Sebastián Emmanuel González",
     "jersey": "11",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Michael Estrada",
+      "Sebastián Emmanuel González",
       "Lucas Rodríguez",
       "Jesús Pretell",
-      "Sebastián Emmanuel González",
+      "Michael Estrada",
       "Juan Sebastián Rodríguez",
       "Gonzalo Valle"
     ]
   },
   "central córdoba (santiago del estero)": {
-    "name": "Michael Santos",
+    "name": "Leonardo Sequeira",
     "jersey": "27",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Leonardo Sequeira",
+      "Dario Cáceres",
       "Michael Santos",
       "Marco Iacobellis",
       "Enzo Tiziano Ramirez Suarez",
-      "Matías Vera",
-      "Diego Barrera",
-      "Leonardo Sequeira"
+      "Diego Barrera"
     ]
   },
   "lanús": {
-    "name": "Allan Wlk",
+    "name": "Eduardo Salvio",
     "jersey": "20",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Allan Wlk",
-      "Marcelino Moreno",
-      "Felipe Peña",
-      "Raúl Loaiza",
       "Eduardo Salvio",
-      "Lucas Besozzi"
+      "Carlos Izquierdoz",
+      "Felipe Peña",
+      "Ronaldo de Jesus",
+      "Marcelino Moreno",
+      "Allan Wlk"
     ]
   },
   "ceará": {
-    "name": "Renzo López",
+    "name": "Enzo",
     "jersey": "94",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 4.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Renzo López",
+      "Enzo",
+      "Luiz Otavio",
       "Melk",
       "João Gabriel",
-      "Richardson",
       "Ryan Bonfim De Santana",
-      "Enzo"
+      "Renzo López"
     ]
   },
   "américa mineiro": {
-    "name": "Willian",
+    "name": "Matías Segovia",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Willian",
       "Matías Segovia",
-      "Barreto",
-      "Jorge Roa",
       "Guilherme Parede",
-      "Paulo Victor"
+      "Barreto",
+      "Tobías Ostchega",
+      "Jorge Roa",
+      "Willian"
     ]
   },
   "deportivo garcilaso": {
     "name": "Facundo Castelli",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Facundo Castelli",
       "Adrián Ascues",
-      "Agustín González",
-      "Carlos Ramos",
+      "Christopher Olivares",
       "Luiz Da Silva",
-      "Christopher Olivares"
+      "Carlos Ramos",
+      "Agustín González"
     ]
   },
   "comerciantes unidos": {
@@ -3124,30 +3124,30 @@
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Matías Sen",
       "Rodrigo Vilca",
-      "Thiago Salinas",
-      "Agustín Rodríguez",
       "Jean Carlo Olivares Uccelli",
-      "Josuee Herrera"
+      "Josuee Herrera",
+      "Thiago Salinas",
+      "Agustín Rodríguez"
     ]
   },
   "goiás": {
-    "name": "Cadu",
+    "name": "Nicolas",
     "jersey": "18",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Nicolas",
+      "Kadu",
       "Cadu",
       "Lucas Lima",
       "Lourenco",
-      "Machado",
-      "Kadu",
       "Felipe Clemente"
     ]
   },
@@ -3155,142 +3155,142 @@
     "name": "Emanuell Silva Ferreira",
     "jersey": "7",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Emanuell Silva Ferreira",
       "Brandão",
+      "Gustavo Teles",
       "Rodrigo Souza",
       "Karl",
-      "Gustavo Teles",
       "Guilherme Viana"
     ]
   },
   "querétaro": {
-    "name": "Ali Avila",
+    "name": "Mateo Coronel",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Ali Avila",
       "Mateo Coronel",
       "Santiago Homenchenko",
+      "Daniel Parra",
+      "Ali Avila",
       "Carlo García",
-      "Denilson Muñoz",
-      "Iker Benito"
+      "Denilson Muñoz"
     ]
   },
   "puebla": {
-    "name": "Luifer Hernández",
+    "name": "Omar Moreno",
     "jersey": "9",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Omar Moreno",
+      "Kevin Velasco",
+      "Oscar Villa",
       "Luifer Hernández",
       "Mathías Tomás",
-      "Eduardo Armenta",
-      "Alejandro Organista",
-      "Omar Moreno",
-      "Kevin Velasco"
+      "Eduardo Armenta"
     ]
   },
   "universidad de concepción": {
     "name": "Rogelio Funes Mori",
     "jersey": "22",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Rogelio Funes Mori",
-      "Bryan Ogaz",
+      "Harol Salgado",
       "Cristopher Mesías",
-      "Jeison Fuentealba",
-      "Iam González",
-      "Harol Salgado"
+      "Moises Torres",
+      "Bryan Ogaz",
+      "Jeison Fuentealba"
     ]
   },
   "o'higgins": {
-    "name": "Esteban Moreira",
+    "name": "Tomás Avilés",
     "jersey": "18",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Tomás Avilés",
       "Esteban Moreira",
       "Walter Bou",
+      "Ignacio Schor",
       "Felipe Ogaz",
-      "Tomás Avilés",
-      "Bastián Yañez",
-      "Ignacio Schor"
+      "Bastián Yañez"
     ]
   },
   "sportivo trinidense": {
-    "name": "Néstor Camacho",
+    "name": "Alan Morinigo",
     "jersey": "7",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Alan Morinigo",
       "Néstor Camacho",
       "Clementino González",
       "Nelson Gauto",
-      "Gustavo Viera",
       "Luis Abreu",
-      "Nicolás Maná"
+      "Gustavo Viera"
     ]
   },
   "sportivo ameliano": {
-    "name": "Richard Torales",
+    "name": "Jonathan Benítez",
     "jersey": "17",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Richard Torales",
       "Jonathan Benítez",
-      "Raúl Cabral",
+      "Abel Paredes",
       "Valentín Larralde",
-      "Ever Fabian Britez Carrera",
-      "Fredy Vera"
+      "Fabián Franco",
+      "Raúl Cabral",
+      "Richard Torales"
     ]
   },
   "deportes tolima": {
-    "name": "Adrián Parra",
+    "name": "Ever Valencia",
     "jersey": "24",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Adrián Parra",
       "Ever Valencia",
+      "Kelvin Florez",
+      "Adrián Parra",
       "Brayan Rovira",
       "Homer Martínez",
-      "Jorge Cabezas",
-      "Kelvin Florez"
+      "Jorge Cabezas"
     ]
   },
   "millonarios": {
-    "name": "David Silva",
+    "name": "Juan Cuadrado",
     "jersey": "14",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
+      "Juan Cuadrado",
       "David Silva",
       "Rodrigo Contreras",
       "Mateo García",
-      "Juan Cuadrado",
       "Daniel Ruíz",
       "Javier Burrai"
     ]
@@ -3299,9 +3299,9 @@
     "name": "Brian Figueroa",
     "jersey": "8",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Brian Figueroa",
       "Juan Gamboa",
@@ -3315,9 +3315,9 @@
     "name": "José Gabriel Rodríguez Novoa",
     "jersey": "12",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "José Gabriel Rodríguez Novoa",
       "Christopher Trejo",
@@ -3328,67 +3328,67 @@
     ]
   },
   "universitario": {
-    "name": "Alex Valera",
+    "name": "Gianluca Lapadula",
     "jersey": "20",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Alex Valera",
       "Gianluca Lapadula",
+      "Andy Polo",
+      "Williams Riveros",
       "Edison Flores",
-      "Jairo Concha",
-      "Horacio Calcaterra",
-      "César Inga"
+      "Alex Valera",
+      "Jairo Concha"
     ]
   },
   "deportivo moquegua": {
-    "name": "Jefferson Collazos",
+    "name": "Juan Lojas",
     "jersey": "90",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Jefferson Collazos",
-      "Ricardo Chipao",
-      "Cristian Mejía",
-      "Diego Ramírez",
+      "Juan Lojas",
       "Edgar Lastre",
-      "Carlos Grados"
+      "Jefferson Collazos",
+      "Cristian Mejía",
+      "Ricardo Chipao",
+      "Diego Ramírez"
     ]
   },
   "alianza fc": {
     "name": "Misael Martínez",
     "jersey": "77",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Misael Martínez",
+      "Jair Castillo",
       "Jesús Muñoz",
       "Felipe Pardo",
-      "Ever Meza",
-      "Jair Castillo",
-      "Jhildrey Lasso"
+      "Jhildrey Lasso",
+      "Ever Meza"
     ]
   },
   "llaneros fc": {
     "name": "Jhon Vásquez",
     "jersey": "95",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 3.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Jhon Vásquez",
-      "Marlon Sierra",
-      "Juan Castilla",
       "Néider Ospina",
-      "Joel Contreras",
-      "Juan Ramírez"
+      "Francisco Meza",
+      "Juan Castilla",
+      "Marlon Sierra",
+      "Joel Contreras"
     ]
   },
   "león": {
@@ -3396,14 +3396,14 @@
     "jersey": "19",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "José Alvarado",
       "Diber Cambindo",
+      "Daniel Arcila",
       "Fernando Beltrán",
       "José Rodríguez",
-      "Daniel Arcila",
       "Rodrigo Echeverría"
     ]
   },
@@ -3411,28 +3411,28 @@
     "name": "Santiago Sandoval",
     "jersey": "30",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Santiago Sandoval",
-      "Efrain Álvarez",
+      "Bryan González",
       "Roberto Alvarado",
+      "Efrain Álvarez",
       "Omar Govea",
-      "Fernando Gonzalez",
-      "Bryan González"
+      "Fernando Gonzalez"
     ]
   },
   "américa de cali": {
-    "name": "Tomás Ángel",
+    "name": "Luis Quiñones",
     "jersey": "21",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Tomás Ángel",
       "Luis Quiñones",
+      "Omar Bertel",
       "Josen Escobar",
       "Yani Quintero",
       "Yeison Guzmán",
@@ -3443,16 +3443,16 @@
     "name": "Juan Dinenno",
     "jersey": "9",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
-    "odds": 1.22,
+    "sot_avg": 0.85,
+    "prob": 71.0,
+    "odds": 1.4,
     "starters_list": [
       "Juan Dinenno",
       "Emanuel Reynoso",
-      "Gustavo Cuéllar",
-      "Daniel Giraldo",
       "Alexis Castillo Manyoma",
-      "Johan Andrés Martínez"
+      "Johan Andrés Martínez",
+      "Gustavo Cuéllar",
+      "Daniel Giraldo"
     ]
   },
   "plymouth parkway": {
@@ -3555,62 +3555,62 @@
     "name": "Leander Alvheim",
     "jersey": "19",
     "pos": "Delantero Titular",
-    "sot_avg": 1.65,
-    "prob": 86.5,
+    "sot_avg": 2.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
       "Leander Alvheim",
+      "Gustav Christensen",
       "Sander Svendsen",
-      "Heine Gikling Bruseth",
+      "Marius Elvius",
       "Syver Skeide",
-      "Zymer Bytyqi",
-      "Gustav Christensen"
+      "Zymer Bytyqi"
     ]
   },
   "vålerenga": {
-    "name": "Ole Saeter",
+    "name": "Mathias Grundetjern",
     "jersey": "90",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Ole Saeter",
       "Mathias Grundetjern",
-      "Carl Lange",
-      "Fidele Brice Ambina",
+      "Ole Saeter",
+      "Petter Strand",
       "Lucas Haren",
-      "Petter Strand"
+      "Carl Lange",
+      "Fidele Brice Ambina"
     ]
   },
   "mushuc runa": {
-    "name": "Elián Caicedo",
+    "name": "Jackson González",
     "jersey": "14",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Elián Caicedo",
-      "Nazareno Bazán",
       "Jackson González",
       "Esteban Dávila",
+      "Nazareno Bazán",
+      "Elián Caicedo",
       "Miguel Perea",
       "Bryan Corozo"
     ]
   },
   "delfín": {
-    "name": "Danny Luna",
+    "name": "Gerónimo Heredia",
     "jersey": "10",
     "pos": "Delantero Titular",
     "sot_avg": 1.65,
-    "prob": 86.5,
+    "prob": 87.5,
     "odds": 1.22,
     "starters_list": [
-      "Danny Luna",
-      "Eber Caicedo",
-      "Jonathan Morocho Basurto",
       "Gerónimo Heredia",
+      "Eber Caicedo",
+      "Danny Luna",
+      "Jonathan Morocho Basurto",
       "Thiago Ozaeta",
       "Brayan Joel Peña Preciado"
     ]
