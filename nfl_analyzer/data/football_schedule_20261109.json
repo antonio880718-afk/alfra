@@ -1,0 +1,64 @@
+[
+  {
+    "id": "401873051",
+    "league": "NFL",
+    "match": "Buffalo Bills @ Minnesota Vikings",
+    "home": "Minnesota Vikings",
+    "away": "Buffalo Bills",
+    "time_cdmx": "01:15",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "BUF -3.5",
+    "over_under": 45.5,
+    "venue": "U.S. Bank Stadium (Minneapolis) [DOMO]",
+    "stars": [
+      {
+        "name": "Sam Darnold",
+        "pos": "QB",
+        "pass_yds": 245.2,
+        "pass_tds": 1.9,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 15.0
+      },
+      {
+        "name": "Justin Jefferson",
+        "pos": "WR",
+        "rec_yds": 94.6,
+        "catches": 6.8,
+        "anytime_td_pct": 62.0
+      },
+      {
+        "name": "Aaron Jones",
+        "pos": "RB",
+        "rush_yds": 68.4,
+        "rec_yds": 26.5,
+        "anytime_td_pct": 48.0
+      },
+      {
+        "name": "Josh Allen",
+        "pos": "QB",
+        "pass_yds": 258.4,
+        "pass_tds": 2.1,
+        "rush_yds": 42.5,
+        "anytime_td_pct": 55.0
+      },
+      {
+        "name": "James Cook",
+        "pos": "RB",
+        "rush_yds": 78.5,
+        "rec_yds": 24.2,
+        "anytime_td_pct": 65.0
+      },
+      {
+        "name": "Khalil Shakir",
+        "pos": "WR",
+        "rec_yds": 58.2,
+        "catches": 4.8,
+        "anytime_td_pct": 38.0
+      }
+    ]
+  }
+]

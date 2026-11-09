@@ -1,0 +1,2450 @@
+[
+  {
+    "id": "401858291",
+    "league": "NCAAF",
+    "match": "Miami Hurricanes @ Notre Dame Fighting Irish",
+    "home": "Notre Dame Fighting Irish",
+    "away": "Miami Hurricanes",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "24 - 31",
+    "home_score": 31,
+    "away_score": 24,
+    "total_points": 55,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Notre Dame Stadium (Notre Dame) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Irish Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Irish Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Hurricanes Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Hurricanes Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856741",
+    "league": "NCAAF",
+    "match": "Georgia Bulldogs @ Ole Miss Rebels",
+    "home": "Ole Miss Rebels",
+    "away": "Georgia Bulldogs",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "42 - 7",
+    "home_score": 7,
+    "away_score": 42,
+    "total_points": 49,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Vaught-Hemingway Stadium (Oxford) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Rebels Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Rebels Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bulldogs Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bulldogs Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856849",
+    "league": "NCAAF",
+    "match": "BYU Cougars @ Utah Utes",
+    "home": "Utah Utes",
+    "away": "BYU Cougars",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "20 - 28",
+    "home_score": 28,
+    "away_score": 20,
+    "total_points": 48,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Rice-Eccles Stadium (Salt Lake City) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Utes Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Utes Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Cougars Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Cougars Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856740",
+    "league": "NCAAF",
+    "match": "Alabama Crimson Tide @ LSU Tigers",
+    "home": "LSU Tigers",
+    "away": "Alabama Crimson Tide",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "31 - 13",
+    "home_score": 13,
+    "away_score": 31,
+    "total_points": 44,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Tiger Stadium (LA) (Baton Rouge) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Tigers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Tigers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Tide Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Tide Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856745",
+    "league": "NCAAF",
+    "match": "Kentucky Wildcats @ Tennessee Volunteers",
+    "home": "Tennessee Volunteers",
+    "away": "Kentucky Wildcats",
+    "time_cdmx": "23:15",
+    "status": "FINALIZADO",
+    "score": "6 - 34",
+    "home_score": 34,
+    "away_score": 6,
+    "total_points": 40,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Neyland Stadium (Knoxville) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Volunteers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Volunteers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Wildcats Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Wildcats Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856743",
+    "league": "NCAAF",
+    "match": "Texas Longhorns @ Missouri Tigers",
+    "home": "Missouri Tigers",
+    "away": "Texas Longhorns",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "34 - 20",
+    "home_score": 20,
+    "away_score": 34,
+    "total_points": 54,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Memorial Stadium (Columbia) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Tigers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Tigers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Longhorns Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Longhorns Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858512",
+    "league": "NCAAF",
+    "match": "UCLA Bruins @ Minnesota Golden Gophers",
+    "home": "Minnesota Golden Gophers",
+    "away": "UCLA Bruins",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "34 - 20",
+    "home_score": 20,
+    "away_score": 34,
+    "total_points": 54,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Huntington Bank Stadium (Minneapolis) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Gophers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Gophers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bruins Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bruins Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858514",
+    "league": "NCAAF",
+    "match": "Oregon Ducks @ Ohio State Buckeyes",
+    "home": "Ohio State Buckeyes",
+    "away": "Oregon Ducks",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "41 - 28",
+    "home_score": 28,
+    "away_score": 41,
+    "total_points": 69,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Ohio Stadium (Columbus) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Buckeyes Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Buckeyes Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Ducks Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Ducks Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856856",
+    "league": "NCAAF",
+    "match": "West Virginia Mountaineers @ Texas Tech Red Raiders",
+    "home": "Texas Tech Red Raiders",
+    "away": "West Virginia Mountaineers",
+    "time_cdmx": "02:30",
+    "status": "FINALIZADO",
+    "score": "48 - 53",
+    "home_score": 53,
+    "away_score": 48,
+    "total_points": 101,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Galaxy Stadium (Lubbock) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Raiders Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Raiders Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Mountaineers Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Mountaineers Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858290",
+    "league": "NCAAF",
+    "match": "Merrimack Warriors @ Wake Forest Demon Deacons",
+    "home": "Wake Forest Demon Deacons",
+    "away": "Merrimack Warriors",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "0 - 77",
+    "home_score": 77,
+    "away_score": 0,
+    "total_points": 77,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Allegacy Federal Credit Union Stadium (Winston-Salem) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Deacons Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Deacons Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Warriors Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Warriors Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856851",
+    "league": "NCAAF",
+    "match": "Cincinnati Bearcats @ Houston Cougars",
+    "home": "Houston Cougars",
+    "away": "Cincinnati Bearcats",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "24 - 31",
+    "home_score": 31,
+    "away_score": 24,
+    "total_points": 55,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "TDECU Stadium (Houston) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Cougars Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Cougars Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bearcats Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bearcats Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858513",
+    "league": "NCAAF",
+    "match": "Iowa Hawkeyes @ Northwestern Wildcats",
+    "home": "Northwestern Wildcats",
+    "away": "Iowa Hawkeyes",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "24 - 10",
+    "home_score": 10,
+    "away_score": 24,
+    "total_points": 34,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Ryan Field (Evanston) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Wildcats Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Wildcats Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Hawkeyes Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Hawkeyes Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856744",
+    "league": "NCAAF",
+    "match": "Texas A&M Aggies @ South Carolina Gamecocks",
+    "home": "South Carolina Gamecocks",
+    "away": "Texas A&M Aggies",
+    "time_cdmx": "20:00",
+    "status": "FINALIZADO",
+    "score": "9 - 17",
+    "home_score": 17,
+    "away_score": 9,
+    "total_points": 26,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Williams-Brice Stadium (Columbia) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Gamecocks Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Gamecocks Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Aggies Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Aggies Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856739",
+    "league": "NCAAF",
+    "match": "Oklahoma Sooners @ Florida Gators",
+    "home": "Florida Gators",
+    "away": "Oklahoma Sooners",
+    "time_cdmx": "00:45",
+    "status": "FINALIZADO",
+    "score": "23 - 7",
+    "home_score": 7,
+    "away_score": 23,
+    "total_points": 30,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Ben Hill Griffin Stadium (Gainesville) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Gators Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Gators Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Sooners Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Sooners Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401860911",
+    "league": "NCAAF",
+    "match": "Boise State Broncos @ Colorado State Rams",
+    "home": "Colorado State Rams",
+    "away": "Boise State Broncos",
+    "time_cdmx": "23:00",
+    "status": "FINALIZADO",
+    "score": "64 - 38",
+    "home_score": 38,
+    "away_score": 64,
+    "total_points": 102,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Canvas Stadium (Fort Collins) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Rams Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Rams Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Broncos Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Broncos Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856853",
+    "league": "NCAAF",
+    "match": "Iowa State Cyclones @ Baylor Bears",
+    "home": "Baylor Bears",
+    "away": "Iowa State Cyclones",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "31 - 42",
+    "home_score": 42,
+    "away_score": 31,
+    "total_points": 73,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "McLane Stadium (Waco) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Bears Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Bears Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Cyclones Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Cyclones Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858285",
+    "league": "NCAAF",
+    "match": "Clemson Tigers @ Syracuse Orange",
+    "home": "Syracuse Orange",
+    "away": "Clemson Tigers",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "18 - 13",
+    "home_score": 13,
+    "away_score": 18,
+    "total_points": 31,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "JMA Wireless Dome (Syracuse) [DOMO]",
+    "stars": [
+      {
+        "name": "Orange Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Orange Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Tigers Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Tigers Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858289",
+    "league": "NCAAF",
+    "match": "Florida State Seminoles @ Boston College Eagles",
+    "home": "Boston College Eagles",
+    "away": "Florida State Seminoles",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "31 - 24",
+    "home_score": 24,
+    "away_score": 31,
+    "total_points": 55,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Alumni Stadium (Chestnut Hill, MA) (Chestnut Hill) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Eagles Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Eagles Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Seminoles Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Seminoles Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858292",
+    "league": "NCAAF",
+    "match": "North Carolina Tar Heels @ UConn Huskies",
+    "home": "UConn Huskies",
+    "away": "North Carolina Tar Heels",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "38 - 21",
+    "home_score": 21,
+    "away_score": 38,
+    "total_points": 59,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Pratt & Whitney Stadium (East Hartford) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Huskies Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Huskies Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Heels Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Heels Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401862822",
+    "league": "NCAAF",
+    "match": "Tulsa Golden Hurricane @ Tulane Green Wave",
+    "home": "Tulane Green Wave",
+    "away": "Tulsa Golden Hurricane",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "60 - 10",
+    "home_score": 10,
+    "away_score": 60,
+    "total_points": 70,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Yulman Stadium (New Orleans) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Wave Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Wave Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Hurricane Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Hurricane Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858286",
+    "league": "NCAAF",
+    "match": "Duke Blue Devils @ NC State Wolfpack",
+    "home": "NC State Wolfpack",
+    "away": "Duke Blue Devils",
+    "time_cdmx": "17:30",
+    "status": "FINALIZADO",
+    "score": "41 - 3",
+    "home_score": 3,
+    "away_score": 41,
+    "total_points": 44,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Carter-Finley Stadium (Raleigh) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Wolfpack Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Wolfpack Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Devils Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Devils Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858515",
+    "league": "NCAAF",
+    "match": "Maryland Terrapins @ Purdue Boilermakers",
+    "home": "Purdue Boilermakers",
+    "away": "Maryland Terrapins",
+    "time_cdmx": "17:30",
+    "status": "FINALIZADO",
+    "score": "34 - 29",
+    "home_score": 29,
+    "away_score": 34,
+    "total_points": 63,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Ross-Ade Stadium (West Lafayette) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Boilermakers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Boilermakers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Terrapins Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Terrapins Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856738",
+    "league": "NCAAF",
+    "match": "Arkansas Razorbacks @ Auburn Tigers",
+    "home": "Auburn Tigers",
+    "away": "Arkansas Razorbacks",
+    "time_cdmx": "17:45",
+    "status": "FINALIZADO",
+    "score": "23 - 26",
+    "home_score": 26,
+    "away_score": 23,
+    "total_points": 49,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Jordan-Hare Stadium (Auburn) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Tigers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Tigers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Razorbacks Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Razorbacks Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856854",
+    "league": "NCAAF",
+    "match": "Oklahoma State Cowboys @ Kansas State Wildcats",
+    "home": "Kansas State Wildcats",
+    "away": "Oklahoma State Cowboys",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "66 - 28",
+    "home_score": 28,
+    "away_score": 66,
+    "total_points": 94,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Bill Snyder Family Stadium (Manhattan) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Wildcats Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Wildcats Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Cowboys Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Cowboys Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401869945",
+    "league": "NCAAF",
+    "match": "Old Dominion Monarchs @ Coastal Carolina Chanticleers",
+    "home": "Coastal Carolina Chanticleers",
+    "away": "Old Dominion Monarchs",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "21 - 8",
+    "home_score": 8,
+    "away_score": 21,
+    "total_points": 29,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Brooks Stadium (SC) (Conway) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Chanticleers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Chanticleers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Monarchs Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Monarchs Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401869927",
+    "league": "NCAAF",
+    "match": "Georgia State Panthers @ App State Mountaineers",
+    "home": "App State Mountaineers",
+    "away": "Georgia State Panthers",
+    "time_cdmx": "19:30",
+    "status": "FINALIZADO",
+    "score": "39 - 23",
+    "home_score": 23,
+    "away_score": 39,
+    "total_points": 62,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Kidd Brewer Stadium (Boone) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Mountaineers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Mountaineers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Panthers Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Panthers Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401869936",
+    "league": "NCAAF",
+    "match": "UL Monroe Warhawks @ Arkansas State Red Wolves",
+    "home": "Arkansas State Red Wolves",
+    "away": "UL Monroe Warhawks",
+    "time_cdmx": "20:00",
+    "status": "FINALIZADO",
+    "score": "19 - 17",
+    "home_score": 17,
+    "away_score": 19,
+    "total_points": 36,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Centennial Bank Stadium (Jonesboro) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Wolves Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Wolves Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Warhawks Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Warhawks Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401871073",
+    "league": "NCAAF",
+    "match": "Delaware Blue Hens @ Kennesaw State Owls",
+    "home": "Kennesaw State Owls",
+    "away": "Delaware Blue Hens",
+    "time_cdmx": "20:00",
+    "status": "FINALIZADO",
+    "score": "40 - 42",
+    "home_score": 42,
+    "away_score": 40,
+    "total_points": 82,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Walens Family Field at Fifth Third Stadium (Kennesaw) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Owls Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Owls Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Hens Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Hens Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858516",
+    "league": "NCAAF",
+    "match": "Penn State Nittany Lions @ Washington Huskies",
+    "home": "Washington Huskies",
+    "away": "Penn State Nittany Lions",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "28 - 25",
+    "home_score": 25,
+    "away_score": 28,
+    "total_points": 53,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Husky Stadium (Seattle) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Huskies Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Huskies Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Lions Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Lions Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401862819",
+    "league": "NCAAF",
+    "match": "Charlotte 49ers @ UAB Blazers",
+    "home": "UAB Blazers",
+    "away": "Charlotte 49ers",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "12 - 23",
+    "home_score": 23,
+    "away_score": 12,
+    "total_points": 35,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Protective Stadium (Birmingham) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Blazers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Blazers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "49ers Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "49ers Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401862820",
+    "league": "NCAAF",
+    "match": "Temple Owls @ Navy Midshipmen",
+    "home": "Navy Midshipmen",
+    "away": "Temple Owls",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "35 - 42",
+    "home_score": 42,
+    "away_score": 35,
+    "total_points": 77,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Navy-Marine Corps Memorial Stadium (Annapolis) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Midshipmen Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Midshipmen Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Owls Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Owls Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401869951",
+    "league": "NCAAF",
+    "match": "Marshall Thundering Herd @ Georgia Southern Eagles",
+    "home": "Georgia Southern Eagles",
+    "away": "Marshall Thundering Herd",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "13 - 49",
+    "home_score": 49,
+    "away_score": 13,
+    "total_points": 62,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Allen E. Paulson Stadium (Statesboro) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Eagles Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Eagles Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Herd Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Herd Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401871076",
+    "league": "NCAAF",
+    "match": "Western Kentucky Hilltoppers @ Middle Tennessee Blue Raiders",
+    "home": "Middle Tennessee Blue Raiders",
+    "away": "Western Kentucky Hilltoppers",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "42 - 51",
+    "home_score": 51,
+    "away_score": 42,
+    "total_points": 93,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Johnny \"Red\" Floyd Stadium (Murfreesboro) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Raiders Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Raiders Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Hilltoppers Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Hilltoppers Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856850",
+    "league": "NCAAF",
+    "match": "UCF Knights @ Kansas Jayhawks",
+    "home": "Kansas Jayhawks",
+    "away": "UCF Knights",
+    "time_cdmx": "20:45",
+    "status": "FINALIZADO",
+    "score": "33 - 32",
+    "home_score": 32,
+    "away_score": 33,
+    "total_points": 65,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "David Booth Kansas Memorial Stadium (Lawrence) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Jayhawks Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Jayhawks Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Knights Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Knights Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401862821",
+    "league": "NCAAF",
+    "match": "Rice Owls @ North Texas Mean Green",
+    "home": "North Texas Mean Green",
+    "away": "Rice Owls",
+    "time_cdmx": "21:00",
+    "status": "FINALIZADO",
+    "score": "23 - 52",
+    "home_score": 52,
+    "away_score": 23,
+    "total_points": 75,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "DATCU Stadium (Denton) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Green Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Green Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Owls Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Owls Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401864534",
+    "league": "NCAAF",
+    "match": "Northern Illinois Huskies @ San José State Spartans",
+    "home": "San José State Spartans",
+    "away": "Northern Illinois Huskies",
+    "time_cdmx": "21:00",
+    "status": "FINALIZADO",
+    "score": "19 - 30",
+    "home_score": 30,
+    "away_score": 19,
+    "total_points": 49,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "CEFCU Stadium (San Jose) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Spartans Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Spartans Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Huskies Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Huskies Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401871074",
+    "league": "NCAAF",
+    "match": "Missouri State Bears @ Florida International Panthers",
+    "home": "Florida International Panthers",
+    "away": "Missouri State Bears",
+    "time_cdmx": "21:00",
+    "status": "FINALIZADO",
+    "score": "20 - 23",
+    "home_score": 23,
+    "away_score": 20,
+    "total_points": 43,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Pitbull Stadium (Miami) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Panthers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Panthers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bears Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bears Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401871098",
+    "league": "NCAAF",
+    "match": "Louisiana Tech Bulldogs @ Troy Trojans",
+    "home": "Troy Trojans",
+    "away": "Louisiana Tech Bulldogs",
+    "time_cdmx": "21:00",
+    "status": "FINALIZADO",
+    "score": "41 - 17",
+    "home_score": 17,
+    "away_score": 41,
+    "total_points": 58,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Veterans Memorial Stadium (AL) (Troy) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Trojans Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Trojans Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bulldogs Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bulldogs Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856742",
+    "league": "NCAAF",
+    "match": "Vanderbilt Commodores @ Mississippi State Bulldogs",
+    "home": "Mississippi State Bulldogs",
+    "away": "Vanderbilt Commodores",
+    "time_cdmx": "21:15",
+    "status": "FINALIZADO",
+    "score": "25 - 23",
+    "home_score": 23,
+    "away_score": 25,
+    "total_points": 48,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Davis Wade Stadium (Starkville) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Bulldogs Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Bulldogs Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Commodores Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Commodores Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858517",
+    "league": "NCAAF",
+    "match": "Rutgers Scarlet Knights @ Wisconsin Badgers",
+    "home": "Wisconsin Badgers",
+    "away": "Rutgers Scarlet Knights",
+    "time_cdmx": "21:15",
+    "status": "FINALIZADO",
+    "score": "10 - 31",
+    "home_score": 31,
+    "away_score": 10,
+    "total_points": 41,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Camp Randall Stadium (Madison) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Badgers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Badgers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Knights Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Knights Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401869968",
+    "league": "NCAAF",
+    "match": "South Alabama Jaguars @ Louisiana Ragin' Cajuns",
+    "home": "Louisiana Ragin' Cajuns",
+    "away": "South Alabama Jaguars",
+    "time_cdmx": "22:00",
+    "status": "FINALIZADO",
+    "score": "26 - 28",
+    "home_score": 28,
+    "away_score": 26,
+    "total_points": 54,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Our Lady of Lourdes Stadium (Lafayette) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Cajuns Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Cajuns Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Jaguars Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Jaguars Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401871075",
+    "league": "NCAAF",
+    "match": "Sam Houston Bearkats @ Jacksonville State Gamecocks",
+    "home": "Jacksonville State Gamecocks",
+    "away": "Sam Houston Bearkats",
+    "time_cdmx": "00:00",
+    "status": "FINALIZADO",
+    "score": "14 - 47",
+    "home_score": 47,
+    "away_score": 14,
+    "total_points": 61,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "AmFirst Stadium (Jacksonville) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Gamecocks Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Gamecocks Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bearkats Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bearkats Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401856852",
+    "league": "NCAAF",
+    "match": "Colorado Buffaloes @ Arizona State Sun Devils",
+    "home": "Arizona State Sun Devils",
+    "away": "Colorado Buffaloes",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "10 - 20",
+    "home_score": 20,
+    "away_score": 10,
+    "total_points": 30,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Mountain America Stadium (Tempe) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Devils Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Devils Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Buffaloes Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Buffaloes Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858287",
+    "league": "NCAAF",
+    "match": "Louisville Cardinals @ Georgia Tech Yellow Jackets",
+    "home": "Georgia Tech Yellow Jackets",
+    "away": "Louisville Cardinals",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "44 - 17",
+    "home_score": 17,
+    "away_score": 44,
+    "total_points": 61,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Bobby Dodd Stadium (Atlanta) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Jackets Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Jackets Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Cardinals Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Cardinals Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401858511",
+    "league": "NCAAF",
+    "match": "Michigan State Spartans @ Michigan Wolverines",
+    "home": "Michigan Wolverines",
+    "away": "Michigan State Spartans",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "15 - 6",
+    "home_score": 6,
+    "away_score": 15,
+    "total_points": 21,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Michigan Stadium (Ann Arbor) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Wolverines Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Wolverines Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Spartans Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Spartans Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401862823",
+    "league": "NCAAF",
+    "match": "Air Force Falcons @ Army Black Knights",
+    "home": "Army Black Knights",
+    "away": "Air Force Falcons",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "24 - 21",
+    "home_score": 21,
+    "away_score": 24,
+    "total_points": 45,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Michie Stadium (West Point) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Knights Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Knights Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Falcons Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Falcons Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401870795",
+    "league": "NCAAF",
+    "match": "Liberty Flames @ New Mexico State Aggies",
+    "home": "New Mexico State Aggies",
+    "away": "Liberty Flames",
+    "time_cdmx": "01:00",
+    "status": "FINALIZADO",
+    "score": "30 - 14",
+    "home_score": 14,
+    "away_score": 30,
+    "total_points": 44,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Aggie Memorial Stadium (Las Cruces) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Aggies Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Aggies Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Flames Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Flames Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401860913",
+    "league": "NCAAF",
+    "match": "Fresno State Bulldogs @ Utah State Aggies",
+    "home": "Utah State Aggies",
+    "away": "Fresno State Bulldogs",
+    "time_cdmx": "02:30",
+    "status": "FINALIZADO",
+    "score": "10 - 17",
+    "home_score": 17,
+    "away_score": 10,
+    "total_points": 27,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Maverik Stadium (Logan) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Aggies Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Aggies Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bulldogs Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bulldogs Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401864532",
+    "league": "NCAAF",
+    "match": "Hawai'i Rainbow Warriors @ UTEP Miners",
+    "home": "UTEP Miners",
+    "away": "Hawai'i Rainbow Warriors",
+    "time_cdmx": "02:30",
+    "status": "FINALIZADO",
+    "score": "17 - 14",
+    "home_score": 14,
+    "away_score": 17,
+    "total_points": 31,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Sun Bowl (El Paso) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Miners Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Miners Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Warriors Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Warriors Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401860912",
+    "league": "NCAAF",
+    "match": "Texas State Bobcats @ Oregon State Beavers",
+    "home": "Oregon State Beavers",
+    "away": "Texas State Bobcats",
+    "time_cdmx": "03:30",
+    "status": "FINALIZADO",
+    "score": "42 - 21",
+    "home_score": 21,
+    "away_score": 42,
+    "total_points": 63,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Reser Stadium (Corvallis) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Beavers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Beavers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bobcats Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bobcats Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401864535",
+    "league": "NCAAF",
+    "match": "Wyoming Cowboys @ UNLV Rebels",
+    "home": "UNLV Rebels",
+    "away": "Wyoming Cowboys",
+    "time_cdmx": "03:30",
+    "status": "FINALIZADO",
+    "score": "41 - 35",
+    "home_score": 35,
+    "away_score": 41,
+    "total_points": 76,
+    "spread_str": "",
+    "over_under": 54.5,
+    "venue": "Allegiant Stadium (Las Vegas) [DOMO]",
+    "stars": [
+      {
+        "name": "Rebels Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Rebels Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Cowboys Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Cowboys Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  }
+]

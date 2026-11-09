@@ -1,0 +1,371 @@
+[
+  {
+    "id": "401909938",
+    "league": "NBA",
+    "match": "Denver Nuggets @ Indiana Pacers",
+    "home": "Indiana Pacers",
+    "away": "Denver Nuggets",
+    "time_cdmx": "22:00",
+    "status": "FINALIZADO",
+    "score": "114 - 102",
+    "home_score": 102,
+    "away_score": 114,
+    "total_points": 216,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Arena CDMX (Mexico City)",
+    "stars": [
+      {
+        "name": "Pacers Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Nuggets Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909939",
+    "league": "NBA",
+    "match": "Brooklyn Nets @ Atlanta Hawks",
+    "home": "Atlanta Hawks",
+    "away": "Brooklyn Nets",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "121 - 124",
+    "home_score": 124,
+    "away_score": 121,
+    "total_points": 245,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "State Farm Arena (Atlanta)",
+    "stars": [
+      {
+        "name": "Trae Young",
+        "pos": "PG",
+        "pts": 26.2,
+        "reb": 3.4,
+        "ast": 10.8,
+        "threes": 3.1,
+        "pra": 40.4
+      },
+      {
+        "name": "Jalen Johnson",
+        "pos": "PF",
+        "pts": 19.4,
+        "reb": 10.0,
+        "ast": 5.2,
+        "threes": 1.4,
+        "pra": 34.6
+      },
+      {
+        "name": "Clint Capela",
+        "pos": "C",
+        "pts": 11.2,
+        "reb": 9.8,
+        "ast": 1.1,
+        "threes": 0.0,
+        "pra": 22.1
+      },
+      {
+        "name": "De'Andre Hunter",
+        "pos": "SF",
+        "pts": 16.5,
+        "reb": 4.2,
+        "ast": 1.8,
+        "threes": 2.3,
+        "pra": 22.5
+      }
+    ]
+  },
+  {
+    "id": "401909940",
+    "league": "NBA",
+    "match": "New York Knicks @ Cleveland Cavaliers",
+    "home": "Cleveland Cavaliers",
+    "away": "New York Knicks",
+    "time_cdmx": "01:00",
+    "status": "FINALIZADO",
+    "score": "109 - 97",
+    "home_score": 97,
+    "away_score": 109,
+    "total_points": 206,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Rocket Arena (Cleveland)",
+    "stars": [
+      {
+        "name": "Donovan Mitchell",
+        "pos": "SG",
+        "pts": 25.6,
+        "reb": 4.2,
+        "ast": 5.1,
+        "threes": 3.4,
+        "pra": 34.9
+      },
+      {
+        "name": "Darius Garland",
+        "pos": "PG",
+        "pts": 20.4,
+        "reb": 2.8,
+        "ast": 6.8,
+        "threes": 2.6,
+        "pra": 30.0
+      },
+      {
+        "name": "Evan Mobley",
+        "pos": "PF",
+        "pts": 18.2,
+        "reb": 8.8,
+        "ast": 2.8,
+        "threes": 0.8,
+        "pra": 29.8
+      },
+      {
+        "name": "Jarrett Allen",
+        "pos": "C",
+        "pts": 14.5,
+        "reb": 11.2,
+        "ast": 1.6,
+        "threes": 0.0,
+        "pra": 27.3
+      }
+    ]
+  },
+  {
+    "id": "401909941",
+    "league": "NBA",
+    "match": "Washington Wizards @ Oklahoma City Thunder",
+    "home": "Oklahoma City Thunder",
+    "away": "Washington Wizards",
+    "time_cdmx": "01:00",
+    "status": "FINALIZADO",
+    "score": "75 - 114",
+    "home_score": 114,
+    "away_score": 75,
+    "total_points": 189,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Paycom Center (Oklahoma City)",
+    "stars": [
+      {
+        "name": "Jordan Poole",
+        "pos": "SG",
+        "pts": 21.2,
+        "reb": 2.8,
+        "ast": 4.6,
+        "threes": 3.2,
+        "pra": 28.6
+      },
+      {
+        "name": "Kyle Kuzma",
+        "pos": "PF",
+        "pts": 17.8,
+        "reb": 6.8,
+        "ast": 3.4,
+        "threes": 1.8,
+        "pra": 28.0
+      },
+      {
+        "name": "Bilal Coulibaly",
+        "pos": "SF",
+        "pts": 14.8,
+        "reb": 5.4,
+        "ast": 2.6,
+        "threes": 1.6,
+        "pra": 22.8
+      }
+    ]
+  },
+  {
+    "id": "401909942",
+    "league": "NBA",
+    "match": "Orlando Magic @ Golden State Warriors",
+    "home": "Golden State Warriors",
+    "away": "Orlando Magic",
+    "time_cdmx": "01:30",
+    "status": "FINALIZADO",
+    "score": "119 - 126",
+    "home_score": 126,
+    "away_score": 119,
+    "total_points": 245,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Chase Center (San Francisco)",
+    "stars": [
+      {
+        "name": "Warriors Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Magic Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909943",
+    "league": "NBA",
+    "match": "Houston Rockets @ Phoenix Suns",
+    "home": "Phoenix Suns",
+    "away": "Houston Rockets",
+    "time_cdmx": "02:00",
+    "status": "FINALIZADO",
+    "score": "99 - 102",
+    "home_score": 102,
+    "away_score": 99,
+    "total_points": 201,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Mortgage Matchup Center (Phoenix)",
+    "stars": [
+      {
+        "name": "Suns Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Rockets Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909944",
+    "league": "NBA",
+    "match": "San Antonio Spurs @ Portland Trail Blazers",
+    "home": "Portland Trail Blazers",
+    "away": "San Antonio Spurs",
+    "time_cdmx": "03:00",
+    "status": "FINALIZADO",
+    "score": "125 - 103",
+    "home_score": 103,
+    "away_score": 125,
+    "total_points": 228,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Moda Center (Portland)",
+    "stars": [
+      {
+        "name": "Blazers Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Spurs Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401918948",
+    "league": "NCAAB",
+    "match": "Morehead State Eagles @ Louisville Cardinals",
+    "home": "Louisville Cardinals",
+    "away": "Morehead State Eagles",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "57 - 107",
+    "home_score": 107,
+    "away_score": 57,
+    "total_points": 164,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "KFC Yum! Center (Louisville)",
+    "stars": [
+      {
+        "name": "Cardinals Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Eagles Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401928788",
+    "league": "NCAAB",
+    "match": "New Mexico State Aggies @ Gonzaga Bulldogs",
+    "home": "Gonzaga Bulldogs",
+    "away": "New Mexico State Aggies",
+    "time_cdmx": "22:00",
+    "status": "FINALIZADO",
+    "score": "68 - 109",
+    "home_score": 109,
+    "away_score": 68,
+    "total_points": 177,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "McCarthey Athletic Center (Spokane)",
+    "stars": [
+      {
+        "name": "Bulldogs Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Aggies Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  }
+]

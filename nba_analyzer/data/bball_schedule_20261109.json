@@ -1,0 +1,605 @@
+[
+  {
+    "id": "401909952",
+    "league": "NBA",
+    "match": "Los Angeles Lakers @ Atlanta Hawks",
+    "home": "Atlanta Hawks",
+    "away": "Los Angeles Lakers",
+    "time_cdmx": "00:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "ATL -2.5",
+    "over_under": 233.5,
+    "venue": "State Farm Arena (Atlanta)",
+    "stars": [
+      {
+        "name": "Trae Young",
+        "pos": "PG",
+        "pts": 26.2,
+        "reb": 3.4,
+        "ast": 10.8,
+        "threes": 3.1,
+        "pra": 40.4
+      },
+      {
+        "name": "Jalen Johnson",
+        "pos": "PF",
+        "pts": 19.4,
+        "reb": 10.0,
+        "ast": 5.2,
+        "threes": 1.4,
+        "pra": 34.6
+      },
+      {
+        "name": "Clint Capela",
+        "pos": "C",
+        "pts": 11.2,
+        "reb": 9.8,
+        "ast": 1.1,
+        "threes": 0.0,
+        "pra": 22.1
+      },
+      {
+        "name": "De'Andre Hunter",
+        "pos": "SF",
+        "pts": 16.5,
+        "reb": 4.2,
+        "ast": 1.8,
+        "threes": 2.3,
+        "pra": 22.5
+      },
+      {
+        "name": "Anthony Davis",
+        "pos": "C",
+        "pts": 27.8,
+        "reb": 11.6,
+        "ast": 3.2,
+        "threes": 0.6,
+        "pra": 42.6
+      },
+      {
+        "name": "LeBron James",
+        "pos": "F",
+        "pts": 22.4,
+        "reb": 7.8,
+        "ast": 8.6,
+        "threes": 2.2,
+        "pra": 38.8
+      },
+      {
+        "name": "Austin Reaves",
+        "pos": "G",
+        "pts": 17.5,
+        "reb": 4.1,
+        "ast": 5.4,
+        "threes": 2.1,
+        "pra": 27.0
+      },
+      {
+        "name": "D'Angelo Russell",
+        "pos": "G",
+        "pts": 14.8,
+        "reb": 2.9,
+        "ast": 5.8,
+        "threes": 2.4,
+        "pra": 23.5
+      }
+    ]
+  },
+  {
+    "id": "401909953",
+    "league": "NBA",
+    "match": "Cleveland Cavaliers @ Charlotte Hornets",
+    "home": "Charlotte Hornets",
+    "away": "Cleveland Cavaliers",
+    "time_cdmx": "00:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "CLE -8.5",
+    "over_under": 215.5,
+    "venue": "Spectrum Center (Charlotte)",
+    "stars": [
+      {
+        "name": "LaMelo Ball",
+        "pos": "PG",
+        "pts": 28.5,
+        "reb": 5.2,
+        "ast": 6.8,
+        "threes": 4.2,
+        "pra": 40.5
+      },
+      {
+        "name": "Brandon Miller",
+        "pos": "SF",
+        "pts": 18.6,
+        "reb": 4.5,
+        "ast": 3.4,
+        "threes": 2.6,
+        "pra": 26.5
+      },
+      {
+        "name": "Miles Bridges",
+        "pos": "PF",
+        "pts": 16.2,
+        "reb": 6.8,
+        "ast": 3.2,
+        "threes": 1.8,
+        "pra": 26.2
+      },
+      {
+        "name": "Donovan Mitchell",
+        "pos": "SG",
+        "pts": 25.6,
+        "reb": 4.2,
+        "ast": 5.1,
+        "threes": 3.4,
+        "pra": 34.9
+      },
+      {
+        "name": "Darius Garland",
+        "pos": "PG",
+        "pts": 20.4,
+        "reb": 2.8,
+        "ast": 6.8,
+        "threes": 2.6,
+        "pra": 30.0
+      },
+      {
+        "name": "Evan Mobley",
+        "pos": "PF",
+        "pts": 18.2,
+        "reb": 8.8,
+        "ast": 2.8,
+        "threes": 0.8,
+        "pra": 29.8
+      },
+      {
+        "name": "Jarrett Allen",
+        "pos": "C",
+        "pts": 14.5,
+        "reb": 11.2,
+        "ast": 1.6,
+        "threes": 0.0,
+        "pra": 27.3
+      }
+    ]
+  },
+  {
+    "id": "401909954",
+    "league": "NBA",
+    "match": "Washington Wizards @ Detroit Pistons",
+    "home": "Detroit Pistons",
+    "away": "Washington Wizards",
+    "time_cdmx": "00:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "DET -9.5",
+    "over_under": 218.5,
+    "venue": "Little Caesars Arena (Detroit)",
+    "stars": [
+      {
+        "name": "Cade Cunningham",
+        "pos": "PG",
+        "pts": 23.4,
+        "reb": 7.2,
+        "ast": 8.1,
+        "threes": 2.0,
+        "pra": 38.7
+      },
+      {
+        "name": "Jaden Ivey",
+        "pos": "SG",
+        "pts": 18.6,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.1,
+        "pra": 26.6
+      },
+      {
+        "name": "Tobias Harris",
+        "pos": "PF",
+        "pts": 14.2,
+        "reb": 6.8,
+        "ast": 2.2,
+        "threes": 1.4,
+        "pra": 23.2
+      },
+      {
+        "name": "Jordan Poole",
+        "pos": "SG",
+        "pts": 21.2,
+        "reb": 2.8,
+        "ast": 4.6,
+        "threes": 3.2,
+        "pra": 28.6
+      },
+      {
+        "name": "Kyle Kuzma",
+        "pos": "PF",
+        "pts": 17.8,
+        "reb": 6.8,
+        "ast": 3.4,
+        "threes": 1.8,
+        "pra": 28.0
+      },
+      {
+        "name": "Bilal Coulibaly",
+        "pos": "SF",
+        "pts": 14.8,
+        "reb": 5.4,
+        "ast": 2.6,
+        "threes": 1.6,
+        "pra": 22.8
+      }
+    ]
+  },
+  {
+    "id": "401909955",
+    "league": "NBA",
+    "match": "Memphis Grizzlies @ Toronto Raptors",
+    "home": "Toronto Raptors",
+    "away": "Memphis Grizzlies",
+    "time_cdmx": "00:30",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "MEM -1.5",
+    "over_under": 225.5,
+    "venue": "Scotiabank Arena (Toronto)",
+    "stars": [
+      {
+        "name": "Raptors Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Grizzlies Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909956",
+    "league": "NBA",
+    "match": "Indiana Pacers @ Dallas Mavericks",
+    "home": "Dallas Mavericks",
+    "away": "Indiana Pacers",
+    "time_cdmx": "01:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "DAL -4.5",
+    "over_under": 226.5,
+    "venue": "American Airlines Center (Dallas)",
+    "stars": [
+      {
+        "name": "Mavericks Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Pacers Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909957",
+    "league": "NBA",
+    "match": "Denver Nuggets @ Houston Rockets",
+    "home": "Houston Rockets",
+    "away": "Denver Nuggets",
+    "time_cdmx": "01:30",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "HOU -4.5",
+    "over_under": 223.5,
+    "venue": "Toyota Center (Houston) (Houston)",
+    "stars": [
+      {
+        "name": "Rockets Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Nuggets Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909958",
+    "league": "NBA",
+    "match": "San Antonio Spurs @ Phoenix Suns",
+    "home": "Phoenix Suns",
+    "away": "San Antonio Spurs",
+    "time_cdmx": "02:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "SA -8.5",
+    "over_under": 226.5,
+    "venue": "Mortgage Matchup Center (Phoenix)",
+    "stars": [
+      {
+        "name": "Suns Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Spurs Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909959",
+    "league": "NBA",
+    "match": "New Orleans Pelicans @ Golden State Warriors",
+    "home": "Golden State Warriors",
+    "away": "New Orleans Pelicans",
+    "time_cdmx": "03:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "GS -11.5",
+    "over_under": 229.5,
+    "venue": "Chase Center (San Francisco)",
+    "stars": [
+      {
+        "name": "Warriors Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Pelicans Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401920686",
+    "league": "NCAAB",
+    "match": "Wagner Seahawks @ UConn Huskies",
+    "home": "UConn Huskies",
+    "away": "Wagner Seahawks",
+    "time_cdmx": "00:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "CONN -39.5",
+    "over_under": 139.5,
+    "venue": "M&T Bank Center at Gampel Pavilion (Storrs)",
+    "stars": [
+      {
+        "name": "Huskies Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Seahawks Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401906865",
+    "league": "NCAAB",
+    "match": "Grambling Tigers @ Texas Longhorns",
+    "home": "Texas Longhorns",
+    "away": "Grambling Tigers",
+    "time_cdmx": "00:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "TEX -37.5",
+    "over_under": 155.5,
+    "venue": "Moody Center (Austin)",
+    "stars": [
+      {
+        "name": "Longhorns Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Tigers Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401906849",
+    "league": "NCAAB",
+    "match": "Radford Highlanders @ Tennessee Volunteers",
+    "home": "Tennessee Volunteers",
+    "away": "Radford Highlanders",
+    "time_cdmx": "00:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "TENN -29.5",
+    "over_under": 153.5,
+    "venue": "Food City Center (Knoxville)",
+    "stars": [
+      {
+        "name": "Volunteers Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Highlanders Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401921720",
+    "league": "NCAAB",
+    "match": "North Florida Ospreys @ Miami Hurricanes",
+    "home": "Miami Hurricanes",
+    "away": "North Florida Ospreys",
+    "time_cdmx": "00:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "MIA -35.5",
+    "over_under": 165.5,
+    "venue": "Watsco Center (Coral Gables)",
+    "stars": [
+      {
+        "name": "Hurricanes Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Ospreys Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401906759",
+    "league": "NCAAB",
+    "match": "Oakland Golden Grizzlies @ Alabama Crimson Tide",
+    "home": "Alabama Crimson Tide",
+    "away": "Oakland Golden Grizzlies",
+    "time_cdmx": "00:30",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "ALA -32.5",
+    "over_under": 170.5,
+    "venue": "Coleman Coliseum (Tuscaloosa)",
+    "stars": [
+      {
+        "name": "Tide Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Grizzlies Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  }
+]

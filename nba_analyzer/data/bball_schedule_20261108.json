@@ -1,0 +1,443 @@
+[
+  {
+    "id": "401909945",
+    "league": "NBA",
+    "match": "Philadelphia 76ers @ Chicago Bulls",
+    "home": "Chicago Bulls",
+    "away": "Philadelphia 76ers",
+    "time_cdmx": "20:30",
+    "status": "FINALIZADO",
+    "score": "127 - 121",
+    "home_score": 121,
+    "away_score": 127,
+    "total_points": 248,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "United Center (Chicago)",
+    "stars": [
+      {
+        "name": "Bulls Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "76ers Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909946",
+    "league": "NBA",
+    "match": "Los Angeles Lakers @ Detroit Pistons",
+    "home": "Detroit Pistons",
+    "away": "Los Angeles Lakers",
+    "time_cdmx": "23:00",
+    "status": "FINALIZADO",
+    "score": "121 - 116",
+    "home_score": 116,
+    "away_score": 121,
+    "total_points": 237,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Little Caesars Arena (Detroit)",
+    "stars": [
+      {
+        "name": "Cade Cunningham",
+        "pos": "PG",
+        "pts": 23.4,
+        "reb": 7.2,
+        "ast": 8.1,
+        "threes": 2.0,
+        "pra": 38.7
+      },
+      {
+        "name": "Jaden Ivey",
+        "pos": "SG",
+        "pts": 18.6,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.1,
+        "pra": 26.6
+      },
+      {
+        "name": "Tobias Harris",
+        "pos": "PF",
+        "pts": 14.2,
+        "reb": 6.8,
+        "ast": 2.2,
+        "threes": 1.4,
+        "pra": 23.2
+      },
+      {
+        "name": "Anthony Davis",
+        "pos": "C",
+        "pts": 27.8,
+        "reb": 11.6,
+        "ast": 3.2,
+        "threes": 0.6,
+        "pra": 42.6
+      },
+      {
+        "name": "LeBron James",
+        "pos": "F",
+        "pts": 22.4,
+        "reb": 7.8,
+        "ast": 8.6,
+        "threes": 2.2,
+        "pra": 38.8
+      },
+      {
+        "name": "Austin Reaves",
+        "pos": "G",
+        "pts": 17.5,
+        "reb": 4.1,
+        "ast": 5.4,
+        "threes": 2.1,
+        "pra": 27.0
+      },
+      {
+        "name": "D'Angelo Russell",
+        "pos": "G",
+        "pts": 14.8,
+        "reb": 2.9,
+        "ast": 5.8,
+        "threes": 2.4,
+        "pra": 23.5
+      }
+    ]
+  },
+  {
+    "id": "401909947",
+    "league": "NBA",
+    "match": "Utah Jazz @ Minnesota Timberwolves",
+    "home": "Minnesota Timberwolves",
+    "away": "Utah Jazz",
+    "time_cdmx": "00:00",
+    "status": "FINALIZADO",
+    "score": "100 - 115",
+    "home_score": 115,
+    "away_score": 100,
+    "total_points": 215,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Target Center (Minneapolis)",
+    "stars": [
+      {
+        "name": "Timberwolves Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Jazz Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909948",
+    "league": "NBA",
+    "match": "Brooklyn Nets @ Dallas Mavericks",
+    "home": "Dallas Mavericks",
+    "away": "Brooklyn Nets",
+    "time_cdmx": "00:30",
+    "status": "FINALIZADO",
+    "score": "93 - 130",
+    "home_score": 130,
+    "away_score": 93,
+    "total_points": 223,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "American Airlines Center (Dallas)",
+    "stars": [
+      {
+        "name": "Mavericks Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Nets Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909949",
+    "league": "NBA",
+    "match": "Boston Celtics @ Milwaukee Bucks",
+    "home": "Milwaukee Bucks",
+    "away": "Boston Celtics",
+    "time_cdmx": "01:00",
+    "status": "FINALIZADO",
+    "score": "117 - 97",
+    "home_score": 97,
+    "away_score": 117,
+    "total_points": 214,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Fiserv Forum (Milwaukee)",
+    "stars": [
+      {
+        "name": "Bucks Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Celtics Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909950",
+    "league": "NBA",
+    "match": "New Orleans Pelicans @ LA Clippers",
+    "home": "LA Clippers",
+    "away": "New Orleans Pelicans",
+    "time_cdmx": "02:00",
+    "status": "FINALIZADO",
+    "score": "123 - 139",
+    "home_score": 139,
+    "away_score": 123,
+    "total_points": 262,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Intuit Dome (Inglewood)",
+    "stars": [
+      {
+        "name": "Clippers Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Pelicans Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401909951",
+    "league": "NBA",
+    "match": "Miami Heat @ Sacramento Kings",
+    "home": "Sacramento Kings",
+    "away": "Miami Heat",
+    "time_cdmx": "02:00",
+    "status": "FINALIZADO",
+    "score": "114 - 108",
+    "home_score": 108,
+    "away_score": 114,
+    "total_points": 222,
+    "spread_str": "",
+    "over_under": 226.5,
+    "venue": "Golden 1 Center (Sacramento)",
+    "stars": [
+      {
+        "name": "Kings Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Heat Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401920424",
+    "league": "NCAAB",
+    "match": "Arkansas Razorbacks @ Virginia Cavaliers",
+    "home": "Virginia Cavaliers",
+    "away": "Arkansas Razorbacks",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "72 - 91",
+    "home_score": 91,
+    "away_score": 72,
+    "total_points": 163,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "Capital One Arena (Washington)",
+    "stars": [
+      {
+        "name": "Cavaliers Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Razorbacks Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401918053",
+    "league": "NCAAB",
+    "match": "California Golden Bears @ Houston Cougars",
+    "home": "Houston Cougars",
+    "away": "California Golden Bears",
+    "time_cdmx": "01:30",
+    "status": "FINALIZADO",
+    "score": "68 - 86",
+    "home_score": 86,
+    "away_score": 68,
+    "total_points": 154,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "Tahoe Blue Event Center (Stateline)",
+    "stars": [
+      {
+        "name": "Cougars Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Bears Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401924646",
+    "league": "NCAAB",
+    "match": "Iona Gaels @ St. John's Red Storm",
+    "home": "St. John's Red Storm",
+    "away": "Iona Gaels",
+    "time_cdmx": "17:00",
+    "status": "FINALIZADO",
+    "score": "65 - 104",
+    "home_score": 104,
+    "away_score": 65,
+    "total_points": 169,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "Madison Square Garden (New York)",
+    "stars": [
+      {
+        "name": "Storm Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Gaels Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
+    "id": "401919029",
+    "league": "NCAAB",
+    "match": "Wichita State Shockers @ USC Trojans",
+    "home": "USC Trojans",
+    "away": "Wichita State Shockers",
+    "time_cdmx": "04:00",
+    "status": "FINALIZADO",
+    "score": "86 - 93",
+    "home_score": 93,
+    "away_score": 86,
+    "total_points": 179,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "Tahoe Blue Event Center (Stateline)",
+    "stars": [
+      {
+        "name": "Trojans Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Shockers Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  }
+]

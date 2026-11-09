@@ -1,0 +1,618 @@
+[
+  {
+    "id": "401873038",
+    "league": "NFL",
+    "match": "Cincinnati Bengals @ Atlanta Falcons",
+    "home": "Atlanta Falcons",
+    "away": "Cincinnati Bengals",
+    "time_cdmx": "14:30",
+    "status": "FINALIZADO",
+    "score": "34 - 17",
+    "home_score": 17,
+    "away_score": 34,
+    "total_points": 51,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Santiago Bernabéu (Madrid) [DOMO]",
+    "stars": [
+      {
+        "name": "Falcons Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Falcons Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Bengals Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Bengals Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873040",
+    "league": "NFL",
+    "match": "Dallas Cowboys @ Indianapolis Colts",
+    "home": "Indianapolis Colts",
+    "away": "Dallas Cowboys",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "27 - 23",
+    "home_score": 23,
+    "away_score": 27,
+    "total_points": 50,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Lucas Oil Stadium (Indianapolis) [DOMO]",
+    "stars": [
+      {
+        "name": "Colts Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Colts Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Cowboys Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Cowboys Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873045",
+    "league": "NFL",
+    "match": "New York Jets @ Kansas City Chiefs",
+    "home": "Kansas City Chiefs",
+    "away": "New York Jets",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "12 - 35",
+    "home_score": 35,
+    "away_score": 12,
+    "total_points": 47,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Arrowhead Stadium (Kansas City) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Patrick Mahomes",
+        "pos": "QB",
+        "pass_yds": 262.5,
+        "pass_tds": 2.0,
+        "rush_yds": 22.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Travis Kelce",
+        "pos": "TE",
+        "rec_yds": 62.4,
+        "catches": 5.4,
+        "anytime_td_pct": 45.0
+      },
+      {
+        "name": "Kareem Hunt",
+        "pos": "RB",
+        "rush_yds": 64.2,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 58.0
+      }
+    ]
+  },
+  {
+    "id": "401873042",
+    "league": "NFL",
+    "match": "Detroit Lions @ Miami Dolphins",
+    "home": "Miami Dolphins",
+    "away": "Detroit Lions",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "19 - 9",
+    "home_score": 9,
+    "away_score": 19,
+    "total_points": 28,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Hard Rock Stadium (Miami Gardens) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Dolphins Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Dolphins Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Lions Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Lions Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873039",
+    "league": "NFL",
+    "match": "Cleveland Browns @ New Orleans Saints",
+    "home": "New Orleans Saints",
+    "away": "Cleveland Browns",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "22 - 23",
+    "home_score": 23,
+    "away_score": 22,
+    "total_points": 45,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Caesars Superdome (New Orleans) [DOMO]",
+    "stars": [
+      {
+        "name": "Saints Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Saints Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Browns Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Browns Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873044",
+    "league": "NFL",
+    "match": "New York Giants @ Philadelphia Eagles",
+    "home": "Philadelphia Eagles",
+    "away": "New York Giants",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "19 - 11",
+    "home_score": 11,
+    "away_score": 19,
+    "total_points": 30,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Lincoln Financial Field (Philadelphia) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Eagles Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Eagles Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Giants Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Giants Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873043",
+    "league": "NFL",
+    "match": "Los Angeles Rams @ Washington Commanders",
+    "home": "Washington Commanders",
+    "away": "Los Angeles Rams",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "20 - 13",
+    "home_score": 13,
+    "away_score": 20,
+    "total_points": 33,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Northwest Stadium (Landover) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Commanders Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Commanders Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Rams Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Rams Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873041",
+    "league": "NFL",
+    "match": "Denver Broncos @ Carolina Panthers",
+    "home": "Carolina Panthers",
+    "away": "Denver Broncos",
+    "time_cdmx": "18:00",
+    "status": "FINALIZADO",
+    "score": "26 - 21",
+    "home_score": 21,
+    "away_score": 26,
+    "total_points": 47,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Bank of America Stadium (Charlotte) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Panthers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Panthers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Broncos Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Broncos Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873046",
+    "league": "NFL",
+    "match": "Houston Texans @ Los Angeles Chargers",
+    "home": "Los Angeles Chargers",
+    "away": "Houston Texans",
+    "time_cdmx": "21:05",
+    "status": "FINALIZADO",
+    "score": "44 - 22",
+    "home_score": 22,
+    "away_score": 44,
+    "total_points": 66,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "SoFi Stadium (Inglewood) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Chargers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Chargers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Texans Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Texans Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873049",
+    "league": "NFL",
+    "match": "Green Bay Packers @ New England Patriots",
+    "home": "New England Patriots",
+    "away": "Green Bay Packers",
+    "time_cdmx": "21:25",
+    "status": "FINALIZADO",
+    "score": "45 - 27",
+    "home_score": 27,
+    "away_score": 45,
+    "total_points": 72,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Gillette Stadium (Foxborough) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Patriots Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Patriots Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Packers Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Packers Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873047",
+    "league": "NFL",
+    "match": "Las Vegas Raiders @ San Francisco 49ers",
+    "home": "San Francisco 49ers",
+    "away": "Las Vegas Raiders",
+    "time_cdmx": "21:25",
+    "status": "FINALIZADO",
+    "score": "17 - 38",
+    "home_score": 38,
+    "away_score": 17,
+    "total_points": 55,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Levi's Stadium (Santa Clara) [ABIERTO]",
+    "stars": [
+      {
+        "name": "49ers Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "49ers Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Raiders Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Raiders Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873048",
+    "league": "NFL",
+    "match": "Arizona Cardinals @ Seattle Seahawks",
+    "home": "Seattle Seahawks",
+    "away": "Arizona Cardinals",
+    "time_cdmx": "21:25",
+    "status": "FINALIZADO",
+    "score": "3 - 17",
+    "home_score": 17,
+    "away_score": 3,
+    "total_points": 20,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Lumen Field (Seattle) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Seahawks Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Seahawks Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Cardinals Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Cardinals Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  },
+  {
+    "id": "401873050",
+    "league": "NFL",
+    "match": "Tampa Bay Buccaneers @ Chicago Bears",
+    "home": "Chicago Bears",
+    "away": "Tampa Bay Buccaneers",
+    "time_cdmx": "01:20",
+    "status": "FINALIZADO",
+    "score": "24 - 27",
+    "home_score": 27,
+    "away_score": 24,
+    "total_points": 51,
+    "spread_str": "",
+    "over_under": 46.5,
+    "venue": "Soldier Field (Chicago) [ABIERTO]",
+    "stars": [
+      {
+        "name": "Bears Starting QB",
+        "pos": "QB",
+        "pass_yds": 235.0,
+        "pass_tds": 1.8,
+        "rush_yds": 15.0,
+        "anytime_td_pct": 25.0
+      },
+      {
+        "name": "Bears Lead RB",
+        "pos": "RB",
+        "rush_yds": 72.0,
+        "rec_yds": 18.0,
+        "anytime_td_pct": 60.0
+      },
+      {
+        "name": "Buccaneers Starting QB",
+        "pos": "QB",
+        "pass_yds": 228.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "anytime_td_pct": 20.0
+      },
+      {
+        "name": "Buccaneers Lead RB",
+        "pos": "RB",
+        "rush_yds": 68.0,
+        "rec_yds": 15.0,
+        "anytime_td_pct": 55.0
+      }
+    ]
+  }
+]
