@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.09.v15"
+_ENGINE_VER = "2026.11.09.v14"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _mod_name in [
         "referee_and_injuries_engine",
@@ -381,33 +381,53 @@ with cb4:
 # -------------------------------------------------------------
 # DESCARGA DIRECTA EN PDF Y REPORTE DE TODOS LOS PICKS SUGERIDOS
 # -------------------------------------------------------------
-import importlib
-import pdf_audit_report_engine
-try:
-    importlib.reload(pdf_audit_report_engine)
-except Exception:
-    pass
-generate_audit_pdf_bytes = getattr(pdf_audit_report_engine, "generate_audit_pdf_bytes", None)
-generate_daily_predictions_pdf_bytes = getattr(pdf_audit_report_engine, "generate_daily_predictions_pdf_bytes", None)
-generate_complete_match_by_match_all_picks_pdf = getattr(pdf_audit_report_engine, "generate_complete_match_by_match_all_picks_pdf", generate_daily_predictions_pdf_bytes)
-collect_full_picks_audit_data = getattr(pdf_audit_report_engine, "collect_full_picks_audit_data", None)
-from match_data_engineering_engine import compute_full_match_data_engineering
+from pdf_audit_report_engine import (
+    generate_audit_pdf_bytes,
+    generate_daily_predictions_pdf_bytes,
+    collect_full_picks_audit_data,
+)
 
 @st.cache_data(ttl=300, show_spinner=False)
 def _cached_complete_match_by_match_pdf(d_str, _ver=_ENGINE_VER):
     import os
-    pre_path = os.path.join(os.path.dirname(__file__), "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{d_str}.pdf")
-    if os.path.exists(pre_path):
-        with open(pre_path, "rb") as fp:
+    p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{d_str}.pdf")
+    if os.path.exists(p):
+        with open(p, "rb") as fp:
             return fp.read()
-    return generate_complete_match_by_match_all_picks_pdf(d_str)
+    return generate_daily_predictions_pdf_bytes(d_str)
 
 @st.cache_data(ttl=300, show_spinner=False)
 def _cached_pdf_bytes(dates_tuple, _ver=_ENGINE_VER):
+    import os
+    if len(dates_tuple) > 1:
+        p = os.path.join(os.path.dirname(__file__), "data", "Reporte_Auditoria_Picks_Alfra_Completo.pdf")
+        if not os.path.exists(p):
+            p = os.path.join(os.path.dirname(__file__), "data", "Reporte_Auditoria_Picks_Alfra.pdf")
+        if os.path.exists(p):
+            with open(p, "rb") as fp:
+                return fp.read()
+    elif len(dates_tuple) == 1:
+        p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_Picks_Alfra_{dates_tuple[0]}.pdf")
+        if os.path.exists(p):
+            with open(p, "rb") as fp:
+                return fp.read()
+        p = os.path.join(os.path.dirname(__file__), "data", "Reporte_Auditoria_Picks_Alfra.pdf")
+        if os.path.exists(p):
+            with open(p, "rb") as fp:
+                return fp.read()
     return generate_audit_pdf_bytes(list(dates_tuple))
 
 @st.cache_data(ttl=300, show_spinner=False)
 def _cached_predictions_pdf_bytes(d_str, _ver=_ENGINE_VER):
+    import os
+    p = os.path.join(os.path.dirname(__file__), "data", f"Predicciones_Del_Dia_{d_str}_Alfra.pdf")
+    if os.path.exists(p):
+        with open(p, "rb") as fp:
+            return fp.read()
+    p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{d_str}.pdf")
+    if os.path.exists(p):
+        with open(p, "rb") as fp:
+            return fp.read()
     return generate_daily_predictions_pdf_bytes(d_str)
 
 @st.cache_data(ttl=300, show_spinner=False)
@@ -417,25 +437,25 @@ def _cached_audit_table_data(dates_tuple, _ver=_ENGINE_VER):
 pdf_col0, pdf_col1, pdf_col2 = st.columns(3)
 with pdf_col0:
     st.download_button(
-        label=f"📂 DESCARGAR PDF: TODOS LOS PICKS ORGANIZADOS POR PARTIDO (~60 PICKS POR JUEGO) ({selected_date.strftime('%d/%m/%Y')})",
+        label=f"📂 DESCARGAR PDF: TODOS LOS PICKS ORGANIZADOS POR PARTIDO ({selected_date.strftime('%d/%m/%Y')})",
         data=_cached_complete_match_by_match_pdf(date_str),
         file_name=f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{date_str}.pdf",
         mime="application/pdf",
         use_container_width=True,
-        key=f"dl_pdf_all_match_picks_{date_str}"
+        key=f"dl_pdf_all_match_{date_str}"
     )
 with pdf_col1:
     st.download_button(
-        label=f"🎯 DESCARGAR PDF: PREDICCIONES DEL DÍA CON % DE OCURRENCIA ({selected_date.strftime('%d/%m/%Y')})",
-        data=_cached_predictions_pdf_bytes(date_str),
-        file_name=f"Predicciones_Del_Dia_{date_str}_Alfra.pdf",
+        label=f"📄 DESCARGAR PDF AUDITORÍA ({selected_date.strftime('%d/%m/%Y')}) — ACIERTOS / FALLOS",
+        data=_cached_pdf_bytes((date_str,)),
+        file_name=f"Reporte_Picks_Alfra_{date_str}.pdf",
         mime="application/pdf",
         use_container_width=True,
-        key=f"dl_pdf_preds_{date_str}"
+        key=f"dl_pdf_day_{date_str}"
     )
 with pdf_col2:
     st.download_button(
-        label="📑 DESCARGAR PDF: AUDITORÍA CONSOLIDADA (Sáb 7 + Dom 8 + Lun 9 Nov)",
+        label="📑 DESCARGAR PDF CONSOLIDADO (Sáb 7 + Dom 8 + Lun 9 Nov — 235 Partidos)",
         data=_cached_pdf_bytes(("20261107", "20261108", "20261109")),
         file_name="Reporte_Auditoria_Picks_Alfra_Completo.pdf",
         mime="application/pdf",
@@ -443,45 +463,31 @@ with pdf_col2:
         key="dl_pdf_all_weekend"
     )
 
-with st.expander(f"📋 VER TODOS LOS PICKS ORGANIZADOS POR PARTIDO EN PANTALLA ({selected_date.strftime('%d/%m/%Y')}) — ~60 PICKS POR JUEGO (CÓRNERS, TARJETAS, GOLES, REMATES, BTTS, ETC.)", expanded=False):
-    _slots_for_screen = slots_data.get("slots", [])
-    _all_matches_screen = [m for s in _slots_for_screen for m in s.get("matches", [])]
-    if _all_matches_screen:
-        match_labels = [f"#{i+1} [{m.get('time_cdmx', '12:00')} | {m.get('league', '')}] {m['home']} vs {m['away']}" for i, m in enumerate(_all_matches_screen)]
-        selected_m_idx = st.selectbox("Selecciona el Partido a Desglosar en Pantalla:", options=range(len(match_labels)), format_func=lambda idx: match_labels[idx])
-        sel_m = _all_matches_screen[selected_m_idx]
-        sel_h, sel_a, sel_code = sel_m["home"], sel_m["away"], sel_m.get("code", "")
-        sel_time = sel_m.get("time_cdmx", "12:00")
-        sel_bs = get_match_boxscore(f"{sel_h} vs {sel_a}", match_date=date_str, match_time_hint=sel_time)
-        st.markdown(f"### ⚽ {sel_h} vs {sel_a} — Marcador Oficial: `{sel_bs.get('score', 'vs')}` ({sel_bs.get('status', 'PROGRAMADO')})")
-        st.caption(f"Liga: {sel_m.get('league', '')} | Hora: {sel_time} hs CDMX | Fuente: {sel_bs.get('source', 'ESPN')}")
-        
-        de_screen = compute_full_match_data_engineering(sel_h, sel_a, sel_code)
-        screen_rows = []
-        for cat in de_screen["categories"]:
-            cat_n = cat["category"]
-            for opt in cat["options"]:
-                aud_sc = audit_individual_pick_empirically({
-                    "match": f"{sel_h} vs {sel_a}",
-                    "pick": opt["pick"],
-                    "odds": opt.get("odds_num", 1.25),
-                    "time": sel_time
-                }, match_date=date_str)
-                out_sc = aud_sc.get("outcome", "PENDING")
-                icon_sc = "✅ ACIERTO" if out_sc == "HIT" else ("❌ FALLO" if out_sc == "MISS" else ("⚪ VOID 1.00" if out_sc == "VOID" else "🟢 PENDIENTE"))
-                screen_rows.append({
-                    "Categoría": cat_n,
-                    "Predicción / Mercado": opt["pick"],
-                    "% Ocurrencia": f"{opt.get('prob_num', 50.0):.1f}%",
-                    "Frecuencia (Récord)": opt.get("record", ""),
-                    "Momio Casa": str(opt.get("odds", "")),
-                    "Cuota Justa": str(opt.get("fair_odds", "")),
-                    "Valor (EV%)": str(opt.get("ev", "")),
-                    "Resultado Oficial": icon_sc,
-                    "Dato en Acta": aud_sc.get("stat_actual", "")
-                })
-        if screen_rows:
-            st.dataframe(pd.DataFrame(screen_rows), use_container_width=True, hide_index=True)
+with st.expander(f"📋 VER REPORTE COMPLETO EN PANTALLA DE TODOS LOS PICKS SUGERIDOS ({selected_date.strftime('%d/%m/%Y')}) — ACIERTOS, FALLOS, VOID Y DATO OFICIAL", expanded=False):
+    _day_rep = _cached_audit_table_data((date_str,))["days"][0]
+    st.markdown(
+        f"**Resumen de Cartelera ({_day_rep['date_label']}):** "
+        f"`{_day_rep['best_hits']} Aciertos (✅)` | `{_day_rep['best_misses']} Fallos (❌)` | "
+        f"`{_day_rep['best_voids']} Anuladas VOID (⚪)` | `{_day_rep['best_pending']} Por Jugar (🟢)` — "
+        f"**Efectividad Pick Principal:** `{_day_rep['best_hit_rate']}%` | "
+        f"**Las 4 Variables SGP ({_day_rep['vars_hits'] + _day_rep['vars_misses']} evaluadas):** `{_day_rep['vars_hits']} Aciertos / {_day_rep['vars_misses']} Fallos ({_day_rep['vars_hit_rate']}%)`"
+    )
+    _df_rows = []
+    for _idx_m, _mr in enumerate(_day_rep["matches"], 1):
+        _out_icon = "✅ ACIERTO" if _mr["best_outcome"] == "HIT" else ("❌ FALLO" if _mr["best_outcome"] == "MISS" else ("⚪ VOID 1.00" if _mr["best_outcome"] == "VOID" else "🟢 POR JUGAR"))
+        _v_summary = " | ".join([f"V{i+1}: {'✅' if v['outcome']=='HIT' else ('❌' if v['outcome']=='MISS' else ('⚪' if v['outcome']=='VOID' else '🟢'))} {v['pick']}" for i, v in enumerate(_mr["variables"])])
+        _df_rows.append({
+            "#": _idx_m,
+            "Hora": _mr["time"],
+            "Liga": _mr["league"],
+            "Partido": f"{_mr['match']} ({_mr['score']})",
+            "Pick Principal Sugerido (#1)": f"{_mr['best_pick']} (@{_mr['best_odds']:.2f})",
+            "Resultado #1": _out_icon,
+            "Dato Oficial en Acta": _mr["best_stat"],
+            "Las 4 Variables SGP del Partido": _v_summary,
+        })
+    if _df_rows:
+        st.dataframe(pd.DataFrame(_df_rows), use_container_width=True, hide_index=True)
 
 with st.expander("🌐 VER MATRIZ OFICIAL DE COTEJO: ¿Contra qué páginas se verifica cada dato? (SofaScore, Playdoit, etc.)", expanded=False):
     st.markdown("""
