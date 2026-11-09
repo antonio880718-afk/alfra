@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.09.v12"
+_ENGINE_VER = "2026.11.09.v13"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _mod_name in [
         "referee_and_injuries_engine",
@@ -381,20 +381,37 @@ with cb4:
 # -------------------------------------------------------------
 # DESCARGA DIRECTA EN PDF Y REPORTE DE TODOS LOS PICKS SUGERIDOS
 # -------------------------------------------------------------
-from pdf_audit_report_engine import generate_audit_pdf_bytes, collect_full_picks_audit_data
+from pdf_audit_report_engine import (
+    generate_audit_pdf_bytes,
+    generate_daily_predictions_pdf_bytes,
+    collect_full_picks_audit_data,
+)
 
 @st.cache_data(ttl=300, show_spinner=False)
 def _cached_pdf_bytes(dates_tuple, _ver=_ENGINE_VER):
     return generate_audit_pdf_bytes(list(dates_tuple))
 
 @st.cache_data(ttl=300, show_spinner=False)
+def _cached_predictions_pdf_bytes(d_str, _ver=_ENGINE_VER):
+    return generate_daily_predictions_pdf_bytes(d_str)
+
+@st.cache_data(ttl=300, show_spinner=False)
 def _cached_audit_table_data(dates_tuple, _ver=_ENGINE_VER):
     return collect_full_picks_audit_data(list(dates_tuple))
 
-pdf_col1, pdf_col2 = st.columns(2)
+pdf_col0, pdf_col1, pdf_col2 = st.columns(3)
+with pdf_col0:
+    st.download_button(
+        label=f"🎯 DESCARGAR PDF: TODAS LAS PREDICCIONES DEL DÍA CON % DE OCURRENCIA ({selected_date.strftime('%d/%m/%Y')})",
+        data=_cached_predictions_pdf_bytes(date_str),
+        file_name=f"Predicciones_Del_Dia_{date_str}_Alfra.pdf",
+        mime="application/pdf",
+        use_container_width=True,
+        key=f"dl_pdf_preds_{date_str}"
+    )
 with pdf_col1:
     st.download_button(
-        label=f"📄 DESCARGAR PDF DE JORNADA ({selected_date.strftime('%d/%m/%Y')}) — TODOS LOS PICKS (ACIERTO / FALLO)",
+        label=f"📄 DESCARGAR PDF AUDITORÍA ({selected_date.strftime('%d/%m/%Y')}) — ACIERTOS / FALLOS",
         data=_cached_pdf_bytes((date_str,)),
         file_name=f"Reporte_Picks_Alfra_{date_str}.pdf",
         mime="application/pdf",
@@ -403,7 +420,7 @@ with pdf_col1:
     )
 with pdf_col2:
     st.download_button(
-        label="📑 DESCARGAR PDF CONSOLIDADO COMPLETO (Sáb 7 + Dom 8 + Lun 9 Nov — 235 Partidos)",
+        label="📑 DESCARGAR PDF CONSOLIDADO (Sáb 7 + Dom 8 + Lun 9 Nov — 235 Partidos)",
         data=_cached_pdf_bytes(("20261107", "20261108", "20261109")),
         file_name="Reporte_Auditoria_Picks_Alfra_Completo.pdf",
         mime="application/pdf",
