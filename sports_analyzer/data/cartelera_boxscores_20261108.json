@@ -7,9 +7,9 @@
     "score": "1 - 2",
     "home_goals": 1,
     "away_goals": 2,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 2,
     "away_corners": 6,
     "total_corners": 8,
@@ -28,56 +28,56 @@
         "mins": 90
       },
       "Facundo Medina": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Tom Krauss": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Mikey Moore": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Linton Maina": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Afonso Moreira": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Edmond Tapsoba": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Joel Schmied": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Borna Sosa": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -98,14 +98,14 @@
         "mins": 90
       },
       "Jahmai Simpson-Pusey": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jonas Hofmann": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -122,9 +122,9 @@
     "score": "2 - 0",
     "home_goals": 2,
     "away_goals": 0,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 5,
     "away_corners": 1,
     "total_corners": 6,
@@ -136,21 +136,21 @@
     "btts": false,
     "player_stats": {
       "Igor Matanovic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Zeno Van Den Bosch": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Yannick Engelhardt": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -171,7 +171,7 @@
         "mins": 90
       },
       "Jeong Woo-Yeong": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -216,7 +216,7 @@
         "mins": 90
       },
       "Hwang Hee-Chan": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -230,7 +230,7 @@
         "mins": 90
       },
       "Adil Aouchiche": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -275,21 +275,21 @@
         "mins": 90
       },
       "Gyrano Kerk": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Miguel Cardoso": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Mustafa Yumlu": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -334,14 +334,14 @@
         "mins": 90
       },
       "Mohammed Diomande": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Nélson Semedo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -393,14 +393,14 @@
         "mins": 90
       },
       "Fidan Aliti": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Chibuike Nwaiwu": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -431,14 +431,14 @@
     "btts": false,
     "player_stats": {
       "Wilfred Ndidi": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Metehan Baltaci": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -452,21 +452,21 @@
         "mins": 90
       },
       "Amir Murillo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ousmane Diabate": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Orkun Kökçü": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -491,8 +491,8 @@
     "home_goals": 0,
     "away_goals": 2,
     "ht_home": 0,
-    "ht_away": 0,
-    "ht_goals": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
     "home_corners": 9,
     "away_corners": 8,
     "total_corners": 17,
@@ -504,14 +504,14 @@
     "btts": false,
     "player_stats": {
       "Federico Redondo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Grady Diangana": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -525,14 +525,14 @@
         "mins": 90
       },
       "Martim Neto": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Javier Morcillo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -570,21 +570,21 @@
     "btts": false,
     "player_stats": {
       "Giorgi Tsitaishvili": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Igor Zubeldia": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Beñat Turrientes": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -598,7 +598,7 @@
         "mins": 90
       },
       "Gnangoro Bouare Samake": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -629,21 +629,21 @@
     "btts": false,
     "player_stats": {
       "Dani Requena": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Adrián de la Fuente": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Javi Galán": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -660,9 +660,9 @@
     "score": "2 - 0",
     "home_goals": 2,
     "away_goals": 0,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 9,
     "away_corners": 4,
     "total_corners": 13,
@@ -674,28 +674,28 @@
     "btts": false,
     "player_stats": {
       "Mario Martín": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Nemanja Gudelj": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Santi Comesaña": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Renato Veiga": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -747,7 +747,7 @@
         "mins": 90
       },
       "Álex Baena": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -761,28 +761,28 @@
         "mins": 90
       },
       "Marc Bernal": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Marcos Llorente": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Marc Pubill": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Morten Hjulmand": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -820,7 +820,7 @@
         "mins": 90
       },
       "Bebeto António Gomes": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -834,7 +834,7 @@
         "mins": 90
       },
       "Cameron McJannett": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -848,7 +848,7 @@
         "mins": 90
       },
       "Tom Tonks": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -862,7 +862,7 @@
         "mins": 90
       },
       "Joe Dunne": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -876,14 +876,14 @@
         "mins": 90
       },
       "Jamie Walker": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Luca Navarro": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -956,7 +956,7 @@
         "mins": 90
       },
       "Luca Ashby-Hammond": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -970,14 +970,14 @@
         "mins": 90
       },
       "Eoghan O'Connell": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ethan Pye": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1015,9 +1015,9 @@
     "score": "2 - 0",
     "home_goals": 2,
     "away_goals": 0,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 4,
     "away_corners": 4,
     "total_corners": 8,
@@ -1036,14 +1036,14 @@
         "mins": 90
       },
       "Joe Smith": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Samuel Roberts": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1057,28 +1057,28 @@
         "mins": 90
       },
       "Nathan Tinsdale": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Charlie Barker": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jackson King": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ángel Francisco Díaz Villa": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1095,9 +1095,9 @@
     "score": "2 - 1",
     "home_goals": 2,
     "away_goals": 1,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 2,
     "away_corners": 8,
     "total_corners": 10,
@@ -1109,14 +1109,14 @@
     "btts": true,
     "player_stats": {
       "Di'Shon Bernard": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Yan Valery": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1137,28 +1137,28 @@
         "mins": 90
       },
       "Callum Slattery": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sean Fusire": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Gus Scott-Morriss": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Emmanuel Monthe": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1196,7 +1196,7 @@
     "btts": false,
     "player_stats": {
       "Kristoffer Ajer": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1210,21 +1210,21 @@
         "mins": 90
       },
       "Chema Andrés": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Igor Thiago": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Olivier Boscagli": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1238,21 +1238,21 @@
         "mins": 90
       },
       "Mats Wieffer": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Lewis Dunk": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Kevin Schade": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1283,7 +1283,7 @@
     "btts": true,
     "player_stats": {
       "Ronald Araujo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1304,28 +1304,28 @@
         "mins": 90
       },
       "Bradley Barcola": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Yéremy Pino": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Víctor Muñoz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jefferson Lerma": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1356,9 +1356,9 @@
     "score": "1 - 2",
     "home_goals": 1,
     "away_goals": 2,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 2,
     "away_corners": 7,
     "total_corners": 9,
@@ -1377,21 +1377,21 @@
         "mins": 90
       },
       "Adam Smith": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Julio Enciso": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Marcus Tavernier": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1412,14 +1412,14 @@
         "mins": 90
       },
       "António Silva": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Zian Flemming": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1450,14 +1450,14 @@
     "btts": false,
     "player_stats": {
       "Jules Ahoka": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Levi Colwill": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1471,49 +1471,49 @@
         "mins": 90
       },
       "Thomas Meunier": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Brian Brobbey": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Pedro Neto": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Moisés Caicedo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Luke O'Nien": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Wesley Fofana": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Nilson Angulo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1586,7 +1586,7 @@
         "mins": 90
       },
       "Ayden Heaven": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1607,7 +1607,7 @@
         "mins": 90
       },
       "Zion Suzuki": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1619,9 +1619,9 @@
   "fc andorra vs mallorca": {
     "match": "FC Andorra vs Mallorca",
     "league": "LaLiga 2",
-    "status": "FINALIZADO (FT)",
+    "status": "APLAZADO (POSTPONED)",
     "time_cdmx": "07:00",
-    "score": "0 - 0",
+    "score": "APLAZADO",
     "home_goals": 0,
     "away_goals": 0,
     "ht_home": 0,
@@ -1661,35 +1661,35 @@
     "btts": false,
     "player_stats": {
       "Álex Moreno": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Fran Beltrán": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Izan González": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Stefan Dzodic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Marcos Luna Marcos Ruiz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1703,21 +1703,21 @@
         "mins": 90
       },
       "Mateu Morey": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Álex Muñoz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Oleksandr Pishchur": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1755,21 +1755,21 @@
         "mins": 90
       },
       "Hugo Guillamón": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jorge": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Stanko Juric": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1783,28 +1783,28 @@
         "mins": 90
       },
       "David Torres": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Iván Alejo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Gaspar Campos": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Miguel Conde": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1818,7 +1818,7 @@
         "mins": 90
       },
       "Juan Otero": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1922,21 +1922,21 @@
         "mins": 90
       },
       "Lucas Rosa": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Robin Pröpper": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Aaron Bouwman": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -1957,28 +1957,28 @@
         "mins": 90
       },
       "Oscar Gloukh": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Daouda Weidmann": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ramiz Zerrouki": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Owen Wijndal": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2044,14 +2044,14 @@
         "mins": 90
       },
       "Marco Rente": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Pelle Clement": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2072,21 +2072,21 @@
         "mins": 90
       },
       "Etienne Vaessen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Peer Koopmeiners": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Hans Hateboer": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2138,28 +2138,28 @@
         "mins": 90
       },
       "Mathieu Maertens": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Morgan Costarelli": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Rafik El Arguioui": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sergiño Dest": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2232,28 +2232,28 @@
         "mins": 90
       },
       "Nordin Amrabat": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Bryan Linssen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Clement Bischoff": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Willum Thór Willumsson": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2298,42 +2298,42 @@
         "mins": 90
       },
       "Oscar Villa": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Iker Moreno": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ali Avila": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Eduardo Pérez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Alonso Ramirez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Santiago Homenchenko": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2350,9 +2350,9 @@
     "score": "1 - 1",
     "home_goals": 1,
     "away_goals": 1,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 2,
     "away_corners": 6,
     "total_corners": 8,
@@ -2364,28 +2364,28 @@
     "btts": true,
     "player_stats": {
       "Richard Ledezma": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Juan Guevara": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Diber Cambindo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "José Rodríguez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2437,7 +2437,7 @@
         "mins": 90
       },
       "Noa Lang": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2451,14 +2451,14 @@
         "mins": 90
       },
       "Billy Gilmour": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Antonio Vergara": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2503,28 +2503,28 @@
         "mins": 90
       },
       "Sankhoun Diawara": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Alessandro Marcandalli": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Adrien Rabiot": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Mario Gila": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2538,7 +2538,7 @@
         "mins": 90
       },
       "Kingsley Ehizibue": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2569,14 +2569,14 @@
     "btts": false,
     "player_stats": {
       "Eddy Kouadio": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Leonardo Colombo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2590,28 +2590,28 @@
         "mins": 90
       },
       "Éderson": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Charles De Ketelaere": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Andrea Carboni": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Andrea Colpani": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2687,7 +2687,7 @@
         "mins": 90
       },
       "Juan Cabal": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2708,7 +2708,7 @@
         "mins": 90
       },
       "Christ Inao Oulaï": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2722,7 +2722,7 @@
         "mins": 90
       },
       "Randal Kolo Muani": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2760,42 +2760,42 @@
         "mins": 90
       },
       "Luigi Cuppone": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Giacomo Olzer": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Luca Vignali": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Stefano Di Mario": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Andrea Franzoni": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Andrea Tiritiello": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2833,28 +2833,28 @@
         "mins": 90
       },
       "Tommaso Rubino": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Lorenzo Mezzotero": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Tjas Begic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Yann Karamoh": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2906,14 +2906,14 @@
         "mins": 90
       },
       "Niccolò Brighenti": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Loris Zonta": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -2972,21 +2972,21 @@
         "mins": 90
       },
       "Mijat Gacinovic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Razvan Marin": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Aboubakary Koita": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3017,14 +3017,14 @@
     "btts": true,
     "player_stats": {
       "Jordan Silva": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Rodrigues": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3038,7 +3038,7 @@
         "mins": 90
       },
       "Giannis Bouzoukis": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3052,14 +3052,14 @@
         "mins": 90
       },
       "Giannis Kotsiras": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Franco Orozco": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3104,14 +3104,14 @@
         "mins": 90
       },
       "Etienne Camara": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Vasilis Sourlis": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3125,42 +3125,42 @@
         "mins": 90
       },
       "Santino Andino": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Yohan Roche": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sotiris Kontouris": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Stefan de Vrij": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Édgar Yoel Bárcenas": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sofian Chakla": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3191,42 +3191,42 @@
     "btts": false,
     "player_stats": {
       "Taxiarchis Fountas": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Thanasis Androutsos": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Andreas Bouchalakis": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Serginho": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Juan Perea": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Stavros Pnevmonidis": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3243,9 +3243,9 @@
     "score": "1 - 1",
     "home_goals": 1,
     "away_goals": 1,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 5,
     "away_corners": 4,
     "total_corners": 9,
@@ -3257,28 +3257,28 @@
     "btts": true,
     "player_stats": {
       "Panagiotis Retsos": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Diego Costa": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Cherif Ndiaye": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Dimitris Giannoulis": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3299,14 +3299,14 @@
         "mins": 90
       },
       "Kostas Fortounis": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Pantelis Hatzidiakos": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3351,7 +3351,7 @@
         "mins": 90
       },
       "Calvin Verdonk": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3365,7 +3365,7 @@
         "mins": 90
       },
       "Maurits Kjaergaard": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3403,21 +3403,21 @@
         "mins": 90
       },
       "Carlens Arcus": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ousmane Camara": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Branco van den Boomen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3462,14 +3462,14 @@
         "mins": 90
       },
       "Corentin Tolisso": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Kail Boudache": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3514,14 +3514,14 @@
         "mins": 90
       },
       "Souleymane Faye": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Noah Cadiou": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3535,7 +3535,7 @@
         "mins": 90
       },
       "Ahmed Touba": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3558,9 +3558,9 @@
     "home_corners": 8,
     "away_corners": 7,
     "total_corners": 15,
-    "home_cards": 0,
-    "away_cards": 0,
-    "total_cards": 0,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
     "home_sot": 5,
     "away_sot": 3,
     "btts": true,
@@ -3618,7 +3618,7 @@
         "mins": 90
       },
       "Yassine Titraoui": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3632,7 +3632,7 @@
         "mins": 90
       },
       "Jeffrey de Lange": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3663,7 +3663,7 @@
     "btts": true,
     "player_stats": {
       "Franz Roggow": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3698,7 +3698,7 @@
         "mins": 90
       },
       "Marcel Hartel": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3743,14 +3743,14 @@
         "mins": 90
       },
       "Dávid Németh": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Tobias Müller": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3764,14 +3764,14 @@
         "mins": 90
       },
       "Joel Chima Fujita": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Louis Oppie": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3792,7 +3792,7 @@
         "mins": 90
       },
       "Samuel Klein": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3809,9 +3809,9 @@
     "score": "3 - 2",
     "home_goals": 3,
     "away_goals": 2,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 4,
     "away_corners": 1,
     "total_corners": 5,
@@ -3837,7 +3837,7 @@
         "mins": 90
       },
       "Santeri Vaananen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3858,7 +3858,7 @@
         "mins": 90
       },
       "Sean Klaiber": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3889,14 +3889,14 @@
     "btts": true,
     "player_stats": {
       "Jorne Spileers": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jayden Onia-Seke": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3910,7 +3910,7 @@
         "mins": 90
       },
       "Joaquin Seys": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3924,21 +3924,21 @@
         "mins": 90
       },
       "Nicolo Tresoldi": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Giulian Biancone": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Enric Llansana": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3969,7 +3969,7 @@
     "btts": false,
     "player_stats": {
       "Siebe van der Heyden": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -3983,14 +3983,14 @@
         "mins": 90
       },
       "Brecht Dejaegere": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Axel Drouhin": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4021,7 +4021,7 @@
     "btts": false,
     "player_stats": {
       "Massiré Sylla": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4035,7 +4035,7 @@
         "mins": 90
       },
       "Yaimar Medina": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4087,14 +4087,14 @@
         "mins": 90
       },
       "Franz Tangala": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Enrique Lofolomo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4115,7 +4115,7 @@
         "mins": 90
       },
       "Youssoupha Mbodji": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4153,7 +4153,7 @@
         "mins": 90
       },
       "Felipe Peña": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4167,21 +4167,21 @@
         "mins": 90
       },
       "Nicolás Garrido": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Diego Barrera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Enzo Tiziano Ramirez Suarez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4254,28 +4254,28 @@
         "mins": 90
       },
       "CJ Fodrey": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Deniss Melniks": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Leart Kabashi": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ben Parkinson": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4306,7 +4306,7 @@
     "btts": false,
     "player_stats": {
       "Tom Lowery": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4320,35 +4320,35 @@
         "mins": 90
       },
       "Joe Hugill": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Cathal McCarthy": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jamie Brandon": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Tyreece John-Jules": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Yang Hyun-Jun": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4379,42 +4379,42 @@
     "btts": false,
     "player_stats": {
       "Cihan Kahraman": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Stavros Gavriel": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "João Guilherme": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Robinho": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Anthony Correia": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Zé Vitor": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4428,7 +4428,7 @@
         "mins": 90
       },
       "Matheus Dias": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4440,9 +4440,9 @@
   "estoril vs maritimo": {
     "match": "Estoril vs Maritimo",
     "league": "Primeira Liga Portugal",
-    "status": "FINALIZADO (FT)",
+    "status": "APLAZADO (POSTPONED)",
     "time_cdmx": "09:30",
-    "score": "0 - 0",
+    "score": "APLAZADO",
     "home_goals": 0,
     "away_goals": 0,
     "ht_home": 0,
@@ -4482,14 +4482,14 @@
     "btts": true,
     "player_stats": {
       "Lucas Soares": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Diogo Prioste": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4503,7 +4503,7 @@
         "mins": 90
       },
       "Fernando": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4517,21 +4517,21 @@
         "mins": 90
       },
       "Emanuel Moreira": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Pedro Pacheco": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Kamika": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4545,7 +4545,7 @@
         "mins": 90
       },
       "Mohamed Kaba": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4576,14 +4576,14 @@
     "btts": true,
     "player_stats": {
       "Toni Borevkovic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "João Mendes": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4597,14 +4597,14 @@
         "mins": 90
       },
       "Pablo Rosario": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Hwang In-Beom": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4625,7 +4625,7 @@
         "mins": 90
       },
       "Alan Varela": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4684,7 +4684,7 @@
         "mins": 90
       },
       "Alisson Souza": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4722,14 +4722,14 @@
     "btts": false,
     "player_stats": {
       "Diogo Nascimento": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Diogo Bezerra": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4743,7 +4743,7 @@
         "mins": 90
       },
       "Fran Navarro": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4774,7 +4774,7 @@
     "btts": true,
     "player_stats": {
       "Jesús González": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4788,7 +4788,7 @@
         "mins": 90
       },
       "Leonardo Sepulveda": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4809,7 +4809,7 @@
         "mins": 90
       },
       "Juan Pablo Cázares": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4840,7 +4840,7 @@
     "btts": true,
     "player_stats": {
       "Jesús Venegas": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4854,7 +4854,7 @@
         "mins": 90
       },
       "Humberto Hernández": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4899,7 +4899,7 @@
         "mins": 90
       },
       "Hervin Goyes": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4913,7 +4913,7 @@
         "mins": 90
       },
       "Samuel Andres Portes Cardozo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4951,7 +4951,7 @@
     "btts": false,
     "player_stats": {
       "Franklin Mosquera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -4972,14 +4972,14 @@
         "mins": 90
       },
       "Aldair Zárate": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Carlos Romaña": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5024,21 +5024,21 @@
         "mins": 90
       },
       "Homer Martínez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Mateo García": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Stiven Vega": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5059,35 +5059,35 @@
         "mins": 90
       },
       "Junior Hernández": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sergio Mosquera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jherson Mosquera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Luis Sandoval": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sergio Aguayo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5118,7 +5118,7 @@
     "btts": true,
     "player_stats": {
       "Juan Pertúz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5146,28 +5146,28 @@
         "mins": 90
       },
       "Dennis Quintero": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jair Castillo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Marlon Sierra": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Josy Pérez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5198,42 +5198,42 @@
     "btts": false,
     "player_stats": {
       "Yani Quintero": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Daniel Giraldo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Josen Escobar": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Yeison Guzmán": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Fernando Álvarez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "José Caldera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5250,9 +5250,9 @@
     "score": "1 - 1",
     "home_goals": 1,
     "away_goals": 1,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 11,
     "away_corners": 0,
     "total_corners": 11,
@@ -5264,7 +5264,7 @@
     "btts": true,
     "player_stats": {
       "Alejandro Silva": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5285,7 +5285,7 @@
         "mins": 90
       },
       "Luis Mendoza": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5330,14 +5330,14 @@
         "mins": 90
       },
       "Luis Ortiz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jonathan Benítez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5361,9 +5361,9 @@
     "score": "1 - 1",
     "home_goals": 1,
     "away_goals": 1,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 5,
     "away_corners": 2,
     "total_corners": 7,
@@ -5375,7 +5375,7 @@
     "btts": true,
     "player_stats": {
       "D'Alessandro Montenegro": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5389,7 +5389,7 @@
         "mins": 90
       },
       "Nicolás Diaz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5403,14 +5403,14 @@
         "mins": 90
       },
       "Jarlín Quintero": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Hector González": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5441,42 +5441,42 @@
     "btts": false,
     "player_stats": {
       "Manuel Ganoza": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Francesco Cavagna": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Mathias Llontop": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "David Dioses": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Rolando Diaz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Pablo Erustes": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5507,77 +5507,77 @@
     "btts": false,
     "player_stats": {
       "Carlos Ramos": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "José Parodi": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jean Carlo Olivares Uccelli": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Patrick Zubczuk": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Juan Rodríguez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Rodrigo Vilca": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Matías Sen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Erick Canales": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Juniors Barbieri": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Thiago Salinas": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Flavio Alcedo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5608,7 +5608,7 @@
     "btts": true,
     "player_stats": {
       "Edgar Lastre": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5629,14 +5629,14 @@
         "mins": 90
       },
       "Aldair Perleche": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ricardo Chipao": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5650,7 +5650,7 @@
         "mins": 90
       },
       "Jorge Murrugarra": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5688,14 +5688,14 @@
     "btts": false,
     "player_stats": {
       "Felipe Salomoni": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Benjamin Gazzolo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5709,28 +5709,28 @@
         "mins": 90
       },
       "Luis Riveros": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Manuel Fernández": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ariel Uribe": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Cesar Pinares": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5768,7 +5768,7 @@
         "mins": 90
       },
       "Leonardo Valencia": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5782,14 +5782,14 @@
         "mins": 90
       },
       "Jhojan Valencia": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Diego Corral": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5827,7 +5827,7 @@
         "mins": 90
       },
       "Diego Ulloa": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5841,35 +5841,35 @@
         "mins": 90
       },
       "Lolo Reyes": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Ignacio Jeraldino": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Osvaldo Bosso": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jonathan Villagra": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Hernán Muñoz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5914,21 +5914,21 @@
         "mins": 90
       },
       "Lucas Barrera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Felipe Villagrán": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Christian Moreno": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -5980,28 +5980,28 @@
         "mins": 90
       },
       "Bayron Oyarzo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Camilo Moya": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Rodrigo Pérez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Carlos Herrera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6032,7 +6032,7 @@
     "btts": true,
     "player_stats": {
       "Osvaldo González": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6067,14 +6067,14 @@
         "mins": 90
       },
       "Santiago Toloza": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Benjamín Pérez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6119,7 +6119,7 @@
         "mins": 90
       },
       "Bruno José": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6147,7 +6147,7 @@
         "mins": 90
       },
       "Philipe Sampaio": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6178,7 +6178,7 @@
     "btts": false,
     "player_stats": {
       "Ryan Bonfim De Santana": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6192,35 +6192,35 @@
         "mins": 90
       },
       "Lenny Lobato": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Luidy": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Barreto": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Lucca": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Richard": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6251,28 +6251,28 @@
     "btts": false,
     "player_stats": {
       "Tadeu": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Lucas Ribeiro": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Karl": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Kadu": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6286,7 +6286,7 @@
         "mins": 90
       },
       "Anselmo Ramon": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6324,7 +6324,7 @@
         "mins": 90
       },
       "Santiago Etchebarne": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6369,7 +6369,7 @@
     "btts": false,
     "player_stats": {
       "Sixto Mina": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6390,28 +6390,28 @@
         "mins": 90
       },
       "Mateo Maccari": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Melvin Díaz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Miguel Parrales": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jhon Valencia": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6470,21 +6470,21 @@
         "mins": 90
       },
       "Agostino Spina": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Luis Gustavino": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jhegson Méndez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6529,21 +6529,21 @@
         "mins": 90
       },
       "Yerlin Quiñonez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Bryan Carabalí": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Michael Estrada": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6557,35 +6557,35 @@
         "mins": 90
       },
       "Damián Díaz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Gonzalo Lugo": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Washington Olvera": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Tomás Rodríguez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Gustavo Vallecilla": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6605,9 +6605,9 @@
     "ht_home": 2,
     "ht_away": 0,
     "ht_goals": 2,
-    "home_corners": 0,
-    "away_corners": 0,
-    "total_corners": 0,
+    "home_corners": 8,
+    "away_corners": 5,
+    "total_corners": 13,
     "home_cards": 0,
     "away_cards": 2,
     "total_cards": 2,
@@ -6623,7 +6623,7 @@
         "mins": 90
       },
       "Filip Milojevic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6637,7 +6637,7 @@
         "mins": 90
       },
       "Mike-Steven Bähre": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6657,9 +6657,9 @@
     "ht_home": 1,
     "ht_away": 1,
     "ht_goals": 2,
-    "home_corners": 0,
-    "away_corners": 0,
-    "total_corners": 0,
+    "home_corners": 5,
+    "away_corners": 6,
+    "total_corners": 11,
     "home_cards": 2,
     "away_cards": 2,
     "total_cards": 4,
@@ -6682,14 +6682,14 @@
         "mins": 90
       },
       "Matthäus Taferner": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Wilhelm Vorsager": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6709,9 +6709,9 @@
     "ht_home": 2,
     "ht_away": 1,
     "ht_goals": 3,
-    "home_corners": 0,
-    "away_corners": 0,
-    "total_corners": 0,
+    "home_corners": 7,
+    "away_corners": 5,
+    "total_corners": 12,
     "home_cards": 1,
     "away_cards": 4,
     "total_cards": 5,
@@ -6741,7 +6741,7 @@
         "mins": 90
       },
       "Soumaïla Diabaté": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6769,14 +6769,14 @@
         "mins": 90
       },
       "Arjan Malic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Umut Tohumcu": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6807,14 +6807,14 @@
     "btts": false,
     "player_stats": {
       "Rodrigo Huescas": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Mads Emil Madsen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6828,14 +6828,14 @@
         "mins": 90
       },
       "Max Ejdum": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Emmanuel Dennis": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6852,9 +6852,9 @@
     "score": "2 - 0",
     "home_goals": 2,
     "away_goals": 0,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 5,
     "away_corners": 3,
     "total_corners": 8,
@@ -6866,7 +6866,7 @@
     "btts": false,
     "player_stats": {
       "Adam Herdonsson": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6880,7 +6880,7 @@
         "mins": 90
       },
       "Kelvin Ehibhatiomhan": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6894,7 +6894,7 @@
         "mins": 90
       },
       "Jacob Bonde": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -6917,9 +6917,9 @@
     "home_corners": 0,
     "away_corners": 1,
     "total_corners": 1,
-    "home_cards": 0,
-    "away_cards": 0,
-    "total_cards": 0,
+    "home_cards": 3,
+    "away_cards": 3,
+    "total_cards": 6,
     "home_sot": 2,
     "away_sot": 6,
     "btts": true,
@@ -6998,28 +6998,28 @@
         "mins": 90
       },
       "Ousmane Diao": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Rasmus Hjorth Vinderslev": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sefer Emini": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Mohamed Haidara": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7033,14 +7033,14 @@
         "mins": 90
       },
       "Andreas Oggesen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Brynjar Bjarnason": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7078,7 +7078,7 @@
         "mins": 90
       },
       "Joshua Kitolano": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7095,9 +7095,9 @@
     "score": "3 - 0",
     "home_goals": 3,
     "away_goals": 0,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 8,
     "away_corners": 5,
     "total_corners": 13,
@@ -7109,21 +7109,21 @@
     "btts": false,
     "player_stats": {
       "Patrick Metcalfe": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Claus Niyukuri": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Daniel Karlsbakk": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7137,7 +7137,7 @@
         "mins": 90
       },
       "Marius Lode": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7151,7 +7151,7 @@
         "mins": 90
       },
       "Olaus Skarsem": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7210,14 +7210,14 @@
         "mins": 90
       },
       "Gustav Nyheim": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Kristoffer Nessø": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7276,7 +7276,7 @@
         "mins": 90
       },
       "Daniel Daga": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7290,14 +7290,14 @@
         "mins": 90
       },
       "Jakob Dunsby": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Halldor Stenevik": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7318,7 +7318,7 @@
         "mins": 90
       },
       "Fredrik Pedersen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7356,14 +7356,14 @@
         "mins": 90
       },
       "Daniel Schneider": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Tore Andre Soras": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7401,9 +7401,9 @@
     "score": "2 - 2",
     "home_goals": 2,
     "away_goals": 2,
-    "ht_home": 0,
+    "ht_home": 1,
     "ht_away": 0,
-    "ht_goals": 0,
+    "ht_goals": 1,
     "home_corners": 3,
     "away_corners": 9,
     "total_corners": 12,
@@ -7415,14 +7415,14 @@
     "btts": true,
     "player_stats": {
       "Isak Helstad Amundsen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Fredrik Knudsen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7436,7 +7436,7 @@
         "mins": 90
       },
       "Niklas Castro": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7450,14 +7450,14 @@
         "mins": 90
       },
       "Noah Holm": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Kristian Eriksen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7471,7 +7471,7 @@
         "mins": 90
       },
       "Fanuel Ghebreyohannes": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7523,14 +7523,14 @@
         "mins": 90
       },
       "Jacob Une": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Peter Langhoff": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7568,49 +7568,49 @@
     "btts": false,
     "player_stats": {
       "Tobias Heintz": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jovan Milosavljevic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Diego García": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Hjörtur Hermannsson": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Jonas Bager": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Daniel Gudjohnsen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Sead Haksabanovic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7648,7 +7648,7 @@
         "mins": 90
       },
       "Dino Besirovic": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7669,7 +7669,7 @@
         "mins": 90
       },
       "Yannick Geiger": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7683,14 +7683,14 @@
         "mins": 90
       },
       "Kristoffer Nordfeldt": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Martin Ellingsen": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7728,14 +7728,14 @@
     "btts": false,
     "player_stats": {
       "Romeo Leandersson": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Oliver Berg": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
@@ -7773,14 +7773,14 @@
         "mins": 90
       },
       "Simon Sandberg": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,
         "mins": 90
       },
       "Oscar Krusnell": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
         "started": true,

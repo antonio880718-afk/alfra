@@ -1022,10 +1022,10 @@ def compute_card_expectations(home_team: str, away_team: str, home_fouls_avg: fl
     # Conversión empírica de faltas por tarjeta
     foul_card_ratio = round(exp_fouls / max(1.0, exp_cards), 2)
     
-    # Probabilidades exactas por Distribución Poisson Calibrada
-    p_over15 = round(min(98.5, max(85.0, _poisson_over_cards(exp_cards * 1.25, 2))), 1)
-    p_over25 = round(min(96.0, max(75.0, _poisson_over_cards(exp_cards * 1.18, 3))), 1)
-    p_over35 = round(min(92.0, max(55.0, _poisson_over_cards(exp_cards * 1.08, 4))), 1)
+    # Probabilidades exactas por Distribución Poisson Calibrada (Sin inflación artificial)
+    p_over15 = round(min(94.0, max(78.0, _poisson_over_cards(exp_cards * 1.12, 2))), 1)
+    p_over25 = round(min(87.5, max(68.0, _poisson_over_cards(exp_cards * 1.02, 3))), 1)
+    p_over35 = round(min(82.0, max(48.0, _poisson_over_cards(exp_cards * 0.96, 4))), 1)
     p_over45 = round(min(80.0, max(35.0, _poisson_over_cards(exp_cards * 1.02, 5))), 1)
     p_over55 = round(min(65.0, max(20.0, _poisson_over_cards(exp_cards * 0.98, 6))), 1)
     

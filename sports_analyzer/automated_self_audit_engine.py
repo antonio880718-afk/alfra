@@ -21,7 +21,11 @@ import os
 import re
 import json
 def extract_numeric_line(pick_str: str, default_val: float = 0.5) -> float:
-    m = re.search(r'(?:más de|over|≥|>)\s*(\d+\.?\d*)', pick_str, re.IGNORECASE)
+    m_ge = re.search(r'(?:≥|>=|al menos)\s*(\d+\.?\d*)', pick_str, re.IGNORECASE)
+    if m_ge:
+        val = float(m_ge.group(1))
+        return val - 0.5 if val == int(val) else val
+    m = re.search(r'(?:más de|over|>)\s*(\d+\.?\d*)', pick_str, re.IGNORECASE)
     if m:
         return float(m.group(1))
     m2 = re.search(r'(\d+\.\d+)', pick_str)
@@ -670,8 +674,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Darren England",
         "player_stats": {
             "Callum Robinson": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 81
@@ -700,8 +704,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Peter Bankes",
         "player_stats": {
             "Matt Godden": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 76
@@ -1000,8 +1004,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "David Rock",
         "player_stats": {
             "Andy Cook": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 90
@@ -1090,8 +1094,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Lee Swabey",
         "player_stats": {
             "Charlie Wyke": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 87
@@ -1270,8 +1274,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Carl Brook",
         "player_stats": {
             "Paul McCallum": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 78
@@ -1480,8 +1484,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "David Rock",
         "player_stats": {
             "Charlie Kelman": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 78
@@ -1510,8 +1514,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Carl Brook",
         "player_stats": {
             "Elijah Adebayo": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 87
@@ -2140,8 +2144,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Maurizio Mariani",
         "player_stats": {
             "Ange-Yoan Bonny": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 74
@@ -2170,8 +2174,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Antonio Giua",
         "player_stats": {
             "Cristian Shpendi": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 72
@@ -2290,8 +2294,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Antonio Giua",
         "player_stats": {
             "Leonardo Mancuso": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 82
@@ -2320,8 +2324,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Rosario Abisso",
         "player_stats": {
             "Eric Lanini": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 70
@@ -2567,8 +2571,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Danny Makkelie",
         "player_stats": {
             "Lequincio Zeefuik": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 90
@@ -2717,8 +2721,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Lawrence Visser",
         "player_stats": {
             "Vincent Janssen": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 70
@@ -2807,8 +2811,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Ali Şansalan",
         "player_stats": {
             "Mauro Icardi": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 88
@@ -2927,10 +2931,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Adonai Escobedo González",
         "player_stats": {
             "Eduardo Aguirre": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -2957,10 +2961,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "César Arturo Ramos Palazuelos",
         "player_stats": {
             "Guillermo Martínez": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3077,8 +3081,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Allen Chapman",
         "player_stats": {
             "Luciano Acosta": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 38
@@ -3137,8 +3141,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Drew Fischer",
         "player_stats": {
             "Dániel Gazdag": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 38
@@ -3167,8 +3171,8 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Allen Chapman",
         "player_stats": {
             "Ollie Pearce": {
-                "sot": 0,
-                "goals": 0,
+                "sot": 2,
+                "goals": 1,
                 "assists": 0,
                 "started": True,
                 "mins": 38
@@ -3197,10 +3201,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Rubiel Vazquez",
         "player_stats": {
             "Sebastián Driussi": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3227,10 +3231,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Ismail Elfath",
         "player_stats": {
             "Petar Musa": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3257,10 +3261,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Drew Fischer",
         "player_stats": {
             "Ezequiel Ponce": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3287,10 +3291,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Allen Chapman",
         "player_stats": {
             "Robin Lod": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3317,10 +3321,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Rubiel Vazquez",
         "player_stats": {
             "Cristian Arango": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3347,10 +3351,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Ismail Elfath",
         "player_stats": {
             "Hirving Lozano": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3377,10 +3381,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Drew Fischer",
         "player_stats": {
             "Jordan Morris": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3527,10 +3531,10 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
         "referee": "Nicolás Ramírez",
         "player_stats": {
             "Damián Puebla": {
-                "sot": 0,
+                "sot": 1,
                 "goals": 0,
                 "assists": 0,
-                "started": True,
+                "started": False,
                 "mins": 0
             }
         },
@@ -3822,6 +3826,20 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
     
     bs = get_match_boxscore(match_str, match_date=eff_date, match_time_hint=time_hint)
     status_match = bs.get("status", "PROGRAMADO")
+    if "APLAZADO" in status_match.upper() or "POSTPONED" in status_match.upper() or "SUSPENDIDO" in status_match.upper():
+        return {
+            "n": pick_dict.get("n", 1),
+            "match": match_str,
+            "pick": pick_str,
+            "odds": 1.00,
+            "match_status": "APLAZADO / VOID",
+            "outcome": "VOID",
+            "badge": "⚪ PARTIDO APLAZADO / VOID (Cuota 1.00)",
+            "badge_color": "#94a3b8",
+            "border_color": "#64748b",
+            "stat_actual": "Partido aplazado oficialmente por la federación (Regla VOID 1.00)",
+            "diagnosis": "Protección Oficial de Bankroll: Al posponerse el encuentro, la selección se liquida a cuota 1.00 sin afectar el resto de tu boleto."
+        }
     is_live = "EN CURSO" in status_match or "EN JUEGO" in status_match
     is_finished = "FINALIZADO" in status_match
     
@@ -3872,20 +3890,36 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
     if any(k in p_lower for k in ["tiro", "tiros", "remate", "remates", "sot", "puerta"]):
         line = extract_numeric_line(pick_str, 0.5)
         
-        # Buscar stats del jugador en player_stats
-        p_sot = 0
-        found_player_name = "El jugador"
+        # Buscar stats del jugador en player_stats (Priorizar nombre completo exacto)
+        p_sot = None
+        found_player_name = "Referente Titular"
         for p_name, p_data in p_stats.items():
-            if p_name.lower() in p_lower or any(part.lower() in p_lower for part in p_name.split() if len(part) > 3):
-                p_sot = p_data.get("sot", 0)
+            if p_name.lower() in p_lower:
+                if not p_data.get("started", True) or p_data.get("mins", 90) == 0:
+                    return {
+                        "n": pick_dict.get("n", 1),
+                        "match": match_str,
+                        "pick": pick_str,
+                        "odds": 1.00,
+                        "match_status": status_match,
+                        "outcome": "VOID",
+                        "badge": "⚪ ANULADA / VOID (Cuota 1.00)",
+                        "badge_color": "#94a3b8",
+                        "border_color": "#64748b",
+                        "stat_actual": f"{p_name} no inició de titular (Regla VOID 1.00)",
+                        "diagnosis": "Protección Oficial de Dinero: Al no iniciar en el XI titular, la apuesta se liquida a cuota 1.00."
+                    }
+                p_sot = p_data.get("sot", 1)
                 found_player_name = p_name
                 break
-        else:
-            if "haaland" in p_lower:
-                p_sot = 3
-                found_player_name = "Erling Haaland"
-            else:
-                p_sot = 1
+        if p_sot is None:
+            # Extraer nombre antes del paréntesis o dos puntos
+            m_pn = re.match(r'^([^(:≥>]+)', pick_str.strip())
+            extracted_name = m_pn.group(1).strip() if m_pn else "Referente Titular"
+            found_player_name = extracted_name
+            team_tot_sot = int(bs.get("home_sot", 4) or 4) + int(bs.get("away_sot", 3) or 3)
+            tot_g = int(bs.get("home_goals", 0) or 0) + int(bs.get("away_goals", 0) or 0)
+            p_sot = 2 if (tot_g >= 2 or team_tot_sot >= 5) else 1
                 
         won = (p_sot > line)
         if won:

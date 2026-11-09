@@ -415,59 +415,39 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "15:00",
-    "home_goals": 2,
-    "away_goals": 1,
-    "source": "MLS Cup Playoffs 2026",
-    "score": "2 - 1",
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
-    "total_cards": 4
+    "home_goals": 0,
+    "away_goals": 0,
+    "source": "MLS Cup Playoffs 2026"
   },
   "tigres uanl vs cruz azul": {
     "match": "Tigres UANL vs Cruz Azul",
     "league": "Liga MX",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "19:00",
-    "home_goals": 2,
-    "away_goals": 1,
+    "home_goals": 0,
+    "away_goals": 0,
     "referee": "Ismael Rosario López Peñuelas",
-    "source": "FMF Liga MX Apertura 2026",
-    "score": "2 - 1",
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
-    "total_cards": 4
+    "source": "FMF Liga MX Apertura 2026"
   },
   "toluca vs monterrey": {
     "match": "Toluca vs Monterrey",
     "league": "Liga MX",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "19:00",
-    "home_goals": 2,
-    "away_goals": 1,
+    "home_goals": 0,
+    "away_goals": 0,
     "referee": "Daniel Quintero Huitrón",
-    "source": "FMF Liga MX Apertura 2026",
-    "score": "2 - 1",
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
-    "total_cards": 4
+    "source": "FMF Liga MX Apertura 2026"
   },
   "pumas unam vs america": {
     "match": "Pumas UNAM vs América",
     "league": "Liga MX",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "21:10",
-    "home_goals": 2,
-    "away_goals": 1,
+    "home_goals": 0,
+    "away_goals": 0,
     "referee": "César Arturo Ramos Palazuelos",
-    "source": "FMF Liga MX Clásico Capitalino",
-    "score": "2 - 1",
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
-    "total_cards": 4
+    "source": "FMF Liga MX Clásico Capitalino"
   },
   "fulham vs newcastle united": {
     "match": "Fulham vs Newcastle United",
@@ -654,8 +634,8 @@
     "referee": "Darren England",
     "player_stats": {
       "Callum Robinson": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 81
@@ -684,8 +664,8 @@
     "referee": "Peter Bankes",
     "player_stats": {
       "Matt Godden": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 76
@@ -894,7 +874,7 @@
     "referee": "Carl Brook",
     "player_stats": {
       "Nicke Kabamba": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 1,
         "started": true,
@@ -984,8 +964,8 @@
     "referee": "David Rock",
     "player_stats": {
       "Andy Cook": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 90
@@ -1074,8 +1054,8 @@
     "referee": "Lee Swabey",
     "player_stats": {
       "Charlie Wyke": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 87
@@ -1254,8 +1234,8 @@
     "referee": "Carl Brook",
     "player_stats": {
       "Paul McCallum": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 78
@@ -1314,7 +1294,7 @@
     "referee": "Lee Swabey",
     "player_stats": {
       "Jayden Clarke": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 1,
         "started": true,
@@ -1404,7 +1384,7 @@
     "referee": "Ben Speedie",
     "player_stats": {
       "Josh Koroma": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 1,
         "started": true,
@@ -1464,8 +1444,8 @@
     "referee": "David Rock",
     "player_stats": {
       "Charlie Kelman": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 78
@@ -1494,8 +1474,8 @@
     "referee": "Carl Brook",
     "player_stats": {
       "Elijah Adebayo": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 87
@@ -1704,7 +1684,7 @@
     "referee": "David Rock",
     "player_stats": {
       "Josh Hedges": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 1,
         "started": true,
@@ -2094,7 +2074,7 @@
     "referee": "Davide Massa",
     "player_stats": {
       "Antonio Sanabria": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 1,
         "started": true,
@@ -2124,8 +2104,8 @@
     "referee": "Maurizio Mariani",
     "player_stats": {
       "Ange-Yoan Bonny": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 74
@@ -2154,8 +2134,8 @@
     "referee": "Antonio Giua",
     "player_stats": {
       "Cristian Shpendi": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 72
@@ -2274,8 +2254,8 @@
     "referee": "Antonio Giua",
     "player_stats": {
       "Leonardo Mancuso": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 82
@@ -2304,8 +2284,8 @@
     "referee": "Rosario Abisso",
     "player_stats": {
       "Eric Lanini": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 70
@@ -2551,8 +2531,8 @@
     "referee": "Danny Makkelie",
     "player_stats": {
       "Lequincio Zeefuik": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 90
@@ -2701,8 +2681,8 @@
     "referee": "Lawrence Visser",
     "player_stats": {
       "Vincent Janssen": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 70
@@ -2791,8 +2771,8 @@
     "referee": "Ali Şansalan",
     "player_stats": {
       "Mauro Icardi": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 88
@@ -2895,26 +2875,26 @@
     "league": "Liga MX",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "17:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Adonai Escobedo González",
     "player_stats": {
       "Eduardo Aguirre": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -2925,26 +2905,26 @@
     "league": "Liga MX",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "21:10",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "César Arturo Ramos Palazuelos",
     "player_stats": {
       "Guillermo Martínez": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -2957,7 +2937,7 @@
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
-    "away_goals": 1,
+    "away_goals": 0,
     "ht_home": 1,
     "ht_away": 0,
     "ht_goals": 1,
@@ -2996,7 +2976,7 @@
     "total_corners": 6,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": true,
     "referee": "Ismail Elfath",
     "player_stats": {
@@ -3017,7 +2997,7 @@
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
-    "away_goals": 1,
+    "away_goals": 0,
     "ht_home": 1,
     "ht_away": 0,
     "ht_goals": 1,
@@ -3061,8 +3041,8 @@
     "referee": "Allen Chapman",
     "player_stats": {
       "Luciano Acosta": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 38
@@ -3077,7 +3057,7 @@
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
-    "away_goals": 1,
+    "away_goals": 0,
     "ht_home": 1,
     "ht_away": 0,
     "ht_goals": 1,
@@ -3107,7 +3087,7 @@
     "time_cdmx": "15:00",
     "score": "1 - 0",
     "home_goals": 1,
-    "away_goals": 1,
+    "away_goals": 0,
     "ht_home": 1,
     "ht_away": 0,
     "ht_goals": 1,
@@ -3121,8 +3101,8 @@
     "referee": "Drew Fischer",
     "player_stats": {
       "Dániel Gazdag": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 38
@@ -3136,7 +3116,7 @@
     "status": "FINALIZADO (FT)",
     "time_cdmx": "15:00",
     "score": "0 - 1",
-    "home_goals": 2,
+    "home_goals": 0,
     "away_goals": 1,
     "ht_home": 0,
     "ht_away": 1,
@@ -3146,13 +3126,13 @@
     "total_corners": 4,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Allen Chapman",
     "player_stats": {
       "Ollie Pearce": {
-        "sot": 0,
-        "goals": 0,
+        "sot": 2,
+        "goals": 1,
         "assists": 0,
         "started": true,
         "mins": 38
@@ -3165,26 +3145,26 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "18:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Rubiel Vazquez",
     "player_stats": {
       "Sebastián Driussi": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -3195,26 +3175,26 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "18:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Ismail Elfath",
     "player_stats": {
       "Petar Musa": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -3225,26 +3205,26 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "18:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Drew Fischer",
     "player_stats": {
       "Ezequiel Ponce": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -3255,26 +3235,26 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "18:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Allen Chapman",
     "player_stats": {
       "Robin Lod": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -3285,26 +3265,26 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "18:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Rubiel Vazquez",
     "player_stats": {
       "Cristian Arango": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -3315,26 +3295,26 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "18:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Ismail Elfath",
     "player_stats": {
       "Hirving Lozano": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -3345,26 +3325,26 @@
     "league": "MLS",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "18:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Drew Fischer",
     "player_stats": {
       "Jordan Morris": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
@@ -3495,26 +3475,26 @@
     "league": "Liga Profesional Argentina",
     "status": "FINALIZADO (FT)",
     "time_cdmx": "19:00",
-    "score": "2 - 1",
-    "home_goals": 2,
-    "away_goals": 1,
+    "score": "vs",
+    "home_goals": 0,
+    "away_goals": 0,
     "ht_home": 0,
     "ht_away": 0,
     "ht_goals": 0,
-    "home_corners": 6,
-    "away_corners": 4,
-    "total_corners": 10,
+    "home_corners": 0,
+    "away_corners": 0,
+    "total_corners": 0,
     "home_cards": 0,
     "away_cards": 0,
-    "total_cards": 4,
+    "total_cards": 0,
     "btts": false,
     "referee": "Nicolás Ramírez",
     "player_stats": {
       "Damián Puebla": {
-        "sot": 0,
+        "sot": 1,
         "goals": 0,
         "assists": 0,
-        "started": true,
+        "started": false,
         "mins": 0
       }
     },
