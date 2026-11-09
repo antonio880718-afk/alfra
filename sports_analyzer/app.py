@@ -11,6 +11,26 @@ _app_dir = os.path.dirname(os.path.abspath(__file__))
 if _app_dir not in sys.path:
     sys.path.insert(0, _app_dir)
 
+import importlib
+import sys as _sys
+
+_ENGINE_VER = "2026.11.09.v5"
+if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
+    for _mod_name in [
+        "referee_and_injuries_engine",
+        "match_data_engineering_engine",
+        "hourly_slots_engine",
+        "daily_tickets_engine",
+        "automated_self_audit_engine",
+        "context_impact_engine"
+    ]:
+        if _mod_name in _sys.modules:
+            try:
+                importlib.reload(_sys.modules[_mod_name])
+            except Exception:
+                pass
+    _sys._ALFRA_ENGINE_VER = _ENGINE_VER
+
 import streamlit as st
 import pandas as pd
 from datetime import datetime, date, timedelta
@@ -206,7 +226,23 @@ from hourly_slots_engine import get_chronological_slots
 from sgp_single_match_engine import build_single_match_sgp, fetch_match_rosters_and_details
 from multi_league_engine import calculate_single_match_markets
 from quant_prediction_engine import compute_dixon_coles_match, scan_all_cartelera_for_winning_picks
-from automated_self_audit_engine import run_autonomous_system_audit, audit_individual_pick_empirically, get_match_boxscore
+from automated_self_audit_engine import run_autonomous_system_audit, audit_individual_pick_empirically as _raw_audit_pick, get_match_boxscore as _raw_get_bs
+
+def get_match_boxscore(match_name: str, match_date: str = None, match_time_hint: str = None):
+    try:
+        return _raw_get_bs(match_name, match_date=match_date, match_time_hint=match_time_hint)
+    except TypeError:
+        try:
+            return _raw_get_bs(match_name, match_date=match_date)
+        except TypeError:
+            return _raw_get_bs(match_name)
+
+def audit_individual_pick_empirically(pick_dict: dict, match_date: str = None):
+    try:
+        return _raw_audit_pick(pick_dict, match_date=match_date)
+    except TypeError:
+        return _raw_audit_pick(pick_dict)
+
 from context_impact_engine import compute_full_context_and_5pages_report
 import pandas as pd
 
@@ -462,7 +498,6 @@ with t_slots:
             l_a1 = get_team_logo(m_chosen['away'])
 
             # Auditoría y Marcador Oficial en Vivo
-            from automated_self_audit_engine import get_match_boxscore, audit_individual_pick_empirically
             bs_match_sel = get_match_boxscore(f"{m_chosen['home']} vs {m_chosen['away']}", match_date=date_str, match_time_hint=m_chosen.get("time_cdmx"))
             m_status_str = bs_match_sel.get("status", "PROGRAMADO")
             m_score_str = bs_match_sel.get("score", "vs")
@@ -1324,7 +1359,6 @@ with t_parlay:
     st.markdown("### 🎟️ Las 11 Selecciones Oficiales del Parlay 100x")
     st.caption("Cada selección fue auditada en la base de datos oficial 2025-2027. Cuota combinada matemática: 104.51x (1.52 × 1.50 × 1.55 × 1.52 × 1.60 × 1.54 × 1.48 × 1.50 × 1.52 × 1.50 × 1.56).")
 
-    from automated_self_audit_engine import audit_individual_pick_empirically
     for item in TICKET_100X:
         m_parts = item['match'].split(' vs ')
         h_tm = m_parts[0].strip() if len(m_parts) > 1 else item['match']
@@ -1764,7 +1798,7 @@ with t_audit:
         )
         h_sel, a_sel, code_sel = match_tuples[sel_match_idx]
 
-        m_audit = audit_match_full_portfolio(h_sel, a_sel, code_sel, date_str)
+        m_audit = (audit_match_full_portfolio(h_sel, a_sel, code_sel, date_str) if audit_match_full_portfolio.__code__.co_argcount >= 4 else audit_match_full_portfolio(h_sel, a_sel, code_sel))
 
         render_html(f"""
         <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #38bdf8; border-radius: 12px; padding: 14px 18px; margin-bottom: 12px;">

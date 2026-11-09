@@ -119,7 +119,7 @@ ALIASES = {
 
 # Cargar planteles oficiales en vivo 2026/2027
 _LIVE_ROSTERS = {}
-_ROSTER_CACHE_PATH = "sports_analyzer/data/live_rosters_cache.json"
+_ROSTER_CACHE_PATH = os.path.join(os.path.dirname(__file__), "data", "live_rosters_cache.json")
 if os.path.exists(_ROSTER_CACHE_PATH):
     try:
         with open(_ROSTER_CACHE_PATH, "r", encoding="utf-8") as f:
@@ -2192,7 +2192,7 @@ def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
     all_matches = []
 
     # 1. PRIORIDAD ABSOLUTA (0.001s): Archivo de calendario oficial local para la fecha
-    cal_path = f"sports_analyzer/data/live_calendar_{date_str}.json"
+    cal_path = os.path.join(os.path.dirname(__file__), "data", f"live_calendar_{date_str}.json")
     if os.path.exists(cal_path):
         try:
             with open(cal_path, "r", encoding="utf-8") as f:
@@ -2248,7 +2248,7 @@ def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
                 5: "20261114",
                 6: "20261108"
             }
-            fallback_cal = f"sports_analyzer/data/live_calendar_{wd_map.get(wd, '20261109')}.json"
+            fallback_cal = os.path.join(os.path.dirname(__file__), "data", f"live_calendar_{wd_map.get(wd, '20261109')}.json")
             if os.path.exists(fallback_cal):
                 with open(fallback_cal, "r", encoding="utf-8") as f:
                     all_matches = json.load(f)

@@ -204,14 +204,18 @@ def compute_full_context_and_5pages_report(
     in_prog = 0
 
     for v in vars_list:
-        aud = audit_individual_pick_empirically({
+        _p_arg = {
             "n": v.get("n", 1),
             "match": f"{home_team} vs {away_team}",
             "pick": v.get("market", v.get("pick", "")),
             "odds": v.get("odds", 1.30),
             "time": time_cdmx,
             "date_str": date_str
-        }, match_date=date_str)
+        }
+        try:
+            aud = audit_individual_pick_empirically(_p_arg, match_date=date_str)
+        except TypeError:
+            aud = audit_individual_pick_empirically(_p_arg)
         var_audits.append(aud)
         out_c = aud.get("outcome", "PENDING")
         if out_c == "HIT":
