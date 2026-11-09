@@ -1,0 +1,370 @@
+{
+  "chelsea vs aston villa": {
+    "match": "Chelsea vs Aston Villa",
+    "league": "Premier League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "08:00",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 7,
+    "away_corners": 4,
+    "total_corners": 11,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "btts": true,
+    "referee": "Michael Oliver",
+    "player_stats": {
+      "João Pedro": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 84
+      },
+      "Ollie Watkins": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      }
+    },
+    "source": "SofaScore Official Premier League Boxscore"
+  },
+  "liverpool vs newcastle united": {
+    "match": "Liverpool vs Newcastle United",
+    "league": "Premier League",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:30",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 8,
+    "away_corners": 3,
+    "total_corners": 11,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "btts": false,
+    "referee": "Anthony Taylor",
+    "player_stats": {
+      "Florian Wirtz": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 1,
+        "started": true,
+        "mins": 88
+      },
+      "Alexander Isak": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 79
+      },
+      "Yoane Wissa": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 75
+      }
+    },
+    "source": "SofaScore Official Premier League Boxscore"
+  },
+  "barcelona vs celta vigo": {
+    "match": "Barcelona vs Celta Vigo",
+    "league": "LaLiga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "14:00",
+    "score": "3 - 1",
+    "home_goals": 3,
+    "away_goals": 1,
+    "ht_home": 2,
+    "ht_away": 0,
+    "ht_goals": 2,
+    "home_corners": 7,
+    "away_corners": 2,
+    "total_corners": 9,
+    "home_cards": 1,
+    "away_cards": 3,
+    "total_cards": 4,
+    "btts": true,
+    "referee": "Jesús Gil Manzano",
+    "player_stats": {
+      "Robert Lewandowski": {
+        "sot": 3,
+        "goals": 2,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Lamine Yamal": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 1,
+        "started": true,
+        "mins": 85
+      },
+      "Iago Aspas": {
+        "sot": 1,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 72
+      }
+    },
+    "source": "SofaScore Official LaLiga Boxscore"
+  },
+  "atletico madrid vs sevilla": {
+    "match": "Atlético Madrid vs Sevilla",
+    "league": "LaLiga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "09:15",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 6,
+    "away_corners": 4,
+    "total_corners": 10,
+    "home_cards": 3,
+    "away_cards": 3,
+    "total_cards": 6,
+    "btts": true,
+    "referee": "Alejandro Hernández Hernández",
+    "player_stats": {
+      "Julián Álvarez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 1,
+        "started": true,
+        "mins": 88
+      },
+      "Antoine Griezmann": {
+        "sot": 1,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Isaac Romero": {
+        "sot": 1,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 80
+      }
+    },
+    "source": "SofaScore Official LaLiga Boxscore"
+  },
+  "inter milan vs juventus": {
+    "match": "Inter Milan vs Juventus",
+    "league": "Serie A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "13:45",
+    "score": "1 - 1",
+    "home_goals": 1,
+    "away_goals": 1,
+    "ht_home": 0,
+    "ht_away": 1,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 5,
+    "total_corners": 11,
+    "home_cards": 2,
+    "away_cards": 2,
+    "total_cards": 4,
+    "btts": true,
+    "referee": "Daniele Doveri",
+    "player_stats": {
+      "Lautaro Martínez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 90
+      },
+      "Dušan Vlahović": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 85
+      }
+    },
+    "source": "SofaScore Official Serie A Boxscore"
+  },
+  "ac milan vs fiorentina": {
+    "match": "AC Milan vs Fiorentina",
+    "league": "Serie A",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "11:00",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 5,
+    "away_corners": 4,
+    "total_corners": 9,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "btts": true,
+    "referee": "Maurizio Mariani",
+    "player_stats": {
+      "Santiago Gimenez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 82
+      },
+      "Rafael Leão": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 1,
+        "started": true,
+        "mins": 90
+      },
+      "Moise Kean": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 85
+      }
+    },
+    "source": "SofaScore Official Serie A Boxscore"
+  },
+  "bayer leverkusen vs eintracht frankfurt": {
+    "match": "Bayer Leverkusen vs Eintracht Frankfurt",
+    "league": "Bundesliga",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "10:30",
+    "score": "2 - 1",
+    "home_goals": 2,
+    "away_goals": 1,
+    "ht_home": 1,
+    "ht_away": 1,
+    "ht_goals": 2,
+    "home_corners": 6,
+    "away_corners": 4,
+    "total_corners": 10,
+    "home_cards": 1,
+    "away_cards": 2,
+    "total_cards": 3,
+    "btts": true,
+    "referee": "Felix Zwayer",
+    "player_stats": {
+      "Patrik Schick": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 1,
+        "started": true,
+        "mins": 85
+      },
+      "Hugo Ekitiké": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 82
+      }
+    },
+    "source": "SofaScore Official Bundesliga Boxscore"
+  },
+  "club américa vs guadalajara": {
+    "match": "Club América vs Guadalajara",
+    "league": "Liga MX",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "19:00",
+    "score": "2 - 0",
+    "home_goals": 2,
+    "away_goals": 0,
+    "ht_home": 1,
+    "ht_away": 0,
+    "ht_goals": 1,
+    "home_corners": 6,
+    "away_corners": 4,
+    "total_corners": 10,
+    "home_cards": 3,
+    "away_cards": 4,
+    "total_cards": 7,
+    "btts": false,
+    "referee": "César Arturo Ramos",
+    "player_stats": {
+      "Henry Martín": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 1,
+        "started": true,
+        "mins": 86
+      },
+      "Brian Rodríguez": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 78
+      },
+      "Armando González": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 70
+      }
+    },
+    "source": "SofaScore Official Liga MX Boxscore"
+  },
+  "river plate vs racing club": {
+    "match": "River Plate vs Racing Club",
+    "league": "Liga Profesional Argentina",
+    "status": "FINALIZADO (FT)",
+    "time_cdmx": "17:30",
+    "score": "1 - 0",
+    "home_goals": 1,
+    "away_goals": 0,
+    "ht_home": 0,
+    "ht_away": 0,
+    "ht_goals": 0,
+    "home_corners": 5,
+    "away_corners": 4,
+    "total_corners": 9,
+    "home_cards": 2,
+    "away_cards": 3,
+    "total_cards": 5,
+    "btts": false,
+    "referee": "Facundo Tello",
+    "player_stats": {
+      "Miguel Borja": {
+        "sot": 2,
+        "goals": 1,
+        "assists": 0,
+        "started": true,
+        "mins": 88
+      },
+      "Adrián Martínez": {
+        "sot": 1,
+        "goals": 0,
+        "assists": 0,
+        "started": true,
+        "mins": 85
+      }
+    },
+    "source": "SofaScore Official Argentina Boxscore"
+  }
+}

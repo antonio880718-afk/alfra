@@ -1934,14 +1934,14 @@
     "questionable": []
   },
   "instituto": {
+    "team": "Instituto",
     "manager": "Diego Dabove",
     "starters_ready": [
       "Damián Puebla",
-      "Facundo Suárez",
-      "Gastón Lodico"
-    ],
-    "out": [],
-    "questionable": []
+      "Ignacio Russo",
+      "Gastón Lodico",
+      "Gregorio Rodríguez"
+    ]
   },
   "burnley": {
     "manager": "Scott Parker",
@@ -2670,22 +2670,14 @@
     "questionable": []
   },
   "samsunspor": {
+    "team": "Samsunspor",
     "manager": "Thomas Reis",
     "starters_ready": [
       "Marius Mouandilmadji",
       "Carlo Holse",
       "Olivier Ntcham",
-      "Okan Kocuk"
-    ],
-    "out": [
-      {
-        "player": "Lubomir Satka",
-        "pos": "Defensa",
-        "type": "🚑 Muscular",
-        "desc": "Baja médica."
-      }
-    ],
-    "questionable": []
+      "Emre Kılınç"
+    ]
   },
   "konyaspor": {
     "manager": "Ali Çamdalı",
@@ -3065,22 +3057,14 @@
     "questionable": []
   },
   "empoli": {
+    "team": "Empoli",
     "manager": "Roberto D'Aversa",
     "starters_ready": [
       "Lorenzo Colombo",
       "Sebastiano Esposito",
-      "Jacopo Fazzini",
-      "Devis Vásquez"
-    ],
-    "out": [
-      {
-        "player": "Saba Sazonov",
-        "pos": "Defensa",
-        "type": "🚑 Ligamento Cruzado",
-        "desc": "Baja de larga duración."
-      }
-    ],
-    "questionable": []
+      "Faustino Anjorin",
+      "Liam Henderson"
+    ]
   },
   "hellas verona": {
     "manager": "Paolo Zanetti",
@@ -7553,6 +7537,226 @@
       "Dodi Lukébakio",
       "Kelechi Iheanacho",
       "Djibril Sow"
+    ]
+  },
+  "asteras tripolis": {
+    "team": "Asteras Tripolis",
+    "manager": "Milan Rastavac",
+    "starters_ready": [
+      "Evgeniy Yablonskiy",
+      "Julián Bartolo",
+      "Francesc Regis",
+      "Nikos Kaltsas"
+    ]
+  },
+  "ofi crete": {
+    "team": "OFI Crete",
+    "manager": "Milan Rastavac",
+    "starters_ready": [
+      "Eddie Salcedo",
+      "Thiago Nuss",
+      "Taxiarchis Fountas",
+      "Marko Bakić"
+    ]
+  },
+  "antalyaspor": {
+    "team": "Antalyaspor",
+    "manager": "Alex de Souza",
+    "starters_ready": [
+      "Sam Larsson",
+      "Adolfo Gaich",
+      "Sander van de Streek",
+      "Ramzi Safuri"
+    ]
+  },
+  "kayserispor": {
+    "team": "Kayserispor",
+    "manager": "Sinan Kaloğlu",
+    "starters_ready": [
+      "Duckens Nazon",
+      "Miguel Cardoso",
+      "Mehdi Bourabia",
+      "Aylton Boa Morte"
+    ]
+  },
+  "gaziantep": {
+    "team": "Gaziantep",
+    "manager": "Selçuk İnan",
+    "starters_ready": [
+      "David Okereke",
+      "Deian Sorescu",
+      "Alexandru Maxim",
+      "Christopher Lungoyi"
+    ]
+  },
+  "sv sandhausen": {
+    "team": "SV Sandhausen",
+    "manager": "Sreto Ristić",
+    "starters_ready": [
+      "Dominic Baumann",
+      "David Otto",
+      "Emmanuel Iwe",
+      "Alexander Mühling"
+    ]
+  },
+  "1860 munich": {
+    "team": "1860 Munich",
+    "manager": "Argirios Giannikis",
+    "starters_ready": [
+      "Patrick Hobsch",
+      "Maximilian Wolfram",
+      "Julian Guttau",
+      "Tunay Deniz"
+    ]
+  },
+  "deportivo riestra": {
+    "team": "Deportivo Riestra",
+    "manager": "Cristian Fabbiani",
+    "starters_ready": [
+      "Jonathan Herrera",
+      "Antony Alonso",
+      "Milton Céliz",
+      "Pedro Ramírez"
+    ]
+  },
+  "vélez sarsfield": {
+    "team": "Vélez Sarsfield",
+    "manager": "Gustavo Quinteros",
+    "starters_ready": [
+      "Braian Romero",
+      "Francisco Pizzini",
+      "Thiago Fernández",
+      "Claudio Aquino"
+    ]
+  },
+  "velez sarsfield": {
+    "team": "Vélez Sarsfield",
+    "manager": "Gustavo Quinteros",
+    "starters_ready": [
+      "Braian Romero",
+      "Francisco Pizzini",
+      "Thiago Fernández",
+      "Claudio Aquino"
+    ]
+  },
+  "metz": {
+    "team": "Metz",
+    "manager": "Stéphane Le Mignan",
+    "starters_ready": [
+      "Gauthier Hein",
+      "Cheikh Sabaly",
+      "Ibou Sané",
+      "Jessy Deminguet"
+    ]
+  },
+  "guingamp": {
+    "team": "Guingamp",
+    "manager": "Sylvain Ripoll",
+    "starters_ready": [
+      "Jacques Siwe",
+      "Hugo Picard",
+      "Taylor Luvambo",
+      "Dylan Louiserre"
+    ]
+  },
+  "moreirense": {
+    "team": "Moreirense",
+    "manager": "César Peixoto",
+    "starters_ready": [
+      "Luís Asué",
+      "Madson de Souza",
+      "Alan",
+      "Gabrielzinho"
+    ]
+  },
+  "lanús": {
+    "team": "Lanús",
+    "manager": "Ricardo Zielinski",
+    "starters_ready": [
+      "Walter Bou",
+      "Marcelino Moreno",
+      "Eduardo Salvio",
+      "Ramiro Carrera"
+    ]
+  },
+  "lanus": {
+    "team": "Lanús",
+    "manager": "Ricardo Zielinski",
+    "starters_ready": [
+      "Walter Bou",
+      "Marcelino Moreno",
+      "Eduardo Salvio",
+      "Ramiro Carrera"
+    ]
+  },
+  "platense": {
+    "team": "Platense",
+    "manager": "Favio Orsi",
+    "starters_ready": [
+      "Mateo Pellegrino",
+      "Guido Mainero",
+      "Ronaldo Martínez",
+      "Fernando Juárez"
+    ]
+  },
+  "tigre": {
+    "team": "Tigre",
+    "manager": "Sebastián Domínguez",
+    "starters_ready": [
+      "Florián Monzón",
+      "Eric Ramírez",
+      "Gonzalo Maroni",
+      "Martín Garay"
+    ]
+  },
+  "belgrano": {
+    "team": "Belgrano",
+    "manager": "Juan Cruz Real",
+    "starters_ready": [
+      "Franco Jara",
+      "Nicolás Fernández",
+      "Bryan Reyna",
+      "Gabriel Compagnucci"
+    ]
+  },
+  "atlante": {
+    "team": "Atlante",
+    "manager": "Daniel Alcántar",
+    "starters_ready": [
+      "Vladimir Moragrega",
+      "Ronaldo González",
+      "Maximiliano García",
+      "Elbis Sousa"
+    ]
+  },
+  "celaya": {
+    "team": "Celaya",
+    "manager": "Sergio Blanco",
+    "starters_ready": [
+      "Allan Wlk",
+      "Lucas de Oliveira",
+      "Adolfo Domínguez",
+      "Jonathan Tovar"
+    ]
+  },
+  "tigres uanl femenil": {
+    "team": "Tigres UANL Femenil",
+    "manager": "Milagros Martínez",
+    "starters_ready": [
+      "Stephany Mayor",
+      "Thembi Kgatlana",
+      "Jacqueline Ovalle",
+      "Greta Espinoza"
+    ]
+  },
+  "club américa femenil": {
+    "team": "Club América Femenil",
+    "manager": "Ángel Villacampa",
+    "starters_ready": [
+      "Kiana Palacios",
+      "Sarah Luebbert",
+      "Scarlett Camberos",
+      "Irene Guerrero"
     ]
   }
 }

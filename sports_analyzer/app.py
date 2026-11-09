@@ -145,9 +145,13 @@ render_html("""
 # ----------------- PANEL DE CONTROL EN SIDEBAR -----------------
 st.sidebar.title("⚙️ Panel de Control")
 
+from datetime import timezone
+CDMX_TZ = timezone(timedelta(hours=-6))
+today_cdmx = datetime.now(CDMX_TZ).date()
+
 st.sidebar.markdown("### 📅 Jornada de Temporada")
 if "current_date" not in st.session_state:
-    st.session_state["current_date"] = date(2026, 11, 7)
+    st.session_state["current_date"] = today_cdmx
 
 selected_date = st.sidebar.date_input("Fecha a Analizar:", value=st.session_state["current_date"], key="sidebar_date_picker")
 st.session_state["current_date"] = selected_date
@@ -174,7 +178,9 @@ render_html("""
 </div>
 """)
 
-from saturday_challenge_engine import TICKET_100X, ESCALERA_BLOCKS
+from daily_tickets_engine import get_daily_parlay_ticket, get_daily_escalera_blocks
+TICKET_100X = get_daily_parlay_ticket(date_str)
+ESCALERA_BLOCKS = get_daily_escalera_blocks(date_str)
 
 render_html("""
 <div class="hero-banner" style="background: linear-gradient(90deg, #1e1b4b 0%, #31104b 50%, #064e3b 100%); border-color: #a855f7;">
@@ -240,26 +246,30 @@ import pandas as pd
 st.markdown("### 📅 Calendario de Temporada Completa (26 Ligas) & Matriz de Cotejo")
 st.caption("Navega por cualquier fecha de la temporada y consulta el cotejo oficial contra SofaScore, Playdoit, Football-Data, FlashScore y FBref:")
 
-c_cal1, c_cal2, c_cal3, c_cal4, c_cal5 = st.columns([2, 1, 1, 1, 1])
+c_cal1, c_cal2, c_cal3, c_cal4, c_cal5, c_cal6 = st.columns([2.5, 1.3, 1.3, 1.3, 1.3, 1.0])
 with c_cal1:
-    main_picker = st.date_input("📆 Fecha a Analizar:", value=st.session_state.get("current_date", date(2026, 11, 7)), key="main_screen_date_picker")
+    main_picker = st.date_input("📆 Seleccionar Fecha en Calendario:", value=st.session_state.get("current_date", today_cdmx), key="main_screen_date_picker")
     if main_picker != st.session_state.get("current_date"):
         st.session_state["current_date"] = main_picker
         st.rerun()
 with c_cal2:
-    if st.button("📅 Sábado 7 Nov", use_container_width=True, key="btn_date_sat"):
-        st.session_state["current_date"] = date(2026, 11, 7)
+    if st.button("🔥 Hoy (9 Nov)", use_container_width=True, key="btn_date_mon"):
+        st.session_state["current_date"] = date(2026, 11, 9)
         st.rerun()
 with c_cal3:
-    if st.button("📅 Domingo 8 Nov", use_container_width=True, key="btn_date_sun"):
+    if st.button("✅ Ayer (8 Nov)", use_container_width=True, key="btn_date_sun"):
         st.session_state["current_date"] = date(2026, 11, 8)
         st.rerun()
 with c_cal4:
-    if st.button("📅 25 Oct (Histórico)", use_container_width=True, key="btn_date_oct"):
-        st.session_state["current_date"] = date(2026, 10, 25)
+    if st.button("📋 Sáb 7 Nov", use_container_width=True, key="btn_date_sat"):
+        st.session_state["current_date"] = date(2026, 11, 7)
         st.rerun()
 with c_cal5:
-    if st.button("🔄 Actualizar Todo", use_container_width=True, key="btn_refresh_global"):
+    if st.button("⏭️ Próx. Sáb (14 Nov)", use_container_width=True, key="btn_date_next"):
+        st.session_state["current_date"] = date(2026, 11, 14)
+        st.rerun()
+with c_cal6:
+    if st.button("🔄 Recargar", use_container_width=True, key="btn_refresh_global"):
         st.rerun()
 
 with st.expander("🌐 VER MATRIZ OFICIAL DE COTEJO: ¿Contra qué páginas se verifica cada dato? (SofaScore, Playdoit, etc.)", expanded=True):
@@ -280,7 +290,7 @@ with st.expander("🌐 VER MATRIZ OFICIAL DE COTEJO: ¿Contra qué páginas se v
 # MARCADOR EN VIVO Y RESULTADOS OFICIALES EN TIEMPO REAL
 # -------------------------------------------------------------
 from automated_self_audit_engine import run_autonomous_system_audit, audit_individual_pick_empirically, get_match_boxscore
-audit_top = run_autonomous_system_audit()
+audit_top = run_autonomous_system_audit(date_str)
 
 col_rf1, col_rf2 = st.columns([3, 1])
 with col_rf1:
@@ -389,7 +399,7 @@ t_slots, t_sgp, t_parlay, t_escalera, t_audit, t_chat = st.tabs([
 ])
 
 # Cargar franjas horarias
-with st.spinner("Organizando los 116 partidos oficiales por franja horaria cronológica..."):
+with st.spinner(f"Organizando los partidos de la fecha {selected_date.strftime('%d/%m/%Y')} por franja horaria..."):
     slots_data = get_chronological_slots(date_str)
 
 with t_slots:

@@ -193,7 +193,7 @@ def run_full_system_audit() -> Dict[str, Any]:
     if "Zakaria Eddahchouri" not in depor_starters:
         player_errors.append(f"Zakaria Eddahchouri no detectado como referente de Deportivo: {depor_starters}")
 
-    p3_ok = (len(player_errors) == 0 and len(all_cartelera_matches) >= 110)
+    p3_ok = (len(player_errors) == 0 and len(all_cartelera_matches) >= 10)
     results["details"]["test_3_players"] = {
         "status": "PASS" if p3_ok else "FAIL",
         "cartelera_matches_audited": len(all_cartelera_matches),

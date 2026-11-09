@@ -2186,7 +2186,9 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         "math_breakdown": math_breakdown
     }
 
-def get_chronological_slots(date_str: str = "20261107") -> Dict[str, Any]:
+def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
+    if not date_str:
+        date_str = datetime.now(CDMX_TZ).strftime("%Y%m%d")
     all_matches = []
     for l in LEAGUES_CONFIG:
         try:
@@ -2266,8 +2268,9 @@ def get_chronological_slots(date_str: str = "20261107") -> Dict[str, Any]:
             except Exception:
                 pass
 
-        # 3. Respaldo general de temporada si no hay calendario específico cargado
-        if not all_matches:
+        # 3. Respaldo general: Si no hay partidos para esta fecha, NO forzar otra fecha
+        # Solamente si la fecha solicitada es 20261107 se carga live_calendar_20261107.json
+        if not all_matches and date_str == "20261107":
             cal_base = "sports_analyzer/data/live_calendar_20261107.json"
             if os.path.exists(cal_base):
                 try:

@@ -3558,14 +3558,17 @@ def _load_cartelera_boxscores() -> Dict[str, Any]:
     if _CARTELERA_CACHE is not None:
         return _CARTELERA_CACHE
     boxscores = dict(LIVE_MATCH_BOXSCORES)
-    cartelera_file = os.path.join(os.path.dirname(__file__), "data", "cartelera_boxscores_20261107.json")
-    if os.path.exists(cartelera_file):
-        try:
-            with open(cartelera_file, "r", encoding="utf-8") as f:
-                extra = json.load(f)
-                boxscores.update(extra)
-        except Exception:
-            pass
+    # Cargar todos los archivos de marcadores de la cartelera oficial (Sábado 7 Nov, Domingo 8 Nov, Lunes 9 Nov)
+    data_dir = os.path.join(os.path.dirname(__file__), "data")
+    for fname in os.listdir(data_dir):
+        if fname.startswith("cartelera_boxscores_") and fname.endswith(".json"):
+            c_path = os.path.join(data_dir, fname)
+            try:
+                with open(c_path, "r", encoding="utf-8") as f:
+                    extra = json.load(f)
+                    boxscores.update(extra)
+            except Exception:
+                pass
     _CARTELERA_CACHE = boxscores
     return _CARTELERA_CACHE
 
@@ -4428,26 +4431,30 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any]) -> Dict[str, An
 # -------------------------------------------------------------
 # 3. AUTO-AUDITORÍA INTEGRAL DE BOLETOS Y MODO GANADOR
 # -------------------------------------------------------------
-def run_autonomous_system_audit() -> Dict[str, Any]:
+def run_autonomous_system_audit(date_str: str = None) -> Dict[str, Any]:
     """
     Ejecuta la auto-auditoría completa sobre los boletos del sistema y la jornada:
     Calcula: Aciertos, Errores, Void, Pendientes, Hit Rate Real y Diagnóstico de Fallas.
+    Soporta fechas dinámicas (Sábado 7 Nov, Domingo 8 Nov, Lunes 9 Nov y toda la temporada).
     """
-    from saturday_challenge_engine import TICKET_100X, TICKET_CONSERVATIVE_11X, ESCALERA_BLOCKS
+    from daily_tickets_engine import get_daily_parlay_ticket, get_daily_conservative_11x, get_daily_escalera_blocks
+    ticket_100x = get_daily_parlay_ticket(date_str)
+    ticket_11x = get_daily_conservative_11x(date_str)
+    escalera_blocks = get_daily_escalera_blocks(date_str)
     
     # 1. Auditar Boleto Parlay 100x
     audited_100x = []
-    for item in TICKET_100X:
+    for item in ticket_100x:
         audited_100x.append(audit_individual_pick_empirically(item))
         
     # 2. Auditar Boleto Parlay Ultra-Seguro 11x
     audited_11x = []
-    for item in TICKET_CONSERVATIVE_11X:
+    for item in ticket_11x:
         audited_11x.append(audit_individual_pick_empirically(item))
         
     # 3. Auditar Reto Escalera (Bloques 1, 2, 3)
     audited_escalera = []
-    for b in ESCALERA_BLOCKS:
+    for b in escalera_blocks:
         b_picks = []
         for p in b.get("picks", []):
             b_picks.append(audit_individual_pick_empirically(p))
