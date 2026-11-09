@@ -3564,13 +3564,17 @@ def _load_cartelera_boxscores() -> Dict[str, Any]:
     boxscores = dict(LIVE_MATCH_BOXSCORES)
     # Cargar todos los archivos de marcadores de la cartelera oficial (Sábado 7 Nov, Domingo 8 Nov, Lunes 9 Nov)
     data_dir = os.path.join(os.path.dirname(__file__), "data")
-    for fname in os.listdir(data_dir):
+    for fname in sorted(os.listdir(data_dir)):
         if fname.startswith("cartelera_boxscores_") and fname.endswith(".json"):
             c_path = os.path.join(data_dir, fname)
             try:
                 with open(c_path, "r", encoding="utf-8") as f:
                     extra = json.load(f)
-                    boxscores.update(extra)
+                    for ek, ev in extra.items():
+                        boxscores[ek] = ev
+                        # Also overwrite accent-free key if present in LIVE_MATCH_BOXSCORES
+                        ek_ascii = ek.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ü","u").replace("ö","o")
+                        boxscores[ek_ascii] = ev
             except Exception:
                 pass
     _CARTELERA_CACHE = boxscores
@@ -3877,11 +3881,15 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
         m_pn = re.match(r'^([^(:≥>]+)', pick_s.strip())
         cand_raw = m_pn.group(1).strip() if m_pn else ""
         cand_n = _norm(cand_raw)
-        # 1. Exact or normalized match on candidate name
-        if cand_n and len(cand_n) >= 3:
+        # 1. Exact match on candidate name first
+        if cand_n and len(cand_n) >= 2:
+            for k, v in stats_dict.items():
+                if _norm(k) == cand_n:
+                    return k, v
+            # 1b. Word-boundary match (prevents "Enzo" matching "Renzo Lopez")
             for k, v in stats_dict.items():
                 kn = _norm(k)
-                if kn == cand_n or cand_n in kn or kn in cand_n:
+                if re.search(rf"\b{re.escape(cand_n)}\b", kn) or re.search(rf"\b{re.escape(kn)}\b", cand_n):
                     return k, v
         # 2. Full name in pick string
         for k, v in stats_dict.items():
@@ -4725,9 +4733,21 @@ def audit_match_full_portfolio(home_team: str, away_team: str, league_code: str 
     Detecta aciertos, errores y anuladas para las 8 categorías del encuentro.
     """
     from match_data_engineering_engine import compute_full_match_data_engineering
-    de = compute_full_match_data_engineering(home_team, away_team, league_code)
-    
     bs = get_match_boxscore(f"{home_team} vs {away_team}", match_date=date_str)
+    if not league_code:
+        lg_str = str(bs.get("league", "")).lower()
+        lg_map = {
+            "premier league": "eng.1", "championship": "eng.2", "laliga": "esp.1",
+            "serie a": "ita.1", "serie b": "ita.2", "bundesliga": "ger.1",
+            "ligue 1": "fra.1", "ligue 2": "fra.2", "eredivisie": "ned.1",
+            "primeira liga": "por.1", "liga mx": "mex.1", "mls": "usa.1",
+            "brasileir": "bra.1", "argentina": "arg.1"
+        }
+        for k_lg, v_cd in lg_map.items():
+            if k_lg in lg_str:
+                league_code = v_cd
+                break
+    de = compute_full_match_data_engineering(home_team, away_team, league_code)
     status = bs.get("status", "PROGRAMADO")
     
     audited_categories = []

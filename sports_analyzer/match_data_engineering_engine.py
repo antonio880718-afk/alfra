@@ -4159,9 +4159,13 @@ def get_team_star_players(team_name: str) -> List[Dict[str, Any]]:
         except Exception:
             pass
     
-    # 1. Prioridad: Buscar en STAR_PLAYERS auditado manualmente
+    # 1. Prioridad: Buscar en STAR_PLAYERS auditado manualmente (Exacto primero, luego palabra completa)
+    if raw in STAR_PLAYERS:
+        return STAR_PLAYERS[raw]
+    if norm in STAR_PLAYERS:
+        return STAR_PLAYERS[norm]
     for k, v in STAR_PLAYERS.items():
-        if k in norm or norm in k:
+        if len(k) >= 5 and (re.search(rf"\b{re.escape(k)}\b", norm) or re.search(rf"\b{re.escape(norm)}\b", k)):
             return v
 
     # 1.5 Buscar en Base Oficial de Cartelera Empírica

@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.09.v13"
+_ENGINE_VER = "2026.11.09.v14"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _mod_name in [
         "referee_and_injuries_engine",
