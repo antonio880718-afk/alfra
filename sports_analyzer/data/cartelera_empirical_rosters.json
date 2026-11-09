@@ -17,14 +17,7 @@
         "desc": "Baja médica oficial por lesión en la articulación de la rodilla."
       }
     ],
-    "questionable": [
-      {
-        "player": "Kenny Tete",
-        "pos": "Defensa",
-        "type": "⚠️ Sobrecarga Muscular",
-        "desc": "En duda para el lateral derecho."
-      }
-    ]
+    "questionable": []
   },
   "newcastle united": {
     "manager": "Eddie Howe",
@@ -41,35 +34,28 @@
         "player": "Jacob Ramsey",
         "pos": "Centrocampista",
         "type": "🟥 Tarjeta roja (2.ª am.)",
-        "desc": "Suspensión oficial por doble amonestación en la jornada anterior."
+        "desc": "Suspensión oficial."
       },
       {
         "player": "Ewen Jaouen",
         "pos": "Portero",
         "type": "🚑 Lesionado Isquiotibiales",
-        "desc": "Baja médica en fase de readaptación muscular."
+        "desc": "Baja médica."
       },
       {
         "player": "Joelinton",
         "pos": "Centrocampista",
         "type": "🚑 Lesionado Golpe",
-        "desc": "Baja confirmada por fuerte traumatismo en el último partido."
+        "desc": "Baja confirmada."
       },
       {
         "player": "Tino Livramento",
         "pos": "Defensa",
         "type": "🚑 Lesionado Golpe",
-        "desc": "Fuera de convocatoria por contusión física."
+        "desc": "Fuera de convocatoria."
       }
     ],
-    "questionable": [
-      {
-        "player": "Lewis Miley",
-        "pos": "Centrocampista",
-        "type": "⚠️ Fatiga Muscular",
-        "desc": "Prueba física previa al encuentro."
-      }
-    ]
+    "questionable": []
   },
   "newcastle": {
     "manager": "Eddie Howe",
@@ -121,33 +107,13 @@
     "starters_ready": [
       "Viktor Gyökeres",
       "Bukayo Saka",
-      "Kai Havertz",
       "Martin Ødegaard",
       "Declan Rice",
-      "William Saliba"
+      "William Saliba",
+      "David Raya"
     ],
-    "out": [
-      {
-        "player": "Gabriel Jesus",
-        "pos": "Delantero",
-        "type": "🚑 Lesión Muscular",
-        "desc": "Rehabilitación en gemelo."
-      },
-      {
-        "player": "Jurriën Timber",
-        "pos": "Defensa",
-        "type": "🚑 Molestia de Tobillo",
-        "desc": "Fuera por precaución médica."
-      }
-    ],
-    "questionable": [
-      {
-        "player": "Takehiro Tomiyasu",
-        "pos": "Defensa",
-        "type": "⚠️ Duda Física",
-        "desc": "Evaluación médica previa."
-      }
-    ]
+    "out": [],
+    "questionable": []
   },
   "hull city": {
     "manager": "Tim Walter",
@@ -409,12 +375,12 @@
   "valencia": {
     "manager": "Carlos Corberán",
     "starters_ready": [
+      "Umar Sadiq",
+      "Sergi Canós",
+      "Luis Rioja",
       "Hugo Duro",
       "Diego López",
-      "Luis Rioja",
-      "Javi Guerra",
-      "Pepelu",
-      "Stole Dimitrievski"
+      "David Otorbi"
     ],
     "out": [
       {
@@ -624,19 +590,13 @@
     "manager": "Dino Toppmöller",
     "starters_ready": [
       "Hugo Ekitiké",
-      "Igor Matanović",
-      "Fares Chaibi",
+      "Mario Götze",
+      "Hugo Larsson",
+      "Ellyes Skhiri",
       "Robin Koch",
       "Kevin Trapp"
     ],
-    "out": [
-      {
-        "player": "Omar Marmoush",
-        "pos": "Delantero",
-        "type": "Traspaso",
-        "desc": "Traspasado a la Premier League"
-      }
-    ],
+    "out": [],
     "questionable": []
   },
   "mainz": {
@@ -1513,12 +1473,12 @@
   "monterrey": {
     "manager": "Domènec Torrent",
     "starters_ready": [
-      "Germán Berterame",
-      "Sergio Canales",
-      "Lucas Ocampos",
-      "Sergio Ramos",
-      "Óliver Torres",
-      "Esteban Andrada"
+      "Hugo Cuypers",
+      "Roberto de la Rosa",
+      "Luca Orellano",
+      "Uros Djurdjevic",
+      "Aldo De Nigris",
+      "Lucas Ocampos"
     ],
     "out": [
       {
@@ -1667,12 +1627,12 @@
   "boca juniors": {
     "manager": "Miguel Ángel Russo",
     "starters_ready": [
-      "Edinson Cavani",
-      "Miguel Merentiel",
-      "Carlos Palacios",
-      "Kevin Zenón",
-      "Ander Herrera",
-      "Agustín Marchesín"
+      "Ángel Romero",
+      "Silvio Miguel Ventos",
+      "Sebastián Villa",
+      "Rodrigo Bacidalupe",
+      "Milton Gimenez",
+      "Miguel Merentiel"
     ],
     "out": [
       {
@@ -2026,22 +1986,16 @@
     "questionable": []
   },
   "wolverhampton wanderers": {
-    "manager": "Gary O'Neil",
+    "manager": "Vítor Pereira",
     "starters_ready": [
       "Raúl Jiménez",
       "Matheus Cunha",
-      "Hwang Hee-chan",
+      "Jørgen Strand Larsen",
       "João Gomes",
-      "Nélson Semedo"
+      "André",
+      "José Sá"
     ],
-    "out": [
-      {
-        "player": "Saša Kalajdžić",
-        "pos": "Delantero",
-        "type": "🚑 Ligamento Cruzado",
-        "desc": "Baja de larga duración."
-      }
-    ],
+    "out": [],
     "questionable": []
   },
   "wolves": {
@@ -2877,11 +2831,10 @@
     "manager": "Henk Brugge",
     "starters_ready": [
       "Sem van Duijn",
-      "Patrick Brouwer",
-      "Jochem Ritmeester van de Kamp",
-      "Jeff Hardeveld",
+      "Soufiane Hetli",
+      "Mees Kaandorp",
+      "Tyrone Owusu",
       "Danny Bakker",
-      "Guus Offerhaus",
       "Ronald Koeman Jr."
     ],
     "out": [],
@@ -3401,10 +3354,12 @@
   "albacete": {
     "manager": "Alberto González",
     "starters_ready": [
-      "Higinio Marín",
-      "Fidel Chaves",
-      "Jon Morcillo",
-      "Raúl Lizoain"
+      "Álex Rubio",
+      "Víctor Valverde Da Silva",
+      "Tomás Inglés",
+      "Samuel Obeng",
+      "Roberto González",
+      "Munir El Haddadi"
     ],
     "out": [],
     "questionable": []
@@ -3412,10 +3367,12 @@
   "burgos": {
     "manager": "Jon Pérez Bolo",
     "starters_ready": [
-      "Curro Sánchez",
-      "Fer Niño",
-      "Álex Sancris",
-      "Ander Cantero"
+      "Alex Fores",
+      "Jon Karrikaburu",
+      "Javi Llabrés",
+      "Victor Mollejo",
+      "Fermín García",
+      "Pablo Sagredo García"
     ],
     "out": [],
     "questionable": []
@@ -3456,10 +3413,12 @@
   "córdoba": {
     "manager": "Iván Ania",
     "starters_ready": [
-      "Antonio Casas",
-      "Jacobo González",
+      "Percan",
+      "Victor Sánchez",
       "Cristian Carracedo",
-      "Carlos Marín"
+      "Enol Rodríguez",
+      "Adnane Ghailan",
+      "Kevin Villodres"
     ],
     "out": [],
     "questionable": []
@@ -3489,10 +3448,12 @@
   "leganés": {
     "manager": "Borja Jiménez",
     "starters_ready": [
-      "Juan Cruz",
-      "Miguel de la Fuente",
-      "Munir El Haddadi",
-      "Marko Dmitrović"
+      "Álvaro Morata",
+      "Ismaël Gharbi",
+      "Naim García",
+      "Álex Millán",
+      "Serge Patrick Njoh",
+      "Álex Sancris"
     ],
     "out": [],
     "questionable": []
@@ -3533,10 +3494,12 @@
   "real oviedo": {
     "manager": "Javi Calleja",
     "starters_ready": [
-      "Alemao",
-      "Hassan",
-      "Santi Cazorla",
-      "Aaron Escandell"
+      "Pablo Sáenz",
+      "Jacobo González",
+      "Estanis Pedrola",
+      "Chris Ramos",
+      "Ilyas Chaira",
+      "Víctor García Mingo"
     ],
     "out": [],
     "questionable": []
@@ -3566,12 +3529,12 @@
   "accrington stanley": {
     "manager": "John Doolan",
     "starters_ready": [
-      "Jimmy Knowles",
-      "Kelsey Mooney",
+      "Josh Woods",
+      "Charlie Caton",
+      "Charlie Warren",
+      "Tyler Walton",
       "Shaun Whalley",
-      "Donald Love",
-      "Seamus Conneely",
-      "Michael Kelly"
+      "Cole Stockton"
     ],
     "out": [],
     "questionable": []
@@ -3579,12 +3542,12 @@
   "afc hornchurch": {
     "manager": "Daryl McMahon",
     "starters_ready": [
-      "Femi Akinwande",
-      "Angelo Balanta",
-      "Liam Nash",
-      "Tom Wraight",
-      "Ryan Scott",
-      "Mason Terry"
+      "Dominic Poleon",
+      "Ángelo Balanta",
+      "Henry Roy Hearn",
+      "Henry Sandat",
+      "Josh Walker",
+      "Myles Weston"
     ],
     "out": [],
     "questionable": []
@@ -3592,12 +3555,12 @@
   "barnet": {
     "manager": "Dean Brennan",
     "starters_ready": [
-      "Nicke Kabamba",
-      "Callum Stead",
-      "Harry Chapman",
-      "Anthony Hartigan",
-      "Danny Collinge",
-      "Nick Hayes"
+      "Kabongo Tshimanga",
+      "Tom Knowles",
+      "Idris Kanu",
+      "Damola Ajayi",
+      "Jack Reagan Maskell",
+      "Isiah Noel-Williams"
     ],
     "out": [],
     "questionable": []
@@ -3605,12 +3568,12 @@
   "barnsley": {
     "manager": "Darrell Clarke",
     "starters_ready": [
-      "Davis Keillor-Dunn",
-      "Stephen Humphrys",
-      "Adam Phillips",
-      "Luca Connell",
-      "Marc Roberts",
-      "Gabriel Slonina"
+      "Reyes Cleary",
+      "Mackenzie Kirk",
+      "Amani Richards",
+      "Luke Alker",
+      "Rylan Brownlie",
+      "Tobi Ademeyo"
     ],
     "out": [],
     "questionable": []
@@ -3618,12 +3581,12 @@
   "boreham wood": {
     "manager": "Luke Garrard",
     "starters_ready": [
-      "Kwesi Appiah",
-      "Lee Ndlovu",
-      "Erico Sousa",
-      "Jack Payne",
-      "Femi Ilesanmi",
-      "Nathan Ashmore"
+      "Matt Rush",
+      "Jay Bird",
+      "Danny Cashman",
+      "Tarryn Allarakhia",
+      "Farhaan Ali Wahid",
+      "Conor Wilkinson"
     ],
     "out": [],
     "questionable": []
@@ -3631,12 +3594,12 @@
   "bradford city": {
     "manager": "Graham Alexander",
     "starters_ready": [
-      "Andy Cook",
-      "Calum Kavanagh",
       "Bobby Pointon",
-      "Richie Smallwood",
-      "Ciaran Kelly",
-      "Sam Walker"
+      "Jake Beesley",
+      "Will Swan",
+      "Kayden Jackson",
+      "Stephen Humphrys",
+      "Harry Ibbitson"
     ],
     "out": [],
     "questionable": []
@@ -3644,12 +3607,12 @@
   "bromley": {
     "manager": "Andy Woodman",
     "starters_ready": [
+      "Victor Adeboyejo",
       "Michael Cheek",
-      "Corey Whitely",
-      "Cameron Congreve",
-      "Jude Arthurs",
-      "Byron Webster",
-      "Grant Smith"
+      "Mickel Miller",
+      "Nicke Kabamba",
+      "Jodi Jones",
+      "Dawid Jakub Przybylo"
     ],
     "out": [],
     "questionable": []
@@ -3657,12 +3620,12 @@
   "burton albion": {
     "manager": "Mark Robinson",
     "starters_ready": [
-      "Danilo Orsi",
-      "Billy Bodin",
-      "Tomas Kalinauskas",
-      "Elliot Watt",
-      "Ryan Sweeney",
-      "Max Crocombe"
+      "Caylon Vickers",
+      "Matthew Dennis",
+      "Gbemi Kingslyn Arubi",
+      "Raphael Borges Rodrigues",
+      "Kain Adom",
+      "Zac Scutt"
     ],
     "out": [],
     "questionable": []
@@ -3670,12 +3633,12 @@
   "carlisle united": {
     "manager": "Mike Williamson",
     "starters_ready": [
-      "Charlie Wyke",
-      "Luke Armstrong",
-      "Dominic Sadi",
-      "Callum Guy",
-      "Aaron Hayden",
-      "Harry Lewis"
+      "David Ajiboye",
+      "Georgie Kelly",
+      "Regan Linney",
+      "Micah Obiero",
+      "Junior Luamba",
+      "Cameron Harper"
     ],
     "out": [],
     "questionable": []
@@ -3683,12 +3646,12 @@
   "cheltenham town": {
     "manager": "Michael Flynn",
     "starters_ready": [
-      "Ethon Archer",
+      "Jake Evans",
+      "Andreas Weimann",
+      "Kirsten Otchere",
+      "Jake Bickerstaff",
       "George Miller",
-      "Joel Colwill",
-      "Luke Young",
-      "Tom Bradbury",
-      "Joe Day"
+      "Favour Onukwuli"
     ],
     "out": [],
     "questionable": []
@@ -3696,12 +3659,12 @@
   "chesterfield": {
     "manager": "Paul Cook",
     "starters_ready": [
-      "Will Grigg",
-      "Armando Dobra",
-      "James Berry",
-      "Darren Oldaker",
-      "Chey Dunkley",
-      "Ryan Boot"
+      "Louie Marsh",
+      "Dilan Kumar Markanday",
+      "Josh Koroma",
+      "Lee Bonis",
+      "Fraser Bryden",
+      "Ruel Sotiriou"
     ],
     "out": [],
     "questionable": []
@@ -3709,12 +3672,12 @@
   "colchester united": {
     "manager": "Danny Cowley",
     "starters_ready": [
-      "Lyle Taylor",
-      "Samson Tovide",
-      "Owura Edwards",
-      "Arthur Read",
-      "Ellis Iandolo",
-      "Matt Macey"
+      "Jaden Williams",
+      "Kylian Kouassi",
+      "Bradley Ihionvien",
+      "Oscar Thorn",
+      "Beryly Lubula",
+      "Leon Chiwome"
     ],
     "out": [],
     "questionable": []
@@ -3722,12 +3685,12 @@
   "crewe alexandra": {
     "manager": "Lee Bell",
     "starters_ready": [
-      "Kane Hemmings",
-      "Shilow Tracey",
-      "Jack Lankester",
-      "Max Sanders",
-      "Mickey Demetriou",
-      "Filip Marschall"
+      "Josh March",
+      "Charlie McNeill",
+      "Calum Agius",
+      "Adrien Thibaut",
+      "Patrick Mlynarski",
+      "Lucas Swann"
     ],
     "out": [],
     "questionable": []
@@ -3735,12 +3698,12 @@
   "doncaster rovers": {
     "manager": "Grant McCann",
     "starters_ready": [
-      "Luke Molyneux",
-      "Billy Sharp",
-      "Jordan Gibson",
-      "Owen Bailey",
-      "Tom Anderson",
-      "Teddy Sharman-Lowe"
+      "Alfie May",
+      "Leon Ayinde",
+      "Brandon Hanlan",
+      "Will Keane",
+      "Hakeeb Adelakun",
+      "James Collins"
     ],
     "out": [],
     "questionable": []
@@ -3761,12 +3724,12 @@
   "eastleigh": {
     "manager": "Kelvin Davis",
     "starters_ready": [
-      "Paul McCallum",
-      "Chris Maguire",
-      "Scott Quigley",
-      "Solomon Nwabuokei",
-      "Luis Fernandez",
-      "Joe McDonnell"
+      "Aaron Blair",
+      "Hady Ghandour",
+      "Max Dickov",
+      "Oliver Hawkins",
+      "Barney Stone",
+      "Josh Lundstram"
     ],
     "out": [],
     "questionable": []
@@ -3774,12 +3737,12 @@
   "exeter city": {
     "manager": "Gary Caldwell",
     "starters_ready": [
-      "Josh Magennis",
-      "Millenic Alli",
-      "Kami Doyle",
-      "Jack McMillan",
-      "Tristan Crama",
-      "Joe Whitworth"
+      "Sonny Cox",
+      "Anthony Scully",
+      "Josh Gordon",
+      "Danny Rose",
+      "Andrew Oluwabori",
+      "Ajay Matthews"
     ],
     "out": [],
     "questionable": []
@@ -3787,12 +3750,12 @@
   "fc halifax town": {
     "manager": "Chris Millington",
     "starters_ready": [
-      "Billy Waters",
-      "Angelo Cappello",
-      "Florent Hoti",
-      "Kane Thomson-Sommers",
-      "Adam Senior",
-      "Sam Johnson"
+      "Ben Tollitt",
+      "Conor Carty",
+      "Amari Morgan-Smith",
+      "Connor Douglas",
+      "David Kawa",
+      "Aj Warburton"
     ],
     "out": [],
     "questionable": []
@@ -3813,12 +3776,12 @@
   "forest green rovers": {
     "manager": "Steve Cotterill",
     "starters_ready": [
-      "Christian Doidge",
-      "Kyle McAllister",
-      "Harry Cardwell",
-      "Emmanuel Osadebe",
-      "Ben Tozer",
-      "Jed Ward"
+      "Ricardo Rees",
+      "Sean Etaluku",
+      "Josh Osude",
+      "Will Grigg",
+      "D'Mani Bughail-Mellor",
+      "James Berry"
     ],
     "out": [],
     "questionable": []
@@ -3826,12 +3789,12 @@
   "gillingham": {
     "manager": "Mark Bonner",
     "starters_ready": [
-      "Jayden Clarke",
-      "Elliott Nevitt",
-      "Remao Hutton",
-      "Timothée Dieng",
-      "Max Ehmer",
-      "Jake Turner"
+      "Ronan Hale",
+      "Lamin Sillah",
+      "Tom Eaves",
+      "Will Goodwin",
+      "Zac Whitelock",
+      "Sullivan Booth"
     ],
     "out": [],
     "questionable": []
@@ -3865,12 +3828,12 @@
   "harrogate town": {
     "manager": "Simon Weaver",
     "starters_ready": [
-      "Ellis Taylor",
-      "Stephen Duke-McKenna",
-      "James Daly",
-      "Stephen Dooley",
-      "Anthony O'Connor",
-      "James Belshaw"
+      "Brad Dolaghan",
+      "Shawn Mccoulsky",
+      "Ciaran Mcguckin",
+      "Jack Muldoon",
+      "Bailey Hobson",
+      "Josh Hmami"
     ],
     "out": [],
     "questionable": []
@@ -3878,12 +3841,12 @@
   "huddersfield town": {
     "manager": "Michael Duff",
     "starters_ready": [
-      "Josh Koroma",
-      "Callum Marshall",
+      "Joseph Taylor",
+      "Sanches Fernandes",
       "Bojan Radulović",
-      "Ben Wiles",
-      "Michal Helik",
-      "Lee Nicholls"
+      "Ashley Fletcher",
+      "Marcus Myers-Harness",
+      "Samson Tovide"
     ],
     "out": [],
     "questionable": []
@@ -3891,12 +3854,12 @@
   "kidderminster harriers": {
     "manager": "Phil Brown",
     "starters_ready": [
-      "Ashley Hemmings",
-      "Maliq Cadogan",
-      "Amari Morgan-Smith",
-      "Joe Leesley",
-      "Alex Penny",
-      "Christian Dibble"
+      "Lewis Walker",
+      "Callum Dolan",
+      "Levi Amantchi",
+      "Michael Reindorf",
+      "Layton Campbell",
+      "Connor Mahoney"
     ],
     "out": [],
     "questionable": []
@@ -3904,12 +3867,12 @@
   "leyton orient": {
     "manager": "Richie Wellens",
     "starters_ready": [
-      "Charlie Kelman",
-      "Dan Agyei",
-      "Ethan Galbraith",
-      "Jordan Graham",
-      "Omar Beckles",
-      "Zach Hemming"
+      "Jaze Kabia",
+      "Yusuf Akhamrich",
+      "Alex Gilbert",
+      "Dane Scarlett",
+      "Armando Dobra",
+      "Aaron Connolly"
     ],
     "out": [],
     "questionable": []
@@ -3917,12 +3880,12 @@
   "luton town": {
     "manager": "Rob Edwards",
     "starters_ready": [
-      "Elijah Adebayo",
-      "Carlton Morris",
-      "Tahith Chong",
-      "Jordan Clark",
-      "Mark McGuinness",
-      "Thomas Kaminski"
+      "Nahki Wells",
+      "Callum Marshall",
+      "Gideon Kodua",
+      "Devante Cole",
+      "Tudor Mendel-Idowu",
+      "Emilio Lawrence"
     ],
     "out": [],
     "questionable": []
@@ -3943,12 +3906,12 @@
   "mansfield town": {
     "manager": "Nigel Clough",
     "starters_ready": [
-      "Will Evans",
-      "Lee Gregory",
-      "Stephen Quinn",
-      "Keanu Baccus",
-      "Adedeji Oshilaja",
-      "Christy Pym"
+      "Michael Smith",
+      "Rhys Oates",
+      "Tyler Roberts",
+      "Lucas Akins",
+      "David McGoldrick",
+      "Nathan Moriah-Welsh"
     ],
     "out": [],
     "questionable": []
@@ -3969,12 +3932,12 @@
   "milton keynes dons": {
     "manager": "Scott Lindsey",
     "starters_ready": [
-      "Alex Gilbey",
-      "Scott Hogan",
-      "Joe White",
-      "Connor Lemonheigh-Evans",
-      "Laurence Maguire",
-      "Tom McGill"
+      "Aaron Collins",
+      "Callum Paterson",
+      "Sam Nombe",
+      "Ben Wiles",
+      "Samuel Silvera",
+      "Rushian Hepburn-Murphy"
     ],
     "out": [],
     "questionable": []
@@ -3982,12 +3945,12 @@
   "newport county": {
     "manager": "Nelson Jardim",
     "starters_ready": [
-      "Courtney Baker-Richardson",
-      "Bobby Kamwa",
-      "Kieron Evans",
-      "Bryn Morris",
-      "Matt Baker",
-      "Nick Townsend"
+      "Shaquille Gwengwe",
+      "Yahya Bamba",
+      "Christian Doidge",
+      "Tanatswa Nyakuhwa",
+      "Gerard Garner",
+      "Kion Etete"
     ],
     "out": [],
     "questionable": []
@@ -3995,12 +3958,12 @@
   "northampton town": {
     "manager": "Jon Brady",
     "starters_ready": [
-      "Cameron McGeehan",
+      "Matthew Warhurst",
+      "Elliott List",
       "Sam Hoskins",
-      "Tyler Roberts",
-      "Mitch Pinnock",
-      "Jon Guthrie",
-      "Lee Burge"
+      "Nathaniel Opoku",
+      "Owen Dale",
+      "Harvey Saunders"
     ],
     "out": [],
     "questionable": []
@@ -4008,12 +3971,12 @@
   "notts county": {
     "manager": "Stuart Maynard",
     "starters_ready": [
-      "Alassana Jatta",
-      "David McGoldrick",
-      "Dan Crowley",
-      "Matt Palmer",
-      "Jacob Bedeau",
-      "Alex Bass"
+      "Callum Roberts",
+      "Luka Smyth",
+      "Daniel Kanu",
+      "Lee Ndlovu",
+      "Emile Acauah",
+      "George Lodge"
     ],
     "out": [],
     "questionable": []
@@ -4022,11 +3985,11 @@
     "manager": "Des Buckingham",
     "starters_ready": [
       "Mark Harris",
-      "Siriki Dembélé",
+      "Gatlin O'Donkor",
+      "Mo Missanga",
+      "Luka Lynch",
       "Tyler Goodrham",
-      "Will Vaulks",
-      "Ciaron Brown",
-      "Jamie Cumming"
+      "Aidomo Emakhu"
     ],
     "out": [],
     "questionable": []
@@ -4034,12 +3997,12 @@
   "peterborough united": {
     "manager": "Darren Ferguson",
     "starters_ready": [
-      "Ricky-Jade Jones",
-      "Kwame Poku",
-      "Malik Mothersille",
-      "Archie Collins",
-      "Emmanuel Fernandez",
-      "Jed Steer"
+      "Harry Leonard",
+      "Vernon Masara",
+      "Ethan Williams",
+      "Bolu Shofowoke",
+      "Danny Ormerod",
+      "Declan Frith"
     ],
     "out": [],
     "questionable": []
@@ -4047,12 +4010,12 @@
   "plymouth argyle": {
     "manager": "Wayne Rooney",
     "starters_ready": [
-      "Morgan Whittaker",
-      "Mustapha Bundu",
-      "Rami Al Hajj",
-      "Darko Gyabi",
-      "Lewis Gibson",
-      "Daniel Grimshaw"
+      "Aribim Pepple",
+      "Oliver Irow",
+      "Xavier Amaechi",
+      "Ronan Curtis",
+      "Owen Oseni",
+      "Jared Robert Christopher Rendle"
     ],
     "out": [],
     "questionable": []
@@ -4060,12 +4023,12 @@
   "port vale": {
     "manager": "Darren Moore",
     "starters_ready": [
-      "Jayden Stockley",
-      "Ruari Paton",
-      "Ethan Chislett",
-      "Ben Garrity",
-      "Connor Hall",
-      "Connor Ripley"
+      "Onel Hernández",
+      "Keyrol Figueroa",
+      "Oliver Lynch",
+      "Max Watters",
+      "Ben Waine",
+      "Mo Faal"
     ],
     "out": [],
     "questionable": []
@@ -4073,12 +4036,12 @@
   "reading": {
     "manager": "Rubén Sellés",
     "starters_ready": [
-      "Sam Smith",
-      "Kelvin Ehibhatiomhan",
-      "Harvey Knibbs",
-      "Lewis Wing",
-      "Amadou Mbengue",
-      "David Button"
+      "Jack Marriott",
+      "Kyreece Lisbie",
+      "Jacob Brown",
+      "Paddy Lane",
+      "Jamie Reid",
+      "Sean Patton"
     ],
     "out": [],
     "questionable": []
@@ -4138,12 +4101,12 @@
   "scunthorpe united": {
     "manager": "Andy Butler",
     "starters_ready": [
-      "Danny Whitehall",
-      "Callum Roberts",
-      "Alfie Beestin",
-      "Michael Clunan",
-      "Will Evans",
-      "Ross Fitzsimons"
+      "James Norwood",
+      "Kyle Hurst",
+      "Luke Brennan",
+      "James Gale",
+      "Tyrell Sellars-Fleming",
+      "Patrick Jones"
     ],
     "out": [],
     "questionable": []
@@ -4177,12 +4140,12 @@
   "stevenage": {
     "manager": "Alex Revell",
     "starters_ready": [
-      "Jamie Reid",
-      "Elliott List",
-      "Dan Kemp",
-      "Louis Thompson",
-      "Carl Piergianni",
-      "Murphy Cooper"
+      "Oliver Sanderson",
+      "Josh Magennis",
+      "Michael Mellon",
+      "Phoenix Patterson",
+      "Ben Broggio",
+      "Jordan Roberts"
     ],
     "out": [],
     "questionable": []
@@ -4190,12 +4153,12 @@
   "sutton united": {
     "manager": "Steve Morison",
     "starters_ready": [
-      "Will Davies",
-      "Ashley Nadesan",
-      "Jayden Harris",
-      "Lewis Simper",
-      "Harry Ransom",
-      "Steve Arnold"
+      "Temi Babalola",
+      "David Ogbonna",
+      "Brandon Njoku",
+      "Sam Folarin",
+      "Jordan Moore",
+      "Charlie Carter"
     ],
     "out": [],
     "questionable": []
@@ -4203,12 +4166,12 @@
   "swindon town": {
     "manager": "Ian Holloway",
     "starters_ready": [
-      "Harry Smith",
-      "Kabongo Tshimanga",
+      "Aaron Drinan",
+      "Joseph Hungbo",
+      "Louis Millard",
+      "Antwoine Hackford",
       "Paul Glatzel",
-      "Gavin Kilkenny",
-      "Will Wright",
-      "Jack Bycroft"
+      "Ollie Palmer"
     ],
     "out": [],
     "questionable": []
@@ -4216,12 +4179,12 @@
   "tranmere rovers": {
     "manager": "Nigel Adkins",
     "starters_ready": [
-      "Omari Patrick",
-      "Kristian Dennis",
-      "Connor Jennings",
-      "Regan Hendry",
-      "Tom Davies",
-      "Luke McGee"
+      "Dylan Jones",
+      "Zane Okoro",
+      "Joe Ironside",
+      "David Kamara",
+      "Courtney Baker-Richardson",
+      "Sam Mann"
     ],
     "out": [],
     "questionable": []
@@ -4229,12 +4192,12 @@
   "walsall": {
     "manager": "Mat Sadler",
     "starters_ready": [
-      "Nathan Lowe",
-      "Jamille Matt",
-      "Taylor Allen",
-      "Ryan Stirk",
-      "David Okagbue",
-      "Tommy Simkin"
+      "Aaron Pressley",
+      "Tai Sodje",
+      "Andrew Dallas",
+      "Albert Adomah",
+      "Reece Smith",
+      "Courtney Clarke"
     ],
     "out": [],
     "questionable": []
@@ -4242,12 +4205,12 @@
   "wealdstone": {
     "manager": "Matthew Taylor",
     "starters_ready": [
-      "Sean Adarkwa",
-      "Micah Obiero",
-      "Max Kretzschmar",
-      "Craig Eastmond",
-      "Jack Cook",
-      "Sam Howes"
+      "Olufela Olomola",
+      "Luke Norris",
+      "Fejiri Okenabirhie",
+      "Shilow Tracey",
+      "Matt Burrows",
+      "Aaron Henry"
     ],
     "out": [],
     "questionable": []
@@ -4255,12 +4218,12 @@
   "wigan athletic": {
     "manager": "Shaun Maloney",
     "starters_ready": [
-      "Joe Hugill",
-      "Thelo Aasgaard",
-      "Callum McManaman",
-      "Matt Smith",
-      "Jason Kerr",
-      "Sam Tickle"
+      "Christian Saydee",
+      "Bradley Burrowes",
+      "Sonny Perkins",
+      "Scott Hogan",
+      "Akeel Higgins",
+      "Dara Costelloe"
     ],
     "out": [],
     "questionable": []
@@ -4281,12 +4244,12 @@
   "wycombe wanderers": {
     "manager": "Matt Bloomfield",
     "starters_ready": [
-      "Richard Kone",
-      "Garath McCleary",
-      "Cameron Humphreys",
-      "Josh Scowen",
-      "Jack Grimmer",
-      "Franco Ravizzoli"
+      "Jayden Wareham",
+      "Fred Onyedinma",
+      "Cauley Woodrow",
+      "Danny Ings",
+      "Silko Thomas",
+      "Malik Mothersille"
     ],
     "out": [],
     "questionable": []
@@ -4294,12 +4257,12 @@
   "yeovil town": {
     "manager": "Mark Cooper",
     "starters_ready": [
-      "Brett McGavin",
-      "Aaron Jarvis",
-      "Jordan Young",
-      "Charlie Cooper",
-      "Morgan Williams",
-      "Ollie Wright"
+      "James Daly",
+      "Slavi Spasov",
+      "Stephen Walker",
+      "Charlie Lennon",
+      "Owen Dean",
+      "Liam Nardiello"
     ],
     "out": [],
     "questionable": []
@@ -4308,11 +4271,11 @@
     "manager": "Adam Hinshelwood",
     "starters_ready": [
       "Ollie Pearce",
-      "Lenell John-Lewis",
-      "Ashley Nathaniel-George",
-      "Alex Hunt",
-      "Callum Howe",
-      "Harrison Male"
+      "Jovan Malcolm",
+      "Joey Grey",
+      "Dipo Akinyemi",
+      "Josh Stones",
+      "Ethan Stiver"
     ],
     "out": [],
     "questionable": []
@@ -4320,12 +4283,12 @@
   "blackpool": {
     "manager": "Steve Bruce",
     "starters_ready": [
-      "Kyle Joseph",
-      "Ashley Fletcher",
-      "CJ Hamilton",
-      "Lee Evans",
-      "James Husband",
-      "Harry Tyrer"
+      "Jerry Yates",
+      "Tom Bloxham",
+      "Dion Charles",
+      "Dale Taylor",
+      "Christopher Hamilton",
+      "Shay Mannix"
     ],
     "out": [],
     "questionable": []
@@ -4333,12 +4296,12 @@
   "altrincham": {
     "manager": "Phil Parkinson",
     "starters_ready": [
-      "Regan Linney",
-      "Justin Amaluzor",
-      "Alex Newby",
-      "Elliot Osborne",
-      "Lewis Baines",
-      "Ethan Ross"
+      "Jimmy Knowles",
+      "Charlie Kirk",
+      "Lucas Weaver",
+      "Kane Hemmings",
+      "Samuel Taylor",
+      "Matthew Kosylo"
     ],
     "out": [],
     "questionable": []
@@ -4359,12 +4322,12 @@
   "afc fylde": {
     "manager": "Chris Beech",
     "starters_ready": [
-      "Nick Haughton",
-      "Offrande Zanzala",
-      "Charlie Jolley",
-      "Owen Evans",
-      "Harry Davis",
-      "Ben Winterbottom"
+      "Luca Thomas",
+      "Millar Matthews-Lewis",
+      "Cedric Main",
+      "Ben Jackson",
+      "Dylan Allen-Hadley",
+      "Jack Morris"
     ],
     "out": [],
     "questionable": []
@@ -4385,12 +4348,12 @@
   "afc wimbledon": {
     "manager": "Johnnie Jackson",
     "starters_ready": [
-      "Mathew Stevens",
-      "Omar Bugiel",
+      "Jayden Stockley",
+      "Aron Sasu",
       "James Tilley",
-      "Alistair Smith",
-      "Joe Lewis",
-      "Owen Goodman"
+      "Harry Cornick",
+      "Donnell Mcneilly",
+      "Dujuan Richards"
     ],
     "out": [],
     "questionable": []
@@ -4398,12 +4361,12 @@
   "aldershot town": {
     "manager": "Tommy Widdrington",
     "starters_ready": [
-      "Hady Ghandour",
-      "James Henry",
-      "Jack Barham",
-      "Theo Widdrington",
-      "Christian Maghoma",
-      "Marcus Dewhurst"
+      "Tristan Abrahams",
+      "Brody Peart",
+      "Marcus Dinanga",
+      "Basil Tuma",
+      "Marcus Wyllie",
+      "Annisuis Lewis"
     ],
     "out": [],
     "questionable": []
@@ -4411,12 +4374,12 @@
   "barrow": {
     "manager": "Stephen Clemence",
     "starters_ready": [
-      "Gerard Garner",
-      "Kian Spence",
-      "Elliot Newby",
-      "Dean Campbell",
-      "Theo Vassell",
-      "Paul Farman"
+      "Innes Cameron",
+      "Seb Thompson",
+      "Mikey Lane",
+      "Dan Mooney",
+      "Alex Reid",
+      "Oliver Crankshaw"
     ],
     "out": [],
     "questionable": []
@@ -4913,22 +4876,16 @@
     "questionable": []
   },
   "wolverhampton": {
-    "manager": "Gary O'Neil",
+    "manager": "Vítor Pereira",
     "starters_ready": [
       "Raúl Jiménez",
       "Matheus Cunha",
-      "Hwang Hee-chan",
+      "Jørgen Strand Larsen",
       "João Gomes",
-      "Nélson Semedo"
+      "André",
+      "José Sá"
     ],
-    "out": [
-      {
-        "player": "Saša Kalajdžić",
-        "pos": "Delantero",
-        "type": "🚑 Ligamento Cruzado",
-        "desc": "Baja de larga duración."
-      }
-    ],
+    "out": [],
     "questionable": []
   },
   "bristol": {
@@ -5756,10 +5713,12 @@
   "atlanta": {
     "manager": "Rob Valentino",
     "starters_ready": [
-      "Saba Lobjanidze",
-      "Daniel Ríos",
-      "Alexey Miranchuk",
-      "Brad Guzan"
+      "Alejandro Quintana",
+      "Ignacio Rodríguez",
+      "Federico Castro",
+      "Lautaro Fedele",
+      "Gustavo Mendoza",
+      "Agustin Morales"
     ],
     "out": [
       {
@@ -6547,11 +6506,12 @@
   "aston villa": {
     "team": "Aston Villa",
     "starters_ready": [
-      "Ollie Watkins",
-      "Morgan Rogers",
-      "Leon Bailey",
+      "Nicolas Jackson",
       "John McGinn",
-      "Youri Tielemans"
+      "Leon Goretzka",
+      "Boubacar Kamara",
+      "Johan Manzambi",
+      "Alysson"
     ],
     "manager": "Unai Emery"
   },
@@ -6568,10 +6528,12 @@
   "brentford": {
     "team": "Brentford",
     "starters_ready": [
-      "Bryan Mbeumo",
-      "Igor Thiago",
       "Kevin Schade",
-      "Mikkel Damsgaard"
+      "Igor Thiago",
+      "Vitaly Janelt",
+      "Mamadou Sangare",
+      "Keane Lewis-Potter",
+      "Dango Ouattara"
     ],
     "manager": "Keith Andrews"
   },
@@ -6590,23 +6552,23 @@
   "brighton & hove albion": {
     "team": "Brighton & Hove Albion",
     "starters_ready": [
-      "Danny Welbeck",
-      "Georginio Rutter",
-      "Kaoru Mitoma",
-      "Yankuba Minteh",
-      "Carlos Baleba",
-      "Bart Verbruggen"
+      "Charalambos Kostoulas",
+      "Yasin Ayari",
+      "Chema Andrés",
+      "Pascal Gross",
+      "Maxim De Cuyper",
+      "Diego Gómez"
     ],
     "manager": "Fabian Hürzeler"
   },
   "chelsea": {
     "team": "Chelsea",
     "starters_ready": [
-      "João Pedro",
-      "Cole Palmer",
       "Pedro Neto",
-      "Estêvão Willian",
-      "Enzo Fernández",
+      "Morgan Rogers",
+      "Cole Palmer",
+      "Romeo Lavia",
+      "Jordan Henderson",
       "Moisés Caicedo"
     ],
     "manager": "Enzo Maresca"
@@ -6614,10 +6576,12 @@
   "crystal palace": {
     "team": "Crystal Palace",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Eberechi Eze",
-      "Eddie Nketiah",
-      "Daichi Kamada"
+      "Jørgen Strand Larsen",
+      "Yéremy Pino",
+      "Daichi Kamada",
+      "Quinten Timber",
+      "Adam Wharton",
+      "Tyrick Mitchell"
     ],
     "manager": "Oliver Glasner"
   },
@@ -6634,10 +6598,12 @@
   "ipswich town": {
     "team": "Ipswich Town",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Leif Davis"
+      "Emersonn",
+      "Julio Enciso",
+      "Florentino",
+      "Exequiel Palacios",
+      "Jaden Philogene",
+      "Daizen Maeda"
     ],
     "manager": "Kieran McKenna"
   },
@@ -6654,10 +6620,12 @@
   "leicester city": {
     "team": "Leicester City",
     "starters_ready": [
-      "Jamie Vardy",
-      "Stephy Mavididi",
-      "Abdul Fatawu",
-      "Facundo Buonanotte"
+      "Emil Riis Jakobsen",
+      "Liam Cullen",
+      "Bobby De Cordova-Reid",
+      "Harry Howell",
+      "Wes Burns",
+      "Tom Watson"
     ],
     "manager": "Steve Cooper"
   },
@@ -6672,26 +6640,27 @@
     "manager": "Steve Cooper"
   },
   "liverpool": {
-    "team": "Liverpool",
+    "manager": "Arne Slot",
     "starters_ready": [
       "Florian Wirtz",
       "Alexander Isak",
       "Mohamed Salah",
-      "Cody Gakpo",
       "Ryan Gravenberch",
-      "Virgil van Dijk"
+      "Virgil van Dijk",
+      "Alisson Becker"
     ],
-    "manager": "Arne Slot"
+    "out": [],
+    "questionable": []
   },
   "manchester united": {
     "team": "Manchester United",
     "starters_ready": [
-      "Benjamin Šeško",
-      "Matheus Cunha",
       "Bryan Mbeumo",
       "Bruno Fernandes",
-      "Amad Diallo",
-      "Lisandro Martínez"
+      "Kobbie Mainoo",
+      "Youri Tielemans",
+      "Matheus Cunha",
+      "Amad Diallo"
     ],
     "manager": "Ruben Amorim"
   },
@@ -6710,10 +6679,12 @@
   "alavés": {
     "team": "Alavés",
     "starters_ready": [
-      "Kike García",
-      "Carlos Martín",
-      "Carlos Vicente",
-      "Jon Guridi"
+      "Toni Martínez",
+      "Miguel Rodríguez",
+      "Mariano Díaz",
+      "Lucas Boyé",
+      "Izei Hernandez",
+      "Hugo Novoa"
     ],
     "manager": "Luis García Plaza"
   },
@@ -6751,31 +6722,35 @@
     "team": "Atlético Madrid",
     "starters_ready": [
       "Julián Álvarez",
-      "Antoine Griezmann",
-      "Alexander Sørloth",
-      "Rodrigo De Paul"
+      "Lee Kang-In",
+      "Pablo Barrios",
+      "Koke",
+      "Álex Baena",
+      "Giuliano Simeone"
     ],
     "manager": "Diego Simeone"
   },
   "barcelona": {
     "team": "Barcelona",
     "starters_ready": [
-      "Robert Lewandowski",
-      "Lamine Yamal",
       "Raphinha",
-      "Dani Olmo",
+      "Marc Bernal",
       "Pedri",
-      "Pau Cubarsí"
+      "Fermín López",
+      "Anthony Gordon",
+      "Lamine Yamal"
     ],
     "manager": "Hansi Flick"
   },
   "celta vigo": {
     "team": "Celta Vigo",
     "starters_ready": [
+      "Pablo Durán",
+      "Couhaib Driouech",
       "Iago Aspas",
-      "Borja Iglesias",
-      "Williot Swedberg",
-      "Óscar Mingueza"
+      "Ilaix Moriba",
+      "Andrés Antañón",
+      "Sergio Carreira"
     ],
     "manager": "Claudio Giráldez"
   },
@@ -6792,20 +6767,24 @@
   "getafe": {
     "team": "Getafe",
     "starters_ready": [
-      "Borja Mayoral",
-      "Bertuğ Yıldırım",
-      "Mauro Arambarri",
-      "Carles Pérez"
+      "Enes Ünal",
+      "Nemanja Gudelj",
+      "Mario Martín",
+      "Orel Mangala",
+      "Martín Satriano",
+      "Andrés García"
     ],
     "manager": "José Bordalás"
   },
   "girona": {
     "team": "Girona",
     "starters_ready": [
-      "Bojan Miovski",
       "Abel Ruiz",
-      "Viktor Tsygankov",
-      "Yáser Asprilla"
+      "Vladyslav Vanat",
+      "Fran Beltrán",
+      "Izan González",
+      "Unai Hernandez",
+      "Carles Pérez"
     ],
     "manager": "Míchel"
   },
@@ -6814,20 +6793,22 @@
     "starters_ready": [
       "Manu Fuster",
       "Jesé",
-      "Caro",
-      "Andrés Rodríguez",
-      "Juanma Herzog",
-      "Valentín Pezzolesi"
+      "Kirian Rodríguez",
+      "Enzo Loiodice",
+      "Taisei Miyashiro",
+      "Iván Jaime"
     ],
     "manager": "Diego Martínez"
   },
   "mallorca": {
     "team": "Mallorca",
     "starters_ready": [
-      "Vedat Muriqi",
-      "Cyle Larin",
-      "Sergi Darder",
-      "Dani Rodríguez"
+      "Fuentes",
+      "Zito Luvumbo",
+      "Adam Buksa",
+      "Adrián Liso",
+      "Josep Cerdà",
+      "Antoniu Roca"
     ],
     "manager": "Jagoba Arrasate"
   },
@@ -6835,20 +6816,23 @@
     "team": "Rayo Vallecano",
     "starters_ready": [
       "Sergio Camello",
-      "Randy Nteka",
-      "Jorge de Frutos",
-      "Isi Palazón"
+      "Pedro Díaz",
+      "Pathé Ciss",
+      "Unai López",
+      "Giorgi Tsitaishvili",
+      "Jorge de Frutos"
     ],
     "manager": "Iñigo Pérez"
   },
   "real betis": {
     "team": "Real Betis",
     "starters_ready": [
-      "Cucho Hernández",
-      "Cédric Bakambu",
-      "Antony",
+      "Troy Parrott",
+      "Isco",
+      "Marc Roca",
+      "Pablo Fornals",
       "Abde Ezzalzouli",
-      "Pablo Fornals"
+      "Antony"
     ],
     "manager": "Manuel Pellegrini",
     "out": [
@@ -6882,20 +6866,24 @@
   "real sociedad": {
     "team": "Real Sociedad",
     "starters_ready": [
-      "Mikel Oyarzabal",
-      "Takefusa Kubo",
       "Orri Óskarsson",
-      "Brais Méndez"
+      "Luka Sucic",
+      "Carlos Soler",
+      "Beñat Turrientes",
+      "Ander Barrenetxea",
+      "Takefusa Kubo"
     ],
     "manager": "Imanol Alguacil"
   },
   "real valladolid": {
     "team": "Real Valladolid",
     "starters_ready": [
-      "Juanmi Latasa",
-      "Raúl Moro",
-      "Mamadou Sylla",
-      "Kike Pérez"
+      "Adrián Arnun",
+      "Víctor Fernández",
+      "Tai Abed",
+      "Stanko Juric",
+      "Julien Ponceau",
+      "Thiago Ojeda"
     ],
     "manager": "Paulo Pezzolano"
   },
@@ -6922,50 +6910,60 @@
   "villarreal": {
     "team": "Villarreal",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Nicolas Pépé",
-      "Álex Baena",
-      "Gerard Moreno"
+      "Georges Mikautadze",
+      "Alberto Moleiro",
+      "Pape Gueye",
+      "Carlos Macià",
+      "Tani Oluwaseyi",
+      "Tajon Buchanan"
     ],
     "manager": "Marcelino García Toral"
   },
   "atalanta": {
     "team": "Atalanta",
     "starters_ready": [
-      "Mateo Retegui",
-      "Ademola Lookman",
+      "Nikola Krstovic",
       "Charles De Ketelaere",
-      "Mario Pašalić"
+      "Mario Pasalic",
+      "Éderson",
+      "Nicola Zalewski",
+      "Eljif Elmas"
     ],
     "manager": "Gian Piero Gasperini"
   },
   "como": {
     "team": "Como",
     "starters_ready": [
-      "Álvaro Morata",
+      "Tasos Douvikas",
       "Nico Paz",
-      "Patrick Cutrone",
-      "Gabriel Strefezza"
+      "Luis Milla",
+      "Máximo Perrone",
+      "Martin Baturina",
+      "Lucas Da Cunha"
     ],
     "manager": "Cesc Fàbregas"
   },
   "fiorentina": {
     "team": "Fiorentina",
     "starters_ready": [
-      "Moise Kean",
-      "Albert Guðmundsson",
-      "Andrea Colpani",
-      "Edoardo Bove"
+      "Mateo Pellegrino",
+      "Pedro Gonçalves",
+      "Christ Inao Oulaï",
+      "Cher Ndour",
+      "Alieu Njie",
+      "Franco Mastantuono"
     ],
     "manager": "Raffaele Palladino"
   },
   "genoa": {
     "team": "Genoa",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Mario Balotelli",
-      "Morten Frendrup",
-      "Milan Badelj"
+      "Milutin Osmajic",
+      "Vitinha",
+      "Junior Messias",
+      "Hamed Traoré",
+      "Samuel Wiafe",
+      "Mikael Ellertsson"
     ],
     "manager": "Patrick Vieira"
   },
@@ -7006,44 +7004,39 @@
   "juventus": {
     "team": "Juventus",
     "starters_ready": [
-      "Dušan Vlahović",
-      "Kenan Yıldız",
-      "Francisco Conceição",
+      "Nick Woltemade",
+      "Randal Kolo Muani",
+      "Douglas Luiz",
       "Teun Koopmeiners",
-      "Khéphren Thuram",
-      "Michele Di Gregorio"
+      "Jérémie Boga",
+      "Weston McKennie"
     ],
     "manager": "Igor Tudor"
   },
   "lazio": {
     "team": "Lazio",
     "starters_ready": [
-      "Valentín Castellanos",
-      "Boulaye Dia",
-      "Mattia Zaccagni",
-      "Gustav Isaksen"
+      "Andrea Pinamonti",
+      "Tijjani Noslin",
+      "Gustav Isaksen",
+      "Reda Belahyane",
+      "Kenneth Taylor",
+      "Davide Frattesi"
     ],
     "manager": "Marco Baroni"
   },
   "ac milan": {
-    "team": "Ac Milan",
+    "manager": "Massimiliano Allegri",
     "starters_ready": [
       "Santiago Gimenez",
       "Rafael Leão",
       "Christian Pulisic",
       "Tijjani Reijnders",
-      "Youssouf Fofana",
+      "Theo Hernández",
       "Mike Maignan"
     ],
-    "manager": "Massimiliano Allegri",
-    "out": [
-      {
-        "player": "Álvaro Morata",
-        "pos": "Delantero",
-        "type": "Traspaso/Cesión",
-        "desc": "Salida a Como 1907 / Leganés"
-      }
-    ]
+    "out": [],
+    "questionable": []
   },
   "milan": {
     "team": "Milan",
@@ -7068,20 +7061,24 @@
   "monza": {
     "team": "Monza",
     "starters_ready": [
-      "Milan Đurić",
-      "Daniel Maldini",
-      "Dany Mota",
-      "Matteo Pessina"
+      "Jay Robinson",
+      "Gustavo Varela",
+      "Mathis Mout",
+      "Ebenezer Akinsanmiro",
+      "Leonardo Colombo",
+      "Ricardo Mangas"
     ],
     "manager": "Alessandro Nesta"
   },
   "napoli": {
     "team": "Napoli",
     "starters_ready": [
-      "Romelu Lukaku",
-      "Khvicha Kvaratskhelia",
+      "Rasmus Højlund",
+      "Noa Lang",
+      "Kevin De Bruyne",
       "Scott McTominay",
-      "Matteo Politano"
+      "Billy Gilmour",
+      "Mathías Olivera"
     ],
     "manager": "Antonio Conte"
   },
@@ -7106,30 +7103,17 @@
     "manager": "Eusebio Di Francesco"
   },
   "bayer leverkusen": {
-    "team": "Bayer Leverkusen",
+    "manager": "Kasper Hjulmand",
     "starters_ready": [
       "Patrik Schick",
-      "Martin Terrier",
       "Aleix García",
       "Exequiel Palacios",
       "Alejandro Grimaldo",
-      "Edmond Tapsoba"
+      "Jonathan Tah",
+      "Lukáš Hrádecký"
     ],
-    "manager": "Kasper Hjulmand",
-    "out": [
-      {
-        "player": "Victor Boniface",
-        "pos": "Delantero",
-        "type": "Cedido",
-        "desc": "Cedido al SV Werder Bremen"
-      },
-      {
-        "player": "Florian Wirtz",
-        "pos": "Centrocampista",
-        "type": "Traspaso",
-        "desc": "Traspasado al Liverpool FC"
-      }
-    ]
+    "out": [],
+    "questionable": []
   },
   "leverkusen": {
     "team": "Bayer Leverkusen",
@@ -7242,10 +7226,12 @@
   "st. pauli": {
     "team": "St. Pauli",
     "starters_ready": [
-      "Johannes Eggestein",
-      "Morgan Guilavogui",
-      "Oladapo Afolayan",
-      "Jackson Irvine"
+      "Connor Metcalfe",
+      "Abdoulie Ceesay",
+      "Branimir Hrgota",
+      "Mathias Rasmussen",
+      "Joel Chima Fujita",
+      "Eric Smith"
     ],
     "manager": "Alexander Blessin"
   },
@@ -7272,20 +7258,24 @@
   "hannover 96": {
     "team": "Hannover 96",
     "starters_ready": [
-      "Nicolò Tresoldi",
-      "Jessic Ngankam",
-      "Havard Nielsen",
-      "Enzo Leopold"
+      "Benjamin Kallman",
+      "Stefán Teitur Thórdarson",
+      "Husseyn Chakroun",
+      "Marcel Hartel",
+      "Hayate Matsuda",
+      "Waniss Taibi"
     ],
     "manager": "Stefan Leitl"
   },
   "karlsruher sc": {
     "team": "Karlsruher Sc",
     "starters_ready": [
-      "Budu Zivzivadze",
-      "Fabian Schleusener",
+      "Shio Fukuda",
       "Marvin Wanitzek",
-      "Dženis Burnić"
+      "Tim Civeja",
+      "Kevin Wiethaup",
+      "Santeri Vaananen",
+      "Deniz Ofli"
     ],
     "manager": "Christian Eichner"
   },
@@ -7332,10 +7322,12 @@
   "schalke 04": {
     "team": "Schalke 04",
     "starters_ready": [
-      "Moussa Sylla",
+      "Hwang Hee-Chan",
       "Kenan Karaman",
-      "Amin Younes",
-      "Paul Seguin"
+      "Satoshi Tanaka",
+      "Soufian El-Faouzi",
+      "Adil Aouchiche",
+      "Dejan Ljubicic"
     ],
     "manager": "Kees van Wonderen"
   },
@@ -7382,21 +7374,23 @@
   "sunderland": {
     "team": "Sunderland",
     "starters_ready": [
-      "Wilson Isidor",
+      "Brian Brobbey",
+      "Enzo Le Fée",
+      "Noah Sadiki",
       "Granit Xhaka",
-      "Eliezer Mayenda",
-      "Chris Rigg",
-      "Trai Hume",
-      "Anthony Patterson"
+      "Chemsdine Talbi",
+      "Trai Hume"
     ],
     "manager": "Régis Le Bris"
   },
   "marseille": {
     "team": "Marseille",
     "starters_ready": [
-      "Mason Greenwood",
-      "Elye Wahi",
-      "Jonathan Rowe",
+      "Amine Gouiri",
+      "Himad Abdelli",
+      "Tochukwu Nnadi",
+      "Pierre-Emile Højbjerg",
+      "Igor Paixão",
       "Amine Harit"
     ],
     "manager": "Roberto De Zerbi"
@@ -7414,30 +7408,36 @@
   "lille": {
     "team": "Lille",
     "starters_ready": [
-      "Jonathan David",
-      "Mohamed Bayo",
-      "Edon Zhegrova",
-      "Osame Sahraoui"
+      "Hákon Haraldsson",
+      "Soriba Diaoune",
+      "Ethan Mbappé",
+      "Nabil Bentaleb",
+      "Benjamin André",
+      "Ngal'ayel Mukau"
     ],
     "manager": "Bruno Génésio"
   },
   "lyon": {
     "team": "Lyon",
     "starters_ready": [
-      "Alexandre Lacazette",
-      "Georges Mikautadze",
-      "Malick Fofana",
-      "Rayan Cherki"
+      "Khalis Merah",
+      "Keito Nakamura",
+      "Kail Boudache",
+      "Tanner Tessmann",
+      "Corentin Tolisso",
+      "Noah Nartey"
     ],
     "manager": "Pierre Sage"
   },
   "lens": {
     "team": "Lens",
     "starters_ready": [
-      "M'Bala Nzola",
+      "Thorgan Hazard",
       "Florian Sotoca",
-      "Wesley Saïd",
-      "Adrien Thomasson"
+      "Florian Thauvin",
+      "Amadou Haidara",
+      "Yassine Titraoui",
+      "Matthieu Udol"
     ],
     "manager": "Will Still"
   },
@@ -7464,12 +7464,12 @@
   "guadalajara": {
     "team": "Guadalajara",
     "starters_ready": [
+      "Santiago Sandoval",
+      "Efrain Álvarez",
       "Roberto Alvarado",
-      "Alan Pulido",
-      "Luis Romo",
-      "Armando González",
-      "Cade Cowell",
-      "Raúl Rangel"
+      "Omar Govea",
+      "Fernando Gonzalez",
+      "Bryan González"
     ],
     "manager": "Gabriel Milito"
   },
@@ -7498,20 +7498,24 @@
   "fenerbahce": {
     "team": "Fenerbahce",
     "starters_ready": [
-      "Edin Džeko",
-      "Youssef En-Nesyri",
-      "Dušan Tadić",
-      "Allan Saint-Maximin"
+      "Romelu Lukaku",
+      "Irfan Can Kahveci",
+      "Ismail Yüksek",
+      "Matteo Guendouzi",
+      "Oguz Aydin",
+      "Mason Greenwood"
     ],
     "manager": "José Mourinho"
   },
   "besiktas": {
     "team": "Besiktas",
     "starters_ready": [
-      "Ciro Immobile",
-      "Semih Kılıçsoy",
-      "Rafa Silva",
-      "Milot Rashica"
+      "Dusan Vlahovic",
+      "Salih Özcan",
+      "Orkun Kökçü",
+      "Wilfred Ndidi",
+      "Ilhan Fakili",
+      "Leandro Trossard"
     ],
     "manager": "Giovanni van Bronckhorst"
   },
@@ -7529,9 +7533,11 @@
     "team": "Benfica",
     "starters_ready": [
       "Vangelis Pavlidis",
-      "Kerem Aktürkoğlu",
-      "Ángel Di María",
-      "Orkun Kökçü"
+      "Claudio Echeverri",
+      "João Palhinha",
+      "Georgiy Sudakov",
+      "Gianluca Prestianni",
+      "Rafa Silva"
     ],
     "manager": "Bruno Lage"
   },
@@ -7610,10 +7616,12 @@
     "team": "OFI Crete",
     "manager": "Milan Rastavac",
     "starters_ready": [
-      "Eddie Salcedo",
-      "Thiago Nuss",
+      "Kenan Kodro",
+      "Thiago Thomas Nuss",
       "Taxiarchis Fountas",
-      "Marko Bakić"
+      "Thanasis Androutsos",
+      "Andreas Bouchalakis",
+      "Nicolaos Athanasiou"
     ]
   },
   "antalyaspor": {
@@ -7730,10 +7738,12 @@
     "team": "Lanús",
     "manager": "Ricardo Zielinski",
     "starters_ready": [
-      "Walter Bou",
+      "Allan Wlk",
       "Marcelino Moreno",
+      "Felipe Peña",
+      "Raúl Loaiza",
       "Eduardo Salvio",
-      "Ramiro Carrera"
+      "Lucas Besozzi"
     ]
   },
   "lanus": {
@@ -7834,11 +7844,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Martijn Kaars",
+      "Mateusz Zukowski",
       "Baris Atik",
-      "Livan Burcu",
-      "Mohammed El Hankouri",
-      "Dominik Reimann"
+      "Emmanuel Iyoha",
+      "Luka Hyryläinen",
+      "Leon Noel Mergner",
+      "Torben Müsel"
     ]
   },
   "almere city": {
@@ -7858,11 +7869,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Luis Suárez",
-      "Sergio Arribas",
-      "Leo Baptistão",
-      "Nico Melamed",
-      "Lucas Robertone"
+      "Miguel de la Fuente",
+      "Brian Cipenga",
+      "Quim Junyent",
+      "Javi Muñoz",
+      "Stefan Dzodic",
+      "Sergio Arribas"
     ]
   },
   "américa femenil": {
@@ -7882,11 +7894,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Duván Vergara",
-      "Rodrigo Holgado",
-      "Cristian Barrios",
-      "Éder Álvarez Balanta",
-      "Jorge Soto"
+      "Tomás Ángel",
+      "Luis Quiñones",
+      "Josen Escobar",
+      "Yani Quintero",
+      "Yeison Guzmán",
+      "Jhon Murillo"
     ]
   },
   "annecy": {
@@ -7931,10 +7944,11 @@
     "questionable": [],
     "starters_ready": [
       "Alfredo Morelos",
-      "Marino Hinestroza",
-      "Edwin Cardona",
-      "Andrés Román",
-      "David Ospina"
+      "Andrés Sarmiento",
+      "Juan Manuel Rengifo",
+      "Marlos Moreno",
+      "Cristian Arango",
+      "Ian Poveda-Ocampo"
     ]
   },
   "bari": {
@@ -7978,11 +7992,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Bruno Damiani",
-      "Juan Manuel Gutiérrez",
-      "Agustín Amado",
-      "Mauricio Vera",
-      "Santiago Silva"
+      "Yair González",
+      "Nicolás Siri",
+      "Leandro Suhr",
+      "Franco Pérez",
+      "Francisco Bonfiglio",
+      "Felipe Avenatti"
     ]
   },
   "botafogo": {
@@ -8002,11 +8017,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
+      "Fran Navarro",
       "Ricardo Horta",
-      "Bruma",
-      "Amine El Ouazzani",
-      "Rodrigo Zalazar",
-      "Matheus"
+      "Pau Víctor",
+      "Gorby",
+      "João Moutinho",
+      "Gabri Martínez"
     ]
   },
   "cittadella": {
@@ -8050,11 +8066,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Franco Vázquez",
-      "Manuel De Luca",
-      "Dennis Johnsen",
+      "Federico Bonazzoli",
+      "Morten Thorsby",
+      "Tommaso Berti",
+      "Simone Lottici Tessadri",
       "Jari Vandeputte",
-      "Andrea Fulignati"
+      "Adin Licina"
     ]
   },
   "cruzeiro": {
@@ -8074,11 +8091,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Isidro Pitta",
-      "Clayson",
-      "Derik Lacerda",
-      "Fernando Sobral",
-      "Walter"
+      "Kauan",
+      "Vinicius Peixoto Trindade Da Silva",
+      "Jean Dias",
+      "Pedro",
+      "Mansano",
+      "Eliel"
     ]
   },
   "defensor sporting": {
@@ -8098,11 +8116,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Yeison Guzmán",
-      "Brayan Gil",
-      "Jeison Lucumí",
-      "Juan Pablo Nieto",
-      "William Cuesta"
+      "Adrián Parra",
+      "Ever Valencia",
+      "Brayan Rovira",
+      "Homer Martínez",
+      "Jorge Cabezas",
+      "Kelvin Florez"
     ]
   },
   "eibar": {
@@ -8110,11 +8129,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
+      "Malcom Adu Ares",
+      "Pejiño",
       "Jon Bautista",
-      "Antonio Puertas",
-      "Jorge Pascual",
-      "Matheus Pereira",
-      "Jonmi Magunagoitia"
+      "Javier Martón",
+      "Elijah Gift",
+      "Eric Pérez"
     ]
   },
   "eintracht braunschweig": {
@@ -8134,11 +8154,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Mourad El Ghezouani",
-      "Agustín Álvarez",
-      "Nico Fernández",
-      "Aleix Febas",
-      "Matías Dituro"
+      "Fer Niño",
+      "Germán Valera",
+      "Lucas Cepeda",
+      "Javier Morcillo",
+      "Ali Houary",
+      "Martim Neto"
     ]
   },
   "estudiantes lp": {
@@ -8182,11 +8203,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Juan Martín Lucero",
-      "Moisés",
-      "Yago Pikachu",
-      "Hércules",
-      "João Ricardo"
+      "Vitinho",
+      "Juan Miritello",
+      "Luiz Fernando",
+      "Paulo Baya",
+      "Pedro Henrique",
+      "Welliton"
     ]
   },
   "godoy cruz": {
@@ -8242,11 +8264,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Brayan León",
-      "Luis Sandoval",
-      "Baldomero Perlaza",
-      "Jaime Alvarado",
-      "Éder Chaux"
+      "John Montaño",
+      "Jeison Medina",
+      "Yony González",
+      "Carlos Gonzalez",
+      "Enzo Larrosa",
+      "Juan Córdoba"
     ]
   },
   "internacional": {
@@ -8302,11 +8325,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Edson Rivera",
-      "Carlos Fierro",
-      "Jesús Henestrosa",
-      "Arturo Ledesma",
-      "Salim Hernández"
+      "Luis Razo",
+      "Óscar Gil",
+      "Alejandro Bravo",
+      "Jahaziel Marchand",
+      "Sergio Hernandez",
+      "Juan Brigido"
     ]
   },
   "levante": {
@@ -8314,11 +8338,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Roger Brugué",
-      "José Luis Morales",
-      "Carlos Álvarez",
-      "Giorgi Kochorashvili",
-      "Andrés Fernández"
+      "Etta Eyong",
+      "Dani Requena",
+      "Hugo Sotelo",
+      "Jon Ander Olasagasti",
+      "Thiago Fernández",
+      "Roger Brugué"
     ]
   },
   "león": {
@@ -8326,11 +8351,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Stiven Mendoza",
-      "Andrés Guardado",
-      "Alfonso Blanco"
+      "José Alvarado",
+      "Diber Cambindo",
+      "Fernando Beltrán",
+      "José Rodríguez",
+      "Daniel Arcila",
+      "Rodrigo Echeverría"
     ]
   },
   "lorient": {
@@ -8338,11 +8364,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Eli Junior Kroupi",
-      "Sambou Soumano",
-      "Mohamed Bamba",
-      "Laurent Abergel",
-      "Yvon Mvogo"
+      "Tosin Aiyegun",
+      "Gabin Bernardeau",
+      "Jean-Victor Makengo",
+      "Arthur Avom",
+      "Noah Cadiou",
+      "Arsène Kouassi"
     ]
   },
   "mk dons": {
@@ -8362,11 +8389,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Radamel Falcao",
-      "Leonardo Castro",
-      "Mackalister Silva",
-      "Daniel Ruiz",
-      "Álvaro Montero"
+      "David Silva",
+      "Rodrigo Contreras",
+      "Mateo García",
+      "Juan Cuadrado",
+      "Daniel Ruíz",
+      "Javier Burrai"
     ]
   },
   "minnesota united": {
@@ -8386,11 +8414,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Nicolás López",
-      "Rubén Bentancourt",
-      "Antonio Galeano",
-      "Lucas Sanabria",
-      "Luis Mejía"
+      "Tomás Verón Lupi",
+      "Tiziano Correa",
+      "Pavel Núñez",
+      "Nahuel Gelos Álvez Da Cruz",
+      "Maximiliano Silvera",
+      "Maxi Gómez"
     ]
   },
   "necaxa": {
@@ -8411,10 +8440,11 @@
     "questionable": [],
     "starters_ready": [
       "Dayro Moreno",
+      "Luis Gómez",
       "Michael Barrios",
-      "Mateo García",
-      "Iván Rojas",
-      "James Aguirre"
+      "Edwin Torres",
+      "Helieyker Guzman",
+      "Mathías González"
     ]
   },
   "palermo": {
@@ -8458,11 +8488,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Lucas Cavallini",
-      "Emiliano Gómez",
-      "Luis Quiñones",
-      "Diego de Buen",
-      "Julio González"
+      "Luifer Hernández",
+      "Mathías Tomás",
+      "Eduardo Armenta",
+      "Alejandro Organista",
+      "Omar Moreno",
+      "Kevin Velasco"
     ]
   },
   "real zaragoza": {
@@ -8518,11 +8549,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Massimo Coda",
       "Gennaro Tutino",
-      "Estanis Pedrola",
-      "Melle Meulensteen",
-      "Marco Silvestri"
+      "Tjas Begic",
+      "Lorenzo Mezzotero",
+      "Oliver Abildgaard",
+      "Antoine Makoumbou",
+      "Liam Henderson"
     ]
   },
   "san lorenzo": {
@@ -8602,11 +8634,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
+      "Miguel Conde",
       "Juan Otero",
-      "Jonathan Dubasin",
+      "Enol Prendes",
+      "Àlex Corredera",
       "Gaspar Campos",
-      "Nacho Méndez",
-      "Rubén Yáñez"
+      "Hugo Guillamón"
     ]
   },
   "stockport county": {
@@ -8614,11 +8647,12 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Louie Barry",
-      "Kyle Wootton",
-      "Isaac Olaofe",
-      "Oliver Norwood",
-      "Corey Addai"
+      "Mikael Mandron",
+      "Jason Adigun",
+      "Benoný Andrésson",
+      "Lewis Fiorini",
+      "Harry Wood",
+      "Che Gardner"
     ]
   },
   "são paulo": {
@@ -8710,22 +8744,23 @@
     "out": [],
     "questionable": [],
     "starters_ready": [
-      "Pablo Vegetti",
-      "Philippe Coutinho",
-      "Dimitri Payet",
-      "Lucas Piton",
-      "Léo Jardim"
+      "Andrés Gómez",
+      "David",
+      "Facundo Colidio",
+      "Marino Hinestroza",
+      "Bruno Duarte",
+      "Claudio Spinelli"
     ]
   },
   "caykur rizespor": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Ali Sowe",
+      "Moussa Diakité",
+      "Qazim Laçi",
+      "Ibrahim Olawoyin",
+      "Ahmed Kutucu",
+      "Adedire Mebude"
     ],
     "out": [],
     "questionable": []
@@ -8733,12 +8768,12 @@
   "erzurum bb": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Ibrahim Diabate",
+      "Elisha Owusu",
+      "Brandon Baiye",
+      "Miguel Cardoso",
+      "Gyrano Kerk",
+      "Ertugrul Taskiran"
     ],
     "out": [],
     "questionable": []
@@ -8746,12 +8781,12 @@
   "f.c. københavn": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Andreas Cornelius",
+      "Robert",
+      "Mohamed Elyounoussi",
+      "William Clem",
+      "Mads Emil Madsen",
+      "Birger Meling"
     ],
     "out": [],
     "questionable": []
@@ -8759,12 +8794,12 @@
   "brøndby if": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Jacob Ambæk",
+      "Mads Frökjaer",
+      "Max Ejdum",
+      "Bartosz Slisz",
+      "Olti Hyseni",
+      "Filip Bundgaard"
     ],
     "out": [],
     "questionable": []
@@ -8772,12 +8807,12 @@
   "heerenveen": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Dylan Vente",
+      "Levi Smans",
+      "Nolhan Courtens",
+      "Marcus Linday",
+      "Maxence Rivera",
+      "Jacob Trenskow"
     ],
     "out": [],
     "questionable": []
@@ -8785,12 +8820,12 @@
   "feyenoord rotterdam": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Nacho Ferri",
+      "Luciano Valente",
+      "Anis Hadj Moussa",
+      "Charles Vanhoutte",
+      "Oussama Targhaline",
+      "Gjivai Zechiël"
     ],
     "out": [],
     "questionable": []
@@ -8798,12 +8833,12 @@
   "stafford rangers": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Remi Efunnuga",
+      "Scott Bakkor",
+      "Todd Ferrier",
+      "Tom Tonks",
+      "Darrhyl Mason",
+      "Jack Birch"
     ],
     "out": [],
     "questionable": []
@@ -8811,12 +8846,12 @@
   "grimsby town": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Josh Andrews",
+      "Iwan Morgan",
+      "Mark Shelton",
+      "Géza Dávid Turi",
+      "Finley Cartwright",
+      "Charles Vernam"
     ],
     "out": [],
     "questionable": []
@@ -8824,12 +8859,12 @@
   "1. fc heidenheim 1846": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Budu Zivzivadze",
+      "Marcel Costly",
+      "Mikkel Kaufmann",
+      "Jan Schöppner",
+      "Jonas Föhrenbach",
+      "Paul Hennrich"
     ],
     "out": [],
     "questionable": []
@@ -8837,12 +8872,12 @@
   "vfl bochum": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Christian Rasmussen",
+      "Philipp Hofmann",
+      "Mats Pannewig",
+      "Tom Meyer",
+      "Berkan Taz",
+      "Jarne Steuckers"
     ],
     "out": [],
     "questionable": []
@@ -8850,12 +8885,12 @@
   "club brugge": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Nicolo Tresoldi",
+      "Romeo Vermant",
+      "Hans Vanaken",
+      "Cheveyo Tsawa",
+      "Felix Lemarechal",
+      "Carlos Forbs"
     ],
     "out": [],
     "questionable": []
@@ -8863,12 +8898,12 @@
   "anderlecht": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Danylo Sikan",
+      "Mihajlo Cvetkovic",
+      "Enric Llansana",
+      "Mario Stroeykens",
+      "Jayden Onia-Seke",
+      "Lukás Ambros"
     ],
     "out": [],
     "questionable": []
@@ -8876,12 +8911,12 @@
   "agf": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "James Bogere",
+      "Callum McCowatt",
+      "Tobias Bech",
+      "Magnus Knudsen",
+      "Markus Solbakken",
+      "Frederik Emmery"
     ],
     "out": [],
     "questionable": []
@@ -8889,12 +8924,12 @@
   "ac horsens": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Kelvin Ehibhatiomhan",
+      "Julius Madsen",
+      "Karlo Lusavec",
+      "Adam Herdonsson",
+      "Adrian Justinussen",
+      "John Batigi"
     ],
     "out": [],
     "questionable": []
@@ -8902,12 +8937,12 @@
   "fc andorra": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Lautaro De León",
+      "Moró Sidibe",
+      "Marc Domenech",
+      "Julian Rijkhoff",
+      "Enes Sali",
+      "Jordi Cano"
     ],
     "out": [],
     "questionable": []
@@ -8915,12 +8950,12 @@
   "çorum fk": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Jesús Ramírez",
+      "Mohammed Diomande",
+      "Ermin Mahmic",
+      "Ylber Ramadani",
+      "Alexandros Kyziridis",
+      "Cengiz Ünder"
     ],
     "out": [],
     "questionable": []
@@ -8928,12 +8963,12 @@
   "halmstads bk": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Omar Faraj",
+      "Tom Trybull",
+      "Joel Allansson",
+      "Rocco Ascone",
+      "Hussein Carneil",
+      "Erik Arvidsson"
     ],
     "out": [],
     "questionable": []
@@ -8941,12 +8976,12 @@
   "djurgården": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Kristian Stromland Lien",
+      "Bo Hegland",
+      "Matias Siltanen",
+      "Peter Langhoff",
+      "Jeppe Okkels",
+      "Charlie Rosenquist"
     ],
     "out": [],
     "questionable": []
@@ -8954,12 +8989,12 @@
   "ifk göteborg": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "Kevin Ackermann",
+      "Alexander Simmelhack",
+      "David Kruse",
+      "Oliver Månsson",
+      "Tobias Heintz",
+      "Nino Zugelj"
     ],
     "out": [],
     "questionable": []
@@ -8967,12 +9002,12 @@
   "malmö ff": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Diego García",
+      "Sead Haksabanovic",
+      "Anton Höög",
+      "Adrian Skogmar",
+      "Theodor Lundbergh",
+      "Otto Rosengren"
     ],
     "out": [],
     "questionable": []
@@ -8980,12 +9015,12 @@
   "tsv hartberg": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Marco Hoffman",
+      "Oliver Lukic",
+      "Angelo Gattermayer",
+      "Nikolaus Feldhofer",
+      "Magnus Dalpiaz",
+      "Youba Diarra"
     ],
     "out": [],
     "questionable": []
@@ -8993,12 +9028,12 @@
   "sc rheindorf altach": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Ousmane Diawara",
+      "Rodney Elongo-Yombo",
+      "Mike-Steven Bähre",
+      "Patrick Greil",
+      "Yann Litawumba",
+      "Dejan Stojanovic"
     ],
     "out": [],
     "questionable": []
@@ -9006,12 +9041,12 @@
   "wsg swarovski tirol": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Nikolai Baden Frederiksen",
+      "Moritz Wels",
+      "Matthäus Taferner",
+      "Marc Striednig",
+      "Michael Olakigbe",
+      "Murat Satin"
     ],
     "out": [],
     "questionable": []
@@ -9019,12 +9054,12 @@
   "austria vienna": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "Johannes Eggestein",
+      "Vasilije Markovic",
+      "Sanel Saljic",
+      "Valentino Müller",
+      "Manfred Fischer",
+      "Daniel Nnodim"
     ],
     "out": [],
     "questionable": []
@@ -9032,12 +9067,12 @@
   "fc twente": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Wout Weghorst",
+      "Younes Taha",
+      "Daouda Weidmann",
+      "Ramiz Zerrouki",
+      "Sondre Ørjasaeter",
+      "Daan Rots"
     ],
     "out": [],
     "questionable": []
@@ -9045,12 +9080,12 @@
   "ajax amsterdam": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Tolu Arokodare",
+      "Jorthy Mokio",
+      "Youri Baas",
+      "Yves Bissouma",
+      "Oscar Gloukh",
+      "Davy Klaassen"
     ],
     "out": [],
     "questionable": []
@@ -9058,12 +9093,12 @@
   "tromso": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Daniel Braut",
+      "Vegard Østraat Erlien",
+      "Ruben Jenssen",
+      "Morten Bjorlo",
+      "David Edvardsson",
+      "Jakob Haugaard"
     ],
     "out": [],
     "questionable": []
@@ -9071,12 +9106,12 @@
   "bodo/glimt": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Andreas Helmersen",
+      "Ole Didrik Blomberg",
+      "Ulrik Saltnes",
+      "Patrick Berg",
+      "Jens Petter Hauge",
+      "Sondre Brunstad Fet"
     ],
     "out": [],
     "questionable": []
@@ -9084,12 +9119,12 @@
   "stade rennais": {
     "manager": "Habib Beye",
     "starters_ready": [
-      "Arnaud Kalimuendo",
-      "Ludovic Blas",
-      "Amine Gouiri",
-      "Azor Matusiwa",
-      "Alidu Seidu",
-      "Brice Samba"
+      "Eliezer Mayenda",
+      "Boulaye Dia",
+      "Mahdi Camara",
+      "Adrien Thomasson",
+      "Valentin Rongier",
+      "Mahamadou Nagida"
     ],
     "out": [],
     "questionable": []
@@ -9098,11 +9133,11 @@
     "manager": "Andoni Iraola",
     "starters_ready": [
       "Evanilson",
-      "Antoine Semenyo",
       "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Ryan Christie",
+      "Tyler Adams",
+      "Marcus Tavernier",
+      "Rayan"
     ],
     "out": [],
     "questionable": []
@@ -9110,12 +9145,12 @@
   "virtus entella": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Mattia Tirelli",
+      "Luigi Cuppone",
+      "Andrea Franzoni",
+      "Luca Vignali",
+      "Lucas Felippe Martello Nascimento",
+      "Stefano Di Mario"
     ],
     "out": [],
     "questionable": []
@@ -9123,12 +9158,12 @@
   "modena": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Daniele Montevago",
+      "Giuseppe Ambrosino",
+      "Giacomo Olzer",
+      "Gastón Brugman",
+      "Alessandro Bianco",
+      "Simone Santoro"
     ],
     "out": [],
     "questionable": []
@@ -9136,12 +9171,12 @@
   "cray wanderers": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "John Ufuah",
+      "Ade Yusuff",
+      "Frankie Raymond",
+      "Sammie Thomas Mcleod",
+      "Alex Joseph Hernández Cascante",
+      "Frankie Del Morgan"
     ],
     "out": [],
     "questionable": []
@@ -9149,12 +9184,12 @@
   "fc cologne": {
     "manager": "Gerhard Struber",
     "starters_ready": [
-      "Tim Lemperle",
-      "Damion Downs",
-      "Dejan Ljubicic",
-      "Eric Martel",
-      "Timo Hübers",
-      "Marvin Schwäbe"
+      "Said El Mala",
+      "Marius Bulter",
+      "Mikey Moore",
+      "Linton Maina",
+      "Paul Okon-Engstler",
+      "Borna Sosa"
     ],
     "out": [],
     "questionable": []
@@ -9162,12 +9197,12 @@
   "kaa gent": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Josué Yamir Vergara Ortega",
+      "Momodou Sonko",
+      "Abdelkahar Kadri",
+      "Mathias Delorge-Knieper",
+      "Tibe De Vlieger",
+      "Tiago Araújo"
     ],
     "out": [],
     "questionable": []
@@ -9175,12 +9210,12 @@
   "kv kortrijk": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Goduine Koyalipou",
+      "Thierry Ambrose",
+      "Shandre Campbell",
+      "Harrison Murray-Campbell",
+      "Anthony Philips",
+      "Boris Lambert"
     ],
     "out": [],
     "questionable": []
@@ -9188,12 +9223,12 @@
   "randers fc": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Mohamed Sankoh",
+      "Mathias Greve",
+      "Axel Henriksson",
+      "Mike Themsen",
+      "Amady Camara",
+      "Paul Izzo"
     ],
     "out": [],
     "questionable": []
@@ -9201,12 +9236,12 @@
   "fc nordsjælland": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Alexander Lind",
+      "Ibrahim Adel",
+      "Hjalte Boe Rasmussen",
+      "Nicklas Rojkjaer",
+      "Justin Janssen",
+      "Runar Norheim"
     ],
     "out": [],
     "questionable": []
@@ -9214,12 +9249,12 @@
   "wimborne town": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Ángel Francisco Díaz Villa",
+      "Joe Smith",
+      "Owen Roundell-Price",
+      "Seung-Woo Yang",
+      "Cameron Munn",
+      "Cameron Sullivan"
     ],
     "out": [],
     "questionable": []
@@ -9227,12 +9262,12 @@
   "crawley town": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Danilo Orsi-Dadomo",
+      "Kai Jennings",
+      "Jude Arthurs",
+      "Charlie Barker",
+      "Dylan Morgan",
+      "Stephen Duke-McKenna"
     ],
     "out": [],
     "questionable": []
@@ -9240,12 +9275,12 @@
   "heart of midlothian": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Pierre Landry Kabore",
+      "Cláudio Braga",
+      "Yan Dhanda",
+      "Laurent Mendy",
+      "Joshua McPake",
+      "Sabah Kerjota"
     ],
     "out": [],
     "questionable": []
@@ -9253,12 +9288,12 @@
   "falkirk": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Jacob Murrell",
+      "Finley Barbrook",
+      "Deniss Melniks",
+      "Brad Spencer",
+      "Owen Eames",
+      "Ethan Ross"
     ],
     "out": [],
     "questionable": []
@@ -9266,12 +9301,12 @@
   "aek athens": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Luka Jovic",
+      "Barnabás Varga",
+      "Razvan Marin",
+      "Lovro Majer",
+      "Petros Mantalos",
+      "Aboubakary Koita"
     ],
     "out": [],
     "questionable": []
@@ -9279,12 +9314,12 @@
   "levadiakos": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Octavian Popescu",
+      "Moses Cobnan",
+      "Adrian Sut",
+      "Ioannis Kosti",
+      "Giorgos Nikas",
+      "Niv Eliasi"
     ],
     "out": [],
     "questionable": []
@@ -9292,12 +9327,12 @@
   "asteras tripoli": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Federico Macheda",
+      "Giannis Bouzoukis",
+      "Eder Gonzalez",
+      "Dimitrios Kourbelis",
+      "Benjamin Mgunga-Kimpioka",
+      "Franco Orozco"
     ],
     "out": [],
     "questionable": []
@@ -9305,12 +9340,12 @@
   "kalamata": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Dawid Kurminowski",
+      "Djibril Diarra",
+      "Juan Cataldi",
+      "Erik Hamza",
+      "Ahmad Mendes Moreira",
+      "Arnór Sigurdsson"
     ],
     "out": [],
     "questionable": []
@@ -9318,12 +9353,12 @@
   "c.d. nacional": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Njoya Kader",
+      "Song Min-Kyu",
+      "Stavros Gavriel",
+      "Matheus Dias",
+      "Chiheb Labidi",
+      "Miguel Baeza"
     ],
     "out": [],
     "questionable": []
@@ -9331,12 +9366,12 @@
   "académico de viseu": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "André Clóvis",
+      "João Guilherme",
+      "Nils Mortimer",
+      "Luís Silva",
+      "Cihan Kahraman",
+      "Soufiane Messeguem"
     ],
     "out": [],
     "questionable": []
@@ -9370,12 +9405,12 @@
   "santa clara": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Fernando",
+      "Brenner",
+      "Vinícius Lopes",
+      "Daniel Borges",
+      "Djé",
+      "João Gonçalves"
     ],
     "out": [],
     "questionable": []
@@ -9383,12 +9418,12 @@
   "gil vicente": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Walace França",
+      "Santi García",
+      "Diogo Prioste",
+      "Andreas Lausen",
+      "Gil Martins",
+      "Murilo"
     ],
     "out": [],
     "questionable": []
@@ -9396,12 +9431,12 @@
   "audax italiano": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Franco Troyansky",
+      "Federico Mateos",
+      "Marco Collao Ramos",
+      "Cesar Pinares",
+      "Vicente Zenteno",
+      "Paolo Guajardo"
     ],
     "out": [],
     "questionable": []
@@ -9409,12 +9444,12 @@
   "coquimbo unido": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Luis Riveros",
+      "Guido Vadalá",
+      "Salvador Cordero",
+      "Sebastián Galani",
+      "Dixon Pereira",
+      "Benjamín Chandía"
     ],
     "out": [],
     "questionable": []
@@ -9422,12 +9457,12 @@
   "universidad católica": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Fernando Zampedri",
+      "Jhojan Valencia",
+      "Juan Rossel",
+      "Jimmy Martínez",
+      "Cristian Cuevas",
+      "Clemente Montes"
     ],
     "out": [],
     "questionable": []
@@ -9435,12 +9470,12 @@
   "deportes limache": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Gonzalo Sosa",
+      "Leonardo Valencia",
+      "Misael Llantén",
+      "Cesar Fuentes",
+      "Daniel Castro",
+      "Jean Meneses"
     ],
     "out": [],
     "questionable": []
@@ -9448,12 +9483,12 @@
   "iraklis": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Pedro Marques",
+      "Xande Silva",
+      "Ivi",
+      "Vasilis Sourlis",
+      "Marco Krainz",
+      "Nanu"
     ],
     "out": [],
     "questionable": []
@@ -9461,12 +9496,12 @@
   "panathinaikos": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Cyriel Dessers",
+      "Santino Andino",
+      "Andrews Tetteh",
+      "Etienne Camara",
+      "Imran Louza",
+      "Vicente Taborda"
     ],
     "out": [],
     "questionable": []
@@ -9474,12 +9509,12 @@
   "alanyaspor": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Arda Usluoglu",
+      "Hwang Ui-Jo",
+      "Ruan",
+      "Baran Gezek",
+      "Maestro",
+      "Yusuf Ozdemir"
     ],
     "out": [],
     "questionable": []
@@ -9487,12 +9522,12 @@
   "trabzonspor": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Paul Onuachu",
+      "Noah Saviolo",
+      "Mohamed Salah",
+      "Fabinho",
+      "Ernest Muçi",
+      "Ozan Tufan"
     ],
     "out": [],
     "questionable": []
@@ -9500,12 +9535,12 @@
   "aik": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Sixten Gustafsson",
+      "Johan Hove",
+      "Dino Besirovic",
+      "Yannick Geiger",
+      "Lucas Assadi",
+      "Axel Kouame"
     ],
     "out": [],
     "questionable": []
@@ -9513,12 +9548,12 @@
   "bk häcken": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Gustav Lindgren",
+      "Mikkel Rygaard",
+      "David Seger",
+      "Abdoulaye Doumbia",
+      "Julius Lindberg",
+      "Adrian Svanbäck"
     ],
     "out": [],
     "questionable": []
@@ -9526,12 +9561,12 @@
   "if brommapojkarna": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Oliver Berg",
+      "Wilmer Odefalk",
+      "Simon Strand",
+      "Anton Kurochkin",
+      "Mads Hansen",
+      "Leo Cavallius"
     ],
     "out": [],
     "questionable": []
@@ -9539,12 +9574,12 @@
   "mjällby aif": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Ali Youssef",
+      "Jesper Gustavsson",
+      "Viktor Gustafson",
+      "Olle Lindberg",
+      "Mads Enggård",
+      "Sebastian Hansen"
     ],
     "out": [],
     "questionable": []
@@ -9552,12 +9587,12 @@
   "kalmar ff": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Vilmer Tyren",
+      "Marius Söderbäck",
+      "Carl Gustafsson",
+      "Robert Gojani",
+      "Charles Sagoe Junior",
+      "Amara Camara"
     ],
     "out": [],
     "questionable": []
@@ -9565,12 +9600,12 @@
   "ik sirius": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Isak Bjerkebo",
+      "Victor Svensson",
+      "Marcus Lindberg",
+      "Melker Heier",
+      "Zalán Vancsa",
+      "Joakim Persson"
     ],
     "out": [],
     "questionable": []
@@ -9578,12 +9613,12 @@
   "az alkmaar": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Mexx Meerdink",
+      "Valdemar Byskov",
+      "Peer Koopmeiners",
+      "Dave Kwakman",
+      "Ro-Zangelo Daal",
+      "Ayoub Oufkir"
     ],
     "out": [],
     "questionable": []
@@ -9591,12 +9626,12 @@
   "fc groningen": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Brynjólfur Willumsson",
+      "Thom Van Bergen",
+      "Pelle Clement",
+      "Tika De Jonge",
+      "Jacob Ondrejka",
+      "Jorg Schreuders"
     ],
     "out": [],
     "questionable": []
@@ -9604,12 +9639,12 @@
   "sc cambuur": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Nicolas Binder",
+      "Ilyes Hamache",
+      "Jason Ceka",
+      "Nicky Souren",
+      "Rafik El Arguioui",
+      "Mathieu Maertens"
     ],
     "out": [],
     "questionable": []
@@ -9617,12 +9652,12 @@
   "psv eindhoven": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Guus Til",
+      "Sven Mijnans",
+      "Mauro Júnior",
+      "Kodai Sano",
+      "Ruben Van Bommel",
+      "Esmir Bajraktarevic"
     ],
     "out": [],
     "questionable": []
@@ -9630,12 +9665,12 @@
   "sk sturm graz": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Oumar Diakité",
+      "Jacob Peter Hödl",
+      "Simon Seidl",
+      "Jon Gorenc Stankovic",
+      "Luca Weinhandl",
+      "Luís Balbo"
     ],
     "out": [],
     "questionable": []
@@ -9643,12 +9678,12 @@
   "rb salzburg": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Haris Tabakovic",
+      "Bartosz Mazurek",
+      "Soumaïla Diabaté",
+      "Abubakr Barry",
+      "Jesper Lindstrom",
+      "Damir Redzic"
     ],
     "out": [],
     "questionable": []
@@ -9656,12 +9691,12 @@
   "hamarkameratene": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Henrik Udahl",
+      "David Benjamin",
+      "Luc Mares",
+      "Aksel Potur",
+      "Patrick Metcalfe",
+      "Markus Sandberg"
     ],
     "out": [],
     "questionable": []
@@ -9669,12 +9704,12 @@
   "sarpsborg fk": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Victor Halvorsen",
+      "Daniel Karlsbakk",
+      "Aimar Sher",
+      "Sander Christiansen",
+      "Olaus Skarsem",
+      "Sondre Sörli"
     ],
     "out": [],
     "questionable": []
@@ -9682,12 +9717,12 @@
   "lillestrom": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Thomas Lehne Olsen",
+      "Filip Ottosson",
+      "Gustav Nyheim",
+      "Henrik Melland",
+      "Gustav Nordh",
+      "Camil Jebara"
     ],
     "out": [],
     "questionable": []
@@ -9695,12 +9730,12 @@
   "aalesund": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Marcus Haagensen Reed",
+      "Elias Myrlid",
+      "Elias Hagen",
+      "Endre Osenbroch",
+      "Mathias Christensen",
+      "Tor Erik Larsen"
     ],
     "out": [],
     "questionable": []
@@ -9708,12 +9743,12 @@
   "sandefjord": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Oscar Kapskarmo",
+      "Sander Mork",
+      "Edvard Pettersen",
+      "Jakob Dunsby",
+      "Evangelos Patoulidis",
+      "Elias Hadaya"
     ],
     "out": [],
     "questionable": []
@@ -9721,12 +9756,12 @@
   "molde": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Kristian Lonebu",
+      "Niklas Odegard",
+      "Daniel Daga",
+      "Sondre Granaas",
+      "Sander Kilen",
+      "Caleb Sery"
     ],
     "out": [],
     "questionable": []
@@ -9734,12 +9769,12 @@
   "viking fk": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Erik Botheim",
+      "Amin Cosic",
+      "Peter Christiansen",
+      "Joe Bell",
+      "Simen Kvia-Egeskog",
+      "Henrik Bjørdal"
     ],
     "out": [],
     "questionable": []
@@ -9747,12 +9782,12 @@
   "kfum oslo": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Magnus Retsius Grødem",
+      "Rasmus Vinge",
+      "Ola Visted",
+      "Martin Vinjor",
+      "Robin Rasch",
+      "Jonas Hjorth"
     ],
     "out": [],
     "questionable": []
@@ -9760,12 +9795,12 @@
   "celtic": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Kasper Høgh",
+      "Benjamin Nygren",
+      "Mika Baur",
+      "Callum McGregor",
+      "Jota",
+      "Camilo Durán"
     ],
     "out": [],
     "questionable": []
@@ -9773,12 +9808,12 @@
   "kilmarnock": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Tyreece John-Jules",
+      "Greg Kiltie",
+      "Tom Lowery",
+      "Aaron Tshibola",
+      "Ieuan Owen",
+      "Joe Hugill"
     ],
     "out": [],
     "questionable": []
@@ -9786,12 +9821,12 @@
   "macará": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Franco Posse",
+      "Martín Tello",
+      "Jose Cazares",
+      "Jean Carlos Estacio",
+      "Mateo Viera",
+      "Agustín Campana"
     ],
     "out": [],
     "questionable": []
@@ -9799,12 +9834,12 @@
   "universidad católica (quito)": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "José Fajardo",
+      "Daniel Clavijo",
+      "Luis Moreno",
+      "Facundo Martinez",
+      "Mauricio Alonso",
+      "Azarias Londoño"
     ],
     "out": [],
     "questionable": []
@@ -9812,12 +9847,12 @@
   "angers": {
     "manager": "Alexandre Dujeux",
     "starters_ready": [
-      "Esteban Lepaul",
-      "Himad Abdelli",
-      "Farid El Melali",
-      "Jean-Eudes Aholou",
-      "Jordan Lefort",
-      "Yahia Fofana"
+      "Prosper Peter",
+      "Branco van den Boomen",
+      "Haris Belkebla",
+      "Yassin Belkhdim",
+      "Amine Sbaï",
+      "Jim Allevinah"
     ],
     "out": [],
     "questionable": []
@@ -9825,12 +9860,12 @@
   "nice": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
+      "Elye Wahi",
+      "Mohamed Amoura",
+      "Sofiane Diop",
       "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Djibril Coulibaly",
+      "Niels Nkounkou"
     ],
     "out": [],
     "questionable": []
@@ -9839,11 +9874,11 @@
     "manager": "Éric Roy",
     "starters_ready": [
       "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
+      "Kamory Doumbia",
       "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Joris Chotard",
+      "Mama Baldé",
+      "Noah Edjouma"
     ],
     "out": [],
     "questionable": []
@@ -9851,12 +9886,12 @@
   "le havre ac": {
     "manager": "Didier Digard",
     "starters_ready": [
-      "Abdoulaye Touré",
-      "Josué Casimir",
-      "Emmanuel Sabbi",
-      "Yassine Kechta",
-      "Gautier Lloris",
-      "Arthur Desmas"
+      "Josh Maja",
+      "Kaito Mizuta",
+      "Rayan Fofana",
+      "Junior Mwanga",
+      "Simon Ebonog",
+      "Mbwana Samatta"
     ],
     "out": [],
     "questionable": []
@@ -9864,12 +9899,12 @@
   "le mans": {
     "manager": "Patrick Videira",
     "starters_ready": [
-      "Arnold Vula",
-      "Erwan Colas",
-      "Dame Gueye",
-      "Edwin Quarshie",
-      "Harold Voyer",
-      "Nicolas Kocik"
+      "Dame Guèye",
+      "Louis Mafouta",
+      "Jean Vercruysse",
+      "Daouda Traoré",
+      "Lucas Calodat",
+      "Lucas Buades"
     ],
     "out": [],
     "questionable": []
@@ -9877,12 +9912,12 @@
   "as monaco": {
     "manager": "Adi Hütter",
     "starters_ready": [
-      "Breel Embolo",
-      "Maghnes Akliouche",
-      "Eliesse Ben Seghir",
+      "Matthis Abline",
+      "Aleksandr Golovin",
+      "Lamine Camara",
       "Denis Zakaria",
-      "Thilo Kehrer",
-      "Philipp Köhn"
+      "Mathys Detourbet",
+      "Mamadou Coulibaly"
     ],
     "out": [],
     "questionable": []
@@ -9890,12 +9925,12 @@
   "carrarese": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Fabio Abiuso",
+      "Tommaso Rubino",
+      "Nicholas Schiavi",
+      "Jacopo Martini",
+      "Jonas Rouhi",
+      "Gabriele Parlanti"
     ],
     "out": [],
     "questionable": []
@@ -9903,12 +9938,12 @@
   "sc freiburg": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
+      "Igor Matanovic",
+      "Yuito Suzuki",
+      "Yannick Engelhardt",
       "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Derry Scherhant",
+      "Niklas Beste"
     ],
     "out": [],
     "questionable": []
@@ -9916,12 +9951,12 @@
   "1. fc union berlin": {
     "manager": "Steffen Baumgart",
     "starters_ready": [
-      "Benedict Hollerbach",
-      "Yorbe Vertessen",
-      "Rani Khedira",
+      "Livan Burcu",
+      "Tim Skarke",
       "András Schäfer",
-      "Danilho Doekhi",
-      "Frederik Rønnow"
+      "Michel Aebischer",
+      "Kastriot Imeri",
+      "Frederik Ronnow"
     ],
     "out": [],
     "questionable": []
@@ -9929,12 +9964,12 @@
   "deportivo cuenca": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Cristhian Alexander Benalcazar Folleco",
+      "Melvin Díaz",
+      "Édison Vega",
+      "Mateo Maccari",
+      "David González",
+      "Lucas Mancinelli"
     ],
     "out": [],
     "questionable": []
@@ -9942,12 +9977,12 @@
   "orense": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Walter Herrera",
+      "Renny Jaramillo",
+      "Gonzalo Rostagno",
+      "Michael Bermúdez",
+      "Ángel Mena",
+      "Rolando Silva"
     ],
     "out": [],
     "questionable": []
@@ -9955,12 +9990,12 @@
   "atromitos": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Juan Perea",
+      "Steven Zuber",
+      "Samuel Moutoussamy",
+      "Thanasis Karamanis",
+      "Serginho",
+      "Kelvin Ofori"
     ],
     "out": [],
     "questionable": []
@@ -9968,12 +10003,12 @@
   "fc midtjylland": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Friday Etim",
+      "Mileta Rajovic",
+      "Pedro Bravo",
+      "Philip Billing",
+      "Kjell-Arik Wätjen",
+      "Viktor Bak"
     ],
     "out": [],
     "questionable": []
@@ -9981,12 +10016,12 @@
   "sønderjyske fodbold": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Osaze De Rosario",
+      "Anders Pedersen",
+      "Mohamed Haidara",
+      "Mathias Olesen",
+      "Sefer Emini",
+      "Anders Hoeg"
     ],
     "out": [],
     "questionable": []
@@ -9994,12 +10029,12 @@
   "internazionale": {
     "manager": "Cristian Chivu",
     "starters_ready": [
-      "Lautaro Martínez",
       "Marcus Thuram",
+      "Pio Esposito",
+      "Piotr Zielinski",
       "Nicolò Barella",
-      "Hakan Çalhanoğlu",
-      "Alessandro Bastoni",
-      "Yann Sommer"
+      "Hakan Çalhanoglu",
+      "Federico Dimarco"
     ],
     "out": [],
     "questionable": []
@@ -10007,12 +10042,12 @@
   "oldham athletic": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Calum Kavanagh",
+      "Mike Fondop-Talom",
+      "Thomas Pett",
+      "Oliver Norburn",
+      "Noah Chilvers",
+      "Jamie Robson"
     ],
     "out": [],
     "questionable": []
@@ -10020,12 +10055,12 @@
   "sheffield wednesday": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Jamal Lowe",
+      "Davis Kellior-Dunn",
+      "Callum Slattery",
+      "Barry Bannan",
+      "Jaden Heskey",
+      "Jordi Liongola"
     ],
     "out": [],
     "questionable": []
@@ -10033,12 +10068,12 @@
   "union st.-gilloise": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Kevin Rodríguez",
+      "Besfort Zeneli",
+      "Raul Florucz",
+      "Adem Zorgane",
+      "Kamiel Van De Perre",
+      "Guilherme Smith"
     ],
     "out": [],
     "questionable": []
@@ -10046,12 +10081,12 @@
   "racing genk": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Rafiu Durosinmi",
+      "Aaron Bibout",
+      "Bryan Heynen",
+      "Benjamin Tahirovic",
+      "Daan Heymans",
+      "Joris Kayembe"
     ],
     "out": [],
     "questionable": []
@@ -10059,12 +10094,12 @@
   "los chankas": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Marlon Torres",
+      "Jarlín Quintero",
+      "Franco Torres",
+      "Jorge Palomino",
+      "Christian Velarde",
+      "Brayan Guevara"
     ],
     "out": [],
     "questionable": []
@@ -10072,12 +10107,12 @@
   "alianza lima": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Federico Girotti",
+      "Erick Castillo",
+      "Esteban Pavez",
+      "Fernando Gaibor",
+      "Gaspar Gentile",
+      "Alejandro Duarte"
     ],
     "out": [],
     "questionable": []
@@ -10085,12 +10120,12 @@
   "durango": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Jose Reyes",
+      "Juan David Angulo Ortíz",
+      "Eric Cantú",
+      "Jared Alexis Torres Ramírez",
+      "Jair González",
+      "César Giovany Vega Hernández"
     ],
     "out": [],
     "questionable": []
@@ -10098,12 +10133,12 @@
   "vitória de guimaraes": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Arnel Jakupovic",
+      "Samu",
+      "Beni Mukendi",
+      "Gonçalo Nogueira",
+      "Gustavo da Silva",
+      "Oumar Tourad Camara"
     ],
     "out": [],
     "questionable": []
@@ -10111,12 +10146,12 @@
   "fc porto": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Samu Aghehowa",
+      "Borja Sainz",
+      "Pepê",
+      "Pablo Rosario",
+      "Gabri Veiga",
+      "Victor Froholdt"
     ],
     "out": [],
     "questionable": []
@@ -10124,12 +10159,12 @@
   "ñublense": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Franco Rami",
+      "Matías Plaza",
+      "Manuel Rivera",
+      "Lolo Reyes",
+      "Lucas Molina",
+      "Gabriel Graciani"
     ],
     "out": [],
     "questionable": []
@@ -10137,12 +10172,12 @@
   "colo colo": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Marcelo Correa",
+      "G Díaz",
+      "Francisco Marchant",
+      "Arturo Vidal",
+      "Víctor Méndez",
+      "Álvaro Madrid"
     ],
     "out": [],
     "questionable": []
@@ -10150,12 +10185,12 @@
   "universidad de chile": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Eduardo Vargas",
+      "Octavio Rivero",
+      "Agustin Arce",
+      "Charles Aránguiz",
+      "Lucas Barrera",
+      "Marcelo Morales"
     ],
     "out": [],
     "questionable": []
@@ -10163,12 +10198,12 @@
   "cobresal": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Stefan Pino",
+      "Felipe Villagrán",
+      "Aaron Astullido",
+      "Janpol Morales",
+      "Julián Brea",
+      "Alejandro Santander"
     ],
     "out": [],
     "questionable": []
@@ -10176,12 +10211,12 @@
   "genclerbirligi": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Pedro Mendes",
+      "Franco Tongya",
+      "Ogulcan Ülgün",
+      "Cheikh Niasse",
+      "Tiago Gouveia",
+      "Adama Traoré"
     ],
     "out": [],
     "questionable": []
@@ -10189,12 +10224,12 @@
   "sint-truidense": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Samed Bazdar",
+      "Shion Shinkawa",
+      "Nelson Ishiwatari",
+      "Abdoulage Sissako",
+      "Ilias Sebaoui",
+      "Nathanaël Mbuku"
     ],
     "out": [],
     "questionable": []
@@ -10202,12 +10237,12 @@
   "zulte-waregem": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Anosike Ementa",
+      "Tobias Hedl",
+      "Enrique Lofolomo",
+      "Thomas Claes",
+      "Marley Aké",
+      "István Átrok"
     ],
     "out": [],
     "questionable": []
@@ -10215,12 +10250,12 @@
   "fredrikstad": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Henrik Skogvold",
+      "Johannes Hummelvoll-Nuñez",
+      "Gabriel Wesseh",
+      "Max Nilsson",
+      "Samuel Leach Holm",
+      "Fanuel Ghebreyohannes"
     ],
     "out": [],
     "questionable": []
@@ -10228,12 +10263,12 @@
   "sk brann": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Noah Holm",
+      "Niklas Castro",
+      "Kristall Máni Ingason",
+      "Niklas Jensen",
+      "Kristian Eriksen",
+      "Saevar Atli Magnússon"
     ],
     "out": [],
     "questionable": []
@@ -10241,12 +10276,12 @@
   "tsg hoffenheim": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Tim Lemperle",
+      "Fisnik Asllani",
+      "Wouter Burger",
+      "Leon Avdullahu",
+      "Alexander Prass",
+      "Andrej Kramaric"
     ],
     "out": [],
     "questionable": []
@@ -10254,12 +10289,12 @@
   "vicenza": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Silvio Merkaj",
+      "Nicola Rauti",
+      "Armand Rada",
+      "Marco Carraro",
+      "Alessandro Bellemo",
+      "Filippo Costa"
     ],
     "out": [],
     "questionable": []
@@ -10267,12 +10302,12 @@
   "aucas": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Rafael Monti",
+      "Thiago Serpa",
+      "Agostino Spina",
+      "Piero Guzman",
+      "Robino Quinónez",
+      "Braian Oyola"
     ],
     "out": [],
     "questionable": []
@@ -10280,12 +10315,12 @@
   "independiente del valle": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Carlos González",
+      "Jordy Alcívar",
+      "Junior Sornoza",
+      "Ronald Briones",
+      "Arón Rodríguez",
+      "Yandri Vásquez"
     ],
     "out": [],
     "questionable": []
@@ -10293,12 +10328,12 @@
   "athletic": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Max",
+      "João Miguel Da Costa Pereira",
+      "Yago Santos",
+      "Kauan",
+      "Yarlen",
+      "Antonio Eduardo Furquim de Freitas Batista"
     ],
     "out": [],
     "questionable": []
@@ -10306,12 +10341,12 @@
   "atlético goianiense": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Gustavo Coutinho",
+      "David Terans",
+      "José Domingo Moraes Neto",
+      "Henrique",
+      "Geovany Soares",
+      "Bruno José"
     ],
     "out": [],
     "questionable": []
@@ -10319,12 +10354,12 @@
   "independiente santa fe": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Hugo Rodallega",
+      "Franco Fagúndez",
+      "Johan Torres",
+      "Daniel Torres",
+      "Emerson Rodríguez",
+      "Jáder Obrian"
     ],
     "out": [],
     "questionable": []
@@ -10332,12 +10367,12 @@
   "deportivo pasto": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Patrick Preciado",
+      "Michael Steven Mosquera Madrid",
+      "Frank Martínez",
+      "Kevin Daniel Santacruz Andrade",
+      "Jonathan Perlaza",
+      "Heiler Moreno"
     ],
     "out": [],
     "questionable": []
@@ -10345,12 +10380,12 @@
   "fc utrecht": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Artem Stepanov",
+      "Yoann Cathline",
+      "Ángel Alarcón",
+      "Joris van Overeem",
+      "Dani de Wit",
+      "Marius Broholm"
     ],
     "out": [],
     "questionable": []
@@ -10358,12 +10393,12 @@
   "nec nijmegen": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Bryan Linssen",
+      "Dusan Tadic",
+      "Tjaronn Chery",
+      "Noé Lebreton",
+      "Darko Nejasmic",
+      "Mitchel Bakker"
     ],
     "out": [],
     "questionable": []
@@ -10371,12 +10406,12 @@
   "olympiacos": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Marius Mouandilmadji",
+      "Chiquinho",
+      "Santiago Hezze",
+      "Remo Freuler",
+      "Joel Roca",
+      "Jota Silva"
     ],
     "out": [],
     "questionable": []
@@ -10384,12 +10419,12 @@
   "paok": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Simon Banza",
+      "Cherif Ndiaye",
+      "Baptiste Santamaria",
+      "Kristijan Jakic",
+      "Christos Zafeiris",
+      "Andrija Zivkovic"
     ],
     "out": [],
     "questionable": []
@@ -10397,12 +10432,12 @@
   "cerro porteño": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Pablo Vegetti",
+      "Sergio Araujo",
+      "Gastón Giménez",
+      "Ariel Gamarra",
+      "Cesar Bobadilla",
+      "Manuel Roffo"
     ],
     "out": [],
     "questionable": []
@@ -10410,12 +10445,12 @@
   "deportivo recoleta": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Paul Charpentier",
+      "Thiago Vidal",
+      "Alejandro Silva",
+      "José Espínola",
+      "Mathías Masi",
+      "Marcelo Cañete"
     ],
     "out": [],
     "questionable": []
@@ -10423,12 +10458,12 @@
   "sport boys": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Carlos Liza",
+      "Federico Illanes",
+      "Jostin Alarcón",
+      "Oslimg Mora",
+      "Christian Cueva",
+      "Yuriel Celi"
     ],
     "out": [],
     "questionable": []
@@ -10436,12 +10471,12 @@
   "utc": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Marlon de Jesús",
+      "Marcos Lliuya",
+      "Luis Arce",
+      "David Dioses",
+      "Adolfo Muñoz",
+      "David Camacho"
     ],
     "out": [],
     "questionable": []
@@ -10449,12 +10484,12 @@
   "estrela": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Leandro Antonetti",
+      "Lovro Zvonarek",
+      "Santiago Serra",
+      "Kevin Höög Jansson",
+      "Ianis Stoica",
+      "Abraham Marcus"
     ],
     "out": [],
     "questionable": []
@@ -10462,12 +10497,12 @@
   "rio ave": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "Jalen Blesa",
+      "Miguel Patrício",
+      "Diogo Nascimento",
+      "Georgios Liavas",
+      "Diogo Bezerra",
+      "Sebastian Clemmensen"
     ],
     "out": [],
     "questionable": []
@@ -10475,12 +10510,12 @@
   "unión la calera": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Brian Nicolas Ferreyra",
+      "Sebastián Sáez",
+      "Camilo Moya",
+      "Rodrigo Pérez",
+      "Bayron Oyarzo",
+      "Martín Hiriart"
     ],
     "out": [],
     "questionable": []
@@ -10488,12 +10523,12 @@
   "huachipato": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Sergio Ñúñez",
+      "Maximiliano Rodríguez",
+      "Claudio Sepúlveda",
+      "Maicol León",
+      "Kevin Altez",
+      "Harold Antiñirre"
     ],
     "out": [],
     "questionable": []
@@ -10501,12 +10536,12 @@
   "jaguares de córdoba": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Johar Mejía",
+      "Cristian Alvarez",
+      "Rafael Bustamante",
+      "Jose Yanez",
+      "Wilfrido De La Rosa",
+      "Faber Gil"
     ],
     "out": [],
     "questionable": []
@@ -10514,12 +10549,12 @@
   "atlético bucaramanga": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Brandon Caicedo",
+      "Fabián Sambueza",
+      "Enmerson Batalla",
+      "Felix Charrupí",
+      "Aldair Zárate",
+      "Leonardo Flores"
     ],
     "out": [],
     "questionable": []
@@ -10527,12 +10562,12 @@
   "barcelona sc": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Tomás Rodríguez",
+      "Damián Díaz",
+      "Gonzalo Lugo",
+      "Jefferson Intriago",
+      "Johan García",
+      "Jefferson Wila"
     ],
     "out": [],
     "questionable": []
@@ -10540,12 +10575,12 @@
   "liga de quito": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Michael Estrada",
+      "Lucas Rodríguez",
+      "Jesús Pretell",
+      "Sebastián Emmanuel González",
+      "Juan Sebastián Rodríguez",
+      "Gonzalo Valle"
     ],
     "out": [],
     "questionable": []
@@ -10553,12 +10588,12 @@
   "ceará": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Renzo López",
+      "Melk",
+      "João Gabriel",
+      "Richardson",
+      "Ryan Bonfim De Santana",
+      "Enzo"
     ],
     "out": [],
     "questionable": []
@@ -10566,12 +10601,12 @@
   "américa mineiro": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Willian",
+      "Matías Segovia",
+      "Barreto",
+      "Jorge Roa",
+      "Guilherme Parede",
+      "Paulo Victor"
     ],
     "out": [],
     "questionable": []
@@ -10579,12 +10614,12 @@
   "goiás": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Cadu",
+      "Lucas Lima",
+      "Lourenco",
+      "Machado",
+      "Kadu",
+      "Felipe Clemente"
     ],
     "out": [],
     "questionable": []
@@ -10592,12 +10627,12 @@
   "ponte preta": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "Emanuell Silva Ferreira",
+      "Brandão",
+      "Rodrigo Souza",
+      "Karl",
+      "Gustavo Teles",
+      "Guilherme Viana"
     ],
     "out": [],
     "questionable": []
@@ -10605,12 +10640,12 @@
   "central córdoba (santiago del estero)": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Michael Santos",
+      "Marco Iacobellis",
+      "Enzo Tiziano Ramirez Suarez",
+      "Matías Vera",
+      "Diego Barrera",
+      "Leonardo Sequeira"
     ],
     "out": [],
     "questionable": []
@@ -10618,12 +10653,12 @@
   "sportivo trinidense": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Néstor Camacho",
+      "Clementino González",
+      "Nelson Gauto",
+      "Gustavo Viera",
+      "Luis Abreu",
+      "Nicolás Maná"
     ],
     "out": [],
     "questionable": []
@@ -10631,12 +10666,12 @@
   "sportivo ameliano": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Richard Torales",
+      "Jonathan Benítez",
+      "Raúl Cabral",
+      "Valentín Larralde",
+      "Ever Fabian Britez Carrera",
+      "Fredy Vera"
     ],
     "out": [],
     "questionable": []
@@ -10644,12 +10679,12 @@
   "deportivo garcilaso": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Facundo Castelli",
+      "Adrián Ascues",
+      "Agustín González",
+      "Carlos Ramos",
+      "Luiz Da Silva",
+      "Christopher Olivares"
     ],
     "out": [],
     "questionable": []
@@ -10657,12 +10692,12 @@
   "comerciantes unidos": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Matías Sen",
+      "Rodrigo Vilca",
+      "Thiago Salinas",
+      "Agustín Rodríguez",
+      "Jean Carlo Olivares Uccelli",
+      "Josuee Herrera"
     ],
     "out": [],
     "questionable": []
@@ -10670,12 +10705,12 @@
   "universidad de concepción": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Rogelio Funes Mori",
+      "Bryan Ogaz",
+      "Cristopher Mesías",
+      "Jeison Fuentealba",
+      "Iam González",
+      "Harol Salgado"
     ],
     "out": [],
     "questionable": []
@@ -10683,12 +10718,12 @@
   "o'higgins": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Esteban Moreira",
+      "Walter Bou",
+      "Felipe Ogaz",
+      "Tomás Avilés",
+      "Bastián Yañez",
+      "Ignacio Schor"
     ],
     "out": [],
     "questionable": []
@@ -10696,12 +10731,12 @@
   "querétaro": {
     "manager": "Benjamín Mora",
     "starters_ready": [
-      "Lucas Rodríguez",
-      "Pablo Barrera",
-      "Samuel Sosa",
-      "Federico Lértora",
-      "Franco Russo",
-      "Guillermo Allison"
+      "Ali Avila",
+      "Mateo Coronel",
+      "Santiago Homenchenko",
+      "Carlo García",
+      "Denilson Muñoz",
+      "Iker Benito"
     ],
     "out": [],
     "questionable": []
@@ -10709,12 +10744,12 @@
   "piratas": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Brian Figueroa",
+      "Juan Gamboa",
+      "Daniel Kuri",
+      "Jesús Venegas",
+      "Rolando González",
+      "Christian Vladimir Fernández García"
     ],
     "out": [],
     "questionable": []
@@ -10722,12 +10757,12 @@
   "cancún fc": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "José Gabriel Rodríguez Novoa",
+      "Christopher Trejo",
+      "Francisco Uscanga",
+      "Armando Chávez",
+      "Karel Campos",
+      "Francisco Javier Melendre García"
     ],
     "out": [],
     "questionable": []
@@ -10735,12 +10770,12 @@
   "alianza fc": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Misael Martínez",
+      "Jesús Muñoz",
+      "Felipe Pardo",
+      "Ever Meza",
+      "Jair Castillo",
+      "Jhildrey Lasso"
     ],
     "out": [],
     "questionable": []
@@ -10748,12 +10783,12 @@
   "llaneros fc": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Jhon Vásquez",
+      "Marlon Sierra",
+      "Juan Castilla",
+      "Néider Ospina",
+      "Joel Contreras",
+      "Juan Ramírez"
     ],
     "out": [],
     "questionable": []
@@ -10761,12 +10796,12 @@
   "universitario": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Alex Valera",
+      "Gianluca Lapadula",
+      "Edison Flores",
+      "Jairo Concha",
+      "Horacio Calcaterra",
+      "César Inga"
     ],
     "out": [],
     "questionable": []
@@ -10774,12 +10809,12 @@
   "deportivo moquegua": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Jefferson Collazos",
+      "Ricardo Chipao",
+      "Cristian Mejía",
+      "Diego Ramírez",
+      "Edgar Lastre",
+      "Carlos Grados"
     ],
     "out": [],
     "questionable": []
@@ -10787,12 +10822,12 @@
   "deportivo cali": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Juan Dinenno",
+      "Emanuel Reynoso",
+      "Gustavo Cuéllar",
+      "Daniel Giraldo",
+      "Alexis Castillo Manyoma",
+      "Johan Andrés Martínez"
     ],
     "out": [],
     "questionable": []
@@ -10801,11 +10836,11 @@
     "manager": "Ever Hugo Almeida",
     "starters_ready": [
       "Elián Caicedo",
-      "Wilman Pabón",
-      "Jeremy Cusme",
-      "Ronny Biojo",
-      "José Hernández",
-      "Cristopher Angulo"
+      "Nazareno Bazán",
+      "Jackson González",
+      "Esteban Dávila",
+      "Miguel Perea",
+      "Bryan Corozo"
     ],
     "out": [],
     "questionable": []
@@ -10813,12 +10848,12 @@
   "delfín": {
     "manager": "Javier Carvajal",
     "starters_ready": [
-      "Brian Heras",
-      "Ober Medina",
-      "Anthony Bedoya",
-      "Erick Zúñiga",
-      "Bryan Hernández",
-      "Jonathan Morocho Basurto"
+      "Danny Luna",
+      "Eber Caicedo",
+      "Jonathan Morocho Basurto",
+      "Gerónimo Heredia",
+      "Thiago Ozaeta",
+      "Brayan Joel Peña Preciado"
     ],
     "out": [],
     "questionable": []
@@ -10826,12 +10861,12 @@
   "kristiansund bk": {
     "manager": "Amund Skiri",
     "starters_ready": [
-      "Sander Svendsen",
       "Leander Alvheim",
-      "Adrian Sæther",
-      "Max Normann Williamsen",
-      "Jesper Isaksen",
-      "John Kitolano"
+      "Sander Svendsen",
+      "Heine Gikling Bruseth",
+      "Syver Skeide",
+      "Zymer Bytyqi",
+      "Gustav Christensen"
     ],
     "out": [],
     "questionable": []
@@ -10839,12 +10874,12 @@
   "vålerenga": {
     "manager": "Geir Bakke",
     "starters_ready": [
-      "Oscar Hedvall",
-      "Kevin Tshiembe",
-      "Aaron Olsen",
-      "Dennis Gjengaar",
-      "Vegar Hedenstad",
-      "Carl Lange"
+      "Ole Saeter",
+      "Mathias Grundetjern",
+      "Carl Lange",
+      "Fidele Brice Ambina",
+      "Lucas Haren",
+      "Petter Strand"
     ],
     "out": [],
     "questionable": []
@@ -10852,12 +10887,12 @@
   "plymouth parkway": {
     "manager": "Chris McPhee",
     "starters_ready": [
+      "Toby Down",
       "Rio Garside",
-      "Callum Hall",
-      "Shane White",
-      "Mikey Williams",
-      "Ryan Brett",
-      "Cory Harvey"
+      "Will Sullivan",
+      "Reece Thomson",
+      "Michael Williams",
+      "Jensen Ireland"
     ],
     "out": [],
     "questionable": []
@@ -10865,12 +10900,12 @@
   "berkhamsted": {
     "manager": "Chris Devane",
     "starters_ready": [
-      "JJ Lacey",
-      "Matt Bateman",
+      "Jonathan Lacey",
+      "Max Rosner",
+      "Jeffrey Sekyere",
       "Luke Andrews",
-      "Adam Watkins",
-      "Ryan Kinnane",
-      "Jamie Head"
+      "Ryan Blake",
+      "James Whittaker Gurteen"
     ],
     "out": [],
     "questionable": []
@@ -10878,12 +10913,12 @@
   "cd sabadell": {
     "manager": "David Català",
     "starters_ready": [
-      "Diego Fuoli",
-      "Edgar González",
-      "José Luis Català Vázquez",
-      "Gerard Fornés",
-      "Ton Ripoll",
-      "Pere Pons"
+      "Gastón Valles",
+      "Joel Priego",
+      "Pere Pons",
+      "Quadri Liameed",
+      "Yanis Rahmani",
+      "Ángel Baena"
     ],
     "out": [],
     "questionable": []
@@ -10891,12 +10926,12 @@
   "real sociedad ii": {
     "manager": "Sergio Francisco",
     "starters_ready": [
-      "Lander Olasagasti",
-      "Kazunari Kita",
-      "Luken Beitia",
-      "Unax Agote",
-      "Iñaki Rupérez",
-      "Alex Lebarbier"
+      "Javier Soroeta",
+      "Gorka Gorosabel",
+      "Alex Lebarbier",
+      "Tomás Carbonell",
+      "Alex Marchal",
+      "Daniel Díaz"
     ],
     "out": [],
     "questionable": []
@@ -10905,11 +10940,11 @@
     "manager": "Dani Ponz",
     "starters_ready": [
       "Mariano Carmona",
-      "Ramon Vila",
-      "Iker Ortega",
-      "Álex Serra",
-      "Juan Larios",
-      "Jesus Clemente"
+      "Roberto López",
+      "Fidel",
+      "Marcos Bustillo",
+      "Jorge Rastrojo",
+      "Justin Smith"
     ],
     "out": [],
     "questionable": []
@@ -10917,12 +10952,12 @@
   "sportivo san lorenzo": {
     "manager": "Miguel Cristaldo",
     "starters_ready": [
-      "Juan Salgueiro",
-      "Orlando Gallardo",
-      "Isidro Pitta",
-      "Jorge Ortega",
-      "Luis Cáceres",
-      "Rhuan dos Santos"
+      "Marcelo Ferreira",
+      "José Barrios",
+      "Rodrigo Amarilla",
+      "Álex Álvarez",
+      "Santiago Salcedo",
+      "Cristian Colmán"
     ],
     "out": [],
     "questionable": []
@@ -10930,12 +10965,12 @@
   "rubio ñú": {
     "manager": "Héctor Marecos",
     "starters_ready": [
-      "César Villagra",
-      "Osvaldo Argüello",
-      "Mathías Martínez",
-      "Derlis Mereles",
-      "Javier Vallejos",
-      "Tulio Schwarz"
+      "Steven Perez",
+      "Rodrigo Ruíz Díaz",
+      "Mauricio Roldan",
+      "Aaron Páez",
+      "Octavio Alfonso",
+      "Mauricio De Carvalho"
     ],
     "out": [],
     "questionable": []
@@ -10943,12 +10978,12 @@
   "técnico universitario": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Bagner Delgado",
+      "Luis Estupiñan",
+      "Wagner Caicedo",
+      "Heuyín Guardia",
+      "Cristopher Arteaga",
+      "Anthony Castilo"
     ],
     "out": [],
     "questionable": []
@@ -10956,12 +10991,12 @@
   "manta f.c.": {
     "manager": "Efrén Mera",
     "starters_ready": [
-      "Daniel Valencia",
-      "Christian Alemán",
-      "Roberto Burbano",
-      "Dagner Quintero",
-      "Justin Peñarrieta",
-      "Félix Zambrano"
+      "Jean Carlos Blanco",
+      "Jostin Alman",
+      "Feyiseitan Asagidigbi",
+      "Maikel Valencia",
+      "Walter Chala",
+      "Exequiel Beltramone"
     ],
     "out": [],
     "questionable": []
@@ -10969,12 +11004,12 @@
   "sportivo luqueño": {
     "manager": "Juan Pablo Pumpido",
     "starters_ready": [
-      "Marcelo Ferreira",
-      "Jorge Benítez",
-      "Rodrigo Rojas",
-      "Lautaro Comas",
-      "Pablo Aguilar",
-      "Alfredo Aguilar"
+      "Iván Maggi",
+      "Marcelo Pérez",
+      "Óscar Ruiz",
+      "Walter González",
+      "Kevin Pereira",
+      "Marcelo Ojeda"
     ],
     "out": [],
     "questionable": []
@@ -10982,12 +11017,12 @@
   "2 de mayo": {
     "manager": "Felipe Giménez",
     "starters_ready": [
-      "Rodrigo Ruiz Díaz",
-      "Elías Alfonso",
-      "Brahian Ayala",
-      "Javier Domínguez",
-      "Miguel Barreto",
-      "Carlos Servín"
+      "Fernando Cáceres",
+      "Matías Moya",
+      "Marcelo González",
+      "Pedro Delvalle",
+      "Ariel Cervera",
+      "Jorge Sanguina"
     ],
     "out": [],
     "questionable": []
@@ -10995,12 +11030,12 @@
   "atlético junior": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Luis Muriel",
+      "Teófilo Gutiérrez",
+      "Guillermo Paiva",
+      "Cristian Barrios",
+      "Joel Canchimbo",
+      "Brayan Castrillón"
     ],
     "out": [],
     "questionable": []
@@ -11008,12 +11043,12 @@
   "cúcuta deportivo": {
     "manager": "Bernardo Redín",
     "starters_ready": [
-      "Jonathan Agudelo",
-      "Lucas Ríos",
-      "Cristian Álvarez",
-      "William Parra",
-      "Hernán Pertúz",
-      "Eduar Esteban"
+      "Jaime Peralta",
+      "Dayan Pérez",
+      "Jhon Quiñónes",
+      "Jhonatan Agudelo",
+      "Marlon Carabalí",
+      "Hassler Beltrán"
     ],
     "out": [],
     "questionable": []
@@ -11021,12 +11056,12 @@
   "anaitasuna": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Oihan Etxaniz Uzin",
+      "Jokin Errazu",
+      "Hicham Hazin",
+      "Carlos Juaristi Badiola",
+      "Aritz Albizuri Sudupe",
+      "Ander Pastrian Soraluze"
     ],
     "out": [],
     "questionable": []
@@ -11034,12 +11069,12 @@
   "cd pamplona": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Mikel Mahugo Cabañas",
+      "Mikel Cubillo",
+      "Martín Saralegui",
+      "Javier Zapata Echeverría",
+      "Javier Ripa Guillén",
+      "Fernando Francés Simón"
     ],
     "out": [],
     "questionable": []
@@ -11047,12 +11082,12 @@
   "amorebieta": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Xalbat Larralde Null",
+      "Unax Benito",
+      "Unai Bikandi Ortega",
+      "Peru Candaudap",
+      "Jon Etxaniz",
+      "Jon Azkuna"
     ],
     "out": [],
     "questionable": []
@@ -11060,12 +11095,12 @@
   "ud logroñés": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Raúl Bello",
+      "Prince Chinedu Kevins Brito",
+      "Papa Dame Ba",
+      "Marcos Baselga",
+      "Julen Berasategi Hernández",
+      "Ismael Santana"
     ],
     "out": [],
     "questionable": []
@@ -11086,12 +11121,12 @@
   "real jaen cf": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Yanis Senhadji",
+      "Mouhamadou Keita",
+      "Mohamed Sanhaji Brahami",
+      "Marco Siverio Toro",
+      "José Álvarez",
+      "Carlos Polo"
     ],
     "out": [],
     "questionable": []
@@ -11099,12 +11134,12 @@
   "trival valderas": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Álex Pérez Gómez",
+      "Tanke",
+      "Rivero",
+      "Raúl Yago Jusdado Sánchez",
+      "Manuel Bielo Beata",
+      "Kpanloh Baptistin Goha"
     ],
     "out": [],
     "questionable": []
@@ -11112,12 +11147,12 @@
   "bristol rovers": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Fabrizio Cavegn",
+      "Bobby Kamwa",
+      "Ellis Harrison",
+      "Shaqai Forde",
+      "Joe Quigley",
+      "Arvin Appiah"
     ],
     "out": [],
     "questionable": []
@@ -11125,12 +11160,12 @@
   "nottingham forest u21": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Jayden Powell",
+      "Zyan Blake",
+      "Kanye Bradshaw",
+      "Basima Balagizi",
+      "Shakir Samuels",
+      "Archie Whitehall"
     ],
     "out": [],
     "questionable": []
@@ -11138,12 +11173,12 @@
   "liverpool u21": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Will Wright",
+      "Joshua Lambie",
+      "Daniel Onanuga",
+      "Jayden Danns",
+      "Kaide Gordon",
+      "Ben Trueman"
     ],
     "out": [],
     "questionable": []
@@ -11151,12 +11186,12 @@
   "fulham u21": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Jonah Kusi-Asare",
+      "Thomas Olyott",
+      "Macauley Zepa",
+      "Jose Badara Mbong Epie Sani",
+      "Terrell Works",
+      "Tarrell Cavell"
     ],
     "out": [],
     "questionable": []
@@ -11164,12 +11199,12 @@
   "brentford u21": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Naeem Giscombe",
+      "Jai Nwosu",
+      "Gustavo Nunes",
+      "Theo Mawene",
+      "Michel Boni",
+      "Kaye Furo"
     ],
     "out": [],
     "questionable": []
@@ -11177,12 +11212,12 @@
   "ipswich town u21": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Luca Fletcher",
+      "Shakil Nicolaou",
+      "Jayden Adetiba",
+      "Sidney Christopher Eldred",
+      "Benjamin Moyano",
+      "Tom Taylor"
     ],
     "out": [],
     "questionable": []
@@ -11190,12 +11225,12 @@
   "tavernes de la valldigna": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Marc Talens Montilla",
+      "Jorge Seral Galindo",
+      "Joan Talens Torres",
+      "Francisco Llario Moscardó",
+      "Erik Martínez Martí",
+      "Carles Boscà Sospedra"
     ],
     "out": [],
     "questionable": []
@@ -11203,12 +11238,12 @@
   "club atlético morelia": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Ruben Del Campo",
+      "Orlando Botello Linares",
+      "José Alonso Flores Ramírez",
+      "Hugo Enrique Ávila Jaimes",
+      "Ander Izarra",
+      "Victor Lopez"
     ],
     "out": [],
     "questionable": []
@@ -11216,12 +11251,12 @@
   "club atlético la paz": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Ángel Robles",
+      "Ulises Jaimes",
+      "Ricardo Renteria",
+      "Oscar Millán",
+      "Martín Barragán",
+      "Luis Alejandro Chiu Urrea"
     ],
     "out": [],
     "questionable": []
@@ -11229,12 +11264,12 @@
   "londrina": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Herbert Mateus Almeida De Oliveira",
+      "Igor Bahia",
+      "William Pottker",
+      "Gilberto",
+      "Vitinho Mota",
+      "Rai Nascimento"
     ],
     "out": [],
     "questionable": []
@@ -11242,12 +11277,12 @@
   "náutico": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Vinícius",
+      "Maranhão",
+      "Derek",
+      "Todinho",
+      "Luiz Claudio",
+      "Victor Andrade"
     ],
     "out": [],
     "questionable": []
@@ -11255,12 +11290,12 @@
   "armenia": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Artur Serobyan",
+      "Artur Gharibyan",
+      "Narek Grigoryan",
+      "Narek Hovhannisyan",
+      "Artur Miranyan",
+      "Zhirayr Shaghoyan"
     ],
     "out": [],
     "questionable": []
@@ -11268,12 +11303,12 @@
   "cyprus": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Marcus Edwards",
+      "Andronikos Kakoulis",
+      "Ioannis Pittas",
+      "Loizos Loizou",
+      "Marinos Tzionis",
+      "Stavros Georgiou"
     ],
     "out": [],
     "questionable": []
@@ -11281,12 +11316,12 @@
   "türkiye": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Baris Alper Yilmaz",
+      "Yunus Akgün",
+      "Oguz Aydin",
+      "Ilhan Fakili",
+      "Kerem Aktürkoglu",
+      "Deniz Gül"
     ],
     "out": [],
     "questionable": []
@@ -11294,12 +11329,12 @@
   "belgium": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Dodi Lukébakio",
+      "Mika Godts",
+      "Romelu Lukaku",
+      "Charles De Ketelaere",
+      "Diego Moreira",
+      "Matias Fernandez-Pardo"
     ],
     "out": [],
     "questionable": []
@@ -11307,12 +11342,12 @@
   "calvo sotelo": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Unai Molina Mena",
+      "Luis Molina",
+      "José Ramón",
+      "Javier Verdú",
+      "Javier Ramírez Morante",
+      "Ismael El Yahimdi El Morabit"
     ],
     "out": [],
     "questionable": []
@@ -11320,12 +11355,12 @@
   "cd artistico navalcarnero": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Álvaro Marcos Rivero",
+      "Álvaro Domínguez Pérez",
+      "Rober",
+      "Mario Sánchez",
+      "Marcos Moraga",
+      "Kensly Vázquez Cervera"
     ],
     "out": [],
     "questionable": []
@@ -11333,12 +11368,12 @@
   "cd tarancon": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Sergio Nieto Del Val",
+      "Paulo Edson Lamelha Romeu Júnior",
+      "Madalin",
+      "Joan Sebastián Londoño Muñoz",
+      "Cabellud",
+      "Antonio Fernández"
     ],
     "out": [],
     "questionable": []
@@ -11346,12 +11381,12 @@
   "barbados": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Thierry Gale",
+      "Niall Reid-Stephen",
+      "Colin Griffith",
+      "Omani Leacock",
+      "Tajio James",
+      "Davion Thorne"
     ],
     "out": [],
     "questionable": []
@@ -11359,12 +11394,12 @@
   "guadeloupe": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "Allan Vulgaire",
+      "Ange-Freddy Plumain",
+      "Taïryk Arconte",
+      "Djamalee Boisné",
+      "Kendy Giblaca",
+      "Dwen Capraja"
     ],
     "out": [],
     "questionable": []
@@ -11372,12 +11407,12 @@
   "cayman islands": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Gunnar Studenthofft",
+      "Jacobbi Tugman",
+      "Sebastian Martinez",
+      "Elijah Seymour",
+      "Christopher Reeves",
+      "Jordan Bonilla"
     ],
     "out": [],
     "questionable": []
@@ -11385,12 +11420,12 @@
   "guyana": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Omari Glasgow",
+      "Osaze De Rosario",
+      "Deon Moore",
+      "Enoch George",
+      "Kelsey Benjamin",
+      "Isaiah Jones"
     ],
     "out": [],
     "questionable": []
@@ -11398,12 +11433,12 @@
   "albania": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Rey Manaj",
+      "Myrto Uzuni",
+      "Arbër Hoxha",
+      "Mirlind Daku",
+      "Taulant Seferi",
+      "Cristian Shpendi"
     ],
     "out": [],
     "questionable": []
@@ -11411,12 +11446,12 @@
   "finland": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Joel Pohjanpalo",
+      "Adrian Svanbäck",
+      "Benjamin Kallman",
+      "Topi Keskinen",
+      "Oliver Antman",
+      "Leo Walta"
     ],
     "out": [],
     "questionable": []
@@ -11424,12 +11459,12 @@
   "czechia": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "Adam Hlozek",
+      "Ryan Naderi",
+      "Václav Sejk",
+      "Daniel Vasulín",
+      "Tomás Chorý",
+      "Idris Hopi"
     ],
     "out": [],
     "questionable": []
@@ -11437,12 +11472,12 @@
   "spain": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Lamine Yamal",
+      "Mikel Oyarzabal",
+      "Nico Williams",
+      "Víctor Muñoz",
+      "Roberto Fernández",
+      "Ferran Torres"
     ],
     "out": [],
     "questionable": []
@@ -11450,12 +11485,12 @@
   "england": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Harry Kane",
+      "Anthony Gordon",
+      "Bukayo Saka",
+      "Rio Ngumoha",
+      "Dominic Calvert-Lewin",
+      "Jude Bellingham"
     ],
     "out": [],
     "questionable": []
@@ -11463,12 +11498,12 @@
   "croatia": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Ivan Perisic",
+      "Marco Pasalic",
+      "Dion Drena Beljo",
+      "Igor Matanovic",
+      "Ante Budimir",
+      "Franjo Ivanovic"
     ],
     "out": [],
     "questionable": []
@@ -11476,12 +11511,12 @@
   "italy": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Pio Esposito",
+      "Gianluca Scamacca",
+      "Moise Kean",
+      "Nicolò Cambiaghi",
+      "Daniel Maldini",
+      "Sebastiano Esposito"
     ],
     "out": [],
     "questionable": []
@@ -11489,12 +11524,12 @@
   "france": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Désiré Doué",
+      "Kylian Mbappé",
+      "Ousmane Dembélé",
+      "Bradley Barcola",
+      "Esteban Lepaul",
+      "Pablo Pagis"
     ],
     "out": [],
     "questionable": []
@@ -11502,12 +11537,12 @@
   "montenegro": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "Nikola Krstovic",
+      "Milutin Osmajic",
+      "Stevan Jovetic",
+      "Dusan Vukovic",
+      "Viktor Djukanovic",
+      "Aleksa Maras"
     ],
     "out": [],
     "questionable": []
@@ -11515,12 +11550,12 @@
   "latvia": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Eduards Daskevics",
+      "Vladislavs Gutkovskis",
+      "Roberts Uldrikis",
+      "Oskars Rubenis",
+      "Markuss Strods",
+      "Dmitrijs Zelenkovs"
     ],
     "out": [],
     "questionable": []
@@ -11528,12 +11563,12 @@
   "san marino": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Nicola Nanni",
+      "Nicolas Giacopetti",
+      "Samuel Pancotti",
+      "Gabriel Capicchioni",
+      "Fausto Salicioni",
+      "Tommaso Podeschi"
     ],
     "out": [],
     "questionable": []
@@ -11541,12 +11576,12 @@
   "belarus": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Artem Shumanskiy",
+      "German Barkovskiy",
+      "Trofim Melnichenko",
+      "Vitali Lisakovic",
+      "Timofey Simanenka",
+      "Karen Vardanyan"
     ],
     "out": [],
     "questionable": []
@@ -11554,12 +11589,12 @@
   "bonaire": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Myron Bostdorp",
+      "Ayrton Cicilia",
+      "Siginho Gerardo",
+      "Fabio Hierck",
+      "Shi-Jon Martina",
+      "Rowendley Martijn"
     ],
     "out": [],
     "questionable": []
@@ -11567,12 +11602,12 @@
   "cuba": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Daniel Díaz",
+      "Didier Reinoso",
+      "Yasniel Matos",
+      "Luis Paradela",
+      "Eloy Nebreda Martinez",
+      "Yunior Pérez"
     ],
     "out": [],
     "questionable": []
@@ -11580,12 +11615,12 @@
   "águilas doradas": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Antony Vásquez",
+      "Ricardo Márquez",
+      "Fabián Suárez",
+      "Eduar Arízalas",
+      "Matías Ramírez",
+      "Andrés Carreño"
     ],
     "out": [],
     "questionable": []
@@ -11593,12 +11628,12 @@
   "fortaleza ceif": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Juan Sebastian Herrera",
+      "Franco Pulicastro",
+      "Jhonier Salas",
+      "Ítalo Montaño",
+      "Jhonier Blanco",
+      "Teun Wilke"
     ],
     "out": [],
     "questionable": []
@@ -11606,12 +11641,12 @@
   "deportivo pereira": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Marco Pérez",
+      "Yuber Quiñones",
+      "Jhon Largacha",
+      "Anderson Plata",
+      "Manuel Alejandro Diaz Hernandez",
+      "Felipe Mosquera"
     ],
     "out": [],
     "questionable": []
@@ -11619,12 +11654,12 @@
   "internacional de bogotá": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Fabricio Sanguinetti",
+      "Facundo Boné",
+      "Johan Caballero",
+      "Cristián Dájome",
+      "Ronaldo Julio",
+      "Sebastián David Girado Díaz"
     ],
     "out": [],
     "questionable": []
@@ -11632,12 +11667,12 @@
   "boyacá chicó fc": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Santiago Mera",
+      "Alejandro Maya Giraldo",
+      "Estiven Sarria",
+      "Jacobo Pimentel",
+      "Felipe Cifuentes",
+      "Andres Aedo"
     ],
     "out": [],
     "questionable": []
@@ -11645,12 +11680,12 @@
   "aruba": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Carlito Fermina",
+      "Alljereau Mercera",
+      "Gello Robertha",
+      "Kymani Nedd",
+      "Jayden Kruydenhof",
+      "Mishawn Molina"
     ],
     "out": [],
     "questionable": []
@@ -11658,12 +11693,12 @@
   "martinique": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Janis Antiste",
+      "Ludovic Blas",
+      "Brighton Labeau",
+      "Johnny Marajo",
+      "Enrick Reuperné",
+      "Alexandre Parsemain"
     ],
     "out": [],
     "questionable": []
@@ -11671,12 +11706,12 @@
   "antigua and barbuda": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Christopher Douglas",
+      "Kayonte George",
+      "Daryl Massicot",
+      "Shalon Knight",
+      "Keon Greene",
+      "D'Andre Bishop"
     ],
     "out": [],
     "questionable": []
@@ -11684,12 +11719,12 @@
   "trinidad and tobago": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Levi García",
+      "Ryan Telfer",
+      "Real Gill",
+      "Kaihim Thomas",
+      "Dante Sealy",
+      "Daniel Phillips"
     ],
     "out": [],
     "questionable": []
@@ -11697,12 +11732,12 @@
   "cerro largo": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Santiago Valentín Brun Recalde",
+      "Lucas Emiliano Píriz Rodríguez",
+      "Gustavo Viera",
+      "Elías De León",
+      "Diego Daguerre Irazabal",
+      "Bruno Hernández"
     ],
     "out": [],
     "questionable": []
@@ -11710,12 +11745,12 @@
   "progreso": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Nahuel López",
+      "Nahuel Acosta",
+      "Maximiliano Juambeltz",
+      "Matteo Copelotti",
+      "Lucas Viana Gauna",
+      "Jonathan Dos Santos"
     ],
     "out": [],
     "questionable": []
@@ -11723,12 +11758,12 @@
   "curaçao": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Kenji Gorré",
+      "Jordi Paulina",
+      "Jürgen Locadia",
+      "Jearl Margaritha",
+      "Jeremy Antonisse",
+      "Juninho Bacuna"
     ],
     "out": [],
     "questionable": []
@@ -11736,12 +11771,12 @@
   "panama": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Manuel Morán",
+      "José Kadir",
+      "José Fajardo",
+      "Josué Yamir Vergara Ortega",
+      "Ismael Díaz",
+      "Daivis Murillo"
     ],
     "out": [],
     "questionable": []
@@ -11749,12 +11784,12 @@
   "moldova": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Petru Popescu",
+      "Nicky Clescenco",
+      "Vladimir Fratea",
+      "Danila Forov",
+      "Alexandru Bețivu",
+      "Sergiu Perciun"
     ],
     "out": [],
     "questionable": []
@@ -11762,12 +11797,12 @@
   "kazakhstan": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Ramazan Karimov",
+      "Artur Shushenachev",
+      "Stanislav Basmanov",
+      "Ismail Bekbolat",
+      "Maksim Samorodov",
+      "Elkhan Astanov"
     ],
     "out": [],
     "questionable": []
@@ -11775,12 +11810,12 @@
   "bermuda": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Djair Parfitt-Williams",
+      "Ajani Burchall",
+      "Enrique Russell",
+      "Nahki Wells",
+      "Sincere Hall",
+      "Zeiko Lewis"
     ],
     "out": [],
     "questionable": []
@@ -11788,12 +11823,12 @@
   "st. lucia": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Kegan Caull",
+      "Caniggia Elva",
+      "Donavan Phillip",
+      "Shevon Byron",
+      "Yanic Noel",
+      "Garvin Reggie"
     ],
     "out": [],
     "questionable": []
@@ -11801,12 +11836,12 @@
   "puerto rico": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Wilfredo Rivera",
+      "Leandro Antonetti",
+      "Jeremy De León",
+      "Ricardo Rivera",
+      "Lazzar Ramos",
+      "Jaden Servania"
     ],
     "out": [],
     "questionable": []
@@ -11814,12 +11849,12 @@
   "dominica": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Troy Jules",
+      "Reon Cuffy",
+      "Javid George",
+      "Audel Laville",
+      "Taran George",
+      "Savio Anselm"
     ],
     "out": [],
     "questionable": []
@@ -11827,12 +11862,12 @@
   "andorra": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Guillaume Lopez",
+      "Aron Rodrigo",
+      "Albert Rosas",
+      "Alexandre Martínez",
+      "Gerard Garcia",
+      "Ricard Fernández"
     ],
     "out": [],
     "questionable": []
@@ -11840,12 +11875,12 @@
   "gibraltar": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Tjay De Barr",
+      "Leon Mason",
+      "Dylan Borge",
+      "Carlos Peliza Richards",
+      "Jaiden Bartolo",
+      "Liam Jessop"
     ],
     "out": [],
     "questionable": []
@@ -11853,12 +11888,12 @@
   "bulgaria": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Atanas Iliev",
+      "Kristiyan Balov",
+      "Georgi Rusev",
+      "Zdravko Dimitrov",
+      "Martin Minchev",
+      "Lukas Petkov"
     ],
     "out": [],
     "questionable": []
@@ -11866,12 +11901,12 @@
   "iceland": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Orri Óskarsson",
+      "Andri Gudjohnsen",
+      "Jon Dagur Thorsteinsson",
+      "Kristall Máni Ingason",
+      "Isak Thorvaldsson",
+      "Brynjólfur Willumsson"
     ],
     "out": [],
     "questionable": []
@@ -11879,12 +11914,12 @@
   "liechtenstein": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Fabio Notaro",
+      "Alessandro Alfredo Lo Russo",
+      "Ferhat Saglam",
+      "William Pizzi",
+      "Marcel Büchel",
+      "Kenny Kindle"
     ],
     "out": [],
     "questionable": []
@@ -11892,12 +11927,12 @@
   "azerbaijan": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Mahir Emreli",
+      "Musa Qurbanly",
+      "Lorenzo Mezzotero",
+      "Abdulakh Khaybulaev",
+      "Oruc Mammadov",
+      "Aleksey Isayev"
     ],
     "out": [],
     "questionable": []
@@ -11905,12 +11940,12 @@
   "luxembourg": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Aiman Dardari",
+      "Omar Natami",
+      "Jayson Videira",
+      "Danel Sinani",
+      "Patrick Macedo Batista",
+      "Arnold Qevani"
     ],
     "out": [],
     "questionable": []
@@ -11918,12 +11953,12 @@
   "estonia": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Karel Mustmaa",
+      "Mattias Männilaan",
+      "Alex Matthias Tamm",
+      "Marten-Chris Paalberg",
+      "Kevor Palumets",
+      "Mattias Käit"
     ],
     "out": [],
     "questionable": []
@@ -11931,12 +11966,12 @@
   "netherlands": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Mexx Meerdink",
+      "Cody Gakpo",
+      "Joshua Zirkzee",
+      "Crysencio Summerville",
+      "Ruben Van Bommel",
+      "Noa Lang"
     ],
     "out": [],
     "questionable": []
@@ -11944,12 +11979,12 @@
   "greece": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Fotis Ioannidis",
+      "Georgios Masouras",
+      "Tasos Douvikas",
+      "Vangelis Pavlidis",
+      "Andrews Tetteh",
+      "Charalambos Kostoulas"
     ],
     "out": [],
     "questionable": []
@@ -11957,12 +11992,12 @@
   "scotland": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Kieron Bowie",
+      "Ben Gannon-Doak",
+      "Oliver McBurnie",
+      "Findlay Curtis",
+      "Robbie Ure",
+      "Joshua McPake"
     ],
     "out": [],
     "questionable": []
@@ -11970,12 +12005,12 @@
   "north macedonia": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Hristijan Maleski",
+      "Bojan Miovski",
+      "Elmin Rastoder",
+      "Ljupco Doriev",
+      "Azer Omeragikj",
+      "Marko Gjorgjievski"
     ],
     "out": [],
     "questionable": []
@@ -11983,12 +12018,12 @@
   "serbia": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Andrija Zivkovic",
+      "Luka Jovic",
+      "Mihajlo Cvetkovic",
+      "Dejan Joveljic",
+      "Dusan Tadic",
+      "Dusan Vlahovic"
     ],
     "out": [],
     "questionable": []
@@ -11996,12 +12031,12 @@
   "germany": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Younes Ebnoutalib",
+      "Derry Scherhant",
+      "Kai Havertz",
+      "Niclas Füllkrug",
+      "Brajan Gruda",
+      "Felix Nmecha"
     ],
     "out": [],
     "questionable": []
@@ -12009,12 +12044,12 @@
   "slovakia": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "David Strelec",
+      "Ivan Schranz",
+      "Leo Sauer",
+      "Róbert Bozeník",
+      "Erik Prekop",
+      "Dávid Duris"
     ],
     "out": [],
     "questionable": []
@@ -12022,12 +12057,12 @@
   "faroe islands": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Áki Debes Samuelsen",
+      "Adrian Justinussen",
+      "Joannes Bjartalid",
+      "Poul Kallsberg",
+      "Jorgen Nielsen",
+      "Aron Benjaminsen"
     ],
     "out": [],
     "questionable": []
@@ -12035,12 +12070,12 @@
   "slovenia": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Aljosa Matko",
+      "Danijel Sturm",
+      "Zan Vipotnik",
+      "Zan Celar",
+      "Andraz Sporar",
+      "Tjas Begic"
     ],
     "out": [],
     "questionable": []
@@ -12048,12 +12083,12 @@
   "switzerland": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Zeki Amdouni",
+      "Dan Ndoye",
+      "Winsley Boteli",
+      "Cedric Itten",
+      "Samuel Ballet",
+      "Joel Monteiro"
     ],
     "out": [],
     "questionable": []
@@ -12061,12 +12096,12 @@
   "grenada": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Caleb Redhead",
+      "Jamal Gittens",
+      "Joshua Issac",
+      "Shavon John-Brown",
+      "Lucas Akins",
+      "Darius Johnson"
     ],
     "out": [],
     "questionable": []
@@ -12074,12 +12109,12 @@
   "st. kitts and nevis": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Tiquanny Williams",
+      "Tyreece Simpson",
+      "Omari Sterling-James",
+      "Harry Panayiotou",
+      "Keke Jeffers",
+      "Kyle Kelly"
     ],
     "out": [],
     "questionable": []
@@ -12087,12 +12122,12 @@
   "salamanca uds": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Óscar León Suárez",
+      "Álex Caramelo",
+      "Willian Peña",
+      "Luis Bilbao",
+      "Larry Opara",
+      "Aimar Vicandi"
     ],
     "out": [],
     "questionable": []
@@ -12100,12 +12135,12 @@
   "montevideo city torque": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Yonatan Muñoz",
+      "Salomón Rodríguez",
+      "Ramiro Lecchini",
+      "Luka Andrade",
+      "Juan Quintana",
+      "Ignacio Molina"
     ],
     "out": [],
     "questionable": []
@@ -12113,12 +12148,12 @@
   "racing (montevideo)": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Tomás Habib",
+      "Thiago Fernández",
+      "Sebastián Da Silva",
+      "Rodrigo Gadea",
+      "Nicolás Sosa Sánchez",
+      "Juan Guarino Mazzei"
     ],
     "out": [],
     "questionable": []
@@ -12126,12 +12161,12 @@
   "st. martin": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Axel Raga Rigobert",
+      "Jordan Alexandre",
+      "Rahim Denis",
+      "Imri Chevalier",
+      "Pierre-Bertrand Arné",
+      "Yanis Montantin"
     ],
     "out": [],
     "questionable": []
@@ -12139,12 +12174,12 @@
   "el salvador": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Brayan Gil",
+      "Rafael Tejada",
+      "Styven Vásquez",
+      "Nathan Ordaz",
+      "Cristian Gil",
+      "Noel Rivera"
     ],
     "out": [],
     "questionable": []
@@ -12152,12 +12187,12 @@
   "montserrat": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Lyle Taylor",
+      "Ashley Boatswain",
+      "Brandon Barzey",
+      "Tyrone Baker",
+      "Seigel Rodney",
+      "Mylan Benjamin"
     ],
     "out": [],
     "questionable": []
@@ -12165,12 +12200,12 @@
   "nicaragua": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Jaime Moreno",
+      "Byron Bonilla",
+      "Widman Talavera",
+      "Raheem Cole",
+      "Efraín Mejía",
+      "Jorge García"
     ],
     "out": [],
     "questionable": []
@@ -12178,12 +12213,12 @@
   "guatemala": {
     "manager": "Patrick Vieira",
     "starters_ready": [
-      "Andrea Pinamonti",
-      "Morten Frendrup",
-      "Milan Badelj",
-      "Aarón Martín",
-      "Johan Vásquez",
-      "Nicola Leali"
+      "William Fajardo",
+      "Rubio Rubín",
+      "Darwin Lom",
+      "Rudy Muñoz",
+      "Olger Escobar",
+      "Jefry Bantes"
     ],
     "out": [],
     "questionable": []
@@ -12191,12 +12226,12 @@
   "canada": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Theo Corbeanu",
+      "Tani Oluwaseyi",
+      "Tajon Buchanan",
+      "Promise David",
+      "Marcus Caldeira",
+      "Liam Millar"
     ],
     "out": [],
     "questionable": []
@@ -12204,12 +12239,12 @@
   "castellón": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Ousmane Camara",
+      "Adam Jakobsen",
+      "Pablo Santiago",
+      "Varo",
+      "Raúl Sánchez",
+      "Rodrigo Rêgo"
     ],
     "out": [],
     "questionable": []
@@ -12217,12 +12252,12 @@
   "central español fútbol club": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Santiago Sequeira Leguina",
+      "Raúl Andrés Tarragona Lemos",
+      "Máximo Alonso",
+      "Matías Kusmanis",
+      "Mariano Fernando Aguilera",
+      "Jonathan Dellarossa"
     ],
     "out": [],
     "questionable": []
@@ -12256,12 +12291,12 @@
   "cambridge united": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Gassan Ahadme",
+      "Shayne Lavery",
+      "Sullay Kaikai",
+      "Louis Appere",
+      "Isaac Heath",
+      "Callum Stead"
     ],
     "out": [],
     "questionable": []
@@ -12269,12 +12304,12 @@
   "tamworth": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Kieren Donnelly",
+      "Dan Creaney",
+      "Jake Hutchinson",
+      "Ramell Carter",
+      "Vanylson Silva",
+      "Taylor Wyse"
     ],
     "out": [],
     "questionable": []
@@ -12282,12 +12317,12 @@
   "boston united": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Kenneth Aboh",
+      "Lennon Wheeldon",
+      "Lenell John-Lewis",
+      "Oliver Bostock",
+      "Jack Holmes",
+      "Connor McBride"
     ],
     "out": [],
     "questionable": []
@@ -12295,12 +12330,12 @@
   "gateshead": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Jordi Hiwula",
+      "Michael Spellman",
+      "Ashley Boatswain",
+      "Frederick Issaka",
+      "Luke Supyk",
+      "Billy Chadwick"
     ],
     "out": [],
     "questionable": []
@@ -12308,12 +12343,12 @@
   "hartlepool united": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "William Harris",
+      "Jordan Hugill",
+      "Chris Popov",
+      "Luke Charman",
+      "Terry Bondo",
+      "Charlie Thomas Thornton"
     ],
     "out": [],
     "questionable": []
@@ -12321,12 +12356,12 @@
   "worthing": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Razzaq De Graft",
+      "Jordan Young",
+      "Ramell Carter",
+      "Dominic Johnson-Fisher",
+      "Charley Kendall",
+      "Dan Isichei"
     ],
     "out": [],
     "questionable": []
@@ -12334,12 +12369,12 @@
   "southend united": {
     "manager": "Cesc Fàbregas",
     "starters_ready": [
-      "Patrick Cutrone",
-      "Nico Paz",
-      "Gabriel Strefezza",
-      "Máximo Perrone",
-      "Alberto Dossena",
-      "Jean Butez"
+      "Promise Omochere",
+      "Harry Cardwell",
+      "Ryan Colclough",
+      "Tyreece Simpson",
+      "Zavier Massiah-Edwards",
+      "Omari Patrick"
     ],
     "out": [],
     "questionable": []
@@ -12347,12 +12382,12 @@
   "solihull moors": {
     "manager": "Marco Silva",
     "starters_ready": [
-      "Alex Iwobi",
-      "Rodrigo Muniz",
-      "Sander Berge",
-      "Antonee Robinson",
-      "Joachim Andersen",
-      "Bernd Leno"
+      "Jacob Wakeling",
+      "Ben Wodskou",
+      "Callum Mcfarlane",
+      "Elias Kachunga",
+      "Charlie Footes",
+      "Ashton Lance-Pencheon"
     ],
     "out": [],
     "questionable": []
@@ -12360,12 +12395,12 @@
   "woking": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "John Marquis",
+      "Aiden O'Brien",
+      "Josh Kelly",
+      "Liam Dulson",
+      "Taylan Harris",
+      "Josh Ayres"
     ],
     "out": [],
     "questionable": []
@@ -12425,12 +12460,12 @@
   "estudiantes (buenos aires)": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Ian Vera",
+      "Darío Rostagno",
+      "Ezequiel Almirón",
+      "Mateo Acosta",
+      "Matías Núñez",
+      "Jorge Correa"
     ],
     "out": [],
     "questionable": []
@@ -12438,12 +12473,12 @@
   "sint maarten": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Imar Kort",
+      "Chovanie Amatkarijo",
+      "Len Bleeker",
+      "Khalid Lamente Tavernier",
+      "Jeffterick Justiniano Martina",
+      "Stanlei Ferdinand"
     ],
     "out": [],
     "questionable": []
@@ -12451,12 +12486,12 @@
   "french guiana": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Yvelin Nozile",
+      "Jules Haabo",
+      "Armando Chri Pinas",
+      "Joël Sarrucco",
+      "Max Gourpil",
+      "Baptiste Jules Torvic"
     ],
     "out": [],
     "questionable": []
@@ -12464,12 +12499,12 @@
   "temperley": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Gabriel Hauche",
+      "Marcos Echeverría",
+      "Brandán Fernando",
+      "Facundo Krüger",
+      "Oswaldo Pacheco",
+      "Nicolás Ávalos"
     ],
     "out": [],
     "questionable": []
@@ -12477,12 +12512,12 @@
   "ciudad de bolívar": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Guillermo Sánchez",
+      "Maximiliano Gutiérrez",
+      "Khalil Caraballo",
+      "Braian Duarte",
+      "Francisco Ilarregui",
+      "Jonathan Maciel"
     ],
     "out": [],
     "questionable": []
@@ -12490,12 +12525,12 @@
   "avaí": {
     "manager": "Eduardo Berizzo",
     "starters_ready": [
-      "James Rodríguez",
-      "Jhonder Cádiz",
-      "Andrés Guardado",
-      "Stiven Mendoza",
-      "Adonis Frías",
-      "Alfonso Blanco"
+      "Luis Eduardo",
+      "Caio Suassuna",
+      "Léo Gamalho",
+      "Felipe Vizeu",
+      "Isaías",
+      "Gabriel Frederico Cipriano"
     ],
     "out": [],
     "questionable": []
@@ -12503,12 +12538,12 @@
   "crb": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Mikael",
+      "Dadá",
+      "Thiago Fernandes",
+      "Luiz Phellype",
+      "Douglas Baggio",
+      "Joao Neto"
     ],
     "out": [],
     "questionable": []
@@ -12516,12 +12551,12 @@
   "criciúma": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Waguininho",
+      "Diego",
+      "Nicolás",
+      "Yuri",
+      "Jhonata Robert",
+      "Cauê"
     ],
     "out": [],
     "questionable": []
@@ -12529,12 +12564,12 @@
   "novorizontino": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Robson",
+      "Carlão",
+      "Nicolas Careca",
+      "Tavinho",
+      "Francisco Reidiney Duarte Gomes",
+      "Vinicius Paiva"
     ],
     "out": [],
     "questionable": []
@@ -12542,12 +12577,12 @@
   "vila nova": {
     "manager": "Fabian Hürzeler",
     "starters_ready": [
-      "Danny Welbeck",
-      "Kaoru Mitoma",
-      "Georginio Rutter",
-      "Carlos Baleba",
-      "Jan Paul van Hecke",
-      "Bart Verbruggen"
+      "Janderson",
+      "André Luis",
+      "Ryan Lima",
+      "Everton",
+      "Rafael Silva",
+      "Dellatorre"
     ],
     "out": [],
     "questionable": []
@@ -12555,12 +12590,12 @@
   "juventude": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Safira",
+      "Marcos Paulo",
+      "Fábio Lima",
+      "Alan Kardec",
+      "Lucas Alves",
+      "Luis Amarilla"
     ],
     "out": [],
     "questionable": []
@@ -12568,12 +12603,12 @@
   "botafogo-sp": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Hygor",
+      "Wesley Pinheiro",
+      "Hugo",
+      "Arthur Caike",
+      "Kelvin",
+      "Jefferson Nem"
     ],
     "out": [],
     "questionable": []
@@ -12581,12 +12616,12 @@
   "operário pr": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Pablo",
+      "Caio Dantas",
+      "Hildeberto Pereira",
+      "Aylon",
+      "Maxwell",
+      "Vinicius Mingotti"
     ],
     "out": [],
     "questionable": []
@@ -12594,12 +12629,12 @@
   "são bernardo": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Pedrinho",
+      "Pedro Vitor",
+      "Felipe Garcia",
+      "Fabrício Daniel",
+      "Daniel Davi Simao Roque",
+      "Daniel Amorim"
     ],
     "out": [],
     "questionable": []
@@ -12607,12 +12642,12 @@
   "sport": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Pedro Perotti",
+      "Chrystian",
+      "Diego Hernández",
+      "Neto",
+      "Marlon",
+      "Juan Alano"
     ],
     "out": [],
     "questionable": []
@@ -12620,12 +12655,12 @@
   "deportivo maldonado": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Thiago David Ortega Silva",
+      "Santiago Ramírez",
+      "Renato César",
+      "Guillermo Lopez",
+      "Emiliano Mozzone",
+      "Christian Tabó"
     ],
     "out": [],
     "questionable": []
@@ -12633,12 +12668,12 @@
   "cerro": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Tiago Rijo",
+      "Pablo Nongoy",
+      "Jorge Severo",
+      "Emiliano Rodríguez",
+      "Cristian Barros",
+      "Bruno Daniel Morales Rodríguez"
     ],
     "out": [],
     "questionable": []
@@ -12776,12 +12811,12 @@
   "colón (santa fe)": {
     "manager": "Marcelino García Toral",
     "starters_ready": [
-      "Ayoze Pérez",
-      "Álex Baena",
-      "Thierno Barry",
-      "Dani Parejo",
-      "Logan Costa",
-      "Diego Conde"
+      "Ignacio Lagos",
+      "Alan Bonansea",
+      "Julián Marcioni",
+      "Dario Sarmiento",
+      "Leandro Garate",
+      "Jerónimo Buosi"
     ],
     "out": [],
     "questionable": []
@@ -12789,12 +12824,12 @@
   "midland": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "David Bulacio",
+      "Marcos Roseti",
+      "Amos Perales",
+      "Rodrigo Cao",
+      "Valentino Madalón",
+      "Uriel Guzmán"
     ],
     "out": [],
     "questionable": []
@@ -12802,12 +12837,12 @@
   "mirassol": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Bruno Santos",
+      "Edson Carioca",
+      "André Luis",
+      "Negueba",
+      "Carlos Eduardo",
+      "Alesson"
     ],
     "out": [],
     "questionable": []
@@ -12815,12 +12850,12 @@
   "atlético-mg": {
     "manager": "José Bordalás",
     "starters_ready": [
-      "Borja Mayoral",
-      "Mauro Arambarri",
-      "Luis Milla",
-      "Christantus Uche",
-      "Djené Dakonam",
-      "David Soria"
+      "Tomás Cuello",
+      "Mateo Casierra",
+      "Alan Minda",
+      "Dudu",
+      "Thiago Borbas",
+      "Cauã Soares"
     ],
     "out": [],
     "questionable": []
@@ -12828,12 +12863,12 @@
   "haiti": {
     "manager": "Paúl Vélez",
     "starters_ready": [
-      "Diego Armas",
-      "Sergio González",
-      "Carlos Arboleda",
-      "Elvis Patta",
-      "Edison Carcelén",
-      "Walter Chávez"
+      "Wilson Isidor",
+      "Yassin Fortuné",
+      "Louicius Deedson",
+      "Fafà Picault",
+      "Dany Jean",
+      "Ruben Providence"
     ],
     "out": [],
     "questionable": []
@@ -12841,12 +12876,12 @@
   "united states": {
     "manager": "Will Still",
     "starters_ready": [
-      "M'Bala Nzola",
-      "Florian Sotoca",
-      "Adrien Thomasson",
-      "Andy Diouf",
-      "Facundo Medina",
-      "Hervé Koffi"
+      "Zavier Gozo",
+      "Mathis Albert",
+      "Justin Ellis",
+      "Julian Hall",
+      "Folarin Balogun",
+      "Damion Downs"
     ],
     "out": [],
     "questionable": []
@@ -12854,12 +12889,12 @@
   "banfield": {
     "manager": "Éric Roy",
     "starters_ready": [
-      "Ludovic Ajorque",
-      "Romain Del Castillo",
-      "Mahdi Camara",
-      "Hugo Magnetti",
-      "Brendan Chardonnet",
-      "Marco Bizot"
+      "Valentín González",
+      "Thomas Rodriguez",
+      "Matías Hernández",
+      "Lisandro Piñero",
+      "Jeremiah Ezekiel Acosta Bobadilla",
+      "Federico Anselmo"
     ],
     "out": [],
     "questionable": []
@@ -12867,12 +12902,12 @@
   "deportivo madryn": {
     "manager": "Franck Haise",
     "starters_ready": [
-      "Evann Guessand",
-      "Gaëtan Laborde",
-      "Mohamed-Ali Cho",
-      "Hicham Boudaoui",
-      "Dante",
-      "Marcin Bułka"
+      "Luis Silba",
+      "Nicolás Servetto",
+      "Juan Peinipil",
+      "Ezequiel Montagna",
+      "Leonardo Marinucci",
+      "Yamil García"
     ],
     "out": [],
     "questionable": []
@@ -12880,12 +12915,12 @@
   "deportivo maipú": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Tomás Silva",
+      "Juan Cruz Giacone",
+      "Lisandro Cabrera",
+      "Luca Landriel",
+      "Mirko Bonfigli",
+      "Juan Pablo Gobetto"
     ],
     "out": [],
     "questionable": []
@@ -12893,12 +12928,12 @@
   "albion fc": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Álvaro López",
+      "Tobías Figueroa",
+      "Joaquín Iurko Varela Pettorossi",
+      "Iker Zufiaurre",
+      "Franco Abreu Firenze",
+      "Tomás Moschión"
     ],
     "out": [],
     "questionable": []
@@ -12906,12 +12941,12 @@
   "gimnasia y esgrima (jujuy)": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Francisco Molina",
+      "Octavio Bianchi",
+      "Cristian Menéndez",
+      "Mauro Daniel Cachi",
+      "David Gallardo",
+      "Pablo Argañaraz"
     ],
     "out": [],
     "questionable": []
@@ -12919,12 +12954,12 @@
   "almirante brown": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Javier Martínez",
+      "Milton Zanotti",
+      "Tomás Almada",
+      "Joaquin Ibañez",
+      "Ramón Gonzalez",
+      "Tobías Zarate"
     ],
     "out": [],
     "questionable": []
@@ -12932,12 +12967,12 @@
   "chapecoense": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Marcinho",
+      "Maurício Garcez",
+      "Túlio Eduardo Silva De Oliveira",
+      "Yannick Bolasie",
+      "Rafael Cavalheira",
+      "Kevin Ramírez"
     ],
     "out": [],
     "questionable": []
@@ -12945,12 +12980,12 @@
   "st. vincent and the grenadines": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Oalex Anderson",
+      "Azhino Solomon",
+      "Steven Pierre",
+      "Cornelius Stewart",
+      "Diel Spring",
+      "Malcolm Stewart"
     ],
     "out": [],
     "questionable": []
@@ -12958,12 +12993,12 @@
   "belize": {
     "manager": "Oliver Glasner",
     "starters_ready": [
-      "Jean-Philippe Mateta",
-      "Ismaïla Sarr",
-      "Eberechi Eze",
-      "Adam Wharton",
-      "Marc Guéhi",
-      "Dean Henderson"
+      "Krisean López",
+      "Daijon Daniels",
+      "Moises Hernandez",
+      "Keydenshaay Zane Bowen",
+      "Desmond Wade",
+      "Michael Palacio"
     ],
     "out": [],
     "questionable": []
@@ -12971,12 +13006,12 @@
   "jamaica": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Javon East",
+      "Rumarn Burrell",
+      "Tyreece Campbell",
+      "Renaldo Cephas",
+      "Jahmarie Nolan",
+      "Bailey Cadamarteri"
     ],
     "out": [],
     "questionable": []
@@ -12984,12 +13019,12 @@
   "mexico": {
     "manager": "Régis Le Bris",
     "starters_ready": [
-      "Wilson Isidor",
-      "Chris Rigg",
-      "Patrick Roberts",
-      "Dan Neil",
-      "Luke O'Nien",
-      "Anthony Patterson"
+      "Santiago Gimenez",
+      "Roberto Alvarado",
+      "Julián Quiñones",
+      "Isaías Violante",
+      "Hirving Lozano",
+      "Germán Berterame"
     ],
     "out": [],
     "questionable": []
@@ -12997,12 +13032,12 @@
   "deportivo morón": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Franco Fagúndez",
+      "Franco Toloza",
+      "Mateo Levato",
+      "Gonzalo Berterame",
+      "Juan Cruz Esquivel",
+      "Joaquín Zappacosta"
     ],
     "out": [],
     "questionable": []
@@ -13010,12 +13045,12 @@
   "colegiales": {
     "manager": "Julian Schuster",
     "starters_ready": [
-      "Lucas Höler",
-      "Vincenzo Grifo",
-      "Ritsu Doan",
-      "Maximilian Eggestein",
-      "Matthias Ginter",
-      "Noah Atubolu"
+      "Rodrigo Monserrat",
+      "Nicolás Toloza",
+      "Mauro Albertengo",
+      "Lucio Castillo",
+      "Leonardo Gonzalez",
+      "Lucas Juárez"
     ],
     "out": [],
     "questionable": []
@@ -13023,12 +13058,12 @@
   "danubio": {
     "manager": "César Farías",
     "starters_ready": [
-      "Carlos Bacca",
-      "Yimmi Chará",
-      "José Enamorado",
-      "Didier Moreno",
-      "Emanuel Olivera",
-      "Santiago Mele"
+      "Sebastián Fernández",
+      "John",
+      "Ivo Costantino",
+      "Hugo Silveira",
+      "Enzo Cabrera Mauri",
+      "Diego Piriz"
     ],
     "out": [],
     "questionable": []
@@ -13036,12 +13071,12 @@
   "godoy cruz antonio tomba": {
     "manager": "Diego Martínez",
     "starters_ready": [
-      "Fábio Silva",
-      "Alberto Moleiro",
-      "Sandro Ramírez",
-      "Kirian Rodríguez",
-      "Mika Mármol",
-      "Jasper Cillessen"
+      "Martín Pino",
+      "Axel Rodriguez",
+      "Silvio Ulariaga",
+      "Rodrigo Fernández",
+      "Willian Riquelme",
+      "Kevin Valdez"
     ],
     "out": [],
     "questionable": []
@@ -13049,12 +13084,12 @@
   "tristán suárez": {
     "manager": "Iñigo Pérez",
     "starters_ready": [
-      "Jorge de Frutos",
-      "Isi Palazón",
-      "Álvaro García",
-      "Óscar Valentín",
-      "Florian Lejeune",
-      "Augusto Batalla"
+      "Maximiliano Álvarez",
+      "Jonathan Berón",
+      "Agustin Gallo",
+      "Renzo Conechny",
+      "Santiago Magnotta",
+      "Maximiliano Gaston Villalba"
     ],
     "out": [],
     "questionable": []
@@ -13062,12 +13097,12 @@
   "juan pablo ii": {
     "manager": "Christian Ilzer",
     "starters_ready": [
-      "Andrej Kramarić",
-      "Adam Hložek",
-      "Tom Bischof",
-      "Anton Stach",
-      "Kevin Akpoguma",
-      "Oliver Baumann"
+      "Erinson Ramirez",
+      "Janio Posito",
+      "Juan Goicochea",
+      "Nicolás Leguizamón",
+      "Adan Hendricks",
+      "Jonathan Cespedes"
     ],
     "out": [],
     "questionable": []
@@ -13075,12 +13110,12 @@
   "ferro carril oeste": {
     "manager": "Andoni Iraola",
     "starters_ready": [
-      "Evanilson",
-      "Antoine Semenyo",
-      "Justin Kluivert",
-      "Lewis Cook",
-      "Illia Zabarnyi",
-      "Kepa Arrizabalaga"
+      "Lautaro Parisi",
+      "Emanuel Dening",
+      "Franco Garcia",
+      "Nicolás Reniero",
+      "Jonathan Menéndez",
+      "Matías Kabalin"
     ],
     "out": [],
     "questionable": []
@@ -13088,12 +13123,12 @@
   "gimnasia y tiro (salta)": {
     "manager": "Kieran McKenna",
     "starters_ready": [
-      "Liam Delap",
-      "Omari Hutchinson",
-      "Sammie Szmodics",
-      "Sam Morsy",
-      "Leif Davis",
-      "Arijanet Muric"
+      "Lautaro Gordillo",
+      "Fabricio Rojas",
+      "Juan Capano",
+      "Leandro Contin",
+      "Juan Rocca",
+      "Juan Turletti"
     ],
     "out": [],
     "questionable": []
