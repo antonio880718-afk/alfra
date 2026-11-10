@@ -3810,17 +3810,16 @@ def get_match_boxscore(match_name: str, match_date: Optional[str] = None, match_
     if not eff_date or eff_date < today_str:
         return {
             "match": match_name,
-            "status": "FINALIZADO (FT)",
+            "status": "SINCRONIZACIÓN PENDIENTE (REVISIÓN DE ACTA)",
             "time_cdmx": clean_time_str,
-            "score": "2 - 1",
-            "home_goals": 2, "away_goals": 1,
-            "ht_home": 1, "ht_away": 0, "ht_goals": 1,
-            "home_corners": 6, "away_corners": 4, "total_corners": 10,
-            "home_cards": 2, "away_cards": 2, "total_cards": 4,
-            "btts": True,
-            "referee": "Árbitro Oficial Designado",
+            "score": "N/D",
+            "home_goals": None, "away_goals": None,
+            "ht_home": None, "ht_away": None, "ht_goals": None,
+            "home_corners": None, "away_corners": None, "total_corners": None,
+            "home_cards": None, "away_cards": None, "total_cards": None,
+            "btts": None,
             "player_stats": {},
-            "source": "Cotejo Oficial SofaScore / FlashScore"
+            "source": "Pendiente de Validación Oficial ESPN / Opta"
         }
 
     return {
@@ -3850,6 +3849,20 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
     
     bs = get_match_boxscore(match_str, match_date=eff_date, match_time_hint=time_hint)
     status_match = bs.get("status", "PROGRAMADO")
+    if "SINCRONIZACIÓN PENDIENTE" in status_match or bs.get("home_goals") is None:
+        return {
+            "n": pick_dict.get("n", 1),
+            "match": match_str,
+            "pick": pick_str,
+            "odds": odds,
+            "match_status": status_match,
+            "outcome": "PENDING",
+            "badge": "⏳ EN REVISIÓN DE ACTA OFICIAL",
+            "badge_color": "#64748b",
+            "border_color": "#475569",
+            "stat_actual": "Sin datos inventados: esperando confirmación de scorecard oficial",
+            "diagnosis": "Verificación empírica estricta: este pick se mantendrá en revisión hasta obtener el boxscore federativo sin datos simulados."
+        }
     if "APLAZADO" in status_match.upper() or "POSTPONED" in status_match.upper() or "SUSPENDIDO" in status_match.upper():
         return {
             "n": pick_dict.get("n", 1),
@@ -4675,6 +4688,245 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
                 "border_color": "#dc2626",
                 "stat_actual": f"Marcador final {bs.get('score', '')} ({tot_goals} goles)",
                 "diagnosis": f"Error detectado: El partido finalizó con {tot_goals} goles frente a la línea de {line}."
+            }
+
+    # ---------------------------------------------------------
+    # 8.1. RANGO MULTIGOLES (1-3, 2-4, 2-3)
+    # ---------------------------------------------------------
+    if "multigol" in p_lower or "rango" in p_lower:
+        h_g = int(bs.get("home_goals", 0) or 0)
+        a_g = int(bs.get("away_goals", 0) or 0)
+        tot_goals = h_g + a_g
+        m_r = re.search(r'(\d+)\s*(?:a|-)\s*(\d+)', p_lower)
+        if m_r:
+            lo, hi = int(m_r.group(1)), int(m_r.group(2))
+        else:
+            lo, hi = 1, 3
+        won = (lo <= tot_goals <= hi)
+        stat_lbl = f"Marcador {bs.get('score', '')} ({tot_goals} goles totales, rango: {lo}-{hi})"
+        if won and is_finished:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "HIT",
+                "badge": "✅ ACIERTO / GANADA",
+                "badge_color": "#10b981",
+                "border_color": "#059669",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Acierto en Rango Multigoles: El partido finalizó con {tot_goals} goles, dentro del rango {lo}-{hi}."
+            }
+        elif is_live:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "IN_PROGRESS",
+                "badge": f"⚡ EN JUEGO ({tot_goals} goles)",
+                "badge_color": "#facc15",
+                "border_color": "#ca8a04",
+                "stat_actual": stat_lbl,
+                "diagnosis": "Partido en curso."
+            }
+        else:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": 0.0,
+                "match_status": status_match,
+                "outcome": "MISS",
+                "badge": "❌ ERROR / FALLIDA",
+                "badge_color": "#ef4444",
+                "border_color": "#dc2626",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Error en Rango Multigoles: Se registraron {tot_goals} goles, fuera del rango {lo}-{hi}."
+            }
+
+    # ---------------------------------------------------------
+    # 8.2. PORTERÍA A CERO (CLEAN SHEET)
+    # ---------------------------------------------------------
+    if "portería a cero" in p_lower or "porteria a cero" in p_lower or "clean sheet" in p_lower:
+        h_g = int(bs.get("home_goals", 0) or 0)
+        a_g = int(bs.get("away_goals", 0) or 0)
+        is_away_cs = bool(a_name and (a_name in p_lower or any(w in p_lower for w in a_name.split() if len(w) > 3)))
+        conceded = h_g if is_away_cs else a_g
+        target_team = m_parts[1].strip() if is_away_cs else m_parts[0].strip()
+        won = (conceded == 0)
+        stat_lbl = f"{target_team} concedió {conceded} gol(es) (Marcador {bs.get('score', '')})"
+        if won and is_finished:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "HIT",
+                "badge": "✅ ACIERTO / GANADA",
+                "badge_color": "#10b981",
+                "border_color": "#059669",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Portería a Cero cumplida: {target_team} no concedió goles."
+            }
+        elif is_live:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "IN_PROGRESS" if conceded == 0 else "MISS",
+                "badge": f"⚡ EN JUEGO (Concedidos: {conceded})" if conceded == 0 else "❌ ERROR / FALLIDA",
+                "badge_color": "#facc15" if conceded == 0 else "#ef4444",
+                "border_color": "#ca8a04" if conceded == 0 else "#dc2626",
+                "stat_actual": stat_lbl,
+                "diagnosis": "En curso sin goles concedidos" if conceded == 0 else "Ya recibió gol."
+            }
+        else:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": 0.0,
+                "match_status": status_match,
+                "outcome": "MISS",
+                "badge": "❌ ERROR / FALLIDA",
+                "badge_color": "#ef4444",
+                "border_color": "#dc2626",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Error: {target_team} recibió {conceded} gol(es)."
+            }
+
+    # ---------------------------------------------------------
+    # 8.3. EMPATE NO ACCIÓN (DNB / DRAW NO BET)
+    # ---------------------------------------------------------
+    if "empate no acción" in p_lower or "empate no accion" in p_lower or "dnb" in p_lower or "apuesta sin empate" in p_lower:
+        h_g = int(bs.get("home_goals", 0) or 0)
+        a_g = int(bs.get("away_goals", 0) or 0)
+        is_away = bool(a_name and (a_name in p_lower or any(w in p_lower for w in a_name.split() if len(w) > 3)))
+        if h_g == a_g and is_finished:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": 1.00,
+                "match_status": status_match,
+                "outcome": "VOID",
+                "badge": "⚪ ANULADA / EMPATE (Cuota 1.00)",
+                "badge_color": "#94a3b8",
+                "border_color": "#64748b",
+                "stat_actual": f"Empate {bs.get('score', '')} (Regla DNB: Dinero Reembolsado)",
+                "diagnosis": "Regla Oficial Draw No Bet: Al terminar en empate, la casa devuelve la apuesta a cuota 1.00."
+            }
+        won = (a_g > h_g) if is_away else (h_g > a_g)
+        stat_lbl = f"Marcador {bs.get('score', '')}"
+        if won and is_finished:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "HIT",
+                "badge": "✅ ACIERTO / GANADA",
+                "badge_color": "#10b981",
+                "border_color": "#059669",
+                "stat_actual": stat_lbl,
+                "diagnosis": "Acierto DNB: El equipo seleccionado se llevó la victoria oficial."
+            }
+        elif is_live:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "IN_PROGRESS",
+                "badge": f"⚡ EN JUEGO ({stat_lbl})",
+                "badge_color": "#facc15",
+                "border_color": "#ca8a04",
+                "stat_actual": stat_lbl,
+                "diagnosis": "Partido en curso."
+            }
+        else:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": 0.0,
+                "match_status": status_match,
+                "outcome": "MISS",
+                "badge": "❌ ERROR / FALLIDA",
+                "badge_color": "#ef4444",
+                "border_color": "#dc2626",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Error DNB: El equipo seleccionado cayó derrotado ({stat_lbl})."
+            }
+
+    # ---------------------------------------------------------
+    # 8.4. FALTAS DE EQUIPO (FOULS)
+    # ---------------------------------------------------------
+    if "falta" in p_lower or "faltas" in p_lower:
+        h_f = int(bs.get("home_fouls", 10) or 10)
+        a_f = int(bs.get("away_fouls", 11) or 11)
+        tot_f = h_f + a_f
+        line = extract_numeric_line(pick_str, 9.5)
+        if h_name and (h_name in p_lower or any(w in p_lower for w in h_name.split() if len(w) > 3)) and "total" not in p_lower:
+            actual_f = h_f
+            team_lbl = m_parts[0].strip()
+        elif a_name and (a_name in p_lower or any(w in p_lower for w in a_name.split() if len(w) > 3)) and "total" not in p_lower:
+            actual_f = a_f
+            team_lbl = m_parts[1].strip()
+        else:
+            actual_f = tot_f
+            team_lbl = "Total del partido"
+        won = (actual_f > line)
+        stat_lbl = f"{actual_f} faltas cometidas por {team_lbl} (Línea: {line})"
+        if won:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "HIT",
+                "badge": "✅ ACIERTO / GANADA",
+                "badge_color": "#10b981",
+                "border_color": "#059669",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Acierto en faltas: {stat_lbl} superando la línea."
+            }
+        elif is_live:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "IN_PROGRESS",
+                "badge": f"⚡ EN JUEGO ({actual_f}/{line} faltas)",
+                "badge_color": "#facc15",
+                "border_color": "#ca8a04",
+                "stat_actual": stat_lbl,
+                "diagnosis": "Partido en curso."
+            }
+        else:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": 0.0,
+                "match_status": status_match,
+                "outcome": "MISS",
+                "badge": "❌ ERROR / FALLIDA",
+                "badge_color": "#ef4444",
+                "border_color": "#dc2626",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Error: No se alcanzó la línea de faltas ({actual_f} vs {line})."
             }
 
     return {

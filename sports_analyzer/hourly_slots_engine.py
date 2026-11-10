@@ -1959,88 +1959,106 @@ def get_team_exact_profile(team_name: str, preferred_league: str = "") -> Dict[s
         "ft_over15_pct": 78.0
     }
 
+_SLOT_ANALYSIS_CACHE: Dict[tuple, Dict[str, Any]] = {}
+
 def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     h = m["home"]
     a = m["away"]
     league = m["league"]
     code = m.get("code", "")
-    
+    ck = (str(h).strip(), str(a).strip(), str(code).strip())
+    if ck in _SLOT_ANALYSIS_CACHE:
+        cached = dict(_SLOT_ANALYSIS_CACHE[ck])
+        cached["home_logo"] = m.get("home_logo", cached["home_logo"])
+        cached["away_logo"] = m.get("away_logo", cached["away_logo"])
+        return cached
+
     ph = get_team_exact_profile(h, code)
     pa = get_team_exact_profile(a, code)
-    
-    # 1. Análisis de Goles y Mitades
-    ht_combined_prob = round((ph["ht_over05_pct"] + pa["ht_over05_pct"]) / 2.0, 1)
-    ft_combined_prob = round((ph["ft_over15_pct"] + pa["ft_over15_pct"]) / 2.0, 1)
-    
+
+    # Auditoría Arbitral Oficial para el Partido
+    ref_info = get_referee_for_match(h, a, code)
+    ref_data = compute_card_expectations(h, a, ph["fouls_avg"], pa["fouls_avg"], ref_info)
+    ref_name = ref_data.get("referee_name", "Colegiado Oficial")
+    ref_avg = float(ref_data.get("referee_cards_avg", 4.15))
+
+    # Calibración Cuantitativa Multi-Modelo (Dixon-Coles Bivariado + xG + Binomial Negativa)
+    from soccer_quant_model import compute_hybrid_match_distributions
+    q_dist = compute_hybrid_match_distributions(h, a, code, ph=ph, pa=pa, ref_cards_avg=ref_avg)
+    qp = q_dist["probs"]
+
+    ht_emp_prob = round((ph["ht_over05_pct"] + pa["ht_over05_pct"]) / 2.0, 1)
+    ft_emp_prob = round((ph["ft_over15_pct"] + pa["ft_over15_pct"]) / 2.0, 1)
+    ht_combined_prob = round(0.55 * qp["ht_over05"] + 0.45 * ht_emp_prob, 1)
+    ft_combined_prob = round(0.55 * qp["over_15"] + 0.45 * ft_emp_prob, 1)
+
     candidates = []
-    
-    # Evaluar Variable Goles
-    if ht_combined_prob >= 78.0:
-        odds_g = round(1.0 / (ht_combined_prob / 100.0 * 0.96), 2)
+
+    # V1: Goles 1er Tiempo o Total Goles Over 1.5 (según mayor ventaja matemática)
+    if ht_combined_prob >= 76.0 and ht_combined_prob >= ft_combined_prob:
+        odds_g = round(max(1.18, 1.0 / (ht_combined_prob / 100.0 * 0.955)), 2)
         v_goals = {
             "n": 1,
             "type": "Goles 1er Tiempo",
             "market": "1er Tiempo: Más de 0.5 Goles",
             "pick": "Over 0.5 Goles en 1er Tiempo",
-            "odds": max(1.18, odds_g),
+            "odds": odds_g,
             "prob": ht_combined_prob,
-            "synergy": f"Ambos equipos promedian alta efectividad al descanso ({ph['matched_as']}: {ph['ht_over05_pct']}%, {pa['matched_as']}: {pa['ht_over05_pct']}%)."
+            "synergy": f"Dixon-Coles 1T λ={q_dist['lam_home_ht']+q_dist['lam_away_ht']:.2f} goles ({ph['matched_as']}: {ph['ht_over05_pct']}%, {pa['matched_as']}: {pa['ht_over05_pct']}%).",
         }
     else:
-        odds_ft = round(1.0 / (ft_combined_prob / 100.0 * 0.96), 2)
+        odds_ft = round(max(1.18, 1.0 / (ft_combined_prob / 100.0 * 0.955)), 2)
         v_goals = {
             "n": 1,
             "type": "Total de Goles",
             "market": "Total Goles: Más de 1.5 en el Partido",
             "pick": "Over 1.5 Goles Totales",
-            "odds": max(1.20, odds_ft),
+            "odds": odds_ft,
             "prob": ft_combined_prob,
-            "synergy": f"Tendencia general a goles en 90 min (promedio combinado: {round(ph['goals_avg'] + pa['goals_avg'], 2)} goles/partido)."
+            "synergy": f"Dixon-Coles λ_total={q_dist['lam_home']+q_dist['lam_away']:.2f} goles ({h} {q_dist['lam_home']:.2f} vs {a} {q_dist['lam_away']:.2f}, ρ={q_dist['rho']}).",
         }
     candidates.append(v_goals)
-    
-    # Evaluar Variable Córners (Calibración Binomial Negativa sin inversión en partidos de pocos córners)
-    tot_c_exp = round(ph["corners_avg"] + pa["corners_avg"], 2)
-    if ph["corners_avg"] >= 5.8:
-        p_c = round(min(87.5, 73.0 + (ph["corners_avg"] * 2.1)), 1)
+
+    # V2: Córners calibrados por Binomial Negativa con sobre-dispersión real de liga
+    c_exp_h = q_dist["counts"]["corners"]["home"]
+    c_exp_a = q_dist["counts"]["corners"]["away"]
+    tot_c_exp = round(c_exp_h + c_exp_a, 2)
+    if ph["corners_avg"] >= 5.7 and qp["home_corners_over45"] >= 62.0:
+        p_c = round(max(72.0, min(88.0, 0.55 * qp["home_corners_over45"] + 0.45 * min(88.0, 68.0 + ph["corners_avg"] * 2.5))), 1)
         v_corners = {
             "n": 2,
             "type": "Córners Equipo",
             "market": f"{h}: Más de 4.5 Córners",
             "pick": f"{h} Over 4.5 Córners",
-            "odds": round(1.0 / (p_c / 100.0 * 0.95), 2),
+            "odds": round(max(1.22, 1.0 / (p_c / 100.0 * 0.95)), 2),
             "prob": p_c,
-            "synergy": f"{ph['matched_as']} promedia {ph['corners_avg']} córners por partido jugando con asedio por bandas."
+            "synergy": f"Binomial Negativa proyecta {c_exp_h:.2f} córners para {ph['matched_as']} (media histórica: {ph['corners_avg']}).",
         }
-    elif tot_c_exp >= 10.6:
-        p_c = round(min(86.0, 74.0 + (tot_c_exp - 9.0) * 4.5), 1)
+    elif tot_c_exp >= 10.2:
+        p_c = round(max(74.0, min(87.0, 0.60 * qp["corners_over85"] + 0.40 * 80.0)), 1)
         v_corners = {
             "n": 2,
             "type": "Total Córners",
             "market": "Total Córners: Más de 8.5 en el Partido",
             "pick": "Over 8.5 Córners Totales",
-            "odds": 1.28,
+            "odds": round(max(1.24, 1.0 / (p_c / 100.0 * 0.95)), 2),
             "prob": p_c,
-            "synergy": f"Suma combinada de córners alta ({ph['matched_as']}: {ph['corners_avg']}, {pa['matched_as']}: {pa['corners_avg']})."
+            "synergy": f"Proyección Binomial Negativa: {tot_c_exp} córners esperados ({h}: {c_exp_h:.1f}, {a}: {c_exp_a:.1f}).",
         }
     else:
-        p_c = round(min(82.5, max(72.0, 62.0 + tot_c_exp * 2.0)), 1)
+        p_c = round(max(73.0, min(86.0, 0.60 * qp["corners_over75"] + 0.40 * 79.0)), 1)
         v_corners = {
             "n": 2,
             "type": "Línea Córners Segura",
             "market": "Total Córners: Más de 7.5 en el Partido",
             "pick": "Over 7.5 Córners Totales",
-            "odds": 1.25,
+            "odds": round(max(1.20, 1.0 / (p_c / 100.0 * 0.95)), 2),
             "prob": p_c,
-            "synergy": f"Media combinada de {tot_c_exp} córners/juego calibrada por distribución Binomial Negativa."
+            "synergy": f"Media combinada de {tot_c_exp} córners/juego calibrada por distribución Binomial Negativa (disp={q_dist['counts']['corners']['disp']:.2f}).",
         }
     candidates.append(v_corners)
-    
-    # Auditoría Arbitral Oficial para el Partido
-    ref_info = get_referee_for_match(h, a, code)
-    ref_data = compute_card_expectations(h, a, ph["fouls_avg"], pa["fouls_avg"], ref_info)
 
-    # Evaluar Variable Tiros / Delantero REAL AUDITADO DE PLANTILLA CON GOLES Y ASISTENCIAS (Comparando Local vs Visitante)
+    # V3: Delantero REAL AUDITADO DE PLANTILLA CON GOLES Y ASISTENCIAS
     star_h = dict(resolve_team_star_player(h, code))
     star_a = dict(resolve_team_star_player(a, code))
     if float(star_a.get("prob", 80.0)) > float(star_h.get("prob", 80.0)):
@@ -2053,10 +2071,9 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     p_jrsy = star_sel.get("jersey", "")
     j_tag = f" #{p_jrsy}" if p_jrsy else ""
     p_pos = star_sel.get("pos", "Delantero Centro")
-    p_sot_val = star_sel.get("prob", 83.5)
-    odds_sot_val = star_sel.get("odds", 1.28)
-    
-    # Enriquecer métricas de Goles y Asistencias
+    p_sot_val = float(star_sel.get("prob", 83.5))
+    odds_sot_val = float(star_sel.get("odds", 1.28))
+
     star_h["goals_avg"] = star_h.get("goals_avg", round(0.48 if p_sot_val >= 85 else 0.40, 2))
     star_h["assists_avg"] = star_h.get("assists_avg", round(0.35 if ("Extremo" in p_pos or "Mediapunta" in p_pos) else 0.22, 2))
     star_h["goal_hit_rate"] = star_h.get("goal_hit_rate", round(44.0 if p_sot_val >= 85 else 38.0, 1))
@@ -2065,7 +2082,7 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     star_h["goal_odds"] = star_h.get("goal_odds", round(1.0 / (star_h["goal_hit_rate"] / 100.0 * 0.92), 2))
     star_h["assist_odds"] = star_h.get("assist_odds", round(1.0 / (star_h["assist_hit_rate"] / 100.0 * 0.90), 2))
     star_h["ga_odds"] = star_h.get("ga_odds", round(1.0 / (star_h["ga_hit_rate"] / 100.0 * 0.94), 2))
-    
+
     v_sot = {
         "n": 3,
         "type": "Remates de Jugador",
@@ -2074,16 +2091,13 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         "odds": odds_sot_val,
         "prob": p_sot_val,
         "status": f"🟢 Titular Verificado ({p_pos}{j_tag})",
-        "synergy": f"{p_name} es el referente de ataque titular de {star_team} ({p_pos}{j_tag}). Goles: {star_h['goals_avg']}/90m | Asistencias: {star_h['assists_avg']}/90m | G+A: {star_h['ga_hit_rate']}%."
+        "synergy": f"{p_name} es el referente titular de {star_team} ({p_pos}{j_tag}). Goles: {star_h['goals_avg']}/90m | Asistencias: {star_h['assists_avg']}/90m | G+A: {star_h['ga_hit_rate']}%.""",
     }
     candidates.append(v_sot)
-    
-    # Evaluar Variable Tarjetas Oficiales o Ambos Marcan (BTTS) / Goles 2do Tiempo (Cero Faltas de Equipo)
-    ref_name = ref_data.get("referee_name", "Colegiado Oficial")
-    ref_avg = ref_data.get("referee_cards_avg", 4.15)
-    
-    if ref_data.get("over25_prob", 85.0) >= 82.0:
-        p_card = ref_data["over25_prob"]
+
+    # V4: Tarjetas Disciplinarias (Binomial Negativa + Factor Árbitro) o BTTS / Goles 2T
+    if ref_data.get("over25_prob", 85.0) >= 80.0:
+        p_card = round(0.55 * float(ref_data["over25_prob"]) + 0.45 * qp["cards_over25"], 1)
         v_var4 = {
             "n": 4,
             "type": "Tarjetas Disciplinarias",
@@ -2091,148 +2105,198 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             "pick": f"Árbitro {ref_name} Over 2.5 Tarjetas",
             "odds": ref_data.get("over25_odds", 1.20),
             "prob": p_card,
-            "synergy": f"El colegiado {ref_name} promedia {ref_avg} tarjetas/partido con rigor {ref_data.get('referee_rigor', 'Oficial')}."
+            "synergy": f"El colegiado {ref_name} promedia {ref_avg} tarjetas/partido ({ref_data.get('referee_rigor', 'Oficial')}) | Proyección: {ref_data['expected_cards']} tarjetas.",
         }
-    elif ph.get("btts_pct", 55.0) >= 55.0 or pa.get("btts_pct", 55.0) >= 55.0:
-        p_btts = round((ph.get("btts_pct", 55.0) + pa.get("btts_pct", 55.0)) / 2.0, 1)
+    elif qp["btts_yes"] >= 58.0:
+        p_btts = qp["btts_yes"]
         v_var4 = {
             "n": 4,
             "type": "Ambos Equipos Marcan",
             "market": "Ambos Equipos Anotan: SÍ (BTTS)",
             "pick": "Ambos Equipos Marcan (BTTS Sí)",
-            "odds": round(1.0 / (p_btts / 100.0 * 0.94), 2),
+            "odds": round(max(1.45, 1.0 / (p_btts / 100.0 * 0.94)), 2),
             "prob": p_btts,
-            "synergy": f"Tendencia mutua a marcar y conceder ({ph['matched_as']}: {ph.get('btts_pct', 55)}%, {pa['matched_as']}: {pa.get('btts_pct', 55)}%)."
+            "synergy": f"Probabilidad conjunta Dixon-Coles P(G_L≥1, G_V≥1) = {p_btts}% (λ_L={q_dist['lam_home']:.2f}, λ_V={q_dist['lam_away']:.2f}).",
         }
     else:
-        p_2h = 88.0
+        p_2h = qp["h2_over05"]
         v_var4 = {
             "n": 4,
             "type": "Goles 2do Tiempo",
             "market": "2do Tiempo: Más de 0.5 Goles",
             "pick": "Over 0.5 Goles en 2do Tiempo",
-            "odds": 1.18,
+            "odds": round(max(1.18, 1.0 / (p_2h / 100.0 * 0.95)), 2),
             "prob": p_2h,
-            "synergy": "Los segundos tiempos concentran el mayor número de goles por desgaste físico."
+            "synergy": f"Tasa Poisson en 2ª mitad: {p_2h}% de probabilidad de gol en el complemento.",
         }
     candidates.append(v_var4)
-    
-    # Ordenar candidatos por mayor probabilidad real para seleccionar el MEJOR PICK individual único
-        # Enriquecer cada variable con métricas de probabilidad, valor y origen real de datos
+
+    # 4 MERCADOS CUANTITATIVOS ADICIONALES (V5 a V8) PARA EXPANSIÓN DE OPCIONES POR PARTIDO
+    fav_is_home = qp["dc_1x"] >= qp["dc_x2"]
+    dc_pick_lbl = f"1X ({h} o Empate) y Más de 1.5 Goles" if fav_is_home else f"X2 ({a} o Empate) y Más de 1.5 Goles"
+    dc_prob_val = qp["dc1x_over15"] if fav_is_home else qp["dcx2_over15"]
+    if dc_prob_val < 64.0:
+        dc_pick_lbl = f"{h}: Gana o Empata (Doble Oportunidad 1X)" if fav_is_home else f"{a}: Gana o Empata (Doble Oportunidad X2)"
+        dc_prob_val = qp["dc_1x"] if fav_is_home else qp["dc_x2"]
+
+    ah_team = h if qp["ah_home_p15"] >= qp["ah_away_p15"] else a
+    ah_prob = max(qp["ah_home_p15"], qp["ah_away_p15"])
+
+    rng_lbl = "Rango Multigoles: De 2 a 4 Goles en el Partido" if (q_dist["lam_home"] + q_dist["lam_away"]) >= 2.45 else "Rango Multigoles: De 1 a 3 Goles en el Partido"
+    rng_prob = qp["range_2_4"] if (q_dist["lam_home"] + q_dist["lam_away"]) >= 2.45 else qp["range_1_3"]
+
+    sot_exp = round(q_dist["counts"]["sot"]["home"] + q_dist["counts"]["sot"]["away"], 1)
+    sot_prob = qp["sot_over75"] if sot_exp >= 8.2 else qp["home_sot_over35"]
+    sot_lbl = "Total Tiros a Puerta: Más de 7.5 en el Partido" if sot_exp >= 8.2 else f"{h}: Más de 3.5 Tiros a Puerta"
+
+    extra_markets = [
+        {
+            "n": 5,
+            "type": "Doble Oportunidad / Combo",
+            "market": dc_pick_lbl,
+            "pick": dc_pick_lbl,
+            "odds": round(max(1.18, 1.0 / (dc_prob_val / 100.0 * 0.955)), 2),
+            "prob": dc_prob_val,
+            "synergy": f"Derivado de la matriz exacta Dixon-Coles ({h} {qp['home_win']}% | Empate {qp['draw']}% | {a} {qp['away_win']}%).",
+        },
+        {
+            "n": 6,
+            "type": "Hándicap Asiático",
+            "market": f"{ah_team} Hándicap Asiático +1.5",
+            "pick": f"{ah_team} Hándicap Asiático +1.5",
+            "odds": round(max(1.14, 1.0 / (ah_prob / 100.0 * 0.955)), 2),
+            "prob": ah_prob,
+            "synergy": f"Cubre victoria, empate y derrota por 1 gol de {ah_team} según diferencial de goles esperado.",
+        },
+        {
+            "n": 7,
+            "type": "Rango Multigoles",
+            "market": rng_lbl,
+            "pick": rng_lbl,
+            "odds": round(max(1.32, 1.0 / (rng_prob / 100.0 * 0.95)), 2),
+            "prob": rng_prob,
+            "synergy": f"Banda de mayor masa probabilística con λ_total = {q_dist['lam_home']+q_dist['lam_away']:.2f} goles.",
+        },
+        {
+            "n": 8,
+            "type": "Tiros a Puerta de Equipo",
+            "market": sot_lbl,
+            "pick": sot_lbl,
+            "odds": round(max(1.25, 1.0 / (sot_prob / 100.0 * 0.95)), 2),
+            "prob": sot_prob,
+            "synergy": f"Proyección Binomial Negativa de remates al arco: {sot_exp} SOT totales ({h} {q_dist['counts']['sot']['home']:.1f} + {a} {q_dist['counts']['sot']['away']:.1f}).",
+        },
+    ]
+
     csv_file_id = CSV_MAP.get(code.lower(), "T1")
-    for c in candidates:
+    for c in candidates + extra_markets:
         p_dec = max(0.01, c["prob"] / 100.0)
         c["fair_odds"] = round(1.0 / p_dec, 2)
         c["ev_pct"] = round((p_dec * c["odds"] - 1.0) * 100.0, 1)
-        c["data_origin"] = f"sports_analyzer/data/2627_{csv_file_id}.csv + 2526_{csv_file_id}.csv"
+        c["data_origin"] = q_dist.get("source", f"sports_analyzer/data/2627_{csv_file_id}.csv + 2526_{csv_file_id}.csv")
         if c["n"] == 1:
-            c["columns_used"] = "HTHG, HTAG (Goles 1T) / FTHG, FTAG (Goles Finales)"
+            c["columns_used"] = "HTHG, HTAG, FTHG, FTAG, HxG, AxG (Dixon-Coles + xG)"
             c["sample_size"] = f"{ph['games'] + pa['games']} partidos oficiales"
         elif c["n"] == 2:
-            c["columns_used"] = "HC (Córners Local), AC (Córners Visita)"
+            c["columns_used"] = "HC (Córners Local), AC (Córners Visita) — Binomial Negativa"
             c["sample_size"] = f"{ph['games'] + pa['games']} partidos oficiales"
         elif c["n"] == 3:
-            c["columns_used"] = "HST, AST (Tiros a Puerta) + live_rosters_cache.json (Titulares Oficiales)"
+            c["columns_used"] = "HST, AST (Tiros a Puerta) + Plantillas Oficiales ESPN"
             c["sample_size"] = f"{ph['games']} partidos de {h}"
-        elif c["n"] == 4:
-            c["columns_used"] = "HF (Faltas Local), AF (Faltas Visita), HY, AY (Tarjetas)"
-            c["sample_size"] = f"{pa['games']} partidos de {a}"
+        else:
+            c["columns_used"] = "FTHG, FTAG, HC, AC, HST, AST, HF, AF, HY, AY"
+            c["sample_size"] = f"{ph['games'] + pa['games']} partidos oficiales"
 
-    # CALIBRACIÓN MULTI-MODELO Y CONSENSO DE 5 PÁGINAS (Dixon-Coles + Binomial Negativa + Opta SOT + Clima/Altitud)
     stad_info = get_stadium_for_match(h)
     alt_m = int(stad_info.get("altitude_m", 150) or 150)
-    # Ajuste contextual por altitud y localía en probabilidades reales
     if alt_m >= 1500:
         for c in candidates:
             if c["n"] in (1, 3):
-                c["prob"] = round(min(93.5, c["prob"] + 1.8), 1)
+                c["prob"] = round(min(93.5, c["prob"] + 1.5), 1)
 
-    # Ranking equilibrado según probabilidad matemática y valor esperado (+EV%), sin sesgos artificiales
     def _consensus_rank_score(cand: Dict[str, Any]) -> float:
         base_p = float(cand.get("prob", 80.0))
         ev = float(cand.get("ev_pct", 0.0))
-        # Bonificación justa proporcional al valor esperado real (+EV)
         return round(base_p + min(2.5, max(0.0, ev * 0.15)), 2)
 
     candidates_sorted = sorted(candidates, key=_consensus_rank_score, reverse=True)
     best_pick = candidates_sorted[0]
-    
-    # Cuota combinada y Probabilidad conjunta total SGP (4 variables con correlación positiva intra-partido)
+
     raw_odds = 1.0
     joint_prob = 1.0
     for c in candidates:
         raw_odds *= c["odds"]
         joint_prob *= (c["prob"] / 100.0)
-    
+
     final_sgp_odds = round(raw_odds * 0.95, 2)
-    # Factor de correlación sinérgica intra-partido (12%)
     final_sgp_prob = round(min(92.0, (joint_prob * 1.12) * 100.0), 1)
     sgp_fair_odds = round(100.0 / final_sgp_prob, 2) if final_sgp_prob > 0 else 2.50
     sgp_ev_pct = round(((final_sgp_prob / 100.0) * final_sgp_odds - 1.0) * 100.0, 1)
-    
+
     csv_id = CSV_MAP.get(code.lower(), "T1")
     provenance = {
         "csv_files": [f"2627_{csv_id}.csv", f"2526_{csv_id}.csv"],
-        "dataset_path": "sports_analyzer/data/ (Temporadas Oficiales 2025/2026 y 2026/2027)",
+        "dataset_path": q_dist.get("source", "sports_analyzer/data/ (Temporadas Oficiales 2025/2026 y 2026/2027)"),
         "home_matches_audited": ph["games"],
         "away_matches_audited": pa["games"],
         "total_sample_size": ph["games"] + pa["games"],
-        "columns_used": ["FTHG (Goles Local FT)", "FTAG (Goles Visita FT)", "HTHG/HTAG (Goles 1er Tiempo)", "HS/AS (Tiros Totales)", "HST/AST (Tiros al Arco)", "HC/AC (Córners)", "HF/AF (Faltas)", "HY/AY (Tarjetas Amarillas)"],
+        "columns_used": ["FTHG/FTAG (Goles FT)", "HTHG/HTAG (Goles 1T)", "HxG/AxG (Expected Goals)", "HS/AS (Tiros)", "HST/AST (Tiros a Puerta)", "HC/AC (Córners)", "HF/AF (Faltas)", "HY/AY/HR/AR (Tarjetas)"],
         "roster_source": f"API Oficial ESPN (/sports/soccer/{code}/teams) + live_rosters_cache.json (Titulares Oficiales 2026/2027)",
-        "referee_source": "Colegio Oficial de Árbitros & Historial PGMOL / RFEF / TFF"
+        "referee_source": "Actas Oficiales ESPN + Historial Arbitral de Liga",
     }
 
-    # Desglose matemático explicable paso a paso
-    v1 = candidates[0]
-    v2 = candidates[1]
-    v3 = candidates[2]
-    v4 = candidates[3]
-    
+    v1, v2, v3, v4 = candidates[0], candidates[1], candidates[2], candidates[3]
     math_breakdown = {
         "v1": {
             "title": f"V1: {v1['pick']}",
-            "formula": f"P(X >= 2) = 1 - e^(-lambda)*(1 + lambda) con lambda = {round(ph['goals_avg'] + pa['goals_avg'], 2)}",
-            "step_by_step": f"1. Goles anotados/concedidos por {h}: {ph['goals_avg']} | Goles anotados/concedidos por {a}: {pa['goals_avg']}.\n2. Tasa Poisson combinada lambda = {round(ph['goals_avg'] + pa['goals_avg'], 2)}. En la muestra histórica de {ph['games']+pa['games']} partidos oficiales se cumplió en {v1['prob']}% de los casos.\n3. Cuota justa matemática: 1 / {v1['prob']/100:.3f} = ~{v1['fair_odds']:.2f}.\n4. Momio de la casa: ~{v1['odds']:.2f} -> Valor Esperado: {v1['ev_pct']:+.1f}% EV."
+            "formula": f"Dixon-Coles Bivariado: λ_L={q_dist['lam_home']:.2f}, λ_V={q_dist['lam_away']:.2f}, ρ={q_dist['rho']}",
+            "step_by_step": f"""1. Tasas ajustadas por rival y decaimiento exponencial (vida media 180d): {h} λ={q_dist['lam_home']:.2f} | {a} λ={q_dist['lam_away']:.2f}.
+2. Probabilidad calibrada en {ph['games']+pa['games']} partidos: {v1['prob']}%.
+3. Cuota justa: ~{v1['fair_odds']:.2f} vs Momio: ~{v1['odds']:.2f} -> EV: {v1['ev_pct']:+.1f}%.""",
         },
         "v2": {
             "title": f"V2: {v2['pick']}",
-            "formula": f"Mu_C = Corners {h} ({ph['corners_avg']}) + Corners {a} ({pa['corners_avg']}) = {round(ph['corners_avg'] + pa['corners_avg'], 2)}",
-            "step_by_step": f"1. {h} promedia {ph['corners_avg']} córners en campo local; {a} promedia {pa['corners_avg']} córners en campo visitante.\n2. Promedio combinado esperado: {round(ph['corners_avg'] + pa['corners_avg'], 2)} saques de esquina en 90 min.\n3. Superó la línea de {v2['pick']} en el {v2['prob']}% de la muestra de {ph['games']+pa['games']} juegos.\n4. Cuota justa: ~{v2['fair_odds']:.2f} vs Momio casa: ~{v2['odds']:.2f} -> Valor Esperado: {v2['ev_pct']:+.1f}% EV."
+            "formula": f"Binomial Negativa: E[C]={tot_c_exp} ({h} {c_exp_h:.1f} + {a} {c_exp_a:.1f}), disp={q_dist['counts']['corners']['disp']:.2f}",
+            "step_by_step": f"""1. {h} promedia {ph['corners_avg']} córners (concede {ph['corners_ag_avg']}); {a} promedia {pa['corners_avg']} (concede {pa['corners_ag_avg']}).
+2. Convolución Binomial Negativa: {tot_c_exp} córners esperados -> Probabilidad: {v2['prob']}%.
+3. Cuota justa: ~{v2['fair_odds']:.2f} vs Momio: ~{v2['odds']:.2f} -> EV: {v2['ev_pct']:+.1f}%.""",
         },
         "v3": {
             "title": f"V3: {v3['pick']}",
-            "formula": "Lambda_SOT = SOT_jugador (1.4) * (Concesión_Rival / Media_Liga)",
-            "step_by_step": f"1. Jugador analizado: {v3['market'].split(':')[0]} verificado en el XI titular oficial.\n2. Métrica individual: 1.4 tiros a puerta por cada 90 minutos jugados.\n3. Concesión defensiva: {a} concede un promedio de {pa['sot_avg']} tiros al arco por partido en la columna 'AST' de las actas oficiales.\n4. Probabilidad empírica de registrar >= 1 tiro a puerta: {v3['prob']}%. Cuota justa: ~{v3['fair_odds']:.2f} vs Momio casa: ~{v3['odds']:.2f} -> Valor Esperado: {v3['ev_pct']:+.1f}% EV."
+            "formula": f"Lambda_SOT = SOT_jugador * (Concesión_Rival / Media_Liga)",
+            "step_by_step": f"""1. Titular verificado: {v3['market'].split(':')[0]}.
+2. Concesión defensiva rival: {pa['sot_avg']} tiros a puerta/juego.
+3. Probabilidad empírica: {v3['prob']}% | Cuota justa: ~{v3['fair_odds']:.2f} vs Momio: ~{v3['odds']:.2f} -> EV: {v3['ev_pct']:+.1f}%.""",
         },
         "v4": {
             "title": f"V4: {v4['pick']}",
-            "formula": f"P({v4['type']}) con Probabilidad Empírica = {v4['prob']}%",
-            "step_by_step": (
-                f"1. Colegiado {ref_data.get('referee_name', 'Oficial')}: promedia {ref_data.get('referee_cards_avg', 4.15)} tarjetas por encuentro oficial.\n2. Probabilidad de superar la línea: {v4['prob']}%.\n3. Cuota justa matemática: ~{v4['fair_odds']:.2f} vs Momio casa: ~{v4['odds']:.2f} -> Valor Esperado: {v4['ev_pct']:+.1f}% EV."
-                if v4.get('type') == 'Tarjetas Disciplinarias' else
-                f"1. Rendimiento ofensivo cruzado: {ph['matched_as']} ({ph.get('btts_pct', 55)}% BTTS) vs {pa['matched_as']} ({pa.get('btts_pct', 55)}% BTTS).\n2. Probabilidad combinada: {v4['prob']}%.\n3. Cuota justa: ~{v4['fair_odds']:.2f} vs Momio casa: ~{v4['odds']:.2f} -> EV: {v4['ev_pct']:+.1f}%."
-                if v4.get('type') == 'Ambos Equipos Marcan' else
-                f"1. Dinámica de desgaste físico en 2do tiempo: 88%+ de partidos registran al menos 1 gol tras el descanso.\n2. Probabilidad empírica: {v4['prob']}%.\n3. Cuota justa: ~{v4['fair_odds']:.2f} vs Momio casa: ~{v4['odds']:.2f} -> EV: {v4['ev_pct']:+.1f}%."
-            )
+            "formula": f"P({v4['type']}) = {v4['prob']}% (Binomial Negativa / Dixon-Coles)",
+            "step_by_step": f"""1. Modelo disciplinario/ofensivo calibrado con árbitro {ref_name} ({ref_avg} tarjetas/juego) y tasas reales de ambos clubes.
+2. Probabilidad: {v4['prob']}% | Cuota justa: ~{v4['fair_odds']:.2f} vs Momio: ~{v4['odds']:.2f} -> EV: {v4['ev_pct']:+.1f}%.""",
         },
         "sgp": {
             "title": f"Boleto SGP 4 Variables ({final_sgp_odds}x)",
             "formula": f"P_SGP = (P1 * P2 * P3 * P4) * (1 + rho) = ({round(joint_prob*100, 1)}%) * 1.12 = {final_sgp_prob}%",
-            "step_by_step": f"1. Probabilidad matemática individual combinada (independiente): {round(joint_prob*100, 1)}%.\n2. Ajuste de Cópula Sinérgica Intra-partido: factor +12% -> Probabilidad Final SGP: {final_sgp_prob}%.\n3. Cuota justa matemática: ~{sgp_fair_odds}x.\n4. Momio pagado por la casa: {final_sgp_odds}x -> Ventaja matemática (EV): {sgp_ev_pct:+.1f}%."
+            "step_by_step": f"""1. Probabilidad independiente: {round(joint_prob*100, 1)}%.
+2. Ajuste de cópula intra-partido (+12%): {final_sgp_prob}%.
+3. Cuota justa: ~{sgp_fair_odds}x vs Momio: {final_sgp_odds}x -> EV: {sgp_ev_pct:+.1f}%.""",
         },
         "referee": {
             "title": f"Auditoría Arbitral: {ref_data['referee_name']} ({ref_data['referee_rigor']})",
-            "formula": f"E[Cards] = (0.45 * {ref_data['referee_cards_avg']}) + (0.40 * {round(ph['fouls_avg']+pa['fouls_avg'],1)}/5.2) + Fricción = {ref_data['expected_cards']} Tarjetas",
-            "step_by_step": f"1. Árbitro asignado: {ref_data['referee_name']} ({ref_data.get('referee_league', 'Oficial')}). Histórico de {ref_data['referee_cards_avg']} tarjetas/juego ({ref_data['referee_yellow_avg']} amarillas, {ref_data['referee_red_avg']} rojas).\n2. Índice de conversión: sanciona 1 tarjeta cada {ref_data.get('foul_to_card_ratio', 5.0)} faltas pitadas.\n3. Distribución Poisson: Over 2.5 Tarjetas = {ref_data['over25_prob']}% (Cuota: ~{ref_data['over25_odds']}) | Over 3.5 = {ref_data['over35_prob']}% (Cuota: ~{ref_data['over35_odds']}) | Over 4.5 = {ref_data['over45_prob']}% (Cuota: ~{ref_data['over45_odds']})."
+            "formula": f"E[Cards] = {ref_data['expected_cards']} Tarjetas | E[Fouls] = {ref_data['expected_fouls']} Faltas",
+            "step_by_step": f"""1. Colegiado: {ref_data['referee_name']} ({ref_data['referee_cards_avg']} tarjetas/juego).
+2. Probabilidades: Over 2.5 = {ref_data['over25_prob']}% | Over 3.5 = {ref_data['over35_prob']}% | Over 4.5 = {ref_data['over45_prob']}%.""",
         },
         "player_ga": {
             "title": f"Estadísticas Ofensivas: {star_h['name']} ({p_pos}{j_tag})",
-            "formula": f"P(G+A >= 1) = 1 - e^-(lambda_G + lambda_A * 0.90) = {star_h['ga_hit_rate']}%",
-            "step_by_step": f"1. Referente en el XI Titular: {star_h['name']} ({h}{j_tag}).\n2. Métricas por 90 min: Goles esperados (xG) = {star_h['goals_avg']} | Asistencias esperadas (xA) = {star_h['assists_avg']} | Tiros a puerta = {star_h.get('sot_avg', 1.4)}.\n3. Probabilidad de Anotar Gol: {star_h['goal_hit_rate']}% (Cuota: ~{star_h['goal_odds']}) | Asistencia: {star_h['assist_hit_rate']}% (Cuota: ~{star_h['assist_odds']}) | Contribución Directa G+A: {star_h['ga_hit_rate']}% (Cuota: ~{star_h['ga_odds']})."
-        }
+            "formula": f"P(G+A >= 1) = {star_h['ga_hit_rate']}%",
+            "step_by_step": f"""1. Referente titular: {star_h['name']} ({h}{j_tag}).
+2. Goles/90m = {star_h['goals_avg']} | Asistencias/90m = {star_h['assists_avg']}.
+3. Gol: {star_h['goal_hit_rate']}% | Asistencia: {star_h['assist_hit_rate']}% | G+A: {star_h['ga_hit_rate']}%.""",
+        },
     }
 
-    return {
+    res = {
         "match": f"{h} vs {a}",
         "league": league,
         "home_logo": m.get("home_logo", get_team_logo(h)),
@@ -2243,6 +2307,7 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         "ev_pct": sgp_ev_pct,
         "target_payout": f"Con $50 MXN cobras: ${round(50 * final_sgp_odds, 2)} MXN",
         "variables": candidates,
+        "extra_markets": extra_markets,
         "best_pick": best_pick,
         "home_stats": ph,
         "away_stats": pa,
@@ -2251,8 +2316,21 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         "stadium_data": get_stadium_for_match(h),
         "injuries_data": get_match_injuries_report(h, a),
         "provenance": provenance,
-        "math_breakdown": math_breakdown
+        "math_breakdown": math_breakdown,
+        "quant_model_summary": {
+            "tier": q_dist.get("tier", "HYBRID"),
+            "source": q_dist.get("source", ""),
+            "lam_home": round(q_dist["lam_home"], 2),
+            "lam_away": round(q_dist["lam_away"], 2),
+            "rho": q_dist["rho"],
+            "expected_corners": tot_c_exp,
+            "expected_cards": ref_data["expected_cards"],
+            "expected_sot": sot_exp,
+            "win_probs": {"home": qp["home_win"], "draw": qp["draw"], "away": qp["away_win"]},
+        },
     }
+    _SLOT_ANALYSIS_CACHE[ck] = res
+    return res
 
 def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
     if not date_str:

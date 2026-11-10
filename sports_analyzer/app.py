@@ -1013,12 +1013,11 @@ with t_slots:
                     for step in sgp_info['step_by_step'].split('\n'):
                         st.markdown(f"- {step}")
 
-            # 1.6 Despliegue de las 8 Categorías Completas ("Más Galleta" para TODOS los partidos)
-            with st.expander(f"🔥 Desplegar las 8 Categorías de Opciones Empíricas para {m_chosen['home']} vs {m_chosen['away']} (Córners, Tarjetas, 1T/2T, BTTS, Props)", expanded=False):
-                from match_data_engineering_engine import compute_full_match_data_engineering
-                de_slot = compute_full_match_data_engineering(m_chosen['home'], m_chosen['away'], m_chosen.get('code', ''))
-                
-                st.markdown(f"**🔬 {len(de_slot['all_flat_options'])} Variables Auditadas Oficiales para este Partido (CERO Tiros por Equipo / CERO Faltas por Equipo):**")
+            # 1.6 Despliegue de las 11 Categorías Cuantitativas Completas
+            from match_data_engineering_engine import compute_full_match_data_engineering
+            de_slot = compute_full_match_data_engineering(m_chosen['home'], m_chosen['away'], m_chosen.get('code', ''))
+            with st.expander(f"🔥 Desplegar las {len(de_slot['categories'])} Categorías de Mercados Cuantitativos Dixon-Coles & Binomial Negativa ({len(de_slot['all_flat_options'])} Opciones) para {m_chosen['home']} vs {m_chosen['away']}", expanded=False):
+                st.markdown(f"**🔬 {len(de_slot['all_flat_options'])} Opciones Cuantitativas Calibradas para este Partido:**")
                 for cat in de_slot["categories"]:
                     cat_name = cat["category"]
                     opts = cat["options"]

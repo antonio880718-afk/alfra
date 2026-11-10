@@ -4298,98 +4298,137 @@ def get_team_raw_matches(team_name: str, preferred_league: str = "") -> pd.DataF
             
     return pd.DataFrame()
 
+_DE_CACHE: Dict[tuple, Dict[str, Any]] = {}
+
 def compute_full_match_data_engineering(home_team: str, away_team: str, league_code: str = "") -> Dict[str, Any]:
+    cache_key = (str(home_team).strip(), str(away_team).strip(), str(league_code).strip())
+    if cache_key in _DE_CACHE:
+        return _DE_CACHE[cache_key]
+
     df_h = get_team_raw_matches(home_team, league_code)
     df_a = get_team_raw_matches(away_team, league_code)
-    
-    nh = len(df_h)
-    na = len(df_a)
-    
-    # Extraer arrays empíricos de Local
-    h_sot = []
-    h_corners = []
-    h_fouls = []
-    h_goals = []
-    h_goals_conceded = []
-    h_ht_goals = []
-    
-    if nh >= 8:
+
+    nh_csv = len(df_h)
+    na_csv = len(df_a)
+
+    from americas_empirical_db import get_americas_team_profile
+    am_h = get_americas_team_profile(home_team)
+    am_a = get_americas_team_profile(away_team)
+
+    h_sot, h_corners, h_corners_ag, h_fouls, h_goals, h_goals_conceded, h_ht_goals, h_ht_for, h_cards = [], [], [], [], [], [], [], [], []
+    if nh_csv >= 6:
         for _, r in df_h.iterrows():
-            ish = r["_IsHome"]
-            h_sot.append(r.get("HST" if ish else "AST", 0) or 0)
-            h_corners.append(r.get("HC" if ish else "AC", 0) or 0)
-            h_fouls.append(r.get("HF" if ish else "AF", 0) or 0)
-            g_f = r.get("FTHG" if ish else "FTAG", 0) or 0
-            g_a = r.get("FTAG" if ish else "FTHG", 0) or 0
-            h_goals.append(g_f)
-            h_goals_conceded.append(g_a)
-            h_ht_goals.append((r.get("HTHG", 0) or 0) + (r.get("HTAG", 0) or 0))
+            ish = bool(r["_IsHome"])
+            h_sot.append(float(r.get("HST" if ish else "AST", 0) or 0))
+            h_corners.append(float(r.get("HC" if ish else "AC", 0) or 0))
+            h_corners_ag.append(float(r.get("AC" if ish else "HC", 0) or 0))
+            h_fouls.append(float(r.get("HF" if ish else "AF", 0) or 0))
+            gf = float(r.get("FTHG" if ish else "FTAG", 0) or 0)
+            ga = float(r.get("FTAG" if ish else "FTHG", 0) or 0)
+            ht_f = float(r.get("HTHG" if ish else "HTAG", 0) or 0)
+            ht_a = float(r.get("HTAG" if ish else "HTHG", 0) or 0)
+            yc = float(r.get("HY" if ish else "AY", 0) or 0)
+            rc = float(r.get("HR" if ish else "AR", 0) or 0)
+            h_goals.append(gf)
+            h_goals_conceded.append(ga)
+            h_ht_for.append(ht_f)
+            h_ht_goals.append(ht_f + ht_a)
+            h_cards.append(yc + rc)
+        nh = nh_csv
+        ph_prof = {
+            "games": nh,
+            "sot_avg": sum(h_sot) / nh,
+            "corners_avg": sum(h_corners) / nh,
+            "corners_ag_avg": sum(h_corners_ag) / nh,
+            "fouls_avg": sum(h_fouls) / nh,
+            "goals_avg": sum(h_goals) / nh,
+            "goals_ag_avg": sum(h_goals_conceded) / nh,
+            "ht_over05_pct": (sum(1 for x in h_ht_goals if x >= 1) / nh) * 100.0,
+        }
+    elif am_h:
+        nh = int(am_h.get("games", 16))
+        ph_prof = dict(am_h)
     else:
-        # Consultar Base Oficial de América (Liga MX, MLS, Argentina)
-        from americas_empirical_db import get_americas_team_profile
-        am_h = get_americas_team_profile(home_team)
-        if am_h:
-            nh = am_h["games"]
-            h_sot = [round(am_h["sot_avg"] + ((i % 3) - 1)*0.5) for i in range(nh)]
-            h_corners = [round(am_h["corners_avg"] + ((i % 3) - 1)*0.8) for i in range(nh)]
-            h_fouls = [round(am_h["fouls_avg"] + ((i % 3) - 1)*1.0) for i in range(nh)]
-            h_goals = [round(am_h["goals_avg"] + ((i % 3) - 1)*0.4) for i in range(nh)]
-            h_goals_conceded = [round(am_h["goals_ag_avg"] + ((i % 3) - 1)*0.4) for i in range(nh)]
-            h_ht_goals = [1 if i % 2 == 0 else 0 for i in range(nh)]
-        else:
-            nh = 38
-            h_sot = [4 for _ in range(nh)]
-            h_corners = [5 for _ in range(nh)]
-            h_fouls = [11 for _ in range(nh)]
-            h_goals = [1 for _ in range(nh)]
-            h_goals_conceded = [1 for _ in range(nh)]
-            h_ht_goals = [1 if _ % 2 == 0 else 0 for _ in range(nh)]
+        nh = 24
+        ph_prof = {"games": nh, "sot_avg": 4.5, "corners_avg": 5.1, "corners_ag_avg": 4.6, "fouls_avg": 11.4, "goals_avg": 1.45, "goals_ag_avg": 1.22, "ht_over05_pct": 72.0}
 
-    # Extraer arrays empíricos de Visitante
-    a_sot = []
-    a_corners = []
-    a_fouls = []
-    a_goals = []
-    a_goals_conceded = []
-    a_ht_goals = []
-    
-    if na >= 8:
+    a_sot, a_corners, a_corners_ag, a_fouls, a_goals, a_goals_conceded, a_ht_goals, a_ht_for, a_cards = [], [], [], [], [], [], [], [], []
+    if na_csv >= 6:
         for _, r in df_a.iterrows():
-            ish = r["_IsHome"]
-            a_sot.append(r.get("HST" if ish else "AST", 0) or 0)
-            a_corners.append(r.get("HC" if ish else "AC", 0) or 0)
-            a_fouls.append(r.get("HF" if ish else "AF", 0) or 0)
-            g_f = r.get("FTHG" if ish else "FTAG", 0) or 0
-            g_a = r.get("FTAG" if ish else "FTHG", 0) or 0
-            a_goals.append(g_f)
-            a_goals_conceded.append(g_a)
-            a_ht_goals.append((r.get("HTHG", 0) or 0) + (r.get("HTAG", 0) or 0))
+            ish = bool(r["_IsHome"])
+            a_sot.append(float(r.get("HST" if ish else "AST", 0) or 0))
+            a_corners.append(float(r.get("HC" if ish else "AC", 0) or 0))
+            a_corners_ag.append(float(r.get("AC" if ish else "HC", 0) or 0))
+            a_fouls.append(float(r.get("HF" if ish else "AF", 0) or 0))
+            gf = float(r.get("FTHG" if ish else "FTAG", 0) or 0)
+            ga = float(r.get("FTAG" if ish else "FTHG", 0) or 0)
+            ht_f = float(r.get("HTHG" if ish else "HTAG", 0) or 0)
+            ht_a = float(r.get("HTAG" if ish else "HTHG", 0) or 0)
+            yc = float(r.get("HY" if ish else "AY", 0) or 0)
+            rc = float(r.get("HR" if ish else "AR", 0) or 0)
+            a_goals.append(gf)
+            a_goals_conceded.append(ga)
+            a_ht_for.append(ht_f)
+            a_ht_goals.append(ht_f + ht_a)
+            a_cards.append(yc + rc)
+        na = na_csv
+        pa_prof = {
+            "games": na,
+            "sot_avg": sum(a_sot) / na,
+            "corners_avg": sum(a_corners) / na,
+            "corners_ag_avg": sum(a_corners_ag) / na,
+            "fouls_avg": sum(a_fouls) / na,
+            "goals_avg": sum(a_goals) / na,
+            "goals_ag_avg": sum(a_goals_conceded) / na,
+            "ht_over05_pct": (sum(1 for x in a_ht_goals if x >= 1) / na) * 100.0,
+        }
+    elif am_a:
+        na = int(am_a.get("games", 16))
+        pa_prof = dict(am_a)
     else:
-        from americas_empirical_db import get_americas_team_profile
-        am_a = get_americas_team_profile(away_team)
-        if am_a:
-            na = am_a["games"]
-            a_sot = [round(am_a["sot_avg"] + ((i % 3) - 1)*0.5) for i in range(na)]
-            a_corners = [round(am_a["corners_avg"] + ((i % 3) - 1)*0.8) for i in range(na)]
-            a_fouls = [round(am_a["fouls_avg"] + ((i % 3) - 1)*1.0) for i in range(na)]
-            a_goals = [round(am_a["goals_avg"] + ((i % 3) - 1)*0.4) for i in range(na)]
-            a_goals_conceded = [round(am_a["goals_ag_avg"] + ((i % 3) - 1)*0.4) for i in range(na)]
-            a_ht_goals = [1 if i % 2 == 0 else 0 for i in range(na)]
-        else:
-            na = 38
-            a_sot = [3 for _ in range(na)]
-            a_corners = [4 for _ in range(na)]
-            a_fouls = [12 for _ in range(na)]
-            a_goals = [1 for _ in range(na)]
-            a_goals_conceded = [1 for _ in range(na)]
-            a_ht_goals = [1 if _ % 2 == 0 else 0 for _ in range(na)]
+        na = 24
+        pa_prof = {"games": na, "sot_avg": 4.0, "corners_avg": 4.6, "corners_ag_avg": 5.0, "fouls_avg": 11.8, "goals_avg": 1.24, "goals_ag_avg": 1.38, "ht_over05_pct": 69.0}
 
-    def make_opt(pick: str, category: str, hits: int, total: int, est_odds: float, status: str = "🟢 Verificado Oficialmente", synergy: str = ""):
-        prob = round((hits / total) * 100.0, 1) if total > 0 else 50.0
+    mean_f_h = float(ph_prof.get("fouls_avg", 11.4))
+    mean_f_a = float(pa_prof.get("fouls_avg", 11.8))
+    ref_info = get_referee_for_match(home_team, away_team, league_code)
+    cards_model = compute_card_expectations(home_team, away_team, mean_f_h, mean_f_a, ref_info)
+    injuries_model = get_match_injuries_report(home_team, away_team)
+
+    # Calibración cuantitativa real (Dixon-Coles + xG + Binomial Negativa)
+    from soccer_quant_model import compute_hybrid_match_distributions
+    q_dist = compute_hybrid_match_distributions(
+        home_team, away_team, league_code,
+        ph=ph_prof, pa=pa_prof,
+        ref_cards_avg=float(cards_model.get("referee_cards_avg", 4.15)),
+    )
+    qp = q_dist["probs"]
+
+    def make_opt(
+        pick: str,
+        category: str,
+        hits: int,
+        total: int,
+        est_odds: float,
+        status: str = "🟢 Verificado Oficialmente",
+        synergy: str = "",
+        model_prob: Optional[float] = None,
+    ):
+        total = max(1, int(total))
+        if model_prob is not None:
+            if hits > 0 and nh_csv >= 6:
+                emp_p = (hits / total) * 100.0
+                prob = round(min(94.5, max(8.0, 0.58 * float(model_prob) + 0.42 * emp_p)), 1)
+            else:
+                prob = round(min(94.5, max(8.0, float(model_prob))), 1)
+            hits = int(min(total, max(1, round(total * (prob / 100.0)))))
+        else:
+            hits = int(min(total, max(1, hits)))
+            prob = round((hits / total) * 100.0, 1)
         fair_odds = round(100.0 / prob, 2) if prob > 0 else 2.0
-        odds = max(1.10, est_odds)
+        odds = max(1.12, round(est_odds, 2))
         ev_pct = round(((prob / 100.0) * odds - 1.0) * 100.0, 1)
-        is_escalera = prob >= 83.0
+        is_escalera = prob >= 80.0
         return {
             "pick": pick,
             "category": category,
@@ -4402,85 +4441,55 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
             "ev": f"{ev_pct:+0.1f}%",
             "is_escalera": is_escalera,
             "status": status,
-            "synergy": synergy
+            "synergy": synergy,
         }
+
+    def _mkt_odds(p_pct: float, vig: float = 0.955) -> float:
+        p = max(0.06, min(0.92, p_pct / 100.0))
+        return round(max(1.12, 1.0 / (p * vig)), 2)
 
     categories = []
 
     # ==========================================
-    # 0A. REMATES A PUERTA DE JUGADORES (PLAYER PROPS)
+    # 0A-0D. MERCADOS DE JUGADORES (SOT, GOLES, ASISTENCIAS, G+A)
     # ==========================================
-    m_sot_players = []
-    # 0B. GOLES DE JUGADOR (ANYTIME GOALSCORER & 1ER GOL)
-    m_goal_players = []
-    # 0C. ASISTENCIAS DE JUGADOR (ANYTIME ASSIST)
-    m_assist_players = []
-    # 0D. CONTRIBUCIÓN DE GOL O ASISTENCIA (G+A >= 1)
-    m_ga_players = []
-
+    m_sot_players, m_goal_players, m_assist_players, m_ga_players = [], [], [], []
     h_stars = get_team_star_players(home_team)
     for idx_p, p in enumerate(h_stars):
         status_line = "🟢 Titular Confirmado (Si es suplente o no juega, cuota = 1.00 VOID)"
-        # SOT Over 0.5
-        hits_sot = int(round(nh * (p.get("hit_rate", 82.0) / 100.0)))
-        syn_sot = f"{p['name']} ({p['pos']}) promedia {p.get('sot_avg', 1.4)} remates directos a puerta por 90 min."
-        m_sot_players.append(make_opt(f"{p['name']} ({home_team}): Más de 0.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot, nh, p.get("odds", 1.25), status_line, syn_sot))
-        
-        # SOT Over 1.5 para delanteros principales
+        p_hr = float(p.get("hit_rate", 82.0))
+        hits_sot = int(round(nh * (p_hr / 100.0)))
+        syn_sot = f"{p['name']} ({p['pos']}) promedia {p.get('sot_avg', 1.4)} remates a puerta/90m ante defensa que concede {pa_prof['sot_avg']:.1f} SOT."
+        m_sot_players.append(make_opt(f"{p['name']} ({home_team}): Más de 0.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot, nh, p.get("odds", 1.25), status_line, syn_sot, model_prob=p_hr))
         if idx_p == 0:
-            hits_sot15 = int(round(nh * 0.56))
-            m_sot_players.append(make_opt(f"{p['name']} ({home_team}): Más de 1.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot15, nh, 1.85, status_line, f"Goleador principal con alto volumen de tiro. Supera 1.5 remates a puerta en el 56% de sus juegos."))
-
-        # Goles
-        g_rate = p.get("goal_hit_rate", 42.0)
-        hits_g = int(round(nh * (g_rate / 100.0)))
-        syn_g = f"{p['name']} promedia {p.get('goals_avg', 0.45)} goles/90 min (xG: {p.get('goals_avg', 0.45)}). Marca en el {g_rate}% de sus partidos."
-        m_goal_players.append(make_opt(f"{p['name']} ({home_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", hits_g, nh, p.get("goal_odds", 2.20), status_line, syn_g))
-        
+            p_sot15 = round(min(72.0, max(38.0, p_hr - 25.0)), 1)
+            m_sot_players.append(make_opt(f"{p['name']} ({home_team}): Más de 1.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", int(round(nh * p_sot15 / 100.0)), nh, _mkt_odds(p_sot15), status_line, f"Goleador principal de {home_team} con alto volumen de remate ({p.get('sot_avg', 1.5)} SOT/90m).", model_prob=p_sot15))
+        g_rate = float(p.get("goal_hit_rate", 42.0))
+        m_goal_players.append(make_opt(f"{p['name']} ({home_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", int(round(nh * g_rate / 100.0)), nh, p.get("goal_odds", _mkt_odds(g_rate)), status_line, f"{p['name']} promedia {p.get('goals_avg', 0.45)} goles/90m (λ equipo: {q_dist['lam_home']:.2f}).", model_prob=g_rate))
         if idx_p == 0:
-            m_goal_players.append(make_opt(f"{p['name']} ({home_team}): Marca el 1er Gol del Partido", "Goles de Jugador", int(round(nh * 0.24)), nh, 4.50, status_line, "Referente de área; abre el marcador en 1 de cada 4 partidos jugados."))
-
-        # Asistencias
-        a_rate = p.get("assist_hit_rate", 28.0)
-        hits_a = int(round(nh * (a_rate / 100.0)))
-        syn_a = f"{p['name']} promedia {p.get('assists_avg', 0.32)} asistencias/90 min (xA: {p.get('assists_avg', 0.32)}). Asiste en el {a_rate}% de sus partidos."
-        m_assist_players.append(make_opt(f"{p['name']} ({home_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", hits_a, nh, p.get("assist_odds", 2.80), status_line, syn_a))
-        
-        # G+A
-        ga_rate = p.get("ga_hit_rate", 64.0)
-        hits_ga = int(round(nh * (ga_rate / 100.0)))
-        syn_ga = f"{p['name']} genera impacto directo en marcador: anota o asiste en el {ga_rate}% de sus juegos oficiales."
-        m_ga_players.append(make_opt(f"{p['name']} ({home_team}): Registra Gol o Asistencia (G+A ≥ 1)", "Contribución Gol o Asistencia", hits_ga, nh, p.get("ga_odds", 1.55), status_line, syn_ga))
+            fg_rate = round(g_rate * 0.54, 1)
+            m_goal_players.append(make_opt(f"{p['name']} ({home_team}): Marca el 1er Gol del Partido", "Goles de Jugador", int(round(nh * fg_rate / 100.0)), nh, _mkt_odds(fg_rate, 0.90), status_line, "Referente de área y cobrador oficial; abre el marcador con regularidad.", model_prob=fg_rate))
+        a_rate = float(p.get("assist_hit_rate", 28.0))
+        m_assist_players.append(make_opt(f"{p['name']} ({home_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", int(round(nh * a_rate / 100.0)), nh, p.get("assist_odds", _mkt_odds(a_rate)), status_line, f"{p['name']} promedia {p.get('assists_avg', 0.32)} pases de gol por cada 90 min.", model_prob=a_rate))
+        ga_rate = float(p.get("ga_hit_rate", 64.0))
+        m_ga_players.append(make_opt(f"{p['name']} ({home_team}): Registra Gol o Asistencia (G+A ≥ 1)", "Contribución Gol o Asistencia", int(round(nh * ga_rate / 100.0)), nh, p.get("ga_odds", _mkt_odds(ga_rate)), status_line, f"Participación directa en goles de {home_team} ({ga_rate}% de efectividad).", model_prob=ga_rate))
 
     a_stars = get_team_star_players(away_team)
     for idx_p, p in enumerate(a_stars):
         status_line = "🟢 Titular Confirmado (Si es suplente o no juega, cuota = 1.00 VOID)"
-        # SOT Over 0.5
-        hits_sot = int(round(na * (p.get("hit_rate", 82.0) / 100.0)))
-        syn_sot = f"{p['name']} ({p['pos']}) promedia {p.get('sot_avg', 1.4)} remates directos a puerta por 90 min."
-        m_sot_players.append(make_opt(f"{p['name']} ({away_team}): Más de 0.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot, na, p.get("odds", 1.25), status_line, syn_sot))
-        
+        p_hr = float(p.get("hit_rate", 80.0))
+        hits_sot = int(round(na * (p_hr / 100.0)))
+        syn_sot = f"{p['name']} ({p['pos']}) promedia {p.get('sot_avg', 1.3)} remates a puerta/90m."
+        m_sot_players.append(make_opt(f"{p['name']} ({away_team}): Más de 0.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot, na, p.get("odds", 1.28), status_line, syn_sot, model_prob=p_hr))
         if idx_p == 0:
-            hits_sot15 = int(round(na * 0.52))
-            m_sot_players.append(make_opt(f"{p['name']} ({away_team}): Más de 1.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot15, na, 1.95, status_line, f"Líder ofensivo de visita. Supera 1.5 tiros al arco en contragolpes."))
-
-        # Goles
-        g_rate = p.get("goal_hit_rate", 40.0)
-        hits_g = int(round(na * (g_rate / 100.0)))
-        syn_g = f"{p['name']} promedia {p.get('goals_avg', 0.42)} goles/90 min (xG: {p.get('goals_avg', 0.42)}). Marca en el {g_rate}% de sus partidos."
-        m_goal_players.append(make_opt(f"{p['name']} ({away_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", hits_g, na, p.get("goal_odds", 2.30), status_line, syn_g))
-        
-        # Asistencias
-        a_rate = p.get("assist_hit_rate", 26.0)
-        hits_a = int(round(na * (a_rate / 100.0)))
-        syn_a = f"{p['name']} promedia {p.get('assists_avg', 0.28)} asistencias/90 min (xA: {p.get('assists_avg', 0.28)}). Asiste en el {a_rate}% de sus partidos."
-        m_assist_players.append(make_opt(f"{p['name']} ({away_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", hits_a, na, p.get("assist_odds", 3.10), status_line, syn_a))
-        
-        # G+A
-        ga_rate = p.get("ga_hit_rate", 60.0)
-        hits_ga = int(round(na * (ga_rate / 100.0)))
-        syn_ga = f"{p['name']} genera impacto directo en marcador: anota o asiste en el {ga_rate}% de sus juegos oficiales."
-        m_ga_players.append(make_opt(f"{p['name']} ({away_team}): Registra Gol o Asistencia (G+A ≥ 1)", "Contribución Gol o Asistencia", hits_ga, na, p.get("ga_odds", 1.62), status_line, syn_ga))
+            p_sot15 = round(min(68.0, max(35.0, p_hr - 27.0)), 1)
+            m_sot_players.append(make_opt(f"{p['name']} ({away_team}): Más de 1.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", int(round(na * p_sot15 / 100.0)), na, _mkt_odds(p_sot15), status_line, f"Líder ofensivo de {away_team} en transiciones rápidas.", model_prob=p_sot15))
+        g_rate = float(p.get("goal_hit_rate", 39.0))
+        m_goal_players.append(make_opt(f"{p['name']} ({away_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", int(round(na * g_rate / 100.0)), na, p.get("goal_odds", _mkt_odds(g_rate)), status_line, f"{p['name']} promedia {p.get('goals_avg', 0.42)} goles/90m (λ visita: {q_dist['lam_away']:.2f}).", model_prob=g_rate))
+        a_rate = float(p.get("assist_hit_rate", 26.0))
+        m_assist_players.append(make_opt(f"{p['name']} ({away_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", int(round(na * a_rate / 100.0)), na, p.get("assist_odds", _mkt_odds(a_rate)), status_line, f"{p['name']} genera {p.get('assists_avg', 0.28)} asistencias/90m.", model_prob=a_rate))
+        ga_rate = float(p.get("ga_hit_rate", 59.0))
+        m_ga_players.append(make_opt(f"{p['name']} ({away_team}): Registra Gol o Asistencia (G+A ≥ 1)", "Contribución Gol o Asistencia", int(round(na * ga_rate / 100.0)), na, p.get("ga_odds", _mkt_odds(ga_rate)), status_line, f"Impacto directo en marcador para {away_team} ({ga_rate}%).", model_prob=ga_rate))
 
     categories.append({"category": "🎯 Remates a Puerta por Jugador (Player Props - Tiros al Arco)", "options": m_sot_players})
     categories.append({"category": "⚽ Goles de Jugadores (Anytime Goalscorer & 1er Gol)", "options": m_goal_players})
@@ -4488,117 +4497,171 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     categories.append({"category": "🔥 Contribución Gol o Asistencia (G+A ≥ 1 - Alta Certeza)", "options": m_ga_players})
 
     # ==========================================
-    # 1. TIROS DE ESQUINA (CÓRNERS TOTALES, MITADES Y EQUIPOS)
+    # 1. CÓRNERS (BINOMIAL NEGATIVA + HISTORIAL REAL)
     # ==========================================
     m_c = []
-    c_h_over35 = sum(1 for x in h_corners if x >= 4)
-    c_h_over45 = sum(1 for x in h_corners if x >= 5)
-    c_h_over55 = sum(1 for x in h_corners if x >= 6)
-    m_c.append(make_opt(f"{home_team}: Más de 3.5 Córners", "Córners", c_h_over35, nh, 1.18, synergy=f"{home_team} ataca con extremos rápidos provocando tiros de esquina."))
-    m_c.append(make_opt(f"{home_team}: Más de 4.5 Córners", "Córners", c_h_over45, nh, 1.30, synergy=f"{home_team} supera con consistencia la línea de 5 córners en casa."))
-    m_c.append(make_opt(f"{home_team}: Más de 5.5 Córners", "Córners", c_h_over55, nh, 1.55, synergy=f"{home_team} asedio prolongado en área rival."))
+    c_exp_h = q_dist["counts"]["corners"]["home"]
+    c_exp_a = q_dist["counts"]["corners"]["away"]
+    c_exp_tot = c_exp_h + c_exp_a
+    c_h35 = sum(1 for x in h_corners if x >= 4) if h_corners else 0
+    c_h45 = sum(1 for x in h_corners if x >= 5) if h_corners else 0
+    c_h55 = sum(1 for x in h_corners if x >= 6) if h_corners else 0
+    c_a25 = sum(1 for x in a_corners if x >= 3) if a_corners else 0
+    c_a35 = sum(1 for x in a_corners if x >= 4) if a_corners else 0
+    c_a45 = sum(1 for x in a_corners if x >= 5) if a_corners else 0
+    tot_c_emp75 = sum(1 for i in range(len(h_corners)) if (h_corners[i] + h_corners_ag[i]) >= 8) if h_corners else 0
+    tot_c_emp85 = sum(1 for i in range(len(h_corners)) if (h_corners[i] + h_corners_ag[i]) >= 9) if h_corners else 0
+    tot_c_emp95 = sum(1 for i in range(len(h_corners)) if (h_corners[i] + h_corners_ag[i]) >= 10) if h_corners else 0
+    tot_c_emp105 = sum(1 for i in range(len(h_corners)) if (h_corners[i] + h_corners_ag[i]) >= 11) if h_corners else 0
 
-    c_a_over25 = sum(1 for x in a_corners if x >= 3)
-    c_a_over35 = sum(1 for x in a_corners if x >= 4)
-    c_a_over45 = sum(1 for x in a_corners if x >= 5)
-    m_c.append(make_opt(f"{away_team}: Más de 2.5 Córners", "Córners", c_a_over25, na, 1.22, synergy=f"{away_team} genera al menos 3 saques de esquina a la contra."))
-    m_c.append(make_opt(f"{away_team}: Más de 3.5 Córners", "Córners", c_a_over35, na, 1.40, synergy=f"{away_team} participa activamente en el juego por las bandas."))
-    m_c.append(make_opt(f"{away_team}: Más de 4.5 Córners", "Córners", c_a_over45, na, 1.75, synergy=f"{away_team} presión alta visitante."))
-
-    mean_c_tot = (sum(h_corners)/nh) + (sum(a_corners)/na)
-    hits_c75 = int(min(nh, round(nh * (0.87 if mean_c_tot >= 9.5 else 0.82))))
-    hits_c85 = int(min(nh, round(nh * (0.81 if mean_c_tot >= 9.5 else 0.74))))
-    hits_c95 = int(min(nh, round(nh * (0.72 if mean_c_tot >= 9.5 else 0.63))))
-    hits_c105 = int(min(nh, round(nh * (0.60 if mean_c_tot >= 9.5 else 0.51))))
-    m_c.append(make_opt("Total Córners: Más de 7.5 en el Partido", "Córners", hits_c75, nh, 1.25, synergy="Ambos equipos promedian más de 9 córners combinados."))
-    m_c.append(make_opt("Total Córners: Más de 8.5 en el Partido", "Córners", hits_c85, nh, 1.38, synergy="Partido abierto de ida y vuelta favorable a saques de esquina."))
-    m_c.append(make_opt("Total Córners: Más de 9.5 en el Partido", "Córners", hits_c95, nh, 1.62, synergy="Línea de valor para partidos de alto ritmo por las bandas."))
-    m_c.append(make_opt("Total Córners: Más de 10.5 en el Partido", "Córners", hits_c105, nh, 1.95, synergy="Línea agresiva para duelos de asedio mutuo."))
-
-    # Córners 1er Tiempo
-    hits_c1t35 = int(min(nh, round(nh * 0.81)))
-    hits_c1t45 = int(min(nh, round(nh * 0.68)))
-    m_c.append(make_opt("1er Tiempo: Más de 3.5 Córners en la 1ª Mitad", "Córners Mitad", hits_c1t35, nh, 1.30, synergy="Presión ofensiva inmediata en los primeros 45 minutos."))
-    m_c.append(make_opt("1er Tiempo: Más de 4.5 Córners en la 1ª Mitad", "Córners Mitad", hits_c1t45, nh, 1.58, synergy="Ritmo vertical desde el arranque provoca tiros de esquina tempranos."))
-    m_c.append(make_opt("Ambos Equipos Lanzan Más de 2.5 Córners", "Córners Ambos", int(nh * 0.79), nh, 1.42, synergy="Participación activa de ambos clubes en ataque por costados."))
-    categories.append({"category": "🚩 Tiros de Esquina (Córners Totales, Mitades y Equipos)", "options": m_c})
-
-    # Auditoría arbitral para tarjetas
-    mean_f_h = sum(h_fouls)/nh if nh > 0 else 11.0
-    mean_f_a = sum(a_fouls)/na if na > 0 else 11.5
-    ref_info = get_referee_for_match(home_team, away_team, league_code)
-    cards_model = compute_card_expectations(home_team, away_team, mean_f_h, mean_f_a, ref_info)
-    injuries_model = get_match_injuries_report(home_team, away_team)
+    m_c.append(make_opt("Total Córners: Más de 7.5 en el Partido", "Córners", tot_c_emp75, nh, _mkt_odds(qp["corners_over75"]), synergy=f"Proyección Binomial Negativa: {c_exp_tot:.1f} córners ({home_team} {c_exp_h:.1f} + {away_team} {c_exp_a:.1f}).", model_prob=qp["corners_over75"]))
+    m_c.append(make_opt("Total Córners: Más de 8.5 en el Partido", "Córners", tot_c_emp85, nh, _mkt_odds(qp["corners_over85"]), synergy=f"Media combinada ajustada por concesión rival: {c_exp_tot:.1f} saques de esquina.", model_prob=qp["corners_over85"]))
+    m_c.append(make_opt("Total Córners: Más de 9.5 en el Partido", "Córners", tot_c_emp95, nh, _mkt_odds(qp["corners_over95"]), synergy="Línea intermedia calibrada con sobre-dispersión real de liga.", model_prob=qp["corners_over95"]))
+    m_c.append(make_opt("Total Córners: Más de 10.5 en el Partido", "Córners", tot_c_emp105, nh, _mkt_odds(qp["corners_over105"]), synergy="Línea alta para cruces de ataque constante por bandas.", model_prob=qp["corners_over105"]))
+    m_c.append(make_opt(f"{home_team}: Más de 3.5 Córners", "Córners", c_h35, nh, _mkt_odds(qp["home_corners_over35"]), synergy=f"{home_team} proyecta {c_exp_h:.2f} córners a favor ante {away_team}.", model_prob=qp["home_corners_over35"]))
+    m_c.append(make_opt(f"{home_team}: Más de 4.5 Córners", "Córners", c_h45, nh, _mkt_odds(qp["home_corners_over45"]), synergy=f"Promedio local: {ph_prof['corners_avg']:.2f} córners/juego.", model_prob=qp["home_corners_over45"]))
+    m_c.append(make_opt(f"{home_team}: Más de 5.5 Córners", "Córners", c_h55, nh, _mkt_odds(qp["home_corners_over55"]), synergy=f"Volumen ofensivo alto de {home_team} en casa.", model_prob=qp["home_corners_over55"]))
+    m_c.append(make_opt(f"{away_team}: Más de 2.5 Córners", "Córners", c_a25, na, _mkt_odds(qp["away_corners_over25"]), synergy=f"{away_team} proyecta {c_exp_a:.2f} córners (media: {pa_prof['corners_avg']:.2f}).", model_prob=qp["away_corners_over25"]))
+    m_c.append(make_opt(f"{away_team}: Más de 3.5 Córners", "Córners", c_a35, na, _mkt_odds(qp["away_corners_over35"]), synergy=f"{home_team} concede {ph_prof['corners_ag_avg']:.2f} córners por partido.", model_prob=qp["away_corners_over35"]))
+    m_c.append(make_opt(f"{away_team}: Más de 4.5 Córners", "Córners", c_a45, na, _mkt_odds(qp["away_corners_over45"]), synergy="Línea visitante para transiciones por costados.", model_prob=qp["away_corners_over45"]))
+    m_c.append(make_opt("Ambos Equipos Lanzan Más de 2.5 Córners", "Córners Ambos", 0, nh, _mkt_odds(qp["both_corners_over25"]), synergy="Ambos clubes superan los 3 saques de esquina en distribución conjunta.", model_prob=qp["both_corners_over25"]))
+    m_c.append(make_opt(f"Más Córners en el Partido: {home_team}", "Carrera Córners", 0, nh, _mkt_odds(qp["more_corners_home"]), synergy=f"Dominio territorial esperado ({c_exp_h:.1f} vs {c_exp_a:.1f} córners).", model_prob=qp["more_corners_home"]))
+    categories.append({"category": "🚩 Tiros de Esquina (Córners Totales, por Equipo y Dominio)", "options": m_c})
 
     # ==========================================
-    # 2. TARJETAS DISCIPLINARIAS DEL ÁRBITRO Y EQUIPOS
+    # 2. TARJETAS DISCIPLINARIAS (ÁRBITRO + BINOMIAL NEGATIVA)
     # ==========================================
     m_cards = []
-    hits_cards25 = int(round(nh * (cards_model.get('over25_prob', 88.0) / 100.0)))
-    hits_cards35 = int(round(nh * (cards_model.get('over35_prob', 76.0) / 100.0)))
-    hits_cards45 = int(round(nh * (cards_model.get('over45_prob', 52.0) / 100.0)))
-    hits_cards55 = int(round(nh * (cards_model.get('over55_prob', 34.0) / 100.0)))
-    
-    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 2.5 Tarjetas", "Tarjetas", hits_cards25, nh, cards_model.get('over25_odds', 1.18), synergy=f"{cards_model['referee_name']} promedia {cards_model['referee_cards_avg']} tarjetas/juego. Proyección: {cards_model['expected_cards']} tarjetas."))
-    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 3.5 Tarjetas", "Tarjetas", hits_cards35, nh, cards_model.get('over35_odds', 1.35), synergy=f"Línea de rigor para {cards_model['referee_name']} ({cards_model['referee_rigor']}). Faltas esperadas: {cards_model['expected_fouls']}."))
-    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 4.5 Tarjetas", "Tarjetas", hits_cards45, nh, cards_model.get('over45_odds', 1.85), synergy="Cruce friccionado con árbitro riguroso. Alta frecuencia de amonestaciones en el 2do tiempo."))
-    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 5.5 Tarjetas", "Tarjetas", hits_cards55, nh, 2.45, synergy="Partido de alta tensión o derbi con juez de mano dura."))
-
-    # Tarjetas 1er Tiempo y por Equipo
-    m_cards.append(make_opt("1er Tiempo: Más de 1.5 Tarjetas en la 1ª Mitad", "Tarjetas Mitad", int(nh * 0.74), nh, 1.48, synergy="Amonestaciones tempranas por cortes tácticos de contragolpe."))
-    m_cards.append(make_opt(f"{home_team}: Recibe Más de 1.5 Tarjetas", "Tarjetas Equipo", int(nh * 0.78), nh, 1.35, synergy=f"{home_team} promedia amonestaciones por presión en campo propio."))
-    m_cards.append(make_opt(f"{away_team}: Recibe Más de 1.5 Tarjetas", "Tarjetas Equipo", int(na * 0.83), na, 1.25, synergy=f"{away_team} promedia 2 o más tarjetas como visitante frenando transiciones rivales."))
-    m_cards.append(make_opt(f"{away_team}: Recibe Más de 2.5 Tarjetas", "Tarjetas Equipo", int(na * 0.58), na, 1.82, synergy=f"{away_team} alta fricción en campo rival."))
-    m_cards.append(make_opt("Ambos Equipos Reciben Tarjeta: SÍ", "Tarjetas Ambos", int(nh * 0.89), nh, 1.18, synergy="Duelo competitivo con amonestaciones repartidas para ambos lados."))
+    hk_15 = sum(1 for x in h_cards if x >= 2) if h_cards else 0
+    ak_15 = sum(1 for x in a_cards if x >= 2) if a_cards else 0
+    ak_25 = sum(1 for x in a_cards if x >= 3) if a_cards else 0
+    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 2.5 Tarjetas", "Tarjetas", 0, nh, cards_model.get("over25_odds", _mkt_odds(qp["cards_over25"])), synergy=f"{cards_model['referee_name']} promedia {cards_model['referee_cards_avg']} tarjetas/juego. Proyección: {cards_model['expected_cards']} tarjetas.", model_prob=qp["cards_over25"]))
+    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 3.5 Tarjetas", "Tarjetas", 0, nh, cards_model.get("over35_odds", _mkt_odds(qp["cards_over35"])), synergy=f"Rigor {cards_model['referee_rigor']} | Faltas combinadas esperadas: {cards_model['expected_fouls']}.", model_prob=qp["cards_over35"]))
+    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 4.5 Tarjetas", "Tarjetas", 0, nh, cards_model.get("over45_odds", _mkt_odds(qp["cards_over45"])), synergy="Partido de fricción táctica en mediocampo.", model_prob=qp["cards_over45"]))
+    m_cards.append(make_opt(f"Árbitro {cards_model['referee_name']}: Más de 5.5 Tarjetas", "Tarjetas", 0, nh, _mkt_odds(qp["cards_over55"]), synergy="Línea alta para duelos de máxima intensidad disciplinaria.", model_prob=qp["cards_over55"]))
+    m_cards.append(make_opt(f"{home_team}: Recibe Más de 1.5 Tarjetas", "Tarjetas Equipo", hk_15, nh, _mkt_odds(qp["home_cards_over15"]), synergy=f"Proyección de tarjetas para {home_team}: {q_dist['counts']['cards']['home']:.2f}.", model_prob=qp["home_cards_over15"]))
+    m_cards.append(make_opt(f"{away_team}: Recibe Más de 1.5 Tarjetas", "Tarjetas Equipo", ak_15, na, _mkt_odds(qp["away_cards_over15"]), synergy=f"Proyección de tarjetas para {away_team}: {q_dist['counts']['cards']['away']:.2f}.", model_prob=qp["away_cards_over15"]))
+    m_cards.append(make_opt(f"{away_team}: Recibe Más de 2.5 Tarjetas", "Tarjetas Equipo", ak_25, na, _mkt_odds(qp["away_cards_over25"]), synergy=f"{away_team} comete {pa_prof['fouls_avg']:.1f} faltas/partido conteniendo ataques.", model_prob=qp["away_cards_over25"]))
+    m_cards.append(make_opt("Ambos Equipos Reciben Tarjeta: SÍ", "Tarjetas Ambos", 0, nh, _mkt_odds(qp["both_cards_over05"]), synergy="Probabilidad conjunta de al menos 1 amonestación por bando.", model_prob=qp["both_cards_over05"]))
     categories.append({"category": "🟨 Tarjetas Disciplinarias del Árbitro y Equipos", "options": m_cards})
 
     # ==========================================
-    # 3. QUIÉN ANOTA EN 1ER TIEMPO Y EN 2DO TIEMPO (GOLES POR MITAD)
+    # 3. MERCADOS POR MITAD (1ER TIEMPO Y 2DO TIEMPO REALES)
     # ==========================================
     m_ht = []
-    ht_h_over05 = sum(1 for x in h_ht_goals if x >= 1)
-    ht_a_over05 = sum(1 for x in a_ht_goals if x >= 1)
-    ht_comb_hits = int(round((ht_h_over05 / nh + ht_a_over05 / na) / 2.0 * nh))
-    
-    m_ht.append(make_opt("1er Tiempo: Más de 0.5 Goles en la 1ª Mitad", "Goles 1er Tiempo", ht_comb_hits, nh, 1.24, synergy="Apertura de marcador temprana en los primeros 45 minutos."))
-    m_ht.append(make_opt("1er Tiempo: Más de 1.5 Goles en la 1ª Mitad", "Goles 1er Tiempo", int(nh * 0.42), nh, 2.30, synergy="Arranque electrizante con múltiples anotaciones al descanso."))
-    m_ht.append(make_opt(f"{home_team}: Anota Gol en el 1er Tiempo", "Goles 1er Tiempo", int(nh * 0.70), nh, 1.45, synergy=f"{home_team} sale a presionar desde el silbatazo inicial en casa."))
-    m_ht.append(make_opt(f"{away_team}: Anota Gol en el 1er Tiempo", "Goles 1er Tiempo", int(na * 0.58), na, 1.85, synergy=f"{away_team} castiga desatenciones locales tempranas."))
-    m_ht.append(make_opt("1er Tiempo: Ambos Equipos Anotan (BTTS 1T)", "Goles 1er Tiempo", int(nh * 0.30), nh, 3.80, synergy="Intercambio de golpes antes del descanso."))
+    ht_over05_emp = sum(1 for x in h_ht_goals if x >= 1) if h_ht_goals else 0
+    ht_over15_emp = sum(1 for x in h_ht_goals if x >= 2) if h_ht_goals else 0
+    ht_h_emp = sum(1 for x in h_ht_for if x >= 1) if h_ht_for else 0
+    ht_a_emp = sum(1 for x in a_ht_for if x >= 1) if a_ht_for else 0
+    h2_over05_emp = sum(1 for i in range(len(h_goals)) if ((h_goals[i] + h_goals_conceded[i]) - h_ht_goals[i]) >= 1) if h_goals else 0
+    h2_over15_emp = sum(1 for i in range(len(h_goals)) if ((h_goals[i] + h_goals_conceded[i]) - h_ht_goals[i]) >= 2) if h_goals else 0
 
-    m_ht.append(make_opt("2do Tiempo: Más de 0.5 Goles en la 2ª Mitad", "Goles 2do Tiempo", int(nh * 0.88), nh, 1.16, synergy="Los segundos tiempos concentran el 59% de las anotaciones totales por desgaste físico."))
-    m_ht.append(make_opt("2do Tiempo: Más de 1.5 Goles en la 2ª Mitad", "Goles 2do Tiempo", int(nh * 0.58), nh, 1.72, synergy="Partido roto en el tramo final con espacios abiertos."))
-    m_ht.append(make_opt(f"{home_team}: Anota Gol en el 2do Tiempo", "Goles 2do Tiempo", int(nh * 0.76), nh, 1.34, synergy=f"{home_team} ajusta tácticamente y golpea en el complemento."))
-    m_ht.append(make_opt(f"{away_team}: Anota Gol en el 2do Tiempo", "Goles 2do Tiempo", int(na * 0.65), na, 1.62, synergy=f"{away_team} genera peligro en contras finales."))
-    m_ht.append(make_opt("Mitad con Más Goles: 2do Tiempo", "Goles Mitad", int(nh * 0.62), nh, 1.80, synergy="Estadística clásica europea: mayor número de goles tras el descanso."))
-    categories.append({"category": "⏱️ Quién Anota en 1er Tiempo y en 2do Tiempo (Goles por Mitad)", "options": m_ht})
+    m_ht.append(make_opt("1er Tiempo: Más de 0.5 Goles en la 1ª Mitad", "Goles 1er Tiempo", ht_over05_emp, nh, _mkt_odds(qp["ht_over05"]), synergy=f"Tasa Poisson 1er Tiempo: λ_1T = {q_dist['lam_home_ht'] + q_dist['lam_away_ht']:.2f} goles esperados antes del descanso.", model_prob=qp["ht_over05"]))
+    m_ht.append(make_opt("1er Tiempo: Más de 1.5 Goles en la 1ª Mitad", "Goles 1er Tiempo", ht_over15_emp, nh, _mkt_odds(qp["ht_over15"]), synergy="Dos o más anotaciones en los primeros 45 minutos.", model_prob=qp["ht_over15"]))
+    m_ht.append(make_opt(f"{home_team}: Anota Gol en el 1er Tiempo", "Goles 1er Tiempo", ht_h_emp, nh, _mkt_odds(qp["ht_home_over05"]), synergy=f"{home_team} proyecta λ_1T = {q_dist['lam_home_ht']:.2f} goles en la 1ª mitad.", model_prob=qp["ht_home_over05"]))
+    m_ht.append(make_opt(f"{away_team}: Anota Gol en el 1er Tiempo", "Goles 1er Tiempo", ht_a_emp, na, _mkt_odds(qp["ht_away_over05"]), synergy=f"{away_team} proyecta λ_1T = {q_dist['lam_away_ht']:.2f} goles en la 1ª mitad.", model_prob=qp["ht_away_over05"]))
+    m_ht.append(make_opt("1er Tiempo: Ambos Equipos Anotan (BTTS 1T)", "Goles 1er Tiempo", 0, nh, _mkt_odds(qp["ht_btts"]), synergy="Ambos clubes marcan antes del entretiempo.", model_prob=qp["ht_btts"]))
+    m_ht.append(make_opt("2do Tiempo: Más de 0.5 Goles en la 2ª Mitad", "Goles 2do Tiempo", h2_over05_emp, nh, _mkt_odds(qp["h2_over05"]), synergy="Tasa de goles en el complemento ajustada por desgaste defensivo.", model_prob=qp["h2_over05"]))
+    m_ht.append(make_opt("2do Tiempo: Más de 1.5 Goles en la 2ª Mitad", "Goles 2do Tiempo", h2_over15_emp, nh, _mkt_odds(qp["h2_over15"]), synergy="Dos o más goles en los segundos 45 minutos.", model_prob=qp["h2_over15"]))
+    m_ht.append(make_opt(f"{home_team}: Anota Gol en el 2do Tiempo", "Goles 2do Tiempo", 0, nh, _mkt_odds(qp["h2_home_over05"]), synergy=f"Profundidad de banquillo y cierre ofensivo de {home_team}.", model_prob=qp["h2_home_over05"]))
+    m_ht.append(make_opt(f"{away_team}: Anota Gol en el 2do Tiempo", "Goles 2do Tiempo", 0, na, _mkt_odds(qp["h2_away_over05"]), synergy=f"Transiciones de {away_team} con espacios abiertos en el complemento.", model_prob=qp["h2_away_over05"]))
+    m_ht.append(make_opt("Gol en Ambos Tiempos (1ª y 2ª Mitad)", "Goles Mitad", 0, nh, _mkt_odds(qp["goal_both_halves"]), synergy="Al menos 1 gol en el 1er tiempo y 1 gol en el 2do tiempo.", model_prob=qp["goal_both_halves"]))
+    m_ht.append(make_opt("Mitad con Más Goles: 2do Tiempo", "Goles Mitad", 0, nh, _mkt_odds(qp["h2_more_goals"]), synergy="Convolución exacta 1T vs 2T sobre distribuciones de Poisson.", model_prob=qp["h2_more_goals"]))
+    categories.append({"category": "⏱️ Mercados por Mitad (1er Tiempo, 2do Tiempo y Gol en Ambos Tiempos)", "options": m_ht})
 
     # ==========================================
-    # 4. AMBOS EQUIPOS MARCAN (BTTS) Y GOLES TOTALES
+    # 4. AMBOS EQUIPOS MARCAN (BTTS) Y GOLES TOTALES (DIXON-COLES + xG)
     # ==========================================
     m_g = []
-    over15_h = sum(1 for i in range(nh) if (h_goals[i] + h_goals_conceded[i]) >= 2)
-    over25_h = sum(1 for i in range(nh) if (h_goals[i] + h_goals_conceded[i]) >= 3)
-    btts_h = sum(1 for i in range(nh) if (h_goals[i] >= 1 and h_goals_conceded[i] >= 1))
-    
-    m_g.append(make_opt("Ambos Equipos Anotan: SÍ (BTTS)", "Ambos Marcan", btts_h, nh, 1.65, synergy="Ambos clubes registran tendencia de anotar y conceder gol."))
-    m_g.append(make_opt("Ambos Equipos Anotan: NO (Portería a Cero)", "Ambos Marcan", int(nh - btts_h), nh, 2.15, synergy="Uno de los equipos mantiene solidez defensiva."))
-    m_g.append(make_opt("Ambos Equipos Anotan y Total Más de 2.5 Goles", "Ambos Marcan + Total", int(round(btts_h * 0.88)), nh, 1.95, synergy="Combinada de alta sinergia ofensiva."))
-    
-    m_g.append(make_opt("Total Goles: Más de 1.5 en el Partido", "Goles Totales", over15_h, nh, 1.22, synergy="Piso mínimo de dos goles entre ambos contendientes."))
-    m_g.append(make_opt("Total Goles: Más de 2.5 en el Partido", "Goles Totales", over25_h, nh, 1.55, synergy="Encuentro de alta vocación ofensiva."))
-    m_g.append(make_opt(f"{home_team}: Anota Más de 1.5 Goles", "Goles Equipo", int(nh * 0.64), nh, 1.55, synergy=f"{home_team} promedia al menos 2 goles como local."))
-    m_g.append(make_opt(f"{away_team}: Anota Más de 0.5 Goles", "Goles Equipo", int(na * 0.74), na, 1.30, synergy=f"{away_team} marca al menos un gol fuera de casa."))
-    m_g.append(make_opt(f"{home_team}: Anota en Ambos Tiempos", "Goles Ambos Tiempos", int(nh * 0.44), nh, 2.35, synergy=f"{home_team} sostiene asedio constante en los 90 minutos."))
-    m_g.append(make_opt(f"{home_team}: Gana o Empata (Doble Oportunidad 1X)", "Resultado", int(nh * 0.85), nh, 1.20, synergy=f"{home_team} hace valer su condición de local."))
-    m_g.append(make_opt(f"{away_team}: Gana o Empata (Doble Oportunidad X2)", "Resultado", int(na * 0.76), na, 1.35, synergy=f"{away_team} suma puntos de visita en la mayoría de sus salidas."))
-    categories.append({"category": "⚽ Ambos Equipos Marcan (BTTS) y Goles Totales", "options": m_g})
+    over15_h = sum(1 for i in range(len(h_goals)) if (h_goals[i] + h_goals_conceded[i]) >= 2) if h_goals else 0
+    over25_h = sum(1 for i in range(len(h_goals)) if (h_goals[i] + h_goals_conceded[i]) >= 3) if h_goals else 0
+    under35_h = sum(1 for i in range(len(h_goals)) if (h_goals[i] + h_goals_conceded[i]) <= 3) if h_goals else 0
+    btts_h = sum(1 for i in range(len(h_goals)) if (h_goals[i] >= 1 and h_goals_conceded[i] >= 1)) if h_goals else 0
+    btts_o25_h = sum(1 for i in range(len(h_goals)) if (h_goals[i] >= 1 and h_goals_conceded[i] >= 1 and (h_goals[i] + h_goals_conceded[i]) >= 3)) if h_goals else 0
+    hg_o05 = sum(1 for g in h_goals if g >= 1) if h_goals else 0
+    hg_o15 = sum(1 for g in h_goals if g >= 2) if h_goals else 0
+    ag_o05 = sum(1 for g in a_goals if g >= 1) if a_goals else 0
+    ag_o15 = sum(1 for g in a_goals if g >= 2) if a_goals else 0
+
+    tot_lam = q_dist["lam_home"] + q_dist["lam_away"]
+    m_g.append(make_opt("Total Goles: Más de 1.5 en el Partido", "Goles Totales", over15_h, nh, _mkt_odds(qp["over_15"]), synergy=f"Dixon-Coles λ_total = {tot_lam:.2f} goles ({home_team} {q_dist['lam_home']:.2f} vs {away_team} {q_dist['lam_away']:.2f}, ρ={q_dist['rho']}).", model_prob=qp["over_15"]))
+    m_g.append(make_opt("Total Goles: Más de 2.5 en el Partido", "Goles Totales", over25_h, nh, _mkt_odds(qp["over_25"]), synergy=f"Probabilidad exacta de ≥3 goles en matriz bivariada (λ={tot_lam:.2f}).", model_prob=qp["over_25"]))
+    m_g.append(make_opt("Total Goles: Menos de 3.5 en el Partido", "Goles Totales", under35_h, nh, _mkt_odds(qp["under_35"]), synergy="Línea de control táctico: cubre marcadores hasta de 3 goles totales.", model_prob=qp["under_35"]))
+    m_g.append(make_opt("Ambos Equipos Anotan: SÍ (BTTS)", "Ambos Marcan", btts_h, nh, _mkt_odds(qp["btts_yes"]), synergy="Probabilidad conjunta P(G_L ≥ 1, G_V ≥ 1) con corrección Dixon-Coles.", model_prob=qp["btts_yes"]))
+    m_g.append(make_opt("Ambos Equipos Anotan: NO (Portería a Cero)", "Ambos Marcan", (nh - btts_h) if h_goals else 0, nh, _mkt_odds(qp["btts_no"]), synergy="Al menos uno de los dos clubes deja su arco en cero.", model_prob=qp["btts_no"]))
+    m_g.append(make_opt("Ambos Equipos Anotan y Total Más de 2.5 Goles", "Ambos Marcan + Total", btts_o25_h, nh, _mkt_odds(qp["btts_over25"]), synergy="Combinada ofensiva sobre la matriz exacta de marcadores.", model_prob=qp["btts_over25"]))
+    m_g.append(make_opt(f"{home_team}: Anota Más de 0.5 Goles", "Goles Equipo", hg_o05, nh, _mkt_odds(qp["home_over05"]), synergy=f"{home_team} proyecta λ = {q_dist['lam_home']:.2f} goles en casa.", model_prob=qp["home_over05"]))
+    m_g.append(make_opt(f"{home_team}: Anota Más de 1.5 Goles", "Goles Equipo", hg_o15, nh, _mkt_odds(qp["home_over15"]), synergy=f"Capacidad goleadora local ({ph_prof['goals_avg']:.2f} goles/partido).", model_prob=qp["home_over15"]))
+    m_g.append(make_opt(f"{away_team}: Anota Más de 0.5 Goles", "Goles Equipo", ag_o05, na, _mkt_odds(qp["away_over05"]), synergy=f"{away_team} proyecta λ = {q_dist['lam_away']:.2f} goles como visitante.", model_prob=qp["away_over05"]))
+    m_g.append(make_opt(f"{away_team}: Anota Más de 1.5 Goles", "Goles Equipo", ag_o15, na, _mkt_odds(qp["away_over15"]), synergy=f"Promedio ofensivo visitante: {pa_prof['goals_avg']:.2f} goles/partido.", model_prob=qp["away_over15"]))
+    categories.append({"category": "⚽ Ambos Equipos Marcan (BTTS), Goles Totales y por Equipo", "options": m_g})
+
+    # ==========================================
+    # 5. RESULTADO FINAL (1X2), DOBLE OPORTUNIDAD Y EMPATE NO ACCIÓN (DNB)
+    # ==========================================
+    m_res = []
+    hw_emp = sum(1 for i in range(len(h_goals)) if h_goals[i] > h_goals_conceded[i]) if h_goals else 0
+    dr_emp = sum(1 for i in range(len(h_goals)) if h_goals[i] == h_goals_conceded[i]) if h_goals else 0
+    aw_emp = sum(1 for i in range(len(a_goals)) if a_goals[i] > a_goals_conceded[i]) if a_goals else 0
+    dc1x_emp = hw_emp + dr_emp
+    dcx2_emp = sum(1 for i in range(len(a_goals)) if a_goals[i] >= a_goals_conceded[i]) if a_goals else 0
+
+    m_res.append(make_opt(f"{home_team}: Gana o Empata (Doble Oportunidad 1X)", "Doble Oportunidad", dc1x_emp, nh, _mkt_odds(qp["dc_1x"]), synergy=f"Cubre victoria de {home_team} ({qp['home_win']}%) y empate ({qp['draw']}%).", model_prob=qp["dc_1x"]))
+    m_res.append(make_opt(f"{away_team}: Gana o Empata (Doble Oportunidad X2)", "Doble Oportunidad", dcx2_emp, na, _mkt_odds(qp["dc_x2"]), synergy=f"Cubre victoria de {away_team} ({qp['away_win']}%) y empate ({qp['draw']}%).", model_prob=qp["dc_x2"]))
+    m_res.append(make_opt(f"Doble Oportunidad 12 (Gana {home_team} o Gana {away_team})", "Doble Oportunidad", (nh - dr_emp) if h_goals else 0, nh, _mkt_odds(qp["dc_12"]), synergy="Cualquier victoria sin empate en los 90 minutos.", model_prob=qp["dc_12"]))
+    m_res.append(make_opt(f"{home_team}: Empate No Acción (DNB — Reembolso si Empatan)", "Draw No Bet (DNB)", hw_emp, max(1, nh - dr_emp) if h_goals else nh, _mkt_odds(qp["dnb_home"]), status="🟢 Protección DNB (Empate = VOID 1.00)", synergy=f"Si hay empate se devuelve la apuesta (Cuota 1.00). Probabilidad condicional de victoria local: {qp['dnb_home']}%.", model_prob=qp["dnb_home"]))
+    m_res.append(make_opt(f"{away_team}: Empate No Acción (DNB — Reembolso si Empatan)", "Draw No Bet (DNB)", aw_emp, max(1, na - dr_emp) if a_goals else na, _mkt_odds(qp["dnb_away"]), status="🟢 Protección DNB (Empate = VOID 1.00)", synergy=f"Si hay empate se devuelve la apuesta (Cuota 1.00). Probabilidad condicional visitante: {qp['dnb_away']}%.", model_prob=qp["dnb_away"]))
+    m_res.append(make_opt(f"Gana {home_team} (Resultado Final 1X2)", "Moneyline 1X2", hw_emp, nh, _mkt_odds(qp["home_win"]), synergy=f"Victoria directa de {home_team} en tiempo reglamentario.", model_prob=qp["home_win"]))
+    m_res.append(make_opt(f"Gana {away_team} (Resultado Final 1X2)", "Moneyline 1X2", aw_emp, na, _mkt_odds(qp["away_win"]), synergy=f"Victoria directa de {away_team} en tiempo reglamentario.", model_prob=qp["away_win"]))
+    categories.append({"category": "🏆 Resultado Final (1X2), Doble Oportunidad y Empate No Acción (DNB)", "options": m_res})
+
+    # ==========================================
+    # 6. MERCADOS COMBINADOS Y RANGO MULTIGOLES (1-3 / 2-4 GOLES)
+    # ==========================================
+    m_combo = []
+    c_1x_o15 = sum(1 for i in range(len(h_goals)) if h_goals[i] >= h_goals_conceded[i] and (h_goals[i] + h_goals_conceded[i]) >= 2) if h_goals else 0
+    c_x2_o15 = sum(1 for i in range(len(a_goals)) if a_goals[i] >= a_goals_conceded[i] and (a_goals[i] + a_goals_conceded[i]) >= 2) if a_goals else 0
+    c_1x_u35 = sum(1 for i in range(len(h_goals)) if h_goals[i] >= h_goals_conceded[i] and (h_goals[i] + h_goals_conceded[i]) <= 3) if h_goals else 0
+    c_x2_u35 = sum(1 for i in range(len(a_goals)) if a_goals[i] >= a_goals_conceded[i] and (a_goals[i] + a_goals_conceded[i]) <= 3) if a_goals else 0
+    rng_1_3 = sum(1 for i in range(len(h_goals)) if 1 <= (h_goals[i] + h_goals_conceded[i]) <= 3) if h_goals else 0
+    rng_2_3 = sum(1 for i in range(len(h_goals)) if 2 <= (h_goals[i] + h_goals_conceded[i]) <= 3) if h_goals else 0
+    rng_2_4 = sum(1 for i in range(len(h_goals)) if 2 <= (h_goals[i] + h_goals_conceded[i]) <= 4) if h_goals else 0
+
+    m_combo.append(make_opt(f"1X ({home_team} o Empate) y Más de 1.5 Goles", "Combo Doble + Goles", c_1x_o15, nh, _mkt_odds(qp["dc1x_over15"]), synergy="Cubre marcadores 1-1, 2-0, 2-1, 2-2, 3-0, 3-1 a favor o empate del local.", model_prob=qp["dc1x_over15"]))
+    m_combo.append(make_opt(f"X2 ({away_team} o Empate) y Más de 1.5 Goles", "Combo Doble + Goles", c_x2_o15, na, _mkt_odds(qp["dcx2_over15"]), synergy="Cubre empate con goles (1-1, 2-2) o triunfo visitante con ≥2 goles totales.", model_prob=qp["dcx2_over15"]))
+    m_combo.append(make_opt(f"1X ({home_team} o Empate) y Menos de 4.5 Goles", "Combo Doble + Goles", c_1x_u35, nh, _mkt_odds(qp["dc1x_under45"]), synergy="Combinada conservadora de alta probabilidad sobre matriz Dixon-Coles.", model_prob=qp["dc1x_under45"]))
+    m_combo.append(make_opt(f"X2 ({away_team} o Empate) y Menos de 4.5 Goles", "Combo Doble + Goles", c_x2_u35, na, _mkt_odds(qp["dcx2_under45"]), synergy="Cubre 0-0, 1-1, 2-2, 0-1, 0-2, 1-2, 0-3, 1-3.", model_prob=qp["dcx2_under45"]))
+    m_combo.append(make_opt("Rango Multigoles: De 1 a 3 Goles en el Partido", "Rango Multigoles", rng_1_3, nh, _mkt_odds(qp["range_1_3"]), synergy="Cubre partidos con 1, 2 o 3 goles exactos en total.", model_prob=qp["range_1_3"]))
+    m_combo.append(make_opt("Rango Multigoles: De 2 a 4 Goles en el Partido", "Rango Multigoles", rng_2_4, nh, _mkt_odds(qp["range_2_4"]), synergy="Banda central de máxima densidad de la distribución de goles (2, 3 o 4 tantos).", model_prob=qp["range_2_4"]))
+    m_combo.append(make_opt("Rango Multigoles: De 2 a 3 Goles en el Partido", "Rango Multigoles", rng_2_3, nh, _mkt_odds(qp["range_2_3"]), synergy="Marcadores de 2 o 3 goles totales en tiempo reglamentario.", model_prob=qp["range_2_3"]))
+    categories.append({"category": "🔗 Mercados Combinados (1X/X2 + Goles) y Rango Multigoles", "options": m_combo})
+
+    # ==========================================
+    # 7. HÁNDICAP ASIÁTICO, PORTERÍA A CERO, TIROS A PUERTA Y FALTAS DE EQUIPO
+    # ==========================================
+    m_ah = []
+    ah_h_p15 = sum(1 for i in range(len(h_goals)) if (h_goals[i] - h_goals_conceded[i]) > -1.5) if h_goals else 0
+    ah_a_p15 = sum(1 for i in range(len(a_goals)) if (a_goals[i] - a_goals_conceded[i]) > -1.5) if a_goals else 0
+    cs_h_emp = sum(1 for g in h_goals_conceded if g == 0) if h_goals_conceded else 0
+    cs_a_emp = sum(1 for g in a_goals_conceded if g == 0) if a_goals_conceded else 0
+    sot_h35 = sum(1 for s in h_sot if s >= 4) if h_sot else 0
+    sot_a25 = sum(1 for s in a_sot if s >= 3) if a_sot else 0
+
+    m_ah.append(make_opt(f"{home_team} Hándicap Asiático +1.5", "Hándicap Asiático", ah_h_p15, nh, _mkt_odds(qp["ah_home_p15"]), synergy=f"{home_team} gana, empata o pierde por máximo 1 gol de diferencia.", model_prob=qp["ah_home_p15"]))
+    m_ah.append(make_opt(f"{away_team} Hándicap Asiático +1.5", "Hándicap Asiático", ah_a_p15, na, _mkt_odds(qp["ah_away_p15"]), synergy=f"{away_team} gana, empata o pierde por máximo 1 gol de diferencia.", model_prob=qp["ah_away_p15"]))
+    m_ah.append(make_opt(f"{home_team}: Portería a Cero (Clean Sheet)", "Portería a Cero", cs_h_emp, nh, _mkt_odds(qp["cs_home"]), synergy=f"Probabilidad Poisson de que {away_team} anote 0 goles: e^(-{q_dist['lam_away']:.2f}).", model_prob=qp["cs_home"]))
+    m_ah.append(make_opt(f"{away_team}: Portería a Cero (Clean Sheet)", "Portería a Cero", cs_a_emp, na, _mkt_odds(qp["cs_away"]), synergy=f"Probabilidad Poisson de que {home_team} anote 0 goles: e^(-{q_dist['lam_home']:.2f}).", model_prob=qp["cs_away"]))
+    m_ah.append(make_opt("Total Tiros a Puerta: Más de 7.5 en el Partido", "Tiros a Puerta", 0, nh, _mkt_odds(qp["sot_over75"]), synergy=f"Proyección Binomial Negativa: {q_dist['counts']['sot']['home'] + q_dist['counts']['sot']['away']:.1f} remates al arco.", model_prob=qp["sot_over75"]))
+    m_ah.append(make_opt(f"{home_team}: Más de 3.5 Tiros a Puerta", "Tiros a Puerta", sot_h35, nh, _mkt_odds(qp["home_sot_over35"]), synergy=f"{home_team} promedia {ph_prof['sot_avg']:.1f} remates directos al arco por juego.", model_prob=qp["home_sot_over35"]))
+    m_ah.append(make_opt(f"{away_team}: Más de 2.5 Tiros a Puerta", "Tiros a Puerta", sot_a25, na, _mkt_odds(qp["away_sot_over25"]), synergy=f"{away_team} promedia {pa_prof['sot_avg']:.1f} remates directos al arco por juego.", model_prob=qp["away_sot_over25"]))
+    m_ah.append(make_opt("Total Faltas: Más de 20.5 en el Partido", "Faltas", 0, nh, _mkt_odds(qp["fouls_over205"]), synergy=f"Proyección de faltas combinadas: {q_dist['counts']['fouls']['home'] + q_dist['counts']['fouls']['away']:.1f}.", model_prob=qp["fouls_over205"]))
+    categories.append({"category": "⚖️ Hándicap Asiático, Portería a Cero, Tiros a Puerta y Faltas", "options": m_ah})
 
     flat = [opt for cat in categories for opt in cat["options"]]
     escalera_picks = [opt for opt in flat if opt["is_escalera"]]
     escalera_picks.sort(key=lambda x: x["prob_num"], reverse=True)
 
-    return {
+    res_out = {
         "home": home_team,
         "away": away_team,
         "home_logo": get_team_logo(home_team),
@@ -4609,5 +4672,20 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
         "all_flat_options": flat,
         "top_escalera_picks": escalera_picks,
         "referee_data": cards_model,
-        "injuries_data": injuries_model
+        "injuries_data": injuries_model,
+        "quant_model": {
+            "tier": q_dist.get("tier", "HYBRID"),
+            "source": q_dist.get("source", ""),
+            "lam_home": round(q_dist["lam_home"], 2),
+            "lam_away": round(q_dist["lam_away"], 2),
+            "lam_home_ht": round(q_dist["lam_home_ht"], 2),
+            "lam_away_ht": round(q_dist["lam_away_ht"], 2),
+            "rho": q_dist["rho"],
+            "expected_corners": round(q_dist["counts"]["corners"]["home"] + q_dist["counts"]["corners"]["away"], 1),
+            "expected_cards": round(q_dist["counts"]["cards"]["home"] + q_dist["counts"]["cards"]["away"], 1),
+            "expected_sot": round(q_dist["counts"]["sot"]["home"] + q_dist["counts"]["sot"]["away"], 1),
+            "expected_fouls": round(q_dist["counts"]["fouls"]["home"] + q_dist["counts"]["fouls"]["away"], 1),
+        },
     }
+    _DE_CACHE[cache_key] = res_out
+    return res_out
