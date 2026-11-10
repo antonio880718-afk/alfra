@@ -1,12 +1,11 @@
 ﻿"""
 nba_data_api.py - Conector Oficial de Datos ESPN API para NBA y NCAA Men's College Basketball (NCAAB).
-Extrae calendarios, marcadores en vivo, cuotas oficiales, boxscores de equipos y estadisticas de jugadores.
+Convierte automáticamente los horarios a HORA OFICIAL DE LA CIUDAD DE MÉXICO (CDMX / UTC-6).
 """
-import os
-import json
-import urllib.request
-from datetime import datetime
+import os, sys, json, urllib.request
+from datetime import datetime, timezone, timedelta
 
+CDMX_TZ = timezone(timedelta(hours=-6))  # Hora Centro de México (CDMX / UTC-6)
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
@@ -25,7 +24,6 @@ LEAGUE_ENDPOINTS = {
     }
 }
 
-# Estrellas de referencia por equipo para NBA y NCAAB (Promedios empíricos 2026/27)
 NBA_DEFAULT_STARS = {
     "Los Angeles Lakers": [
         {"name": "Anthony Davis", "pos": "C", "pts": 27.8, "reb": 11.6, "ast": 3.2, "threes": 0.6, "pra": 42.6},
@@ -63,7 +61,6 @@ NBA_DEFAULT_STARS = {
 }
 
 def fetch_league_scoreboard(league_key: str, date_str: str) -> list:
-    """Consulta la API de ESPN para una liga (NBA o NCAAB) y fecha YYYYMMDD."""
     ep = LEAGUE_ENDPOINTS.get(league_key, {}).get("scoreboard")
     if not ep:
         return []
@@ -78,10 +75,6 @@ def fetch_league_scoreboard(league_key: str, date_str: str) -> list:
         return []
 
 def get_normalized_bball_schedule(date_str: str = "20261109", league_filter: str = "ALL") -> list:
-    """
-    Retorna la lista normalizada de partidos de baloncesto para la fecha indicada.
-    Soporta filtro: 'ALL', 'NBA', 'NCAAB'.
-    """
     cache_file = os.path.join(DATA_DIR, f"bball_schedule_{date_str}.json")
     if os.path.exists(cache_file):
         try:
@@ -106,10 +99,9 @@ def get_normalized_bball_schedule(date_str: str = "20261109", league_filter: str
             
             h_team = h.get("team", {}).get("displayName", "Home Team")
             a_team = a.get("team", {}).get("displayName", "Away Team")
-            h_score = int(h.get("score", 0)) if h.get("score") and h.get("score").isdigit() else 0
-            a_score = int(a.get("score", 0)) if a.get("score") and a.get("score").isdigit() else 0
+            h_score = int(h.get("score", 0)) if h.get("score") and str(h.get("score")).isdigit() else 0
+            a_score = int(a.get("score", 0)) if a.get("score") and str(a.get("score")).isdigit() else 0
 
-            # Cuotas oficiales bookmaker (ESPN BET / Caesars / BetMGM)
             odds_arr = comp.get("odds", [])
             spread_str = odds_arr[0].get("details", "") if odds_arr else ""
             ou_val = float(odds_arr[0].get("overUnder", 226.5 if l_key == "NBA" else 145.5)) if odds_arr and odds_arr[0].get("overUnder") else (226.5 if l_key == "NBA" else 145.5)
@@ -118,23 +110,22 @@ def get_normalized_bball_schedule(date_str: str = "20261109", league_filter: str
             status_desc = status_obj.get("description", "Scheduled")
             is_final = "Final" in status_desc or status_obj.get("completed", False)
             
-            # Hora CDMX (ISO a hora local)
+            # CONVERSIÓN EXACTA A HORA CDMX (UTC-6)
             dt_raw = comp.get("date", "")
             time_cdmx = "18:00"
             if dt_raw:
                 try:
                     utc_dt = datetime.fromisoformat(dt_raw.replace("Z", "+00:00"))
-                    time_cdmx = utc_dt.strftime("%H:%M")
+                    cdmx_dt = utc_dt.astimezone(CDMX_TZ)
+                    time_cdmx = cdmx_dt.strftime("%H:%M")
                 except Exception:
                     pass
 
             venue_name = comp.get("venue", {}).get("fullName", "Arena Oficial")
             city = comp.get("venue", {}).get("address", {}).get("city", "")
 
-            # Star players
             stars = NBA_DEFAULT_STARS.get(h_team, []) + NBA_DEFAULT_STARS.get(a_team, [])
             if not stars:
-                # Jugadores generados por posición si es colegial
                 stars = [
                     {"name": f"{h_team.split()[-1]} Top Scorer", "pos": "G", "pts": 18.5, "reb": 4.2, "ast": 3.8, "threes": 2.2, "pra": 26.5},
                     {"name": f"{a_team.split()[-1]} Top Scorer", "pos": "G", "pts": 17.2, "reb": 4.0, "ast": 3.5, "threes": 2.0, "pra": 24.7}
@@ -158,7 +149,9 @@ def get_normalized_bball_schedule(date_str: str = "20261109", league_filter: str
                 "stars": stars
             })
 
-    # Guardar en cache local si hay partidos
+    # Ordenar estrictamente por Hora CDMX
+    games.sort(key=lambda x: (x.get("time_cdmx", "18:00"), x.get("league", "NBA")))
+
     if games:
         try:
             with open(cache_file, "w", encoding="utf-8") as f:
@@ -169,7 +162,11 @@ def get_normalized_bball_schedule(date_str: str = "20261109", league_filter: str
     return games
 
 if __name__ == "__main__":
-    g = get_normalized_bball_schedule("20261109", "ALL")
-    print(f"Total Partidos Baloncesto (NBA + NCAAB): {len(g)}")
-    for item in g[:5]:
-        print(f"[{item['league']}] {item['match']} | Hora: {item['time_cdmx']} | O/U: {item['over_under']} | Spread: {item['spread_str']}")
+    for d in ["20261109", "20261108", "20261107"]:
+        c = os.path.join(DATA_DIR, f"bball_schedule_{d}.json")
+        if os.path.exists(c):
+            os.remove(c)
+        res = get_normalized_bball_schedule(d, "ALL")
+        print(f"NBA/NCAAB {d} sincronizado: {len(res)} juegos")
+        for g in res[:4]:
+            print(f"   [{g['league']}] {g['time_cdmx']} hs CDMX | {g['match']}")

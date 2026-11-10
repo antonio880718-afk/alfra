@@ -1,10 +1,11 @@
 ﻿"""
 nfl_data_api.py - Conector Oficial de Datos ESPN API para NFL y NCAA College Football (NCAAF).
-Extrae calendarios, marcadores en vivo, cuotas oficiales, boxscores de equipos y estadisticas de jugadores.
+Convierte automáticamente los horarios a HORA OFICIAL DE LA CIUDAD DE MÉXICO (CDMX / UTC-6).
 """
 import os, sys, json, urllib.request
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
+CDMX_TZ = timezone(timedelta(hours=-6))  # Hora Centro de México (CDMX / UTC-6)
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
@@ -23,7 +24,6 @@ LEAGUE_ENDPOINTS = {
     }
 }
 
-# Estrellas de referencia NFL (Promedios empíricos 2026/27)
 NFL_DEFAULT_STARS = {
     "Buffalo Bills": [
         {"name": "Josh Allen", "pos": "QB", "pass_yds": 258.4, "pass_tds": 2.1, "rush_yds": 42.5, "anytime_td_pct": 55.0},
@@ -62,10 +62,6 @@ def fetch_football_scoreboard(league_key: str, date_str: str) -> list:
         return []
 
 def get_normalized_football_schedule(date_str: str = "20261109", league_filter: str = "ALL") -> list:
-    """
-    Retorna la lista normalizada de partidos de fútbol americano para la fecha indicada.
-    Soporta filtro: 'ALL', 'NFL', 'NCAAF'.
-    """
     cache_file = os.path.join(DATA_DIR, f"football_schedule_{date_str}.json")
     if os.path.exists(cache_file):
         try:
@@ -90,8 +86,8 @@ def get_normalized_football_schedule(date_str: str = "20261109", league_filter: 
 
             h_team = h.get("team", {}).get("displayName", "Home Team")
             a_team = a.get("team", {}).get("displayName", "Away Team")
-            h_score = int(h.get("score", 0)) if h.get("score") and h.get("score").isdigit() else 0
-            a_score = int(a.get("score", 0)) if a.get("score") and a.get("score").isdigit() else 0
+            h_score = int(h.get("score", 0)) if h.get("score") and str(h.get("score")).isdigit() else 0
+            a_score = int(a.get("score", 0)) if a.get("score") and str(a.get("score")).isdigit() else 0
 
             odds_arr = comp.get("odds", [])
             spread_str = odds_arr[0].get("details", "") if odds_arr else ""
@@ -101,12 +97,14 @@ def get_normalized_football_schedule(date_str: str = "20261109", league_filter: 
             status_desc = status_obj.get("description", "Scheduled")
             is_final = "Final" in status_desc or status_obj.get("completed", False)
 
+            # CONVERSIÓN EXACTA A HORA CDMX (UTC-6)
             dt_raw = comp.get("date", "")
-            time_cdmx = "19:15" if l_key == "NFL" else "12:00"
+            time_cdmx = "12:00"
             if dt_raw:
                 try:
                     utc_dt = datetime.fromisoformat(dt_raw.replace("Z", "+00:00"))
-                    time_cdmx = utc_dt.strftime("%H:%M")
+                    cdmx_dt = utc_dt.astimezone(CDMX_TZ)
+                    time_cdmx = cdmx_dt.strftime("%H:%M")
                 except Exception:
                     pass
 
@@ -141,6 +139,9 @@ def get_normalized_football_schedule(date_str: str = "20261109", league_filter: 
                 "stars": stars
             })
 
+    # Ordenar cronológicamente por hora CDMX
+    games.sort(key=lambda x: (x.get("time_cdmx", "12:00"), x.get("league", "NFL")))
+
     if games:
         try:
             with open(cache_file, "w", encoding="utf-8") as f:
@@ -151,5 +152,11 @@ def get_normalized_football_schedule(date_str: str = "20261109", league_filter: 
     return games
 
 if __name__ == "__main__":
-    g = get_normalized_football_schedule("20261109", "ALL")
-    print(f"Total Juegos Fútbol Americano: {len(g)}")
+    for d in ["20261109", "20261108", "20261107"]:
+        c = os.path.join(DATA_DIR, f"football_schedule_{d}.json")
+        if os.path.exists(c):
+            os.remove(c)
+        res = get_normalized_football_schedule(d, "ALL")
+        print(f"NFL/NCAAF {d} sincronizado: {len(res)} juegos")
+        for g in res[:4]:
+            print(f"   [{g['league']}] {g['time_cdmx']} hs CDMX | {g['match']}")

@@ -1,11 +1,47 @@
 [
   {
+    "id": "401918948",
+    "league": "NCAAB",
+    "match": "Morehead State Eagles @ Louisville Cardinals",
+    "home": "Louisville Cardinals",
+    "away": "Morehead State Eagles",
+    "time_cdmx": "11:00",
+    "status": "FINALIZADO",
+    "score": "57 - 107",
+    "home_score": 107,
+    "away_score": 57,
+    "total_points": 164,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "KFC Yum! Center (Louisville)",
+    "stars": [
+      {
+        "name": "Cardinals Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Eagles Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
     "id": "401909938",
     "league": "NBA",
     "match": "Denver Nuggets @ Indiana Pacers",
     "home": "Indiana Pacers",
     "away": "Denver Nuggets",
-    "time_cdmx": "22:00",
+    "time_cdmx": "16:00",
     "status": "FINALIZADO",
     "score": "114 - 102",
     "home_score": 102,
@@ -36,12 +72,48 @@
     ]
   },
   {
+    "id": "401928788",
+    "league": "NCAAB",
+    "match": "New Mexico State Aggies @ Gonzaga Bulldogs",
+    "home": "Gonzaga Bulldogs",
+    "away": "New Mexico State Aggies",
+    "time_cdmx": "16:00",
+    "status": "FINALIZADO",
+    "score": "68 - 109",
+    "home_score": 109,
+    "away_score": 68,
+    "total_points": 177,
+    "spread_str": "",
+    "over_under": 145.5,
+    "venue": "McCarthey Athletic Center (Spokane)",
+    "stars": [
+      {
+        "name": "Bulldogs Top Scorer",
+        "pos": "G",
+        "pts": 18.5,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.2,
+        "pra": 26.5
+      },
+      {
+        "name": "Aggies Top Scorer",
+        "pos": "G",
+        "pts": 17.2,
+        "reb": 4.0,
+        "ast": 3.5,
+        "threes": 2.0,
+        "pra": 24.7
+      }
+    ]
+  },
+  {
     "id": "401909939",
     "league": "NBA",
     "match": "Brooklyn Nets @ Atlanta Hawks",
     "home": "Atlanta Hawks",
     "away": "Brooklyn Nets",
-    "time_cdmx": "00:30",
+    "time_cdmx": "18:30",
     "status": "FINALIZADO",
     "score": "121 - 124",
     "home_score": 124,
@@ -95,7 +167,7 @@
     "match": "New York Knicks @ Cleveland Cavaliers",
     "home": "Cleveland Cavaliers",
     "away": "New York Knicks",
-    "time_cdmx": "01:00",
+    "time_cdmx": "19:00",
     "status": "FINALIZADO",
     "score": "109 - 97",
     "home_score": 97,
@@ -149,7 +221,7 @@
     "match": "Washington Wizards @ Oklahoma City Thunder",
     "home": "Oklahoma City Thunder",
     "away": "Washington Wizards",
-    "time_cdmx": "01:00",
+    "time_cdmx": "19:00",
     "status": "FINALIZADO",
     "score": "75 - 114",
     "home_score": 114,
@@ -194,7 +266,7 @@
     "match": "Orlando Magic @ Golden State Warriors",
     "home": "Golden State Warriors",
     "away": "Orlando Magic",
-    "time_cdmx": "01:30",
+    "time_cdmx": "19:30",
     "status": "FINALIZADO",
     "score": "119 - 126",
     "home_score": 126,
@@ -230,7 +302,7 @@
     "match": "Houston Rockets @ Phoenix Suns",
     "home": "Phoenix Suns",
     "away": "Houston Rockets",
-    "time_cdmx": "02:00",
+    "time_cdmx": "20:00",
     "status": "FINALIZADO",
     "score": "99 - 102",
     "home_score": 102,
@@ -266,7 +338,7 @@
     "match": "San Antonio Spurs @ Portland Trail Blazers",
     "home": "Portland Trail Blazers",
     "away": "San Antonio Spurs",
-    "time_cdmx": "03:00",
+    "time_cdmx": "21:00",
     "status": "FINALIZADO",
     "score": "125 - 103",
     "home_score": 103,
@@ -287,78 +359,6 @@
       },
       {
         "name": "Spurs Top Scorer",
-        "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
-      }
-    ]
-  },
-  {
-    "id": "401918948",
-    "league": "NCAAB",
-    "match": "Morehead State Eagles @ Louisville Cardinals",
-    "home": "Louisville Cardinals",
-    "away": "Morehead State Eagles",
-    "time_cdmx": "17:00",
-    "status": "FINALIZADO",
-    "score": "57 - 107",
-    "home_score": 107,
-    "away_score": 57,
-    "total_points": 164,
-    "spread_str": "",
-    "over_under": 145.5,
-    "venue": "KFC Yum! Center (Louisville)",
-    "stars": [
-      {
-        "name": "Cardinals Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
-      },
-      {
-        "name": "Eagles Top Scorer",
-        "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
-      }
-    ]
-  },
-  {
-    "id": "401928788",
-    "league": "NCAAB",
-    "match": "New Mexico State Aggies @ Gonzaga Bulldogs",
-    "home": "Gonzaga Bulldogs",
-    "away": "New Mexico State Aggies",
-    "time_cdmx": "22:00",
-    "status": "FINALIZADO",
-    "score": "68 - 109",
-    "home_score": 109,
-    "away_score": 68,
-    "total_points": 177,
-    "spread_str": "",
-    "over_under": 145.5,
-    "venue": "McCarthey Athletic Center (Spokane)",
-    "stars": [
-      {
-        "name": "Bulldogs Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
-      },
-      {
-        "name": "Aggies Top Scorer",
         "pos": "G",
         "pts": 17.2,
         "reb": 4.0,
