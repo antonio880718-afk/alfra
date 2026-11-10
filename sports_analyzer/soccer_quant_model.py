@@ -952,6 +952,15 @@ def predict_match(m: Dict[str, Any], as_of=None, with_odds: bool = True) -> Dict
         except Exception:
             pass
 
+    if not referee:
+        try:
+            from referee_and_injuries_engine import get_referee_for_match
+            r_info = get_referee_for_match(home, away, code)
+            if r_info.get("is_official"):
+                referee = r_info.get("name", "")
+        except Exception:
+            pass
+
     cid_h, h_csv = find_team_league(home, code)
     cid_a, a_csv = find_team_league(away, code)
     if cid_h and cid_h == cid_a:

@@ -109,6 +109,8 @@ def _parse_espn_soccer_summary(m: Dict[str, Any], summary_data: Dict[str, Any], 
     h_red = a_red = 0
     h_sot = a_sot = 0
     h_fouls = a_fouls = 0
+    h_offsides = a_offsides = 0
+    h_shots = a_shots = 0
 
     for bt in summary_data.get("boxscore", {}).get("teams", []):
         bt_id = str(bt.get("team", {}).get("id", ""))
@@ -119,12 +121,14 @@ def _parse_espn_soccer_summary(m: Dict[str, Any], summary_data: Dict[str, Any], 
         y_val = _safe_int(st_map.get("yellowCards"), 0)
         r_val = _safe_int(st_map.get("redCards"), 0)
         sot_val = _safe_int(st_map.get("shotsOnTarget"), 0)
-        f_val = _safe_int(st_map.get("foulsCommitted"), 0)
+        f_val = _safe_int(st_map["foulsCommitted"]) if "foulsCommitted" in st_map else None
+        o_val = _safe_int(st_map["offsides"]) if "offsides" in st_map else None
+        sh_val = _safe_int(st_map["totalShots"]) if "totalShots" in st_map else None
 
         if is_home_bt:
-            h_corners, h_yellow, h_red, h_sot, h_fouls = c_val, y_val, r_val, sot_val, f_val
+            h_corners, h_yellow, h_red, h_sot, h_fouls, h_offsides, h_shots = c_val, y_val, r_val, sot_val, f_val, o_val, sh_val
         else:
-            a_corners, a_yellow, a_red, a_sot, a_fouls = c_val, y_val, r_val, sot_val, f_val
+            a_corners, a_yellow, a_red, a_sot, a_fouls, a_offsides, a_shots = c_val, y_val, r_val, sot_val, f_val, o_val, sh_val
 
     h_cards = h_yellow + h_red
     a_cards = a_yellow + a_red
@@ -193,6 +197,13 @@ def _parse_espn_soccer_summary(m: Dict[str, Any], summary_data: Dict[str, Any], 
         "away_sot": a_sot,
         "home_fouls": h_fouls,
         "away_fouls": a_fouls,
+        "total_fouls": (h_fouls + a_fouls) if (h_fouls is not None and a_fouls is not None) else None,
+        "home_offsides": h_offsides,
+        "away_offsides": a_offsides,
+        "total_offsides": (h_offsides + a_offsides) if (h_offsides is not None and a_offsides is not None) else None,
+        "home_shots": h_shots,
+        "away_shots": a_shots,
+        "total_shots": (h_shots + a_shots) if (h_shots is not None and a_shots is not None) else None,
         "btts": (h_goals > 0 and a_goals > 0),
         "referee": ref_name or "Árbitro Oficial Designado",
         "player_stats": player_stats,

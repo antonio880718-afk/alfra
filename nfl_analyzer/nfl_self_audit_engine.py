@@ -100,11 +100,19 @@ def audit_individual_nfl_pick(pick_item: dict, game_info: dict = None, date_str:
             "match_status": status
         }
 
-    # Fallback
-    hit_player = True
+    # Si el partido no ha finalizado
+    if "FINAL" not in status:
+        return {
+            "outcome": "IN_PROGRESS" if ("EN VIVO" in status or "CUARTO" in status or "1Q" in status or "2Q" in status or "3Q" in status or "4Q" in status) else "PENDING",
+            "stat_actual": f"{player_name}: En juego / Por iniciar",
+            "match_status": status
+        }
+
+    # Si finalizó y el jugador no tuvo snaps o no participó:
+    # Regla Bookmaker Oficial (Garantía Playdoit / Altenar / Bet365: Inactivo/0 snaps = VOID Cuota 1.00)
     return {
-        "outcome": "HIT" if hit_player else "MISS",
-        "stat_actual": f"{player_name}: Cumplió línea oficial ({a_score}-{h_score})",
+        "outcome": "VOID",
+        "stat_actual": f"{player_name}: Inactivo / 0 snaps oficiales (Protección VOID 1.00)",
         "match_status": status
     }
 

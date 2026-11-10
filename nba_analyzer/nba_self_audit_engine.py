@@ -106,13 +106,19 @@ def audit_individual_nba_pick(pick_item: dict, game_info: dict = None, date_str:
             "match_status": status
         }
 
-    # Fallback si el jugador no aparece en la síntesis básica de ESPN
-    # Estimación empírica correlacionada con el resultado del partido
-    hit_player = (tot_pts > 200)
-    stat_val = round(thresh + (2.5 if hit_player else -1.5))
+    # Si el partido no ha finalizado
+    if "FINAL" not in status:
+        return {
+            "outcome": "IN_PROGRESS" if ("EN VIVO" in status or "CUARTO" in status) else "PENDING",
+            "stat_actual": f"{player_name}: En juego / Por iniciar",
+            "match_status": status
+        }
+
+    # Si finalizó y el jugador no vio minutos o no aparece en el roster activo:
+    # Regla Bookmaker Oficial (Garantía Playdoit / Altenar / Bet365: DNP = VOID Cuota 1.00)
     return {
-        "outcome": "HIT" if hit_player else "MISS",
-        "stat_actual": f"{player_name}: {stat_val:g} registrado (Acta Final)",
+        "outcome": "VOID",
+        "stat_actual": f"{player_name}: DNP / Sin minutos registrados (Protección VOID 1.00)",
         "match_status": status
     }
 

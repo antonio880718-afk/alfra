@@ -479,7 +479,10 @@ def _cached_audit_table_data(dates_tuple, bs_mtimes, _ver=_ENGINE_VER):
     return collect_full_picks_audit_data(list(dates_tuple))
 
 _cur_bs_mtime = _get_bs_mtime((date_str,))
-_all_dates_tuple = ("20261107", "20261108", "20261109", "20261110") if today_cdmx.strftime("%Y%m%d") >= "20261110" else ("20261107", "20261108", "20261109")
+_data_dir = os.path.join(os.path.dirname(__file__), "data")
+_today_str_check = today_cdmx.strftime("%Y%m%d")
+_found_bs_dates = sorted([f.replace("cartelera_boxscores_", "").replace(".json", "") for f in os.listdir(_data_dir) if f.startswith("cartelera_boxscores_") and f.endswith(".json") and f.replace("cartelera_boxscores_", "").replace(".json", "") <= _today_str_check])
+_all_dates_tuple = tuple(_found_bs_dates) if _found_bs_dates else (date_str,)
 _all_bs_mtime = _get_bs_mtime(_all_dates_tuple)
 
 pdf_col0, pdf_col1, pdf_col2 = st.columns(3)
@@ -1111,24 +1114,11 @@ with t_sgp:
     if available_matches:
         all_sgp_matches = available_matches
     else:
-        all_sgp_matches = [
-            {"home": "Leeds United", "away": "Tottenham Hotspur", "league": "Premier League", "code": "eng.1", "time": "06:30 hs"},
-            {"home": "Bristol City", "away": "Norwich City", "league": "Championship (Inglaterra)", "code": "eng.2", "time": "06:30 hs"},
-            {"home": "Borussia Dortmund", "away": "SV Elversberg", "league": "Bundesliga", "code": "ger.1", "time": "08:30 hs"},
-            {"home": "Mainz", "away": "Bayern Munich", "league": "Bundesliga", "code": "ger.1", "time": "08:30 hs"},
-            {"home": "Arsenal", "away": "Hull City", "league": "Premier League", "code": "eng.1", "time": "09:00 hs"},
-            {"home": "Fulham", "away": "Newcastle United", "league": "Premier League", "code": "eng.1", "time": "09:00 hs"},
-            {"home": "Nottingham Forest", "away": "Manchester City", "league": "Premier League", "code": "eng.1", "time": "11:30 hs"},
-            {"home": "AS Roma", "away": "Sassuolo", "league": "Serie A", "code": "ita.1", "time": "13:45 hs"},
-            {"home": "Valencia", "away": "Real Madrid", "league": "LaLiga", "code": "esp.1", "time": "14:00 hs"},
-            {"home": "Paris Saint-Germain", "away": "Troyes", "league": "Ligue 1", "code": "fra.1", "time": "14:05 hs"},
-            {"home": "Atlas", "away": "Pachuca", "league": "Liga MX (México)", "code": "mex.1", "time": "17:00 hs"},
-            {"home": "Boca Juniors", "away": "Defensa y Justicia", "league": "Liga Argentina", "code": "arg.1", "time": "17:30 hs"},
-            {"home": "Inter Miami CF", "away": "Charlotte FC", "league": "MLS (EE.UU.)", "code": "usa.1", "time": "18:30 hs"},
-            {"home": "Tigres UANL", "away": "Cruz Azul", "league": "Liga MX (México)", "code": "mex.1", "time": "19:00 hs"},
-            {"home": "Toluca", "away": "Monterrey", "league": "Liga MX (México)", "code": "mex.1", "time": "19:00 hs"},
-            {"home": "Pumas UNAM", "away": "Club América", "league": "Liga MX (México)", "code": "mex.1", "time": "21:10 hs"}
-        ]
+        st.info(f"ℹ️ No hay partidos en el calendario oficial para el {selected_date.strftime('%d/%m/%Y')}. Selecciona otra fecha en el calendario superior.")
+        all_sgp_matches = []
+
+    if not all_sgp_matches:
+        st.stop()
 
     m_labels = [f"[{m['league']}] {m['home']} vs {m['away']} (⏰ {m['time']})" for m in all_sgp_matches]
     sel_idx = st.selectbox("⚽ Elige el partido que deseas auditar y construir:", range(len(m_labels)), format_func=lambda i: m_labels[i])

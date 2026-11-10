@@ -164,7 +164,9 @@ def get_match_weather_and_environment(home_team: str, away_team: str, stadium_in
         "corners_mod": corners_mod,
         "sot_mod": sot_mod,
         "cards_mod": cards_mod,
-        "how_weather_affects": impact
+        "how_weather_affects": impact,
+        "is_seasonal_estimate": True,
+        "source": f"Modelo Climatológico Estacional de Noviembre para {city} (Altitud: {altitude_m} m)"
     }
 
 
@@ -345,7 +347,7 @@ def compute_full_context_and_5pages_report(
         },
         {
             "page": "🟣 5. FBref / Opta Sports",
-            "verified_data": f"Ajuste Clima/Altura ({weather['temp_c']}°C, {weather['altitude_m']}m): {weather['xg_mod']:+.2f} xG y {weather['corners_mod']:+.2f} córners • Prob. SGP: {sgp_data.get('combined_prob', 45.0):.1f}%.",
+            "verified_data": f"Ajuste Clima/Altura ({weather['temp_c']}°C, {weather['altitude_m']}m s.n.m. — Estimación Estacional de Sede): {weather['xg_mod']:+.2f} xG y {weather['corners_mod']:+.2f} córners • Prob. SGP: {sgp_data.get('combined_prob', 45.0):.1f}%.",
             "impact_rule": "Integra métricas avanzadas xG/xA y telemetría climática para filtrar picks con certeza empírica ≥ 80%."
         }
     ]

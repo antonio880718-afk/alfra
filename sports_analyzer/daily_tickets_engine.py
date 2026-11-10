@@ -331,7 +331,7 @@ def get_daily_parlay_ticket(date_str: str = None) -> List[Dict[str, Any]]:
         return SAT_100X
     else:
         picks = _build_dynamic_picks_for_date(date_str)
-        return picks if picks else MON_100X
+        return picks if picks else []
 
 def get_daily_conservative_11x(date_str: str = None) -> List[Dict[str, Any]]:
     if not date_str:
@@ -354,7 +354,7 @@ def get_daily_escalera_blocks(date_str: str = None) -> List[Dict[str, Any]]:
         for b in MON_ESCALERA:
             for p in b["picks"]:
                 p["date_str"] = "20261109"
-        return MON_ESCALERA
+        return []
     elif date_str == "20261108":
         for b in SUN_ESCALERA:
             for p in b["picks"]:

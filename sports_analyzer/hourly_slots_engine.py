@@ -2435,25 +2435,30 @@ def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
         except Exception:
             pass
 
-    # 3. TERCERA PRIORIDAD: Si el usuario selecciona cualquier otra fecha futura o de temporada sin archivo directo,
-    # mapear instantáneamente según el día de la semana (Lunes a Domingo) para respuesta en <0.005s sin bloqueo HTTP
+    # 3. TERCERA PRIORIDAD: Si no hay archivo local ni filas CSV, sincronizar en tiempo real desde ESPN Scoreboard API
     if not all_matches and len(date_str) == 8:
         try:
-            dt_obj = datetime.strptime(date_str, "%Y%m%d")
-            wd = dt_obj.weekday()  # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri, 5=Sat, 6=Sun
-            wd_map = {
-                0: "20261109",
-                1: "20261110",
-                2: "20261111",
-                3: "20261112",
-                4: "20261113",
-                5: "20261114",
-                6: "20261108"
-            }
-            fallback_cal = os.path.join(os.path.dirname(__file__), "data", f"live_calendar_{wd_map.get(wd, '20261109')}.json")
-            if os.path.exists(fallback_cal):
-                with open(fallback_cal, "r", encoding="utf-8") as f:
-                    all_matches = json.load(f)
+            from multi_league_engine import fetch_league_games_by_date, LEAGUES_CONFIG
+            for l_cfg in LEAGUES_CONFIG[:12]:
+                l_code = l_cfg["code"]
+                try:
+                    games = fetch_league_games_by_date(l_code, date_str)
+                    for g in games:
+                        all_matches.append({
+                            "league": l_cfg["name"],
+                            "code": l_code,
+                            "country": l_cfg["country"],
+                            "home": g["home"],
+                            "away": g["away"],
+                            "home_logo": get_team_logo(g["home"]),
+                            "away_logo": get_team_logo(g["away"]),
+                            "time_cdmx": g.get("time_cdmx", "12:00"),
+                            "hour_int": int(g.get("time_cdmx", "12:00").split(":")[0]) if ":" in g.get("time_cdmx", "") else 12,
+                            "id": f"{g['home']}_{g['away']}_{date_str}",
+                            "status_text": "Partido Oficial ESPN"
+                        })
+                except Exception:
+                    pass
         except Exception:
             pass
 

@@ -4125,8 +4125,15 @@ STAR_PLAYERS = {
 
 def get_team_star_players(team_name: str) -> List[Dict[str, Any]]:
     import os, json, re
+    try:
+        from referee_and_injuries_engine import TEAM_TRANSLATIONS
+    except ImportError:
+        TEAM_TRANSLATIONS = {}
     raw = team_name.lower().strip()
     norm = normalize_name(team_name)
+    trans_raw = TEAM_TRANSLATIONS.get(raw, raw)
+    trans_norm = TEAM_TRANSLATIONS.get(norm, norm)
+    lookup_keys = [raw, norm, trans_raw, trans_norm]
     
     # 0. PRIORIDAD MÁXIMA: Actas Oficiales y Plantillas en Vivo de ESPN (espn_verified_star_players.json)
     espn_p = os.path.join(os.path.dirname(__file__), "data", "espn_verified_star_players.json")
@@ -4134,7 +4141,11 @@ def get_team_star_players(team_name: str) -> List[Dict[str, Any]]:
         try:
             with open(espn_p, "r", encoding="utf-8") as fp:
                 espn_db = json.load(fp)
-            entry = espn_db.get(raw) or (espn_db.get(norm) if raw not in ("barcelona sc", "lillestrom") else None)
+            entry = None
+            for lk in lookup_keys:
+                if lk in espn_db:
+                    entry = espn_db[lk]
+                    break
             if entry and entry.get("starters_list"):
                 res = []
                 for idx, s_name in enumerate(entry["starters_list"][:2]):
@@ -4159,11 +4170,10 @@ def get_team_star_players(team_name: str) -> List[Dict[str, Any]]:
         except Exception:
             pass
     
-    # 1. Prioridad: Buscar en STAR_PLAYERS auditado manualmente (Exacto primero, luego palabra completa)
-    if raw in STAR_PLAYERS:
-        return STAR_PLAYERS[raw]
-    if norm in STAR_PLAYERS:
-        return STAR_PLAYERS[norm]
+    # 1. Prioridad: Buscar en STAR_PLAYERS auditado manualmente (Exacto primero, luego traducciones)
+    for lk in lookup_keys:
+        if lk in STAR_PLAYERS:
+            return STAR_PLAYERS[lk]
     for k, v in STAR_PLAYERS.items():
         if len(k) >= 5 and (re.search(rf"\b{re.escape(k)}\b", norm) or re.search(rf"\b{re.escape(norm)}\b", k)):
             return v
