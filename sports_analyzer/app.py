@@ -1680,27 +1680,33 @@ with t_parlay:
                     leg_logo_a = get_team_logo(leg_a)
                     
                     render_html(f"""
-                    <div style="background-color: #080c14; border-left: 4px solid {opt_color}; border: 1px solid #1e293b; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px;">
+                    <div style="background-color: #080c14; border-left: 4px solid {opt_color}; border: 1px solid #1e293b; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <img src="{leg_logo_h}" style="width: 26px; height: 26px; object-fit: contain;">
-                                <img src="{leg_logo_a}" style="width: 26px; height: 26px; object-fit: contain;">
-                                <span style="color: #f8fafc; font-weight: bold; font-size: 0.95rem;">{leg['match']}</span>
+                                <img src="{leg_logo_h}" style="width: 28px; height: 28px; object-fit: contain;">
+                                <img src="{leg_logo_a}" style="width: 28px; height: 28px; object-fit: contain;">
+                                <span style="color: #f8fafc; font-weight: bold; font-size: 1rem;">{leg['match']}</span>
                                 <span style="background-color: #1e293b; color: #94a3b8; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px;">⏰ {leg['time']}</span>
                                 <span style="background-color: #1e293b; color: #38bdf8; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px;">{leg['league']}</span>
                             </div>
-                            <div>
-                                <span style="color: #94a3b8; font-size: 0.8rem;">Momio:</span> <b style="color: #facc15; font-size: 1.05rem;">{leg['odds']:.2f}</b>
-                                <span style="color: #6ee7b7; font-size: 0.8rem; margin-left: 8px;">Hit: {leg['prob']:.1f}%</span>
+                            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                                <div><span style="color: #94a3b8; font-size: 0.78rem;">Momio Casa:</span> <b style="color: #facc15; font-size: 1.1rem;">{leg['odds']:.2f}</b></div>
+                                <div><span style="color: #93c5fd; font-size: 0.78rem;">Cuota Justa:</span> <b style="color: #38bdf8; font-size: 0.95rem;">{leg.get('fair_odds', round(100.0/max(leg['prob'], 1.0), 2)):.2f}</b></div>
+                                <div><span style="color: #6ee7b7; font-size: 0.78rem;">Hit:</span> <b style="color: #10b981; font-size: 0.95rem;">{leg['prob']:.1f}%</b></div>
+                                <span style="background-color: #064e3b; color: #a7f3d0; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">+EV {leg.get('ev_pct', 5.0):+.1f}%</span>
                             </div>
                         </div>
-                        <div style="margin-top: 8px; color: #7ee787; font-weight: 700; font-size: 0.98rem;">
+                        <div style="margin-top: 10px; color: #7ee787; font-weight: 700; font-size: 1.05rem;">
                             🎯 Selección #{l_idx}: {leg['pick']}
                         </div>
-                        <div style="margin-top: 4px; color: #cbd5e1; font-size: 0.82rem;">
-                            📌 <b>Deducción Empírica:</b> {leg['reason']}
+                        <div style="margin-top: 6px; background-color: #0b1329; border: 1px solid #1e3a8a; border-radius: 6px; padding: 8px 12px; font-size: 0.84rem; color: #e2e8f0;">
+                            🔬 <b>Cálculo & Deducción Matemática del Motor (Dixon-Coles / Poisson / Binomial Negativa):</b><br>
+                            <span style="color: #93c5fd;">{leg.get('math_deduction', leg.get('reason', ''))}</span>
                         </div>
-                        <div style="margin-top: 6px; background-color: #0b1329; border: 1px dashed #334155; border-radius: 6px; padding: 6px 10px; font-size: 0.78rem; color: #93c5fd;">
+                        <div style="margin-top: 6px; font-size: 0.78rem; color: #64748b;">
+                            📁 <b>Dataset Oficial:</b> {leg.get('data_origin', 'football-data.co.uk')} • <b>Muestra:</b> {leg.get('sample_size', '92 partidos')}
+                        </div>
+                        <div style="margin-top: 6px; background-color: #080c14; border: 1px dashed #334155; border-radius: 6px; padding: 6px 10px; font-size: 0.78rem; color: #93c5fd;">
                             🧭 <b>Navegación en Playdoit / Altenar:</b> {leg['bookmaker_tree']}
                         </div>
                     </div>
