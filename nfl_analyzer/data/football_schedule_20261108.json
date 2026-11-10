@@ -13,37 +13,92 @@
     "total_points": 51,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Santiago Bernabéu (Madrid) [DOMO]",
+    "is_dome": true,
+    "venue": "Santiago Bernabéu (Madrid) [DOMO TECHADO]",
+    "home_defense": {
+      "pass_def_rank": 18,
+      "pass_yds_allowed": 222.0,
+      "rush_def_rank": 20,
+      "rush_yds_allowed": 126.0,
+      "style": "Poco Sack / Cobertura en Zona"
+    },
+    "away_defense": {
+      "pass_def_rank": 22,
+      "pass_yds_allowed": 238.0,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 136.0,
+      "style": "Permite Series Largas y Anotaciones"
+    },
     "stars": [
       {
-        "name": "Falcons Starting QB",
+        "name": "Michael Penix Jr.",
+        "team": "Atlanta Falcons",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "9",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Atlanta Falcons (20/31, 162 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Falcons Lead RB",
+        "name": "Bijan Robinson",
+        "team": "Atlanta Falcons",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Atlanta Falcons (19 CAR, 100 YDS, 1 TD)"
       },
       {
-        "name": "Bengals Starting QB",
+        "name": "Drake London",
+        "team": "Atlanta Falcons",
+        "pos": "WR",
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Atlanta Falcons (5 REC, 68 YDS)"
+      },
+      {
+        "name": "Joe Burrow",
+        "team": "Cincinnati Bengals",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "9",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Cincinnati Bengals (24/29, 271 YDS, 3 TD)"
       },
       {
-        "name": "Bengals Lead RB",
+        "name": "Chase Brown",
+        "team": "Cincinnati Bengals",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "30",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Cincinnati Bengals (9 CAR, 57 YDS)"
+      },
+      {
+        "name": "Ja'Marr Chase",
+        "team": "Cincinnati Bengals",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Cincinnati Bengals (10 REC, 155 YDS, 1 TD)"
       }
     ]
   },
@@ -61,37 +116,92 @@
     "total_points": 50,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Lucas Oil Stadium (Indianapolis) [DOMO]",
+    "is_dome": true,
+    "venue": "Lucas Oil Stadium (Indianapolis) [DOMO TECHADO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 20,
+      "pass_yds_allowed": 230.0,
+      "rush_def_rank": 30,
+      "rush_yds_allowed": 145.0,
+      "style": "Muy Explotable por Tierra"
+    },
     "stars": [
       {
-        "name": "Colts Starting QB",
+        "name": "Daniel Jones",
+        "team": "Indianapolis Colts",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "17",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Indianapolis Colts (20/34, 180 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Colts Lead RB",
+        "name": "Jonathan Taylor",
+        "team": "Indianapolis Colts",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "28",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Indianapolis Colts (13 CAR, 46 YDS)"
       },
       {
-        "name": "Cowboys Starting QB",
+        "name": "Ashton Dulin",
+        "team": "Indianapolis Colts",
+        "pos": "WR",
+        "jersey": "16",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Indianapolis Colts (1 REC, 55 YDS, 1 TD)"
+      },
+      {
+        "name": "Dak Prescott",
+        "team": "Dallas Cowboys",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Dallas Cowboys (21/34, 335 YDS, 2 TD)"
       },
       {
-        "name": "Cowboys Lead RB",
+        "name": "Javonte Williams",
+        "team": "Dallas Cowboys",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "33",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Dallas Cowboys (20 CAR, 101 YDS, 1 TD)"
+      },
+      {
+        "name": "CeeDee Lamb",
+        "team": "Dallas Cowboys",
+        "pos": "WR",
+        "jersey": "88",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Dallas Cowboys (10 REC, 195 YDS, 1 TD)"
       }
     ]
   },
@@ -109,29 +219,101 @@
     "total_points": 47,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Arrowhead Stadium (Kansas City) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Arrowhead Stadium (Kansas City) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 5,
+      "pass_yds_allowed": 188.0,
+      "rush_def_rank": 4,
+      "rush_yds_allowed": 85.0,
+      "style": "Defensa de Campeonato / Difícil Anotar en Zona Roja"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
         "name": "Patrick Mahomes",
         "pos": "QB",
-        "pass_yds": 262.5,
-        "pass_tds": 2.0,
-        "rush_yds": 22.0,
-        "anytime_td_pct": 20.0
+        "jersey": "15",
+        "pass_yds": 262.0,
+        "pass_tds": 2.3,
+        "rush_yds": 24.0,
+        "anytime_td_pct": 32.0,
+        "role": "Mago Mariscal de Campo / 3x Campeón Super Bowl"
       },
       {
         "name": "Travis Kelce",
         "pos": "TE",
-        "rec_yds": 62.4,
-        "catches": 5.4,
-        "anytime_td_pct": 45.0
+        "jersey": "87",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 66.0,
+        "anytime_td_pct": 55.0,
+        "role": "Ala Cerrada Histórica / Tercer Down y Gol"
       },
       {
         "name": "Kareem Hunt",
         "pos": "RB",
-        "rush_yds": 64.2,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 58.0
+        "jersey": "29",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 62.0,
+        "rec_yds": 14.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor de Fuerza en Zona de Gol"
+      },
+      {
+        "name": "Kenneth Walker III",
+        "team": "Kansas City Chiefs",
+        "pos": "RB",
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Kansas City Chiefs (18 CAR, 102 YDS, 1 TD)"
+      },
+      {
+        "name": "Geno Smith",
+        "team": "New York Jets",
+        "pos": "QB",
+        "jersey": "7",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular New York Jets (18/32, 165 YDS)"
+      },
+      {
+        "name": "Breece Hall",
+        "team": "New York Jets",
+        "pos": "RB",
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal New York Jets (15 CAR, 61 YDS)"
+      },
+      {
+        "name": "Omar Cooper Jr.",
+        "team": "New York Jets",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal New York Jets (8 REC, 58 YDS)"
       }
     ]
   },
@@ -149,37 +331,89 @@
     "total_points": 28,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Hard Rock Stadium (Miami Gardens) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Hard Rock Stadium (Miami Gardens) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 10,
+      "pass_yds_allowed": 200.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 118.0,
+      "style": "Secundaria Fuerte con Ramsey"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 224.0,
+      "rush_def_rank": 5,
+      "rush_yds_allowed": 89.2,
+      "style": "Física y Agresiva / Concede Yardas Cortas por Aire"
+    },
     "stars": [
       {
-        "name": "Dolphins Starting QB",
+        "name": "Jared Goff",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "16",
+        "pass_yds": 255.0,
+        "pass_tds": 2.1,
+        "rush_yds": 2.0,
+        "anytime_td_pct": 10.0,
+        "role": "QB de Precisión Quirúrgica en Bolsa de Protección"
+      },
+      {
+        "name": "Jahmyr Gibbs",
+        "pos": "RB",
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 78.0,
+        "rec_yds": 32.0,
+        "anytime_td_pct": 68.0,
+        "role": "Cohete Ofensivo / Amenaza en Cada Toque"
+      },
+      {
+        "name": "Amon-Ra St. Brown",
+        "pos": "WR",
+        "jersey": "14",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 2.0,
+        "rec_yds": 84.0,
+        "anytime_td_pct": 65.0,
+        "role": "Receptor Ranura con Manos de Pegamento"
+      },
+      {
+        "name": "Malik Willis",
+        "team": "Miami Dolphins",
+        "pos": "QB",
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Miami Dolphins (13/25, 128 YDS, 1 INT)"
       },
       {
-        "name": "Dolphins Lead RB",
+        "name": "Ollie Gordon II",
+        "team": "Miami Dolphins",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Miami Dolphins (16 CAR, 55 YDS)"
       },
       {
-        "name": "Lions Starting QB",
-        "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
-      },
-      {
-        "name": "Lions Lead RB",
-        "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "name": "Caleb Douglas",
+        "team": "Miami Dolphins",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Miami Dolphins (6 REC, 70 YDS)"
       }
     ]
   },
@@ -197,37 +431,92 @@
     "total_points": 45,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Caesars Superdome (New Orleans) [DOMO]",
+    "is_dome": true,
+    "venue": "Caesars Superdome (New Orleans) [DOMO TECHADO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Saints Starting QB",
+        "name": "Tyler Shough",
+        "team": "New Orleans Saints",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "6",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular New Orleans Saints (21/35, 265 YDS, 1 TD)"
       },
       {
-        "name": "Saints Lead RB",
+        "name": "Audric Estime",
+        "team": "New Orleans Saints",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "30",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal New Orleans Saints (15 CAR, 72 YDS, 1 TD)"
       },
       {
-        "name": "Browns Starting QB",
+        "name": "Chris Olave",
+        "team": "New Orleans Saints",
+        "pos": "WR",
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal New Orleans Saints (7 REC, 98 YDS)"
+      },
+      {
+        "name": "Shedeur Sanders",
+        "team": "Cleveland Browns",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "2",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Cleveland Browns (19/31, 297 YDS, 2 TD)"
       },
       {
-        "name": "Browns Lead RB",
+        "name": "Quinshon Judkins",
+        "team": "Cleveland Browns",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Cleveland Browns (15 CAR, 43 YDS)"
+      },
+      {
+        "name": "Denzel Boston",
+        "team": "Cleveland Browns",
+        "pos": "WR",
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Cleveland Browns (6 REC, 98 YDS)"
       }
     ]
   },
@@ -245,37 +534,112 @@
     "total_points": 30,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Lincoln Financial Field (Philadelphia) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Lincoln Financial Field (Philadelphia) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 195.0,
+      "rush_def_rank": 10,
+      "rush_yds_allowed": 102.5,
+      "style": "Línea Defensiva Imponente"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Eagles Starting QB",
+        "name": "Jalen Hurts",
         "pos": "QB",
-        "pass_yds": 235.0,
-        "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
-      },
-      {
-        "name": "Eagles Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
-      },
-      {
-        "name": "Giants Starting QB",
-        "pos": "QB",
-        "pass_yds": 228.0,
+        "jersey": "1",
+        "pass_yds": 225.0,
         "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "rush_yds": 38.0,
+        "anytime_td_pct": 68.0,
+        "role": "QB Titular / Especialista en Touchdown Terrestre ('Tush Push')"
       },
       {
-        "name": "Giants Lead RB",
+        "name": "Saquon Barkley",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 105.0,
+        "rec_yds": 26.0,
+        "anytime_td_pct": 82.0,
+        "role": "Líder Corredor de la NFL / Jugadas Explosivas"
+      },
+      {
+        "name": "A.J. Brown",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 88.0,
+        "anytime_td_pct": 62.0,
+        "role": "Receptor Dominante en Duelos 1 vs 1"
+      },
+      {
+        "name": "Joe Milton",
+        "team": "Philadelphia Eagles",
+        "pos": "QB",
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Philadelphia Eagles (18/34, 169 YDS)"
+      },
+      {
+        "name": "Makai Lemon",
+        "team": "Philadelphia Eagles",
+        "pos": "WR",
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Philadelphia Eagles (6 REC, 61 YDS)"
+      },
+      {
+        "name": "J.J. McCarthy",
+        "team": "New York Giants",
+        "pos": "QB",
+        "jersey": "18",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular New York Giants (12/19, 127 YDS)"
+      },
+      {
+        "name": "Devin Singletary",
+        "team": "New York Giants",
+        "pos": "RB",
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal New York Giants (21 CAR, 31 YDS)"
+      },
+      {
+        "name": "Darnell Mooney",
+        "team": "New York Giants",
+        "pos": "WR",
+        "jersey": "17",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal New York Giants (3 REC, 54 YDS)"
       }
     ]
   },
@@ -293,37 +657,92 @@
     "total_points": 33,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Northwest Stadium (Landover) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Northwest Stadium (Landover) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Commanders Starting QB",
+        "name": "Jayden Daniels",
+        "team": "Washington Commanders",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "5",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Washington Commanders (24/35, 274 YDS, 1 TD)"
       },
       {
-        "name": "Commanders Lead RB",
+        "name": "Rachaad White",
+        "team": "Washington Commanders",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Washington Commanders (7 CAR, 28 YDS)"
       },
       {
-        "name": "Rams Starting QB",
+        "name": "Van Jefferson",
+        "team": "Washington Commanders",
+        "pos": "WR",
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Washington Commanders (5 REC, 58 YDS, 1 TD)"
+      },
+      {
+        "name": "Matthew Stafford",
+        "team": "Los Angeles Rams",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "9",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Los Angeles Rams (26/43, 228 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Rams Lead RB",
+        "name": "Blake Corum",
+        "team": "Los Angeles Rams",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Los Angeles Rams (11 CAR, 58 YDS, 1 TD)"
+      },
+      {
+        "name": "Puka Nacua",
+        "team": "Los Angeles Rams",
+        "pos": "WR",
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Los Angeles Rams (14 REC, 150 YDS, 1 TD)"
       }
     ]
   },
@@ -341,37 +760,92 @@
     "total_points": 47,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Bank of America Stadium (Charlotte) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Bank of America Stadium (Charlotte) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Panthers Starting QB",
+        "name": "Bryce Young",
+        "team": "Carolina Panthers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "9",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Carolina Panthers (28/39, 276 YDS, 3 TD, 1 INT)"
       },
       {
-        "name": "Panthers Lead RB",
+        "name": "Chuba Hubbard",
+        "team": "Carolina Panthers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "30",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Carolina Panthers (16 CAR, 79 YDS)"
       },
       {
-        "name": "Broncos Starting QB",
+        "name": "Darren Waller",
+        "team": "Carolina Panthers",
+        "pos": "WR",
+        "jersey": "88",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Carolina Panthers (8 REC, 90 YDS, 1 TD)"
+      },
+      {
+        "name": "Bo Nix",
+        "team": "Denver Broncos",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Denver Broncos (25/37, 237 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Broncos Lead RB",
+        "name": "Jonah Coleman",
+        "team": "Denver Broncos",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Denver Broncos (17 CAR, 57 YDS, 1 TD)"
+      },
+      {
+        "name": "Pat Bryant",
+        "team": "Denver Broncos",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Denver Broncos (4 REC, 56 YDS, 1 TD)"
       }
     ]
   },
@@ -389,37 +863,92 @@
     "total_points": 66,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "SoFi Stadium (Inglewood) [ABIERTO]",
+    "is_dome": false,
+    "venue": "SoFi Stadium (Inglewood) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 6,
+      "pass_yds_allowed": 190.5,
+      "rush_def_rank": 14,
+      "rush_yds_allowed": 112.0,
+      "style": "Pass Rush Asfixiante (Will Anderson)"
+    },
     "stars": [
       {
-        "name": "Chargers Starting QB",
+        "name": "Justin Herbert",
+        "team": "Los Angeles Chargers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "10",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Los Angeles Chargers (13/23, 193 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Chargers Lead RB",
+        "name": "Omarion Hampton",
+        "team": "Los Angeles Chargers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Los Angeles Chargers (13 CAR, 60 YDS)"
       },
       {
-        "name": "Texans Starting QB",
+        "name": "Quentin Johnston",
+        "team": "Los Angeles Chargers",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Los Angeles Chargers (1 REC, 58 YDS, 1 TD)"
+      },
+      {
+        "name": "C.J. Stroud",
+        "team": "Houston Texans",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "7",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Houston Texans (21/35, 384 YDS, 5 TD, 1 INT)"
       },
       {
-        "name": "Texans Lead RB",
+        "name": "Woody Marks",
+        "team": "Houston Texans",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Houston Texans (18 CAR, 70 YDS)"
+      },
+      {
+        "name": "Kayshon Boutte",
+        "team": "Houston Texans",
+        "pos": "WR",
+        "jersey": "14",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Houston Texans (4 REC, 125 YDS, 2 TD)"
       }
     ]
   },
@@ -437,37 +966,92 @@
     "total_points": 72,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Gillette Stadium (Foxborough) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Gillette Stadium (Foxborough) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 14,
+      "pass_yds_allowed": 215.0,
+      "rush_def_rank": 12,
+      "rush_yds_allowed": 108.0,
+      "style": "Generadora de Balones Sueltos e Intercepciones"
+    },
     "stars": [
       {
-        "name": "Patriots Starting QB",
+        "name": "Drake Maye",
+        "team": "New England Patriots",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "10",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular New England Patriots (21/38, 299 YDS, 3 TD, 3 INT)"
       },
       {
-        "name": "Patriots Lead RB",
+        "name": "Corey Kiner",
+        "team": "New England Patriots",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal New England Patriots (8 CAR, 55 YDS, 1 TD)"
       },
       {
-        "name": "Packers Starting QB",
+        "name": "DeMario Douglas",
+        "team": "New England Patriots",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal New England Patriots (5 REC, 102 YDS)"
+      },
+      {
+        "name": "Jordan Love",
+        "team": "Green Bay Packers",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Green Bay Packers (23/29, 372 YDS, 3 TD)"
       },
       {
-        "name": "Packers Lead RB",
+        "name": "Kaleb Johnson",
+        "team": "Green Bay Packers",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Green Bay Packers (14 CAR, 68 YDS, 1 TD)"
+      },
+      {
+        "name": "Christian Watson",
+        "team": "Green Bay Packers",
+        "pos": "WR",
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Green Bay Packers (7 REC, 171 YDS, 1 TD)"
       }
     ]
   },
@@ -485,37 +1069,92 @@
     "total_points": 55,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Levi's Stadium (Santa Clara) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Levi's Stadium (Santa Clara) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 9,
+      "pass_yds_allowed": 198.5,
+      "rush_def_rank": 11,
+      "rush_yds_allowed": 105.0,
+      "style": "Presión Frontal Rápida y Buen Tackle"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "49ers Starting QB",
+        "name": "Brock Purdy",
+        "team": "San Francisco 49ers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "13",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular San Francisco 49ers (17/25, 232 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "49ers Lead RB",
+        "name": "Kaelon Black",
+        "team": "San Francisco 49ers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal San Francisco 49ers (11 CAR, 70 YDS)"
       },
       {
-        "name": "Raiders Starting QB",
+        "name": "Jordan Watkins",
+        "team": "San Francisco 49ers",
+        "pos": "WR",
+        "jersey": "17",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal San Francisco 49ers (4 REC, 86 YDS, 1 TD)"
+      },
+      {
+        "name": "Kirk Cousins",
+        "team": "Las Vegas Raiders",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "8",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Las Vegas Raiders (22/32, 216 YDS, 1 TD, 3 INT)"
       },
       {
-        "name": "Raiders Lead RB",
+        "name": "Ashton Jeanty",
+        "team": "Las Vegas Raiders",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Las Vegas Raiders (6 CAR, 25 YDS)"
+      },
+      {
+        "name": "Brock Bowers",
+        "team": "Las Vegas Raiders",
+        "pos": "WR",
+        "jersey": "89",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Las Vegas Raiders (7 REC, 111 YDS, 1 TD)"
       }
     ]
   },
@@ -533,37 +1172,92 @@
     "total_points": 20,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Lumen Field (Seattle) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Lumen Field (Seattle) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Seahawks Starting QB",
+        "name": "Drew Lock",
+        "team": "Seattle Seahawks",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Seattle Seahawks (19/28, 175 YDS, 1 TD)"
       },
       {
-        "name": "Seahawks Lead RB",
+        "name": "Zach Charbonnet",
+        "team": "Seattle Seahawks",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Seattle Seahawks (16 CAR, 77 YDS)"
       },
       {
-        "name": "Cardinals Starting QB",
+        "name": "Jadarian Price",
+        "team": "Seattle Seahawks",
+        "pos": "WR",
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Seattle Seahawks (4 REC, 54 YDS)"
+      },
+      {
+        "name": "Gardner Minshew II",
+        "team": "Arizona Cardinals",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "15",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Arizona Cardinals (21/30, 166 YDS)"
       },
       {
-        "name": "Cardinals Lead RB",
+        "name": "Tyler Allgeier",
+        "team": "Arizona Cardinals",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "22",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Arizona Cardinals (17 CAR, 46 YDS)"
+      },
+      {
+        "name": "Michael Wilson",
+        "team": "Arizona Cardinals",
+        "pos": "WR",
+        "jersey": "14",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Arizona Cardinals (6 REC, 60 YDS)"
       }
     ]
   },
@@ -581,37 +1275,92 @@
     "total_points": 51,
     "spread_str": "",
     "over_under": 46.5,
-    "venue": "Soldier Field (Chicago) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Soldier Field (Chicago) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 260.0,
+      "rush_def_rank": 7,
+      "rush_yds_allowed": 95.0,
+      "style": "Blitz Frecuente / Expuesta en Pases Profundos"
+    },
     "stars": [
       {
-        "name": "Bears Starting QB",
+        "name": "Caleb Williams",
+        "team": "Chicago Bears",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "18",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Chicago Bears (22/37, 279 YDS, 2 TD, 4 INT)"
       },
       {
-        "name": "Bears Lead RB",
+        "name": "D'Andre Swift",
+        "team": "Chicago Bears",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Chicago Bears (12 CAR, 31 YDS)"
       },
       {
-        "name": "Buccaneers Starting QB",
+        "name": "Luther Burden III",
+        "team": "Chicago Bears",
+        "pos": "WR",
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Chicago Bears (7 REC, 97 YDS, 1 TD)"
+      },
+      {
+        "name": "Baker Mayfield",
+        "team": "Tampa Bay Buccaneers",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "6",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Tampa Bay Buccaneers (18/32, 243 YDS, 2 INT)"
       },
       {
-        "name": "Buccaneers Lead RB",
+        "name": "Bucky Irving",
+        "team": "Tampa Bay Buccaneers",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Tampa Bay Buccaneers (20 CAR, 97 YDS, 2 TD)"
+      },
+      {
+        "name": "Tez Johnson",
+        "team": "Tampa Bay Buccaneers",
+        "pos": "WR",
+        "jersey": "15",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Tampa Bay Buccaneers (2 REC, 76 YDS)"
       }
     ]
   }

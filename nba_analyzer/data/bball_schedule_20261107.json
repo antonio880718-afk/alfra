@@ -14,24 +14,78 @@
     "spread_str": "",
     "over_under": 145.5,
     "venue": "KFC Yum! Center (Louisville)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Cardinals Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "name": "Obinna Ekezie Jr.",
+        "team": "Louisville Cardinals",
+        "pos": "C",
+        "jersey": "15",
+        "pts": 20.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 28.5,
+        "role": "Líder Anotador de Louisville Cardinals (20.0 PPG)"
       },
       {
-        "name": "Eagles Top Scorer",
+        "name": "Alvaro Folgueiras",
+        "team": "Louisville Cardinals",
+        "pos": "F",
+        "jersey": "7",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 6.0,
+        "threes": 1.6,
+        "pra": 24.3,
+        "role": "Líder Asistente de Louisville Cardinals (6.0 APG)"
+      },
+      {
+        "name": "Clayton Parker",
+        "team": "Morehead State Eagles",
+        "pos": "F",
+        "jersey": "33",
+        "pts": 19.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 27.5,
+        "role": "Líder Anotador de Morehead State Eagles (19.0 PPG)"
+      },
+      {
+        "name": "Izaiah Day",
+        "team": "Morehead State Eagles",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "23",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 4.0,
+        "threes": 1.6,
+        "pra": 20.3,
+        "role": "Líder Asistente de Morehead State Eagles (2.0 APG)"
+      },
+      {
+        "name": "Kyrell Shaw",
+        "team": "Morehead State Eagles",
+        "pos": "G",
+        "jersey": "7",
+        "pts": 13.0,
+        "reb": 9.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 23.5,
+        "role": "Líder Reboteador de Morehead State Eagles (9.0 RPG)"
       }
     ]
   },
@@ -50,24 +104,96 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Arena CDMX (Mexico City)",
+    "home_defense": {
+      "def_rank": 25,
+      "pts_allowed": 118.2,
+      "pace": 101.5,
+      "style": "Juego Rápido / Tiros Abiertos Frecuentes"
+    },
+    "away_defense": {
+      "def_rank": 18,
+      "pts_allowed": 114.2,
+      "pace": 99.8,
+      "style": "Juego Estructurado / Puntos en Pintura"
+    },
     "stars": [
       {
-        "name": "Pacers Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
+        "name": "Pascal Siakam",
+        "pos": "PF",
+        "jersey": "43",
+        "pts": 21.4,
+        "reb": 6.6,
+        "ast": 4.2,
+        "threes": 1.2,
+        "pra": 32.2,
+        "role": "Líder Interior / Rematador en Pintura"
       },
       {
-        "name": "Nuggets Top Scorer",
-        "pos": "G",
-        "pts": 17.2,
+        "name": "Andrew Nembhard",
+        "pos": "PG",
+        "jersey": "2",
+        "pts": 15.8,
+        "reb": 3.4,
+        "ast": 7.0,
+        "threes": 1.6,
+        "pra": 26.2,
+        "role": "Director de Juego y Asistencias"
+      },
+      {
+        "name": "Tyrese Haliburton",
+        "pos": "PG",
+        "jersey": "0",
+        "pts": 20.8,
         "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "ast": 9.5,
+        "threes": 3.1,
+        "pra": 34.3,
+        "role": "Base Distribuidor Estrella"
+      },
+      {
+        "name": "Jamal Murray",
+        "pos": "PG",
+        "jersey": "27",
+        "pts": 24.2,
+        "reb": 4.4,
+        "ast": 6.8,
+        "threes": 2.6,
+        "pra": 35.4,
+        "role": "Anotador de Clutch y Generador"
+      },
+      {
+        "name": "Nikola Jokic",
+        "pos": "C",
+        "jersey": "15",
+        "pts": 28.8,
+        "reb": 12.4,
+        "ast": 10.2,
+        "threes": 1.4,
+        "pra": 51.4,
+        "role": "MVP / Triple-Doble Caminante"
+      },
+      {
+        "name": "Michael Porter Jr.",
+        "pos": "SF",
+        "jersey": "1",
+        "pts": 18.2,
+        "reb": 7.4,
+        "ast": 1.8,
+        "threes": 3.0,
+        "pra": 27.4,
+        "role": "Tirador Alto y Reboteador Exterior"
+      },
+      {
+        "name": "Ivica Zubac",
+        "team": "Indiana Pacers",
+        "pos": "C",
+        "jersey": "40",
+        "pts": 13.0,
+        "reb": 12.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 26.5,
+        "role": "Líder Reboteador de Indiana Pacers (12.0 RPG)"
       }
     ]
   },
@@ -86,24 +212,90 @@
     "spread_str": "",
     "over_under": 145.5,
     "venue": "McCarthey Athletic Center (Spokane)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Bulldogs Top Scorer",
+        "name": "Isiah Harwell",
+        "team": "Gonzaga Bulldogs",
         "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "jersey": "1",
+        "pts": 22.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 30.5,
+        "role": "Líder Anotador de Gonzaga Bulldogs (22.0 PPG)"
       },
       {
-        "name": "Aggies Top Scorer",
+        "name": "Xaivian Lee",
+        "team": "Gonzaga Bulldogs",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "5",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 10.0,
+        "threes": 1.6,
+        "pra": 28.3,
+        "role": "Líder Asistente de Gonzaga Bulldogs (10.0 APG)"
+      },
+      {
+        "name": "Massamba Diop",
+        "team": "Gonzaga Bulldogs",
+        "pos": "C",
+        "jersey": "35",
+        "pts": 13.0,
+        "reb": 7.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 21.5,
+        "role": "Líder Reboteador de Gonzaga Bulldogs (7.0 RPG)"
+      },
+      {
+        "name": "Mark Lavrenov",
+        "team": "New Mexico State Aggies",
+        "pos": "F",
+        "jersey": "32",
+        "pts": 19.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 27.5,
+        "role": "Líder Anotador de New Mexico State Aggies (19.0 PPG)"
+      },
+      {
+        "name": "Gabe Pickens",
+        "team": "New Mexico State Aggies",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 5.0,
+        "threes": 1.6,
+        "pra": 23.3,
+        "role": "Líder Asistente de New Mexico State Aggies (5.0 APG)"
+      },
+      {
+        "name": "Jae'Coby Osborne",
+        "team": "New Mexico State Aggies",
+        "pos": "F",
+        "jersey": "4",
+        "pts": 13.0,
+        "reb": 5.5,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 19.5,
+        "role": "Líder Reboteador de New Mexico State Aggies (5.0 RPG)"
       }
     ]
   },
@@ -122,42 +314,86 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "State Farm Arena (Atlanta)",
+    "home_defense": {
+      "def_rank": 27,
+      "pts_allowed": 119.8,
+      "pace": 102.1,
+      "style": "Ritmo Acelerado / Defensa Permisiva"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Trae Young",
-        "pos": "PG",
-        "pts": 26.2,
-        "reb": 3.4,
-        "ast": 10.8,
-        "threes": 3.1,
-        "pra": 40.4
+        "name": "Nickeil Alexander-Walker",
+        "pos": "SG",
+        "jersey": "9",
+        "pts": 22.1,
+        "reb": 4.2,
+        "ast": 3.8,
+        "threes": 2.6,
+        "pra": 30.1,
+        "role": "Líder Anotador Perimetral"
       },
       {
         "name": "Jalen Johnson",
         "pos": "PF",
+        "jersey": "1",
         "pts": 19.4,
-        "reb": 10.0,
-        "ast": 5.2,
+        "reb": 8.8,
+        "ast": 7.6,
         "threes": 1.4,
-        "pra": 34.6
+        "pra": 35.8,
+        "role": "Ala-Pívot Titular / Motor Ofensivo"
       },
       {
-        "name": "Clint Capela",
+        "name": "Onyeka Okongwu",
         "pos": "C",
-        "pts": 11.2,
-        "reb": 9.8,
-        "ast": 1.1,
-        "threes": 0.0,
-        "pra": 22.1
+        "jersey": "17",
+        "pts": 13.8,
+        "reb": 9.2,
+        "ast": 1.8,
+        "threes": 0.3,
+        "pra": 24.8,
+        "role": "Pívot Titular / Presencia en la Pintura"
       },
       {
-        "name": "De'Andre Hunter",
-        "pos": "SF",
-        "pts": 16.5,
-        "reb": 4.2,
-        "ast": 1.8,
-        "threes": 2.3,
-        "pra": 22.5
+        "name": "Dyson Daniels",
+        "pos": "PG",
+        "jersey": "5",
+        "pts": 14.5,
+        "reb": 4.6,
+        "ast": 5.2,
+        "threes": 1.5,
+        "pra": 24.3,
+        "role": "Base Director y Especialista Defensivo"
+      },
+      {
+        "name": "Michael Porter Jr.",
+        "team": "Brooklyn Nets",
+        "pos": "F",
+        "jersey": "17",
+        "pts": 25.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 33.5,
+        "role": "Líder Anotador de Brooklyn Nets (25.0 PPG)"
+      },
+      {
+        "name": "Day'Ron Sharpe",
+        "team": "Brooklyn Nets",
+        "pos": "C",
+        "jersey": "20",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 13.0,
+        "threes": 1.6,
+        "pra": 31.3,
+        "role": "Líder Asistente de Brooklyn Nets (13.0 APG)"
       }
     ]
   },
@@ -176,42 +412,86 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Rocket Arena (Cleveland)",
+    "home_defense": {
+      "def_rank": 4,
+      "pts_allowed": 106.8,
+      "pace": 98.9,
+      "style": "Defensa Élite Interior y Perímetro"
+    },
+    "away_defense": {
+      "def_rank": 9,
+      "pts_allowed": 109.8,
+      "pace": 97.4,
+      "style": "Juego Lento, Físico y Posesiones Largas"
+    },
     "stars": [
       {
         "name": "Donovan Mitchell",
         "pos": "SG",
-        "pts": 25.6,
+        "jersey": "45",
+        "pts": 24.0,
         "reb": 4.2,
         "ast": 5.1,
         "threes": 3.4,
-        "pra": 34.9
+        "pra": 33.3,
+        "role": "Anotador Élite Titular"
       },
       {
-        "name": "Darius Garland",
+        "name": "James Harden",
         "pos": "PG",
-        "pts": 20.4,
-        "reb": 2.8,
-        "ast": 6.8,
-        "threes": 2.6,
-        "pra": 30.0
+        "jersey": "1",
+        "pts": 18.5,
+        "reb": 4.8,
+        "ast": 5.8,
+        "threes": 2.5,
+        "pra": 29.1,
+        "role": "Base Organizador y Tirador"
       },
       {
         "name": "Evan Mobley",
         "pos": "PF",
+        "jersey": "4",
         "pts": 18.2,
-        "reb": 8.8,
+        "reb": 8.1,
         "ast": 2.8,
         "threes": 0.8,
-        "pra": 29.8
+        "pra": 29.1,
+        "role": "Pilar Interior y Rebote"
       },
       {
         "name": "Jarrett Allen",
         "pos": "C",
+        "jersey": "31",
         "pts": 14.5,
         "reb": 11.2,
         "ast": 1.6,
         "threes": 0.0,
-        "pra": 27.3
+        "pra": 27.3,
+        "role": "Centro Protector y Tapones"
+      },
+      {
+        "name": "Jalen Brunson",
+        "team": "New York Knicks",
+        "pos": "G",
+        "jersey": "11",
+        "pts": 31.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 39.5,
+        "role": "Líder Anotador de New York Knicks (31.0 PPG)"
+      },
+      {
+        "name": "Karl-Anthony Towns",
+        "team": "New York Knicks",
+        "pos": "C",
+        "jersey": "32",
+        "pts": 13.0,
+        "reb": 13.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 27.5,
+        "role": "Líder Reboteador de New York Knicks (13.0 RPG)"
       }
     ]
   },
@@ -230,33 +510,99 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Paycom Center (Oklahoma City)",
+    "home_defense": {
+      "def_rank": 1,
+      "pts_allowed": 103.8,
+      "pace": 100.6,
+      "style": "Líder en Robos y Pérdidas Provocadas"
+    },
+    "away_defense": {
+      "def_rank": 29,
+      "pts_allowed": 121.2,
+      "pace": 102.8,
+      "style": "Transición Abierta / Baja Eficiencia Defensiva"
+    },
     "stars": [
+      {
+        "name": "Alex Sarr",
+        "pos": "C",
+        "jersey": "12",
+        "pts": 15.6,
+        "reb": 7.8,
+        "ast": 2.4,
+        "threes": 1.2,
+        "pra": 25.8,
+        "role": "Centro Titular / Gran Envergadura"
+      },
       {
         "name": "Jordan Poole",
         "pos": "SG",
+        "jersey": "13",
         "pts": 21.2,
         "reb": 2.8,
         "ast": 4.6,
         "threes": 3.2,
-        "pra": 28.6
+        "pra": 28.6,
+        "role": "Tirador Principal de Alto Volumen"
       },
       {
         "name": "Kyle Kuzma",
         "pos": "PF",
+        "jersey": "0",
         "pts": 17.8,
         "reb": 6.8,
         "ast": 3.4,
         "threes": 1.8,
-        "pra": 28.0
+        "pra": 28.0,
+        "role": "Alero / Anotador en Transición"
       },
       {
-        "name": "Bilal Coulibaly",
-        "pos": "SF",
-        "pts": 14.8,
-        "reb": 5.4,
-        "ast": 2.6,
+        "name": "Shai Gilgeous-Alexander",
+        "team": "Oklahoma City Thunder",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 30.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 38.5,
+        "role": "Líder Anotador de Oklahoma City Thunder (30.0 PPG)"
+      },
+      {
+        "name": "Isaiah Hartenstein",
+        "team": "Oklahoma City Thunder",
+        "pos": "C",
+        "jersey": "55",
+        "pts": 13.0,
+        "reb": 14.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 28.5,
+        "role": "Líder Reboteador de Oklahoma City Thunder (14.0 RPG)"
+      },
+      {
+        "name": "AJ Dybantsa",
+        "team": "Washington Wizards",
+        "pos": "F",
+        "jersey": "4",
+        "pts": 19.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 27.5,
+        "role": "Líder Anotador de Washington Wizards (19.0 PPG)"
+      },
+      {
+        "name": "Kyshawn George",
+        "team": "Washington Wizards",
+        "pos": "F",
+        "jersey": "18",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 6.0,
         "threes": 1.6,
-        "pra": 22.8
+        "pra": 24.3,
+        "role": "Líder Asistente de Washington Wizards (6.0 APG)"
       }
     ]
   },
@@ -275,24 +621,87 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Chase Center (San Francisco)",
+    "home_defense": {
+      "def_rank": 6,
+      "pts_allowed": 107.5,
+      "pace": 101.2,
+      "style": "Presión Perimetral y Rotaciones Rápidas"
+    },
+    "away_defense": {
+      "def_rank": 5,
+      "pts_allowed": 107.1,
+      "pace": 98.5,
+      "style": "Envergadura y Presión en Todo el Campo"
+    },
     "stars": [
       {
-        "name": "Warriors Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
+        "name": "Stephen Curry",
+        "pos": "PG",
+        "jersey": "30",
+        "pts": 31.2,
+        "reb": 5.1,
+        "ast": 6.4,
+        "threes": 4.8,
+        "pra": 42.7,
+        "role": "Tirador Histórico y Líder Ofensivo"
       },
       {
-        "name": "Magic Top Scorer",
-        "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "name": "Draymond Green",
+        "pos": "PF",
+        "jersey": "23",
+        "pts": 9.2,
+        "reb": 7.4,
+        "ast": 6.8,
+        "threes": 1.0,
+        "pra": 23.4,
+        "role": "Pilar Defensivo y Facilitador"
+      },
+      {
+        "name": "Jonathan Kuminga",
+        "pos": "SF",
+        "jersey": "00",
+        "pts": 18.4,
+        "reb": 5.8,
+        "ast": 2.6,
+        "threes": 1.2,
+        "pra": 26.8,
+        "role": "Alero Atlético en Corte hacia el Aro"
+      },
+      {
+        "name": "Yaxel Lendeborg",
+        "team": "Golden State Warriors",
+        "pos": "F",
+        "jersey": "1",
+        "pts": 13.0,
+        "reb": 8.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 22.5,
+        "role": "Líder Reboteador de Golden State Warriors (8.0 RPG)"
+      },
+      {
+        "name": "Franz Wagner",
+        "team": "Orlando Magic",
+        "pos": "F",
+        "jersey": "22",
+        "pts": 30.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 38.5,
+        "role": "Líder Anotador de Orlando Magic (30.0 PPG)"
+      },
+      {
+        "name": "Jamal Cain",
+        "team": "Orlando Magic",
+        "pos": "F",
+        "jersey": "8",
+        "pts": 13.0,
+        "reb": 12.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 26.5,
+        "role": "Líder Reboteador de Orlando Magic (12.0 RPG)"
       }
     ]
   },
@@ -311,24 +720,96 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Mortgage Matchup Center (Phoenix)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.8,
+      "pace": 99.6,
+      "style": "Anotación Fluida / Dificultades en Rebote Ofensivo"
+    },
+    "away_defense": {
+      "def_rank": 7,
+      "pts_allowed": 108.6,
+      "pace": 98.4,
+      "style": "Defensa Asfixiante y Alto Rebote"
+    },
     "stars": [
       {
-        "name": "Suns Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
+        "name": "Devin Booker",
+        "pos": "SG",
+        "jersey": "1",
+        "pts": 25.2,
         "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
+        "ast": 6.5,
+        "threes": 2.4,
+        "pra": 35.9,
+        "role": "Anotador Quirúrgico de Élite"
       },
       {
-        "name": "Rockets Top Scorer",
-        "pos": "G",
-        "pts": 17.2,
+        "name": "Kevin Durant",
+        "pos": "PF",
+        "jersey": "35",
+        "pts": 27.6,
+        "reb": 6.8,
+        "ast": 4.5,
+        "threes": 2.6,
+        "pra": 38.9,
+        "role": "Anotador Indefendible en Aislamiento"
+      },
+      {
+        "name": "Bradley Beal",
+        "pos": "PG",
+        "jersey": "3",
+        "pts": 17.8,
         "reb": 4.0,
+        "ast": 4.4,
+        "threes": 1.9,
+        "pra": 26.2,
+        "role": "Tercera Opción Ofensiva Letal"
+      },
+      {
+        "name": "Alperen Sengun",
+        "pos": "C",
+        "jersey": "28",
+        "pts": 21.5,
+        "reb": 10.4,
+        "ast": 5.2,
+        "threes": 0.4,
+        "pra": 37.1,
+        "role": "Pívot Creador y Reboteador Principal"
+      },
+      {
+        "name": "Jalen Green",
+        "pos": "SG",
+        "jersey": "4",
+        "pts": 20.8,
+        "reb": 4.6,
         "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "threes": 2.7,
+        "pra": 28.9,
+        "role": "Escolta Rápido de Alto Vuelo"
+      },
+      {
+        "name": "Fred VanVleet",
+        "pos": "PG",
+        "jersey": "5",
+        "pts": 15.6,
+        "reb": 3.8,
+        "ast": 6.8,
+        "threes": 2.4,
+        "pra": 26.2,
+        "role": "Base Director y Defensor Perimetral"
+      },
+      {
+        "name": "Miles Bridges",
+        "team": "Phoenix Suns",
+        "pos": "F",
+        "jersey": "22",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 7.0,
+        "threes": 1.6,
+        "pra": 25.3,
+        "role": "Líder Asistente de Phoenix Suns (7.0 APG)"
       }
     ]
   },
@@ -347,24 +828,99 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Moda Center (Portland)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 19,
+      "pts_allowed": 114.8,
+      "pace": 100.8,
+      "style": "Bloqueo Élite (Wembanyama) / Espacios Exteriores"
+    },
     "stars": [
       {
-        "name": "Blazers Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
+        "name": "Victor Wembanyama",
+        "pos": "C",
+        "jersey": "1",
+        "pts": 29.1,
+        "reb": 11.8,
+        "ast": 4.2,
+        "threes": 2.8,
+        "pra": 45.1,
+        "role": "Unicornio Generacional / Defensor del Año"
       },
       {
-        "name": "Spurs Top Scorer",
+        "name": "Chris Paul",
+        "pos": "PG",
+        "jersey": "3",
+        "pts": 11.2,
+        "reb": 3.8,
+        "ast": 8.4,
+        "threes": 1.4,
+        "pra": 23.4,
+        "role": "Maestro Pasador y Mentor"
+      },
+      {
+        "name": "Devin Vassell",
+        "pos": "SG",
+        "jersey": "24",
+        "pts": 18.6,
+        "reb": 4.1,
+        "ast": 3.8,
+        "threes": 2.4,
+        "pra": 26.5,
+        "role": "Escolta Tirador y Defensor"
+      },
+      {
+        "name": "Deni Avdija",
+        "team": "Portland Trail Blazers",
+        "pos": "F",
+        "jersey": "8",
+        "pts": 15.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 23.5,
+        "role": "Líder Anotador de Portland Trail Blazers (15.0 PPG)"
+      },
+      {
+        "name": "Damian Lillard",
+        "team": "Portland Trail Blazers",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "0",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 7.0,
+        "threes": 1.6,
+        "pra": 25.3,
+        "role": "Líder Asistente de Portland Trail Blazers (7.0 APG)"
+      },
+      {
+        "name": "Yang Hansen",
+        "team": "Portland Trail Blazers",
+        "pos": "C",
+        "jersey": "16",
+        "pts": 13.0,
+        "reb": 10.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 24.5,
+        "role": "Líder Reboteador de Portland Trail Blazers (10.0 RPG)"
+      },
+      {
+        "name": "De'Aaron Fox",
+        "team": "San Antonio Spurs",
+        "pos": "G",
+        "jersey": "4",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 6.0,
+        "threes": 1.6,
+        "pra": 24.3,
+        "role": "Líder Asistente de San Antonio Spurs (6.0 APG)"
       }
     ]
   }

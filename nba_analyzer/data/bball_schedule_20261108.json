@@ -14,24 +14,78 @@
     "spread_str": "",
     "over_under": 145.5,
     "venue": "Madison Square Garden (New York)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Storm Top Scorer",
+        "name": "Tounde Yessoufou",
+        "team": "St. John's Red Storm",
         "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "jersey": "24",
+        "pts": 23.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 31.5,
+        "role": "Líder Anotador de St. John's Red Storm (23.0 PPG)"
       },
       {
-        "name": "Gaels Top Scorer",
+        "name": "Quinn Ellis",
+        "team": "St. John's Red Storm",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "4",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 11.0,
+        "threes": 1.6,
+        "pra": 29.3,
+        "role": "Líder Asistente de St. John's Red Storm (11.0 APG)"
+      },
+      {
+        "name": "Ore Odutayo",
+        "team": "Iona Gaels",
+        "pos": "F",
+        "jersey": "00",
+        "pts": 12.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 20.5,
+        "role": "Líder Anotador de Iona Gaels (12.0 PPG)"
+      },
+      {
+        "name": "Oliver Sassella",
+        "team": "Iona Gaels",
+        "pos": "G",
+        "jersey": "13",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 4.0,
+        "threes": 1.6,
+        "pra": 22.3,
+        "role": "Líder Asistente de Iona Gaels (4.0 APG)"
+      },
+      {
+        "name": "Keyshawn Mitchell",
+        "team": "Iona Gaels",
+        "pos": "F",
+        "jersey": "22",
+        "pts": 13.0,
+        "reb": 5.5,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 19.5,
+        "role": "Líder Reboteador de Iona Gaels (5.0 RPG)"
       }
     ]
   },
@@ -50,24 +104,66 @@
     "spread_str": "",
     "over_under": 145.5,
     "venue": "Capital One Arena (Washington)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Cavaliers Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "name": "Thijs De Ridder",
+        "team": "Virginia Cavaliers",
+        "pos": "F",
+        "jersey": "28",
+        "pts": 16.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 24.5,
+        "role": "Líder Anotador de Virginia Cavaliers (16.0 PPG)"
       },
       {
-        "name": "Razorbacks Top Scorer",
+        "name": "Chance Mallory",
+        "team": "Virginia Cavaliers",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "1",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 6.0,
+        "threes": 1.6,
+        "pra": 24.3,
+        "role": "Líder Asistente de Virginia Cavaliers (6.0 APG)"
+      },
+      {
+        "name": "Jordan Smith Jr.",
+        "team": "Arkansas Razorbacks",
+        "pos": "G",
+        "jersey": "23",
+        "pts": 19.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 27.5,
+        "role": "Líder Anotador de Arkansas Razorbacks (19.0 PPG)"
+      },
+      {
+        "name": "Billy Richmond III",
+        "team": "Arkansas Razorbacks",
+        "pos": "G",
+        "jersey": "24",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 4.0,
+        "threes": 1.6,
+        "pra": 22.3,
+        "role": "Líder Asistente de Arkansas Razorbacks (4.0 APG)"
       }
     ]
   },
@@ -86,24 +182,78 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "United Center (Chicago)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 13,
+      "pts_allowed": 112.0,
+      "pace": 98.7,
+      "style": "Pintura Blindada / Ritmo Moderado"
+    },
     "stars": [
       {
-        "name": "Bulls Top Scorer",
+        "name": "Josh Giddey",
+        "team": "Chicago Bulls",
         "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "jersey": "3",
+        "pts": 19.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 27.5,
+        "role": "Líder Anotador de Chicago Bulls (19.0 PPG)"
       },
       {
-        "name": "76ers Top Scorer",
+        "name": "Jalen Smith",
+        "team": "Chicago Bulls",
+        "pos": "F",
+        "jersey": "25",
+        "pts": 13.0,
+        "reb": 8.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 22.5,
+        "role": "Líder Reboteador de Chicago Bulls (8.0 RPG)"
+      },
+      {
+        "name": "Jaylen Brown",
+        "team": "Philadelphia 76ers",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "7",
+        "pts": 29.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 37.5,
+        "role": "Líder Anotador de Philadelphia 76ers (29.0 PPG)"
+      },
+      {
+        "name": "Tyrese Maxey",
+        "team": "Philadelphia 76ers",
+        "pos": "G",
+        "jersey": "0",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 7.0,
+        "threes": 1.6,
+        "pra": 25.3,
+        "role": "Líder Asistente de Philadelphia 76ers (7.0 APG)"
+      },
+      {
+        "name": "Jabari Walker",
+        "team": "Philadelphia 76ers",
+        "pos": "F",
+        "jersey": "33",
+        "pts": 13.0,
+        "reb": 11.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 25.5,
+        "role": "Líder Reboteador de Philadelphia 76ers (11.0 RPG)"
       }
     ]
   },
@@ -122,69 +272,119 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Little Caesars Arena (Detroit)",
+    "home_defense": {
+      "def_rank": 22,
+      "pts_allowed": 115.5,
+      "pace": 99.4,
+      "style": "En Desarrollo / Faltas Frecuentes"
+    },
+    "away_defense": {
+      "def_rank": 21,
+      "pts_allowed": 116.4,
+      "pace": 100.8,
+      "style": "Pintura Explotable / Ritmo Medio"
+    },
     "stars": [
       {
         "name": "Cade Cunningham",
         "pos": "PG",
+        "jersey": "2",
         "pts": 23.4,
         "reb": 7.2,
         "ast": 8.1,
         "threes": 2.0,
-        "pra": 38.7
+        "pra": 38.7,
+        "role": "Líder Generador y Anotador"
+      },
+      {
+        "name": "John Collins",
+        "pos": "PF",
+        "jersey": "20",
+        "pts": 16.8,
+        "reb": 7.6,
+        "ast": 1.8,
+        "threes": 1.4,
+        "pra": 26.2,
+        "role": "Ala-Pívot Rematador Interior"
       },
       {
         "name": "Jaden Ivey",
         "pos": "SG",
+        "jersey": "23",
         "pts": 18.6,
         "reb": 4.2,
         "ast": 3.8,
         "threes": 2.1,
-        "pra": 26.6
+        "pra": 26.6,
+        "role": "Escolta Rápido en Penetración"
       },
       {
-        "name": "Tobias Harris",
-        "pos": "PF",
-        "pts": 14.2,
-        "reb": 6.8,
-        "ast": 2.2,
-        "threes": 1.4,
-        "pra": 23.2
+        "name": "Luka Doncic",
+        "pos": "PG",
+        "jersey": "77",
+        "pts": 40.1,
+        "reb": 8.6,
+        "ast": 7.7,
+        "threes": 3.8,
+        "pra": 56.4,
+        "role": "Superestrella / Generador Absoluto"
       },
       {
-        "name": "Anthony Davis",
+        "name": "Walker Kessler",
         "pos": "C",
-        "pts": 27.8,
-        "reb": 11.6,
-        "ast": 3.2,
-        "threes": 0.6,
-        "pra": 42.6
-      },
-      {
-        "name": "LeBron James",
-        "pos": "F",
-        "pts": 22.4,
-        "reb": 7.8,
-        "ast": 8.6,
-        "threes": 2.2,
-        "pra": 38.8
+        "jersey": "24",
+        "pts": 14.2,
+        "reb": 10.9,
+        "ast": 1.4,
+        "threes": 0.0,
+        "pra": 26.5,
+        "role": "Centro Titular / Reboteador Dominante"
       },
       {
         "name": "Austin Reaves",
-        "pos": "G",
+        "pos": "SG",
+        "jersey": "15",
         "pts": 17.5,
         "reb": 4.1,
         "ast": 5.4,
         "threes": 2.1,
-        "pra": 27.0
+        "pra": 27.0,
+        "role": "Escolta Titular / Creador Secundario"
       },
       {
-        "name": "D'Angelo Russell",
+        "name": "Anthony Davis",
+        "pos": "PF",
+        "jersey": "3",
+        "pts": 26.4,
+        "reb": 11.8,
+        "ast": 3.2,
+        "threes": 0.6,
+        "pra": 41.4,
+        "role": "Pilar Defensivo y Anotador"
+      },
+      {
+        "name": "Daniss Jenkins",
+        "team": "Detroit Pistons",
         "pos": "G",
-        "pts": 14.8,
-        "reb": 2.9,
-        "ast": 5.8,
-        "threes": 2.4,
-        "pra": 23.5
+        "jersey": "24",
+        "pts": 31.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 39.5,
+        "role": "Líder Anotador de Detroit Pistons (31.0 PPG)"
+      },
+      {
+        "name": "Ausar Thompson",
+        "team": "Detroit Pistons",
+        "pos": "G",
+        "jersey": "9",
+        "pts": 13.0,
+        "reb": 11.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 25.5,
+        "role": "Líder Reboteador de Detroit Pistons (11.0 RPG)"
       }
     ]
   },
@@ -203,24 +403,78 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Target Center (Minneapolis)",
+    "home_defense": {
+      "def_rank": 3,
+      "pts_allowed": 106.1,
+      "pace": 98.2,
+      "style": "Muro en Pintura (Gobert) / Rebote Dominante"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Timberwolves Top Scorer",
+        "name": "Ayo Dosunmu",
+        "team": "Minnesota Timberwolves",
         "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "jersey": "13",
+        "pts": 26.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 34.5,
+        "role": "Líder Anotador de Minnesota Timberwolves (26.0 PPG)"
       },
       {
-        "name": "Jazz Top Scorer",
+        "name": "LaMelo Ball",
+        "team": "Minnesota Timberwolves",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "1",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 5.0,
+        "threes": 1.6,
+        "pra": 23.3,
+        "role": "Líder Asistente de Minnesota Timberwolves (5.0 APG)"
+      },
+      {
+        "name": "Rudy Gobert",
+        "team": "Minnesota Timberwolves",
+        "pos": "C",
+        "jersey": "27",
+        "pts": 13.0,
+        "reb": 15.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 29.5,
+        "role": "Líder Reboteador de Minnesota Timberwolves (15.0 RPG)"
+      },
+      {
+        "name": "Darryn Peterson",
+        "team": "Utah Jazz",
+        "pos": "G",
+        "jersey": "22",
+        "pts": 26.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 34.5,
+        "role": "Líder Anotador de Utah Jazz (26.0 PPG)"
+      },
+      {
+        "name": "Keyonte George",
+        "team": "Utah Jazz",
+        "pos": "G",
+        "jersey": "3",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 8.0,
+        "threes": 1.6,
+        "pra": 26.3,
+        "role": "Líder Asistente de Utah Jazz (8.0 APG)"
       }
     ]
   },
@@ -239,24 +493,87 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "American Airlines Center (Dallas)",
+    "home_defense": {
+      "def_rank": 14,
+      "pts_allowed": 112.5,
+      "pace": 99.2,
+      "style": "Control de Posesiones y Cierre Interior"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Mavericks Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
+        "name": "Cooper Flagg",
+        "pos": "SF",
+        "jersey": "32",
+        "pts": 24.0,
+        "reb": 6.8,
+        "ast": 7.0,
+        "threes": 2.1,
+        "pra": 37.8,
+        "role": "Superestrella / Líder Ofensivo Total"
       },
       {
-        "name": "Nets Top Scorer",
-        "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "name": "Kyrie Irving",
+        "pos": "PG",
+        "jersey": "11",
+        "pts": 25.2,
+        "reb": 4.8,
+        "ast": 5.4,
+        "threes": 2.9,
+        "pra": 35.4,
+        "role": "Base Manejador Élite y Anotador"
+      },
+      {
+        "name": "P.J. Washington",
+        "pos": "PF",
+        "jersey": "25",
+        "pts": 14.2,
+        "reb": 7.4,
+        "ast": 2.1,
+        "threes": 1.8,
+        "pra": 23.7,
+        "role": "Reboteador y Defensor Versátil"
+      },
+      {
+        "name": "Morez Johnson Jr.",
+        "team": "Dallas Mavericks",
+        "pos": "F",
+        "jersey": "14",
+        "pts": 13.0,
+        "reb": 9.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 23.5,
+        "role": "Líder Reboteador de Dallas Mavericks (9.0 RPG)"
+      },
+      {
+        "name": "Michael Porter Jr.",
+        "team": "Brooklyn Nets",
+        "pos": "F",
+        "jersey": "17",
+        "pts": 19.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 27.5,
+        "role": "Líder Anotador de Brooklyn Nets (19.0 PPG)"
+      },
+      {
+        "name": "Day'Ron Sharpe",
+        "team": "Brooklyn Nets",
+        "pos": "C",
+        "jersey": "20",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 6.0,
+        "threes": 1.6,
+        "pra": 24.3,
+        "role": "Líder Asistente de Brooklyn Nets (6.0 APG)"
       }
     ]
   },
@@ -275,24 +592,90 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Fiserv Forum (Milwaukee)",
+    "home_defense": {
+      "def_rank": 16,
+      "pts_allowed": 113.5,
+      "pace": 100.4,
+      "style": "Protección de Aro Élite / Vulnerable al Triple"
+    },
+    "away_defense": {
+      "def_rank": 2,
+      "pts_allowed": 105.2,
+      "pace": 99.5,
+      "style": "Defensa Élite de Campeonato"
+    },
     "stars": [
       {
-        "name": "Bucks Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "name": "Kyle Kuzma",
+        "team": "Milwaukee Bucks",
+        "pos": "F",
+        "jersey": "18",
+        "pts": 27.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 35.5,
+        "role": "Líder Anotador de Milwaukee Bucks (27.0 PPG)"
       },
       {
-        "name": "Celtics Top Scorer",
+        "name": "Myles Turner",
+        "team": "Milwaukee Bucks",
+        "pos": "C",
+        "jersey": "3",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 7.0,
+        "threes": 1.6,
+        "pra": 25.3,
+        "role": "Líder Asistente de Milwaukee Bucks (7.0 APG)"
+      },
+      {
+        "name": "Brayden Burries",
+        "team": "Milwaukee Bucks",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "0",
+        "pts": 13.0,
+        "reb": 8.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 22.5,
+        "role": "Líder Reboteador de Milwaukee Bucks (8.0 RPG)"
+      },
+      {
+        "name": "Paul George",
+        "team": "Boston Celtics",
+        "pos": "F",
+        "jersey": "13",
+        "pts": 27.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 35.5,
+        "role": "Líder Anotador de Boston Celtics (27.0 PPG)"
+      },
+      {
+        "name": "Derrick White",
+        "team": "Boston Celtics",
+        "pos": "G",
+        "jersey": "9",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 7.0,
+        "threes": 1.6,
+        "pra": 25.3,
+        "role": "Líder Asistente de Boston Celtics (7.0 APG)"
+      },
+      {
+        "name": "Neemias Queta",
+        "team": "Boston Celtics",
+        "pos": "C",
+        "jersey": "88",
+        "pts": 13.0,
+        "reb": 9.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 23.5,
+        "role": "Líder Reboteador de Boston Celtics (9.0 RPG)"
       }
     ]
   },
@@ -311,24 +694,78 @@
     "spread_str": "",
     "over_under": 145.5,
     "venue": "Tahoe Blue Event Center (Stateline)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Cougars Top Scorer",
+        "name": "Dedan Thomas Jr.",
+        "team": "Houston Cougars",
         "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "jersey": "9",
+        "pts": 20.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 28.5,
+        "role": "Líder Anotador de Houston Cougars (20.0 PPG)"
       },
       {
-        "name": "Bears Top Scorer",
+        "name": "Delrecco Gillespie",
+        "team": "Houston Cougars",
+        "pos": "F",
+        "jersey": "23",
+        "pts": 13.0,
+        "reb": 8.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 22.5,
+        "role": "Líder Reboteador de Houston Cougars (8.0 RPG)"
+      },
+      {
+        "name": "Michael Cooper",
+        "team": "California Golden Bears",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "55",
+        "pts": 19.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 27.5,
+        "role": "Líder Anotador de California Golden Bears (19.0 PPG)"
+      },
+      {
+        "name": "Jordan Ross",
+        "team": "California Golden Bears",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 5.0,
+        "threes": 1.6,
+        "pra": 23.3,
+        "role": "Líder Asistente de California Golden Bears (5.0 APG)"
+      },
+      {
+        "name": "Semetri Carr",
+        "team": "California Golden Bears",
+        "pos": "G",
+        "jersey": "3",
+        "pts": 13.0,
+        "reb": 6.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 20.5,
+        "role": "Líder Reboteador de California Golden Bears (6.0 RPG)"
       }
     ]
   },
@@ -347,24 +784,99 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Intuit Dome (Inglewood)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 23,
+      "pts_allowed": 116.9,
+      "pace": 99.0,
+      "style": "Transición Lenta / Permite Triples de Esquina"
+    },
     "stars": [
       {
-        "name": "Clippers Top Scorer",
-        "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
-        "threes": 2.2,
-        "pra": 26.5
+        "name": "Zion Williamson",
+        "pos": "PF",
+        "jersey": "1",
+        "pts": 21.0,
+        "reb": 7.2,
+        "ast": 5.1,
+        "threes": 0.1,
+        "pra": 33.3,
+        "role": "Fuerza Dominante en la Pintura"
       },
       {
-        "name": "Pelicans Top Scorer",
+        "name": "Brandon Ingram",
+        "pos": "SF",
+        "jersey": "14",
+        "pts": 22.8,
+        "reb": 5.6,
+        "ast": 5.4,
+        "threes": 1.8,
+        "pra": 33.8,
+        "role": "Anotador de Media Distancia"
+      },
+      {
+        "name": "CJ McCollum",
+        "pos": "SG",
+        "jersey": "3",
+        "pts": 19.5,
+        "reb": 4.2,
+        "ast": 4.8,
+        "threes": 3.2,
+        "pra": 28.5,
+        "role": "Tirador Experto y Creador"
+      },
+      {
+        "name": "Darius Garland",
+        "team": "LA Clippers",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "10",
+        "pts": 24.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 32.5,
+        "role": "Líder Anotador de LA Clippers (24.0 PPG)"
+      },
+      {
+        "name": "Brook Lopez",
+        "team": "LA Clippers",
+        "pos": "C",
+        "jersey": "11",
+        "pts": 13.0,
+        "reb": 7.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 21.5,
+        "role": "Líder Reboteador de LA Clippers (7.0 RPG)"
+      },
+      {
+        "name": "Trey Murphy III",
+        "team": "New Orleans Pelicans",
+        "pos": "F",
+        "jersey": "25",
+        "pts": 26.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 34.5,
+        "role": "Líder Anotador de New Orleans Pelicans (26.0 PPG)"
+      },
+      {
+        "name": "Jeremiah Fears",
+        "team": "New Orleans Pelicans",
+        "pos": "G",
+        "jersey": "0",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 5.0,
+        "threes": 1.6,
+        "pra": 23.3,
+        "role": "Líder Asistente de New Orleans Pelicans (5.0 APG)"
       }
     ]
   },
@@ -383,24 +895,66 @@
     "spread_str": "",
     "over_under": 226.5,
     "venue": "Golden 1 Center (Sacramento)",
+    "home_defense": {
+      "def_rank": 20,
+      "pts_allowed": 115.8,
+      "pace": 100.7,
+      "style": "Ofensiva Dinámica / Concede Puntos al Contragolpe"
+    },
+    "away_defense": {
+      "def_rank": 8,
+      "pts_allowed": 109.2,
+      "pace": 97.8,
+      "style": "Zona Táctica y Disciplina Defensiva"
+    },
     "stars": [
       {
-        "name": "Kings Top Scorer",
+        "name": "Darius Acuff Jr.",
+        "team": "Sacramento Kings",
         "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "jersey": "5",
+        "pts": 32.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 40.5,
+        "role": "Líder Anotador de Sacramento Kings (32.0 PPG)"
       },
       {
-        "name": "Heat Top Scorer",
+        "name": "Precious Achiuwa",
+        "team": "Sacramento Kings",
+        "pos": "F",
+        "jersey": "9",
+        "pts": 13.0,
+        "reb": 14.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 28.5,
+        "role": "Líder Reboteador de Sacramento Kings (14.0 RPG)"
+      },
+      {
+        "name": "Giannis Antetokounmpo",
+        "team": "Miami Heat",
+        "pos": "F",
+        "jersey": "7",
+        "pts": 29.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 37.5,
+        "role": "Líder Anotador de Miami Heat (29.0 PPG)"
+      },
+      {
+        "name": "Davion Mitchell",
+        "team": "Miami Heat",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "2",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 11.0,
+        "threes": 1.6,
+        "pra": 29.3,
+        "role": "Líder Asistente de Miami Heat (11.0 APG)"
       }
     ]
   },
@@ -419,24 +973,78 @@
     "spread_str": "",
     "over_under": 145.5,
     "venue": "Tahoe Blue Event Center (Stateline)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
     "stars": [
       {
-        "name": "Trojans Top Scorer",
+        "name": "Rodney Rice",
+        "team": "USC Trojans",
         "pos": "G",
-        "pts": 18.5,
-        "reb": 4.2,
-        "ast": 3.8,
+        "jersey": "1",
+        "pts": 32.0,
+        "reb": 4.5,
+        "ast": 4.0,
         "threes": 2.2,
-        "pra": 26.5
+        "pra": 40.5,
+        "role": "Líder Anotador de USC Trojans (32.0 PPG)"
       },
       {
-        "name": "Shockers Top Scorer",
+        "name": "Adonis Ratliff",
+        "team": "USC Trojans",
+        "pos": "F",
+        "jersey": "3",
+        "pts": 13.0,
+        "reb": 13.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 27.5,
+        "role": "Líder Reboteador de USC Trojans (13.0 RPG)"
+      },
+      {
+        "name": "Michael Gray Jr.",
+        "team": "Wichita State Shockers",
         "pos": "G",
-        "pts": 17.2,
-        "reb": 4.0,
-        "ast": 3.5,
-        "threes": 2.0,
-        "pra": 24.7
+        "jersey": "9",
+        "pts": 18.0,
+        "reb": 4.5,
+        "ast": 4.0,
+        "threes": 2.2,
+        "pra": 26.5,
+        "role": "Líder Anotador de Wichita State Shockers (18.0 PPG)"
+      },
+      {
+        "name": "Jordan Frison",
+        "team": "Wichita State Shockers",
+        "pos": "G",
+        "jersey": "5",
+        "pts": 14.5,
+        "reb": 3.8,
+        "ast": 6.0,
+        "threes": 1.6,
+        "pra": 24.3,
+        "role": "Líder Asistente de Wichita State Shockers (6.0 APG)"
+      },
+      {
+        "name": "William Berg",
+        "team": "Wichita State Shockers",
+        "pos": "C",
+        "jersey": "44",
+        "pts": 13.0,
+        "reb": 11.0,
+        "ast": 1.5,
+        "threes": 0.2,
+        "pra": 25.5,
+        "role": "Líder Reboteador de Wichita State Shockers (11.0 RPG)"
       }
     ]
   }

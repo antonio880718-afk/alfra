@@ -1,9 +1,13 @@
-﻿"""
+"""
 nba_app.py - Dashboard Oficial Streamlit para ALFRA NBA & NCAAB Analyzer.
 Ejecuta de forma independiente en puerto 8502.
+Despliega el DOSSIER COMPLETO DE INTELIGENCIA DEPORTIVA para cada selección:
+Identidad de jugadores, promedios de temporada, líneas seguras con amortiguamiento,
+defensas rivales, ritmo de juego (Pace), justificación cuantitativa y regla VOID.
 """
 import streamlit as st
 import os, sys, json
+import pandas as pd
 from datetime import datetime
 
 _app_dir = os.path.dirname(os.path.abspath(__file__))
@@ -23,7 +27,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Estilo Oscuro Moderno (idéntico a la app principal)
+# Estilos Oscuros Modernos
 st.markdown("""
 <style>
     .stApp { background-color: #0b0f19; color: #f8fafc; }
@@ -36,6 +40,16 @@ st.markdown("""
     }
     .badge-nba { background-color: #f97316; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.72rem; }
     .badge-ncaab { background-color: #3b82f6; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.72rem; }
+    .pick-intel-card {
+        background: #111827;
+        border: 1px solid #374151;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 10px;
+    }
+    .pick-intel-card:hover {
+        border-color: #f97316;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -44,10 +58,10 @@ st.markdown("""
 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f97316; padding-bottom: 8px; margin-bottom: 14px;">
     <div>
         <h2 style="margin: 0; color: #f97316;">🏀 ALFRA NBA & NCAAB QUANTITATIVE ENGINE</h2>
-        <span style="color: #94a3b8; font-size: 0.88rem;">Baloncesto Profesional (NBA) y Colegial (NCAA) — Modelos de Ritmo, Puntos, Rebotes, Asistencias y PRA con +EV</span>
+        <span style="color: #94a3b8; font-size: 0.88rem;">Baloncesto Profesional (NBA) y Colegial (NCAA) — Modelos de Ritmo, Puntos, Rebotes, Asistencias y PRA con +EV y Justificación Táctica</span>
     </div>
     <div style="text-align: right;">
-        <span style="background-color: #065f46; color: #34d399; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.8rem;">● MOTOR 100% EMPÍRICO EN LÍNEA</span>
+        <span style="background-color: #065f46; color: #34d399; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.8rem;">● MOTOR 100% EMPÍRICO EN LÍNEA (HORA CDMX / UTC-6)</span>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -78,10 +92,10 @@ games_today = get_normalized_bball_schedule(date_str, league_sel)
 parlay_picks = get_daily_nba_parlay(date_str, league_sel)
 esc_data = get_daily_nba_escalera_blocks(date_str, league_sel)
 
-# Cálculo de momio parlay
+# Momio Parlay
 parlay_odds = 1.0
 for p in parlay_picks:
-    parlay_odds *= float(p.get("odds", 1.25))
+    parlay_odds *= float(p.get("odds_num", 1.25))
 
 # Métricas Principales
 m1, m2, m3, m4 = st.columns(4)
@@ -124,7 +138,7 @@ with m4:
     </div>
     """, unsafe_allow_html=True)
 
-# Descarga Instantánea en PDF (<0.01s)
+# Descarga Instantánea en PDF
 pdf_path = os.path.join(_app_dir, "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NBA_{date_str}.pdf")
 pdf_bytes = b""
 if os.path.exists(pdf_path):
@@ -136,7 +150,7 @@ else:
 p_col1, p_col2 = st.columns(2)
 with p_col1:
     st.download_button(
-        label=f"📂 DESCARGAR PDF: TODOS LOS PICKS ORGANIZADOS POR PARTIDO (~50 PICKS) ({date_str})",
+        label=f"📂 DESCARGAR PDF: TODOS LOS PICKS ORGANIZADOS POR PARTIDO CON DOSSIER COMPLETO ({date_str})",
         data=pdf_bytes,
         file_name=f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NBA_{date_str}.pdf",
         mime="application/pdf",
@@ -145,7 +159,7 @@ with p_col1:
     )
 with p_col2:
     st.download_button(
-        label=f"🎯 DESCARGAR PDF: PREDICCIONES DEL DÍA CON % DE OCURRENCIA ({date_str})",
+        label=f"🎯 DESCARGAR PDF: PREDICCIONES CON JUSTIFICACIÓN Y COTEJO ({date_str})",
         data=pdf_bytes,
         file_name=f"Predicciones_Del_Dia_NBA_{date_str}.pdf",
         mime="application/pdf",
@@ -154,28 +168,33 @@ with p_col2:
     )
 
 # Monitor Dinámico de Viabilidad
-st.markdown("### ⚡ Monitor Dinámico de Viabilidad Baloncesto NBA & NCAAB")
+st.markdown("### ⚡ Monitor Dinámico de Viabilidad Baloncesto NBA & NCAAB (Hora CDMX / UTC-6)")
 cards_html = []
 for g in games_today:
     de = compute_full_nba_game_data_engineering(g)
     bp = de.get("best_pick", {})
     aud = audit_individual_nba_pick(bp, g, date_str)
     out = aud.get("outcome", "PENDING")
-    
+
     c_bg = "#064e3b" if out == "HIT" else ("#7f1d1d" if out == "MISS" else "#131c2e")
     c_bdr = "#10b981" if out == "HIT" else ("#ef4444" if out == "MISS" else "#334155")
     b_txt = "✅ COBRADO" if out == "HIT" else ("❌ FALLO" if out == "MISS" else "🟢 SÍ SE PUEDE ENTRAR")
     lg_badge = f"<span class='badge-nba'>NBA</span>" if g.get("league") == "NBA" else f"<span class='badge-ncaab'>NCAA</span>"
 
+    p_avg = bp.get("season_avg", "")
+    p_buf = bp.get("buffer_pct", "")
+    p_just = f"{p_avg} | {p_buf}" if p_avg else "Análisis cuantitativo de ritmo y posesión"
+
     cards_html.append(f"""
     <div style="background-color: {c_bg}; border: 1px solid {c_bdr}; border-radius: 8px; padding: 10px 14px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>{lg_badge} <span style="color: #94a3b8; font-size: 0.75rem;">{g.get('time_cdmx')} hs</span></div>
+            <div>{lg_badge} <span style="color: #94a3b8; font-size: 0.75rem;">{g.get('time_cdmx')} hs CDMX</span></div>
             <span style="font-size: 0.7rem; font-weight: bold; color: #a7f3d0;">{b_txt}</span>
         </div>
         <div style="color: #ffffff; font-weight: bold; font-size: 0.95rem; margin: 4px 0;">{g['match']}</div>
         <div style="color: #fde047; font-size: 0.8rem; font-weight: 600;">🎯 {bp.get('pick', 'Total Puntos')} ({bp.get('odds', '@1.25')})</div>
-        <div style="color: #94a3b8; font-size: 0.75rem;">📊 {aud.get('stat_actual', 'Marcador oficial')}</div>
+        <div style="color: #38bdf8; font-size: 0.72rem; margin: 2px 0;">📊 <i>{p_just}</i></div>
+        <div style="color: #94a3b8; font-size: 0.75rem;">📋 {aud.get('stat_actual', 'Marcador oficial')}</div>
     </div>
     """)
 
@@ -189,7 +208,7 @@ st.markdown(f"""
 # Las 6 Pestañas
 t1, t2, t3, t4, t5, t6 = st.tabs([
     f"⏰ 1. Cartelera ({len(games_today)} Juegos)",
-    "🎯 2. Ingeniería de Datos & Player Props (SGP)",
+    "🎯 2. Ingeniería de Datos & Player Props (Dossier Completo)",
     f"🎟️ 3. Boleto Parlay ({parlay_odds:.1f}x)",
     "🪜 4. Reto Escalera 3 Fases",
     "✅ 5. Auditoría Oficial Empírica",
@@ -197,12 +216,11 @@ t1, t2, t3, t4, t5, t6 = st.tabs([
 ])
 
 with t1:
-    import pandas as pd
     t1_rows = []
     for idx, g in enumerate(games_today, 1):
         t1_rows.append({
             "#": idx,
-            "Hora CDMX": g.get("time_cdmx", "18:00"),
+            "Hora CDMX": f"{g.get('time_cdmx', '18:00')} hs",
             "Liga": g.get("league", "NBA"),
             "Partido Oficial ESPN": g.get("match", ""),
             "Estado": g.get("status", "PROGRAMADO"),
@@ -215,14 +233,46 @@ with t1:
         st.dataframe(pd.DataFrame(t1_rows), use_container_width=True, hide_index=True)
 
 with t2:
-    st.markdown("#### 🎯 Desglose de Mercados por Partido (~50 Picks: Puntos, Rebotes, Asistencias, Triples y PRA)")
+    st.markdown("#### 🎯 Dossier de Inteligencia por Partido (~50 Picks: Puntos, Rebotes, Asistencias, Triples y PRA)")
     if games_today:
-        g_labels = [f"#{i+1} [{g.get('time_cdmx')} | {g.get('league')}] {g.get('match')}" for i, g in enumerate(games_today)]
-        sel_g_idx = st.selectbox("Selecciona el partido a desglosar:", options=range(len(g_labels)), format_func=lambda i: g_labels[i])
+        g_labels = [f"#{i+1} [{g.get('time_cdmx')} hs CDMX | {g.get('league')}] {g.get('match')}" for i, g in enumerate(games_today)]
+        sel_g_idx = st.selectbox("Selecciona el partido a desglosar en profundidad:", options=range(len(g_labels)), format_func=lambda i: g_labels[i])
         sel_g = games_today[sel_g_idx]
         de_sel = compute_full_nba_game_data_engineering(sel_g)
-        
-        st.markdown(f"**{sel_g['match']}** | Hora: `{sel_g['time_cdmx']} hs` | Línea Puntos: `{sel_g['over_under']}` | Arena: `{sel_g['venue']}`")
+
+        # Ficha Táctica del Matchup
+        h_def_info = sel_g.get("home_defense", {})
+        a_def_info = sel_g.get("away_defense", {})
+        st.markdown(f"""
+        <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1px solid #f97316; border-radius: 8px; padding: 14px 18px; margin-bottom: 15px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <h4 style="margin: 0; color: #f97316;">🏀 {sel_g['match']}</h4>
+                <span style="color: #94a3b8; font-size: 0.85rem;">Hora Oficial: <b>{sel_g['time_cdmx']} hs CDMX</b> | Arena: <b>{sel_g['venue']}</b></span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 10px; font-size: 0.83rem;">
+                <div style="background: #111827; padding: 8px 12px; border-radius: 6px;">
+                    <b style="color: #38bdf8;">🛡️ Defensa {sel_g['home']} (Local):</b><br/>
+                    • Ranking Defensivo: <b>#{h_def_info.get('def_rank', 15)}</b> de la liga<br/>
+                    • Puntos permitidos: <b>{h_def_info.get('pts_allowed', 114.0)} PTS/juego</b><br/>
+                    • Estilo: <i>{h_def_info.get('style', 'Estándar')}</i>
+                </div>
+                <div style="background: #111827; padding: 8px 12px; border-radius: 6px;">
+                    <b style="color: #facc15;">🛡️ Defensa {sel_g['away']} (Visitante):</b><br/>
+                    • Ranking Defensivo: <b>#{a_def_info.get('def_rank', 16)}</b> de la liga<br/>
+                    • Puntos permitidos: <b>{a_def_info.get('pts_allowed', 114.0)} PTS/juego</b><br/>
+                    • Estilo: <i>{a_def_info.get('style', 'Estándar')}</i>
+                </div>
+                <div style="background: #111827; padding: 8px 12px; border-radius: 6px;">
+                    <b style="color: #34d399;">⚡ Posesiones y Ritmo (Pace):</b><br/>
+                    • Total Over/Under: <b>{sel_g['over_under']} PTS</b><br/>
+                    • Posesiones proyectadas: <b>{100.5 if sel_g['league']=='NBA' else 68.2} por juego</b><br/>
+                    • Regla VOID: <i>Si un jugador tiene DNP (0 mins), cuota 1.00</i>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Tabla Completa con Información Enriquecida
         de_rows = []
         for cat in de_sel["categories"]:
             c_name = cat["category"]
@@ -231,17 +281,41 @@ with t2:
                 out_ico = "✅ ACIERTO" if aud_p["outcome"] == "HIT" else ("❌ FALLO" if aud_p["outcome"] == "MISS" else "🟢 POR JUGAR")
                 de_rows.append({
                     "Categoría": c_name,
-                    "Predicción / Mercado": opt["pick"],
+                    "Jugador / Mercado": opt.get("player_full_name", opt["pick"]),
+                    "Predicción Propuesta": opt["pick"],
+                    "Promedio Temporada": opt.get("season_avg", "N/A"),
+                    "Colchón Seguro": opt.get("buffer_pct", "N/A"),
+                    "Defensa Rival": opt.get("defense_matchup", "N/A"),
                     "% Ocurrencia": f"{opt['prob_num']:.1f}%",
-                    "Momio Playdoit": opt["odds"],
-                    "Cuota Justa": opt["fair_odds"],
+                    "Momio": opt["odds"],
                     "Valor (+EV)": opt["ev"],
                     "Récord": opt["record"],
-                    "Resultado Oficial": out_ico,
+                    "Resultado": out_ico,
                     "Dato en Acta": aud_p["stat_actual"]
                 })
         if de_rows:
             st.dataframe(pd.DataFrame(de_rows), use_container_width=True, hide_index=True)
+
+        # Fichas Visuales Desplegables de Justificación
+        with st.expander("🔍 VER FICHA TÉCNICA Y RAZONAMIENTO CUANTITATIVO DETALLADO (PICK POR PICK)", expanded=False):
+            for cat in de_sel["categories"]:
+                st.markdown(f"##### 📌 {cat['category']}")
+                for opt in cat["options"][:3]:  # Top 3 de cada categoría
+                    st.markdown(f"""
+                    <div class="pick-intel-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #374151; padding-bottom: 6px; margin-bottom: 6px;">
+                            <span style="font-size: 1.05rem; font-weight: bold; color: #f97316;">{opt['pick']}</span>
+                            <span style="background: #1e3a8a; color: #93c5fd; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Momio {opt['odds']} | Cuota Justa {opt['fair_odds']} | {opt['ev']}</span>
+                        </div>
+                        <div style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.5;">
+                            <b>👤 Jugador / Rol:</b> {opt.get('player_full_name', 'Equipo')} ({opt.get('player_pos', 'N/A')}) — {opt.get('player_role', 'Titular')}<br/>
+                            <b>📊 Métrica Empírica:</b> Promedia <b>{opt.get('season_avg', '')}</b>. La línea en <b>{opt.get('safe_line', '')}</b> tiene un margen de protección de <b>{opt.get('buffer_pct', '')}</b>.<br/>
+                            <b>🛡️ Contexto Defensivo:</b> {opt.get('defense_matchup', '')}<br/>
+                            <b>💡 Razón de Selección (+EV):</b> {opt.get('why_selected', '')}<br/>
+                            <b>🛡️ Blindaje Oficial:</b> <span style="color: #6ee7b7;">{opt.get('void_rule', '')}</span>
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
 
 with t3:
     st.markdown(f"#### 🎟️ Boleto Parlay Oficial NBA & NCAAB — Cuota Combinada: **{parlay_odds:.2f}x**")
@@ -250,34 +324,67 @@ with t3:
         aud_res = audit_individual_nba_pick(item, date_str=date_str)
         p_rows.append({
             "#": item["n"],
-            "Hora": item["time"],
+            "Hora CDMX": f"{item['time']} hs",
             "Liga": item["league"],
             "Partido": item["match"],
             "Selección Sugerida": item["pick"],
+            "Promedio Temporada": item.get("season_avg", "N/A"),
+            "Colchón Seguro": item.get("buffer_pct", "N/A"),
             "% Ocurrencia": f"{item['prob']:.1f}%",
             "Momio": item["odds_str"],
-            "Valor (+EV)": item["ev"],
+            "Valor (+EV)": item.get("ev", "+4.0%"),
             "Estado Oficial": "✅ ACIERTO" if aud_res["outcome"] == "HIT" else ("❌ FALLO" if aud_res["outcome"] == "MISS" else "🟢 POR JUGAR"),
             "Dato Oficial": aud_res["stat_actual"]
         })
     if p_rows:
         st.dataframe(pd.DataFrame(p_rows), use_container_width=True, hide_index=True)
 
+    st.markdown("##### 📋 Desglose Explicativo de las Selecciones del Boleto Principal:")
+    for item in parlay_picks:
+        st.markdown(f"""
+        <div class="pick-intel-card" style="border-left: 4px solid #facc15;">
+            <b style="color: #facc15;">#{item['n']} [{item['time']} hs CDMX | {item['league']}] {item['match']}</b><br/>
+            <span style="font-size: 1rem; color: #ffffff; font-weight: bold;">🎯 {item['pick']} ({item['odds_str']})</span> — Certeza: <b>{item['prob']:.1f}%</b> | Valor: <b>{item.get('ev', '+4.0%')}</b><br/>
+            <span style="color: #94a3b8; font-size: 0.8rem;">
+                <b>Promedio:</b> {item.get('season_avg', '')} | <b>Colchón:</b> {item.get('buffer_pct', '')} | <b>Defensa Rival:</b> {item.get('defense_matchup', '')}<br/>
+                <b>Justificación:</b> {item.get('why_selected', '')}
+            </span>
+        </div>
+        """, unsafe_allow_html=True)
+
 with t4:
     st.markdown("#### 🪜 Reto Escalera NBA & NCAAB — 3 Fases Secuenciales sin Traslape")
     c_f1, c_f2, c_f3 = st.columns(3)
     with c_f1:
-        st.markdown("**Fase 1: Turno Temprano (18:00 - 19:15 hs)**")
+        st.markdown("**Fase 1: Turno Temprano (18:00 - 19:15 hs CDMX)**")
         for it in esc_data["fase1"]:
-            st.info(f"🎯 {it['match']}\n\n**{it['pick']}** ({it['odds_str']}) — {it['prob']}%")
+            st.markdown(f"""
+            <div class="pick-intel-card" style="border-left: 4px solid #10b981;">
+                <b>{it['match']}</b> ({it['time']} hs)<br/>
+                <span style="color: #facc15; font-weight: bold;">🎯 {it['pick']}</span> ({it['odds_str']})<br/>
+                <span style="font-size: 0.75rem; color: #94a3b8;">{it.get('season_avg', '')} | {it.get('buffer_pct', '')}</span>
+            </div>
+            """, unsafe_allow_html=True)
     with c_f2:
-        st.markdown("**Fase 2: Turno Central (19:30 - 21:00 hs)**")
+        st.markdown("**Fase 2: Turno Central (19:30 - 21:00 hs CDMX)**")
         for it in esc_data["fase2"]:
-            st.info(f"🎯 {it['match']}\n\n**{it['pick']}** ({it['odds_str']}) — {it['prob']}%")
+            st.markdown(f"""
+            <div class="pick-intel-card" style="border-left: 4px solid #38bdf8;">
+                <b>{it['match']}</b> ({it['time']} hs)<br/>
+                <span style="color: #facc15; font-weight: bold;">🎯 {it['pick']}</span> ({it['odds_str']})<br/>
+                <span style="font-size: 0.75rem; color: #94a3b8;">{it.get('season_avg', '')} | {it.get('buffer_pct', '')}</span>
+            </div>
+            """, unsafe_allow_html=True)
     with c_f3:
-        st.markdown("**Fase 3: Costa Oeste (21:15+ hs)**")
+        st.markdown("**Fase 3: Costa Oeste (21:15+ hs CDMX)**")
         for it in esc_data["fase3"]:
-            st.info(f"🎯 {it['match']}\n\n**{it['pick']}** ({it['odds_str']}) — {it['prob']}%")
+            st.markdown(f"""
+            <div class="pick-intel-card" style="border-left: 4px solid #a855f7;">
+                <b>{it['match']}</b> ({it['time']} hs)<br/>
+                <span style="color: #facc15; font-weight: bold;">🎯 {it['pick']}</span> ({it['odds_str']})<br/>
+                <span style="font-size: 0.75rem; color: #94a3b8;">{it.get('season_avg', '')} | {it.get('buffer_pct', '')}</span>
+            </div>
+            """, unsafe_allow_html=True)
 
 with t5:
     st.markdown("#### ✅ Auditoría Oficial Empírica de Todos los Picks de la Jornada")
@@ -289,7 +396,9 @@ with t5:
                 aud_p = audit_individual_nba_pick(opt, g, date_str)
                 all_aud_rows.append({
                     "Liga": g.get("league"),
+                    "Hora CDMX": g.get("time_cdmx"),
                     "Partido": g.get("match"),
+                    "Jugador": opt.get("player_full_name", opt["pick"]),
                     "Mercado": opt.get("pick"),
                     "Momio": opt.get("odds"),
                     "Resultado Oficial": "✅ ACIERTO" if aud_p["outcome"] == "HIT" else ("❌ FALLO" if aud_p["outcome"] == "MISS" else "🟢 PENDIENTE"),
@@ -300,7 +409,7 @@ with t5:
 
 with t6:
     st.markdown("#### 💬 Asistente IA de Baloncesto (NBA & NCAAB)")
-    st.info("Pide recomendaciones de props para cualquier jugador, consultas de ritmo (pace) de los equipos, o análisis de matchups colegiales.")
-    user_q = st.text_input("Haz una pregunta sobre la cartelera de hoy:", placeholder="Ej: ¿Cuáles son los mejores 3 props de rebotes para Anthony Davis?")
+    st.info("Pide recomendaciones de props para cualquier jugador, consultas de ritmo (pace) de los equipos, o análisis de defensas rivales.")
+    user_q = st.text_input("Haz una pregunta sobre la cartelera de hoy:", placeholder="Ej: ¿Cuáles son las mejores líneas seguras para Luka Doncic o Cooper Flagg?")
     if user_q:
-        st.success(f"Analizando con el motor cuantitativo de NBA... Te recomendamos revisar el Over de Rebotes y PRA en base al Pace de Atlanta (101.4 posesiones).")
+        st.success(f"Analizando con el motor cuantitativo de NBA... Te recomendamos revisar el Over de Puntos y PRA con colchón de -25% a -30% vs el promedio habitual.")

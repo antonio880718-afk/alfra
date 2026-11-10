@@ -1,6 +1,7 @@
-﻿"""
+"""
 nfl_pdf_report_engine.py - Generador de Reportes PDF Completos para Fútbol Americano (NFL y NCAAF).
-Exporta el 100% de los picks organizados partido a partido con % de ocurrencia y auditoría empírica.
+Exporta el 100% de los picks organizados partido a partido con % de ocurrencia, justificación táctica,
+promedios de temporada, defensas secundarias rivales, clima/domo y auditoría empírica.
 """
 import os, io, sys
 from datetime import datetime
@@ -21,6 +22,7 @@ def _clean(txt):
     return str(txt).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 def generate_nfl_complete_pdf(date_str: str = "20261109", league_filter: str = "ALL") -> bytes:
+    """Genera un PDF exhaustivo con todos los picks de cada juego de NFL + NCAAF y su justificación completa."""
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import letter, landscape
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -32,24 +34,25 @@ def generate_nfl_complete_pdf(date_str: str = "20261109", league_filter: str = "
     doc = SimpleDocTemplate(
         buf,
         pagesize=landscape(letter),
-        leftMargin=0.35 * inch,
-        rightMargin=0.35 * inch,
+        leftMargin=0.3 * inch,
+        rightMargin=0.3 * inch,
         topMargin=0.35 * inch,
         bottomMargin=0.35 * inch,
         title=f"Reporte Completo NFL y NCAAF - {date_str}"
     )
 
     styles = getSampleStyleSheet()
-    t_style = ParagraphStyle("T", parent=styles["Heading1"], fontSize=14, leading=17, textColor=colors.HexColor("#0f172a"))
-    sub_style = ParagraphStyle("S", parent=styles["Normal"], fontSize=8.5, leading=11, textColor=colors.HexColor("#334155"))
-    h2_style = ParagraphStyle("H2", parent=styles["Heading2"], fontSize=10.5, leading=13, textColor=colors.HexColor("#1e293b"))
-    c_style = ParagraphStyle("C", parent=styles["Normal"], fontSize=7.2, leading=9.0)
+    t_style = ParagraphStyle("T", parent=styles["Heading1"], fontSize=13, leading=16, textColor=colors.HexColor("#0f172a"))
+    sub_style = ParagraphStyle("S", parent=styles["Normal"], fontSize=8.0, leading=10, textColor=colors.HexColor("#334155"))
+    h2_style = ParagraphStyle("H2", parent=styles["Heading2"], fontSize=9.5, leading=12, textColor=colors.HexColor("#1e293b"))
+    c_style = ParagraphStyle("C", parent=styles["Normal"], fontSize=6.8, leading=8.5)
     b_style = ParagraphStyle("B", parent=c_style, fontName="Helvetica-Bold")
+    j_style = ParagraphStyle("J", parent=c_style, fontSize=6.2, leading=7.8, textColor=colors.HexColor("#1e3a8a"))
 
     story = []
-    story.append(Paragraph(_clean(f"ALFRA NFL & NCAAF QUANTITATIVE ENGINE — REPORTE DE TODOS LOS PICKS ({date_str})"), t_style))
-    story.append(Paragraph(_clean(f"Total Partidos Evaluados: {len(games)} | Modelos: EPA/Play + Números Clave (3, 7) + Target Share + Red Zone TD Share"), sub_style))
-    story.append(Spacer(1, 8))
+    story.append(Paragraph(_clean(f"ALFRA NFL & NCAAF QUANTITATIVE ENGINE — DOSSIER DE INTELIGENCIA DE TODOS LOS PICKS ({date_str})"), t_style))
+    story.append(Paragraph(_clean(f"Total Partidos Evaluados: {len(games)} | Horarios Oficiales CDMX (UTC-6) | Modelos: EPA/Play + Números Clave (3, 7) + Target Share + Red Zone TD Share"), sub_style))
+    story.append(Spacer(1, 6))
 
     for idx, g in enumerate(games, 1):
         m_title = g.get("match", "")
@@ -61,19 +64,19 @@ def generate_nfl_complete_pdf(date_str: str = "20261109", league_filter: str = "
         sp = g.get("spread_str", "N/A")
         ven = g.get("venue", "Estadio Oficial")
 
-        story.append(Paragraph(_clean(f"#{idx} [{t_cdmx} | {lg}] {m_title} — Marcador Oficial: {sc} ({st}) | O/U: {ou} | Spread: {sp} | {ven}"), h2_style))
-        story.append(Spacer(1, 3))
+        story.append(Paragraph(_clean(f"#{idx} [{t_cdmx} hs CDMX | {lg}] {m_title} — Marcador Oficial: {sc} ({st}) | O/U: {ou} | Spread: {sp} | {ven}"), h2_style))
+        story.append(Spacer(1, 2))
 
         de = compute_full_nfl_game_data_engineering(g)
-        t_rows = [["Categoría / Mercado", "Predicción Sugerida", "% Ocurrencia", "Momio", "Cuota Justa", "EV%", "Récord", "Resultado Oficial", "Dato en Acta"]]
+        t_rows = [["Categoría / Mercado", "Selección Sugerida", "Justificación Táctica & Matchup (Métrica vs Línea)", "% Ocurr", "Momio", "EV%", "Récord", "Auditoría", "Dato Oficial en Acta"]]
         t_styles = [
             ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0f172a")),
             ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
             ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-            ("FONTSIZE", (0, 0), (-1, -1), 6.8),
+            ("FONTSIZE", (0, 0), (-1, -1), 6.5),
             ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#cbd5e1")),
             ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-            ("ALIGN", (2, 0), (6, -1), "CENTER"),
+            ("ALIGN", (3, 0), (6, -1), "CENTER"),
         ]
 
         r_idx = 1
@@ -82,12 +85,15 @@ def generate_nfl_complete_pdf(date_str: str = "20261109", league_filter: str = "
             for opt in cat.get("options", []):
                 aud = audit_individual_nfl_pick(opt, g, date_str)
                 out_icon = "ACIERTO" if aud.get("outcome") == "HIT" else ("FALLO" if aud.get("outcome") == "MISS" else "PENDIENTE")
+
+                justif_txt = f"{opt.get('season_avg', '')} | {opt.get('buffer_pct', '')}<br/>{opt.get('defense_matchup', '')}"
+
                 t_rows.append([
                     Paragraph(_clean(cat_name), c_style),
                     Paragraph(_clean(opt.get("pick", "")), b_style),
+                    Paragraph(justif_txt, j_style),
                     f"{opt.get('prob_num', 80.0):.1f}%",
                     str(opt.get("odds", "")),
-                    str(opt.get("fair_odds", "")),
                     str(opt.get("ev", "")),
                     str(opt.get("record", "")),
                     out_icon,
@@ -99,10 +105,10 @@ def generate_nfl_complete_pdf(date_str: str = "20261109", league_filter: str = "
                     t_styles.append(("BACKGROUND", (7, r_idx), (7, r_idx), colors.HexColor("#fee2e2")))
                 r_idx += 1
 
-        tbl = Table(t_rows, colWidths=[1.4*inch, 2.2*inch, 0.75*inch, 0.65*inch, 0.65*inch, 0.65*inch, 0.9*inch, 0.85*inch, 1.95*inch], repeatRows=1)
+        tbl = Table(t_rows, colWidths=[1.1*inch, 1.8*inch, 2.6*inch, 0.65*inch, 0.55*inch, 0.55*inch, 0.75*inch, 0.75*inch, 1.65*inch], repeatRows=1)
         tbl.setStyle(TableStyle(t_styles))
         story.append(tbl)
-        story.append(Spacer(1, 10))
+        story.append(Spacer(1, 8))
 
     doc.build(story)
     pdf_bytes = buf.getvalue()
@@ -118,6 +124,5 @@ def generate_nfl_complete_pdf(date_str: str = "20261109", league_filter: str = "
     return pdf_bytes
 
 if __name__ == "__main__":
-    for d in ["20261109", "20261108", "20261107"]:
-        b = generate_nfl_complete_pdf(d, "ALL")
-        print(f"NFL PDF {d} Generado: {len(b)} bytes")
+    b = generate_nfl_complete_pdf("20261109", "ALL")
+    print(f"PDF NFL Generado Exitosamente: {len(b)} bytes")

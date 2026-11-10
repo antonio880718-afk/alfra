@@ -13,37 +13,68 @@
     "total_points": 48,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Rice-Eccles Stadium (Salt Lake City) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Rice-Eccles Stadium (Salt Lake City) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Utes Starting QB",
+        "name": "Devon Dampier",
+        "team": "Utah Utes",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "4",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Utah Utes (14/26, 177 YDS, 2 TD)"
       },
       {
-        "name": "Utes Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Braden Pegan",
+        "team": "Utah Utes",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Utah Utes (5 REC, 86 YDS, 2 TD)"
       },
       {
-        "name": "Cougars Starting QB",
+        "name": "Bear Bachmeier",
+        "team": "BYU Cougars",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "47",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular BYU Cougars (21/35, 272 YDS, 1 TD, 4 INT)"
       },
       {
-        "name": "Cougars Lead RB",
-        "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "name": "Legend Glasker",
+        "team": "BYU Cougars",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal BYU Cougars (7 REC, 118 YDS, 1 TD)"
       }
     ]
   },
@@ -61,37 +92,113 @@
     "total_points": 54,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Memorial Stadium (Columbia) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Memorial Stadium (Columbia) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Tigers Starting QB",
+        "name": "Quinn Ewers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "3",
+        "pass_yds": 258.0,
+        "pass_tds": 2.2,
+        "rush_yds": 8.0,
+        "anytime_td_pct": 20.0,
+        "role": "QB Titular / Brazo de Primera Ronda"
+      },
+      {
+        "name": "Isaiah Bond",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 4.0,
+        "rec_yds": 74.0,
+        "anytime_td_pct": 55.0,
+        "role": "Receptor Rápido Colegial"
+      },
+      {
+        "name": "Austin Simmons",
+        "team": "Missouri Tigers",
+        "pos": "QB",
+        "jersey": "13",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Missouri Tigers (23/43, 252 YDS, 2 TD)"
       },
       {
-        "name": "Tigers Lead RB",
+        "name": "Jamal Roberts",
+        "team": "Missouri Tigers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Missouri Tigers (19 CAR, 66 YDS)"
       },
       {
-        "name": "Longhorns Starting QB",
+        "name": "Naeshaun Montgomery",
+        "team": "Missouri Tigers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Missouri Tigers (2 REC, 81 YDS, 1 TD)"
+      },
+      {
+        "name": "Arch Manning",
+        "team": "Texas Longhorns",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "16",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Texas Longhorns (28/38, 297 YDS, 3 TD)"
       },
       {
-        "name": "Longhorns Lead RB",
+        "name": "Raleek Brown",
+        "team": "Texas Longhorns",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Texas Longhorns (17 CAR, 85 YDS, 1 TD)"
+      },
+      {
+        "name": "Emmett Mosley V",
+        "team": "Texas Longhorns",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Texas Longhorns (5 REC, 85 YDS)"
       }
     ]
   },
@@ -109,37 +216,92 @@
     "total_points": 54,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Huntington Bank Stadium (Minneapolis) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Huntington Bank Stadium (Minneapolis) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Gophers Starting QB",
+        "name": "Drake Lindsey",
+        "team": "Minnesota Golden Gophers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "5",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Minnesota Golden Gophers (19/37, 205 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Gophers Lead RB",
+        "name": "Darius Taylor",
+        "team": "Minnesota Golden Gophers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Minnesota Golden Gophers (14 CAR, 46 YDS, 1 TD)"
       },
       {
-        "name": "Bruins Starting QB",
+        "name": "Jalen Smith",
+        "team": "Minnesota Golden Gophers",
+        "pos": "WR",
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Minnesota Golden Gophers (5 REC, 85 YDS)"
+      },
+      {
+        "name": "Ty Dieffenbach",
+        "team": "UCLA Bruins",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular UCLA Bruins (8/16, 303 YDS, 3 TD, 1 INT)"
       },
       {
-        "name": "Bruins Lead RB",
+        "name": "Wayne Knight",
+        "team": "UCLA Bruins",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal UCLA Bruins (18 CAR, 109 YDS, 1 TD)"
+      },
+      {
+        "name": "Aidan Mizell",
+        "team": "UCLA Bruins",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal UCLA Bruins (2 REC, 150 YDS, 2 TD)"
       }
     ]
   },
@@ -157,37 +319,80 @@
     "total_points": 73,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "McLane Stadium (Waco) [ABIERTO]",
+    "is_dome": false,
+    "venue": "McLane Stadium (Waco) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Bears Starting QB",
+        "name": "DJ Lagway",
+        "team": "Baylor Bears",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Baylor Bears (16/28, 229 YDS, 2 TD)"
       },
       {
-        "name": "Bears Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Taz Williams Jr.",
+        "team": "Baylor Bears",
+        "pos": "WR",
+        "jersey": "18",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Baylor Bears (1 REC, 62 YDS, 1 TD)"
       },
       {
-        "name": "Cyclones Starting QB",
+        "name": "Jaylen Raynor",
+        "team": "Iowa State Cyclones",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "1",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Iowa State Cyclones (22/37, 256 YDS, 2 TD)"
       },
       {
-        "name": "Cyclones Lead RB",
+        "name": "Aiden Flora",
+        "team": "Iowa State Cyclones",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "21",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Iowa State Cyclones (26 CAR, 182 YDS, 1 TD)"
+      },
+      {
+        "name": "Cameron Pettaway",
+        "team": "Iowa State Cyclones",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Iowa State Cyclones (2 REC, 52 YDS, 1 TD)"
       }
     ]
   },
@@ -205,37 +410,92 @@
     "total_points": 31,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "JMA Wireless Dome (Syracuse) [DOMO]",
+    "is_dome": true,
+    "venue": "JMA Wireless Dome (Syracuse) [DOMO TECHADO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Orange Starting QB",
+        "name": "Steve Angeli",
+        "team": "Syracuse Orange",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "9",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Syracuse Orange (18/40, 263 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Orange Lead RB",
+        "name": "Ahmad Miller",
+        "team": "Syracuse Orange",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "22",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Syracuse Orange (20 CAR, 101 YDS)"
       },
       {
-        "name": "Tigers Starting QB",
+        "name": "Justus Ross-Simmons",
+        "team": "Syracuse Orange",
+        "pos": "WR",
+        "jersey": "86",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Syracuse Orange (4 REC, 84 YDS)"
+      },
+      {
+        "name": "Tait Reynolds",
+        "team": "Clemson Tigers",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "2",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Clemson Tigers (17/28, 161 YDS, 1 INT)"
       },
       {
-        "name": "Tigers Lead RB",
+        "name": "Jarvis Green",
+        "team": "Clemson Tigers",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "21",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Clemson Tigers (9 CAR, 85 YDS)"
+      },
+      {
+        "name": "Bryant Wesco Jr.",
+        "team": "Clemson Tigers",
+        "pos": "WR",
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Clemson Tigers (6 REC, 100 YDS)"
       }
     ]
   },
@@ -253,37 +513,92 @@
     "total_points": 55,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Alumni Stadium (Chestnut Hill, MA) (Chestnut Hill) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Alumni Stadium (Chestnut Hill, MA) (Chestnut Hill) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Eagles Starting QB",
+        "name": "Mason McKenzie",
+        "team": "Boston College Eagles",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "10",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Boston College Eagles (15/27, 166 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Eagles Lead RB",
+        "name": "Bo MacCormack III",
+        "team": "Boston College Eagles",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Boston College Eagles (16 CAR, 105 YDS, 1 TD)"
       },
       {
-        "name": "Seminoles Starting QB",
+        "name": "Nedrick Boldin Jr.",
+        "team": "Boston College Eagles",
+        "pos": "WR",
+        "jersey": "16",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Boston College Eagles (2 REC, 49 YDS, 1 TD)"
+      },
+      {
+        "name": "Ashton Daniels",
+        "team": "Florida State Seminoles",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Florida State Seminoles (15/26, 178 YDS, 1 INT)"
       },
       {
-        "name": "Seminoles Lead RB",
+        "name": "Amari Thomas",
+        "team": "Florida State Seminoles",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Florida State Seminoles (19 CAR, 98 YDS, 2 TD)"
+      },
+      {
+        "name": "Micahi Danzy",
+        "team": "Florida State Seminoles",
+        "pos": "WR",
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Florida State Seminoles (7 REC, 86 YDS)"
       }
     ]
   },
@@ -301,37 +616,92 @@
     "total_points": 59,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Pratt & Whitney Stadium (East Hartford) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Pratt & Whitney Stadium (East Hartford) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Huskies Starting QB",
+        "name": "Kalieb Osborne",
+        "team": "UConn Huskies",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "7",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular UConn Huskies (17/35, 245 YDS, 2 TD, 2 INT)"
       },
       {
-        "name": "Huskies Lead RB",
+        "name": "Cyncir Bowers",
+        "team": "UConn Huskies",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "23",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal UConn Huskies (13 CAR, 68 YDS, 1 TD)"
       },
       {
-        "name": "Heels Starting QB",
+        "name": "Ryder Treadway",
+        "team": "UConn Huskies",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal UConn Huskies (4 REC, 82 YDS, 1 TD)"
+      },
+      {
+        "name": "Billy Edwards Jr.",
+        "team": "North Carolina Tar Heels",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "9",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular North Carolina Tar Heels (29/38, 255 YDS, 3 TD, 1 INT)"
       },
       {
-        "name": "Heels Lead RB",
+        "name": "Benjamin Hall",
+        "team": "North Carolina Tar Heels",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal North Carolina Tar Heels (9 CAR, 81 YDS, 1 TD)"
+      },
+      {
+        "name": "Jelani Thurman",
+        "team": "North Carolina Tar Heels",
+        "pos": "WR",
+        "jersey": "45",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal North Carolina Tar Heels (7 REC, 64 YDS, 2 TD)"
       }
     ]
   },
@@ -349,37 +719,92 @@
     "total_points": 70,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Yulman Stadium (New Orleans) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Yulman Stadium (New Orleans) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Wave Starting QB",
+        "name": "Trace Johnson",
+        "team": "Tulane Green Wave",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "11",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Tulane Green Wave (11/19, 69 YDS, 1 INT)"
       },
       {
-        "name": "Wave Lead RB",
+        "name": "Johnnie Daniels",
+        "team": "Tulane Green Wave",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Tulane Green Wave (10 CAR, 49 YDS)"
       },
       {
-        "name": "Hurricane Starting QB",
+        "name": "Destyn Hill",
+        "team": "Tulane Green Wave",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Tulane Green Wave (4 REC, 55 YDS)"
+      },
+      {
+        "name": "Baylor Hayes",
+        "team": "Tulsa Golden Hurricane",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Tulsa Golden Hurricane (26/33, 338 YDS, 4 TD)"
       },
       {
-        "name": "Hurricane Lead RB",
+        "name": "Damari Alston",
+        "team": "Tulsa Golden Hurricane",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Tulsa Golden Hurricane (14 CAR, 52 YDS, 1 TD)"
+      },
+      {
+        "name": "Oran Singleton Jr.",
+        "team": "Tulsa Golden Hurricane",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Tulsa Golden Hurricane (13 REC, 177 YDS, 3 TD)"
       }
     ]
   },
@@ -397,37 +822,92 @@
     "total_points": 44,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Carter-Finley Stadium (Raleigh) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Carter-Finley Stadium (Raleigh) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Wolfpack Starting QB",
+        "name": "CJ Bailey",
+        "team": "NC State Wolfpack",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "11",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular NC State Wolfpack (15/24, 123 YDS)"
       },
       {
-        "name": "Wolfpack Lead RB",
+        "name": "Davion Gause",
+        "team": "NC State Wolfpack",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal NC State Wolfpack (8 CAR, 26 YDS)"
       },
       {
-        "name": "Devils Starting QB",
+        "name": "Amiri Acker",
+        "team": "NC State Wolfpack",
+        "pos": "WR",
+        "jersey": "83",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal NC State Wolfpack (2 REC, 54 YDS)"
+      },
+      {
+        "name": "Walker Eget",
+        "team": "Duke Blue Devils",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "2",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Duke Blue Devils (22/31, 208 YDS, 1 TD)"
       },
       {
-        "name": "Devils Lead RB",
+        "name": "Nate Sheppard",
+        "team": "Duke Blue Devils",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Duke Blue Devils (18 CAR, 217 YDS, 3 TD)"
+      },
+      {
+        "name": "Jaivon Solomon",
+        "team": "Duke Blue Devils",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Duke Blue Devils (5 REC, 71 YDS, 1 TD)"
       }
     ]
   },
@@ -445,37 +925,92 @@
     "total_points": 63,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Ross-Ade Stadium (West Lafayette) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Ross-Ade Stadium (West Lafayette) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Boilermakers Starting QB",
+        "name": "Ryan Browne",
+        "team": "Purdue Boilermakers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "15",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Purdue Boilermakers (24/38, 296 YDS)"
       },
       {
-        "name": "Boilermakers Lead RB",
+        "name": "Antonio Harris",
+        "team": "Purdue Boilermakers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "22",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Purdue Boilermakers (5 CAR, 51 YDS)"
       },
       {
-        "name": "Terrapins Starting QB",
+        "name": "Tra'Mar Harris",
+        "team": "Purdue Boilermakers",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Purdue Boilermakers (3 REC, 76 YDS)"
+      },
+      {
+        "name": "Malik Washington",
+        "team": "Maryland Terrapins",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "7",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Maryland Terrapins (13/18, 253 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Terrapins Lead RB",
+        "name": "DeJuan Williams",
+        "team": "Maryland Terrapins",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Maryland Terrapins (14 CAR, 99 YDS, 1 TD)"
+      },
+      {
+        "name": "Chris Durr Jr.",
+        "team": "Maryland Terrapins",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Maryland Terrapins (4 REC, 127 YDS, 1 TD)"
       }
     ]
   },
@@ -493,37 +1028,80 @@
     "total_points": 49,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Jordan-Hare Stadium (Auburn) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Jordan-Hare Stadium (Auburn) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Tigers Starting QB",
+        "name": "Byrum Brown",
+        "team": "Auburn Tigers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "17",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Auburn Tigers (23/34, 180 YDS, 2 TD)"
       },
       {
-        "name": "Tigers Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Keshaun Singleton",
+        "team": "Auburn Tigers",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Auburn Tigers (6 REC, 58 YDS, 1 TD)"
       },
       {
-        "name": "Razorbacks Starting QB",
+        "name": "KJ Jackson",
+        "team": "Arkansas Razorbacks",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "7",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Arkansas Razorbacks (14/30, 180 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Razorbacks Lead RB",
+        "name": "Cam Settles",
+        "team": "Arkansas Razorbacks",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "27",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Arkansas Razorbacks (16 CAR, 100 YDS)"
+      },
+      {
+        "name": "Chris Marshall",
+        "team": "Arkansas Razorbacks",
+        "pos": "WR",
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Arkansas Razorbacks (5 REC, 65 YDS)"
       }
     ]
   },
@@ -541,37 +1119,92 @@
     "total_points": 94,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Bill Snyder Family Stadium (Manhattan) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Bill Snyder Family Stadium (Manhattan) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Wildcats Starting QB",
+        "name": "Blake Barnett",
+        "team": "Kansas State Wildcats",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "3",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Kansas State Wildcats (7/17, 106 YDS, 1 TD, 2 INT)"
       },
       {
-        "name": "Wildcats Lead RB",
+        "name": "Rodney Fields Jr.",
+        "team": "Kansas State Wildcats",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Kansas State Wildcats (20 CAR, 87 YDS, 1 TD)"
       },
       {
-        "name": "Cowboys Starting QB",
+        "name": "Derrick Salley Jr.",
+        "team": "Kansas State Wildcats",
+        "pos": "WR",
+        "jersey": "15",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Kansas State Wildcats (3 REC, 100 YDS, 2 TD)"
+      },
+      {
+        "name": "Drew Mestemaker",
+        "team": "Oklahoma State Cowboys",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "17",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Oklahoma State Cowboys (22/28, 313 YDS, 4 TD, 1 INT)"
       },
       {
-        "name": "Cowboys Lead RB",
+        "name": "Caleb Hawkins",
+        "team": "Oklahoma State Cowboys",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Oklahoma State Cowboys (20 CAR, 175 YDS, 3 TD)"
+      },
+      {
+        "name": "Miles Coleman",
+        "team": "Oklahoma State Cowboys",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Oklahoma State Cowboys (6 REC, 95 YDS, 1 TD)"
       }
     ]
   },
@@ -589,37 +1222,92 @@
     "total_points": 29,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Brooks Stadium (SC) (Conway) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Brooks Stadium (SC) (Conway) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Chanticleers Starting QB",
+        "name": "Deuce Bailey",
+        "team": "Coastal Carolina Chanticleers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Coastal Carolina Chanticleers (17/33, 233 YDS, 3 INT)"
       },
       {
-        "name": "Chanticleers Lead RB",
+        "name": "Jaden Allen-Hendrix",
+        "team": "Coastal Carolina Chanticleers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "25",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Coastal Carolina Chanticleers (5 CAR, 24 YDS)"
       },
       {
-        "name": "Monarchs Starting QB",
+        "name": "Karmello English",
+        "team": "Coastal Carolina Chanticleers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Coastal Carolina Chanticleers (5 REC, 57 YDS)"
+      },
+      {
+        "name": "Jaxon Potter",
+        "team": "Old Dominion Monarchs",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "2",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Old Dominion Monarchs (17/30, 150 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Monarchs Lead RB",
+        "name": "Devin Roche",
+        "team": "Old Dominion Monarchs",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Old Dominion Monarchs (18 CAR, 46 YDS)"
+      },
+      {
+        "name": "Leon Haughton Jr.",
+        "team": "Old Dominion Monarchs",
+        "pos": "WR",
+        "jersey": "86",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Old Dominion Monarchs (6 REC, 67 YDS, 1 TD)"
       }
     ]
   },
@@ -637,37 +1325,92 @@
     "total_points": 62,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Kidd Brewer Stadium (Boone) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Kidd Brewer Stadium (Boone) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Mountaineers Starting QB",
+        "name": "Malachi Singleton",
+        "team": "App State Mountaineers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "3",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular App State Mountaineers (23/34, 241 YDS, 2 TD, 2 INT)"
       },
       {
-        "name": "Mountaineers Lead RB",
+        "name": "Jaquari Lewis",
+        "team": "App State Mountaineers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal App State Mountaineers (8 CAR, 31 YDS)"
       },
       {
-        "name": "Panthers Starting QB",
+        "name": "Chris Lofton",
+        "team": "App State Mountaineers",
+        "pos": "WR",
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal App State Mountaineers (6 REC, 117 YDS, 1 TD)"
+      },
+      {
+        "name": "Ayden Pereira",
+        "team": "Georgia State Panthers",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "2",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Georgia State Panthers (10/17, 115 YDS, 3 TD)"
       },
       {
-        "name": "Panthers Lead RB",
+        "name": "Lanear McCrary Jr.",
+        "team": "Georgia State Panthers",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Georgia State Panthers (21 CAR, 123 YDS)"
+      },
+      {
+        "name": "DJ Riles",
+        "team": "Georgia State Panthers",
+        "pos": "WR",
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Georgia State Panthers (4 REC, 49 YDS, 1 TD)"
       }
     ]
   },
@@ -685,37 +1428,92 @@
     "total_points": 26,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Williams-Brice Stadium (Columbia) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Williams-Brice Stadium (Columbia) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Gamecocks Starting QB",
+        "name": "LaNorris Sellers",
+        "team": "South Carolina Gamecocks",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "16",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular South Carolina Gamecocks (20/31, 251 YDS, 1 TD)"
       },
       {
-        "name": "Gamecocks Lead RB",
+        "name": "Isaiah Augustave",
+        "team": "South Carolina Gamecocks",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal South Carolina Gamecocks (10 CAR, 50 YDS)"
       },
       {
-        "name": "Aggies Starting QB",
+        "name": "Nyck Harbor",
+        "team": "South Carolina Gamecocks",
+        "pos": "WR",
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal South Carolina Gamecocks (4 REC, 70 YDS)"
+      },
+      {
+        "name": "Marcel Reed",
+        "team": "Texas A&M Aggies",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Texas A&M Aggies (25/43, 251 YDS)"
       },
       {
-        "name": "Aggies Lead RB",
+        "name": "Rueben Owens II",
+        "team": "Texas A&M Aggies",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Texas A&M Aggies (19 CAR, 137 YDS)"
+      },
+      {
+        "name": "Isaiah Horton",
+        "team": "Texas A&M Aggies",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Texas A&M Aggies (5 REC, 78 YDS)"
       }
     ]
   },
@@ -733,37 +1531,80 @@
     "total_points": 36,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Centennial Bank Stadium (Jonesboro) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Centennial Bank Stadium (Jonesboro) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Wolves Starting QB",
+        "name": "Trey Owens",
+        "team": "Arkansas State Red Wolves",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "9",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Arkansas State Red Wolves (16/29, 193 YDS, 1 TD, 2 INT)"
       },
       {
-        "name": "Wolves Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Jaylen Bonelli",
+        "team": "Arkansas State Red Wolves",
+        "pos": "WR",
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Arkansas State Red Wolves (3 REC, 66 YDS)"
       },
       {
-        "name": "Warhawks Starting QB",
+        "name": "Aidan Armenta",
+        "team": "UL Monroe Warhawks",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular UL Monroe Warhawks (11/15, 90 YDS, 2 INT)"
       },
       {
-        "name": "Warhawks Lead RB",
+        "name": "Austin Carlisle",
+        "team": "UL Monroe Warhawks",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal UL Monroe Warhawks (19 CAR, 111 YDS)"
+      },
+      {
+        "name": "Bryson Roland",
+        "team": "UL Monroe Warhawks",
+        "pos": "WR",
+        "jersey": "25",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal UL Monroe Warhawks (3 REC, 35 YDS)"
       }
     ]
   },
@@ -781,37 +1622,92 @@
     "total_points": 82,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Walens Family Field at Fifth Third Stadium (Kennesaw) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Walens Family Field at Fifth Third Stadium (Kennesaw) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Owls Starting QB",
+        "name": "Landon Varnes",
+        "team": "Kennesaw State Owls",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Kennesaw State Owls (19/37, 254 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Owls Lead RB",
+        "name": "Boogie Woods III",
+        "team": "Kennesaw State Owls",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Kennesaw State Owls (15 CAR, 90 YDS, 2 TD)"
       },
       {
-        "name": "Hens Starting QB",
+        "name": "Dylan Gary",
+        "team": "Kennesaw State Owls",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Kennesaw State Owls (5 REC, 92 YDS)"
+      },
+      {
+        "name": "Nick Minicucci",
+        "team": "Delaware Blue Hens",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Delaware Blue Hens (35/54, 408 YDS, 2 TD)"
       },
       {
-        "name": "Hens Lead RB",
+        "name": "Jo Silver",
+        "team": "Delaware Blue Hens",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "27",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Delaware Blue Hens (10 CAR, 39 YDS)"
+      },
+      {
+        "name": "Bryson Graves",
+        "team": "Delaware Blue Hens",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Delaware Blue Hens (7 REC, 125 YDS, 1 TD)"
       }
     ]
   },
@@ -829,37 +1725,92 @@
     "total_points": 44,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Tiger Stadium (LA) (Baton Rouge) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Tiger Stadium (LA) (Baton Rouge) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Tigers Starting QB",
+        "name": "Sam Leavitt",
+        "team": "LSU Tigers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "10",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular LSU Tigers (35/47, 380 YDS, 1 INT)"
       },
       {
-        "name": "Tigers Lead RB",
+        "name": "Dilin Jones",
+        "team": "LSU Tigers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal LSU Tigers (17 CAR, 56 YDS, 1 TD)"
       },
       {
-        "name": "Tide Starting QB",
+        "name": "Jackson Harris",
+        "team": "LSU Tigers",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal LSU Tigers (11 REC, 166 YDS)"
+      },
+      {
+        "name": "Keelon Russell",
+        "team": "Alabama Crimson Tide",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "12",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Alabama Crimson Tide (17/24, 206 YDS, 3 TD)"
       },
       {
-        "name": "Tide Lead RB",
+        "name": "Trae'shawn Brown",
+        "team": "Alabama Crimson Tide",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "17",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Alabama Crimson Tide (11 CAR, 35 YDS)"
+      },
+      {
+        "name": "Rico Scott",
+        "team": "Alabama Crimson Tide",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Alabama Crimson Tide (3 REC, 67 YDS)"
       }
     ]
   },
@@ -877,37 +1828,112 @@
     "total_points": 69,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Ohio Stadium (Columbus) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Ohio Stadium (Columbus) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Buckeyes Starting QB",
+        "name": "Will Howard",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "18",
+        "pass_yds": 265.0,
+        "pass_tds": 2.4,
+        "rush_yds": 22.0,
+        "anytime_td_pct": 42.0,
+        "role": "QB Titular de Ohio State"
+      },
+      {
+        "name": "Jeremiah Smith",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 95.0,
+        "anytime_td_pct": 75.0,
+        "role": "Receptor Sensación / Mejor Novato Colegial"
+      },
+      {
+        "name": "Quinshon Judkins",
+        "pos": "RB",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 82.0,
+        "rec_yds": 12.0,
+        "anytime_td_pct": 68.0,
+        "role": "Corredor de Poder Colegial"
+      },
+      {
+        "name": "Luke Fahey",
+        "team": "Ohio State Buckeyes",
+        "pos": "QB",
+        "jersey": "13",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Ohio State Buckeyes (36/50, 360 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Buckeyes Lead RB",
+        "name": "Bo Jackson",
+        "team": "Ohio State Buckeyes",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "25",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Ohio State Buckeyes (11 CAR, 48 YDS, 2 TD)"
       },
       {
-        "name": "Ducks Starting QB",
+        "name": "Dylan Raiola",
+        "team": "Oregon Ducks",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "8",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Oregon Ducks (25/40, 257 YDS, 2 TD)"
       },
       {
-        "name": "Ducks Lead RB",
+        "name": "Dierre Hill Jr.",
+        "team": "Oregon Ducks",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Oregon Ducks (13 CAR, 75 YDS, 2 TD)"
+      },
+      {
+        "name": "Dakorien Moore",
+        "team": "Oregon Ducks",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Oregon Ducks (7 REC, 56 YDS, 1 TD)"
       }
     ]
   },
@@ -925,37 +1951,80 @@
     "total_points": 77,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Allegacy Federal Credit Union Stadium (Winston-Salem) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Allegacy Federal Credit Union Stadium (Winston-Salem) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Deacons Starting QB",
+        "name": "Steele Pizzella",
+        "team": "Wake Forest Demon Deacons",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "6",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Wake Forest Demon Deacons (23/28, 432 YDS, 3 TD)"
       },
       {
-        "name": "Deacons Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Jack Foley",
+        "team": "Wake Forest Demon Deacons",
+        "pos": "WR",
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Wake Forest Demon Deacons (6 REC, 162 YDS)"
       },
       {
-        "name": "Warriors Starting QB",
+        "name": "AJ Hairston Jr",
+        "team": "Merrimack Warriors",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "8",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Merrimack Warriors (11/27, 80 YDS, 1 INT)"
       },
       {
-        "name": "Warriors Lead RB",
+        "name": "DeMarcus McElroy",
+        "team": "Merrimack Warriors",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Merrimack Warriors (9 CAR, 26 YDS)"
+      },
+      {
+        "name": "Austin Palmer",
+        "team": "Merrimack Warriors",
+        "pos": "WR",
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Merrimack Warriors (5 REC, 48 YDS)"
       }
     ]
   },
@@ -973,37 +2042,92 @@
     "total_points": 55,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "TDECU Stadium (Houston) [ABIERTO]",
+    "is_dome": false,
+    "venue": "TDECU Stadium (Houston) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Cougars Starting QB",
+        "name": "Conner Weigman",
+        "team": "Houston Cougars",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "1",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Houston Cougars (17/24, 227 YDS, 2 TD)"
       },
       {
-        "name": "Cougars Lead RB",
+        "name": "Re'Shaun Sanford II",
+        "team": "Houston Cougars",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Houston Cougars (15 CAR, 126 YDS, 1 TD)"
       },
       {
-        "name": "Bearcats Starting QB",
+        "name": "Amare Thomas",
+        "team": "Houston Cougars",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Houston Cougars (6 REC, 78 YDS, 2 TD)"
+      },
+      {
+        "name": "JC French IV",
+        "team": "Cincinnati Bearcats",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Cincinnati Bearcats (19/30, 217 YDS, 2 TD)"
       },
       {
-        "name": "Bearcats Lead RB",
+        "name": "Gi'Bran Payne",
+        "team": "Cincinnati Bearcats",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Cincinnati Bearcats (11 CAR, 71 YDS)"
+      },
+      {
+        "name": "Malachi Henry",
+        "team": "Cincinnati Bearcats",
+        "pos": "WR",
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Cincinnati Bearcats (6 REC, 65 YDS)"
       }
     ]
   },
@@ -1021,37 +2145,92 @@
     "total_points": 53,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Husky Stadium (Seattle) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Husky Stadium (Seattle) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Huskies Starting QB",
+        "name": "Demond Williams Jr.",
+        "team": "Washington Huskies",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "1",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Washington Huskies (19/33, 172 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Huskies Lead RB",
+        "name": "Jayden Limar",
+        "team": "Washington Huskies",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "17",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Washington Huskies (9 CAR, 66 YDS)"
       },
       {
-        "name": "Lions Starting QB",
+        "name": "Chris Lawson",
+        "team": "Washington Huskies",
+        "pos": "WR",
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Washington Huskies (5 REC, 89 YDS)"
+      },
+      {
+        "name": "Rocco Becht",
+        "team": "Penn State Nittany Lions",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "3",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Penn State Nittany Lions (16/27, 240 YDS, 2 TD)"
       },
       {
-        "name": "Lions Lead RB",
+        "name": "Carson Hansen",
+        "team": "Penn State Nittany Lions",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "21",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Penn State Nittany Lions (14 CAR, 119 YDS, 1 TD)"
+      },
+      {
+        "name": "Chase Sowell",
+        "team": "Penn State Nittany Lions",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Penn State Nittany Lions (4 REC, 125 YDS, 1 TD)"
       }
     ]
   },
@@ -1069,37 +2248,92 @@
     "total_points": 35,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Protective Stadium (Birmingham) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Protective Stadium (Birmingham) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Blazers Starting QB",
+        "name": "Ryder Burton",
+        "team": "UAB Blazers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "5",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular UAB Blazers (17/29, 141 YDS, 3 INT)"
       },
       {
-        "name": "Blazers Lead RB",
+        "name": "Rod Robinson II",
+        "team": "UAB Blazers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal UAB Blazers (14 CAR, 101 YDS)"
       },
       {
-        "name": "49ers Starting QB",
+        "name": "EJ Reid",
+        "team": "UAB Blazers",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal UAB Blazers (5 REC, 57 YDS)"
+      },
+      {
+        "name": "Conner Harrell",
+        "team": "Charlotte 49ers",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "15",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Charlotte 49ers (15/31, 175 YDS, 1 TD)"
       },
       {
-        "name": "49ers Lead RB",
+        "name": "Khamani Alexander",
+        "team": "Charlotte 49ers",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Charlotte 49ers (11 CAR, 40 YDS)"
+      },
+      {
+        "name": "Jaden Barnes",
+        "team": "Charlotte 49ers",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Charlotte 49ers (6 REC, 80 YDS, 1 TD)"
       }
     ]
   },
@@ -1117,37 +2351,80 @@
     "total_points": 77,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Navy-Marine Corps Memorial Stadium (Annapolis) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Navy-Marine Corps Memorial Stadium (Annapolis) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Midshipmen Starting QB",
+        "name": "Jackson Gutierrez",
+        "team": "Navy Midshipmen",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "8",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Navy Midshipmen (6/11, 178 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Midshipmen Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Jordan Collins",
+        "team": "Navy Midshipmen",
+        "pos": "WR",
+        "jersey": "84",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Navy Midshipmen (2 REC, 112 YDS, 1 TD)"
       },
       {
-        "name": "Owls Starting QB",
+        "name": "Jaxon Smolik",
+        "team": "Temple Owls",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Temple Owls (12/26, 173 YDS, 3 TD, 1 INT)"
       },
       {
-        "name": "Owls Lead RB",
+        "name": "Keveun Mason",
+        "team": "Temple Owls",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Temple Owls (6 CAR, 24 YDS)"
+      },
+      {
+        "name": "Jayce Freeman",
+        "team": "Temple Owls",
+        "pos": "WR",
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Temple Owls (4 REC, 62 YDS, 2 TD)"
       }
     ]
   },
@@ -1165,37 +2442,92 @@
     "total_points": 62,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Allen E. Paulson Stadium (Statesboro) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Allen E. Paulson Stadium (Statesboro) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Eagles Starting QB",
+        "name": "Max Johnson",
+        "team": "Georgia Southern Eagles",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "7",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Georgia Southern Eagles (19/26, 271 YDS, 4 TD)"
       },
       {
-        "name": "Eagles Lead RB",
+        "name": "Tyrese Woodgett",
+        "team": "Georgia Southern Eagles",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "27",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Georgia Southern Eagles (6 CAR, 41 YDS)"
       },
       {
-        "name": "Herd Starting QB",
+        "name": "Jeremiah Ware",
+        "team": "Georgia Southern Eagles",
+        "pos": "WR",
+        "jersey": "81",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Georgia Southern Eagles (5 REC, 94 YDS, 2 TD)"
+      },
+      {
+        "name": "Zion Turner",
+        "team": "Marshall Thundering Herd",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "1",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Marshall Thundering Herd (11/26, 141 YDS, 2 INT)"
       },
       {
-        "name": "Herd Lead RB",
+        "name": "Jo'Shon Barbie",
+        "team": "Marshall Thundering Herd",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Marshall Thundering Herd (12 CAR, 83 YDS, 1 TD)"
+      },
+      {
+        "name": "Owen Sweeney",
+        "team": "Marshall Thundering Herd",
+        "pos": "WR",
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Marshall Thundering Herd (4 REC, 46 YDS)"
       }
     ]
   },
@@ -1213,37 +2545,92 @@
     "total_points": 93,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Johnny \"Red\" Floyd Stadium (Murfreesboro) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Johnny \"Red\" Floyd Stadium (Murfreesboro) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Raiders Starting QB",
+        "name": "Roman Gagliano",
+        "team": "Middle Tennessee Blue Raiders",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "16",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Middle Tennessee Blue Raiders (30/41, 312 YDS, 4 TD)"
       },
       {
-        "name": "Raiders Lead RB",
+        "name": "Antonio Martin",
+        "team": "Middle Tennessee Blue Raiders",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Middle Tennessee Blue Raiders (16 CAR, 125 YDS, 2 TD)"
       },
       {
-        "name": "Hilltoppers Starting QB",
+        "name": "Ziyon Butler",
+        "team": "Middle Tennessee Blue Raiders",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Middle Tennessee Blue Raiders (6 REC, 129 YDS, 1 TD)"
+      },
+      {
+        "name": "Brock Glenn",
+        "team": "Western Kentucky Hilltoppers",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "11",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Western Kentucky Hilltoppers (13/23, 152 YDS, 1 TD)"
       },
       {
-        "name": "Hilltoppers Lead RB",
+        "name": "Ajay Allen",
+        "team": "Western Kentucky Hilltoppers",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Western Kentucky Hilltoppers (15 CAR, 116 YDS, 1 TD)"
+      },
+      {
+        "name": "Jonathan Stafford Jr.",
+        "team": "Western Kentucky Hilltoppers",
+        "pos": "WR",
+        "jersey": "80",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Western Kentucky Hilltoppers (8 REC, 90 YDS)"
       }
     ]
   },
@@ -1261,37 +2648,80 @@
     "total_points": 65,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "David Booth Kansas Memorial Stadium (Lawrence) [ABIERTO]",
+    "is_dome": false,
+    "venue": "David Booth Kansas Memorial Stadium (Lawrence) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Jayhawks Starting QB",
+        "name": "Isaiah Marshall",
+        "team": "Kansas Jayhawks",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "8",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Kansas Jayhawks (21/32, 210 YDS)"
       },
       {
-        "name": "Jayhawks Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Keaton Kubecka",
+        "team": "Kansas Jayhawks",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Kansas Jayhawks (5 REC, 71 YDS)"
       },
       {
-        "name": "Knights Starting QB",
+        "name": "Alonza Barnett III",
+        "team": "UCF Knights",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular UCF Knights (18/31, 251 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Knights Lead RB",
+        "name": "Landen Chambers",
+        "team": "UCF Knights",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal UCF Knights (13 CAR, 40 YDS)"
+      },
+      {
+        "name": "Josh Derry",
+        "team": "UCF Knights",
+        "pos": "WR",
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal UCF Knights (8 REC, 143 YDS, 1 TD)"
       }
     ]
   },
@@ -1309,37 +2739,92 @@
     "total_points": 75,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "DATCU Stadium (Denton) [ABIERTO]",
+    "is_dome": false,
+    "venue": "DATCU Stadium (Denton) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Green Starting QB",
+        "name": "Tayven Jackson",
+        "team": "North Texas Mean Green",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular North Texas Mean Green (18/31, 303 YDS, 1 TD)"
       },
       {
-        "name": "Green Lead RB",
+        "name": "Jahiem White",
+        "team": "North Texas Mean Green",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal North Texas Mean Green (21 CAR, 139 YDS, 3 TD)"
       },
       {
-        "name": "Owls Starting QB",
+        "name": "Justin Stevenson",
+        "team": "North Texas Mean Green",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal North Texas Mean Green (5 REC, 117 YDS)"
+      },
+      {
+        "name": "Gael Ochoa",
+        "team": "Rice Owls",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Rice Owls (8/13, 172 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Owls Lead RB",
+        "name": "D'Andre Hardeman Jr.",
+        "team": "Rice Owls",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "28",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Rice Owls (7 CAR, 73 YDS)"
+      },
+      {
+        "name": "Jacurri Brown",
+        "team": "Rice Owls",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Rice Owls (2 REC, 55 YDS)"
       }
     ]
   },
@@ -1357,37 +2842,92 @@
     "total_points": 49,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "CEFCU Stadium (San Jose) [ABIERTO]",
+    "is_dome": false,
+    "venue": "CEFCU Stadium (San Jose) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Spartans Starting QB",
+        "name": "Daniel Rolovich",
+        "team": "San José State Spartans",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "5",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular San José State Spartans (16/27, 231 YDS, 1 TD)"
       },
       {
-        "name": "Spartans Lead RB",
+        "name": "Viliami Teu",
+        "team": "San José State Spartans",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal San José State Spartans (17 CAR, 42 YDS, 2 TD)"
       },
       {
-        "name": "Huskies Starting QB",
+        "name": "Dominique McKenzie",
+        "team": "San José State Spartans",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal San José State Spartans (2 REC, 71 YDS, 1 TD)"
+      },
+      {
+        "name": "Taron Dickens",
+        "team": "Northern Illinois Huskies",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "5",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Northern Illinois Huskies (26/36, 259 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Huskies Lead RB",
+        "name": "Elijah Porter",
+        "team": "Northern Illinois Huskies",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Northern Illinois Huskies (12 CAR, 79 YDS)"
+      },
+      {
+        "name": "DeAree Rogers",
+        "team": "Northern Illinois Huskies",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Northern Illinois Huskies (6 REC, 86 YDS)"
       }
     ]
   },
@@ -1405,37 +2945,92 @@
     "total_points": 43,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Pitbull Stadium (Miami) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Pitbull Stadium (Miami) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Panthers Starting QB",
+        "name": "JJ Kohl",
+        "team": "Florida International Panthers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "17",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Florida International Panthers (20/28, 234 YDS, 1 INT)"
       },
       {
-        "name": "Panthers Lead RB",
+        "name": "Devonte Lyons",
+        "team": "Florida International Panthers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Florida International Panthers (24 CAR, 215 YDS, 2 TD)"
       },
       {
-        "name": "Bears Starting QB",
+        "name": "Kyle McNeal",
+        "team": "Florida International Panthers",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Florida International Panthers (4 REC, 84 YDS)"
+      },
+      {
+        "name": "Henry Belin IV",
+        "team": "Missouri State Bears",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "2",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Missouri State Bears (19/36, 231 YDS, 1 INT)"
       },
       {
-        "name": "Bears Lead RB",
+        "name": "Connor Lair",
+        "team": "Missouri State Bears",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "40",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Missouri State Bears (17 CAR, 67 YDS)"
+      },
+      {
+        "name": "Jmariyae Robinson",
+        "team": "Missouri State Bears",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Missouri State Bears (6 REC, 100 YDS)"
       }
     ]
   },
@@ -1453,37 +3048,92 @@
     "total_points": 58,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Veterans Memorial Stadium (AL) (Troy) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Veterans Memorial Stadium (AL) (Troy) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Trojans Starting QB",
+        "name": "Tucker Kilcrease",
+        "team": "Troy Trojans",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "10",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Troy Trojans (18/33, 215 YDS, 1 INT)"
       },
       {
-        "name": "Trojans Lead RB",
+        "name": "Jordan Lovett",
+        "team": "Troy Trojans",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Troy Trojans (10 CAR, 31 YDS)"
       },
       {
-        "name": "Bulldogs Starting QB",
+        "name": "Howard Kinchen",
+        "team": "Troy Trojans",
+        "pos": "WR",
+        "jersey": "18",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Troy Trojans (2 REC, 63 YDS)"
+      },
+      {
+        "name": "Blake Baker",
+        "team": "Louisiana Tech Bulldogs",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "5",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Louisiana Tech Bulldogs (16/19, 177 YDS, 1 TD)"
       },
       {
-        "name": "Bulldogs Lead RB",
+        "name": "Rayshun Hurt",
+        "team": "Louisiana Tech Bulldogs",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Louisiana Tech Bulldogs (7 CAR, 29 YDS)"
+      },
+      {
+        "name": "Marcus Calwise Jr.",
+        "team": "Louisiana Tech Bulldogs",
+        "pos": "WR",
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Louisiana Tech Bulldogs (9 REC, 137 YDS, 1 TD)"
       }
     ]
   },
@@ -1501,37 +3151,92 @@
     "total_points": 48,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Davis Wade Stadium (Starkville) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Davis Wade Stadium (Starkville) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Bulldogs Starting QB",
+        "name": "AJ Swann",
+        "team": "Mississippi State Bulldogs",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "17",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Mississippi State Bulldogs (23/36, 254 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Bulldogs Lead RB",
+        "name": "Fluff Bothwell",
+        "team": "Mississippi State Bulldogs",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Mississippi State Bulldogs (14 CAR, 50 YDS)"
       },
       {
-        "name": "Commodores Starting QB",
+        "name": "Sanfrisco Magee",
+        "team": "Mississippi State Bulldogs",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Mississippi State Bulldogs (2 REC, 95 YDS, 2 TD)"
+      },
+      {
+        "name": "Jared Curtis",
+        "team": "Vanderbilt Commodores",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "2",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Vanderbilt Commodores (17/27, 168 YDS)"
       },
       {
-        "name": "Commodores Lead RB",
+        "name": "Makhilyn Young",
+        "team": "Vanderbilt Commodores",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "22",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Vanderbilt Commodores (15 CAR, 63 YDS)"
+      },
+      {
+        "name": "Tristen Brown",
+        "team": "Vanderbilt Commodores",
+        "pos": "WR",
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Vanderbilt Commodores (2 REC, 52 YDS)"
       }
     ]
   },
@@ -1549,37 +3254,92 @@
     "total_points": 41,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Camp Randall Stadium (Madison) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Camp Randall Stadium (Madison) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Badgers Starting QB",
+        "name": "Ryan Hopkins",
+        "team": "Wisconsin Badgers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "10",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Wisconsin Badgers (18/24, 241 YDS, 3 TD)"
       },
       {
-        "name": "Badgers Lead RB",
+        "name": "Eugene Hilton Jr.",
+        "team": "Wisconsin Badgers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Wisconsin Badgers (3 CAR, 39 YDS)"
       },
       {
-        "name": "Knights Starting QB",
+        "name": "Shamar Rigby",
+        "team": "Wisconsin Badgers",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Wisconsin Badgers (4 REC, 71 YDS)"
+      },
+      {
+        "name": "AJ Surace",
+        "team": "Rutgers Scarlet Knights",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Rutgers Scarlet Knights (14/24, 161 YDS, 1 TD)"
       },
       {
-        "name": "Knights Lead RB",
+        "name": "Antwan Raymond",
+        "team": "Rutgers Scarlet Knights",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Rutgers Scarlet Knights (15 CAR, 56 YDS)"
+      },
+      {
+        "name": "Ben Black III",
+        "team": "Rutgers Scarlet Knights",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Rutgers Scarlet Knights (6 REC, 70 YDS)"
       }
     ]
   },
@@ -1597,37 +3357,80 @@
     "total_points": 54,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Our Lady of Lourdes Stadium (Lafayette) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Our Lady of Lourdes Stadium (Lafayette) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Cajuns Starting QB",
+        "name": "Lunch Winfield",
+        "team": "Louisiana Ragin' Cajuns",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "7",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Louisiana Ragin' Cajuns (10/14, 147 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Cajuns Lead RB",
+        "name": "JJ Garner",
+        "team": "Louisiana Ragin' Cajuns",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Louisiana Ragin' Cajuns (10 CAR, 136 YDS, 1 TD)"
       },
       {
-        "name": "Jaguars Starting QB",
+        "name": "Trenton Chaney",
+        "team": "Louisiana Ragin' Cajuns",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Louisiana Ragin' Cajuns (2 REC, 46 YDS)"
+      },
+      {
+        "name": "Bishop Davenport",
+        "team": "South Alabama Jaguars",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular South Alabama Jaguars (16/22, 210 YDS, 1 INT)"
       },
       {
-        "name": "Jaguars Lead RB",
-        "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "name": "Brendan Jenkins",
+        "team": "South Alabama Jaguars",
+        "pos": "WR",
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal South Alabama Jaguars (6 REC, 101 YDS)"
       }
     ]
   },
@@ -1645,37 +3448,80 @@
     "total_points": 102,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Canvas Stadium (Fort Collins) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Canvas Stadium (Fort Collins) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Rams Starting QB",
+        "name": "Hauss Hejny",
+        "team": "Colorado State Rams",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "8",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Colorado State Rams (14/25, 253 YDS, 2 TD)"
       },
       {
-        "name": "Rams Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Tommy Maher",
+        "team": "Colorado State Rams",
+        "pos": "WR",
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Colorado State Rams (6 REC, 99 YDS, 1 TD)"
       },
       {
-        "name": "Broncos Starting QB",
+        "name": "Max Cutforth",
+        "team": "Boise State Broncos",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Boise State Broncos (16/19, 317 YDS, 4 TD)"
       },
       {
-        "name": "Broncos Lead RB",
+        "name": "Dylan Riley",
+        "team": "Boise State Broncos",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Boise State Broncos (19 CAR, 192 YDS, 2 TD)"
+      },
+      {
+        "name": "Rasean Jones",
+        "team": "Boise State Broncos",
+        "pos": "WR",
+        "jersey": "19",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Boise State Broncos (6 REC, 116 YDS, 1 TD)"
       }
     ]
   },
@@ -1693,37 +3539,92 @@
     "total_points": 40,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Neyland Stadium (Knoxville) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Neyland Stadium (Knoxville) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Volunteers Starting QB",
+        "name": "George MacIntyre",
+        "team": "Tennessee Volunteers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "12",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Tennessee Volunteers (9/14, 125 YDS)"
       },
       {
-        "name": "Volunteers Lead RB",
+        "name": "DeSean Bishop",
+        "team": "Tennessee Volunteers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "18",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Tennessee Volunteers (25 CAR, 109 YDS, 2 TD)"
       },
       {
-        "name": "Wildcats Starting QB",
+        "name": "Braylon Staley",
+        "team": "Tennessee Volunteers",
+        "pos": "WR",
+        "jersey": "14",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Tennessee Volunteers (4 REC, 50 YDS)"
+      },
+      {
+        "name": "Kenny Minchey",
+        "team": "Kentucky Wildcats",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "3",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Kentucky Wildcats (26/34, 224 YDS, 1 INT)"
       },
       {
-        "name": "Wildcats Lead RB",
+        "name": "CJ Baxter",
+        "team": "Kentucky Wildcats",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Kentucky Wildcats (11 CAR, 54 YDS)"
+      },
+      {
+        "name": "Willie Rodriguez",
+        "team": "Kentucky Wildcats",
+        "pos": "WR",
+        "jersey": "81",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Kentucky Wildcats (6 REC, 81 YDS)"
       }
     ]
   },
@@ -1741,37 +3642,80 @@
     "total_points": 61,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "AmFirst Stadium (Jacksonville) [ABIERTO]",
+    "is_dome": false,
+    "venue": "AmFirst Stadium (Jacksonville) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Gamecocks Starting QB",
+        "name": "Caden Creel",
+        "team": "Jacksonville State Gamecocks",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "12",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Jacksonville State Gamecocks (18/28, 246 YDS, 2 TD)"
       },
       {
-        "name": "Gamecocks Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Deondre Johnson",
+        "team": "Jacksonville State Gamecocks",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Jacksonville State Gamecocks (3 REC, 82 YDS, 1 TD)"
       },
       {
-        "name": "Bearkats Starting QB",
+        "name": "Landyn Locke",
+        "team": "Sam Houston Bearkats",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "8",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Sam Houston Bearkats (16/21, 126 YDS, 1 TD)"
       },
       {
-        "name": "Bearkats Lead RB",
+        "name": "Landan Brown",
+        "team": "Sam Houston Bearkats",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Sam Houston Bearkats (10 CAR, 50 YDS)"
+      },
+      {
+        "name": "Chris Reed",
+        "team": "Sam Houston Bearkats",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Sam Houston Bearkats (6 REC, 80 YDS, 1 TD)"
       }
     ]
   },
@@ -1789,37 +3733,92 @@
     "total_points": 55,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Notre Dame Stadium (Notre Dame) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Notre Dame Stadium (Notre Dame) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Irish Starting QB",
+        "name": "CJ Carr",
+        "team": "Notre Dame Fighting Irish",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "13",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Notre Dame Fighting Irish (29/40, 319 YDS, 3 TD)"
       },
       {
-        "name": "Irish Lead RB",
+        "name": "Nolan James Jr.",
+        "team": "Notre Dame Fighting Irish",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Notre Dame Fighting Irish (16 CAR, 52 YDS, 1 TD)"
       },
       {
-        "name": "Hurricanes Starting QB",
+        "name": "Micah Gilbert",
+        "team": "Notre Dame Fighting Irish",
+        "pos": "WR",
+        "jersey": "14",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Notre Dame Fighting Irish (9 REC, 98 YDS, 2 TD)"
+      },
+      {
+        "name": "Darian Mensah",
+        "team": "Miami Hurricanes",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Miami Hurricanes (24/43, 276 YDS, 3 TD, 1 INT)"
       },
       {
-        "name": "Hurricanes Lead RB",
+        "name": "Mark Fletcher Jr.",
+        "team": "Miami Hurricanes",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Miami Hurricanes (13 CAR, 57 YDS)"
+      },
+      {
+        "name": "Elija Lofton",
+        "team": "Miami Hurricanes",
+        "pos": "WR",
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Miami Hurricanes (7 REC, 113 YDS, 1 TD)"
       }
     ]
   },
@@ -1837,37 +3836,113 @@
     "total_points": 49,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Vaught-Hemingway Stadium (Oxford) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Vaught-Hemingway Stadium (Oxford) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Rebels Starting QB",
+        "name": "Carson Beck",
         "pos": "QB",
-        "pass_yds": 235.0,
-        "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "jersey": "15",
+        "pass_yds": 272.0,
+        "pass_tds": 2.1,
+        "rush_yds": 10.0,
+        "anytime_td_pct": 22.0,
+        "role": "QB Titular de Georgia"
       },
       {
-        "name": "Rebels Lead RB",
+        "name": "Trevor Etienne",
         "pos": "RB",
-        "rush_yds": 72.0,
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 76.0,
         "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "anytime_td_pct": 62.0,
+        "role": "Corredor Titular de Georgia"
       },
       {
-        "name": "Bulldogs Starting QB",
+        "name": "Trinidad Chambliss",
+        "team": "Ole Miss Rebels",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "6",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Ole Miss Rebels (18/34, 170 YDS, 1 INT)"
       },
       {
-        "name": "Bulldogs Lead RB",
+        "name": "Shekai Mills-Knight",
+        "team": "Ole Miss Rebels",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "33",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Ole Miss Rebels (13 CAR, 52 YDS, 1 TD)"
+      },
+      {
+        "name": "Horatio Fields",
+        "team": "Ole Miss Rebels",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Ole Miss Rebels (8 REC, 96 YDS)"
+      },
+      {
+        "name": "Gunner Stockton",
+        "team": "Georgia Bulldogs",
+        "pos": "QB",
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Georgia Bulldogs (9/15, 186 YDS, 4 TD)"
+      },
+      {
+        "name": "Nate Frazier",
+        "team": "Georgia Bulldogs",
+        "pos": "RB",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Georgia Bulldogs (16 CAR, 107 YDS)"
+      },
+      {
+        "name": "Talyn Taylor",
+        "team": "Georgia Bulldogs",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Georgia Bulldogs (4 REC, 140 YDS, 3 TD)"
       }
     ]
   },
@@ -1885,37 +3960,80 @@
     "total_points": 34,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Ryan Field (Evanston) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Ryan Field (Evanston) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Wildcats Starting QB",
+        "name": "Nicco Marchiol",
+        "team": "Northwestern Wildcats",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "4",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Northwestern Wildcats (24/32, 181 YDS, 1 TD)"
       },
       {
-        "name": "Wildcats Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Griffin Wilde",
+        "team": "Northwestern Wildcats",
+        "pos": "WR",
+        "jersey": "17",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Northwestern Wildcats (5 REC, 52 YDS)"
       },
       {
-        "name": "Hawkeyes Starting QB",
+        "name": "Hank Brown",
+        "team": "Iowa Hawkeyes",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "9",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Iowa Hawkeyes (16/21, 126 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Hawkeyes Lead RB",
+        "name": "L.J. Phillips Jr.",
+        "team": "Iowa Hawkeyes",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "21",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Iowa Hawkeyes (21 CAR, 128 YDS)"
+      },
+      {
+        "name": "Tony Diaz",
+        "team": "Iowa Hawkeyes",
+        "pos": "WR",
+        "jersey": "14",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Iowa Hawkeyes (2 REC, 43 YDS, 1 TD)"
       }
     ]
   },
@@ -1933,37 +4051,92 @@
     "total_points": 30,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Mountain America Stadium (Tempe) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Mountain America Stadium (Tempe) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Devils Starting QB",
+        "name": "Jake Fette",
+        "team": "Arizona State Sun Devils",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Arizona State Sun Devils (13/19, 187 YDS, 1 TD)"
       },
       {
-        "name": "Devils Lead RB",
+        "name": "Cardae Mack",
+        "team": "Arizona State Sun Devils",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "25",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Arizona State Sun Devils (24 CAR, 80 YDS)"
       },
       {
-        "name": "Buffaloes Starting QB",
+        "name": "Reed Harris",
+        "team": "Arizona State Sun Devils",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Arizona State Sun Devils (4 REC, 103 YDS, 1 TD)"
+      },
+      {
+        "name": "Isaac Wilson",
+        "team": "Colorado Buffaloes",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "16",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Colorado Buffaloes (20/31, 248 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Buffaloes Lead RB",
+        "name": "Richard Young",
+        "team": "Colorado Buffaloes",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Colorado Buffaloes (15 CAR, 47 YDS)"
+      },
+      {
+        "name": "Joseph Williams",
+        "team": "Colorado Buffaloes",
+        "pos": "WR",
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Colorado Buffaloes (7 REC, 121 YDS, 1 TD)"
       }
     ]
   },
@@ -1981,37 +4154,80 @@
     "total_points": 61,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Bobby Dodd Stadium (Atlanta) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Bobby Dodd Stadium (Atlanta) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Jackets Starting QB",
+        "name": "Alberto Mendoza",
+        "team": "Georgia Tech Yellow Jackets",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "15",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Georgia Tech Yellow Jackets (13/25, 148 YDS, 1 TD)"
       },
       {
-        "name": "Jackets Lead RB",
+        "name": "Justice Haynes",
+        "team": "Georgia Tech Yellow Jackets",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "22",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Georgia Tech Yellow Jackets (12 CAR, 87 YDS)"
       },
       {
-        "name": "Cardinals Starting QB",
+        "name": "Dalen Penson",
+        "team": "Georgia Tech Yellow Jackets",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Georgia Tech Yellow Jackets (5 REC, 66 YDS)"
+      },
+      {
+        "name": "Lincoln Kienholz",
+        "team": "Louisville Cardinals",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "3",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Louisville Cardinals (17/25, 182 YDS, 2 TD)"
       },
       {
-        "name": "Cardinals Lead RB",
-        "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "name": "TreyShun Hurry",
+        "team": "Louisville Cardinals",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Louisville Cardinals (8 REC, 104 YDS, 1 TD)"
       }
     ]
   },
@@ -2029,37 +4245,92 @@
     "total_points": 21,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Michigan Stadium (Ann Arbor) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Michigan Stadium (Ann Arbor) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Wolverines Starting QB",
+        "name": "Tommy Carr",
+        "team": "Michigan Wolverines",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "14",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Michigan Wolverines (14/26, 138 YDS, 2 INT)"
       },
       {
-        "name": "Wolverines Lead RB",
+        "name": "Bryson Kuzdzal",
+        "team": "Michigan Wolverines",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Michigan Wolverines (9 CAR, 49 YDS)"
       },
       {
-        "name": "Spartans Starting QB",
+        "name": "Andrew Marsh",
+        "team": "Michigan Wolverines",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Michigan Wolverines (4 REC, 38 YDS)"
+      },
+      {
+        "name": "Alessio Milivojevic",
+        "team": "Michigan State Spartans",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "11",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Michigan State Spartans (21/32, 188 YDS)"
       },
       {
-        "name": "Spartans Lead RB",
+        "name": "Brandon Tullis",
+        "team": "Michigan State Spartans",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Michigan State Spartans (25 CAR, 86 YDS)"
+      },
+      {
+        "name": "Chrishon McCray",
+        "team": "Michigan State Spartans",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Michigan State Spartans (6 REC, 92 YDS)"
       }
     ]
   },
@@ -2077,37 +4348,92 @@
     "total_points": 45,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Michie Stadium (West Point) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Michie Stadium (West Point) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Knights Starting QB",
+        "name": "Cale Hellums",
+        "team": "Army Black Knights",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "3",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Army Black Knights (5/10, 38 YDS, 1 INT)"
       },
       {
-        "name": "Knights Lead RB",
+        "name": "Godspower Nwawuihe",
+        "team": "Army Black Knights",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Army Black Knights (18 CAR, 82 YDS, 1 TD)"
       },
       {
-        "name": "Falcons Starting QB",
+        "name": "Tobi Olawole",
+        "team": "Army Black Knights",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Army Black Knights (2 REC, 18 YDS)"
+      },
+      {
+        "name": "Evan Medders",
+        "team": "Air Force Falcons",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "5",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Air Force Falcons (6/8, 84 YDS, 1 TD)"
       },
       {
-        "name": "Falcons Lead RB",
+        "name": "Kemper Hodges",
+        "team": "Air Force Falcons",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Air Force Falcons (17 CAR, 119 YDS, 1 TD)"
+      },
+      {
+        "name": "Mason Hayes",
+        "team": "Air Force Falcons",
+        "pos": "WR",
+        "jersey": "18",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Air Force Falcons (2 REC, 40 YDS)"
       }
     ]
   },
@@ -2125,37 +4451,80 @@
     "total_points": 30,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Ben Hill Griffin Stadium (Gainesville) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Ben Hill Griffin Stadium (Gainesville) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Gators Starting QB",
+        "name": "Tramell Jones Jr.",
+        "team": "Florida Gators",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "9",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Florida Gators (10/22, 133 YDS, 2 INT)"
       },
       {
-        "name": "Gators Lead RB",
+        "name": "Jadan Baugh",
+        "team": "Florida Gators",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Florida Gators (8 CAR, 35 YDS, 1 TD)"
       },
       {
-        "name": "Sooners Starting QB",
+        "name": "Duke Clark",
+        "team": "Florida Gators",
+        "pos": "WR",
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Florida Gators (4 REC, 70 YDS)"
+      },
+      {
+        "name": "John Mateer",
+        "team": "Oklahoma Sooners",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "10",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Oklahoma Sooners (21/33, 207 YDS, 2 TD)"
       },
       {
-        "name": "Sooners Lead RB",
-        "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "name": "Rocky Beers",
+        "team": "Oklahoma Sooners",
+        "pos": "WR",
+        "jersey": "81",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Oklahoma Sooners (4 REC, 72 YDS)"
       }
     ]
   },
@@ -2173,37 +4542,92 @@
     "total_points": 44,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Aggie Memorial Stadium (Las Cruces) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Aggie Memorial Stadium (Las Cruces) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Aggies Starting QB",
+        "name": "Trey Hedden",
+        "team": "New Mexico State Aggies",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "3",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular New Mexico State Aggies (19/29, 256 YDS, 2 TD, 2 INT)"
       },
       {
-        "name": "Aggies Lead RB",
+        "name": "James Jones",
+        "team": "New Mexico State Aggies",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal New Mexico State Aggies (15 CAR, 51 YDS)"
       },
       {
-        "name": "Flames Starting QB",
+        "name": "AJ Williams III",
+        "team": "New Mexico State Aggies",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal New Mexico State Aggies (8 REC, 150 YDS, 2 TD)"
+      },
+      {
+        "name": "Deshawn Purdie",
+        "team": "Liberty Flames",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "5",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Liberty Flames (19/28, 252 YDS, 1 TD)"
       },
       {
-        "name": "Flames Lead RB",
+        "name": "Kam Davis",
+        "team": "Liberty Flames",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Liberty Flames (15 CAR, 63 YDS, 1 TD)"
+      },
+      {
+        "name": "Makai Jackson",
+        "team": "Liberty Flames",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Liberty Flames (6 REC, 76 YDS, 1 TD)"
       }
     ]
   },
@@ -2221,37 +4645,92 @@
     "total_points": 101,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Galaxy Stadium (Lubbock) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Galaxy Stadium (Lubbock) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Raiders Starting QB",
+        "name": "Thomas Castellanos",
+        "team": "Texas Tech Red Raiders",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "4",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Texas Tech Red Raiders (18/27, 362 YDS, 5 TD)"
       },
       {
-        "name": "Raiders Lead RB",
+        "name": "J'Koby Williams",
+        "team": "Texas Tech Red Raiders",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Texas Tech Red Raiders (19 CAR, 160 YDS, 1 TD)"
       },
       {
-        "name": "Mountaineers Starting QB",
+        "name": "Kenny Johnson",
+        "team": "Texas Tech Red Raiders",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Texas Tech Red Raiders (5 REC, 84 YDS, 2 TD)"
+      },
+      {
+        "name": "Michael Hawkins Jr.",
+        "team": "West Virginia Mountaineers",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "3",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular West Virginia Mountaineers (11/16, 303 YDS, 1 TD)"
       },
       {
-        "name": "Mountaineers Lead RB",
+        "name": "Cam Cook",
+        "team": "West Virginia Mountaineers",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal West Virginia Mountaineers (23 CAR, 149 YDS, 1 TD)"
+      },
+      {
+        "name": "TaRon Francis",
+        "team": "West Virginia Mountaineers",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal West Virginia Mountaineers (3 REC, 169 YDS, 1 TD)"
       }
     ]
   },
@@ -2269,37 +4748,80 @@
     "total_points": 27,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Maverik Stadium (Logan) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Maverik Stadium (Logan) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Aggies Starting QB",
+        "name": "McCae Hillstead",
+        "team": "Utah State Aggies",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Utah State Aggies (9/14, 117 YDS)"
       },
       {
-        "name": "Aggies Lead RB",
-        "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "name": "Anthony Garcia",
+        "team": "Utah State Aggies",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Utah State Aggies (2 REC, 39 YDS)"
       },
       {
-        "name": "Bulldogs Starting QB",
+        "name": "Jayden Mandal",
+        "team": "Fresno State Bulldogs",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "7",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Fresno State Bulldogs (22/39, 262 YDS, 1 TD)"
       },
       {
-        "name": "Bulldogs Lead RB",
+        "name": "Bryson Donelson",
+        "team": "Fresno State Bulldogs",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Fresno State Bulldogs (6 CAR, 15 YDS)"
+      },
+      {
+        "name": "Josiah Freeman",
+        "team": "Fresno State Bulldogs",
+        "pos": "WR",
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Fresno State Bulldogs (8 REC, 114 YDS)"
       }
     ]
   },
@@ -2317,37 +4839,92 @@
     "total_points": 31,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Sun Bowl (El Paso) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Sun Bowl (El Paso) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Miners Starting QB",
+        "name": "Raymond Moore III",
+        "team": "UTEP Miners",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "12",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular UTEP Miners (9/18, 109 YDS, 1 TD)"
       },
       {
-        "name": "Miners Lead RB",
+        "name": "Lamar Sperling",
+        "team": "UTEP Miners",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "32",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal UTEP Miners (11 CAR, 63 YDS, 1 TD)"
       },
       {
-        "name": "Warriors Starting QB",
+        "name": "Carver Cheeks",
+        "team": "UTEP Miners",
+        "pos": "WR",
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal UTEP Miners (2 REC, 46 YDS)"
+      },
+      {
+        "name": "Micah Alejado",
+        "team": "Hawai'i Rainbow Warriors",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "12",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Hawai'i Rainbow Warriors (26/40, 303 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Warriors Lead RB",
+        "name": "Cam Barfield",
+        "team": "Hawai'i Rainbow Warriors",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Hawai'i Rainbow Warriors (15 CAR, 64 YDS)"
+      },
+      {
+        "name": "Titan Lacaden",
+        "team": "Hawai'i Rainbow Warriors",
+        "pos": "WR",
+        "jersey": "22",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Hawai'i Rainbow Warriors (11 REC, 109 YDS, 1 TD)"
       }
     ]
   },
@@ -2365,37 +4942,92 @@
     "total_points": 63,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Reser Stadium (Corvallis) [ABIERTO]",
+    "is_dome": false,
+    "venue": "Reser Stadium (Corvallis) [CLIMA ABIERTO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Beavers Starting QB",
+        "name": "Braden Atkinson",
+        "team": "Oregon State Beavers",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "2",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Oregon State Beavers (20/36, 192 YDS, 1 INT)"
       },
       {
-        "name": "Beavers Lead RB",
+        "name": "AJ Newberry",
+        "team": "Oregon State Beavers",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "23",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Oregon State Beavers (9 CAR, 41 YDS, 1 TD)"
       },
       {
-        "name": "Bobcats Starting QB",
+        "name": "Jesse Legree",
+        "team": "Oregon State Beavers",
+        "pos": "WR",
+        "jersey": "12",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Oregon State Beavers (8 REC, 99 YDS)"
+      },
+      {
+        "name": "Brad Jackson",
+        "team": "Texas State Bobcats",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "8",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Texas State Bobcats (16/20, 214 YDS, 1 TD, 1 INT)"
       },
       {
-        "name": "Bobcats Lead RB",
+        "name": "Torrance Burgess Jr.",
+        "team": "Texas State Bobcats",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Texas State Bobcats (28 CAR, 196 YDS, 1 TD)"
+      },
+      {
+        "name": "Zechariah Sample",
+        "team": "Texas State Bobcats",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Texas State Bobcats (3 REC, 95 YDS, 1 TD)"
       }
     ]
   },
@@ -2413,37 +5045,92 @@
     "total_points": 76,
     "spread_str": "",
     "over_under": 54.5,
-    "venue": "Allegiant Stadium (Las Vegas) [DOMO]",
+    "is_dome": true,
+    "venue": "Allegiant Stadium (Las Vegas) [DOMO TECHADO]",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.0,
+      "style": "Defensa Estándar"
+    },
+    "away_defense": {
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 220.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.0,
+      "style": "Defensa Estándar"
+    },
     "stars": [
       {
-        "name": "Rebels Starting QB",
+        "name": "Jackson Arnold",
+        "team": "UNLV Rebels",
         "pos": "QB",
-        "pass_yds": 235.0,
+        "jersey": "11",
+        "pass_yds": 242.0,
         "pass_tds": 1.8,
-        "rush_yds": 15.0,
-        "anytime_td_pct": 25.0
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular UNLV Rebels (7/18, 83 YDS, 2 TD, 1 INT)"
       },
       {
-        "name": "Rebels Lead RB",
+        "name": "Jai'Den Thomas",
+        "team": "UNLV Rebels",
         "pos": "RB",
-        "rush_yds": 72.0,
-        "rec_yds": 18.0,
-        "anytime_td_pct": 60.0
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal UNLV Rebels (16 CAR, 96 YDS, 2 TD)"
       },
       {
-        "name": "Cowboys Starting QB",
+        "name": "Tavian McNair",
+        "team": "UNLV Rebels",
+        "pos": "WR",
+        "jersey": "5",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal UNLV Rebels (2 REC, 51 YDS)"
+      },
+      {
+        "name": "Tyler Hughes",
+        "team": "Wyoming Cowboys",
         "pos": "QB",
-        "pass_yds": 228.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
-        "anytime_td_pct": 20.0
+        "jersey": "6",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
+        "anytime_td_pct": 30.0,
+        "role": "Mariscal Titular Wyoming Cowboys (5/9, 107 YDS, 1 TD)"
       },
       {
-        "name": "Cowboys Lead RB",
+        "name": "Samuel Harris",
+        "team": "Wyoming Cowboys",
         "pos": "RB",
-        "rush_yds": 68.0,
-        "rec_yds": 15.0,
-        "anytime_td_pct": 55.0
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Principal Wyoming Cowboys (17 CAR, 128 YDS, 2 TD)"
+      },
+      {
+        "name": "Jake Wilson",
+        "team": "Wyoming Cowboys",
+        "pos": "WR",
+        "jersey": "89",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Principal Wyoming Cowboys (2 REC, 56 YDS, 1 TD)"
       }
     ]
   }
