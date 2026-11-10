@@ -64,19 +64,20 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-top_c1, top_c2 = st.columns([1.5, 2.5])
+top_c1, top_c2, top_c3 = st.columns([1.2, 1.8, 1.0])
 with top_c1:
     league_sel = st.radio(
         "Filtrar por Liga:",
         options=["ALL", "NFL", "NCAAF"],
-        format_func=lambda x: "🏈 TODAS (NFL + NCAAF)" if x == "ALL" else ("🏆 Solo NFL" if x == "NFL" else "🎓 Solo NCAA Colegial"),
+        format_func=lambda x: "🏈 TODAS" if x == "ALL" else ("🏆 Solo NFL" if x == "NFL" else "🎓 Solo NCAA"),
         horizontal=True
     )
 with top_c2:
     date_options = {
-        "20261109": "🔥 Hoy (Lun 9 MNF)",
-        "20261108": "✅ Ayer (Dom 8 NFL)",
-        "20261107": "📜 Sáb 7 Nov (NCAAF 51 Juegos)"
+        "20261110": "🔥 Hoy (Mar 10 MACtion)",
+        "20261109": "✅ Ayer (Lun 9 MNF)",
+        "20261108": "📜 Dom 8 Nov (NFL)",
+        "20261107": "📜 Sáb 7 Nov (NCAAF)"
     }
     date_str = st.radio(
         "Seleccionar Fecha:",
@@ -84,6 +85,13 @@ with top_c2:
         format_func=lambda d: date_options[d],
         horizontal=True
     )
+with top_c3:
+    st.write("")
+    if st.button("🔄 Sincronizar ESPN", key="btn_sync_nfl", help="Actualiza marcadores y boxscores oficiales en vivo desde ESPN"):
+        with st.spinner("Sincronizando con ESPN..."):
+            from live_nfl_audit_sync import sync_nfl_date_from_espn
+            sync_nfl_date_from_espn(date_str)
+            st.rerun()
 
 games_today = get_normalized_football_schedule(date_str, league_sel)
 parlay_picks = get_daily_nfl_parlay(date_str, league_sel)
@@ -376,7 +384,15 @@ with t4:
             """, unsafe_allow_html=True)
 
 with t5:
-    st.markdown("#### ✅ Auditoría Oficial Empírica de Todos los Picks de la Jornada")
+    col_t5_h1, col_t5_h2 = st.columns([3, 1])
+    with col_t5_h1:
+        st.markdown("#### ✅ Auditoría Oficial Empírica de Todos los Picks de la Jornada")
+    with col_t5_h2:
+        if st.button("🔄 Actualizar Auditoría en Vivo (ESPN)", key="btn_sync_tab5_nfl"):
+            with st.spinner("Actualizando con ESPN..."):
+                from live_nfl_audit_sync import sync_nfl_date_from_espn
+                sync_nfl_date_from_espn(date_str)
+                st.rerun()
     all_aud_rows = []
     for g in games_today:
         de_g = compute_full_nfl_game_data_engineering(g)

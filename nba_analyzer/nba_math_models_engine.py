@@ -197,7 +197,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
     # 4. REBOTES DE JUGADOR (REB OVER)
     cat_reb = {"category": "Rebotes de Jugador (REB)", "options": []}
     for s in stars[:5]:
-        base_reb = float(s.get("reb", 5.5))
+        base_reb = max(1.0, float(s.get("reb", 5.5)))
         safe_line = max(2.5, round(base_reb * 0.65) + 0.5)
         prob_reb = poisson_prob_over(base_reb, safe_line)
         odds_val = round(min(1.40, max(1.18, (1.0 / prob_reb) * 1.03)), 2)
@@ -239,7 +239,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
     # 5. ASISTENCIAS DE JUGADOR (AST OVER)
     cat_ast = {"category": "Asistencias de Jugador (AST)", "options": []}
     for s in stars[:5]:
-        base_ast = float(s.get("ast", 4.2))
+        base_ast = max(1.0, float(s.get("ast", 4.2)))
         safe_line = max(1.5, round(base_ast * 0.62) + 0.5)
         prob_ast = poisson_prob_over(base_ast, safe_line)
         odds_val = round(min(1.42, max(1.20, (1.0 / prob_ast) * 1.03)), 2)

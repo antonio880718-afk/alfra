@@ -67,18 +67,19 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Selectores de Liga y Fecha
-top_c1, top_c2 = st.columns([1.5, 2.5])
+top_c1, top_c2, top_c3 = st.columns([1.2, 1.8, 1.0])
 with top_c1:
     league_sel = st.radio(
         "Filtrar por Liga:",
         options=["ALL", "NBA", "NCAAB"],
-        format_func=lambda x: "🏀 TODAS (NBA + NCAAB)" if x == "ALL" else ("🏆 Solo NBA" if x == "NBA" else "🎓 Solo NCAA Colegial"),
+        format_func=lambda x: "🏀 TODAS" if x == "ALL" else ("🏆 Solo NBA" if x == "NBA" else "🎓 Solo NCAA"),
         horizontal=True
     )
 with top_c2:
     date_options = {
-        "20261109": "🔥 Hoy (Lun 9)",
-        "20261108": "✅ Ayer (Dom 8)",
+        "20261110": "🔥 Hoy (Mar 10)",
+        "20261109": "✅ Ayer (Lun 9)",
+        "20261108": "📜 Dom 8 Nov",
         "20261107": "📜 Sáb 7 Nov"
     }
     date_str = st.radio(
@@ -87,6 +88,13 @@ with top_c2:
         format_func=lambda d: date_options[d],
         horizontal=True
     )
+with top_c3:
+    st.write("")
+    if st.button("🔄 Sincronizar ESPN", key="btn_sync_nba", help="Actualiza marcadores y boxscores oficiales en vivo desde ESPN"):
+        with st.spinner("Sincronizando con ESPN..."):
+            from live_nba_audit_sync import sync_nba_date_from_espn
+            sync_nba_date_from_espn(date_str)
+            st.rerun()
 
 games_today = get_normalized_bball_schedule(date_str, league_sel)
 parlay_picks = get_daily_nba_parlay(date_str, league_sel)
@@ -387,7 +395,15 @@ with t4:
             """, unsafe_allow_html=True)
 
 with t5:
-    st.markdown("#### ✅ Auditoría Oficial Empírica de Todos los Picks de la Jornada")
+    col_t5_h1, col_t5_h2 = st.columns([3, 1])
+    with col_t5_h1:
+        st.markdown("#### ✅ Auditoría Oficial Empírica de Todos los Picks de la Jornada")
+    with col_t5_h2:
+        if st.button("🔄 Actualizar Auditoría en Vivo (ESPN)", key="btn_sync_tab5_nba"):
+            with st.spinner("Actualizando con ESPN..."):
+                from live_nba_audit_sync import sync_nba_date_from_espn
+                sync_nba_date_from_espn(date_str)
+                st.rerun()
     all_aud_rows = []
     for g in games_today:
         de_g = compute_full_nba_game_data_engineering(g)

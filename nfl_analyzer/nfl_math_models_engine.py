@@ -114,7 +114,7 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     cat_pass = {"category": "Yardas por Pase de QB", "options": []}
     for s in stars:
         if s.get("pos") == "QB":
-            base_pass = float(s.get("pass_yds", 235.0))
+            base_pass = max(10.0, float(s.get("pass_yds", 235.0)))
             safe_line = max(165.5, round(base_pass * 0.74) + 0.5)
             prob_pass = normal_prob_over(base_pass, 42.0, safe_line)
             odds_val = round(min(1.40, max(1.18, 1.0 / prob_pass * 1.04)), 2)

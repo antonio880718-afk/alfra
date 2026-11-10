@@ -1,0 +1,755 @@
+[
+  {
+    "id": "401906771",
+    "league": "NCAAB",
+    "match": "Florida Gators @ Florida State Seminoles",
+    "home": "Florida State Seminoles",
+    "away": "Florida Gators",
+    "time_cdmx": "17:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "FLA -9.5",
+    "over_under": 166.5,
+    "venue": "Tucker Center (Tallahassee)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Seminoles",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Florida State Seminoles"
+      },
+      {
+        "name": "Líder Gators",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Florida Gators"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909564",
+    "league": "NCAAB",
+    "match": "Michigan State Spartans @ Duke Blue Devils",
+    "home": "Duke Blue Devils",
+    "away": "Michigan State Spartans",
+    "time_cdmx": "18:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "DUKE -7.5",
+    "over_under": 145.5,
+    "venue": "United Center (Chicago)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Devils",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Duke Blue Devils"
+      },
+      {
+        "name": "Líder Spartans",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Michigan State Spartans"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401918987",
+    "league": "NCAAB",
+    "match": "Memphis Tigers @ Vanderbilt Commodores",
+    "home": "Vanderbilt Commodores",
+    "away": "Memphis Tigers",
+    "time_cdmx": "18:15",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "VAN -13.5",
+    "over_under": 160.5,
+    "venue": "Memorial Gymnasium (TN) (Nashville)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Commodores",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Vanderbilt Commodores"
+      },
+      {
+        "name": "Líder Tigers",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Memphis Tigers"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909960",
+    "league": "NBA",
+    "match": "Milwaukee Bucks @ New York Knicks",
+    "home": "New York Knicks",
+    "away": "Milwaukee Bucks",
+    "time_cdmx": "18:30",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "NY -15.5",
+    "over_under": 221.5,
+    "venue": "Madison Square Garden (New York)",
+    "home_defense": {
+      "def_rank": 9,
+      "pts_allowed": 109.8,
+      "pace": 97.4,
+      "style": "Juego Lento, Físico y Posesiones Largas"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 113.5,
+      "pace": 100.4,
+      "style": "Protección de Aro Élite / Vulnerable al Triple"
+    },
+    "stars": [
+      {
+        "name": "Líder Knicks",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador New York Knicks"
+      },
+      {
+        "name": "Líder Bucks",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Milwaukee Bucks"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909961",
+    "league": "NBA",
+    "match": "Boston Celtics @ Philadelphia 76ers",
+    "home": "Philadelphia 76ers",
+    "away": "Boston Celtics",
+    "time_cdmx": "19:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "BOS -1.5",
+    "over_under": 216.5,
+    "venue": "Xfinity Mobile Arena (Philadelphia)",
+    "home_defense": {
+      "def_rank": 13,
+      "pts_allowed": 112.0,
+      "pace": 98.7,
+      "style": "Pintura Blindada / Ritmo Moderado"
+    },
+    "away_defense": {
+      "def_rank": 2,
+      "pts_allowed": 105.2,
+      "pace": 99.5,
+      "style": "Defensa Élite de Campeonato"
+    },
+    "stars": [
+      {
+        "name": "Líder 76ers",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Philadelphia 76ers"
+      },
+      {
+        "name": "Líder Celtics",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Boston Celtics"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401913527",
+    "league": "NCAAB",
+    "match": "Illinois Fighting Illini @ Texas Tech Red Raiders",
+    "home": "Texas Tech Red Raiders",
+    "away": "Illinois Fighting Illini",
+    "time_cdmx": "19:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "ILL -2.5",
+    "over_under": 166.5,
+    "venue": "United Supermarkets Arena (Lubbock)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Raiders",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Texas Tech Red Raiders"
+      },
+      {
+        "name": "Líder Illini",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Illinois Fighting Illini"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909962",
+    "league": "NBA",
+    "match": "LA Clippers @ Phoenix Suns",
+    "home": "Phoenix Suns",
+    "away": "LA Clippers",
+    "time_cdmx": "20:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "PHX -3.5",
+    "over_under": 224.5,
+    "venue": "Mortgage Matchup Center (Phoenix)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.8,
+      "pace": 99.6,
+      "style": "Anotación Fluida / Dificultades en Rebote Ofensivo"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Devin Booker",
+        "pos": "SG",
+        "jersey": "1",
+        "pts": 25.2,
+        "reb": 4.2,
+        "ast": 6.5,
+        "threes": 2.4,
+        "pra": 35.9,
+        "role": "Anotador Quirúrgico de Élite"
+      },
+      {
+        "name": "Kevin Durant",
+        "pos": "PF",
+        "jersey": "35",
+        "pts": 27.6,
+        "reb": 6.8,
+        "ast": 4.5,
+        "threes": 2.6,
+        "pra": 38.9,
+        "role": "Anotador Indefendible en Aislamiento"
+      },
+      {
+        "name": "Bradley Beal",
+        "pos": "PG",
+        "jersey": "3",
+        "pts": 17.8,
+        "reb": 4.0,
+        "ast": 4.4,
+        "threes": 1.9,
+        "pra": 26.2,
+        "role": "Tercera Opción Ofensiva Letal"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909963",
+    "league": "NBA",
+    "match": "Miami Heat @ Utah Jazz",
+    "home": "Utah Jazz",
+    "away": "Miami Heat",
+    "time_cdmx": "20:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "MIA -8.5",
+    "over_under": 227.5,
+    "venue": "Delta Center (Salt Lake City)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 8,
+      "pts_allowed": 109.2,
+      "pace": 97.8,
+      "style": "Zona Táctica y Disciplina Defensiva"
+    },
+    "stars": [
+      {
+        "name": "Líder Jazz",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Utah Jazz"
+      },
+      {
+        "name": "Líder Heat",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Miami Heat"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401920425",
+    "league": "NCAAB",
+    "match": "Bucknell Bison @ Virginia Cavaliers",
+    "home": "Virginia Cavaliers",
+    "away": "Bucknell Bison",
+    "time_cdmx": "20:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "UVA -38.5",
+    "over_under": 151.5,
+    "venue": "John Paul Jones Arena (Charlottesville)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Cavaliers",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Virginia Cavaliers"
+      },
+      {
+        "name": "Líder Bison",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Bucknell Bison"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909740",
+    "league": "NCAAB",
+    "match": "Northern Arizona Lumberjacks @ Arizona Wildcats",
+    "home": "Arizona Wildcats",
+    "away": "Northern Arizona Lumberjacks",
+    "time_cdmx": "20:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "ARIZ -35.5",
+    "over_under": 156.5,
+    "venue": "McKale Center at ALKEME Arena (Tucson)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Wildcats",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Arizona Wildcats"
+      },
+      {
+        "name": "Líder Lumberjacks",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Northern Arizona Lumberjacks"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401921740",
+    "league": "NCAAB",
+    "match": "Queens University Royals @ BYU Cougars",
+    "home": "BYU Cougars",
+    "away": "Queens University Royals",
+    "time_cdmx": "20:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "BYU -29.5",
+    "over_under": 181.5,
+    "venue": "Marriott Center (Provo)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Cougars",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador BYU Cougars"
+      },
+      {
+        "name": "Líder Royals",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Queens University Royals"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909786",
+    "league": "NCAAB",
+    "match": "Kansas Jayhawks @ Kentucky Wildcats",
+    "home": "Kentucky Wildcats",
+    "away": "Kansas Jayhawks",
+    "time_cdmx": "20:30",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "KU -4.5",
+    "over_under": 158.5,
+    "venue": "United Center (Chicago)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 16,
+      "pts_allowed": 114.0,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "Líder Wildcats",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Kentucky Wildcats"
+      },
+      {
+        "name": "Líder Jayhawks",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Kansas Jayhawks"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909964",
+    "league": "NBA",
+    "match": "Orlando Magic @ Sacramento Kings",
+    "home": "Sacramento Kings",
+    "away": "Orlando Magic",
+    "time_cdmx": "21:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "ORL -6.5",
+    "over_under": 223.5,
+    "venue": "Golden 1 Center (Sacramento)",
+    "home_defense": {
+      "def_rank": 20,
+      "pts_allowed": 115.8,
+      "pace": 100.7,
+      "style": "Ofensiva Dinámica / Concede Puntos al Contragolpe"
+    },
+    "away_defense": {
+      "def_rank": 5,
+      "pts_allowed": 107.1,
+      "pace": 98.5,
+      "style": "Envergadura y Presión en Todo el Campo"
+    },
+    "stars": [
+      {
+        "name": "Líder Kings",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Sacramento Kings"
+      },
+      {
+        "name": "Líder Magic",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Orlando Magic"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401909965",
+    "league": "NBA",
+    "match": "Oklahoma City Thunder @ Portland Trail Blazers",
+    "home": "Portland Trail Blazers",
+    "away": "Oklahoma City Thunder",
+    "time_cdmx": "22:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "OKC -2.5",
+    "over_under": 224.5,
+    "venue": "Moda Center (Portland)",
+    "home_defense": {
+      "def_rank": 15,
+      "pts_allowed": 113.5,
+      "pace": 100.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 1,
+      "pts_allowed": 103.8,
+      "pace": 100.6,
+      "style": "Líder en Robos y Pérdidas Provocadas"
+    },
+    "stars": [
+      {
+        "name": "Líder Blazers",
+        "pos": "G",
+        "jersey": "1",
+        "pts": 19.5,
+        "reb": 4.5,
+        "ast": 4.2,
+        "threes": 2.2,
+        "pra": 28.2,
+        "role": "Anotador Portland Trail Blazers"
+      },
+      {
+        "name": "Líder Thunder",
+        "pos": "G",
+        "jersey": "2",
+        "pts": 18.2,
+        "reb": 4.0,
+        "ast": 4.0,
+        "threes": 2.0,
+        "pra": 26.2,
+        "role": "Anotador Oklahoma City Thunder"
+      }
+    ],
+    "boxscore_athletes": {}
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "id": "401866458",
+    "league": "NCAAF",
+    "match": "Western Michigan Broncos @ Akron Zips",
+    "home": "Akron Zips",
+    "away": "Western Michigan Broncos",
+    "time_cdmx": "18:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "WMU -15.5",
+    "over_under": 49.5,
+    "is_dome": false,
+    "venue": "InfoCision Stadium",
+    "home_defense": {
+      "def_rank": 16,
+      "pass_yds_allowed": 225.0,
+      "rush_yds_allowed": 115.0,
+      "pts_allowed": 22.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 17,
+      "pass_yds_allowed": 228.0,
+      "rush_yds_allowed": 118.0,
+      "pts_allowed": 23.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "QB Zips",
+        "pos": "QB",
+        "jersey": "1",
+        "pass_yds": 235.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "rec_yds": 0.0,
+        "anytime_td_pct": 20.0,
+        "role": "QB Titular Akron Zips"
+      },
+      {
+        "name": "QB Broncos",
+        "pos": "QB",
+        "jersey": "2",
+        "pass_yds": 220.0,
+        "pass_tds": 1.4,
+        "rush_yds": 8.0,
+        "rec_yds": 0.0,
+        "anytime_td_pct": 18.0,
+        "role": "QB Titular Western Michigan Broncos"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401866459",
+    "league": "NCAAF",
+    "match": "Kent State Golden Flashes @ Bowling Green Falcons",
+    "home": "Bowling Green Falcons",
+    "away": "Kent State Golden Flashes",
+    "time_cdmx": "18:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "BGSU -5.5",
+    "over_under": 43.5,
+    "is_dome": false,
+    "venue": "Doyt L. Perry Stadium",
+    "home_defense": {
+      "def_rank": 16,
+      "pass_yds_allowed": 225.0,
+      "rush_yds_allowed": 115.0,
+      "pts_allowed": 22.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 17,
+      "pass_yds_allowed": 228.0,
+      "rush_yds_allowed": 118.0,
+      "pts_allowed": 23.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "QB Falcons",
+        "pos": "QB",
+        "jersey": "1",
+        "pass_yds": 235.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "rec_yds": 0.0,
+        "anytime_td_pct": 20.0,
+        "role": "QB Titular Bowling Green Falcons"
+      },
+      {
+        "name": "QB Flashes",
+        "pos": "QB",
+        "jersey": "2",
+        "pass_yds": 220.0,
+        "pass_tds": 1.4,
+        "rush_yds": 8.0,
+        "rec_yds": 0.0,
+        "anytime_td_pct": 18.0,
+        "role": "QB Titular Kent State Golden Flashes"
+      }
+    ],
+    "boxscore_athletes": {}
+  },
+  {
+    "id": "401866460",
+    "league": "NCAAF",
+    "match": "Ohio Bobcats @ Miami (OH) RedHawks",
+    "home": "Miami (OH) RedHawks",
+    "away": "Ohio Bobcats",
+    "time_cdmx": "19:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "spread_str": "OHIO -1.5",
+    "over_under": 47.5,
+    "is_dome": false,
+    "venue": "Yager Stadium",
+    "home_defense": {
+      "def_rank": 16,
+      "pass_yds_allowed": 225.0,
+      "rush_yds_allowed": 115.0,
+      "pts_allowed": 22.0,
+      "style": "Defensa Promedio"
+    },
+    "away_defense": {
+      "def_rank": 17,
+      "pass_yds_allowed": 228.0,
+      "rush_yds_allowed": 118.0,
+      "pts_allowed": 23.0,
+      "style": "Defensa Promedio"
+    },
+    "stars": [
+      {
+        "name": "QB RedHawks",
+        "pos": "QB",
+        "jersey": "1",
+        "pass_yds": 235.0,
+        "pass_tds": 1.6,
+        "rush_yds": 12.0,
+        "rec_yds": 0.0,
+        "anytime_td_pct": 20.0,
+        "role": "QB Titular Miami (OH) RedHawks"
+      },
+      {
+        "name": "QB Bobcats",
+        "pos": "QB",
+        "jersey": "2",
+        "pass_yds": 220.0,
+        "pass_tds": 1.4,
+        "rush_yds": 8.0,
+        "rec_yds": 0.0,
+        "anytime_td_pct": 18.0,
+        "role": "QB Titular Ohio Bobcats"
+      }
+    ],
+    "boxscore_athletes": {}
+  }
+]

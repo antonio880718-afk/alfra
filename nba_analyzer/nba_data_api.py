@@ -269,20 +269,38 @@ def fetch_league_scoreboard(league_key: str, date_str: str) -> list:
         print(f"Error fetching {league_key} {date_str}: {e}")
         return []
 
-def get_normalized_bball_schedule(date_str: str = "20261109", league_filter: str = "ALL") -> list:
+def get_normalized_bball_schedule(date_str: str = "20261110", league_filter: str = "ALL", force_refresh: bool = False) -> list:
     cache_file = os.path.join(DATA_DIR, f"bball_schedule_{date_str}.json")
-    if os.path.exists(cache_file):
+    if not force_refresh and os.path.exists(cache_file):
         try:
             with open(cache_file, "r", encoding="utf-8") as f:
                 all_games = json.load(f)
-                # Verificar si los juegos tienen datos ricos de jugadores (si tienen Top Scorer, invalidar)
                 has_placeholders = any(any("Top Scorer" in s.get("name", "") for s in g.get("stars", [])) for g in all_games)
-                if not has_placeholders:
+                has_unfinalized = any("FINAL" not in g.get("status", "") for g in all_games)
+                # Si los juegos no están finalizados y el cache tiene más de 10 minutos, auto-sincronizar
+                age_sec = 0
+                try:
+                    import time
+                    age_sec = time.time() - os.path.getmtime(cache_file)
+                except Exception:
+                    pass
+                if not has_placeholders and (not has_unfinalized or age_sec < 600):
                     if league_filter != "ALL":
                         return [g for g in all_games if g.get("league") == league_filter]
                     return all_games
         except Exception:
             pass
+
+    # Sincronización en vivo vía ESPN
+    try:
+        from live_nba_audit_sync import sync_nba_date_from_espn
+        synced = sync_nba_date_from_espn(date_str)
+        if synced:
+            if league_filter != "ALL":
+                return [g for g in synced if g.get("league") == league_filter]
+            return synced
+    except Exception as e:
+        print(f"Error live sync NBA {date_str}: {e}")
 
     leagues_to_fetch = ["NBA", "NCAAB"] if league_filter == "ALL" else [league_filter]
     games = []

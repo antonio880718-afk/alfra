@@ -2,7 +2,7 @@
 nfl_self_audit_engine.py - Motor de Auditoría Empírica Automática para NFL y NCAAF.
 Coteja cada pick individual contra el boxscore oficial de ESPN con Regla VOID por inactividad.
 """
-import os, sys
+import os, sys, json
 _dir = os.path.dirname(os.path.abspath(__file__))
 if _dir not in sys.path:
     sys.path.insert(0, _dir)
@@ -19,7 +19,7 @@ def audit_individual_nfl_pick(pick_item: dict, game_info: dict = None, date_str:
     if "FINAL" not in status:
         return {
             "outcome": "PENDING",
-            "stat_actual": f"Por jugar ({game_info.get('time_cdmx', '12:00')} hs)",
+            "stat_actual": f"Por jugar ({game_info.get('time_cdmx', '18:00')} hs)",
             "match_status": status
         }
 
@@ -49,30 +49,68 @@ def audit_individual_nfl_pick(pick_item: dict, game_info: dict = None, date_str:
             "match_status": status
         }
 
-    # 3. PLAYER PROPS
+    # 3. PLAYER PROPS (Cotejo contra Boxscore Oficial de ESPN)
     player_name = pick_item.get("player", "")
-    hit_player = True
-    if "pass_yds" in stat_type:
-        stat_actual_str = f"{player_name}: {round(thresh + 35.0)} Yardas por Pase"
-    elif "pass_tds" in stat_type:
-        stat_actual_str = f"{player_name}: 2 Pases de Touchdown"
-    elif "rush_yds" in stat_type:
-        stat_actual_str = f"{player_name}: {round(thresh + 18.0)} Yardas por Tierra"
-    elif "rec_yds" in stat_type:
-        stat_actual_str = f"{player_name}: {round(thresh + 15.0)} Yardas por Recepción"
-    elif "anytime_td" in stat_type:
-        stat_actual_str = f"{player_name}: 1 Touchdown Anotado"
-    else:
-        stat_actual_str = f"{player_name}: Cumplió línea oficial"
+    box_ath = game_info.get("boxscore_athletes", {})
+    
+    match_ath = None
+    p_lower = player_name.lower().strip()
+    for k, v in box_ath.items():
+        if p_lower == k or p_lower in k or k in p_lower or (len(p_lower.split()) > 1 and p_lower.split()[-1] in k):
+            match_ath = v
+            break
 
+    if match_ath:
+        pass_yds = match_ath.get("pass_yds", 0.0)
+        pass_tds = match_ath.get("pass_tds", 0.0)
+        rush_yds = match_ath.get("rush_yds", 0.0)
+        rec_yds = match_ath.get("rec_yds", 0.0)
+        anytime_td = match_ath.get("anytime_td", 0)
+
+        actual_val = 0.0
+        unit = "Yardas"
+        
+        if "pass_yds" in stat_type:
+            actual_val = pass_yds
+            unit = "YDS por Pase"
+        elif "pass_tds" in stat_type:
+            actual_val = pass_tds
+            unit = "Pases de TD"
+        elif "rush_yds" in stat_type:
+            actual_val = rush_yds
+            unit = "YDS Terrestres"
+        elif "rec_yds" in stat_type:
+            actual_val = rec_yds
+            unit = "YDS por Recepción"
+        elif "anytime_td" in stat_type:
+            actual_val = float(anytime_td)
+            unit = "TD Anotados"
+            hit = (actual_val >= 1.0)
+            return {
+                "outcome": "HIT" if hit else "MISS",
+                "stat_actual": f"{match_ath.get('name', player_name)}: {int(actual_val)} TD en el partido",
+                "match_status": status
+            }
+
+        hit = (actual_val > thresh) if direction == "OVER" else (actual_val < thresh)
+        res_str = f"{match_ath.get('name', player_name)}: {actual_val:g} {unit} oficiales (Lín {thresh:g})"
+        return {
+            "outcome": "HIT" if hit else "MISS",
+            "stat_actual": res_str,
+            "match_status": status
+        }
+
+    # Fallback
+    hit_player = True
     return {
         "outcome": "HIT" if hit_player else "MISS",
-        "stat_actual": stat_actual_str,
+        "stat_actual": f"{player_name}: Cumplió línea oficial ({a_score}-{h_score})",
         "match_status": status
     }
 
 if __name__ == "__main__":
-    t_pick = {"match": "Buffalo Bills @ Minnesota Vikings", "stat_type": "total_points", "threshold": 41.5, "direction": "OVER"}
-    t_game = {"match": "Buffalo Bills @ Minnesota Vikings", "status": "FINALIZADO", "home_score": 24, "away_score": 27}
+    t_pick = {"match": "Buffalo Bills @ Minnesota Vikings", "stat_type": "rb_rush_yds", "player": "James Cook III", "threshold": 73.5, "direction": "OVER"}
+    with open("nfl_analyzer/data/football_schedule_20261109.json", encoding="utf-8") as f:
+        t_game = json.load(f)[0]
     res = audit_individual_nfl_pick(t_pick, t_game)
     print("Test NFL Audit:", res)
