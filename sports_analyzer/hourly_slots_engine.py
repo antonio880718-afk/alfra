@@ -2131,7 +2131,55 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         }
     candidates.append(v_var4)
 
-    # 4 MERCADOS CUANTITATIVOS ADICIONALES (V5 a V8) PARA EXPANSIÓN DE OPCIONES POR PARTIDO
+    # V5 Y V6: FUERAS DE JUEGO (OFFSIDES EN CANDIDATOS DIRECTOS)
+    p_off25 = qp.get("offsides_over25", 76.0)
+    p_off35 = qp.get("offsides_over35", 58.0)
+    v_var5 = {
+        "n": 5,
+        "type": "Fueras de Juego",
+        "market": "Total Fueras de Juego: Más de 2.5 en el Partido",
+        "pick": "Total Fueras de Juego: Más de 2.5 en el Partido",
+        "odds": round(max(1.22, 1.0 / (p_off25 / 100.0 * 0.95)), 2),
+        "prob": p_off25,
+        "synergy": f"Proyección Binomial Negativa de posiciones adelantadas ({q_dist['counts'].get('offsides', {}).get('home', 1.8):.1f} + {q_dist['counts'].get('offsides', {}).get('away', 1.5):.1f} fueras de juego esperados).",
+    }
+    v_var6 = {
+        "n": 6,
+        "type": "Fueras de Juego",
+        "market": "Total Fueras de Juego: Más de 3.5 en el Partido",
+        "pick": "Total Fueras de Juego: Más de 3.5 en el Partido",
+        "odds": round(max(1.55, 1.0 / (p_off35 / 100.0 * 0.95)), 2),
+        "prob": p_off35,
+        "synergy": "Línea estándar en casas oficiales (Playdoit / Caliente / Bet365) para defensas adelantadas.",
+    }
+    candidates.append(v_var5)
+    candidates.append(v_var6)
+
+    # V7 a V12: FALTAS, TIROS TOTALES, COMBOS, HÁNDICAP, MULTIGOLES
+    p_foul19 = qp.get("fouls_over195", 82.0)
+    v_var7 = {
+        "n": 7,
+        "type": "Faltas Cometidas",
+        "market": "Total Faltas: Más de 19.5 en el Partido",
+        "pick": "Total Faltas: Más de 19.5 en el Partido",
+        "odds": round(max(1.20, 1.0 / (p_foul19 / 100.0 * 0.95)), 2),
+        "prob": p_foul19,
+        "synergy": f"Intensidad física y faltas esperadas: {q_dist['counts']['fouls']['home'] + q_dist['counts']['fouls']['away']:.1f} infracciones.",
+    }
+    candidates.append(v_var7)
+
+    p_sh21 = qp.get("shots_over215", 77.0)
+    v_var8 = {
+        "n": 8,
+        "type": "Tiros Totales",
+        "market": "Total Tiros del Partido: Más de 21.5 Tiros",
+        "pick": "Total Tiros del Partido: Más de 21.5 Tiros",
+        "odds": round(max(1.24, 1.0 / (p_sh21 / 100.0 * 0.95)), 2),
+        "prob": p_sh21,
+        "synergy": "Volumen global de disparos de ambos clubes.",
+    }
+    candidates.append(v_var8)
+
     fav_is_home = qp["dc_1x"] >= qp["dc_x2"]
     dc_pick_lbl = f"1X ({h} o Empate) y Más de 1.5 Goles" if fav_is_home else f"X2 ({a} o Empate) y Más de 1.5 Goles"
     dc_prob_val = qp["dc1x_over15"] if fav_is_home else qp["dcx2_over15"]
@@ -2139,93 +2187,47 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         dc_pick_lbl = f"{h}: Gana o Empata (Doble Oportunidad 1X)" if fav_is_home else f"{a}: Gana o Empata (Doble Oportunidad X2)"
         dc_prob_val = qp["dc_1x"] if fav_is_home else qp["dc_x2"]
 
+    v_var9 = {
+        "n": 9,
+        "type": "Doble Oportunidad / Combo",
+        "market": dc_pick_lbl,
+        "pick": dc_pick_lbl,
+        "odds": round(max(1.18, 1.0 / (dc_prob_val / 100.0 * 0.955)), 2),
+        "prob": dc_prob_val,
+        "synergy": f"Derivado de la matriz exacta Dixon-Coles ({h} {qp['home_win']}% | Empate {qp['draw']}% | {a} {qp['away_win']}%).",
+    }
+    candidates.append(v_var9)
+
     ah_team = h if qp["ah_home_p15"] >= qp["ah_away_p15"] else a
     ah_prob = max(qp["ah_home_p15"], qp["ah_away_p15"])
+    v_var10 = {
+        "n": 10,
+        "type": "Hándicap Asiático",
+        "market": f"{ah_team} Hándicap Asiático +1.5",
+        "pick": f"{ah_team} Hándicap Asiático +1.5",
+        "odds": round(max(1.14, 1.0 / (ah_prob / 100.0 * 0.955)), 2),
+        "prob": ah_prob,
+        "synergy": f"Cubre victoria, empate y derrota por 1 gol de {ah_team}.",
+    }
+    candidates.append(v_var10)
 
     rng_lbl = "Rango Multigoles: De 2 a 4 Goles en el Partido" if (q_dist["lam_home"] + q_dist["lam_away"]) >= 2.45 else "Rango Multigoles: De 1 a 3 Goles en el Partido"
     rng_prob = qp["range_2_4"] if (q_dist["lam_home"] + q_dist["lam_away"]) >= 2.45 else qp["range_1_3"]
+    v_var11 = {
+        "n": 11,
+        "type": "Rango Multigoles",
+        "market": rng_lbl,
+        "pick": rng_lbl,
+        "odds": round(max(1.32, 1.0 / (rng_prob / 100.0 * 0.95)), 2),
+        "prob": rng_prob,
+        "synergy": f"Banda de mayor masa probabilística con λ_total = {q_dist['lam_home']+q_dist['lam_away']:.2f} goles.",
+    }
+    candidates.append(v_var11)
 
-    sot_exp = round(q_dist["counts"]["sot"]["home"] + q_dist["counts"]["sot"]["away"], 1)
-    sot_prob = qp["sot_over75"] if sot_exp >= 8.2 else qp["home_sot_over35"]
-    sot_lbl = "Total Tiros a Puerta: Más de 7.5 en el Partido" if sot_exp >= 8.2 else f"{h}: Más de 3.5 Tiros a Puerta"
-
-    extra_markets = [
-        {
-            "n": 5,
-            "type": "Doble Oportunidad / Combo",
-            "market": dc_pick_lbl,
-            "pick": dc_pick_lbl,
-            "odds": round(max(1.18, 1.0 / (dc_prob_val / 100.0 * 0.955)), 2),
-            "prob": dc_prob_val,
-            "synergy": f"Derivado de la matriz exacta Dixon-Coles ({h} {qp['home_win']}% | Empate {qp['draw']}% | {a} {qp['away_win']}%).",
-        },
-        {
-            "n": 6,
-            "type": "Hándicap Asiático",
-            "market": f"{ah_team} Hándicap Asiático +1.5",
-            "pick": f"{ah_team} Hándicap Asiático +1.5",
-            "odds": round(max(1.14, 1.0 / (ah_prob / 100.0 * 0.955)), 2),
-            "prob": ah_prob,
-            "synergy": f"Cubre victoria, empate y derrota por 1 gol de {ah_team} según diferencial de goles esperado.",
-        },
-        {
-            "n": 7,
-            "type": "Rango Multigoles",
-            "market": rng_lbl,
-            "pick": rng_lbl,
-            "odds": round(max(1.32, 1.0 / (rng_prob / 100.0 * 0.95)), 2),
-            "prob": rng_prob,
-            "synergy": f"Banda de mayor masa probabilística con λ_total = {q_dist['lam_home']+q_dist['lam_away']:.2f} goles.",
-        },
-        {
-            "n": 8,
-            "type": "Tiros a Puerta de Equipo",
-            "market": sot_lbl,
-            "pick": sot_lbl,
-            "odds": round(max(1.25, 1.0 / (sot_prob / 100.0 * 0.95)), 2),
-            "prob": sot_prob,
-            "synergy": f"Proyección Binomial Negativa de remates al arco: {sot_exp} SOT totales ({h} {q_dist['counts']['sot']['home']:.1f} + {a} {q_dist['counts']['sot']['away']:.1f}).",
-        },
-        {
-            "n": 9,
-            "type": "Tarjetas Disciplinarias",
-            "market": f"Árbitro {ref_name}: Más de 3.5 Tarjetas",
-            "pick": f"Árbitro {ref_name}: Más de 3.5 Tarjetas",
-            "odds": round(max(1.28, 1.0 / (max(0.1, qp.get("cards_over35", 65.0) / 100.0) * 0.95)), 2),
-            "prob": qp.get("cards_over35", 65.0),
-            "synergy": f"Rigor arbitral ({ref_avg} tarjetas/juego) y faltas combinadas proyectadas.",
-        },
-        {
-            "n": 10,
-            "type": "Fueras de Juego",
-            "market": "Total Fueras de Juego: Más de 2.5 en el Partido",
-            "pick": "Total Fueras de Juego: Más de 2.5 en el Partido",
-            "odds": round(max(1.22, 1.0 / (max(0.1, qp.get("offsides_over25", 76.0) / 100.0) * 0.95)), 2),
-            "prob": qp.get("offsides_over25", 76.0),
-            "synergy": f"Proyección de fueras de juego por transiciones y defensas adelantadas.",
-        },
-        {
-            "n": 11,
-            "type": "Faltas Cometidas",
-            "market": "Total Faltas: Más de 20.5 en el Partido",
-            "pick": "Total Faltas: Más de 20.5 en el Partido",
-            "odds": round(max(1.25, 1.0 / (max(0.1, qp.get("fouls_over205", 72.0) / 100.0) * 0.95)), 2),
-            "prob": qp.get("fouls_over205", 72.0),
-            "synergy": f"Media de {q_dist['counts']['fouls']['home'] + q_dist['counts']['fouls']['away']:.1f} faltas estimadas en disputa física.",
-        },
-        {
-            "n": 12,
-            "type": "Tiros Totales",
-            "market": "Total Tiros del Partido: Más de 21.5 Tiros",
-            "pick": "Total Tiros del Partido: Más de 21.5 Tiros",
-            "odds": round(max(1.24, 1.0 / (max(0.1, qp.get("shots_over215", 77.0) / 100.0) * 0.95)), 2),
-            "prob": qp.get("shots_over215", 77.0),
-            "synergy": "Volumen acumulado de remates (bloqueados, desviados y al arco).",
-        },
-    ]
+    extra_markets = candidates[4:]
 
     csv_file_id = CSV_MAP.get(code.lower(), "T1")
-    for c in candidates + extra_markets:
+    for c in candidates:
         p_dec = max(0.01, c["prob"] / 100.0)
         c["fair_odds"] = round(1.0 / p_dec, 2)
         c["ev_pct"] = round((p_dec * c["odds"] - 1.0) * 100.0, 1)
@@ -2260,7 +2262,7 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
 
     raw_odds = 1.0
     joint_prob = 1.0
-    for c in candidates:
+    for c in candidates[:4]:
         raw_odds *= c["odds"]
         joint_prob *= (c["prob"] / 100.0)
 
@@ -2309,6 +2311,20 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             "formula": f"P({v4['type']}) = {v4['prob']}% (Binomial Negativa / Dixon-Coles)",
             "step_by_step": f"""1. Modelo disciplinario/ofensivo calibrado con árbitro {ref_name} ({ref_avg} tarjetas/juego) y tasas reales de ambos clubes.
 2. Probabilidad: {v4['prob']}% | Cuota justa: ~{v4['fair_odds']:.2f} vs Momio: ~{v4['odds']:.2f} -> EV: {v4['ev_pct']:+.1f}%.""",
+        },
+        "v5": {
+            "title": f"V5: {candidates[4]['pick']}",
+            "formula": f"Binomial Negativa Fueras de Juego: P(Offsides > 2.5) = {candidates[4]['prob']}%",
+            "step_by_step": f"""1. Proyección de posiciones adelantadas: {q_dist['counts'].get('offsides', {}).get('home', 1.8):.1f} local + {q_dist['counts'].get('offsides', {}).get('away', 1.5):.1f} visita.
+2. Probabilidad empírica Over 2.5: {candidates[4]['prob']}%.
+3. Cuota justa: ~{candidates[4]['fair_odds']:.2f} vs Momio: ~{candidates[4]['odds']:.2f} -> EV: {candidates[4]['ev_pct']:+.1f}%.""",
+        },
+        "v6": {
+            "title": f"V6: {candidates[5]['pick']}",
+            "formula": f"Binomial Negativa Fueras de Juego Línea Media: P(Offsides > 3.5) = {candidates[5]['prob']}%",
+            "step_by_step": f"""1. Transiciones directas y defensas en bloque medio/alto.
+2. Probabilidad calibrada Over 3.5: {candidates[5]['prob']}%.
+3. Cuota justa: ~{candidates[5]['fair_odds']:.2f} vs Momio: ~{candidates[5]['odds']:.2f} -> EV: {candidates[5]['ev_pct']:+.1f}%.""",
         },
         "sgp": {
             "title": f"Boleto SGP 4 Variables ({final_sgp_odds}x)",
@@ -2361,7 +2377,9 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             "rho": q_dist["rho"],
             "expected_corners": tot_c_exp,
             "expected_cards": ref_data["expected_cards"],
-            "expected_sot": sot_exp,
+            "expected_sot": round(q_dist["counts"]["sot"]["home"] + q_dist["counts"]["sot"]["away"], 1),
+            "expected_offsides": round(q_dist["counts"].get("offsides", {}).get("home", 1.8) + q_dist["counts"].get("offsides", {}).get("away", 1.5), 1),
+            "expected_fouls": round(q_dist["counts"]["fouls"]["home"] + q_dist["counts"]["fouls"]["away"], 1),
             "win_probs": {"home": qp["home_win"], "draw": qp["draw"], "away": qp["away_win"]},
         },
     }

@@ -280,7 +280,12 @@ def _build_dynamic_picks_for_date(date_str: str) -> List[Dict[str, Any]]:
         a = m.get("away", "Visitante")
         ana = analyze_match_for_slot(m)
         vars_list = ana.get("variables", [])
-        chosen_v = ana.get("best_pick") or (vars_list[0] if vars_list else {"pick": f"{h} o Empate (1X)", "odds": 1.40, "prob": 82.0, "fair_odds": 1.22, "ev_pct": 14.5, "title": "Mercado Principal"})
+        if idx in (2, 5, 8) and len(vars_list) >= 6:
+            chosen_v = next((v for v in vars_list if "fueras de juego" in v.get("pick", "").lower()), vars_list[4])
+        elif idx in (3, 7) and len(vars_list) >= 4:
+            chosen_v = next((v for v in vars_list if "tarjeta" in v.get("pick", "").lower() or "córner" in v.get("pick", "").lower()), vars_list[1])
+        else:
+            chosen_v = ana.get("best_pick") or (vars_list[0] if vars_list else {"pick": f"{h} o Empate (1X)", "odds": 1.40, "prob": 82.0, "fair_odds": 1.22, "ev_pct": 14.5, "title": "Mercado Principal"})
         prov = ana.get("provenance", {})
         csv_name = prov.get("csv_files", ["2627_E0.csv"])[0] if prov.get("csv_files") else "2627_E0.csv"
         picks.append({

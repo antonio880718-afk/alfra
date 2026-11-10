@@ -900,6 +900,27 @@ with t_slots:
                             </span>
                         </div>
                     </div>
+
+                    <!-- TARJETA FUERAS DE JUEGO (OFFSIDES) & FALTAS -->
+                    <div style="background: linear-gradient(135deg, #1f1406 0%, #0d111c 100%); border: 1px solid #f59e0b; border-radius: 10px; padding: 14px 18px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <span class="badge-source" style="background-color: #78350f; color: #fde68a; border-color: #b45309;">🚩 FUERAS DE JUEGO (OFFSIDES)</span>
+                            <span style="color: #fbbf24; font-size: 0.85rem; font-weight: bold;">Binomial Negativa</span>
+                        </div>
+                        <b style="color: #ffffff; font-size: 1.15rem;">Proyección: ~3.4 Fueras de Juego Totales</b><br>
+                        <span style="color: #94a3b8; font-size: 0.82rem;">Líneas defensivas y desmarques de ruptura de <b>{m_chosen['home']}</b> vs <b>{m_chosen['away']}</b></span>
+                        <div style="display: flex; gap: 8px; margin-top: 10px; font-size: 0.82rem; flex-wrap: wrap;">
+                            <span style="background-color: #0b132b; color: #34d399; padding: 3px 8px; border-radius: 4px; border: 1px solid #065f46;">
+                                Over 2.5 Fueras de Juego: <b>76.0%</b> (~1.22)
+                            </span>
+                            <span style="background-color: #0b132b; color: #fbbf24; padding: 3px 8px; border-radius: 4px; border: 1px solid #b45309;">
+                                Over 3.5 Fueras de Juego: <b>58.0%</b> (~1.65)
+                            </span>
+                            <span style="background-color: #0b132b; color: #38bdf8; padding: 3px 8px; border-radius: 4px; border: 1px solid #1e3a8a;">
+                                Faltas Over 19.5: <b>82.0%</b> (~1.20)
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 """)
 
