@@ -4543,7 +4543,11 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     m_cards.append(make_opt(f"{away_team}: Recibe Más de 1.5 Tarjetas", "Tarjetas Equipo", ak_15, na, _mkt_odds(qp["away_cards_over15"]), synergy=f"Proyección de tarjetas para {away_team}: {q_dist['counts']['cards']['away']:.2f}.", model_prob=qp["away_cards_over15"]))
     m_cards.append(make_opt(f"{away_team}: Recibe Más de 2.5 Tarjetas", "Tarjetas Equipo", ak_25, na, _mkt_odds(qp["away_cards_over25"]), synergy=f"{away_team} comete {pa_prof['fouls_avg']:.1f} faltas/partido conteniendo ataques.", model_prob=qp["away_cards_over25"]))
     m_cards.append(make_opt("Ambos Equipos Reciben Tarjeta: SÍ", "Tarjetas Ambos", 0, nh, _mkt_odds(qp["both_cards_over05"]), synergy="Probabilidad conjunta de al menos 1 amonestación por bando.", model_prob=qp["both_cards_over05"]))
-    categories.append({"category": "🟨 Tarjetas Disciplinarias del Árbitro y Equipos", "options": m_cards})
+    m_cards.append(make_opt("1er Tiempo: Más de 0.5 Tarjetas en la 1ª Mitad", "Tarjetas 1T", 0, nh, _mkt_odds(qp.get("ht_cards_over05", 81.0)), synergy=f"Árbitro {cards_model['referee_name']} suele amonestar temprano para fijar límites.", model_prob=qp.get("ht_cards_over05", 81.0)))
+    m_cards.append(make_opt(f"{home_team}: Recibe Más de 2.5 Tarjetas", "Tarjetas Equipo", sum(1 for x in h_cards if x >= 3) if h_cards else 0, nh, _mkt_odds(qp.get("home_cards_over25", 48.0)), synergy="Presión alta y faltas tácticas del cuadro local.", model_prob=qp.get("home_cards_over25", 48.0)))
+    m_cards.append(make_opt("Ambos Equipos Reciben 2 o Más Tarjetas: SÍ", "Tarjetas Ambos", 0, nh, _mkt_odds(qp.get("both_cards_over15", 58.0)), synergy="Duelo de alta fricción con al menos 2 amarillas por equipo.", model_prob=qp.get("both_cards_over15", 58.0)))
+    m_cards.append(make_opt("Tarjeta Roja en el Partido: NO (Menos de 0.5 Rojas)", "Tarjetas Rojas", 0, nh, 1.22, synergy="Baja frecuencia histórica de expulsiones directas (~15% de los encuentros).", model_prob=qp.get("card_red_no", 85.0)))
+    categories.append({"category": "🟨 Tarjetas Disciplinarias del Árbitro y Equipos (Totales, por Equipo y 1T)", "options": m_cards})
 
     # ==========================================
     # 3. MERCADOS POR MITAD (1ER TIEMPO Y 2DO TIEMPO REALES)
@@ -4655,7 +4659,38 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     m_ah.append(make_opt(f"{home_team}: Más de 3.5 Tiros a Puerta", "Tiros a Puerta", sot_h35, nh, _mkt_odds(qp["home_sot_over35"]), synergy=f"{home_team} promedia {ph_prof['sot_avg']:.1f} remates directos al arco por juego.", model_prob=qp["home_sot_over35"]))
     m_ah.append(make_opt(f"{away_team}: Más de 2.5 Tiros a Puerta", "Tiros a Puerta", sot_a25, na, _mkt_odds(qp["away_sot_over25"]), synergy=f"{away_team} promedia {pa_prof['sot_avg']:.1f} remates directos al arco por juego.", model_prob=qp["away_sot_over25"]))
     m_ah.append(make_opt("Total Faltas: Más de 20.5 en el Partido", "Faltas", 0, nh, _mkt_odds(qp["fouls_over205"]), synergy=f"Proyección de faltas combinadas: {q_dist['counts']['fouls']['home'] + q_dist['counts']['fouls']['away']:.1f}.", model_prob=qp["fouls_over205"]))
-    categories.append({"category": "⚖️ Hándicap Asiático, Portería a Cero, Tiros a Puerta y Faltas", "options": m_ah})
+    categories.append({"category": "⚖️ Hándicap Asiático, Portería a Cero y Tiros a Puerta", "options": m_ah})
+
+    # ==========================================
+    # 8. FUERAS DE JUEGO (OFFSIDES TOTALES Y POR EQUIPO)
+    # ==========================================
+    m_off = []
+    o_exp_tot = q_dist["counts"].get("offsides", {}).get("home", 1.85) + q_dist["counts"].get("offsides", {}).get("away", 1.55)
+    m_off.append(make_opt("Total Fueras de Juego: Más de 2.5 en el Partido", "Fueras de Juego", 0, nh, _mkt_odds(qp.get("offsides_over25", 76.0)), synergy=f"Proyección Binomial Negativa: {o_exp_tot:.1f} fueras de juego combinados.", model_prob=qp.get("offsides_over25", 76.0)))
+    m_off.append(make_opt("Total Fueras de Juego: Más de 3.5 en el Partido", "Fueras de Juego", 0, nh, _mkt_odds(qp.get("offsides_over35", 58.0)), synergy="Línea estándar en operadores oficiales ante defensas adelantadas.", model_prob=qp.get("offsides_over35", 58.0)))
+    m_off.append(make_opt(f"{home_team}: Más de 1.5 Fueras de Juego", "Fueras de Juego", 0, nh, _mkt_odds(qp.get("home_offsides_over15", 64.0)), synergy=f"Ataque con desmarques de ruptura de {home_team}.", model_prob=qp.get("home_offsides_over15", 64.0)))
+    m_off.append(make_opt(f"{away_team}: Más de 1.5 Fueras de Juego", "Fueras de Juego", 0, na, _mkt_odds(qp.get("away_offsides_over15", 59.0)), synergy=f"Línea de presión y fuera de juego provocada por {home_team}.", model_prob=qp.get("away_offsides_over15", 59.0)))
+    m_off.append(make_opt("Ambos Equipos Caen en Fuera de Juego: SÍ", "Fueras de Juego", 0, nh, _mkt_odds(qp.get("both_offsides_over05", 81.0)), synergy="Al menos 1 posición antirreglamentaria pitada por bando.", model_prob=qp.get("both_offsides_over05", 81.0)))
+    categories.append({"category": "🚩 Fueras de Juego (Offsides Totales y por Equipo)", "options": m_off})
+
+    # ==========================================
+    # 9. FALTAS COMETIDAS Y TIROS TOTALES (VOLUMEN E INTENSIDAD)
+    # ==========================================
+    m_fouls_shots = []
+    tot_f_exp = q_dist["counts"].get("fouls", {}).get("home", 11.4) + q_dist["counts"].get("fouls", {}).get("away", 11.8)
+    tot_sh_exp = q_dist["counts"].get("shots", {}).get("home", 12.5) + q_dist["counts"].get("shots", {}).get("away", 10.2)
+    m_fouls_shots.append(make_opt("Total Faltas: Más de 19.5 en el Partido", "Faltas", 0, nh, _mkt_odds(qp.get("fouls_over195", 82.0)), synergy=f"Intensidad táctica: media de {tot_f_exp:.1f} faltas combinadas.", model_prob=qp.get("fouls_over195", 82.0)))
+    m_fouls_shots.append(make_opt("Total Faltas: Más de 21.5 en el Partido", "Faltas", 0, nh, _mkt_odds(qp.get("fouls_over215", 66.0)), synergy="Línea regular de casa de apuestas para duelos competitivos.", model_prob=qp.get("fouls_over215", 66.0)))
+    m_fouls_shots.append(make_opt("Total Faltas: Más de 23.5 en el Partido", "Faltas", 0, nh, _mkt_odds(qp.get("fouls_over235", 51.0)), synergy="Línea alta de fricción para duelos de mediocampo.", model_prob=qp.get("fouls_over235", 51.0)))
+    m_fouls_shots.append(make_opt(f"{home_team}: Comete Más de 9.5 Faltas", "Faltas", 0, nh, _mkt_odds(qp.get("home_fouls_over95", 72.0)), synergy=f"{home_team} promedia {ph_prof['fouls_avg']:.1f} faltas cometidas/juego.", model_prob=qp.get("home_fouls_over95", 72.0)))
+    m_fouls_shots.append(make_opt(f"{home_team}: Comete Más de 10.5 Faltas", "Faltas", 0, nh, _mkt_odds(qp.get("home_fouls_over105", 59.0)), synergy=f"Presión alta en bloque de {home_team}.", model_prob=qp.get("home_fouls_over105", 59.0)))
+    m_fouls_shots.append(make_opt(f"{away_team}: Comete Más de 9.5 Faltas", "Faltas", 0, na, _mkt_odds(qp.get("away_fouls_over95", 75.0)), synergy=f"{away_team} promedia {pa_prof['fouls_avg']:.1f} infracciones para cortar juego.", model_prob=qp.get("away_fouls_over95", 75.0)))
+    m_fouls_shots.append(make_opt(f"{away_team}: Comete Más de 10.5 Faltas", "Faltas", 0, na, _mkt_odds(qp.get("away_fouls_over105", 62.0)), synergy="Línea visitante de repliegue.", model_prob=qp.get("away_fouls_over105", 62.0)))
+    m_fouls_shots.append(make_opt("Total Tiros del Partido: Más de 21.5 Tiros", "Tiros Totales", 0, nh, _mkt_odds(qp.get("shots_over215", 77.0)), synergy=f"Volumen de disparo conjunto proyectado: {tot_sh_exp:.1f} remates.", model_prob=qp.get("shots_over215", 77.0)))
+    m_fouls_shots.append(make_opt("Total Tiros del Partido: Más de 23.5 Tiros", "Tiros Totales", 0, nh, _mkt_odds(qp.get("shots_over235", 61.0)), synergy="Cruces abiertos de alto ritmo y transiciones.", model_prob=qp.get("shots_over235", 61.0)))
+    m_fouls_shots.append(make_opt(f"{home_team}: Registra Más de 11.5 Tiros Totales", "Tiros Totales", 0, nh, _mkt_odds(qp.get("home_shots_over115", 68.0)), synergy=f"Media de disparos local de {home_team}.", model_prob=qp.get("home_shots_over115", 68.0)))
+    m_fouls_shots.append(make_opt(f"{away_team}: Registra Más de 9.5 Tiros Totales", "Tiros Totales", 0, na, _mkt_odds(qp.get("away_shots_over95", 62.0)), synergy=f"Media de disparos de {away_team} como visitante.", model_prob=qp.get("away_shots_over95", 62.0)))
+    categories.append({"category": "🛑 Faltas Cometidas y Tiros Totales (Líneas de Juego Limpio e Intensidad)", "options": m_fouls_shots})
 
     flat = [opt for cat in categories for opt in cat["options"]]
     escalera_picks = [opt for opt in flat if opt["is_escalera"]]
@@ -4685,6 +4720,8 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
             "expected_cards": round(q_dist["counts"]["cards"]["home"] + q_dist["counts"]["cards"]["away"], 1),
             "expected_sot": round(q_dist["counts"]["sot"]["home"] + q_dist["counts"]["sot"]["away"], 1),
             "expected_fouls": round(q_dist["counts"]["fouls"]["home"] + q_dist["counts"]["fouls"]["away"], 1),
+            "expected_offsides": round(q_dist["counts"].get("offsides", {}).get("home", 1.85) + q_dist["counts"].get("offsides", {}).get("away", 1.55), 1),
+            "expected_shots": round(q_dist["counts"].get("shots", {}).get("home", 12.5) + q_dist["counts"].get("shots", {}).get("away", 10.2), 1),
         },
     }
     _DE_CACHE[cache_key] = res_out

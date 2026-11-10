@@ -667,9 +667,10 @@ def generate_daily_predictions_pdf_bytes(date_str: str = "20261109") -> bytes:
             )
 
             v_lines = []
-            for v_i, v in enumerate(a.get("variables", []), 1):
+            all_featured = a.get("variables", []) + a.get("extra_markets", [])
+            for v_i, v in enumerate(all_featured[:8], 1):
                 v_lines.append(
-                    f"V{v_i} [{v.get('prob', 80.0)}% Ocurrencia | @{v.get('odds', 1.25):.2f}]: {v.get('pick', '')}"
+                    f"V{v_i} [{v.get('prob', 80.0)}% | @{v.get('odds', 1.25):.2f}]: {v.get('pick', '')}"
                 )
             v_html = "<br/>".join(_clean_pdf_text(x) for x in v_lines)
 
@@ -788,10 +789,24 @@ def generate_daily_predictions_pdf_bytes(date_str: str = "20261109") -> bytes:
                 for o in cat.get("options", []):
                     all_opts.append((c_name, o))
 
-            # Ordenar de mayor a menor % de ocurrencia
+            # Ordenar de mayor a menor % de ocurrencia garantizando presencia de Tarjetas, Fueras de Juego, Faltas y todas las 13 categorías
             all_opts.sort(key=lambda x: float(x[1].get("prob_num", 50.0)), reverse=True)
             if not full_all_markets:
-                all_opts = all_opts[:14]
+                cat_buckets = {}
+                for c_name, o in all_opts:
+                    cat_buckets.setdefault(c_name, []).append((c_name, o))
+                balanced_opts = []
+                # Al menos las 2 mejores selecciones de cada categoría (Tarjetas, Fueras de Juego, Faltas, Córners, etc.)
+                for c_name, b_items in cat_buckets.items():
+                    balanced_opts.extend(b_items[:2])
+                # Completar hasta 26 selecciones con las de mayor probabilidad global
+                seen_picks = {o[1].get("pick") for o in balanced_opts}
+                for c_name, o in all_opts:
+                    if o.get("pick") not in seen_picks and len(balanced_opts) < 26:
+                        balanced_opts.append((c_name, o))
+                        seen_picks.add(o.get("pick"))
+                balanced_opts.sort(key=lambda x: float(x[1].get("prob_num", 50.0)), reverse=True)
+                all_opts = balanced_opts
 
             p_rows = [[
                 "Categoria",

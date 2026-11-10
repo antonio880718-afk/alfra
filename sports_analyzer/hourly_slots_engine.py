@@ -2186,6 +2186,42 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             "prob": sot_prob,
             "synergy": f"Proyección Binomial Negativa de remates al arco: {sot_exp} SOT totales ({h} {q_dist['counts']['sot']['home']:.1f} + {a} {q_dist['counts']['sot']['away']:.1f}).",
         },
+        {
+            "n": 9,
+            "type": "Tarjetas Disciplinarias",
+            "market": f"Árbitro {ref_name}: Más de 3.5 Tarjetas",
+            "pick": f"Árbitro {ref_name}: Más de 3.5 Tarjetas",
+            "odds": round(max(1.28, 1.0 / (max(0.1, qp.get("cards_over35", 65.0) / 100.0) * 0.95)), 2),
+            "prob": qp.get("cards_over35", 65.0),
+            "synergy": f"Rigor arbitral ({ref_avg} tarjetas/juego) y faltas combinadas proyectadas.",
+        },
+        {
+            "n": 10,
+            "type": "Fueras de Juego",
+            "market": "Total Fueras de Juego: Más de 2.5 en el Partido",
+            "pick": "Total Fueras de Juego: Más de 2.5 en el Partido",
+            "odds": round(max(1.22, 1.0 / (max(0.1, qp.get("offsides_over25", 76.0) / 100.0) * 0.95)), 2),
+            "prob": qp.get("offsides_over25", 76.0),
+            "synergy": f"Proyección de fueras de juego por transiciones y defensas adelantadas.",
+        },
+        {
+            "n": 11,
+            "type": "Faltas Cometidas",
+            "market": "Total Faltas: Más de 20.5 en el Partido",
+            "pick": "Total Faltas: Más de 20.5 en el Partido",
+            "odds": round(max(1.25, 1.0 / (max(0.1, qp.get("fouls_over205", 72.0) / 100.0) * 0.95)), 2),
+            "prob": qp.get("fouls_over205", 72.0),
+            "synergy": f"Media de {q_dist['counts']['fouls']['home'] + q_dist['counts']['fouls']['away']:.1f} faltas estimadas en disputa física.",
+        },
+        {
+            "n": 12,
+            "type": "Tiros Totales",
+            "market": "Total Tiros del Partido: Más de 21.5 Tiros",
+            "pick": "Total Tiros del Partido: Más de 21.5 Tiros",
+            "odds": round(max(1.24, 1.0 / (max(0.1, qp.get("shots_over215", 77.0) / 100.0) * 0.95)), 2),
+            "prob": qp.get("shots_over215", 77.0),
+            "synergy": "Volumen acumulado de remates (bloqueados, desviados y al arco).",
+        },
     ]
 
     csv_file_id = CSV_MAP.get(code.lower(), "T1")

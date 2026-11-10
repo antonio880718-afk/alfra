@@ -716,7 +716,9 @@ def build_markets(pred: Dict[str, Any]) -> List[Dict[str, Any]]:
     count_block("corners", "Córners", "córners", [7.5, 8.5, 9.5, 10.5, 11.5], [3.5, 4.5, 5.5])
     count_block("cards", "Tarjetas", "tarjetas", [2.5, 3.5, 4.5, 5.5], [0.5, 1.5, 2.5])
     count_block("sot", "Tiros a Puerta", "tiros a puerta", [6.5, 7.5, 8.5, 9.5], [2.5, 3.5, 4.5])
-    count_block("fouls", "Faltas", "faltas", [20.5, 22.5, 24.5], [9.5, 11.5])
+    count_block("fouls", "Faltas", "faltas", [19.5, 20.5, 21.5, 22.5, 23.5, 24.5], [9.5, 10.5, 11.5])
+    count_block("offsides", "Fueras de Juego", "fueras de juego", [2.5, 3.5, 4.5], [1.5, 2.5])
+    count_block("shots", "Tiros Totales", "tiros", [20.5, 21.5, 22.5, 23.5, 24.5], [10.5, 11.5, 12.5])
     return mk
 
 
@@ -847,6 +849,11 @@ def predict_csv_tier(csv_id: str, home_csv: str, away_csv: str, as_of=None, refe
         h, a, disp = lam(st)
         if h is not None:
             counts[st] = {"home": h, "away": a, "disp": disp}
+    # Proyecciones empíricas de fueras de juego y tiros totales
+    counts["offsides"] = {"home": max(0.9, min(4.2, 1.85 * (pred["lam_home"] / 1.5))), "away": max(0.8, min(3.8, 1.55 * (pred["lam_away"] / 1.2))), "disp": 1.25}
+    sot_h_cnt = counts.get("sot", {}).get("home", 4.5)
+    sot_a_cnt = counts.get("sot", {}).get("away", 3.8)
+    counts["shots"] = {"home": max(6.5, min(22.0, sot_h_cnt * 2.85)), "away": max(5.5, min(19.0, sot_a_cnt * 2.80)), "disp": 1.20}
     rf, rinfo = _referee_factor(fit, referee)
     if "cards" in counts and rf != 1.0:
         counts["cards"]["home"] *= rf
@@ -1171,6 +1178,8 @@ def compute_hybrid_match_distributions(
                 "cards": {"home": cards_h, "away": cards_a, "disp": cards_pri["disp"]},
                 "sot": {"home": sot_h, "away": sot_a, "disp": sot_pri["disp"]},
                 "fouls": {"home": f_h, "away": f_a, "disp": f_pri["disp"]},
+                "offsides": {"home": max(0.9, min(4.2, 1.85 * (lam_h / 1.5))), "away": max(0.8, min(3.8, 1.55 * (lam_a / 1.2))), "disp": 1.25},
+                "shots": {"home": max(6.5, min(22.0, sot_h * 2.85)), "away": max(5.5, min(19.0, sot_a * 2.80)), "disp": 1.20},
             },
         }
     else:
@@ -1223,6 +1232,16 @@ def compute_hybrid_match_distributions(
     dh_f = count_dist(f_info["home"], f_info["disp"])
     da_f = count_dist(f_info["away"], f_info["disp"])
     dt_f = np.convolve(dh_f, da_f)
+
+    o_info = pred["counts"].get("offsides", {"home": 1.85, "away": 1.55, "disp": 1.25})
+    dh_o = count_dist(o_info["home"], o_info["disp"])
+    da_o = count_dist(o_info["away"], o_info["disp"])
+    dt_o = np.convolve(dh_o, da_o)
+
+    sh_info = pred["counts"].get("shots", {"home": 12.5, "away": 10.2, "disp": 1.20})
+    dh_sh = count_dist(sh_info["home"], sh_info["disp"])
+    da_sh = count_dist(sh_info["away"], sh_info["disp"])
+    dt_sh = np.convolve(dh_sh, da_sh)
 
     tot1 = np.bincount(t1.ravel(), M1.ravel())
     tot2 = np.bincount(t1.ravel(), M2.ravel())
@@ -1302,6 +1321,9 @@ def compute_hybrid_match_distributions(
         "away_cards_over15": _over(da_k, 1.5),
         "away_cards_over25": _over(da_k, 2.5),
         "both_cards_over05": float(_over(dh_k, 0.5) * _over(da_k, 0.5)),
+        "both_cards_over15": float(_over(dh_k, 1.5) * _over(da_k, 1.5)),
+        "ht_cards_over05": float(1.0 - (1.0 - _over(dt_k, 2.5)) ** 0.45),
+        "card_red_no": float(0.85),
         "sot_over65": _over(dt_s, 6.5),
         "sot_over75": _over(dt_s, 7.5),
         "sot_over85": _over(dt_s, 8.5),
@@ -1310,9 +1332,29 @@ def compute_hybrid_match_distributions(
         "home_sot_over45": _over(dh_s, 4.5),
         "away_sot_over25": _over(da_s, 2.5),
         "away_sot_over35": _over(da_s, 3.5),
+        "fouls_over195": _over(dt_f, 19.5),
         "fouls_over205": _over(dt_f, 20.5),
+        "fouls_over215": _over(dt_f, 21.5),
         "fouls_over225": _over(dt_f, 22.5),
+        "fouls_over235": _over(dt_f, 23.5),
         "fouls_over245": _over(dt_f, 24.5),
+        "home_fouls_over95": _over(dh_f, 9.5),
+        "home_fouls_over105": _over(dh_f, 10.5),
+        "away_fouls_over95": _over(da_f, 9.5),
+        "away_fouls_over105": _over(da_f, 10.5),
+        "offsides_over25": _over(dt_o, 2.5),
+        "offsides_over35": _over(dt_o, 3.5),
+        "offsides_over45": _over(dt_o, 4.5),
+        "home_offsides_over15": _over(dh_o, 1.5),
+        "away_offsides_over15": _over(da_o, 1.5),
+        "both_offsides_over05": float(_over(dh_o, 0.5) * _over(da_o, 0.5)),
+        "shots_over205": _over(dt_sh, 20.5),
+        "shots_over215": _over(dt_sh, 21.5),
+        "shots_over225": _over(dt_sh, 22.5),
+        "shots_over235": _over(dt_sh, 23.5),
+        "shots_over245": _over(dt_sh, 24.5),
+        "home_shots_over115": _over(dh_sh, 11.5),
+        "away_shots_over95": _over(da_sh, 9.5),
     }
 
     pred["probs"] = {k: round(min(0.96, max(0.03, v)) * 100.0, 1) for k, v in probs.items()}

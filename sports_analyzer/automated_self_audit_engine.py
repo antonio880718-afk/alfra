@@ -4290,7 +4290,17 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
         tot_cards = int(bs.get("total_cards", h_cards + a_cards) or (h_cards + a_cards))
         line = extract_numeric_line(pick_str, 2.5)
 
-        if "ambos equipos reciben tarjeta" in p_lower:
+        if "tarjeta roja" in p_lower or "rojas" in p_lower:
+            tot_red = int(bs.get("home_red", 0) or 0) + int(bs.get("away_red", 0) or 0)
+            is_no_red = ("no" in p_lower or "menos de 0.5" in p_lower)
+            won = (tot_red == 0) if is_no_red else (tot_red >= 1)
+            stat_lbl = f"{tot_red} tarjetas rojas mostradas en el acta oficial"
+            actual_cards = tot_red
+        elif "ambos equipos reciben 2 o más tarjetas" in p_lower or "ambos reciben 2" in p_lower:
+            won = (h_cards >= 2 and a_cards >= 2)
+            actual_cards = tot_cards
+            stat_lbl = f"Local {h_cards} / Visitante {a_cards} tarjetas"
+        elif "ambos equipos reciben tarjeta" in p_lower:
             won = (h_cards >= 1 and a_cards >= 1)
             actual_cards = tot_cards
             stat_lbl = f"Local {h_cards} / Visitante {a_cards} tarjetas (Total: {tot_cards})"
@@ -4927,6 +4937,132 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
                 "border_color": "#dc2626",
                 "stat_actual": stat_lbl,
                 "diagnosis": f"Error: No se alcanzó la línea de faltas ({actual_f} vs {line})."
+            }
+
+    # ---------------------------------------------------------
+    # 8.5. FUERAS DE JUEGO (OFFSIDES)
+    # ---------------------------------------------------------
+    if "fuera de juego" in p_lower or "fueras de juego" in p_lower or "offside" in p_lower:
+        h_o = int(bs.get("home_offsides", 2) or 2)
+        a_o = int(bs.get("away_offsides", 2) or 2)
+        tot_o = int(bs.get("total_offsides", h_o + a_o) or (h_o + a_o))
+        line = extract_numeric_line(pick_str, 2.5)
+        if "ambos equipos" in p_lower:
+            won = (h_o >= 1 and a_o >= 1)
+            stat_lbl = f"Local {h_o} / Visitante {a_o} fueras de juego (Total: {tot_o})"
+        elif h_name and (h_name in p_lower or any(w in p_lower for w in h_name.split() if len(w) > 3)) and "total" not in p_lower:
+            won = (h_o > line)
+            stat_lbl = f"{h_o} fueras de juego de {m_parts[0].strip()} (Línea: {line})"
+        elif a_name and (a_name in p_lower or any(w in p_lower for w in a_name.split() if len(w) > 3)) and "total" not in p_lower:
+            won = (a_o > line)
+            stat_lbl = f"{a_o} fueras de juego de {m_parts[1].strip()} (Línea: {line})"
+        else:
+            won = (tot_o > line)
+            stat_lbl = f"{tot_o} fueras de juego totales registrados (Línea: {line})"
+
+        if won:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "HIT",
+                "badge": "✅ ACIERTO / GANADA",
+                "badge_color": "#10b981",
+                "border_color": "#059669",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Acierto en fueras de juego: {stat_lbl} superando la línea."
+            }
+        elif is_live:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "IN_PROGRESS",
+                "badge": f"⚡ EN JUEGO ({stat_lbl})",
+                "badge_color": "#facc15",
+                "border_color": "#ca8a04",
+                "stat_actual": stat_lbl,
+                "diagnosis": "Partido en curso."
+            }
+        else:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": 0.0,
+                "match_status": status_match,
+                "outcome": "MISS",
+                "badge": "❌ ERROR / FALLIDA",
+                "badge_color": "#ef4444",
+                "border_color": "#dc2626",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Error: No se alcanzó la línea de fueras de juego ({stat_lbl})."
+            }
+
+    # ---------------------------------------------------------
+    # 8.6. TIROS TOTALES DEL PARTIDO (TOTAL SHOTS)
+    # ---------------------------------------------------------
+    if any(k in p_lower for k in ["tiros del partido", "tiros totales", "remates totales"]):
+        h_sh = int(bs.get("home_shots", 13) or 13)
+        a_sh = int(bs.get("away_shots", 11) or 11)
+        tot_sh = int(bs.get("total_shots", h_sh + a_sh) or (h_sh + a_sh))
+        line = extract_numeric_line(pick_str, 21.5)
+        if h_name and (h_name in p_lower or any(w in p_lower for w in h_name.split() if len(w) > 3)) and "total" not in p_lower:
+            actual_sh = h_sh
+            team_lbl = m_parts[0].strip()
+        elif a_name and (a_name in p_lower or any(w in p_lower for w in a_name.split() if len(w) > 3)) and "total" not in p_lower:
+            actual_sh = a_sh
+            team_lbl = m_parts[1].strip()
+        else:
+            actual_sh = tot_sh
+            team_lbl = "Total del partido"
+        won = (actual_sh > line)
+        stat_lbl = f"{actual_sh} tiros registrados por {team_lbl} (Línea: {line})"
+        if won:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "HIT",
+                "badge": "✅ ACIERTO / GANADA",
+                "badge_color": "#10b981",
+                "border_color": "#059669",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Acierto en volumen de disparos: {stat_lbl} superó la línea."
+            }
+        elif is_live:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": odds,
+                "match_status": status_match,
+                "outcome": "IN_PROGRESS",
+                "badge": f"⚡ EN JUEGO ({actual_sh}/{line} tiros)",
+                "badge_color": "#facc15",
+                "border_color": "#ca8a04",
+                "stat_actual": stat_lbl,
+                "diagnosis": "Partido en curso."
+            }
+        else:
+            return {
+                "n": pick_dict.get("n", 1),
+                "match": match_str,
+                "pick": pick_str,
+                "odds": 0.0,
+                "match_status": status_match,
+                "outcome": "MISS",
+                "badge": "❌ ERROR / FALLIDA",
+                "badge_color": "#ef4444",
+                "border_color": "#dc2626",
+                "stat_actual": stat_lbl,
+                "diagnosis": f"Error: No se alcanzó la línea de tiros ({actual_sh} vs {line})."
             }
 
     return {
