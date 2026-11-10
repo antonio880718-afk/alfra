@@ -650,7 +650,7 @@ with st.expander(f"📋 VER LOS {slots_data['total_matches']} PARTIDOS REALES DE
 t_slots, t_sgp, t_parlay, t_escalera, t_sniper, t_audit, t_chat = st.tabs([
     f"⏰ 1. Cartelera por Horarios ({slots_data['total_matches']} Juegos - {selected_date.strftime('%d/%m')})",
     "🎯 2. Ingeniería de Datos, Clima & 'Tú Eliges' (SGP)",
-    f"🎟️ 3. Boleto Parlay {parlay_odds_val}x ({selected_date.strftime('%d/%m')})",
+    f"🎟️ 3. Optimizador Parlays & Fijas (Apuesta $X ➔ Gana $Y)",
     f"🪜 4. Reto Escalera 3 Fases ({selected_date.strftime('%d/%m')})",
     "💎 5. Picks Sniper +EV (Mayor Certeza & Kelly)",
     f"✅ 6. Auditoría de Aciertos & Fallos ({selected_date.strftime('%d/%m')})",
@@ -1582,8 +1582,144 @@ with t_sgp:
         """)
 
 with t_parlay:
-    st.markdown("### 🎟️ Las 11 Selecciones Oficiales del Parlay 100x")
-    st.caption("Cada selección fue auditada en la base de datos oficial 2025-2027. Cuota combinada matemática: 104.51x (1.52 × 1.50 × 1.55 × 1.52 × 1.60 × 1.54 × 1.48 × 1.50 × 1.52 × 1.50 × 1.56).")
+    # =========================================================================
+    # 🧮 MOTOR COMBINATORIO INVERSO: APUESTA $X PARA GANAR $Y (PARLAYS / FIJAS)
+    # =========================================================================
+    st.markdown("### 🧮 Optimizador Inteligente: 'Apuesta $X para Ganar $Y'")
+    st.caption("Indica cuánto dinero quieres arriesgar y cuánto te gustaría ganar en neto. Nuestro motor combinatorio calcula la cuota exacta requerida y diseña las 3 mejores opciones verificadas del día (Apuestas Fijas de 1 pata o Parlays de 2 a 5 patas) con cuotas reales de mercado.")
+
+    col_t1, col_t2, col_t3 = st.columns([1, 1, 1.2])
+    with col_t1:
+        u_stake = st.number_input("💵 ¿Cuánto quieres apostar? ($ MXN)", min_value=10.0, max_value=50000.0, value=200.0, step=50.0, key="target_stake_val")
+    with col_t2:
+        u_profit = st.number_input("🏆 ¿Cuánto te gustaría ganar neto? ($ MXN)", min_value=20.0, max_value=200000.0, value=1000.0, step=100.0, key="target_profit_val")
+    with col_t3:
+        u_mode_lbl = st.selectbox(
+            "⚙️ Estrategia de Selección:",
+            ["🛡️ Máxima Probabilidad Conjunta (Mayor Certeza)", "💰 Máximo Valor Esperado (+EV)", "⚡ Agresivo / Menos Patas (Llegada Directa)"],
+            key="target_strat_mode"
+        )
+
+    mode_key_map = {
+        "🛡️ Máxima Probabilidad Conjunta (Mayor Certeza)": "conservative",
+        "💰 Máximo Valor Esperado (+EV)": "balanced",
+        "⚡ Agresivo / Menos Patas (Llegada Directa)": "aggressive"
+    }
+
+    try:
+        from custom_target_parlay_engine import find_target_payout_combos
+    except ImportError:
+        from sports_analyzer.custom_target_parlay_engine import find_target_payout_combos
+
+    target_res = find_target_payout_combos(
+        date_str=date_str,
+        stake_mxn=float(u_stake),
+        target_profit_mxn=float(u_profit),
+        risk_mode=mode_key_map.get(u_mode_lbl, "balanced")
+    )
+
+    t_odds_val = target_res.get("target_odds", (u_stake + u_profit) / u_stake)
+    st.info(f"🎯 **Meta Matemática:** Apostar **${u_stake:,.2f} MXN** para ganar **+${u_profit:,.2f} MXN netos** (Cobro total: **${u_stake + u_profit:,.2f} MXN**). Cuota objetivo requerida: **{t_odds_val:.2f}x**.")
+
+    opts = target_res.get("options", [])
+    if not opts:
+        st.warning(f"No fue posible encontrar combinaciones que alcancen la cuota objetivo {t_odds_val:.2f}x con los partidos verificados de esta jornada. Prueba ajustando el monto.")
+    else:
+        for opt in opts:
+            opt_title = opt.get("title", f"Opción {opt['option_id']}")
+            opt_badge = opt.get("badge", "CALIBRADO")
+            opt_color = opt.get("badge_color", "#10b981")
+            opt_odds = opt.get("total_odds", 1.0)
+            opt_ret = opt.get("est_return_mxn", 0.0)
+            opt_prof = opt.get("est_profit_mxn", 0.0)
+            opt_prob = opt.get("joint_prob", 0.0)
+            opt_ev = opt.get("ev_pct", 0.0)
+            opt_type = opt.get("type", "PARLAY")
+            opt_legs = opt.get("legs", [])
+
+            render_html(f"""
+            <div style="background-color: #0b132b; border: 2px solid {opt_color}; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 12px;">
+                    <div>
+                        <span style="font-size: 1.15rem; font-weight: 800; color: #f8fafc;">{opt_title}</span>
+                        <span style="background-color: {opt_color}22; color: {opt_color}; border: 1px solid {opt_color}; font-size: 0.75rem; font-weight: bold; padding: 2px 8px; border-radius: 4px; margin-left: 8px;">{opt_badge}</span>
+                    </div>
+                    <div style="text-align: right;">
+                        <span style="color: #94a3b8; font-size: 0.82rem;">Cuota Combinada:</span> 
+                        <b style="color: #facc15; font-size: 1.4rem; margin-left: 4px;">{opt_odds:.2f}x</b>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 14px; margin-bottom: 14px;">
+                    <div style="background-color: #0f172a; padding: 10px 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #94a3b8; font-size: 0.78rem;">Inversión Entrada:</span><br>
+                        <b style="color: #f8fafc; font-size: 1.1rem;">${u_stake:,.2f} MXN</b>
+                    </div>
+                    <div style="background-color: #0f172a; padding: 10px 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #94a3b8; font-size: 0.78rem;">Cobras en Total:</span><br>
+                        <b style="color: #facc15; font-size: 1.1rem;">${opt_ret:,.2f} MXN</b>
+                    </div>
+                    <div style="background-color: #0f172a; padding: 10px 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #94a3b8; font-size: 0.78rem;">Ganancia Neta:</span><br>
+                        <b style="color: #6ee7b7; font-size: 1.1rem;">+${opt_prof:,.2f} MXN</b>
+                    </div>
+                    <div style="background-color: #0f172a; padding: 10px 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #94a3b8; font-size: 0.78rem;">Prob. Conjunta / EV:</span><br>
+                        <b style="color: #38bdf8; font-size: 1.1rem;">{opt_prob:.1f}%</b> <span style="color: #a7f3d0; font-size: 0.8rem;">(EV: +{opt_ev:.1f}%)</span>
+                    </div>
+                </div>
+            </div>
+            """)
+
+            with st.expander(f"📋 Ver las {len(opt_legs)} Selecciones y Ruta en Playdoit / Altenar ({opt_title})", expanded=True):
+                for l_idx, leg in enumerate(opt_legs, 1):
+                    leg_m_parts = leg["match"].split(" vs ")
+                    leg_h = leg_m_parts[0].strip() if len(leg_m_parts) > 1 else leg["match"]
+                    leg_a = leg_m_parts[1].strip() if len(leg_m_parts) > 1 else ""
+                    leg_logo_h = get_team_logo(leg_h)
+                    leg_logo_a = get_team_logo(leg_a)
+                    
+                    render_html(f"""
+                    <div style="background-color: #080c14; border-left: 4px solid {opt_color}; border: 1px solid #1e293b; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <img src="{leg_logo_h}" style="width: 26px; height: 26px; object-fit: contain;">
+                                <img src="{leg_logo_a}" style="width: 26px; height: 26px; object-fit: contain;">
+                                <span style="color: #f8fafc; font-weight: bold; font-size: 0.95rem;">{leg['match']}</span>
+                                <span style="background-color: #1e293b; color: #94a3b8; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px;">⏰ {leg['time']}</span>
+                                <span style="background-color: #1e293b; color: #38bdf8; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px;">{leg['league']}</span>
+                            </div>
+                            <div>
+                                <span style="color: #94a3b8; font-size: 0.8rem;">Momio:</span> <b style="color: #facc15; font-size: 1.05rem;">{leg['odds']:.2f}</b>
+                                <span style="color: #6ee7b7; font-size: 0.8rem; margin-left: 8px;">Hit: {leg['prob']:.1f}%</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 8px; color: #7ee787; font-weight: 700; font-size: 0.98rem;">
+                            🎯 Selección #{l_idx}: {leg['pick']}
+                        </div>
+                        <div style="margin-top: 4px; color: #cbd5e1; font-size: 0.82rem;">
+                            📌 <b>Deducción Empírica:</b> {leg['reason']}
+                        </div>
+                        <div style="margin-top: 6px; background-color: #0b1329; border: 1px dashed #334155; border-radius: 6px; padding: 6px 10px; font-size: 0.78rem; color: #93c5fd;">
+                            🧭 <b>Navegación en Playdoit / Altenar:</b> {leg['bookmaker_tree']}
+                        </div>
+                    </div>
+                    """)
+
+                slip_txt = f"=== BOLETO OBJETIVO: {opt_title} ===\n"
+                slip_txt += f"Fecha: {selected_date.strftime('%d/%m/%Y')} | Inversión: ${u_stake:,.2f} MXN\n"
+                slip_txt += f"Cuota: {opt_odds:.2f}x | Cobro: ${opt_ret:,.2f} MXN (Ganancia: +${opt_prof:,.2f} MXN)\n"
+                slip_txt += f"Probabilidad Conjunta: {opt_prob:.1f}% | Tipo: {opt_type}\n"
+                slip_txt += "--------------------------------------------------\n"
+                for i_s, leg_s in enumerate(opt_legs, 1):
+                    slip_txt += f"{i_s}. [{leg_s['time']}] {leg_s['match']} -> {leg_s['pick']} (@{leg_s['odds']:.2f})\n"
+                    slip_txt += f"   Ruta: {leg_s['bookmaker_tree']}\n"
+                slip_txt += "=================================================="
+                st.code(slip_txt, language="text")
+
+    st.markdown("---")
+    st.markdown(f"### 🎟️ Boleto Parlay Tradicional {parlay_odds_val}x ({selected_date.strftime('%d/%m')})")
+    st.caption("Auditoría de las 11 selecciones del parlay de jornada corrida con linaje a CSVs oficiales:")
 
     for item in TICKET_100X:
         m_parts = item['match'].split(' vs ')
