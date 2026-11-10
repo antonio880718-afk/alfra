@@ -3544,7 +3544,14 @@ LIVE_MATCH_BOXSCORES: Dict[str, Any] = {
 
 # Cache para base de datos de cartelera completa y temporadas históricas
 _CARTELERA_CACHE: Optional[Dict[str, Any]] = None
+_CARTELERA_MTIMES: Dict[str, float] = {}
 _HISTORICAL_CSV_CACHE: Optional[Dict[str, Any]] = None
+
+def invalidate_audit_cache():
+    global _CARTELERA_CACHE, _CARTELERA_MTIMES, _CALENDAR_TIMES_CACHE
+    _CARTELERA_CACHE = None
+    _CARTELERA_MTIMES = {}
+    _CALENDAR_TIMES_CACHE.clear()
 
 def _normalize_team_str(s: str) -> str:
     s = s.lower().strip()
@@ -3558,26 +3565,32 @@ def _normalize_team_str(s: str) -> str:
     return s.strip()
 
 def _load_cartelera_boxscores() -> Dict[str, Any]:
-    global _CARTELERA_CACHE
-    if _CARTELERA_CACHE is not None:
-        return _CARTELERA_CACHE
-    boxscores = dict(LIVE_MATCH_BOXSCORES)
-    # Cargar todos los archivos de marcadores de la cartelera oficial (Sábado 7 Nov, Domingo 8 Nov, Lunes 9 Nov)
+    global _CARTELERA_CACHE, _CARTELERA_MTIMES
     data_dir = os.path.join(os.path.dirname(__file__), "data")
+    current_mtimes: Dict[str, float] = {}
     for fname in sorted(os.listdir(data_dir)):
         if fname.startswith("cartelera_boxscores_") and fname.endswith(".json"):
             c_path = os.path.join(data_dir, fname)
             try:
-                with open(c_path, "r", encoding="utf-8") as f:
-                    extra = json.load(f)
-                    for ek, ev in extra.items():
-                        boxscores[ek] = ev
-                        # Also overwrite accent-free key if present in LIVE_MATCH_BOXSCORES
-                        ek_ascii = ek.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ü","u").replace("ö","o")
-                        boxscores[ek_ascii] = ev
+                current_mtimes[fname] = os.path.getmtime(c_path)
             except Exception:
                 pass
+    if _CARTELERA_CACHE is not None and current_mtimes == _CARTELERA_MTIMES:
+        return _CARTELERA_CACHE
+    boxscores = dict(LIVE_MATCH_BOXSCORES)
+    for fname in sorted(current_mtimes.keys()):
+        c_path = os.path.join(data_dir, fname)
+        try:
+            with open(c_path, "r", encoding="utf-8") as f:
+                extra = json.load(f)
+                for ek, ev in extra.items():
+                    boxscores[ek] = ev
+                    ek_ascii = ek.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ü","u").replace("ö","o")
+                    boxscores[ek_ascii] = ev
+        except Exception:
+            pass
     _CARTELERA_CACHE = boxscores
+    _CARTELERA_MTIMES = current_mtimes
     return _CARTELERA_CACHE
 
 def _load_historical_csv_boxscores() -> Dict[str, Any]:
@@ -3700,26 +3713,11 @@ def get_match_boxscore(match_name: str, match_date: Optional[str] = None, match_
             "source": "Calendario Oficial 2026/2027 (Abierto en Playdoit / Altenar)"
         }
 
-    # 2. SI ES HOY (== HOY): Si aún no inicia, devolver PROGRAMADO; si ya inició, buscar en cartelera_boxscores_YYYYMMDD.json real de ESPN
-    if eff_date == today_str:
-        now_mins = now_cdmx.hour * 60 + now_cdmx.minute
-        kickoff_mins = m_hour * 60 + m_min
-        if now_mins < kickoff_mins:
-            return {
-                "match": match_name,
-                "status": f"PROGRAMADO ({clean_time_str} hs CDMX)",
-                "time_cdmx": clean_time_str,
-                "score": "vs",
-                "home_goals": 0, "away_goals": 0,
-                "home_corners": 0, "away_corners": 0, "total_corners": 0,
-                "home_cards": 0, "away_cards": 0, "total_cards": 0,
-                "source": "Calendario Oficial ESPN de Hoy (Abierto en Playdoit / Altenar)"
-            }
-
-    # 3. PARTIDOS YA JUGADOS (Fechas pasadas o partidos de hoy ya concluidos):
     m_clean = match_name.lower().strip()
-    if eff_date:
-        date_bs_path = os.path.join(os.path.dirname(__file__), "data", f"cartelera_boxscores_{eff_date}.json")
+
+    # Helper para buscar en un archivo específico de fecha
+    def _lookup_in_date_file(d_code: str):
+        date_bs_path = os.path.join(os.path.dirname(__file__), "data", f"cartelera_boxscores_{d_code}.json")
         if os.path.exists(date_bs_path):
             try:
                 with open(date_bs_path, "r", encoding="utf-8") as _dfp:
@@ -3736,6 +3734,44 @@ def get_match_boxscore(match_name: str, match_date: Optional[str] = None, match_
                                 return v_d
             except Exception:
                 pass
+        return None
+
+    # 2. SI ES HOY (== HOY): Buscar primero resultado/estado en vivo de HOY y si no, respetar hora de inicio CDMX
+    if eff_date == today_str:
+        today_entry = _lookup_in_date_file(eff_date)
+        if today_entry and any(tag in str(today_entry.get("status", "")) for tag in ("FINALIZADO", "EN JUEGO", "APLAZADO")):
+            return today_entry
+        now_mins = now_cdmx.hour * 60 + now_cdmx.minute
+        kickoff_mins = m_hour * 60 + m_min
+        if now_mins < kickoff_mins:
+            return {
+                "match": match_name,
+                "status": f"PROGRAMADO ({clean_time_str} hs CDMX)",
+                "time_cdmx": clean_time_str,
+                "score": "vs",
+                "home_goals": 0, "away_goals": 0,
+                "home_corners": 0, "away_corners": 0, "total_corners": 0,
+                "home_cards": 0, "away_cards": 0, "total_cards": 0,
+                "source": "Calendario Oficial ESPN de Hoy (Abierto en Playdoit / Altenar)"
+            }
+        if today_entry:
+            return today_entry
+        return {
+            "match": match_name,
+            "status": f"EN JUEGO / SINCRONIZANDO ({clean_time_str} hs CDMX)",
+            "time_cdmx": clean_time_str,
+            "score": "0 - 0",
+            "home_goals": 0, "away_goals": 0,
+            "home_corners": 0, "away_corners": 0, "total_corners": 0,
+            "home_cards": 0, "away_cards": 0, "total_cards": 0,
+            "source": "Sincronización ESPN en Curso"
+        }
+
+    # 3. FECHAS PASADAS (< HOY): Buscar estrictamente primero en cartelera_boxscores_YYYYMMDD.json de ESA fecha
+    if eff_date:
+        date_entry = _lookup_in_date_file(eff_date)
+        if date_entry:
+            return date_entry
     db = _load_cartelera_boxscores()
     
     if m_clean in db:
@@ -4532,9 +4568,14 @@ def audit_individual_pick_empirically(pick_dict: Dict[str, Any], match_date: Opt
         is_away_pick = ("x2" in p_lower or "gana (2)" in p_lower or (a_name and (a_name in p_lower or any(w in p_lower for w in a_name.split() if len(w) > 3)) and not (h_name and h_name in p_lower)))
 
         if is_away_pick:
-            won = (a_g >= h_g) if is_double_chance else (a_g > h_g)
+            won_res = (a_g >= h_g) if is_double_chance else (a_g > h_g)
         else:
-            won = (h_g >= a_g) if is_double_chance else (h_g > a_g)
+            won_res = (h_g >= a_g) if is_double_chance else (h_g > a_g)
+
+        won = won_res
+        if "más de" in p_lower or "over" in p_lower:
+            g_line = extract_numeric_line(pick_str, 0.5)
+            won = won_res and ((h_g + a_g) > g_line)
 
         if won and is_finished:
             return {

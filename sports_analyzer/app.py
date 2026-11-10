@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.09.v14"
+_ENGINE_VER = "2026.11.10.v15"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _mod_name in [
         "referee_and_injuries_engine",
@@ -22,7 +22,9 @@ if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
         "hourly_slots_engine",
         "daily_tickets_engine",
         "automated_self_audit_engine",
-        "context_impact_engine"
+        "context_impact_engine",
+        "live_espn_audit_sync",
+        "pdf_audit_report_engine"
     ]:
         if _mod_name in _sys.modules:
             try:
@@ -246,6 +248,10 @@ def audit_individual_pick_empirically(pick_dict: dict, match_date: str = None):
 from context_impact_engine import compute_full_context_and_5pages_report
 import pandas as pd
 
+# Sincronización automática ESPN en vivo si hay partidos de hoy/ayer pendientes o sin acta (TTL 120s)
+from live_espn_audit_sync import sync_recent_dates_if_stale, sync_soccer_date_from_espn
+_sync_info = sync_recent_dates_if_stale(date_str, max_age_sec=120)
+
 # Cargar franjas horarias y auditoría de la fecha seleccionada (Instantáneo <0.005s)
 slots_data = get_chronological_slots(date_str)
 TICKET_100X = get_daily_parlay_ticket(date_str)
@@ -323,7 +329,15 @@ render_html(f"""
 st.markdown("### 📅 Calendario de Temporada Completa (26 Ligas) & Matriz de Cotejo")
 st.caption("Toca cualquier botón de fecha o elige cualquier día en el calendario (carga instantánea <0.01s sin bloqueo):")
 
-c_cal1, c_cal2, c_cal3, c_cal4, c_cal5, c_cal6, c_cal7 = st.columns([2.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2])
+_d_names = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
+def _fmt_d(d_obj):
+    return f"{_d_names[d_obj.weekday()]} {d_obj.day}"
+
+_d_yest = today_cdmx - timedelta(days=1)
+_d_prev2 = today_cdmx - timedelta(days=2)
+_d_prev3 = today_cdmx - timedelta(days=3)
+
+c_cal1, c_cal2, c_cal3, c_cal4, c_cal5, c_cal6, c_cal7 = st.columns([2.0, 1.3, 1.3, 1.2, 1.2, 1.2, 1.4])
 with c_cal1:
     st.date_input(
         "📆 Seleccionar Fecha en Calendario:",
@@ -331,17 +345,21 @@ with c_cal1:
         on_change=_on_main_date_change
     )
 with c_cal2:
-    st.button("🔥 Hoy (Lun 9)", use_container_width=True, key="btn_date_mon", on_click=_set_quick_date, args=(date(2026, 11, 9),))
+    st.button(f"🔥 Hoy ({_fmt_d(today_cdmx)})", use_container_width=True, key="btn_date_today", on_click=_set_quick_date, args=(today_cdmx,))
 with c_cal3:
-    st.button("✅ Ayer (Dom 8)", use_container_width=True, key="btn_date_sun", on_click=_set_quick_date, args=(date(2026, 11, 8),))
+    st.button(f"✅ Ayer ({_fmt_d(_d_yest)})", use_container_width=True, key="btn_date_yest", on_click=_set_quick_date, args=(_d_yest,))
 with c_cal4:
-    st.button("📋 Sáb 7 Nov", use_container_width=True, key="btn_date_sat", on_click=_set_quick_date, args=(date(2026, 11, 7),))
+    st.button(f"📋 {_fmt_d(_d_prev2)} Nov", use_container_width=True, key="btn_date_prev2", on_click=_set_quick_date, args=(_d_prev2,))
 with c_cal5:
-    st.button("📅 Vie 13 Nov", use_container_width=True, key="btn_date_fri13", on_click=_set_quick_date, args=(date(2026, 11, 13),))
+    st.button(f"📜 {_fmt_d(_d_prev3)} Nov", use_container_width=True, key="btn_date_prev3", on_click=_set_quick_date, args=(_d_prev3,))
 with c_cal6:
     st.button("⏭️ Sáb 14 Nov", use_container_width=True, key="btn_date_sat14", on_click=_set_quick_date, args=(date(2026, 11, 14),))
 with c_cal7:
-    st.button("🗓️ Dom 15 Nov", use_container_width=True, key="btn_date_sun15", on_click=_set_quick_date, args=(date(2026, 11, 15),))
+    if st.button("🔄 Sincronizar ESPN Hoy", use_container_width=True, key="btn_sync_espn_top", help="Descarga marcadores, córners, tarjetas y actas reales de ESPN al instante"):
+        with st.spinner("Sincronizando resultados en vivo desde ESPN API..."):
+            sync_soccer_date_from_espn(date_str, force=True)
+            st.cache_data.clear()
+        st.rerun()
 
 # Tarjetas Dinámicas de Estado de la Fecha Seleccionada ("¿CÓMO VA? ¿SE PUEDE O NO?")
 cb1, cb2, cb3, cb4 = st.columns(4)
@@ -384,61 +402,91 @@ with cb4:
 from pdf_audit_report_engine import (
     generate_audit_pdf_bytes,
     generate_daily_predictions_pdf_bytes,
+    generate_complete_match_by_match_all_picks_pdf,
     collect_full_picks_audit_data,
 )
 
-@st.cache_data(ttl=300, show_spinner=False)
-def _cached_complete_match_by_match_pdf(d_str, _ver=_ENGINE_VER):
+def _get_bs_mtime(dates_list):
+    import os
+    mtimes = []
+    for d in dates_list:
+        p = os.path.join(os.path.dirname(__file__), "data", f"cartelera_boxscores_{d}.json")
+        mtimes.append(os.path.getmtime(p) if os.path.exists(p) else 0.0)
+    return tuple(mtimes)
+
+@st.cache_data(ttl=180, show_spinner=False)
+def _cached_complete_match_by_match_pdf(d_str, bs_mtimes, _ver=_ENGINE_VER):
     import os
     p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{d_str}.pdf")
-    if os.path.exists(p):
+    if os.path.exists(p) and os.path.getmtime(p) >= max(bs_mtimes or (0.0,)):
         with open(p, "rb") as fp:
             return fp.read()
-    return generate_daily_predictions_pdf_bytes(d_str)
+    pdf_b = generate_complete_match_by_match_all_picks_pdf(d_str)
+    try:
+        with open(p, "wb") as fp:
+            fp.write(pdf_b)
+    except Exception:
+        pass
+    return pdf_b
 
-@st.cache_data(ttl=300, show_spinner=False)
-def _cached_pdf_bytes(dates_tuple, _ver=_ENGINE_VER):
+@st.cache_data(ttl=180, show_spinner=False)
+def _cached_pdf_bytes(dates_tuple, bs_mtimes, _ver=_ENGINE_VER):
     import os
+    max_bs = max(bs_mtimes or (0.0,))
     if len(dates_tuple) > 1:
         p = os.path.join(os.path.dirname(__file__), "data", "Reporte_Auditoria_Picks_Alfra_Completo.pdf")
-        if not os.path.exists(p):
-            p = os.path.join(os.path.dirname(__file__), "data", "Reporte_Auditoria_Picks_Alfra.pdf")
-        if os.path.exists(p):
+        if os.path.exists(p) and os.path.getmtime(p) >= max_bs:
             with open(p, "rb") as fp:
                 return fp.read()
+        pdf_b = generate_audit_pdf_bytes(list(dates_tuple))
+        try:
+            with open(p, "wb") as fp:
+                fp.write(pdf_b)
+        except Exception:
+            pass
+        return pdf_b
     elif len(dates_tuple) == 1:
         p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_Picks_Alfra_{dates_tuple[0]}.pdf")
-        if os.path.exists(p):
+        if os.path.exists(p) and os.path.getmtime(p) >= max_bs:
             with open(p, "rb") as fp:
                 return fp.read()
-        p = os.path.join(os.path.dirname(__file__), "data", "Reporte_Auditoria_Picks_Alfra.pdf")
-        if os.path.exists(p):
-            with open(p, "rb") as fp:
-                return fp.read()
+        pdf_b = generate_audit_pdf_bytes(list(dates_tuple))
+        try:
+            with open(p, "wb") as fp:
+                fp.write(pdf_b)
+        except Exception:
+            pass
+        return pdf_b
     return generate_audit_pdf_bytes(list(dates_tuple))
 
-@st.cache_data(ttl=300, show_spinner=False)
-def _cached_predictions_pdf_bytes(d_str, _ver=_ENGINE_VER):
+@st.cache_data(ttl=180, show_spinner=False)
+def _cached_predictions_pdf_bytes(d_str, bs_mtimes, _ver=_ENGINE_VER):
     import os
     p = os.path.join(os.path.dirname(__file__), "data", f"Predicciones_Del_Dia_{d_str}_Alfra.pdf")
-    if os.path.exists(p):
+    if os.path.exists(p) and os.path.getmtime(p) >= max(bs_mtimes or (0.0,)):
         with open(p, "rb") as fp:
             return fp.read()
-    p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{d_str}.pdf")
-    if os.path.exists(p):
-        with open(p, "rb") as fp:
-            return fp.read()
-    return generate_daily_predictions_pdf_bytes(d_str)
+    pdf_b = generate_daily_predictions_pdf_bytes(d_str)
+    try:
+        with open(p, "wb") as fp:
+            fp.write(pdf_b)
+    except Exception:
+        pass
+    return pdf_b
 
-@st.cache_data(ttl=300, show_spinner=False)
-def _cached_audit_table_data(dates_tuple, _ver=_ENGINE_VER):
+@st.cache_data(ttl=120, show_spinner=False)
+def _cached_audit_table_data(dates_tuple, bs_mtimes, _ver=_ENGINE_VER):
     return collect_full_picks_audit_data(list(dates_tuple))
+
+_cur_bs_mtime = _get_bs_mtime((date_str,))
+_all_dates_tuple = ("20261107", "20261108", "20261109", "20261110") if today_cdmx.strftime("%Y%m%d") >= "20261110" else ("20261107", "20261108", "20261109")
+_all_bs_mtime = _get_bs_mtime(_all_dates_tuple)
 
 pdf_col0, pdf_col1, pdf_col2 = st.columns(3)
 with pdf_col0:
     st.download_button(
         label=f"📂 DESCARGAR PDF: TODOS LOS PICKS ORGANIZADOS POR PARTIDO ({selected_date.strftime('%d/%m/%Y')})",
-        data=_cached_complete_match_by_match_pdf(date_str),
+        data=_cached_complete_match_by_match_pdf(date_str, _cur_bs_mtime),
         file_name=f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{date_str}.pdf",
         mime="application/pdf",
         use_container_width=True,
@@ -447,7 +495,7 @@ with pdf_col0:
 with pdf_col1:
     st.download_button(
         label=f"📄 DESCARGAR PDF AUDITORÍA ({selected_date.strftime('%d/%m/%Y')}) — ACIERTOS / FALLOS",
-        data=_cached_pdf_bytes((date_str,)),
+        data=_cached_pdf_bytes((date_str,), _cur_bs_mtime),
         file_name=f"Reporte_Picks_Alfra_{date_str}.pdf",
         mime="application/pdf",
         use_container_width=True,
@@ -455,8 +503,8 @@ with pdf_col1:
     )
 with pdf_col2:
     st.download_button(
-        label="📑 DESCARGAR PDF CONSOLIDADO (Sáb 7 + Dom 8 + Lun 9 Nov — 235 Partidos)",
-        data=_cached_pdf_bytes(("20261107", "20261108", "20261109")),
+        label="📑 DESCARGAR PDF CONSOLIDADO (Sáb 7 + Dom 8 + Lun 9 + Mar 10 Nov)",
+        data=_cached_pdf_bytes(_all_dates_tuple, _all_bs_mtime),
         file_name="Reporte_Auditoria_Picks_Alfra_Completo.pdf",
         mime="application/pdf",
         use_container_width=True,
@@ -464,7 +512,7 @@ with pdf_col2:
     )
 
 with st.expander(f"📋 VER REPORTE COMPLETO EN PANTALLA DE TODOS LOS PICKS SUGERIDOS ({selected_date.strftime('%d/%m/%Y')}) — ACIERTOS, FALLOS, VOID Y DATO OFICIAL", expanded=False):
-    _day_rep = _cached_audit_table_data((date_str,))["days"][0]
+    _day_rep = _cached_audit_table_data((date_str,), _cur_bs_mtime)["days"][0]
     st.markdown(
         f"**Resumen de Cartelera ({_day_rep['date_label']}):** "
         f"`{_day_rep['best_hits']} Aciertos (✅)` | `{_day_rep['best_misses']} Fallos (❌)` | "
@@ -1724,11 +1772,17 @@ with t_audit:
     from post_match_audit_engine import run_season_backtest_audit
     
     st.markdown("### 🤖 Detector Automático de Aciertos & Errores (Auto-Auditoría Inteligente)")
+    _now_lbl = datetime.now(CDMX_TZ).strftime("%H:%M:%S hs CDMX")
+    _bs_file_check = os.path.join(os.path.dirname(__file__), "data", f"cartelera_boxscores_{date_str}.json")
+    _bs_updated_lbl = datetime.fromtimestamp(os.path.getmtime(_bs_file_check), CDMX_TZ).strftime("%d/%m %H:%M hs") if os.path.exists(_bs_file_check) else _now_lbl
     col_rf_t5_1, col_rf_t5_2 = st.columns([3, 1])
     with col_rf_t5_1:
-        st.caption("🔴 **AUDITORÍA EN VIVO PUSH-SYNC** • *Sincronización activa con actas oficiales SofaScore (14:41 hs CDMX)*")
+        st.caption(f"🟢 **AUDITORÍA EN VIVO ESPN / SOFASCORE** • *Última sincronización ({selected_date.strftime('%d/%m/%Y')}): {_bs_updated_lbl}*")
     with col_rf_t5_2:
-        if st.button("🔄 ACTUALIZAR AUDITORÍA", key="btn_refresh_tab5", use_container_width=True):
+        if st.button("🔄 ACTUALIZAR AUDITORÍA EN VIVO", key="btn_refresh_tab5", use_container_width=True):
+            with st.spinner("Consultando actas y marcadores reales en ESPN API..."):
+                sync_soccer_date_from_espn(date_str, force=True)
+                st.cache_data.clear()
             st.rerun()
     st.caption("El sistema se audita a sí mismo en tiempo real con actas oficiales y SofaScore. Detecta automáticamente aciertos (✅), fallos (❌) y anulaciones (⚪ VOID por suplencia), calculando la efectividad real y diagnosticando cualquier discrepancia.")
 
@@ -2067,11 +2121,41 @@ BOLETO 3: RETO ESCALERA EN 3 FASES (Horarios Oficiales CDMX)
         st.text_area("Copia los picks aquí:", copy_text, height=350)
 
     elif audit_view.startswith("📱 5."):
-        from sofascore_audit_engine import get_all_sofascore_audited_matches
-        sofa_list = get_all_sofascore_audited_matches()
+        import json as _json
+        _bs_p5 = os.path.join(os.path.dirname(__file__), "data", f"cartelera_boxscores_{date_str}.json")
+        sofa_list = []
+        if os.path.exists(_bs_p5):
+            try:
+                with open(_bs_p5, "r", encoding="utf-8") as _fp5:
+                    _bs_dict5 = _json.load(_fp5)
+                for _mk, _mv in _bs_dict5.items():
+                    _p_st = _mv.get("player_stats", {})
+                    _starters_list = [pn for pn, pv in _p_st.items() if pv.get("started")]
+                    _sot_scorers = [f"{pn} ({pv.get('goals',0)}G, {pv.get('sot',0)} SOT)" for pn, pv in _p_st.items() if pv.get("goals", 0) > 0 or pv.get("sot", 0) >= 1]
+                    sofa_list.append({
+                        "match": _mv.get("match", _mk.title()),
+                        "status": _mv.get("status", "PROGRAMADO"),
+                        "score": _mv.get("score", "vs"),
+                        "source": _mv.get("source", "ESPN / SofaScore Match Center"),
+                        "goals": [{"player": s, "minute": "Acta", "team": _mv.get("league", "")} for s in _sot_scorers[:6]],
+                        "stats": {
+                            "possession": f"HT {_mv.get('ht_home',0)}-{_mv.get('ht_away',0)}",
+                            "total_shots": f"{_mv.get('home_sot',0)} - {_mv.get('away_sot',0)}",
+                            "shots_on_target": f"SOT {_mv.get('home_sot',0)}-{_mv.get('away_sot',0)}",
+                            "xg": f"Tarjetas {_mv.get('home_cards',0)}-{_mv.get('away_cards',0)} (Tot {_mv.get('total_cards',0)})",
+                            "corners": f"{_mv.get('home_corners',0)}-{_mv.get('away_corners',0)} (Tot {_mv.get('total_corners',0)})",
+                            "fouls": f"{_mv.get('home_fouls',0)}-{_mv.get('away_fouls',0)}"
+                        },
+                        "notes": f"Titulares verificados en acta: {len(_starters_list)} jugadores" if _starters_list else ""
+                    })
+            except Exception:
+                sofa_list = []
+        if not sofa_list:
+            from sofascore_audit_engine import get_all_sofascore_audited_matches
+            sofa_list = get_all_sofascore_audited_matches()
         
-        st.markdown("#### 📱 Auditoría en Vivo y Cotejo de Actas con SofaScore")
-        st.caption("Validación de marcadores oficiales, xG, remates y alineaciones directamente contra las actas de SofaScore para la jornada activa:")
+        st.markdown(f"#### 📱 Auditoría en Vivo y Cotejo de Actas ESPN / SofaScore ({selected_date.strftime('%d/%m/%Y')})")
+        st.caption(f"Mostrando {len(sofa_list)} actas oficiales sincronizadas con marcadores, córners, tarjetas, tiros a puerta y XI titular (Regla VOID):")
 
         for sm in sofa_list:
             st_badge_bg = "#064e3b" if "FINALIZADO" in sm["status"] else ("#1e3a8a" if "EN JUEGO" in sm["status"] else "#1e293b")

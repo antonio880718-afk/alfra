@@ -305,8 +305,14 @@ def _build_dynamic_picks_for_date(date_str: str) -> List[Dict[str, Any]]:
         })
     return picks
 
+def _today_cdmx_str() -> str:
+    from datetime import datetime, timezone, timedelta
+    return datetime.now(timezone(timedelta(hours=-6))).strftime("%Y%m%d")
+
 def get_daily_parlay_ticket(date_str: str = None) -> List[Dict[str, Any]]:
-    if not date_str or date_str == "20261109":
+    if not date_str:
+        date_str = _today_cdmx_str()
+    if date_str == "20261109":
         for p in MON_100X:
             p["date_str"] = "20261109"
         return MON_100X
@@ -323,7 +329,9 @@ def get_daily_parlay_ticket(date_str: str = None) -> List[Dict[str, Any]]:
         return picks if picks else MON_100X
 
 def get_daily_conservative_11x(date_str: str = None) -> List[Dict[str, Any]]:
-    if not date_str or date_str == "20261109":
+    if not date_str:
+        date_str = _today_cdmx_str()
+    if date_str == "20261109":
         return get_daily_parlay_ticket("20261109")[:6]
     elif date_str == "20261108":
         return get_daily_parlay_ticket("20261108")[:6]
@@ -335,7 +343,9 @@ def get_daily_conservative_11x(date_str: str = None) -> List[Dict[str, Any]]:
         return get_daily_parlay_ticket(date_str)[:6]
 
 def get_daily_escalera_blocks(date_str: str = None) -> List[Dict[str, Any]]:
-    if not date_str or date_str == "20261109":
+    if not date_str:
+        date_str = _today_cdmx_str()
+    if date_str == "20261109":
         for b in MON_ESCALERA:
             for p in b["picks"]:
                 p["date_str"] = "20261109"
@@ -378,7 +388,7 @@ def get_daily_escalera_blocks(date_str: str = None) -> List[Dict[str, Any]]:
                 {
                     "block_id": 3,
                     "title": f"Fase 3: Cierre Estelar Nocturno ({b3_p[0]['time']})",
-                    "target_odds": o3, "stake_suggested": pay2, "payout_expected": pay3, "net_profit": round(pay2 - pay1, 2),
+                    "target_odds": o3, "stake_suggested": pay2, "payout_expected": pay3, "net_profit": round(pay3 - pay2, 2),
                     "picks": b3_p, "strategy": f"{b3_p[0]['pick']} + {b3_p[1]['pick']}", "phase_prob": 68.4
                 }
             ]
