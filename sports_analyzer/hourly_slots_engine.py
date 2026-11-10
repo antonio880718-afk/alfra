@@ -1743,14 +1743,7 @@ def resolve_team_star_player(team_name: str, code: str = "") -> dict:
     raw = team_name.lower().strip()
     norm = normalize_name(team_name)
 
-    # 0.A PRIORIDAD MÁXIMA: Actas Oficiales y Plantillas en Vivo de ESPN (450 clubes extraídos del API oficial)
-    espn_db = _get_espn_verified_stars()
-    if raw in espn_db and raw not in ("liverpool", "arsenal", "ac milan", "bayer leverkusen", "fulham", "wolverhampton", "wolverhampton wanderers", "telstar"):
-        return dict(espn_db[raw])
-    if norm in espn_db and raw not in ("liverpool", "arsenal", "ac milan", "bayer leverkusen", "fulham", "wolverhampton", "wolverhampton wanderers", "telstar", "barcelona sc", "lillestrom"):
-        return dict(espn_db[norm])
-
-    # 0.B Excepciones de homónimos internacionales (Evitar Barcelona SC -> FC Barcelona o Lillestrom -> Lille)
+    # 0.A Excepciones de homónimos internacionales
     HOMONYM_OVERRIDES = {
         "barcelona sc": {"name": "Octavio Rivero", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.65, "prob": 86.5, "odds": 1.22},
         "lillestrom": {"name": "Thomas Lehne Olsen", "jersey": "9", "pos": "Delantero Centro", "sot_avg": 1.60, "prob": 86.0, "odds": 1.23},
@@ -1763,11 +1756,18 @@ def resolve_team_star_player(team_name: str, code: str = "") -> dict:
     if raw in HOMONYM_OVERRIDES:
         return dict(HOMONYM_OVERRIDES[raw])
 
-    # 1. Exact Match en VERIFIED_FORWARDS_DB
+    # 1. PRIORIDAD 1: Base de datos meticulosamente auditada (VERIFIED_FORWARDS_DB)
     if raw in VERIFIED_FORWARDS_DB:
         return dict(VERIFIED_FORWARDS_DB[raw])
     if norm in VERIFIED_FORWARDS_DB and raw not in ("barcelona sc", "lillestrom"):
         return dict(VERIFIED_FORWARDS_DB[norm])
+
+    # 2. Base de datos de ESPN complementaria
+    espn_db = _get_espn_verified_stars()
+    if raw in espn_db and raw not in ("liverpool", "arsenal", "ac milan", "bayer leverkusen", "fulham", "wolverhampton", "wolverhampton wanderers", "telstar"):
+        return dict(espn_db[raw])
+    if norm in espn_db and raw not in ("liverpool", "arsenal", "ac milan", "bayer leverkusen", "fulham", "wolverhampton", "wolverhampton wanderers", "telstar", "barcelona sc", "lillestrom"):
+        return dict(espn_db[norm])
 
     # 1.5 Exact Match en Base Oficial de Cartelera Empírica
     c_path = os.path.join(os.path.dirname(__file__), "data", "cartelera_empirical_rosters.json")

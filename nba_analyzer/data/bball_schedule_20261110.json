@@ -11,8 +11,8 @@
     "home_score": 0,
     "away_score": 0,
     "total_points": 0,
-    "spread_str": "FLA -9.5",
-    "over_under": 166.5,
+    "spread_str": "FLA -8.5",
+    "over_under": 164.5,
     "venue": "Tucker Center (Tallahassee)",
     "home_defense": {
       "def_rank": 15,
@@ -65,7 +65,7 @@
     "away_score": 0,
     "total_points": 0,
     "spread_str": "DUKE -7.5",
-    "over_under": 145.5,
+    "over_under": 146.5,
     "venue": "United Center (Chicago)",
     "home_defense": {
       "def_rank": 15,
@@ -171,7 +171,7 @@
     "away_score": 0,
     "total_points": 0,
     "spread_str": "NY -15.5",
-    "over_under": 221.5,
+    "over_under": 222.5,
     "venue": "Madison Square Garden (New York)",
     "home_defense": {
       "def_rank": 9,
@@ -393,7 +393,7 @@
     "home_score": 0,
     "away_score": 0,
     "total_points": 0,
-    "spread_str": "MIA -8.5",
+    "spread_str": "MIA -9.5",
     "over_under": 227.5,
     "venue": "Delta Center (Salt Lake City)",
     "home_defense": {
@@ -500,7 +500,7 @@
     "away_score": 0,
     "total_points": 0,
     "spread_str": "ARIZ -35.5",
-    "over_under": 156.5,
+    "over_under": 157.5,
     "venue": "McKale Center at ALKEME Arena (Tucson)",
     "home_defense": {
       "def_rank": 15,
@@ -552,7 +552,7 @@
     "home_score": 0,
     "away_score": 0,
     "total_points": 0,
-    "spread_str": "BYU -29.5",
+    "spread_str": "BYU -28.5",
     "over_under": 181.5,
     "venue": "Marriott Center (Provo)",
     "home_defense": {
@@ -658,8 +658,8 @@
     "home_score": 0,
     "away_score": 0,
     "total_points": 0,
-    "spread_str": "ORL -6.5",
-    "over_under": 223.5,
+    "spread_str": "ORL -5.5",
+    "over_under": 222.5,
     "venue": "Golden 1 Center (Sacramento)",
     "home_defense": {
       "def_rank": 20,
@@ -712,7 +712,7 @@
     "away_score": 0,
     "total_points": 0,
     "spread_str": "OKC -1.5",
-    "over_under": 223.5,
+    "over_under": 226.5,
     "venue": "Moda Center (Portland)",
     "home_defense": {
       "def_rank": 15,
