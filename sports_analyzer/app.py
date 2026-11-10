@@ -865,8 +865,12 @@ with t_slots:
                             <span class="badge-source" style="background-color: #3b0764; color: #d8b4fe;">⚖️ ÁRBITRO DESIGNADO</span>
                             <span style="color: #facc15; font-size: 0.85rem; font-weight: bold;">{ref_s.get('referee_rigor', 'Riguroso')}</span>
                         </div>
-                        <b style="color: #ffffff; font-size: 1.15rem;">{ref_s.get('referee_name', 'Árbitro Oficial')}</b><br>
+                        <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                            <b style="color: #ffffff; font-size: 1.15rem;">{ref_s.get('referee_name', 'Árbitro Oficial')}</b>
+                            {f'<span style="background: #1e1b4b; color: #c084fc; font-size: 0.76rem; padding: 1px 6px; border-radius: 4px; font-weight: bold;">{ref_s["country"]}</span>' if ref_s.get("country") else ''}
+                        </div>
                         <span style="color: #94a3b8; font-size: 0.82rem;">Historial: <b>{ref_s.get('referee_cards_avg', 4.0)}</b> tarjetas/partido ({ref_s.get('referee_yellow_avg', 4.0)} amarillas) • 1 tarjeta cada <b>{ref_s.get('foul_to_card_ratio', 5.0)}</b> faltas</span>
+                        {f'<div style="color: #cbd5e1; font-size: 0.76rem; margin-top: 3px;">🚩 Asistentes: {", ".join(ref_s["assistants"]) if isinstance(ref_s.get("assistants"), list) else ref_s.get("assistants")} • 📺 VAR: {ref_s.get("var", "Oficial")}</div>' if ref_s.get("assistants") or ref_s.get("var") else ''}
                         <div style="display: flex; gap: 8px; margin-top: 10px; font-size: 0.82rem; flex-wrap: wrap;">
                             <span style="background-color: #0b132b; color: #38bdf8; padding: 3px 8px; border-radius: 4px; border: 1px solid #1e3a8a;">
                                 Over 2.5 Tarjetas: <b>{ref_s.get('over25_prob', 88.0)}%</b> (~{ref_s.get('over25_odds', 1.20)})
@@ -1260,17 +1264,42 @@ with t_sgp:
     # -------------------------------------------------------------
     rigor_bg = "#7f1d1d" if "Muy Riguroso" in ref.get("referee_rigor", "") else ("#064e3b" if "Permisivo" in ref.get("referee_rigor", "") else "#1e3a8a")
     rigor_color = "#fca5a5" if "Muy Riguroso" in ref.get("referee_rigor", "") else ("#6ee7b7" if "Permisivo" in ref.get("referee_rigor", "") else "#93c5fd")
+    ref_country_tag = f'<span style="background-color: #1e1b4b; color: #c084fc; font-size: 0.82rem; padding: 2px 7px; border-radius: 4px; border: 1px solid #7e22ce; margin-left: 8px; font-weight: bold;">{ref["country"]}</span>' if ref.get("country") else ""
     
+    crew_items = []
+    if ref.get("assistants"):
+        ast_str = ", ".join(ref["assistants"]) if isinstance(ref["assistants"], list) else str(ref["assistants"])
+        crew_items.append(f'<span>🚩 <b>Asistentes:</b> <b style="color: #ffffff;">{ast_str}</b></span>')
+    if ref.get("fourth_official"):
+        crew_items.append(f'<span>4️⃣ <b>4º Árbitro:</b> <b style="color: #ffffff;">{ref["fourth_official"]}</b></span>')
+    if ref.get("var"):
+        crew_items.append(f'<span>📺 <b>VAR:</b> <b style="color: #38bdf8;">{ref["var"]}</b></span>')
+    if ref.get("avar"):
+        crew_items.append(f'<span>🖥️ <b>AVAR:</b> <b style="color: #cbd5e1;">{ref["avar"]}</b></span>')
+    if ref.get("stadium"):
+        crew_items.append(f'<span>🏟️ <b>Sede:</b> <b style="color: #facc15;">{ref["stadium"]}</b></span>')
+    
+    crew_block_html = ""
+    if crew_items:
+        joined_crew = " • ".join(crew_items)
+        crew_block_html = f"""
+        <div style="background-color: #070b14; border: 1px solid #334155; border-radius: 8px; padding: 10px 14px; margin-top: 12px; font-size: 0.84rem; color: #94a3b8; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+            <b style="color: #d8b4fe; text-transform: uppercase; font-size: 0.76rem; letter-spacing: 0.5px;">👥 CUERPO ARBITRAL OFICIAL (UEFA / FEDERACIÓN):</b>
+            {joined_crew}
+        </div>
+        """
+
     render_html(f"""
     <div style="background: linear-gradient(135deg, #090e1a 0%, #111827 50%, #1e1b4b 100%); border: 2px solid #a855f7; border-radius: 14px; padding: 18px 22px; margin-bottom: 18px; box-shadow: 0 8px 20px -4px rgba(0,0,0,0.5);">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
             <div>
                 <span class="badge-source" style="background-color: #3b0764; color: #d8b4fe; border-color: #7e22ce;">⚖️ AUDITORÍA ARBITRAL OFICIAL</span>
-                <h3 style="margin: 4px 0 2px 0; color: #ffffff; font-size: 1.4rem;">Colegiado Designado: {ref.get('referee_name', 'Árbitro Designado')}</h3>
+                <h3 style="margin: 4px 0 2px 0; color: #ffffff; font-size: 1.4rem;">Colegiado Designado: {ref.get('referee_name', 'Árbitro Designado')}{ref_country_tag}</h3>
                 <div style="margin-top: 4px;">
                     <span style="background-color: {rigor_bg}; color: {rigor_color}; font-size: 0.8rem; padding: 3px 8px; border-radius: 4px; font-weight: bold;">
                         {ref.get('referee_rigor', 'Riguroso')}
                     </span>
+                    {f'<span style="color: #94a3b8; font-size: 0.78rem; margin-left: 8px;">Designación: <b>{ref.get("referee_league", "Oficial")}</b></span>' if ref.get("referee_league") else ''}
                 </div>
             </div>
             <div style="text-align: right; background-color: #0b0f19; padding: 12px 18px; border-radius: 8px; border: 1px solid #7e22ce;">
@@ -1302,6 +1331,8 @@ with t_sgp:
                 <span style="color: #facc15; font-size: 0.8rem;">Cuota: ~{ref.get('over45_odds', 1.85)}</span>
             </div>
         </div>
+
+        {crew_block_html}
 
         <div style="color: #cbd5e1; font-size: 0.85rem; margin-top: 12px; background-color: #070b14; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #a855f7;">
             📌 <b>Criterio y Tendencia Arbitral:</b> {ref.get('referee_style', 'Controla faltas reiteradas y castiga protestas.')}

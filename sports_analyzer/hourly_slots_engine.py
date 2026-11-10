@@ -2098,11 +2098,13 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     # V4: Tarjetas Disciplinarias (Binomial Negativa + Factor Árbitro) o BTTS / Goles 2T
     if ref_data.get("over25_prob", 85.0) >= 80.0:
         p_card = round(0.55 * float(ref_data["over25_prob"]) + 0.45 * qp["cards_over25"], 1)
+        _is_off = bool(ref_data.get("is_official", False))
+        _ref_tag = f"Árbitro {ref_name}" if (_is_off and "Promedio" not in ref_name and "Designación" not in ref_name) else "Línea Disciplinaria"
         v_var4 = {
             "n": 4,
             "type": "Tarjetas Disciplinarias",
-            "market": f"Árbitro {ref_name}: Más de 2.5 Tarjetas",
-            "pick": f"Árbitro {ref_name} Over 2.5 Tarjetas",
+            "market": f"{_ref_tag}: Más de 2.5 Tarjetas",
+            "pick": f"{_ref_tag} Over 2.5 Tarjetas",
             "odds": ref_data.get("over25_odds", 1.20),
             "prob": p_card,
             "synergy": f"El colegiado {ref_name} promedia {ref_avg} tarjetas/partido ({ref_data.get('referee_rigor', 'Oficial')}) | Proyección: {ref_data['expected_cards']} tarjetas.",

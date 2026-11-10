@@ -7147,16 +7147,26 @@
     "fouls_avg": 22.8
   },
   "england vs croatia": {
-    "name": "Clément Turpin",
+    "name": "Morten Krogh",
+    "country": "DEN",
     "league": "UEFA Nations League",
-    "yellow_avg": 4.1,
-    "red_avg": 0.16,
-    "cards_avg": 4.26,
-    "foul_to_card_ratio": 5.1,
-    "rigor": "Estricto",
-    "source": "Designación Oficial (UEFA Nations League)",
-    "style": "Control disciplinario oficial (UEFA Nations League); sanciona 1 tarjeta cada 5.1 faltas.",
-    "fouls_avg": 22.8
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
   },
   "italy vs france": {
     "name": "Daniele Orsato",
@@ -8753,5 +8763,159 @@
     "source": "Designación Oficial (Primera Nacional Argentina)",
     "style": "Control disciplinario oficial (Primera Nacional Argentina); sanciona 1 tarjeta cada 5.2 faltas.",
     "fouls_avg": 22.8
+  },
+  "croatia vs england": {
+    "name": "Morten Krogh",
+    "country": "DEN",
+    "league": "UEFA Nations League",
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
+  },
+  "england_vs_croatia": {
+    "name": "Morten Krogh",
+    "country": "DEN",
+    "league": "UEFA Nations League",
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
+  },
+  "croatia_vs_england": {
+    "name": "Morten Krogh",
+    "country": "DEN",
+    "league": "UEFA Nations League",
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
+  },
+  "inglaterra vs croacia": {
+    "name": "Morten Krogh",
+    "country": "DEN",
+    "league": "UEFA Nations League",
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
+  },
+  "croacia vs inglaterra": {
+    "name": "Morten Krogh",
+    "country": "DEN",
+    "league": "UEFA Nations League",
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
+  },
+  "inglaterra_vs_croacia": {
+    "name": "Morten Krogh",
+    "country": "DEN",
+    "league": "UEFA Nations League",
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
+  },
+  "croacia_vs_inglaterra": {
+    "name": "Morten Krogh",
+    "country": "DEN",
+    "league": "UEFA Nations League",
+    "cards_avg": 3.9,
+    "yellow_avg": 3.75,
+    "red_avg": 0.15,
+    "fouls_avg": 21.8,
+    "foul_to_card_ratio": 5.59,
+    "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+    "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez física nórdica pero sanciona con rigor faltas tácticas y reclamos.",
+    "assistants": [
+      "Victor Skytte (DEN)",
+      "Steffen Bramsen (DEN)"
+    ],
+    "fourth_official": "Jens Maae (DEN)",
+    "var": "Bastian Dankert (GER)",
+    "avar": "Jakob Kehlet (DEN)",
+    "stadium": "Wembley Stadium, Londres (ENG)",
+    "is_official": true,
+    "source": "Designación Oficial UEFA"
   }
 }

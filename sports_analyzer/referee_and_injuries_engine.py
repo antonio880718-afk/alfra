@@ -13,6 +13,143 @@ from typing import Dict, Any, List
 
 # Base de datos empírica oficial de árbitros (Auditoría Football-Data & ESPN 2025-2027)
 REFEREES_DB = {
+    # UEFA NATIONS LEAGUE & COMPETICIONES INTERNACIONALES (UEFA / FIFA Elite)
+    "Morten Krogh": {
+        "league": "UEFA Nations League / Superligaen",
+        "country": "DEN",
+        "cards_avg": 3.90,
+        "yellow_avg": 3.75,
+        "red_avg": 0.15,
+        "fouls_avg": 21.8,
+        "foul_to_card_ratio": 5.59,
+        "rigor": "⚖️ Dinámico UEFA / Ritmo Nórdico",
+        "style": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez nórdica pero sanciona con rigor faltas tácticas de contragolpe y protestas reiteradas.",
+        "assistants": ["Victor Skytte (DEN)", "Steffen Bramsen (DEN)"],
+        "fourth_official": "Jens Maae (DEN)",
+        "var": "Bastian Dankert (GER)",
+        "avar": "Jakob Kehlet (DEN)",
+        "stadium": "Wembley Stadium, Londres (ENG)",
+    },
+    "Szymon Marciniak": {
+        "league": "UEFA / Ekstraklasa / FIFA Elite",
+        "country": "POL",
+        "cards_avg": 4.15,
+        "yellow_avg": 4.00,
+        "red_avg": 0.15,
+        "fouls_avg": 23.0,
+        "foul_to_card_ratio": 5.54,
+        "rigor": "🔥 Firmeza Máxima UEFA Elite",
+        "style": "Árbitro de la final del Mundial; autoridad implacable, control psicológico absoluto del partido y castigo inmediato a faltas tácticas.",
+        "assistants": ["Tomasz Listkiewicz (POL)", "Adam Kupsik (POL)"],
+        "fourth_official": "Pawel Raczkowski (POL)",
+        "var": "Tomasz Kwiatkowski (POL)",
+        "avar": "Bartosz Frankowski (POL)",
+    },
+    "Slavko Vinčić": {
+        "league": "UEFA / PrvaLiga / FIFA Elite",
+        "country": "SVN",
+        "cards_avg": 4.10,
+        "yellow_avg": 3.95,
+        "red_avg": 0.15,
+        "fouls_avg": 22.5,
+        "foul_to_card_ratio": 5.49,
+        "rigor": "⚖️ Control Riguroso UEFA",
+        "style": "Árbitro de la final Champions League; riguroso en amonestaciones de interrupción de contragolpe y manotazos en disputas aéreas.",
+        "assistants": ["Tomaž Klančnik (SVN)", "Andraž Kovačič (SVN)"],
+        "fourth_official": "Matej Jug (SVN)",
+        "var": "Nejc Kajtazovic (SVN)",
+        "avar": "Alen Borošak (SVN)",
+    },
+    "François Letexier": {
+        "league": "UEFA / Ligue 1 / FIFA Elite",
+        "country": "FRA",
+        "cards_avg": 4.05,
+        "yellow_avg": 3.90,
+        "red_avg": 0.15,
+        "fouls_avg": 22.0,
+        "foul_to_card_ratio": 5.43,
+        "rigor": "⚖️ Disciplinado UEFA Elite",
+        "style": "Árbitro de la final de la Eurocopa 2024; moderno, dinámico y muy preciso en la sanción de tarjetas en transición.",
+        "assistants": ["Cyril Mugnier (FRA)", "Mehdi Rahmouni (FRA)"],
+        "fourth_official": "Jérôme Brisard (FRA)",
+        "var": "Willy Delajod (FRA)",
+        "avar": "Benoît Millot (FRA)",
+    },
+    "István Kovács": {
+        "league": "UEFA / Liga I / FIFA Elite",
+        "country": "ROU",
+        "cards_avg": 4.70,
+        "yellow_avg": 4.45,
+        "red_avg": 0.25,
+        "fouls_avg": 25.0,
+        "foul_to_card_ratio": 5.32,
+        "rigor": "🔥 Muy Riguroso UEFA (Alta Tasa de Tarjetas)",
+        "style": "Colegiado rumano de alta tensión; mano muy dura con las protestas y rojas directas ante juego peligroso.",
+        "assistants": ["Vasile Marinescu (ROU)", "Mihai Artene (ROU)"],
+        "fourth_official": "Horațiu Feșnic (ROU)",
+        "var": "Catalin Popa (ROU)",
+        "avar": "Marcel Birsan (ROU)",
+    },
+    "Clément Turpin": {
+        "league": "UEFA / Ligue 1 / FIFA Elite",
+        "country": "FRA",
+        "cards_avg": 4.25,
+        "yellow_avg": 4.10,
+        "red_avg": 0.15,
+        "fouls_avg": 22.6,
+        "foul_to_card_ratio": 5.32,
+        "rigor": "🔥 Riguroso UEFA Elite",
+        "style": "Colegiado FIFA con amplio recorrido internacional; estricto en amonestaciones de interrupción y simulación.",
+        "assistants": ["Nicolas Danos (FRA)", "Benjamin Pages (FRA)"],
+        "fourth_official": "Ruddy Buquet (FRA)",
+        "var": "Jérôme Brisard (FRA)",
+        "avar": "Willy Delajod (FRA)",
+    },
+    "Anthony Taylor": {
+        "league": "Premier League / UEFA Elite",
+        "country": "ENG",
+        "cards_avg": 4.30,
+        "yellow_avg": 4.15,
+        "red_avg": 0.15,
+        "fouls_avg": 22.4,
+        "foul_to_card_ratio": 5.21,
+        "rigor": "🔥 Riguroso Premier & UEFA",
+        "style": "Colegiado experimentado de Manchester; castiga severamente zancadillas y pérdida deliberada de tiempo.",
+        "assistants": ["Gary Beswick (ENG)", "Adam Nunn (ENG)"],
+        "fourth_official": "Craig Pawson (ENG)",
+        "var": "Stuart Attwell (ENG)",
+        "avar": "Jarred Gillett (ENG)",
+    },
+    "Michael Oliver": {
+        "league": "Premier League / UEFA Elite",
+        "country": "ENG",
+        "cards_avg": 4.10,
+        "yellow_avg": 3.95,
+        "red_avg": 0.15,
+        "fouls_avg": 21.9,
+        "foul_to_card_ratio": 5.34,
+        "rigor": "⚖️ Disciplinado PGMOL & UEFA",
+        "style": "Referente de la Premier League; fluido en el juego pero tajante e inflexible ante confrontaciones multitudinarias.",
+        "assistants": ["Stuart Burt (ENG)", "Dan Cook (ENG)"],
+        "fourth_official": "Andrew Madley (ENG)",
+        "var": "Paul Tierney (ENG)",
+        "avar": "Lee Betts (ENG)",
+    },
+    "Felix Zwayer": {
+        "league": "Bundesliga / UEFA Elite",
+        "country": "GER",
+        "cards_avg": 4.45,
+        "yellow_avg": 4.25,
+        "red_avg": 0.20,
+        "fouls_avg": 23.5,
+        "foul_to_card_ratio": 5.28,
+        "rigor": "🔥 Riguroso DFB & UEFA",
+        "style": "Colegiado berlinés; alta propensión a amonestar temprano para delimitar la agresividad.",
+        "assistants": ["Stefan Lupp (GER)", "Marco Achmüller (GER)"],
+        "fourth_official": "Daniel Siebert (GER)",
+        "var": "Bastian Dankert (GER)",
+        "avar": "Christian Dingert (GER)",
+    },
     # 2. BUNDESLIGA & BUNDESLIGA (DFB Oficial 2026/2027)
     "Eric-Dominic Weisbach": {
         "league": "2. Bundesliga",
@@ -416,6 +553,20 @@ REFEREES_DB = {
 
 # Asignación automática por defecto para partidos destacados
 FEATURED_MATCH_REFEREES = {
+    # UEFA NATIONS LEAGUE & COMPETICIONES INTERNACIONALES (Oficial UEFA)
+    ("inglaterra", "croacia"): "Morten Krogh",
+    ("croacia", "inglaterra"): "Morten Krogh",
+    ("england", "croatia"): "Morten Krogh",
+    ("croatia", "england"): "Morten Krogh",
+    ("españa", "república checa"): "Szymon Marciniak",
+    ("españa", "chequia"): "Szymon Marciniak",
+    ("spain", "czechia"): "Szymon Marciniak",
+    ("turquía", "bélgica"): "Slavko Vinčić",
+    ("turkey", "belgium"): "Slavko Vinčić",
+    ("albania", "finlandia"): "François Letexier",
+    ("albania", "finland"): "François Letexier",
+    ("armenia", "chipre"): "István Kovács",
+    ("armenia", "cyprus"): "István Kovács",
     # 2. BUNDESLIGA (DFB Oficial)
     ("1. fc nürnberg", "sv darmstadt 98"): "Eric-Dominic Weisbach",
     ("1. fc nurnberg", "sv darmstadt 98"): "Eric-Dominic Weisbach",
@@ -912,14 +1063,47 @@ def _get_master_stadiums():
             _MASTER_STADIUMS_CACHE = {}
     return _MASTER_STADIUMS_CACHE
 
+TEAM_TRANSLATIONS = {
+    "inglaterra": "england", "england": "inglaterra",
+    "croacia": "croatia", "croatia": "croacia",
+    "españa": "spain", "espana": "spain", "spain": "españa",
+    "alemania": "germany", "germany": "alemania",
+    "francia": "france", "france": "francia",
+    "italia": "italy", "italy": "italia",
+    "paises bajos": "netherlands", "países bajos": "netherlands", "holanda": "netherlands", "netherlands": "países bajos",
+    "bélgica": "belgium", "belgica": "belgium", "belgium": "bélgica",
+    "dinamarca": "denmark", "denmark": "dinamarca",
+    "suecia": "sweden", "sweden": "suecia",
+    "noruega": "norway", "norway": "noruega",
+    "suiza": "switzerland", "switzerland": "suiza",
+    "austria": "austria", "polonia": "poland", "poland": "polonia",
+    "república checa": "czechia", "republica checa": "czechia", "chequia": "czechia", "czechia": "república checa",
+    "turquía": "turkey", "turquia": "turkey", "turkey": "turquía",
+    "escocia": "scotland", "scotland": "escocia",
+    "irlanda": "ireland", "ireland": "irlanda",
+    "gales": "wales", "wales": "gales",
+    "grecia": "greece", "greece": "grecia",
+    "serbia": "serbia", "hungría": "hungary", "hungria": "hungary", "hungary": "hungría",
+    "eslovaquia": "slovakia", "slovakia": "eslovaquia",
+    "eslovenia": "slovenia", "slovenia": "eslovenia",
+    "finlandia": "finland", "finland": "finlandia",
+    "rumanía": "romania", "rumania": "romania", "romania": "rumanía",
+    "ucrania": "ukraine", "ukraine": "ucrania",
+    "albania": "albania", "armenia": "armenia", "chipre": "cyprus", "cyprus": "chipre",
+    "portugal": "portugal",
+}
+
 def get_stadium_for_match(home_team: str):
     """Retorna el estadio oficial verificado, ciudad y capacidad del club local."""
     stads = _get_master_stadiums()
     h_clean = home_team.lower().strip()
     if h_clean in stads:
         return dict(stads[h_clean])
+    h_trans = TEAM_TRANSLATIONS.get(h_clean, h_clean)
+    if h_trans in stads:
+        return dict(stads[h_trans])
     for k, v in stads.items():
-        if k in h_clean or h_clean in k:
+        if k in h_clean or h_clean in k or k in h_trans or h_trans in k:
             return dict(v)
     norm = h_clean
     for noise in [" united", " city", " hotspur", " wanderers", " fc", " cf", " 1.", " sv", " vfl", " sc"]:
@@ -935,41 +1119,62 @@ def get_stadium_for_match(home_team: str):
     }
 
 def get_referee_for_match(home_team: str, away_team: str, league_code: str = ""):
-    """Obtiene el árbitro oficial confirmado de la cartelera empírica o base arbitral."""
-    h_norm = home_team.lower().strip().replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "")
-    a_norm = away_team.lower().strip().replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "")
+    """Obtiene el árbitro oficial confirmado con su cuerpo arbitral completo (asistentes, 4º árbitro, VAR y AVAR)."""
+    h_raw = home_team.lower().strip()
+    a_raw = away_team.lower().strip()
+    h_clean = h_raw.replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "").replace("sc ", "").strip()
+    a_clean = a_raw.replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "").replace("sc ", "").strip()
+    
+    h_vars = {h_raw, h_clean, TEAM_TRANSLATIONS.get(h_raw, h_raw), TEAM_TRANSLATIONS.get(h_clean, h_clean)}
+    a_vars = {a_raw, a_clean, TEAM_TRANSLATIONS.get(a_raw, a_raw), TEAM_TRANSLATIONS.get(a_clean, a_clean)}
     
     # 1. Búsqueda prioritaria en FEATURED_MATCH_REFEREES
-    for (h, a), ref_name in FEATURED_MATCH_REFEREES.items():
-        h_clean = h.replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "")
-        a_clean = a.replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "")
-        if (h_clean in h_norm or h_norm in h_clean) and (a_clean in a_norm or a_norm in a_clean):
+    for (fh, fa), ref_name in FEATURED_MATCH_REFEREES.items():
+        fh_clean = fh.lower().strip().replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "").replace("sc ", "")
+        fa_clean = fa.lower().strip().replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "").replace("sc ", "")
+        matched_h = any(hv in fh_clean or fh_clean in hv for hv in h_vars)
+        matched_a = any(av in fa_clean or fa_clean in av for av in a_vars)
+        if matched_h and matched_a:
             if ref_name in REFEREES_DB:
                 ref_info = dict(REFEREES_DB[ref_name])
                 ref_info["name"] = ref_name
                 ref_info["is_official"] = True
                 return ref_info
 
-    # 2. Búsqueda en cartelera_official_referees.json (Cobertura 100% de los 116 partidos)
+    # 2. Búsqueda en cartelera_official_referees.json (Cobertura con traducciones)
     c_refs = _get_cartelera_official_refs()
-    pair_k = home_team.lower().strip() + "_vs_" + away_team.lower().strip()
-    if pair_k in c_refs:
-        ref_entry = dict(c_refs[pair_k])
-        ref_entry["is_official"] = True
-        return ref_entry
+    for hv in h_vars:
+        for av in a_vars:
+            for pk in [f"{hv}_vs_{av}", f"{hv} vs {av}", f"{av}_vs_{hv}", f"{av} vs {hv}"]:
+                if pk in c_refs:
+                    ref_entry = dict(c_refs[pk])
+                    r_name = ref_entry.get("name")
+                    if r_name and r_name in REFEREES_DB:
+                        for db_k, db_v in REFEREES_DB[r_name].items():
+                            if db_k not in ref_entry or not ref_entry[db_k]:
+                                ref_entry[db_k] = db_v
+                    ref_entry["is_official"] = True
+                    return ref_entry
+
     for rk, rv in c_refs.items():
-        if home_team.lower().strip() in rk and away_team.lower().strip() in rk:
+        rk_l = rk.lower()
+        matched_h = any(hv in rk_l for hv in h_vars)
+        matched_a = any(av in rk_l for av in a_vars)
+        if matched_h and matched_a:
             ref_entry = dict(rv)
-            ref_entry["is_official"] = True
-            return ref_entry
-    for rk, rv in c_refs.items():
-        if h_norm in rk and a_norm in rk:
-            ref_entry = dict(rv)
+            r_name = ref_entry.get("name")
+            if r_name and r_name in REFEREES_DB:
+                for db_k, db_v in REFEREES_DB[r_name].items():
+                    if db_k not in ref_entry or not ref_entry[db_k]:
+                        ref_entry[db_k] = db_v
             ref_entry["is_official"] = True
             return ref_entry
 
     # 3. Fallback reglamentario
     league_labels = {
+        "uefa.nations": "UEFA Nations League",
+        "uefa.champions": "UEFA Champions League",
+        "uefa.europa": "UEFA Europa League",
         "ger.2": "2. Bundesliga (DFB)",
         "ger.1": "Bundesliga (DFB)",
         "eng.1": "Premier League (PGMOL)",
@@ -981,10 +1186,17 @@ def get_referee_for_match(home_team: str, away_team: str, league_code: str = "")
         "conmebol.libertadores": "Copa Libertadores (CONMEBOL)"
     }
     lg_label = league_labels.get(league_code.lower(), "Competición Oficial")
+    stad_info = get_stadium_for_match(home_team)
     
     return {
-        "name": "Promedio Oficial " + lg_label + " (Designación en Curso)",
+        "name": "Colegiado Oficial (Designación en Trámite)",
         "league": lg_label,
+        "country": "",
+        "assistants": [],
+        "fourth_official": "",
+        "var": "",
+        "avar": "",
+        "stadium": stad_info.get("stadium", f"Estadio Oficial de {home_team}"),
         "cards_avg": 4.15,
         "fouls_avg": 22.8,
         "yellow_avg": 3.98,
@@ -1038,8 +1250,17 @@ def compute_card_expectations(home_team: str, away_team: str, home_fouls_avg: fl
     fair_o35 = round(100.0 / p_over35, 2)
     fair_o45 = round(100.0 / p_over45, 2)
     
+    ref_name = ref_info.get("name", "Árbitro Oficial")
+    is_off = bool(ref_info.get("is_official", False))
+    if is_off and "Promedio Oficial" not in ref_name and "Designación" not in ref_name:
+        pick_label_35 = f"Árbitro {ref_name}: Más de 3.5 Tarjetas"
+        pick_label_25 = f"Árbitro {ref_name}: Más de 2.5 Tarjetas"
+    else:
+        pick_label_35 = "Línea Disciplinaria: Más de 3.5 Tarjetas"
+        pick_label_25 = "Línea Disciplinaria: Más de 2.5 Tarjetas"
+
     best_pick = {
-        "pick": f"Árbitro {ref_info['name']}: Más de 3.5 Tarjetas" if p_over35 >= 80.0 else f"Árbitro {ref_info['name']}: Más de 2.5 Tarjetas",
+        "pick": pick_label_35 if p_over35 >= 80.0 else pick_label_25,
         "prob": p_over35 if p_over35 >= 80.0 else p_over25,
         "odds": odds_o35 if p_over35 >= 80.0 else odds_o25,
         "fair_odds": fair_o35 if p_over35 >= 80.0 else fair_o25,
@@ -1047,8 +1268,15 @@ def compute_card_expectations(home_team: str, away_team: str, home_fouls_avg: fl
     }
 
     return {
-        "referee_name": ref_info.get("name", "Árbitro Oficial"),
+        "referee_name": ref_name,
         "referee_league": ref_info.get("league", "Oficial"),
+        "country": ref_info.get("country", ""),
+        "assistants": ref_info.get("assistants", []),
+        "fourth_official": ref_info.get("fourth_official", ""),
+        "var": ref_info.get("var", ""),
+        "avar": ref_info.get("avar", ""),
+        "stadium": ref_info.get("stadium", ""),
+        "is_official": is_off,
         "referee_cards_avg": ref_cards,
         "referee_yellow_avg": ref_yellows,
         "referee_red_avg": ref_reds,
