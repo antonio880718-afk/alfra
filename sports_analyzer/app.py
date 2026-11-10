@@ -24,7 +24,8 @@ if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
         "automated_self_audit_engine",
         "context_impact_engine",
         "live_espn_audit_sync",
-        "pdf_audit_report_engine"
+        "pdf_audit_report_engine",
+        "sniper_ev_engine"
     ]:
         if _mod_name in _sys.modules:
             try:
@@ -646,14 +647,141 @@ with st.expander(f"📋 VER LOS {slots_data['total_matches']} PARTIDOS REALES DE
     if _all_day_rows:
         st.dataframe(pd.DataFrame(_all_day_rows), use_container_width=True, hide_index=True)
 
-t_slots, t_sgp, t_parlay, t_escalera, t_audit, t_chat = st.tabs([
-    f"⏰ 1. Cartelera por Horarios ({slots_data['total_matches']} Juegos - {selected_date.strftime('%d/%m')})",
-    "🎯 2. Ingeniería de Datos, Clima & 'Tú Eliges' (SGP)",
-    f"🎟️ 3. Boleto Parlay {parlay_odds_val}x ({selected_date.strftime('%d/%m')})",
-    f"🪜 4. Reto Escalera 3 Fases ({selected_date.strftime('%d/%m')})",
-    f"✅ 5. Auditoría de Aciertos & Fallos ({selected_date.strftime('%d/%m')})",
-    "💬 6. Asistente IA en Vivo (Órdenes desde Celular)"
+t_sniper, t_slots, t_sgp, t_parlay, t_escalera, t_audit, t_chat = st.tabs([
+    "🎯 1. SNIPER PICKS +EV (Mayor Certeza & Kelly)",
+    f"⏰ 2. Cartelera por Horarios ({slots_data['total_matches']} Juegos - {selected_date.strftime('%d/%m')})",
+    "📊 3. Ingeniería de Datos, Clima & 'Tú Eliges' (SGP)",
+    f"🎟️ 4. Boleto Parlay {parlay_odds_val}x ({selected_date.strftime('%d/%m')})",
+    f"🪜 5. Reto Escalera 3 Fases ({selected_date.strftime('%d/%m')})",
+    f"✅ 6. Auditoría de Aciertos & Fallos ({selected_date.strftime('%d/%m')})",
+    "💬 7. Asistente IA en Vivo (Órdenes desde Celular)"
 ])
+
+with t_sniper:
+    from sniper_ev_engine import get_daily_sniper_picks
+
+    st.markdown('''
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #064e3b 100%); border: 2px solid #10b981; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div>
+                <h2 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                    🎯 PICKS SNIPER CON VALOR ESPERADO POSITIVO (+EV)
+                </h2>
+                <p style="color: #94a3b8; margin: 6px 0 0 0; font-size: 14px;">
+                    Estrategia Cuantitativa de Fondos Profesionales: <b>Apostar únicamente donde la cuota de la casa paga MÁS que la probabilidad matemática real.</b>
+                </p>
+            </div>
+            <div style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; border-radius: 8px; padding: 8px 16px; text-align: center;">
+                <div style="color: #6ee7b7; font-size: 11px; text-transform: uppercase; font-weight: 700;">Gestión de Riesgo</div>
+                <div style="color: #ffffff; font-size: 16px; font-weight: 800;">Quarter-Kelly (0.25x)</div>
+            </div>
+        </div>
+    </div>
+    ''', unsafe_allow_html=True)
+
+    with st.expander("💡 ¿Qué es +EV (Expected Value) y cómo te hace ganar dinero?", expanded=False):
+        st.markdown('''
+        ### 🧠 Entendiendo el Valor Esperado (+EV) en 1 Minuto:
+        * **El Secreto del Casino:** El casino en la ruleta siempre gana porque tiene una ventaja matemática del **+2.7% (+EV para ellos)**. A la larga, nunca pierden.
+        * **Tú como el Casino:** Cuando encuentras una apuesta **+EV**, **la ventaja matemática pasa a tu favor**. La casa de apuestas fijó una cuota inflada por error o por volumen del público, y tú cobras más de lo que matemáticamente deberías.
+        * **Ejemplo Real:**
+          * Si lanzas una moneda (50% de probabilidad real), la cuota justa sin comisión es **2.00**.
+          * Si un amigo te ofrece pagar **2.25** si sale cara, esa apuesta tiene un **+12.5% de EV**.
+          * Aunque en un volado individual puede salir cruz, **si juegas 100 veces, la matemática garantiza que sales en ganancia neta.**
+        * **Criterio de Kelly:** Fórmula de Wall Street que te dice cuántos pesos exactos meter a cada pick según tu ventaja matemática para maximizar ganancias sin arriesgar la quiebra.
+        ''')
+
+    col_k1, col_k2, col_k3 = st.columns([1.5, 1.5, 1])
+    with col_k1:
+        user_bankroll = st.number_input("💰 Tu Bankroll Total Disponible ($ MXN):", min_value=100, max_value=500000, value=2000, step=250)
+    with col_k2:
+        st.caption("Ajuste de Gestión de Capital:")
+        st.info(f"Con un bankroll de **${user_bankroll:,.2f} MXN**, el sistema calcula el importe óptimo en pesos para cada selección sniper.")
+
+    sniper_data = get_daily_sniper_picks(selected_date.strftime("%Y%m%d"), top_k=5)
+    s_picks = sniper_data.get("sniper_picks", [])
+    d_ticket = sniper_data.get("double_ticket")
+
+    if d_ticket:
+        st.markdown("#### 🛡️ Combinada Recomendada: Doble Blindado del Día")
+        d_stake_amt = round(user_bankroll * (d_ticket["kelly_pct"] / 100.0), 0)
+        d_payout = round(d_stake_amt * d_ticket["combined_odds"], 0)
+        st.markdown(f'''
+        <div style="background: rgba(30, 41, 59, 0.7); border: 2px solid #3b82f6; border-radius: 12px; padding: 18px 20px; margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 12px;">
+                <span style="font-size: 18px; font-weight: 800; color: #60a5fa;">🛡️ Doble Blindado Cuantitativo (+EV)</span>
+                <span style="background: #1e3a8a; color: #93c5fd; padding: 4px 12px; border-radius: 6px; font-weight: 700; font-size: 14px;">Cuota Total: {d_ticket["combined_odds"]}</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+                <div style="background: #0f172a; padding: 12px; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <div style="font-size: 11px; color: #94a3b8;">SELECCIÓN 1 (Prob: {d_ticket["leg1"]["prob"]}%)</div>
+                    <div style="font-weight: 700; color: #ffffff; font-size: 14px;">{d_ticket["leg1"]["match"]}</div>
+                    <div style="color: #34d399; font-weight: 600;">{d_ticket["leg1"]["pick"]} @ {d_ticket["leg1"]["odds"]}</div>
+                </div>
+                <div style="background: #0f172a; padding: 12px; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <div style="font-size: 11px; color: #94a3b8;">SELECCIÓN 2 (Prob: {d_ticket["leg2"]["prob"]}%)</div>
+                    <div style="font-weight: 700; color: #ffffff; font-size: 14px;">{d_ticket["leg2"]["match"]}</div>
+                    <div style="color: #34d399; font-weight: 600;">{d_ticket["leg2"]["pick"]} @ {d_ticket["leg2"]["odds"]}</div>
+                </div>
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.8); padding: 10px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <span style="color: #cbd5e1; font-size: 13px;">Probabilidad Conjunta: <b>{d_ticket["combined_prob"]}%</b> · Valor Esperado: <b style="color: #10b981;">+{d_ticket["ev_pct"]}% EV</b></span>
+                <span style="color: #facc15; font-weight: 700; font-size: 14px;">💵 Stake Sugerido: {d_ticket["kelly_pct"]}% (${d_stake_amt:,.0f} MXN) ➔ Retorno: ${d_payout:,.0f} MXN</span>
+            </div>
+        </div>
+        ''', unsafe_allow_html=True)
+
+    st.markdown("#### 🎯 Top 5 Picks Sniper del Día (Apuestas Simples de Alta Certeza)")
+    st.caption("Estas selecciones ofrecen la mayor probabilidad empírica de acierto y ventaja matemática positiva (+EV) sobre las líneas de la casa:")
+
+    if not s_picks:
+        st.info("No se encontraron selecciones que superen el umbral estricto de +EV para esta fecha.")
+    else:
+        for p in s_picks:
+            stake_amt = round(user_bankroll * (p["kelly_pct"] / 100.0), 0)
+            potential_return = round(stake_amt * p["odds"], 0)
+            profit_amt = round(potential_return - stake_amt, 0)
+            
+            st.markdown(f'''
+            <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+                    <div>
+                        <span style="background: {p["tier_bg"]}; color: {p["tier_color"]}; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 800; border: 1px solid {p["tier_color"]};">
+                            {p["tier"]}
+                        </span>
+                        <span style="color: #94a3b8; font-size: 12px; margin-left: 8px;">⏰ {p["time"]} · {p["league"]}</span>
+                        <h3 style="color: #ffffff; margin: 6px 0 2px 0; font-size: 17px; font-weight: 700;">
+                            #{p["rank"]} {p["match"]}
+                        </h3>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 20px; font-weight: 800; color: #10b981;">Cuota: {p["odds"]}</div>
+                        <div style="font-size: 11px; color: #94a3b8;">Cuota Justa: {p["fair_odds"]} (Sin trampa de casa)</div>
+                    </div>
+                </div>
+
+                <div style="background: #1e293b; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px;">
+                    <div style="color: #60a5fa; font-weight: 700; font-size: 15px; margin-bottom: 4px;">
+                        📌 Selección: {p["pick"]}
+                    </div>
+                    <div style="color: #cbd5e1; font-size: 13px; line-height: 1.4;">
+                        📊 {p["reason"]}
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; border-top: 1px solid #334155; padding-top: 10px;">
+                    <div>
+                        <span style="color: #94a3b8;">Probabilidad Real:</span> <b style="color: #ffffff;">{p["prob"]}%</b> &nbsp;|&nbsp;
+                        <span style="color: #94a3b8;">Ventaja Matemática:</span> <b style="color: #10b981;">+{p["ev_pct"]}% EV</b>
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid #059669; padding: 4px 12px; border-radius: 6px;">
+                        <span style="color: #a7f3d0; font-weight: 700;">💵 Stake Kelly Sugerido:</span> 
+                        <b style="color: #ffffff;">{p["kelly_pct"]}% (${stake_amt:,.0f} MXN)</b> ➔ Ganas netos <b style="color: #34d399;">+${profit_amt:,.0f} MXN</b>
+                    </div>
+                </div>
+            </div>
+            ''', unsafe_allow_html=True)
+
 
 with t_slots:
     from hourly_slots_engine import analyze_match_for_slot
