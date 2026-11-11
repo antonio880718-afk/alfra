@@ -86,7 +86,7 @@ def generate_nfl_complete_pdf(date_str: str = None, league_filter: str = "ALL") 
             cat_name = cat.get("category", "")
             for opt in cat.get("options", []):
                 aud = audit_individual_nfl_pick(opt, g, date_str)
-                out_icon = "ACIERTO" if aud.get("outcome") == "HIT" else ("FALLO" if aud.get("outcome") == "MISS" else "PENDIENTE")
+                out_icon = {"HIT": "ACIERTO", "MISS": "FALLO", "VOID": "VOID", "IN_PROGRESS": "EN VIVO"}.get(aud.get("outcome"), "PENDIENTE")
 
                 justif_txt = f"{opt.get('season_avg', '')} | {opt.get('buffer_pct', '')}<br/>{opt.get('defense_matchup', '')}"
 
@@ -116,7 +116,7 @@ def generate_nfl_complete_pdf(date_str: str = None, league_filter: str = "ALL") 
     pdf_bytes = buf.getvalue()
     buf.close()
 
-    out_file = os.path.join(DATA_DIR, f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NFL_{date_str}.pdf")
+    out_file = os.path.join(DATA_DIR, f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NFL_{league_filter}_{date_str}.pdf")
     try:
         with open(out_file, "wb") as f:
             f.write(pdf_bytes)

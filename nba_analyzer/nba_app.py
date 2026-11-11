@@ -14,7 +14,7 @@ _app_dir = os.path.dirname(os.path.abspath(__file__))
 if _app_dir not in sys.path:
     sys.path.insert(0, _app_dir)
 
-_NBA_ENGINE_VER = "2026.11.11.v2"
+_NBA_ENGINE_VER = "2026.11.11.v3"
 if getattr(sys, "_ALFRA_NBA_VER", None) != _NBA_ENGINE_VER:
     for _base in (
         "live_nba_audit_sync",
@@ -129,7 +129,7 @@ with top_c2:
                 _qlbl,
                 key=f"nba_q_{_qd.strftime('%Y%m%d')}",
                 type="primary" if _cur_sel == _qd else "secondary",
-                use_container_width=True,
+                width="stretch",
                 on_click=_nba_pick_quick,
                 args=(_qd,),
             )
@@ -193,14 +193,27 @@ with m3:
     </div>
     """, unsafe_allow_html=True)
 
+_all_day_audits = []
+_all_day_total_opts = 0
+for _g_item in games_today:
+    _de_item = compute_full_nba_game_data_engineering(_g_item)
+    _all_day_total_opts += _de_item.get("total_options", 0)
+    for _c_item in _de_item.get("categories", []):
+        for _o_item in _c_item.get("options", []):
+            _all_day_audits.append(audit_individual_nba_pick(_o_item, _g_item, date_str).get("outcome", "PENDING"))
+
+hits_cnt = _all_day_audits.count("HIT")
+miss_cnt = _all_day_audits.count("MISS")
+void_cnt = _all_day_audits.count("VOID")
+pend_cnt = len(_all_day_audits) - hits_cnt - miss_cnt - void_cnt
+_resolved_cnt = hits_cnt + miss_cnt
+_eff_pct_lbl = f" ({(hits_cnt/_resolved_cnt)*100:.1f}%)" if _resolved_cnt > 0 else ""
+
 with m4:
-    hits_cnt = sum(1 for p in parlay_picks if audit_individual_nba_pick(p, date_str=date_str).get("outcome") == "HIT")
-    miss_cnt = sum(1 for p in parlay_picks if audit_individual_nba_pick(p, date_str=date_str).get("outcome") == "MISS")
-    pend_cnt = len(parlay_picks) - hits_cnt - miss_cnt
     st.markdown(f"""
     <div class="metric-card" style="border-left: 4px solid #38bdf8;">
         <span style="color: #94a3b8; font-size: 0.8rem;">📊 AUDITORÍA {date_str}:</span><br>
-        <b style="font-size: 1.4rem; color: #38bdf8;">{hits_cnt} ✅ | {miss_cnt} ❌ | {pend_cnt} ⏳</b><br>
+        <b style="font-size: 1.25rem; color: #38bdf8;">{hits_cnt} ✅ | {miss_cnt} ❌ | {void_cnt} 🔄 | {pend_cnt} ⏳{_eff_pct_lbl}</b><br>
         <span style="color: #6ee7b7; font-size: 0.78rem;">Regla VOID Activa (DNP 0 mins)</span>
     </div>
     """, unsafe_allow_html=True)
@@ -222,7 +235,7 @@ with p_col1:
         data=pdf_bytes,
         file_name=f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NBA_{date_str}.pdf",
         mime="application/pdf",
-        use_container_width=True,
+        width="stretch",
         key=f"dl_pdf_nba_{date_str}"
     )
 with p_col2:
@@ -231,7 +244,7 @@ with p_col2:
         data=pdf_bytes,
         file_name=f"Predicciones_Del_Dia_NBA_{date_str}.pdf",
         mime="application/pdf",
-        use_container_width=True,
+        width="stretch",
         key=f"dl_pdf_nba_preds_{date_str}"
     )
 
@@ -246,7 +259,7 @@ for g in games_today:
 
     c_bg = "#064e3b" if out == "HIT" else ("#7f1d1d" if out == "MISS" else "#131c2e")
     c_bdr = "#10b981" if out == "HIT" else ("#ef4444" if out == "MISS" else "#334155")
-    b_txt = "✅ COBRADO" if out == "HIT" else ("❌ FALLO" if out == "MISS" else "🟢 SÍ SE PUEDE ENTRAR")
+    b_txt = {"HIT": "✅ COBRADO", "MISS": "❌ FALLO", "VOID": "🔄 VOID (@1.00)", "IN_PROGRESS": "🟡 EN VIVO"}.get(out, "🟢 SÍ SE PUEDE ENTRAR")
     lg_badge = f"<span class='badge-nba'>NBA</span>" if g.get("league") == "NBA" else f"<span class='badge-ncaab'>NCAA</span>"
 
     p_avg = bp.get("season_avg", "")
@@ -262,6 +275,7 @@ for g in games_today:
         <div style="color: #ffffff; font-weight: bold; font-size: 0.95rem; margin: 4px 0;">{g['match']}</div>
         <div style="color: #fde047; font-size: 0.8rem; font-weight: 600;">🎯 {bp.get('pick', 'Total Puntos')} ({bp.get('odds', '@1.25')})</div>
         <div style="color: #38bdf8; font-size: 0.72rem; margin: 2px 0;">📊 <i>{p_just}</i></div>
+        <div style="color: #cbd5e1; font-size: 0.72rem; margin-top: 2px;">📦 <b>{de.get("total_options", 0)} mercados</b> cuantitativos</div>
         <div style="color: #94a3b8; font-size: 0.75rem;">📋 {aud.get('stat_actual', 'Marcador oficial')}</div>
     </div>
     """)
@@ -301,7 +315,7 @@ with t1:
             "Arena / Sede": g.get("venue", "Arena Oficial")
         })
     if t1_rows:
-        st.dataframe(pd.DataFrame(t1_rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(t1_rows), width="stretch", hide_index=True)
 
 with t2:
     st.markdown("#### 🎯 Dossier de Inteligencia por Partido (~50 Picks: Puntos, Rebotes, Asistencias, Triples y PRA)")
@@ -349,7 +363,7 @@ with t2:
             c_name = cat["category"]
             for opt in cat["options"]:
                 aud_p = audit_individual_nba_pick(opt, sel_g, date_str)
-                out_ico = "✅ ACIERTO" if aud_p["outcome"] == "HIT" else ("❌ FALLO" if aud_p["outcome"] == "MISS" else "🟢 POR JUGAR")
+                out_ico = {"HIT": "✅ ACIERTO", "MISS": "❌ FALLO", "VOID": "🔄 VOID", "IN_PROGRESS": "🟡 EN VIVO"}.get(aud_p["outcome"], "🟢 POR JUGAR")
                 de_rows.append({
                     "Categoría": c_name,
                     "Jugador / Mercado": opt.get("player_full_name", opt["pick"]),
@@ -365,7 +379,7 @@ with t2:
                     "Dato en Acta": aud_p["stat_actual"]
                 })
         if de_rows:
-            st.dataframe(pd.DataFrame(de_rows), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame(de_rows), width="stretch", hide_index=True)
 
         # Fichas Visuales Desplegables de Justificación
         with st.expander("🔍 VER FICHA TÉCNICA Y RAZONAMIENTO CUANTITATIVO DETALLADO (PICK POR PICK)", expanded=False):
@@ -404,11 +418,11 @@ with t3:
             "% Ocurrencia": f"{item['prob']:.1f}%",
             "Momio": item["odds_str"],
             "Valor (+EV)": item.get("ev", "+4.0%"),
-            "Estado Oficial": "✅ ACIERTO" if aud_res["outcome"] == "HIT" else ("❌ FALLO" if aud_res["outcome"] == "MISS" else "🟢 POR JUGAR"),
+            "Estado Oficial": {"HIT": "✅ ACIERTO", "MISS": "❌ FALLO", "VOID": "🔄 VOID", "IN_PROGRESS": "🟡 EN VIVO"}.get(aud_res["outcome"], "🟢 POR JUGAR"),
             "Dato Oficial": aud_res["stat_actual"]
         })
     if p_rows:
-        st.dataframe(pd.DataFrame(p_rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(p_rows), width="stretch", hide_index=True)
 
     st.markdown("##### 📋 Desglose Explicativo de las Selecciones del Boleto Principal:")
     for item in parlay_picks:
@@ -485,11 +499,19 @@ with t5:
                     "Jugador": opt.get("player_full_name", opt["pick"]),
                     "Mercado": opt.get("pick"),
                     "Momio": opt.get("odds"),
-                    "Resultado Oficial": "✅ ACIERTO" if aud_p["outcome"] == "HIT" else ("❌ FALLO" if aud_p["outcome"] == "MISS" else "🟢 PENDIENTE"),
+                    "Resultado Oficial": {"HIT": "✅ ACIERTO", "MISS": "❌ FALLO", "VOID": "🔄 VOID (@1.00)", "IN_PROGRESS": "🟡 EN VIVO"}.get(aud_p["outcome"], "🟢 PENDIENTE"),
                     "Dato en Acta ESPN": aud_p.get("stat_actual")
                 })
     if all_aud_rows:
-        st.dataframe(pd.DataFrame(all_aud_rows), use_container_width=True, hide_index=True)
+        _a1, _a2, _a3, _a4, _a5 = st.columns(5)
+        _a1.metric("Picks Auditados", len(all_aud_rows))
+        _a2.metric("✅ Aciertos (HIT)", hits_cnt)
+        _a3.metric("❌ Fallos (MISS)", miss_cnt)
+        _a4.metric("🔄 Anulados (VOID)", void_cnt)
+        _a5.metric("🎯 Efectividad Real", f"{(hits_cnt/_resolved_cnt)*100:.1f}%" if _resolved_cnt > 0 else "Pendiente")
+        st.dataframe(pd.DataFrame(all_aud_rows), width="stretch", hide_index=True)
+    else:
+        st.info("No hay partidos de baloncesto para auditar en esta fecha/filtro.")
 
 with t6:
     st.markdown("#### 💬 Asistente IA de Baloncesto (NBA & NCAAB)")
