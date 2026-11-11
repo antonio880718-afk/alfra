@@ -1162,12 +1162,22 @@ def compute_hybrid_match_distributions(
         c_a = max(1.8, min(7.8, (ac_for * hc_ag / max(2.0, mu_c)) * 0.95))
 
         sot_pri = pri.get("sot", {"mu_h": 4.65, "mu_a": 3.85, "disp": 1.22})
-        sot_h = max(1.8, min(8.5, float((ph or {}).get("sot_avg", sot_pri["mu_h"])) * 1.04))
-        sot_a = max(1.5, min(7.5, float((pa or {}).get("sot_avg", sot_pri["mu_a"])) * 0.96))
+        mu_sot = (sot_pri["mu_h"] + sot_pri["mu_a"]) / 2.0
+        hs_for = float((ph or {}).get("sot_avg", sot_pri["mu_h"]))
+        hs_ag = float((ph or {}).get("sot_ag_avg", sot_pri["mu_a"]))
+        as_for = float((pa or {}).get("sot_avg", sot_pri["mu_a"]))
+        as_ag = float((pa or {}).get("sot_ag_avg", sot_pri["mu_h"]))
+        sot_h = max(1.8, min(9.5, (hs_for * as_ag / max(1.5, mu_sot)) * 1.04))
+        sot_a = max(1.5, min(8.5, (as_for * hs_ag / max(1.5, mu_sot)) * 0.96))
 
         f_pri = pri.get("fouls", {"mu_h": 11.4, "mu_a": 11.8, "disp": 1.30})
-        f_h = max(7.0, min(17.0, float((ph or {}).get("fouls_avg", f_pri["mu_h"]))))
-        f_a = max(7.0, min(17.5, float((pa or {}).get("fouls_avg", f_pri["mu_a"]))))
+        mu_f = (f_pri["mu_h"] + f_pri["mu_a"]) / 2.0
+        hf_for = float((ph or {}).get("fouls_avg", f_pri["mu_h"]))
+        hf_drw = float((ph or {}).get("fouls_drawn_avg", f_pri["mu_a"]))
+        af_for = float((pa or {}).get("fouls_avg", f_pri["mu_a"]))
+        af_drw = float((pa or {}).get("fouls_drawn_avg", f_pri["mu_h"]))
+        f_h = max(6.5, min(17.5, (hf_for * af_drw / max(6.0, mu_f))))
+        f_a = max(6.5, min(18.0, (af_for * hf_drw / max(6.0, mu_f))))
 
         cards_pri = pri.get("cards", {"mu_h": 1.95, "mu_a": 2.25, "disp": 1.327})
         cards_pri = dict(cards_pri)

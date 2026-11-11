@@ -732,9 +732,9 @@ with t_slots:
             </div>
             """)
 
-            st.markdown(f"**🔹 Las 4 Variables para {sgp['match']} (Con Probabilidades Auditadas):**")
+            st.markdown(f"**📊 Picks del Encuentro Ordenados de Mayor a Menor Probabilidad (Top 6 para {sgp['match']}):**")
             cols_v = st.columns(2)
-            for idx, v in enumerate(sgp["variables"]):
+            for idx, v in enumerate(sgp.get("top_variables", sgp["variables"][:6])):
                 with cols_v[idx % 2]:
                     v_prob = float(v.get("prob", 80.0))
                     v_fair = round(v.get("fair_odds", round(100.0 / max(1.0, v_prob), 2)), 2)
@@ -858,6 +858,21 @@ with t_slots:
                     </div>
                     """)
 
+            with st.expander(f"📋 Ver Menú Completo del Encuentro Ordenado de Mayor a Menor % ({len(sgp['variables'])} Mercados Cruzados)", expanded=False):
+                rows_all_v = []
+                for rank_i, v_item in enumerate(sgp["variables"], 1):
+                    rows_all_v.append({
+                        "#": rank_i,
+                        "Categoría": v_item.get("cat_group", v_item.get("type", "")),
+                        "Mercado / Pick": v_item.get("pick", v_item.get("market", "")),
+                        "Prob. %": f"{float(v_item.get('prob', 0.0)):.1f}%",
+                        "Momio Casa": f"{float(v_item.get('odds', 1.0)):.2f}",
+                        "Cuota Justa": f"{float(v_item.get('fair_odds', 1.0)):.2f}",
+                        "EV %": f"{float(v_item.get('ev_pct', 0.0)):+.1f}%",
+                        "Análisis del Cruce (Ataque vs Defensa)": v_item.get("synergy", ""),
+                    })
+                st.dataframe(pd.DataFrame(rows_all_v), width="stretch", hide_index=True)
+
             # Panel de Doble Investigación: Árbitro (Tarjetas) y Referente Ofensivo (Goles & Asistencias)
             ref_s = sgp.get("referee_data", {})
             star_s = sgp.get("star_player", {})
@@ -916,17 +931,17 @@ with t_slots:
                             <span class="badge-source" style="background-color: #78350f; color: #fde68a; border-color: #b45309;">🚩 FUERAS DE JUEGO (OFFSIDES)</span>
                             <span style="color: #fbbf24; font-size: 0.85rem; font-weight: bold;">Binomial Negativa</span>
                         </div>
-                        <b style="color: #ffffff; font-size: 1.15rem;">Proyección: ~3.4 Fueras de Juego Totales</b><br>
-                        <span style="color: #94a3b8; font-size: 0.82rem;">Líneas defensivas y desmarques de ruptura de <b>{m_chosen['home']}</b> vs <b>{m_chosen['away']}</b></span>
+                        <b style="color: #ffffff; font-size: 1.15rem;">Proyección: ~{sgp.get('secondary_props', {}).get('expected_offsides', sgp.get('quant_model_summary', {}).get('expected_offsides', 3.4))} Fueras de Juego | ~{sgp.get('secondary_props', {}).get('expected_fouls', sgp.get('quant_model_summary', {}).get('expected_fouls', 22.8))} Faltas</b><br>
+                        <span style="color: #94a3b8; font-size: 0.82rem;">Líneas defensivas y fricción cruzada de <b>{m_chosen['home']}</b> vs <b>{m_chosen['away']}</b></span>
                         <div style="display: flex; gap: 8px; margin-top: 10px; font-size: 0.82rem; flex-wrap: wrap;">
                             <span style="background-color: #0b132b; color: #34d399; padding: 3px 8px; border-radius: 4px; border: 1px solid #065f46;">
-                                Over 2.5 Fueras de Juego: <b>76.0%</b> (~1.22)
+                                Over 2.5 Fueras de Juego: <b>{sgp.get('secondary_props', {}).get('offsides_over25_prob', 64.0):.1f}%</b> (~{sgp.get('secondary_props', {}).get('offsides_over25_odds', 1.64):.2f})
                             </span>
                             <span style="background-color: #0b132b; color: #fbbf24; padding: 3px 8px; border-radius: 4px; border: 1px solid #b45309;">
-                                Over 3.5 Fueras de Juego: <b>58.0%</b> (~1.65)
+                                Over 3.5 Fueras de Juego: <b>{sgp.get('secondary_props', {}).get('offsides_over35_prob', 44.0):.1f}%</b> (~{sgp.get('secondary_props', {}).get('offsides_over35_odds', 2.38):.2f})
                             </span>
                             <span style="background-color: #0b132b; color: #38bdf8; padding: 3px 8px; border-radius: 4px; border: 1px solid #1e3a8a;">
-                                Faltas Over 19.5: <b>82.0%</b> (~1.20)
+                                Faltas Over 19.5: <b>{sgp.get('secondary_props', {}).get('fouls_over195_prob', 72.0):.1f}%</b> (~{sgp.get('secondary_props', {}).get('fouls_over195_odds', 1.46):.2f})
                             </span>
                         </div>
                     </div>
@@ -1611,11 +1626,19 @@ with t_parlay:
     except ImportError:
         from sports_analyzer.custom_target_parlay_engine import find_target_payout_combos
 
+    u_allowed_cats = st.multiselect(
+        "🎛️ Mercados que SÍ deseas incluir (los no seleccionados quedan excluidos):",
+        options=["Goles", "Resultado", "Ambos Anotan", "Corners", "Tarjetas", "Jugadores", "Tiros", "FuerasDeJuego", "Faltas"],
+        default=["Goles", "Resultado", "Ambos Anotan", "Corners", "Tarjetas", "Jugadores", "Tiros"],
+        key="target_allowed_cats"
+    )
+
     target_res = find_target_payout_combos(
         date_str=date_str,
         stake_mxn=float(u_stake),
         target_profit_mxn=float(u_profit),
-        risk_mode=mode_key_map.get(u_mode_lbl, "balanced")
+        risk_mode=mode_key_map.get(u_mode_lbl, "balanced"),
+        allowed_categories=u_allowed_cats if u_allowed_cats else None,
     )
 
     t_odds_val = target_res.get("target_odds", (u_stake + u_profit) / u_stake)

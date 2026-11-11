@@ -29,23 +29,36 @@ except ImportError:
     from sports_analyzer.hourly_slots_engine import get_chronological_slots, analyze_match_for_slot
 
 
-def categorize_pick(pick_str: str) -> str:
-    """Clasifica la selección para aplicar filtros de diversidad de mercado."""
+DEFAULT_ALLOWED_CATEGORIES = ["Goles", "Resultado", "Ambos Anotan", "Corners", "Tarjetas", "Jugadores", "Tiros"]
+
+
+def categorize_pick(pick_str: str, cat_group: str = "") -> str:
+    """Clasifica la selección para aplicar filtros de usuario y diversidad de mercado."""
+    if cat_group:
+        cg = cat_group.strip()
+        if cg == "Córners":
+            return "Corners"
+        if cg in ("Goles", "Resultado", "Ambos Anotan", "Tarjetas", "Jugadores", "Tiros", "Faltas", "FuerasDeJuego"):
+            return cg
     p_lower = pick_str.lower()
-    if "córner" in p_lower or "corner" in p_lower:
+    if "tiro a puerta" in p_lower or "gol o asistencia" in p_lower or "anota gol" in p_lower:
+        return "Jugadores"
+    elif "córner" in p_lower or "corner" in p_lower:
         return "Corners"
-    elif "gol" in p_lower or "btts" in p_lower or "marcan" in p_lower:
-        return "Goles"
+    elif "btts" in p_lower or "ambos equipos marcan" in p_lower or "ambos anotan" in p_lower:
+        return "Ambos Anotan"
     elif "tarjeta" in p_lower or "árbitro" in p_lower or "arbitro" in p_lower:
         return "Tarjetas"
     elif "falta" in p_lower:
         return "Faltas"
     elif "fuera" in p_lower or "offside" in p_lower:
         return "FuerasDeJuego"
-    elif "tiro" in p_lower or "puerta" in p_lower or "remate" in p_lower:
+    elif "tiros a puerta" in p_lower or "total tiros" in p_lower or "remate" in p_lower:
         return "Tiros"
-    elif "doble oportunidad" in p_lower or "hándicap" in p_lower or "handicap" in p_lower:
+    elif any(k in p_lower for k in ("doble oportunidad", "hándicap", "handicap", "dnb", "gana", "1x2", "1x (", "x2 (")):
         return "Resultado"
+    elif "gol" in p_lower:
+        return "Goles"
     return "Otros"
 
 
@@ -53,7 +66,8 @@ def find_target_payout_combos(
     date_str: str,
     stake_mxn: float = 200.0,
     target_profit_mxn: float = 1000.0,
-    risk_mode: str = "balanced"  # "conservative", "balanced", "aggressive"
+    risk_mode: str = "balanced",  # "conservative", "balanced", "aggressive"
+    allowed_categories: List[str] = None,
 ) -> Dict[str, Any]:
     """
     Dada una inversión ($X) y una ganancia neta deseada ($Y), calcula la cuota requerida:
@@ -94,16 +108,18 @@ def find_target_payout_combos(
         if not v_list:
             continue
 
+        active_cats = set(allowed_categories) if allowed_categories else set(DEFAULT_ALLOWED_CATEGORIES)
         prov = ana.get("provenance", {})
         for v in v_list:
             odds = float(v.get("odds", 1.35))
             prob = float(v.get("prob", 75.0))
-            if odds < 1.14 or odds > 4.50 or prob < 52.0:
+            if odds < 1.12 or odds > 4.50 or prob < 52.0:
+                continue
+            pick_text = v.get("pick", "")
+            cat = categorize_pick(pick_text, v.get("cat_group", ""))
+            if cat not in active_cats:
                 continue
             ev_pct = round(((prob / 100.0) * odds - 1.0) * 100.0, 1)
-
-            pick_text = v.get("pick", "")
-            cat = categorize_pick(pick_text)
 
             math_calc = v.get("synergy") or v.get("reason")
             if not math_calc or "Respaldo oficial auditado" in str(math_calc):
@@ -131,6 +147,8 @@ def find_target_payout_combos(
                 "bookmaker_tree": f"Playdoit / Altenar > {m.get('league', '')} > {pick_text}"
             })
 
+    for _mk in by_match:
+        by_match[_mk].sort(key=lambda x: (x['prob'], x['ev_pct']), reverse=True)
     match_keys = list(by_match.keys())
     total_available_matches = len(match_keys)
 

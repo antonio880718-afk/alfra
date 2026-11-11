@@ -4325,14 +4325,16 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     am_h = get_americas_team_profile(home_team)
     am_a = get_americas_team_profile(away_team)
 
-    h_sot, h_corners, h_corners_ag, h_fouls, h_goals, h_goals_conceded, h_ht_goals, h_ht_for, h_cards = [], [], [], [], [], [], [], [], []
+    h_sot, h_sot_ag, h_corners, h_corners_ag, h_fouls, h_fouls_drw, h_goals, h_goals_conceded, h_ht_goals, h_ht_for, h_cards = [], [], [], [], [], [], [], [], [], [], []
     if nh_csv >= 6:
         for _, r in df_h.iterrows():
             ish = bool(r["_IsHome"])
             h_sot.append(float(r.get("HST" if ish else "AST", 0) or 0))
+            h_sot_ag.append(float(r.get("AST" if ish else "HST", 0) or 0))
             h_corners.append(float(r.get("HC" if ish else "AC", 0) or 0))
             h_corners_ag.append(float(r.get("AC" if ish else "HC", 0) or 0))
             h_fouls.append(float(r.get("HF" if ish else "AF", 0) or 0))
+            h_fouls_drw.append(float(r.get("AF" if ish else "HF", 0) or 0))
             gf = float(r.get("FTHG" if ish else "FTAG", 0) or 0)
             ga = float(r.get("FTAG" if ish else "FTHG", 0) or 0)
             ht_f = float(r.get("HTHG" if ish else "HTAG", 0) or 0)
@@ -4348,9 +4350,11 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
         ph_prof = {
             "games": nh,
             "sot_avg": sum(h_sot) / nh,
+            "sot_ag_avg": sum(h_sot_ag) / nh,
             "corners_avg": sum(h_corners) / nh,
             "corners_ag_avg": sum(h_corners_ag) / nh,
             "fouls_avg": sum(h_fouls) / nh,
+            "fouls_drawn_avg": sum(h_fouls_drw) / nh,
             "goals_avg": sum(h_goals) / nh,
             "goals_ag_avg": sum(h_goals_conceded) / nh,
             "ht_over05_pct": (sum(1 for x in h_ht_goals if x >= 1) / nh) * 100.0,
@@ -4362,14 +4366,16 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
         nh = 24
         ph_prof = {"games": nh, "sot_avg": 4.5, "corners_avg": 5.1, "corners_ag_avg": 4.6, "fouls_avg": 11.4, "goals_avg": 1.45, "goals_ag_avg": 1.22, "ht_over05_pct": 72.0}
 
-    a_sot, a_corners, a_corners_ag, a_fouls, a_goals, a_goals_conceded, a_ht_goals, a_ht_for, a_cards = [], [], [], [], [], [], [], [], []
+    a_sot, a_sot_ag, a_corners, a_corners_ag, a_fouls, a_fouls_drw, a_goals, a_goals_conceded, a_ht_goals, a_ht_for, a_cards = [], [], [], [], [], [], [], [], [], [], []
     if na_csv >= 6:
         for _, r in df_a.iterrows():
             ish = bool(r["_IsHome"])
             a_sot.append(float(r.get("HST" if ish else "AST", 0) or 0))
+            a_sot_ag.append(float(r.get("AST" if ish else "HST", 0) or 0))
             a_corners.append(float(r.get("HC" if ish else "AC", 0) or 0))
             a_corners_ag.append(float(r.get("AC" if ish else "HC", 0) or 0))
             a_fouls.append(float(r.get("HF" if ish else "AF", 0) or 0))
+            a_fouls_drw.append(float(r.get("AF" if ish else "HF", 0) or 0))
             gf = float(r.get("FTHG" if ish else "FTAG", 0) or 0)
             ga = float(r.get("FTAG" if ish else "FTHG", 0) or 0)
             ht_f = float(r.get("HTHG" if ish else "HTAG", 0) or 0)
@@ -4385,9 +4391,11 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
         pa_prof = {
             "games": na,
             "sot_avg": sum(a_sot) / na,
+            "sot_ag_avg": sum(a_sot_ag) / na,
             "corners_avg": sum(a_corners) / na,
             "corners_ag_avg": sum(a_corners_ag) / na,
             "fouls_avg": sum(a_fouls) / na,
+            "fouls_drawn_avg": sum(a_fouls_drw) / na,
             "goals_avg": sum(a_goals) / na,
             "goals_ag_avg": sum(a_goals_conceded) / na,
             "ht_over05_pct": (sum(1 for x in a_ht_goals if x >= 1) / na) * 100.0,
@@ -4426,11 +4434,8 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     ):
         total = max(1, int(total))
         if model_prob is not None:
-            if hits > 0 and nh_csv >= 6:
-                emp_p = (hits / total) * 100.0
-                prob = round(min(94.5, max(8.0, 0.58 * float(model_prob) + 0.42 * emp_p)), 1)
-            else:
-                prob = round(min(94.5, max(8.0, float(model_prob))), 1)
+            # Usar directamente la probabilidad cruzada del encuentro (Dixon-Coles / Binomial Negativa)
+            prob = round(min(95.5, max(8.0, float(model_prob))), 1)
             hits = int(min(total, max(1, round(total * (prob / 100.0)))))
         else:
             hits = int(min(total, max(1, hits)))
@@ -4705,7 +4710,10 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     m_fouls_shots.append(make_opt(f"{away_team}: Registra Más de 9.5 Tiros Totales", "Tiros Totales", 0, na, _mkt_odds(qp.get("away_shots_over95", 62.0)), synergy=f"Media de disparos de {away_team} como visitante.", model_prob=qp.get("away_shots_over95", 62.0)))
     categories.append({"category": "🛑 Faltas Cometidas y Tiros Totales (Líneas de Juego Limpio e Intensidad)", "options": m_fouls_shots})
 
+    for cat in categories:
+        cat["options"].sort(key=lambda x: x["prob_num"], reverse=True)
     flat = [opt for cat in categories for opt in cat["options"]]
+    flat.sort(key=lambda x: x["prob_num"], reverse=True)
     escalera_picks = [opt for opt in flat if opt["is_escalera"]]
     escalera_picks.sort(key=lambda x: x["prob_num"], reverse=True)
 
