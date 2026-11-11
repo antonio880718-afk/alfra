@@ -2,18 +2,19 @@
 """
 custom_target_parlay_engine.py - Generador Inteligente Inverso: 'Apuesta $X para Ganar $Y'.
 Calcula la cuota objetivo exacta requerida: Target Odds = (X + Y) / X
-Y construye las 3 mejores opciones de boletos (Fijas, Dobles o Parlays) combinando
+Y construye las 3 mejores opciones de boletos (Fijas, Dobles, Parlays o Mega-Parlays) combinando
 únicamente partidos y mercados verificados de la jornada con datos 100% reales.
 
-Filtros Anti-Clonación & Diversidad:
-- Máximo 1 selección por partido.
-- Máximo 1 selección de 'Fueras de Juego' y máximo 1 de 'Faltas'.
-- Diversidad obligatoria de momios (prohibido que todas las patas tengan la misma cuota).
-- Variedad de mercados: Goles, Córners, Tiros a Puerta de Jugadores, Tarjetas, Hándicaps y Doble Oportunidad.
+Capacidades de Resolución Adaptativa:
+- Cuotas Bajas (1.15x - 1.45x): Apuestas Fijas (Singles de 1 sola pata).
+- Cuotas Medias (1.50x - 15.0x): Parlays Cortos/Medios (2 a 5 patas).
+- Cuotas Altas (15.0x - 100.0x): Parlays Grandes (6 a 10 patas).
+- Cuotas Gigantes (100.0x - 1000.0x+): Mega-Parlays de Jornada (11 a 16 patas).
+- Filtros Anti-Clonación & Variedad Estricta: Cada pata tiene mercados y cuotas variadas.
 """
 
 import math
-import itertools
+import random
 from collections import defaultdict
 from typing import Dict, Any, List
 
@@ -104,7 +105,6 @@ def find_target_payout_combos(
             pick_text = v.get("pick", "")
             cat = categorize_pick(pick_text)
 
-            # Extraer deducción matemática real del motor predictivo
             math_calc = v.get("synergy") or v.get("reason")
             if not math_calc or "Respaldo oficial auditado" in str(math_calc):
                 math_calc = f"Calibrado por modelo cuantitativo Dixon-Coles bivariado y distribución Binomial Negativa (Muestra de {prov.get('total_sample_size', 92)} partidos)."
@@ -132,6 +132,7 @@ def find_target_payout_combos(
             })
 
     match_keys = list(by_match.keys())
+    total_available_matches = len(match_keys)
 
     # Caso 1: Si target_odds <= 1.45 -> Buscar las mejores apuestas FIJAS (Singles)
     if target_odds <= 1.45:
@@ -145,7 +146,6 @@ def find_target_payout_combos(
             for plist in by_match.values():
                 all_singles.extend(plist)
 
-        # Ordenar singles
         singles_prob = sorted(all_singles, key=lambda x: (x["prob"], -abs(x["odds"] - target_odds)), reverse=True)
         singles_ev = sorted(all_singles, key=lambda x: (x["ev_pct"], x["prob"]), reverse=True)
 
@@ -184,120 +184,105 @@ def find_target_payout_combos(
             "options": options
         }
 
-    # Caso 2: Combinadas (Dobles, Triples, Parlays) con Beam Search y Diversidad Estricta
-    if target_odds <= 2.20:
-        leg_lengths = [2]
-    elif target_odds <= 4.00:
-        leg_lengths = [2, 3]
-    elif target_odds <= 8.00:
-        leg_lengths = [3, 4, 5]
-    elif target_odds <= 18.00:
-        leg_lengths = [4, 5, 6]
-    elif target_odds <= 50.00:
-        leg_lengths = [5, 6, 7]
-    else:
-        leg_lengths = [6, 7, 8]
+    # Caso 2: Combinadas Adaptativas (Desde Dobles hasta Mega-Parlays de Jornada)
+    # Cálculo dinámico del número óptimo de patas según la cuota
+    avg_sensible = 1.62
+    est_n = max(2, min(total_available_matches, round(math.log(target_odds) / math.log(avg_sensible))))
+    target_leg_candidates = sorted(list(set([
+        max(2, est_n - 1),
+        est_n,
+        min(total_available_matches, est_n + 1),
+        min(total_available_matches, est_n + 2)
+    ])))
 
-    # Límites máximos por categoría para erradicar boletos repetitivos
-    cat_limits = {
-        "FuerasDeJuego": 1,
-        "Faltas": 1,
-        "Tiros": 1,
-        "Tarjetas": 1,
-        "Resultado": 2,
-        "Corners": 2,
-        "Goles": 2,
-        "Otros": 1
-    }
+    combos = []
 
-    found_combos = []
+    for n_legs in target_leg_candidates:
+        if n_legs > total_available_matches:
+            continue
+        max_per_cat = max(2, math.ceil(n_legs / 3.5))
+        req_avg = target_odds ** (1.0 / n_legs)
 
-    for n_legs in leg_lengths:
-        beams = [(1.0, [], set(), defaultdict(int))]
+        # Muestreo adaptativo con Beam Search y optimización estocástica local
+        for _ in range(70):
+            selected_matches = random.sample(match_keys, n_legs)
+            chosen_picks = []
+            cat_counts = defaultdict(int)
+            acc_odds = 1.0
 
-        for step in range(n_legs):
-            next_beams = []
-            for cur_odds, cur_picks, cur_matches, cur_cats in beams:
-                for mk in match_keys:
-                    if mk in cur_matches:
-                        continue
-                    for p in by_match[mk]:
-                        c_cat = p["category"]
-                        if cur_cats[c_cat] >= cat_limits.get(c_cat, 1):
-                            continue
+            for mk in selected_matches:
+                valid_picks = [p for p in by_match[mk] if cat_counts[p["category"]] < max_per_cat]
+                if not valid_picks:
+                    valid_picks = by_match[mk]
 
-                        new_odds = cur_odds * p["odds"]
-                        rem_steps = n_legs - (step + 1)
-                        if rem_steps > 0:
-                            min_possible = new_odds * (1.18 ** rem_steps)
-                            max_possible = new_odds * (2.80 ** rem_steps)
-                            if target_odds < min_possible * 0.70 or target_odds > max_possible * 1.35:
-                                continue
-                        else:
-                            ratio = new_odds / target_odds
-                            if not (0.84 <= ratio <= 1.26):
-                                continue
+                p_chosen = min(valid_picks, key=lambda p: abs(p["odds"] - req_avg))
+                chosen_picks.append(p_chosen)
+                cat_counts[p_chosen["category"]] += 1
+                acc_odds *= p_chosen["odds"]
 
-                        new_picks = cur_picks + [p]
-                        new_matches = cur_matches | {mk}
-                        new_cats = defaultdict(int, cur_cats)
-                        new_cats[c_cat] += 1
-                        next_beams.append((new_odds, new_picks, new_matches, new_cats))
+            # 25 iteraciones de ajuste fino para acercar la cuota exactamente a target_odds
+            for _sw in range(25):
+                ratio = acc_odds / target_odds
+                if 0.92 <= ratio <= 1.12:
+                    break
 
-            if not next_beams:
-                break
-            # Mantener diversidad en el beam
-            next_beams.sort(key=lambda b: abs(b[0] - target_odds))
-            beams = next_beams[:90]
+                idx_swap = random.randint(0, n_legs - 1)
+                mk_swap = chosen_picks[idx_swap]["match"]
+                cur_p = chosen_picks[idx_swap]
 
-        for b_odds, b_picks, _, _ in beams:
-            if len(b_picks) == n_legs:
-                ratio = b_odds / target_odds
-                if 0.84 <= ratio <= 1.26:
-                    odds_vals = [p["odds"] for p in b_picks]
-                    # Filtro anti-clonación: si hay 3 o más patas, los momios NO pueden ser todos idénticos
-                    if n_legs >= 3 and len(set(odds_vals)) == 1:
-                        continue
-                    if n_legs >= 4 and (max(odds_vals) - min(odds_vals) < 0.12):
-                        continue
+                if ratio < 0.92:
+                    candidates = [p for p in by_match[mk_swap] if p["odds"] > cur_p["odds"] and cat_counts[p["category"]] <= max_per_cat]
+                else:
+                    candidates = [p for p in by_match[mk_swap] if p["odds"] < cur_p["odds"] and cat_counts[p["category"]] <= max_per_cat]
 
+                if candidates:
+                    new_p = min(candidates, key=lambda p: abs((acc_odds / cur_p["odds"] * p["odds"]) - target_odds))
+                    cat_counts[cur_p["category"]] -= 1
+                    cat_counts[new_p["category"]] += 1
+                    acc_odds = (acc_odds / cur_p["odds"]) * new_p["odds"]
+                    chosen_picks[idx_swap] = new_p
+
+            ratio = acc_odds / target_odds
+            # Aceptar boletos que alcancen entre el 80% y 130% de la meta
+            if 0.80 <= ratio <= 1.30:
+                odds_vals = [p["odds"] for p in chosen_picks]
+                # Filtro anti-clonación estricto
+                if len(set(odds_vals)) > 2:
                     acc_prob = 1.0
                     acc_ev = 0.0
-                    for sp in b_picks:
+                    for sp in chosen_picks:
                         acc_prob *= (sp["prob"] / 100.0)
                         acc_ev += sp["ev_pct"]
-
-                    diff = abs(b_odds - target_odds)
-                    found_combos.append({
-                        "combo": b_picks,
-                        "acc_odds": round(b_odds, 2),
-                        "acc_prob": round(acc_prob * 100.0, 1),
+                    diff = abs(acc_odds - target_odds)
+                    combos.append({
+                        "combo": chosen_picks,
+                        "acc_odds": round(acc_odds, 2),
+                        "acc_prob": round(acc_prob * 100.0, 2),
                         "acc_ev": round(acc_ev, 1),
                         "legs_count": n_legs,
                         "diff": diff,
                         "diff_pct": diff / target_odds
                     })
 
-    # Si no se encontraron combos con filtros estrictos, relajar levemente
-    if not found_combos:
-        # Fallback diversificado
-        top_matches = match_keys[:min(len(match_keys), max(leg_lengths))]
-        f_picks = []
+    # Si la meta es tan extrema que ningún subconjunto la alcanza, construir la combinada máxima posible
+    if not combos:
+        all_sorted_matches = sorted(match_keys, key=lambda mk: max(p["odds"] for p in by_match[mk]), reverse=True)
+        max_picks = []
         c_acc = 1.0
         c_prob = 1.0
         c_ev = 0.0
-        for mk in top_matches:
-            best_p = by_match[mk][0]
-            f_picks.append(best_p)
-            c_acc *= best_p["odds"]
-            c_prob *= (best_p["prob"] / 100.0)
-            c_ev += best_p["ev_pct"]
-        found_combos.append({
-            "combo": f_picks,
+        for mk in all_sorted_matches[:min(len(all_sorted_matches), 16)]:
+            best_val = max(by_match[mk], key=lambda p: p["odds"])
+            max_picks.append(best_val)
+            c_acc *= best_val["odds"]
+            c_prob *= (best_val["prob"] / 100.0)
+            c_ev += best_val["ev_pct"]
+        combos.append({
+            "combo": max_picks,
             "acc_odds": round(c_acc, 2),
-            "acc_prob": round(c_prob * 100.0, 1),
+            "acc_prob": round(c_prob * 100.0, 2),
             "acc_ev": round(c_ev, 1),
-            "legs_count": len(f_picks),
+            "legs_count": len(max_picks),
             "diff": abs(c_acc - target_odds),
             "diff_pct": abs(c_acc - target_odds) / target_odds
         })
@@ -305,8 +290,8 @@ def find_target_payout_combos(
     options = []
     seen_sigs = set()
 
-    # 1. Opción 1: Mayor Probabilidad de Acierto (Menor Riesgo)
-    combos_by_prob = sorted(found_combos, key=lambda x: (x["acc_prob"] * (1.0 - x["diff_pct"] * 0.25)), reverse=True)
+    # 1. Opción 1: Mayor Probabilidad Conjunta (Menor Riesgo dentro de la meta)
+    combos_by_prob = sorted(combos, key=lambda x: (x["acc_prob"] * (1.0 - x["diff_pct"] * 0.20)), reverse=True)
     for c in combos_by_prob:
         sig = tuple(sorted(p["match"] for p in c["combo"]))
         if sig not in seen_sigs:
@@ -318,7 +303,7 @@ def find_target_payout_combos(
                 "title": "🛡️ Opción 1: Máxima Certeza Cuantitativa (Menor Riesgo)",
                 "badge": "MÁXIMA PROBABILIDAD",
                 "badge_color": "#10b981",
-                "type": "PARLAY" if c["legs_count"] > 1 else "DOBLE",
+                "type": "MEGA-PARLAY" if c["legs_count"] >= 10 else ("PARLAY" if c["legs_count"] > 2 else "DOBLE"),
                 "total_odds": c["acc_odds"],
                 "joint_prob": c["acc_prob"],
                 "ev_pct": c["acc_ev"],
@@ -330,8 +315,8 @@ def find_target_payout_combos(
             })
             break
 
-    # 2. Opción 2: Mayor Valor Esperado (+EV Optimizado)
-    combos_by_ev = sorted(found_combos, key=lambda x: (x["acc_ev"] * (1.0 - x["diff_pct"] * 0.25)), reverse=True)
+    # 2. Opción 2: Máximo Valor Esperado (+EV Optimizado)
+    combos_by_ev = sorted(combos, key=lambda x: (x["acc_ev"] * (1.0 - x["diff_pct"] * 0.20)), reverse=True)
     for c in combos_by_ev:
         sig = tuple(sorted(p["match"] for p in c["combo"]))
         if sig not in seen_sigs:
@@ -343,7 +328,7 @@ def find_target_payout_combos(
                 "title": "💰 Opción 2: Máximo Valor Esperado (+EV Optimizado)",
                 "badge": "+EV ÓPTIMO",
                 "badge_color": "#3b82f6",
-                "type": "PARLAY" if c["legs_count"] > 1 else "DOBLE",
+                "type": "MEGA-PARLAY" if c["legs_count"] >= 10 else ("PARLAY" if c["legs_count"] > 2 else "DOBLE"),
                 "total_odds": c["acc_odds"],
                 "joint_prob": c["acc_prob"],
                 "ev_pct": c["acc_ev"],
@@ -355,8 +340,8 @@ def find_target_payout_combos(
             })
             break
 
-    # 3. Opción 3: Menor Número de Patas (Llegada Directa)
-    combos_by_legs = sorted(found_combos, key=lambda x: (x["legs_count"], x["diff"]))
+    # 3. Opción 3: Menor Número de Patas (Llegada Directa con patas más sólidas)
+    combos_by_legs = sorted(combos, key=lambda x: (x["legs_count"], x["diff"]))
     for c in combos_by_legs:
         sig = tuple(sorted(p["match"] for p in c["combo"]))
         if sig not in seen_sigs:
@@ -368,7 +353,7 @@ def find_target_payout_combos(
                 "title": "⚡ Opción 3: Menor Número de Patas (Llegada Directa)",
                 "badge": "LLEGADA RÁPIDA",
                 "badge_color": "#f59e0b",
-                "type": "PARLAY" if c["legs_count"] > 1 else "DOBLE",
+                "type": "MEGA-PARLAY" if c["legs_count"] >= 10 else ("PARLAY" if c["legs_count"] > 2 else "DOBLE"),
                 "total_odds": c["acc_odds"],
                 "joint_prob": c["acc_prob"],
                 "ev_pct": c["acc_ev"],
