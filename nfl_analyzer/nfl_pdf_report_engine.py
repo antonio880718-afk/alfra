@@ -4,7 +4,7 @@ Exporta el 100% de los picks organizados partido a partido con % de ocurrencia, 
 promedios de temporada, defensas secundarias rivales, clima/domo y auditoría empírica.
 """
 import os, io, sys
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 _dir = os.path.dirname(os.path.abspath(__file__))
 if _dir not in sys.path:
@@ -21,7 +21,9 @@ def _clean(txt):
         return ""
     return str(txt).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
-def generate_nfl_complete_pdf(date_str: str = "20261109", league_filter: str = "ALL") -> bytes:
+def generate_nfl_complete_pdf(date_str: str = None, league_filter: str = "ALL") -> bytes:
+    if not date_str:
+        date_str = datetime.now(timezone(timedelta(hours=-6))).strftime("%Y%m%d")
     """Genera un PDF exhaustivo con todos los picks de cada juego de NFL + NCAAF y su justificación completa."""
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import letter, landscape

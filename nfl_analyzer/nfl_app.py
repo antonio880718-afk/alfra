@@ -6,13 +6,31 @@ Identidad de jugadores, promedios de temporada, líneas seguras con amortiguamie
 defensas secundarias rivales, impacto del estadio/clima (Domo vs Abierto), justificación cuantitativa y regla VOID.
 """
 import streamlit as st
-import os, sys, json
+import os, sys, json, importlib
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 _app_dir = os.path.dirname(os.path.abspath(__file__))
 if _app_dir not in sys.path:
     sys.path.insert(0, _app_dir)
+
+_NFL_ENGINE_VER = "2026.11.11.v2"
+if getattr(sys, "_ALFRA_NFL_VER", None) != _NFL_ENGINE_VER:
+    for _base in (
+        "live_nfl_audit_sync",
+        "nfl_data_api",
+        "nfl_math_models_engine",
+        "nfl_daily_tickets_engine",
+        "nfl_self_audit_engine",
+        "nfl_pdf_report_engine",
+    ):
+        for _mn in (_base, f"nfl_analyzer.{_base}"):
+            if _mn in sys.modules:
+                try:
+                    importlib.reload(sys.modules[_mn])
+                except Exception:
+                    pass
+    sys._ALFRA_NFL_VER = _NFL_ENGINE_VER
 
 from nfl_data_api import get_normalized_football_schedule
 from nfl_math_models_engine import compute_full_nfl_game_data_engineering
@@ -72,25 +90,66 @@ with top_c1:
         format_func=lambda x: "🏈 TODAS" if x == "ALL" else ("🏆 Solo NFL" if x == "NFL" else "🎓 Solo NCAA"),
         horizontal=True
     )
+_CDMX_TZ = timezone(timedelta(hours=-6))
+_today_cdmx = datetime.now(_CDMX_TZ).date()
+_DIAS_ES = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
+_MESES_ES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+def _fmt_fecha_es(d) -> str:
+    return f"{_DIAS_ES[d.weekday()]} {d.day} {_MESES_ES[d.month - 1]}"
+
+if st.session_state.get("nfl_today_ref") != _today_cdmx:
+    st.session_state["nfl_today_ref"] = _today_cdmx
+    st.session_state["nfl_selected_date"] = _today_cdmx
+    st.session_state["nfl_date_picker"] = _today_cdmx
+
+def _nfl_pick_quick(d):
+    st.session_state["nfl_selected_date"] = d
+    st.session_state["nfl_date_picker"] = d
+
+def _nfl_on_cal_change():
+    st.session_state["nfl_selected_date"] = st.session_state["nfl_date_picker"]
+
 with top_c2:
-    date_options = {
-        "20261110": "🔥 Hoy (Mar 10 MACtion)",
-        "20261109": "✅ Ayer (Lun 9 MNF)",
-        "20261108": "📜 Dom 8 Nov (NFL)",
-        "20261107": "📜 Sáb 7 Nov (NCAAF)"
-    }
-    date_str = st.radio(
-        "Seleccionar Fecha:",
-        options=list(date_options.keys()),
-        format_func=lambda d: date_options[d],
-        horizontal=True
+    st.markdown("<span style='font-size:0.86rem; color:#cbd5e1;'>Seleccionar Fecha (Hora CDMX):</span>", unsafe_allow_html=True)
+    _quick_days = [
+        (_today_cdmx, f"🔥 Hoy ({_fmt_fecha_es(_today_cdmx)})"),
+        (_today_cdmx + timedelta(days=1), f"⏭️ Mañana ({_fmt_fecha_es(_today_cdmx + timedelta(days=1))})"),
+        (_today_cdmx - timedelta(days=1), f"✅ Ayer ({_fmt_fecha_es(_today_cdmx - timedelta(days=1))})"),
+        (_today_cdmx - timedelta(days=2), f"📜 {_fmt_fecha_es(_today_cdmx - timedelta(days=2))}"),
+        (_today_cdmx - timedelta(days=3), f"📜 {_fmt_fecha_es(_today_cdmx - timedelta(days=3))}"),
+    ]
+    _q_cols = st.columns(len(_quick_days))
+    _cur_sel = st.session_state["nfl_selected_date"]
+    for _idx, (_qd, _qlbl) in enumerate(_quick_days):
+        with _q_cols[_idx]:
+            st.button(
+                _qlbl,
+                key=f"nfl_q_{_qd.strftime('%Y%m%d')}",
+                type="primary" if _cur_sel == _qd else "secondary",
+                use_container_width=True,
+                on_click=_nfl_pick_quick,
+                args=(_qd,),
+            )
+    st.date_input(
+        "📅 O elegir cualquier fecha del calendario:",
+        key="nfl_date_picker",
+        on_change=_nfl_on_cal_change,
     )
+
+date_str = st.session_state["nfl_selected_date"].strftime("%Y%m%d")
+
 with top_c3:
     st.write("")
     if st.button("🔄 Sincronizar ESPN", key="btn_sync_nfl", help="Actualiza marcadores y boxscores oficiales en vivo desde ESPN"):
         with st.spinner("Sincronizando con ESPN..."):
             from live_nfl_audit_sync import sync_nfl_date_from_espn
             sync_nfl_date_from_espn(date_str)
+            _stale_pdf = os.path.join(_app_dir, "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NFL_{league_sel}_{date_str}.pdf")
+            if os.path.exists(_stale_pdf):
+                try:
+                    os.remove(_stale_pdf)
+                except Exception:
+                    pass
             st.rerun()
 
 games_today = get_normalized_football_schedule(date_str, league_sel)
@@ -141,9 +200,10 @@ with m4:
     </div>
     """, unsafe_allow_html=True)
 
-pdf_path = os.path.join(_app_dir, "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NFL_{date_str}.pdf")
-pdf_bytes = b""
-if os.path.exists(pdf_path):
+pdf_path = os.path.join(_app_dir, "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NFL_{league_sel}_{date_str}.pdf")
+_sched_path = os.path.join(_app_dir, "data", f"football_schedule_{date_str}.json")
+_pdf_fresh = os.path.exists(pdf_path) and (not os.path.exists(_sched_path) or os.path.getmtime(pdf_path) >= os.path.getmtime(_sched_path))
+if _pdf_fresh:
     with open(pdf_path, "rb") as fp:
         pdf_bytes = fp.read()
 else:
@@ -199,12 +259,15 @@ for g in games_today[:12]:
     </div>
     """)
 
-cards_grid = " ".join([c.strip() for c in cards_html])
-st.markdown(f"""
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-bottom: 20px;">
-    {cards_grid}
-</div>
-""", unsafe_allow_html=True)
+if cards_html:
+    cards_grid = " ".join([c.strip() for c in cards_html])
+    st.markdown(f"""
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-bottom: 20px;">
+        {cards_grid}
+    </div>
+    """, unsafe_allow_html=True)
+else:
+    st.info(f"No hay partidos de {league_sel} programados en ESPN para la fecha {date_str} (entre semana suele jugar NCAAF o TNF el jueves). Prueba 'TODAS' o selecciona otra fecha en el calendario.")
 
 t1, t2, t3, t4, t5, t6 = st.tabs([
     f"⏰ 1. Cartelera ({len(games_today)} Juegos)",
@@ -392,6 +455,11 @@ with t5:
             with st.spinner("Actualizando con ESPN..."):
                 from live_nfl_audit_sync import sync_nfl_date_from_espn
                 sync_nfl_date_from_espn(date_str)
+                if os.path.exists(pdf_path):
+                    try:
+                        os.remove(pdf_path)
+                    except Exception:
+                        pass
                 st.rerun()
     all_aud_rows = []
     for g in games_today:

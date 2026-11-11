@@ -9,7 +9,7 @@ if _dir not in sys.path:
 
 from nfl_data_api import get_normalized_football_schedule
 
-def audit_individual_nfl_pick(pick_item: dict, game_info: dict = None, date_str: str = "20261109") -> dict:
+def audit_individual_nfl_pick(pick_item: dict, game_info: dict = None, date_str: str = None) -> dict:
     if not game_info:
         sched = get_normalized_football_schedule(date_str)
         m_title = pick_item.get("match", "")

@@ -10,7 +10,7 @@ if _dir not in sys.path:
 from nfl_data_api import get_normalized_football_schedule
 from nfl_math_models_engine import compute_full_nfl_game_data_engineering
 
-def get_daily_nfl_parlay(date_str: str = "20261109", league_filter: str = "ALL") -> list:
+def get_daily_nfl_parlay(date_str: str = None, league_filter: str = "ALL") -> list:
     games = get_normalized_football_schedule(date_str, league_filter)
     picks = []
     for g in games:
@@ -32,11 +32,11 @@ def get_daily_nfl_parlay(date_str: str = "20261109", league_filter: str = "ALL")
             break
     return picks
 
-def get_daily_nfl_conservative(date_str: str = "20261109", league_filter: str = "ALL") -> list:
+def get_daily_nfl_conservative(date_str: str = None, league_filter: str = "ALL") -> list:
     all_p = get_daily_nfl_parlay(date_str, league_filter)
     return [p for p in all_p if p.get("prob", 0) >= 81.0][:8]
 
-def get_daily_nfl_escalera_blocks(date_str: str = "20261109", league_filter: str = "ALL") -> dict:
+def get_daily_nfl_escalera_blocks(date_str: str = None, league_filter: str = "ALL") -> dict:
     games = get_normalized_football_schedule(date_str, league_filter)
     f1_picks, f2_picks, f3_picks = [], [], []
 

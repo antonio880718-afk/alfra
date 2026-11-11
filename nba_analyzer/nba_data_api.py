@@ -6,7 +6,8 @@ Extrae jugadores reales, métricas de temporada, líderes de anotación y defens
 import os, sys, json, urllib.request
 from datetime import datetime, timezone, timedelta
 
-CDMX_TZ = timezone(timedelta(hours=-6))  # Hora Centro de México (CDMX / UTC-6)
+CDMX_TZ = timezone(timedelta(hours=-6))
+_LAST_SYNC_TS = {}  # {date_str: epoch_seconds}  # Hora Centro de México (CDMX / UTC-6)
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 SUMMARY_DIR = os.path.join(DATA_DIR, "summary_cache")
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -269,12 +270,17 @@ def fetch_league_scoreboard(league_key: str, date_str: str) -> list:
         print(f"Error fetching {league_key} {date_str}: {e}")
         return []
 
-def get_normalized_bball_schedule(date_str: str = "20261110", league_filter: str = "ALL", force_refresh: bool = False) -> list:
+def get_normalized_bball_schedule(date_str: str = None, league_filter: str = "ALL", force_refresh: bool = False) -> list:
+    if not date_str:
+        date_str = datetime.now(CDMX_TZ).strftime("%Y%m%d")
     cache_file = os.path.join(DATA_DIR, f"bball_schedule_{date_str}.json")
+    stale_cache_games = []
     if not force_refresh and os.path.exists(cache_file):
         try:
             with open(cache_file, "r", encoding="utf-8") as f:
                 all_games = json.load(f)
+                if isinstance(all_games, list) and all_games:
+                    stale_cache_games = all_games
                 has_placeholders = any(any("Top Scorer" in s.get("name", "") for s in g.get("stars", [])) for g in all_games)
                 has_unfinalized = any("FINAL" not in g.get("status", "") for g in all_games)
                 # Si los juegos no están finalizados y el cache tiene más de 10 minutos, auto-sincronizar
@@ -284,12 +290,20 @@ def get_normalized_bball_schedule(date_str: str = "20261110", league_filter: str
                     age_sec = time.time() - os.path.getmtime(cache_file)
                 except Exception:
                     pass
-                if not has_placeholders and (not has_unfinalized or age_sec < 600):
+                if all_games and not has_placeholders and (not has_unfinalized or age_sec < 180):
                     if league_filter != "ALL":
                         return [g for g in all_games if g.get("league") == league_filter]
                     return all_games
         except Exception:
             pass
+
+    import time as _time
+    _now_ts = _time.time()
+    if not force_refresh and stale_cache_games and (_now_ts - _LAST_SYNC_TS.get(date_str, 0.0) < 120):
+        if league_filter != "ALL":
+            return [g for g in stale_cache_games if g.get("league") == league_filter]
+        return stale_cache_games
+    _LAST_SYNC_TS[date_str] = _now_ts
 
     # Sincronización en vivo vía ESPN
     try:
@@ -395,6 +409,11 @@ def get_normalized_bball_schedule(date_str: str = "20261110", league_filter: str
                 json.dump(games, f, ensure_ascii=False, indent=2)
         except Exception:
             pass
+
+    if not games and stale_cache_games:
+        if league_filter != "ALL":
+            return [g for g in stale_cache_games if g.get("league") == league_filter]
+        return stale_cache_games
 
     return games
 

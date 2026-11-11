@@ -10,7 +10,7 @@ if _dir not in sys.path:
 from nba_data_api import get_normalized_bball_schedule
 from nba_math_models_engine import compute_full_nba_game_data_engineering
 
-def get_daily_nba_parlay(date_str: str = "20261109", league_filter: str = "ALL") -> list:
+def get_daily_nba_parlay(date_str: str = None, league_filter: str = "ALL") -> list:
     """Retorna un boleto parlay de 8 a 10 selecciones de alta certeza con justificación completa."""
     games = get_normalized_bball_schedule(date_str, league_filter)
     picks = []
@@ -33,11 +33,11 @@ def get_daily_nba_parlay(date_str: str = "20261109", league_filter: str = "ALL")
             break
     return picks
 
-def get_daily_nba_conservative(date_str: str = "20261109", league_filter: str = "ALL") -> list:
+def get_daily_nba_conservative(date_str: str = None, league_filter: str = "ALL") -> list:
     all_p = get_daily_nba_parlay(date_str, league_filter)
     return [p for p in all_p if p.get("prob", 0) >= 81.0][:8]
 
-def get_daily_nba_escalera_blocks(date_str: str = "20261109", league_filter: str = "ALL") -> dict:
+def get_daily_nba_escalera_blocks(date_str: str = None, league_filter: str = "ALL") -> dict:
     games = get_normalized_bball_schedule(date_str, league_filter)
     f1_picks, f2_picks, f3_picks = [], [], []
 

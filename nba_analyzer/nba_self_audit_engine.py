@@ -9,7 +9,7 @@ if _dir not in sys.path:
 
 from nba_data_api import get_normalized_bball_schedule
 
-def audit_individual_nba_pick(pick_item: dict, game_info: dict = None, date_str: str = "20261109") -> dict:
+def audit_individual_nba_pick(pick_item: dict, game_info: dict = None, date_str: str = None) -> dict:
     """
     Audita un pick de baloncesto contrastándolo contra el resultado oficial.
     Retorna outcome ('HIT', 'MISS', 'VOID', 'PENDING') y stat_actual con el dato oficial.
