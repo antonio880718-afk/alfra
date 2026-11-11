@@ -14,24 +14,29 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.10.v15"
+_ENGINE_VER = "2026.11.10.v17"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
-    for _mod_name in [
+    for _base_name in [
+        "soccer_quant_model",
+        "quant_prediction_engine",
+        "sgp_single_match_engine",
         "referee_and_injuries_engine",
         "match_data_engineering_engine",
         "hourly_slots_engine",
+        "custom_target_parlay_engine",
         "daily_tickets_engine",
         "automated_self_audit_engine",
         "context_impact_engine",
         "live_espn_audit_sync",
         "pdf_audit_report_engine",
-        "sniper_ev_engine"
+        "sniper_ev_engine",
     ]:
-        if _mod_name in _sys.modules:
-            try:
-                importlib.reload(_sys.modules[_mod_name])
-            except Exception:
-                pass
+        for _mod_name in (_base_name, f"sports_analyzer.{_base_name}"):
+            if _mod_name in _sys.modules:
+                try:
+                    importlib.reload(_sys.modules[_mod_name])
+                except Exception:
+                    pass
     _sys._ALFRA_ENGINE_VER = _ENGINE_VER
 
 import streamlit as st
@@ -1621,10 +1626,19 @@ with t_parlay:
         "⚡ Agresivo / Menos Patas (Llegada Directa)": "aggressive"
     }
 
+    import inspect as _inspect
     try:
-        from custom_target_parlay_engine import find_target_payout_combos
+        import custom_target_parlay_engine as _ctpe
     except ImportError:
-        from sports_analyzer.custom_target_parlay_engine import find_target_payout_combos
+        from sports_analyzer import custom_target_parlay_engine as _ctpe
+
+    if "allowed_categories" not in _inspect.signature(_ctpe.find_target_payout_combos).parameters:
+        try:
+            _ctpe = importlib.reload(_ctpe)
+        except Exception:
+            pass
+
+    find_target_payout_combos = _ctpe.find_target_payout_combos
 
     u_allowed_cats = st.multiselect(
         "🎛️ Mercados que SÍ deseas incluir (los no seleccionados quedan excluidos):",
@@ -1633,13 +1647,16 @@ with t_parlay:
         key="target_allowed_cats"
     )
 
-    target_res = find_target_payout_combos(
-        date_str=date_str,
-        stake_mxn=float(u_stake),
-        target_profit_mxn=float(u_profit),
-        risk_mode=mode_key_map.get(u_mode_lbl, "balanced"),
-        allowed_categories=u_allowed_cats if u_allowed_cats else None,
-    )
+    _ftpc_kwargs = {
+        "date_str": date_str,
+        "stake_mxn": float(u_stake),
+        "target_profit_mxn": float(u_profit),
+        "risk_mode": mode_key_map.get(u_mode_lbl, "balanced"),
+    }
+    if "allowed_categories" in _inspect.signature(find_target_payout_combos).parameters:
+        _ftpc_kwargs["allowed_categories"] = u_allowed_cats if u_allowed_cats else None
+
+    target_res = find_target_payout_combos(**_ftpc_kwargs)
 
     t_odds_val = target_res.get("target_odds", (u_stake + u_profit) / u_stake)
     st.info(f"🎯 **Meta Matemática:** Apostar **${u_stake:,.2f} MXN** para ganar **+${u_profit:,.2f} MXN netos** (Cobro total: **${u_stake + u_profit:,.2f} MXN**). Cuota objetivo requerida: **{t_odds_val:.2f}x**.")

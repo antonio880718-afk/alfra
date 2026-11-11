@@ -152,6 +152,14 @@ def find_target_payout_combos(
     match_keys = list(by_match.keys())
     total_available_matches = len(match_keys)
 
+    if total_available_matches == 0:
+        return {
+            "stake_mxn": stake_mxn,
+            "target_profit_mxn": target_profit_mxn,
+            "target_odds": target_odds,
+            "options": []
+        }
+
     # Caso 1: Si target_odds <= 1.45 -> Buscar las mejores apuestas FIJAS (Singles)
     if target_odds <= 1.45:
         all_singles = []
@@ -206,17 +214,19 @@ def find_target_payout_combos(
     # Cálculo dinámico del número óptimo de patas según la cuota
     avg_sensible = 1.62
     est_n = max(2, min(total_available_matches, round(math.log(target_odds) / math.log(avg_sensible))))
-    target_leg_candidates = sorted(list(set([
-        max(2, est_n - 1),
-        est_n,
-        min(total_available_matches, est_n + 1),
-        min(total_available_matches, est_n + 2)
-    ])))
+    target_leg_candidates = [
+        c for c in sorted(list(set([
+            max(2, est_n - 1),
+            est_n,
+            min(total_available_matches, est_n + 1),
+            min(total_available_matches, est_n + 2)
+        ]))) if 2 <= c <= total_available_matches
+    ]
 
     combos = []
 
     for n_legs in target_leg_candidates:
-        if n_legs > total_available_matches:
+        if n_legs < 2 or n_legs > total_available_matches:
             continue
         max_per_cat = max(2, math.ceil(n_legs / 3.5))
         req_avg = target_odds ** (1.0 / n_legs)
