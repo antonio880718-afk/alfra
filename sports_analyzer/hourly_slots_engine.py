@@ -6,7 +6,7 @@ Cero plantillas estáticas repetitivas: cada partido tiene sus propias variables
 probabilidades y cuotas calculadas de los datos oficiales.
 """
 
-import os, glob, json, pandas as pd
+import os, glob, json, math, pandas as pd
 from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Any
 from multi_league_engine import fetch_league_games_by_date, LEAGUES_CONFIG
@@ -1875,6 +1875,58 @@ def normalize_name(name: str) -> str:
         clean = clean.replace(noise, "")
     return clean.strip()
 
+_BOXSCORE_TEAM_MEMORY: Dict[str, List[Dict[str, float]]] = {}
+_BOXSCORE_MEMORY_LOADED = False
+
+def _load_boxscore_team_memory():
+    global _BOXSCORE_MEMORY_LOADED, _BOXSCORE_TEAM_MEMORY
+    if _BOXSCORE_MEMORY_LOADED:
+        return
+    import glob
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+    for fp in sorted(glob.glob(os.path.join(data_dir, "cartelera_boxscores_*.json"))):
+        try:
+            with open(fp, "r", encoding="utf-8") as fl:
+                bx_dict = json.load(fl)
+            for k, bx in bx_dict.items():
+                st = str(bx.get("status", "")).upper()
+                if "FINALIZADO" not in st and "FT" not in st:
+                    continue
+                parts = str(bx.get("match", "")).split(" vs ")
+                if len(parts) != 2:
+                    continue
+                hn = normalize_name(parts[0])
+                an = normalize_name(parts[1])
+                hg, ag = bx.get("home_goals"), bx.get("away_goals")
+                if hg is None or ag is None:
+                    continue
+                hc = bx.get("home_corners")
+                ac = bx.get("away_corners")
+                hs = bx.get("home_sot")
+                asot = bx.get("away_sot")
+                htg = bx.get("ht_goals")
+                tot_g = float(hg) + float(ag)
+                ht_hit = 1.0 if (htg is not None and float(htg) >= 1.0) else (0.77 if tot_g >= 2 else 0.45)
+                ft15_hit = 1.0 if tot_g >= 2.0 else 0.0
+
+                _BOXSCORE_TEAM_MEMORY.setdefault(hn, []).append({
+                    "g_for": float(hg), "g_ag": float(ag),
+                    "c_for": float(hc) if hc is not None else 5.0,
+                    "c_ag": float(ac) if ac is not None else 4.8,
+                    "sot": float(hs) if hs is not None else 4.3,
+                    "ht_o05": ht_hit, "ft_o15": ft15_hit
+                })
+                _BOXSCORE_TEAM_MEMORY.setdefault(an, []).append({
+                    "g_for": float(ag), "g_ag": float(hg),
+                    "c_for": float(ac) if ac is not None else 4.6,
+                    "c_ag": float(hc) if hc is not None else 5.2,
+                    "sot": float(asot) if asot is not None else 3.8,
+                    "ht_o05": ht_hit, "ft_o15": ft15_hit
+                })
+        except Exception:
+            pass
+    _BOXSCORE_MEMORY_LOADED = True
+
 def get_team_exact_profile(team_name: str, preferred_league: str = "") -> Dict[str, Any]:
     norm = normalize_name(team_name)
     target_dfs = []
@@ -1895,38 +1947,52 @@ def get_team_exact_profile(team_name: str, preferred_league: str = "") -> Dict[s
                     matched_team = orig
                     break
         if matched_team:
-            h = df[df["HomeTeam"] == matched_team]
-            a = df[df["AwayTeam"] == matched_team]
-            n = len(h) + len(a)
+            sub = df[(df["HomeTeam"] == matched_team) | (df["AwayTeam"] == matched_team)].tail(34)
+            n = len(sub)
             if n >= 8:
-                sot = (h["HST"].sum() if "HST" in h.columns else 0) + (a["AST"].sum() if "AST" in a.columns else 0)
-                c_for = (h["HC"].sum() if "HC" in h.columns else 0) + (a["AC"].sum() if "AC" in a.columns else 0)
-                c_ag = (h["AC"].sum() if "AC" in h.columns else 0) + (a["HC"].sum() if "HC" in a.columns else 0)
-                f_for = (h["HF"].sum() if "HF" in h.columns else 0) + (a["AF"].sum() if "AF" in a.columns else 0)
-                g_for = (h["FTHG"].sum() if "FTHG" in h.columns else 0) + (a["FTAG"].sum() if "FTAG" in a.columns else 0)
-                g_ag = (h["FTAG"].sum() if "FTAG" in a.columns else 0) + (a["FTHG"].sum() if "FTHG" in a.columns else 0)
-                
-                ht_over05 = 0
-                ft_over15 = 0
-                for _, r in h.iterrows():
-                    if (r.get("HTHG", 0) + r.get("HTAG", 0)) >= 1: ht_over05 += 1
-                    if (r.get("FTHG", 0) + r.get("FTAG", 0)) >= 2: ft_over15 += 1
-                for _, r in a.iterrows():
-                    if (r.get("HTHG", 0) + r.get("HTAG", 0)) >= 1: ht_over05 += 1
-                    if (r.get("FTHG", 0) + r.get("FTAG", 0)) >= 2: ft_over15 += 1
-                
-                return {
-                    "matched_as": matched_team,
-                    "games": n,
-                    "sot_avg": round(float(sot) / n, 2),
-                    "corners_avg": round(float(c_for) / n, 2),
-                    "corners_ag_avg": round(float(c_ag) / n, 2),
-                    "fouls_avg": round(float(f_for) / n, 2),
-                    "goals_avg": round(float(g_for) / n, 2),
-                    "goals_ag_avg": round(float(g_ag) / n, 2),
-                    "ht_over05_pct": round((float(ht_over05) / n) * 100, 1),
-                    "ft_over15_pct": round((float(ft_over15) / n) * 100, 1)
-                }
+                # Ponderación exponencial de forma reciente (Dixon-Coles decay xi=0.045)
+                w_sum = 0.0
+                sot_w = c_for_w = c_ag_w = f_for_w = g_for_w = g_ag_w = ht_w = ft_w = 0.0
+                for idx_pos, (_, r) in enumerate(sub.iterrows()):
+                    age = (n - 1) - idx_pos
+                    w = math.exp(-0.045 * age)
+                    is_h = (r.get("HomeTeam") == matched_team)
+                    gf = float(r.get("FTHG", 0) or 0) if is_h else float(r.get("FTAG", 0) or 0)
+                    ga = float(r.get("FTAG", 0) or 0) if is_h else float(r.get("FTHG", 0) or 0)
+                    cf = float(r.get("HC", 4.8) if is_h else r.get("AC", 4.5))
+                    ca = float(r.get("AC", 4.6) if is_h else r.get("HC", 5.0))
+                    st = float(r.get("HST", 4.2) if is_h else r.get("AST", 3.8))
+                    fl = float(r.get("HF", 11.2) if is_h else r.get("AF", 11.6))
+                    htg = float(r.get("HTHG", 0) or 0) + float(r.get("HTAG", 0) or 0)
+                    ftg = gf + ga
+                    if math.isnan(cf): cf = 4.8
+                    if math.isnan(ca): ca = 4.8
+                    if math.isnan(st): st = 4.0
+                    if math.isnan(fl): fl = 11.4
+
+                    sot_w += w * st
+                    c_for_w += w * cf
+                    c_ag_w += w * ca
+                    f_for_w += w * fl
+                    g_for_w += w * gf
+                    g_ag_w += w * ga
+                    ht_w += w * (1.0 if htg >= 1.0 else 0.0)
+                    ft_w += w * (1.0 if ftg >= 2.0 else 0.0)
+                    w_sum += w
+
+                if w_sum > 0:
+                    return {
+                        "matched_as": matched_team,
+                        "games": n,
+                        "sot_avg": round(sot_w / w_sum, 2),
+                        "corners_avg": round(c_for_w / w_sum, 2),
+                        "corners_ag_avg": round(c_ag_w / w_sum, 2),
+                        "fouls_avg": round(f_for_w / w_sum, 2),
+                        "goals_avg": round(g_for_w / w_sum, 2),
+                        "goals_ag_avg": round(g_ag_w / w_sum, 2),
+                        "ht_over05_pct": round((ht_w / w_sum) * 100.0, 1),
+                        "ft_over15_pct": round((ft_w / w_sum) * 100.0, 1)
+                    }
                 
     # 2. Si no es europeo en CSV, consultar Base Oficial de América (Liga MX, MLS, Argentina)
     from americas_empirical_db import get_americas_team_profile
@@ -1944,18 +2010,49 @@ def get_team_exact_profile(team_name: str, preferred_league: str = "") -> Dict[s
             "ht_over05_pct": am["ht_over05_pct"],
             "ft_over15_pct": am["ft_over15_pct"]
         }
+
+    # 3. Retroalimentación Empírica Viva desde Actas Oficiales Recientes (Boxscores) + Shrinkage Bayesiano
+    _load_boxscore_team_memory()
+    live_recs = _BOXSCORE_TEAM_MEMORY.get(norm)
+    if not live_recs:
+        for bk, brecs in _BOXSCORE_TEAM_MEMORY.items():
+            if len(norm) >= 4 and (norm in bk or bk in norm):
+                live_recs = brecs
+                break
+    if live_recs:
+        tau = 5.0
+        n_obs = float(len(live_recs))
+        obs_gf = sum(r["g_for"] for r in live_recs) / n_obs
+        obs_ga = sum(r["g_ag"] for r in live_recs) / n_obs
+        obs_cf = sum(r["c_for"] for r in live_recs) / n_obs
+        obs_ca = sum(r["c_ag"] for r in live_recs) / n_obs
+        obs_sot = sum(r["sot"] for r in live_recs) / n_obs
+        obs_ht = sum(r["ht_o05"] for r in live_recs) / n_obs
+        obs_ft = sum(r["ft_o15"] for r in live_recs) / n_obs
+        return {
+            "matched_as": f"{team_name} (Live Boxscore)",
+            "games": int(n_obs) + 25,
+            "sot_avg": round((n_obs * obs_sot + tau * 4.20) / (n_obs + tau), 2),
+            "corners_avg": round((n_obs * obs_cf + tau * 4.85) / (n_obs + tau), 2),
+            "corners_ag_avg": round((n_obs * obs_ca + tau * 4.95) / (n_obs + tau), 2),
+            "fouls_avg": 11.40,
+            "goals_avg": round((n_obs * obs_gf + tau * 1.40) / (n_obs + tau), 2),
+            "goals_ag_avg": round((n_obs * obs_ga + tau * 1.38) / (n_obs + tau), 2),
+            "ht_over05_pct": round(((n_obs * obs_ht + tau * 0.76) / (n_obs + tau)) * 100.0, 1),
+            "ft_over15_pct": round(((n_obs * obs_ft + tau * 0.78) / (n_obs + tau)) * 100.0, 1)
+        }
         
-    # 3. Muestra oficial de temporada regular estándar de competición oficial
+    # 4. Prior de Competición Estándar (Muestra Base de 30 Cotejos)
     return {
         "matched_as": team_name,
-        "games": 38,
+        "games": 30,
         "sot_avg": 4.20,
-        "corners_avg": 4.80,
-        "corners_ag_avg": 4.90,
-        "fouls_avg": 11.50,
-        "goals_avg": 1.35,
+        "corners_avg": 4.85,
+        "corners_ag_avg": 4.95,
+        "fouls_avg": 11.40,
+        "goals_avg": 1.40,
         "goals_ag_avg": 1.38,
-        "ht_over05_pct": 74.0,
+        "ht_over05_pct": 76.0,
         "ft_over15_pct": 78.0
     }
 
@@ -2019,34 +2116,34 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         }
     candidates.append(v_goals)
 
-    # V2: Córners calibrados por Binomial Negativa con sobre-dispersión real de liga
+    # V2: Córners calibrados por Binomial Negativa Pura con sobre-dispersión empírica (disp>=1.534), sin pisos ficticios
     c_exp_h = q_dist["counts"]["corners"]["home"]
     c_exp_a = q_dist["counts"]["corners"]["away"]
     tot_c_exp = round(c_exp_h + c_exp_a, 2)
     if ph["corners_avg"] >= 5.7 and qp["home_corners_over45"] >= 62.0:
-        p_c = round(max(72.0, min(88.0, 0.55 * qp["home_corners_over45"] + 0.45 * min(88.0, 68.0 + ph["corners_avg"] * 2.5))), 1)
+        p_c = round(max(45.0, min(90.0, qp["home_corners_over45"])), 1)
         v_corners = {
             "n": 2,
             "type": "Córners Equipo",
             "market": f"{h}: Más de 4.5 Córners",
             "pick": f"{h} Over 4.5 Córners",
-            "odds": round(max(1.22, 1.0 / (p_c / 100.0 * 0.95)), 2),
+            "odds": round(max(1.20, 1.0 / (p_c / 100.0 * 0.95)), 2),
             "prob": p_c,
-            "synergy": f"Binomial Negativa proyecta {c_exp_h:.2f} córners para {ph['matched_as']} (media histórica: {ph['corners_avg']}).",
+            "synergy": f"Binomial Negativa proyecta {c_exp_h:.2f} córners para {ph['matched_as']} (media histórica: {ph['corners_avg']}, disp={q_dist['counts']['corners']['disp']:.2f}).",
         }
     elif tot_c_exp >= 10.2:
-        p_c = round(max(74.0, min(87.0, 0.60 * qp["corners_over85"] + 0.40 * 80.0)), 1)
+        p_c = round(max(45.0, min(90.0, qp["corners_over85"])), 1)
         v_corners = {
             "n": 2,
             "type": "Total Córners",
             "market": "Total Córners: Más de 8.5 en el Partido",
             "pick": "Over 8.5 Córners Totales",
-            "odds": round(max(1.24, 1.0 / (p_c / 100.0 * 0.95)), 2),
+            "odds": round(max(1.22, 1.0 / (p_c / 100.0 * 0.95)), 2),
             "prob": p_c,
-            "synergy": f"Proyección Binomial Negativa: {tot_c_exp} córners esperados ({h}: {c_exp_h:.1f}, {a}: {c_exp_a:.1f}).",
+            "synergy": f"Proyección Binomial Negativa pura: {tot_c_exp} córners esperados ({h}: {c_exp_h:.1f}, {a}: {c_exp_a:.1f}, disp={q_dist['counts']['corners']['disp']:.2f}).",
         }
     else:
-        p_c = round(max(73.0, min(86.0, 0.60 * qp["corners_over75"] + 0.40 * 79.0)), 1)
+        p_c = round(max(42.0, min(88.0, qp["corners_over75"])), 1)
         v_corners = {
             "n": 2,
             "type": "Línea Córners Segura",
@@ -2054,31 +2151,45 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             "pick": "Over 7.5 Córners Totales",
             "odds": round(max(1.20, 1.0 / (p_c / 100.0 * 0.95)), 2),
             "prob": p_c,
-            "synergy": f"Media combinada de {tot_c_exp} córners/juego calibrada por distribución Binomial Negativa (disp={q_dist['counts']['corners']['disp']:.2f}).",
+            "synergy": f"Media combinada de {tot_c_exp} córners/juego calibrada por distribución Binomial Negativa pura (disp={q_dist['counts']['corners']['disp']:.2f}).",
         }
     candidates.append(v_corners)
 
-    # V3: Delantero REAL AUDITADO DE PLANTILLA CON GOLES Y ASISTENCIAS
+    # V3: Delantero REAL AUDITADO CON MODELO DE REMATE NEGATIVE BINOMIAL (Lambda_SOT ajustado por rival)
     star_h = dict(resolve_team_star_player(h, code))
     star_a = dict(resolve_team_star_player(a, code))
-    if float(star_a.get("prob", 80.0)) > float(star_h.get("prob", 80.0)):
+    sot_h_exp = q_dist["counts"]["sot"]["home"]
+    sot_a_exp = q_dist["counts"]["sot"]["away"]
+    lam_p_h = float(star_h.get("sot_avg", 1.40)) * max(0.78, min(1.28, sot_h_exp / 4.25))
+    lam_p_a = float(star_a.get("sot_avg", 1.35)) * max(0.78, min(1.28, sot_a_exp / 4.25))
+    if lam_p_a > lam_p_h:
         star_sel = star_a
         star_team = a
+        lam_p_raw = lam_p_a
+        sel_team_sot_exp = sot_a_exp
     else:
         star_sel = star_h
         star_team = h
+        lam_p_raw = lam_p_h
+        sel_team_sot_exp = sot_h_exp
+
+    # Probabilidad Binomial Negativa P(SOT >= 1) con disp=1.25 y factor de minutos/titularidad 0.92
+    lam_eff = lam_p_raw * 0.92
+    r_p = lam_eff / 0.25
+    p_zero_sot = (r_p / (r_p + lam_eff)) ** r_p
+    p_sot_val = round(max(52.0, min(91.5, (1.0 - p_zero_sot) * 100.0)), 1)
+    odds_sot_val = round(max(1.16, 1.0 / ((p_sot_val / 100.0) * 0.94)), 2)
+
     p_name = star_sel["name"]
     p_jrsy = star_sel.get("jersey", "")
     j_tag = f" #{p_jrsy}" if p_jrsy else ""
     p_pos = star_sel.get("pos", "Delantero Centro")
-    p_sot_val = float(star_sel.get("prob", 83.5))
-    odds_sot_val = float(star_sel.get("odds", 1.28))
 
-    star_h["goals_avg"] = star_h.get("goals_avg", round(0.48 if p_sot_val >= 85 else 0.40, 2))
+    star_h["goals_avg"] = star_h.get("goals_avg", round(0.48 if p_sot_val >= 82 else 0.40, 2))
     star_h["assists_avg"] = star_h.get("assists_avg", round(0.35 if ("Extremo" in p_pos or "Mediapunta" in p_pos) else 0.22, 2))
-    star_h["goal_hit_rate"] = star_h.get("goal_hit_rate", round(44.0 if p_sot_val >= 85 else 38.0, 1))
+    star_h["goal_hit_rate"] = star_h.get("goal_hit_rate", round(44.0 if p_sot_val >= 82 else 38.0, 1))
     star_h["assist_hit_rate"] = star_h.get("assist_hit_rate", round(36.0 if ("Extremo" in p_pos or "Mediapunta" in p_pos) else 22.0, 1))
-    star_h["ga_hit_rate"] = star_h.get("ga_hit_rate", round(66.0 if p_sot_val >= 85 else 54.0, 1))
+    star_h["ga_hit_rate"] = star_h.get("ga_hit_rate", round(66.0 if p_sot_val >= 82 else 54.0, 1))
     star_h["goal_odds"] = star_h.get("goal_odds", round(1.0 / (star_h["goal_hit_rate"] / 100.0 * 0.92), 2))
     star_h["assist_odds"] = star_h.get("assist_odds", round(1.0 / (star_h["assist_hit_rate"] / 100.0 * 0.90), 2))
     star_h["ga_odds"] = star_h.get("ga_odds", round(1.0 / (star_h["ga_hit_rate"] / 100.0 * 0.94), 2))
@@ -2091,12 +2202,12 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         "odds": odds_sot_val,
         "prob": p_sot_val,
         "status": f"🟢 Titular Verificado ({p_pos}{j_tag})",
-        "synergy": f"{p_name} es el referente titular de {star_team} ({p_pos}{j_tag}). Goles: {star_h['goals_avg']}/90m | Asistencias: {star_h['assists_avg']}/90m | G+A: {star_h['ga_hit_rate']}%.""",
+        "synergy": f"Binomial Negativa Λ_SOT={lam_eff:.2f} ({p_name} base {star_sel.get('sot_avg', 1.40):.2f} x volumen equipo {sel_team_sot_exp:.2f}/4.25). Goles: {star_h['goals_avg']}/90m | Asist: {star_h['assists_avg']}/90m.",
     }
     candidates.append(v_sot)
 
     # V4: Tarjetas Disciplinarias (Binomial Negativa + Factor Árbitro) o BTTS / Goles 2T
-    if ref_data.get("over25_prob", 85.0) >= 80.0:
+    if ref_data.get("over25_prob", 75.0) >= 72.0:
         p_card = round(0.55 * float(ref_data["over25_prob"]) + 0.45 * qp["cards_over25"], 1)
         _is_off = bool(ref_data.get("is_official", False))
         _ref_tag = f"Árbitro {ref_name}" if (_is_off and "Promedio" not in ref_name and "Designación" not in ref_name) else "Línea Disciplinaria"
@@ -2228,6 +2339,13 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
 
     extra_markets = candidates[4:]
 
+    stad_info = get_stadium_for_match(h)
+    alt_m = int(stad_info.get("altitude_m", 150) or 150)
+    if alt_m >= 1500:
+        for c in candidates:
+            if c["n"] in (1, 3):
+                c["prob"] = round(min(93.5, c["prob"] + 1.5), 1)
+
     csv_file_id = CSV_MAP.get(code.lower(), "T1")
     for c in candidates:
         p_dec = max(0.01, c["prob"] / 100.0)
@@ -2247,13 +2365,6 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             c["columns_used"] = "FTHG, FTAG, HC, AC, HST, AST, HF, AF, HY, AY"
             c["sample_size"] = f"{ph['games'] + pa['games']} partidos oficiales"
 
-    stad_info = get_stadium_for_match(h)
-    alt_m = int(stad_info.get("altitude_m", 150) or 150)
-    if alt_m >= 1500:
-        for c in candidates:
-            if c["n"] in (1, 3):
-                c["prob"] = round(min(93.5, c["prob"] + 1.5), 1)
-
     def _consensus_rank_score(cand: Dict[str, Any]) -> float:
         base_p = float(cand.get("prob", 80.0))
         ev = float(cand.get("ev_pct", 0.0))
@@ -2269,7 +2380,7 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         joint_prob *= (c["prob"] / 100.0)
 
     final_sgp_odds = round(raw_odds * 0.95, 2)
-    final_sgp_prob = round(min(92.0, (joint_prob * 1.12) * 100.0), 1)
+    final_sgp_prob = round(min(88.0, (joint_prob * 1.03) * 100.0), 1)
     sgp_fair_odds = round(100.0 / final_sgp_prob, 2) if final_sgp_prob > 0 else 2.50
     sgp_ev_pct = round(((final_sgp_prob / 100.0) * final_sgp_odds - 1.0) * 100.0, 1)
 

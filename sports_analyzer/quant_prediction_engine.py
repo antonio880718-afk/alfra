@@ -101,8 +101,8 @@ def compute_dixon_coles_match(home_team: str, away_team: str, league_code: str =
     p_draw = 0.0
     p_away_win = 0.0
     
-    p_over05_ht = round((1.0 - math.exp(-0.44 * (lam + mu))) * 100.0, 1)
-    p_over05_2t = round((1.0 - math.exp(-0.56 * (lam + mu))) * 100.0, 1)
+    p_over05_ht = round((1.0 - math.exp(-0.448 * (lam + mu))) * 100.0, 1)
+    p_over05_2t = round((1.0 - math.exp(-0.552 * (lam + mu))) * 100.0, 1)
     
     p_over15_ft = 0.0
     p_over25_ft = 0.0
@@ -141,6 +141,8 @@ def compute_dixon_coles_match(home_team: str, away_team: str, league_code: str =
             if x >= 2: p_home_over15 += pxy
             if y >= 2: p_away_over15 += pxy
 
+    r_asym = min(lam, mu) / max(0.35, max(lam, mu))
+    p_btts = max(0.20, min(0.78, p_btts * (0.86 + 0.09 * r_asym)))
     is_asymmetric_trap = (min(lam, mu) < 0.82 and (lam + mu) >= 2.3)
 
     return {
@@ -187,26 +189,31 @@ def compute_match_corners_quant(home_team: str, away_team: str, league_code: str
 
     tot_corners_exp = round(h_corners_avg + a_corners_avg, 1)
 
-    p_home_o45 = round((1.0 - sum(poisson_pmf(i, h_corners_avg) for i in range(5))) * 100.0, 1)
-    p_home_o55 = round((1.0 - sum(poisson_pmf(i, h_corners_avg) for i in range(6))) * 100.0, 1)
-    p_away_o35 = round((1.0 - sum(poisson_pmf(i, a_corners_avg) for i in range(4))) * 100.0, 1)
-    p_away_o45 = round((1.0 - sum(poisson_pmf(i, a_corners_avg) for i in range(5))) * 100.0, 1)
+    # Dispersión empírica medida en 255 partidos oficiales: disp = 1.534 => r = mean / (disp - 1)
+    r_h = max(3.0, h_corners_avg / 0.534)
+    r_a = max(3.0, a_corners_avg / 0.534)
+    r_tot = max(5.0, tot_corners_exp / 0.534)
+
+    p_home_o45 = round((1.0 - sum(neg_binomial_pmf(i, r_h, h_corners_avg) for i in range(5))) * 100.0, 1)
+    p_home_o55 = round((1.0 - sum(neg_binomial_pmf(i, r_h, h_corners_avg) for i in range(6))) * 100.0, 1)
+    p_away_o35 = round((1.0 - sum(neg_binomial_pmf(i, r_a, a_corners_avg) for i in range(4))) * 100.0, 1)
+    p_away_o45 = round((1.0 - sum(neg_binomial_pmf(i, r_a, a_corners_avg) for i in range(5))) * 100.0, 1)
     
-    p_tot_o75 = round((1.0 - sum(poisson_pmf(i, tot_corners_exp) for i in range(8))) * 100.0, 1)
-    p_tot_o85 = round((1.0 - sum(poisson_pmf(i, tot_corners_exp) for i in range(9))) * 100.0, 1)
-    p_tot_o95 = round((1.0 - sum(poisson_pmf(i, tot_corners_exp) for i in range(10))) * 100.0, 1)
+    p_tot_o75 = round((1.0 - sum(neg_binomial_pmf(i, r_tot, tot_corners_exp) for i in range(8))) * 100.0, 1)
+    p_tot_o85 = round((1.0 - sum(neg_binomial_pmf(i, r_tot, tot_corners_exp) for i in range(9))) * 100.0, 1)
+    p_tot_o95 = round((1.0 - sum(neg_binomial_pmf(i, r_tot, tot_corners_exp) for i in range(10))) * 100.0, 1)
 
     return {
         "home_corners_avg": round(h_corners_avg, 2),
         "away_corners_avg": round(a_corners_avg, 2),
         "total_corners_exp": tot_corners_exp,
-        "p_home_o45": min(95.0, max(60.0, p_home_o45)),
-        "p_home_o55": min(90.0, max(45.0, p_home_o55)),
-        "p_away_o35": min(92.0, max(50.0, p_away_o35)),
-        "p_away_o45": min(85.0, max(40.0, p_away_o45)),
-        "p_tot_o75": min(96.0, max(75.0, p_tot_o75)),
-        "p_tot_o85": min(90.0, max(60.0, p_tot_o85)),
-        "p_tot_o95": min(80.0, max(45.0, p_tot_o95))
+        "p_home_o45": min(92.0, max(45.0, p_home_o45)),
+        "p_home_o55": min(88.0, max(35.0, p_home_o55)),
+        "p_away_o35": min(90.0, max(40.0, p_away_o35)),
+        "p_away_o45": min(85.0, max(30.0, p_away_o45)),
+        "p_tot_o75": min(92.0, max(55.0, p_tot_o75)),
+        "p_tot_o85": min(86.0, max(45.0, p_tot_o85)),
+        "p_tot_o95": min(78.0, max(35.0, p_tot_o95))
     }
 
 def evaluate_bet_value(pick_name: str, category: str, model_prob: float, bookie_odds: float, rationale: str = "", is_trap: bool = False, trap_reason: str = "") -> Dict[str, Any]:

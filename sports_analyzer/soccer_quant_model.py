@@ -1140,18 +1140,19 @@ def compute_hybrid_match_distributions(
         lam_h = max(0.35, min(3.60, (h_gf * a_ga / max(0.6, mu_g)) * h_adv))
         lam_a = max(0.25, min(3.20, (a_gf * h_ga / max(0.6, mu_g)) / h_adv))
 
-        ht_share = 0.44
+        ht_share = 0.448
         if ph and pa and "ht_over05_pct" in ph and "ht_over05_pct" in pa:
-            ht_p = min(0.92, max(0.45, (float(ph["ht_over05_pct"]) + float(pa["ht_over05_pct"])) / 200.0))
-            lam_ht_tot = max(0.40, -math.log(max(0.05, 1.0 - ht_p)))
-            tot_l = max(0.60, lam_h + lam_a)
-            lam_h1 = min(lam_h * 0.72, lam_ht_tot * (lam_h / tot_l))
-            lam_a1 = min(lam_a * 0.72, lam_ht_tot * (lam_a / tot_l))
+            ht_p = min(0.86, max(0.55, (float(ph["ht_over05_pct"]) + float(pa["ht_over05_pct"])) / 200.0))
+            ht_adj = max(0.39, min(0.465, 0.448 + (ht_p - 0.75) * 0.16))
+            lam_h1 = lam_h * ht_adj
+            lam_a1 = lam_a * ht_adj
         else:
             lam_h1 = lam_h * ht_share
             lam_a1 = lam_a * ht_share
 
-        c_pri = pri.get("corners", {"mu_h": 5.35, "mu_a": 4.45, "disp": 1.28})
+        c_pri = pri.get("corners", {"mu_h": 5.35, "mu_a": 4.45, "disp": 1.534})
+        c_pri = dict(c_pri)
+        c_pri["disp"] = max(1.534, float(c_pri.get("disp", 1.534)))
         mu_c = (c_pri["mu_h"] + c_pri["mu_a"]) / 2.0
         hc_for = float((ph or {}).get("corners_avg", c_pri["mu_h"]))
         hc_ag = float((ph or {}).get("corners_ag_avg", c_pri["mu_a"]))
@@ -1168,7 +1169,9 @@ def compute_hybrid_match_distributions(
         f_h = max(7.0, min(17.0, float((ph or {}).get("fouls_avg", f_pri["mu_h"]))))
         f_a = max(7.0, min(17.5, float((pa or {}).get("fouls_avg", f_pri["mu_a"]))))
 
-        cards_pri = pri.get("cards", {"mu_h": 1.95, "mu_a": 2.25, "disp": 1.25})
+        cards_pri = pri.get("cards", {"mu_h": 1.95, "mu_a": 2.25, "disp": 1.327})
+        cards_pri = dict(cards_pri)
+        cards_pri["disp"] = max(1.327, float(cards_pri.get("disp", 1.327)))
         tot_cards_exp = 0.50 * float(ref_cards_avg) + 0.50 * ((f_h + f_a) / 5.2)
         cards_h = max(0.8, tot_cards_exp * 0.46)
         cards_a = max(0.9, tot_cards_exp * 0.54)
@@ -1203,8 +1206,9 @@ def compute_hybrid_match_distributions(
     pred["home"] = home_team
     pred["away"] = away_team
     lh, la, rho = pred["lam_home"], pred["lam_away"], pred["rho"]
-    lh1, la1 = pred["lam_home_ht"], pred["lam_away_ht"]
-    lh2, la2 = max(0.08, lh - lh1), max(0.08, la - la1)
+    lh1 = max(lh * 0.415, min(pred["lam_home_ht"], lh * 0.475))
+    la1 = max(la * 0.415, min(pred["lam_away_ht"], la * 0.475))
+    lh2, la2 = max(lh * 0.525, lh - lh1), max(la * 0.525, la - la1)
 
     M = score_matrix(lh, la, rho)
     M1 = score_matrix(lh1, la1, 0.0, 8)
@@ -1218,18 +1222,24 @@ def compute_hybrid_match_distributions(
     pH = float(M[I > J].sum())
     pD = float(M[I == J].sum())
     pA = float(M[I < J].sum())
-    btts = float(M[(I > 0) & (J > 0)].sum())
+
+    raw_btts = float(M[(I > 0) & (J > 0)].sum())
+    r_asym = min(lh, la) / max(0.35, max(lh, la))
+    btts_discount = 0.86 + 0.09 * r_asym
+    btts = max(0.20, min(0.78, raw_btts * btts_discount))
 
     c_info = pred["counts"]["corners"]
-    dh_c = count_dist(c_info["home"], c_info["disp"])
-    da_c = count_dist(c_info["away"], c_info["disp"])
+    c_disp = max(1.50, float(c_info.get("disp", 1.534)))
+    dh_c = count_dist(c_info["home"], c_disp)
+    da_c = count_dist(c_info["away"], c_disp)
     dt_c = np.convolve(dh_c, da_c)
     jm_c = np.outer(dh_c[:30], da_c[:30])
     Ic, Jc = np.indices(jm_c.shape)
 
     card_info = pred["counts"]["cards"]
-    dh_k = count_dist(card_info["home"], card_info["disp"])
-    da_k = count_dist(card_info["away"], card_info["disp"])
+    k_disp = max(1.327, float(card_info.get("disp", 1.327)))
+    dh_k = count_dist(card_info["home"], k_disp)
+    da_k = count_dist(card_info["away"], k_disp)
     dt_k = np.convolve(dh_k, da_k)
 
     sot_info = pred["counts"]["sot"]
@@ -1268,7 +1278,7 @@ def compute_hybrid_match_distributions(
         "under_35": float(M[tot < 3.5].sum()),
         "under_45": float(M[tot < 4.5].sum()),
         "btts_yes": btts, "btts_no": 1.0 - btts,
-        "btts_over25": float(M[(I > 0) & (J > 0) & (tot > 2.5)].sum()),
+        "btts_over25": float(M[(I > 0) & (J > 0) & (tot > 2.5)].sum()) * (btts / max(1e-6, raw_btts)),
         "dc1x_over15": float(M[(I >= J) & (tot > 1.5)].sum()),
         "dcx2_over15": float(M[(I <= J) & (tot > 1.5)].sum()),
         "dc1x_under35": float(M[(I >= J) & (tot < 3.5)].sum()),
@@ -1293,7 +1303,7 @@ def compute_hybrid_match_distributions(
         "ah_away_m15": float(M[-diff - 1.5 > 0].sum()),
         "ah_home_p25": float(M[diff + 2.5 > 0].sum()),
         "ah_away_p25": float(M[-diff + 2.5 > 0].sum()),
-        "ht_over05": float(M1[t1 > 0.5].sum()),
+        "ht_over05": float(1.0 - (max(1e-6, 1.0 - float(M1[t1 > 0.5].sum())) ** 1.085)),
         "ht_over15": float(M1[t1 > 1.5].sum()),
         "ht_home_over05": float(M1[I1 > 0.5].sum()),
         "ht_away_over05": float(M1[J1 > 0.5].sum()),
@@ -1308,6 +1318,7 @@ def compute_hybrid_match_distributions(
         "goal_both_halves": float((1.0 - M1[0, 0]) * (1.0 - M2[0, 0])),
         "home_both_halves": float((1.0 - M1[0, :].sum()) * (1.0 - M2[0, :].sum())),
         "h2_more_goals": p_2h_more,
+        "corners_over65": _over(dt_c, 6.5),
         "corners_over75": _over(dt_c, 7.5),
         "corners_over85": _over(dt_c, 8.5),
         "corners_over95": _over(dt_c, 9.5),

@@ -61,30 +61,41 @@ def build_single_match_sgp(home: str, away: str, league_name: str, exp_stats: Di
     Construye la combinada óptima de 3 a 4 variables para UN SOLO PARTIDO (Same Game Parlay)
     sincronizando: Goles 1T + Córners + Tiros/Player Props + Disciplina/Faltas.
     """
-    exp_c = exp_stats.get("exp_corners", 9.5)
-    exp_g = exp_stats.get("exp_goals", 2.6)
+    import math
+    exp_c = float(exp_stats.get("exp_corners", 9.8))
+    exp_g = float(exp_stats.get("exp_goals", 2.85))
     
-    # 1. Variable Mitad / Goles
+    def _nb_over(k_min: int, lam: float, disp: float) -> float:
+        r = lam / max(0.05, disp - 1.0)
+        p = r / (r + lam)
+        cdf = sum(math.exp(math.lgamma(k + r) - math.lgamma(k + 1) - math.lgamma(r)) * (p ** r) * ((1.0 - p) ** k) for k in range(k_min))
+        return round(max(45.0, min(92.0, (1.0 - cdf) * 100.0)), 1)
+
+    # 1. Variable Mitad / Goles (44.8% empírico en 1er Tiempo, sub-dispersión 0.89)
+    lam_ht = exp_g * 0.448
+    p_ht = round(max(55.0, min(88.0, (1.0 - (math.exp(-lam_ht) ** 1.085)) * 100.0)), 1)
     v_goals = {
         "n": 1,
         "type": "Ritmo / Goles",
         "market": "1er Tiempo: Más de 0.5 Goles (Over 0.5 1T)",
         "pick": "Over 0.5 Goles en 1er Tiempo",
-        "odds": 1.25,
-        "prob": 82.5,
-        "synergy": "Se cobra temprano y abre el partido para el resto de variables."
+        "odds": round(max(1.18, 1.0 / (p_ht / 100.0 * 0.95)), 2),
+        "prob": p_ht,
+        "synergy": f"Poisson ajustado 1T (λ_1T={lam_ht:.2f} goles, P={p_ht}%)."
     }
     
-    # 2. Variable Córners Equipo Dominante
-    c_line = 4.5 if exp_c >= 9.0 else 3.5
+    # 2. Variable Córners Equipo Dominante (Binomial Negativa disp=1.534)
+    c_line = 4.5 if exp_c >= 9.4 else 3.5
+    lam_hc = exp_c * 0.545
+    p_hc = _nb_over(5 if c_line == 4.5 else 4, lam_hc, 1.534)
     v_corners = {
         "n": 2,
         "type": "Córners Equipo Dominante",
         "market": f"{home}: Más de {c_line} Córners",
         "pick": f"{home} Over {c_line} Córners",
-        "odds": 1.30,
-        "prob": 84.0,
-        "synergy": f"{home} empuja como local generando asedio continuo por bandas."
+        "odds": round(max(1.18, 1.0 / (p_hc / 100.0 * 0.95)), 2),
+        "prob": p_hc,
+        "synergy": f"Binomial Negativa ({lam_hc:.2f} córners esperados para {home}, disp=1.534)."
     }
     
     # 3. Variable Jugador Titular (Player Prop) con validación
@@ -104,8 +115,8 @@ def build_single_match_sgp(home: str, away: str, league_name: str, exp_stats: Di
         "type": "Remates de Jugador (Player Prop)",
         "market": f"{player_target}: Más de 0.5 Tiros a Puerta",
         "pick": f"{player_target} $\\ge 1$ Tiro a Puerta",
-        "odds": 1.28,
-        "prob": 86.5,
+        "odds": 1.32,
+        "prob": 79.5,
         "status": player_status,
         "synergy": f"Si {home} ataca y genera córners, su delantero titular tiene garantizados remates."
     }
