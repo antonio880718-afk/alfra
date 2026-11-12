@@ -38,17 +38,29 @@ from nba_daily_tickets_engine import get_daily_nba_parlay, get_daily_nba_conserv
 from nba_self_audit_engine import audit_individual_nba_pick
 from nba_pdf_report_engine import generate_nba_complete_pdf
 
-st.set_page_config(
-    page_title="ALFRA NBA & NCAAB Analyzer",
-    page_icon="🏀",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
+if not globals().get("_ALFRA_EMBEDDED_WEBAPP"):
+    st.set_page_config(
+        page_title="ALFRA NBA & NCAAB Analyzer",
+        page_icon="🏀",
+        layout="wide",
+        initial_sidebar_state="collapsed"
+    )
+
 
 # Estilos Oscuros Modernos
 st.markdown("""
 <style>
     .stApp { background-color: #0b0f19; color: #f8fafc; }
+    @media (max-width: 768px) {
+        .block-container { padding: 0.75rem 0.65rem 2rem 0.65rem !important; }
+        div[data-testid="stTabs"] button { padding: 0.35rem 0.55rem !important; font-size: 0.8rem !important; }
+        h2 { font-size: 1.2rem !important; }
+    }
+    div[data-testid="stTabs"] [role="tablist"] {
+        overflow-x: auto;
+        scrollbar-width: thin;
+        border-bottom: 1px solid #f97316;
+    }
     .metric-card {
         background: linear-gradient(135deg, #131c2e 0%, #1e293b 100%);
         border: 1px solid #334155;

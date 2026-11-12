@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.10.v17"
+_ENGINE_VER = "2026.11.11.v18"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _base_name in [
         "soccer_quant_model",
@@ -41,7 +41,96 @@ if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
 
 import streamlit as st
 import pandas as pd
+import runpy
 from datetime import datetime, date, timedelta
+
+# ------------------------------------------------------------------
+# WEB APP MULTI-DEPORTE (FÚTBOL • NBA & NCAAB • NFL & NCAAF)
+# Soporta ?sport=futbol | ?sport=nba | ?sport=nfl en URL para abrir o
+# instalar cada deporte directo como Web App en celular o PC.
+# ------------------------------------------------------------------
+_VALID_SPORTS = ("futbol", "nba", "nfl")
+try:
+    _qp_sport = str(st.query_params.get("sport", "")).strip().lower()
+except Exception:
+    _qp_sport = ""
+if _qp_sport in _VALID_SPORTS:
+    st.session_state["alfra_active_sport"] = _qp_sport
+elif st.session_state.get("alfra_active_sport") not in _VALID_SPORTS:
+    st.session_state["alfra_active_sport"] = "futbol"
+
+_active_sport = st.session_state["alfra_active_sport"]
+_PAGE_META = {
+    "futbol": ("ALFRA Sports Web App — Fútbol • NBA • NFL", "⚽", "expanded"),
+    "nba": ("ALFRA NBA & NCAAB — Web App Cuantitativa", "🏀", "collapsed"),
+    "nfl": ("ALFRA NFL & NCAAF — Web App Cuantitativa", "🏈", "collapsed"),
+}
+_pt, _pi, _psb = _PAGE_META[_active_sport]
+st.set_page_config(page_title=_pt, page_icon=_pi, layout="wide", initial_sidebar_state=_psb)
+
+st.markdown("""
+<style>
+    .block-container { padding-top: 1.1rem !important; }
+    @media (max-width: 768px) {
+        .block-container { padding: 0.75rem 0.65rem 2rem 0.65rem !important; }
+        div[data-testid="stTabs"] button { padding: 0.35rem 0.55rem !important; font-size: 0.8rem !important; }
+        h1, h2 { font-size: 1.25rem !important; }
+    }
+    .alfra-nav-caption {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        margin: 0 0 6px 0;
+        text-align: center;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+_nav_c1, _nav_c2, _nav_c3 = st.columns(3)
+def _switch_sport(target: str):
+    st.session_state["alfra_active_sport"] = target
+    try:
+        st.query_params["sport"] = target
+    except Exception:
+        pass
+
+with _nav_c1:
+    if st.button(
+        "⚽ FÚTBOL (26 Ligas)",
+        key="nav_sport_futbol",
+        type="primary" if _active_sport == "futbol" else "secondary",
+        width='stretch',
+    ):
+        _switch_sport("futbol")
+        st.rerun()
+with _nav_c2:
+    if st.button(
+        "🏀 NBA & NCAAB Web App",
+        key="nav_sport_nba",
+        type="primary" if _active_sport == "nba" else "secondary",
+        width='stretch',
+    ):
+        _switch_sport("nba")
+        st.rerun()
+with _nav_c3:
+    if st.button(
+        "🏈 NFL & NCAAF Web App",
+        key="nav_sport_nfl",
+        type="primary" if _active_sport == "nfl" else "secondary",
+        width='stretch',
+    ):
+        _switch_sport("nfl")
+        st.rerun()
+
+if _active_sport in ("nba", "nfl"):
+    _repo_root = os.path.dirname(_app_dir)
+    _target_script = os.path.join(
+        _repo_root,
+        "nba_analyzer" if _active_sport == "nba" else "nfl_analyzer",
+        "nba_app.py" if _active_sport == "nba" else "nfl_app.py",
+    )
+    runpy.run_path(_target_script, init_globals={"_ALFRA_EMBEDDED_WEBAPP": True}, run_name="__main__")
+    st.stop()
+
 
 # Importar motores
 from team_referee_explorer import (
@@ -59,12 +148,6 @@ from combos_optimizer import generate_optimal_combos_up_to_4
 from team_stats_db import load_league_dataset, compute_match_real_expectations, CSV_MAP
 from expert_news_engine import get_match_full_intelligence
 
-st.set_page_config(
-    page_title="Sindicato Cuantitativo - Explorador de Equipos & 50+ Mercados",
-    page_icon="⚽",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 def render_html(html_str: str):
     """
