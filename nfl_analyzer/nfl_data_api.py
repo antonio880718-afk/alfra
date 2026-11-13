@@ -4,6 +4,9 @@ Convierte automáticamente los horarios a HORA OFICIAL DE LA CIUDAD DE MÉXICO (
 Extrae jugadores reales, mariscales (QBs), corredores (RBs), receptores (WRs) y métricas de defensa directamente de ESPN.
 """
 import os, sys, json, urllib.request
+_app_dir = os.path.dirname(os.path.abspath(__file__))
+if _app_dir not in sys.path:
+    sys.path.insert(0, _app_dir)
 from datetime import datetime, timezone, timedelta
 
 CDMX_TZ = timezone(timedelta(hours=-6))

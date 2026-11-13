@@ -36,7 +36,7 @@ from nba_data_api import get_normalized_bball_schedule
 from nba_math_models_engine import compute_full_nba_game_data_engineering
 from nba_daily_tickets_engine import get_daily_nba_parlay, get_daily_nba_conservative, get_daily_nba_escalera_blocks
 from nba_self_audit_engine import audit_individual_nba_pick
-from nba_pdf_report_engine import generate_nba_complete_pdf
+from nba_pdf_report_engine import generate_nba_complete_pdf, generate_nba_audit_pdf_bytes
 
 if not globals().get("_ALFRA_EMBEDDED_WEBAPP"):
     st.set_page_config(
@@ -82,6 +82,28 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+
+# Barra de Navegación Rápida Multi-Deporte
+_nav_c1, _nav_c2, _nav_c3 = st.columns(3)
+with _nav_c1:
+    if st.button("⚽ FÚTBOL (26 Ligas)", key="nba_top_nav_futbol", width="stretch"):
+        st.session_state["alfra_active_sport"] = "futbol"
+        try:
+            st.query_params["sport"] = "futbol"
+        except Exception:
+            pass
+        st.rerun()
+with _nav_c2:
+    st.button("🏀 NBA & NCAAB Web App", key="nba_top_nav_nba", type="primary", width="stretch", disabled=True)
+with _nav_c3:
+    if st.button("🏈 NFL & NCAAF Web App", key="nba_top_nav_nfl", width="stretch"):
+        st.session_state["alfra_active_sport"] = "nfl"
+        try:
+            st.query_params["sport"] = "nfl"
+        except Exception:
+            pass
+        st.rerun()
 
 # Encabezado
 st.markdown("""
@@ -276,10 +298,27 @@ if _pdf_fresh:
 else:
     pdf_bytes = generate_nba_complete_pdf(date_str, league_sel)
 
-p_col1, p_col2 = st.columns(2)
+# Cache de PDF de Auditoría
+_audit_pdf_path = os.path.join(_app_dir, "data", f"Reporte_Auditoria_NBA_{league_sel}_{date_str}.pdf")
+_audit_pdf_fresh = os.path.exists(_audit_pdf_path) and (not os.path.exists(_sched_path) or os.path.getmtime(_audit_pdf_path) >= os.path.getmtime(_sched_path))
+if _audit_pdf_fresh:
+    with open(_audit_pdf_path, "rb") as fp:
+        _audit_pdf_bytes = fp.read()
+else:
+    _audit_pdf_bytes = generate_nba_audit_pdf_bytes([date_str], league_sel)
+
+_all_nba_dates = ["20261108", "20261110", "20261111", "20261112"]
+_consolidated_pdf_path = os.path.join(_app_dir, "data", "Reporte_Auditoria_NBA_Consolidado.pdf")
+if os.path.exists(_consolidated_pdf_path):
+    with open(_consolidated_pdf_path, "rb") as fp:
+        _consolidated_pdf_bytes = fp.read()
+else:
+    _consolidated_pdf_bytes = generate_nba_audit_pdf_bytes(_all_nba_dates, league_sel)
+
+p_col1, p_col2, p_col3 = st.columns(3)
 with p_col1:
     st.download_button(
-        label=f"📂 DESCARGAR PDF: TODOS LOS PICKS ORGANIZADOS POR PARTIDO CON DOSSIER COMPLETO ({date_str})",
+        label=f"📂 DESCARGAR PDF: TODOS LOS PICKS ORGANIZADOS POR PARTIDO ({date_str})",
         data=pdf_bytes,
         file_name=f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_NBA_{date_str}.pdf",
         mime="application/pdf",
@@ -288,13 +327,64 @@ with p_col1:
     )
 with p_col2:
     st.download_button(
-        label=f"🎯 DESCARGAR PDF: PREDICCIONES CON JUSTIFICACIÓN Y COTEJO ({date_str})",
-        data=pdf_bytes,
-        file_name=f"Predicciones_Del_Dia_NBA_{date_str}.pdf",
+        label=f"📄 DESCARGAR PDF AUDITORÍA NBA ({date_str}) — ACIERTOS / FALLOS",
+        data=_audit_pdf_bytes,
+        file_name=f"Reporte_Auditoria_NBA_{date_str}.pdf",
         mime="application/pdf",
         width="stretch",
-        key=f"dl_pdf_nba_preds_{date_str}"
+        key=f"dl_pdf_nba_audit_{date_str}"
     )
+with p_col3:
+    st.download_button(
+        label="📑 DESCARGAR PDF AUDITORÍA CONSOLIDADO (Últimas Jornadas)",
+        data=_consolidated_pdf_bytes,
+        file_name="Reporte_Auditoria_NBA_Consolidado.pdf",
+        mime="application/pdf",
+        width="stretch",
+        key="dl_pdf_nba_audit_all"
+    )
+
+with st.expander(f"📋 VER REPORTE COMPLETO EN PANTALLA DE TODOS LOS PICKS SUGERIDOS ({date_str}) — ACIERTOS, FALLOS, VOID Y DATO OFICIAL", expanded=False):
+    st.markdown(
+        f"**Resumen de Jornada ({date_str}):** "
+        f"`{hits_cnt} Aciertos (✅)` | `{miss_cnt} Fallos (❌)` | "
+        f"`{void_cnt} Anuladas VOID (🔄)` | `{pend_cnt} Por Jugar (🟢)` — "
+        f"**Efectividad Real Pick #1:** `{((hits_cnt / _resolved_cnt) * 100.0) if _resolved_cnt > 0 else 0.0:.1f}%` | "
+        f"**Total Mercados Auditados:** `{_all_day_total_opts}`"
+    )
+    _rep_rows = []
+    for _idx, _b in enumerate(_game_bundles, 1):
+        _g = _b["game"]
+        _bp = _b["best_pick"]
+        _ba = _b["best_aud"]
+        _out_ico = _fmt_outcome(_ba.get("outcome", "PENDING"))
+        _rep_rows.append({
+            "#": _idx,
+            "Hora": _g.get("time_cdmx", "18:00"),
+            "Liga": _g.get("league", "NBA"),
+            "Partido Oficial ESPN": _g.get("match", ""),
+            "Marcador Final": _g.get("score", "vs"),
+            "Pick Principal Sugerido (#1)": f"{_bp.get('pick', '')} ({_bp.get('odds', '')})",
+            "% Prob.": f"{float(_bp.get('prob_num', 0)):.1f}%",
+            "Resultado #1": _out_ico,
+            "Dato Oficial en Acta ESPN": _ba.get("stat_actual", ""),
+            "Mercados Totales": _b["de"].get("total_options", 0),
+        })
+    if _rep_rows:
+        st.dataframe(pd.DataFrame(_rep_rows), width="stretch", hide_index=True)
+
+with st.expander("🌐 VER MATRIZ OFICIAL DE COTEJO: ¿Contra qué plataformas se verifica cada dato? (ESPN API, Vegas, Boxscores)", expanded=False):
+    st.markdown("""
+    #### 🛡️ Certificación Oficial de Fuentes de Datos Baloncesto (100% Empírico):
+    Cada partido, línea de Over/Under, spread, puntos, rebotes, asistencias y triples está auditado contra las 4 plataformas oficiales:
+
+    | Fuente Oficial | Rol de Validación Exigido | Datos Extraídos & Cotejados | Regla de Blindaje |
+    | :--- | :--- | :--- | :--- |
+    | **🟢 1. ESPN Official Match Center** | Validación de Actas, Boxscores y Minutos | • Minutos jugados, PTS, REB, AST, 3PM, STL, BLK<br>• Titular vs Suplente y DNP (Did Not Play)<br>• Puntos por cuarto (Q1..Q4) y Primera Mitad (1H) | Si un jugador tiene DNP o 0 minutos, se aplica automáticamente la Regla VOID (cuota 1.00). |
+    | **🟡 2. Vegas Consensus & Bookmakers** | Líneas Oficiales de Apertura y Cierre | • Over/Under de Partido y por Equipo<br>• Hándicaps y Spreads principales<br>• Margen y Valor Esperado (+EV) | Comparación de líneas con amortiguamiento del 20% al 30% para asegurar alta probabilidad. |
+    | **🔵 3. NBA Stats Official API** | Perfiles Defensivos y Ritmo (Pace) | • Posesiones por partido (Pace real)<br>• Puntos permitidos por posición defensiva<br>• Eficiencia Ofensiva / Defensiva (Ortg / Drtg) | Ajuste de probabilidades basado en el ritmo del enfrentamiento directo (Home vs Away). |
+    | **🟠 4. Rotowire / Injury Report** | Reporte Oficial de Lesionados y Descansos | • Estatus Oficial: Out, Questionable, Probable<br>• Redistribución de uso (Usage Rate) por bajas | Filtrado preventivo de jugadores descartados antes de la generación de boletos. |
+    """)
 
 st.markdown("### ⚡ Monitor Dinámico de Viabilidad Baloncesto NBA & NCAAB (Hora CDMX / UTC-6)")
 cards_html = []

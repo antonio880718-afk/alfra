@@ -61,7 +61,7 @@ elif st.session_state.get("alfra_active_sport") not in _VALID_SPORTS:
 
 _active_sport = st.session_state["alfra_active_sport"]
 _PAGE_META = {
-    "futbol": ("ALFRA Sports Web App — Fútbol • NBA • NFL", "⚽", "expanded"),
+    "futbol": ("Sindicato Cuantitativo - Explorador de Equipos & 50+ Mercados", "⚽", "expanded"),
     "nba": ("ALFRA NBA & NCAAB — Web App Cuantitativa", "🏀", "collapsed"),
     "nfl": ("ALFRA NFL & NCAAF — Web App Cuantitativa", "🏈", "collapsed"),
 }
