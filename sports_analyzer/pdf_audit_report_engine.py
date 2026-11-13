@@ -434,11 +434,13 @@ def generate_audit_pdf_bytes(dates: Optional[List[str]] = None) -> bytes:
                     else ("FALLO" if out_m == "MISS" else ("VOID 1.00" if out_m == "VOID" else "POR JUGAR"))
                 )
                 vars_lines = []
-                for v_idx, v_item in enumerate(m["variables"], 1):
+                # Limitar estrictamente a las 4 variables SGP para evitar desborde de celda en ReportLab
+                for v_idx, v_item in enumerate(m["variables"][:4], 1):
                     vo = v_item["outcome"]
                     v_tag = "OK" if vo == "HIT" else ("FALLO" if vo == "MISS" else ("VOID" if vo == "VOID" else "PEND"))
+                    v_stat = str(v_item.get("stat_actual", ""))[:32]
                     vars_lines.append(
-                        f"V{v_idx} [{v_tag}] {v_item['pick']} -> {v_item['stat_actual']}"
+                        f"V{v_idx} [{v_tag}] {v_item['pick']} ({v_stat})"
                     )
                 vars_text = "<br/>".join(_clean_pdf_text(line) for line in vars_lines)
 
