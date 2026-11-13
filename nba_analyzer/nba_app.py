@@ -84,10 +84,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# Barra de Navegación Rápida Multi-Deporte
+# BARRA DE NAVEGACION MULTI-DEPORTE
+st.markdown("""
+<div style="background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 10px 14px; margin-bottom: 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <span style="font-weight: 700; color: #f97316; font-size: 0.95rem; letter-spacing: 0.5px;">
+            🏀 WEB APP BALONCESTO (NBA & NCAAB):
+        </span>
+        <span style="font-size: 0.8rem; color: #94a3b8;">
+            Toca Fútbol o NFL para alternar de deporte
+        </span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 _nav_c1, _nav_c2, _nav_c3 = st.columns(3)
 with _nav_c1:
-    if st.button("⚽ FÚTBOL (26 Ligas)", key="nba_top_nav_futbol", width="stretch"):
+    if st.button("⚽ FÚTBOL (26 Ligas)", key="nba_top_nav_futbol", use_container_width=True):
         st.session_state["alfra_active_sport"] = "futbol"
         try:
             st.query_params["sport"] = "futbol"
@@ -95,9 +108,9 @@ with _nav_c1:
             pass
         st.rerun()
 with _nav_c2:
-    st.button("🏀 NBA & NCAAB Web App", key="nba_top_nav_nba", type="primary", width="stretch", disabled=True)
+    st.button("🏀 NBA & NCAAB (Activo)", key="nba_top_nav_nba", type="primary", use_container_width=True, disabled=True)
 with _nav_c3:
-    if st.button("🏈 NFL & NCAAF Web App", key="nba_top_nav_nfl", width="stretch"):
+    if st.button("🏈 NFL & NCAAF Web App", key="nba_top_nav_nfl", use_container_width=True):
         st.session_state["alfra_active_sport"] = "nfl"
         try:
             st.query_params["sport"] = "nfl"

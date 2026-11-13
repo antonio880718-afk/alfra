@@ -85,6 +85,20 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# BARRA DE NAVEGACIÓN MULTI-DEPORTE (Fútbol, NBA, NFL)
+st.markdown("""
+<div style="background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 10px 14px; margin-bottom: 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <span style="font-weight: 700; color: #38bdf8; font-size: 0.95rem; letter-spacing: 0.5px;">
+            ⚡ SELECCIONAR WEB APP DEPORTIVA:
+        </span>
+        <span style="font-size: 0.8rem; color: #94a3b8;">
+            Toca cualquier deporte para abrir su pantalla completa de análisis y picks
+        </span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 _nav_c1, _nav_c2, _nav_c3 = st.columns(3)
 def _switch_sport(target: str):
     st.session_state["alfra_active_sport"] = target
@@ -98,25 +112,27 @@ with _nav_c1:
         "⚽ FÚTBOL (26 Ligas)",
         key="nav_sport_futbol",
         type="primary" if _active_sport == "futbol" else "secondary",
-        width='stretch',
+        use_container_width=True,
     ):
         _switch_sport("futbol")
         st.rerun()
+
 with _nav_c2:
     if st.button(
         "🏀 NBA & NCAAB Web App",
         key="nav_sport_nba",
         type="primary" if _active_sport == "nba" else "secondary",
-        width='stretch',
+        use_container_width=True,
     ):
         _switch_sport("nba")
         st.rerun()
+
 with _nav_c3:
     if st.button(
         "🏈 NFL & NCAAF Web App",
         key="nav_sport_nfl",
         type="primary" if _active_sport == "nfl" else "secondary",
-        width='stretch',
+        use_container_width=True,
     ):
         _switch_sport("nfl")
         st.rerun()
