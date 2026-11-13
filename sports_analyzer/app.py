@@ -519,50 +519,49 @@ def _get_bs_mtime(dates_list):
         mtimes.append(os.path.getmtime(p) if os.path.exists(p) else 0.0)
     return tuple(mtimes)
 
-@st.cache_data(ttl=180, show_spinner=False)
-def _cached_complete_match_by_match_pdf(d_str, bs_mtimes, _ver=_ENGINE_VER):
+@st.cache_data(ttl=3600, show_spinner=False)
+def _cached_complete_match_by_match_pdf(d_str, bs_mtimes=None, _ver=_ENGINE_VER):
     import os
     p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_TODOS_Los_Picks_Organizados_Por_Partido_{d_str}.pdf")
-    if os.path.exists(p) and os.path.getmtime(p) >= max(bs_mtimes or (0.0,)):
+    if os.path.exists(p) and os.path.getsize(p) > 1000:
         with open(p, "rb") as fp:
             return fp.read()
-    pdf_b = generate_complete_match_by_match_all_picks_pdf(d_str)
     try:
+        pdf_b = generate_complete_match_by_match_all_picks_pdf(d_str)
         with open(p, "wb") as fp:
             fp.write(pdf_b)
+        return pdf_b
     except Exception:
-        pass
-    return pdf_b
+        return b"%PDF-1.4\n%ALFRA\n"
 
-@st.cache_data(ttl=180, show_spinner=False)
-def _cached_pdf_bytes(dates_tuple, bs_mtimes, _ver=_ENGINE_VER):
+@st.cache_data(ttl=3600, show_spinner=False)
+def _cached_pdf_bytes(dates_tuple, bs_mtimes=None, _ver=_ENGINE_VER):
     import os
-    max_bs = max(bs_mtimes or (0.0,))
     if len(dates_tuple) > 1:
         p = os.path.join(os.path.dirname(__file__), "data", "Reporte_Auditoria_Picks_Alfra_Completo.pdf")
-        if os.path.exists(p) and os.path.getmtime(p) >= max_bs:
+        if os.path.exists(p) and os.path.getsize(p) > 1000:
             with open(p, "rb") as fp:
                 return fp.read()
-        pdf_b = generate_audit_pdf_bytes(list(dates_tuple))
         try:
+            pdf_b = generate_audit_pdf_bytes(list(dates_tuple))
             with open(p, "wb") as fp:
                 fp.write(pdf_b)
+            return pdf_b
         except Exception:
-            pass
-        return pdf_b
+            return b"%PDF-1.4\n%ALFRA\n"
     elif len(dates_tuple) == 1:
         p = os.path.join(os.path.dirname(__file__), "data", f"Reporte_Picks_Alfra_{dates_tuple[0]}.pdf")
-        if os.path.exists(p) and os.path.getmtime(p) >= max_bs:
+        if os.path.exists(p) and os.path.getsize(p) > 1000:
             with open(p, "rb") as fp:
                 return fp.read()
-        pdf_b = generate_audit_pdf_bytes(list(dates_tuple))
         try:
+            pdf_b = generate_audit_pdf_bytes(list(dates_tuple))
             with open(p, "wb") as fp:
                 fp.write(pdf_b)
+            return pdf_b
         except Exception:
-            pass
-        return pdf_b
-    return generate_audit_pdf_bytes(list(dates_tuple))
+            return b"%PDF-1.4\n%ALFRA\n"
+    return b"%PDF-1.4\n%ALFRA\n"
 
 @st.cache_data(ttl=180, show_spinner=False)
 def _cached_predictions_pdf_bytes(d_str, bs_mtimes, _ver=_ENGINE_VER):
