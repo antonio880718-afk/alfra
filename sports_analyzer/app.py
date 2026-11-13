@@ -619,6 +619,139 @@ with pdf_col2:
         key="dl_pdf_all_weekend"
     )
 
+
+# -------------------------------------------------------------
+# PICKS DESGLOSADOS PARTIDO POR PARTIDO (DE MAYOR A MENOR PROBABILIDAD)
+# -------------------------------------------------------------
+from hourly_slots_engine import analyze_match_for_slot
+
+_all_screen_matches = [m for s in slots_data.get("slots", []) for m in s.get("matches", [])]
+if _all_screen_matches:
+    with st.expander(
+        f"📋 VER TODOS LOS PICKS DESGLOSADOS PARTIDO POR PARTIDO EN PANTALLA ({selected_date.strftime('%d/%m/%Y')}) — ORDENADOS DE MAYOR A MENOR PROBABILIDAD (~35 PICKS POR JUEGO)",
+        expanded=True
+    ):
+        st.markdown("#### 🎯 Análisis de Encuentro & Catálogo Completo Ordenado por Probabilidad")
+        st.caption("Cada partido cruza el historial de temporada, ataque vs defensa, árbitro y cuotas para ordenar todos los mercados disponibles de mayor a menor probabilidad real.")
+
+        _ctrl_col1, _ctrl_col2 = st.columns([2.5, 1.2])
+        with _ctrl_col1:
+            _m_labels = [
+                f"#{i+1} [{m.get('time_cdmx', '12:00')} hs | {m.get('league', '')}] {m['home']} vs {m['away']}"
+                for i, m in enumerate(_all_screen_matches)
+            ]
+            _sel_idx = st.selectbox(
+                "👉 Elige el Partido a Desglosar en Pantalla:",
+                range(len(_m_labels)),
+                format_func=lambda i: _m_labels[i],
+                key=f"soccer_screen_m_sel_{date_str}"
+            )
+        with _ctrl_col2:
+            _view_all_matches = st.checkbox(
+                "📋 Expandir todos los partidos",
+                value=False,
+                key=f"soccer_expall_{date_str}"
+            )
+
+        def _render_single_match_breakdown(m_obj, match_idx):
+            _sgp = analyze_match_for_slot(m_obj)
+            _bs = get_match_boxscore(f"{m_obj['home']} vs {m_obj['away']}", match_date=date_str, match_time_hint=m_obj.get("time_cdmx"))
+            _st_score = _bs.get("score", "vs")
+            _st_status = _bs.get("status", "PROGRAMADO")
+            _st_badge_bg = "#064e3b" if "FINALIZADO" in _st_status else ("#1e3a8a" if "EN JUEGO" in _st_status else "#1e293b")
+            _st_badge_col = "#6ee7b7" if "FINALIZADO" in _st_status else ("#93c5fd" if "EN JUEGO" in _st_status else "#94a3b8")
+
+            # Matchup Card
+            _ref = _sgp.get("referee_data", {})
+            _ref_name = _ref.get("name") or "Colegiado Oficial Federativo"
+            _ref_cards = _ref.get("cards_per_game", 4.2)
+            _stad = _sgp.get("stadium_data", {})
+            _stad_name = _stad.get("name") or m_obj.get("venue_name") or "Sede Oficial"
+            _stad_city = _stad.get("city") or "Sede Verificada"
+
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, #091224 0%, #1e293b 100%); border: 1px solid #3b82f6; border-radius: 10px; padding: 12px 16px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <span style="background-color: {_st_badge_bg}; color: {_st_badge_col}; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: bold;">{_st_status}</span>
+                        <span style="color: #94a3b8; font-size: 0.82rem; margin-left: 8px;">{m_obj.get('time_cdmx', '12:00')} hs CDMX | <b>{m_obj.get('league', '')}</b></span>
+                        <h3 style="margin: 4px 0 2px 0; color: #ffffff;">⚽ {m_obj['home']} vs {m_obj['away']} — <span style="color: #facc15;">{_st_score}</span></h3>
+                    </div>
+                    <div style="text-align: right; font-size: 0.8rem; color: #cbd5e1;">
+                        <div>🏟️ <b>{_stad_name}</b> ({_stad_city})</div>
+                        <div>🟨 Árbitro: <b>{_ref_name}</b> (~{_ref_cards:.1f} tarj/juego)</div>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            _raw_vars = _sgp.get("variables", [])
+            if not _raw_vars:
+                st.info("No hay mercados disponibles para este partido.")
+                return
+
+            # Top 4 Picks más probables en tarjetas visuales
+            _top4 = _raw_vars[:4]
+            _t4_cols = st.columns(len(_top4))
+            for _k, _v in enumerate(_top4, 1):
+                _p_val = float(_v.get("prob", 50.0))
+                _aud = audit_individual_pick_empirically({
+                    "match": f"{m_obj['home']} vs {m_obj['away']}",
+                    "pick": _v.get("pick"),
+                    "odds": _v.get("odds", 1.25),
+                    "time": m_obj.get("time_cdmx")
+                }, match_date=date_str)
+                _out = _aud.get("outcome", "PENDING")
+                _out_ico = "✅ ACIERTO" if _out == "HIT" else ("❌ FALLO" if _out == "MISS" else ("⚪ VOID" if _out == "VOID" else "⏳ POR JUGAR"))
+                _out_col = "#34d399" if _out == "HIT" else ("#f87171" if _out == "MISS" else ("#94a3b8" if _out == "VOID" else "#60a5fa"))
+                _p_bg = "#064e3b" if _p_val >= 80 else ("#1e3a8a" if _p_val >= 70 else "#374151")
+
+                with _t4_cols[_k - 1]:
+                    st.markdown(f"""
+                    <div style="background: #0d1527; border: 1px solid #1e3a8a; border-left: 4px solid #10b981; border-radius: 8px; padding: 10px 12px; height: 100%;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <span style="background: {_p_bg}; color: #ffffff; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 0.78rem;">#{_k} • {_p_val:.1f}%</span>
+                            <span style="color: #facc15; font-weight: bold; font-size: 0.84rem;">@{_v.get('odds', 1.25)}</span>
+                        </div>
+                        <div style="color: #ffffff; font-weight: 700; font-size: 0.86rem; margin-bottom: 4px;">{_v.get('pick', '')}</div>
+                        <div style="color: #94a3b8; font-size: 0.74rem; margin-bottom: 4px;">Cuota Justa: <b>{_v.get('fair_odds', '')}</b> | EV: <b style="color: #a78bfa;">{_v.get('ev', '')}</b></div>
+                        <div style="color: {_out_col}; font-size: 0.76rem; font-weight: 700;">{_out_ico} — <span style="color: #cbd5e1; font-weight: 400;">{_aud.get('stat_actual', '')}</span></div>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+            # Tabla completa de todos los ~35 picks del partido
+            _p_rows = []
+            for _idx_v, _v in enumerate(_raw_vars, 1):
+                _aud_row = audit_individual_pick_empirically({
+                    "match": f"{m_obj['home']} vs {m_obj['away']}",
+                    "pick": _v.get("pick"),
+                    "odds": _v.get("odds", 1.25),
+                    "time": m_obj.get("time_cdmx")
+                }, match_date=date_str)
+                _out_r = _aud_row.get("outcome", "PENDING")
+                _out_badge = "✅ ACIERTO" if _out_r == "HIT" else ("❌ FALLO" if _out_r == "MISS" else ("⚪ VOID 1.00" if _out_r == "VOID" else "⏳ POR JUGAR"))
+                _p_rows.append({
+                    "#": _idx_v,
+                    "% Probabilidad": f"{float(_v.get('prob', 50.0)):.1f}%",
+                    "Mercado / Predicción": _v.get("pick", ""),
+                    "Momio Casa": str(_v.get("odds", "")),
+                    "Cuota Justa": str(_v.get("fair_odds", "")),
+                    "Valor (+EV)": str(_v.get("ev", "")),
+                    "Resultado Oficial": _out_badge,
+                    "Dato en Acta ESPN": _aud_row.get("stat_actual", "")
+                })
+            if _p_rows:
+                st.dataframe(pd.DataFrame(_p_rows), use_container_width=True, hide_index=True)
+
+        if _view_all_matches:
+            for _i_m, _m_item in enumerate(_all_screen_matches, 1):
+                _bs_hdr = get_match_boxscore(f"{_m_item['home']} vs {_m_item['away']}", match_date=date_str, match_time_hint=_m_item.get("time_cdmx"))
+                _exp_hdr = f"#{_i_m} [{_m_item.get('time_cdmx', '12:00')} hs | {_m_item.get('league', '')}] {_m_item['home']} vs {_m_item['away']} ({_bs_hdr.get('score', 'vs')}) — {_bs_hdr.get('status', 'PROGRAMADO')}"
+                with st.expander(_exp_hdr, expanded=False):
+                    _render_single_match_breakdown(_m_item, _i_m)
+        else:
+            _render_single_match_breakdown(_all_screen_matches[_sel_idx], _sel_idx + 1)
+
 with st.expander(f"📋 VER REPORTE COMPLETO EN PANTALLA DE TODOS LOS PICKS SUGERIDOS ({selected_date.strftime('%d/%m/%Y')}) — ACIERTOS, FALLOS, VOID Y DATO OFICIAL", expanded=False):
     _day_rep = _cached_audit_table_data((date_str,), _cur_bs_mtime)["days"][0]
     st.markdown(
