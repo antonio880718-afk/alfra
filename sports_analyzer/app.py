@@ -626,10 +626,10 @@ from hourly_slots_engine import analyze_match_for_slot
 
 _all_screen_matches = [m for s in slots_data.get("slots", []) for m in s.get("matches", [])]
 if _all_screen_matches:
-    with st.expander(
-        f"📋 VER TODOS LOS PICKS DESGLOSADOS PARTIDO POR PARTIDO EN PANTALLA ({selected_date.strftime('%d/%m/%Y')}) — ORDENADOS DE MAYOR A MENOR PROBABILIDAD (~35 PICKS POR JUEGO)",
-        expanded=True
-    ):
+    st.markdown("---")
+    st.markdown(f"### 📋 PICKS DESGLOSADOS PARTIDO POR PARTIDO EN PANTALLA ({selected_date.strftime('%d/%m/%Y')})")
+    st.caption("Ordenados de Mayor a Menor Probabilidad Real (~35 picks por encuentro cruzando métricas, árbitro y cuotas)")
+    if True:
         st.markdown("#### 🎯 Análisis de Encuentro & Catálogo Completo Ordenado por Probabilidad")
         st.caption("Cada partido cruza el historial de temporada, ataque vs defensa, árbitro y cuotas para ordenar todos los mercados disponibles de mayor a menor probabilidad real.")
 

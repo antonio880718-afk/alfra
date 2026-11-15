@@ -1,0 +1,20 @@
+﻿name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    # Run every 10 minutes to guarantee Streamlit Cloud never sleeps
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  keep-awake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Alfra Sports Streamlit Web App
+        run: |
+          echo "Pinging alfra-sports.streamlit.app to prevent cloud hibernation..."
+          curl -s -L -m 25 "https://alfra-sports.streamlit.app/_stcore/health" || true
+          curl -s -L -m 25 "https://alfra-sports.streamlit.app/?sport=futbol" > /dev/null || true
+          curl -s -L -m 25 "https://alfra-sports.streamlit.app/?sport=nba" > /dev/null || true
+          curl -s -L -m 25 "https://alfra-sports.streamlit.app/?sport=nfl" > /dev/null || true
+          echo "Ping completed! Web App remains active 24/7."
