@@ -23,6 +23,12 @@ LEAGUES_CONFIG = [
     {"name": "Champions League", "code": "uefa.champions", "country": "Europa"},
     {"name": "Europa League", "code": "uefa.europa", "country": "Europa"},
     {"name": "Conference League", "code": "uefa.europa.conf", "country": "Europa"},
+    {"name": "UEFA Nations League", "code": "uefa.nations", "country": "Europa"},
+    {"name": "CONCACAF Nations League", "code": "concacaf.nations", "country": "América"},
+    {"name": "Eliminatorias UEFA", "code": "fifa.worldq.uefa", "country": "Europa"},
+    {"name": "Eliminatorias CONMEBOL", "code": "fifa.worldq.conmebol", "country": "Sudamérica"},
+    {"name": "Eliminatorias CONCACAF", "code": "fifa.worldq.concacaf", "country": "América"},
+    {"name": "Amistosos Internacionales", "code": "fifa.friendly", "country": "Mundo"},
     
     # INGLATERRA & COPAS
     {"name": "Premier League", "code": "eng.1", "country": "Inglaterra"},

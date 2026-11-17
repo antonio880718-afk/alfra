@@ -380,7 +380,12 @@ p100_hits = sum(1 for x in p100_auds if x["outcome"] == "HIT")
 p100_miss = sum(1 for x in p100_auds if x["outcome"] == "MISS")
 p100_pend = sum(1 for x in p100_auds if x["outcome"] in ("PENDING", "IN_PROGRESS"))
 
-if p100_miss == 0 and p100_pend == 0:
+if len(p100_auds) == 0:
+    verdict_global_badge = "⏳ SIN PARTIDOS OFICIALES EN ESTA FECHA (PRUEBA OTRA LIGA O FECHA)"
+    verdict_global_bg = "#1e293b"
+    verdict_global_col = "#94a3b8"
+    p100_status_txt = "⏳ SIN JUEGOS"
+elif p100_miss == 0 and p100_pend == 0:
     verdict_global_badge = f"🏆 ¡SÍ SE PUDO! BOLETO COBRADO AL 100% ({p100_hits}/{len(p100_auds)} ACIERTOS)"
     verdict_global_bg = "#064e3b"
     verdict_global_col = "#34d399"
@@ -404,6 +409,8 @@ for _eb in audit_top["audited_escalera"]:
     _et = len(_eb["picks"])
     if _em > 0:
         esc_phases_summary.append(f"❌ F{_eb['block_id']} Caída")
+    elif _et == 0:
+        esc_phases_summary.append(f"⏳ F{_eb['block_id']} Sin Juegos")
     elif _eh == _et:
         esc_phases_summary.append(f"🏆 F{_eb['block_id']} Cobrada")
     else:
