@@ -1,8 +1,7 @@
-﻿name: Keep Streamlit App Awake
+﻿name: Keep Streamlit App Awake 24/7
 
 on:
   schedule:
-    # Run every 10 minutes to guarantee Streamlit Cloud never sleeps
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
@@ -10,11 +9,55 @@ jobs:
   keep-awake:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Alfra Sports Streamlit Web App
+      - name: Wake and Ping Streamlit Cloud App via API v2 + WebSocket
         run: |
-          echo "Pinging alfra-sports.streamlit.app to prevent cloud hibernation..."
-          curl -s -L -m 25 "https://alfra-sports.streamlit.app/_stcore/health" || true
-          curl -s -L -m 25 "https://alfra-sports.streamlit.app/?sport=futbol" > /dev/null || true
-          curl -s -L -m 25 "https://alfra-sports.streamlit.app/?sport=nba" > /dev/null || true
-          curl -s -L -m 25 "https://alfra-sports.streamlit.app/?sport=nfl" > /dev/null || true
-          echo "Ping completed! Web App remains active 24/7."
+          pip install --quiet requests websocket-client
+          python3 - << 'EOF'
+          import requests, time, websocket
+
+          BASE = "https://alfra-sports.streamlit.app"
+          s = requests.Session()
+          s.headers.update({
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+          })
+
+          # 1. Authenticate session cookies across redirects
+          r0 = s.get(BASE + "/", timeout=20)
+          print("Initial GET status:", r0.status_code)
+
+          # 2. Check /api/v2/app/status and auto-resume if sleeping (status != 5)
+          st_resp = s.get(BASE + "/api/v2/app/status", timeout=15)
+          csrf = st_resp.headers.get("x-csrf-token", "")
+          data = st_resp.json() if st_resp.status_code == 200 else {}
+          status = data.get("status")
+          print("Current app status:", status, data)
+
+          if status != 5:
+              print("App is sleeping or not running! Sending POST /api/v2/app/resume...")
+              res_post = s.post(BASE + "/api/v2/app/resume", headers={"X-CSRF-Token": csrf}, timeout=20)
+              print("Resume response:", res_post.status_code)
+              for i in range(24):
+                  time.sleep(5)
+                  poll = s.get(BASE + "/api/v2/app/status", timeout=15).json()
+                  print(f"Poll {i+1}: status={poll.get('status')}")
+                  if poll.get("status") == 5:
+                      print("App is now RUNNING (status=5)!")
+                      break
+
+          # 3. Ping internal Streamlit endpoints and open WebSocket stream to register viewer activity
+          h_resp = s.get(BASE + "/_stcore/health", timeout=15)
+          print("Health check:", h_resp.status_code, h_resp.text)
+
+          cookie_hdr = "; ".join([f"{k}={v}" for k, v in s.cookies.get_dict().items()])
+          try:
+              ws = websocket.create_connection(
+                  "wss://alfra-sports.streamlit.app/_stcore/stream",
+                  header=[f"Cookie: {cookie_hdr}", "User-Agent: Mozilla/5.0"],
+                  timeout=15
+              )
+              time.sleep(2)
+              ws.close()
+              print("WebSocket viewer session registered successfully!")
+          except Exception as e:
+              print("WebSocket note:", e)
+          EOF
