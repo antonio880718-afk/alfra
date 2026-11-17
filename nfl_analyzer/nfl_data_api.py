@@ -47,7 +47,24 @@ NFL_DEFENSE_PROFILES = {
     "Dallas Cowboys": {"pass_def_rank": 20, "pass_yds_allowed": 230.0, "rush_def_rank": 30, "rush_yds_allowed": 145.0, "style": "Muy Explotable por Tierra"},
     "Miami Dolphins": {"pass_def_rank": 10, "pass_yds_allowed": 200.0, "rush_def_rank": 16, "rush_yds_allowed": 118.0, "style": "Secundaria Fuerte con Ramsey"},
     "Atlanta Falcons": {"pass_def_rank": 18, "pass_yds_allowed": 222.0, "rush_def_rank": 20, "rush_yds_allowed": 126.0, "style": "Poco Sack / Cobertura en Zona"},
-    "Tampa Bay Buccaneers": {"pass_def_rank": 29, "pass_yds_allowed": 260.0, "rush_def_rank": 7, "rush_yds_allowed": 95.0, "style": "Blitz Frecuente / Expuesta en Pases Profundos"}
+    "Tampa Bay Buccaneers": {"pass_def_rank": 29, "pass_yds_allowed": 260.0, "rush_def_rank": 7, "rush_yds_allowed": 95.0, "pts_allowed": 24.8, "style": "Blitz Frecuente / Expuesta en Pases Profundos"},
+    "Los Angeles Chargers": {"pass_def_rank": 7, "pass_yds_allowed": 194.0, "rush_def_rank": 11, "rush_yds_allowed": 106.0, "pts_allowed": 17.8, "style": "Defensa Disciplinada / Baja Concesión en Zona Roja"},
+    "Pittsburgh Steelers": {"pass_def_rank": 8, "pass_yds_allowed": 198.0, "rush_def_rank": 6, "rush_yds_allowed": 93.0, "pts_allowed": 17.4, "style": "Presión Élite (T.J. Watt) / Muro Defensivo"},
+    "Denver Broncos": {"pass_def_rank": 3, "pass_yds_allowed": 182.0, "rush_def_rank": 9, "rush_yds_allowed": 101.0, "pts_allowed": 17.9, "style": "Cobertura Élite con Surtain II / Pocos TDs"},
+    "New England Patriots": {"pass_def_rank": 19, "pass_yds_allowed": 226.0, "rush_def_rank": 22, "rush_yds_allowed": 128.0, "pts_allowed": 23.8, "style": "Defensa en Reconstrucción / Vulnerable por Tierra"},
+    "Washington Commanders": {"pass_def_rank": 15, "pass_yds_allowed": 216.0, "rush_def_rank": 24, "rush_yds_allowed": 132.0, "pts_allowed": 22.4, "style": "Secundaria Sólida / Concede Yardas Terrestres"},
+    "Los Angeles Rams": {"pass_def_rank": 17, "pass_yds_allowed": 221.0, "rush_def_rank": 18, "rush_yds_allowed": 119.0, "pts_allowed": 22.6, "style": "Pass Rush Joven / Presión Interior"},
+    "Seattle Seahawks": {"pass_def_rank": 13, "pass_yds_allowed": 212.0, "rush_def_rank": 21, "rush_yds_allowed": 125.0, "pts_allowed": 22.1, "style": "Esquema Macdonald / Presión Disfrazada"},
+    "Arizona Cardinals": {"pass_def_rank": 21, "pass_yds_allowed": 232.0, "rush_def_rank": 19, "rush_yds_allowed": 121.0, "pts_allowed": 23.5, "style": "Defensa Agresiva con Carga / Media Tabla"},
+    "Chicago Bears": {"pass_def_rank": 9, "pass_yds_allowed": 199.0, "rush_def_rank": 23, "rush_yds_allowed": 130.0, "pts_allowed": 20.5, "style": "Secundaria Fuerte / Explotable por Carrera"},
+    "Indianapolis Colts": {"pass_def_rank": 24, "pass_yds_allowed": 238.0, "rush_def_rank": 25, "rush_yds_allowed": 134.0, "pts_allowed": 24.2, "style": "Cobertura Blanda / Ritmo Alto de Posesiones"},
+    "New York Jets": {"pass_def_rank": 4, "pass_yds_allowed": 185.0, "rush_def_rank": 15, "rush_yds_allowed": 115.0, "pts_allowed": 19.6, "style": "Secundaria Cerrada / Pases Cortos"},
+    "New York Giants": {"pass_def_rank": 16, "pass_yds_allowed": 219.0, "rush_def_rank": 28, "rush_yds_allowed": 141.0, "pts_allowed": 23.9, "style": "Alto Índice de Sacks / Vulnerable al Acarreo"},
+    "Cleveland Browns": {"pass_def_rank": 11, "pass_yds_allowed": 204.0, "rush_def_rank": 17, "rush_yds_allowed": 117.0, "pts_allowed": 21.8, "style": "Pass Rush con Myles Garrett / Cobertura Hombre a Hombre"},
+    "Las Vegas Raiders": {"pass_def_rank": 22, "pass_yds_allowed": 234.0, "rush_def_rank": 26, "rush_yds_allowed": 136.0, "pts_allowed": 25.4, "style": "Permisiva en Zona Roja"},
+    "Tennessee Titans": {"pass_def_rank": 12, "pass_yds_allowed": 207.0, "rush_def_rank": 12, "rush_yds_allowed": 108.0, "pts_allowed": 22.8, "style": "Física en Línea Frontal"},
+    "New Orleans Saints": {"pass_def_rank": 25, "pass_yds_allowed": 242.0, "rush_def_rank": 27, "rush_yds_allowed": 138.0, "pts_allowed": 24.9, "style": "Secundaria Explotable en Jugadas Grandes"},
+    "Carolina Panthers": {"pass_def_rank": 32, "pass_yds_allowed": 272.0, "rush_def_rank": 32, "rush_yds_allowed": 152.0, "pts_allowed": 29.8, "style": "Defensa Más Permisiva de la Liga"}
 }
 
 # BASE DE DATOS DE ESTRELLAS NFL Y NCAA

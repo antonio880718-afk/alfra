@@ -113,9 +113,19 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
     tot_std = 16.0 if is_nba else 12.5
     margin_std = 11.5 if is_nba else 10.5
     expected_pace = round((float(h_def.get("pace", 100.0)) + float(a_def.get("pace", 100.0))) / 2.0, 1) if is_nba else 68.5
+    h_pa = float(h_def.get("pts_allowed", 113.5 if is_nba else 72.5))
+    a_pa = float(a_def.get("pts_allowed", 114.0 if is_nba else 73.0))
+    pace_factor = (expected_pace / 100.0) if is_nba else 1.0
+    def_cross_total = (h_pa + a_pa) * pace_factor
+    has_vegas_spread = bool(spread_str and str(spread_str).strip())
     home_spread = _extract_home_spread(spread_str, home, away)
-    exp_home = round((ou_line - home_spread) / 2.0, 1)
-    exp_away = round((ou_line + home_spread) / 2.0, 1)
+    if not has_vegas_spread:
+        hca = 2.8 if is_nba else 3.5
+        home_spread = round(max(-14.5, min(14.5, (h_pa - a_pa) * 0.65 - hca)), 1)
+    is_default_ou = (is_nba and abs(ou_line - 226.5) < 0.05) or ((not is_nba) and abs(ou_line - 145.5) < 0.05)
+    proj_total = round((0.30 * ou_line + 0.70 * def_cross_total) if (is_default_ou and not has_vegas_spread) else (0.65 * ou_line + 0.35 * def_cross_total), 1)
+    exp_home = round((proj_total - home_spread) / 2.0, 1)
+    exp_away = round((proj_total + home_spread) / 2.0, 1)
     match_lbl = f"{away} @ {home}"
 
     categories = []
@@ -128,8 +138,8 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
         ("Under Seguro (+8.5)", 8.5, "UNDER"),
         ("Under Conservador (+4.5)", 4.5, "UNDER"),
     ]:
-        line = round(ou_line + delta - 0.5) + 0.5
-        p_val = normal_prob_over(ou_line, tot_std, line) if direction == "OVER" else (1.0 - normal_prob_over(ou_line, tot_std, line))
+        line = round(proj_total + delta - 0.5) + 0.5
+        p_val = normal_prob_over(proj_total, tot_std, line) if direction == "OVER" else (1.0 - normal_prob_over(proj_total, tot_std, line))
         buf_sign = "-" if direction == "OVER" else "+"
         cat_totals["options"].append(_make_opt(
             pick=f"Total Puntos {'Over' if direction=='OVER' else 'Under'} {line:.1f}",

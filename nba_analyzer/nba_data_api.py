@@ -58,7 +58,12 @@ NBA_DEFENSE_PROFILES = {
     "Philadelphia 76ers": {"def_rank": 13, "pts_allowed": 112.0, "pace": 98.7, "style": "Pintura Blindada / Ritmo Moderado"},
     "Orlando Magic": {"def_rank": 5, "pts_allowed": 107.1, "pace": 98.5, "style": "Envergadura y Presión en Todo el Campo"},
     "Sacramento Kings": {"def_rank": 20, "pts_allowed": 115.8, "pace": 100.7, "style": "Ofensiva Dinámica / Concede Puntos al Contragolpe"},
-    "Los Angeles Clippers": {"def_rank": 10, "pts_allowed": 110.5, "pace": 98.0, "style": "Defensa Experimentada a Media Cancha"}
+    "Los Angeles Clippers": {"def_rank": 10, "pts_allowed": 110.5, "pace": 98.0, "style": "Defensa Experimentada a Media Cancha"},
+    "LA Clippers": {"def_rank": 10, "pts_allowed": 110.5, "pace": 98.0, "style": "Defensa Experimentada a Media Cancha"},
+    "Chicago Bulls": {"def_rank": 20, "pts_allowed": 115.8, "pace": 100.9, "style": "Ritmo Alto / Defensa Exterior Vulnerable"},
+    "Brooklyn Nets": {"def_rank": 23, "pts_allowed": 116.8, "pace": 99.6, "style": "Rotación Joven / Concesión en Pintura"},
+    "Portland Trail Blazers": {"def_rank": 24, "pts_allowed": 117.4, "pace": 100.6, "style": "Transición Rápida / Baja Eficiencia Defensiva"},
+    "Utah Jazz": {"def_rank": 30, "pts_allowed": 121.6, "pace": 101.8, "style": "Ritmo Acelerado / Defensa Muy Permisiva"}
 }
 
 # BASE DE DATOS DE ESTRELLAS REALES (TODOS LOS EQUIPOS DE LA NBA Y NCAA)

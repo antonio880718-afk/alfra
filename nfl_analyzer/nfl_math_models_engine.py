@@ -108,11 +108,23 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     h_def = game.get("home_defense", {"pass_def_rank": 15, "pass_yds_allowed": 218.0, "rush_def_rank": 15, "rush_yds_allowed": 110.0, "style": "Defensa Estándar"})
     a_def = game.get("away_defense", {"pass_def_rank": 16, "pass_yds_allowed": 220.0, "rush_def_rank": 16, "rush_yds_allowed": 112.0, "style": "Defensa Estándar"})
 
-    tot_std = 12.8 if league == "NFL" else 14.5
-    margin_std = 13.5 if league == "NFL" else 15.5
+    is_nfl = league == "NFL"
+    tot_std = 12.8 if is_nfl else 14.5
+    margin_std = 13.5 if is_nfl else 15.5
+    h_pa = float(h_def.get("pts_allowed", 21.8 if is_nfl else 25.0))
+    a_pa = float(a_def.get("pts_allowed", 22.4 if is_nfl else 26.0))
+    h_yds = float(h_def.get("pass_yds_allowed", 220.0)) + float(h_def.get("rush_yds_allowed", 112.0))
+    a_yds = float(a_def.get("pass_yds_allowed", 222.0)) + float(a_def.get("rush_yds_allowed", 115.0))
+    dome_adj = 1.6 if is_dome else -0.8
+    def_cross_total = (h_pa + a_pa) + ((h_yds + a_yds - 665.0) * 0.025) + dome_adj
+    has_vegas_spread = bool(spread_str and str(spread_str).strip())
     home_spread = _extract_home_spread(spread_str, home, away)
-    exp_home = round((ou_line - home_spread) / 2.0, 1)
-    exp_away = round((ou_line + home_spread) / 2.0, 1)
+    if not has_vegas_spread:
+        home_spread = round(max(-14.5, min(14.5, (h_pa - a_pa) * 0.70 - 2.2)), 1)
+    is_default_ou = (is_nfl and abs(ou_line - 46.5) < 0.05) or ((not is_nfl) and abs(ou_line - 54.5) < 0.05)
+    proj_total = round((0.30 * ou_line + 0.70 * def_cross_total) if (is_default_ou and not has_vegas_spread) else (0.68 * ou_line + 0.32 * def_cross_total), 1)
+    exp_home = round((proj_total - home_spread) / 2.0, 1)
+    exp_away = round((proj_total + home_spread) / 2.0, 1)
     match_lbl = f"{away} @ {home}"
 
     categories = []
@@ -125,8 +137,8 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
         ("Under Seguro (+7.5)", 7.5, "UNDER"),
         ("Under Conservador (+3.5)", 3.5, "UNDER"),
     ]:
-        line = max(21.5, round(ou_line + delta - 0.5) + 0.5)
-        p_val = normal_prob_over(ou_line, tot_std, line) if direction == "OVER" else (1.0 - normal_prob_over(ou_line, tot_std, line))
+        line = max(21.5, round(proj_total + delta - 0.5) + 0.5)
+        p_val = normal_prob_over(proj_total, tot_std, line) if direction == "OVER" else (1.0 - normal_prob_over(proj_total, tot_std, line))
         cat_totals["options"].append(_make_opt(
             pick=f"Total Puntos {'Over' if direction=='OVER' else 'Under'} {line:.1f}",
             category="Puntos Totales",
