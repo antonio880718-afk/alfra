@@ -1,0 +1,13 @@
+﻿services:
+  - type: web
+    name: alfra-sports
+    env: docker
+    plan: starter
+    region: oregon
+    branch: main
+    dockerContext: .
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000

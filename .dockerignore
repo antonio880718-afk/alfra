@@ -1,0 +1,17 @@
+﻿.git
+.github
+.agents
+.agent
+node_modules
+dist
+build
+android
+ios
+capturas_playstore
+*.apk
+*.aab
+__pycache__
+*.pyc
+.env*
+scratch
+functions/node_modules
