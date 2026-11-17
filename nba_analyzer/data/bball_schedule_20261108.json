@@ -20,16 +20,16 @@
     "over_under": 145.5,
     "venue": "Madison Square Garden (New York)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 1,
+      "pts_allowed": 64.5,
+      "pace": 68.6,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 58,
+      "pts_allowed": 78.2,
+      "pace": 66.5,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -598,16 +598,16 @@
     "over_under": 145.5,
     "venue": "Capital One Arena (Washington)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 70.0,
+      "pace": 71.6,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 25,
+      "pts_allowed": 70.3,
+      "pace": 72.7,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1176,10 +1176,10 @@
     "over_under": 226.5,
     "venue": "United Center (Chicago)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 20,
+      "pts_allowed": 115.8,
+      "pace": 100.9,
+      "style": "Ritmo Alto / Defensa Exterior Vulnerable"
     },
     "away_defense": {
       "def_rank": 13,
@@ -2176,10 +2176,10 @@
       "style": "Muro en Pintura (Gobert) / Rebote Dominante"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 30,
+      "pts_allowed": 121.6,
+      "pace": 101.8,
+      "style": "Ritmo Acelerado / Defensa Muy Permisiva"
     },
     "stars": [
       {
@@ -2663,10 +2663,10 @@
       "style": "Control de Posesiones y Cierre Interior"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 23,
+      "pts_allowed": 116.8,
+      "pace": 99.6,
+      "style": "Rotación Joven / Concesión en Pintura"
     },
     "stars": [
       {
@@ -3638,16 +3638,16 @@
     "over_under": 145.5,
     "venue": "Tahoe Blue Event Center (Stateline)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 44,
+      "pts_allowed": 74.8,
+      "pace": 69.0,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 34,
+      "pts_allowed": 72.4,
+      "pace": 70.0,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -4203,10 +4203,10 @@
     "over_under": 226.5,
     "venue": "Intuit Dome (Inglewood)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 10,
+      "pts_allowed": 110.5,
+      "pace": 98.0,
+      "style": "Defensa Experimentada a Media Cancha"
     },
     "away_defense": {
       "def_rank": 23,
@@ -5194,16 +5194,16 @@
     "over_under": 145.5,
     "venue": "Tahoe Blue Event Center (Stateline)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 34,
+      "pts_allowed": 72.4,
+      "pace": 68.5,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 27,
+      "pts_allowed": 70.7,
+      "pace": 70.2,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {

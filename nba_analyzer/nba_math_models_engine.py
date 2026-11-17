@@ -106,8 +106,12 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
     stars = game.get("stars", [])
     venue = game.get("venue", "Arena Oficial")
 
-    h_def = game.get("home_defense", {"def_rank": 15, "pts_allowed": 113.5, "pace": 100.0, "style": "Defensa Estándar"})
-    a_def = game.get("away_defense", {"def_rank": 16, "pts_allowed": 114.0, "pace": 100.0, "style": "Defensa Estándar"})
+    try:
+        from nba_data_api import NBA_DEFENSE_PROFILES
+    except Exception:
+        NBA_DEFENSE_PROFILES = {}
+    h_def = dict(NBA_DEFENSE_PROFILES.get(home, game.get("home_defense", {"def_rank": 14, "pts_allowed": 112.8, "pace": 99.8, "style": "Defensa Táctica"})))
+    a_def = dict(NBA_DEFENSE_PROFILES.get(away, game.get("away_defense", {"def_rank": 16, "pts_allowed": 113.6, "pace": 100.1, "style": "Defensa Táctica"})))
 
     is_nba = league == "NBA"
     tot_std = 16.0 if is_nba else 12.5
@@ -318,20 +322,28 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
         ))
     categories.append(cat_1h)
 
-    # Helper para defensa rival por jugador
+    # Helper cuantitativo: Cruce Defensa Rival + Pace + Riesgo de Blowout
     def _opp_ctx(s: dict):
         p_team = s.get("team", home)
         opp_def = a_def if p_team == home else h_def
         opp_tm = away if p_team == home else home
-        pace_adj = 1.0 + ((float(opp_def.get("pace", 100.0)) - 100.0) * 0.008)
+        base_pa = 113.5 if is_nba else 72.5
+        base_pc = 100.0 if is_nba else 68.5
+        def_mult = float(opp_def.get("pts_allowed", base_pa)) / base_pa
+        rk_mult = 1.0 + (float(opp_def.get("def_rank", 15)) - 15.5) * 0.0042
+        pc_mult = 1.0 + ((float(opp_def.get("pace", base_pc)) - base_pc) * 0.0065)
+        blowout_disc = 0.955 if abs(home_spread) >= 12.5 else 1.0
+        pace_adj = max(0.85, min(1.18, (0.55 * def_mult + 0.45 * (rk_mult * pc_mult)) * blowout_disc))
         return p_team, opp_tm, opp_def, pace_adj
 
-    # 5. PUNTOS DE JUGADOR (PTS - línea segura + hito para todos los líderes)
+    # 5. PUNTOS DE JUGADOR (PTS - Empirical Bayes shrinkage + cruce defensivo rival)
     cat_pts = {"category": "Puntos de Jugador (PTS)", "options": []}
     for s in stars[:8]:
-        base_pts = float(s.get("pts", 16.0))
-        if base_pts < 6.5:
+        raw_pts = float(s.get("pts", 16.0))
+        if raw_pts < 6.5:
             continue
+        # Contracción Empírica de Bayes para amortiguar picos de un solo partido de ESPN leaders
+        base_pts = round(25.5 + (raw_pts - 25.5) * 0.52, 1) if raw_pts > 26.5 else raw_pts
         p_team, opp_tm, opp_def, pace_adj = _opp_ctx(s)
         adj_pts = round(base_pts * pace_adj, 1)
         safe_line = max(5.5, round(adj_pts * 0.72) + 0.5)

@@ -15,16 +15,16 @@
     "over_under": 145.5,
     "venue": "KFC Yum! Center (Louisville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 67,
+      "pts_allowed": 80.3,
+      "pace": 68.9,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 56,
+      "pts_allowed": 77.7,
+      "pace": 66.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -213,16 +213,16 @@
     "over_under": 145.5,
     "venue": "McCarthey Athletic Center (Spokane)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 58,
+      "pts_allowed": 78.2,
+      "pace": 68.0,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 62,
+      "pts_allowed": 79.1,
+      "pace": 70.2,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -321,10 +321,10 @@
       "style": "Ritmo Acelerado / Defensa Permisiva"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 23,
+      "pts_allowed": 116.8,
+      "pace": 99.6,
+      "style": "Rotación Joven / Concesión en Pintura"
     },
     "stars": [
       {
@@ -829,10 +829,10 @@
     "over_under": 226.5,
     "venue": "Moda Center (Portland)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 117.4,
+      "pace": 100.6,
+      "style": "Transición Rápida / Baja Eficiencia Defensiva"
     },
     "away_defense": {
       "def_rank": 19,

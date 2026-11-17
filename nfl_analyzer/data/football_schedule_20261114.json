@@ -21,20 +21,20 @@
     "is_dome": false,
     "venue": "Hard Rock Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 26,
+      "pass_yds_allowed": 247.0,
+      "rush_def_rank": 19,
+      "rush_yds_allowed": 118.2,
+      "pts_allowed": 26.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_yds_allowed": 223.6,
+      "rush_def_rank": 10,
+      "rush_yds_allowed": 101.1,
+      "pts_allowed": 22.9,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -1201,20 +1201,20 @@
     "is_dome": false,
     "venue": "Gerald J. Ford Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 7,
+      "pass_yds_allowed": 197.6,
+      "rush_def_rank": 5,
+      "rush_yds_allowed": 91.6,
+      "pts_allowed": 19.7,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 23,
+      "pass_yds_allowed": 239.2,
+      "rush_def_rank": 29,
+      "rush_yds_allowed": 137.2,
+      "pts_allowed": 28.1,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -2589,20 +2589,20 @@
     "is_dome": false,
     "venue": "Ohio Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 254.8,
+      "rush_def_rank": 30,
+      "rush_yds_allowed": 139.1,
+      "pts_allowed": 29.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 25,
+      "pass_yds_allowed": 244.4,
+      "rush_def_rank": 7,
+      "rush_yds_allowed": 95.4,
+      "pts_allowed": 23.9,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -3736,20 +3736,20 @@
     "is_dome": false,
     "venue": "Jack Trice Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 20,
+      "pass_yds_allowed": 231.4,
+      "rush_def_rank": 30,
+      "rush_yds_allowed": 139.1,
+      "pts_allowed": 27.7,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 10,
+      "rush_yds_allowed": 101.1,
+      "pts_allowed": 21.0,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -5063,20 +5063,20 @@
     "is_dome": false,
     "venue": "Carter-Finley Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_def_rank": 11,
+      "pass_yds_allowed": 208.0,
       "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 112.5,
+      "pts_allowed": 22.9,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 2,
+      "pass_yds_allowed": 184.6,
+      "rush_def_rank": 26,
+      "rush_yds_allowed": 131.5,
+      "pts_allowed": 23.1,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -6387,20 +6387,20 @@
     "is_dome": false,
     "venue": "SECU Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 23,
+      "pass_yds_allowed": 239.2,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.6,
+      "pts_allowed": 25.2,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 14,
+      "pass_yds_allowed": 215.8,
+      "rush_def_rank": 6,
+      "rush_yds_allowed": 93.5,
+      "pts_allowed": 21.4,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -7525,20 +7525,20 @@
     "is_dome": false,
     "venue": "Pratt & Whitney Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 11,
+      "pass_yds_allowed": 208.0,
+      "rush_def_rank": 7,
+      "rush_yds_allowed": 95.4,
+      "pts_allowed": 21.0,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 11,
+      "pass_yds_allowed": 208.0,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 129.6,
+      "pts_allowed": 24.8,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -8753,20 +8753,20 @@
     "is_dome": false,
     "venue": "Memorial Stadium (Clemson, SC)",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 9,
+      "pass_yds_allowed": 202.8,
+      "rush_def_rank": 21,
+      "rush_yds_allowed": 122.0,
+      "pts_allowed": 23.5,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_def_rank": 13,
+      "pass_yds_allowed": 213.2,
       "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 114.4,
+      "pts_allowed": 23.5,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -10061,20 +10061,20 @@
     "is_dome": false,
     "venue": "SHI Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 19,
+      "pass_yds_allowed": 228.8,
+      "rush_def_rank": 28,
+      "rush_yds_allowed": 135.3,
+      "pts_allowed": 27.1,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 9,
+      "rush_yds_allowed": 99.2,
+      "pts_allowed": 25.8,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -11183,20 +11183,20 @@
     "is_dome": false,
     "venue": "FirstBank Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_def_rank": 27,
+      "pass_yds_allowed": 249.6,
       "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 112.5,
+      "pts_allowed": 26.2,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 10,
+      "pass_yds_allowed": 205.4,
+      "rush_def_rank": 2,
+      "rush_yds_allowed": 85.9,
+      "pts_allowed": 19.7,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -12443,20 +12443,20 @@
     "is_dome": false,
     "venue": "Jerry Richardson Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 4,
+      "pass_yds_allowed": 189.8,
+      "rush_def_rank": 2,
+      "rush_yds_allowed": 85.9,
+      "pts_allowed": 18.5,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_def_rank": 1,
+      "pass_yds_allowed": 182.0,
       "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 114.4,
+      "pts_allowed": 21.0,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -13575,20 +13575,20 @@
     "is_dome": false,
     "venue": "Lincoln Financial Field",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 26,
+      "pass_yds_allowed": 247.0,
+      "rush_def_rank": 18,
+      "rush_yds_allowed": 116.3,
+      "pts_allowed": 26.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 9,
+      "pass_yds_allowed": 202.8,
+      "rush_def_rank": 19,
+      "rush_yds_allowed": 118.2,
+      "pts_allowed": 23.1,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -14726,20 +14726,20 @@
     "is_dome": false,
     "venue": "Brooks Stadium (SC)",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 4,
+      "pass_yds_allowed": 189.8,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 129.6,
+      "pts_allowed": 23.3,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 24,
+      "pass_yds_allowed": 241.8,
+      "rush_def_rank": 4,
+      "rush_yds_allowed": 89.7,
+      "pts_allowed": 23.1,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -16066,20 +16066,20 @@
     "is_dome": false,
     "venue": "Amon G. Carter Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 18,
+      "pass_yds_allowed": 226.2,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.6,
+      "pts_allowed": 24.1,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 20,
+      "pass_yds_allowed": 231.4,
+      "rush_def_rank": 24,
+      "rush_yds_allowed": 127.7,
+      "pts_allowed": 26.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -17247,19 +17247,19 @@
     "venue": "Elliott T. Bowers Stadium",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_yds_allowed": 221.0,
       "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 112.5,
+      "pts_allowed": 23.9,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 5,
+      "pass_yds_allowed": 192.4,
+      "rush_def_rank": 3,
+      "rush_yds_allowed": 87.8,
+      "pts_allowed": 18.9,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -18704,20 +18704,20 @@
     "is_dome": false,
     "venue": "Kyle Field",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 1,
+      "rush_yds_allowed": 84.0,
+      "pts_allowed": 24.1,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.4,
+      "rush_def_rank": 6,
+      "rush_yds_allowed": 93.5,
+      "pts_allowed": 21.6,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -19948,20 +19948,20 @@
     "is_dome": false,
     "venue": "Robert W. Plaster Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
+      "pass_def_rank": 10,
+      "pass_yds_allowed": 205.4,
+      "rush_def_rank": 13,
+      "rush_yds_allowed": 106.8,
       "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 10,
+      "pass_yds_allowed": 205.4,
+      "rush_def_rank": 31,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 25.8,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -21160,20 +21160,20 @@
     "is_dome": false,
     "venue": "Delaware Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 2,
+      "pass_yds_allowed": 184.6,
+      "rush_def_rank": 17,
+      "rush_yds_allowed": 114.4,
+      "pts_allowed": 21.2,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_yds_allowed": 223.6,
+      "rush_def_rank": 8,
+      "rush_yds_allowed": 97.3,
+      "pts_allowed": 22.4,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -22452,20 +22452,20 @@
     "is_dome": false,
     "venue": "Memorial Stadium (Bloomington, IN)",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 27,
+      "pass_yds_allowed": 249.6,
+      "rush_def_rank": 29,
+      "rush_yds_allowed": 137.2,
+      "pts_allowed": 29.0,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 22,
+      "pass_yds_allowed": 236.6,
+      "rush_def_rank": 28,
+      "rush_yds_allowed": 135.3,
+      "pts_allowed": 27.7,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -23632,20 +23632,20 @@
     "is_dome": false,
     "venue": "Sanford Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 12,
+      "pass_yds_allowed": 210.6,
+      "rush_def_rank": 4,
+      "rush_yds_allowed": 89.7,
+      "pts_allowed": 20.6,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 1,
+      "pass_yds_allowed": 182.0,
+      "rush_def_rank": 22,
+      "rush_yds_allowed": 123.9,
+      "pts_allowed": 22.0,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -25019,20 +25019,20 @@
     "is_dome": false,
     "venue": "Notre Dame Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 6,
+      "pass_yds_allowed": 195.0,
+      "rush_def_rank": 13,
+      "rush_yds_allowed": 106.8,
+      "pts_allowed": 21.2,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 7,
+      "pass_yds_allowed": 197.6,
+      "rush_def_rank": 2,
+      "rush_yds_allowed": 85.9,
+      "pts_allowed": 19.1,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -26439,20 +26439,20 @@
     "is_dome": false,
     "venue": "Autzen Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_def_rank": 4,
+      "pass_yds_allowed": 189.8,
       "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 112.5,
+      "pts_allowed": 21.4,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 18,
+      "pass_yds_allowed": 226.2,
+      "rush_def_rank": 12,
+      "rush_yds_allowed": 104.9,
+      "pts_allowed": 23.5,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -27619,20 +27619,20 @@
     "is_dome": false,
     "venue": "Milan Puskar Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 5,
+      "pass_yds_allowed": 192.4,
+      "rush_def_rank": 10,
+      "rush_yds_allowed": 101.1,
+      "pts_allowed": 20.3,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 254.8,
+      "rush_def_rank": 4,
+      "rush_yds_allowed": 89.7,
+      "pts_allowed": 24.1,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -28943,20 +28943,20 @@
     "is_dome": false,
     "venue": "Scott Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 12,
+      "pass_yds_allowed": 210.6,
+      "rush_def_rank": 5,
+      "rush_yds_allowed": 91.6,
+      "pts_allowed": 20.8,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_def_rank": 6,
+      "pass_yds_allowed": 195.0,
       "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 114.4,
+      "pts_allowed": 22.0,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -30363,20 +30363,20 @@
     "is_dome": false,
     "venue": "Huskie Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 26,
+      "pass_yds_allowed": 247.0,
+      "rush_def_rank": 7,
+      "rush_yds_allowed": 95.4,
+      "pts_allowed": 24.1,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 9,
+      "rush_yds_allowed": 99.2,
+      "pts_allowed": 20.8,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -31402,20 +31402,20 @@
     "is_dome": false,
     "venue": "Center Parc Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 1,
+      "pass_yds_allowed": 182.0,
+      "rush_def_rank": 21,
+      "rush_yds_allowed": 122.0,
+      "pts_allowed": 21.8,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 129.6,
+      "pts_allowed": 29.2,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -32630,20 +32630,20 @@
     "is_dome": false,
     "venue": "Houchens Industries-L.T. Smith Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 13,
+      "pass_yds_allowed": 213.2,
+      "rush_def_rank": 31,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 26.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 221.0,
+      "rush_def_rank": 22,
+      "rush_yds_allowed": 123.9,
+      "pts_allowed": 25.2,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -33954,20 +33954,20 @@
     "is_dome": false,
     "venue": "Williams Stadium (VA)",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 6,
+      "pass_yds_allowed": 195.0,
+      "rush_def_rank": 12,
+      "rush_yds_allowed": 104.9,
+      "pts_allowed": 21.0,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 4,
+      "pass_yds_allowed": 189.8,
+      "rush_def_rank": 32,
+      "rush_yds_allowed": 142.9,
+      "pts_allowed": 24.8,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -35150,20 +35150,20 @@
     "is_dome": false,
     "venue": "UFCU Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 25,
+      "pass_yds_allowed": 244.4,
+      "rush_def_rank": 22,
+      "rush_yds_allowed": 123.9,
+      "pts_allowed": 27.1,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 21,
+      "pass_yds_allowed": 234.0,
+      "rush_def_rank": 6,
+      "rush_yds_allowed": 93.5,
+      "pts_allowed": 22.9,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -36410,20 +36410,20 @@
     "is_dome": false,
     "venue": "Davis Wade Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 30,
+      "pass_yds_allowed": 257.4,
+      "rush_def_rank": 6,
+      "rush_yds_allowed": 93.5,
+      "pts_allowed": 24.8,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_yds_allowed": 223.6,
+      "rush_def_rank": 20,
+      "rush_yds_allowed": 120.1,
+      "pts_allowed": 25.0,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -37718,20 +37718,20 @@
     "is_dome": false,
     "venue": "First Community Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 1,
+      "pass_yds_allowed": 182.0,
+      "rush_def_rank": 19,
+      "rush_yds_allowed": 118.2,
+      "pts_allowed": 21.4,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 14,
+      "pass_yds_allowed": 215.8,
+      "rush_def_rank": 28,
+      "rush_yds_allowed": 135.3,
+      "pts_allowed": 26.0,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -38786,20 +38786,20 @@
     "is_dome": false,
     "venue": "Joe Aillet Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 2,
+      "pass_yds_allowed": 184.6,
+      "rush_def_rank": 31,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 24.1,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 221.0,
+      "rush_def_rank": 31,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 27.1,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -39902,20 +39902,20 @@
     "is_dome": false,
     "venue": "Acrisure Bounce House",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 4,
+      "pass_yds_allowed": 189.8,
+      "rush_def_rank": 11,
+      "rush_yds_allowed": 103.0,
+      "pts_allowed": 20.3,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 23,
+      "pass_yds_allowed": 239.2,
+      "rush_def_rank": 13,
+      "rush_yds_allowed": 106.8,
+      "pts_allowed": 24.8,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -40896,20 +40896,20 @@
     "is_dome": false,
     "venue": "Spartan Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 30,
+      "pass_yds_allowed": 257.4,
+      "rush_def_rank": 22,
+      "rush_yds_allowed": 123.9,
+      "pts_allowed": 28.1,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 25,
+      "pass_yds_allowed": 244.4,
+      "rush_def_rank": 11,
+      "rush_yds_allowed": 103.0,
+      "pts_allowed": 24.8,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -41900,20 +41900,20 @@
     "is_dome": false,
     "venue": "Albertsons Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.4,
+      "rush_def_rank": 28,
+      "rush_yds_allowed": 135.3,
+      "pts_allowed": 26.2,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 19,
+      "pass_yds_allowed": 228.8,
+      "rush_def_rank": 3,
+      "rush_yds_allowed": 87.8,
+      "pts_allowed": 21.8,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -42734,20 +42734,20 @@
     "is_dome": false,
     "venue": "Joan C. Edwards Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 23,
+      "pass_yds_allowed": 239.2,
+      "rush_def_rank": 31,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 28.5,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 25,
+      "pass_yds_allowed": 244.4,
+      "rush_def_rank": 2,
+      "rush_yds_allowed": 85.9,
+      "pts_allowed": 22.9,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -43705,20 +43705,20 @@
     "is_dome": false,
     "venue": "Kroger Field",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 13,
+      "pass_yds_allowed": 213.2,
+      "rush_def_rank": 6,
+      "rush_yds_allowed": 93.5,
+      "pts_allowed": 21.2,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 22,
+      "pass_yds_allowed": 236.6,
+      "rush_def_rank": 23,
+      "rush_yds_allowed": 125.8,
+      "pts_allowed": 26.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -44445,72 +44445,72 @@
     "is_dome": false,
     "venue": "LaVell Edwards Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 1,
+      "pass_yds_allowed": 182.0,
+      "rush_def_rank": 18,
+      "rush_yds_allowed": 116.3,
+      "pts_allowed": 21.2,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 9,
+      "rush_yds_allowed": 99.2,
+      "pts_allowed": 20.8,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
-        "name": "QB Cougars",
+        "name": "Jake Retzlaff",
         "team": "BYU Cougars",
         "pos": "QB",
-        "jersey": "1",
-        "pass_yds": 235.0,
-        "pass_tds": 1.6,
-        "rush_yds": 12.0,
+        "jersey": "12",
+        "pass_yds": 242.0,
+        "pass_tds": 2.1,
+        "rush_yds": 34.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
+        "anytime_td_pct": 42.0,
         "role": "QB Titular BYU Cougars"
       },
       {
-        "name": "RB Cougars",
+        "name": "LJ Martin",
         "team": "BYU Cougars",
         "pos": "RB",
-        "jersey": "24",
+        "jersey": "27",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 68.0,
-        "rec_yds": 16.0,
+        "rush_yds": 78.5,
+        "rec_yds": 18.0,
         "receptions": 2.0,
         "anytime_td_pct": 54.0,
         "role": "RB #1 BYU Cougars"
       },
       {
-        "name": "QB Bears",
+        "name": "Sawyer Robertson",
         "team": "Baylor Bears",
         "pos": "QB",
-        "jersey": "2",
-        "pass_yds": 220.0,
-        "pass_tds": 1.4,
-        "rush_yds": 8.0,
+        "jersey": "13",
+        "pass_yds": 236.0,
+        "pass_tds": 2.0,
+        "rush_yds": 28.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 20.0,
+        "anytime_td_pct": 38.0,
         "role": "QB Titular Baylor Bears"
       },
       {
-        "name": "RB Bears",
+        "name": "Bryson Washington",
         "team": "Baylor Bears",
         "pos": "RB",
-        "jersey": "26",
+        "jersey": "30",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 64.0,
-        "rec_yds": 14.0,
+        "rush_yds": 84.0,
+        "rec_yds": 22.0,
         "receptions": 1.8,
-        "anytime_td_pct": 50.0,
+        "anytime_td_pct": 56.0,
         "role": "RB #1 Baylor Bears"
       }
     ],
@@ -44699,20 +44699,20 @@
     "is_dome": false,
     "venue": "Kenan Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 254.8,
+      "rush_def_rank": 6,
+      "rush_yds_allowed": 93.5,
+      "pts_allowed": 24.5,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 218.4,
+      "rush_def_rank": 26,
+      "rush_yds_allowed": 131.5,
+      "pts_allowed": 25.8,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -44850,72 +44850,72 @@
     "is_dome": false,
     "venue": "Beaver Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 23,
+      "pass_yds_allowed": 239.2,
+      "rush_def_rank": 5,
+      "rush_yds_allowed": 91.6,
+      "pts_allowed": 23.1,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 14,
+      "pass_yds_allowed": 215.8,
+      "rush_def_rank": 19,
+      "rush_yds_allowed": 118.2,
+      "pts_allowed": 24.1,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
-        "name": "QB Lions",
+        "name": "Drew Allar",
         "team": "Penn State Nittany Lions",
         "pos": "QB",
-        "jersey": "1",
-        "pass_yds": 235.0,
+        "jersey": "15",
+        "pass_yds": 228.0,
+        "pass_tds": 1.9,
+        "rush_yds": 18.0,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 32.0,
+        "role": "QB Titular Penn State Nittany Lions"
+      },
+      {
+        "name": "Nicholas Singleton",
+        "team": "Penn State Nittany Lions",
+        "pos": "RB",
+        "jersey": "10",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 82.0,
+        "rec_yds": 24.0,
+        "receptions": 2.0,
+        "anytime_td_pct": 58.0,
+        "role": "RB #1 Penn State Nittany Lions"
+      },
+      {
+        "name": "Max Brosmer",
+        "team": "Minnesota Golden Gophers",
+        "pos": "QB",
+        "jersey": "16",
+        "pass_yds": 218.0,
         "pass_tds": 1.6,
         "rush_yds": 12.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Titular Penn State Nittany Lions"
-      },
-      {
-        "name": "RB Lions",
-        "team": "Penn State Nittany Lions",
-        "pos": "RB",
-        "jersey": "24",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 68.0,
-        "rec_yds": 16.0,
-        "receptions": 2.0,
-        "anytime_td_pct": 54.0,
-        "role": "RB #1 Penn State Nittany Lions"
-      },
-      {
-        "name": "QB Gophers",
-        "team": "Minnesota Golden Gophers",
-        "pos": "QB",
-        "jersey": "2",
-        "pass_yds": 220.0,
-        "pass_tds": 1.4,
-        "rush_yds": 8.0,
-        "rec_yds": 0.0,
-        "receptions": 0.0,
-        "anytime_td_pct": 20.0,
+        "anytime_td_pct": 28.0,
         "role": "QB Titular Minnesota Golden Gophers"
       },
       {
-        "name": "RB Gophers",
+        "name": "Darius Taylor",
         "team": "Minnesota Golden Gophers",
         "pos": "RB",
-        "jersey": "26",
+        "jersey": "1",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 64.0,
-        "rec_yds": 14.0,
+        "rush_yds": 76.0,
+        "rec_yds": 28.0,
         "receptions": 1.8,
-        "anytime_td_pct": 50.0,
+        "anytime_td_pct": 52.0,
         "role": "RB #1 Minnesota Golden Gophers"
       }
     ],
@@ -45072,20 +45072,20 @@
     "is_dome": false,
     "venue": "Falcon Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 23,
+      "rush_yds_allowed": 125.8,
+      "pts_allowed": 28.8,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 13,
+      "pass_yds_allowed": 213.2,
+      "rush_def_rank": 28,
+      "rush_yds_allowed": 135.3,
+      "pts_allowed": 25.8,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -45191,20 +45191,20 @@
     "is_dome": false,
     "venue": "Hancock Whitney Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 3,
+      "rush_yds_allowed": 87.8,
+      "pts_allowed": 24.5,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 254.8,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 110.6,
+      "pts_allowed": 26.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -45390,20 +45390,20 @@
     "is_dome": false,
     "venue": "H. A. Chapman Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 9,
+      "pass_yds_allowed": 202.8,
+      "rush_def_rank": 26,
+      "rush_yds_allowed": 131.5,
+      "pts_allowed": 24.5,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 23,
+      "pass_yds_allowed": 239.2,
+      "rush_def_rank": 22,
+      "rush_yds_allowed": 123.9,
+      "pts_allowed": 26.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -45509,20 +45509,20 @@
     "is_dome": false,
     "venue": "Tiger Stadium (LA)",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 254.8,
+      "rush_def_rank": 22,
+      "rush_yds_allowed": 123.9,
+      "pts_allowed": 27.9,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 28,
+      "pass_yds_allowed": 252.2,
+      "rush_def_rank": 27,
+      "rush_yds_allowed": 133.4,
+      "pts_allowed": 28.8,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -45653,20 +45653,20 @@
     "is_dome": false,
     "venue": "Kinnick Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 19,
+      "rush_yds_allowed": 118.2,
+      "pts_allowed": 22.9,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_def_rank": 27,
+      "pass_yds_allowed": 249.6,
       "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 114.4,
+      "pts_allowed": 26.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -45772,20 +45772,20 @@
     "is_dome": false,
     "venue": "Lane Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 13,
+      "rush_yds_allowed": 106.8,
+      "pts_allowed": 26.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 2,
+      "pass_yds_allowed": 184.6,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 129.6,
+      "pts_allowed": 22.9,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -45891,20 +45891,20 @@
     "is_dome": false,
     "venue": "University Stadium (NM)",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 19,
+      "pass_yds_allowed": 228.8,
+      "rush_def_rank": 9,
+      "rush_yds_allowed": 99.2,
+      "pts_allowed": 23.1,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 25,
+      "pass_yds_allowed": 244.4,
+      "rush_def_rank": 1,
+      "rush_yds_allowed": 84.0,
+      "pts_allowed": 22.7,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {
@@ -46010,20 +46010,20 @@
     "is_dome": false,
     "venue": "Donald W. Reynolds Razorback Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 21,
+      "pass_yds_allowed": 234.0,
+      "rush_def_rank": 5,
+      "rush_yds_allowed": 91.6,
+      "pts_allowed": 22.7,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 10,
+      "rush_yds_allowed": 101.1,
+      "pts_allowed": 21.0,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -46116,20 +46116,20 @@
     "is_dome": true,
     "venue": "Alamodome",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 254.8,
+      "rush_def_rank": 6,
+      "rush_yds_allowed": 93.5,
+      "pts_allowed": 24.5,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 13,
+      "pass_yds_allowed": 213.2,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 129.6,
+      "pts_allowed": 25.2,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -46235,20 +46235,20 @@
     "is_dome": false,
     "venue": "Boone Pickens Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 2,
+      "pass_yds_allowed": 184.6,
+      "rush_def_rank": 23,
+      "rush_yds_allowed": 125.8,
+      "pts_allowed": 22.4,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 1,
+      "pass_yds_allowed": 182.0,
+      "rush_def_rank": 30,
+      "rush_yds_allowed": 139.1,
+      "pts_allowed": 23.7,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -46354,20 +46354,20 @@
     "is_dome": false,
     "venue": "Snapdragon Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 6,
+      "pass_yds_allowed": 195.0,
+      "rush_def_rank": 19,
+      "rush_yds_allowed": 118.2,
+      "pts_allowed": 22.4,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 28,
+      "pass_yds_allowed": 252.2,
+      "rush_def_rank": 30,
+      "rush_yds_allowed": 139.1,
+      "pts_allowed": 29.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -46473,20 +46473,20 @@
     "is_dome": false,
     "venue": "Sun Bowl",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 2,
+      "rush_yds_allowed": 85.9,
+      "pts_allowed": 24.3,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 13,
+      "rush_yds_allowed": 106.8,
+      "pts_allowed": 26.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -46579,20 +46579,20 @@
     "is_dome": false,
     "venue": "Casino Del Sol Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 26,
+      "pass_yds_allowed": 247.0,
+      "rush_def_rank": 14,
+      "rush_yds_allowed": 108.7,
+      "pts_allowed": 25.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 221.0,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.5,
+      "pts_allowed": 23.9,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -46698,20 +46698,20 @@
     "is_dome": false,
     "venue": "Martin Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 5,
+      "pass_yds_allowed": 192.4,
+      "rush_def_rank": 26,
+      "rush_yds_allowed": 131.5,
+      "pts_allowed": 23.7,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 26,
+      "pass_yds_allowed": 247.0,
+      "rush_def_rank": 18,
+      "rush_yds_allowed": 116.3,
+      "pts_allowed": 26.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -46817,20 +46817,20 @@
     "is_dome": false,
     "venue": "Clarence T.C. Ching Athletics Complex",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 27,
+      "pass_yds_allowed": 249.6,
+      "rush_def_rank": 18,
+      "rush_yds_allowed": 116.3,
+      "pts_allowed": 26.6,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 8,
+      "rush_yds_allowed": 97.3,
+      "pts_allowed": 20.6,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {

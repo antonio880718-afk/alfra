@@ -20,14 +20,16 @@
       "pass_yds_allowed": 245.8,
       "rush_def_rank": 8,
       "rush_yds_allowed": 98.4,
-      "style": "Dura vs Carrera / Vulnerable por Aire (Blitz Agresivo)"
+      "style": "Dura vs Carrera / Vulnerable por Aire (Blitz Agresivo)",
+      "pts_allowed": 24.2
     },
     "away_defense": {
       "pass_def_rank": 12,
       "pass_yds_allowed": 208.5,
       "rush_def_rank": 18,
       "rush_yds_allowed": 122.0,
-      "style": "Secundaria Disciplinada / Espacios Terrestres"
+      "style": "Secundaria Disciplinada / Espacios Terrestres",
+      "pts_allowed": 20.3
     },
     "stars": [
       {

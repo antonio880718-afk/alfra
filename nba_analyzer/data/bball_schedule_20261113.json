@@ -20,16 +20,16 @@
     "over_under": 152.5,
     "venue": "Watsco Center (Coral Gables)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 50,
+      "pts_allowed": 76.3,
+      "pace": 71.2,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 13,
+      "pts_allowed": 67.4,
+      "pace": 67.6,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -329,16 +329,16 @@
     "over_under": 141.5,
     "venue": "Tower Hill Arena (Gainesville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 2,
+      "pts_allowed": 64.7,
+      "pace": 71.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 49,
+      "pts_allowed": 76.0,
+      "pace": 71.7,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -435,16 +435,16 @@
     "over_under": 171.5,
     "venue": "State Farm Center (Champaign)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 23,
+      "pts_allowed": 69.8,
+      "pace": 68.6,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 8,
+      "pts_allowed": 66.2,
+      "pace": 65.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -541,16 +541,16 @@
     "over_under": 154.5,
     "venue": "Breslin Center (East Lansing)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 2,
+      "pts_allowed": 64.7,
+      "pace": 68.0,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 9,
+      "pts_allowed": 66.4,
+      "pace": 67.2,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -619,16 +619,16 @@
     "over_under": 158.5,
     "venue": "Food City Center (Knoxville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 31,
+      "pts_allowed": 71.7,
+      "pace": 67.1,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 37,
+      "pts_allowed": 73.1,
+      "pace": 68.0,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -733,16 +733,16 @@
     "over_under": 154.5,
     "venue": "Memorial Gymnasium (TN) (Nashville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 51,
+      "pts_allowed": 76.5,
+      "pace": 69.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 38,
+      "pts_allowed": 73.4,
+      "pace": 72.4,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -839,16 +839,16 @@
     "over_under": 152.5,
     "venue": "Rupp Arena (Lexington)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 29,
+      "pts_allowed": 71.2,
+      "pace": 72.7,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 25,
+      "pts_allowed": 70.3,
+      "pace": 65.7,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -945,16 +945,16 @@
     "over_under": 147.5,
     "venue": "PeoplesBank Arena (Hartford)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 7,
+      "pts_allowed": 65.9,
+      "pace": 67.9,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 45,
+      "pts_allowed": 75.1,
+      "pace": 71.0,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1179,10 +1179,10 @@
     "over_under": 245.5,
     "venue": "United Center (Chicago)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 20,
+      "pts_allowed": 115.8,
+      "pace": 100.9,
+      "style": "Ritmo Alto / Defensa Exterior Vulnerable"
     },
     "away_defense": {
       "def_rank": 27,
@@ -1446,16 +1446,16 @@
     "over_under": 148.5,
     "venue": "Cameron Indoor Stadium (Durham)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 33,
+      "pts_allowed": 72.2,
+      "pace": 70.3,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 31,
+      "pts_allowed": 71.7,
+      "pace": 68.6,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1552,16 +1552,16 @@
     "over_under": 152.5,
     "venue": "XFINITY Center (College Park)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 59,
+      "pts_allowed": 78.4,
+      "pace": 68.9,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 70.0,
+      "pace": 71.6,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1658,16 +1658,16 @@
     "over_under": 162.5,
     "venue": "Bud Walton Arena (Fayetteville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 25,
+      "pts_allowed": 70.3,
+      "pace": 72.7,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 14,
+      "pts_allowed": 67.6,
+      "pace": 70.2,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -1784,10 +1784,10 @@
       "style": "Defensa Asfixiante y Alto Rebote"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 30,
+      "pts_allowed": 121.6,
+      "pace": 101.8,
+      "style": "Ritmo Acelerado / Defensa Muy Permisiva"
     },
     "stars": [
       {
@@ -1878,16 +1878,16 @@
     "over_under": 159.5,
     "venue": "Neville Arena (Auburn)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 17,
+      "pts_allowed": 68.3,
+      "pace": 68.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 38,
+      "pts_allowed": 73.4,
+      "pace": 69.3,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1970,16 +1970,16 @@
     "over_under": 156.5,
     "venue": "Coleman Coliseum (Tuscaloosa)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 26,
+      "pts_allowed": 70.5,
+      "pace": 71.6,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 36,
+      "pts_allowed": 72.9,
+      "pace": 66.4,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -2218,10 +2218,10 @@
       "style": "Ofensiva Dinámica / Concede Puntos al Contragolpe"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 117.4,
+      "pace": 100.6,
+      "style": "Transición Rápida / Baja Eficiencia Defensiva"
     },
     "stars": [
       {
@@ -2304,10 +2304,10 @@
     "over_under": 222.5,
     "venue": "Intuit Dome (Inglewood)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 10,
+      "pts_allowed": 110.5,
+      "pace": 98.0,
+      "style": "Defensa Experimentada a Media Cancha"
     },
     "away_defense": {
       "def_rank": 1,

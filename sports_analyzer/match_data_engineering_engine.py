@@ -24,23 +24,28 @@ CSV_MAP = {
     "bel.1": "B1", "tur.1": "T1", "gre.1": "G1", "por.1": "P1", "sco.1": "SC0"
 }
 
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Cargar todos los dataframes de fútbol de temporadas 2526 y 2627
 _ALL_DFS = {}
+_BY_CSV_ID = {}
 for code, csv_id in CSV_MAP.items():
     dfs = []
     for s in ["2627", "2526"]:
-        p = f"sports_analyzer/data/{s}_{csv_id}.csv"
+        p = os.path.join(_BASE_DIR, "data", f"{s}_{csv_id}.csv")
         if os.path.exists(p):
             try:
                 dfs.append(pd.read_csv(p))
             except Exception:
                 pass
     if dfs:
-        _ALL_DFS[code] = pd.concat(dfs, ignore_index=True)
+        _cat = pd.concat(dfs, ignore_index=True)
+        _ALL_DFS[code] = _cat
+        _BY_CSV_ID[csv_id] = _cat
 
 # Cargar caché oficial en vivo de planteles de ESPN (Temporada 2026/2027)
 _LIVE_ROSTERS = {}
-_ROSTER_CACHE_PATH = "sports_analyzer/data/live_rosters_cache.json"
+_ROSTER_CACHE_PATH = os.path.join(_BASE_DIR, "data", "live_rosters_cache.json")
 if os.path.exists(_ROSTER_CACHE_PATH):
     try:
         with open(_ROSTER_CACHE_PATH, "r", encoding="utf-8") as f:
@@ -49,7 +54,7 @@ if os.path.exists(_ROSTER_CACHE_PATH):
         pass
 
 _LOGOS = {}
-_LOGOS_CACHE_PATH = "sports_analyzer/data/team_logos_cache.json"
+_LOGOS_CACHE_PATH = os.path.join(_BASE_DIR, "data", "team_logos_cache.json")
 if os.path.exists(_LOGOS_CACHE_PATH):
     try:
         with open(_LOGOS_CACHE_PATH, "r", encoding="utf-8") as f:
@@ -4288,6 +4293,20 @@ def get_all_team_live_players(team_name: str) -> List[Dict[str, Any]]:
     return []
 
 def get_team_raw_matches(team_name: str, preferred_league: str = "") -> pd.DataFrame:
+    try:
+        from soccer_quant_model import find_team_league
+        cid, csv_team = find_team_league(team_name, str(preferred_league).lower())
+        if cid and csv_team and cid in _BY_CSV_ID:
+            df_c = _BY_CSV_ID[cid]
+            h_m = df_c["HomeTeam"].astype(str) == csv_team
+            a_m = df_c["AwayTeam"].astype(str) == csv_team
+            sub_c = df_c[h_m | a_m].copy()
+            if len(sub_c) >= 6:
+                sub_c["_IsHome"] = df_c["HomeTeam"].astype(str) == csv_team
+                return sub_c
+    except Exception:
+        pass
+
     norm = normalize_name(team_name)
     dfs_to_search = []
     if preferred_league and preferred_league.lower() in _ALL_DFS:
@@ -4302,7 +4321,7 @@ def get_team_raw_matches(team_name: str, preferred_league: str = "") -> pd.DataF
         h_mask = df["HomeTeam"].astype(str).str.lower().str.contains(norm, regex=False)
         a_mask = df["AwayTeam"].astype(str).str.lower().str.contains(norm, regex=False)
         sub = df[h_mask | a_mask].copy()
-        if len(sub) >= 8:
+        if len(sub) >= 6:
             sub["_IsHome"] = df["HomeTeam"].astype(str).str.lower().str.contains(norm, regex=False)
             return sub
             
@@ -4347,16 +4366,28 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
             h_ht_goals.append(ht_f + ht_a)
             h_cards.append(yc + rc)
         nh = nh_csv
+        def _blend_metric(vals, is_home_flags, target_home: bool) -> float:
+            if not vals:
+                return 0.0
+            season_m = sum(vals) / len(vals)
+            venue_vals = [v for v, fl in zip(vals, is_home_flags) if fl == target_home]
+            venue_m = (sum(venue_vals) / len(venue_vals)) if len(venue_vals) >= 3 else season_m
+            recent = vals[:8]
+            w_rec = [0.88 ** i for i in range(len(recent))]
+            rec_m = sum(v * w for v, w in zip(recent, w_rec)) / max(1e-6, sum(w_rec))
+            return 0.45 * venue_m + 0.30 * rec_m + 0.25 * season_m
+
+        _h_flags = [bool(r["_IsHome"]) for _, r in df_h.iterrows()]
         ph_prof = {
             "games": nh,
-            "sot_avg": sum(h_sot) / nh,
-            "sot_ag_avg": sum(h_sot_ag) / nh,
-            "corners_avg": sum(h_corners) / nh,
-            "corners_ag_avg": sum(h_corners_ag) / nh,
-            "fouls_avg": sum(h_fouls) / nh,
-            "fouls_drawn_avg": sum(h_fouls_drw) / nh,
-            "goals_avg": sum(h_goals) / nh,
-            "goals_ag_avg": sum(h_goals_conceded) / nh,
+            "sot_avg": _blend_metric(h_sot, _h_flags, True),
+            "sot_ag_avg": _blend_metric(h_sot_ag, _h_flags, True),
+            "corners_avg": _blend_metric(h_corners, _h_flags, True),
+            "corners_ag_avg": _blend_metric(h_corners_ag, _h_flags, True),
+            "fouls_avg": _blend_metric(h_fouls, _h_flags, True),
+            "fouls_drawn_avg": _blend_metric(h_fouls_drw, _h_flags, True),
+            "goals_avg": _blend_metric(h_goals, _h_flags, True),
+            "goals_ag_avg": _blend_metric(h_goals_conceded, _h_flags, True),
             "ht_over05_pct": (sum(1 for x in h_ht_goals if x >= 1) / nh) * 100.0,
         }
     elif am_h:
@@ -4388,16 +4419,28 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
             a_ht_goals.append(ht_f + ht_a)
             a_cards.append(yc + rc)
         na = na_csv
+        _a_flags = [bool(r["_IsHome"]) for _, r in df_a.iterrows()]
+        def _blend_metric_a(vals, is_home_flags, target_home: bool) -> float:
+            if not vals:
+                return 0.0
+            season_m = sum(vals) / len(vals)
+            venue_vals = [v for v, fl in zip(vals, is_home_flags) if fl == target_home]
+            venue_m = (sum(venue_vals) / len(venue_vals)) if len(venue_vals) >= 3 else season_m
+            recent = vals[:8]
+            w_rec = [0.88 ** i for i in range(len(recent))]
+            rec_m = sum(v * w for v, w in zip(recent, w_rec)) / max(1e-6, sum(w_rec))
+            return 0.45 * venue_m + 0.30 * rec_m + 0.25 * season_m
+
         pa_prof = {
             "games": na,
-            "sot_avg": sum(a_sot) / na,
-            "sot_ag_avg": sum(a_sot_ag) / na,
-            "corners_avg": sum(a_corners) / na,
-            "corners_ag_avg": sum(a_corners_ag) / na,
-            "fouls_avg": sum(a_fouls) / na,
-            "fouls_drawn_avg": sum(a_fouls_drw) / na,
-            "goals_avg": sum(a_goals) / na,
-            "goals_ag_avg": sum(a_goals_conceded) / na,
+            "sot_avg": _blend_metric_a(a_sot, _a_flags, False),
+            "sot_ag_avg": _blend_metric_a(a_sot_ag, _a_flags, False),
+            "corners_avg": _blend_metric_a(a_corners, _a_flags, False),
+            "corners_ag_avg": _blend_metric_a(a_corners_ag, _a_flags, False),
+            "fouls_avg": _blend_metric_a(a_fouls, _a_flags, False),
+            "fouls_drawn_avg": _blend_metric_a(a_fouls_drw, _a_flags, False),
+            "goals_avg": _blend_metric_a(a_goals, _a_flags, False),
+            "goals_ag_avg": _blend_metric_a(a_goals_conceded, _a_flags, False),
             "ht_over05_pct": (sum(1 for x in a_ht_goals if x >= 1) / na) * 100.0,
         }
     elif am_a:

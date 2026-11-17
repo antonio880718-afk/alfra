@@ -1246,16 +1246,16 @@
     "over_under": 145.5,
     "venue": "M&T Bank Center at Gampel Pavilion (Storrs)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 7,
+      "pts_allowed": 65.9,
+      "pace": 67.9,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 41,
+      "pts_allowed": 74.1,
+      "pace": 72.2,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1693,16 +1693,16 @@
     "over_under": 145.5,
     "venue": "Moody Center (Austin)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 8,
+      "pts_allowed": 66.2,
+      "pace": 68.2,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 67,
+      "pts_allowed": 80.3,
+      "pace": 71.0,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -2151,16 +2151,16 @@
     "over_under": 145.5,
     "venue": "Food City Center (Knoxville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 31,
+      "pts_allowed": 71.7,
+      "pace": 67.1,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 9,
+      "pts_allowed": 66.4,
+      "pace": 66.9,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -2631,16 +2631,16 @@
     "over_under": 145.5,
     "venue": "Watsco Center (Coral Gables)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 50,
+      "pts_allowed": 76.3,
+      "pace": 71.2,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 17,
+      "pts_allowed": 68.3,
+      "pace": 71.1,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -3481,16 +3481,16 @@
     "over_under": 145.5,
     "venue": "Coleman Coliseum (Tuscaloosa)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 26,
+      "pts_allowed": 70.5,
+      "pace": 71.6,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 4,
+      "pts_allowed": 65.2,
+      "pace": 68.6,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {

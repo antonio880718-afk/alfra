@@ -20,16 +20,16 @@
     "over_under": 145.5,
     "venue": "John Paul Jones Arena (Charlottesville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 70.0,
+      "pace": 71.6,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 2,
+      "pts_allowed": 64.7,
+      "pace": 68.2,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -1505,16 +1505,16 @@
     "over_under": 145.5,
     "venue": "Rupp Arena (Lexington)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 29,
+      "pts_allowed": 71.2,
+      "pace": 72.7,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 59,
+      "pts_allowed": 78.4,
+      "pace": 71.9,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -2486,16 +2486,16 @@
     "over_under": 145.5,
     "venue": "Coleman Coliseum (Tuscaloosa)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 26,
+      "pts_allowed": 70.5,
+      "pace": 71.6,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 12,
+      "pts_allowed": 67.1,
+      "pace": 72.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -3031,10 +3031,10 @@
       "style": "Control de Posesiones y Cierre Interior"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 30,
+      "pts_allowed": 121.6,
+      "pace": 101.8,
+      "style": "Ritmo Acelerado / Defensa Muy Permisiva"
     },
     "stars": [
       {
@@ -5030,16 +5030,16 @@
     "over_under": 145.5,
     "venue": "TD Garden (Boston)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 46,
+      "pts_allowed": 75.3,
+      "pace": 68.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 7,
+      "pts_allowed": 65.9,
+      "pace": 67.9,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -5589,16 +5589,16 @@
     "over_under": 145.5,
     "venue": "Hilton Coliseum (Ames)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 48,
+      "pts_allowed": 75.8,
+      "pace": 71.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 20,
+      "pts_allowed": 69.1,
+      "pace": 68.3,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -6154,16 +6154,16 @@
     "over_under": 145.5,
     "venue": "Watsco Center (Coral Gables)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 50,
+      "pts_allowed": 76.3,
+      "pace": 71.2,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 41,
+      "pts_allowed": 74.1,
+      "pace": 72.2,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -6674,16 +6674,16 @@
     "over_under": 145.5,
     "venue": "Allen Fieldhouse (Lawrence)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 21,
+      "pts_allowed": 69.3,
+      "pace": 70.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 4,
+      "pts_allowed": 65.2,
+      "pace": 68.4,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -7226,16 +7226,16 @@
     "over_under": 145.5,
     "venue": "Marriott Center (Provo)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 61,
+      "pts_allowed": 78.9,
+      "pace": 67.6,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 51,
+      "pts_allowed": 76.5,
+      "pace": 72.4,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -7771,10 +7771,10 @@
       "style": "Pintura Explotable / Ritmo Medio"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 117.4,
+      "pace": 100.6,
+      "style": "Transición Rápida / Baja Eficiencia Defensiva"
     },
     "stars": [
       {
@@ -8727,16 +8727,16 @@
     "over_under": 145.5,
     "venue": "Pauley Pavilion (Los Angeles)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 22,
+      "pts_allowed": 69.5,
+      "pace": 69.9,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 17,
+      "pts_allowed": 68.3,
+      "pace": 71.1,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {

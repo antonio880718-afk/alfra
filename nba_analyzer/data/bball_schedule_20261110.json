@@ -20,16 +20,16 @@
     "over_under": 145.5,
     "venue": "Tucker Center (Tallahassee)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 10,
+      "pts_allowed": 66.7,
+      "pace": 72.5,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 2,
+      "pts_allowed": 64.7,
+      "pace": 71.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -572,16 +572,16 @@
     "over_under": 145.5,
     "venue": "United Center (Chicago)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 33,
+      "pts_allowed": 72.2,
+      "pace": 70.3,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 2,
+      "pts_allowed": 64.7,
+      "pace": 68.0,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -1111,16 +1111,16 @@
     "over_under": 145.5,
     "venue": "Memorial Gymnasium (TN) (Nashville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 51,
+      "pts_allowed": 76.5,
+      "pace": 69.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 50,
+      "pts_allowed": 76.3,
+      "pace": 66.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -2663,16 +2663,16 @@
     "over_under": 145.5,
     "venue": "United Supermarkets Arena (Lubbock)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 1,
+      "pts_allowed": 64.5,
+      "pace": 68.4,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 23,
+      "pts_allowed": 69.8,
+      "pace": 68.6,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -3195,10 +3195,10 @@
       "style": "Anotación Fluida / Dificultades en Rebote Ofensivo"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 10,
+      "pts_allowed": 110.5,
+      "pace": 98.0,
+      "style": "Defensa Experimentada a Media Cancha"
     },
     "stars": [
       {
@@ -3654,10 +3654,10 @@
     "over_under": 226.5,
     "venue": "Delta Center (Salt Lake City)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 30,
+      "pts_allowed": 121.6,
+      "pace": 101.8,
+      "style": "Ritmo Acelerado / Defensa Muy Permisiva"
     },
     "away_defense": {
       "def_rank": 8,
@@ -4167,16 +4167,16 @@
     "over_under": 145.5,
     "venue": "John Paul Jones Arena (Charlottesville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 70.0,
+      "pace": 71.6,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 48,
+      "pts_allowed": 75.8,
+      "pace": 67.2,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -4771,16 +4771,16 @@
     "over_under": 145.5,
     "venue": "McKale Center at ALKEME Arena (Tucson)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 38,
+      "pts_allowed": 73.4,
+      "pace": 69.3,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 25,
+      "pts_allowed": 70.3,
+      "pace": 65.7,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -5323,16 +5323,16 @@
     "over_under": 145.5,
     "venue": "Marriott Center (Provo)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 61,
+      "pts_allowed": 78.9,
+      "pace": 67.6,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 2,
+      "pts_allowed": 64.7,
+      "pace": 69.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -5914,16 +5914,16 @@
     "over_under": 145.5,
     "venue": "United Center (Chicago)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 29,
+      "pts_allowed": 71.2,
+      "pace": 72.7,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 21,
+      "pts_allowed": 69.3,
+      "pace": 70.8,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -6914,10 +6914,10 @@
     "over_under": 226.5,
     "venue": "Moda Center (Portland)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 117.4,
+      "pace": 100.6,
+      "style": "Transición Rápida / Baja Eficiencia Defensiva"
     },
     "away_defense": {
       "def_rank": 1,

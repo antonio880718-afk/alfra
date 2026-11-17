@@ -25,14 +25,16 @@
       "pass_yds_allowed": 222.0,
       "rush_def_rank": 20,
       "rush_yds_allowed": 126.0,
-      "style": "Poco Sack / Cobertura en Zona"
+      "style": "Poco Sack / Cobertura en Zona",
+      "pts_allowed": 22.3
     },
     "away_defense": {
       "pass_def_rank": 22,
       "pass_yds_allowed": 238.0,
       "rush_def_rank": 25,
       "rush_yds_allowed": 136.0,
-      "style": "Permite Series Largas y Anotaciones"
+      "style": "Permite Series Largas y Anotaciones",
+      "pts_allowed": 23.5
     },
     "stars": [
       {
@@ -1218,19 +1220,20 @@
     "is_dome": true,
     "venue": "Lucas Oil Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 24,
+      "pass_yds_allowed": 238.0,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 134.0,
+      "pts_allowed": 24.2,
+      "style": "Cobertura Blanda / Ritmo Alto de Posesiones"
     },
     "away_defense": {
       "pass_def_rank": 20,
       "pass_yds_allowed": 230.0,
       "rush_def_rank": 30,
       "rush_yds_allowed": 145.0,
-      "style": "Muy Explotable por Tierra"
+      "style": "Muy Explotable por Tierra",
+      "pts_allowed": 22.9
     },
     "stars": [
       {
@@ -2353,15 +2356,16 @@
       "pass_yds_allowed": 188.0,
       "rush_def_rank": 4,
       "rush_yds_allowed": 85.0,
-      "style": "Defensa de Campeonato / Difícil Anotar en Zona Roja"
+      "style": "Defensa de Campeonato / Difícil Anotar en Zona Roja",
+      "pts_allowed": 18.1
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 4,
+      "pass_yds_allowed": 185.0,
+      "rush_def_rank": 15,
+      "rush_yds_allowed": 115.0,
+      "pts_allowed": 19.6,
+      "style": "Secundaria Cerrada / Pases Cortos"
     },
     "stars": [
       {
@@ -3611,14 +3615,16 @@
       "pass_yds_allowed": 200.0,
       "rush_def_rank": 16,
       "rush_yds_allowed": 118.0,
-      "style": "Secundaria Fuerte con Ramsey"
+      "style": "Secundaria Fuerte con Ramsey",
+      "pts_allowed": 19.7
     },
     "away_defense": {
       "pass_def_rank": 16,
       "pass_yds_allowed": 224.0,
       "rush_def_rank": 5,
       "rush_yds_allowed": 89.2,
-      "style": "Física y Agresiva / Concede Yardas Cortas por Aire"
+      "style": "Física y Agresiva / Concede Yardas Cortas por Aire",
+      "pts_allowed": 21.6
     },
     "stars": [
       {
@@ -4755,20 +4761,20 @@
     "is_dome": true,
     "venue": "Caesars Superdome",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 25,
+      "pass_yds_allowed": 242.0,
+      "rush_def_rank": 27,
+      "rush_yds_allowed": 138.0,
+      "pts_allowed": 24.9,
+      "style": "Secundaria Explotable en Jugadas Grandes"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_def_rank": 11,
+      "pass_yds_allowed": 204.0,
       "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "rush_yds_allowed": 117.0,
+      "pts_allowed": 21.8,
+      "style": "Pass Rush con Myles Garrett / Cobertura Hombre a Hombre"
     },
     "stars": [
       {
@@ -6003,15 +6009,16 @@
       "pass_yds_allowed": 195.0,
       "rush_def_rank": 10,
       "rush_yds_allowed": 102.5,
-      "style": "Línea Defensiva Imponente"
+      "style": "Línea Defensiva Imponente",
+      "pts_allowed": 19.1
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 16,
+      "pass_yds_allowed": 219.0,
+      "rush_def_rank": 28,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 23.9,
+      "style": "Alto Índice de Sacks / Vulnerable al Acarreo"
     },
     "stars": [
       {
@@ -7193,20 +7200,20 @@
     "is_dome": false,
     "venue": "Northwest Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 216.0,
+      "rush_def_rank": 24,
+      "rush_yds_allowed": 132.0,
+      "pts_allowed": 22.4,
+      "style": "Secundaria Sólida / Concede Yardas Terrestres"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_yds_allowed": 221.0,
+      "rush_def_rank": 18,
+      "rush_yds_allowed": 119.0,
+      "pts_allowed": 22.6,
+      "style": "Pass Rush Joven / Presión Interior"
     },
     "stars": [
       {
@@ -8325,20 +8332,20 @@
     "is_dome": false,
     "venue": "Bank of America Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 272.0,
+      "rush_def_rank": 32,
+      "rush_yds_allowed": 152.0,
+      "pts_allowed": 29.8,
+      "style": "Defensa Más Permisiva de la Liga"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 3,
+      "pass_yds_allowed": 182.0,
+      "rush_def_rank": 9,
+      "rush_yds_allowed": 101.0,
+      "pts_allowed": 17.9,
+      "style": "Cobertura Élite con Surtain II / Pocos TDs"
     },
     "stars": [
       {
@@ -9633,19 +9640,20 @@
     "is_dome": false,
     "venue": "SoFi Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 7,
+      "pass_yds_allowed": 194.0,
+      "rush_def_rank": 11,
+      "rush_yds_allowed": 106.0,
+      "pts_allowed": 17.8,
+      "style": "Defensa Disciplinada / Baja Concesión en Zona Roja"
     },
     "away_defense": {
       "pass_def_rank": 6,
       "pass_yds_allowed": 190.5,
       "rush_def_rank": 14,
       "rush_yds_allowed": 112.0,
-      "style": "Pass Rush Asfixiante (Will Anderson)"
+      "style": "Pass Rush Asfixiante (Will Anderson)",
+      "pts_allowed": 18.4
     },
     "stars": [
       {
@@ -10908,19 +10916,20 @@
     "is_dome": false,
     "venue": "Gillette Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 19,
+      "pass_yds_allowed": 226.0,
+      "rush_def_rank": 22,
+      "rush_yds_allowed": 128.0,
+      "pts_allowed": 23.8,
+      "style": "Defensa en Reconstrucción / Vulnerable por Tierra"
     },
     "away_defense": {
       "pass_def_rank": 14,
       "pass_yds_allowed": 215.0,
       "rush_def_rank": 12,
       "rush_yds_allowed": 108.0,
-      "style": "Generadora de Balones Sueltos e Intercepciones"
+      "style": "Generadora de Balones Sueltos e Intercepciones",
+      "pts_allowed": 21.0
     },
     "stars": [
       {
@@ -12187,15 +12196,16 @@
       "pass_yds_allowed": 198.5,
       "rush_def_rank": 11,
       "rush_yds_allowed": 105.0,
-      "style": "Presión Frontal Rápida y Buen Tackle"
+      "style": "Presión Frontal Rápida y Buen Tackle",
+      "pts_allowed": 19.4
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 22,
+      "pass_yds_allowed": 234.0,
+      "rush_def_rank": 26,
+      "rush_yds_allowed": 136.0,
+      "pts_allowed": 25.4,
+      "style": "Permisiva en Zona Roja"
     },
     "stars": [
       {
@@ -13362,20 +13372,20 @@
     "is_dome": false,
     "venue": "Lumen Field",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 13,
+      "pass_yds_allowed": 212.0,
+      "rush_def_rank": 21,
+      "rush_yds_allowed": 125.0,
+      "pts_allowed": 22.1,
+      "style": "Esquema Macdonald / Presión Disfrazada"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 21,
+      "pass_yds_allowed": 232.0,
+      "rush_def_rank": 19,
+      "rush_yds_allowed": 121.0,
+      "pts_allowed": 23.5,
+      "style": "Defensa Agresiva con Carga / Media Tabla"
     },
     "stars": [
       {
@@ -14510,18 +14520,19 @@
     "is_dome": false,
     "venue": "Soldier Field",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 9,
+      "pass_yds_allowed": 199.0,
+      "rush_def_rank": 23,
+      "rush_yds_allowed": 130.0,
+      "pts_allowed": 20.5,
+      "style": "Secundaria Fuerte / Explotable por Carrera"
     },
     "away_defense": {
       "pass_def_rank": 29,
       "pass_yds_allowed": 260.0,
       "rush_def_rank": 7,
       "rush_yds_allowed": 95.0,
+      "pts_allowed": 24.8,
       "style": "Blitz Frecuente / Expuesta en Pases Profundos"
     },
     "stars": [

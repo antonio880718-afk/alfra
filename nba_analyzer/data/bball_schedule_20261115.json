@@ -488,16 +488,16 @@
     "over_under": 145.5,
     "venue": "FedExForum (Memphis)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 50,
+      "pts_allowed": 76.3,
+      "pace": 66.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 67,
+      "pts_allowed": 80.3,
+      "pace": 68.9,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -1001,16 +1001,16 @@
     "over_under": 145.5,
     "venue": "Sanford Pentagon (Sioux Falls)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 12,
+      "pts_allowed": 67.1,
+      "pace": 72.3,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 31,
+      "pts_allowed": 71.7,
+      "pace": 68.6,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1553,16 +1553,16 @@
     "over_under": 145.5,
     "venue": "Crisler Center (Ann Arbor)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 46,
+      "pts_allowed": 75.3,
+      "pace": 68.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 51,
+      "pts_allowed": 76.5,
+      "pace": 69.9,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -2118,16 +2118,16 @@
     "over_under": 145.5,
     "venue": "Frost Bank Center (San Antonio)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 8,
+      "pts_allowed": 66.2,
+      "pace": 68.2,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 56,
+      "pts_allowed": 77.7,
+      "pace": 72.1,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -3168,10 +3168,10 @@
     "over_under": 226.5,
     "venue": "Intuit Dome (Inglewood)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 10,
+      "pts_allowed": 110.5,
+      "pace": 98.0,
+      "style": "Defensa Experimentada a Media Cancha"
     },
     "away_defense": {
       "def_rank": 28,
@@ -3633,10 +3633,10 @@
     "over_under": 226.5,
     "venue": "Delta Center (Salt Lake City)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 30,
+      "pts_allowed": 121.6,
+      "pace": 101.8,
+      "style": "Ritmo Acelerado / Defensa Muy Permisiva"
     },
     "away_defense": {
       "def_rank": 19,
@@ -5554,16 +5554,16 @@
     "over_under": 145.5,
     "venue": "Madison Square Garden (New York)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 1,
+      "pts_allowed": 64.5,
+      "pace": 68.6,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 38,
+      "pts_allowed": 73.4,
+      "pace": 67.7,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -6119,16 +6119,16 @@
     "over_under": 145.5,
     "venue": "Galen Center (Los Angeles)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 34,
+      "pts_allowed": 72.4,
+      "pace": 68.5,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 19,
+      "pts_allowed": 68.8,
+      "pace": 65.5,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {

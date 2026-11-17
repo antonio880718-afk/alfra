@@ -1938,16 +1938,16 @@
     "over_under": 145.5,
     "venue": "Marriott Center (Provo)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 61,
+      "pts_allowed": 78.9,
+      "pace": 67.6,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 64,
+      "pts_allowed": 79.6,
+      "pace": 66.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {

@@ -41,7 +41,7 @@ from nfl_pdf_report_engine import generate_nfl_complete_pdf, generate_nfl_audit_
 if not globals().get("_ALFRA_EMBEDDED_WEBAPP"):
     st.set_page_config(
         page_title="ALFRA NFL & NCAAF Analyzer",
-        page_icon="ðŸˆ",
+        page_icon="🏈",
         layout="wide",
         initial_sidebar_state="collapsed"
     )
@@ -83,20 +83,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# BARRA DE NAVEGACION MULTI-DEPORTE
-st.markdown("""
-<div style="background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 10px 14px; margin-bottom: 14px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-        <span style="font-weight: 700; color: #38bdf8; font-size: 0.95rem; letter-spacing: 0.5px;">
-            ðŸˆ WEB APP FÃšTBOL AMERICANO (NFL & NCAAF):
-        </span>
-        <span style="font-size: 0.8rem; color: #94a3b8;">
-            Toca Fútbol o NBA para alternar de deporte
-        </span>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
+# Barra de Navegación Rápida Multi-Deporte
 _nav_c1, _nav_c2, _nav_c3 = st.columns(3)
 with _nav_c1:
     if st.button("⚽ FÚTBOL (26 Ligas)", key="nfl_top_nav_futbol", use_container_width=True):
@@ -107,7 +94,7 @@ with _nav_c1:
             pass
         st.rerun()
 with _nav_c2:
-    if st.button("ðŸ€ NBA & NCAAB Web App", key="nfl_top_nav_nba", use_container_width=True):
+    if st.button("🏀 NBA & NCAAB Web App", key="nfl_top_nav_nba", use_container_width=True):
         st.session_state["alfra_active_sport"] = "nba"
         try:
             st.query_params["sport"] = "nba"
@@ -115,16 +102,16 @@ with _nav_c2:
             pass
         st.rerun()
 with _nav_c3:
-    st.button("ðŸˆ NFL & NCAAF (Activo)", key="nfl_top_nav_nfl", type="primary", use_container_width=True, disabled=True)
+    st.button("🏈 NFL & NCAAF Web App", key="nfl_top_nav_nfl", type="primary", use_container_width=True, disabled=True)
 
 st.markdown("""
 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0284c7; padding-bottom: 8px; margin-bottom: 14px;">
     <div>
-        <h2 style="margin: 0; color: #38bdf8;">ðŸˆ ALFRA NFL & NCAAF ADVANCED ANALYTICS</h2>
+        <h2 style="margin: 0; color: #38bdf8;">🏈 ALFRA NFL & NCAAF ADVANCED ANALYTICS</h2>
         <span style="color: #94a3b8; font-size: 0.88rem;">Fútbol Americano Profesional (NFL) y Colegial (NCAAF) — Modelos EPA/Play, Números Clave (3, 7) y Anytime TD Scorer con +EV y Justificación Táctica</span>
     </div>
     <div style="text-align: right;">
-        <span style="background-color: #065f46; color: #34d399; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.8rem;">â— MOTOR 100% EMPÃRICO EN LÃNEA (HORA CDMX / UTC-6)</span>
+        <span style="background-color: #065f46; color: #34d399; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.8rem;">● MOTOR 100% EMPÍRICO EN LÍNEA (HORA CDMX / UTC-6)</span>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -134,7 +121,7 @@ with top_c1:
     league_sel = st.radio(
         "Filtrar por Liga:",
         options=["ALL", "NFL", "NCAAF"],
-        format_func=lambda x: "ðŸˆ TODAS" if x == "ALL" else ("ðŸ† Solo NFL" if x == "NFL" else "ðŸŽ“ Solo NCAA"),
+        format_func=lambda x: "🏈 TODAS" if x == "ALL" else ("🏆 Solo NFL" if x == "NFL" else "🎓 Solo NCAA"),
         horizontal=True
     )
 _CDMX_TZ = timezone(timedelta(hours=-6))
@@ -211,7 +198,7 @@ m1, m2, m3, m4 = st.columns(4)
 with m1:
     st.markdown(f"""
     <div class="metric-card" style="border-left: 4px solid #0284c7;">
-        <span style="color: #94a3b8; font-size: 0.8rem;">ðŸˆ CARTELERA {date_str}:</span><br>
+        <span style="color: #94a3b8; font-size: 0.8rem;">🏈 CARTELERA {date_str}:</span><br>
         <b style="font-size: 1.4rem; color: #ffffff;">{len(games_today)} Juegos</b><br>
         <span style="color: #cbd5e1; font-size: 0.78rem;">NFL: {len([g for g in games_today if g.get('league')=='NFL'])} | NCAA: {len([g for g in games_today if g.get('league')=='NCAAF'])}</span>
     </div>
@@ -220,7 +207,7 @@ with m1:
 with m2:
     st.markdown(f"""
     <div class="metric-card" style="border-left: 4px solid #facc15;">
-        <span style="color: #94a3b8; font-size: 0.8rem;">ðŸŽŸï¸ BOLETO PARLAY ({parlay_odds:.1f}x):</span><br>
+        <span style="color: #94a3b8; font-size: 0.8rem;">🎟️ BOLETO PARLAY ({parlay_odds:.1f}x):</span><br>
         <b style="font-size: 1.4rem; color: #facc15;">{len(parlay_picks)} Selecciones</b><br>
         <span style="color: #34d399; font-size: 0.78rem;">Con $50 ➔ ${(50.0 * parlay_odds):,.2f} MXN</span>
     </div>
@@ -237,7 +224,7 @@ with m3:
 
 _OUTCOME_MAP = {
     "HIT": "✅ ACIERTO",
-    "MISS": "âŒ FALLO",
+    "MISS": "❌ FALLO",
     "VOID": "🔄 VOID (@1.00)",
     "IN_PROGRESS": "🟡 EN VIVO",
 }
@@ -291,8 +278,8 @@ _eff_pct_lbl = f" ({(hits_cnt/_resolved_cnt)*100:.1f}%)" if _resolved_cnt > 0 el
 with m4:
     st.markdown(f"""
     <div class="metric-card" style="border-left: 4px solid #38bdf8;">
-        <span style="color: #94a3b8; font-size: 0.8rem;">ðŸ“Š AUDITORÃA {date_str}:</span><br>
-        <b style="font-size: 1.25rem; color: #38bdf8;">{hits_cnt} âœ… | {miss_cnt} âŒ | {void_cnt} ðŸ”„ | {pend_cnt} â³{_eff_pct_lbl}</b><br>
+        <span style="color: #94a3b8; font-size: 0.8rem;">📊 AUDITORÍA {date_str}:</span><br>
+        <b style="font-size: 1.25rem; color: #38bdf8;">{hits_cnt} ✅ | {miss_cnt} ❌ | {void_cnt} 🔄 | {pend_cnt} ⏳{_eff_pct_lbl}</b><br>
         <span style="color: #6ee7b7; font-size: 0.78rem;">Regla VOID (Inactivos 90 min)</span>
     </div>
     """, unsafe_allow_html=True)
@@ -335,7 +322,7 @@ with p_col1:
     )
 with p_col2:
     st.download_button(
-        label=f"ðŸ“„ DESCARGAR PDF AUDITORÃA NFL ({date_str}) â€” ACIERTOS / FALLOS",
+        label=f"📄 DESCARGAR PDF AUDITORÍA NFL ({date_str}) — ACIERTOS / FALLOS",
         data=_audit_pdf_bytes,
         file_name=f"Reporte_Auditoria_NFL_{date_str}.pdf",
         mime="application/pdf",
@@ -344,7 +331,7 @@ with p_col2:
     )
 with p_col3:
     st.download_button(
-        label="ðŸ“‘ DESCARGAR PDF AUDITORÃA CONSOLIDADO (Ãšltimas Jornadas)",
+        label="📑 DESCARGAR PDF AUDITORÍA CONSOLIDADO (Últimas Jornadas)",
         data=_consolidated_pdf_bytes,
         file_name="Reporte_Auditoria_NFL_Consolidado.pdf",
         mime="application/pdf",
@@ -355,7 +342,7 @@ with p_col3:
 with st.expander(f"📋 VER REPORTE COMPLETO EN PANTALLA DE TODOS LOS PICKS SUGERIDOS ({date_str}) — ACIERTOS, FALLOS, VOID Y DATO OFICIAL", expanded=False):
     st.markdown(
         f"**Resumen de Jornada ({date_str}):** "
-        f"`{hits_cnt} Aciertos (âœ…)` | `{miss_cnt} Fallos (âŒ)` | "
+        f"`{hits_cnt} Aciertos (✅)` | `{miss_cnt} Fallos (❌)` | "
         f"`{void_cnt} Anuladas VOID (🔄)` | `{pend_cnt} Por Jugar (🟢)` — "
         f"**Efectividad Real Pick #1:** `{((hits_cnt / _resolved_cnt) * 100.0) if _resolved_cnt > 0 else 0.0:.1f}%` | "
         f"**Total Mercados Auditados:** `{_all_day_total_opts}`"
@@ -381,9 +368,9 @@ with st.expander(f"📋 VER REPORTE COMPLETO EN PANTALLA DE TODOS LOS PICKS SUGE
     if _rep_rows:
         st.dataframe(pd.DataFrame(_rep_rows), use_container_width=True, hide_index=True)
 
-with st.expander("ðŸŒ VER MATRIZ OFICIAL DE COTEJO: Â¿Contra quÃ© plataformas se verifica cada dato? (ESPN API, Vegas, Boxscores)", expanded=False):
+with st.expander("🌐 VER MATRIZ OFICIAL DE COTEJO: ¿Contra qué plataformas se verifica cada dato? (ESPN API, Vegas, Boxscores)", expanded=False):
     st.markdown("""
-    #### ðŸ›¡ï¸ CertificaciÃ³n Oficial de Fuentes de Datos FÃºtbol Americano (100% EmpÃ­rico):
+    #### 🛡️ Certificación Oficial de Fuentes de Datos Fútbol Americano (100% Empírico):
     Cada partido, línea de Over/Under, spread, yardas de pase, acarreos, recepciones y touchdowns está auditado contra las 4 plataformas oficiales:
 
     | Fuente Oficial | Rol de Validación Exigido | Datos Extraídos & Cotejados | Regla de Blindaje |
@@ -405,7 +392,7 @@ for b in _game_bundles:
 
     c_bg = "#064e3b" if out == "HIT" else ("#7f1d1d" if out == "MISS" else "#131c2e")
     c_bdr = "#10b981" if out == "HIT" else ("#ef4444" if out == "MISS" else "#334155")
-    b_txt = {"HIT": "âœ… COBRADO", "MISS": "âŒ FALLO", "VOID": "ðŸ”„ VOID (@1.00)", "IN_PROGRESS": "ðŸŸ¡ EN VIVO"}.get(out, "ðŸŸ¢ SÃ SE PUEDE ENTRAR")
+    b_txt = {"HIT": "✅ COBRADO", "MISS": "❌ FALLO", "VOID": "🔄 VOID (@1.00)", "IN_PROGRESS": "🟡 EN VIVO"}.get(out, "🟢 SÍ SE PUEDE ENTRAR")
     lg_badge = f"<span class='badge-nfl'>NFL</span>" if g.get("league") == "NFL" else f"<span class='badge-ncaaf'>NCAAF</span>"
 
     p_avg = bp.get("season_avg", "")
@@ -439,7 +426,7 @@ else:
 t1, t2, t3, t4, t5, t6 = st.tabs([
     f"🎯 1. Picks por Partido ({len(games_today)} Juegos)",
     "🎯 2. Ingeniería de Matchups & Player Props (Dossier Completo)",
-    f"ðŸŽŸï¸ 3. Boleto Parlay ({parlay_odds:.1f}x)",
+    f"🎟️ 3. Boleto Parlay ({parlay_odds:.1f}x)",
     "🪜 4. Reto Escalera 3 Fases",
     "✅ 5. Auditoría Oficial Empírica",
     "💬 6. Asistente IA Fútbol Americano"
@@ -497,10 +484,10 @@ with t1:
             ba = b["best_aud"]
             _filtered = [x for x in b["ranked"] if float(x[0].get("prob_num", 0.0)) >= _min_prob_val]
             _shown = _filtered[:_top_lim]
-            _ba_ico = {"HIT": "âœ…", "MISS": "âŒ", "VOID": "ðŸ”„", "IN_PROGRESS": "ðŸŸ¡"}.get(ba.get("outcome", "PENDING"), "ðŸŸ¢")
+            _ba_ico = {"HIT": "✅", "MISS": "❌", "VOID": "🔄", "IN_PROGRESS": "🟡"}.get(ba.get("outcome", "PENDING"), "🟢")
             _exp_title = (
                 f"#{idx} | {g.get('time_cdmx', '12:00')} hs | [{g.get('league', 'NFL')}] {g.get('match', '')} "
-                f"({g.get('score', 'vs')}) â€” ðŸ† #1: {bp.get('pick', '')} ({float(bp.get('prob_num', 0)):.1f}% | {bp.get('odds', '')}) "
+                f"({g.get('score', 'vs')}) — 🏆 #1: {bp.get('pick', '')} ({float(bp.get('prob_num', 0)):.1f}% | {bp.get('odds', '')}) "
                 f"| {_ba_ico} | {len(_filtered)} picks"
             )
             with st.expander(_exp_title, expanded=(idx == 1 or _exp_all)):
@@ -509,7 +496,7 @@ with t1:
                 _matchup_txt = f"<b>{g.get('home')}</b> (Def Pase #{h_def.get('pass_def_rank', 15)} / Carrera #{h_def.get('rush_def_rank', 15)}) vs <b>{g.get('away')}</b> (Def Pase #{a_def.get('pass_def_rank', 16)} / Carrera #{a_def.get('rush_def_rank', 16)})"
                 st.markdown(f"""
                 <div style="background: linear-gradient(135deg, #131c2e 0%, #0f172a 100%); border: 1px solid #0284c7; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; font-size: 0.82rem;">
-                    <b>ðŸˆ Cruce del Encuentro:</b> {_matchup_txt} |
+                    <b>🏈 Cruce del Encuentro:</b> {_matchup_txt} |
                     <b>O/U:</b> {g.get('over_under')} | <b>Spread:</b> {g.get('spread_str', 'N/A')} |
                     <b>Estado:</b> {g.get('status', 'PROGRAMADO')} ({g.get('score', 'vs')}) | <b>Estadio:</b> {g.get('venue', 'Estadio Oficial')}
                 </div>
@@ -570,24 +557,24 @@ with t2:
         st.markdown(f"""
         <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1px solid #0284c7; border-radius: 8px; padding: 14px 18px; margin-bottom: 15px;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                <h4 style="margin: 0; color: #38bdf8;">ðŸˆ {sel_g['match']}</h4>
+                <h4 style="margin: 0; color: #38bdf8;">🏈 {sel_g['match']}</h4>
                 <span style="color: #94a3b8; font-size: 0.85rem;">Hora Oficial: <b>{sel_g['time_cdmx']} hs CDMX</b> | Sede: <b>{sel_g['venue']}</b></span>
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 10px; font-size: 0.83rem;">
                 <div style="background: #111827; padding: 8px 12px; border-radius: 6px;">
-                    <b style="color: #38bdf8;">ðŸ›¡ï¸ Defensa {sel_g['home']} (Local):</b><br/>
+                    <b style="color: #38bdf8;">🛡️ Defensa {sel_g['home']} (Local):</b><br/>
                     • Ranking vs Pase: <b>#{h_def_info.get('pass_def_rank', 15)}</b> ({h_def_info.get('pass_yds_allowed', 220.0)} YDS/juego)<br/>
                     • Ranking vs Carrera: <b>#{h_def_info.get('rush_def_rank', 15)}</b> ({h_def_info.get('rush_yds_allowed', 110.0)} YDS/juego)<br/>
                     • Estilo: <i>{h_def_info.get('style', 'Estándar')}</i>
                 </div>
                 <div style="background: #111827; padding: 8px 12px; border-radius: 6px;">
-                    <b style="color: #facc15;">ðŸ›¡ï¸ Defensa {sel_g['away']} (Visitante):</b><br/>
+                    <b style="color: #facc15;">🛡️ Defensa {sel_g['away']} (Visitante):</b><br/>
                     • Ranking vs Pase: <b>#{a_def_info.get('pass_def_rank', 16)}</b> ({a_def_info.get('pass_yds_allowed', 220.0)} YDS/juego)<br/>
                     • Ranking vs Carrera: <b>#{a_def_info.get('rush_def_rank', 16)}</b> ({a_def_info.get('rush_yds_allowed', 112.0)} YDS/juego)<br/>
                     • Estilo: <i>{a_def_info.get('style', 'Estándar')}</i>
                 </div>
                 <div style="background: #111827; padding: 8px 12px; border-radius: 6px;">
-                    <b style="color: #34d399;">ðŸŸï¸ Clima, Estadio & Reglas:</b><br/>
+                    <b style="color: #34d399;">🏟️ Clima, Estadio & Reglas:</b><br/>
                     • Tipo de Estadio: <b>{'Domo Techado Climatizado (Sin viento)' if sel_g.get('is_dome') else 'Estadio Abierto al Aire Libre'}</b><br/>
                     • Total Over/Under: <b>{sel_g['over_under']} PTS</b><br/>
                     • Regla VOID: <i>Inactivos 90 min antes liquidan a cuota 1.00</i>
@@ -601,7 +588,7 @@ with t2:
             c_name = cat["category"]
             for opt in cat["options"]:
                 aud_p = audit_individual_nfl_pick(opt, sel_g, date_str)
-                out_ico = {"HIT": "âœ… ACIERTO", "MISS": "âŒ FALLO", "VOID": "ðŸ”„ VOID", "IN_PROGRESS": "ðŸŸ¡ EN VIVO"}.get(aud_p["outcome"], "ðŸŸ¢ POR JUGAR")
+                out_ico = {"HIT": "✅ ACIERTO", "MISS": "❌ FALLO", "VOID": "🔄 VOID", "IN_PROGRESS": "🟡 EN VIVO"}.get(aud_p["outcome"], "🟢 POR JUGAR")
                 de_rows.append({
                     "Categoría": c_name,
                     "Jugador / Mercado": opt.get("player_full_name", opt["pick"]),
@@ -619,7 +606,7 @@ with t2:
         if de_rows:
             st.dataframe(pd.DataFrame(de_rows), use_container_width=True, hide_index=True)
 
-        with st.expander("ðŸ” VER FICHA TÃ‰CNICA Y RAZONAMIENTO CUANTITATIVO DETALLADO (PICK POR PICK)", expanded=False):
+        with st.expander("🔍 VER FICHA TÉCNICA Y RAZONAMIENTO CUANTITATIVO DETALLADO (PICK POR PICK)", expanded=False):
             for cat in de_sel["categories"]:
                 st.markdown(f"##### 📌 {cat['category']}")
                 for opt in cat["options"][:3]:
@@ -632,15 +619,15 @@ with t2:
                         <div style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.5;">
                             <b>👤 Jugador / Rol:</b> {opt.get('player_full_name', 'Equipo')} ({opt.get('player_pos', 'N/A')}) — {opt.get('player_role', 'Titular')}<br/>
                             <b>📊 Métrica Empírica:</b> Promedia <b>{opt.get('season_avg', '')}</b>. La línea en <b>{opt.get('safe_line', '')}</b> tiene un margen de protección de <b>{opt.get('buffer_pct', '')}</b>.<br/>
-                            <b>ðŸ›¡ï¸ Contexto Defensivo:</b> {opt.get('defense_matchup', '')}<br/>
+                            <b>🛡️ Contexto Defensivo:</b> {opt.get('defense_matchup', '')}<br/>
                             <b>💡 Razón de Selección (+EV):</b> {opt.get('why_selected', '')}<br/>
-                            <b>ðŸ›¡ï¸ Blindaje Oficial:</b> <span style="color: #6ee7b7;">{opt.get('void_rule', '')}</span>
+                            <b>🛡️ Blindaje Oficial:</b> <span style="color: #6ee7b7;">{opt.get('void_rule', '')}</span>
                         </div>
                     </div>
                     """, unsafe_allow_html=True)
 
 with t3:
-    st.markdown(f"#### ðŸŽŸï¸ Boleto Parlay Oficial NFL & NCAAF â€” Cuota Combinada: **{parlay_odds:.2f}x**")
+    st.markdown(f"#### 🎟️ Boleto Parlay Oficial NFL & NCAAF — Cuota Combinada: **{parlay_odds:.2f}x**")
     p_rows = []
     for item in parlay_picks:
         aud_res = audit_individual_nfl_pick(item, date_str=date_str)
@@ -655,7 +642,7 @@ with t3:
             "% Ocurrencia": f"{item['prob']:.1f}%",
             "Momio": item["odds_str"],
             "Valor (+EV)": item.get("ev", "+4.0%"),
-            "Estado Oficial": {"HIT": "âœ… ACIERTO", "MISS": "âŒ FALLO", "VOID": "ðŸ”„ VOID", "IN_PROGRESS": "ðŸŸ¡ EN VIVO"}.get(aud_res["outcome"], "ðŸŸ¢ POR JUGAR"),
+            "Estado Oficial": {"HIT": "✅ ACIERTO", "MISS": "❌ FALLO", "VOID": "🔄 VOID", "IN_PROGRESS": "🟡 EN VIVO"}.get(aud_res["outcome"], "🟢 POR JUGAR"),
             "Dato Oficial": aud_res["stat_actual"]
         })
     if p_rows:
@@ -742,7 +729,7 @@ with t5:
         _a1, _a2, _a3, _a4, _a5 = st.columns(5)
         _a1.metric("Picks Auditados", len(all_aud_rows))
         _a2.metric("✅ Aciertos (HIT)", hits_cnt)
-        _a3.metric("âŒ Fallos (MISS)", miss_cnt)
+        _a3.metric("❌ Fallos (MISS)", miss_cnt)
         _a4.metric("🔄 Anulados (VOID)", void_cnt)
         _a5.metric("🎯 Efectividad Real", f"{(hits_cnt/_resolved_cnt)*100:.1f}%" if _resolved_cnt > 0 else "Pendiente")
         st.dataframe(pd.DataFrame(all_aud_rows), use_container_width=True, hide_index=True)

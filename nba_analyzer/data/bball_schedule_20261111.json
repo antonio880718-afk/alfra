@@ -1479,16 +1479,16 @@
     "over_under": 145.5,
     "venue": "Carnesecca Arena (Queens)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 1,
+      "pts_allowed": 64.5,
+      "pace": 68.6,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 7,
+      "pts_allowed": 65.9,
+      "pace": 72.2,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -2018,16 +2018,16 @@
     "over_under": 145.5,
     "venue": "Crisler Center (Ann Arbor)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 46,
+      "pts_allowed": 75.3,
+      "pace": 68.3,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 49,
+      "pts_allowed": 76.0,
+      "pace": 68.9,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -2596,10 +2596,10 @@
     "over_under": 226.5,
     "venue": "United Center (Chicago)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 20,
+      "pts_allowed": 115.8,
+      "pace": 100.9,
+      "style": "Ritmo Alto / Defensa Exterior Vulnerable"
     },
     "away_defense": {
       "def_rank": 19,
@@ -4133,10 +4133,10 @@
       "style": "Transición Lenta / Permite Triples de Esquina"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 23,
+      "pts_allowed": 116.8,
+      "pace": 99.6,
+      "style": "Rotación Joven / Concesión en Pintura"
     },
     "stars": [
       {
@@ -4595,16 +4595,16 @@
     "over_under": 145.5,
     "venue": "Fertitta Center (Houston)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 44,
+      "pts_allowed": 74.8,
+      "pace": 69.0,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 56,
+      "pts_allowed": 77.7,
+      "pace": 71.5,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -5121,16 +5121,16 @@
     "over_under": 145.5,
     "venue": "Bud Walton Arena (Fayetteville)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 25,
+      "pts_allowed": 70.3,
+      "pace": 72.7,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 60,
+      "pts_allowed": 78.7,
+      "pace": 72.7,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "stars": [
       {
@@ -5660,10 +5660,10 @@
     "over_under": 226.5,
     "venue": "Delta Center (Salt Lake City)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 30,
+      "pts_allowed": 121.6,
+      "pace": 101.8,
+      "style": "Ritmo Acelerado / Defensa Muy Permisiva"
     },
     "away_defense": {
       "def_rank": 5,
@@ -6147,16 +6147,16 @@
     "over_under": 145.5,
     "venue": "Pauley Pavilion (Los Angeles)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 22,
+      "pts_allowed": 69.5,
+      "pace": 69.9,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 19,
+      "pts_allowed": 68.8,
+      "pace": 65.5,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -6699,16 +6699,16 @@
     "over_under": 145.5,
     "venue": "Pinnacle Bank Arena (Lincoln)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 12,
+      "pts_allowed": 67.1,
+      "pace": 72.3,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 8,
+      "pts_allowed": 66.2,
+      "pace": 69.5,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "stars": [
       {
@@ -7742,10 +7742,10 @@
     "over_under": 226.5,
     "venue": "Moda Center (Portland)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 24,
+      "pts_allowed": 117.4,
+      "pace": 100.6,
+      "style": "Transición Rápida / Baja Eficiencia Defensiva"
     },
     "away_defense": {
       "def_rank": 1,
@@ -8203,16 +8203,16 @@
     "over_under": 145.5,
     "venue": "Haas Pavilion (Berkeley)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 34,
+      "pts_allowed": 72.4,
+      "pace": 70.0,
+      "style": "Presión en Transición NCAA"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 34,
+      "pts_allowed": 72.4,
+      "pace": 68.5,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {

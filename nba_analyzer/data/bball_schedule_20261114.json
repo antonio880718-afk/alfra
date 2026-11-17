@@ -20,16 +20,16 @@
     "over_under": 145.5,
     "venue": "United Supermarkets Arena (Lubbock)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 1,
+      "pts_allowed": 64.5,
+      "pace": 68.4,
+      "style": "Defensa Colegial de Media Cancha"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 33,
+      "pts_allowed": 72.2,
+      "pace": 70.7,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -559,16 +559,16 @@
     "over_under": 145.5,
     "venue": "Spokane Numerica Veterans Arena (Spokane)",
     "home_defense": {
-      "def_rank": 15,
-      "pts_allowed": 113.5,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 58,
+      "pts_allowed": 78.2,
+      "pace": 68.0,
+      "style": "Posesiones Rápidas / Permisiva en Triple"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 29,
+      "pts_allowed": 71.2,
+      "pace": 66.5,
+      "style": "Presión en Transición NCAA"
     },
     "stars": [
       {
@@ -1822,10 +1822,10 @@
       "style": "Física y Agresiva en Pintura"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 23,
+      "pts_allowed": 116.8,
+      "pace": 99.6,
+      "style": "Rotación Joven / Concesión en Pintura"
     },
     "stars": [
       {
@@ -1933,10 +1933,10 @@
       "style": "Muro en Pintura (Gobert) / Rebote Dominante"
     },
     "away_defense": {
-      "def_rank": 16,
-      "pts_allowed": 114.0,
-      "pace": 100.0,
-      "style": "Defensa Promedio"
+      "def_rank": 20,
+      "pts_allowed": 115.8,
+      "pace": 100.9,
+      "style": "Ritmo Alto / Defensa Exterior Vulnerable"
     },
     "stars": [
       {

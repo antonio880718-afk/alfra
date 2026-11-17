@@ -837,7 +837,7 @@
   "atlético nacional": {
     "stadium": "Estadio Atanasio Girardot",
     "city": "Medellín, Colombia",
-    "capacity": 44826
+    "capacity": 40943
   },
   "bari": {
     "stadium": "Stadio San Nicola",
@@ -1197,7 +1197,7 @@
   "independiente medellín": {
     "stadium": "Estadio Atanasio Girardot",
     "city": "Medellín, Colombia",
-    "capacity": 44826
+    "capacity": 40943
   },
   "independiente rivadavia": {
     "stadium": "Estadio Bautista Gargantini",
@@ -1355,7 +1355,7 @@
     "capacity": 34742
   },
   "millonarios": {
-    "stadium": "Estadio El Campín",
+    "stadium": "Estadio Nemesio Camacho El Campín",
     "city": "Bogotá, Colombia",
     "capacity": 36343
   },
@@ -2360,10 +2360,8 @@
   },
   "independiente santa fe": {
     "stadium": "Estadio Nemesio Camacho El Campín",
-    "city": "Bogota, Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "city": "Bogotá, Colombia",
+    "capacity": 36343
   },
   "fc utrecht": {
     "stadium": "Stadion Galgenwaard",
@@ -2506,11 +2504,9 @@
     "altitude_m": 150
   },
   "américa de cali": {
-    "stadium": "Pascual Guerrero",
+    "stadium": "Estadio Olímpico Pascual Guerrero",
     "city": "Cali, Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "capacity": 37899
   },
   "mushuc runa": {
     "stadium": "Estadio COAC Mushuc Runa",
@@ -2562,11 +2558,9 @@
     "altitude_m": 150
   },
   "atlético junior": {
-    "stadium": "Romelio Martínez",
+    "stadium": "Estadio Metropolitano Roberto Meléndez",
     "city": "Barranquilla, Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "capacity": 46692
   },
   "anaitasuna": {
     "stadium": "Txerloia",
@@ -2758,46 +2752,34 @@
     "altitude_m": 150
   },
   "águilas doradas": {
-    "stadium": "Estadio Oficial de Águilas Doradas",
-    "city": "Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "stadium": "Estadio Alberto Grisales",
+    "city": "Rionegro, Colombia",
+    "capacity": 14000
   },
   "atlético bucaramanga": {
-    "stadium": "Estadio Oficial de Atlético Bucaramanga",
-    "city": "Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "stadium": "Estadio Américo Montanini",
+    "city": "Bucaramanga, Colombia",
+    "capacity": 28000
   },
   "cúcuta deportivo": {
-    "stadium": "Estadio Oficial de Cúcuta Deportivo",
-    "city": "Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "stadium": "Estadio General Santander",
+    "city": "Cúcuta, Colombia",
+    "capacity": 42901
   },
   "deportivo cali": {
-    "stadium": "Estadio Oficial de Deportivo Cali",
-    "city": "Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "stadium": "Estadio Deportivo Cali (Palmaseca)",
+    "city": "Palmira, Colombia",
+    "capacity": 44000
   },
   "deportivo pasto": {
-    "stadium": "Estadio Oficial de Deportivo Pasto",
-    "city": "Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "stadium": "Estadio Departamental Libertad",
+    "city": "Pasto, Colombia",
+    "capacity": 20665
   },
   "deportivo pereira": {
-    "stadium": "Estadio Oficial de Deportivo Pereira",
-    "city": "Colombia",
-    "capacity": 28500,
-    "surface": "Césped Natural Híbrido",
-    "altitude_m": 150
+    "stadium": "Estadio Hernán Ramírez Villegas",
+    "city": "Pereira, Colombia",
+    "capacity": 30297
   },
   "internacional de bogotá": {
     "stadium": "Estadio Oficial de Internacional de Bogotá",
@@ -3337,5 +3319,185 @@
     "capacity": 28500,
     "surface": "Césped Natural Híbrido",
     "altitude_m": 150
+  },
+  "faroe islands": {
+    "stadium": "Tórsvollur",
+    "city": "Tórshavn",
+    "capacity": 25000
+  },
+  "kazakhstan": {
+    "stadium": "Astana Arena",
+    "city": "Astana",
+    "capacity": 25000
+  },
+  "estonia": {
+    "stadium": "A. Le Coq Arena",
+    "city": "Tallinn",
+    "capacity": 25000
+  },
+  "iceland": {
+    "stadium": "Laugardalsvöllur",
+    "city": "Reykjavik",
+    "capacity": 25000
+  },
+  "lithuania": {
+    "stadium": "S. Darius and S. Gireno Stadium",
+    "city": "Kaunas",
+    "capacity": 25000
+  },
+  "germany": {
+    "stadium": "Olympic Stadium Berlin",
+    "city": "Berlin",
+    "capacity": 25000
+  },
+  "gibraltar": {
+    "stadium": "Europa Point Stadium",
+    "city": "Gibraltar",
+    "capacity": 25000
+  },
+  "greece": {
+    "stadium": "Panthessaliko Stadium",
+    "city": "Volos",
+    "capacity": 25000
+  },
+  "north macedonia": {
+    "stadium": "Toše Proeski Arena",
+    "city": "Skopje",
+    "capacity": 25000
+  },
+  "switzerland": {
+    "stadium": "Kybunpark",
+    "city": "St. Gallen",
+    "capacity": 25000
+  },
+  "bosnia-herzegovina": {
+    "stadium": "Bilino Polje Stadium",
+    "city": "Zenica",
+    "capacity": 25000
+  },
+  "denmark": {
+    "stadium": "Parken Stadium",
+    "city": "Copenhagen",
+    "capacity": 25000
+  },
+  "hungary": {
+    "stadium": "Puskás Aréna",
+    "city": "Budapest",
+    "capacity": 25000
+  },
+  "israel": {
+    "stadium": "Nagyerdei Stadium",
+    "city": "Debrecen",
+    "capacity": 25000
+  },
+  "poland": {
+    "stadium": "Municipal Stadium Wroclaw",
+    "city": "Wroclaw",
+    "capacity": 25000
+  },
+  "republic of ireland": {
+    "stadium": "Aviva Stadium",
+    "city": "Dublin",
+    "capacity": 25000
+  },
+  "ukraine": {
+    "stadium": "Košická futbalová aréna (KFA)",
+    "city": "Kosice",
+    "capacity": 25000
+  },
+  "wales": {
+    "stadium": "Cardiff City Stadium",
+    "city": "Cardiff",
+    "capacity": 25000
+  },
+  "tahiti": {
+    "stadium": "Stade Louis Ganivet",
+    "city": "Mundo",
+    "capacity": 25000
+  },
+  "malaysia": {
+    "stadium": "Zhaoqing New District Sports Center Stadium",
+    "city": "Zhaoqing",
+    "capacity": 25000
+  },
+  "singapore": {
+    "stadium": "Singapore National Stadium",
+    "city": "Singapore",
+    "capacity": 25000
+  },
+  "china": {
+    "stadium": "Zhaoqing New District Sports Center Stadium",
+    "city": "Zhaoqing",
+    "capacity": 25000
+  },
+  "kyrgyz republic": {
+    "stadium": "Thien Truong Stadium",
+    "city": "Nam Dinh",
+    "capacity": 25000
+  },
+  "lebanon": {
+    "stadium": "Basra International Stadium",
+    "city": "Basra",
+    "capacity": 25000
+  },
+  "japan": {
+    "stadium": "Singapore National Stadium",
+    "city": "Singapore",
+    "capacity": 25000
+  },
+  "qatar": {
+    "stadium": "Abdullah bin Khalifa Stadium",
+    "city": "Ar-Rayyan",
+    "capacity": 25000
+  },
+  "united arab emirates": {
+    "stadium": "Hazza Bin Zayed Stadium",
+    "city": "Al Ain",
+    "capacity": 25000
+  },
+  "saudi arabia": {
+    "stadium": "Jassim Bin Hamad Stadium",
+    "city": "Doha",
+    "capacity": 25000
+  },
+  "jordan": {
+    "stadium": "Suheim bin Hamad Stadium",
+    "city": "Ar-Rayyan",
+    "capacity": 25000
+  },
+  "russia": {
+    "stadium": "Krasnodar Stadium",
+    "city": "Krasnodar",
+    "capacity": 25000
+  },
+  "iraq": {
+    "stadium": "Basra International Stadium",
+    "city": "Basra",
+    "capacity": 25000
+  },
+  "kuwait": {
+    "stadium": "Al-Sadaqua Walsalam Stadium",
+    "city": "Jaber Al-Ahmad International Stadium",
+    "capacity": 25000
+  },
+  "argentina": {
+    "stadium": "Mario Alberto Kempes",
+    "city": "Córdoba",
+    "capacity": 25000
+  },
+  "chile": {
+    "stadium": "Estadio Nacional Julio Martínez Prádanos",
+    "city": "Santiago",
+    "capacity": 25000
+  },
+  "ecuador": {
+    "stadium": "Estadio Banco Pichincha",
+    "city": "Quito",
+    "capacity": 25000
+  },
+  "uruguay": {
+    "stadium": "Estadio Domingo Burgueño Miguel",
+    "city": "Maldonado",
+    "capacity": 25000
   }
 }

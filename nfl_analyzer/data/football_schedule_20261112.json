@@ -21,20 +21,20 @@
     "is_dome": false,
     "venue": "Raymond James Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
+      "pass_def_rank": 10,
+      "pass_yds_allowed": 205.4,
+      "rush_def_rank": 13,
+      "rush_yds_allowed": 106.8,
       "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 6,
+      "pass_yds_allowed": 195.0,
+      "rush_def_rank": 26,
+      "rush_yds_allowed": 131.5,
+      "pts_allowed": 23.9,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
@@ -1298,19 +1298,19 @@
     "venue": "MetLife Stadium",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_yds_allowed": 219.0,
+      "rush_def_rank": 28,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 23.9,
+      "style": "Alto Índice de Sacks / Vulnerable al Acarreo"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 216.0,
+      "rush_def_rank": 24,
+      "rush_yds_allowed": 132.0,
+      "pts_allowed": 22.4,
+      "style": "Secundaria Sólida / Concede Yardas Terrestres"
     },
     "stars": [
       {
@@ -2525,20 +2525,20 @@
     "is_dome": false,
     "venue": "Malone Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 29,
+      "rush_yds_allowed": 137.2,
+      "pts_allowed": 30.0,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 262.6,
+      "rush_def_rank": 2,
+      "rush_yds_allowed": 85.9,
+      "pts_allowed": 24.3,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "stars": [
       {

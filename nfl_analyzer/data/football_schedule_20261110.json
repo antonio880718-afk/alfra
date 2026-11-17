@@ -21,20 +21,20 @@
     "is_dome": false,
     "venue": "InfoCision Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 18,
+      "pass_yds_allowed": 226.2,
+      "rush_def_rank": 1,
+      "rush_yds_allowed": 84.0,
+      "pts_allowed": 21.2,
+      "style": "Frente Defensivo Físico contra Carrera"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 26,
+      "pass_yds_allowed": 247.0,
+      "rush_def_rank": 31,
+      "rush_yds_allowed": 141.0,
+      "pts_allowed": 29.2,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -1313,20 +1313,20 @@
     "is_dome": false,
     "venue": "Doyt L. Perry Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 18,
+      "rush_yds_allowed": 116.3,
+      "pts_allowed": 22.7,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 30,
+      "pass_yds_allowed": 257.4,
+      "rush_def_rank": 14,
+      "rush_yds_allowed": 108.7,
+      "pts_allowed": 26.4,
+      "style": "Cobertura en Zona / Presión Mixta"
     },
     "stars": [
       {
@@ -2579,20 +2579,20 @@
     "is_dome": false,
     "venue": "Yager Stadium",
     "home_defense": {
-      "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
-      "rush_def_rank": 16,
-      "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 8,
+      "pass_yds_allowed": 200.2,
+      "rush_def_rank": 23,
+      "rush_yds_allowed": 125.8,
+      "pts_allowed": 23.7,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "away_defense": {
-      "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
-      "rush_def_rank": 17,
-      "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pass_def_rank": 3,
+      "pass_yds_allowed": 187.2,
+      "rush_def_rank": 16,
+      "rush_yds_allowed": 112.5,
+      "pts_allowed": 21.2,
+      "style": "Secundaria Fuerte / Cierre Interior"
     },
     "stars": [
       {
