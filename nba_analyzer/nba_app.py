@@ -272,6 +272,7 @@ for _g_item in games_today:
         "best_pick": _bp_item,
         "best_aud": _bp_aud,
         "ranked": _ranked_opts,
+        "all_opts": [x[0] for x in _ranked_opts],
     })
 
 hits_cnt = _all_day_audits.count("HIT")
@@ -662,7 +663,7 @@ with t3:
                 _acc_o = 1.0
                 _acc_p = 1.0
                 for _b_item in _sel_b:
-                    _opts_b = _b_item["all_opts"][:15]
+                    _opts_b = (_b_item.get("all_opts") or [x[0] for x in _b_item.get("ranked", [])])[:15]
                     if not _opts_b:
                         continue
                     _cand_pool = sorted(_opts_b, key=lambda x: abs(float(x.get("odds_num", 1.35)) - _req) - (float(x.get("prob_num", 70.0)) / 400.0))[:min(4, len(_opts_b))]
