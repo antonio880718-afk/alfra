@@ -299,7 +299,8 @@ def get_normalized_bball_schedule(date_str: str = None, league_filter: str = "AL
                     age_sec = time.time() - os.path.getmtime(cache_file)
                 except Exception:
                     pass
-                if all_games and not has_placeholders and not missing_finished_box and (not has_unfinalized or age_sec < 180):
+                today_s = datetime.now(CDMX_TZ).strftime('%Y%m%d')
+                if all_games and not has_placeholders and not missing_finished_box and (not has_unfinalized or date_str > today_s or age_sec < 1800):
                     if league_filter != "ALL":
                         return [g for g in all_games if g.get("league") == league_filter]
                     return all_games

@@ -13,10 +13,22 @@ from nfl_math_models_engine import compute_full_nfl_game_data_engineering
 def get_daily_nfl_parlay(date_str: str = None, league_filter: str = "ALL") -> list:
     games = get_normalized_football_schedule(date_str, league_filter)
     picks = []
-    for g in games:
+    target_cat_cycle = [
+        ("Puntos Totales",),
+        ("Hándicap", "Spread"),
+        ("Moneyline",),
+        ("Total por Equipo",),
+        ("1ra Mitad", "Primera Mitad"),
+        ("Puntos", "PRA", "Pase", "Terrestres", "Recepción", "Scrimmage"),
+    ]
+    for g_idx, g in enumerate(games):
         de = compute_full_nfl_game_data_engineering(g)
-        bp = de.get("best_pick")
-        if bp and bp.get("prob_num", 0) >= 78.0:
+        all_opts = [opt for c in de.get("categories", []) for opt in c.get("options", [])]
+        pref_kws = target_cat_cycle[g_idx % len(target_cat_cycle)]
+        pref_matches = [o for o in all_opts if any(k in str(o.get("category", "")) for k in pref_kws) and float(o.get("prob_num", 0)) >= 72.0]
+        pref_matches.sort(key=lambda x: (-float(x.get("prob_num", 0)), -float(x.get("odds_num", 1.0))))
+        bp = pref_matches[0] if pref_matches else de.get("best_pick")
+        if bp and bp.get("prob_num", 0) >= 70.0:
             pick_item = dict(bp)
             pick_item.update({
                 "n": len(picks) + 1,

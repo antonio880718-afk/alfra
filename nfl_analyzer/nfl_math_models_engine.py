@@ -136,10 +136,14 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     # 1. PUNTOS TOTALES PARTIDO (4 líneas)
     cat_totals = {"category": "Puntos Totales Partido (Over / Under)", "options": []}
     for label, delta, direction in [
+        ("Over Blindado (-10.5)", -10.5, "OVER"),
         ("Over Seguro (-7.5)", -7.5, "OVER"),
-        ("Over Conservador (-3.5)", -3.5, "OVER"),
+        ("Over Alternativo (-3.5)", -3.5, "OVER"),
+        ("Over Línea Principal (0.0)", 0.0, "OVER"),
+        ("Under Blindado (+10.5)", 10.5, "UNDER"),
         ("Under Seguro (+7.5)", 7.5, "UNDER"),
-        ("Under Conservador (+3.5)", 3.5, "UNDER"),
+        ("Under Alternativo (+3.5)", 3.5, "UNDER"),
+        ("Under Línea Principal (0.0)", 0.0, "UNDER"),
     ]:
         line = max(21.5, round(proj_total + delta - 0.5) + 0.5)
         p_val = normal_prob_over(proj_total, tot_std, line) if direction == "OVER" else (1.0 - normal_prob_over(proj_total, tot_std, line))
@@ -184,10 +188,34 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
         direction="WIN",
         void_rule="Incluye tiempo extra oficial.",
     ))
+    dog_team, dog_prob, dog_stat = (away, p_ml_away, "moneyline_away") if fav_team == home else (home, p_ml_home, "moneyline_home")
+    if dog_prob >= 0.28:
+        cat_ml_sp["options"].append(_make_opt(
+            pick=f"{dog_team} Gana el Partido (Moneyline Valor)",
+            category="Moneyline",
+            prob=max(0.35, dog_prob),
+            player_full_name=dog_team,
+            player_pos="ML",
+            player_team=dog_team,
+            season_avg=f"Spread ref: {spread_str or 'Parejo'}",
+            safe_line=0.0,
+            buffer_pct=f"Probabilidad implícita {dog_prob*100:.1f}%",
+            defense_matchup=f"Proyección: {away} {exp_away:.0f} - {home} {exp_home:.0f}",
+            why_selected=f"Valor en triunfo directo de {dog_team} en duelo proyectado a {abs(home_spread):.1f} PTS.",
+            stat_type=dog_stat,
+            threshold=0.0,
+            direction="WIN",
+            void_rule="Incluye tiempo extra oficial.",
+        ))
     for tm, sp_base, st_key in [
+        (home, home_spread, "spread_home"),
+        (away, -home_spread, "spread_away"),
+        (home, home_spread + 3.5, "spread_home"),
+        (away, -home_spread + 3.5, "spread_away"),
         (home, home_spread + 7.5, "spread_home"),
         (away, -home_spread + 7.5, "spread_away"),
         (home, home_spread + 10.5, "spread_home"),
+        (away, -home_spread + 10.5, "spread_away"),
     ]:
         alt_line = round(sp_base * 2.0) / 2.0
         if alt_line == int(alt_line):
@@ -547,10 +575,16 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     for c in categories:
         c["options"].sort(key=lambda x: (x["prob_num"], x["odds_num"]), reverse=True)
 
+    team_cats = {"Puntos Totales", "Moneyline", "Hándicap / Spread", "Total por Equipo", "1ra Mitad"}
+    team_opts = [opt for c in categories for opt in c["options"] if opt.get("category") in team_cats]
+    player_opts = [opt for c in categories for opt in c["options"] if opt.get("category") not in team_cats]
+    team_opts.sort(key=lambda x: (x["prob_num"], x["odds_num"]), reverse=True)
+    player_opts.sort(key=lambda x: (x["prob_num"], x["odds_num"]), reverse=True)
+
     all_flat = [opt for c in categories for opt in c["options"]]
     all_flat.sort(key=lambda x: (x["prob_num"], x["odds_num"]), reverse=True)
-    best_pick = all_flat[0] if all_flat else {}
-    top_4_vars = all_flat[1:5] if len(all_flat) > 4 else all_flat
+    best_pick = team_opts[0] if team_opts else (all_flat[0] if all_flat else {})
+    top_4_vars = (team_opts[:3] + player_opts[:2])[:4] if team_opts else all_flat[1:5]
 
     return {
         "match": game.get("match", match_lbl),

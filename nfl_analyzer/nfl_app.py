@@ -256,11 +256,14 @@ for _g_item in games_today:
             _aud_item = audit_individual_nfl_pick(_o_item, _g_item, date_str)
             _all_day_audits.append(_aud_item.get("outcome", "PENDING"))
             _ranked_opts.append((_o_item, _c_name, _aud_item))
-    _ranked_opts.sort(
-        key=lambda x: (-float(x[0].get("prob_num", 0.0)), -float(x[0].get("odds_num", 1.0)))
-    )
-    _bp_item = _ranked_opts[0][0] if _ranked_opts else _de_item.get("best_pick", {})
-    _bp_aud = _ranked_opts[0][2] if _ranked_opts else audit_individual_nfl_pick(_bp_item, _g_item, date_str)
+    _TEAM_CAT_KEYS = ("Puntos Totales", "Moneyline", "Hándicap", "Total por Equipo", "1ra Mitad", "Primera Mitad")
+    _team_ranked = [x for x in _ranked_opts if any(k in str(x[0].get("category", "")) or k in str(x[1]) for k in _TEAM_CAT_KEYS)]
+    _prop_ranked = [x for x in _ranked_opts if x not in _team_ranked]
+    _team_ranked.sort(key=lambda x: (-float(x[0].get("prob_num", 0.0)), -float(x[0].get("odds_num", 1.0))))
+    _prop_ranked.sort(key=lambda x: (-float(x[0].get("prob_num", 0.0)), -float(x[0].get("odds_num", 1.0))))
+    _ranked_opts = _team_ranked[:6] + _prop_ranked[:4] + _team_ranked[6:] + _prop_ranked[4:]
+    _bp_item = _team_ranked[0][0] if _team_ranked else (_ranked_opts[0][0] if _ranked_opts else _de_item.get("best_pick", {}))
+    _bp_aud = _team_ranked[0][2] if _team_ranked else _ranked_opts[0][2] if _ranked_opts else audit_individual_nfl_pick(_bp_item, _g_item, date_str)
     _game_bundles.append({
         "game": _g_item,
         "de": _de_item,
@@ -460,7 +463,18 @@ with t1:
 
         st.markdown("#### 🎯 Picks Partido por Partido — Ordenados de Mayor a Menor Probabilidad")
         st.caption("Cada encuentro cruza defensiva vs pase/carrera (Home vs Away), estadio/clima, números clave (3, 7, 10) y líneas Vegas para ordenar todos los mercados disponibles de mayor a menor probabilidad.")
-        _f_c1, _f_c2, _f_c3 = st.columns([1.2, 1.2, 1.0])
+        _f_c0, _f_c1, _f_c2, _f_c3 = st.columns([1.6, 1.0, 1.1, 0.9])
+        with _f_c0:
+            _mkt_filter_lbl = st.selectbox(
+                "🎛️ Tipo de Mercado a Mostrar:",
+                [
+                    "🔥 Todos (Puntos Totales, Hándicap, Ganador + Jugadores)",
+                    "🏟️ Solo Mercados de Partido (Puntos Totales, Hándicap, Ganador, Mitad)",
+                    "⛹️ Solo Player Props (Jugadores)"
+                ],
+                index=0,
+                key=f"nfl_t1_mktf_{date_str}_{league_sel}",
+            )
         with _f_c1:
             _min_prob_lbl = st.selectbox(
                 "Probabilidad mínima:",
@@ -472,7 +486,7 @@ with t1:
         with _f_c2:
             _top_lim_lbl = st.selectbox(
                 "Mostrar por partido:",
-                ["Top 15 más probables", "Top 30 más probables", "Todos los mercados"],
+                ["Top 30 más probables", "Todos los mercados", "Top 15 más probables"],
                 index=0,
                 key=f"nfl_t1_lim_{date_str}_{league_sel}",
             )
@@ -484,7 +498,13 @@ with t1:
             g = b["game"]
             bp = b["best_pick"]
             ba = b["best_aud"]
-            _filtered = [x for x in b["ranked"] if float(x[0].get("prob_num", 0.0)) >= _min_prob_val]
+            _TEAM_KWS = ("Puntos Totales", "Moneyline", "Hándicap", "Total por Equipo", "1ra Mitad", "Primera Mitad")
+            _base_rk = b["ranked"]
+            if _mkt_filter_lbl.startswith("🏟️"):
+                _base_rk = [x for x in _base_rk if any(k in str(x[0].get("category", "")) or k in str(x[1]) for k in _TEAM_KWS)]
+            elif _mkt_filter_lbl.startswith("⛹️"):
+                _base_rk = [x for x in _base_rk if not any(k in str(x[0].get("category", "")) or k in str(x[1]) for k in _TEAM_KWS)]
+            _filtered = [x for x in _base_rk if float(x[0].get("prob_num", 0.0)) >= _min_prob_val]
             _shown = _filtered[:_top_lim]
             _ba_ico = {"HIT": "✅", "MISS": "❌", "VOID": "🔄", "IN_PROGRESS": "🟡"}.get(ba.get("outcome", "PENDING"), "🟢")
             _exp_title = (
@@ -639,9 +659,32 @@ with t3:
     _nb_todds = round((_nb_stake + _nb_profit) / max(1.0, _nb_stake), 2)
     st.info(f"🎯 **Meta Matemática NFL/NCAAF:** Apostar **${_nb_stake:,.2f} MXN** para ganar **+${_nb_profit:,.2f} MXN netos** (Cobro total: **${_nb_stake + _nb_profit:,.2f} MXN** | Cuota objetivo: **{_nb_todds:.2f}x**).")
 
+    _allowed_parlay_mkts = st.multiselect(
+        "🎛️ Mercados que SÍ deseas incluir en tus Boletos Parlay (puedes elegir solo Puntos Totales, Hándicap, Ganador o combinar con Jugadores):",
+        options=["Puntos Totales (Over/Under)", "Hándicap (Spread)", "Ganador (Moneyline)", "Totales por Equipo", "1ra Mitad (1st Half)", "Player Props (Jugadores)"],
+        default=["Puntos Totales (Over/Under)", "Hándicap (Spread)", "Ganador (Moneyline)", "Totales por Equipo", "1ra Mitad (1st Half)", "Player Props (Jugadores)"],
+        key=f"nfl_target_allowed_mkts",
+    )
+
+    def _matches_allowed_mkt(opt_d: dict) -> bool:
+        if not _allowed_parlay_mkts:
+            return True
+        c_str = str(opt_d.get("category", ""))
+        if "Puntos Totales" in c_str:
+            return "Puntos Totales (Over/Under)" in _allowed_parlay_mkts
+        if "Hándicap" in c_str or "Spread" in c_str:
+            return "Hándicap (Spread)" in _allowed_parlay_mkts
+        if "Moneyline" in c_str:
+            return "Ganador (Moneyline)" in _allowed_parlay_mkts
+        if "Total por Equipo" in c_str:
+            return "Totales por Equipo" in _allowed_parlay_mkts
+        if "1ra Mitad" in c_str or "Primera Mitad" in c_str:
+            return "1ra Mitad (1st Half)" in _allowed_parlay_mkts
+        return "Player Props (Jugadores)" in _allowed_parlay_mkts
+
     if _game_bundles:
         import math as _m_nb, random as _r_nb
-        _rng_nb = _r_nb.Random(int(date_str) + int(_nb_todds * 100))
+        _rng_nb = _r_nb.Random(int(date_str) + int(_nb_todds * 100) + len(_allowed_parlay_mkts))
         _nb_n = len(_game_bundles)
         _min_l = max(1, min(_nb_n, int(_m_nb.ceil(_m_nb.log(max(1.2, _nb_todds)) / _m_nb.log(2.25)))))
         _max_l = max(_min_l, min(_nb_n, int(_m_nb.ceil(_m_nb.log(max(1.2, _nb_todds)) / _m_nb.log(1.32))) + 1))
@@ -655,7 +698,10 @@ with t3:
                 _acc_o = 1.0
                 _acc_p = 1.0
                 for _b_item in _sel_b:
-                    _opts_b = (_b_item.get("all_opts") or [x[0] for x in _b_item.get("ranked", [])])[:15]
+                    _full_opts_b = _b_item.get("all_opts") or [x[0] for x in _b_item.get("ranked", [])]
+                    _opts_b = [o for o in _full_opts_b if _matches_allowed_mkt(o)]
+                    if not _opts_b:
+                        _opts_b = _full_opts_b[:25]
                     if not _opts_b:
                         continue
                     _cand_pool = sorted(_opts_b, key=lambda x: abs(float(x.get("odds_num", 1.35)) - _req) - (float(x.get("prob_num", 70.0)) / 400.0))[:min(4, len(_opts_b))]
