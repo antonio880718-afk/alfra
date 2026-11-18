@@ -28,7 +28,7 @@
     "away_shots": null,
     "total_shots": null,
     "btts": true,
-    "referee": "Adonai Escobedo",
+    "referee": "Clément Turpin",
     "player_stats": {
       "Humberto Hernández": {
         "team": "Piratas",
@@ -1009,7 +1009,7 @@
     "away_shots": 9,
     "total_shots": 30,
     "btts": true,
-    "referee": "César Soto Grado",
+    "referee": "Slavko Vinčić",
     "player_stats": {
       "Rogan Ravenhill": {
         "team": "Barnsley",
@@ -1439,7 +1439,7 @@
     "away_shots": 19,
     "total_shots": 26,
     "btts": false,
-    "referee": "Simon Hooper",
+    "referee": "Daniele Orsato",
     "player_stats": {
       "Connal Trueman": {
         "team": "Sheffield Wednesday",
@@ -1869,7 +1869,7 @@
     "away_shots": 10,
     "total_shots": 22,
     "btts": true,
-    "referee": "István Kovács",
+    "referee": "Wilton Pereira Sampaio",
     "player_stats": {
       "Mauricio Kozlinski": {
         "team": "Londrina",

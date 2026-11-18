@@ -1,0 +1,758 @@
+{
+  "Raphael Claus": {
+    "league": "Brasileirao Serie A (CBF)",
+    "country": "BRA",
+    "assistants": [
+      "Danilo Simon Manis",
+      "Rodrigo Correa"
+    ],
+    "fourth_official": "Edina Alves Batista",
+    "var": "Rodolpho Toski",
+    "avar": "Fabricio Vilarinho",
+    "cards_avg": 5.15,
+    "fouls_avg": 27.4,
+    "yellow_avg": 4.92,
+    "red_avg": 0.23,
+    "foul_to_card_ratio": 5.32,
+    "rigor": "🔥 Estricto CBF / FIFA",
+    "style": "Colegiado N°1 de Brasil (FIFA Elite); estricto en reclamos y faltas tácticas."
+  },
+  "Wilton Pereira Sampaio": {
+    "league": "Brasileirao Serie A (CBF)",
+    "country": "BRA",
+    "assistants": [
+      "Bruno Pires",
+      "Bruno Boschilia"
+    ],
+    "fourth_official": "Paulo Zanovelli",
+    "var": "Wagner Reway",
+    "avar": "Igor Benevenuto",
+    "cards_avg": 5.35,
+    "fouls_avg": 28.1,
+    "yellow_avg": 5.1,
+    "red_avg": 0.25,
+    "foul_to_card_ratio": 5.25,
+    "rigor": "🔥 Riguroso CBF / FIFA",
+    "style": "Mundialista brasileño; marca de cerca el juego físico y corta simulaciones."
+  },
+  "Anderson Daronco": {
+    "league": "Brasileirao Serie A (CBF)",
+    "country": "BRA",
+    "assistants": [
+      "Rafael Alves",
+      "Maira Moreira"
+    ],
+    "fourth_official": "Lucas Torezin",
+    "var": "Daniel Bins",
+    "avar": "Andre Bitencourt",
+    "cards_avg": 4.88,
+    "fouls_avg": 26.5,
+    "yellow_avg": 4.65,
+    "red_avg": 0.23,
+    "foul_to_card_ratio": 5.43,
+    "rigor": "⚖️ Físico / Control CBF",
+    "style": "Fuerte presencia física en el campo; diálogo corto y tarjetas en entradas destempladas."
+  },
+  "Ramon Abatti Abel": {
+    "league": "Brasileirao Serie A (CBF)",
+    "country": "BRA",
+    "assistants": [
+      "Alex dos Santos",
+      "Thiaggo Labes"
+    ],
+    "fourth_official": "Matheus Candançan",
+    "var": "Marco Fazekas",
+    "avar": "Helton Nunes",
+    "cards_avg": 4.95,
+    "fouls_avg": 26.2,
+    "yellow_avg": 4.72,
+    "red_avg": 0.23,
+    "foul_to_card_ratio": 5.29,
+    "rigor": "⚖️ Dinámico CBF / FIFA",
+    "style": "Árbitro FIFA de finales continentales; ritmo dinámico y sanción rápida a protestas."
+  },
+  "Bráulio da Silva Machado": {
+    "league": "Brasileirao Serie A (CBF)",
+    "country": "BRA",
+    "assistants": [
+      "Kleber Lucio Gil",
+      "Henrique Ribeiro"
+    ],
+    "fourth_official": "Denis Serafim",
+    "var": "Daiane Muniz",
+    "avar": "Johnny Oliveira",
+    "cards_avg": 5.22,
+    "fouls_avg": 27.8,
+    "yellow_avg": 4.96,
+    "red_avg": 0.26,
+    "foul_to_card_ratio": 5.33,
+    "rigor": "🔥 Tarjetero CBF",
+    "style": "Alto promedio de amonestaciones en duelos directos del Brasileirão."
+  },
+  "Flavio Rodrigues de Souza": {
+    "league": "Brasileirao Serie A (CBF)",
+    "country": "BRA",
+    "assistants": [
+      "Marcelo Van Gasse",
+      "Neuza Back"
+    ],
+    "fourth_official": "João Vitor Gobi",
+    "var": "Rodrigo Amaral",
+    "avar": "Vitor Metestaine",
+    "cards_avg": 5.05,
+    "fouls_avg": 27.0,
+    "yellow_avg": 4.82,
+    "red_avg": 0.23,
+    "foul_to_card_ratio": 5.35,
+    "rigor": "⚖️ Riguroso CBF",
+    "style": "Colegiado FIFA paulista de criterio firme en áreas y balón parado."
+  },
+  "Bruno Arleu de Araújo": {
+    "league": "Brasileirao Serie A (CBF)",
+    "country": "BRA",
+    "assistants": [
+      "Rodrigo Correa",
+      "Luiz Regazone"
+    ],
+    "fourth_official": "Alex Stefano",
+    "var": "Carlos Braga",
+    "avar": "Diogo Silva",
+    "cards_avg": 4.92,
+    "fouls_avg": 26.8,
+    "yellow_avg": 4.7,
+    "red_avg": 0.22,
+    "foul_to_card_ratio": 5.45,
+    "rigor": "⚖️ Balanceado CBF",
+    "style": "Control disciplinario constante en Serie A y Serie B de Brasil."
+  },
+  "Darío Herrera": {
+    "league": "Liga Profesional Argentina (AFA)",
+    "country": "ARG",
+    "assistants": [
+      "Juan Pablo Belatti",
+      "Gabriel Chade"
+    ],
+    "fourth_official": "Pablo Echavarría",
+    "var": "Mauro Vigliano",
+    "avar": "Jorge Baliño",
+    "cards_avg": 5.4,
+    "fouls_avg": 27.5,
+    "yellow_avg": 5.12,
+    "red_avg": 0.28,
+    "foul_to_card_ratio": 5.09,
+    "rigor": "🔥 Riguroso AFA / CONMEBOL",
+    "style": "Árbitro de Superclásicos y Copa Libertadores; estricto ante juego brusco."
+  },
+  "Facundo Tello": {
+    "league": "Liga Profesional Argentina (AFA)",
+    "country": "ARG",
+    "assistants": [
+      "Ezequiel Brailovsky",
+      "Cristian Navarro"
+    ],
+    "fourth_official": "Sebastián Zunino",
+    "var": "Héctor Paletta",
+    "avar": "Lucas Novelli",
+    "cards_avg": 5.25,
+    "fouls_avg": 26.8,
+    "yellow_avg": 4.95,
+    "red_avg": 0.3,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "🔥 Estricto FIFA / AFA",
+    "style": "Mundialista argentino; no duda en mostrar rojas directas o dobles amarillas."
+  },
+  "Yael Falcón Pérez": {
+    "league": "Liga Profesional Argentina (AFA)",
+    "country": "ARG",
+    "assistants": [
+      "Maximiliano Del Yesso",
+      "Sebastián Raineri"
+    ],
+    "fourth_official": "Hernán Mastrángelo",
+    "var": "Silvio Trucco",
+    "avar": "Diego Ceballos",
+    "cards_avg": 5.18,
+    "fouls_avg": 27.2,
+    "yellow_avg": 4.92,
+    "red_avg": 0.26,
+    "foul_to_card_ratio": 5.25,
+    "rigor": "⚖️ Riguroso AFA",
+    "style": "Seguimiento cercano de la jugada y alto volumen de faltas sancionadas."
+  },
+  "Andrés Merlos": {
+    "league": "Liga Profesional Argentina (AFA)",
+    "country": "ARG",
+    "assistants": [
+      "Miguel Savorani",
+      "José Castelli"
+    ],
+    "fourth_official": "Luis Lobo Medina",
+    "var": "Germán Delfino",
+    "avar": "Salomé Di Iorio",
+    "cards_avg": 5.3,
+    "fouls_avg": 27.0,
+    "yellow_avg": 5.04,
+    "red_avg": 0.26,
+    "foul_to_card_ratio": 5.09,
+    "rigor": "🔥 Intenso AFA",
+    "style": "Partidos de alta tensión emocional y muchas tarjetas en segundos tiempos."
+  },
+  "Nicolás Ramírez": {
+    "league": "Liga Profesional Argentina (AFA)",
+    "country": "ARG",
+    "assistants": [
+      "Pablo González",
+      "Lucas Germanotta"
+    ],
+    "fourth_official": "Leandro Rey Hilfer",
+    "var": "Fernando Espinoza",
+    "avar": "Nazareno Arasa",
+    "cards_avg": 4.95,
+    "fouls_avg": 26.0,
+    "yellow_avg": 4.72,
+    "red_avg": 0.23,
+    "foul_to_card_ratio": 5.25,
+    "rigor": "⚖️ Firme AFA",
+    "style": "Designado regularmente para clásicos del fútbol argentino."
+  },
+  "Danny Makkelie": {
+    "league": "Eredivisie (KNVB)",
+    "country": "NED",
+    "assistants": [
+      "Hessel Steegstra",
+      "Jan de Vries"
+    ],
+    "fourth_official": "Allard Lindhout",
+    "var": "Rob Dieperink",
+    "avar": "Clay Ruperti",
+    "cards_avg": 3.55,
+    "fouls_avg": 20.8,
+    "yellow_avg": 3.4,
+    "red_avg": 0.15,
+    "foul_to_card_ratio": 5.86,
+    "rigor": "🟢 Fluido KNVB / UEFA",
+    "style": "Élite UEFA neerlandés; prioriza continuidad y ley de la ventaja en Eredivisie."
+  },
+  "Serdar Gözübüyük": {
+    "league": "Eredivisie (KNVB)",
+    "country": "NED",
+    "assistants": [
+      "Erwin Zeinstra",
+      "Johan Balder"
+    ],
+    "fourth_official": "Joey Kooij",
+    "var": "Pol van Boekel",
+    "avar": "Jeroen Manschot",
+    "cards_avg": 3.75,
+    "fouls_avg": 21.4,
+    "yellow_avg": 3.6,
+    "red_avg": 0.15,
+    "foul_to_card_ratio": 5.71,
+    "rigor": "⚖️ Control KNVB / UEFA",
+    "style": "Criterio moderno europeo con control preventivo en duelos de Eredivisie."
+  },
+  "Allard Lindhout": {
+    "league": "Eredivisie (KNVB)",
+    "country": "NED",
+    "assistants": [
+      "Rogier Honig",
+      "Patrick Inia"
+    ],
+    "fourth_official": "Bas Nijhuis",
+    "var": "Dennis Higler",
+    "avar": "Sander van der Eijk",
+    "cards_avg": 3.45,
+    "fouls_avg": 20.2,
+    "yellow_avg": 3.32,
+    "red_avg": 0.13,
+    "foul_to_card_ratio": 5.85,
+    "rigor": "🟢 Deja Jugar KNVB",
+    "style": "Ritmo alto y bajo promedio de amonestaciones en fútbol neerlandés."
+  },
+  "Bas Nijhuis": {
+    "league": "Eredivisie (KNVB)",
+    "country": "NED",
+    "assistants": [
+      "Roy de Nas",
+      "Erik Koopman"
+    ],
+    "fourth_official": "Jeroen Manschot",
+    "var": "Pol van Boekel",
+    "avar": "Ingmar Oostrom",
+    "cards_avg": 3.15,
+    "fouls_avg": 19.5,
+    "yellow_avg": 3.02,
+    "red_avg": 0.13,
+    "foul_to_card_ratio": 6.19,
+    "rigor": "🟢 Muy Permisivo KNVB",
+    "style": "Reconocido en Países Bajos por dejar correr el contacto físico sin cortar el juego."
+  },
+  "Erik Lambrechts": {
+    "league": "Belgian Pro League (RBFA)",
+    "country": "BEL",
+    "assistants": [
+      "Jo de Weirdt",
+      "Kevin Monteny"
+    ],
+    "fourth_official": "Nathan Verboomen",
+    "var": "Bram Van Driessche",
+    "avar": "Jan Boterberg",
+    "cards_avg": 4.15,
+    "fouls_avg": 22.8,
+    "yellow_avg": 3.98,
+    "red_avg": 0.17,
+    "foul_to_card_ratio": 5.49,
+    "rigor": "⚖️ Balanceado RBFA / UEFA",
+    "style": "Árbitro internacional belga; control técnico en Jupiler Pro League."
+  },
+  "Lawrence Visser": {
+    "league": "Belgian Pro League (RBFA)",
+    "country": "BEL",
+    "assistants": [
+      "Rien Vanyzere",
+      "Thibaud Nijssen"
+    ],
+    "fourth_official": "Lothar D'hondt",
+    "var": "Nicolas Laforge",
+    "avar": "Bert Put",
+    "cards_avg": 4.28,
+    "fouls_avg": 23.4,
+    "yellow_avg": 4.08,
+    "red_avg": 0.2,
+    "foul_to_card_ratio": 5.46,
+    "rigor": "⚖️ Firme RBFA",
+    "style": "Rigor disciplinario en clásicos belgas."
+  },
+  "Jasper Vergoote": {
+    "league": "Belgian Pro League (RBFA)",
+    "country": "BEL",
+    "assistants": [
+      "Michele Seeldraeyers",
+      "Martijn Tiesters"
+    ],
+    "fourth_official": "Wesli De Cremer",
+    "var": "Lothar D'hondt",
+    "avar": "Wim Smet",
+    "cards_avg": 4.05,
+    "fouls_avg": 22.4,
+    "yellow_avg": 3.88,
+    "red_avg": 0.17,
+    "foul_to_card_ratio": 5.53,
+    "rigor": "⚖️ Moderno RBFA",
+    "style": "Buena ubicación y criterio uniforme en la liga belga."
+  },
+  "Halil Umut Meler": {
+    "league": "Super Lig Turquía (TFF)",
+    "country": "TUR",
+    "assistants": [
+      "Mustafa Eyisoy",
+      "Kerem Ersoy"
+    ],
+    "fourth_official": "Zorbay Küçük",
+    "var": "Alper Ulusoy",
+    "avar": "Mustafa Coşkun",
+    "cards_avg": 5.1,
+    "fouls_avg": 26.2,
+    "yellow_avg": 4.85,
+    "red_avg": 0.25,
+    "foul_to_card_ratio": 5.14,
+    "rigor": "🔥 Estricto TFF / UEFA Elite",
+    "style": "Principal árbitro turco en UEFA Elite; acostumbrado a derbis de Estambul."
+  },
+  "Atilla Karaoğlan": {
+    "league": "Super Lig Turquía (TFF)",
+    "country": "TUR",
+    "assistants": [
+      "Ceyhun Sesigüzel",
+      "Abdullah Özkara"
+    ],
+    "fourth_official": "Turgut Doman",
+    "var": "Erkan Engin",
+    "avar": "Onur Özütoprak",
+    "cards_avg": 5.25,
+    "fouls_avg": 26.8,
+    "yellow_avg": 5.0,
+    "red_avg": 0.25,
+    "foul_to_card_ratio": 5.1,
+    "rigor": "🔥 Riguroso TFF",
+    "style": "Alto volumen de tarjetas en partidos calientes de la Süper Lig turca."
+  },
+  "Arda Kardeşler": {
+    "league": "Super Lig Turquía (TFF)",
+    "country": "TUR",
+    "assistants": [
+      "Mehmet Tuğral",
+      "İbrahim Uyarcan"
+    ],
+    "fourth_official": "Cihan Aydın",
+    "var": "Koray Gençerler",
+    "avar": "Bahattin Şimşek",
+    "cards_avg": 4.85,
+    "fouls_avg": 25.4,
+    "yellow_avg": 4.65,
+    "red_avg": 0.2,
+    "foul_to_card_ratio": 5.24,
+    "rigor": "⚖️ Firme TFF",
+    "style": "Control disciplinario sólido en primera división de Turquía."
+  },
+  "Tasos Sidiropoulos": {
+    "league": "Super League Grecia (EPO)",
+    "country": "GRE",
+    "assistants": [
+      "Polychronis Kostaras",
+      "Lazaros Dimitriadis"
+    ],
+    "fourth_official": "Ioannis Papadopoulos",
+    "var": "Stefanos Koubarakis",
+    "avar": "Andreas Fotopoulos",
+    "cards_avg": 4.95,
+    "fouls_avg": 26.0,
+    "yellow_avg": 4.75,
+    "red_avg": 0.2,
+    "foul_to_card_ratio": 5.25,
+    "rigor": "⚖️ Élite EPO / UEFA",
+    "style": "Colegiado N°1 de Grecia; experiencia en Champions League y clásicos helénicos."
+  },
+  "Vasilis Fotias": {
+    "league": "Super League Grecia (EPO)",
+    "country": "GRE",
+    "assistants": [
+      "Andreas Meintanas",
+      "Michalis Papadakis"
+    ],
+    "fourth_official": "Aristotelis Diamantopoulos",
+    "var": "Angelos Evangelou",
+    "avar": "Konstantinos Psarris",
+    "cards_avg": 5.08,
+    "fouls_avg": 26.6,
+    "yellow_avg": 4.86,
+    "red_avg": 0.22,
+    "foul_to_card_ratio": 5.24,
+    "rigor": "🔥 Riguroso EPO",
+    "style": "Firmeza disciplinaria en la Super League griega."
+  },
+  "Benoît Bastien": {
+    "league": "Ligue 1 (FFF)",
+    "country": "FRA",
+    "assistants": [
+      "Hicham Zakrani",
+      "Aurélien Berthomieu"
+    ],
+    "fourth_official": "Jérémie Pignard",
+    "var": "Willy Delajod",
+    "avar": "Alexandre Castro",
+    "cards_avg": 4.18,
+    "fouls_avg": 23.2,
+    "yellow_avg": 3.98,
+    "red_avg": 0.2,
+    "foul_to_card_ratio": 5.55,
+    "rigor": "⚖️ Firme FFF / UEFA",
+    "style": "Árbitro internacional francés de amplia trayectoria en Ligue 1."
+  },
+  "Jérôme Brisard": {
+    "league": "Ligue 1 (FFF)",
+    "country": "FRA",
+    "assistants": [
+      "Alexis Auger",
+      "Benjamin Pages"
+    ],
+    "fourth_official": "Thomas Léonard",
+    "var": "Eric Wattellier",
+    "avar": "Hamid Guenaoui",
+    "cards_avg": 3.92,
+    "fouls_avg": 22.4,
+    "yellow_avg": 3.74,
+    "red_avg": 0.18,
+    "foul_to_card_ratio": 5.71,
+    "rigor": "⚖️ Balanceado FFF",
+    "style": "Conducción fluida en la Ligue 1 francesa."
+  },
+  "Artur Soares Dias": {
+    "league": "Primeira Liga (FPF)",
+    "country": "POR",
+    "assistants": [
+      "Paulo Soares",
+      "Pedro Ribeiro"
+    ],
+    "fourth_official": "Fábio Veríssimo",
+    "var": "Tiago Martins",
+    "avar": "Hugo Miguel",
+    "cards_avg": 5.15,
+    "fouls_avg": 26.8,
+    "yellow_avg": 4.9,
+    "red_avg": 0.25,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "🔥 Estricto FPF / UEFA",
+    "style": "Referente del arbitraje portugués en clásicos Porto-Benfica-Sporting."
+  },
+  "João Pinheiro": {
+    "league": "Primeira Liga (FPF)",
+    "country": "POR",
+    "assistants": [
+      "Bruno Jesus",
+      "Luciano Maia"
+    ],
+    "fourth_official": "Luís Godinho",
+    "var": "André Narciso",
+    "avar": "Vasco Santos",
+    "cards_avg": 4.95,
+    "fouls_avg": 26.0,
+    "yellow_avg": 4.72,
+    "red_avg": 0.23,
+    "foul_to_card_ratio": 5.25,
+    "rigor": "⚖️ Riguroso FPF / UEFA",
+    "style": "Colegiado internacional portugués de alto rigor técnico."
+  },
+  "Ismail Elfath": {
+    "league": "MLS (PRO)",
+    "country": "USA",
+    "assistants": [
+      "Corey Parker",
+      "Kyle Atkins"
+    ],
+    "fourth_official": "Rubiel Vazquez",
+    "var": "Edvin Jurisevic",
+    "avar": "Caleb Mendez",
+    "cards_avg": 3.95,
+    "fouls_avg": 22.5,
+    "yellow_avg": 3.78,
+    "red_avg": 0.17,
+    "foul_to_card_ratio": 5.7,
+    "rigor": "⚖️ Élite PRO / FIFA",
+    "style": "Mundialista de la MLS; excelente manejo de ritmo en Playoffs."
+  },
+  "Drew Fischer": {
+    "league": "MLS (PRO)",
+    "country": "CAN",
+    "assistants": [
+      "Micheal Barwegen",
+      "Lyes Arfa"
+    ],
+    "fourth_official": "Pierre-Luc Lauziere",
+    "var": "Carol Anne Chenard",
+    "avar": "Philippe Briere",
+    "cards_avg": 3.85,
+    "fouls_avg": 22.0,
+    "yellow_avg": 3.7,
+    "red_avg": 0.15,
+    "foul_to_card_ratio": 5.71,
+    "rigor": "⚖️ Balanceado PRO / FIFA",
+    "style": "Árbitro FIFA de MLS y CONCACAF con criterio consistente."
+  },
+  "Armando Villarreal": {
+    "league": "MLS (PRO)",
+    "country": "USA",
+    "assistants": [
+      "Cameron Blanchard",
+      "Chris Elliott"
+    ],
+    "fourth_official": "Guido Gonzales Jr.",
+    "var": "Kevin Stott",
+    "avar": "Ian Cristo",
+    "cards_avg": 4.1,
+    "fouls_avg": 23.1,
+    "yellow_avg": 3.92,
+    "red_avg": 0.18,
+    "foul_to_card_ratio": 5.63,
+    "rigor": "⚖️ Firme PRO",
+    "style": "Designado habitual en finales de conferencia de MLS."
+  },
+  "Cristián Garay": {
+    "league": "Primera División Chile (ANFP)",
+    "country": "CHI",
+    "assistants": [
+      "José Retamal",
+      "Alejandro Molina"
+    ],
+    "fourth_official": "Juan Lara",
+    "var": "Rodrigo Carvajal",
+    "avar": "Manuel Marín",
+    "cards_avg": 5.2,
+    "fouls_avg": 26.8,
+    "yellow_avg": 4.95,
+    "red_avg": 0.25,
+    "foul_to_card_ratio": 5.15,
+    "rigor": "🔥 Riguroso ANFP / CONMEBOL",
+    "style": "Árbitro FIFA chileno; estricto en el torneo nacional y copas."
+  },
+  "Felipe González": {
+    "league": "Primera División Chile (ANFP)",
+    "country": "CHI",
+    "assistants": [
+      "Carlos Poblete",
+      "Claudio Urrutia"
+    ],
+    "fourth_official": "José Cabero",
+    "var": "Piero Maza",
+    "avar": "Alan Sandoval",
+    "cards_avg": 5.32,
+    "fouls_avg": 27.2,
+    "yellow_avg": 5.05,
+    "red_avg": 0.27,
+    "foul_to_card_ratio": 5.11,
+    "rigor": "🔥 Tarjetero ANFP",
+    "style": "Fuerte temperamento disciplinario en Primera División de Chile."
+  },
+  "José Cabero": {
+    "league": "Primera División Chile (ANFP)",
+    "country": "CHI",
+    "assistants": [
+      "Juan Serrano",
+      "Miguel Rocha"
+    ],
+    "fourth_official": "Héctor Jona",
+    "var": "Francisco Gilabert",
+    "avar": "Cindy Nahuelcoy",
+    "cards_avg": 5.05,
+    "fouls_avg": 26.2,
+    "yellow_avg": 4.8,
+    "red_avg": 0.25,
+    "foul_to_card_ratio": 5.19,
+    "rigor": "⚖️ Firme ANFP / FIFA",
+    "style": "Árbitro FIFA de duelos clave en el campeonato chileno."
+  },
+  "Andrés Rojas": {
+    "league": "Liga BetPlay Colombia (DIMAYOR)",
+    "country": "COL",
+    "assistants": [
+      "Alexander Guzmán",
+      "Dionisio Ruiz"
+    ],
+    "fourth_official": "Bismarks Santiago",
+    "var": "Nicolás Gallo",
+    "avar": "John Perdomo",
+    "cards_avg": 5.18,
+    "fouls_avg": 27.0,
+    "yellow_avg": 4.92,
+    "red_avg": 0.26,
+    "foul_to_card_ratio": 5.21,
+    "rigor": "🔥 Riguroso FCF / FIFA",
+    "style": "Árbitro FIFA bogotano de finales en Liga BetPlay y CONMEBOL."
+  },
+  "Carlos Betancur": {
+    "league": "Liga BetPlay Colombia (DIMAYOR)",
+    "country": "COL",
+    "assistants": [
+      "David Fuentes",
+      "Sebastián Vela"
+    ],
+    "fourth_official": "Jhon Ospina",
+    "var": "Leonard Mosquera",
+    "avar": "Mauricio Pérez",
+    "cards_avg": 5.28,
+    "fouls_avg": 27.4,
+    "yellow_avg": 5.02,
+    "red_avg": 0.26,
+    "foul_to_card_ratio": 5.19,
+    "rigor": "🔥 Estricto DIMAYOR",
+    "style": "Acostumbrado a cuadrangulares y clásicos del fútbol colombiano."
+  },
+  "Kevin Ortega": {
+    "league": "Liga 1 Perú (CONAR)",
+    "country": "PER",
+    "assistants": [
+      "Michael Orué",
+      "Jesús Sánchez"
+    ],
+    "fourth_official": "Bruno Pérez",
+    "var": "Diego Haro",
+    "avar": "Jonny Bossio",
+    "cards_avg": 5.35,
+    "fouls_avg": 27.6,
+    "yellow_avg": 5.08,
+    "red_avg": 0.27,
+    "foul_to_card_ratio": 5.16,
+    "rigor": "🔥 Estricto CONAR / FIFA",
+    "style": "Mundialista peruano N°1; corta reclamos y juego brusco de inmediato."
+  },
+  "Bruno Pérez": {
+    "league": "Liga 1 Perú (CONAR)",
+    "country": "PER",
+    "assistants": [
+      "Stephen Atoche",
+      "Cotty Carrera"
+    ],
+    "fourth_official": "Augusto Menéndez",
+    "var": "Joel Alarcón",
+    "avar": "Víctor Ráez",
+    "cards_avg": 5.12,
+    "fouls_avg": 26.8,
+    "yellow_avg": 4.86,
+    "red_avg": 0.26,
+    "foul_to_card_ratio": 5.23,
+    "rigor": "⚖️ Riguroso CONAR",
+    "style": "Designado habitual en duelos de altura y clásicos en Liga 1 Perú."
+  },
+  "Esteban Ostojich": {
+    "league": "Primera División Uruguay (AUF)",
+    "country": "URU",
+    "assistants": [
+      "Nicolás Tarán",
+      "Carlos Barreiro"
+    ],
+    "fourth_official": "Gustavo Tejera",
+    "var": "Leodán González",
+    "avar": "Richard Trinidad",
+    "cards_avg": 5.45,
+    "fouls_avg": 28.0,
+    "yellow_avg": 5.18,
+    "red_avg": 0.27,
+    "foul_to_card_ratio": 5.14,
+    "rigor": "🔥 Muy Riguroso AUF / CONMEBOL",
+    "style": "Árbitro de finales de Copa América y Libertadores; mano dura en Uruguay."
+  },
+  "Andrés Matonte": {
+    "league": "Primera División Uruguay (AUF)",
+    "country": "URU",
+    "assistants": [
+      "Martín Soppi",
+      "Horacio Ferreiro"
+    ],
+    "fourth_official": "Christian Ferreyra",
+    "var": "Jonhatan Fuentes",
+    "avar": "Santiago Fernández",
+    "cards_avg": 5.3,
+    "fouls_avg": 27.4,
+    "yellow_avg": 5.04,
+    "red_avg": 0.26,
+    "foul_to_card_ratio": 5.17,
+    "rigor": "🔥 Estricto AUF / FIFA",
+    "style": "Mundialista uruguayo; rigor alto en duelos friccionados."
+  },
+  "Iván Barton": {
+    "league": "CONCACAF Nations League / FIFA",
+    "country": "SLV",
+    "assistants": [
+      "David Morán",
+      "Henri Pupiro"
+    ],
+    "fourth_official": "Said Martínez",
+    "var": "Ismail Elfath",
+    "avar": "Tatiana Guzmán",
+    "cards_avg": 4.95,
+    "fouls_avg": 25.8,
+    "yellow_avg": 4.7,
+    "red_avg": 0.25,
+    "foul_to_card_ratio": 5.21,
+    "rigor": "🔥 Élite CONCACAF / FIFA",
+    "style": "Mundialista salvadoreño N°1 de CONCACAF; estricto en áreas y pérdidas de tiempo."
+  },
+  "Said Martínez": {
+    "league": "CONCACAF Nations League / FIFA",
+    "country": "HON",
+    "assistants": [
+      "Walter López",
+      "Christian Ramírez"
+    ],
+    "fourth_official": "Selvin Brown",
+    "var": "Drew Fischer",
+    "avar": "Shirley Perelló",
+    "cards_avg": 4.88,
+    "fouls_avg": 25.4,
+    "yellow_avg": 4.65,
+    "red_avg": 0.23,
+    "foul_to_card_ratio": 5.2,
+    "rigor": "⚖️ Firme CONCACAF / FIFA",
+    "style": "Árbitro de finales de Copa Oro y Nations League."
+  }
+}

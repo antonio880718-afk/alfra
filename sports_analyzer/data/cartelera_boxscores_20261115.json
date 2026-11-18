@@ -28,7 +28,7 @@
     "away_shots": 11,
     "total_shots": 31,
     "btts": true,
-    "referee": "István Kovács",
+    "referee": "Kevin Ortega",
     "player_stats": {
       "Matías Cordova": {
         "team": "Comerciantes Unidos",
@@ -1494,7 +1494,7 @@
     "away_shots": 0,
     "total_shots": 0,
     "btts": true,
-    "referee": "Clément Turpin",
+    "referee": "Nicolás Ramírez",
     "player_stats": {
       "Julio César Salvá": {
         "team": "Deportivo Morón",
@@ -5120,7 +5120,7 @@
     "away_shots": null,
     "total_shots": null,
     "btts": true,
-    "referee": "Anthony Taylor",
+    "referee": "Esteban Ostojich",
     "player_stats": {},
     "source": "ESPN / SofaScore Official Match Center (Sync en Vivo)"
   },
@@ -6200,7 +6200,7 @@
     "away_shots": null,
     "total_shots": null,
     "btts": true,
-    "referee": "Javier Alberola Rojas",
+    "referee": "Esteban Ostojich",
     "player_stats": {},
     "source": "ESPN / SofaScore Official Match Center (Sync en Vivo)"
   },
@@ -6233,7 +6233,7 @@
     "away_shots": 0,
     "total_shots": 0,
     "btts": true,
-    "referee": "Clément Turpin",
+    "referee": "Andrés Merlos",
     "player_stats": {
       "Juan Strumia": {
         "team": "Godoy Cruz Antonio Tomba",
@@ -6773,7 +6773,7 @@
     "away_shots": 0,
     "total_shots": 0,
     "btts": false,
-    "referee": "François Letexier",
+    "referee": "Facundo Tello",
     "player_stats": {
       "Fernando Monetti": {
         "team": "Ferro Carril Oeste",
@@ -8316,7 +8316,7 @@
     "away_shots": 21,
     "total_shots": 33,
     "btts": true,
-    "referee": "Szymon Marciniak",
+    "referee": "Bruno Pérez",
     "player_stats": {
       "Matías Vega": {
         "team": "Juan Pablo II",
@@ -8768,7 +8768,7 @@
     "away_shots": 7,
     "total_shots": 25,
     "btts": false,
-    "referee": "Morten Krogh",
+    "referee": "Said Martínez",
     "player_stats": {
       "Orlando Mosquera": {
         "team": "Panama",

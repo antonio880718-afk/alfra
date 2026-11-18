@@ -551,6 +551,117 @@ REFEREES_DB = {
     }
 }
 
+
+_fed_db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "federation_referees_db.json")
+if os.path.exists(_fed_db_path):
+    try:
+        with open(_fed_db_path, "r", encoding="utf-8") as _fp_fed:
+            REFEREES_DB.update(json.load(_fp_fed))
+    except Exception:
+        pass
+
+LEAGUE_REFEREE_POOLS = {
+    "bra.1": ["Raphael Claus", "Wilton Pereira Sampaio", "Anderson Daronco", "Ramon Abatti Abel", "Bráulio da Silva Machado", "Flavio Rodrigues de Souza", "Bruno Arleu de Araújo"],
+    "bra.2": ["Raphael Claus", "Wilton Pereira Sampaio", "Anderson Daronco", "Ramon Abatti Abel", "Bráulio da Silva Machado", "Flavio Rodrigues de Souza", "Bruno Arleu de Araújo"],
+    "arg.1": ["Darío Herrera", "Facundo Tello", "Yael Falcón Pérez", "Andrés Merlos", "Nicolás Ramírez"],
+    "mex.1": ["César Ramos", "Marco Antonio Ortiz", "Adonai Escobedo", "Daniel Quintero Huitrón", "Ismael Rosario López Peñuelas"],
+    "eng.1": ["Michael Oliver", "Anthony Taylor", "Simon Hooper", "Chris Kavanagh", "Stuart Attwell", "John Brooks", "Robert Jones", "Craig Pawson", "Darren England", "Sam Barrott"],
+    "eng.2": ["Simon Hooper", "Stuart Attwell", "John Brooks", "Robert Jones", "Craig Pawson", "Darren England", "Sam Barrott", "Farai Hallam"],
+    "eng.3": ["Robert Jones", "Darren England", "Sam Barrott", "Farai Hallam", "Craig Pawson"],
+    "eng.fa": ["Michael Oliver", "Anthony Taylor", "Simon Hooper", "Chris Kavanagh", "Stuart Attwell", "John Brooks"],
+    "eng.league_cup": ["Michael Oliver", "Anthony Taylor", "Simon Hooper", "Chris Kavanagh", "Stuart Attwell", "John Brooks"],
+    "esp.1": ["Jesús Gil Manzano", "José María Sánchez Martínez", "Alejandro Hernández Hernández", "César Soto Grado", "Javier Alberola Rojas", "Francisco José Hernández Maeso"],
+    "esp.2": ["Francisco José Hernández Maeso", "Miguel Sesma", "César Soto Grado", "Javier Alberola Rojas", "Alejandro Hernández Hernández"],
+    "esp.copa_del_rey": ["Jesús Gil Manzano", "José María Sánchez Martínez", "Alejandro Hernández Hernández", "César Soto Grado", "Javier Alberola Rojas", "Miguel Sesma"],
+    "ita.1": ["Daniele Orsato", "Maurizio Mariani", "Marco Guida", "Marco Di Bello"],
+    "ita.2": ["Marco Di Bello", "Marco Guida", "Maurizio Mariani"],
+    "ita.coppa_italia": ["Daniele Orsato", "Maurizio Mariani", "Marco Guida", "Marco Di Bello"],
+    "ger.1": ["Felix Zwayer", "Deniz Aytekin", "Bastian Dankert", "Harm Osmers", "Daniel Schlager", "Robert Schröder", "Sören Storks"],
+    "ger.2": ["Patrick Schwengers", "Wolfgang Haslberger", "Eric-Dominic Weisbach", "Sören Storks", "Robert Schröder", "Harm Osmers"],
+    "ger.dfb_pokal": ["Felix Zwayer", "Deniz Aytekin", "Bastian Dankert", "Harm Osmers", "Daniel Schlager"],
+    "fra.1": ["Clément Turpin", "François Letexier", "Benoît Bastien", "Jérôme Brisard"],
+    "ned.1": ["Danny Makkelie", "Serdar Gözübüyük", "Allard Lindhout", "Bas Nijhuis"],
+    "bel.1": ["Erik Lambrechts", "Lawrence Visser", "Jasper Vergoote"],
+    "tur.1": ["Halil Umut Meler", "Atilla Karaoğlan", "Arda Kardeşler"],
+    "gre.1": ["Tasos Sidiropoulos", "Vasilis Fotias"],
+    "por.1": ["Artur Soares Dias", "João Pinheiro"],
+    "usa.1": ["Ismail Elfath", "Drew Fischer", "Armando Villarreal"],
+    "chi.1": ["Piero Maza", "Cristián Garay", "Felipe González", "José Cabero"],
+    "col.1": ["Wilmar Roldán", "Andrés Rojas", "Carlos Betancur"],
+    "per.1": ["Kevin Ortega", "Bruno Pérez"],
+    "uru.1": ["Esteban Ostojich", "Andrés Matonte"],
+    "conmebol.libertadores": ["Wilmar Roldán", "Jesús Valenzuela", "Piero Maza", "Esteban Ostojich", "Andrés Matonte", "Raphael Claus", "Darío Herrera", "Facundo Tello"],
+    "conmebol.sudamericana": ["Wilmar Roldán", "Jesús Valenzuela", "Piero Maza", "Esteban Ostojich", "Andrés Matonte", "Raphael Claus", "Darío Herrera", "Facundo Tello"],
+    "fifa.worldq.conmebol": ["Wilmar Roldán", "Jesús Valenzuela", "Piero Maza", "Esteban Ostojich", "Andrés Matonte", "Raphael Claus", "Darío Herrera", "Facundo Tello"],
+    "concacaf.nations": ["César Ramos", "Marco Antonio Ortiz", "Iván Barton", "Said Martínez", "Ismail Elfath", "Drew Fischer"],
+    "fifa.worldq.concacaf": ["César Ramos", "Marco Antonio Ortiz", "Iván Barton", "Said Martínez", "Ismail Elfath", "Drew Fischer"],
+    "uefa.champions": ["Szymon Marciniak", "Slavko Vinčić", "François Letexier", "Clément Turpin", "István Kovács", "Michael Oliver", "Anthony Taylor", "Felix Zwayer", "Danny Makkelie", "Jesús Gil Manzano", "Daniele Orsato", "Morten Krogh"],
+    "uefa.europa": ["Szymon Marciniak", "Slavko Vinčić", "François Letexier", "Clément Turpin", "István Kovács", "Michael Oliver", "Felix Zwayer", "Danny Makkelie", "Morten Krogh"],
+    "uefa.europa.conf": ["Slavko Vinčić", "István Kovács", "Morten Krogh", "Erik Lambrechts", "Halil Umut Meler", "Tasos Sidiropoulos", "Artur Soares Dias"],
+    "uefa.nations": ["Szymon Marciniak", "Slavko Vinčić", "François Letexier", "Clément Turpin", "István Kovács", "Michael Oliver", "Anthony Taylor", "Felix Zwayer", "Danny Makkelie", "Jesús Gil Manzano", "Daniele Orsato", "Morten Krogh"],
+    "fifa.worldq.uefa": ["Szymon Marciniak", "Slavko Vinčić", "François Letexier", "Clément Turpin", "István Kovács", "Michael Oliver", "Anthony Taylor", "Felix Zwayer", "Danny Makkelie", "Morten Krogh"],
+}
+
+_MATCH_LEAGUE_LOOKUP = None
+
+def _resolve_league_code(home_team: str, away_team: str, league_code: str = "") -> str:
+    global _MATCH_LEAGUE_LOOKUP
+    lc = str(league_code or "").lower().strip()
+    if lc in LEAGUE_REFEREE_POOLS:
+        return lc
+    name_map = {
+        "brasileirao": "bra.1", "brasileirão": "bra.1", "serie a brasil": "bra.1", "série b": "bra.2", "serie b brasil": "bra.2",
+        "argentina": "arg.1", "liga profesional": "arg.1",
+        "liga mx": "mex.1", "méxico": "mex.1", "mexico": "mex.1",
+        "premier league": "eng.1", "championship": "eng.2", "league one": "eng.3", "fa cup": "eng.fa", "carabao": "eng.league_cup",
+        "laliga 2": "esp.2", "laliga": "esp.1", "copa del rey": "esp.copa_del_rey",
+        "serie b": "ita.2", "serie a": "ita.1", "coppa italia": "ita.coppa_italia",
+        "2. bundesliga": "ger.2", "bundesliga": "ger.1", "dfb pokal": "ger.dfb_pokal",
+        "ligue 1": "fra.1", "eredivisie": "ned.1", "belgian": "bel.1", "bélgica": "bel.1",
+        "turquía": "tur.1", "super lig": "tur.1", "grecia": "gre.1", "portugal": "por.1", "primeira liga": "por.1",
+        "mls": "usa.1", "chile": "chi.1", "colombia": "col.1", "betplay": "col.1", "perú": "per.1", "peru": "per.1", "liga 1": "per.1",
+        "uruguay": "uru.1", "libertadores": "conmebol.libertadores", "sudamericana": "conmebol.sudamericana", "conmebol": "fifa.worldq.conmebol",
+        "concacaf": "concacaf.nations", "champions league": "uefa.champions", "europa league": "uefa.europa", "conference": "uefa.europa.conf",
+        "nations league": "uefa.nations", "uefa": "uefa.nations",
+    }
+    for kw, code_val in name_map.items():
+        if kw in lc:
+            return code_val
+
+    if _MATCH_LEAGUE_LOOKUP is None:
+        _MATCH_LEAGUE_LOOKUP = {}
+        try:
+            data_d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+            for p in glob.glob(os.path.join(data_d, "live_calendar_*.json")):
+                with open(p, "r", encoding="utf-8") as f:
+                    for m in json.load(f):
+                        hm = str(m.get("home", "")).lower().strip()
+                        aw = str(m.get("away", "")).lower().strip()
+                        cd = str(m.get("code", "")).lower().strip()
+                        lg_n = str(m.get("league", "")).lower().strip()
+                        resolved_cd = cd if cd in LEAGUE_REFEREE_POOLS else ""
+                        if not resolved_cd:
+                            for kw, code_val in name_map.items():
+                                if kw in lg_n:
+                                    resolved_cd = code_val
+                                    break
+                        if resolved_cd and hm and aw:
+                            _MATCH_LEAGUE_LOOKUP[f"{hm}_vs_{aw}"] = resolved_cd
+                            _MATCH_LEAGUE_LOOKUP[hm] = resolved_cd
+                            _MATCH_LEAGUE_LOOKUP[aw] = resolved_cd
+        except Exception:
+            pass
+
+    h_l = home_team.lower().strip()
+    a_l = away_team.lower().strip()
+    if f"{h_l}_vs_{a_l}" in _MATCH_LEAGUE_LOOKUP:
+        return _MATCH_LEAGUE_LOOKUP[f"{h_l}_vs_{a_l}"]
+    if h_l in _MATCH_LEAGUE_LOOKUP:
+        return _MATCH_LEAGUE_LOOKUP[h_l]
+    if a_l in _MATCH_LEAGUE_LOOKUP:
+        return _MATCH_LEAGUE_LOOKUP[a_l]
+    return "uefa.champions"
+
 # Asignación automática por defecto para partidos destacados
 FEATURED_MATCH_REFEREES = {
     # UEFA NATIONS LEAGUE & COMPETICIONES INTERNACIONALES (Oficial UEFA)
@@ -1119,7 +1230,7 @@ def get_stadium_for_match(home_team: str):
     }
 
 def get_referee_for_match(home_team: str, away_team: str, league_code: str = ""):
-    """Obtiene el árbitro oficial confirmado con su cuerpo arbitral completo (asistentes, 4º árbitro, VAR y AVAR)."""
+    """Obtiene el árbitro oficial confirmado estrictamente dentro de la federación de la liga correspondiente."""
     h_raw = home_team.lower().strip()
     a_raw = away_team.lower().strip()
     h_clean = h_raw.replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "").replace("sc ", "").strip()
@@ -1127,95 +1238,47 @@ def get_referee_for_match(home_team: str, away_team: str, league_code: str = "")
     
     h_vars = {h_raw, h_clean, TEAM_TRANSLATIONS.get(h_raw, h_raw), TEAM_TRANSLATIONS.get(h_clean, h_clean)}
     a_vars = {a_raw, a_clean, TEAM_TRANSLATIONS.get(a_raw, a_raw), TEAM_TRANSLATIONS.get(a_clean, a_clean)}
-    
-    # 1. Búsqueda prioritaria en FEATURED_MATCH_REFEREES
+
+    resolved_code = _resolve_league_code(home_team, away_team, league_code)
+    allowed_pool = LEAGUE_REFEREE_POOLS.get(resolved_code, LEAGUE_REFEREE_POOLS["uefa.champions"])
+    stad_info = get_stadium_for_match(home_team)
+
     for (fh, fa), ref_name in FEATURED_MATCH_REFEREES.items():
         fh_clean = fh.lower().strip().replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "").replace("sc ", "")
         fa_clean = fa.lower().strip().replace("1. ", "").replace("fc ", "").replace("sv ", "").replace("vfl ", "").replace("sc ", "")
         matched_h = any(hv in fh_clean or fh_clean in hv for hv in h_vars)
         matched_a = any(av in fa_clean or fa_clean in av for av in a_vars)
-        if matched_h and matched_a:
-            if ref_name in REFEREES_DB:
-                ref_info = dict(REFEREES_DB[ref_name])
-                ref_info["name"] = ref_name
-                ref_info["is_official"] = True
-                return ref_info
+        if matched_h and matched_a and ref_name in REFEREES_DB and ref_name in allowed_pool:
+            ref_info = dict(REFEREES_DB[ref_name])
+            ref_info["name"] = ref_name
+            ref_info["stadium"] = stad_info.get("stadium", f"Estadio Oficial de {home_team}")
+            ref_info["is_official"] = True
+            return ref_info
 
-    # 2. Búsqueda en cartelera_official_referees.json (Cobertura con traducciones)
     c_refs = _get_cartelera_official_refs()
     for hv in h_vars:
         for av in a_vars:
             for pk in [f"{hv}_vs_{av}", f"{hv} vs {av}", f"{av}_vs_{hv}", f"{av} vs {hv}"]:
                 if pk in c_refs:
                     ref_entry = dict(c_refs[pk])
-                    r_name = ref_entry.get("name")
-                    if r_name and r_name in REFEREES_DB:
-                        for db_k, db_v in REFEREES_DB[r_name].items():
-                            if db_k not in ref_entry or not ref_entry[db_k]:
-                                ref_entry[db_k] = db_v
-                    ref_entry["is_official"] = True
-                    return ref_entry
+                    r_name = ref_entry.get("name", "")
+                    if r_name in allowed_pool or ref_entry.get("espn_verified"):
+                        if r_name in REFEREES_DB:
+                            for db_k, db_v in REFEREES_DB[r_name].items():
+                                if db_k not in ref_entry or not ref_entry[db_k]:
+                                    ref_entry[db_k] = db_v
+                        ref_entry["stadium"] = stad_info.get("stadium", f"Estadio Oficial de {home_team}")
+                        ref_entry["is_official"] = True
+                        return ref_entry
 
-    for rk, rv in c_refs.items():
-        rk_l = rk.lower()
-        matched_h = any(hv in rk_l for hv in h_vars)
-        matched_a = any(av in rk_l for av in a_vars)
-        if matched_h and matched_a:
-            ref_entry = dict(rv)
-            r_name = ref_entry.get("name")
-            if r_name and r_name in REFEREES_DB:
-                for db_k, db_v in REFEREES_DB[r_name].items():
-                    if db_k not in ref_entry or not ref_entry[db_k]:
-                        ref_entry[db_k] = db_v
-            ref_entry["is_official"] = True
-            return ref_entry
-
-    # 3. Fallback reglamentario
-    league_labels = {
-        "uefa.nations": "UEFA Nations League",
-        "uefa.champions": "UEFA Champions League",
-        "uefa.europa": "UEFA Europa League",
-        "ger.2": "2. Bundesliga (DFB)",
-        "ger.1": "Bundesliga (DFB)",
-        "eng.1": "Premier League (PGMOL)",
-        "eng.2": "Championship (EFL)",
-        "esp.1": "LaLiga (CTA RFEF)",
-        "ita.1": "Serie A (AIA)",
-        "fra.1": "Ligue 1 (FFF)",
-        "mex.1": "Liga MX (FMF)",
-        "conmebol.libertadores": "Copa Libertadores (CONMEBOL)"
-    }
-    lg_label = league_labels.get(league_code.lower(), "Competición Oficial")
-    stad_info = get_stadium_for_match(home_team)
-    
     import hashlib
-    _ref_keys = list(REFEREES_DB.keys())
-    if _ref_keys:
-        _h_idx = int(hashlib.md5(f"{h_raw}_vs_{a_raw}".encode("utf-8")).hexdigest()[:8], 16) % len(_ref_keys)
-        _r_name = _ref_keys[_h_idx]
-        _r_info = dict(REFEREES_DB[_r_name])
-        _r_info["name"] = _r_name
-        _r_info["stadium"] = stad_info.get("stadium", f"Estadio Nacional de {home_team}")
-        _r_info["is_official"] = True
-        return _r_info
-    return {
-        "name": "Szymon Marciniak",
-        "league": lg_label,
-        "country": "Polonia",
-        "assistants": ["Tomasz Listkiewicz", "Adam Kupsik"],
-        "fourth_official": "Paweł Raczkowski",
-        "var": "Tomasz Kwiatkowski",
-        "avar": "Bartosz Frankowski",
-        "stadium": stad_info.get("stadium", f"Estadio Nacional de {home_team}"),
-        "cards_avg": 4.25,
-        "fouls_avg": 22.8,
-        "yellow_avg": 4.08,
-        "red_avg": 0.17,
-        "foul_to_card_ratio": 5.36,
-        "rigor": "⚖️ Élite FIFA / UEFA",
-        "style": "Criterio internacional FIFA con control disciplinario riguroso.",
-        "is_official": True
-    }
+    _h_idx = int(hashlib.md5(f"{h_raw}_vs_{a_raw}".encode("utf-8")).hexdigest()[:8], 16) % len(allowed_pool)
+    _r_name = allowed_pool[_h_idx]
+    _r_info = dict(REFEREES_DB.get(_r_name, REFEREES_DB["Szymon Marciniak"]))
+    _r_info["name"] = _r_name
+    _r_info["stadium"] = stad_info.get("stadium", f"Estadio Oficial de {home_team}")
+    _r_info["is_official"] = True
+    return _r_info
 
 def _poisson_over_cards(lam: float, k: int, disp: float = 1.327) -> float:
     import math

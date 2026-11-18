@@ -461,7 +461,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Sören Storks"
   },
   "sc freiburg vs 1. fc union berlin": {
     "match": "SC Freiburg vs 1. FC Union Berlin",
@@ -925,7 +926,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Deniz Aytekin"
   },
   "tsg hoffenheim vs schalke 04": {
     "match": "TSG Hoffenheim vs Schalke 04",
@@ -1389,7 +1391,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Deniz Aytekin"
   },
   "caykur rizespor vs erzurum bb": {
     "match": "Caykur Rizespor vs Erzurum BB",
@@ -1875,7 +1878,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Arda Kardeşler"
   },
   "çorum fk vs fenerbahce": {
     "match": "Çorum FK vs Fenerbahce",
@@ -2361,7 +2365,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Atilla Karaoğlan"
   },
   "alanyaspor vs trabzonspor": {
     "match": "Alanyaspor vs Trabzonspor",
@@ -2836,7 +2841,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Halil Umut Meler"
   },
   "besiktas vs genclerbirligi": {
     "match": "Besiktas vs Genclerbirligi",
@@ -3322,7 +3328,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Atilla Karaoğlan"
   },
   "elche vs real betis": {
     "match": "Elche vs Real Betis",
@@ -3852,7 +3859,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "José María Sánchez Martínez"
   },
   "real sociedad vs rayo vallecano": {
     "match": "Real Sociedad vs Rayo Vallecano",
@@ -4371,7 +4379,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Alejandro Hernández Hernández"
   },
   "celta vigo vs levante": {
     "match": "Celta Vigo vs Levante",
@@ -4890,7 +4899,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jesús Gil Manzano"
   },
   "villarreal vs getafe": {
     "match": "Villarreal vs Getafe",
@@ -5398,7 +5408,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "José María Sánchez Martínez"
   },
   "atlético madrid vs barcelona": {
     "match": "Atlético Madrid vs Barcelona",
@@ -5928,7 +5939,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jesús Gil Manzano"
   },
   "stafford rangers vs grimsby town": {
     "match": "Stafford Rangers vs Grimsby Town",
@@ -6392,7 +6404,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Michael Oliver"
   },
   "cray wanderers vs stockport county": {
     "match": "Cray Wanderers vs Stockport County",
@@ -6856,7 +6869,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Anthony Taylor"
   },
   "wimborne town vs crawley town": {
     "match": "Wimborne Town vs Crawley Town",
@@ -7320,7 +7334,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "John Brooks"
   },
   "oldham athletic vs sheffield wednesday": {
     "match": "Oldham Athletic vs Sheffield Wednesday",
@@ -7762,7 +7777,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Anthony Taylor"
   },
   "brighton & hove albion vs brentford": {
     "match": "Brighton & Hove Albion vs Brentford",
@@ -8226,7 +8242,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Simon Hooper"
   },
   "crystal palace vs liverpool": {
     "match": "Crystal Palace vs Liverpool",
@@ -8690,7 +8707,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Simon Hooper"
   },
   "ipswich town vs afc bournemouth": {
     "match": "Ipswich Town vs AFC Bournemouth",
@@ -9154,7 +9172,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Anthony Taylor"
   },
   "sunderland vs chelsea": {
     "match": "Sunderland vs Chelsea",
@@ -9618,7 +9637,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Michael Oliver"
   },
   "manchester united vs aston villa": {
     "match": "Manchester United vs Aston Villa",
@@ -10082,7 +10102,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Simon Hooper"
   },
   "fc andorra vs mallorca": {
     "match": "FC Andorra vs Mallorca",
@@ -10105,7 +10126,8 @@
     "away_sot": 0,
     "btts": false,
     "player_stats": {},
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Javier Alberola Rojas"
   },
   "girona vs almería": {
     "match": "Girona vs Almería",
@@ -10613,7 +10635,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Miguel Sesma"
   },
   "sporting gijón vs real valladolid": {
     "match": "Sporting Gijón vs Real Valladolid",
@@ -11121,7 +11144,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Miguel Sesma"
   },
   "heerenveen vs feyenoord rotterdam": {
     "match": "Heerenveen vs Feyenoord Rotterdam",
@@ -11651,7 +11675,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Allard Lindhout"
   },
   "fc twente vs ajax amsterdam": {
     "match": "FC Twente vs Ajax Amsterdam",
@@ -12137,7 +12162,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Danny Makkelie"
   },
   "az alkmaar vs fc groningen": {
     "match": "AZ Alkmaar vs FC Groningen",
@@ -12667,7 +12693,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Allard Lindhout"
   },
   "sc cambuur vs psv eindhoven": {
     "match": "SC Cambuur vs PSV Eindhoven",
@@ -13197,7 +13224,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Serdar Gözübüyük"
   },
   "fc utrecht vs nec nijmegen": {
     "match": "FC Utrecht vs NEC Nijmegen",
@@ -13727,7 +13755,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Danny Makkelie"
   },
   "querétaro vs puebla": {
     "match": "Querétaro vs Puebla",
@@ -14213,7 +14242,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Adonai Escobedo"
   },
   "león vs guadalajara": {
     "match": "León vs Guadalajara",
@@ -14699,7 +14729,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Ismael Rosario López Peñuelas"
   },
   "napoli vs lazio": {
     "match": "Napoli vs Lazio",
@@ -15251,7 +15282,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Marco Guida"
   },
   "genoa vs ac milan": {
     "match": "Genoa vs AC Milan",
@@ -15792,7 +15824,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Maurizio Mariani"
   },
   "monza vs atalanta": {
     "match": "Monza vs Atalanta",
@@ -16333,7 +16366,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Marco Guida"
   },
   "internazionale vs como": {
     "match": "Internazionale vs Como",
@@ -16885,7 +16919,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Marco Guida"
   },
   "fiorentina vs juventus": {
     "match": "Fiorentina vs Juventus",
@@ -17393,7 +17428,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Marco Di Bello"
   },
   "virtus entella vs modena": {
     "match": "Virtus Entella vs Modena",
@@ -17923,7 +17959,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Marco Guida"
   },
   "carrarese vs sampdoria": {
     "match": "Carrarese vs Sampdoria",
@@ -18431,7 +18468,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Maurizio Mariani"
   },
   "vicenza vs cremonese": {
     "match": "Vicenza vs Cremonese",
@@ -18961,7 +18999,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Maurizio Mariani"
   },
   "aek athens vs levadiakos": {
     "match": "AEK Athens vs Levadiakos",
@@ -19491,7 +19530,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Tasos Sidiropoulos"
   },
   "asteras tripoli vs kalamata": {
     "match": "Asteras Tripoli vs Kalamata",
@@ -20021,7 +20061,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Tasos Sidiropoulos"
   },
   "iraklis vs panathinaikos": {
     "match": "Iraklis vs Panathinaikos",
@@ -20551,7 +20592,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Vasilis Fotias"
   },
   "ofi crete vs atromitos": {
     "match": "OFI Crete vs Atromitos",
@@ -21081,7 +21123,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Vasilis Fotias"
   },
   "olympiacos vs paok": {
     "match": "Olympiacos vs PAOK",
@@ -21611,7 +21654,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Tasos Sidiropoulos"
   },
   "stade rennais vs lille": {
     "match": "Stade Rennais vs Lille",
@@ -22075,7 +22119,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "angers vs nice": {
     "match": "Angers vs Nice",
@@ -22539,7 +22584,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "brest vs lyon": {
     "match": "Brest vs Lyon",
@@ -23003,7 +23049,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "le havre ac vs lorient": {
     "match": "Le Havre AC vs Lorient",
@@ -23467,7 +23514,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "le mans vs as monaco": {
     "match": "Le Mans vs AS Monaco",
@@ -23931,7 +23979,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "lens vs marseille": {
     "match": "Lens vs Marseille",
@@ -24395,7 +24444,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Clément Turpin"
   },
   "1. fc heidenheim 1846 vs hannover 96": {
     "match": "1. FC Heidenheim 1846 vs Hannover 96",
@@ -24859,7 +24909,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Robert Schröder"
   },
   "1. fc magdeburg vs st. pauli": {
     "match": "1. FC Magdeburg vs St. Pauli",
@@ -25323,7 +25374,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Eric-Dominic Weisbach"
   },
   "vfl bochum vs karlsruher sc": {
     "match": "VfL Bochum vs Karlsruher SC",
@@ -25787,7 +25839,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Eric-Dominic Weisbach"
   },
   "club brugge vs anderlecht": {
     "match": "Club Brugge vs Anderlecht",
@@ -26251,7 +26304,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Lawrence Visser"
   },
   "kaa gent vs kv kortrijk": {
     "match": "KAA Gent vs KV Kortrijk",
@@ -26715,7 +26769,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Erik Lambrechts"
   },
   "union st.-gilloise vs racing genk": {
     "match": "Union St.-Gilloise vs Racing Genk",
@@ -27190,7 +27245,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jasper Vergoote"
   },
   "sint-truidense vs zulte-waregem": {
     "match": "Sint-Truidense vs Zulte-Waregem",
@@ -27654,7 +27710,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jasper Vergoote"
   },
   "central córdoba (santiago del estero) vs lanús": {
     "match": "Central Córdoba (Santiago del Estero) vs Lanús",
@@ -28173,7 +28230,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Darío Herrera"
   },
   "heart of midlothian vs falkirk": {
     "match": "Heart of Midlothian vs Falkirk",
@@ -28637,7 +28695,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "István Kovács"
   },
   "celtic vs kilmarnock": {
     "match": "Celtic vs Kilmarnock",
@@ -29101,7 +29160,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Slavko Vinčić"
   },
   "c.d. nacional vs académico de viseu": {
     "match": "C.D. Nacional vs Académico de Viseu",
@@ -29631,7 +29691,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "João Pinheiro"
   },
   "estoril vs maritimo": {
     "match": "Estoril vs Maritimo",
@@ -29654,7 +29715,8 @@
     "away_sot": 0,
     "btts": false,
     "player_stats": {},
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "João Pinheiro"
   },
   "santa clara vs gil vicente": {
     "match": "Santa Clara vs Gil Vicente",
@@ -30184,7 +30246,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "João Pinheiro"
   },
   "vitória de guimaraes vs fc porto": {
     "match": "Vitória de Guimaraes vs FC Porto",
@@ -30714,7 +30777,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Artur Soares Dias"
   },
   "estrela vs benfica": {
     "match": "Estrela vs Benfica",
@@ -31233,7 +31297,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Artur Soares Dias"
   },
   "rio ave vs braga": {
     "match": "Rio Ave vs Braga",
@@ -31763,7 +31828,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Artur Soares Dias"
   },
   "leones negros vs durango": {
     "match": "Leones Negros vs Durango",
@@ -32249,7 +32315,8 @@
         "opta_tracked": false
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jesús Gil Manzano"
   },
   "piratas vs cancún fc": {
     "match": "Piratas vs Cancún FC",
@@ -32735,7 +32802,8 @@
         "opta_tracked": false
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Clément Turpin"
   },
   "independiente santa fe vs deportivo pasto": {
     "match": "Independiente Santa Fe vs Deportivo Pasto",
@@ -33199,7 +33267,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Clément Turpin"
   },
   "jaguares de córdoba vs atlético bucaramanga": {
     "match": "Jaguares de Córdoba vs Atlético Bucaramanga",
@@ -33663,7 +33732,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "István Kovács"
   },
   "deportes tolima vs millonarios": {
     "match": "Deportes Tolima vs Millonarios",
@@ -34127,7 +34197,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Slavko Vinčić"
   },
   "alianza fc vs llaneros fc": {
     "match": "Alianza FC vs Llaneros FC",
@@ -34569,7 +34640,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Michael Oliver"
   },
   "américa de cali vs deportivo cali": {
     "match": "América de Cali vs Deportivo Cali",
@@ -35033,7 +35105,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Morten Krogh"
   },
   "cerro porteño vs deportivo recoleta": {
     "match": "Cerro Porteño vs Deportivo Recoleta",
@@ -35563,7 +35636,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Michael Oliver"
   },
   "sportivo trinidense vs sportivo ameliano": {
     "match": "Sportivo Trinidense vs Sportivo Ameliano",
@@ -36093,7 +36167,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jesús Gil Manzano"
   },
   "los chankas vs alianza lima": {
     "match": "Los Chankas vs Alianza Lima",
@@ -36557,7 +36632,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Kevin Ortega"
   },
   "sport boys vs utc": {
     "match": "Sport Boys vs UTC",
@@ -37010,7 +37086,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Kevin Ortega"
   },
   "deportivo garcilaso vs comerciantes unidos": {
     "match": "Deportivo Garcilaso vs Comerciantes Unidos",
@@ -37474,7 +37551,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Kevin Ortega"
   },
   "universitario vs deportivo moquegua": {
     "match": "Universitario vs Deportivo Moquegua",
@@ -37938,7 +38016,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Bruno Pérez"
   },
   "audax italiano vs coquimbo unido": {
     "match": "Audax Italiano vs Coquimbo Unido",
@@ -38402,7 +38481,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "José Cabero"
   },
   "universidad católica vs deportes limache": {
     "match": "Universidad Católica vs Deportes Limache",
@@ -38855,7 +38935,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "José Cabero"
   },
   "ñublense vs colo colo": {
     "match": "Ñublense vs Colo Colo",
@@ -39319,7 +39400,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Piero Maza"
   },
   "universidad de chile vs cobresal": {
     "match": "Universidad de Chile vs Cobresal",
@@ -39783,7 +39865,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Felipe González"
   },
   "unión la calera vs huachipato": {
     "match": "Unión La Calera vs Huachipato",
@@ -40247,7 +40330,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "José Cabero"
   },
   "universidad de concepción vs o'higgins": {
     "match": "Universidad de Concepción vs O'Higgins",
@@ -40711,7 +40795,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "José Cabero"
   },
   "athletic vs atlético goianiense": {
     "match": "Athletic vs Atlético Goianiense",
@@ -41197,7 +41282,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Anderson Daronco"
   },
   "ceará vs américa mineiro": {
     "match": "Ceará vs América Mineiro",
@@ -41705,7 +41791,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Raphael Claus"
   },
   "goiás vs ponte preta": {
     "match": "Goiás vs Ponte Preta",
@@ -42224,7 +42311,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Wilton Pereira Sampaio"
   },
   "macará vs universidad católica (quito)": {
     "match": "Macará vs Universidad Católica (Quito)",
@@ -42754,7 +42842,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jesús Gil Manzano"
   },
   "deportivo cuenca vs orense": {
     "match": "Deportivo Cuenca vs Orense",
@@ -43284,7 +43373,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Daniele Orsato"
   },
   "aucas vs independiente del valle": {
     "match": "Aucas vs Independiente del Valle",
@@ -43770,7 +43860,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Jesús Gil Manzano"
   },
   "barcelona sc vs liga de quito": {
     "match": "Barcelona SC vs Liga de Quito",
@@ -44300,7 +44391,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Slavko Vinčić"
   },
   "tsv hartberg vs sc rheindorf altach": {
     "match": "TSV Hartberg vs SC Rheindorf Altach",
@@ -44764,7 +44856,8 @@
         "opta_tracked": false
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Robert Schröder"
   },
   "wsg swarovski tirol vs austria vienna": {
     "match": "WSG Swarovski Tirol vs Austria Vienna",
@@ -45228,7 +45321,8 @@
         "opta_tracked": false
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Sören Storks"
   },
   "sk sturm graz vs rb salzburg": {
     "match": "SK Sturm Graz vs RB Salzburg",
@@ -45692,7 +45786,8 @@
         "opta_tracked": false
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Bastian Dankert"
   },
   "f.c. københavn vs brøndby if": {
     "match": "F.C. København vs Brøndby IF",
@@ -46156,7 +46251,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "agf vs ac horsens": {
     "match": "AGF vs AC Horsens",
@@ -46620,7 +46716,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Clément Turpin"
   },
   "randers fc vs fc nordsjælland": {
     "match": "Randers FC vs FC Nordsjælland",
@@ -47084,7 +47181,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Slavko Vinčić"
   },
   "fc midtjylland vs sønderjyske fodbold": {
     "match": "FC Midtjylland vs Sønderjyske Fodbold",
@@ -47548,7 +47646,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Morten Krogh"
   },
   "tromso vs bodo/glimt": {
     "match": "Tromso vs Bodo/Glimt",
@@ -48012,7 +48111,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Slavko Vinčić"
   },
   "hamarkameratene vs sarpsborg fk": {
     "match": "Hamarkameratene vs Sarpsborg FK",
@@ -48476,7 +48576,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "István Kovács"
   },
   "lillestrom vs aalesund": {
     "match": "Lillestrom vs Aalesund",
@@ -48929,7 +49030,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Clément Turpin"
   },
   "sandefjord vs molde": {
     "match": "Sandefjord vs Molde",
@@ -49393,7 +49495,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Szymon Marciniak"
   },
   "viking fk vs kfum oslo": {
     "match": "Viking FK vs KFUM Oslo",
@@ -49857,7 +49960,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Morten Krogh"
   },
   "fredrikstad vs sk brann": {
     "match": "Fredrikstad vs SK Brann",
@@ -50299,7 +50403,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "halmstads bk vs djurgården": {
     "match": "Halmstads BK vs Djurgården",
@@ -50763,7 +50868,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "François Letexier"
   },
   "ifk göteborg vs malmö ff": {
     "match": "IFK Göteborg vs Malmö FF",
@@ -51227,7 +51333,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "István Kovács"
   },
   "aik vs bk häcken": {
     "match": "AIK vs BK Häcken",
@@ -51691,7 +51798,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "István Kovács"
   },
   "if brommapojkarna vs mjällby aif": {
     "match": "IF Brommapojkarna vs Mjällby AIF",
@@ -52144,7 +52252,8 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Clément Turpin"
   },
   "kalmar ff vs ik sirius": {
     "match": "Kalmar FF vs IK Sirius",
@@ -52608,6 +52717,7 @@
         "opta_tracked": true
       }
     },
-    "source": "ESPN / SofaScore Official Match Center"
+    "source": "ESPN / SofaScore Official Match Center",
+    "referee": "Szymon Marciniak"
   }
 }

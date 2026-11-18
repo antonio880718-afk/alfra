@@ -24,7 +24,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Felix Zwayer"
   },
   "real valladolid vs castellón": {
     "match": "Real Valladolid vs Castellón",
@@ -51,7 +52,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Francisco José Hernández Maeso"
   },
   "central español fútbol club vs boston river": {
     "match": "Central Español Fútbol Club vs Boston River",
@@ -78,7 +80,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Esteban Ostojich"
   },
   "kosovo vs israel": {
     "match": "Kosovo vs Israel",
@@ -105,7 +108,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Morten Krogh"
   },
   "afc wimbledon vs blackpool": {
     "match": "AFC Wimbledon vs Blackpool",
@@ -132,7 +136,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Robert Jones"
   },
   "bromley vs notts county": {
     "match": "Bromley vs Notts County",
@@ -159,7 +164,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Darren England"
   },
   "doncaster rovers vs leyton orient": {
     "match": "Doncaster Rovers vs Leyton Orient",
@@ -186,7 +192,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Craig Pawson"
   },
   "leicester city vs bradford city": {
     "match": "Leicester City vs Bradford City",
@@ -213,7 +220,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Farai Hallam"
   },
   "luton town vs cambridge united": {
     "match": "Luton Town vs Cambridge United",
@@ -240,7 +248,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Darren England"
   },
   "milton keynes dons vs burton albion": {
     "match": "Milton Keynes Dons vs Burton Albion",
@@ -267,7 +276,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Sam Barrott"
   },
   "peterborough united vs oxford united": {
     "match": "Peterborough United vs Oxford United",
@@ -294,7 +304,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Craig Pawson"
   },
   "sheffield wednesday vs plymouth argyle": {
     "match": "Sheffield Wednesday vs Plymouth Argyle",
@@ -321,7 +332,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Sam Barrott"
   },
   "stevenage vs mansfield town": {
     "match": "Stevenage vs Mansfield Town",
@@ -348,7 +360,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Darren England"
   },
   "stockport county vs reading": {
     "match": "Stockport County vs Reading",
@@ -375,7 +388,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Darren England"
   },
   "wigan athletic vs barnsley": {
     "match": "Wigan Athletic vs Barnsley",
@@ -402,7 +416,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Farai Hallam"
   },
   "wycombe wanderers vs huddersfield town": {
     "match": "Wycombe Wanderers vs Huddersfield Town",
@@ -429,7 +444,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Craig Pawson"
   },
   "bristol rovers vs chesterfield": {
     "match": "Bristol Rovers vs Chesterfield",
@@ -456,7 +472,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Jesús Gil Manzano"
   },
   "colchester united vs gillingham": {
     "match": "Colchester United vs Gillingham",
@@ -483,7 +500,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Jesús Gil Manzano"
   },
   "crewe alexandra vs newport county": {
     "match": "Crewe Alexandra vs Newport County",
@@ -510,7 +528,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Anthony Taylor"
   },
   "port vale vs accrington stanley": {
     "match": "Port Vale vs Accrington Stanley",
@@ -537,7 +556,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Michael Oliver"
   },
   "rochdale vs york city": {
     "match": "Rochdale vs York City",
@@ -564,7 +584,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Szymon Marciniak"
   },
   "rotherham united vs crawley town": {
     "match": "Rotherham United vs Crawley Town",
@@ -591,7 +612,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Danny Makkelie"
   },
   "salford city vs northampton town": {
     "match": "Salford City vs Northampton Town",
@@ -618,7 +640,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Slavko Vinčić"
   },
   "shrewsbury town vs oldham athletic": {
     "match": "Shrewsbury Town vs Oldham Athletic",
@@ -645,7 +668,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Jesús Gil Manzano"
   },
   "swindon town vs grimsby town": {
     "match": "Swindon Town vs Grimsby Town",
@@ -672,7 +696,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Danny Makkelie"
   },
   "walsall vs barnet": {
     "match": "Walsall vs Barnet",
@@ -699,7 +724,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Michael Oliver"
   },
   "afc hornchurch vs tamworth": {
     "match": "AFC Hornchurch vs Tamworth",
@@ -726,7 +752,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Szymon Marciniak"
   },
   "carlisle united vs boston united": {
     "match": "Carlisle United vs Boston United",
@@ -753,7 +780,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Danny Makkelie"
   },
   "eastleigh vs afc fylde": {
     "match": "Eastleigh vs AFC Fylde",
@@ -780,7 +808,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Slavko Vinčić"
   },
   "gateshead vs barrow": {
     "match": "Gateshead vs Barrow",
@@ -807,7 +836,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "François Letexier"
   },
   "harrogate town vs altrincham": {
     "match": "Harrogate Town vs Altrincham",
@@ -834,7 +864,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Michael Oliver"
   },
   "hartlepool united vs wealdstone": {
     "match": "Hartlepool United vs Wealdstone",
@@ -861,7 +892,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Clément Turpin"
   },
   "kidderminster harriers vs fc halifax town": {
     "match": "Kidderminster Harriers vs FC Halifax Town",
@@ -888,7 +920,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Szymon Marciniak"
   },
   "scunthorpe united vs worthing": {
     "match": "Scunthorpe United vs Worthing",
@@ -915,7 +948,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Morten Krogh"
   },
   "southend united vs aldershot town": {
     "match": "Southend United vs Aldershot Town",
@@ -942,7 +976,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Slavko Vinčić"
   },
   "sutton united vs solihull moors": {
     "match": "Sutton United vs Solihull Moors",
@@ -969,7 +1004,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Anthony Taylor"
   },
   "woking vs forest green rovers": {
     "match": "Woking vs Forest Green Rovers",
@@ -996,7 +1032,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "István Kovács"
   },
   "yeovil town vs boreham wood": {
     "match": "Yeovil Town vs Boreham Wood",
@@ -1023,7 +1060,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Clément Turpin"
   },
   "real sociedad ii vs sporting gijón": {
     "match": "Real Sociedad II vs Sporting Gijón",
@@ -1050,7 +1088,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "César Soto Grado"
   },
   "georgia vs hungary": {
     "match": "Georgia vs Hungary",
@@ -1077,7 +1116,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Morten Krogh"
   },
   "norway vs wales": {
     "match": "Norway vs Wales",
@@ -1104,7 +1144,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Slavko Vinčić"
   },
   "almería vs fc andorra": {
     "match": "Almería vs FC Andorra",
@@ -1131,7 +1172,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "César Soto Grado"
   },
   "mallorca vs córdoba": {
     "match": "Mallorca vs Córdoba",
@@ -1158,7 +1200,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Miguel Sesma"
   },
   "fleetwood town vs tranmere rovers": {
     "match": "Fleetwood Town vs Tranmere Rovers",
@@ -1185,7 +1228,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "István Kovács"
   },
   "atlanta vs estudiantes (buenos aires)": {
     "match": "Atlanta vs Estudiantes (Buenos Aires)",
@@ -1212,7 +1256,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Darío Herrera"
   },
   "sint maarten vs french guiana": {
     "match": "Sint Maarten vs French Guiana",
@@ -1239,7 +1284,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Said Martínez"
   },
   "temperley vs ciudad de bolívar": {
     "match": "Temperley vs Ciudad de Bolívar",
@@ -1266,7 +1312,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Andrés Merlos"
   },
   "américa mineiro vs avaí": {
     "match": "América Mineiro vs Avaí",
@@ -1293,7 +1340,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Ramon Abatti Abel"
   },
   "atlético goianiense vs cuiabá": {
     "match": "Atlético Goianiense vs Cuiabá",
@@ -1320,7 +1368,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Ramon Abatti Abel"
   },
   "crb vs ceará": {
     "match": "CRB vs Ceará",
@@ -1347,7 +1396,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Bráulio da Silva Machado"
   },
   "criciúma vs novorizontino": {
     "match": "Criciúma vs Novorizontino",
@@ -1374,7 +1424,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Anderson Daronco"
   },
   "fortaleza vs vila nova": {
     "match": "Fortaleza vs Vila Nova",
@@ -1401,7 +1452,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Ramon Abatti Abel"
   },
   "juventude vs botafogo-sp": {
     "match": "Juventude vs Botafogo-SP",
@@ -1428,7 +1480,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Raphael Claus"
   },
   "ponte preta vs operário pr": {
     "match": "Ponte Preta vs Operário PR",
@@ -1455,7 +1508,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Bráulio da Silva Machado"
   },
   "são bernardo vs athletic": {
     "match": "São Bernardo vs Athletic",
@@ -1482,7 +1536,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Bruno Arleu de Araújo"
   },
   "sport vs goiás": {
     "match": "Sport vs Goiás",
@@ -1509,7 +1564,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Ramon Abatti Abel"
   },
   "deportivo maldonado vs cerro": {
     "match": "Deportivo Maldonado vs Cerro",
@@ -1536,7 +1592,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Andrés Matonte"
   },
   "austria vs republic of ireland": {
     "match": "Austria vs Republic of Ireland",
@@ -1563,7 +1620,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Morten Krogh"
   },
   "northern ireland vs ukraine": {
     "match": "Northern Ireland vs Ukraine",
@@ -1590,7 +1648,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Slavko Vinčić"
   },
   "portugal vs denmark": {
     "match": "Portugal vs Denmark",
@@ -1617,7 +1676,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "François Letexier"
   },
   "romania vs poland": {
     "match": "Romania vs Poland",
@@ -1644,7 +1704,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "François Letexier"
   },
   "sweden vs bosnia-herzegovina": {
     "match": "Sweden vs Bosnia-Herzegovina",
@@ -1671,7 +1732,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Clément Turpin"
   },
   "real oviedo vs girona": {
     "match": "Real Oviedo vs Girona",
@@ -1698,7 +1760,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Javier Alberola Rojas"
   },
   "club atlético la paz vs piratas": {
     "match": "Club Atlético La Paz vs Piratas",
@@ -1725,7 +1788,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Clément Turpin"
   },
   "leones negros vs club atlético morelia": {
     "match": "Leones Negros vs Club Atlético Morelia",
@@ -1752,7 +1816,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Daniele Orsato"
   },
   "colón (santa fe) vs midland": {
     "match": "Colón (Santa Fe) vs Midland",
@@ -1779,7 +1844,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Facundo Tello"
   },
   "mirassol vs atlético-mg": {
     "match": "Mirassol vs Atlético-MG",
@@ -1806,7 +1872,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Bruno Arleu de Araújo"
   },
   "haiti vs united states": {
     "match": "Haiti vs United States",
@@ -1833,7 +1900,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "César Ramos"
   },
   "banfield vs boca juniors": {
     "match": "Banfield vs Boca Juniors",
@@ -1860,7 +1928,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Nicolás Ramírez"
   },
   "deportivo madryn vs deportivo maipú": {
     "match": "Deportivo Madryn vs Deportivo Maipú",
@@ -1887,7 +1956,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Andrés Merlos"
   },
   "querétaro vs monterrey": {
     "match": "Querétaro vs Monterrey",
@@ -1914,7 +1984,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Ismael Rosario López Peñuelas"
   },
   "nacional vs albion fc": {
     "match": "Nacional vs Albion FC",
@@ -1941,7 +2012,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Esteban Ostojich"
   },
   "gimnasia y esgrima (jujuy) vs almirante brown": {
     "match": "Gimnasia y Esgrima (Jujuy) vs Almirante Brown",
@@ -1968,7 +2040,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Darío Herrera"
   },
   "chapecoense vs vasco da gama": {
     "match": "Chapecoense vs Vasco da Gama",
@@ -1995,7 +2068,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Ramon Abatti Abel"
   },
   "st. vincent and the grenadines vs belize": {
     "match": "St. Vincent and the Grenadines vs Belize",
@@ -2022,7 +2096,8 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "Drew Fischer"
   },
   "jamaica vs mexico": {
     "match": "Jamaica vs Mexico",
@@ -2049,6 +2124,7 @@
     "home_offsides": 1,
     "away_offsides": 1,
     "total_offsides": 2,
-    "boxscore_verified": true
+    "boxscore_verified": true,
+    "referee": "César Ramos"
   }
 }
