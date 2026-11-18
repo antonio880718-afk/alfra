@@ -627,6 +627,76 @@ with t2:
                     """, unsafe_allow_html=True)
 
 with t3:
+    st.markdown("### 🧮 Optimizador Inteligente NFL & NCAAF: 'Apuesta $X para Ganar $Y'")
+    st.caption("Ingresa tu inversión ($X) y la ganancia neta que deseas ($Y). El motor construye hasta 6 boletos probables y distintos combinando mercados verificados de la cartelera.")
+    _nc1, _nc2 = st.columns(2)
+    with _nc1:
+        _nb_stake = st.number_input("💵 ¿Cuánto quieres apostar? ($ MXN)", min_value=10.0, max_value=50000.0, value=50.0, step=50.0, key="nfl_target_stake")
+    with _nc2:
+        _nb_profit = st.number_input("🏆 ¿Cuánto te gustaría ganar neto? ($ MXN)", min_value=20.0, max_value=200000.0, value=1000.0, step=100.0, key="nfl_target_profit")
+    _nb_todds = round((_nb_stake + _nb_profit) / max(1.0, _nb_stake), 2)
+    st.info(f"🎯 **Meta Matemática NFL/NCAAF:** Apostar **${_nb_stake:,.2f} MXN** para ganar **+${_nb_profit:,.2f} MXN netos** (Cobro total: **${_nb_stake + _nb_profit:,.2f} MXN** | Cuota objetivo: **{_nb_todds:.2f}x**).")
+
+    if _game_bundles:
+        import math as _m_nb, random as _r_nb
+        _rng_nb = _r_nb.Random(int(date_str) + int(_nb_todds * 100))
+        _nb_n = len(_game_bundles)
+        _min_l = max(1, min(_nb_n, int(_m_nb.ceil(_m_nb.log(max(1.2, _nb_todds)) / _m_nb.log(2.25)))))
+        _max_l = max(_min_l, min(_nb_n, int(_m_nb.ceil(_m_nb.log(max(1.2, _nb_todds)) / _m_nb.log(1.32))) + 1))
+        _nb_combos = []
+        _nb_sigs = set()
+        for _nl in range(_min_l, _max_l + 1):
+            _req = _nb_todds ** (1.0 / max(1, _nl))
+            for _tr in range(60):
+                _sel_b = _rng_nb.sample(_game_bundles, _nl)
+                _legs = []
+                _acc_o = 1.0
+                _acc_p = 1.0
+                for _b_item in _sel_b:
+                    _opts_b = _b_item["all_opts"][:15]
+                    if not _opts_b:
+                        continue
+                    _cand_pool = sorted(_opts_b, key=lambda x: abs(float(x.get("odds_num", 1.35)) - _req) - (float(x.get("prob_num", 70.0)) / 400.0))[:min(4, len(_opts_b))]
+                    _ch = _cand_pool[_tr % len(_cand_pool)] if _tr < 4 else _rng_nb.choice(_cand_pool)
+                    _legs.append((_b_item["game"], _ch, [o for o in _opts_b[:4] if o.get("pick") != _ch.get("pick")][:2]))
+                    _acc_o *= float(_ch.get("odds_num", 1.35))
+                    _acc_p *= (float(_ch.get("prob_num", 70.0)) / 100.0)
+                if _legs:
+                    _sig = tuple(sorted((g["match"], c["pick"]) for g, c, _ in _legs))
+                    if _sig not in _nb_sigs:
+                        _nb_sigs.add(_sig)
+                        _nb_combos.append({"legs": _legs, "odds": round(_acc_o, 2), "prob": round(_acc_p * 100.0, 2), "diff": abs(_acc_o - _nb_todds), "meets": _acc_o >= _nb_todds * 0.92})
+        _nb_combos.sort(key=lambda x: (x["meets"], -abs(x["odds"] - _nb_todds) / max(1.0, _nb_todds) + x["prob"] * 0.02), reverse=True)
+        _nb_top6 = []
+        _used_s = []
+        for _c in _nb_combos:
+            _s_set = set((g["match"], c["pick"]) for g, c, _ in _c["legs"])
+            if all(len(_s_set.intersection(u)) / max(1, len(_s_set)) <= 0.75 for u in _used_s):
+                _used_s.append(_s_set)
+                _nb_top6.append(_c)
+                if len(_nb_top6) >= 6:
+                    break
+        if _nb_top6:
+            _nb_sum = []
+            for _i6, _c6 in enumerate(_nb_top6, 1):
+                _ret6 = round(_nb_stake * _c6["odds"], 2)
+                _nb_sum.append({
+                    "Boleto": f"Opción #{_i6}",
+                    "Patas": f"{len(_c6['legs'])} juegos",
+                    "Cuota Total": f"{_c6['odds']:.2f}x",
+                    "Inversión": f"${_nb_stake:,.2f} MXN",
+                    "Cobro Total": f"${_ret6:,.2f} MXN",
+                    "Ganancia Neta": f"+${_ret6 - _nb_stake:,.2f} MXN",
+                    "% Prob. Conjunta": f"{_c6['prob']:.2f}%",
+                })
+            st.dataframe(pd.DataFrame(_nb_sum), use_container_width=True, hide_index=True)
+            for _i6, _c6 in enumerate(_nb_top6, 1):
+                _ret6 = round(_nb_stake * _c6["odds"], 2)
+                with st.expander(f"🏈 Opción #{_i6}: Cuota {_c6['odds']:.2f}x | Cobro ${_ret6:,.2f} MXN (+${_ret6 - _nb_stake:,.2f} netos) | Prob. {_c6['prob']:.2f}% ({len(_c6['legs'])} patas)", expanded=(_i6 <= 2)):
+                    for _li, (_lg_g, _lg_c, _lg_alts) in enumerate(_c6["legs"], 1):
+                        _alt_s = " • ".join([f"{a['pick']} ({a['prob_num']:.1f}% {a['odds']})" for a in _lg_alts])
+                        st.markdown(f"**#{_li} [{_lg_g.get('time_cdmx')} hs | {_lg_g.get('league')}] {_lg_g.get('match')}** ➔ 🎯 **{_lg_c.get('pick')}** (`{_lg_c.get('odds')}` | `{_lg_c.get('prob_num'):.1f}%`)  \n🔄 *Otras opciones probables del partido:* {_alt_s}")
+    st.markdown("---")
     st.markdown(f"#### 🎟️ Boleto Parlay Oficial NFL & NCAAF — Cuota Combinada: **{parlay_odds:.2f}x**")
     p_rows = []
     for item in parlay_picks:
