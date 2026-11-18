@@ -48,7 +48,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Syracuse Orange (272.0 YDS/J)"
+        "role": "QB Titular Activo Syracuse Orange (272.0 YDS/J)"
       },
       {
         "name": "Ahmad Miller",
@@ -61,7 +61,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Syracuse Orange (62.5 YDS/J)"
+        "role": "Corredor Titular Activo Syracuse Orange (62.5 YDS/J)"
       },
       {
         "name": "Tylik Hill",
@@ -74,7 +74,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Syracuse Orange (60.0 YDS/J)"
+        "role": "Corredor Titular Activo Syracuse Orange (60.0 YDS/J)"
       },
       {
         "name": "Calvin Russell III",
@@ -87,7 +87,7 @@
         "rec_yds": 137.0,
         "receptions": 17.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Syracuse Orange (137.0 YDS/J)"
+        "role": "Receptor Titular Activo Syracuse Orange (137.0 YDS/J)"
       },
       {
         "name": "Umari Hatcher",
@@ -100,7 +100,7 @@
         "rec_yds": 96.3,
         "receptions": 8.4,
         "anytime_td_pct": 68.4,
-        "role": "Receptor Titular Syracuse Orange (96.3 YDS/J)"
+        "role": "Receptor Titular Activo Syracuse Orange (96.3 YDS/J)"
       },
       {
         "name": "CJ Carr",
@@ -113,7 +113,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Notre Dame Fighting Irish (233.2 YDS/J)"
+        "role": "QB Titular Activo Notre Dame Fighting Irish (233.2 YDS/J)"
       },
       {
         "name": "Jonaz Walton",
@@ -126,7 +126,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Notre Dame Fighting Irish (141.0 YDS/J)"
+        "role": "Corredor Titular Activo Notre Dame Fighting Irish (141.0 YDS/J)"
       },
       {
         "name": "Nolan James Jr.",
@@ -139,7 +139,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Notre Dame Fighting Irish (73.7 YDS/J)"
+        "role": "Corredor Titular Activo Notre Dame Fighting Irish (73.7 YDS/J)"
       },
       {
         "name": "Micah Gilbert",
@@ -152,7 +152,7 @@
         "rec_yds": 86.0,
         "receptions": 7.5,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Notre Dame Fighting Irish (86.0 YDS/J)"
+        "role": "Receptor Titular Activo Notre Dame Fighting Irish (86.0 YDS/J)"
       },
       {
         "name": "Jordan Faison",
@@ -165,7 +165,7 @@
         "rec_yds": 54.3,
         "receptions": 5.0,
         "anytime_td_pct": 58.8,
-        "role": "Receptor Titular Notre Dame Fighting Irish (54.3 YDS/J)"
+        "role": "Receptor Titular Activo Notre Dame Fighting Irish (54.3 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -219,7 +219,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Miami Hurricanes (382.0 YDS/J)"
+        "role": "QB Titular Activo Miami Hurricanes (382.0 YDS/J)"
       },
       {
         "name": "Javian Mallory",
@@ -232,7 +232,7 @@
         "rec_yds": 79.0,
         "receptions": 3.0,
         "anytime_td_pct": 75.4,
-        "role": "Corredor Titular Miami Hurricanes (71.0 YDS/J)"
+        "role": "Corredor Titular Activo Miami Hurricanes (71.0 YDS/J)"
       },
       {
         "name": "Mark Fletcher Jr.",
@@ -245,7 +245,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Miami Hurricanes (56.1 YDS/J)"
+        "role": "Corredor Titular Activo Miami Hurricanes (56.1 YDS/J)"
       },
       {
         "name": "Cooper Barkate",
@@ -258,7 +258,7 @@
         "rec_yds": 134.0,
         "receptions": 11.7,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Miami Hurricanes (134.0 YDS/J)"
+        "role": "Receptor Titular Activo Miami Hurricanes (134.0 YDS/J)"
       },
       {
         "name": "Malachi Toney",
@@ -271,7 +271,7 @@
         "rec_yds": 102.7,
         "receptions": 7.3,
         "anytime_td_pct": 74.0,
-        "role": "Receptor Titular Miami Hurricanes (102.7 YDS/J)"
+        "role": "Receptor Titular Activo Miami Hurricanes (102.7 YDS/J)"
       },
       {
         "name": "Mason McKenzie",
@@ -284,7 +284,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 52.5,
-        "role": "QB Titular Boston College Eagles (242.0 YDS/J)"
+        "role": "QB Titular Activo Boston College Eagles (242.0 YDS/J)"
       },
       {
         "name": "Bo MacCormack III",
@@ -297,7 +297,7 @@
         "rec_yds": 35.0,
         "receptions": 3.0,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Boston College Eagles (58.2 YDS/J)"
+        "role": "Corredor Titular Activo Boston College Eagles (58.2 YDS/J)"
       },
       {
         "name": "Mekhi Dodd",
@@ -310,7 +310,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Boston College Eagles (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Boston College Eagles (48.0 YDS/J)"
       },
       {
         "name": "Nedrick Boldin Jr.",
@@ -323,7 +323,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Boston College Eagles (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Boston College Eagles (68.0 YDS/J)"
       },
       {
         "name": "Javarius Green",
@@ -336,7 +336,7 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Boston College Eagles (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Boston College Eagles (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -390,7 +390,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Ohio State Buckeyes (227.7 YDS/J)"
+        "role": "QB Titular Activo Ohio State Buckeyes (227.7 YDS/J)"
       },
       {
         "name": "Bo Jackson",
@@ -403,7 +403,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Ohio State Buckeyes (114.0 YDS/J)"
+        "role": "Corredor Titular Activo Ohio State Buckeyes (114.0 YDS/J)"
       },
       {
         "name": "Isaiah West",
@@ -416,7 +416,7 @@
         "rec_yds": 20.0,
         "receptions": 3.0,
         "anytime_td_pct": 52.0,
-        "role": "Corredor Titular Ohio State Buckeyes (54.0 YDS/J)"
+        "role": "Corredor Titular Activo Ohio State Buckeyes (54.0 YDS/J)"
       },
       {
         "name": "Jeremiah Smith",
@@ -429,7 +429,7 @@
         "rec_yds": 126.6,
         "receptions": 11.0,
         "anytime_td_pct": 74.0,
-        "role": "Receptor Titular Ohio State Buckeyes (126.6 YDS/J)"
+        "role": "Receptor Titular Activo Ohio State Buckeyes (126.6 YDS/J)"
       },
       {
         "name": "Bryce Underwood",
@@ -442,7 +442,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Michigan Wolverines (175.0 YDS/J)"
+        "role": "QB Titular Activo Michigan Wolverines (175.0 YDS/J)"
       },
       {
         "name": "Savion Hiter",
@@ -455,7 +455,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Michigan Wolverines (107.0 YDS/J)"
+        "role": "Corredor Titular Activo Michigan Wolverines (107.0 YDS/J)"
       },
       {
         "name": "Bryson Kuzdzal",
@@ -468,7 +468,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Michigan Wolverines (64.2 YDS/J)"
+        "role": "Corredor Titular Activo Michigan Wolverines (64.2 YDS/J)"
       },
       {
         "name": "JJ Buchanan",
@@ -481,7 +481,7 @@
         "rec_yds": 64.6,
         "receptions": 4.0,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Michigan Wolverines (64.6 YDS/J)"
+        "role": "Receptor Titular Activo Michigan Wolverines (64.6 YDS/J)"
       },
       {
         "name": "Andrew Marsh",
@@ -494,7 +494,7 @@
         "rec_yds": 60.3,
         "receptions": 5.2,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Michigan Wolverines (60.3 YDS/J)"
+        "role": "Receptor Titular Activo Michigan Wolverines (60.3 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -548,7 +548,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular North Carolina Tar Heels (242.0 YDS/J)"
+        "role": "QB Titular Activo North Carolina Tar Heels (242.0 YDS/J)"
       },
       {
         "name": "Benjamin Hall",
@@ -561,7 +561,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular North Carolina Tar Heels (74.0 YDS/J)"
+        "role": "Corredor Titular Activo North Carolina Tar Heels (74.0 YDS/J)"
       },
       {
         "name": "Jordan Shipp",
@@ -574,7 +574,7 @@
         "rec_yds": 70.3,
         "receptions": 5.7,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular North Carolina Tar Heels (70.3 YDS/J)"
+        "role": "Receptor Titular Activo North Carolina Tar Heels (70.3 YDS/J)"
       },
       {
         "name": "Jelani Thurman",
@@ -587,7 +587,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular North Carolina Tar Heels (68.0 YDS/J)"
+        "role": "Receptor Titular Activo North Carolina Tar Heels (68.0 YDS/J)"
       },
       {
         "name": "CJ Bailey",
@@ -600,7 +600,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular NC State Wolfpack (231.2 YDS/J)"
+        "role": "QB Titular Activo NC State Wolfpack (231.2 YDS/J)"
       },
       {
         "name": "Jayden Scott",
@@ -613,7 +613,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular NC State Wolfpack (127.0 YDS/J)"
+        "role": "Corredor Titular Activo NC State Wolfpack (127.0 YDS/J)"
       },
       {
         "name": "Davion Gause",
@@ -626,7 +626,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular NC State Wolfpack (74.0 YDS/J)"
+        "role": "Corredor Titular Activo NC State Wolfpack (74.0 YDS/J)"
       },
       {
         "name": "Davion Dozier",
@@ -639,7 +639,7 @@
         "rec_yds": 69.0,
         "receptions": 6.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular NC State Wolfpack (69.0 YDS/J)"
+        "role": "Receptor Titular Activo NC State Wolfpack (69.0 YDS/J)"
       },
       {
         "name": "Amiri Acker",
@@ -652,7 +652,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular NC State Wolfpack (68.0 YDS/J)"
+        "role": "Receptor Titular Activo NC State Wolfpack (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -706,7 +706,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 60.2,
-        "role": "QB Titular Wyoming Cowboys (242.0 YDS/J)"
+        "role": "QB Titular Activo Wyoming Cowboys (242.0 YDS/J)"
       },
       {
         "name": "Samuel Harris",
@@ -719,7 +719,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Wyoming Cowboys (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Wyoming Cowboys (74.0 YDS/J)"
       },
       {
         "name": "Jake Wilson",
@@ -732,7 +732,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Wyoming Cowboys (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Wyoming Cowboys (68.0 YDS/J)"
       },
       {
         "name": "Kyle Frendt",
@@ -745,7 +745,7 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Wyoming Cowboys (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Wyoming Cowboys (45.0 YDS/J)"
       },
       {
         "name": "Kalieb Osborne",
@@ -758,7 +758,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular UConn Huskies (274.0 YDS/J)"
+        "role": "QB Titular Activo UConn Huskies (274.0 YDS/J)"
       },
       {
         "name": "Cyncir Bowers",
@@ -771,7 +771,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular UConn Huskies (123.0 YDS/J)"
+        "role": "Corredor Titular Activo UConn Huskies (123.0 YDS/J)"
       },
       {
         "name": "Shamar Porter",
@@ -784,7 +784,7 @@
         "rec_yds": 135.0,
         "receptions": 11.7,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular UConn Huskies (135.0 YDS/J)"
+        "role": "Receptor Titular Activo UConn Huskies (135.0 YDS/J)"
       },
       {
         "name": "Ryder Treadway",
@@ -797,7 +797,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular UConn Huskies (68.0 YDS/J)"
+        "role": "Receptor Titular Activo UConn Huskies (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -851,7 +851,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Charlotte 49ers (213.7 YDS/J)"
+        "role": "QB Titular Activo Charlotte 49ers (213.7 YDS/J)"
       },
       {
         "name": "Khamani Alexander",
@@ -864,7 +864,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Charlotte 49ers (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Charlotte 49ers (74.0 YDS/J)"
       },
       {
         "name": "Henry Rutledge",
@@ -877,7 +877,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 42.0,
-        "role": "Corredor Titular Charlotte 49ers (66.0 YDS/J)"
+        "role": "Corredor Titular Activo Charlotte 49ers (66.0 YDS/J)"
       },
       {
         "name": "Derrick Eley",
@@ -890,7 +890,7 @@
         "rec_yds": 96.0,
         "receptions": 8.3,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Charlotte 49ers (96.0 YDS/J)"
+        "role": "Receptor Titular Activo Charlotte 49ers (96.0 YDS/J)"
       },
       {
         "name": "Jaden Barnes",
@@ -903,7 +903,7 @@
         "rec_yds": 59.6,
         "receptions": 5.9,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Charlotte 49ers (59.6 YDS/J)"
+        "role": "Receptor Titular Activo Charlotte 49ers (59.6 YDS/J)"
       },
       {
         "name": "Jackson Gutierrez",
@@ -916,7 +916,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 78.0,
-        "role": "QB Titular Navy Midshipmen (242.0 YDS/J)"
+        "role": "QB Titular Activo Navy Midshipmen (242.0 YDS/J)"
       },
       {
         "name": "Jordan Collins",
@@ -929,7 +929,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 51.1,
-        "role": "Receptor Titular Navy Midshipmen (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Navy Midshipmen (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -983,7 +983,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Ball State Cardinals (175.0 YDS/J)"
+        "role": "QB Titular Activo Ball State Cardinals (175.0 YDS/J)"
       },
       {
         "name": "TJ Horton",
@@ -996,7 +996,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 75.4,
-        "role": "Corredor Titular Ball State Cardinals (92.0 YDS/J)"
+        "role": "Corredor Titular Activo Ball State Cardinals (92.0 YDS/J)"
       },
       {
         "name": "Elijah Jackson",
@@ -1009,7 +1009,20 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Ball State Cardinals (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Ball State Cardinals (48.0 YDS/J)"
+      },
+      {
+        "name": "Eli Hohlt",
+        "team": "Ball State Cardinals",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 112.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Ball State Cardinals (112.0 YDS/J)"
       },
       {
         "name": "Donovan Hamilton",
@@ -1022,7 +1035,7 @@
         "rec_yds": 104.0,
         "receptions": 11.0,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Ball State Cardinals (104.0 YDS/J)"
+        "role": "Receptor Titular Activo Ball State Cardinals (104.0 YDS/J)"
       },
       {
         "name": "Jadyn Glasser",
@@ -1035,7 +1048,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Central Michigan Chippewas (175.0 YDS/J)"
+        "role": "QB Titular Activo Central Michigan Chippewas (175.0 YDS/J)"
       },
       {
         "name": "Nick Woodford",
@@ -1048,7 +1061,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Central Michigan Chippewas (119.0 YDS/J)"
+        "role": "Corredor Titular Activo Central Michigan Chippewas (119.0 YDS/J)"
       },
       {
         "name": "Jayden Clerveaux",
@@ -1061,7 +1074,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Central Michigan Chippewas (100.0 YDS/J)"
+        "role": "Corredor Titular Activo Central Michigan Chippewas (100.0 YDS/J)"
       },
       {
         "name": "Nasir Williams",
@@ -1074,20 +1087,20 @@
         "rec_yds": 57.0,
         "receptions": 5.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Central Michigan Chippewas (57.0 YDS/J)"
+        "role": "Receptor Titular Activo Central Michigan Chippewas (57.0 YDS/J)"
       },
       {
-        "name": "Langston Lewis",
+        "name": "Vaughn Blue",
         "team": "Central Michigan Chippewas",
         "pos": "WR",
-        "jersey": "20",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Central Michigan Chippewas (45.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Central Michigan Chippewas (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1141,7 +1154,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Georgia Southern Eagles (228.4 YDS/J)"
+        "role": "QB Titular Activo Georgia Southern Eagles (228.4 YDS/J)"
       },
       {
         "name": "Tyrese Woodgett",
@@ -1154,7 +1167,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Georgia Southern Eagles (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Georgia Southern Eagles (74.0 YDS/J)"
       },
       {
         "name": "Taeo Todd",
@@ -1167,7 +1180,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Georgia Southern Eagles (77.0 YDS/J)"
+        "role": "Corredor Titular Activo Georgia Southern Eagles (77.0 YDS/J)"
       },
       {
         "name": "Alex Taylor",
@@ -1180,7 +1193,7 @@
         "rec_yds": 92.0,
         "receptions": 8.0,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Georgia Southern Eagles (92.0 YDS/J)"
+        "role": "Receptor Titular Activo Georgia Southern Eagles (92.0 YDS/J)"
       },
       {
         "name": "River Helms",
@@ -1193,7 +1206,7 @@
         "rec_yds": 75.0,
         "receptions": 6.5,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Georgia Southern Eagles (75.0 YDS/J)"
+        "role": "Receptor Titular Activo Georgia Southern Eagles (75.0 YDS/J)"
       },
       {
         "name": "Blake Baker",
@@ -1206,7 +1219,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Louisiana Tech Bulldogs (218.2 YDS/J)"
+        "role": "QB Titular Activo Louisiana Tech Bulldogs (218.2 YDS/J)"
       },
       {
         "name": "Rayshun Hurt",
@@ -1219,7 +1232,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Louisiana Tech Bulldogs (59.6 YDS/J)"
+        "role": "Corredor Titular Activo Louisiana Tech Bulldogs (59.6 YDS/J)"
       },
       {
         "name": "Andrew Burnette",
@@ -1232,7 +1245,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 47.8,
-        "role": "Corredor Titular Louisiana Tech Bulldogs (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Louisiana Tech Bulldogs (48.0 YDS/J)"
       },
       {
         "name": "Eli Finley",
@@ -1245,7 +1258,7 @@
         "rec_yds": 81.0,
         "receptions": 7.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Louisiana Tech Bulldogs (81.0 YDS/J)"
+        "role": "Receptor Titular Activo Louisiana Tech Bulldogs (81.0 YDS/J)"
       },
       {
         "name": "Marcus Calwise Jr.",
@@ -1258,7 +1271,7 @@
         "rec_yds": 65.9,
         "receptions": 5.7,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Louisiana Tech Bulldogs (65.9 YDS/J)"
+        "role": "Receptor Titular Activo Louisiana Tech Bulldogs (65.9 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1312,7 +1325,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Northwestern Wildcats (236.1 YDS/J)"
+        "role": "QB Titular Activo Northwestern Wildcats (236.1 YDS/J)"
       },
       {
         "name": "Caleb Komolafe",
@@ -1325,7 +1338,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular Northwestern Wildcats (64.2 YDS/J)"
+        "role": "Corredor Titular Activo Northwestern Wildcats (64.2 YDS/J)"
       },
       {
         "name": "Luke Dehnicke",
@@ -1338,7 +1351,7 @@
         "rec_yds": 88.0,
         "receptions": 7.7,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Northwestern Wildcats (88.0 YDS/J)"
+        "role": "Receptor Titular Activo Northwestern Wildcats (88.0 YDS/J)"
       },
       {
         "name": "Griffin Wilde",
@@ -1351,7 +1364,7 @@
         "rec_yds": 65.3,
         "receptions": 5.7,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Northwestern Wildcats (65.3 YDS/J)"
+        "role": "Receptor Titular Activo Northwestern Wildcats (65.3 YDS/J)"
       },
       {
         "name": "Katin Houser",
@@ -1364,7 +1377,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Illinois Fighting Illini (217.2 YDS/J)"
+        "role": "QB Titular Activo Illinois Fighting Illini (217.2 YDS/J)"
       },
       {
         "name": "Aidan Laughery",
@@ -1377,7 +1390,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 44.1,
-        "role": "Corredor Titular Illinois Fighting Illini (68.3 YDS/J)"
+        "role": "Corredor Titular Activo Illinois Fighting Illini (68.3 YDS/J)"
       },
       {
         "name": "Collin Dixon",
@@ -1390,7 +1403,7 @@
         "rec_yds": 101.1,
         "receptions": 7.6,
         "anytime_td_pct": 74.0,
-        "role": "Receptor Titular Illinois Fighting Illini (101.1 YDS/J)"
+        "role": "Receptor Titular Activo Illinois Fighting Illini (101.1 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1444,7 +1457,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular East Carolina Pirates (175.0 YDS/J)"
+        "role": "QB Titular Activo East Carolina Pirates (175.0 YDS/J)"
       },
       {
         "name": "Ashton Gray",
@@ -1457,7 +1470,7 @@
         "rec_yds": 35.0,
         "receptions": 4.0,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular East Carolina Pirates (88.0 YDS/J)"
+        "role": "Corredor Titular Activo East Carolina Pirates (88.0 YDS/J)"
       },
       {
         "name": "TJ Engleman Jr.",
@@ -1470,7 +1483,20 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular East Carolina Pirates (69.5 YDS/J)"
+        "role": "Corredor Titular Activo East Carolina Pirates (69.5 YDS/J)"
+      },
+      {
+        "name": "Jason Dickerson",
+        "team": "East Carolina Pirates",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo East Carolina Pirates (46.0 YDS/J)"
       },
       {
         "name": "Ray Ray Joseph Jr.",
@@ -1483,20 +1509,7 @@
         "rec_yds": 44.0,
         "receptions": 4.4,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular East Carolina Pirates (44.0 YDS/J)"
-      },
-      {
-        "name": "Tyler Johnson",
-        "team": "East Carolina Pirates",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular East Carolina Pirates (44.0 YDS/J)"
+        "role": "Receptor Titular Activo East Carolina Pirates (44.0 YDS/J)"
       },
       {
         "name": "Caden Veltkamp",
@@ -1509,7 +1522,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Florida Atlantic Owls (308.6 YDS/J)"
+        "role": "QB Titular Activo Florida Atlantic Owls (308.6 YDS/J)"
       },
       {
         "name": "Leonard Farrow",
@@ -1522,7 +1535,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 49.2,
-        "role": "Corredor Titular Florida Atlantic Owls (53.2 YDS/J)"
+        "role": "Corredor Titular Activo Florida Atlantic Owls (53.2 YDS/J)"
       },
       {
         "name": "Easton Messer",
@@ -1535,7 +1548,7 @@
         "rec_yds": 109.2,
         "receptions": 9.0,
         "anytime_td_pct": 74.0,
-        "role": "Receptor Titular Florida Atlantic Owls (109.2 YDS/J)"
+        "role": "Receptor Titular Activo Florida Atlantic Owls (109.2 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1589,7 +1602,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 66.0,
-        "role": "QB Titular Western Kentucky Hilltoppers (186.0 YDS/J)"
+        "role": "QB Titular Activo Western Kentucky Hilltoppers (186.0 YDS/J)"
       },
       {
         "name": "Ajay Allen",
@@ -1602,7 +1615,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Western Kentucky Hilltoppers (63.9 YDS/J)"
+        "role": "Corredor Titular Activo Western Kentucky Hilltoppers (63.9 YDS/J)"
       },
       {
         "name": "Jonathan Stafford Jr.",
@@ -1615,7 +1628,7 @@
         "rec_yds": 68.0,
         "receptions": 5.6,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Western Kentucky Hilltoppers (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Western Kentucky Hilltoppers (68.0 YDS/J)"
       },
       {
         "name": "Zion Taylor",
@@ -1628,7 +1641,7 @@
         "rec_yds": 52.0,
         "receptions": 6.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Western Kentucky Hilltoppers (52.0 YDS/J)"
+        "role": "Receptor Titular Activo Western Kentucky Hilltoppers (52.0 YDS/J)"
       },
       {
         "name": "Landon Varnes",
@@ -1641,7 +1654,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Kennesaw State Owls (220.7 YDS/J)"
+        "role": "QB Titular Activo Kennesaw State Owls (220.7 YDS/J)"
       },
       {
         "name": "Boogie Woods III",
@@ -1654,7 +1667,7 @@
         "rec_yds": 38.0,
         "receptions": 4.0,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular Kennesaw State Owls (101.0 YDS/J)"
+        "role": "Corredor Titular Activo Kennesaw State Owls (101.0 YDS/J)"
       },
       {
         "name": "Davis Bryson",
@@ -1667,7 +1680,7 @@
         "rec_yds": 56.0,
         "receptions": 6.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Kennesaw State Owls (56.0 YDS/J)"
+        "role": "Receptor Titular Activo Kennesaw State Owls (56.0 YDS/J)"
       },
       {
         "name": "Dylan Gary",
@@ -1680,7 +1693,7 @@
         "rec_yds": 53.3,
         "receptions": 4.6,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Kennesaw State Owls (53.3 YDS/J)"
+        "role": "Receptor Titular Activo Kennesaw State Owls (53.3 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1734,7 +1747,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular UL Monroe Warhawks (181.8 YDS/J)"
+        "role": "QB Titular Activo UL Monroe Warhawks (181.8 YDS/J)"
       },
       {
         "name": "Bryson Roland",
@@ -1747,7 +1760,7 @@
         "rec_yds": 68.0,
         "receptions": 2.2,
         "anytime_td_pct": 50.0,
-        "role": "Corredor Titular UL Monroe Warhawks (111.0 YDS/J)"
+        "role": "Corredor Titular Activo UL Monroe Warhawks (111.0 YDS/J)"
       },
       {
         "name": "Austin Carlisle",
@@ -1760,7 +1773,20 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular UL Monroe Warhawks (102.0 YDS/J)"
+        "role": "Corredor Titular Activo UL Monroe Warhawks (102.0 YDS/J)"
+      },
+      {
+        "name": "Nic Trujillo",
+        "team": "UL Monroe Warhawks",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo UL Monroe Warhawks (46.0 YDS/J)"
       },
       {
         "name": "Marcellus Jackson",
@@ -1773,20 +1799,7 @@
         "rec_yds": 44.0,
         "receptions": 3.8,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular UL Monroe Warhawks (44.0 YDS/J)"
-      },
-      {
-        "name": "Bryce Anderson",
-        "team": "UL Monroe Warhawks",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 4.0,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular UL Monroe Warhawks (44.0 YDS/J)"
+        "role": "Receptor Titular Activo UL Monroe Warhawks (44.0 YDS/J)"
       },
       {
         "name": "Zion Turner",
@@ -1799,7 +1812,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Marshall Thundering Herd (242.0 YDS/J)"
+        "role": "QB Titular Activo Marshall Thundering Herd (242.0 YDS/J)"
       },
       {
         "name": "Jo'Shon Barbie",
@@ -1812,7 +1825,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Marshall Thundering Herd (61.0 YDS/J)"
+        "role": "Corredor Titular Activo Marshall Thundering Herd (61.0 YDS/J)"
       },
       {
         "name": "Owen Sweeney",
@@ -1825,20 +1838,20 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Marshall Thundering Herd (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Marshall Thundering Herd (68.0 YDS/J)"
       },
       {
-        "name": "Xayvion Turner-Bradshaw",
+        "name": "Adrian Norton",
         "team": "Marshall Thundering Herd",
         "pos": "WR",
-        "jersey": "5",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Marshall Thundering Herd (45.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Marshall Thundering Herd (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1892,7 +1905,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Old Dominion Monarchs (242.0 YDS/J)"
+        "role": "QB Titular Activo Old Dominion Monarchs (242.0 YDS/J)"
       },
       {
         "name": "Devin Roche",
@@ -1905,7 +1918,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Old Dominion Monarchs (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Old Dominion Monarchs (74.0 YDS/J)"
       },
       {
         "name": "Leon Haughton Jr.",
@@ -1918,7 +1931,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Old Dominion Monarchs (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Old Dominion Monarchs (68.0 YDS/J)"
       },
       {
         "name": "Josh Rodriguez",
@@ -1931,20 +1944,20 @@
         "rec_yds": 45.0,
         "receptions": 3.6,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Old Dominion Monarchs (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Old Dominion Monarchs (45.0 YDS/J)"
       },
       {
-        "name": "Landry Lyddy",
+        "name": "John White",
         "team": "Southern Miss Golden Eagles",
         "pos": "QB",
-        "jersey": "18",
-        "pass_yds": 175.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
         "pass_tds": 1.5,
-        "rush_yds": 15.0,
+        "rush_yds": -4.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Southern Miss Golden Eagles (175.0 YDS/J)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Southern Miss Golden Eagles (185.0 YDS/J)"
       },
       {
         "name": "Steven Robinson",
@@ -1957,7 +1970,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Southern Miss Golden Eagles (67.8 YDS/J)"
+        "role": "Corredor Titular Activo Southern Miss Golden Eagles (67.8 YDS/J)"
       },
       {
         "name": "Jamarice Wilder",
@@ -1970,7 +1983,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Southern Miss Golden Eagles (58.0 YDS/J)"
+        "role": "Corredor Titular Activo Southern Miss Golden Eagles (58.0 YDS/J)"
       },
       {
         "name": "Mario Sanders",
@@ -1983,7 +1996,7 @@
         "rec_yds": 75.5,
         "receptions": 6.6,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Southern Miss Golden Eagles (75.5 YDS/J)"
+        "role": "Receptor Titular Activo Southern Miss Golden Eagles (75.5 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -2037,7 +2050,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Colorado Buffaloes (242.0 YDS/J)"
+        "role": "QB Titular Activo Colorado Buffaloes (242.0 YDS/J)"
       },
       {
         "name": "Richard Young",
@@ -2050,7 +2063,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Colorado Buffaloes (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Colorado Buffaloes (74.0 YDS/J)"
       },
       {
         "name": "JaQuail Smith",
@@ -2063,7 +2076,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 43.2,
-        "role": "Corredor Titular Colorado Buffaloes (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Colorado Buffaloes (48.0 YDS/J)"
       },
       {
         "name": "Joseph Williams",
@@ -2076,7 +2089,7 @@
         "rec_yds": 94.8,
         "receptions": 6.4,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Colorado Buffaloes (94.8 YDS/J)"
+        "role": "Receptor Titular Activo Colorado Buffaloes (94.8 YDS/J)"
       },
       {
         "name": "Alonza Barnett III",
@@ -2089,7 +2102,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular UCF Knights (199.7 YDS/J)"
+        "role": "QB Titular Activo UCF Knights (199.7 YDS/J)"
       },
       {
         "name": "Landen Chambers",
@@ -2102,7 +2115,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular UCF Knights (59.0 YDS/J)"
+        "role": "Corredor Titular Activo UCF Knights (59.0 YDS/J)"
       },
       {
         "name": "Duke Watson",
@@ -2115,7 +2128,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 47.8,
-        "role": "Corredor Titular UCF Knights (59.6 YDS/J)"
+        "role": "Corredor Titular Activo UCF Knights (59.6 YDS/J)"
       },
       {
         "name": "Josh Derry",
@@ -2128,7 +2141,7 @@
         "rec_yds": 66.7,
         "receptions": 5.8,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular UCF Knights (66.7 YDS/J)"
+        "role": "Receptor Titular Activo UCF Knights (66.7 YDS/J)"
       },
       {
         "name": "Caden Piening",
@@ -2141,7 +2154,7 @@
         "rec_yds": 44.0,
         "receptions": 3.4,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular UCF Knights (44.0 YDS/J)"
+        "role": "Receptor Titular Activo UCF Knights (44.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -2195,7 +2208,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Iowa State Cyclones (237.4 YDS/J)"
+        "role": "QB Titular Activo Iowa State Cyclones (237.4 YDS/J)"
       },
       {
         "name": "Aiden Flora",
@@ -2208,7 +2221,7 @@
         "rec_yds": 38.0,
         "receptions": 4.0,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Iowa State Cyclones (216.0 YDS/J)"
+        "role": "Corredor Titular Activo Iowa State Cyclones (216.0 YDS/J)"
       },
       {
         "name": "Arnold Barnes III",
@@ -2221,7 +2234,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Iowa State Cyclones (55.0 YDS/J)"
+        "role": "Corredor Titular Activo Iowa State Cyclones (55.0 YDS/J)"
       },
       {
         "name": "Cameron Pettaway",
@@ -2234,7 +2247,7 @@
         "rec_yds": 76.0,
         "receptions": 6.6,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Iowa State Cyclones (76.0 YDS/J)"
+        "role": "Receptor Titular Activo Iowa State Cyclones (76.0 YDS/J)"
       },
       {
         "name": "Jamal Polite Jr.",
@@ -2247,7 +2260,7 @@
         "rec_yds": 68.0,
         "receptions": 5.9,
         "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Iowa State Cyclones (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Iowa State Cyclones (68.0 YDS/J)"
       },
       {
         "name": "Dillon Duff",
@@ -2260,7 +2273,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Kansas State Wildcats (244.0 YDS/J)"
+        "role": "QB Titular Activo Kansas State Wildcats (244.0 YDS/J)"
       },
       {
         "name": "Rodney Fields Jr.",
@@ -2273,7 +2286,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 61.6,
-        "role": "Corredor Titular Kansas State Wildcats (59.6 YDS/J)"
+        "role": "Corredor Titular Activo Kansas State Wildcats (59.6 YDS/J)"
       },
       {
         "name": "Joe Jackson",
@@ -2286,7 +2299,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Kansas State Wildcats (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Kansas State Wildcats (48.0 YDS/J)"
       },
       {
         "name": "Jaron Tibbs",
@@ -2299,7 +2312,7 @@
         "rec_yds": 115.0,
         "receptions": 10.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Kansas State Wildcats (115.0 YDS/J)"
+        "role": "Receptor Titular Activo Kansas State Wildcats (115.0 YDS/J)"
       },
       {
         "name": "Garrett Oakley",
@@ -2312,7 +2325,7 @@
         "rec_yds": 60.0,
         "receptions": 6.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Kansas State Wildcats (60.0 YDS/J)"
+        "role": "Receptor Titular Activo Kansas State Wildcats (60.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -2366,7 +2379,7 @@
         "rec_yds": 68.0,
         "receptions": 0.0,
         "anytime_td_pct": 57.0,
-        "role": "QB Titular Rice Owls (175.0 YDS/J)"
+        "role": "QB Titular Activo Rice Owls (175.0 YDS/J)"
       },
       {
         "name": "D'Andre Hardeman Jr.",
@@ -2379,7 +2392,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Rice Owls (65.6 YDS/J)"
+        "role": "Corredor Titular Activo Rice Owls (65.6 YDS/J)"
       },
       {
         "name": "Gael Ochoa",
@@ -2392,7 +2405,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Rice Owls (59.0 YDS/J)"
+        "role": "Corredor Titular Activo Rice Owls (59.0 YDS/J)"
       },
       {
         "name": "Jordan Clark",
@@ -2405,7 +2418,7 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Rice Owls (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Rice Owls (45.0 YDS/J)"
       },
       {
         "name": "Cale Hellums",
@@ -2418,7 +2431,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 78.0,
-        "role": "QB Titular Army Black Knights (242.0 YDS/J)"
+        "role": "QB Titular Activo Army Black Knights (242.0 YDS/J)"
       },
       {
         "name": "Godspower Nwawuihe",
@@ -2431,7 +2444,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Army Black Knights (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Army Black Knights (74.0 YDS/J)"
       },
       {
         "name": "Tobi Olawole",
@@ -2444,7 +2457,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Army Black Knights (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Army Black Knights (68.0 YDS/J)"
       },
       {
         "name": "Samari Howard",
@@ -2457,7 +2470,7 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Army Black Knights (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Army Black Knights (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -2511,7 +2524,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular James Madison Dukes (236.0 YDS/J)"
+        "role": "QB Titular Activo James Madison Dukes (236.0 YDS/J)"
       },
       {
         "name": "George Pettaway",
@@ -2524,7 +2537,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 67.6,
-        "role": "Corredor Titular James Madison Dukes (74.9 YDS/J)"
+        "role": "Corredor Titular Activo James Madison Dukes (74.9 YDS/J)"
       },
       {
         "name": "Jackson McCarter",
@@ -2537,7 +2550,7 @@
         "rec_yds": 35.0,
         "receptions": 4.0,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular James Madison Dukes (48.0 YDS/J)"
+        "role": "Corredor Titular Activo James Madison Dukes (48.0 YDS/J)"
       },
       {
         "name": "Braeden Wisloski",
@@ -2550,7 +2563,7 @@
         "rec_yds": 75.0,
         "receptions": 7.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular James Madison Dukes (75.0 YDS/J)"
+        "role": "Receptor Titular Activo James Madison Dukes (75.0 YDS/J)"
       },
       {
         "name": "Cole Keller",
@@ -2563,7 +2576,7 @@
         "rec_yds": 54.0,
         "receptions": 4.7,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular James Madison Dukes (54.0 YDS/J)"
+        "role": "Receptor Titular Activo James Madison Dukes (54.0 YDS/J)"
       },
       {
         "name": "Deuce Bailey",
@@ -2576,7 +2589,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Coastal Carolina Chanticleers (230.1 YDS/J)"
+        "role": "QB Titular Activo Coastal Carolina Chanticleers (230.1 YDS/J)"
       },
       {
         "name": "Jaden Allen-Hendrix",
@@ -2589,20 +2602,20 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Coastal Carolina Chanticleers (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Coastal Carolina Chanticleers (74.0 YDS/J)"
       },
       {
-        "name": "Dominic Lee-Knicely",
+        "name": "Kente Edwards",
         "team": "Coastal Carolina Chanticleers",
         "pos": "RB",
-        "jersey": "23",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 50.8,
+        "rush_yds": 54.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 47.8,
-        "role": "Corredor Titular Coastal Carolina Chanticleers (50.8 YDS/J)"
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Coastal Carolina Chanticleers (54.0 YDS/J)"
       },
       {
         "name": "Colton Hinton",
@@ -2615,7 +2628,7 @@
         "rec_yds": 81.0,
         "receptions": 7.0,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Coastal Carolina Chanticleers (81.0 YDS/J)"
+        "role": "Receptor Titular Activo Coastal Carolina Chanticleers (81.0 YDS/J)"
       },
       {
         "name": "Karmello English",
@@ -2628,7 +2641,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Coastal Carolina Chanticleers (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Coastal Carolina Chanticleers (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -2682,7 +2695,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Georgia State Panthers (183.6 YDS/J)"
+        "role": "QB Titular Activo Georgia State Panthers (183.6 YDS/J)"
       },
       {
         "name": "Lanear McCrary Jr.",
@@ -2695,7 +2708,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Georgia State Panthers (86.0 YDS/J)"
+        "role": "Corredor Titular Activo Georgia State Panthers (86.0 YDS/J)"
       },
       {
         "name": "Qwantavius Wiggins",
@@ -2708,7 +2721,7 @@
         "rec_yds": 14.0,
         "receptions": 2.0,
         "anytime_td_pct": 52.0,
-        "role": "Corredor Titular Georgia State Panthers (54.0 YDS/J)"
+        "role": "Corredor Titular Activo Georgia State Panthers (54.0 YDS/J)"
       },
       {
         "name": "DJ Riles",
@@ -2721,7 +2734,7 @@
         "rec_yds": 55.8,
         "receptions": 4.9,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Georgia State Panthers (55.8 YDS/J)"
+        "role": "Receptor Titular Activo Georgia State Panthers (55.8 YDS/J)"
       },
       {
         "name": "Rodshaun Dorsey",
@@ -2734,7 +2747,7 @@
         "rec_yds": 48.0,
         "receptions": 3.4,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular Georgia State Panthers (48.0 YDS/J)"
+        "role": "Receptor Titular Activo Georgia State Panthers (48.0 YDS/J)"
       },
       {
         "name": "Lunch Winfield",
@@ -2747,20 +2760,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 75.0,
-        "role": "QB Titular Louisiana Ragin' Cajuns (180.1 YDS/J)"
-      },
-      {
-        "name": "JJ Garner",
-        "team": "Louisiana Ragin' Cajuns",
-        "pos": "RB",
-        "jersey": "20",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 104.0,
-        "rec_yds": 20.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Louisiana Ragin' Cajuns (104.0 YDS/J)"
+        "role": "QB Titular Activo Louisiana Ragin' Cajuns (180.1 YDS/J)"
       },
       {
         "name": "Steven Blanco",
@@ -2773,7 +2773,20 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Louisiana Ragin' Cajuns (113.0 YDS/J)"
+        "role": "Corredor Titular Activo Louisiana Ragin' Cajuns (113.0 YDS/J)"
+      },
+      {
+        "name": "JJ Garner",
+        "team": "Louisiana Ragin' Cajuns",
+        "pos": "RB",
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 104.0,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Activo Louisiana Ragin' Cajuns (104.0 YDS/J)"
       },
       {
         "name": "Trenton Chaney",
@@ -2786,7 +2799,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Louisiana Ragin' Cajuns (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Louisiana Ragin' Cajuns (68.0 YDS/J)"
       },
       {
         "name": "Brock Chappell",
@@ -2799,7 +2812,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Louisiana Ragin' Cajuns (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Louisiana Ragin' Cajuns (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -2853,7 +2866,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Missouri State Bears (222.8 YDS/J)"
+        "role": "QB Titular Activo Missouri State Bears (222.8 YDS/J)"
       },
       {
         "name": "Connor Lair",
@@ -2866,20 +2879,20 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Missouri State Bears (64.2 YDS/J)"
+        "role": "Corredor Titular Activo Missouri State Bears (64.2 YDS/J)"
       },
       {
-        "name": "Ramone Green Jr.",
+        "name": "Breezy Dubar",
         "team": "Missouri State Bears",
         "pos": "RB",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 48.0,
-        "rec_yds": 12.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Missouri State Bears (48.0 YDS/J)"
+        "rush_yds": 54.0,
+        "rec_yds": 14.0,
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Missouri State Bears (54.0 YDS/J)"
       },
       {
         "name": "Isaiah Myers",
@@ -2892,7 +2905,7 @@
         "rec_yds": 98.1,
         "receptions": 8.5,
         "anytime_td_pct": 68.4,
-        "role": "Receptor Titular Missouri State Bears (98.1 YDS/J)"
+        "role": "Receptor Titular Activo Missouri State Bears (98.1 YDS/J)"
       },
       {
         "name": "Jmariyae Robinson",
@@ -2905,7 +2918,20 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Missouri State Bears (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Missouri State Bears (68.0 YDS/J)"
+      },
+      {
+        "name": "Deshawn Purdie",
+        "team": "Liberty Flames",
+        "pos": "QB",
+        "jersey": "0",
+        "pass_yds": 185.0,
+        "pass_tds": 1.5,
+        "rush_yds": 45.0,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Liberty Flames (185.0 YDS/J)"
       },
       {
         "name": "Kam Davis",
@@ -2918,7 +2944,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 75.4,
-        "role": "Corredor Titular Liberty Flames (126.0 YDS/J)"
+        "role": "Corredor Titular Activo Liberty Flames (126.0 YDS/J)"
       },
       {
         "name": "Jaylon Coleman",
@@ -2931,7 +2957,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Liberty Flames (84.0 YDS/J)"
+        "role": "Corredor Titular Activo Liberty Flames (84.0 YDS/J)"
       },
       {
         "name": "Makai Jackson",
@@ -2944,7 +2970,7 @@
         "rec_yds": 66.4,
         "receptions": 5.8,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Liberty Flames (66.4 YDS/J)"
+        "role": "Receptor Titular Activo Liberty Flames (66.4 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -2998,7 +3024,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Florida International Panthers (313.0 YDS/J)"
+        "role": "QB Titular Activo Florida International Panthers (313.0 YDS/J)"
       },
       {
         "name": "Devonte Lyons",
@@ -3011,7 +3037,7 @@
         "rec_yds": 40.0,
         "receptions": 4.0,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Florida International Panthers (67.7 YDS/J)"
+        "role": "Corredor Titular Activo Florida International Panthers (67.7 YDS/J)"
       },
       {
         "name": "Maguire Anderson",
@@ -3024,7 +3050,7 @@
         "rec_yds": 122.0,
         "receptions": 10.6,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Florida International Panthers (122.0 YDS/J)"
+        "role": "Receptor Titular Activo Florida International Panthers (122.0 YDS/J)"
       },
       {
         "name": "Kyle McNeal",
@@ -3037,7 +3063,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Florida International Panthers (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Florida International Panthers (68.0 YDS/J)"
       },
       {
         "name": "Landyn Locke",
@@ -3050,7 +3076,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Sam Houston Bearkats (182.2 YDS/J)"
+        "role": "QB Titular Activo Sam Houston Bearkats (182.2 YDS/J)"
       },
       {
         "name": "Landan Brown",
@@ -3063,20 +3089,20 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Sam Houston Bearkats (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Sam Houston Bearkats (74.0 YDS/J)"
       },
       {
-        "name": "Alton McCaskill",
+        "name": "DJ Bailey",
         "team": "Sam Houston Bearkats",
         "pos": "RB",
-        "jersey": "22",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 53.0,
+        "rush_yds": 54.0,
         "rec_yds": 14.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 42.0,
-        "role": "Corredor Titular Sam Houston Bearkats (53.0 YDS/J)"
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Sam Houston Bearkats (54.0 YDS/J)"
       },
       {
         "name": "Chris Reed",
@@ -3089,7 +3115,7 @@
         "rec_yds": 61.0,
         "receptions": 5.3,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Sam Houston Bearkats (61.0 YDS/J)"
+        "role": "Receptor Titular Activo Sam Houston Bearkats (61.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -3143,7 +3169,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Middle Tennessee Blue Raiders (228.0 YDS/J)"
+        "role": "QB Titular Activo Middle Tennessee Blue Raiders (228.0 YDS/J)"
       },
       {
         "name": "Antonio Martin",
@@ -3156,7 +3182,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Middle Tennessee Blue Raiders (62.4 YDS/J)"
+        "role": "Corredor Titular Activo Middle Tennessee Blue Raiders (62.4 YDS/J)"
       },
       {
         "name": "Cam'ron Lacy",
@@ -3169,7 +3195,7 @@
         "rec_yds": 97.0,
         "receptions": 10.0,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Middle Tennessee Blue Raiders (97.0 YDS/J)"
+        "role": "Receptor Titular Activo Middle Tennessee Blue Raiders (97.0 YDS/J)"
       },
       {
         "name": "Ziyon Butler",
@@ -3182,7 +3208,7 @@
         "rec_yds": 54.4,
         "receptions": 4.7,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Middle Tennessee Blue Raiders (54.4 YDS/J)"
+        "role": "Receptor Titular Activo Middle Tennessee Blue Raiders (54.4 YDS/J)"
       },
       {
         "name": "Trey Hedden",
@@ -3195,7 +3221,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular New Mexico State Aggies (195.8 YDS/J)"
+        "role": "QB Titular Activo New Mexico State Aggies (195.8 YDS/J)"
       },
       {
         "name": "James Jones",
@@ -3208,7 +3234,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular New Mexico State Aggies (150.0 YDS/J)"
+        "role": "Corredor Titular Activo New Mexico State Aggies (150.0 YDS/J)"
       },
       {
         "name": "TJ Washington Jr.",
@@ -3221,7 +3247,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular New Mexico State Aggies (107.0 YDS/J)"
+        "role": "Corredor Titular Activo New Mexico State Aggies (107.0 YDS/J)"
       },
       {
         "name": "AJ Williams III",
@@ -3234,7 +3260,7 @@
         "rec_yds": 57.5,
         "receptions": 5.0,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular New Mexico State Aggies (57.5 YDS/J)"
+        "role": "Receptor Titular Activo New Mexico State Aggies (57.5 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -3288,7 +3314,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Virginia Tech Hokies (270.1 YDS/J)"
+        "role": "QB Titular Activo Virginia Tech Hokies (270.1 YDS/J)"
       },
       {
         "name": "Jeffrey Overton Jr.",
@@ -3301,7 +3327,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Virginia Tech Hokies (86.9 YDS/J)"
+        "role": "Corredor Titular Activo Virginia Tech Hokies (86.9 YDS/J)"
       },
       {
         "name": "Que'Sean Brown",
@@ -3314,20 +3340,20 @@
         "rec_yds": 80.2,
         "receptions": 6.7,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Virginia Tech Hokies (80.2 YDS/J)"
+        "role": "Receptor Titular Activo Virginia Tech Hokies (80.2 YDS/J)"
       },
       {
-        "name": "Beau Pribula",
+        "name": "Eli Holstein",
         "team": "Virginia Cavaliers",
         "pos": "QB",
-        "jersey": "7",
-        "pass_yds": 175.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
         "pass_tds": 1.5,
-        "rush_yds": 67.0,
+        "rush_yds": 0.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Virginia Cavaliers (175.0 YDS/J)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Virginia Cavaliers (185.0 YDS/J)"
       },
       {
         "name": "Solomon Beebe",
@@ -3340,7 +3366,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Virginia Cavaliers (58.0 YDS/J)"
+        "role": "Corredor Titular Activo Virginia Cavaliers (58.0 YDS/J)"
       },
       {
         "name": "Jekail Middlebrook",
@@ -3353,7 +3379,7 @@
         "rec_yds": 35.0,
         "receptions": 5.0,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Virginia Cavaliers (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Virginia Cavaliers (48.0 YDS/J)"
       },
       {
         "name": "Da'Shawn Martin",
@@ -3366,7 +3392,7 @@
         "rec_yds": 59.0,
         "receptions": 5.1,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Virginia Cavaliers (59.0 YDS/J)"
+        "role": "Receptor Titular Activo Virginia Cavaliers (59.0 YDS/J)"
       },
       {
         "name": "Jack Rhodes",
@@ -3379,7 +3405,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Virginia Cavaliers (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Virginia Cavaliers (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -3433,7 +3459,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Arkansas State Red Wolves (233.2 YDS/J)"
+        "role": "QB Titular Activo Arkansas State Red Wolves (233.2 YDS/J)"
       },
       {
         "name": "Solomon Baggett",
@@ -3446,7 +3472,7 @@
         "rec_yds": 15.0,
         "receptions": 2.2,
         "anytime_td_pct": 43.2,
-        "role": "Corredor Titular Arkansas State Red Wolves (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Arkansas State Red Wolves (48.0 YDS/J)"
       },
       {
         "name": "Jaylen Bonelli",
@@ -3459,7 +3485,7 @@
         "rec_yds": 59.2,
         "receptions": 6.0,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Arkansas State Red Wolves (59.2 YDS/J)"
+        "role": "Receptor Titular Activo Arkansas State Red Wolves (59.2 YDS/J)"
       },
       {
         "name": "Chauncy Cobb",
@@ -3472,7 +3498,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Arkansas State Red Wolves (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Arkansas State Red Wolves (46.0 YDS/J)"
       },
       {
         "name": "Tucker Kilcrease",
@@ -3485,7 +3511,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Troy Trojans (242.0 YDS/J)"
+        "role": "QB Titular Activo Troy Trojans (242.0 YDS/J)"
       },
       {
         "name": "Jordan Lovett",
@@ -3498,7 +3524,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Troy Trojans (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Troy Trojans (74.0 YDS/J)"
       },
       {
         "name": "Gavin Griffin",
@@ -3511,7 +3537,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Troy Trojans (50.3 YDS/J)"
+        "role": "Corredor Titular Activo Troy Trojans (50.3 YDS/J)"
       },
       {
         "name": "Howard Kinchen",
@@ -3524,7 +3550,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Troy Trojans (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Troy Trojans (68.0 YDS/J)"
       },
       {
         "name": "Noreel White",
@@ -3537,7 +3563,7 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Troy Trojans (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Troy Trojans (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -3591,7 +3617,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular UCLA Bruins (242.0 YDS/J)"
+        "role": "QB Titular Activo UCLA Bruins (242.0 YDS/J)"
       },
       {
         "name": "Wayne Knight",
@@ -3604,7 +3630,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular UCLA Bruins (87.7 YDS/J)"
+        "role": "Corredor Titular Activo UCLA Bruins (87.7 YDS/J)"
       },
       {
         "name": "Aidan Mizell",
@@ -3617,7 +3643,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular UCLA Bruins (68.0 YDS/J)"
+        "role": "Receptor Titular Activo UCLA Bruins (68.0 YDS/J)"
       },
       {
         "name": "Semaj Morgan",
@@ -3630,7 +3656,7 @@
         "rec_yds": 52.5,
         "receptions": 4.1,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular UCLA Bruins (52.5 YDS/J)"
+        "role": "Receptor Titular Activo UCLA Bruins (52.5 YDS/J)"
       },
       {
         "name": "Jayden Maiava",
@@ -3643,7 +3669,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular USC Trojans (311.0 YDS/J)"
+        "role": "QB Titular Activo USC Trojans (311.0 YDS/J)"
       },
       {
         "name": "King Miller",
@@ -3656,7 +3682,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular USC Trojans (63.7 YDS/J)"
+        "role": "Corredor Titular Activo USC Trojans (63.7 YDS/J)"
       },
       {
         "name": "Waymond Jordan",
@@ -3669,7 +3695,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular USC Trojans (51.0 YDS/J)"
+        "role": "Corredor Titular Activo USC Trojans (51.0 YDS/J)"
       },
       {
         "name": "Trent Mosley",
@@ -3682,7 +3708,7 @@
         "rec_yds": 130.0,
         "receptions": 11.3,
         "anytime_td_pct": 58.8,
-        "role": "Receptor Titular USC Trojans (130.0 YDS/J)"
+        "role": "Receptor Titular Activo USC Trojans (130.0 YDS/J)"
       },
       {
         "name": "Kayden Dixon-Wyatt",
@@ -3695,7 +3721,7 @@
         "rec_yds": 51.0,
         "receptions": 4.4,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular USC Trojans (51.0 YDS/J)"
+        "role": "Receptor Titular Activo USC Trojans (51.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -3749,7 +3775,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 75.0,
-        "role": "QB Titular BYU Cougars (242.0 YDS/J)"
+        "role": "QB Titular Activo BYU Cougars (242.0 YDS/J)"
       },
       {
         "name": "LJ Martin",
@@ -3762,7 +3788,7 @@
         "rec_yds": 18.0,
         "receptions": 2.0,
         "anytime_td_pct": 54.0,
-        "role": "Corredor Titular BYU Cougars (78.5 YDS/J)"
+        "role": "Corredor Titular Activo BYU Cougars (78.5 YDS/J)"
       },
       {
         "name": "Legend Glasker",
@@ -3775,7 +3801,7 @@
         "rec_yds": 70.6,
         "receptions": 4.2,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular BYU Cougars (70.6 YDS/J)"
+        "role": "Receptor Titular Activo BYU Cougars (70.6 YDS/J)"
       },
       {
         "name": "JC French IV",
@@ -3788,7 +3814,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Cincinnati Bearcats (191.2 YDS/J)"
+        "role": "QB Titular Activo Cincinnati Bearcats (191.2 YDS/J)"
       },
       {
         "name": "Cole Tabb",
@@ -3801,7 +3827,7 @@
         "rec_yds": 70.0,
         "receptions": 8.0,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Cincinnati Bearcats (165.0 YDS/J)"
+        "role": "Corredor Titular Activo Cincinnati Bearcats (165.0 YDS/J)"
       },
       {
         "name": "Gi'Bran Payne",
@@ -3814,7 +3840,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Cincinnati Bearcats (64.2 YDS/J)"
+        "role": "Corredor Titular Activo Cincinnati Bearcats (64.2 YDS/J)"
       },
       {
         "name": "Malachi Henry",
@@ -3827,7 +3853,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Cincinnati Bearcats (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Cincinnati Bearcats (68.0 YDS/J)"
       },
       {
         "name": "JV Gibson",
@@ -3840,7 +3866,7 @@
         "rec_yds": 51.5,
         "receptions": 3.9,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Cincinnati Bearcats (51.5 YDS/J)"
+        "role": "Receptor Titular Activo Cincinnati Bearcats (51.5 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -3894,7 +3920,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Maryland Terrapins (242.0 YDS/J)"
+        "role": "QB Titular Activo Maryland Terrapins (242.0 YDS/J)"
       },
       {
         "name": "DeJuan Williams",
@@ -3907,7 +3933,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Maryland Terrapins (73.3 YDS/J)"
+        "role": "Corredor Titular Activo Maryland Terrapins (73.3 YDS/J)"
       },
       {
         "name": "Preston Howard",
@@ -3920,7 +3946,7 @@
         "rec_yds": 77.0,
         "receptions": 6.7,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Maryland Terrapins (77.0 YDS/J)"
+        "role": "Receptor Titular Activo Maryland Terrapins (77.0 YDS/J)"
       },
       {
         "name": "Chris Durr Jr.",
@@ -3933,7 +3959,7 @@
         "rec_yds": 65.9,
         "receptions": 8.0,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Maryland Terrapins (65.9 YDS/J)"
+        "role": "Receptor Titular Activo Maryland Terrapins (65.9 YDS/J)"
       },
       {
         "name": "Rocco Becht",
@@ -3946,7 +3972,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Penn State Nittany Lions (242.0 YDS/J)"
+        "role": "QB Titular Activo Penn State Nittany Lions (242.0 YDS/J)"
       },
       {
         "name": "Nicholas Singleton",
@@ -3959,7 +3985,7 @@
         "rec_yds": 24.0,
         "receptions": 2.0,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Penn State Nittany Lions (82.0 YDS/J)"
+        "role": "Corredor Titular Activo Penn State Nittany Lions (82.0 YDS/J)"
       },
       {
         "name": "Carson Hansen",
@@ -3972,7 +3998,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Penn State Nittany Lions (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Penn State Nittany Lions (74.0 YDS/J)"
       },
       {
         "name": "Chase Sowell",
@@ -3985,7 +4011,7 @@
         "rec_yds": 68.0,
         "receptions": 3.8,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Penn State Nittany Lions (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Penn State Nittany Lions (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -4039,7 +4065,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular South Florida Bulls (271.0 YDS/J)"
+        "role": "QB Titular Activo South Florida Bulls (271.0 YDS/J)"
       },
       {
         "name": "Jason Collins Jr.",
@@ -4052,7 +4078,7 @@
         "rec_yds": 65.0,
         "receptions": 3.0,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular South Florida Bulls (108.0 YDS/J)"
+        "role": "Corredor Titular Activo South Florida Bulls (108.0 YDS/J)"
       },
       {
         "name": "D.J. Crowther",
@@ -4065,7 +4091,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular South Florida Bulls (68.9 YDS/J)"
+        "role": "Corredor Titular Activo South Florida Bulls (68.9 YDS/J)"
       },
       {
         "name": "Mudia Reuben",
@@ -4078,7 +4104,7 @@
         "rec_yds": 98.0,
         "receptions": 6.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular South Florida Bulls (98.0 YDS/J)"
+        "role": "Receptor Titular Activo South Florida Bulls (98.0 YDS/J)"
       },
       {
         "name": "Bryson Rodgers",
@@ -4091,7 +4117,7 @@
         "rec_yds": 49.0,
         "receptions": 6.0,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular South Florida Bulls (49.0 YDS/J)"
+        "role": "Receptor Titular Activo South Florida Bulls (49.0 YDS/J)"
       },
       {
         "name": "Trace Johnson",
@@ -4104,7 +4130,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Tulane Green Wave (215.4 YDS/J)"
+        "role": "QB Titular Activo Tulane Green Wave (215.4 YDS/J)"
       },
       {
         "name": "Maurice Turner",
@@ -4117,7 +4143,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Tulane Green Wave (81.0 YDS/J)"
+        "role": "Corredor Titular Activo Tulane Green Wave (81.0 YDS/J)"
       },
       {
         "name": "Johnnie Daniels",
@@ -4130,7 +4156,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 61.6,
-        "role": "Corredor Titular Tulane Green Wave (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Tulane Green Wave (74.0 YDS/J)"
       },
       {
         "name": "Destyn Hill",
@@ -4143,20 +4169,20 @@
         "rec_yds": 59.6,
         "receptions": 5.2,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Tulane Green Wave (59.6 YDS/J)"
+        "role": "Receptor Titular Activo Tulane Green Wave (59.6 YDS/J)"
       },
       {
-        "name": "Zycarl Lewis Jr.",
+        "name": "Anthony Brown-Stephens",
         "team": "Tulane Green Wave",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 4.0,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Tulane Green Wave (44.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Tulane Green Wave (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -4210,7 +4236,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Northern Illinois Huskies (225.2 YDS/J)"
+        "role": "QB Titular Activo Northern Illinois Huskies (225.2 YDS/J)"
       },
       {
         "name": "Elijah Porter",
@@ -4223,7 +4249,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Northern Illinois Huskies (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Northern Illinois Huskies (74.0 YDS/J)"
       },
       {
         "name": "Telly Johnson Jr.",
@@ -4236,7 +4262,7 @@
         "rec_yds": 15.0,
         "receptions": 3.0,
         "anytime_td_pct": 61.6,
-        "role": "Corredor Titular Northern Illinois Huskies (53.8 YDS/J)"
+        "role": "Corredor Titular Activo Northern Illinois Huskies (53.8 YDS/J)"
       },
       {
         "name": "DeAree Rogers",
@@ -4249,7 +4275,7 @@
         "rec_yds": 73.3,
         "receptions": 10.0,
         "anytime_td_pct": 58.8,
-        "role": "Receptor Titular Northern Illinois Huskies (73.3 YDS/J)"
+        "role": "Receptor Titular Activo Northern Illinois Huskies (73.3 YDS/J)"
       },
       {
         "name": "La'Don Bryant",
@@ -4262,7 +4288,7 @@
         "rec_yds": 68.0,
         "receptions": 5.9,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Northern Illinois Huskies (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Northern Illinois Huskies (68.0 YDS/J)"
       },
       {
         "name": "EJ Colson Jr.",
@@ -4275,7 +4301,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular UTEP Miners (175.0 YDS/J)"
+        "role": "QB Titular Activo UTEP Miners (175.0 YDS/J)"
       },
       {
         "name": "Lamar Sperling",
@@ -4288,7 +4314,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular UTEP Miners (74.0 YDS/J)"
+        "role": "Corredor Titular Activo UTEP Miners (74.0 YDS/J)"
       },
       {
         "name": "Raymond Moore III",
@@ -4301,7 +4327,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular UTEP Miners (68.6 YDS/J)"
+        "role": "Corredor Titular Activo UTEP Miners (68.6 YDS/J)"
       },
       {
         "name": "Carver Cheeks",
@@ -4314,7 +4340,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular UTEP Miners (68.0 YDS/J)"
+        "role": "Receptor Titular Activo UTEP Miners (68.0 YDS/J)"
       },
       {
         "name": "Jaden Smith",
@@ -4327,7 +4353,7 @@
         "rec_yds": 45.0,
         "receptions": 4.0,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular UTEP Miners (45.0 YDS/J)"
+        "role": "Receptor Titular Activo UTEP Miners (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -4381,7 +4407,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Bowling Green Falcons (229.0 YDS/J)"
+        "role": "QB Titular Activo Bowling Green Falcons (229.0 YDS/J)"
       },
       {
         "name": "Nakai Amachree",
@@ -4394,7 +4420,7 @@
         "rec_yds": 87.0,
         "receptions": 3.0,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Bowling Green Falcons (110.0 YDS/J)"
+        "role": "Corredor Titular Activo Bowling Green Falcons (110.0 YDS/J)"
       },
       {
         "name": "Austyn Dendy",
@@ -4407,7 +4433,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Bowling Green Falcons (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Bowling Green Falcons (48.0 YDS/J)"
       },
       {
         "name": "Eli Jacon-Duffy",
@@ -4420,7 +4446,7 @@
         "rec_yds": 59.0,
         "receptions": 5.1,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Bowling Green Falcons (59.0 YDS/J)"
+        "role": "Receptor Titular Activo Bowling Green Falcons (59.0 YDS/J)"
       },
       {
         "name": "Brennan Ridley",
@@ -4433,20 +4459,20 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Bowling Green Falcons (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Bowling Green Falcons (46.0 YDS/J)"
       },
       {
-        "name": "William Watson III",
+        "name": "Logan Inagawa",
         "team": "Massachusetts Minutemen",
         "pos": "QB",
-        "jersey": "5",
-        "pass_yds": 175.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
         "pass_tds": 1.5,
-        "rush_yds": 15.0,
+        "rush_yds": 40.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Massachusetts Minutemen (175.0 YDS/J)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Massachusetts Minutemen (185.0 YDS/J)"
       },
       {
         "name": "Curtis Kimmons IV",
@@ -4459,33 +4485,33 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Massachusetts Minutemen (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Massachusetts Minutemen (48.0 YDS/J)"
       },
       {
-        "name": "T.Y. Harding",
-        "team": "Massachusetts Minutemen",
-        "pos": "WR",
-        "jersey": "2",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Massachusetts Minutemen (45.0 YDS/J)"
-      },
-      {
-        "name": "Drew Alsup",
+        "name": "Reece Adkins",
         "team": "Massachusetts Minutemen",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Massachusetts Minutemen (44.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Massachusetts Minutemen (46.0 YDS/J)"
+      },
+      {
+        "name": "Jabari Lewis",
+        "team": "Massachusetts Minutemen",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Massachusetts Minutemen (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -4539,7 +4565,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Delaware Blue Hens (237.8 YDS/J)"
+        "role": "QB Titular Activo Delaware Blue Hens (237.8 YDS/J)"
       },
       {
         "name": "Jo Silver",
@@ -4552,7 +4578,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Delaware Blue Hens (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Delaware Blue Hens (74.0 YDS/J)"
       },
       {
         "name": "Sean Wilson",
@@ -4565,7 +4591,7 @@
         "rec_yds": 78.0,
         "receptions": 8.0,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Delaware Blue Hens (78.0 YDS/J)"
+        "role": "Receptor Titular Activo Delaware Blue Hens (78.0 YDS/J)"
       },
       {
         "name": "Donovan Lewis",
@@ -4578,7 +4604,7 @@
         "rec_yds": 63.0,
         "receptions": 8.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Delaware Blue Hens (63.0 YDS/J)"
+        "role": "Receptor Titular Activo Delaware Blue Hens (63.0 YDS/J)"
       },
       {
         "name": "Caden Creel",
@@ -4591,7 +4617,20 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 57.0,
-        "role": "QB Titular Jacksonville State Gamecocks (214.7 YDS/J)"
+        "role": "QB Titular Activo Jacksonville State Gamecocks (214.7 YDS/J)"
+      },
+      {
+        "name": "Jalen Likely",
+        "team": "Jacksonville State Gamecocks",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 54.0,
+        "rec_yds": 14.0,
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Jacksonville State Gamecocks (54.0 YDS/J)"
       },
       {
         "name": "Deondre Johnson",
@@ -4604,7 +4643,7 @@
         "rec_yds": 72.0,
         "receptions": 6.3,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Jacksonville State Gamecocks (72.0 YDS/J)"
+        "role": "Receptor Titular Activo Jacksonville State Gamecocks (72.0 YDS/J)"
       },
       {
         "name": "Luke Gilbert",
@@ -4617,7 +4656,7 @@
         "rec_yds": 55.0,
         "receptions": 5.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Jacksonville State Gamecocks (55.0 YDS/J)"
+        "role": "Receptor Titular Activo Jacksonville State Gamecocks (55.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -4671,7 +4710,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular North Texas Mean Green (320.0 YDS/J)"
+        "role": "QB Titular Activo North Texas Mean Green (320.0 YDS/J)"
       },
       {
         "name": "Jahiem White",
@@ -4684,7 +4723,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular North Texas Mean Green (131.8 YDS/J)"
+        "role": "Corredor Titular Activo North Texas Mean Green (131.8 YDS/J)"
       },
       {
         "name": "Justin Stevenson",
@@ -4697,7 +4736,7 @@
         "rec_yds": 99.8,
         "receptions": 6.1,
         "anytime_td_pct": 72.7,
-        "role": "Receptor Titular North Texas Mean Green (99.8 YDS/J)"
+        "role": "Receptor Titular Activo North Texas Mean Green (99.8 YDS/J)"
       },
       {
         "name": "Ryder Burton",
@@ -4710,7 +4749,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular UAB Blazers (203.9 YDS/J)"
+        "role": "QB Titular Activo UAB Blazers (203.9 YDS/J)"
       },
       {
         "name": "Rod Robinson II",
@@ -4723,7 +4762,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular UAB Blazers (202.0 YDS/J)"
+        "role": "Corredor Titular Activo UAB Blazers (202.0 YDS/J)"
       },
       {
         "name": "Bam McReynolds",
@@ -4736,7 +4775,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular UAB Blazers (60.0 YDS/J)"
+        "role": "Corredor Titular Activo UAB Blazers (60.0 YDS/J)"
       },
       {
         "name": "Scott Isacks",
@@ -4749,7 +4788,7 @@
         "rec_yds": 80.0,
         "receptions": 7.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular UAB Blazers (80.0 YDS/J)"
+        "role": "Receptor Titular Activo UAB Blazers (80.0 YDS/J)"
       },
       {
         "name": "EJ Reid",
@@ -4762,7 +4801,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular UAB Blazers (68.0 YDS/J)"
+        "role": "Receptor Titular Activo UAB Blazers (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -4816,7 +4855,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Missouri Tigers (218.6 YDS/J)"
+        "role": "QB Titular Activo Missouri Tigers (218.6 YDS/J)"
       },
       {
         "name": "Jamal Roberts",
@@ -4829,7 +4868,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 75.4,
-        "role": "Corredor Titular Missouri Tigers (95.3 YDS/J)"
+        "role": "Corredor Titular Activo Missouri Tigers (95.3 YDS/J)"
       },
       {
         "name": "Ahmad Hardy",
@@ -4842,7 +4881,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Missouri Tigers (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Missouri Tigers (48.0 YDS/J)"
       },
       {
         "name": "Cayden Lee",
@@ -4855,7 +4894,7 @@
         "rec_yds": 72.5,
         "receptions": 6.5,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Missouri Tigers (72.5 YDS/J)"
+        "role": "Receptor Titular Activo Missouri Tigers (72.5 YDS/J)"
       },
       {
         "name": "Donovan Olugbode",
@@ -4868,7 +4907,7 @@
         "rec_yds": 67.0,
         "receptions": 5.8,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Missouri Tigers (67.0 YDS/J)"
+        "role": "Receptor Titular Activo Missouri Tigers (67.0 YDS/J)"
       },
       {
         "name": "John Mateer",
@@ -4881,7 +4920,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Oklahoma Sooners (196.2 YDS/J)"
+        "role": "QB Titular Activo Oklahoma Sooners (196.2 YDS/J)"
       },
       {
         "name": "Lloyd Avant",
@@ -4894,7 +4933,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 43.2,
-        "role": "Corredor Titular Oklahoma Sooners (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Oklahoma Sooners (48.0 YDS/J)"
       },
       {
         "name": "Tory Blaylock",
@@ -4907,7 +4946,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Oklahoma Sooners (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Oklahoma Sooners (48.0 YDS/J)"
       },
       {
         "name": "Isaiah Sategna III",
@@ -4920,7 +4959,7 @@
         "rec_yds": 62.8,
         "receptions": 5.0,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Oklahoma Sooners (62.8 YDS/J)"
+        "role": "Receptor Titular Activo Oklahoma Sooners (62.8 YDS/J)"
       },
       {
         "name": "Rocky Beers",
@@ -4933,7 +4972,7 @@
         "rec_yds": 57.9,
         "receptions": 5.0,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Oklahoma Sooners (57.9 YDS/J)"
+        "role": "Receptor Titular Activo Oklahoma Sooners (57.9 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -4987,7 +5026,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Rutgers Scarlet Knights (242.0 YDS/J)"
+        "role": "QB Titular Activo Rutgers Scarlet Knights (242.0 YDS/J)"
       },
       {
         "name": "Antwan Raymond",
@@ -5000,7 +5039,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 61.6,
-        "role": "Corredor Titular Rutgers Scarlet Knights (81.0 YDS/J)"
+        "role": "Corredor Titular Activo Rutgers Scarlet Knights (81.0 YDS/J)"
       },
       {
         "name": "Clay Thevenin",
@@ -5013,7 +5052,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Rutgers Scarlet Knights (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Rutgers Scarlet Knights (48.0 YDS/J)"
       },
       {
         "name": "KJ Duff",
@@ -5026,7 +5065,7 @@
         "rec_yds": 77.4,
         "receptions": 4.5,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular Rutgers Scarlet Knights (77.4 YDS/J)"
+        "role": "Receptor Titular Activo Rutgers Scarlet Knights (77.4 YDS/J)"
       },
       {
         "name": "Ben Black III",
@@ -5039,7 +5078,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Rutgers Scarlet Knights (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Rutgers Scarlet Knights (68.0 YDS/J)"
       },
       {
         "name": "Alessio Milivojevic",
@@ -5052,7 +5091,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Michigan State Spartans (195.1 YDS/J)"
+        "role": "QB Titular Activo Michigan State Spartans (195.1 YDS/J)"
       },
       {
         "name": "Brandon Tullis",
@@ -5065,7 +5104,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Michigan State Spartans (63.1 YDS/J)"
+        "role": "Corredor Titular Activo Michigan State Spartans (63.1 YDS/J)"
       },
       {
         "name": "Jaziun Patterson",
@@ -5078,7 +5117,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular Michigan State Spartans (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Michigan State Spartans (48.0 YDS/J)"
       },
       {
         "name": "Chrishon McCray",
@@ -5091,20 +5130,20 @@
         "rec_yds": 53.7,
         "receptions": 4.7,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Michigan State Spartans (53.7 YDS/J)"
+        "role": "Receptor Titular Activo Michigan State Spartans (53.7 YDS/J)"
       },
       {
-        "name": "Bryson Williams",
+        "name": "Carson Gulker",
         "team": "Michigan State Spartans",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Michigan State Spartans (44.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Michigan State Spartans (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -5158,7 +5197,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Oklahoma State Cowboys (329.1 YDS/J)"
+        "role": "QB Titular Activo Oklahoma State Cowboys (329.1 YDS/J)"
       },
       {
         "name": "Caleb Hawkins",
@@ -5171,7 +5210,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 69.9,
-        "role": "Corredor Titular Oklahoma State Cowboys (120.1 YDS/J)"
+        "role": "Corredor Titular Activo Oklahoma State Cowboys (120.1 YDS/J)"
       },
       {
         "name": "Justin Bowick",
@@ -5184,7 +5223,7 @@
         "rec_yds": 87.8,
         "receptions": 4.9,
         "anytime_td_pct": 74.0,
-        "role": "Receptor Titular Oklahoma State Cowboys (87.8 YDS/J)"
+        "role": "Receptor Titular Activo Oklahoma State Cowboys (87.8 YDS/J)"
       },
       {
         "name": "Miles Coleman",
@@ -5197,7 +5236,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Oklahoma State Cowboys (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Oklahoma State Cowboys (68.0 YDS/J)"
       },
       {
         "name": "Isaiah Marshall",
@@ -5210,7 +5249,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Kansas Jayhawks (210.5 YDS/J)"
+        "role": "QB Titular Activo Kansas Jayhawks (210.5 YDS/J)"
       },
       {
         "name": "Chase Belcher",
@@ -5223,7 +5262,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Kansas Jayhawks (58.0 YDS/J)"
+        "role": "Corredor Titular Activo Kansas Jayhawks (58.0 YDS/J)"
       },
       {
         "name": "Khijohnn Cummings-Coleman",
@@ -5236,7 +5275,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Kansas Jayhawks (56.0 YDS/J)"
+        "role": "Corredor Titular Activo Kansas Jayhawks (56.0 YDS/J)"
       },
       {
         "name": "Keaton Kubecka",
@@ -5249,7 +5288,7 @@
         "rec_yds": 51.2,
         "receptions": 4.5,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Kansas Jayhawks (51.2 YDS/J)"
+        "role": "Receptor Titular Activo Kansas Jayhawks (51.2 YDS/J)"
       },
       {
         "name": "Nik McMillan",
@@ -5262,7 +5301,7 @@
         "rec_yds": 50.6,
         "receptions": 6.0,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Kansas Jayhawks (50.6 YDS/J)"
+        "role": "Receptor Titular Activo Kansas Jayhawks (50.6 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -5316,7 +5355,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular California Golden Bears (175.0 YDS/J)"
+        "role": "QB Titular Activo California Golden Bears (175.0 YDS/J)"
       },
       {
         "name": "Adam Mohammed",
@@ -5329,7 +5368,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular California Golden Bears (48.0 YDS/J)"
+        "role": "Corredor Titular Activo California Golden Bears (48.0 YDS/J)"
       },
       {
         "name": "Mark Hamper",
@@ -5342,7 +5381,7 @@
         "rec_yds": 66.0,
         "receptions": 6.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular California Golden Bears (66.0 YDS/J)"
+        "role": "Receptor Titular Activo California Golden Bears (66.0 YDS/J)"
       },
       {
         "name": "Chase Hendricks",
@@ -5355,7 +5394,7 @@
         "rec_yds": 50.0,
         "receptions": 6.5,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular California Golden Bears (50.0 YDS/J)"
+        "role": "Receptor Titular Activo California Golden Bears (50.0 YDS/J)"
       },
       {
         "name": "Mason Heintschel",
@@ -5368,7 +5407,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Pittsburgh Panthers (175.0 YDS/J)"
+        "role": "QB Titular Activo Pittsburgh Panthers (175.0 YDS/J)"
       },
       {
         "name": "Damon Ferguson Jr.",
@@ -5381,7 +5420,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 64.8,
-        "role": "Corredor Titular Pittsburgh Panthers (73.6 YDS/J)"
+        "role": "Corredor Titular Activo Pittsburgh Panthers (73.6 YDS/J)"
       },
       {
         "name": "Cataurus Hicks",
@@ -5394,7 +5433,7 @@
         "rec_yds": 77.6,
         "receptions": 3.8,
         "anytime_td_pct": 62.2,
-        "role": "Receptor Titular Pittsburgh Panthers (77.6 YDS/J)"
+        "role": "Receptor Titular Activo Pittsburgh Panthers (77.6 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -5448,7 +5487,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Arizona Wildcats (315.0 YDS/J)"
+        "role": "QB Titular Activo Arizona Wildcats (315.0 YDS/J)"
       },
       {
         "name": "Kedrick Reescano",
@@ -5461,7 +5500,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular Arizona Wildcats (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Arizona Wildcats (48.0 YDS/J)"
       },
       {
         "name": "Isaiah Mizell",
@@ -5474,7 +5513,7 @@
         "rec_yds": 86.8,
         "receptions": 4.7,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular Arizona Wildcats (86.8 YDS/J)"
+        "role": "Receptor Titular Activo Arizona Wildcats (86.8 YDS/J)"
       },
       {
         "name": "Jake Fette",
@@ -5487,7 +5526,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Arizona State Sun Devils (199.3 YDS/J)"
+        "role": "QB Titular Activo Arizona State Sun Devils (199.3 YDS/J)"
       },
       {
         "name": "Cardae Mack",
@@ -5500,7 +5539,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Arizona State Sun Devils (68.0 YDS/J)"
+        "role": "Corredor Titular Activo Arizona State Sun Devils (68.0 YDS/J)"
       },
       {
         "name": "Reed Harris",
@@ -5513,20 +5552,20 @@
         "rec_yds": 90.4,
         "receptions": 7.9,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular Arizona State Sun Devils (90.4 YDS/J)"
+        "role": "Receptor Titular Activo Arizona State Sun Devils (90.4 YDS/J)"
       },
       {
-        "name": "Anthony Miller",
+        "name": "Kyson Brown",
         "team": "Arizona State Sun Devils",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Arizona State Sun Devils (44.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Arizona State Sun Devils (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -5580,7 +5619,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular UNLV Rebels (242.0 YDS/J)"
+        "role": "QB Titular Activo UNLV Rebels (242.0 YDS/J)"
       },
       {
         "name": "Jai'Den Thomas",
@@ -5593,7 +5632,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 64.8,
-        "role": "Corredor Titular UNLV Rebels (83.7 YDS/J)"
+        "role": "Corredor Titular Activo UNLV Rebels (83.7 YDS/J)"
       },
       {
         "name": "Tavian McNair",
@@ -5606,7 +5645,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular UNLV Rebels (68.0 YDS/J)"
+        "role": "Receptor Titular Activo UNLV Rebels (68.0 YDS/J)"
       },
       {
         "name": "Kayden McGee",
@@ -5619,20 +5658,20 @@
         "rec_yds": 53.9,
         "receptions": 3.4,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular UNLV Rebels (53.9 YDS/J)"
+        "role": "Receptor Titular Activo UNLV Rebels (53.9 YDS/J)"
       },
       {
-        "name": "Carter Jones",
+        "name": "AJ Bianco",
         "team": "Nevada Wolf Pack",
         "pos": "QB",
-        "jersey": "6",
-        "pass_yds": 175.0,
-        "pass_tds": 1.5,
-        "rush_yds": 15.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
+        "pass_tds": 2.0,
+        "rush_yds": 90.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Nevada Wolf Pack (175.0 YDS/J)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Nevada Wolf Pack (185.0 YDS/J)"
       },
       {
         "name": "Herschel Turner",
@@ -5645,7 +5684,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 61.6,
-        "role": "Corredor Titular Nevada Wolf Pack (153.0 YDS/J)"
+        "role": "Corredor Titular Activo Nevada Wolf Pack (153.0 YDS/J)"
       },
       {
         "name": "Janerious Jackson",
@@ -5658,7 +5697,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Nevada Wolf Pack (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Nevada Wolf Pack (48.0 YDS/J)"
       },
       {
         "name": "Trace Estes",
@@ -5671,7 +5710,7 @@
         "rec_yds": 73.0,
         "receptions": 6.3,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Nevada Wolf Pack (73.0 YDS/J)"
+        "role": "Receptor Titular Activo Nevada Wolf Pack (73.0 YDS/J)"
       },
       {
         "name": "Gary Givens III",
@@ -5684,7 +5723,7 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Nevada Wolf Pack (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Nevada Wolf Pack (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -5738,7 +5777,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Houston Cougars (255.2 YDS/J)"
+        "role": "QB Titular Activo Houston Cougars (255.2 YDS/J)"
       },
       {
         "name": "Re'Shaun Sanford II",
@@ -5751,7 +5790,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Houston Cougars (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Houston Cougars (74.0 YDS/J)"
       },
       {
         "name": "Makhi Hughes",
@@ -5764,7 +5803,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular Houston Cougars (71.2 YDS/J)"
+        "role": "Corredor Titular Activo Houston Cougars (71.2 YDS/J)"
       },
       {
         "name": "Amare Thomas",
@@ -5777,7 +5816,7 @@
         "rec_yds": 77.6,
         "receptions": 5.3,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular Houston Cougars (77.6 YDS/J)"
+        "role": "Receptor Titular Activo Houston Cougars (77.6 YDS/J)"
       },
       {
         "name": "DJ Lagway",
@@ -5790,7 +5829,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Baylor Bears (242.0 YDS/J)"
+        "role": "QB Titular Activo Baylor Bears (242.0 YDS/J)"
       },
       {
         "name": "Bryson Washington",
@@ -5803,7 +5842,7 @@
         "rec_yds": 22.0,
         "receptions": 1.8,
         "anytime_td_pct": 56.0,
-        "role": "Corredor Titular Baylor Bears (84.0 YDS/J)"
+        "role": "Corredor Titular Activo Baylor Bears (84.0 YDS/J)"
       },
       {
         "name": "Caden Knighten",
@@ -5816,7 +5855,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 47.8,
-        "role": "Corredor Titular Baylor Bears (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Baylor Bears (48.0 YDS/J)"
       },
       {
         "name": "Gavin Freeman",
@@ -5829,7 +5868,7 @@
         "rec_yds": 88.9,
         "receptions": 7.5,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular Baylor Bears (88.9 YDS/J)"
+        "role": "Receptor Titular Activo Baylor Bears (88.9 YDS/J)"
       },
       {
         "name": "Taz Williams Jr.",
@@ -5842,7 +5881,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Baylor Bears (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Baylor Bears (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -5896,7 +5935,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Hawai'i Rainbow Warriors (276.6 YDS/J)"
+        "role": "QB Titular Activo Hawai'i Rainbow Warriors (276.6 YDS/J)"
       },
       {
         "name": "Cam Barfield",
@@ -5909,7 +5948,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Hawai'i Rainbow Warriors (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Hawai'i Rainbow Warriors (74.0 YDS/J)"
       },
       {
         "name": "DeVon Rice",
@@ -5922,7 +5961,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Hawai'i Rainbow Warriors (49.3 YDS/J)"
+        "role": "Corredor Titular Activo Hawai'i Rainbow Warriors (49.3 YDS/J)"
       },
       {
         "name": "Titan Lacaden",
@@ -5935,7 +5974,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Hawai'i Rainbow Warriors (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Hawai'i Rainbow Warriors (68.0 YDS/J)"
       },
       {
         "name": "Kainoa Carvalho",
@@ -5948,20 +5987,20 @@
         "rec_yds": 48.4,
         "receptions": 4.5,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Hawai'i Rainbow Warriors (48.4 YDS/J)"
+        "role": "Receptor Titular Activo Hawai'i Rainbow Warriors (48.4 YDS/J)"
       },
       {
-        "name": "Jackson Sharman",
+        "name": "Brian Salazar Jr.",
         "team": "Sacramento State Hornets",
         "pos": "QB",
-        "jersey": "8",
-        "pass_yds": 175.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
         "pass_tds": 1.5,
-        "rush_yds": 15.0,
+        "rush_yds": 9.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Sacramento State Hornets (175.0 YDS/J)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Sacramento State Hornets (185.0 YDS/J)"
       },
       {
         "name": "Isaiah Ene",
@@ -5974,7 +6013,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Sacramento State Hornets (67.0 YDS/J)"
+        "role": "Corredor Titular Activo Sacramento State Hornets (67.0 YDS/J)"
       },
       {
         "name": "Davion Godley",
@@ -5987,7 +6026,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Sacramento State Hornets (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Sacramento State Hornets (48.0 YDS/J)"
       },
       {
         "name": "Matt Coleman",
@@ -6000,7 +6039,7 @@
         "rec_yds": 49.5,
         "receptions": 4.3,
         "anytime_td_pct": 56.4,
-        "role": "Receptor Titular Sacramento State Hornets (49.5 YDS/J)"
+        "role": "Receptor Titular Activo Sacramento State Hornets (49.5 YDS/J)"
       },
       {
         "name": "Onterrio Smith Jr.",
@@ -6013,7 +6052,7 @@
         "rec_yds": 47.0,
         "receptions": 4.1,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Sacramento State Hornets (47.0 YDS/J)"
+        "role": "Receptor Titular Activo Sacramento State Hornets (47.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -6067,7 +6106,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Georgia Bulldogs (252.0 YDS/J)"
+        "role": "QB Titular Activo Georgia Bulldogs (252.0 YDS/J)"
       },
       {
         "name": "Nate Frazier",
@@ -6080,7 +6119,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Georgia Bulldogs (73.3 YDS/J)"
+        "role": "Corredor Titular Activo Georgia Bulldogs (73.3 YDS/J)"
       },
       {
         "name": "Dwight Phillips Jr.",
@@ -6093,7 +6132,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 43.2,
-        "role": "Corredor Titular Georgia Bulldogs (66.0 YDS/J)"
+        "role": "Corredor Titular Activo Georgia Bulldogs (66.0 YDS/J)"
       },
       {
         "name": "Craig Dandridge",
@@ -6106,7 +6145,7 @@
         "rec_yds": 85.0,
         "receptions": 6.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Georgia Bulldogs (85.0 YDS/J)"
+        "role": "Receptor Titular Activo Georgia Bulldogs (85.0 YDS/J)"
       },
       {
         "name": "Talyn Taylor",
@@ -6119,7 +6158,7 @@
         "rec_yds": 66.2,
         "receptions": 5.8,
         "anytime_td_pct": 58.8,
-        "role": "Receptor Titular Georgia Bulldogs (66.2 YDS/J)"
+        "role": "Receptor Titular Activo Georgia Bulldogs (66.2 YDS/J)"
       },
       {
         "name": "Alberto Mendoza",
@@ -6132,7 +6171,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Georgia Tech Yellow Jackets (205.6 YDS/J)"
+        "role": "QB Titular Activo Georgia Tech Yellow Jackets (205.6 YDS/J)"
       },
       {
         "name": "Justice Haynes",
@@ -6145,7 +6184,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Georgia Tech Yellow Jackets (116.0 YDS/J)"
+        "role": "Corredor Titular Activo Georgia Tech Yellow Jackets (116.0 YDS/J)"
       },
       {
         "name": "Grady Adamson",
@@ -6158,7 +6197,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Georgia Tech Yellow Jackets (87.0 YDS/J)"
+        "role": "Corredor Titular Activo Georgia Tech Yellow Jackets (87.0 YDS/J)"
       },
       {
         "name": "Dalen Penson",
@@ -6171,7 +6210,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Georgia Tech Yellow Jackets (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Georgia Tech Yellow Jackets (68.0 YDS/J)"
       },
       {
         "name": "Jordan Allen",
@@ -6184,7 +6223,7 @@
         "rec_yds": 62.8,
         "receptions": 5.5,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Georgia Tech Yellow Jackets (62.8 YDS/J)"
+        "role": "Receptor Titular Activo Georgia Tech Yellow Jackets (62.8 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -6238,7 +6277,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Alabama Crimson Tide (237.2 YDS/J)"
+        "role": "QB Titular Activo Alabama Crimson Tide (237.2 YDS/J)"
       },
       {
         "name": "Daniel Hill",
@@ -6251,7 +6290,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Alabama Crimson Tide (89.0 YDS/J)"
+        "role": "Corredor Titular Activo Alabama Crimson Tide (89.0 YDS/J)"
       },
       {
         "name": "Trae'shawn Brown",
@@ -6264,7 +6303,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Alabama Crimson Tide (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Alabama Crimson Tide (74.0 YDS/J)"
       },
       {
         "name": "Ryan Coleman-Williams",
@@ -6277,7 +6316,7 @@
         "rec_yds": 68.0,
         "receptions": 7.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Alabama Crimson Tide (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Alabama Crimson Tide (68.0 YDS/J)"
       },
       {
         "name": "Lotzeir Brooks",
@@ -6290,7 +6329,7 @@
         "rec_yds": 62.0,
         "receptions": 5.4,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Alabama Crimson Tide (62.0 YDS/J)"
+        "role": "Receptor Titular Activo Alabama Crimson Tide (62.0 YDS/J)"
       },
       {
         "name": "Byrum Brown",
@@ -6303,7 +6342,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 70.5,
-        "role": "QB Titular Auburn Tigers (238.5 YDS/J)"
+        "role": "QB Titular Activo Auburn Tigers (238.5 YDS/J)"
       },
       {
         "name": "Jeremiah Cobb",
@@ -6316,7 +6355,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Auburn Tigers (50.0 YDS/J)"
+        "role": "Corredor Titular Activo Auburn Tigers (50.0 YDS/J)"
       },
       {
         "name": "Keshaun Singleton",
@@ -6329,20 +6368,20 @@
         "rec_yds": 103.0,
         "receptions": 9.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Auburn Tigers (103.0 YDS/J)"
+        "role": "Receptor Titular Activo Auburn Tigers (103.0 YDS/J)"
       },
       {
-        "name": "Chas Nimrod",
+        "name": "DeShawn Spencer",
         "team": "Auburn Tigers",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
+        "rec_yds": 46.0,
         "receptions": 3.6,
-        "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Auburn Tigers (44.0 YDS/J)"
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Auburn Tigers (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -6396,20 +6435,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Indiana Hoosiers (305.0 YDS/J)"
-      },
-      {
-        "name": "Lee Beebe Jr.",
-        "team": "Indiana Hoosiers",
-        "pos": "RB",
-        "jersey": "29",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 75.9,
-        "rec_yds": 14.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Indiana Hoosiers (75.9 YDS/J)"
+        "role": "QB Titular Activo Indiana Hoosiers (305.0 YDS/J)"
       },
       {
         "name": "Khobie Martin",
@@ -6422,7 +6448,20 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Indiana Hoosiers (82.0 YDS/J)"
+        "role": "Corredor Titular Activo Indiana Hoosiers (82.0 YDS/J)"
+      },
+      {
+        "name": "Lee Beebe Jr.",
+        "team": "Indiana Hoosiers",
+        "pos": "RB",
+        "jersey": "29",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 75.9,
+        "rec_yds": 14.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 52.4,
+        "role": "Corredor Titular Activo Indiana Hoosiers (75.9 YDS/J)"
       },
       {
         "name": "Charlie Becker",
@@ -6435,7 +6474,7 @@
         "rec_yds": 88.0,
         "receptions": 7.7,
         "anytime_td_pct": 74.0,
-        "role": "Receptor Titular Indiana Hoosiers (88.0 YDS/J)"
+        "role": "Receptor Titular Activo Indiana Hoosiers (88.0 YDS/J)"
       },
       {
         "name": "Nick Marsh",
@@ -6448,7 +6487,7 @@
         "rec_yds": 80.0,
         "receptions": 7.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Indiana Hoosiers (80.0 YDS/J)"
+        "role": "Receptor Titular Activo Indiana Hoosiers (80.0 YDS/J)"
       },
       {
         "name": "Ryan Browne",
@@ -6461,7 +6500,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Purdue Boilermakers (251.1 YDS/J)"
+        "role": "QB Titular Activo Purdue Boilermakers (251.1 YDS/J)"
       },
       {
         "name": "Antonio Harris",
@@ -6474,7 +6513,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Purdue Boilermakers (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Purdue Boilermakers (74.0 YDS/J)"
       },
       {
         "name": "Fame Ijeboi",
@@ -6487,7 +6526,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Purdue Boilermakers (68.9 YDS/J)"
+        "role": "Corredor Titular Activo Purdue Boilermakers (68.9 YDS/J)"
       },
       {
         "name": "Asaad Waseem",
@@ -6500,7 +6539,7 @@
         "rec_yds": 80.2,
         "receptions": 4.9,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Purdue Boilermakers (80.2 YDS/J)"
+        "role": "Receptor Titular Activo Purdue Boilermakers (80.2 YDS/J)"
       },
       {
         "name": "Tra'Mar Harris",
@@ -6513,7 +6552,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Purdue Boilermakers (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Purdue Boilermakers (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -6567,7 +6606,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Vanderbilt Commodores (235.4 YDS/J)"
+        "role": "QB Titular Activo Vanderbilt Commodores (235.4 YDS/J)"
       },
       {
         "name": "Makhilyn Young",
@@ -6580,7 +6619,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Vanderbilt Commodores (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Vanderbilt Commodores (74.0 YDS/J)"
       },
       {
         "name": "Sedrick Alexander",
@@ -6593,7 +6632,7 @@
         "rec_yds": 15.0,
         "receptions": 4.0,
         "anytime_td_pct": 61.6,
-        "role": "Corredor Titular Vanderbilt Commodores (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Vanderbilt Commodores (48.0 YDS/J)"
       },
       {
         "name": "Junior Sherrill",
@@ -6606,7 +6645,7 @@
         "rec_yds": 100.0,
         "receptions": 8.7,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Vanderbilt Commodores (100.0 YDS/J)"
+        "role": "Receptor Titular Activo Vanderbilt Commodores (100.0 YDS/J)"
       },
       {
         "name": "Tristen Brown",
@@ -6619,7 +6658,7 @@
         "rec_yds": 53.3,
         "receptions": 4.6,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Vanderbilt Commodores (53.3 YDS/J)"
+        "role": "Receptor Titular Activo Vanderbilt Commodores (53.3 YDS/J)"
       },
       {
         "name": "George MacIntyre",
@@ -6632,7 +6671,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Tennessee Volunteers (195.5 YDS/J)"
+        "role": "QB Titular Activo Tennessee Volunteers (195.5 YDS/J)"
       },
       {
         "name": "DeSean Bishop",
@@ -6645,7 +6684,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Tennessee Volunteers (109.5 YDS/J)"
+        "role": "Corredor Titular Activo Tennessee Volunteers (109.5 YDS/J)"
       },
       {
         "name": "Javin Gordon",
@@ -6658,7 +6697,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Tennessee Volunteers (78.0 YDS/J)"
+        "role": "Corredor Titular Activo Tennessee Volunteers (78.0 YDS/J)"
       },
       {
         "name": "Braylon Staley",
@@ -6671,7 +6710,7 @@
         "rec_yds": 56.1,
         "receptions": 4.9,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Tennessee Volunteers (56.1 YDS/J)"
+        "role": "Receptor Titular Activo Tennessee Volunteers (56.1 YDS/J)"
       },
       {
         "name": "Mike Matthews",
@@ -6684,7 +6723,7 @@
         "rec_yds": 54.2,
         "receptions": 4.7,
         "anytime_td_pct": 49.2,
-        "role": "Receptor Titular Tennessee Volunteers (54.2 YDS/J)"
+        "role": "Receptor Titular Activo Tennessee Volunteers (54.2 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -6738,7 +6777,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Wake Forest Demon Deacons (224.9 YDS/J)"
+        "role": "QB Titular Activo Wake Forest Demon Deacons (224.9 YDS/J)"
       },
       {
         "name": "Ty Clark III",
@@ -6751,7 +6790,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 75.4,
-        "role": "Corredor Titular Wake Forest Demon Deacons (77.0 YDS/J)"
+        "role": "Corredor Titular Activo Wake Forest Demon Deacons (77.0 YDS/J)"
       },
       {
         "name": "Steele Pizzella",
@@ -6764,7 +6803,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Wake Forest Demon Deacons (58.0 YDS/J)"
+        "role": "Corredor Titular Activo Wake Forest Demon Deacons (58.0 YDS/J)"
       },
       {
         "name": "Carlos Hernandez",
@@ -6777,7 +6816,7 @@
         "rec_yds": 100.4,
         "receptions": 8.7,
         "anytime_td_pct": 68.4,
-        "role": "Receptor Titular Wake Forest Demon Deacons (100.4 YDS/J)"
+        "role": "Receptor Titular Activo Wake Forest Demon Deacons (100.4 YDS/J)"
       },
       {
         "name": "Jack Foley",
@@ -6790,7 +6829,7 @@
         "rec_yds": 58.9,
         "receptions": 5.1,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Wake Forest Demon Deacons (58.9 YDS/J)"
+        "role": "Receptor Titular Activo Wake Forest Demon Deacons (58.9 YDS/J)"
       },
       {
         "name": "Walker Eget",
@@ -6803,7 +6842,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Duke Blue Devils (225.6 YDS/J)"
+        "role": "QB Titular Activo Duke Blue Devils (225.6 YDS/J)"
       },
       {
         "name": "Nate Sheppard",
@@ -6816,7 +6855,7 @@
         "rec_yds": 93.0,
         "receptions": 12.0,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Duke Blue Devils (131.6 YDS/J)"
+        "role": "Corredor Titular Activo Duke Blue Devils (131.6 YDS/J)"
       },
       {
         "name": "Jaivon Solomon",
@@ -6829,7 +6868,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Duke Blue Devils (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Duke Blue Devils (68.0 YDS/J)"
       },
       {
         "name": "Jonah Burton",
@@ -6842,7 +6881,7 @@
         "rec_yds": 46.0,
         "receptions": 4.0,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Duke Blue Devils (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Duke Blue Devils (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -6896,7 +6935,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Oregon Ducks (341.0 YDS/J)"
+        "role": "QB Titular Activo Oregon Ducks (341.0 YDS/J)"
       },
       {
         "name": "Dierre Hill Jr.",
@@ -6909,7 +6948,7 @@
         "rec_yds": 49.0,
         "receptions": 2.5,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Oregon Ducks (98.0 YDS/J)"
+        "role": "Corredor Titular Activo Oregon Ducks (98.0 YDS/J)"
       },
       {
         "name": "Brandon Smith",
@@ -6922,7 +6961,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Oregon Ducks (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Oregon Ducks (48.0 YDS/J)"
       },
       {
         "name": "Jeremiah McClellan",
@@ -6935,7 +6974,7 @@
         "rec_yds": 105.0,
         "receptions": 9.1,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Oregon Ducks (105.0 YDS/J)"
+        "role": "Receptor Titular Activo Oregon Ducks (105.0 YDS/J)"
       },
       {
         "name": "Dakorien Moore",
@@ -6948,7 +6987,7 @@
         "rec_yds": 101.0,
         "receptions": 8.8,
         "anytime_td_pct": 68.4,
-        "role": "Receptor Titular Oregon Ducks (101.0 YDS/J)"
+        "role": "Receptor Titular Activo Oregon Ducks (101.0 YDS/J)"
       },
       {
         "name": "Demond Williams Jr.",
@@ -6961,7 +7000,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Washington Huskies (219.6 YDS/J)"
+        "role": "QB Titular Activo Washington Huskies (219.6 YDS/J)"
       },
       {
         "name": "Jayden Limar",
@@ -6974,7 +7013,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Washington Huskies (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Washington Huskies (74.0 YDS/J)"
       },
       {
         "name": "Brian Bonner Jr.",
@@ -6987,7 +7026,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 42.0,
-        "role": "Corredor Titular Washington Huskies (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Washington Huskies (48.0 YDS/J)"
       },
       {
         "name": "Chris Lawson",
@@ -7000,20 +7039,20 @@
         "rec_yds": 81.6,
         "receptions": 7.1,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Washington Huskies (81.6 YDS/J)"
+        "role": "Receptor Titular Activo Washington Huskies (81.6 YDS/J)"
       },
       {
-        "name": "Rashid Williams",
+        "name": "Decker DeGraaf",
         "team": "Washington Huskies",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Washington Huskies (44.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Washington Huskies (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -7067,7 +7106,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Kentucky Wildcats (186.0 YDS/J)"
+        "role": "QB Titular Activo Kentucky Wildcats (186.0 YDS/J)"
       },
       {
         "name": "CJ Baxter",
@@ -7080,7 +7119,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular Kentucky Wildcats (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Kentucky Wildcats (74.0 YDS/J)"
       },
       {
         "name": "Willie Rodriguez",
@@ -7093,7 +7132,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Kentucky Wildcats (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Kentucky Wildcats (68.0 YDS/J)"
       },
       {
         "name": "Kenny Darby",
@@ -7106,7 +7145,7 @@
         "rec_yds": 46.8,
         "receptions": 4.9,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular Kentucky Wildcats (46.8 YDS/J)"
+        "role": "Receptor Titular Activo Kentucky Wildcats (46.8 YDS/J)"
       },
       {
         "name": "Lincoln Kienholz",
@@ -7119,7 +7158,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Louisville Cardinals (243.0 YDS/J)"
+        "role": "QB Titular Activo Louisville Cardinals (243.0 YDS/J)"
       },
       {
         "name": "Isaac Brown",
@@ -7132,7 +7171,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular Louisville Cardinals (80.4 YDS/J)"
+        "role": "Corredor Titular Activo Louisville Cardinals (80.4 YDS/J)"
       },
       {
         "name": "Tre Richardson",
@@ -7145,7 +7184,7 @@
         "rec_yds": 70.8,
         "receptions": 5.0,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular Louisville Cardinals (70.8 YDS/J)"
+        "role": "Receptor Titular Activo Louisville Cardinals (70.8 YDS/J)"
       },
       {
         "name": "TreyShun Hurry",
@@ -7158,7 +7197,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Louisville Cardinals (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Louisville Cardinals (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -7212,7 +7251,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Clemson Tigers (242.0 YDS/J)"
+        "role": "QB Titular Activo Clemson Tigers (242.0 YDS/J)"
       },
       {
         "name": "Jarvis Green",
@@ -7225,7 +7264,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Clemson Tigers (61.8 YDS/J)"
+        "role": "Corredor Titular Activo Clemson Tigers (61.8 YDS/J)"
       },
       {
         "name": "Gideon Davidson",
@@ -7238,7 +7277,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular Clemson Tigers (52.8 YDS/J)"
+        "role": "Corredor Titular Activo Clemson Tigers (52.8 YDS/J)"
       },
       {
         "name": "Juju Preston",
@@ -7251,7 +7290,7 @@
         "rec_yds": 56.0,
         "receptions": 4.9,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Clemson Tigers (56.0 YDS/J)"
+        "role": "Receptor Titular Activo Clemson Tigers (56.0 YDS/J)"
       },
       {
         "name": "Bryant Wesco Jr.",
@@ -7264,7 +7303,7 @@
         "rec_yds": 53.0,
         "receptions": 4.7,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Clemson Tigers (53.0 YDS/J)"
+        "role": "Receptor Titular Activo Clemson Tigers (53.0 YDS/J)"
       },
       {
         "name": "LaNorris Sellers",
@@ -7277,7 +7316,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 65.1,
-        "role": "QB Titular South Carolina Gamecocks (242.0 YDS/J)"
+        "role": "QB Titular Activo South Carolina Gamecocks (242.0 YDS/J)"
       },
       {
         "name": "Isaiah Augustave",
@@ -7290,7 +7329,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular South Carolina Gamecocks (74.0 YDS/J)"
+        "role": "Corredor Titular Activo South Carolina Gamecocks (74.0 YDS/J)"
       },
       {
         "name": "Nyck Harbor",
@@ -7303,7 +7342,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular South Carolina Gamecocks (68.0 YDS/J)"
+        "role": "Receptor Titular Activo South Carolina Gamecocks (68.0 YDS/J)"
       },
       {
         "name": "Mazeo Bennett Jr.",
@@ -7316,7 +7355,7 @@
         "rec_yds": 55.8,
         "receptions": 4.2,
         "anytime_td_pct": 56.9,
-        "role": "Receptor Titular South Carolina Gamecocks (55.8 YDS/J)"
+        "role": "Receptor Titular Activo South Carolina Gamecocks (55.8 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -7370,7 +7409,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Arkansas Razorbacks (242.0 YDS/J)"
+        "role": "QB Titular Activo Arkansas Razorbacks (242.0 YDS/J)"
       },
       {
         "name": "Cam Settles",
@@ -7383,7 +7422,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Arkansas Razorbacks (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Arkansas Razorbacks (74.0 YDS/J)"
       },
       {
         "name": "Chris Marshall",
@@ -7396,7 +7435,7 @@
         "rec_yds": 77.6,
         "receptions": 5.3,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Arkansas Razorbacks (77.6 YDS/J)"
+        "role": "Receptor Titular Activo Arkansas Razorbacks (77.6 YDS/J)"
       },
       {
         "name": "Sam Leavitt",
@@ -7409,7 +7448,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular LSU Tigers (283.7 YDS/J)"
+        "role": "QB Titular Activo LSU Tigers (283.7 YDS/J)"
       },
       {
         "name": "Dilin Jones",
@@ -7422,7 +7461,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular LSU Tigers (83.8 YDS/J)"
+        "role": "Corredor Titular Activo LSU Tigers (83.8 YDS/J)"
       },
       {
         "name": "Jackson Harris",
@@ -7435,7 +7474,7 @@
         "rec_yds": 88.9,
         "receptions": 5.5,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular LSU Tigers (88.9 YDS/J)"
+        "role": "Receptor Titular Activo LSU Tigers (88.9 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -7489,7 +7528,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Stanford Cardinal (244.8 YDS/J)"
+        "role": "QB Titular Activo Stanford Cardinal (244.8 YDS/J)"
       },
       {
         "name": "Micah Ford",
@@ -7502,7 +7541,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Stanford Cardinal (90.0 YDS/J)"
+        "role": "Corredor Titular Activo Stanford Cardinal (90.0 YDS/J)"
       },
       {
         "name": "Caden High",
@@ -7515,7 +7554,7 @@
         "rec_yds": 50.9,
         "receptions": 3.8,
         "anytime_td_pct": 51.1,
-        "role": "Receptor Titular Stanford Cardinal (50.9 YDS/J)"
+        "role": "Receptor Titular Activo Stanford Cardinal (50.9 YDS/J)"
       },
       {
         "name": "Kevin Jennings",
@@ -7528,7 +7567,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular SMU Mustangs (266.4 YDS/J)"
+        "role": "QB Titular Activo SMU Mustangs (266.4 YDS/J)"
       },
       {
         "name": "Kendrick Raphael",
@@ -7541,7 +7580,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular SMU Mustangs (71.5 YDS/J)"
+        "role": "Corredor Titular Activo SMU Mustangs (71.5 YDS/J)"
       },
       {
         "name": "Randy Pittman Jr.",
@@ -7554,7 +7593,7 @@
         "rec_yds": 76.0,
         "receptions": 5.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular SMU Mustangs (76.0 YDS/J)"
+        "role": "Receptor Titular Activo SMU Mustangs (76.0 YDS/J)"
       },
       {
         "name": "Yamir Knight",
@@ -7567,7 +7606,7 @@
         "rec_yds": 59.0,
         "receptions": 5.5,
         "anytime_td_pct": 58.8,
-        "role": "Receptor Titular SMU Mustangs (59.0 YDS/J)"
+        "role": "Receptor Titular Activo SMU Mustangs (59.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

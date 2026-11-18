@@ -48,7 +48,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 28.0,
-        "role": "QB Titular Akron Zips (185.0 YDS/J)"
+        "role": "QB Titular Activo Akron Zips (185.0 YDS/J)"
       },
       {
         "name": "Jordan Gant",
@@ -61,7 +61,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Akron Zips (72.8 YDS/J)"
+        "role": "Corredor Titular Activo Akron Zips (72.8 YDS/J)"
       },
       {
         "name": "Marcel Williams",
@@ -74,7 +74,7 @@
         "rec_yds": 85.0,
         "receptions": 7.4,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Akron Zips (85.0 YDS/J)"
+        "role": "Receptor Titular Activo Akron Zips (85.0 YDS/J)"
       },
       {
         "name": "Miles Burris",
@@ -87,7 +87,7 @@
         "rec_yds": 55.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Akron Zips (55.0 YDS/J)"
+        "role": "Receptor Titular Activo Akron Zips (55.0 YDS/J)"
       },
       {
         "name": "Broc Lowry",
@@ -100,7 +100,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Western Michigan Broncos (175.0 YDS/J)"
+        "role": "QB Titular Activo Western Michigan Broncos (175.0 YDS/J)"
       },
       {
         "name": "Jalen Buckley",
@@ -113,7 +113,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Western Michigan Broncos (121.0 YDS/J)"
+        "role": "Corredor Titular Activo Western Michigan Broncos (121.0 YDS/J)"
       },
       {
         "name": "Cole Cabana",
@@ -126,7 +126,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Western Michigan Broncos (107.0 YDS/J)"
+        "role": "Corredor Titular Activo Western Michigan Broncos (107.0 YDS/J)"
       },
       {
         "name": "Baylin Brooks",
@@ -139,7 +139,7 @@
         "rec_yds": 78.0,
         "receptions": 8.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Western Michigan Broncos (78.0 YDS/J)"
+        "role": "Receptor Titular Activo Western Michigan Broncos (78.0 YDS/J)"
       },
       {
         "name": "Keivin Boone-Nelson II",
@@ -152,7 +152,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Western Michigan Broncos (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Western Michigan Broncos (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {
@@ -1327,7 +1327,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Bowling Green Falcons (229.0 YDS/J)"
+        "role": "QB Titular Activo Bowling Green Falcons (229.0 YDS/J)"
       },
       {
         "name": "Nakai Amachree",
@@ -1340,7 +1340,7 @@
         "rec_yds": 87.0,
         "receptions": 3.0,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Bowling Green Falcons (110.0 YDS/J)"
+        "role": "Corredor Titular Activo Bowling Green Falcons (110.0 YDS/J)"
       },
       {
         "name": "Austyn Dendy",
@@ -1353,7 +1353,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Bowling Green Falcons (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Bowling Green Falcons (48.0 YDS/J)"
       },
       {
         "name": "Eli Jacon-Duffy",
@@ -1366,7 +1366,7 @@
         "rec_yds": 59.0,
         "receptions": 5.1,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Bowling Green Falcons (59.0 YDS/J)"
+        "role": "Receptor Titular Activo Bowling Green Falcons (59.0 YDS/J)"
       },
       {
         "name": "Brennan Ridley",
@@ -1379,7 +1379,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Bowling Green Falcons (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Bowling Green Falcons (46.0 YDS/J)"
       },
       {
         "name": "Dru DeShields",
@@ -1392,7 +1392,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Kent State Golden Flashes (332.0 YDS/J)"
+        "role": "QB Titular Activo Kent State Golden Flashes (332.0 YDS/J)"
       },
       {
         "name": "Wayne Harris",
@@ -1405,7 +1405,7 @@
         "rec_yds": 143.0,
         "receptions": 12.4,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Kent State Golden Flashes (143.0 YDS/J)"
+        "role": "Receptor Titular Activo Kent State Golden Flashes (143.0 YDS/J)"
       },
       {
         "name": "Da'Realyst Clark",
@@ -1418,7 +1418,7 @@
         "rec_yds": 107.0,
         "receptions": 9.3,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Kent State Golden Flashes (107.0 YDS/J)"
+        "role": "Receptor Titular Activo Kent State Golden Flashes (107.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {
@@ -2583,17 +2583,17 @@
     },
     "stars": [
       {
-        "name": "David McComb",
+        "name": "Drew Bellisari",
         "team": "Miami (OH) RedHawks",
         "pos": "QB",
-        "jersey": "16",
-        "pass_yds": 175.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
         "pass_tds": 1.5,
-        "rush_yds": 15.0,
+        "rush_yds": 55.5,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Miami (OH) RedHawks (175.0 YDS/J)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Miami (OH) RedHawks (185.0 YDS/J)"
       },
       {
         "name": "D'Shawntae Jones",
@@ -2606,20 +2606,20 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Miami (OH) RedHawks (115.0 YDS/J)"
+        "role": "Corredor Titular Activo Miami (OH) RedHawks (115.0 YDS/J)"
       },
       {
-        "name": "Rodney Nelson",
+        "name": "Lazaro Rogers",
         "team": "Miami (OH) RedHawks",
         "pos": "RB",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 48.0,
+        "rush_yds": 54.0,
         "rec_yds": 14.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Miami (OH) RedHawks (48.0 YDS/J)"
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Miami (OH) RedHawks (54.0 YDS/J)"
       },
       {
         "name": "Maleek Huggins",
@@ -2632,7 +2632,7 @@
         "rec_yds": 61.0,
         "receptions": 5.3,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Miami (OH) RedHawks (61.0 YDS/J)"
+        "role": "Receptor Titular Activo Miami (OH) RedHawks (61.0 YDS/J)"
       },
       {
         "name": "Braylon Isom",
@@ -2645,7 +2645,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Miami (OH) RedHawks (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Miami (OH) RedHawks (46.0 YDS/J)"
       },
       {
         "name": "Nick Poulos",
@@ -2658,7 +2658,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Ohio Bobcats (193.0 YDS/J)"
+        "role": "QB Titular Activo Ohio Bobcats (193.0 YDS/J)"
       },
       {
         "name": "Duncan Brune",
@@ -2671,7 +2671,20 @@
         "rec_yds": 35.0,
         "receptions": 3.0,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Ohio Bobcats (49.6 YDS/J)"
+        "role": "Corredor Titular Activo Ohio Bobcats (49.6 YDS/J)"
+      },
+      {
+        "name": "Victor Rosa",
+        "team": "Ohio Bobcats",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 65.0,
+        "rec_yds": 14.0,
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Ohio Bobcats (65.0 YDS/J)"
       },
       {
         "name": "Riley Neer",
@@ -2684,7 +2697,7 @@
         "rec_yds": 74.0,
         "receptions": 6.4,
         "anytime_td_pct": 58.8,
-        "role": "Receptor Titular Ohio Bobcats (74.0 YDS/J)"
+        "role": "Receptor Titular Activo Ohio Bobcats (74.0 YDS/J)"
       },
       {
         "name": "Preston Bowman",
@@ -2697,7 +2710,7 @@
         "rec_yds": 50.0,
         "receptions": 4.3,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Ohio Bobcats (50.0 YDS/J)"
+        "role": "Receptor Titular Activo Ohio Bobcats (50.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {

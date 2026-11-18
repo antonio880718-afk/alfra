@@ -38,17 +38,17 @@
     },
     "stars": [
       {
-        "name": "William Watson III",
+        "name": "Logan Inagawa",
         "team": "Massachusetts Minutemen",
         "pos": "QB",
-        "jersey": "5",
-        "pass_yds": 175.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
         "pass_tds": 1.5,
-        "rush_yds": 15.0,
+        "rush_yds": 40.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Massachusetts Minutemen (175.0 YDS/J)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Activo Massachusetts Minutemen (185.0 YDS/J)"
       },
       {
         "name": "Curtis Kimmons IV",
@@ -61,33 +61,33 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Massachusetts Minutemen (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Massachusetts Minutemen (48.0 YDS/J)"
       },
       {
-        "name": "T.Y. Harding",
-        "team": "Massachusetts Minutemen",
-        "pos": "WR",
-        "jersey": "2",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Massachusetts Minutemen (45.0 YDS/J)"
-      },
-      {
-        "name": "Drew Alsup",
+        "name": "Reece Adkins",
         "team": "Massachusetts Minutemen",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Massachusetts Minutemen (44.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Massachusetts Minutemen (46.0 YDS/J)"
+      },
+      {
+        "name": "Jabari Lewis",
+        "team": "Massachusetts Minutemen",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Massachusetts Minutemen (46.0 YDS/J)"
       },
       {
         "name": "Cibastian Broughton",
@@ -100,7 +100,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 28.0,
-        "role": "QB Titular Akron Zips (185.0 YDS/J)"
+        "role": "QB Titular Activo Akron Zips (185.0 YDS/J)"
       },
       {
         "name": "Jordan Gant",
@@ -113,7 +113,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Akron Zips (72.8 YDS/J)"
+        "role": "Corredor Titular Activo Akron Zips (72.8 YDS/J)"
       },
       {
         "name": "Marcel Williams",
@@ -126,7 +126,7 @@
         "rec_yds": 85.0,
         "receptions": 7.4,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Akron Zips (85.0 YDS/J)"
+        "role": "Receptor Titular Activo Akron Zips (85.0 YDS/J)"
       },
       {
         "name": "Miles Burris",
@@ -139,7 +139,7 @@
         "rec_yds": 55.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Akron Zips (55.0 YDS/J)"
+        "role": "Receptor Titular Activo Akron Zips (55.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -193,7 +193,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Buffalo Bulls (175.0 YDS/J)"
+        "role": "QB Titular Activo Buffalo Bulls (175.0 YDS/J)"
       },
       {
         "name": "Messiah Burch",
@@ -206,7 +206,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Buffalo Bulls (209.0 YDS/J)"
+        "role": "Corredor Titular Activo Buffalo Bulls (209.0 YDS/J)"
       },
       {
         "name": "Terrance Shelton Jr.",
@@ -219,7 +219,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Buffalo Bulls (92.0 YDS/J)"
+        "role": "Corredor Titular Activo Buffalo Bulls (92.0 YDS/J)"
       },
       {
         "name": "Chance Morrow",
@@ -232,7 +232,7 @@
         "rec_yds": 69.3,
         "receptions": 5.4,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular Buffalo Bulls (69.3 YDS/J)"
+        "role": "Receptor Titular Activo Buffalo Bulls (69.3 YDS/J)"
       },
       {
         "name": "Clint Walker",
@@ -245,7 +245,7 @@
         "rec_yds": 44.0,
         "receptions": 3.4,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Buffalo Bulls (44.0 YDS/J)"
+        "role": "Receptor Titular Activo Buffalo Bulls (44.0 YDS/J)"
       },
       {
         "name": "Jadyn Glasser",
@@ -258,7 +258,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Central Michigan Chippewas (175.0 YDS/J)"
+        "role": "QB Titular Activo Central Michigan Chippewas (175.0 YDS/J)"
       },
       {
         "name": "Nick Woodford",
@@ -271,7 +271,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Central Michigan Chippewas (119.0 YDS/J)"
+        "role": "Corredor Titular Activo Central Michigan Chippewas (119.0 YDS/J)"
       },
       {
         "name": "Jayden Clerveaux",
@@ -284,7 +284,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Central Michigan Chippewas (100.0 YDS/J)"
+        "role": "Corredor Titular Activo Central Michigan Chippewas (100.0 YDS/J)"
       },
       {
         "name": "Nasir Williams",
@@ -297,20 +297,20 @@
         "rec_yds": 57.0,
         "receptions": 5.0,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Central Michigan Chippewas (57.0 YDS/J)"
+        "role": "Receptor Titular Activo Central Michigan Chippewas (57.0 YDS/J)"
       },
       {
-        "name": "Langston Lewis",
+        "name": "Vaughn Blue",
         "team": "Central Michigan Chippewas",
         "pos": "WR",
-        "jersey": "20",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Central Michigan Chippewas (45.0 YDS/J)"
+        "rec_yds": 46.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Central Michigan Chippewas (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

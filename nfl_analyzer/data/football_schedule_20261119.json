@@ -48,7 +48,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Temple Owls (242.0 YDS/J)"
+        "role": "QB Titular Activo Temple Owls (242.0 YDS/J)"
       },
       {
         "name": "Keveun Mason",
@@ -61,7 +61,20 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Temple Owls (70.8 YDS/J)"
+        "role": "Corredor Titular Activo Temple Owls (70.8 YDS/J)"
+      },
+      {
+        "name": "JoJo Bermudez",
+        "team": "Temple Owls",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 54.0,
+        "rec_yds": 18.0,
+        "receptions": 3.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Temple Owls (54.0 YDS/J)"
       },
       {
         "name": "Jayce Freeman",
@@ -74,7 +87,7 @@
         "rec_yds": 55.1,
         "receptions": 4.8,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Temple Owls (55.1 YDS/J)"
+        "role": "Receptor Titular Activo Temple Owls (55.1 YDS/J)"
       },
       {
         "name": "Joey Schlaffer",
@@ -87,7 +100,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Temple Owls (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Temple Owls (46.0 YDS/J)"
       },
       {
         "name": "Jacurri Brown",
@@ -100,7 +113,7 @@
         "rec_yds": 68.0,
         "receptions": 0.0,
         "anytime_td_pct": 57.0,
-        "role": "QB Titular Rice Owls (175.0 YDS/J)"
+        "role": "QB Titular Activo Rice Owls (175.0 YDS/J)"
       },
       {
         "name": "D'Andre Hardeman Jr.",
@@ -113,7 +126,7 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Rice Owls (65.6 YDS/J)"
+        "role": "Corredor Titular Activo Rice Owls (65.6 YDS/J)"
       },
       {
         "name": "Gael Ochoa",
@@ -126,7 +139,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Rice Owls (59.0 YDS/J)"
+        "role": "Corredor Titular Activo Rice Owls (59.0 YDS/J)"
       },
       {
         "name": "Jordan Clark",
@@ -139,7 +152,7 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Rice Owls (45.0 YDS/J)"
+        "role": "Receptor Titular Activo Rice Owls (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -192,33 +205,20 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Houston Texans (323.8 YDS/J)"
+        "role": "QB Titular Activo Houston Texans (323.8 YDS/J)"
       },
       {
-        "name": "Woody Marks",
+        "name": "Emari Demercado",
         "team": "Houston Texans",
         "pos": "RB",
-        "jersey": "0",
+        "jersey": "21",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 60.0,
-        "rec_yds": 12.0,
+        "rush_yds": 62.0,
+        "rec_yds": 16.0,
         "receptions": 2.2,
-        "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Houston Texans (60.0 YDS/J)"
-      },
-      {
-        "name": "David Montgomery",
-        "team": "Houston Texans",
-        "pos": "RB",
-        "jersey": "32",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 48.0,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 44.1,
-        "role": "Corredor Titular Houston Texans (48.0 YDS/J)"
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Houston Texans (62.0 YDS/J)"
       },
       {
         "name": "Kayshon Boutte",
@@ -231,7 +231,7 @@
         "rec_yds": 90.9,
         "receptions": 7.9,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Houston Texans (90.9 YDS/J)"
+        "role": "Receptor Titular Activo Houston Texans (90.9 YDS/J)"
       },
       {
         "name": "Tank Dell",
@@ -244,7 +244,7 @@
         "rec_yds": 80.0,
         "receptions": 7.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Houston Texans (80.0 YDS/J)"
+        "role": "Receptor Titular Activo Houston Texans (80.0 YDS/J)"
       },
       {
         "name": "Daniel Jones",
@@ -257,7 +257,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Indianapolis Colts (175.0 YDS/J)"
+        "role": "QB Titular Activo Indianapolis Colts (175.0 YDS/J)"
       },
       {
         "name": "Jonathan Taylor",
@@ -270,7 +270,7 @@
         "rec_yds": 35.0,
         "receptions": 4.2,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular Indianapolis Colts (70.6 YDS/J)"
+        "role": "Corredor Titular Activo Indianapolis Colts (70.6 YDS/J)"
       },
       {
         "name": "Seth McGowan",
@@ -283,7 +283,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Indianapolis Colts (63.9 YDS/J)"
+        "role": "Corredor Titular Activo Indianapolis Colts (63.9 YDS/J)"
       },
       {
         "name": "Keenan Allen",
@@ -296,7 +296,7 @@
         "rec_yds": 46.0,
         "receptions": 4.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Indianapolis Colts (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Indianapolis Colts (46.0 YDS/J)"
       },
       {
         "name": "Josh Downs",
@@ -309,7 +309,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Indianapolis Colts (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Indianapolis Colts (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

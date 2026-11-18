@@ -43,7 +43,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Minnesota Vikings (207.0 YDS/J)"
+        "role": "QB Titular Activo Minnesota Vikings (207.0 YDS/J)"
       },
       {
         "name": "Aaron Jones Sr.",
@@ -56,7 +56,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 49.2,
-        "role": "Corredor Titular Minnesota Vikings (48.7 YDS/J)"
+        "role": "Corredor Titular Activo Minnesota Vikings (48.7 YDS/J)"
       },
       {
         "name": "Jordan Mason",
@@ -69,7 +69,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Minnesota Vikings (49.0 YDS/J)"
+        "role": "Corredor Titular Activo Minnesota Vikings (49.0 YDS/J)"
       },
       {
         "name": "Justin Jefferson",
@@ -82,10 +82,10 @@
         "rec_yds": 66.0,
         "receptions": 6.0,
         "anytime_td_pct": 51.1,
-        "role": "Receptor Titular Minnesota Vikings (66.0 YDS/J)"
+        "role": "Receptor Titular Activo Minnesota Vikings (66.0 YDS/J)"
       },
       {
-        "name": "Jordan Addison",
+        "name": "T.J. Hockenson",
         "team": "Minnesota Vikings",
         "pos": "WR",
         "jersey": "0",
@@ -93,9 +93,9 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 46.0,
-        "receptions": 3.6,
+        "receptions": 4.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Minnesota Vikings (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Minnesota Vikings (46.0 YDS/J)"
       },
       {
         "name": "Josh Allen",
@@ -108,7 +108,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Buffalo Bills (235.8 YDS/J)"
+        "role": "QB Titular Activo Buffalo Bills (235.8 YDS/J)"
       },
       {
         "name": "James Cook III",
@@ -121,7 +121,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Buffalo Bills (132.0 YDS/J)"
+        "role": "Corredor Titular Activo Buffalo Bills (132.0 YDS/J)"
       },
       {
         "name": "DJ Moore",
@@ -134,7 +134,7 @@
         "rec_yds": 69.8,
         "receptions": 6.1,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Buffalo Bills (69.8 YDS/J)"
+        "role": "Receptor Titular Activo Buffalo Bills (69.8 YDS/J)"
       },
       {
         "name": "Khalil Shakir",
@@ -147,7 +147,7 @@
         "rec_yds": 52.4,
         "receptions": 4.6,
         "anytime_td_pct": 35.0,
-        "role": "Receptor Titular Buffalo Bills (52.4 YDS/J)"
+        "role": "Receptor Titular Activo Buffalo Bills (52.4 YDS/J)"
       }
     ],
     "boxscore_athletes": {

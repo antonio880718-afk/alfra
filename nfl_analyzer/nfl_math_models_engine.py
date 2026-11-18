@@ -101,7 +101,14 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     league = game.get("league", "NFL")
     ou_line = float(game.get("over_under", 46.5 if league == "NFL" else 54.5))
     spread_str = game.get("spread_str", "")
-    stars = game.get("stars", [])
+    _raw_stars = game.get("stars", [])
+    try:
+        import os as _os_ij, json as _json_ij
+        _ij_p = _os_ij.path.join(_os_ij.path.dirname(_os_ij.path.abspath(__file__)), "data", "espn_injured_blacklist.json")
+        _ij_set = set(_json_ij.load(open(_ij_p, "r", encoding="utf-8"))) if _os_ij.path.exists(_ij_p) else set()
+    except Exception:
+        _ij_set = set()
+    stars = [s for s in _raw_stars if str(s.get("name", "")).lower().strip() not in _ij_set]
     venue = game.get("venue", "Estadio Oficial")
     is_dome = game.get("is_dome", False)
 

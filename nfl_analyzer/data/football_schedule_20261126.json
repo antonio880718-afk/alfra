@@ -47,7 +47,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Detroit Lions (258.8 YDS/J)"
+        "role": "QB Titular Activo Detroit Lions (258.8 YDS/J)"
       },
       {
         "name": "Jahmyr Gibbs",
@@ -60,7 +60,7 @@
         "rec_yds": 49.5,
         "receptions": 3.5,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Detroit Lions (113.5 YDS/J)"
+        "role": "Corredor Titular Activo Detroit Lions (113.5 YDS/J)"
       },
       {
         "name": "Sione Vaki",
@@ -73,7 +73,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Detroit Lions (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Detroit Lions (48.0 YDS/J)"
       },
       {
         "name": "Amon-Ra St. Brown",
@@ -86,20 +86,20 @@
         "rec_yds": 92.0,
         "receptions": 8.0,
         "anytime_td_pct": 67.4,
-        "role": "Receptor Titular Detroit Lions (92.0 YDS/J)"
+        "role": "Receptor Titular Activo Detroit Lions (92.0 YDS/J)"
       },
       {
-        "name": "Jameson Williams",
+        "name": "Sam LaPorta",
         "team": "Detroit Lions",
         "pos": "WR",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 44.0,
+        "rec_yds": 46.0,
         "receptions": 3.6,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Detroit Lions (44.0 YDS/J)"
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Detroit Lions (46.0 YDS/J)"
       },
       {
         "name": "Caleb Williams",
@@ -112,7 +112,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Chicago Bears (279.0 YDS/J)"
+        "role": "QB Titular Activo Chicago Bears (279.0 YDS/J)"
       },
       {
         "name": "D'Andre Swift",
@@ -125,7 +125,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Chicago Bears (52.5 YDS/J)"
+        "role": "Corredor Titular Activo Chicago Bears (52.5 YDS/J)"
       },
       {
         "name": "Salvon Ahmed",
@@ -138,7 +138,7 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Chicago Bears (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Chicago Bears (48.0 YDS/J)"
       },
       {
         "name": "Luther Burden III",
@@ -151,7 +151,7 @@
         "rec_yds": 97.0,
         "receptions": 8.4,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Chicago Bears (97.0 YDS/J)"
+        "role": "Receptor Titular Activo Chicago Bears (97.0 YDS/J)"
       },
       {
         "name": "Rome Odunze",
@@ -164,7 +164,7 @@
         "rec_yds": 60.0,
         "receptions": 4.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Chicago Bears (60.0 YDS/J)"
+        "role": "Receptor Titular Activo Chicago Bears (60.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -216,7 +216,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Dallas Cowboys (339.0 YDS/J)"
+        "role": "QB Titular Activo Dallas Cowboys (339.0 YDS/J)"
       },
       {
         "name": "Javonte Williams",
@@ -229,20 +229,7 @@
         "rec_yds": 35.0,
         "receptions": 3.4,
         "anytime_td_pct": 75.4,
-        "role": "Corredor Titular Dallas Cowboys (84.5 YDS/J)"
-      },
-      {
-        "name": "Tyler Goodson",
-        "team": "Dallas Cowboys",
-        "pos": "RB",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 77.0,
-        "rec_yds": 12.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Dallas Cowboys (77.0 YDS/J)"
+        "role": "Corredor Titular Activo Dallas Cowboys (84.5 YDS/J)"
       },
       {
         "name": "CeeDee Lamb",
@@ -255,7 +242,7 @@
         "rec_yds": 154.5,
         "receptions": 13.4,
         "anytime_td_pct": 68.4,
-        "role": "Receptor Titular Dallas Cowboys (154.5 YDS/J)"
+        "role": "Receptor Titular Activo Dallas Cowboys (154.5 YDS/J)"
       },
       {
         "name": "George Pickens",
@@ -268,7 +255,7 @@
         "rec_yds": 145.0,
         "receptions": 12.6,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Dallas Cowboys (145.0 YDS/J)"
+        "role": "Receptor Titular Activo Dallas Cowboys (145.0 YDS/J)"
       },
       {
         "name": "Joe Milton",
@@ -281,7 +268,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 28.0,
-        "role": "QB Titular Philadelphia Eagles (185.0 YDS/J)"
+        "role": "QB Titular Activo Philadelphia Eagles (185.0 YDS/J)"
       },
       {
         "name": "Saquon Barkley",
@@ -294,7 +281,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 49.2,
-        "role": "Corredor Titular Philadelphia Eagles (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Philadelphia Eagles (48.0 YDS/J)"
       },
       {
         "name": "Makai Lemon",
@@ -307,7 +294,7 @@
         "rec_yds": 61.0,
         "receptions": 6.0,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Philadelphia Eagles (61.0 YDS/J)"
+        "role": "Receptor Titular Activo Philadelphia Eagles (61.0 YDS/J)"
       },
       {
         "name": "Dallas Goedert",
@@ -320,7 +307,7 @@
         "rec_yds": 50.0,
         "receptions": 5.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Philadelphia Eagles (50.0 YDS/J)"
+        "role": "Receptor Titular Activo Philadelphia Eagles (50.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -374,7 +361,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Texas Tech Red Raiders (242.0 YDS/J)"
+        "role": "QB Titular Activo Texas Tech Red Raiders (242.0 YDS/J)"
       },
       {
         "name": "J'Koby Williams",
@@ -387,7 +374,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular Texas Tech Red Raiders (107.8 YDS/J)"
+        "role": "Corredor Titular Activo Texas Tech Red Raiders (107.8 YDS/J)"
       },
       {
         "name": "Kenny Johnson",
@@ -400,7 +387,7 @@
         "rec_yds": 70.7,
         "receptions": 4.4,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Texas Tech Red Raiders (70.7 YDS/J)"
+        "role": "Receptor Titular Activo Texas Tech Red Raiders (70.7 YDS/J)"
       },
       {
         "name": "Jaden Craig",
@@ -413,7 +400,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular TCU Horned Frogs (251.9 YDS/J)"
+        "role": "QB Titular Activo TCU Horned Frogs (251.9 YDS/J)"
       },
       {
         "name": "Jeremy Payne",
@@ -426,7 +413,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 43.2,
-        "role": "Corredor Titular TCU Horned Frogs (55.0 YDS/J)"
+        "role": "Corredor Titular Activo TCU Horned Frogs (55.0 YDS/J)"
       },
       {
         "name": "Jordan Dwyer",
@@ -439,7 +426,7 @@
         "rec_yds": 85.0,
         "receptions": 5.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular TCU Horned Frogs (85.0 YDS/J)"
+        "role": "Receptor Titular Activo TCU Horned Frogs (85.0 YDS/J)"
       },
       {
         "name": "Ed Small",
@@ -452,7 +439,7 @@
         "rec_yds": 65.0,
         "receptions": 4.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular TCU Horned Frogs (65.0 YDS/J)"
+        "role": "Receptor Titular Activo TCU Horned Frogs (65.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -504,7 +491,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Buffalo Bills (235.8 YDS/J)"
+        "role": "QB Titular Activo Buffalo Bills (235.8 YDS/J)"
       },
       {
         "name": "James Cook III",
@@ -517,7 +504,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Buffalo Bills (132.0 YDS/J)"
+        "role": "Corredor Titular Activo Buffalo Bills (132.0 YDS/J)"
       },
       {
         "name": "DJ Moore",
@@ -530,7 +517,7 @@
         "rec_yds": 69.8,
         "receptions": 6.1,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Buffalo Bills (69.8 YDS/J)"
+        "role": "Receptor Titular Activo Buffalo Bills (69.8 YDS/J)"
       },
       {
         "name": "Khalil Shakir",
@@ -543,7 +530,7 @@
         "rec_yds": 52.4,
         "receptions": 4.6,
         "anytime_td_pct": 35.0,
-        "role": "Receptor Titular Buffalo Bills (52.4 YDS/J)"
+        "role": "Receptor Titular Activo Buffalo Bills (52.4 YDS/J)"
       },
       {
         "name": "Patrick Mahomes",
@@ -556,7 +543,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Kansas City Chiefs (295.0 YDS/J)"
+        "role": "QB Titular Activo Kansas City Chiefs (295.0 YDS/J)"
       },
       {
         "name": "Kenneth Walker III",
@@ -569,7 +556,7 @@
         "rec_yds": 41.0,
         "receptions": 4.0,
         "anytime_td_pct": 69.9,
-        "role": "Corredor Titular Kansas City Chiefs (102.0 YDS/J)"
+        "role": "Corredor Titular Activo Kansas City Chiefs (102.0 YDS/J)"
       },
       {
         "name": "Emmett Johnson",
@@ -582,7 +569,7 @@
         "rec_yds": 59.5,
         "receptions": 5.1,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Kansas City Chiefs (79.4 YDS/J)"
+        "role": "Corredor Titular Activo Kansas City Chiefs (79.4 YDS/J)"
       },
       {
         "name": "Rashee Rice",
@@ -595,7 +582,7 @@
         "rec_yds": 68.2,
         "receptions": 5.9,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Kansas City Chiefs (68.2 YDS/J)"
+        "role": "Receptor Titular Activo Kansas City Chiefs (68.2 YDS/J)"
       },
       {
         "name": "Travis Kelce",
@@ -608,7 +595,7 @@
         "rec_yds": 54.8,
         "receptions": 4.8,
         "anytime_td_pct": 40.6,
-        "role": "Receptor Titular Kansas City Chiefs (54.8 YDS/J)"
+        "role": "Receptor Titular Activo Kansas City Chiefs (54.8 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

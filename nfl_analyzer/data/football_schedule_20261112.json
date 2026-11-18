@@ -48,7 +48,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular South Florida Bulls (271.0 YDS/J)"
+        "role": "QB Titular Activo South Florida Bulls (271.0 YDS/J)"
       },
       {
         "name": "Jason Collins Jr.",
@@ -61,7 +61,7 @@
         "rec_yds": 65.0,
         "receptions": 3.0,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular South Florida Bulls (108.0 YDS/J)"
+        "role": "Corredor Titular Activo South Florida Bulls (108.0 YDS/J)"
       },
       {
         "name": "D.J. Crowther",
@@ -74,7 +74,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular South Florida Bulls (68.9 YDS/J)"
+        "role": "Corredor Titular Activo South Florida Bulls (68.9 YDS/J)"
       },
       {
         "name": "Mudia Reuben",
@@ -87,7 +87,7 @@
         "rec_yds": 98.0,
         "receptions": 6.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular South Florida Bulls (98.0 YDS/J)"
+        "role": "Receptor Titular Activo South Florida Bulls (98.0 YDS/J)"
       },
       {
         "name": "Bryson Rodgers",
@@ -100,7 +100,7 @@
         "rec_yds": 49.0,
         "receptions": 6.0,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular South Florida Bulls (49.0 YDS/J)"
+        "role": "Receptor Titular Activo South Florida Bulls (49.0 YDS/J)"
       },
       {
         "name": "Marcus Stokes",
@@ -113,7 +113,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Memphis Tigers (313.0 YDS/J)"
+        "role": "QB Titular Activo Memphis Tigers (313.0 YDS/J)"
       },
       {
         "name": "Jaylin Carter",
@@ -126,20 +126,20 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Memphis Tigers (109.0 YDS/J)"
+        "role": "Corredor Titular Activo Memphis Tigers (109.0 YDS/J)"
       },
       {
-        "name": "Jordan Thompson",
+        "name": "Manny Covey",
         "team": "Memphis Tigers",
         "pos": "RB",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 51.0,
-        "rec_yds": 12.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Memphis Tigers (51.0 YDS/J)"
+        "rush_yds": 54.0,
+        "rec_yds": 14.0,
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Memphis Tigers (54.0 YDS/J)"
       },
       {
         "name": "Jemyri Davis",
@@ -152,7 +152,7 @@
         "rec_yds": 161.0,
         "receptions": 14.0,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Memphis Tigers (161.0 YDS/J)"
+        "role": "Receptor Titular Activo Memphis Tigers (161.0 YDS/J)"
       },
       {
         "name": "Aidan O'Callaghan",
@@ -165,7 +165,7 @@
         "rec_yds": 53.0,
         "receptions": 4.6,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Memphis Tigers (53.0 YDS/J)"
+        "role": "Receptor Titular Activo Memphis Tigers (53.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {
@@ -1324,20 +1324,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular New York Giants (241.1 YDS/J)"
-      },
-      {
-        "name": "Cam Skattebo",
-        "team": "New York Giants",
-        "pos": "RB",
-        "jersey": "44",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 78.0,
-        "rec_yds": 44.0,
-        "receptions": 3.0,
-        "anytime_td_pct": 58.0,
-        "role": "Corredor Titular New York Giants (78.0 YDS/J)"
+        "role": "QB Titular Activo New York Giants (241.1 YDS/J)"
       },
       {
         "name": "Devin Singletary",
@@ -1350,7 +1337,7 @@
         "rec_yds": 12.0,
         "receptions": 1.8,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular New York Giants (48.0 YDS/J)"
+        "role": "Corredor Titular Activo New York Giants (48.0 YDS/J)"
       },
       {
         "name": "Isaiah Likely",
@@ -1363,7 +1350,7 @@
         "rec_yds": 101.7,
         "receptions": 8.8,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular New York Giants (101.7 YDS/J)"
+        "role": "Receptor Titular Activo New York Giants (101.7 YDS/J)"
       },
       {
         "name": "Malik Nabers",
@@ -1376,7 +1363,7 @@
         "rec_yds": 65.2,
         "receptions": 6.4,
         "anytime_td_pct": 40.6,
-        "role": "Receptor Titular New York Giants (65.2 YDS/J)"
+        "role": "Receptor Titular Activo New York Giants (65.2 YDS/J)"
       },
       {
         "name": "Jayden Daniels",
@@ -1389,7 +1376,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 39.9,
-        "role": "QB Titular Washington Commanders (261.5 YDS/J)"
+        "role": "QB Titular Activo Washington Commanders (261.5 YDS/J)"
       },
       {
         "name": "Rachaad White",
@@ -1402,7 +1389,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Washington Commanders (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Washington Commanders (48.0 YDS/J)"
       },
       {
         "name": "Austin Ekeler",
@@ -1415,7 +1402,7 @@
         "rec_yds": 35.0,
         "receptions": 3.4,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Washington Commanders (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Washington Commanders (48.0 YDS/J)"
       },
       {
         "name": "Stefon Diggs",
@@ -1428,7 +1415,7 @@
         "rec_yds": 69.3,
         "receptions": 6.0,
         "anytime_td_pct": 62.2,
-        "role": "Receptor Titular Washington Commanders (69.3 YDS/J)"
+        "role": "Receptor Titular Activo Washington Commanders (69.3 YDS/J)"
       },
       {
         "name": "Van Jefferson",
@@ -1441,7 +1428,7 @@
         "rec_yds": 58.0,
         "receptions": 5.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Washington Commanders (58.0 YDS/J)"
+        "role": "Receptor Titular Activo Washington Commanders (58.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {
@@ -2552,7 +2539,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular UL Monroe Warhawks (181.8 YDS/J)"
+        "role": "QB Titular Activo UL Monroe Warhawks (181.8 YDS/J)"
       },
       {
         "name": "Bryson Roland",
@@ -2565,7 +2552,7 @@
         "rec_yds": 68.0,
         "receptions": 2.2,
         "anytime_td_pct": 50.0,
-        "role": "Corredor Titular UL Monroe Warhawks (111.0 YDS/J)"
+        "role": "Corredor Titular Activo UL Monroe Warhawks (111.0 YDS/J)"
       },
       {
         "name": "Austin Carlisle",
@@ -2578,7 +2565,20 @@
         "rec_yds": 20.0,
         "receptions": 2.2,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular UL Monroe Warhawks (102.0 YDS/J)"
+        "role": "Corredor Titular Activo UL Monroe Warhawks (102.0 YDS/J)"
+      },
+      {
+        "name": "Nic Trujillo",
+        "team": "UL Monroe Warhawks",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo UL Monroe Warhawks (46.0 YDS/J)"
       },
       {
         "name": "Marcellus Jackson",
@@ -2591,20 +2591,7 @@
         "rec_yds": 44.0,
         "receptions": 3.8,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular UL Monroe Warhawks (44.0 YDS/J)"
-      },
-      {
-        "name": "Bryce Anderson",
-        "team": "UL Monroe Warhawks",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 4.0,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular UL Monroe Warhawks (44.0 YDS/J)"
+        "role": "Receptor Titular Activo UL Monroe Warhawks (44.0 YDS/J)"
       },
       {
         "name": "Lunch Winfield",
@@ -2617,20 +2604,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 75.0,
-        "role": "QB Titular Louisiana Ragin' Cajuns (180.1 YDS/J)"
-      },
-      {
-        "name": "JJ Garner",
-        "team": "Louisiana Ragin' Cajuns",
-        "pos": "RB",
-        "jersey": "20",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 104.0,
-        "rec_yds": 20.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Louisiana Ragin' Cajuns (104.0 YDS/J)"
+        "role": "QB Titular Activo Louisiana Ragin' Cajuns (180.1 YDS/J)"
       },
       {
         "name": "Steven Blanco",
@@ -2643,7 +2617,20 @@
         "rec_yds": 12.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Louisiana Ragin' Cajuns (113.0 YDS/J)"
+        "role": "Corredor Titular Activo Louisiana Ragin' Cajuns (113.0 YDS/J)"
+      },
+      {
+        "name": "JJ Garner",
+        "team": "Louisiana Ragin' Cajuns",
+        "pos": "RB",
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 104.0,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Activo Louisiana Ragin' Cajuns (104.0 YDS/J)"
       },
       {
         "name": "Trenton Chaney",
@@ -2656,7 +2643,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Louisiana Ragin' Cajuns (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Louisiana Ragin' Cajuns (68.0 YDS/J)"
       },
       {
         "name": "Brock Chappell",
@@ -2669,7 +2656,7 @@
         "rec_yds": 46.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Louisiana Ragin' Cajuns (46.0 YDS/J)"
+        "role": "Receptor Titular Activo Louisiana Ragin' Cajuns (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {

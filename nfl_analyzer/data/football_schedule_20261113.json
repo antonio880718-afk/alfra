@@ -48,7 +48,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Pittsburgh Panthers (175.0 YDS/J)"
+        "role": "QB Titular Activo Pittsburgh Panthers (175.0 YDS/J)"
       },
       {
         "name": "Damon Ferguson Jr.",
@@ -61,7 +61,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 64.8,
-        "role": "Corredor Titular Pittsburgh Panthers (73.6 YDS/J)"
+        "role": "Corredor Titular Activo Pittsburgh Panthers (73.6 YDS/J)"
       },
       {
         "name": "Cataurus Hicks",
@@ -74,7 +74,7 @@
         "rec_yds": 77.6,
         "receptions": 3.8,
         "anytime_td_pct": 62.2,
-        "role": "Receptor Titular Pittsburgh Panthers (77.6 YDS/J)"
+        "role": "Receptor Titular Activo Pittsburgh Panthers (77.6 YDS/J)"
       },
       {
         "name": "Ashton Daniels",
@@ -87,7 +87,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Florida State Seminoles (242.0 YDS/J)"
+        "role": "QB Titular Activo Florida State Seminoles (242.0 YDS/J)"
       },
       {
         "name": "Amari Thomas",
@@ -100,7 +100,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Florida State Seminoles (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Florida State Seminoles (74.0 YDS/J)"
       },
       {
         "name": "Ousmane Kromah",
@@ -113,7 +113,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 59.8,
-        "role": "Corredor Titular Florida State Seminoles (67.7 YDS/J)"
+        "role": "Corredor Titular Activo Florida State Seminoles (67.7 YDS/J)"
       },
       {
         "name": "Micahi Danzy",
@@ -126,7 +126,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Florida State Seminoles (68.0 YDS/J)"
+        "role": "Receptor Titular Activo Florida State Seminoles (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -180,7 +180,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular UCLA Bruins (242.0 YDS/J)"
+        "role": "QB Titular Activo UCLA Bruins (242.0 YDS/J)"
       },
       {
         "name": "Wayne Knight",
@@ -193,7 +193,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular UCLA Bruins (87.7 YDS/J)"
+        "role": "Corredor Titular Activo UCLA Bruins (87.7 YDS/J)"
       },
       {
         "name": "Aidan Mizell",
@@ -206,7 +206,7 @@
         "rec_yds": 68.0,
         "receptions": 3.4,
         "anytime_td_pct": 50.0,
-        "role": "Receptor Titular UCLA Bruins (68.0 YDS/J)"
+        "role": "Receptor Titular Activo UCLA Bruins (68.0 YDS/J)"
       },
       {
         "name": "Semaj Morgan",
@@ -219,7 +219,7 @@
         "rec_yds": 52.5,
         "receptions": 4.1,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular UCLA Bruins (52.5 YDS/J)"
+        "role": "Receptor Titular Activo UCLA Bruins (52.5 YDS/J)"
       },
       {
         "name": "Katin Houser",
@@ -232,7 +232,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Illinois Fighting Illini (217.2 YDS/J)"
+        "role": "QB Titular Activo Illinois Fighting Illini (217.2 YDS/J)"
       },
       {
         "name": "Aidan Laughery",
@@ -245,7 +245,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 44.1,
-        "role": "Corredor Titular Illinois Fighting Illini (68.3 YDS/J)"
+        "role": "Corredor Titular Activo Illinois Fighting Illini (68.3 YDS/J)"
       },
       {
         "name": "Collin Dixon",
@@ -258,7 +258,7 @@
         "rec_yds": 101.1,
         "receptions": 7.6,
         "anytime_td_pct": 74.0,
-        "role": "Receptor Titular Illinois Fighting Illini (101.1 YDS/J)"
+        "role": "Receptor Titular Activo Illinois Fighting Illini (101.1 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -312,7 +312,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Colorado Buffaloes (242.0 YDS/J)"
+        "role": "QB Titular Activo Colorado Buffaloes (242.0 YDS/J)"
       },
       {
         "name": "Richard Young",
@@ -325,7 +325,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Colorado Buffaloes (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Colorado Buffaloes (74.0 YDS/J)"
       },
       {
         "name": "JaQuail Smith",
@@ -338,7 +338,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 43.2,
-        "role": "Corredor Titular Colorado Buffaloes (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Colorado Buffaloes (48.0 YDS/J)"
       },
       {
         "name": "Joseph Williams",
@@ -351,7 +351,7 @@
         "rec_yds": 94.8,
         "receptions": 6.4,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Colorado Buffaloes (94.8 YDS/J)"
+        "role": "Receptor Titular Activo Colorado Buffaloes (94.8 YDS/J)"
       },
       {
         "name": "Conner Weigman",
@@ -364,7 +364,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 35.0,
-        "role": "QB Titular Houston Cougars (255.2 YDS/J)"
+        "role": "QB Titular Activo Houston Cougars (255.2 YDS/J)"
       },
       {
         "name": "Re'Shaun Sanford II",
@@ -377,7 +377,7 @@
         "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Houston Cougars (74.0 YDS/J)"
+        "role": "Corredor Titular Activo Houston Cougars (74.0 YDS/J)"
       },
       {
         "name": "Makhi Hughes",
@@ -390,7 +390,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular Houston Cougars (71.2 YDS/J)"
+        "role": "Corredor Titular Activo Houston Cougars (71.2 YDS/J)"
       },
       {
         "name": "Amare Thomas",
@@ -403,7 +403,7 @@
         "rec_yds": 77.6,
         "receptions": 5.3,
         "anytime_td_pct": 73.2,
-        "role": "Receptor Titular Houston Cougars (77.6 YDS/J)"
+        "role": "Receptor Titular Activo Houston Cougars (77.6 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

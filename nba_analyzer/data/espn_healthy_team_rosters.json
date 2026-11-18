@@ -1,0 +1,2726 @@
+{
+  "Atlanta Hawks": [
+    {
+      "name": "Nickeil Alexander-Walker",
+      "team": "Atlanta Hawks",
+      "pos": "G",
+      "jersey": "7"
+    },
+    {
+      "name": "Rafael Castro",
+      "team": "Atlanta Hawks",
+      "pos": "F",
+      "jersey": "0"
+    },
+    {
+      "name": "Dyson Daniels",
+      "team": "Atlanta Hawks",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "RayJ Dennis",
+      "team": "Atlanta Hawks",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Luguentz Dort",
+      "team": "Atlanta Hawks",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Zuby Ejiofor",
+      "team": "Atlanta Hawks",
+      "pos": "F",
+      "jersey": "20"
+    },
+    {
+      "name": "Dorian Finney-Smith",
+      "team": "Atlanta Hawks",
+      "pos": "F",
+      "jersey": "8"
+    },
+    {
+      "name": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "pos": "F",
+      "jersey": "1"
+    },
+    {
+      "name": "Corey Kispert",
+      "team": "Atlanta Hawks",
+      "pos": "F",
+      "jersey": "24"
+    },
+    {
+      "name": "Onyeka Okongwu",
+      "team": "Atlanta Hawks",
+      "pos": "F",
+      "jersey": "17"
+    },
+    {
+      "name": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Jalen Wilson",
+      "team": "Atlanta Hawks",
+      "pos": "F",
+      "jersey": "22"
+    }
+  ],
+  "Boston Celtics": [
+    {
+      "name": "Devin Carter",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "99"
+    },
+    {
+      "name": "Chris Cenac Jr.",
+      "team": "Boston Celtics",
+      "pos": "F",
+      "jersey": "12"
+    },
+    {
+      "name": "Mike Conley",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "45"
+    },
+    {
+      "name": "Luka Garza",
+      "team": "Boston Celtics",
+      "pos": "C",
+      "jersey": "52"
+    },
+    {
+      "name": "Paul George",
+      "team": "Boston Celtics",
+      "pos": "F",
+      "jersey": "13"
+    },
+    {
+      "name": "Hugo Gonzalez",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "28"
+    },
+    {
+      "name": "Ron Harper Jr.",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Sam Hauser",
+      "team": "Boston Celtics",
+      "pos": "F",
+      "jersey": "30"
+    },
+    {
+      "name": "Dillon Mitchell",
+      "team": "Boston Celtics",
+      "pos": "F",
+      "jersey": "20"
+    },
+    {
+      "name": "Payton Pritchard",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "11"
+    },
+    {
+      "name": "Neemias Queta",
+      "team": "Boston Celtics",
+      "pos": "C",
+      "jersey": "88"
+    },
+    {
+      "name": "Mitchell Robinson",
+      "team": "Boston Celtics",
+      "pos": "C",
+      "jersey": "4"
+    },
+    {
+      "name": "Baylor Scheierman",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "55"
+    },
+    {
+      "name": "Jayson Tatum",
+      "team": "Boston Celtics",
+      "pos": "F",
+      "jersey": "0"
+    },
+    {
+      "name": "Jordan Walsh",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "27"
+    },
+    {
+      "name": "Derrick White",
+      "team": "Boston Celtics",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Amari Williams",
+      "team": "Boston Celtics",
+      "pos": "F",
+      "jersey": "77"
+    }
+  ],
+  "Brooklyn Nets": [
+    {
+      "name": "Tyler Bilodeau",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "34"
+    },
+    {
+      "name": "Mikel Brown Jr.",
+      "team": "Brooklyn Nets",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Noah Clowney",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "21"
+    },
+    {
+      "name": "Egor Demin",
+      "team": "Brooklyn Nets",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Keon Ellis",
+      "team": "Brooklyn Nets",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "Joshua Jefferson",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "9"
+    },
+    {
+      "name": "Chaney Johnson",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "31"
+    },
+    {
+      "name": "Terance Mann",
+      "team": "Brooklyn Nets",
+      "pos": "G",
+      "jersey": "14"
+    },
+    {
+      "name": "Josh Minott",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "00"
+    },
+    {
+      "name": "Grant Nelson",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "16"
+    },
+    {
+      "name": "Michael Porter Jr.",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "17"
+    },
+    {
+      "name": "Drake Powell",
+      "team": "Brooklyn Nets",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Julius Randle",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "30"
+    },
+    {
+      "name": "Ben Saraf",
+      "team": "Brooklyn Nets",
+      "pos": "G",
+      "jersey": "77"
+    },
+    {
+      "name": "Day'Ron Sharpe",
+      "team": "Brooklyn Nets",
+      "pos": "C",
+      "jersey": "20"
+    },
+    {
+      "name": "Nolan Traore",
+      "team": "Brooklyn Nets",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Moritz Wagner",
+      "team": "Brooklyn Nets",
+      "pos": "C",
+      "jersey": "13"
+    },
+    {
+      "name": "Danny Wolf",
+      "team": "Brooklyn Nets",
+      "pos": "F",
+      "jersey": "2"
+    }
+  ],
+  "Charlotte Hornets": [
+    {
+      "name": "Michael Ajayi",
+      "team": "Charlotte Hornets",
+      "pos": "F",
+      "jersey": "10"
+    },
+    {
+      "name": "Grayson Allen",
+      "team": "Charlotte Hornets",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Christian Anderson",
+      "team": "Charlotte Hornets",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Kylan Boswell",
+      "team": "Charlotte Hornets",
+      "pos": "G",
+      "jersey": "18"
+    },
+    {
+      "name": "Moussa Diabate",
+      "team": "Charlotte Hornets",
+      "pos": "F",
+      "jersey": "14"
+    },
+    {
+      "name": "PJ Hall",
+      "team": "Charlotte Hornets",
+      "pos": "C",
+      "jersey": "16"
+    },
+    {
+      "name": "Sion James",
+      "team": "Charlotte Hornets",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Ryan Kalkbrenner",
+      "team": "Charlotte Hornets",
+      "pos": "C",
+      "jersey": "11"
+    },
+    {
+      "name": "Liam McNeeley",
+      "team": "Charlotte Hornets",
+      "pos": "G",
+      "jersey": "33"
+    },
+    {
+      "name": "Brandon Miller",
+      "team": "Charlotte Hornets",
+      "pos": "F",
+      "jersey": "24"
+    },
+    {
+      "name": "Royce O'Neale",
+      "team": "Charlotte Hornets",
+      "pos": "F",
+      "jersey": "00"
+    },
+    {
+      "name": "Naz Reid",
+      "team": "Charlotte Hornets",
+      "pos": "C",
+      "jersey": "0"
+    },
+    {
+      "name": "Tidjane Salaun",
+      "team": "Charlotte Hornets",
+      "pos": "F",
+      "jersey": "31"
+    },
+    {
+      "name": "Hannes Steinbach",
+      "team": "Charlotte Hornets",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Coby White",
+      "team": "Charlotte Hornets",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Grant Williams",
+      "team": "Charlotte Hornets",
+      "pos": "F",
+      "jersey": "2"
+    }
+  ],
+  "Chicago Bulls": [
+    {
+      "name": "Matas Buzelis",
+      "team": "Chicago Bulls",
+      "pos": "F",
+      "jersey": "14"
+    },
+    {
+      "name": "Nic Claxton",
+      "team": "Chicago Bulls",
+      "pos": "C",
+      "jersey": "9"
+    },
+    {
+      "name": "Zach Collins",
+      "team": "Chicago Bulls",
+      "pos": "F",
+      "jersey": "12"
+    },
+    {
+      "name": "Noa Essengue",
+      "team": "Chicago Bulls",
+      "pos": "F",
+      "jersey": "2"
+    },
+    {
+      "name": "Josh Giddey",
+      "team": "Chicago Bulls",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Jordan Hawkins",
+      "team": "Chicago Bulls",
+      "pos": "G",
+      "jersey": "15"
+    },
+    {
+      "name": "Buddy Hield",
+      "team": "Chicago Bulls",
+      "pos": "G",
+      "jersey": "7"
+    },
+    {
+      "name": "Tre Jones",
+      "team": "Chicago Bulls",
+      "pos": "G",
+      "jersey": "30"
+    },
+    {
+      "name": "Leonard Miller",
+      "team": "Chicago Bulls",
+      "pos": "F",
+      "jersey": "11"
+    },
+    {
+      "name": "Isaac Okoro",
+      "team": "Chicago Bulls",
+      "pos": "F",
+      "jersey": "35"
+    },
+    {
+      "name": "Norman Powell",
+      "team": "Chicago Bulls",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Orlando Robinson",
+      "team": "Chicago Bulls",
+      "pos": "C",
+      "jersey": "00"
+    },
+    {
+      "name": "Jaylin Sellers",
+      "team": "Chicago Bulls",
+      "pos": "G",
+      "jersey": "22"
+    },
+    {
+      "name": "Jalen Smith",
+      "team": "Chicago Bulls",
+      "pos": "F",
+      "jersey": "25"
+    },
+    {
+      "name": "Dailyn Swain",
+      "team": "Chicago Bulls",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Patrick Williams",
+      "team": "Chicago Bulls",
+      "pos": "F",
+      "jersey": "44"
+    }
+  ],
+  "Cleveland Cavaliers": [
+    {
+      "name": "Jarrett Allen",
+      "team": "Cleveland Cavaliers",
+      "pos": "C",
+      "jersey": "31"
+    },
+    {
+      "name": "Zack Austin",
+      "team": "Cleveland Cavaliers",
+      "pos": "G",
+      "jersey": "55"
+    },
+    {
+      "name": "Thomas Bryant",
+      "team": "Cleveland Cavaliers",
+      "pos": "C",
+      "jersey": "3"
+    },
+    {
+      "name": "Khalifa Diop",
+      "team": "Cleveland Cavaliers",
+      "pos": "C",
+      "jersey": "18"
+    },
+    {
+      "name": "James Harden",
+      "team": "Cleveland Cavaliers",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "Mario Hezonja",
+      "team": "Cleveland Cavaliers",
+      "pos": "F",
+      "jersey": "33"
+    },
+    {
+      "name": "Riley Minix",
+      "team": "Cleveland Cavaliers",
+      "pos": "F",
+      "jersey": "12"
+    },
+    {
+      "name": "Donovan Mitchell",
+      "team": "Cleveland Cavaliers",
+      "pos": "G",
+      "jersey": "45"
+    },
+    {
+      "name": "Norchad Omier",
+      "team": "Cleveland Cavaliers",
+      "pos": "C",
+      "jersey": "77"
+    },
+    {
+      "name": "Craig Porter Jr.",
+      "team": "Cleveland Cavaliers",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Tyrese Proctor",
+      "team": "Cleveland Cavaliers",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Meleek Thomas",
+      "team": "Cleveland Cavaliers",
+      "pos": "G",
+      "jersey": "15"
+    },
+    {
+      "name": "Ernest Udeh Jr.",
+      "team": "Cleveland Cavaliers",
+      "pos": "C",
+      "jersey": "88"
+    },
+    {
+      "name": "Peyton Watson",
+      "team": "Cleveland Cavaliers",
+      "pos": "G",
+      "jersey": "8"
+    }
+  ],
+  "Dallas Mavericks": [
+    {
+      "name": "Santi Aldama",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "34"
+    },
+    {
+      "name": "Max Christie",
+      "team": "Dallas Mavericks",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Moussa Cisse",
+      "team": "Dallas Mavericks",
+      "pos": "C",
+      "jersey": "30"
+    },
+    {
+      "name": "Walter Clayton Jr.",
+      "team": "Dallas Mavericks",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "32"
+    },
+    {
+      "name": "Daniel Gafford",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "21"
+    },
+    {
+      "name": "Jett Howard",
+      "team": "Dallas Mavericks",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Kyrie Irving",
+      "team": "Dallas Mavericks",
+      "pos": "G",
+      "jersey": "11"
+    },
+    {
+      "name": "Morez Johnson Jr.",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "14"
+    },
+    {
+      "name": "Tobi Lawal",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "33"
+    },
+    {
+      "name": "Naji Marshall",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "3"
+    },
+    {
+      "name": "Caleb Martin",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "16"
+    },
+    {
+      "name": "Zaccharie Risacher",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "10"
+    },
+    {
+      "name": "Marcus Sasser",
+      "team": "Dallas Mavericks",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "P.J. Washington",
+      "team": "Dallas Mavericks",
+      "pos": "F",
+      "jersey": "25"
+    }
+  ],
+  "Denver Nuggets": [
+    {
+      "name": "Marvin Bagley III",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "3"
+    },
+    {
+      "name": "Christian Braun",
+      "team": "Denver Nuggets",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Trevon Brazile",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "7"
+    },
+    {
+      "name": "DeMar DeRozan",
+      "team": "Denver Nuggets",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Alpha Diallo",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "11"
+    },
+    {
+      "name": "Aaron Gordon",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "32"
+    },
+    {
+      "name": "DaRon Holmes II",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "14"
+    },
+    {
+      "name": "Bryce Hopkins",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "13"
+    },
+    {
+      "name": "Cameron Johnson",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Nikola Jokic",
+      "team": "Denver Nuggets",
+      "pos": "C",
+      "jersey": "15"
+    },
+    {
+      "name": "Spencer Jones",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "21"
+    },
+    {
+      "name": "Tyus Jones",
+      "team": "Denver Nuggets",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Jamal Murray",
+      "team": "Denver Nuggets",
+      "pos": "G",
+      "jersey": "27"
+    },
+    {
+      "name": "Ryan Nembhard",
+      "team": "Denver Nuggets",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Zeke Nnaji",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Cam Whitmore",
+      "team": "Denver Nuggets",
+      "pos": "F",
+      "jersey": "00"
+    }
+  ],
+  "Detroit Pistons": [
+    {
+      "name": "John Collins",
+      "team": "Detroit Pistons",
+      "pos": "F",
+      "jersey": "20"
+    },
+    {
+      "name": "Cade Cunningham",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Javonte Green",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "31"
+    },
+    {
+      "name": "Elijah Harkless",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "94"
+    },
+    {
+      "name": "Kevin Huerter",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "27"
+    },
+    {
+      "name": "Daniss Jenkins",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Isaac Jones",
+      "team": "Detroit Pistons",
+      "pos": "C",
+      "jersey": "13"
+    },
+    {
+      "name": "Chaz Lanier",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Ebuka Okorie",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "23"
+    },
+    {
+      "name": "Ugonna Onyenso",
+      "team": "Detroit Pistons",
+      "pos": "C",
+      "jersey": "34"
+    },
+    {
+      "name": "Paul Reed",
+      "team": "Detroit Pistons",
+      "pos": "F",
+      "jersey": "7"
+    },
+    {
+      "name": "Tolu Smith",
+      "team": "Detroit Pistons",
+      "pos": "F",
+      "jersey": "35"
+    },
+    {
+      "name": "Ausar Thompson",
+      "team": "Detroit Pistons",
+      "pos": "G",
+      "jersey": "9"
+    }
+  ],
+  "Golden State Warriors": [
+    {
+      "name": "Charles Bassey",
+      "team": "Golden State Warriors",
+      "pos": "C",
+      "jersey": "28"
+    },
+    {
+      "name": "LJ Cryer",
+      "team": "Golden State Warriors",
+      "pos": "G",
+      "jersey": "18"
+    },
+    {
+      "name": "Draymond Green",
+      "team": "Golden State Warriors",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Al Horford",
+      "team": "Golden State Warriors",
+      "pos": "C",
+      "jersey": "20"
+    },
+    {
+      "name": "Graham Ike",
+      "team": "Golden State Warriors",
+      "pos": "F",
+      "jersey": "45"
+    },
+    {
+      "name": "Yaxel Lendeborg",
+      "team": "Golden State Warriors",
+      "pos": "F",
+      "jersey": "1"
+    },
+    {
+      "name": "Malevy Leons",
+      "team": "Golden State Warriors",
+      "pos": "F",
+      "jersey": "33"
+    },
+    {
+      "name": "De'Anthony Melton",
+      "team": "Golden State Warriors",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Georges Niang",
+      "team": "Golden State Warriors",
+      "pos": "F",
+      "jersey": "32"
+    },
+    {
+      "name": "Gary Payton II",
+      "team": "Golden State Warriors",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Brandin Podziemski",
+      "team": "Golden State Warriors",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Will Richard",
+      "team": "Golden State Warriors",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Gui Santos",
+      "team": "Golden State Warriors",
+      "pos": "F",
+      "jersey": "15"
+    }
+  ],
+  "Houston Rockets": [
+    {
+      "name": "Steven Adams",
+      "team": "Houston Rockets",
+      "pos": "C",
+      "jersey": "12"
+    },
+    {
+      "name": "Bogdan Bogdanovic",
+      "team": "Houston Rockets",
+      "pos": "G",
+      "jersey": "31"
+    },
+    {
+      "name": "Quadir Copeland",
+      "team": "Houston Rockets",
+      "pos": "G",
+      "jersey": "25"
+    },
+    {
+      "name": "Isaiah Crawford",
+      "team": "Houston Rockets",
+      "pos": "F",
+      "jersey": "27"
+    },
+    {
+      "name": "Kevin Durant",
+      "team": "Houston Rockets",
+      "pos": "F",
+      "jersey": "7"
+    },
+    {
+      "name": "Tari Eason",
+      "team": "Houston Rockets",
+      "pos": "F",
+      "jersey": "17"
+    },
+    {
+      "name": "Julian Phillips",
+      "team": "Houston Rockets",
+      "pos": "F",
+      "jersey": "3"
+    },
+    {
+      "name": "Alperen Sengun",
+      "team": "Houston Rockets",
+      "pos": "C",
+      "jersey": "28"
+    },
+    {
+      "name": "Reed Sheppard",
+      "team": "Houston Rockets",
+      "pos": "G",
+      "jersey": "15"
+    },
+    {
+      "name": "Marcus Smart",
+      "team": "Houston Rockets",
+      "pos": "G",
+      "jersey": "36"
+    },
+    {
+      "name": "Jabari Smith Jr.",
+      "team": "Houston Rockets",
+      "pos": "F",
+      "jersey": "10"
+    },
+    {
+      "name": "Jae'Sean Tate",
+      "team": "Houston Rockets",
+      "pos": "F",
+      "jersey": "8"
+    },
+    {
+      "name": "Amen Thompson",
+      "team": "Houston Rockets",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "Bruce Thornton",
+      "team": "Houston Rockets",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Oscar Tshiebwe",
+      "team": "Houston Rockets",
+      "pos": "C",
+      "jersey": "9"
+    },
+    {
+      "name": "Fred VanVleet",
+      "team": "Houston Rockets",
+      "pos": "G",
+      "jersey": "5"
+    }
+  ],
+  "Indiana Pacers": [
+    {
+      "name": "Kobe Brown",
+      "team": "Indiana Pacers",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Jay Huff",
+      "team": "Indiana Pacers",
+      "pos": "C",
+      "jersey": "32"
+    },
+    {
+      "name": "Quenton Jackson",
+      "team": "Indiana Pacers",
+      "pos": "G",
+      "jersey": "29"
+    },
+    {
+      "name": "T.J. McConnell",
+      "team": "Indiana Pacers",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Larry Nance Jr.",
+      "team": "Indiana Pacers",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Andrew Nembhard",
+      "team": "Indiana Pacers",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Aaron Nesmith",
+      "team": "Indiana Pacers",
+      "pos": "G",
+      "jersey": "23"
+    },
+    {
+      "name": "Kelly Oubre Jr.",
+      "team": "Indiana Pacers",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Pascal Siakam",
+      "team": "Indiana Pacers",
+      "pos": "F",
+      "jersey": "43"
+    },
+    {
+      "name": "Jalen Slawson",
+      "team": "Indiana Pacers",
+      "pos": "F",
+      "jersey": "18"
+    },
+    {
+      "name": "Braden Smith",
+      "team": "Indiana Pacers",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Obi Toppin",
+      "team": "Indiana Pacers",
+      "pos": "F",
+      "jersey": "1"
+    },
+    {
+      "name": "Jarace Walker",
+      "team": "Indiana Pacers",
+      "pos": "F",
+      "jersey": "5"
+    },
+    {
+      "name": "Ivica Zubac",
+      "team": "Indiana Pacers",
+      "pos": "C",
+      "jersey": "40"
+    }
+  ],
+  "LA Clippers": [
+    {
+      "name": "Cam Christie",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Gradey Dick",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Kris Dunn",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Darius Garland",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Rui Hachimura",
+      "team": "LA Clippers",
+      "pos": "F",
+      "jersey": "28"
+    },
+    {
+      "name": "Isaiah Jackson",
+      "team": "LA Clippers",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Derrick Jones Jr.",
+      "team": "LA Clippers",
+      "pos": "F",
+      "jersey": "5"
+    },
+    {
+      "name": "Brook Lopez",
+      "team": "LA Clippers",
+      "pos": "C",
+      "jersey": "11"
+    },
+    {
+      "name": "Nick Martinelli",
+      "team": "LA Clippers",
+      "pos": "F",
+      "jersey": "12"
+    },
+    {
+      "name": "Baba Miller",
+      "team": "LA Clippers",
+      "pos": "F",
+      "jersey": "18"
+    },
+    {
+      "name": "Jalen Pickett",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "21"
+    },
+    {
+      "name": "Kobe Sanders",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Max Strus",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "31"
+    },
+    {
+      "name": "Keaton Wagler",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "Blake Wesley",
+      "team": "LA Clippers",
+      "pos": "G",
+      "jersey": "20"
+    }
+  ],
+  "Los Angeles Lakers": [
+    {
+      "name": "Cameron Carr",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "43"
+    },
+    {
+      "name": "Carson Cooper",
+      "team": "Los Angeles Lakers",
+      "pos": "C",
+      "jersey": "0"
+    },
+    {
+      "name": "Luka Doncic",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "77"
+    },
+    {
+      "name": "Quentin Grimes",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Jaden Hardy",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "7"
+    },
+    {
+      "name": "Bronny James",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Arthur Kaluma",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "47"
+    },
+    {
+      "name": "Walker Kessler",
+      "team": "Los Angeles Lakers",
+      "pos": "C",
+      "jersey": "14"
+    },
+    {
+      "name": "Jake LaRavia",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "12"
+    },
+    {
+      "name": "Kevon Looney",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "55"
+    },
+    {
+      "name": "Sandro Mamukelashvili",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "54"
+    },
+    {
+      "name": "Chris Manon",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "30"
+    },
+    {
+      "name": "AK Okereke",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "31"
+    },
+    {
+      "name": "Austin Reaves",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "15"
+    },
+    {
+      "name": "Collin Sexton",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Adou Thiero",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "1"
+    },
+    {
+      "name": "Matisse Thybulle",
+      "team": "Los Angeles Lakers",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Jarred Vanderbilt",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "2"
+    },
+    {
+      "name": "Ziaire Williams",
+      "team": "Los Angeles Lakers",
+      "pos": "F",
+      "jersey": "11"
+    }
+  ],
+  "Memphis Grizzlies": [
+    {
+      "name": "Cameron Boozer",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "27"
+    },
+    {
+      "name": "Cedric Coward",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Zach Edey",
+      "team": "Memphis Grizzlies",
+      "pos": "C",
+      "jersey": "14"
+    },
+    {
+      "name": "Jerami Grant",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "3"
+    },
+    {
+      "name": "Taylor Hendricks",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Karim Lopez",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "35"
+    },
+    {
+      "name": "Jahmai Mashack",
+      "team": "Memphis Grizzlies",
+      "pos": "G",
+      "jersey": "21"
+    },
+    {
+      "name": "Kris Murray",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "17"
+    },
+    {
+      "name": "Quinten Post",
+      "team": "Memphis Grizzlies",
+      "pos": "C",
+      "jersey": "41"
+    },
+    {
+      "name": "Olivier-Maxence Prosper",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "18"
+    },
+    {
+      "name": "Javon Small",
+      "team": "Memphis Grizzlies",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Cam Spencer",
+      "team": "Memphis Grizzlies",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Jaylen Wells",
+      "team": "Memphis Grizzlies",
+      "pos": "F",
+      "jersey": "0"
+    }
+  ],
+  "Miami Heat": [
+    {
+      "name": "Bam Adebayo",
+      "team": "Miami Heat",
+      "pos": "C",
+      "jersey": "13"
+    },
+    {
+      "name": "Giannis Antetokounmpo",
+      "team": "Miami Heat",
+      "pos": "F",
+      "jersey": "7"
+    },
+    {
+      "name": "Ryan Conwell",
+      "team": "Miami Heat",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Tre Donaldson",
+      "team": "Miami Heat",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Simone Fontecchio",
+      "team": "Miami Heat",
+      "pos": "F",
+      "jersey": "0"
+    },
+    {
+      "name": "Vladislav Goldin",
+      "team": "Miami Heat",
+      "pos": "C",
+      "jersey": "50"
+    },
+    {
+      "name": "Tim Hardaway Jr.",
+      "team": "Miami Heat",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Keshad Johnson",
+      "team": "Miami Heat",
+      "pos": "F",
+      "jersey": "16"
+    },
+    {
+      "name": "Nikola Jovic",
+      "team": "Miami Heat",
+      "pos": "F",
+      "jersey": "5"
+    },
+    {
+      "name": "Pelle Larsson",
+      "team": "Miami Heat",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Davion Mitchell",
+      "team": "Miami Heat",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Bobby Portis",
+      "team": "Miami Heat",
+      "pos": "F",
+      "jersey": "95"
+    },
+    {
+      "name": "Nick Richards",
+      "team": "Miami Heat",
+      "pos": "C",
+      "jersey": "8"
+    },
+    {
+      "name": "Dru Smith",
+      "team": "Miami Heat",
+      "pos": "G",
+      "jersey": "12"
+    },
+    {
+      "name": "Klay Thompson",
+      "team": "Miami Heat",
+      "pos": "G",
+      "jersey": "11"
+    },
+    {
+      "name": "Andrew Wiggins",
+      "team": "Miami Heat",
+      "pos": "F",
+      "jersey": "22"
+    }
+  ],
+  "Milwaukee Bucks": [
+    {
+      "name": "Nate Ament",
+      "team": "Milwaukee Bucks",
+      "pos": "F",
+      "jersey": "15"
+    },
+    {
+      "name": "Brayden Burries",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "AJ Green",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "20"
+    },
+    {
+      "name": "Tyler Herro",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "11"
+    },
+    {
+      "name": "Kasparas Jakucionis",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "25"
+    },
+    {
+      "name": "Jaime Jaquez Jr.",
+      "team": "Milwaukee Bucks",
+      "pos": "F",
+      "jersey": "24"
+    },
+    {
+      "name": "Kam Jones",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "19"
+    },
+    {
+      "name": "Kyle Kuzma",
+      "team": "Milwaukee Bucks",
+      "pos": "F",
+      "jersey": "18"
+    },
+    {
+      "name": "Caris LeVert",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "12"
+    },
+    {
+      "name": "Bogoljub Markovic",
+      "team": "Milwaukee Bucks",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Pete Nance",
+      "team": "Milwaukee Bucks",
+      "pos": "F",
+      "jersey": "35"
+    },
+    {
+      "name": "Cormac Ryan",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "30"
+    },
+    {
+      "name": "Jericho Sims",
+      "team": "Milwaukee Bucks",
+      "pos": "C",
+      "jersey": "00"
+    },
+    {
+      "name": "Gary Trent Jr.",
+      "team": "Milwaukee Bucks",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Myles Turner",
+      "team": "Milwaukee Bucks",
+      "pos": "C",
+      "jersey": "3"
+    },
+    {
+      "name": "Kel'el Ware",
+      "team": "Milwaukee Bucks",
+      "pos": "C",
+      "jersey": "9"
+    }
+  ],
+  "Minnesota Timberwolves": [
+    {
+      "name": "LaMelo Ball",
+      "team": "Minnesota Timberwolves",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "Joan Beringer",
+      "team": "Minnesota Timberwolves",
+      "pos": "F",
+      "jersey": "19"
+    },
+    {
+      "name": "Johni Broome",
+      "team": "Minnesota Timberwolves",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Ayo Dosunmu",
+      "team": "Minnesota Timberwolves",
+      "pos": "G",
+      "jersey": "13"
+    },
+    {
+      "name": "Isaiah Evans",
+      "team": "Minnesota Timberwolves",
+      "pos": "F",
+      "jersey": "33"
+    },
+    {
+      "name": "Rudy Gobert",
+      "team": "Minnesota Timberwolves",
+      "pos": "C",
+      "jersey": "27"
+    },
+    {
+      "name": "Bones Hyland",
+      "team": "Minnesota Timberwolves",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Jonathan Kuminga",
+      "team": "Minnesota Timberwolves",
+      "pos": "F",
+      "jersey": "24"
+    },
+    {
+      "name": "Trey Lyles",
+      "team": "Minnesota Timberwolves",
+      "pos": "F",
+      "jersey": "41"
+    },
+    {
+      "name": "Jaden McDaniels",
+      "team": "Minnesota Timberwolves",
+      "pos": "F",
+      "jersey": "3"
+    },
+    {
+      "name": "Zyon Pullin",
+      "team": "Minnesota Timberwolves",
+      "pos": "G",
+      "jersey": "15"
+    },
+    {
+      "name": "Terrence Shannon Jr.",
+      "team": "Minnesota Timberwolves",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Cody Williams",
+      "team": "Minnesota Timberwolves",
+      "pos": "F",
+      "jersey": "9"
+    },
+    {
+      "name": "Rocco Zikarsky",
+      "team": "Minnesota Timberwolves",
+      "pos": "C",
+      "jersey": "44"
+    }
+  ],
+  "New Orleans Pelicans": [
+    {
+      "name": "Saddiq Bey",
+      "team": "New Orleans Pelicans",
+      "pos": "F",
+      "jersey": "41"
+    },
+    {
+      "name": "Malik Dia",
+      "team": "New Orleans Pelicans",
+      "pos": "F",
+      "jersey": "8"
+    },
+    {
+      "name": "Jeremiah Fears",
+      "team": "New Orleans Pelicans",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "AJ Johnson",
+      "team": "New Orleans Pelicans",
+      "pos": "G",
+      "jersey": "14"
+    },
+    {
+      "name": "Herbert Jones",
+      "team": "New Orleans Pelicans",
+      "pos": "F",
+      "jersey": "2"
+    },
+    {
+      "name": "DeAndre Jordan",
+      "team": "New Orleans Pelicans",
+      "pos": "C",
+      "jersey": "6"
+    },
+    {
+      "name": "Karlo Matkovic",
+      "team": "New Orleans Pelicans",
+      "pos": "F",
+      "jersey": "17"
+    },
+    {
+      "name": "Yves Missi",
+      "team": "New Orleans Pelicans",
+      "pos": "C",
+      "jersey": "21"
+    },
+    {
+      "name": "Jaron Pierre Jr.",
+      "team": "New Orleans Pelicans",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Jordan Poole",
+      "team": "New Orleans Pelicans",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Derik Queen",
+      "team": "New Orleans Pelicans",
+      "pos": "C",
+      "jersey": "22"
+    },
+    {
+      "name": "Julian Reese",
+      "team": "New Orleans Pelicans",
+      "pos": "F",
+      "jersey": "13"
+    },
+    {
+      "name": "Zion Williamson",
+      "team": "New Orleans Pelicans",
+      "pos": "F",
+      "jersey": "1"
+    }
+  ],
+  "New York Knicks": [
+    {
+      "name": "Jaden Akins",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "14"
+    },
+    {
+      "name": "Jose Alvarado",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "OG Anunoby",
+      "team": "New York Knicks",
+      "pos": "F",
+      "jersey": "8"
+    },
+    {
+      "name": "Mikal Bridges",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "25"
+    },
+    {
+      "name": "Jalen Brunson",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "11"
+    },
+    {
+      "name": "Jordan Clarkson",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "00"
+    },
+    {
+      "name": "Pacome Dadiet",
+      "team": "New York Knicks",
+      "pos": "F",
+      "jersey": "4"
+    },
+    {
+      "name": "Mohamed Diawara",
+      "team": "New York Knicks",
+      "pos": "F",
+      "jersey": "51"
+    },
+    {
+      "name": "Andre Drummond",
+      "team": "New York Knicks",
+      "pos": "C",
+      "jersey": "0"
+    },
+    {
+      "name": "Josh Hart",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Dalton Knecht",
+      "team": "New York Knicks",
+      "pos": "F",
+      "jersey": "1"
+    },
+    {
+      "name": "Tyler Kolek",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "13"
+    },
+    {
+      "name": "Miles McBride",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Tyler Nickel",
+      "team": "New York Knicks",
+      "pos": "F",
+      "jersey": "55"
+    },
+    {
+      "name": "Landry Shamet",
+      "team": "New York Knicks",
+      "pos": "G",
+      "jersey": "44"
+    },
+    {
+      "name": "Karl-Anthony Towns",
+      "team": "New York Knicks",
+      "pos": "C",
+      "jersey": "32"
+    },
+    {
+      "name": "James Wiseman",
+      "team": "New York Knicks",
+      "pos": "C",
+      "jersey": "35"
+    }
+  ],
+  "Oklahoma City Thunder": [
+    {
+      "name": "Brooks Barnhizer",
+      "team": "Oklahoma City Thunder",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Alex Caruso",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Nique Clifford",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Josh Dix",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "21"
+    },
+    {
+      "name": "Shai Gilgeous-Alexander",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Isaiah Hartenstein",
+      "team": "Oklahoma City Thunder",
+      "pos": "C",
+      "jersey": "55"
+    },
+    {
+      "name": "Aday Mara",
+      "team": "Oklahoma City Thunder",
+      "pos": "C",
+      "jersey": "15"
+    },
+    {
+      "name": "Jared McCain",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Ajay Mitchell",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "25"
+    },
+    {
+      "name": "Micah Peavy",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Bennett Stirtz",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "14"
+    },
+    {
+      "name": "Nikola Topic",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "44"
+    },
+    {
+      "name": "Kenrich Williams",
+      "team": "Oklahoma City Thunder",
+      "pos": "G",
+      "jersey": "34"
+    }
+  ],
+  "Orlando Magic": [
+    {
+      "name": "Desmond Bane",
+      "team": "Orlando Magic",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Goga Bitadze",
+      "team": "Orlando Magic",
+      "pos": "C",
+      "jersey": "35"
+    },
+    {
+      "name": "Anthony Black",
+      "team": "Orlando Magic",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Jamal Cain",
+      "team": "Orlando Magic",
+      "pos": "F",
+      "jersey": "8"
+    },
+    {
+      "name": "Jevon Carter",
+      "team": "Orlando Magic",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Wendell Carter Jr.",
+      "team": "Orlando Magic",
+      "pos": "C",
+      "jersey": "34"
+    },
+    {
+      "name": "Colin Castleton",
+      "team": "Orlando Magic",
+      "pos": "C",
+      "jersey": "14"
+    },
+    {
+      "name": "Tristan da Silva",
+      "team": "Orlando Magic",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Alex Morales",
+      "team": "Orlando Magic",
+      "pos": "G",
+      "jersey": "30"
+    },
+    {
+      "name": "Jase Richardson",
+      "team": "Orlando Magic",
+      "pos": "G",
+      "jersey": "11"
+    },
+    {
+      "name": "Jalen Suggs",
+      "team": "Orlando Magic",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Nikola Vucevic",
+      "team": "Orlando Magic",
+      "pos": "C",
+      "jersey": "9"
+    },
+    {
+      "name": "Franz Wagner",
+      "team": "Orlando Magic",
+      "pos": "F",
+      "jersey": "22"
+    }
+  ],
+  "Philadelphia 76ers": [
+    {
+      "name": "Kentavious Caldwell-Pope",
+      "team": "Philadelphia 76ers",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "VJ Edgecombe",
+      "team": "Philadelphia 76ers",
+      "pos": "G",
+      "jersey": "77"
+    },
+    {
+      "name": "Justin Edwards",
+      "team": "Philadelphia 76ers",
+      "pos": "F",
+      "jersey": "11"
+    },
+    {
+      "name": "Joel Embiid",
+      "team": "Philadelphia 76ers",
+      "pos": "C",
+      "jersey": "21"
+    },
+    {
+      "name": "Tacko Fall",
+      "team": "Philadelphia 76ers",
+      "pos": "C",
+      "jersey": "99"
+    },
+    {
+      "name": "LeBron James",
+      "team": "Philadelphia 76ers",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "Caleb Love",
+      "team": "Philadelphia 76ers",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Tyrese Maxey",
+      "team": "Philadelphia 76ers",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Labaron Philon Jr.",
+      "team": "Philadelphia 76ers",
+      "pos": "G",
+      "jersey": "00"
+    },
+    {
+      "name": "Rayan Rupert",
+      "team": "Philadelphia 76ers",
+      "pos": "G",
+      "jersey": "12"
+    },
+    {
+      "name": "Anfernee Simons",
+      "team": "Philadelphia 76ers",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Dean Wade",
+      "team": "Philadelphia 76ers",
+      "pos": "F",
+      "jersey": "45"
+    },
+    {
+      "name": "Jabari Walker",
+      "team": "Philadelphia 76ers",
+      "pos": "F",
+      "jersey": "33"
+    }
+  ],
+  "Phoenix Suns": [
+    {
+      "name": "Devin Booker",
+      "team": "Phoenix Suns",
+      "pos": "G",
+      "jersey": "15"
+    },
+    {
+      "name": "Jamaree Bouyea",
+      "team": "Phoenix Suns",
+      "pos": "G",
+      "jersey": "17"
+    },
+    {
+      "name": "Miles Bridges",
+      "team": "Phoenix Suns",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Dillon Brooks",
+      "team": "Phoenix Suns",
+      "pos": "F",
+      "jersey": "3"
+    },
+    {
+      "name": "Ryan Dunn",
+      "team": "Phoenix Suns",
+      "pos": "F",
+      "jersey": "0"
+    },
+    {
+      "name": "Rasheer Fleming",
+      "team": "Phoenix Suns",
+      "pos": "F",
+      "jersey": "20"
+    },
+    {
+      "name": "Collin Gillespie",
+      "team": "Phoenix Suns",
+      "pos": "G",
+      "jersey": "12"
+    },
+    {
+      "name": "Jordan Goodwin",
+      "team": "Phoenix Suns",
+      "pos": "G",
+      "jersey": "23"
+    },
+    {
+      "name": "Jalen Green",
+      "team": "Phoenix Suns",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Oso Ighodaro",
+      "team": "Phoenix Suns",
+      "pos": "F",
+      "jersey": "11"
+    },
+    {
+      "name": "Luke Kennard",
+      "team": "Phoenix Suns",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Khaman Maluach",
+      "team": "Phoenix Suns",
+      "pos": "C",
+      "jersey": "10"
+    },
+    {
+      "name": "Koa Peat",
+      "team": "Phoenix Suns",
+      "pos": "F",
+      "jersey": "18"
+    },
+    {
+      "name": "Duop Reath",
+      "team": "Phoenix Suns",
+      "pos": "C",
+      "jersey": "26"
+    },
+    {
+      "name": "Pat Spencer",
+      "team": "Phoenix Suns",
+      "pos": "G",
+      "jersey": "61"
+    },
+    {
+      "name": "Drew Timme",
+      "team": "Phoenix Suns",
+      "pos": "F",
+      "jersey": "2"
+    }
+  ],
+  "Portland Trail Blazers": [
+    {
+      "name": "Deni Avdija",
+      "team": "Portland Trail Blazers",
+      "pos": "F",
+      "jersey": "8"
+    },
+    {
+      "name": "Toumani Camara",
+      "team": "Portland Trail Blazers",
+      "pos": "F",
+      "jersey": "33"
+    },
+    {
+      "name": "Branden Carlson",
+      "team": "Portland Trail Blazers",
+      "pos": "C",
+      "jersey": "10"
+    },
+    {
+      "name": "Sidy Cissoko",
+      "team": "Portland Trail Blazers",
+      "pos": "G",
+      "jersey": "91"
+    },
+    {
+      "name": "Donovan Clingan",
+      "team": "Portland Trail Blazers",
+      "pos": "C",
+      "jersey": "23"
+    },
+    {
+      "name": "Yang Hansen",
+      "team": "Portland Trail Blazers",
+      "pos": "C",
+      "jersey": "16"
+    },
+    {
+      "name": "Scoot Henderson",
+      "team": "Portland Trail Blazers",
+      "pos": "G",
+      "jersey": "00"
+    },
+    {
+      "name": "Jrue Holiday",
+      "team": "Portland Trail Blazers",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Jayson Kent",
+      "team": "Portland Trail Blazers",
+      "pos": "G",
+      "jersey": "29"
+    },
+    {
+      "name": "Damian Lillard",
+      "team": "Portland Trail Blazers",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Micah Potter",
+      "team": "Portland Trail Blazers",
+      "pos": "C",
+      "jersey": "9"
+    },
+    {
+      "name": "John Tonje",
+      "team": "Portland Trail Blazers",
+      "pos": "F",
+      "jersey": "2"
+    },
+    {
+      "name": "Robert Williams III",
+      "team": "Portland Trail Blazers",
+      "pos": "C",
+      "jersey": "35"
+    }
+  ],
+  "Sacramento Kings": [
+    {
+      "name": "Precious Achiuwa",
+      "team": "Sacramento Kings",
+      "pos": "F",
+      "jersey": "9"
+    },
+    {
+      "name": "Darius Acuff Jr.",
+      "team": "Sacramento Kings",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Leaky Black",
+      "team": "Sacramento Kings",
+      "pos": "F",
+      "jersey": "19"
+    },
+    {
+      "name": "Dylan Cardwell",
+      "team": "Sacramento Kings",
+      "pos": "C",
+      "jersey": "32"
+    },
+    {
+      "name": "De'Andre Hunter",
+      "team": "Sacramento Kings",
+      "pos": "F",
+      "jersey": "15"
+    },
+    {
+      "name": "Alex Karaban",
+      "team": "Sacramento Kings",
+      "pos": "F",
+      "jersey": "33"
+    },
+    {
+      "name": "Zach LaVine",
+      "team": "Sacramento Kings",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Jonathan Mogbo",
+      "team": "Sacramento Kings",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Malik Monk",
+      "team": "Sacramento Kings",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Keegan Murray",
+      "team": "Sacramento Kings",
+      "pos": "F",
+      "jersey": "13"
+    },
+    {
+      "name": "Sean Pedulla",
+      "team": "Sacramento Kings",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Daeqwon Plowden",
+      "team": "Sacramento Kings",
+      "pos": "G",
+      "jersey": "29"
+    },
+    {
+      "name": "Mason Plumlee",
+      "team": "Sacramento Kings",
+      "pos": "C",
+      "jersey": "24"
+    },
+    {
+      "name": "Domantas Sabonis",
+      "team": "Sacramento Kings",
+      "pos": "F",
+      "jersey": "11"
+    },
+    {
+      "name": "Emanuel Sharp",
+      "team": "Sacramento Kings",
+      "pos": "G",
+      "jersey": "34"
+    }
+  ],
+  "San Antonio Spurs": [
+    {
+      "name": "Harrison Barnes",
+      "team": "San Antonio Spurs",
+      "pos": "F",
+      "jersey": "40"
+    },
+    {
+      "name": "Maliq Brown",
+      "team": "San Antonio Spurs",
+      "pos": "F",
+      "jersey": "15"
+    },
+    {
+      "name": "Carter Bryant",
+      "team": "San Antonio Spurs",
+      "pos": "F",
+      "jersey": "11"
+    },
+    {
+      "name": "Stephon Castle",
+      "team": "San Antonio Spurs",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Julian Champagnie",
+      "team": "San Antonio Spurs",
+      "pos": "F",
+      "jersey": "30"
+    },
+    {
+      "name": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
+      "pos": "G",
+      "jersey": "4"
+    },
+    {
+      "name": "Ja'Kobi Gillespie",
+      "team": "San Antonio Spurs",
+      "pos": "G",
+      "jersey": "17"
+    },
+    {
+      "name": "Dylan Harper",
+      "team": "San Antonio Spurs",
+      "pos": "G",
+      "jersey": "2"
+    },
+    {
+      "name": "Keldon Johnson",
+      "team": "San Antonio Spurs",
+      "pos": "F",
+      "jersey": "3"
+    },
+    {
+      "name": "David Jones Garcia",
+      "team": "San Antonio Spurs",
+      "pos": "F",
+      "jersey": "25"
+    },
+    {
+      "name": "Luke Kornet",
+      "team": "San Antonio Spurs",
+      "pos": "C",
+      "jersey": "7"
+    },
+    {
+      "name": "Jordan McLaughlin",
+      "team": "San Antonio Spurs",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Tarris Reed Jr.",
+      "team": "San Antonio Spurs",
+      "pos": "C",
+      "jersey": "10"
+    },
+    {
+      "name": "Devin Vassell",
+      "team": "San Antonio Spurs",
+      "pos": "G",
+      "jersey": "24"
+    },
+    {
+      "name": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "pos": "F",
+      "jersey": "1"
+    }
+  ],
+  "Toronto Raptors": [
+    {
+      "name": "Kyle Anderson",
+      "team": "Toronto Raptors",
+      "pos": "F",
+      "jersey": "12"
+    },
+    {
+      "name": "RJ Barrett",
+      "team": "Toronto Raptors",
+      "pos": "F",
+      "jersey": "9"
+    },
+    {
+      "name": "Jamison Battle",
+      "team": "Toronto Raptors",
+      "pos": "F",
+      "jersey": "77"
+    },
+    {
+      "name": "Jaden Bradley",
+      "team": "Toronto Raptors",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Allen Graves",
+      "team": "Toronto Raptors",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Trayce Jackson-Davis",
+      "team": "Toronto Raptors",
+      "pos": "F",
+      "jersey": "32"
+    },
+    {
+      "name": "Alijah Martin",
+      "team": "Toronto Raptors",
+      "pos": "G",
+      "jersey": "55"
+    },
+    {
+      "name": "Kevin McCullar Jr.",
+      "team": "Toronto Raptors",
+      "pos": "G",
+      "jersey": "9"
+    },
+    {
+      "name": "Collin Murray-Boyles",
+      "team": "Toronto Raptors",
+      "pos": "F",
+      "jersey": "30"
+    },
+    {
+      "name": "Jakob Poeltl",
+      "team": "Toronto Raptors",
+      "pos": "C",
+      "jersey": "19"
+    },
+    {
+      "name": "Immanuel Quickley",
+      "team": "Toronto Raptors",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Jamal Shead",
+      "team": "Toronto Raptors",
+      "pos": "G",
+      "jersey": "23"
+    },
+    {
+      "name": "Malachi Smith",
+      "team": "Toronto Raptors",
+      "pos": "G",
+      "jersey": "18"
+    },
+    {
+      "name": "Ja'Kobe Walter",
+      "team": "Toronto Raptors",
+      "pos": "G",
+      "jersey": "14"
+    }
+  ],
+  "Utah Jazz": [
+    {
+      "name": "Jonas Aidoo",
+      "team": "Utah Jazz",
+      "pos": "C",
+      "jersey": "13"
+    },
+    {
+      "name": "Ace Bailey",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "19"
+    },
+    {
+      "name": "Mo Bamba",
+      "team": "Utah Jazz",
+      "pos": "C",
+      "jersey": "44"
+    },
+    {
+      "name": "Tony Bradley",
+      "team": "Utah Jazz",
+      "pos": "C",
+      "jersey": "13"
+    },
+    {
+      "name": "Kobe Bufkin",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Isaiah Collier",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "8"
+    },
+    {
+      "name": "Kyle Filipowski",
+      "team": "Utah Jazz",
+      "pos": "F",
+      "jersey": "2"
+    },
+    {
+      "name": "Keyonte George",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "3"
+    },
+    {
+      "name": "Josh Green",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "5"
+    },
+    {
+      "name": "Jaxson Hayes",
+      "team": "Utah Jazz",
+      "pos": "C",
+      "jersey": "11"
+    },
+    {
+      "name": "Harrison Ingram",
+      "team": "Utah Jazz",
+      "pos": "F",
+      "jersey": "00"
+    },
+    {
+      "name": "Svi Mykhailiuk",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "10"
+    },
+    {
+      "name": "Josh Okogie",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "21"
+    },
+    {
+      "name": "Darryn Peterson",
+      "team": "Utah Jazz",
+      "pos": "G",
+      "jersey": "22"
+    },
+    {
+      "name": "Brice Sensabaugh",
+      "team": "Utah Jazz",
+      "pos": "F",
+      "jersey": "28"
+    }
+  ],
+  "Washington Wizards": [
+    {
+      "name": "Deandre Ayton",
+      "team": "Washington Wizards",
+      "pos": "C",
+      "jersey": "8"
+    },
+    {
+      "name": "Bub Carrington",
+      "team": "Washington Wizards",
+      "pos": "G",
+      "jersey": "7"
+    },
+    {
+      "name": "Bilal Coulibaly",
+      "team": "Washington Wizards",
+      "pos": "G",
+      "jersey": "0"
+    },
+    {
+      "name": "Anthony Davis",
+      "team": "Washington Wizards",
+      "pos": "F",
+      "jersey": "23"
+    },
+    {
+      "name": "AJ Dybantsa",
+      "team": "Washington Wizards",
+      "pos": "F",
+      "jersey": "4"
+    },
+    {
+      "name": "Kyshawn George",
+      "team": "Washington Wizards",
+      "pos": "F",
+      "jersey": "18"
+    },
+    {
+      "name": "Anthony Gill",
+      "team": "Washington Wizards",
+      "pos": "F",
+      "jersey": "16"
+    },
+    {
+      "name": "Tre Johnson",
+      "team": "Washington Wizards",
+      "pos": "G",
+      "jersey": "12"
+    },
+    {
+      "name": "Tre Mann",
+      "team": "Washington Wizards",
+      "pos": "G",
+      "jersey": "1"
+    },
+    {
+      "name": "Khris Middleton",
+      "team": "Washington Wizards",
+      "pos": "F",
+      "jersey": "22"
+    },
+    {
+      "name": "Felix Okpara",
+      "team": "Washington Wizards",
+      "pos": "F",
+      "jersey": "34"
+    },
+    {
+      "name": "Will Riley",
+      "team": "Washington Wizards",
+      "pos": "G",
+      "jersey": "27"
+    },
+    {
+      "name": "Alex Sarr",
+      "team": "Washington Wizards",
+      "pos": "C",
+      "jersey": "20"
+    },
+    {
+      "name": "Trae Young",
+      "team": "Washington Wizards",
+      "pos": "G",
+      "jersey": "3"
+    }
+  ]
+}

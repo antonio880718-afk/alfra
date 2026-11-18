@@ -47,7 +47,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Los Angeles Rams (254.0 YDS/J)"
+        "role": "QB Titular Activo Los Angeles Rams (254.0 YDS/J)"
       },
       {
         "name": "Blake Corum",
@@ -60,7 +60,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Los Angeles Rams (82.9 YDS/J)"
+        "role": "Corredor Titular Activo Los Angeles Rams (82.9 YDS/J)"
       },
       {
         "name": "Kyren Williams",
@@ -73,20 +73,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 61.6,
-        "role": "Corredor Titular Los Angeles Rams (51.9 YDS/J)"
-      },
-      {
-        "name": "Puka Nacua",
-        "team": "Los Angeles Rams",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 35.0,
-        "rec_yds": 150.0,
-        "receptions": 14.0,
-        "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Los Angeles Rams (150.0 YDS/J)"
+        "role": "Corredor Titular Activo Los Angeles Rams (51.9 YDS/J)"
       },
       {
         "name": "Konata Mumpfield",
@@ -99,7 +86,20 @@
         "rec_yds": 62.4,
         "receptions": 5.4,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Los Angeles Rams (62.4 YDS/J)"
+        "role": "Receptor Titular Activo Los Angeles Rams (62.4 YDS/J)"
+      },
+      {
+        "name": "Tutu Atwell",
+        "team": "Los Angeles Rams",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Activo Los Angeles Rams (46.0 YDS/J)"
       },
       {
         "name": "Jordan Love",
@@ -112,7 +112,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Green Bay Packers (316.4 YDS/J)"
+        "role": "QB Titular Activo Green Bay Packers (316.4 YDS/J)"
       },
       {
         "name": "Kaleb Johnson",
@@ -125,7 +125,20 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Green Bay Packers (56.8 YDS/J)"
+        "role": "Corredor Titular Activo Green Bay Packers (56.8 YDS/J)"
+      },
+      {
+        "name": "Pierre Strong Jr.",
+        "team": "Green Bay Packers",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 54.0,
+        "rec_yds": 14.0,
+        "receptions": 2.0,
+        "anytime_td_pct": 52.0,
+        "role": "Corredor Titular Activo Green Bay Packers (54.0 YDS/J)"
       },
       {
         "name": "Matthew Golden",
@@ -138,7 +151,7 @@
         "rec_yds": 131.6,
         "receptions": 11.4,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Green Bay Packers (131.6 YDS/J)"
+        "role": "Receptor Titular Activo Green Bay Packers (131.6 YDS/J)"
       },
       {
         "name": "Christian Watson",
@@ -151,7 +164,7 @@
         "rec_yds": 130.8,
         "receptions": 11.4,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Green Bay Packers (130.8 YDS/J)"
+        "role": "Receptor Titular Activo Green Bay Packers (130.8 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

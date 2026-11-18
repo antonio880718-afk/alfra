@@ -47,7 +47,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 39.9,
-        "role": "QB Titular Washington Commanders (261.5 YDS/J)"
+        "role": "QB Titular Activo Washington Commanders (261.5 YDS/J)"
       },
       {
         "name": "Rachaad White",
@@ -60,7 +60,7 @@
         "rec_yds": 35.0,
         "receptions": 2.5,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Washington Commanders (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Washington Commanders (48.0 YDS/J)"
       },
       {
         "name": "Austin Ekeler",
@@ -73,7 +73,7 @@
         "rec_yds": 35.0,
         "receptions": 3.4,
         "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Washington Commanders (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Washington Commanders (48.0 YDS/J)"
       },
       {
         "name": "Stefon Diggs",
@@ -86,7 +86,7 @@
         "rec_yds": 69.3,
         "receptions": 6.0,
         "anytime_td_pct": 62.2,
-        "role": "Receptor Titular Washington Commanders (69.3 YDS/J)"
+        "role": "Receptor Titular Activo Washington Commanders (69.3 YDS/J)"
       },
       {
         "name": "Van Jefferson",
@@ -99,7 +99,7 @@
         "rec_yds": 58.0,
         "receptions": 5.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Washington Commanders (58.0 YDS/J)"
+        "role": "Receptor Titular Activo Washington Commanders (58.0 YDS/J)"
       },
       {
         "name": "Joe Burrow",
@@ -112,7 +112,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Cincinnati Bengals (352.9 YDS/J)"
+        "role": "QB Titular Activo Cincinnati Bengals (352.9 YDS/J)"
       },
       {
         "name": "Chase Brown",
@@ -125,7 +125,7 @@
         "rec_yds": 35.0,
         "receptions": 6.8,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Cincinnati Bengals (50.5 YDS/J)"
+        "role": "Corredor Titular Activo Cincinnati Bengals (50.5 YDS/J)"
       },
       {
         "name": "Samaje Perine",
@@ -138,7 +138,7 @@
         "rec_yds": 35.0,
         "receptions": 3.4,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Cincinnati Bengals (48.0 YDS/J)"
+        "role": "Corredor Titular Activo Cincinnati Bengals (48.0 YDS/J)"
       },
       {
         "name": "Ja'Marr Chase",
@@ -151,7 +151,7 @@
         "rec_yds": 195.1,
         "receptions": 17.0,
         "anytime_td_pct": 67.4,
-        "role": "Receptor Titular Cincinnati Bengals (195.1 YDS/J)"
+        "role": "Receptor Titular Activo Cincinnati Bengals (195.1 YDS/J)"
       },
       {
         "name": "Tee Higgins",
@@ -164,7 +164,7 @@
         "rec_yds": 49.0,
         "receptions": 5.0,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Cincinnati Bengals (49.0 YDS/J)"
+        "role": "Receptor Titular Activo Cincinnati Bengals (49.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

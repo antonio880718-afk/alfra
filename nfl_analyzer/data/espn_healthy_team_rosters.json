@@ -1,0 +1,4134 @@
+{
+  "Arizona Cardinals": [
+    {
+      "name": "Joey Aguilar",
+      "team": "Arizona Cardinals",
+      "pos": "QB",
+      "jersey": "18"
+    },
+    {
+      "name": "Tyler Allgeier",
+      "team": "Arizona Cardinals",
+      "pos": "RB",
+      "jersey": "22"
+    },
+    {
+      "name": "Carson Beck",
+      "team": "Arizona Cardinals",
+      "pos": "QB",
+      "jersey": "19"
+    },
+    {
+      "name": "Shawn Bowman",
+      "team": "Arizona Cardinals",
+      "pos": "TE",
+      "jersey": "44"
+    },
+    {
+      "name": "Devin Duvernay",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "Simi Fehoko",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "80"
+    },
+    {
+      "name": "Jerome Ford",
+      "team": "Arizona Cardinals",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Elijah Higgins",
+      "team": "Arizona Cardinals",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Evan Hull",
+      "team": "Arizona Cardinals",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Josh Johnson",
+      "team": "Arizona Cardinals",
+      "pos": "QB",
+      "jersey": "14"
+    },
+    {
+      "name": "Zay Jones",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "7"
+    },
+    {
+      "name": "Bam Knight",
+      "team": "Arizona Cardinals",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "Hunter Long",
+      "team": "Arizona Cardinals",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Trey McBride",
+      "team": "Arizona Cardinals",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Teagan Quitoriano",
+      "team": "Arizona Cardinals",
+      "pos": "TE",
+      "jersey": "47"
+    },
+    {
+      "name": "Reggie Virgil",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Harrison Wallace III",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Xavier Weaver",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "89"
+    },
+    {
+      "name": "Ronnie Bell",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Phillip Dorsett II",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Shedrick Jackson",
+      "team": "Arizona Cardinals",
+      "pos": "WR",
+      "jersey": "0"
+    }
+  ],
+  "Atlanta Falcons": [
+    {
+      "name": "Chris Blair",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Beaux Collins",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "88"
+    },
+    {
+      "name": "Andy Dalton",
+      "team": "Atlanta Falcons",
+      "pos": "QB",
+      "jersey": "13"
+    },
+    {
+      "name": "Jahan Dotson",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "Khalil Herbert",
+      "team": "Atlanta Falcons",
+      "pos": "RB",
+      "jersey": "40"
+    },
+    {
+      "name": "Austin Hooper",
+      "team": "Atlanta Falcons",
+      "pos": "TE",
+      "jersey": "81"
+    },
+    {
+      "name": "Drake London",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "5"
+    },
+    {
+      "name": "Nick Muse",
+      "team": "Atlanta Falcons",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Michael Penix Jr.",
+      "team": "Atlanta Falcons",
+      "pos": "QB",
+      "jersey": "9"
+    },
+    {
+      "name": "Kyle Pitts Sr.",
+      "team": "Atlanta Falcons",
+      "pos": "TE",
+      "jersey": "8"
+    },
+    {
+      "name": "Bijan Robinson",
+      "team": "Atlanta Falcons",
+      "pos": "RB",
+      "jersey": "7"
+    },
+    {
+      "name": "Jack Strand",
+      "team": "Atlanta Falcons",
+      "pos": "QB",
+      "jersey": "18"
+    },
+    {
+      "name": "Tua Tagovailoa",
+      "team": "Atlanta Falcons",
+      "pos": "QB",
+      "jersey": "1"
+    },
+    {
+      "name": "Charlie Woerner",
+      "team": "Atlanta Falcons",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Olamide Zaccheaus",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Vinny Anthony II",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Dylan Drummond",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "80"
+    },
+    {
+      "name": "E.J. Jenkins",
+      "team": "Atlanta Falcons",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Jam Miller",
+      "team": "Atlanta Falcons",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Antwane Wells Jr.",
+      "team": "Atlanta Falcons",
+      "pos": "WR",
+      "jersey": "82"
+    }
+  ],
+  "Baltimore Ravens": [
+    {
+      "name": "Rasheen Ali",
+      "team": "Baltimore Ravens",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Mark Andrews",
+      "team": "Baltimore Ravens",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Rashod Bateman",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "7"
+    },
+    {
+      "name": "Jacoby Brissett",
+      "team": "Baltimore Ravens",
+      "pos": "QB",
+      "jersey": "11"
+    },
+    {
+      "name": "Josh Cuevas",
+      "team": "Baltimore Ravens",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Joe Fagnano",
+      "team": "Baltimore Ravens",
+      "pos": "QB",
+      "jersey": "12"
+    },
+    {
+      "name": "Zay Flowers",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "Derrick Henry",
+      "team": "Baltimore Ravens",
+      "pos": "RB",
+      "jersey": "22"
+    },
+    {
+      "name": "Matt Hibner",
+      "team": "Baltimore Ravens",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Justice Hill",
+      "team": "Baltimore Ravens",
+      "pos": "RB",
+      "jersey": "43"
+    },
+    {
+      "name": "Ja'Kobi Lane",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "6"
+    },
+    {
+      "name": "Chris Moore",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Elijah Sarratt",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Kedon Slovis",
+      "team": "Baltimore Ravens",
+      "pos": "QB",
+      "jersey": "18"
+    },
+    {
+      "name": "Nick Vannett",
+      "team": "Baltimore Ravens",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Devontez Walker",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "LaJohntay Wester",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "10"
+    },
+    {
+      "name": "Adam Randall",
+      "team": "Baltimore Ravens",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Gage Larvadain",
+      "team": "Baltimore Ravens",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Ty Pezza",
+      "team": "Baltimore Ravens",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Lucas Scott",
+      "team": "Baltimore Ravens",
+      "pos": "RB",
+      "jersey": "47"
+    }
+  ],
+  "Buffalo Bills": [
+    {
+      "name": "Josh Allen",
+      "team": "Buffalo Bills",
+      "pos": "QB",
+      "jersey": "17"
+    },
+    {
+      "name": "Kyle Allen",
+      "team": "Buffalo Bills",
+      "pos": "QB",
+      "jersey": "11"
+    },
+    {
+      "name": "Skyler Bell",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Shane Buechele",
+      "team": "Buffalo Bills",
+      "pos": "QB",
+      "jersey": "6"
+    },
+    {
+      "name": "Keon Coleman",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "James Cook III",
+      "team": "Buffalo Bills",
+      "pos": "RB",
+      "jersey": "4"
+    },
+    {
+      "name": "Ray Davis",
+      "team": "Buffalo Bills",
+      "pos": "RB",
+      "jersey": "7"
+    },
+    {
+      "name": "Greg Dortch",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Jackson Hawes",
+      "team": "Buffalo Bills",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Ty Johnson",
+      "team": "Buffalo Bills",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Dalton Kincaid",
+      "team": "Buffalo Bills",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Dawson Knox",
+      "team": "Buffalo Bills",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Keleki Latu",
+      "team": "Buffalo Bills",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "DJ Moore",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "2"
+    },
+    {
+      "name": "Khalil Shakir",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "10"
+    },
+    {
+      "name": "Tyrell Shavers",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Frank Gore Jr.",
+      "team": "Buffalo Bills",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "Stephen Gosnell",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "89"
+    },
+    {
+      "name": "Brock Lampe",
+      "team": "Buffalo Bills",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Ja'Mori Maclin",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "84"
+    },
+    {
+      "name": "Trent Sherfield",
+      "team": "Buffalo Bills",
+      "pos": "WR",
+      "jersey": "81"
+    }
+  ],
+  "Carolina Panthers": [
+    {
+      "name": "Jalen Coker",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "AJ Dillon",
+      "team": "Carolina Panthers",
+      "pos": "RB",
+      "jersey": "28"
+    },
+    {
+      "name": "Trevor Etienne",
+      "team": "Carolina Panthers",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Mitchell Evans",
+      "team": "Carolina Panthers",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Feleipe Franks",
+      "team": "Carolina Panthers",
+      "pos": "TE",
+      "jersey": "81"
+    },
+    {
+      "name": "Chuba Hubbard",
+      "team": "Carolina Panthers",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Haynes King",
+      "team": "Carolina Panthers",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Xavier Legette",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Tetairoa McMillan",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "John Metchie III",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Kenny Pickett",
+      "team": "Carolina Panthers",
+      "pos": "QB",
+      "jersey": "12"
+    },
+    {
+      "name": "Ja'seem Reed",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Ja'Tavion Sanders",
+      "team": "Carolina Panthers",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Brycen Tremayne",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "87"
+    },
+    {
+      "name": "Tommy Tremble",
+      "team": "Carolina Panthers",
+      "pos": "TE",
+      "jersey": "82"
+    },
+    {
+      "name": "Anthony Tyus III",
+      "team": "Carolina Panthers",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Darren Waller",
+      "team": "Carolina Panthers",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Bryce Young",
+      "team": "Carolina Panthers",
+      "pos": "QB",
+      "jersey": "9"
+    },
+    {
+      "name": "Ahmani Marshall",
+      "team": "Carolina Panthers",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "David Moore",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Joshua Simon",
+      "team": "Carolina Panthers",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Casey Washington",
+      "team": "Carolina Panthers",
+      "pos": "WR",
+      "jersey": "88"
+    }
+  ],
+  "Chicago Bears": [
+    {
+      "name": "Salvon Ahmed",
+      "team": "Chicago Bears",
+      "pos": "RB",
+      "jersey": "36"
+    },
+    {
+      "name": "Tyson Bagent",
+      "team": "Chicago Bears",
+      "pos": "QB",
+      "jersey": "17"
+    },
+    {
+      "name": "Luther Burden III",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "10"
+    },
+    {
+      "name": "Stephen Carlson",
+      "team": "Chicago Bears",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Kaden Davis",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "Roschon Johnson",
+      "team": "Chicago Bears",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Case Keenum",
+      "team": "Chicago Bears",
+      "pos": "QB",
+      "jersey": "11"
+    },
+    {
+      "name": "Colston Loveland",
+      "team": "Chicago Bears",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Kyle Monangai",
+      "team": "Chicago Bears",
+      "pos": "RB",
+      "jersey": "25"
+    },
+    {
+      "name": "Miller Moss",
+      "team": "Chicago Bears",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Rome Odunze",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "15"
+    },
+    {
+      "name": "Kalif Raymond",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Sam Roush",
+      "team": "Chicago Bears",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "D'Andre Swift",
+      "team": "Chicago Bears",
+      "pos": "RB",
+      "jersey": "4"
+    },
+    {
+      "name": "Zavion Thomas",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Jahdae Walker",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Caleb Williams",
+      "team": "Chicago Bears",
+      "pos": "QB",
+      "jersey": "18"
+    },
+    {
+      "name": "Qadir Ismail",
+      "team": "Chicago Bears",
+      "pos": "TE",
+      "jersey": "80"
+    },
+    {
+      "name": "Scotty Miller",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "35"
+    },
+    {
+      "name": "JP Richardson",
+      "team": "Chicago Bears",
+      "pos": "WR",
+      "jersey": "83"
+    }
+  ],
+  "Cincinnati Bengals": [
+    {
+      "name": "Tahj Brooks",
+      "team": "Cincinnati Bengals",
+      "pos": "RB",
+      "jersey": "25"
+    },
+    {
+      "name": "Chase Brown",
+      "team": "Cincinnati Bengals",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Joe Burrow",
+      "team": "Cincinnati Bengals",
+      "pos": "QB",
+      "jersey": "9"
+    },
+    {
+      "name": "Ja'Marr Chase",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Jack Endries",
+      "team": "Cincinnati Bengals",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Joe Flacco",
+      "team": "Cincinnati Bengals",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Mike Gesicki",
+      "team": "Cincinnati Bengals",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Cam Grandy",
+      "team": "Cincinnati Bengals",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Tee Higgins",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "5"
+    },
+    {
+      "name": "Dohnte Meyers",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "Samaje Perine",
+      "team": "Cincinnati Bengals",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Drew Sample",
+      "team": "Cincinnati Bengals",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Mitchell Tinsley",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Colbie Young",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Kentrel Bullock",
+      "team": "Cincinnati Bengals",
+      "pos": "RB",
+      "jersey": "31"
+    },
+    {
+      "name": "Sean Clifford",
+      "team": "Cincinnati Bengals",
+      "pos": "QB",
+      "jersey": "4"
+    },
+    {
+      "name": "Kendall Milton",
+      "team": "Cincinnati Bengals",
+      "pos": "RB",
+      "jersey": "36"
+    },
+    {
+      "name": "Jordan Moore",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Caden Prieskorn",
+      "team": "Cincinnati Bengals",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Noah Thomas",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Ke'Shawn Williams",
+      "team": "Cincinnati Bengals",
+      "pos": "WR",
+      "jersey": "12"
+    }
+  ],
+  "Cleveland Browns": [
+    {
+      "name": "Isaiah Bond",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Denzel Boston",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "12"
+    },
+    {
+      "name": "KC Concepcion",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Malachi Corley",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Harold Fannin Jr.",
+      "team": "Cleveland Browns",
+      "pos": "TE",
+      "jersey": "44"
+    },
+    {
+      "name": "Dillon Gabriel",
+      "team": "Cleveland Browns",
+      "pos": "QB",
+      "jersey": "6"
+    },
+    {
+      "name": "Taylen Green",
+      "team": "Cleveland Browns",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Jerry Jeudy",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "3"
+    },
+    {
+      "name": "Quinshon Judkins",
+      "team": "Cleveland Browns",
+      "pos": "RB",
+      "jersey": "10"
+    },
+    {
+      "name": "Jaleel McLaughlin",
+      "team": "Cleveland Browns",
+      "pos": "RB",
+      "jersey": "38"
+    },
+    {
+      "name": "Zaire Mitchell-Paden",
+      "team": "Cleveland Browns",
+      "pos": "TE",
+      "jersey": "80"
+    },
+    {
+      "name": "Dylan Sampson",
+      "team": "Cleveland Browns",
+      "pos": "RB",
+      "jersey": "22"
+    },
+    {
+      "name": "Shedeur Sanders",
+      "team": "Cleveland Browns",
+      "pos": "QB",
+      "jersey": "2"
+    },
+    {
+      "name": "Tylan Wallace",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "16"
+    },
+    {
+      "name": "Deshaun Watson",
+      "team": "Cleveland Browns",
+      "pos": "QB",
+      "jersey": "4"
+    },
+    {
+      "name": "Blake Whiteheart",
+      "team": "Cleveland Browns",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Xavier Guillory",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Hassan Haskins",
+      "team": "Cleveland Browns",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Jimmy Horn Jr.",
+      "team": "Cleveland Browns",
+      "pos": "WR",
+      "jersey": "0"
+    }
+  ],
+  "Dallas Cowboys": [
+    {
+      "name": "Israel Abanikanda",
+      "team": "Dallas Cowboys",
+      "pos": "RB",
+      "jersey": "37"
+    },
+    {
+      "name": "Camden Brown",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "80"
+    },
+    {
+      "name": "Ryan Flournoy",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Sam Howell",
+      "team": "Dallas Cowboys",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Jordan Hudson",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "CeeDee Lamb",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "88"
+    },
+    {
+      "name": "Hunter Luepke",
+      "team": "Dallas Cowboys",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Jonathan Mingo",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "James Mitchell",
+      "team": "Dallas Cowboys",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "George Pickens",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "3"
+    },
+    {
+      "name": "Dak Prescott",
+      "team": "Dallas Cowboys",
+      "pos": "QB",
+      "jersey": "4"
+    },
+    {
+      "name": "Luke Schoonmaker",
+      "team": "Dallas Cowboys",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Brevyn Spann-Ford",
+      "team": "Dallas Cowboys",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "KaVontae Turpin",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Javonte Williams",
+      "team": "Dallas Cowboys",
+      "pos": "RB",
+      "jersey": "33"
+    },
+    {
+      "name": "Jashaun Corbin",
+      "team": "Dallas Cowboys",
+      "pos": "RB",
+      "jersey": "36"
+    },
+    {
+      "name": "Kendre Miller",
+      "team": "Dallas Cowboys",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Anthony Smith",
+      "team": "Dallas Cowboys",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Kyle Trask",
+      "team": "Dallas Cowboys",
+      "pos": "QB",
+      "jersey": "0"
+    },
+    {
+      "name": "Michael Trigg",
+      "team": "Dallas Cowboys",
+      "pos": "TE",
+      "jersey": "46"
+    }
+  ],
+  "Denver Broncos": [
+    {
+      "name": "Nate Adkins",
+      "team": "Denver Broncos",
+      "pos": "TE",
+      "jersey": "45"
+    },
+    {
+      "name": "Dallen Bentley",
+      "team": "Denver Broncos",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Jonah Coleman",
+      "team": "Denver Broncos",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "J.K. Dobbins",
+      "team": "Denver Broncos",
+      "pos": "RB",
+      "jersey": "27"
+    },
+    {
+      "name": "Sam Ehlinger",
+      "team": "Denver Broncos",
+      "pos": "QB",
+      "jersey": "4"
+    },
+    {
+      "name": "Evan Engram",
+      "team": "Denver Broncos",
+      "pos": "TE",
+      "jersey": "1"
+    },
+    {
+      "name": "Troy Franklin",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Lil'Jordan Humphrey",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "5"
+    },
+    {
+      "name": "Kolbe Katsis",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "Marvin Mims Jr.",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Bo Nix",
+      "team": "Denver Broncos",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Adam Prentice",
+      "team": "Denver Broncos",
+      "pos": "RB",
+      "jersey": "46"
+    },
+    {
+      "name": "Cody Schrader",
+      "team": "Denver Broncos",
+      "pos": "RB",
+      "jersey": "25"
+    },
+    {
+      "name": "Jarrett Stidham",
+      "team": "Denver Broncos",
+      "pos": "QB",
+      "jersey": "8"
+    },
+    {
+      "name": "Courtland Sutton",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Adam Trautman",
+      "team": "Denver Broncos",
+      "pos": "TE",
+      "jersey": "82"
+    },
+    {
+      "name": "Jaylen Waddle",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Pat Bryant",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Michael Bandy",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Dane Key",
+      "team": "Denver Broncos",
+      "pos": "WR",
+      "jersey": "32"
+    },
+    {
+      "name": "Lucas Krull",
+      "team": "Denver Broncos",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Jaret Patterson",
+      "team": "Denver Broncos",
+      "pos": "RB",
+      "jersey": "0"
+    }
+  ],
+  "Detroit Lions": [
+    {
+      "name": "DeAndre Carter",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Tyler Conklin",
+      "team": "Detroit Lions",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "Joshua Dobbs",
+      "team": "Detroit Lions",
+      "pos": "QB",
+      "jersey": "11"
+    },
+    {
+      "name": "Jahmyr Gibbs",
+      "team": "Detroit Lions",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Jared Goff",
+      "team": "Detroit Lions",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Justin Jackson",
+      "team": "Detroit Lions",
+      "pos": "RB",
+      "jersey": "38"
+    },
+    {
+      "name": "Sam LaPorta",
+      "team": "Detroit Lions",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Tay Martin",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Jacob Saylors",
+      "team": "Detroit Lions",
+      "pos": "RB",
+      "jersey": "25"
+    },
+    {
+      "name": "Jabari Small",
+      "team": "Detroit Lions",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Amon-Ra St. Brown",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Isaac TeSlaa",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Sione Vaki",
+      "team": "Detroit Lions",
+      "pos": "RB",
+      "jersey": "33"
+    },
+    {
+      "name": "Jameson Williams",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Brock Wright",
+      "team": "Detroit Lions",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Luke Altmyer",
+      "team": "Detroit Lions",
+      "pos": "QB",
+      "jersey": "2"
+    },
+    {
+      "name": "Thomas Gordon",
+      "team": "Detroit Lions",
+      "pos": "TE",
+      "jersey": "82"
+    },
+    {
+      "name": "Lucky Jackson",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Miles Kitselman",
+      "team": "Detroit Lions",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Dominic Lovett",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Jackson Meeks",
+      "team": "Detroit Lions",
+      "pos": "WR",
+      "jersey": "13"
+    }
+  ],
+  "Green Bay Packers": [
+    {
+      "name": "Chris Brooks",
+      "team": "Green Bay Packers",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Drake Dabney",
+      "team": "Green Bay Packers",
+      "pos": "TE",
+      "jersey": "49"
+    },
+    {
+      "name": "Matthew Golden",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Kaleb Johnson",
+      "team": "Green Bay Packers",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Tucker Kraft",
+      "team": "Green Bay Packers",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "MarShawn Lloyd",
+      "team": "Green Bay Packers",
+      "pos": "RB",
+      "jersey": "32"
+    },
+    {
+      "name": "Jordan Love",
+      "team": "Green Bay Packers",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Bo Melton",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "16"
+    },
+    {
+      "name": "Skyy Moore",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "23"
+    },
+    {
+      "name": "Mark Redman",
+      "team": "Green Bay Packers",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Jonnu Smith",
+      "team": "Green Bay Packers",
+      "pos": "TE",
+      "jersey": "18"
+    },
+    {
+      "name": "Pierre Strong Jr.",
+      "team": "Green Bay Packers",
+      "pos": "RB",
+      "jersey": "22"
+    },
+    {
+      "name": "J. Michael Sturdivant",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "87"
+    },
+    {
+      "name": "Tyrod Taylor",
+      "team": "Green Bay Packers",
+      "pos": "QB",
+      "jersey": "6"
+    },
+    {
+      "name": "Christian Watson",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Savion Williams",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Kenny Fletcher Jr.",
+      "team": "Green Bay Packers",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Cam Miller",
+      "team": "Green Bay Packers",
+      "pos": "QB",
+      "jersey": "0"
+    },
+    {
+      "name": "Isaiah Neyor",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "80"
+    },
+    {
+      "name": "Coleman Owen",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Quincy Skinner Jr.",
+      "team": "Green Bay Packers",
+      "pos": "WR",
+      "jersey": "0"
+    }
+  ],
+  "Houston Texans": [
+    {
+      "name": "Lewis Bond",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Kayshon Boutte",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Nico Collins",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "12"
+    },
+    {
+      "name": "Emari Demercado",
+      "team": "Houston Texans",
+      "pos": "RB",
+      "jersey": "21"
+    },
+    {
+      "name": "Marvin Harrison Jr.",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Xavier Hutchinson",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Brevin Jordan",
+      "team": "Houston Texans",
+      "pos": "TE",
+      "jersey": "9"
+    },
+    {
+      "name": "Marlin Klein",
+      "team": "Houston Texans",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "Davis Mills",
+      "team": "Houston Texans",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "David Montgomery",
+      "team": "Houston Texans",
+      "pos": "RB",
+      "jersey": "32"
+    },
+    {
+      "name": "Foster Moreau",
+      "team": "Houston Texans",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Dare Ogunbowale",
+      "team": "Houston Texans",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Nikko Remigio",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "88"
+    },
+    {
+      "name": "Dalton Schultz",
+      "team": "Houston Texans",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Cade Stover",
+      "team": "Houston Texans",
+      "pos": "TE",
+      "jersey": "8"
+    },
+    {
+      "name": "C.J. Stroud",
+      "team": "Houston Texans",
+      "pos": "QB",
+      "jersey": "7"
+    },
+    {
+      "name": "Tank Dell",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Josh Kelly",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "85"
+    },
+    {
+      "name": "Bryce Oliver",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Josh Pitsenberger",
+      "team": "Houston Texans",
+      "pos": "RB",
+      "jersey": "31"
+    },
+    {
+      "name": "Treyvhon Saunders",
+      "team": "Houston Texans",
+      "pos": "WR",
+      "jersey": "14"
+    }
+  ],
+  "Indianapolis Colts": [
+    {
+      "name": "Pharaoh Brown",
+      "team": "Indianapolis Colts",
+      "pos": "TE",
+      "jersey": "49"
+    },
+    {
+      "name": "Deion Burks",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "80"
+    },
+    {
+      "name": "Ashton Dulin",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "16"
+    },
+    {
+      "name": "DJ Giddens",
+      "team": "Indianapolis Colts",
+      "pos": "RB",
+      "jersey": "21"
+    },
+    {
+      "name": "Anthony Gould",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "6"
+    },
+    {
+      "name": "Daniel Jones",
+      "team": "Indianapolis Colts",
+      "pos": "QB",
+      "jersey": "17"
+    },
+    {
+      "name": "Riley Leonard",
+      "team": "Indianapolis Colts",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Seth McGowan",
+      "team": "Indianapolis Colts",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "Drew Ogletree",
+      "team": "Indianapolis Colts",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Anthony Richardson Sr.",
+      "team": "Indianapolis Colts",
+      "pos": "QB",
+      "jersey": "5"
+    },
+    {
+      "name": "Jonathan Taylor",
+      "team": "Indianapolis Colts",
+      "pos": "RB",
+      "jersey": "28"
+    },
+    {
+      "name": "Laquon Treadwell",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Tyler Warren",
+      "team": "Indianapolis Colts",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Quez Watkins",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Nick Westbrook-Ikhine",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "12"
+    },
+    {
+      "name": "Sean McKeon",
+      "team": "Indianapolis Colts",
+      "pos": "TE",
+      "jersey": "49"
+    },
+    {
+      "name": "Davon Booth",
+      "team": "Indianapolis Colts",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Harrison Bryant",
+      "team": "Indianapolis Colts",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Mecole Hardman Jr.",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Samori Toure",
+      "team": "Indianapolis Colts",
+      "pos": "WR",
+      "jersey": "0"
+    }
+  ],
+  "Jacksonville Jaguars": [
+    {
+      "name": "Ameer Abdullah",
+      "team": "Jacksonville Jaguars",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "LeQuint Allen Jr.",
+      "team": "Jacksonville Jaguars",
+      "pos": "RB",
+      "jersey": "5"
+    },
+    {
+      "name": "Nate Boerkircher",
+      "team": "Jacksonville Jaguars",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Josh Cameron",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Quinn Ewers",
+      "team": "Jacksonville Jaguars",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Travis Hunter",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "12"
+    },
+    {
+      "name": "Tanner Koziol",
+      "team": "Jacksonville Jaguars",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Trevor Lawrence",
+      "team": "Jacksonville Jaguars",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Jakobi Meyers",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "3"
+    },
+    {
+      "name": "Quintin Morris",
+      "team": "Jacksonville Jaguars",
+      "pos": "TE",
+      "jersey": "80"
+    },
+    {
+      "name": "Nick Mullens",
+      "team": "Jacksonville Jaguars",
+      "pos": "QB",
+      "jersey": "14"
+    },
+    {
+      "name": "Chris Rodriguez Jr.",
+      "team": "Jacksonville Jaguars",
+      "pos": "RB",
+      "jersey": "24"
+    },
+    {
+      "name": "Brenton Strange",
+      "team": "Jacksonville Jaguars",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Brian Thomas Jr.",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "7"
+    },
+    {
+      "name": "Bhayshul Tuten",
+      "team": "Jacksonville Jaguars",
+      "pos": "RB",
+      "jersey": "33"
+    },
+    {
+      "name": "Parker Washington",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "CJ Williams",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Brenden Bates",
+      "team": "Jacksonville Jaguars",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Tim Jones",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Trebor Pena",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "J'Mari Taylor",
+      "team": "Jacksonville Jaguars",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Austin Trammell",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "Michael Wortham",
+      "team": "Jacksonville Jaguars",
+      "pos": "WR",
+      "jersey": "0"
+    }
+  ],
+  "Kansas City Chiefs": [
+    {
+      "name": "Cyrus Allen",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Andrew Armstrong",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "85"
+    },
+    {
+      "name": "Jake Briningstool",
+      "team": "Kansas City Chiefs",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Nate Carter",
+      "team": "Kansas City Chiefs",
+      "pos": "RB",
+      "jersey": "35"
+    },
+    {
+      "name": "Jacob De Jesus",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "80"
+    },
+    {
+      "name": "Josh Downs",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "2"
+    },
+    {
+      "name": "Justin Fields",
+      "team": "Kansas City Chiefs",
+      "pos": "QB",
+      "jersey": "6"
+    },
+    {
+      "name": "Noah Gray",
+      "team": "Kansas City Chiefs",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "Emmett Johnson",
+      "team": "Kansas City Chiefs",
+      "pos": "RB",
+      "jersey": "10"
+    },
+    {
+      "name": "Travis Kelce",
+      "team": "Kansas City Chiefs",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Patrick Mahomes",
+      "team": "Kansas City Chiefs",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Garrett Nussmeier",
+      "team": "Kansas City Chiefs",
+      "pos": "QB",
+      "jersey": "19"
+    },
+    {
+      "name": "Jaydn Ott",
+      "team": "Kansas City Chiefs",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Rashee Rice",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "Jalen Royals",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Ben VanSumeren",
+      "team": "Kansas City Chiefs",
+      "pos": "RB",
+      "jersey": "47"
+    },
+    {
+      "name": "Kenneth Walker III",
+      "team": "Kansas City Chiefs",
+      "pos": "RB",
+      "jersey": "9"
+    },
+    {
+      "name": "Justin Watson",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "84"
+    },
+    {
+      "name": "Xavier Worthy",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Omari Evans",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "7"
+    },
+    {
+      "name": "John FitzPatrick",
+      "team": "Kansas City Chiefs",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Bub Means",
+      "team": "Kansas City Chiefs",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "EJ Smith",
+      "team": "Kansas City Chiefs",
+      "pos": "RB",
+      "jersey": "35"
+    }
+  ],
+  "Las Vegas Raiders": [
+    {
+      "name": "Jack Bech",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Malik Benson",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Brock Bowers",
+      "team": "Las Vegas Raiders",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Roman Hemby",
+      "team": "Las Vegas Raiders",
+      "pos": "RB",
+      "jersey": "37"
+    },
+    {
+      "name": "Connor Heyward",
+      "team": "Las Vegas Raiders",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Ashton Jeanty",
+      "team": "Las Vegas Raiders",
+      "pos": "RB",
+      "jersey": "2"
+    },
+    {
+      "name": "Dylan Laube",
+      "team": "Las Vegas Raiders",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Michael Mayer",
+      "team": "Las Vegas Raiders",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Fernando Mendoza",
+      "team": "Las Vegas Raiders",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Chris Myarick",
+      "team": "Las Vegas Raiders",
+      "pos": "TE",
+      "jersey": "41"
+    },
+    {
+      "name": "Jalen Nailor",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Aidan O'Connell",
+      "team": "Las Vegas Raiders",
+      "pos": "QB",
+      "jersey": "12"
+    },
+    {
+      "name": "Carter Runyon",
+      "team": "Las Vegas Raiders",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Ian Thomas",
+      "team": "Las Vegas Raiders",
+      "pos": "TE",
+      "jersey": "80"
+    },
+    {
+      "name": "Deven Thompkins",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Dont'e Thornton Jr.",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "10"
+    },
+    {
+      "name": "Tre Tucker",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Mike Washington Jr.",
+      "team": "Las Vegas Raiders",
+      "pos": "RB",
+      "jersey": "4"
+    },
+    {
+      "name": "Cody White",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Dareke Young",
+      "team": "Las Vegas Raiders",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "Patrick Gurd",
+      "team": "Las Vegas Raiders",
+      "pos": "TE",
+      "jersey": "45"
+    },
+    {
+      "name": "Brett Rypien",
+      "team": "Las Vegas Raiders",
+      "pos": "QB",
+      "jersey": "0"
+    },
+    {
+      "name": "Owen Wright",
+      "team": "Las Vegas Raiders",
+      "pos": "RB",
+      "jersey": "0"
+    }
+  ],
+  "Los Angeles Chargers": [
+    {
+      "name": "Derius Davis",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "12"
+    },
+    {
+      "name": "Oronde Gadsden",
+      "team": "Los Angeles Chargers",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Omarion Hampton",
+      "team": "Los Angeles Chargers",
+      "pos": "RB",
+      "jersey": "8"
+    },
+    {
+      "name": "Tre' Harris",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Justin Herbert",
+      "team": "Los Angeles Chargers",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Patrick Herbert",
+      "team": "Los Angeles Chargers",
+      "pos": "TE",
+      "jersey": "81"
+    },
+    {
+      "name": "Quentin Johnston",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Charlie Kolar",
+      "team": "Los Angeles Chargers",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "KeAndre Lambert-Smith",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "84"
+    },
+    {
+      "name": "Scott Matlock",
+      "team": "Los Angeles Chargers",
+      "pos": "RB",
+      "jersey": "44"
+    },
+    {
+      "name": "Ladd McConkey",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "15"
+    },
+    {
+      "name": "Keaton Mitchell",
+      "team": "Los Angeles Chargers",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "David Njoku",
+      "team": "Los Angeles Chargers",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "Brenen Thompson",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "89"
+    },
+    {
+      "name": "DJ Uiagalelei",
+      "team": "Los Angeles Chargers",
+      "pos": "QB",
+      "jersey": "7"
+    },
+    {
+      "name": "Kimani Vidal",
+      "team": "Los Angeles Chargers",
+      "pos": "RB",
+      "jersey": "28"
+    },
+    {
+      "name": "Theo Wease Jr.",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Jake Browning",
+      "team": "Los Angeles Chargers",
+      "pos": "QB",
+      "jersey": "0"
+    },
+    {
+      "name": "Luke Grimm",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "87"
+    },
+    {
+      "name": "Amar Johnson",
+      "team": "Los Angeles Chargers",
+      "pos": "RB",
+      "jersey": "35"
+    },
+    {
+      "name": "Tejhaun Palmer",
+      "team": "Los Angeles Chargers",
+      "pos": "WR",
+      "jersey": "0"
+    }
+  ],
+  "Los Angeles Rams": [
+    {
+      "name": "Davis Allen",
+      "team": "Los Angeles Rams",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Tutu Atwell",
+      "team": "Los Angeles Rams",
+      "pos": "WR",
+      "jersey": "8"
+    },
+    {
+      "name": "Stetson Bennett IV",
+      "team": "Los Angeles Rams",
+      "pos": "QB",
+      "jersey": "13"
+    },
+    {
+      "name": "Blake Corum",
+      "team": "Los Angeles Rams",
+      "pos": "RB",
+      "jersey": "24"
+    },
+    {
+      "name": "CJ Daniels",
+      "team": "Los Angeles Rams",
+      "pos": "WR",
+      "jersey": "6"
+    },
+    {
+      "name": "Tyler Higbee",
+      "team": "Los Angeles Rams",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Max Klare",
+      "team": "Los Angeles Rams",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Konata Mumpfield",
+      "team": "Los Angeles Rams",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "Colby Parkinson",
+      "team": "Los Angeles Rams",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Ronnie Rivers",
+      "team": "Los Angeles Rams",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "Ty Simpson",
+      "team": "Los Angeles Rams",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Xavier Smith",
+      "team": "Los Angeles Rams",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Matthew Stafford",
+      "team": "Los Angeles Rams",
+      "pos": "QB",
+      "jersey": "9"
+    },
+    {
+      "name": "Kyren Williams",
+      "team": "Los Angeles Rams",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Tyler Scott",
+      "team": "Los Angeles Rams",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Dan Villari",
+      "team": "Los Angeles Rams",
+      "pos": "TE",
+      "jersey": "38"
+    },
+    {
+      "name": "Jordan Waters",
+      "team": "Los Angeles Rams",
+      "pos": "RB",
+      "jersey": "32"
+    }
+  ],
+  "Miami Dolphins": [
+    {
+      "name": "Kaytron Allen",
+      "team": "Miami Dolphins",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Chris Bell",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Kevin Coleman Jr.",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "21"
+    },
+    {
+      "name": "Brady Cook",
+      "team": "Miami Dolphins",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Caleb Douglas",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "7"
+    },
+    {
+      "name": "Greg Dulcich",
+      "team": "Miami Dolphins",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Ollie Gordon II",
+      "team": "Miami Dolphins",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "DJ Herman",
+      "team": "Miami Dolphins",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Justin Joly",
+      "team": "Miami Dolphins",
+      "pos": "TE",
+      "jersey": "80"
+    },
+    {
+      "name": "Will Kacmarek",
+      "team": "Miami Dolphins",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Kyle McCord",
+      "team": "Miami Dolphins",
+      "pos": "QB",
+      "jersey": "14"
+    },
+    {
+      "name": "Jalen Reagor",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Jalen Tolbert",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Seydou Traore",
+      "team": "Miami Dolphins",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "Malik Washington",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "6"
+    },
+    {
+      "name": "Carlos Washington Jr.",
+      "team": "Miami Dolphins",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Jared Wayne",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Jaylen Wright",
+      "team": "Miami Dolphins",
+      "pos": "RB",
+      "jersey": "5"
+    },
+    {
+      "name": "Brady Boyd",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "AJ Henning",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Will Sheppard",
+      "team": "Miami Dolphins",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Tre Watson",
+      "team": "Miami Dolphins",
+      "pos": "TE",
+      "jersey": "0"
+    }
+  ],
+  "Minnesota Vikings": [
+    {
+      "name": "Gavin Bartholomew",
+      "team": "Minnesota Vikings",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Dillon Bell",
+      "team": "Minnesota Vikings",
+      "pos": "WR",
+      "jersey": "89"
+    },
+    {
+      "name": "Max Bredeson",
+      "team": "Minnesota Vikings",
+      "pos": "RB",
+      "jersey": "45"
+    },
+    {
+      "name": "Max Brosmer",
+      "team": "Minnesota Vikings",
+      "pos": "QB",
+      "jersey": "12"
+    },
+    {
+      "name": "Kirk Cousins",
+      "team": "Minnesota Vikings",
+      "pos": "QB",
+      "jersey": "8"
+    },
+    {
+      "name": "Devin Culp",
+      "team": "Minnesota Vikings",
+      "pos": "TE",
+      "jersey": "48"
+    },
+    {
+      "name": "DeeJay Dallas",
+      "team": "Minnesota Vikings",
+      "pos": "RB",
+      "jersey": "31"
+    },
+    {
+      "name": "Tai Felton",
+      "team": "Minnesota Vikings",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "T.J. Hockenson",
+      "team": "Minnesota Vikings",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Justin Jefferson",
+      "team": "Minnesota Vikings",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Jauan Jennings",
+      "team": "Minnesota Vikings",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Jeshaun Jones",
+      "team": "Minnesota Vikings",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Aaron Jones Sr.",
+      "team": "Minnesota Vikings",
+      "pos": "RB",
+      "jersey": "33"
+    },
+    {
+      "name": "Jordan Mason",
+      "team": "Minnesota Vikings",
+      "pos": "RB",
+      "jersey": "27"
+    },
+    {
+      "name": "Myles Price",
+      "team": "Minnesota Vikings",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "Carson Wentz",
+      "team": "Minnesota Vikings",
+      "pos": "QB",
+      "jersey": "11"
+    },
+    {
+      "name": "Ben Yurosek",
+      "team": "Minnesota Vikings",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Damon Bankston",
+      "team": "Minnesota Vikings",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Odell Beckham Jr.",
+      "team": "Minnesota Vikings",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Matt Lauter",
+      "team": "Minnesota Vikings",
+      "pos": "TE",
+      "jersey": "46"
+    }
+  ],
+  "New England Patriots": [
+    {
+      "name": "A.J. Brown",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Efton Chism III",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Tommy DeVito",
+      "team": "New England Patriots",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "DeMario Douglas",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "3"
+    },
+    {
+      "name": "Reggie Gilliam",
+      "team": "New England Patriots",
+      "pos": "RB",
+      "jersey": "44"
+    },
+    {
+      "name": "Hunter Henry",
+      "team": "New England Patriots",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Mack Hollins",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Corey Kiner",
+      "team": "New England Patriots",
+      "pos": "RB",
+      "jersey": "9"
+    },
+    {
+      "name": "Lan Larison",
+      "team": "New England Patriots",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Cameron Latu",
+      "team": "New England Patriots",
+      "pos": "TE",
+      "jersey": "36"
+    },
+    {
+      "name": "Behren Morton",
+      "team": "New England Patriots",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Eli Raridon",
+      "team": "New England Patriots",
+      "pos": "TE",
+      "jersey": "82"
+    },
+    {
+      "name": "Rhamondre Stevenson",
+      "team": "New England Patriots",
+      "pos": "RB",
+      "jersey": "38"
+    },
+    {
+      "name": "Kyle Williams",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Tanner Arkin",
+      "team": "New England Patriots",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Chandler Brayboy",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Tanner Conner",
+      "team": "New England Patriots",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Kyle Dixon",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Terrell Jennings",
+      "team": "New England Patriots",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Ryan Miller",
+      "team": "New England Patriots",
+      "pos": "WR",
+      "jersey": "11"
+    }
+  ],
+  "New Orleans Saints": [
+    {
+      "name": "Barion Brown",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Oscar Delp",
+      "team": "New Orleans Saints",
+      "pos": "TE",
+      "jersey": "4"
+    },
+    {
+      "name": "CJ Donaldson",
+      "team": "New Orleans Saints",
+      "pos": "RB",
+      "jersey": "43"
+    },
+    {
+      "name": "Audric Estime",
+      "team": "New Orleans Saints",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Travis Etienne Jr.",
+      "team": "New Orleans Saints",
+      "pos": "RB",
+      "jersey": "3"
+    },
+    {
+      "name": "Noah Fant",
+      "team": "New Orleans Saints",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Juwan Johnson",
+      "team": "New Orleans Saints",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "Alvin Kamara",
+      "team": "New Orleans Saints",
+      "pos": "RB",
+      "jersey": "41"
+    },
+    {
+      "name": "Bryce Lance",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Jalen Moreno-Cropper",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "85"
+    },
+    {
+      "name": "Chris Olave",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "12"
+    },
+    {
+      "name": "Spencer Rattler",
+      "team": "New Orleans Saints",
+      "pos": "QB",
+      "jersey": "2"
+    },
+    {
+      "name": "Tyler Shough",
+      "team": "New Orleans Saints",
+      "pos": "QB",
+      "jersey": "6"
+    },
+    {
+      "name": "Cedric Tillman",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Jordyn Tyson",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Devaughn Vele",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Zamir White",
+      "team": "New Orleans Saints",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Zach Wilson",
+      "team": "New Orleans Saints",
+      "pos": "QB",
+      "jersey": "11"
+    },
+    {
+      "name": "Kevin Austin Jr.",
+      "team": "New Orleans Saints",
+      "pos": "WR",
+      "jersey": "81"
+    },
+    {
+      "name": "Treyton Welch",
+      "team": "New Orleans Saints",
+      "pos": "TE",
+      "jersey": "82"
+    }
+  ],
+  "New York Giants": [
+    {
+      "name": "Dalen Cambre",
+      "team": "New York Giants",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Greg Desrosiers Jr.",
+      "team": "New York Giants",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Thomas Fidone II",
+      "team": "New York Giants",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Malachi Fields",
+      "team": "New York Giants",
+      "pos": "WR",
+      "jersey": "88"
+    },
+    {
+      "name": "Xavier Gipson",
+      "team": "New York Giants",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Jalin Hyatt",
+      "team": "New York Giants",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Theo Johnson",
+      "team": "New York Giants",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Isaiah Likely",
+      "team": "New York Giants",
+      "pos": "TE",
+      "jersey": "9"
+    },
+    {
+      "name": "Phil Mafah",
+      "team": "New York Giants",
+      "pos": "RB",
+      "jersey": "36"
+    },
+    {
+      "name": "Chris Manhertz",
+      "team": "New York Giants",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "J.J. McCarthy",
+      "team": "New York Giants",
+      "pos": "QB",
+      "jersey": "18"
+    },
+    {
+      "name": "Darnell Mooney",
+      "team": "New York Giants",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Malik Nabers",
+      "team": "New York Giants",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Patrick Ricard",
+      "team": "New York Giants",
+      "pos": "RB",
+      "jersey": "45"
+    },
+    {
+      "name": "Devin Singletary",
+      "team": "New York Giants",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Cam Skattebo",
+      "team": "New York Giants",
+      "pos": "RB",
+      "jersey": "44"
+    },
+    {
+      "name": "Jameis Winston",
+      "team": "New York Giants",
+      "pos": "QB",
+      "jersey": "19"
+    },
+    {
+      "name": "Grant Finley",
+      "team": "New York Giants",
+      "pos": "RB",
+      "jersey": "47"
+    },
+    {
+      "name": "Dontae Fleming",
+      "team": "New York Giants",
+      "pos": "WR",
+      "jersey": "37"
+    },
+    {
+      "name": "Eric Gray",
+      "team": "New York Giants",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "Jake Haener",
+      "team": "New York Giants",
+      "pos": "QB",
+      "jersey": "13"
+    }
+  ],
+  "New York Jets": [
+    {
+      "name": "Braelon Allen",
+      "team": "New York Jets",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Andrew Beck",
+      "team": "New York Jets",
+      "pos": "RB",
+      "jersey": "47"
+    },
+    {
+      "name": "Omar Cooper Jr.",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Isaiah Davis",
+      "team": "New York Jets",
+      "pos": "RB",
+      "jersey": "32"
+    },
+    {
+      "name": "Breece Hall",
+      "team": "New York Jets",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "Cade Klubnik",
+      "team": "New York Jets",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Will Levis",
+      "team": "New York Jets",
+      "pos": "QB",
+      "jersey": "4"
+    },
+    {
+      "name": "Malik McClain",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "84"
+    },
+    {
+      "name": "Adonai Mitchell",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "15"
+    },
+    {
+      "name": "Kene Nwangwu",
+      "team": "New York Jets",
+      "pos": "RB",
+      "jersey": "3"
+    },
+    {
+      "name": "Jeremy Ruckert",
+      "team": "New York Jets",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Kenyon Sadiq",
+      "team": "New York Jets",
+      "pos": "TE",
+      "jersey": "16"
+    },
+    {
+      "name": "Sterling Shepard",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "87"
+    },
+    {
+      "name": "Geno Smith",
+      "team": "New York Jets",
+      "pos": "QB",
+      "jersey": "7"
+    },
+    {
+      "name": "Mason Taylor",
+      "team": "New York Jets",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Isaiah Williams",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Garrett Wilson",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "5"
+    },
+    {
+      "name": "Jelani Woods",
+      "team": "New York Jets",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Caullin Lacy",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "35"
+    },
+    {
+      "name": "Tim Patrick",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Cody Hardy",
+      "team": "New York Jets",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Al-Jay Henderson",
+      "team": "New York Jets",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Joseph Manjack IV",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Jamaal Pritchett",
+      "team": "New York Jets",
+      "pos": "WR",
+      "jersey": "81"
+    }
+  ],
+  "Philadelphia Eagles": [
+    {
+      "name": "Saquon Barkley",
+      "team": "Philadelphia Eagles",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Jaydon Blue",
+      "team": "Philadelphia Eagles",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Grant Calcaterra",
+      "team": "Philadelphia Eagles",
+      "pos": "TE",
+      "jersey": "81"
+    },
+    {
+      "name": "Darius Cooper",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "80"
+    },
+    {
+      "name": "Britain Covey",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "85"
+    },
+    {
+      "name": "Zach Ertz",
+      "team": "Philadelphia Eagles",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Dallas Goedert",
+      "team": "Philadelphia Eagles",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Makai Lemon",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "9"
+    },
+    {
+      "name": "Tanner McKee",
+      "team": "Philadelphia Eagles",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Joe Milton",
+      "team": "Philadelphia Eagles",
+      "pos": "QB",
+      "jersey": "14"
+    },
+    {
+      "name": "Elijah Mitchell",
+      "team": "Philadelphia Eagles",
+      "pos": "RB",
+      "jersey": "38"
+    },
+    {
+      "name": "Elijah Moore",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Johnny Mundt",
+      "team": "Philadelphia Eagles",
+      "pos": "TE",
+      "jersey": "83"
+    },
+    {
+      "name": "Cole Payton",
+      "team": "Philadelphia Eagles",
+      "pos": "QB",
+      "jersey": "18"
+    },
+    {
+      "name": "Dameon Pierce",
+      "team": "Philadelphia Eagles",
+      "pos": "RB",
+      "jersey": "39"
+    },
+    {
+      "name": "DeVonta Smith",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "6"
+    },
+    {
+      "name": "Eli Stowers",
+      "team": "Philadelphia Eagles",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Dontayvion Wicks",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Erik Ezukanma",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "82"
+    },
+    {
+      "name": "Hayden Rucci",
+      "team": "Philadelphia Eagles",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Quentin Skinner",
+      "team": "Philadelphia Eagles",
+      "pos": "WR",
+      "jersey": "0"
+    }
+  ],
+  "Pittsburgh Steelers": [
+    {
+      "name": "Drew Allar",
+      "team": "Pittsburgh Steelers",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Germie Bernard",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Rico Dowdle",
+      "team": "Pittsburgh Steelers",
+      "pos": "RB",
+      "jersey": "13"
+    },
+    {
+      "name": "Pat Freiermuth",
+      "team": "Pittsburgh Steelers",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Eli Heidenreich",
+      "team": "Pittsburgh Steelers",
+      "pos": "RB",
+      "jersey": "29"
+    },
+    {
+      "name": "Travis Homer",
+      "team": "Pittsburgh Steelers",
+      "pos": "RB",
+      "jersey": "21"
+    },
+    {
+      "name": "Will Howard",
+      "team": "Pittsburgh Steelers",
+      "pos": "QB",
+      "jersey": "18"
+    },
+    {
+      "name": "DK Metcalf",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "Lew Nichols",
+      "team": "Pittsburgh Steelers",
+      "pos": "RB",
+      "jersey": "31"
+    },
+    {
+      "name": "Riley Nowakowski",
+      "team": "Pittsburgh Steelers",
+      "pos": "RB",
+      "jersey": "37"
+    },
+    {
+      "name": "Aaron Rodgers",
+      "team": "Pittsburgh Steelers",
+      "pos": "QB",
+      "jersey": "8"
+    },
+    {
+      "name": "Mason Rudolph",
+      "team": "Pittsburgh Steelers",
+      "pos": "QB",
+      "jersey": "2"
+    },
+    {
+      "name": "Ben Skowronek",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "15"
+    },
+    {
+      "name": "Brandon Smith",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "87"
+    },
+    {
+      "name": "Robert Tonyan",
+      "team": "Pittsburgh Steelers",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Jaylen Warren",
+      "team": "Pittsburgh Steelers",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Darnell Washington",
+      "team": "Pittsburgh Steelers",
+      "pos": "TE",
+      "jersey": "80"
+    },
+    {
+      "name": "Kaden Wetjen",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "10"
+    },
+    {
+      "name": "Isaiah Hodgins",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Brandon Johnson",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "89"
+    },
+    {
+      "name": "Lake McRee",
+      "team": "Pittsburgh Steelers",
+      "pos": "TE",
+      "jersey": "81"
+    },
+    {
+      "name": "Marquez Valdes-Scantling",
+      "team": "Pittsburgh Steelers",
+      "pos": "WR",
+      "jersey": "83"
+    }
+  ],
+  "San Francisco 49ers": [
+    {
+      "name": "Keenan Allen",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "3"
+    },
+    {
+      "name": "Kaelon Black",
+      "team": "San Francisco 49ers",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Brandin Cooks",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "84"
+    },
+    {
+      "name": "Jacob Cowing",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "4"
+    },
+    {
+      "name": "Mike Evans",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "5"
+    },
+    {
+      "name": "Luke Farrell",
+      "team": "San Francisco 49ers",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "KhaDarel Hodge",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Jordan James",
+      "team": "San Francisco 49ers",
+      "pos": "RB",
+      "jersey": "29"
+    },
+    {
+      "name": "Mac Jones",
+      "team": "San Francisco 49ers",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Kyle Juszczyk",
+      "team": "San Francisco 49ers",
+      "pos": "RB",
+      "jersey": "44"
+    },
+    {
+      "name": "George Kittle",
+      "team": "San Francisco 49ers",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Christian McCaffrey",
+      "team": "San Francisco 49ers",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Brock Purdy",
+      "team": "San Francisco 49ers",
+      "pos": "QB",
+      "jersey": "13"
+    },
+    {
+      "name": "Demarcus Robinson",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Kurtis Rourke",
+      "team": "San Francisco 49ers",
+      "pos": "QB",
+      "jersey": "14"
+    },
+    {
+      "name": "Deebo Samuel Sr.",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Jack Stoll",
+      "team": "San Francisco 49ers",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Jordan Watkins",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Brayden Willis",
+      "team": "San Francisco 49ers",
+      "pos": "TE",
+      "jersey": "9"
+    },
+    {
+      "name": "Khalil Dinkins",
+      "team": "San Francisco 49ers",
+      "pos": "TE",
+      "jersey": "43"
+    },
+    {
+      "name": "Wesley Grimes",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "18"
+    },
+    {
+      "name": "Sincere McCormick",
+      "team": "San Francisco 49ers",
+      "pos": "RB",
+      "jersey": "35"
+    },
+    {
+      "name": "Will Pauling",
+      "team": "San Francisco 49ers",
+      "pos": "WR",
+      "jersey": "84"
+    }
+  ],
+  "Seattle Seahawks": [
+    {
+      "name": "AJ Barner",
+      "team": "Seattle Seahawks",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Zach Charbonnet",
+      "team": "Seattle Seahawks",
+      "pos": "RB",
+      "jersey": "26"
+    },
+    {
+      "name": "Irv Charles",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "85"
+    },
+    {
+      "name": "Montorie Foster Jr.",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "87"
+    },
+    {
+      "name": "George Holani",
+      "team": "Seattle Seahawks",
+      "pos": "RB",
+      "jersey": "36"
+    },
+    {
+      "name": "Tory Horton",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "15"
+    },
+    {
+      "name": "Nick Kallerup",
+      "team": "Seattle Seahawks",
+      "pos": "TE",
+      "jersey": "89"
+    },
+    {
+      "name": "Cooper Kupp",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "10"
+    },
+    {
+      "name": "Drew Lock",
+      "team": "Seattle Seahawks",
+      "pos": "QB",
+      "jersey": "2"
+    },
+    {
+      "name": "Jalen Milroe",
+      "team": "Seattle Seahawks",
+      "pos": "QB",
+      "jersey": "6"
+    },
+    {
+      "name": "Jadarian Price",
+      "team": "Seattle Seahawks",
+      "pos": "RB",
+      "jersey": "8"
+    },
+    {
+      "name": "Brady Russell",
+      "team": "Seattle Seahawks",
+      "pos": "RB",
+      "jersey": "38"
+    },
+    {
+      "name": "Eric Saubert",
+      "team": "Seattle Seahawks",
+      "pos": "TE",
+      "jersey": "81"
+    },
+    {
+      "name": "Rashid Shaheed",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "22"
+    },
+    {
+      "name": "Jaxon Smith-Njigba",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Emanuel Wilson",
+      "team": "Seattle Seahawks",
+      "pos": "RB",
+      "jersey": "23"
+    },
+    {
+      "name": "Emmanuel Henderson Jr.",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "84"
+    },
+    {
+      "name": "Julian Hicks",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "1"
+    },
+    {
+      "name": "Velus Jones Jr.",
+      "team": "Seattle Seahawks",
+      "pos": "RB",
+      "jersey": "33"
+    },
+    {
+      "name": "Adrian Martinez",
+      "team": "Seattle Seahawks",
+      "pos": "QB",
+      "jersey": "0"
+    },
+    {
+      "name": "Ben Sims",
+      "team": "Seattle Seahawks",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Ricky White III",
+      "team": "Seattle Seahawks",
+      "pos": "WR",
+      "jersey": "86"
+    }
+  ],
+  "Tampa Bay Buccaneers": [
+    {
+      "name": "Jalon Daniels",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Payne Durham",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Emeka Egbuka",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "2"
+    },
+    {
+      "name": "Kenny Gainwell",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "RB",
+      "jersey": "1"
+    },
+    {
+      "name": "Chris Godwin Jr.",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Ted Hurst III",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Bucky Irving",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "RB",
+      "jersey": "7"
+    },
+    {
+      "name": "Kameron Johnson",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Tez Johnson",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "15"
+    },
+    {
+      "name": "Ko Kieft",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "TE",
+      "jersey": "41"
+    },
+    {
+      "name": "Baker Mayfield",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "QB",
+      "jersey": "6"
+    },
+    {
+      "name": "Cade Otton",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Bauer Sharp",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "Easton Stick",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Sean Tucker",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "RB",
+      "jersey": "44"
+    },
+    {
+      "name": "Josh Williams",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "RB",
+      "jersey": "18"
+    },
+    {
+      "name": "CJ Dippre",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "TE",
+      "jersey": "0"
+    },
+    {
+      "name": "Garrett Greene",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "85"
+    },
+    {
+      "name": "Dean Patterson",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "8"
+    },
+    {
+      "name": "Eric Rivers Jr.",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "WR",
+      "jersey": "83"
+    },
+    {
+      "name": "Cooper Rush",
+      "team": "Tampa Bay Buccaneers",
+      "pos": "QB",
+      "jersey": "0"
+    }
+  ],
+  "Tennessee Titans": [
+    {
+      "name": "Elic Ayomanor",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "5"
+    },
+    {
+      "name": "Daniel Bellinger",
+      "team": "Tennessee Titans",
+      "pos": "TE",
+      "jersey": "82"
+    },
+    {
+      "name": "Julius Chestnut",
+      "team": "Tennessee Titans",
+      "pos": "RB",
+      "jersey": "36"
+    },
+    {
+      "name": "Chimere Dike",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "17"
+    },
+    {
+      "name": "Kylen Granson",
+      "team": "Tennessee Titans",
+      "pos": "TE",
+      "jersey": "86"
+    },
+    {
+      "name": "Gunnar Helm",
+      "team": "Tennessee Titans",
+      "pos": "TE",
+      "jersey": "84"
+    },
+    {
+      "name": "David Martin-Robinson",
+      "team": "Tennessee Titans",
+      "pos": "TE",
+      "jersey": "88"
+    },
+    {
+      "name": "Kalel Mullings",
+      "team": "Tennessee Titans",
+      "pos": "RB",
+      "jersey": "31"
+    },
+    {
+      "name": "K.J. Osborn",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "85"
+    },
+    {
+      "name": "Tony Pollard",
+      "team": "Tennessee Titans",
+      "pos": "RB",
+      "jersey": "20"
+    },
+    {
+      "name": "Xavier Restrepo",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "87"
+    },
+    {
+      "name": "Calvin Ridley",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Nicholas Singleton",
+      "team": "Tennessee Titans",
+      "pos": "RB",
+      "jersey": "32"
+    },
+    {
+      "name": "Tyjae Spears",
+      "team": "Tennessee Titans",
+      "pos": "RB",
+      "jersey": "2"
+    },
+    {
+      "name": "Carnell Tate",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Mitchell Trubisky",
+      "team": "Tennessee Titans",
+      "pos": "QB",
+      "jersey": "10"
+    },
+    {
+      "name": "Cam Ward",
+      "team": "Tennessee Titans",
+      "pos": "QB",
+      "jersey": "1"
+    },
+    {
+      "name": "Jason Brownlee",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Michael Carter",
+      "team": "Tennessee Titans",
+      "pos": "RB",
+      "jersey": "35"
+    },
+    {
+      "name": "Hendon Hooker",
+      "team": "Tennessee Titans",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Tyren Montgomery",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "19"
+    },
+    {
+      "name": "Jamari Thrash",
+      "team": "Tennessee Titans",
+      "pos": "WR",
+      "jersey": "0"
+    },
+    {
+      "name": "Joel Wilson",
+      "team": "Tennessee Titans",
+      "pos": "TE",
+      "jersey": "83"
+    }
+  ],
+  "Washington Commanders": [
+    {
+      "name": "John Bates",
+      "team": "Washington Commanders",
+      "pos": "TE",
+      "jersey": "87"
+    },
+    {
+      "name": "Jaden Bradley",
+      "team": "Washington Commanders",
+      "pos": "WR",
+      "jersey": "86"
+    },
+    {
+      "name": "Treylon Burks",
+      "team": "Washington Commanders",
+      "pos": "WR",
+      "jersey": "13"
+    },
+    {
+      "name": "Jayden Daniels",
+      "team": "Washington Commanders",
+      "pos": "QB",
+      "jersey": "5"
+    },
+    {
+      "name": "Stefon Diggs",
+      "team": "Washington Commanders",
+      "pos": "WR",
+      "jersey": "3"
+    },
+    {
+      "name": "Austin Ekeler",
+      "team": "Washington Commanders",
+      "pos": "RB",
+      "jersey": "30"
+    },
+    {
+      "name": "Robert Henry Jr.",
+      "team": "Washington Commanders",
+      "pos": "RB",
+      "jersey": "34"
+    },
+    {
+      "name": "Van Jefferson",
+      "team": "Washington Commanders",
+      "pos": "WR",
+      "jersey": "12"
+    },
+    {
+      "name": "Athan Kaliakmanis",
+      "team": "Washington Commanders",
+      "pos": "QB",
+      "jersey": "16"
+    },
+    {
+      "name": "Marcus Mariota",
+      "team": "Washington Commanders",
+      "pos": "QB",
+      "jersey": "8"
+    },
+    {
+      "name": "Luke McCaffrey",
+      "team": "Washington Commanders",
+      "pos": "WR",
+      "jersey": "11"
+    },
+    {
+      "name": "Chig Okonkwo",
+      "team": "Washington Commanders",
+      "pos": "TE",
+      "jersey": "85"
+    },
+    {
+      "name": "Craig Reynolds",
+      "team": "Washington Commanders",
+      "pos": "RB",
+      "jersey": "32"
+    },
+    {
+      "name": "Ben Sinnott",
+      "team": "Washington Commanders",
+      "pos": "TE",
+      "jersey": "82"
+    },
+    {
+      "name": "Rachaad White",
+      "team": "Washington Commanders",
+      "pos": "RB",
+      "jersey": "1"
+    },
+    {
+      "name": "Antonio Williams",
+      "team": "Washington Commanders",
+      "pos": "WR",
+      "jersey": "14"
+    },
+    {
+      "name": "Colson Yankoff",
+      "team": "Washington Commanders",
+      "pos": "TE",
+      "jersey": "80"
+    },
+    {
+      "name": "Nick DeGennaro",
+      "team": "Washington Commanders",
+      "pos": "WR",
+      "jersey": "88"
+    },
+    {
+      "name": "Sam Hartman",
+      "team": "Washington Commanders",
+      "pos": "QB",
+      "jersey": "15"
+    },
+    {
+      "name": "Quentin Moore",
+      "team": "Washington Commanders",
+      "pos": "TE",
+      "jersey": "40"
+    },
+    {
+      "name": "Devin Neal",
+      "team": "Washington Commanders",
+      "pos": "RB",
+      "jersey": "0"
+    },
+    {
+      "name": "Jack Westover",
+      "team": "Washington Commanders",
+      "pos": "TE",
+      "jersey": "0"
+    }
+  ]
+}

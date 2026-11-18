@@ -48,7 +48,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Tampa Bay Buccaneers (243.0 YDS/J)"
+        "role": "QB Titular Activo Tampa Bay Buccaneers (243.0 YDS/J)"
       },
       {
         "name": "Bucky Irving",
@@ -61,7 +61,7 @@
         "rec_yds": 35.0,
         "receptions": 4.0,
         "anytime_td_pct": 69.9,
-        "role": "Corredor Titular Tampa Bay Buccaneers (97.0 YDS/J)"
+        "role": "Corredor Titular Activo Tampa Bay Buccaneers (97.0 YDS/J)"
       },
       {
         "name": "Tez Johnson",
@@ -74,7 +74,7 @@
         "rec_yds": 76.0,
         "receptions": 6.6,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Tampa Bay Buccaneers (76.0 YDS/J)"
+        "role": "Receptor Titular Activo Tampa Bay Buccaneers (76.0 YDS/J)"
       },
       {
         "name": "Kenny Gainwell",
@@ -87,7 +87,7 @@
         "rec_yds": 60.0,
         "receptions": 5.2,
         "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Tampa Bay Buccaneers (60.0 YDS/J)"
+        "role": "Receptor Titular Activo Tampa Bay Buccaneers (60.0 YDS/J)"
       },
       {
         "name": "Bryce Young",
@@ -100,7 +100,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Carolina Panthers (256.4 YDS/J)"
+        "role": "QB Titular Activo Carolina Panthers (256.4 YDS/J)"
       },
       {
         "name": "Chuba Hubbard",
@@ -113,7 +113,7 @@
         "rec_yds": 68.0,
         "receptions": 4.5,
         "anytime_td_pct": 69.9,
-        "role": "Corredor Titular Carolina Panthers (85.5 YDS/J)"
+        "role": "Corredor Titular Activo Carolina Panthers (85.5 YDS/J)"
       },
       {
         "name": "Darren Waller",
@@ -126,7 +126,7 @@
         "rec_yds": 69.7,
         "receptions": 6.8,
         "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Carolina Panthers (69.7 YDS/J)"
+        "role": "Receptor Titular Activo Carolina Panthers (69.7 YDS/J)"
       },
       {
         "name": "Tetairoa McMillan",
@@ -139,7 +139,7 @@
         "rec_yds": 63.6,
         "receptions": 5.5,
         "anytime_td_pct": 45.8,
-        "role": "Receptor Titular Carolina Panthers (63.6 YDS/J)"
+        "role": "Receptor Titular Activo Carolina Panthers (63.6 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

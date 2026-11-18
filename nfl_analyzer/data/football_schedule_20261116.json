@@ -47,7 +47,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 36.0,
-        "role": "QB Titular Baltimore Ravens (340.0 YDS/J)"
+        "role": "QB Titular Activo Baltimore Ravens (340.0 YDS/J)"
       },
       {
         "name": "Derrick Henry",
@@ -60,7 +60,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Baltimore Ravens (69.9 YDS/J)"
+        "role": "Corredor Titular Activo Baltimore Ravens (69.9 YDS/J)"
       },
       {
         "name": "Mark Andrews",
@@ -73,7 +73,7 @@
         "rec_yds": 82.0,
         "receptions": 8.0,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Baltimore Ravens (82.0 YDS/J)"
+        "role": "Receptor Titular Activo Baltimore Ravens (82.0 YDS/J)"
       },
       {
         "name": "Zay Flowers",
@@ -86,7 +86,7 @@
         "rec_yds": 74.0,
         "receptions": 6.4,
         "anytime_td_pct": 44.4,
-        "role": "Receptor Titular Baltimore Ravens (74.0 YDS/J)"
+        "role": "Receptor Titular Activo Baltimore Ravens (74.0 YDS/J)"
       },
       {
         "name": "Justin Herbert",
@@ -99,7 +99,7 @@
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 58.0,
-        "role": "QB Titular Los Angeles Chargers (180.6 YDS/J)"
+        "role": "QB Titular Activo Los Angeles Chargers (180.6 YDS/J)"
       },
       {
         "name": "Omarion Hampton",
@@ -112,7 +112,7 @@
         "rec_yds": 14.0,
         "receptions": 2.2,
         "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Los Angeles Chargers (86.9 YDS/J)"
+        "role": "Corredor Titular Activo Los Angeles Chargers (86.9 YDS/J)"
       },
       {
         "name": "Tre' Harris",
@@ -125,7 +125,7 @@
         "rec_yds": 63.6,
         "receptions": 5.5,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Los Angeles Chargers (63.6 YDS/J)"
+        "role": "Receptor Titular Activo Los Angeles Chargers (63.6 YDS/J)"
       },
       {
         "name": "KeAndre Lambert-Smith",
@@ -138,7 +138,7 @@
         "rec_yds": 50.0,
         "receptions": 3.6,
         "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Los Angeles Chargers (50.0 YDS/J)"
+        "role": "Receptor Titular Activo Los Angeles Chargers (50.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {
