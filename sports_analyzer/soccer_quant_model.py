@@ -1137,8 +1137,22 @@ def compute_hybrid_match_distributions(
         a_gf = float((pa or {}).get("goals_avg", g_pri["mu_a"]))
         a_ga = float((pa or {}).get("goals_ag_avg", g_pri["mu_h"]))
 
-        lam_h = max(0.35, min(3.60, (h_gf * a_ga / max(0.6, mu_g)) * h_adv))
-        lam_a = max(0.25, min(3.20, (a_gf * h_ga / max(0.6, mu_g)) / h_adv))
+        sot_pri = pri.get("sot", {"mu_h": 4.65, "mu_a": 3.85, "disp": 1.22})
+        mu_sot = (sot_pri["mu_h"] + sot_pri["mu_a"]) / 2.0
+        hs_for = float((ph or {}).get("sot_avg", sot_pri["mu_h"]))
+        hs_ag = float((ph or {}).get("sot_ag_avg", sot_pri["mu_a"]))
+        as_for = float((pa or {}).get("sot_avg", sot_pri["mu_a"]))
+        as_ag = float((pa or {}).get("sot_ag_avg", sot_pri["mu_h"]))
+        sot_h = max(1.8, min(9.5, (hs_for * as_ag / max(1.5, mu_sot)) * 1.04))
+        sot_a = max(1.5, min(8.5, (as_for * hs_ag / max(1.5, mu_sot)) * 0.96))
+
+        # Mezcla 75% Cruce Goles Ataque-Defensa + 25% Presión de Remates al Arco (Proxy xG)
+        lam_h_raw = (h_gf * a_ga / max(0.6, mu_g)) * h_adv
+        lam_a_raw = (a_gf * h_ga / max(0.6, mu_g)) / h_adv
+        xg_proxy_h = (sot_h / max(2.2, sot_pri["mu_h"])) * g_pri["mu_h"]
+        xg_proxy_a = (sot_a / max(2.0, sot_pri["mu_a"])) * g_pri["mu_a"]
+        lam_h = max(0.35, min(3.60, 0.76 * lam_h_raw + 0.24 * xg_proxy_h))
+        lam_a = max(0.25, min(3.20, 0.76 * lam_a_raw + 0.24 * xg_proxy_a))
 
         ht_share = 0.448
         if ph and pa and "ht_over05_pct" in ph and "ht_over05_pct" in pa:
@@ -1158,17 +1172,10 @@ def compute_hybrid_match_distributions(
         hc_ag = float((ph or {}).get("corners_ag_avg", c_pri["mu_a"]))
         ac_for = float((pa or {}).get("corners_avg", c_pri["mu_a"]))
         ac_ag = float((pa or {}).get("corners_ag_avg", c_pri["mu_h"]))
-        c_h = max(2.2, min(8.8, (hc_for * ac_ag / max(2.0, mu_c)) * 1.05))
-        c_a = max(1.8, min(7.8, (ac_for * hc_ag / max(2.0, mu_c)) * 0.95))
-
-        sot_pri = pri.get("sot", {"mu_h": 4.65, "mu_a": 3.85, "disp": 1.22})
-        mu_sot = (sot_pri["mu_h"] + sot_pri["mu_a"]) / 2.0
-        hs_for = float((ph or {}).get("sot_avg", sot_pri["mu_h"]))
-        hs_ag = float((ph or {}).get("sot_ag_avg", sot_pri["mu_a"]))
-        as_for = float((pa or {}).get("sot_avg", sot_pri["mu_a"]))
-        as_ag = float((pa or {}).get("sot_ag_avg", sot_pri["mu_h"]))
-        sot_h = max(1.8, min(9.5, (hs_for * as_ag / max(1.5, mu_sot)) * 1.04))
-        sot_a = max(1.5, min(8.5, (as_for * hs_ag / max(1.5, mu_sot)) * 0.96))
+        # Factor de dominio territorial por diferencial de gol esperado
+        dom_shift = math.tanh((lam_h - lam_a) * 0.55) * 0.075
+        c_h = max(2.2, min(8.8, (hc_for * ac_ag / max(2.0, mu_c)) * (1.05 + dom_shift)))
+        c_a = max(1.8, min(7.8, (ac_for * hc_ag / max(2.0, mu_c)) * (0.95 - dom_shift * 0.6)))
 
         f_pri = pri.get("fouls", {"mu_h": 11.4, "mu_a": 11.8, "disp": 1.30})
         mu_f = (f_pri["mu_h"] + f_pri["mu_a"]) / 2.0
@@ -1182,7 +1189,9 @@ def compute_hybrid_match_distributions(
         cards_pri = pri.get("cards", {"mu_h": 1.95, "mu_a": 2.25, "disp": 1.327})
         cards_pri = dict(cards_pri)
         cards_pri["disp"] = max(1.327, float(cards_pri.get("disp", 1.327)))
-        tot_cards_exp = 0.50 * float(ref_cards_avg) + 0.50 * ((f_h + f_a) / 5.2)
+        # Factor de paridad competitiva: duelos cerrados incrementan fricción disciplinaria
+        parity_mult = 1.07 if abs(lam_h - lam_a) <= 0.42 else (0.94 if abs(lam_h - lam_a) >= 1.35 else 1.0)
+        tot_cards_exp = (0.50 * float(ref_cards_avg) + 0.50 * ((f_h + f_a) / 5.2)) * parity_mult
         cards_h = max(0.8, tot_cards_exp * 0.46)
         cards_a = max(0.9, tot_cards_exp * 0.54)
 
@@ -1205,10 +1214,23 @@ def compute_hybrid_match_distributions(
             },
         }
     else:
-        # Ajustar tarjetas del Tier A con el árbitro asignado al partido
+        # Integrar forma reciente exponencial + localía (ph, pa) al 25% con el MLE de Tier A (75%)
+        if ph and pa:
+            try:
+                g_pri_t = pri.get("goals", {"mu_h": 1.48, "mu_a": 1.18})
+                mu_g_t = (g_pri_t["mu_h"] + g_pri_t["mu_a"]) / 2.0
+                h_adv_t = math.sqrt(g_pri_t["mu_h"] / max(0.5, g_pri_t["mu_a"]))
+                lh_form = (float(ph.get("goals_avg", 1.45)) * float(pa.get("goals_ag_avg", 1.25)) / max(0.6, mu_g_t)) * h_adv_t
+                la_form = (float(pa.get("goals_avg", 1.20)) * float(ph.get("goals_ag_avg", 1.15)) / max(0.6, mu_g_t)) / h_adv_t
+                pred["lam_home"] = max(0.35, min(3.60, 0.75 * float(pred["lam_home"]) + 0.25 * lh_form))
+                pred["lam_away"] = max(0.25, min(3.20, 0.75 * float(pred["lam_away"]) + 0.25 * la_form))
+            except Exception:
+                pass
+        # Ajustar tarjetas del Tier A con el árbitro asignado al partido y paridad competitiva
         if "cards" in pred["counts"] and ref_cards_avg:
             tot_c = pred["counts"]["cards"]["home"] + pred["counts"]["cards"]["away"]
-            blended_c = 0.55 * tot_c + 0.45 * float(ref_cards_avg)
+            parity_t = 1.06 if abs(float(pred["lam_home"]) - float(pred["lam_away"])) <= 0.42 else 1.0
+            blended_c = (0.55 * tot_c + 0.45 * float(ref_cards_avg)) * parity_t
             scale = blended_c / max(0.5, tot_c)
             pred["counts"]["cards"]["home"] *= scale
             pred["counts"]["cards"]["away"] *= scale
