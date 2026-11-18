@@ -565,13 +565,21 @@ def global_priors() -> Dict[str, Any]:
 # 6. DISTRIBUCIONES Y MERCADOS
 # =====================================================================================
 def score_matrix(lh: float, la: float, rho: float = 0.0, mx: int = MAX_GOALS) -> np.ndarray:
+    """Matriz Híbrida Dixon-Coles (tau en 0-0, 1-0, 0-1, 1-1) + Covarianza Bivariada de Ritmo Compartido Karlis-Ntzoufras (lambda_3, opisthokonta/goalmodel)."""
     ph = poisson.pmf(np.arange(mx + 1), lh)
     pa = poisson.pmf(np.arange(mx + 1), la)
-    m = np.outer(ph, pa)
+    m_dc = np.outer(ph, pa)
     for i in range(2):
         for j in range(2):
-            m[i, j] *= max(0.0, _dc_tau(i, j, lh, la, rho))
-    return m / m.sum()
+            m_dc[i, j] *= max(0.0, _dc_tau(i, j, lh, la, rho))
+    m_dc = m_dc / m_dc.sum()
+
+    # Covarianza bivariada de ritmo abierto (X = X1 + X3, Y = X2 + X3 con X3 ~ Poisson(lam3))
+    lam3 = min(0.11, max(0.025, 0.042 * math.sqrt(max(0.1, lh * la))))
+    m_bp = np.zeros_like(m_dc)
+    m_bp += (1.0 - lam3) * m_dc
+    m_bp[1:, 1:] += lam3 * m_dc[:-1, :-1]
+    return m_bp / m_bp.sum()
 
 
 def count_dist(mean: float, disp: float, mx: int = 45) -> np.ndarray:

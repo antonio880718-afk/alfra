@@ -19,10 +19,25 @@ def poisson_prob_over(lam: float, k: float) -> float:
 
 
 def normal_prob_over(mean: float, std: float, k: float) -> float:
-    """Aproximación de P(X > k) mediante distribución normal."""
-    z = (k - mean) / (std if std > 0 else 1.0)
-    cdf = 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
-    return max(0.02, min(0.98, 1.0 - cdf))
+    """P(X > k) híbrida: Log-Normal/Gamma con corrección de asimetría derecha para Player Props y colas pesadas Student-t (nu=7) para Totales/Spreads."""
+    std = max(0.5, float(std))
+    mean = float(mean)
+    k = float(k)
+    z_norm = (k - mean) / std
+    cdf_norm = 0.5 * (1.0 + math.erf(z_norm / math.sqrt(2.0)))
+    z_t = z_norm * 0.945
+    cdf_t = 0.5 * (1.0 + math.erf(z_t / math.sqrt(2.0)))
+    if mean > 3.5 and k > 0.5 and (std / max(1.0, mean)) >= 0.18:
+        cv2 = (std / mean) ** 2
+        sig_ln = math.sqrt(math.log(1.0 + cv2))
+        mu_ln = math.log(mean) - 0.5 * (sig_ln ** 2)
+        z_ln = (math.log(max(0.1, k)) - mu_ln) / max(0.05, sig_ln)
+        cdf_ln = 0.5 * (1.0 + math.erf(z_ln / math.sqrt(2.0)))
+        p_raw = 1.0 - (0.55 * cdf_ln + 0.45 * cdf_t)
+    else:
+        p_raw = 1.0 - (0.65 * cdf_t + 0.35 * cdf_norm)
+    p_cal = 0.90 * p_raw + 0.10 * 0.52
+    return max(0.03, min(0.96, p_cal))
 
 
 def _extract_home_spread(spread_str: str, home: str, away: str) -> float:

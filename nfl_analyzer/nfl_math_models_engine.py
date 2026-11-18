@@ -18,9 +18,36 @@ def poisson_prob_over(lam: float, k: float) -> float:
 
 
 def normal_prob_over(mean: float, std: float, k: float) -> float:
-    z = (k - mean) / (std if std > 0 else 1.0)
-    cdf = 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
-    return max(0.02, min(0.98, 1.0 - cdf))
+    """P(X > k) calibrada estilo nflfastR / edge-nfl: Log-Normal/Gamma para yardas (asimetría derecha de jugadas explosivas) y masa discreta en Números Clave NFL (3, 6, 7, 10, 14) para spreads."""
+    std = max(0.5, float(std))
+    mean = float(mean)
+    k = float(k)
+    z_norm = (k - mean) / std
+    cdf_norm = 0.5 * (1.0 + math.erf(z_norm / math.sqrt(2.0)))
+    z_t = z_norm * 0.94
+    cdf_t = 0.5 * (1.0 + math.erf(z_t / math.sqrt(2.0)))
+
+    if mean >= 15.0 and k > 2.0 and (std / mean) >= 0.22:
+        cv2 = (std / mean) ** 2
+        sig_ln = math.sqrt(math.log(1.0 + cv2))
+        mu_ln = math.log(mean) - 0.5 * (sig_ln ** 2)
+        z_ln = (math.log(max(0.5, k)) - mu_ln) / max(0.05, sig_ln)
+        cdf_ln = 0.5 * (1.0 + math.erf(z_ln / math.sqrt(2.0)))
+        p_raw = 1.0 - (0.58 * cdf_ln + 0.42 * cdf_t)
+    else:
+        p_raw = 1.0 - (0.65 * cdf_t + 0.35 * cdf_norm)
+        if -25.0 <= k <= 25.0 and 10.0 <= std <= 15.0:
+            key_bonus = 0.0
+            for kn, weight in ((3.0, 0.022), (7.0, 0.018), (6.0, 0.010), (10.0, 0.012), (14.0, 0.009)):
+                for sgn in (-1.0, 1.0):
+                    kn_v = sgn * kn
+                    if kn_v > k and (kn_v - k) <= 0.6:
+                        dist_factor = math.exp(-0.5 * (((kn_v - mean) / std) ** 2))
+                        key_bonus += weight * dist_factor
+            p_raw = min(0.96, p_raw + key_bonus)
+
+    p_cal = 0.90 * p_raw + 0.10 * 0.52
+    return max(0.03, min(0.95, p_cal))
 
 
 def _extract_home_spread(spread_str: str, home: str, away: str) -> float:
