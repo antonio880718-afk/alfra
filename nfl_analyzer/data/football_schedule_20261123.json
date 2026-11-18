@@ -1,0 +1,107 @@
+[
+  {
+    "id": "401873078",
+    "league": "NFL",
+    "match": "Cincinnati Bengals @ Washington Commanders",
+    "home": "Washington Commanders",
+    "away": "Cincinnati Bengals",
+    "time_cdmx": "19:15",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "home_q1_score": null,
+    "away_q1_score": null,
+    "home_1h_score": null,
+    "away_1h_score": null,
+    "total_1h_points": null,
+    "spread_str": "CIN -6.5",
+    "over_under": 53.5,
+    "is_dome": false,
+    "venue": "Northwest Stadium",
+    "home_defense": {
+      "pass_def_rank": 15,
+      "pass_yds_allowed": 216.0,
+      "rush_def_rank": 24,
+      "rush_yds_allowed": 132.0,
+      "pts_allowed": 22.4,
+      "style": "Secundaria Sólida / Concede Yardas Terrestres"
+    },
+    "away_defense": {
+      "pass_def_rank": 22,
+      "pass_yds_allowed": 238.0,
+      "rush_def_rank": 25,
+      "rush_yds_allowed": 136.0,
+      "style": "Permite Series Largas y Anotaciones"
+    },
+    "stars": [
+      {
+        "name": "Jayden Daniels",
+        "team": "Washington Commanders",
+        "pos": "QB",
+        "jersey": "5",
+        "pass_yds": 166.6,
+        "pass_tds": 1.11,
+        "rush_yds": 31.1,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 39.9,
+        "role": "QB Líder Washington Commanders (166.6 YDS/g, 1.1 TD/g)"
+      },
+      {
+        "name": "Stefon Diggs",
+        "team": "Washington Commanders",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 45.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 62.2,
+        "role": "WR/TE Líder Washington Commanders (42.9 YDS/g, 4.0 REC/g)"
+      },
+      {
+        "name": "Joe Burrow",
+        "team": "Cincinnati Bengals",
+        "pos": "QB",
+        "jersey": "9",
+        "pass_yds": 310.6,
+        "pass_tds": 3.0,
+        "rush_yds": 15.0,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Cincinnati Bengals (310.6 YDS/g, 3.0 TD/g)"
+      },
+      {
+        "name": "Chase Brown",
+        "team": "Cincinnati Bengals",
+        "pos": "RB",
+        "jersey": "30",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 49.0,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 42.0,
+        "role": "RB Líder Cincinnati Bengals (49.0 YDS/g)"
+      },
+      {
+        "name": "Ja'Marr Chase",
+        "team": "Cincinnati Bengals",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 97.6,
+        "receptions": 7.1,
+        "anytime_td_pct": 67.4,
+        "role": "WR/TE Líder Cincinnati Bengals (97.6 YDS/g, 7.1 REC/g)"
+      }
+    ],
+    "boxscore_athletes": {}
+  }
+]

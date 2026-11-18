@@ -151,9 +151,10 @@ with top_c2:
     _quick_days = [
         (_today_cdmx, f"🔥 Hoy ({_fmt_fecha_es(_today_cdmx)})"),
         (_today_cdmx + timedelta(days=1), f"⏭️ Mañana ({_fmt_fecha_es(_today_cdmx + timedelta(days=1))})"),
+        (_today_cdmx + timedelta(days=2), f"📅 {_fmt_fecha_es(_today_cdmx + timedelta(days=2))}"),
+        (_today_cdmx + timedelta(days=3), f"📅 {_fmt_fecha_es(_today_cdmx + timedelta(days=3))}"),
+        (_today_cdmx + timedelta(days=4), f"📅 {_fmt_fecha_es(_today_cdmx + timedelta(days=4))}"),
         (_today_cdmx - timedelta(days=1), f"✅ Ayer ({_fmt_fecha_es(_today_cdmx - timedelta(days=1))})"),
-        (_today_cdmx - timedelta(days=2), f"📜 {_fmt_fecha_es(_today_cdmx - timedelta(days=2))}"),
-        (_today_cdmx - timedelta(days=3), f"📜 {_fmt_fecha_es(_today_cdmx - timedelta(days=3))}"),
     ]
     _q_cols = st.columns(len(_quick_days))
     _cur_sel = st.session_state["nba_selected_date"]

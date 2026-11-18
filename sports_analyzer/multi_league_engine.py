@@ -29,6 +29,13 @@ LEAGUES_CONFIG = [
     {"name": "Eliminatorias CONMEBOL", "code": "fifa.worldq.conmebol", "country": "Sudamérica"},
     {"name": "Eliminatorias CONCACAF", "code": "fifa.worldq.concacaf", "country": "América"},
     {"name": "Amistosos Internacionales", "code": "fifa.friendly", "country": "Mundo"},
+    {"name": "Eliminatorias Asia", "code": "fifa.worldq.afc", "country": "Asia"},
+    {"name": "Clasif. Copa Africana", "code": "fifa.afconq", "country": "África"},
+    {"name": "Liga BetPlay Colombia", "code": "col.1", "country": "Colombia"},
+    {"name": "Primera División Uruguay", "code": "uru.1", "country": "Uruguay"},
+    {"name": "Primera División Chile", "code": "chi.1", "country": "Chile"},
+    {"name": "Liga 1 Perú", "code": "per.1", "country": "Perú"},
+    {"name": "Brasileirão Série B", "code": "bra.2", "country": "Brasil"},
     
     # INGLATERRA & COPAS
     {"name": "Premier League", "code": "eng.1", "country": "Inglaterra"},

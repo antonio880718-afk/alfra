@@ -238,6 +238,12 @@ def sync_soccer_date_from_espn(date_str: str, force: bool = False) -> Dict[str, 
     refs_path = os.path.join(DATA_DIR, "cartelera_official_referees.json")
 
     if not os.path.exists(cal_path):
+        try:
+            from hourly_slots_engine import get_chronological_slots
+            get_chronological_slots(date_str)
+        except Exception:
+            pass
+    if not os.path.exists(cal_path):
         return {"date_str": date_str, "updated": 0, "finalized": 0, "live": 0, "scheduled": 0, "skipped": True}
 
     try:

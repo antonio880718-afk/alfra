@@ -445,11 +445,13 @@ _d_names = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
 def _fmt_d(d_obj):
     return f"{_d_names[d_obj.weekday()]} {d_obj.day}"
 
+_d_tmrw = today_cdmx + timedelta(days=1)
+_d_plus2 = today_cdmx + timedelta(days=2)
+_d_plus3 = today_cdmx + timedelta(days=3)
+_d_plus4 = today_cdmx + timedelta(days=4)
 _d_yest = today_cdmx - timedelta(days=1)
-_d_prev2 = today_cdmx - timedelta(days=2)
-_d_prev3 = today_cdmx - timedelta(days=3)
 
-c_cal1, c_cal2, c_cal3, c_cal4, c_cal5, c_cal6, c_cal7 = st.columns([2.0, 1.3, 1.3, 1.2, 1.2, 1.2, 1.4])
+c_cal1, c_cal2, c_cal3, c_cal4, c_cal5, c_cal6, c_cal7, c_cal8 = st.columns([1.8, 1.2, 1.3, 1.15, 1.15, 1.15, 1.15, 1.35])
 with c_cal1:
     st.date_input(
         "📆 Seleccionar Fecha en Calendario:",
@@ -459,15 +461,17 @@ with c_cal1:
 with c_cal2:
     st.button(f"🔥 Hoy ({_fmt_d(today_cdmx)})", use_container_width=True, key="btn_date_today", on_click=_set_quick_date, args=(today_cdmx,))
 with c_cal3:
-    st.button(f"✅ Ayer ({_fmt_d(_d_yest)})", use_container_width=True, key="btn_date_yest", on_click=_set_quick_date, args=(_d_yest,))
+    st.button(f"⏭️ Mañana ({_fmt_d(_d_tmrw)})", use_container_width=True, key="btn_date_tmrw", on_click=_set_quick_date, args=(_d_tmrw,))
 with c_cal4:
-    st.button(f"📋 {_fmt_d(_d_prev2)} Nov", use_container_width=True, key="btn_date_prev2", on_click=_set_quick_date, args=(_d_prev2,))
+    st.button(f"📅 {_fmt_d(_d_plus2)}", use_container_width=True, key="btn_date_plus2", on_click=_set_quick_date, args=(_d_plus2,))
 with c_cal5:
-    st.button(f"📜 {_fmt_d(_d_prev3)} Nov", use_container_width=True, key="btn_date_prev3", on_click=_set_quick_date, args=(_d_prev3,))
+    st.button(f"📅 {_fmt_d(_d_plus3)}", use_container_width=True, key="btn_date_plus3", on_click=_set_quick_date, args=(_d_plus3,))
 with c_cal6:
-    st.button("⏭️ Sáb 14 Nov", use_container_width=True, key="btn_date_sat14", on_click=_set_quick_date, args=(date(2026, 11, 14),))
+    st.button(f"📅 {_fmt_d(_d_plus4)}", use_container_width=True, key="btn_date_plus4", on_click=_set_quick_date, args=(_d_plus4,))
 with c_cal7:
-    if st.button("🔄 Sincronizar ESPN Hoy", use_container_width=True, key="btn_sync_espn_top", help="Descarga marcadores, córners, tarjetas y actas reales de ESPN al instante"):
+    st.button(f"✅ Ayer ({_fmt_d(_d_yest)})", use_container_width=True, key="btn_date_yest", on_click=_set_quick_date, args=(_d_yest,))
+with c_cal8:
+    if st.button("🔄 Sincronizar ESPN", use_container_width=True, key="btn_sync_espn_top", help="Descarga marcadores, córners, tarjetas y actas reales de ESPN al instante"):
         with st.spinner("Sincronizando resultados en vivo desde ESPN API..."):
             sync_soccer_date_from_espn(date_str, force=True)
             st.cache_data.clear()

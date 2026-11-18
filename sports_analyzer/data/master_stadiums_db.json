@@ -3499,5 +3499,2003 @@
     "stadium": "Estadio Domingo Burgueño Miguel",
     "city": "Maldonado",
     "capacity": 25000
+  },
+  "Portugalete": {
+    "stadium": "La Florida",
+    "city": "Portugalete",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Utebo": {
+    "stadium": "Campo de Fútbol Municipal Santa Ana",
+    "city": "Utebo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Alcoyano": {
+    "stadium": "El Collao",
+    "city": "Manises",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Badajoz": {
+    "stadium": "Estadio Municipal Nuevo Vivero",
+    "city": "Badajoz",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "CD Minera": {
+    "stadium": "Estadio Municipal Ángel Celdrán",
+    "city": "Murcia",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Reus FC Reddis": {
+    "stadium": "Camp Nou Municipal",
+    "city": "Reus",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Alianza Atlético": {
+    "stadium": "Estadio Campeones del '36",
+    "city": "Sullana",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Coritiba": {
+    "stadium": "Couto Pereira",
+    "city": "Curitiba",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Remo": {
+    "stadium": "Mangueirão",
+    "city": "Belém",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Cruzeiro": {
+    "stadium": "Estadio Mineirão",
+    "city": "Belo Horizonte",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Flamengo": {
+    "stadium": "Estadio do Maracana",
+    "city": "Rio de Janeiro",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Corinthians": {
+    "stadium": "Neo Química Arena",
+    "city": "Sao Paulo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Grêmio": {
+    "stadium": "Arena do Grêmio",
+    "city": "Porto Alegre",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Vasco da Gama": {
+    "stadium": "Estádio São Januário",
+    "city": "Rio de Janeiro",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Vitória": {
+    "stadium": "Estadio Manoel Barradas",
+    "city": "Salvador",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Orlando City SC": {
+    "stadium": "Inter&Co Stadium",
+    "city": "Orlando, Florida",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "São Paulo": {
+    "stadium": "Estádio Cícero Pompeu de Toledo",
+    "city": "Sao Paulo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Seattle Sounders FC": {
+    "stadium": "Lumen Field",
+    "city": "Seattle, Washington",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Arminia Bielefeld": {
+    "stadium": "SchücoArena",
+    "city": "Bielefeld",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "SV Darmstadt 98": {
+    "stadium": "Merck-Stadion am Böllenfalltor",
+    "city": "Darmstadt",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "FC Andorra": {
+    "stadium": "Estadi de la FAF d'Encamp",
+    "city": "Encamp",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Hellas Verona": {
+    "stadium": "Stadio Marcantonio Bentegodi",
+    "city": "Verona",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bayern Munich": {
+    "stadium": "Allianz Arena",
+    "city": "München",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Troyes": {
+    "stadium": "Stade de l'Aube",
+    "city": "Paris",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Cercle Brugge KSV": {
+    "stadium": "Jan Breydel Stadium",
+    "city": "Brugge",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Barnsley": {
+    "stadium": "Oakwell",
+    "city": "Barnsley",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Athletic Club": {
+    "stadium": "San Mamés",
+    "city": "Bilbao",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Cobresal": {
+    "stadium": "Estadio El Cobre",
+    "city": "El Salvador",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Independiente Medellín": {
+    "stadium": "Atanasio Girardot",
+    "city": "Medellin",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Vélez Sarsfield": {
+    "stadium": "José Amalfitani",
+    "city": "Buenos Aires",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Palestino": {
+    "stadium": "Estadio Municipal de La Cisterna",
+    "city": "Santiago",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Atlético Bucaramanga": {
+    "stadium": "Estadio Alfonso López",
+    "city": "Bucaramanga",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Puebla": {
+    "stadium": "Estadio Cuauhtémoc",
+    "city": "Puebla",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Deportivo Cali": {
+    "stadium": "Deportivo Cali",
+    "city": "Cali",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "FC Juárez": {
+    "stadium": "Estadio Olímpico Benito Juárez",
+    "city": "Ciudad Juárez",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Tijuana": {
+    "stadium": "Estadio Caliente",
+    "city": "Tijuana",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Genclerbirligi": {
+    "stadium": "Eryaman Stadium",
+    "city": "Ankara",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "1. FC Nürnberg": {
+    "stadium": "Max-Morlock-Stadion",
+    "city": "Nürnberg",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Hannover 96": {
+    "stadium": "HDI Arena",
+    "city": "Hannover",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "VfL Wolfsburg": {
+    "stadium": "Volkswagen Arena",
+    "city": "Wolfsburg",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Manchester City": {
+    "stadium": "Etihad Stadium",
+    "city": "Manchester",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Millwall": {
+    "stadium": "The Den",
+    "city": "London",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Norwich City": {
+    "stadium": "Carrow Road",
+    "city": "Norwich",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Southampton": {
+    "stadium": "St. Mary's Stadium",
+    "city": "Southampton",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Blackpool": {
+    "stadium": "Bloomfield Road",
+    "city": "Blackpool",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Reading": {
+    "stadium": "Madejski Stadium",
+    "city": "Reading",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Alavés": {
+    "stadium": "Mendizorrotza",
+    "city": "Vitoria-Gasteiz",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "CD Sabadell": {
+    "stadium": "Estadi Municipal de la Nova Creu Alta",
+    "city": "Sabadell",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Amed SFK": {
+    "stadium": "Diyarbakir Stadyumu",
+    "city": "Diyarbakir",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Galatasaray": {
+    "stadium": "RAMS Park",
+    "city": "Istanbul",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Como": {
+    "stadium": "Giuseppe Sinigaglia",
+    "city": "Como",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Lazio": {
+    "stadium": "Olimpico",
+    "city": "Roma",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Ascoli": {
+    "stadium": "Stadio Cino e Lillo Del Duca",
+    "city": "Ascoli Piceno",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Carrarese": {
+    "stadium": "Dei Marmi",
+    "city": "Carrara",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Modena": {
+    "stadium": "Alberto Braglia",
+    "city": "Modena",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sampdoria": {
+    "stadium": "Stadio Luigi Ferraris",
+    "city": "Genova",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sudtirol": {
+    "stadium": "Stadio Druso",
+    "city": "Bolzano",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "1. FC Union Berlin": {
+    "stadium": "Stadion An der Alten Försterei",
+    "city": "Berlin",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bayer Leverkusen": {
+    "stadium": "BayArena",
+    "city": "Leverkusen",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Borussia Mönchengladbach": {
+    "stadium": "BORUSSIA-PARK",
+    "city": "Mönchengladbach",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Eintracht Frankfurt": {
+    "stadium": "Deutsche Bank Park",
+    "city": "Frankfurt",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "SV Elversberg": {
+    "stadium": "URSAPHARM-Arena an der Kaiserlinde",
+    "city": "Spiesen-Elversberg",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Coquimbo Unido": {
+    "stadium": "Estadio Francisco Sánchez Rumoroso",
+    "city": "Coquimbo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "AFC Bournemouth": {
+    "stadium": "Vitality Stadium",
+    "city": "Bournemouth",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Aston Villa": {
+    "stadium": "Villa Park",
+    "city": "Birmingham",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Chelsea": {
+    "stadium": "Stamford Bridge",
+    "city": "London",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Coventry City": {
+    "stadium": "Coventry Building Society Arena",
+    "city": "Coventry",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Tottenham Hotspur": {
+    "stadium": "Tottenham Hotspur Stadium",
+    "city": "London",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bolton Wanderers": {
+    "stadium": "Toughsheet Community Stadium",
+    "city": "Bolton",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Lincoln City": {
+    "stadium": "LNER Stadium",
+    "city": "Lincoln",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Middlesbrough": {
+    "stadium": "Riverside Stadium",
+    "city": "Middlesbrough",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sheffield United": {
+    "stadium": "Bramall Lane",
+    "city": "Sheffield",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Stoke City": {
+    "stadium": "bet365 Stadium",
+    "city": "Stoke-on-Trent",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Swansea City": {
+    "stadium": "Swansea.com Stadium",
+    "city": "Swansea",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "West Ham United": {
+    "stadium": "London Stadium",
+    "city": "London",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Wolverhampton Wanderers": {
+    "stadium": "Molineux Stadium",
+    "city": "Wolverhampton",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bradford City": {
+    "stadium": "Valley Parade",
+    "city": "Bradford",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Burton Albion": {
+    "stadium": "Pirelli Stadium",
+    "city": "Burton-upon-Trent, Staffordshire",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Cambridge United": {
+    "stadium": "Cledara Abbey Stadium",
+    "city": "Cambridge",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Huddersfield Town": {
+    "stadium": "John Smith's Stadium",
+    "city": "Huddersfield",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Leyton Orient": {
+    "stadium": "Gaughan Group Stadium",
+    "city": "London",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Mansfield Town": {
+    "stadium": "One Call Stadium",
+    "city": "Mansfield",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Notts County": {
+    "stadium": "Meadow Lane",
+    "city": "Nottingham",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Oxford United": {
+    "stadium": "The Kassam Stadium",
+    "city": "Oxford",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Plymouth Argyle": {
+    "stadium": "Home Park",
+    "city": "Plymouth",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Royal Charleroi SC": {
+    "stadium": "Stade du Pays de Charleroi",
+    "city": "Charleroi",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Rayo Vallecano": {
+    "stadium": "Estadio de Vallecas",
+    "city": "Madrid",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Real Sociedad II": {
+    "stadium": "Instalaciones de Zubieta",
+    "city": "San Sebastian",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "NEC Nijmegen": {
+    "stadium": "Goffertstadion",
+    "city": "Nijmegen",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Kocaelispor": {
+    "stadium": "Yildiz Entegre Kocaeli Stadyumu",
+    "city": "Kocaeli",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Catanzaro": {
+    "stadium": "Stadio Nicola Ceravolo",
+    "city": "Catanzaro",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Nice": {
+    "stadium": "Allianz Riviera",
+    "city": "Nice",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Parma": {
+    "stadium": "Ennio Tardini",
+    "city": "Parma",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Racing Genk": {
+    "stadium": "Cegeka Arena",
+    "city": "Genk",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Newcastle United": {
+    "stadium": "St. James' Park",
+    "city": "Newcastle-upon-Tyne",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sevilla": {
+    "stadium": "Ramón Sánchez Pizjuán Stadium",
+    "city": "Sevilla",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Castellón": {
+    "stadium": "Nou Estadi Castalia",
+    "city": "Castellón",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Schalke 04": {
+    "stadium": "Veltins Arena",
+    "city": "Gelsenkirchen",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Kalamata": {
+    "stadium": "Dimotiko Gipedo Neapolis Nikaias",
+    "city": "Athens",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "FC Utrecht": {
+    "stadium": "Stadion Galgenwaard",
+    "city": "Utrecht",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Feyenoord Rotterdam": {
+    "stadium": "De Kuip",
+    "city": "Rotterdam",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Defensa y Justicia": {
+    "stadium": "Norberto Tomaghello",
+    "city": "Buenos Aires",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Empoli": {
+    "stadium": "Stadio Carlo Castellani - Computer Gross Arena",
+    "city": "Empoli",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "New England Revolution": {
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "St. Pauli": {
+    "stadium": "Millerntor-Stadion",
+    "city": "Hamburg Norderstedt",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Palmeiras": {
+    "stadium": "Allianz Parque",
+    "city": "Sao Paulo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Napoli": {
+    "stadium": "Stadio Diego Armando Maradona",
+    "city": "Napoli",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "AS Monaco": {
+    "stadium": "Stade Louis II",
+    "city": "Monaco",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Lens": {
+    "stadium": "Stade Bollaert-Delelis",
+    "city": "Lens",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Lille": {
+    "stadium": "Decathlon Arena - Stade Pierre-Mauroy",
+    "city": "Lille",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Strasbourg": {
+    "stadium": "Stade de la Meinau",
+    "city": "Strasbourg",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "KV Mechelen": {
+    "stadium": "AFAS Stadion",
+    "city": "Mechelen",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Zulte-Waregem": {
+    "stadium": "Elindus Arena",
+    "city": "Waregem",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Real Madrid": {
+    "stadium": "Santiago Bernabéu",
+    "city": "Madrid",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Tenerife": {
+    "stadium": "Estadio Heliodoro Rodríguez López",
+    "city": "Santa Cruz de Tenerife",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "FC Groningen": {
+    "stadium": "Euroborg",
+    "city": "Groningen",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Telstar": {
+    "stadium": "711 Stadion",
+    "city": "Velsen-Zuid",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Argentinos Juniors": {
+    "stadium": "Diego Armando Maradona",
+    "city": "Buenos Aires",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Alianza Lima": {
+    "stadium": "Estadio Alejandro Villanueva",
+    "city": "Lima",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bahia": {
+    "stadium": "Arena Fonte Nova",
+    "city": "Salvador",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "O'Higgins": {
+    "stadium": "Estadio El Teniente",
+    "city": "Rancagua",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "FC Dallas": {
+    "stadium": "Toyota Stadium",
+    "city": "Toyota Stadium",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Atlético-MG": {
+    "stadium": "Metropolitano Roberto Meléndez",
+    "city": "Barranquilla",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Pachuca": {
+    "stadium": "Estadio Hidalgo",
+    "city": "Pachuca",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Santos": {
+    "stadium": "Estadio Corona",
+    "city": "Torreón",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Inter Miami CF": {
+    "stadium": "Nu Stadium",
+    "city": "Miami, Florida",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Universidad de Concepción": {
+    "stadium": "Estadio Municipal Alcaldesa Ester Roa Rebolledo",
+    "city": "Concepción",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Chapecoense": {
+    "stadium": "Arena Condá",
+    "city": "Chapecó",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Pumas UNAM": {
+    "stadium": "Estadio Olímpico Universitario",
+    "city": "Mexico City",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Once Caldas": {
+    "stadium": "Palogrande",
+    "city": "Manizales",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Tigres UANL": {
+    "stadium": "Estadio Universitario",
+    "city": "San Nicolás de los Garza",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Erzurum BB": {
+    "stadium": "Erzurum Kazim Karabekir",
+    "city": "Erzurum",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "FC Twente": {
+    "stadium": "De Grolsch Veste",
+    "city": "Enschede",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Juventus": {
+    "stadium": "Allianz Stadium",
+    "city": "Torino",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Burnley": {
+    "stadium": "Turf Moor",
+    "city": "Burnley",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Energie Cottbus": {
+    "stadium": "Stadion Der Freundschaft",
+    "city": "Cottbus",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Kaiserslautern": {
+    "stadium": "Fritz-Walter Stadion",
+    "city": "Kaiserslautern",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Karlsruher SC": {
+    "stadium": "BBBank Wildpark",
+    "city": "Karlsruhe",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Waasland-Beveren": {
+    "stadium": "Freethielstadion",
+    "city": "Beveren",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Barcelona": {
+    "stadium": "Spotify Camp Nou",
+    "city": "Barcelona",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Córdoba": {
+    "stadium": "Estadio Municipal Nuevo El Arcángel",
+    "city": "Córdoba",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Kasimpasa": {
+    "stadium": "Recep Tayyip Erdogan Stadium",
+    "city": "Istanbul",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Konyaspor": {
+    "stadium": "Medas Konya Büyüksehir Stadyumu",
+    "city": "Konya",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Ajax Amsterdam": {
+    "stadium": "Johan Cruijff Arena",
+    "city": "Amsterdam",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sparta Rotterdam": {
+    "stadium": "Sparta-Stadion Het Kasteel",
+    "city": "Rotterdam",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Hull City": {
+    "stadium": "The MKM Stadium",
+    "city": "Hull",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bologna": {
+    "stadium": "Renato Dall'Ara",
+    "city": "Bologna",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sassuolo": {
+    "stadium": "Mapei Stadium",
+    "city": "Reggio Emilia",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "US Avellino": {
+    "stadium": "Partenio",
+    "city": "Avellino",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Paris FC": {
+    "stadium": "Stade Jean Bouin",
+    "city": "Paris",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Levadiakos": {
+    "stadium": "Levadia Municipal Stadium",
+    "city": "Levadia",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "FC Augsburg": {
+    "stadium": "WWK Arena",
+    "city": "Augsburg",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Huachipato": {
+    "stadium": "Estadio Huachipato-CAP Acero",
+    "city": "Talcahuano",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "KV Kortrijk": {
+    "stadium": "Guldensporenstadion",
+    "city": "Kortrijk",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Panetolikos": {
+    "stadium": "Panetolikos Stadium",
+    "city": "Agrinio",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Racing Santander": {
+    "stadium": "El Sardineros",
+    "city": "Santander",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sporting Gijón": {
+    "stadium": "Estadio El Molinón-Enrique Castro \"Quini\"",
+    "city": "Gijón",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Panathinaikos": {
+    "stadium": "Athens Olympic Stadium",
+    "city": "Athens",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Go Ahead Eagles": {
+    "stadium": "De Adelaarshorst",
+    "city": "Deventer",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Trabzonspor": {
+    "stadium": "Papara Park",
+    "city": "Trabzon",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Arezzo": {
+    "stadium": "Stadio Città di Arezzo",
+    "city": "Arezzo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Lorient": {
+    "stadium": "Stade du Moustoir - Yves Allainmat",
+    "city": "Lorient",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Liverpool": {
+    "stadium": "Anfield",
+    "city": "Liverpool",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Werder Bremen": {
+    "stadium": "Weserstadion",
+    "city": "Bremen",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "AC Milan": {
+    "stadium": "San Siro",
+    "city": "Milano",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Olympiacos": {
+    "stadium": "Georgios Karaiskakis Stadium",
+    "city": "Piraeus",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Osasuna": {
+    "stadium": "El Sadar",
+    "city": "Pamplona",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Girona": {
+    "stadium": "Estadi Montilivi",
+    "city": "Girona",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "RC Celta Fortuna": {
+    "stadium": "Balaidos",
+    "city": "Vigo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Anderlecht": {
+    "stadium": "Lotto Park",
+    "city": "Brussels",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "PAOK": {
+    "stadium": "Toumba Stadium",
+    "city": "Thessaloniki",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Lommel SK": {
+    "stadium": "Soeverein Stadion",
+    "city": "Lommel",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Criciúma": {
+    "stadium": "Heriberto Hülse",
+    "city": "Criciúma",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Rosario Central": {
+    "stadium": "Gigante de Arroyito",
+    "city": "Rosario",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Athletico-PR": {
+    "stadium": "Arena da Baixada",
+    "city": "Curitiba",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Atalanta": {
+    "stadium": "New Balance Arena",
+    "city": "Bergamo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Marseille": {
+    "stadium": "Stade Vélodrome",
+    "city": "Marseille",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sport Huancayo": {
+    "stadium": "Estadio Huancayo",
+    "city": "Huancayo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Sporting Cristal": {
+    "stadium": "Estadio Alberto Gallardo",
+    "city": "San Martin de Porres",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Getafe": {
+    "stadium": "Estadio Coliseum",
+    "city": "Getafe",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Burgos": {
+    "stadium": "Estadio Municipal de El Plantío",
+    "city": "Burgos",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Colo Colo": {
+    "stadium": "Estadio Monumental David Arellano",
+    "city": "Santiago",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Nashville SC": {
+    "stadium": "GEODIS Park",
+    "city": "Nashville, Tennessee",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Atlético Goianiense": {
+    "stadium": "Estádio Antônio Accioly",
+    "city": "Goiãnia",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Fluminense": {
+    "stadium": "Estadio do Maracana",
+    "city": "Rio de Janeiro",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "River Plate": {
+    "stadium": "Estadio Más Monumental",
+    "city": "Buenos Aires",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Red Bull Bragantino": {
+    "stadium": "Estádio Municipal Cicero de Souza Marques",
+    "city": "Bragança Paulista",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Guadalajara": {
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Deportes Limache": {
+    "stadium": "Estadio Lucio Fariña Fernández",
+    "city": "Quillota",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Chicago Fire FC": {
+    "stadium": "SeatGeek Stadium",
+    "city": "Bridgeview, Illinois",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Instituto (Córdoba)": {
+    "stadium": "Mario Alberto Kempes",
+    "city": "Córdoba",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Querétaro": {
+    "stadium": "Estadio Corregidora",
+    "city": "Santiago de Querétaro",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Vancouver Whitecaps": {
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Asteras Tripoli": {
+    "stadium": "Theodoros Kolokotronis Stadium",
+    "city": "Tripoli",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Istanbul Basaksehir": {
+    "stadium": "Basaksehir Fatih Terim Stadium",
+    "city": "Istanbul",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Ceuta": {
+    "stadium": "Estadio Alfonso Murube",
+    "city": "Ceuta",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Monza": {
+    "stadium": "U-Power Stadium",
+    "city": "Monza",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Brentford": {
+    "stadium": "Gtech Community Stadium",
+    "city": "Brentford",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Levante": {
+    "stadium": "Estadi Ciutat de València",
+    "city": "Manises",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Gimnasia La Plata": {
+    "stadium": "Juan Carmelo Zerillo (El Bosque)",
+    "city": "La Plata",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Internacional": {
+    "stadium": "Estadio Beira-Rio",
+    "city": "Porto Alegre",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Botafogo": {
+    "stadium": "Joao Havelange Stadium",
+    "city": "Rio de Janeiro",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "St. Louis CITY SC": {
+    "stadium": "Energizer Park",
+    "city": "St. Louis, Missouri",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bodo/Glimt": {
+    "stadium": "Aspmyra Stadion",
+    "city": "Bodø/Glimt",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Juve Stabia": {
+    "stadium": "Romeo Menti di Castellammare",
+    "city": "Castellammare di Stabia",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Benevento": {
+    "stadium": "Stadio Ciro Vigorito",
+    "city": "Benevento",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Cesena": {
+    "stadium": "Estadio Dino Manuzzi",
+    "city": "Cesena",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Palermo": {
+    "stadium": "Stadio Renzo Barbera",
+    "city": "Palermo",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Vicenza": {
+    "stadium": "Romeo Menti di Vicenza",
+    "city": "Vicenza",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Virtus Entella": {
+    "stadium": "Comunale Aldo Gastaldi",
+    "city": "Chiavari",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bristol City": {
+    "stadium": "Ashton Gate",
+    "city": "Bristol",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Cardiff City": {
+    "stadium": "Cardiff City Stadium",
+    "city": "Cardiff",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Charlton Athletic": {
+    "stadium": "The Valley",
+    "city": "London",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Portsmouth": {
+    "stadium": "Fratton Park",
+    "city": "Portsmouth",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Bromley": {
+    "stadium": "RELOC8 EM Community Stadium",
+    "city": "Bromley",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Stevenage": {
+    "stadium": "Lamex Stadium",
+    "city": "Stevenage",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Arsenal": {
+    "stadium": "Emirates Stadium",
+    "city": "London",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "RB Leipzig": {
+    "stadium": "Red Bull Arena",
+    "city": "Leipzig",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Slovan Bratislava": {
+    "stadium": "Národny Futbalovy Stadión",
+    "city": "Bratislava",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "Millonarios": {
+    "stadium": "Estadio Nemesio Camacho El Campín",
+    "city": "Bogota",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "América de Cali": {
+    "stadium": "Pascual Guerrero",
+    "city": "Cali",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
+  },
+  "San Jose Earthquakes": {
+    "stadium": "PayPal Park",
+    "city": "San Jose, California",
+    "lat": 40.0,
+    "lon": -3.0,
+    "altitude_m": 120,
+    "capacity": 38000,
+    "grass": "Natural"
   }
 }

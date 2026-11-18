@@ -2784,28 +2784,83 @@ def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
         except Exception:
             pass
 
-    # 3. TERCERA PRIORIDAD: Si no hay archivo local ni filas CSV, sincronizar en tiempo real desde ESPN Scoreboard API
+    # 3. TERCERA PRIORIDAD: Si no hay archivo local, sincronizar en tiempo real desde ESPN Scoreboard API (todas las ligas en paralelo)
     if not all_matches and len(date_str) == 8:
         try:
+            from concurrent.futures import ThreadPoolExecutor
             from multi_league_engine import fetch_league_games_by_date, LEAGUES_CONFIG
-            for l_cfg in LEAGUES_CONFIG[:12]:
+
+            def _fetch_one_cfg(l_cfg):
                 l_code = l_cfg["code"]
+                out_g = []
                 try:
-                    games = fetch_league_games_by_date(l_code, date_str)
-                    for g in games:
-                        all_matches.append({
-                            "league": l_cfg["name"],
-                            "code": l_code,
-                            "country": l_cfg["country"],
-                            "home": g["home"],
-                            "away": g["away"],
-                            "home_logo": get_team_logo(g["home"]),
-                            "away_logo": get_team_logo(g["away"]),
-                            "time_cdmx": g.get("time_cdmx", "12:00"),
-                            "hour_int": int(g.get("time_cdmx", "12:00").split(":")[0]) if ":" in g.get("time_cdmx", "") else 12,
-                            "id": f"{g['home']}_{g['away']}_{date_str}",
-                            "status_text": "Partido Oficial ESPN"
-                        })
+                    events = fetch_league_games_by_date(l_code, date_str)
+                    for e in events:
+                        if "home" in e and "away" in e:
+                            h_n, a_n = e["home"], e["away"]
+                            t_c = e.get("time_cdmx", "12:00")
+                            h_i = e.get("hour_int", int(t_c.split(":")[0]) if ":" in t_c and t_c.split(":")[0].isdigit() else 12)
+                            out_g.append({
+                                "league": l_cfg["name"],
+                                "code": l_code,
+                                "country": l_cfg.get("country", ""),
+                                "home": h_n,
+                                "away": a_n,
+                                "home_logo": e.get("home_logo") or get_team_logo(h_n),
+                                "away_logo": e.get("away_logo") or get_team_logo(a_n),
+                                "time_cdmx": t_c,
+                                "hour_int": h_i,
+                                "id": str(e.get("id", f"{h_n}_{a_n}_{date_str}")),
+                                "status_text": e.get("status_text", "Programado Oficial"),
+                                "venue_name": e.get("venue_name", "Estadio Oficial"),
+                                "venue_city": e.get("venue_city", ""),
+                            })
+                        else:
+                            comp = (e.get("competitions") or [{}])[0]
+                            comps = comp.get("competitors") or []
+                            hc = next((c for c in comps if c.get("homeAway") == "home"), {})
+                            ac = next((c for c in comps if c.get("homeAway") == "away"), {})
+                            h_n = hc.get("team", {}).get("displayName", "")
+                            a_n = ac.get("team", {}).get("displayName", "")
+                            if not h_n or not a_n or "TBD" in h_n.upper() or "TBD" in a_n.upper():
+                                continue
+                            t_c, h_i = "12:00", 12
+                            try:
+                                dt_u = datetime.fromisoformat(str(e.get("date", "")).replace("Z", "+00:00"))
+                                dt_l = dt_u.astimezone(CDMX_TZ)
+                                t_c = dt_l.strftime("%H:%M")
+                                h_i = dt_l.hour
+                            except Exception:
+                                pass
+                            ven = comp.get("venue") or {}
+                            out_g.append({
+                                "league": l_cfg["name"],
+                                "code": l_code,
+                                "country": l_cfg.get("country", ""),
+                                "home": h_n,
+                                "away": a_n,
+                                "home_logo": hc.get("team", {}).get("logo") or get_team_logo(h_n),
+                                "away_logo": ac.get("team", {}).get("logo") or get_team_logo(a_n),
+                                "time_cdmx": t_c,
+                                "hour_int": h_i,
+                                "id": str(e.get("id", f"{h_n}_{a_n}_{date_str}")),
+                                "status_text": "Programado Oficial",
+                                "espn_state": e.get("status", {}).get("type", {}).get("state", "pre"),
+                                "venue_name": ven.get("fullName", "Estadio Oficial"),
+                                "venue_city": (ven.get("address") or {}).get("city", ""),
+                            })
+                except Exception:
+                    pass
+                return out_g
+
+            with ThreadPoolExecutor(max_workers=10) as ex:
+                for res_list in ex.map(_fetch_one_cfg, LEAGUES_CONFIG):
+                    all_matches.extend(res_list)
+
+            if all_matches:
+                try:
+                    with open(cal_path, "w", encoding="utf-8") as fp_c:
+                        json.dump(all_matches, fp_c, indent=2, ensure_ascii=False)
                 except Exception:
                     pass
         except Exception:

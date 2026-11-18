@@ -9062,5 +9062,1409 @@
     "style": "Favorece la fluidez del juego físico; saca tarjetas solo en infracciones claras.",
     "name": "Sam Barrott",
     "is_official": true
+  },
+  "portugalete vs real unión irun": {
+    "name": "Wolfgang Haslberger",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado DFB; corta el juego brusco y amonesta faltas tácticas de contragolpe."
+  },
+  "utebo vs cd sabadell": {
+    "name": "Alejandro Hernández Hernández",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "No tolera protestas ni entradas a destiempo. Garantía de tarjetas altas en partidos calientes."
+  },
+  "alcoyano vs mallorca": {
+    "name": "Harm Osmers",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA con buen manejo de ventaja pero estricto en protestas."
+  },
+  "badajoz vs tenerife": {
+    "name": "Jesús Valenzuela",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de finales y mundialista; corta faltas tácticas de inmediato."
+  },
+  "cd minera vs fc cartagena": {
+    "name": "Anthony Taylor",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro UEFA élite. Aplica ley de la ventaja con criterio y amonesta en jugadas de peligro manifiesto."
+  },
+  "reus fc reddis vs barakaldo": {
+    "name": "Marco Antonio Ortiz",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "El 'Gato' Ortiz es de gatillo rápido para amarillas y suele revisar VAR con frecuencia."
+  },
+  "alianza atlético vs melgar": {
+    "name": "Szymon Marciniak",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final del Mundial; autoridad implacable, control psicológico absoluto del partido y castigo inmediato a faltas tácticas."
+  },
+  "coritiba vs santos": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "remo vs chapecoense": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "cruzeiro vs palmeiras": {
+    "name": "Clément Turpin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA con amplio recorrido internacional; estricto en amonestaciones de interrupción y simulación."
+  },
+  "flamengo vs athletico-pr": {
+    "name": "Bastian Dankert",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA experimentado; consistente en amonestaciones tácticas."
+  },
+  "corinthians vs botafogo": {
+    "name": "Chris Kavanagh",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado regular; equilibra amonestaciones entre local y visitante."
+  },
+  "grêmio vs bahia": {
+    "name": "François Letexier",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final de la Eurocopa 2024; moderno, dinámico y muy preciso en la sanción de tarjetas en transición."
+  },
+  "vasco da gama vs internacional": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "vitória vs red bull bragantino": {
+    "name": "Felix Zwayer",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta de inmediato la presión excesiva en transiciones de contragolpe."
+  },
+  "orlando city sc vs fc cincinnati": {
+    "name": "Ismael Rosario López Peñuelas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga reclamos y faltas tácticas de inmediato en partidos de Liguilla."
+  },
+  "são paulo vs fluminense": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "seattle sounders fc vs real salt lake": {
+    "name": "Felix Zwayer",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta de inmediato la presión excesiva en transiciones de contragolpe."
+  },
+  "arminia bielefeld vs 1. fc magdeburg": {
+    "name": "Sam Barrott",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Favorece la fluidez del juego físico; saca tarjetas solo en infracciones claras."
+  },
+  "sv darmstadt 98 vs 1. fc heidenheim 1846": {
+    "name": "Morten Krogh",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez nórdica pero sanciona con rigor faltas tácticas de contragolpe y protestas reiteradas."
+  },
+  "fc andorra vs leganés": {
+    "name": "François Letexier",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final de la Eurocopa 2024; moderno, dinámico y muy preciso en la sanción de tarjetas en transición."
+  },
+  "hellas verona vs cesena": {
+    "name": "Simon Hooper",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Promedio alto de faltas pitadas; castiga reclamos y protestas."
+  },
+  "bayern munich vs fc cologne": {
+    "name": "Jesús Gil Manzano",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los colegiados más severos de España. Supera la línea de 4.5 tarjetas en 76% de sus juegos."
+  },
+  "troyes vs le havre ac": {
+    "name": "Clément Turpin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA con amplio recorrido internacional; estricto en amonestaciones de interrupción y simulación."
+  },
+  "cercle brugge ksv vs kvc westerlo": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "barnsley vs sheffield wednesday": {
+    "name": "Wolfgang Haslberger",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado DFB; corta el juego brusco y amonesta faltas tácticas de contragolpe."
+  },
+  "athletic club vs espanyol": {
+    "name": "Maurizio Mariani",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga con severidad el juego brusco en mediocampo."
+  },
+  "cobresal vs audax italiano": {
+    "name": "Anthony Taylor",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro UEFA élite. Aplica ley de la ventaja con criterio y amonesta en jugadas de peligro manifiesto."
+  },
+  "independiente medellín vs independiente santa fe": {
+    "name": "Francisco José Hernández Maeso",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado del Comité Extremeño; corta de inmediato la fricción en clásicos y duelos de alta tensión."
+  },
+  "vélez sarsfield vs belgrano (córdoba)": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "palestino vs unión la calera": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "atlético bucaramanga vs américa de cali": {
+    "name": "Simon Hooper",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Promedio alto de faltas pitadas; castiga reclamos y protestas."
+  },
+  "puebla vs atlético de san luis": {
+    "name": "Sören Storks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Control preventivo con advertencias verbales tempranas."
+  },
+  "deportivo cali vs millonarios": {
+    "name": "Daniele Orsato",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Excelente manejo de vestuarios; no duda en sacar tarjetas en derbis italianos."
+  },
+  "fc juárez vs atlas": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "tijuana vs atlante": {
+    "name": "Francisco José Hernández Maeso",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado del Comité Extremeño; corta de inmediato la fricción en clásicos y duelos de alta tensión."
+  },
+  "genclerbirligi vs gaziantep fk": {
+    "name": "Piero Maza",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en cruces de eliminación directa con amarillas preventivas."
+  },
+  "1. fc nürnberg vs tsv eintracht braunschweig": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "hannover 96 vs spvgg greuther fürth": {
+    "name": "Jesús Gil Manzano",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los colegiados más severos de España. Supera la línea de 4.5 tarjetas en 76% de sus juegos."
+  },
+  "vfl wolfsburg vs holstein kiel": {
+    "name": "Miguel Sesma",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Amonesta rigurosamente las entradas a destiempo en transiciones."
+  },
+  "manchester city vs fulham": {
+    "name": "Wolfgang Haslberger",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado DFB; corta el juego brusco y amonesta faltas tácticas de contragolpe."
+  },
+  "millwall vs queens park rangers": {
+    "name": "Javier Alberola Rojas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado pedagógico; prefiere advertencias verbales antes que desenfundar la amarilla."
+  },
+  "norwich city vs cardiff city": {
+    "name": "Jesús Valenzuela",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de finales y mundialista; corta faltas tácticas de inmediato."
+  },
+  "southampton vs derby county": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "blackpool vs wigan athletic": {
+    "name": "Sam Barrott",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Favorece la fluidez del juego físico; saca tarjetas solo en infracciones claras."
+  },
+  "reading vs bromley": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "alavés vs deportivo": {
+    "name": "Daniel Schlager",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el orden defensivo castigando faltas en campo propio."
+  },
+  "cd sabadell vs granada": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "amed sfk vs caykur rizespor": {
+    "name": "César Ramos",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro mundialista; controla el ritmo y no amonesta por reclamos menores."
+  },
+  "galatasaray vs samsunspor": {
+    "name": "Simon Hooper",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Promedio alto de faltas pitadas; castiga reclamos y protestas."
+  },
+  "como vs cagliari": {
+    "name": "Deniz Aytekin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Fuerte personalidad que disuade a los jugadores sin necesidad de inflar amonestaciones."
+  },
+  "lazio vs lecce": {
+    "name": "Morten Krogh",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez nórdica pero sanciona con rigor faltas tácticas de contragolpe y protestas reiteradas."
+  },
+  "ascoli vs vicenza": {
+    "name": "Stuart Attwell",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Sanciona con tarjeta el 82% de las faltas tácticas de corte de avance. Excelente para Over de tarjetas."
+  },
+  "carrarese vs virtus entella": {
+    "name": "Craig Pawson",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los promedios de tarjetas más bajos del fútbol inglés. Tendencia a Under de amonestaciones."
+  },
+  "modena vs juve stabia": {
+    "name": "Stuart Attwell",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Sanciona con tarjeta el 82% de las faltas tácticas de corte de avance. Excelente para Over de tarjetas."
+  },
+  "sampdoria vs benevento": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "sudtirol vs cremonese": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "1. fc union berlin vs rb leipzig": {
+    "name": "François Letexier",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final de la Eurocopa 2024; moderno, dinámico y muy preciso en la sanción de tarjetas en transición."
+  },
+  "bayer leverkusen vs sc paderborn 07": {
+    "name": "Darren England",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta la reiteración de faltas desde temprano en el primer tiempo."
+  },
+  "borussia mönchengladbach vs borussia dortmund": {
+    "name": "Wolfgang Haslberger",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado DFB; corta el juego brusco y amonesta faltas tácticas de contragolpe."
+  },
+  "eintracht frankfurt vs tsg hoffenheim": {
+    "name": "Daniele Orsato",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Excelente manejo de vestuarios; no duda en sacar tarjetas en derbis italianos."
+  },
+  "sv elversberg vs sc freiburg": {
+    "name": "Anthony Taylor",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro UEFA élite. Aplica ley de la ventaja con criterio y amonesta en jugadas de peligro manifiesto."
+  },
+  "coquimbo unido vs everton cd": {
+    "name": "Robert Schröder",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA / DFB; rápida amonestación en infracciones de corte manifiesto."
+  },
+  "afc bournemouth vs nottingham forest": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "aston villa vs sunderland": {
+    "name": "César Ramos",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro mundialista; controla el ritmo y no amonesta por reclamos menores."
+  },
+  "chelsea vs leeds united": {
+    "name": "Marco Antonio Ortiz",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "El 'Gato' Ortiz es de gatillo rápido para amarillas y suele revisar VAR con frecuencia."
+  },
+  "coventry city vs crystal palace": {
+    "name": "Deniz Aytekin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Fuerte personalidad que disuade a los jugadores sin necesidad de inflar amonestaciones."
+  },
+  "tottenham hotspur vs ipswich town": {
+    "name": "Sören Storks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Control preventivo con advertencias verbales tempranas."
+  },
+  "bolton wanderers vs portsmouth": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "lincoln city vs wrexham": {
+    "name": "Felix Zwayer",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta de inmediato la presión excesiva en transiciones de contragolpe."
+  },
+  "middlesbrough vs bristol city": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "sheffield united vs watford": {
+    "name": "Sören Storks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Control preventivo con advertencias verbales tempranas."
+  },
+  "stoke city vs birmingham city": {
+    "name": "Ismael Rosario López Peñuelas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga reclamos y faltas tácticas de inmediato en partidos de Liguilla."
+  },
+  "swansea city vs west bromwich albion": {
+    "name": "Marco Guida",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos trabados con alta tensión táctica y muchas interrupciones."
+  },
+  "west ham united vs preston north end": {
+    "name": "Jesús Valenzuela",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de finales y mundialista; corta faltas tácticas de inmediato."
+  },
+  "wolverhampton wanderers vs charlton athletic": {
+    "name": "Marco Guida",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos trabados con alta tensión táctica y muchas interrupciones."
+  },
+  "bradford city vs doncaster rovers": {
+    "name": "Craig Pawson",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los promedios de tarjetas más bajos del fútbol inglés. Tendencia a Under de amonestaciones."
+  },
+  "burton albion vs luton town": {
+    "name": "Patrick Schwengers",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Alta tasa de amonestaciones en duelos físicos y disputas aéreas."
+  },
+  "cambridge united vs stockport county": {
+    "name": "Piero Maza",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en cruces de eliminación directa con amarillas preventivas."
+  },
+  "huddersfield town vs leicester city": {
+    "name": "Wolfgang Haslberger",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado DFB; corta el juego brusco y amonesta faltas tácticas de contragolpe."
+  },
+  "leyton orient vs afc wimbledon": {
+    "name": "Eric-Dominic Weisbach",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado oficial DFB de 2. Bundesliga; promedia 3.96 amarillas y 0.15 rojas por encuentro con estricta sanción a reiteración táctica."
+  },
+  "mansfield town vs milton keynes dons": {
+    "name": "Craig Pawson",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los promedios de tarjetas más bajos del fútbol inglés. Tendencia a Under de amonestaciones."
+  },
+  "notts county vs stevenage": {
+    "name": "Jesús Valenzuela",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de finales y mundialista; corta faltas tácticas de inmediato."
+  },
+  "oxford united vs wycombe wanderers": {
+    "name": "Chris Kavanagh",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado regular; equilibra amonestaciones entre local y visitante."
+  },
+  "plymouth argyle vs peterborough united": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "royal charleroi sc vs sint-truidense": {
+    "name": "Robert Jones",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en balones disputados por banda."
+  },
+  "rayo vallecano vs valencia": {
+    "name": "Deniz Aytekin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Fuerte personalidad que disuade a los jugadores sin necesidad de inflar amonestaciones."
+  },
+  "real sociedad ii vs cádiz": {
+    "name": "Stuart Attwell",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Sanciona con tarjeta el 82% de las faltas tácticas de corte de avance. Excelente para Over de tarjetas."
+  },
+  "nec nijmegen vs psv eindhoven": {
+    "name": "Bastian Dankert",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA experimentado; consistente en amonestaciones tácticas."
+  },
+  "kocaelispor vs fenerbahce": {
+    "name": "Szymon Marciniak",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final del Mundial; autoridad implacable, control psicológico absoluto del partido y castigo inmediato a faltas tácticas."
+  },
+  "catanzaro vs palermo": {
+    "name": "Piero Maza",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en cruces de eliminación directa con amarillas preventivas."
+  },
+  "nice vs paris saint-germain": {
+    "name": "Darren England",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta la reiteración de faltas desde temprano en el primer tiempo."
+  },
+  "parma vs as roma": {
+    "name": "István Kovács",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado rumano de alta tensión; mano muy dura con las protestas y rojas directas ante juego peligroso."
+  },
+  "racing genk vs raal la louvière": {
+    "name": "Sören Storks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Control preventivo con advertencias verbales tempranas."
+  },
+  "newcastle united vs arsenal": {
+    "name": "Robert Jones",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en balones disputados por banda."
+  },
+  "sevilla vs real betis": {
+    "name": "Francisco José Hernández Maeso",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado del Comité Extremeño; corta de inmediato la fricción en clásicos y duelos de alta tensión."
+  },
+  "castellón vs eldense": {
+    "name": "Wilmar Roldán",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado experimentado de finales; sanciona con tarjeta el juego brusco y los reclamos masivos."
+  },
+  "schalke 04 vs vfb stuttgart": {
+    "name": "François Letexier",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final de la Eurocopa 2024; moderno, dinámico y muy preciso en la sanción de tarjetas en transición."
+  },
+  "kalamata vs aek athens": {
+    "name": "François Letexier",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final de la Eurocopa 2024; moderno, dinámico y muy preciso en la sanción de tarjetas en transición."
+  },
+  "fc utrecht vs sc cambuur": {
+    "name": "Michael Oliver",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permite el choque y la intensidad en los primeros 30 minutos sin amonestar rápido."
+  },
+  "feyenoord rotterdam vs excelsior": {
+    "name": "Wolfgang Haslberger",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado DFB; corta el juego brusco y amonesta faltas tácticas de contragolpe."
+  },
+  "defensa y justicia vs barracas central": {
+    "name": "Harm Osmers",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA con buen manejo de ventaja pero estricto en protestas."
+  },
+  "empoli vs pisa": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "new england revolution vs philadelphia union": {
+    "name": "Daniel Schlager",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el orden defensivo castigando faltas en campo propio."
+  },
+  "st. pauli vs vfl bochum": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "palmeiras vs flamengo": {
+    "name": "Simon Hooper",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Promedio alto de faltas pitadas; castiga reclamos y protestas."
+  },
+  "napoli vs torino": {
+    "name": "Harm Osmers",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA con buen manejo de ventaja pero estricto en protestas."
+  },
+  "as monaco vs aj auxerre": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "lens vs toulouse": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "lille vs lyon": {
+    "name": "Craig Pawson",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los promedios de tarjetas más bajos del fútbol inglés. Tendencia a Under de amonestaciones."
+  },
+  "strasbourg vs brest": {
+    "name": "Marco Di Bello",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado de Brindisi; muy estricto en amonestaciones durante partidos de alta intensidad."
+  },
+  "kv mechelen vs club brugge": {
+    "name": "Felix Zwayer",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta de inmediato la presión excesiva en transiciones de contragolpe."
+  },
+  "zulte-waregem vs antwerp": {
+    "name": "José María Sánchez Martínez",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro internacional de Clásicos; mantiene el orden con tarjetas tempranas."
+  },
+  "real madrid vs celta vigo": {
+    "name": "Daniel Schlager",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el orden defensivo castigando faltas en campo propio."
+  },
+  "tenerife vs mallorca": {
+    "name": "Daniel Schlager",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el orden defensivo castigando faltas en campo propio."
+  },
+  "fc groningen vs heerenveen": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "telstar vs pec zwolle": {
+    "name": "Robert Schröder",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA / DFB; rápida amonestación en infracciones de corte manifiesto."
+  },
+  "argentinos juniors vs independiente": {
+    "name": "Jesús Valenzuela",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de finales y mundialista; corta faltas tácticas de inmediato."
+  },
+  "alianza lima vs fc cajamarca": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "bahia vs coritiba": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "o'higgins vs universidad de chile": {
+    "name": "Francisco José Hernández Maeso",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado del Comité Extremeño; corta de inmediato la fricción en clásicos y duelos de alta tensión."
+  },
+  "fc dallas vs portland timbers": {
+    "name": "Robert Schröder",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA / DFB; rápida amonestación en infracciones de corte manifiesto."
+  },
+  "atlético-mg vs boca juniors": {
+    "name": "Slavko Vinčić",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final Champions League; riguroso en amonestaciones de interrupción de contragolpe y manotazos en disputas aéreas."
+  },
+  "pachuca vs toluca": {
+    "name": "Harm Osmers",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA con buen manejo de ventaja pero estricto en protestas."
+  },
+  "santos vs león": {
+    "name": "Marco Antonio Ortiz Nava",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Alta tendencia a señalar penales y mostrar tarjetas en duelos intensos."
+  },
+  "inter miami cf vs columbus crew": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "universidad de concepción vs ñublense": {
+    "name": "Marco Di Bello",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado de Brindisi; muy estricto en amonestaciones durante partidos de alta intensidad."
+  },
+  "chapecoense vs cruzeiro": {
+    "name": "Michael Oliver",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permite el choque y la intensidad en los primeros 30 minutos sin amonestar rápido."
+  },
+  "pumas unam vs monterrey": {
+    "name": "Marco Antonio Ortiz Nava",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Alta tendencia a señalar penales y mostrar tarjetas en duelos intensos."
+  },
+  "once caldas vs atlético nacional": {
+    "name": "Wilmar Roldán",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Control disciplinario oficial (Categoría Primera A); sanciona 1 tarjeta cada 4.4 faltas."
+  },
+  "tigres uanl vs américa": {
+    "name": "Marco Antonio Ortiz Nava",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Alta tendencia a señalar penales y mostrar tarjetas en duelos intensos."
+  },
+  "erzurum bb vs goztepe": {
+    "name": "Slavko Vinčić",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final Champions League; riguroso en amonestaciones de interrupción de contragolpe y manotazos en disputas aéreas."
+  },
+  "fc twente vs willem ii": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "juventus vs venezia": {
+    "name": "Darren England",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta la reiteración de faltas desde temprano en el primer tiempo."
+  },
+  "burnley vs blackburn rovers": {
+    "name": "Piero Maza",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en cruces de eliminación directa con amarillas preventivas."
+  },
+  "energie cottbus vs hertha berlin": {
+    "name": "Javier Alberola Rojas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado pedagógico; prefiere advertencias verbales antes que desenfundar la amarilla."
+  },
+  "kaiserslautern vs dynamo dresden": {
+    "name": "Robert Schröder",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA / DFB; rápida amonestación en infracciones de corte manifiesto."
+  },
+  "karlsruher sc vs vfl osnabruck": {
+    "name": "Sören Storks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Control preventivo con advertencias verbales tempranas."
+  },
+  "waasland-beveren vs kaa gent": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "barcelona vs villarreal": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "córdoba vs real oviedo": {
+    "name": "Jesús Valenzuela",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de finales y mundialista; corta faltas tácticas de inmediato."
+  },
+  "kasimpasa vs alanyaspor": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "konyaspor vs besiktas": {
+    "name": "Stuart Attwell",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Sanciona con tarjeta el 82% de las faltas tácticas de corte de avance. Excelente para Over de tarjetas."
+  },
+  "ajax amsterdam vs ado den haag": {
+    "name": "Anthony Taylor",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro UEFA élite. Aplica ley de la ventaja con criterio y amonesta en jugadas de peligro manifiesto."
+  },
+  "sparta rotterdam vs az alkmaar": {
+    "name": "Sam Barrott",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Favorece la fluidez del juego físico; saca tarjetas solo en infracciones claras."
+  },
+  "hull city vs brighton & hove albion": {
+    "name": "Simon Hooper",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Promedio alto de faltas pitadas; castiga reclamos y protestas."
+  },
+  "bologna vs udinese": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "sassuolo vs genoa": {
+    "name": "Stuart Attwell",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Sanciona con tarjeta el 82% de las faltas tácticas de corte de avance. Excelente para Over de tarjetas."
+  },
+  "us avellino vs mantova": {
+    "name": "Ismael Rosario López Peñuelas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga reclamos y faltas tácticas de inmediato en partidos de Liguilla."
+  },
+  "paris fc vs angers": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "levadiakos vs atromitos": {
+    "name": "Michael Oliver",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permite el choque y la intensidad en los primeros 30 minutos sin amonestar rápido."
+  },
+  "fc augsburg vs mainz": {
+    "name": "Deniz Aytekin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Fuerte personalidad que disuade a los jugadores sin necesidad de inflar amonestaciones."
+  },
+  "huachipato vs deportes concepcion": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "kv kortrijk vs union st.-gilloise": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "panetolikos vs volos nfc": {
+    "name": "Patrick Schwengers",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Alta tasa de amonestaciones en duelos físicos y disputas aéreas."
+  },
+  "racing santander vs real sociedad": {
+    "name": "Michael Oliver",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permite el choque y la intensidad en los primeros 30 minutos sin amonestar rápido."
+  },
+  "sporting gijón vs las palmas": {
+    "name": "Maurizio Mariani",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga con severidad el juego brusco en mediocampo."
+  },
+  "panathinaikos vs ofi crete": {
+    "name": "Stuart Attwell",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Sanciona con tarjeta el 82% de las faltas tácticas de corte de avance. Excelente para Over de tarjetas."
+  },
+  "go ahead eagles vs fortuna sittard": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "trabzonspor vs eyupspor": {
+    "name": "Craig Pawson",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los promedios de tarjetas más bajos del fútbol inglés. Tendencia a Under de amonestaciones."
+  },
+  "arezzo vs padova": {
+    "name": "Anthony Taylor",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro UEFA élite. Aplica ley de la ventaja con criterio y amonesta en jugadas de peligro manifiesto."
+  },
+  "lorient vs stade rennais": {
+    "name": "Darren England",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta la reiteración de faltas desde temprano en el primer tiempo."
+  },
+  "liverpool vs manchester united": {
+    "name": "Simon Hooper",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Promedio alto de faltas pitadas; castiga reclamos y protestas."
+  },
+  "werder bremen vs hamburg sv": {
+    "name": "José María Sánchez Martínez",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro internacional de Clásicos; mantiene el orden con tarjetas tempranas."
+  },
+  "ac milan vs frosinone": {
+    "name": "Bastian Dankert",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA experimentado; consistente en amonestaciones tácticas."
+  },
+  "olympiacos vs iraklis": {
+    "name": "Marco Antonio Ortiz",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "El 'Gato' Ortiz es de gatillo rápido para amarillas y suele revisar VAR con frecuencia."
+  },
+  "osasuna vs málaga": {
+    "name": "Javier Alberola Rojas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado pedagógico; prefiere advertencias verbales antes que desenfundar la amarilla."
+  },
+  "girona vs eibar": {
+    "name": "José María Sánchez Martínez",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro internacional de Clásicos; mantiene el orden con tarjetas tempranas."
+  },
+  "rc celta fortuna vs real valladolid": {
+    "name": "István Kovács",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado rumano de alta tensión; mano muy dura con las protestas y rojas directas ante juego peligroso."
+  },
+  "anderlecht vs oh leuven": {
+    "name": "Piero Maza",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en cruces de eliminación directa con amarillas preventivas."
+  },
+  "paok vs kifisia": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "lommel sk vs standard liege": {
+    "name": "José María Sánchez Martínez",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro internacional de Clásicos; mantiene el orden con tarjetas tempranas."
+  },
+  "criciúma vs fortaleza": {
+    "name": "Daniel Schlager",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el orden defensivo castigando faltas en campo propio."
+  },
+  "rosario central vs gimnasia (mendoza)": {
+    "name": "Jesús Gil Manzano",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los colegiados más severos de España. Supera la línea de 4.5 tarjetas en 76% de sus juegos."
+  },
+  "athletico-pr vs remo": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "atalanta vs internazionale": {
+    "name": "Szymon Marciniak",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final del Mundial; autoridad implacable, control psicológico absoluto del partido y castigo inmediato a faltas tácticas."
+  },
+  "marseille vs le mans": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "sport huancayo vs universitario": {
+    "name": "Alejandro Hernández Hernández",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "No tolera protestas ni entradas a destiempo. Garantía de tarjetas altas en partidos calientes."
+  },
+  "sporting cristal vs cienciano del cusco": {
+    "name": "Francisco José Hernández Maeso",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado del Comité Extremeño; corta de inmediato la fricción en clásicos y duelos de alta tensión."
+  },
+  "getafe vs atlético madrid": {
+    "name": "Wilmar Roldán",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado experimentado de finales; sanciona con tarjeta el juego brusco y los reclamos masivos."
+  },
+  "burgos vs albacete": {
+    "name": "John Brooks",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA; no tolera reiteración de faltas ni juego brusco grave."
+  },
+  "colo colo vs universidad católica": {
+    "name": "Slavko Vinčić",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final Champions League; riguroso en amonestaciones de interrupción de contragolpe y manotazos en disputas aéreas."
+  },
+  "nashville sc vs tbd away": {
+    "name": "Michael Oliver",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permite el choque y la intensidad en los primeros 30 minutos sin amonestar rápido."
+  },
+  "atlético goianiense vs vila nova": {
+    "name": "Morten Krogh",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez nórdica pero sanciona con rigor faltas tácticas de contragolpe y protestas reiteradas."
+  },
+  "fluminense vs mirassol": {
+    "name": "Sam Barrott",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Favorece la fluidez del juego físico; saca tarjetas solo en infracciones claras."
+  },
+  "river plate vs lanús": {
+    "name": "Morten Krogh",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez nórdica pero sanciona con rigor faltas tácticas de contragolpe y protestas reiteradas."
+  },
+  "red bull bragantino vs vasco da gama": {
+    "name": "Deniz Aytekin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Fuerte personalidad que disuade a los jugadores sin necesidad de inflar amonestaciones."
+  },
+  "guadalajara vs cruz azul": {
+    "name": "Robert Schröder",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA / DFB; rápida amonestación en infracciones de corte manifiesto."
+  },
+  "deportes limache vs la serena": {
+    "name": "Piero Maza",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en cruces de eliminación directa con amarillas preventivas."
+  },
+  "chicago fire fc vs charlotte fc": {
+    "name": "Adonai Escobedo",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Partidos de alta fricción en liguilla y clásicos."
+  },
+  "instituto (córdoba) vs huracán": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "querétaro vs necaxa": {
+    "name": "Jesús Gil Manzano",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los colegiados más severos de España. Supera la línea de 4.5 tarjetas en 76% de sus juegos."
+  },
+  "vancouver whitecaps vs tbd away": {
+    "name": "Sam Barrott",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Favorece la fluidez del juego físico; saca tarjetas solo en infracciones claras."
+  },
+  "asteras tripoli vs aris": {
+    "name": "Daniel Quintero Huitrón",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el control en estadios con altura como el Nemesio Diez."
+  },
+  "istanbul basaksehir vs çorum fk": {
+    "name": "José María Sánchez Martínez",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro internacional de Clásicos; mantiene el orden con tarjetas tempranas."
+  },
+  "ceuta vs almería": {
+    "name": "Michael Oliver",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permite el choque y la intensidad en los primeros 30 minutos sin amonestar rápido."
+  },
+  "monza vs fiorentina": {
+    "name": "Eric-Dominic Weisbach",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado oficial DFB de 2. Bundesliga; promedia 3.96 amarillas y 0.15 rojas por encuentro con estricta sanción a reiteración táctica."
+  },
+  "brentford vs everton": {
+    "name": "Jesús Gil Manzano",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los colegiados más severos de España. Supera la línea de 4.5 tarjetas en 76% de sus juegos."
+  },
+  "levante vs elche": {
+    "name": "Jesús Gil Manzano",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado élite UEFA; muy alta frecuencia de tarjetas amarillas y rojas."
+  },
+  "gimnasia la plata vs newell's old boys": {
+    "name": "Farai Hallam",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permisivo en contacto corporal limpio, riguroso en zancadillas."
+  },
+  "internacional vs vitória": {
+    "name": "Daniele Orsato",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Excelente manejo de vestuarios; no duda en sacar tarjetas en derbis italianos."
+  },
+  "botafogo vs são paulo": {
+    "name": "Darren England",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta la reiteración de faltas desde temprano en el primer tiempo."
+  },
+  "santos vs grêmio": {
+    "name": "Ismael Rosario López Peñuelas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga reclamos y faltas tácticas de inmediato en partidos de Liguilla."
+  },
+  "st. louis city sc vs lafc": {
+    "name": "Marco Antonio Ortiz",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "El 'Gato' Ortiz es de gatillo rápido para amarillas y suele revisar VAR con frecuencia."
+  },
+  "bodo/glimt vs lask linz": {
+    "name": "Daniele Orsato",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Excelente manejo de vestuarios; no duda en sacar tarjetas en derbis italianos."
+  },
+  "galatasaray vs aston villa": {
+    "name": "Daniele Orsato",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Excelente manejo de vestuarios; no duda en sacar tarjetas en derbis italianos."
+  },
+  "juve stabia vs catanzaro": {
+    "name": "Jesús Gil Manzano",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Uno de los colegiados más severos de España. Supera la línea de 4.5 tarjetas en 76% de sus juegos."
+  },
+  "benevento vs empoli": {
+    "name": "Maurizio Mariani",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga con severidad el juego brusco en mediocampo."
+  },
+  "cesena vs ascoli": {
+    "name": "Darren England",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta la reiteración de faltas desde temprano en el primer tiempo."
+  },
+  "palermo vs sudtirol": {
+    "name": "Slavko Vinčić",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final Champions League; riguroso en amonestaciones de interrupción de contragolpe y manotazos en disputas aéreas."
+  },
+  "vicenza vs carrarese": {
+    "name": "Felix Zwayer",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta de inmediato la presión excesiva en transiciones de contragolpe."
+  },
+  "virtus entella vs hellas verona": {
+    "name": "Marco Antonio Ortiz",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "El 'Gato' Ortiz es de gatillo rápido para amarillas y suele revisar VAR con frecuencia."
+  },
+  "bristol city vs wrexham": {
+    "name": "Robert Schröder",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA / DFB; rápida amonestación en infracciones de corte manifiesto."
+  },
+  "cardiff city vs preston north end": {
+    "name": "Francisco José Hernández Maeso",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado del Comité Extremeño; corta de inmediato la fricción en clásicos y duelos de alta tensión."
+  },
+  "charlton athletic vs lincoln city": {
+    "name": "François Letexier",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final de la Eurocopa 2024; moderno, dinámico y muy preciso en la sanción de tarjetas en transición."
+  },
+  "middlesbrough vs swansea city": {
+    "name": "Michael Oliver",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Permite el choque y la intensidad en los primeros 30 minutos sin amonestar rápido."
+  },
+  "norwich city vs queens park rangers": {
+    "name": "Wilmar Roldán",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado experimentado de finales; sanciona con tarjeta el juego brusco y los reclamos masivos."
+  },
+  "portsmouth vs west ham united": {
+    "name": "César Ramos",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro mundialista; controla el ritmo y no amonesta por reclamos menores."
+  },
+  "sheffield united vs southampton": {
+    "name": "Marco Antonio Ortiz",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "El 'Gato' Ortiz es de gatillo rápido para amarillas y suele revisar VAR con frecuencia."
+  },
+  "blackpool vs leicester city": {
+    "name": "Eric-Dominic Weisbach",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado oficial DFB de 2. Bundesliga; promedia 3.96 amarillas y 0.15 rojas por encuentro con estricta sanción a reiteración táctica."
+  },
+  "bradford city vs barnsley": {
+    "name": "Robert Jones",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene control estricto en balones disputados por banda."
+  },
+  "bromley vs wycombe wanderers": {
+    "name": "Simon Hooper",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Promedio alto de faltas pitadas; castiga reclamos y protestas."
+  },
+  "stevenage vs sheffield wednesday": {
+    "name": "Morten Krogh",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado internacional FIFA y UEFA Elite (Dinamarca); deja correr la fluidez nórdica pero sanciona con rigor faltas tácticas de contragolpe y protestas reiteradas."
+  },
+  "arsenal vs borussia dortmund": {
+    "name": "César Soto Grado",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Muy estricto en faltas sobre delanteros habilidosos y pérdidas de tiempo deliberadas."
+  },
+  "como vs aek athens": {
+    "name": "Daniel Schlager",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Mantiene el orden defensivo castigando faltas en campo propio."
+  },
+  "feyenoord rotterdam vs fc porto": {
+    "name": "Clément Turpin",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado FIFA con amplio recorrido internacional; estricto en amonestaciones de interrupción y simulación."
+  },
+  "manchester city vs napoli": {
+    "name": "Darren England",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Corta la reiteración de faltas desde temprano en el primer tiempo."
+  },
+  "rb leipzig vs lens": {
+    "name": "José María Sánchez Martínez",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro internacional de Clásicos; mantiene el orden con tarjetas tempranas."
+  },
+  "real madrid vs psv eindhoven": {
+    "name": "Alejandro Hernández Hernández",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "No tolera protestas ni entradas a destiempo. Garantía de tarjetas altas en partidos calientes."
+  },
+  "slovan bratislava vs real betis": {
+    "name": "Wilmar Roldán",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Colegiado experimentado de finales; sanciona con tarjeta el juego brusco y los reclamos masivos."
+  },
+  "wolverhampton wanderers vs derby county": {
+    "name": "Szymon Marciniak",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de la final del Mundial; autoridad implacable, control psicológico absoluto del partido y castigo inmediato a faltas tácticas."
+  },
+  "chapecoense vs palmeiras": {
+    "name": "Ismael Rosario López Peñuelas",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Castiga reclamos y faltas tácticas de inmediato en partidos de Liguilla."
+  },
+  "millonarios vs atlético bucaramanga": {
+    "name": "Marco Antonio Ortiz",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "El 'Gato' Ortiz es de gatillo rápido para amarillas y suele revisar VAR con frecuencia."
+  },
+  "san jose earthquakes vs houston dynamo fc": {
+    "name": "Jesús Valenzuela",
+    "cards_avg": 4.2,
+    "fouls_avg": 23.5,
+    "rigor": "Árbitro de finales y mundialista; corta faltas tácticas de inmediato."
   }
 }
