@@ -583,3 +583,102 @@ def generate_target_options_pdf_bytes(target_res: Dict[str, Any], date_str: str 
 
     doc.build(story)
     return buf.getvalue()
+
+
+def generate_universal_parlay_pdf_bytes(title: str, subtitle: str, tickets: List[Dict[str, Any]], date_str: str) -> bytes:
+    """
+    Generador PDF universal para cualquier Boleto Parlay (Individual, Múltiple, SGP, Tradicional, NBA o NFL).
+    Cada elemento en `tickets` tiene:
+      - header: str (ej. "Opción #1: Parlay Balanceado | Cuota 203.08x | Cobro $10,154 MXN")
+      - summary_line: str (ej. "Inversión: $50.00 MXN | Ganancia Neta: +$10,104.00 MXN | Prob. Conjunta: 18.4%")
+      - legs: List[Dict] con llaves: time, league, match, pick, odds, prob, alt_text (opcional), route (opcional)
+    """
+    from reportlab.lib import colors
+    from reportlab.lib.pagesizes import letter, landscape
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+
+    buf = io.BytesIO()
+    doc = SimpleDocTemplate(
+        buf,
+        pagesize=landscape(letter),
+        leftMargin=22,
+        rightMargin=22,
+        topMargin=22,
+        bottomMargin=22,
+    )
+    styles = getSampleStyleSheet()
+    title_st = ParagraphStyle(
+        "UnivTitle",
+        parent=styles["Heading1"],
+        fontSize=14,
+        leading=17,
+        textColor=colors.HexColor("#0f172a"),
+        spaceAfter=4,
+    )
+    sub_st = ParagraphStyle(
+        "UnivSub",
+        parent=styles["Normal"],
+        fontSize=9.5,
+        leading=12,
+        textColor=colors.HexColor("#334155"),
+        spaceAfter=10,
+    )
+    opt_st = ParagraphStyle(
+        "UnivOptHdr",
+        parent=styles["Heading2"],
+        fontSize=11,
+        leading=14,
+        textColor=colors.HexColor("#065f46"),
+        spaceBefore=8,
+        spaceAfter=3,
+    )
+    cell_st = ParagraphStyle(
+        "UnivCell",
+        parent=styles["Normal"],
+        fontSize=8,
+        leading=10,
+        textColor=colors.HexColor("#0f172a"),
+    )
+
+    story = []
+    story.append(Paragraph(title, title_st))
+    story.append(Paragraph(f"Fecha Oficial: <b>{date_str}</b> &nbsp;|&nbsp; {subtitle}", sub_st))
+
+    for t in tickets:
+        story.append(Paragraph(t.get("header", "Boleto Parlay Oficial"), opt_st))
+        if t.get("summary_line"):
+            story.append(Paragraph(t["summary_line"], sub_st))
+
+        rows = [["#", "Hora / Liga", "Partido Oficial", "Selección Principal del Boleto", "Cuota / Prob.", "Opciones Alternativas / Ruta / Respaldo"]]
+        for idx, lg in enumerate(t.get("legs", []), 1):
+            odds_val = lg.get("odds", "")
+            odds_s = f"{odds_val:.2f}x" if isinstance(odds_val, (int, float)) else str(odds_val)
+            prob_val = lg.get("prob", "")
+            prob_s = f"{prob_val:.1f}%" if isinstance(prob_val, (int, float)) else str(prob_val)
+            extra_s = lg.get("alt_text") or lg.get("route") or lg.get("backing") or "Verificado ESPN / Opta"
+            rows.append([
+                str(idx),
+                Paragraph(f"{lg.get('time', '')}<br/><b>{lg.get('league', '')}</b>", cell_st),
+                Paragraph(f"<b>{lg.get('match', '')}</b>", cell_st),
+                Paragraph(f"<b>{lg.get('pick', '')}</b>", cell_st),
+                Paragraph(f"<b>{odds_s}</b><br/>({prob_s})", cell_st),
+                Paragraph(str(extra_s), cell_st),
+            ])
+        tbl = Table(rows, colWidths=[24, 95, 155, 200, 68, 195])
+        tbl.setStyle(TableStyle([
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0f172a")),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, 0), 8.5),
+            ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#cbd5e1")),
+            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f8fafc")]),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ("TOPPADDING", (0, 0), (-1, -1), 4),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+        ]))
+        story.append(tbl)
+        story.append(Spacer(1, 10))
+
+    doc.build(story)
+    return buf.getvalue()

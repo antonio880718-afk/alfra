@@ -2784,8 +2784,8 @@ def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
         except Exception:
             pass
 
-    # 3. TERCERA PRIORIDAD: Si no hay archivo local, sincronizar en tiempo real desde ESPN Scoreboard API (todas las ligas en paralelo)
-    if not all_matches and len(date_str) == 8:
+    # 3. TERCERA PRIORIDAD: Si no existe archivo local live_calendar_{date_str}.json, sincronizar SIEMPRE en tiempo real desde ESPN Scoreboard API (41 ligas en paralelo)
+    if not os.path.exists(cal_path) and len(date_str) == 8:
         try:
             from concurrent.futures import ThreadPoolExecutor
             from multi_league_engine import fetch_league_games_by_date, LEAGUES_CONFIG
@@ -2853,9 +2853,14 @@ def get_chronological_slots(date_str: str = None) -> Dict[str, Any]:
                     pass
                 return out_g
 
-            with ThreadPoolExecutor(max_workers=10) as ex:
+            existing_keys = {f"{m.get('home','').lower()}_{m.get('away','').lower()}" for m in all_matches}
+            with ThreadPoolExecutor(max_workers=12) as ex:
                 for res_list in ex.map(_fetch_one_cfg, LEAGUES_CONFIG):
-                    all_matches.extend(res_list)
+                    for rm in res_list:
+                        rk = f"{rm.get('home','').lower()}_{rm.get('away','').lower()}"
+                        if rk not in existing_keys:
+                            existing_keys.add(rk)
+                            all_matches.append(rm)
 
             if all_matches:
                 try:

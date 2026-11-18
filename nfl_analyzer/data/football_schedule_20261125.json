@@ -1,0 +1,120 @@
+[
+  {
+    "id": "401873079",
+    "league": "NFL",
+    "match": "Green Bay Packers @ Los Angeles Rams",
+    "home": "Los Angeles Rams",
+    "away": "Green Bay Packers",
+    "time_cdmx": "19:00",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "home_q1_score": null,
+    "away_q1_score": null,
+    "home_1h_score": null,
+    "away_1h_score": null,
+    "total_1h_points": null,
+    "spread_str": "LAR -3.5",
+    "over_under": 46.5,
+    "is_dome": false,
+    "venue": "SoFi Stadium",
+    "home_defense": {
+      "pass_def_rank": 17,
+      "pass_yds_allowed": 221.0,
+      "rush_def_rank": 18,
+      "rush_yds_allowed": 119.0,
+      "pts_allowed": 22.6,
+      "style": "Pass Rush Joven / Presión Interior"
+    },
+    "away_defense": {
+      "pass_def_rank": 14,
+      "pass_yds_allowed": 215.0,
+      "rush_def_rank": 12,
+      "rush_yds_allowed": 108.0,
+      "style": "Generadora de Balones Sueltos e Intercepciones"
+    },
+    "stars": [
+      {
+        "name": "Matthew Stafford",
+        "team": "Los Angeles Rams",
+        "pos": "QB",
+        "jersey": "9",
+        "pass_yds": 262.3,
+        "pass_tds": 1.9,
+        "rush_yds": 15.0,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Los Angeles Rams (262.3 YDS/g, 1.9 TD/g)"
+      },
+      {
+        "name": "Kyren Williams",
+        "team": "Los Angeles Rams",
+        "pos": "RB",
+        "jersey": "23",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 61.6,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 61.6,
+        "role": "RB Líder Los Angeles Rams (61.6 YDS/g)"
+      },
+      {
+        "name": "Tyler Higbee",
+        "team": "Los Angeles Rams",
+        "pos": "TE",
+        "jersey": "89",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 45.0,
+        "receptions": 3.2,
+        "anytime_td_pct": 39.6,
+        "role": "WR/TE Líder Los Angeles Rams (30.4 YDS/g, 3.1 REC/g)"
+      },
+      {
+        "name": "Jordan Love",
+        "team": "Green Bay Packers",
+        "pos": "QB",
+        "jersey": "10",
+        "pass_yds": 283.8,
+        "pass_tds": 2.0,
+        "rush_yds": 15.0,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Green Bay Packers (283.8 YDS/g, 2.0 TD/g)"
+      },
+      {
+        "name": "Kaleb Johnson",
+        "team": "Green Bay Packers",
+        "pos": "RB",
+        "jersey": "26",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 42.0,
+        "role": "RB Líder Green Bay Packers (21.4 YDS/g)"
+      },
+      {
+        "name": "Christian Watson",
+        "team": "Green Bay Packers",
+        "pos": "WR",
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 91.6,
+        "receptions": 5.2,
+        "anytime_td_pct": 63.6,
+        "role": "WR/TE Líder Green Bay Packers (91.6 YDS/g, 5.2 REC/g)"
+      }
+    ],
+    "boxscore_athletes": {}
+  }
+]

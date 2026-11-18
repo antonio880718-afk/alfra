@@ -1,0 +1,121 @@
+[
+  {
+    "id": "401873094",
+    "league": "NFL",
+    "match": "Carolina Panthers @ Tampa Bay Buccaneers",
+    "home": "Tampa Bay Buccaneers",
+    "away": "Carolina Panthers",
+    "time_cdmx": "19:15",
+    "status": "PROGRAMADO",
+    "score": "vs",
+    "home_score": 0,
+    "away_score": 0,
+    "total_points": 0,
+    "home_q1_score": null,
+    "away_q1_score": null,
+    "home_1h_score": null,
+    "away_1h_score": null,
+    "total_1h_points": null,
+    "spread_str": "TB -2.5",
+    "over_under": 43.5,
+    "is_dome": false,
+    "venue": "Raymond James Stadium",
+    "home_defense": {
+      "pass_def_rank": 29,
+      "pass_yds_allowed": 260.0,
+      "rush_def_rank": 7,
+      "rush_yds_allowed": 95.0,
+      "pts_allowed": 24.8,
+      "style": "Blitz Frecuente / Expuesta en Pases Profundos"
+    },
+    "away_defense": {
+      "pass_def_rank": 32,
+      "pass_yds_allowed": 272.0,
+      "rush_def_rank": 32,
+      "rush_yds_allowed": 152.0,
+      "pts_allowed": 29.8,
+      "style": "Defensa Más Permisiva de la Liga"
+    },
+    "stars": [
+      {
+        "name": "Baker Mayfield",
+        "team": "Tampa Bay Buccaneers",
+        "pos": "QB",
+        "jersey": "6",
+        "pass_yds": 155.0,
+        "pass_tds": 1.1,
+        "rush_yds": 15.0,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Tampa Bay Buccaneers (102.4 YDS/g, 0.3 TD/g)"
+      },
+      {
+        "name": "Bucky Irving",
+        "team": "Tampa Bay Buccaneers",
+        "pos": "RB",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 91.7,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 69.9,
+        "role": "RB Líder Tampa Bay Buccaneers (91.7 YDS/g)"
+      },
+      {
+        "name": "Emeka Egbuka",
+        "team": "Tampa Bay Buccaneers",
+        "pos": "WR",
+        "jersey": "2",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 45.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 40.6,
+        "role": "WR/TE Líder Tampa Bay Buccaneers (30.9 YDS/g, 3.4 REC/g)"
+      },
+      {
+        "name": "Bryce Young",
+        "team": "Carolina Panthers",
+        "pos": "QB",
+        "jersey": "9",
+        "pass_yds": 266.3,
+        "pass_tds": 1.78,
+        "rush_yds": 15.0,
+        "rec_yds": 0.0,
+        "receptions": 0.0,
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Carolina Panthers (266.3 YDS/g, 1.8 TD/g)"
+      },
+      {
+        "name": "Chuba Hubbard",
+        "team": "Carolina Panthers",
+        "pos": "RB",
+        "jersey": "30",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 79.0,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 69.9,
+        "role": "RB Líder Carolina Panthers (79.0 YDS/g)"
+      },
+      {
+        "name": "Tetairoa McMillan",
+        "team": "Carolina Panthers",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 73.3,
+        "receptions": 5.4,
+        "anytime_td_pct": 45.8,
+        "role": "WR/TE Líder Carolina Panthers (73.3 YDS/g, 5.4 REC/g)"
+      }
+    ],
+    "boxscore_athletes": {}
+  }
+]

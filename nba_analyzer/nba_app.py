@@ -698,6 +698,44 @@ with t3:
                     "Ganancia Neta": f"+${_ret6 - _nb_stake:,.2f} MXN",
                     "% Prob. Conjunta": f"{_c6['prob']:.2f}%",
                 })
+            try:
+                import os as _os_p, sys as _sys_p
+                _sa_dir = _os_p.path.abspath(_os_p.path.join(_os_p.path.dirname(__file__), "..", "sports_analyzer"))
+                if _sa_dir not in _sys_p.path:
+                    _sys_p.path.insert(0, _sa_dir)
+                from custom_target_parlay_engine import generate_universal_parlay_pdf_bytes as _gen_u_pdf
+                _all6_tickets = []
+                for _i6, _c6 in enumerate(_nb_top6, 1):
+                    _ret6 = round(_nb_stake * _c6["odds"], 2)
+                    _all6_tickets.append({
+                        "header": f"Opción #{_i6}: Parlay NBA & NCAAB ({len(_c6['legs'])} patas) | Cuota {_c6['odds']:.2f}x | Cobro ${_ret6:,.2f} MXN",
+                        "summary_line": f"Inversión: ${_nb_stake:,.2f} MXN | Ganancia Neta: +${_ret6 - _nb_stake:,.2f} MXN | Probabilidad Conjunta: {_c6['prob']:.2f}%",
+                        "legs": [{
+                            "time": _lg_g.get("time_cdmx", ""),
+                            "league": _lg_g.get("league", ""),
+                            "match": _lg_g.get("match", ""),
+                            "pick": _lg_c.get("pick", ""),
+                            "odds": _lg_c.get("odds", ""),
+                            "prob": _lg_c.get("prob_num", 80.0),
+                            "alt_text": " | ".join([f"{a['pick']} ({a['prob_num']:.1f}% {a['odds']})" for a in _lg_alts])
+                        } for (_lg_g, _lg_c, _lg_alts) in _c6["legs"]]
+                    })
+                _all6_pdf_b = _gen_u_pdf(
+                    title=f"ALFRA SPORTS - 6 OPCIONES DE PARLAY NBA & NCAAB PARA TU OBJETIVO (${_nb_stake:,.0f} -> +${_nb_profit:,.0f} MXN)",
+                    subtitle=f"Cuota Objetivo Requerida: {_nb_todds:.2f}x | 6 Boletos Probables Verificados",
+                    tickets=_all6_tickets,
+                    date_str=date_str,
+                )
+                st.download_button(
+                    label=f"🖨️ DESCARGAR / IMPRIMIR PDF CON LAS {len(_nb_top6)} OPCIONES DE PARLAY NBA & NCAAB (${_nb_stake:,.0f} ➔ +${_nb_profit:,.0f} MXN)",
+                    data=_all6_pdf_b,
+                    file_name=f"Opciones_Parlay_NBA_{int(_nb_stake)}_a_{int(_nb_profit)}_{date_str}.pdf",
+                    mime="application/pdf",
+                    use_container_width=True,
+                    key=f"dl_all6_NBA_{date_str}_{int(_nb_stake)}_{int(_nb_profit)}"
+                )
+            except Exception:
+                pass
             st.dataframe(pd.DataFrame(_nb_sum), use_container_width=True, hide_index=True)
             for _i6, _c6 in enumerate(_nb_top6, 1):
                 _ret6 = round(_nb_stake * _c6["odds"], 2)
@@ -705,8 +743,60 @@ with t3:
                     for _li, (_lg_g, _lg_c, _lg_alts) in enumerate(_c6["legs"], 1):
                         _alt_s = " • ".join([f"{a['pick']} ({a['prob_num']:.1f}% {a['odds']})" for a in _lg_alts])
                         st.markdown(f"**#{_li} [{_lg_g.get('time_cdmx')} hs | {_lg_g.get('league')}] {_lg_g.get('match')}** ➔ 🎯 **{_lg_c.get('pick')}** (`{_lg_c.get('odds')}` | `{_lg_c.get('prob_num'):.1f}%`)  \n🔄 *Otras opciones probables del partido:* {_alt_s}")
+                    try:
+                        _one_pdf_b = _gen_u_pdf(
+                            title=f"ALFRA SPORTS - BOLETO PARLAY NBA & NCAAB (OPCIÓN #{_i6} - {_c6['odds']:.2f}x)",
+                            subtitle=f"Inversión: ${_nb_stake:,.2f} MXN | Cobro Total: ${_ret6:,.2f} MXN (+${_ret6 - _nb_stake:,.2f} MXN netos)",
+                            tickets=[_all6_tickets[_i6 - 1]],
+                            date_str=date_str,
+                        )
+                        st.download_button(
+                            label=f"🖨️ DESCARGAR / IMPRIMIR SOLO ESTE BOLETO (OPCIÓN #{_i6} - {_c6['odds']:.2f}x) EN PDF",
+                            data=_one_pdf_b,
+                            file_name=f"Boleto_NBA_Opcion_{_i6}_{date_str}.pdf",
+                            mime="application/pdf",
+                            use_container_width=True,
+                            key=f"dl_one_NBA_{_i6}_{date_str}_{int(_nb_stake)}_{int(_nb_profit)}"
+                        )
+                    except Exception:
+                        pass
     st.markdown("---")
     st.markdown(f"#### 🎟️ Boleto Parlay Oficial NBA & NCAAB — Cuota Combinada: **{parlay_odds:.2f}x**")
+    try:
+        import os as _os_p2, sys as _sys_p2
+        _sa_dir2 = _os_p2.path.abspath(_os_p2.path.join(_os_p2.path.dirname(__file__), "..", "sports_analyzer"))
+        if _sa_dir2 not in _sys_p2.path:
+            _sys_p2.path.insert(0, _sa_dir2)
+        from custom_target_parlay_engine import generate_universal_parlay_pdf_bytes as _gen_u_pdf2
+        if parlay_picks:
+            _off_pdf_b = _gen_u_pdf2(
+                title=f"ALFRA SPORTS - BOLETO PARLAY OFICIAL NBA & NCAAB ({parlay_odds:.2f}x)",
+                subtitle=f"Boleto Maestro Oficial de la Jornada ({len(parlay_picks)} Selecciones Verificadas)",
+                tickets=[{
+                    "header": f"Boleto Parlay Oficial NBA & NCAAB — Cuota Combinada: {parlay_odds:.2f}x",
+                    "summary_line": f"Total Selecciones: {len(parlay_picks)} | Datos Oficiales ESPN & Cruce Defensivo",
+                    "legs": [{
+                        "time": it.get("time", ""),
+                        "league": it.get("league", ""),
+                        "match": it.get("match", ""),
+                        "pick": it.get("pick", ""),
+                        "odds": it.get("odds_str", ""),
+                        "prob": it.get("prob", 80.0),
+                        "alt_text": f"Prom: {it.get('season_avg', '')} | Colchón: {it.get('buffer_pct', '')} | {it.get('defense_matchup', '')}"
+                    } for it in parlay_picks]
+                }],
+                date_str=date_str,
+            )
+            st.download_button(
+                label=f"🖨️ DESCARGAR / IMPRIMIR BOLETO PARLAY OFICIAL NBA & NCAAB ({parlay_odds:.2f}x) EN PDF",
+                data=_off_pdf_b,
+                file_name=f"Boleto_Parlay_Oficial_NBA_{date_str}.pdf",
+                mime="application/pdf",
+                use_container_width=True,
+                key=f"dl_official_parlay_NBA_{date_str}"
+            )
+    except Exception:
+        pass
     p_rows = []
     for item in parlay_picks:
         aud_res = audit_individual_nba_pick(item, date_str=date_str)

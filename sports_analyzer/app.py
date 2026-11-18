@@ -1828,8 +1828,38 @@ with t_sgp:
         slip_text += f"Apuesta $500 MXN -> Pago Estimado: ${payout_500} MXN\n"
         slip_text += f"=================================================="
 
-        st.markdown("#### 📋 Texto Rápido para Ingresar en tu Casa de Apuestas:")
+        st.markdown("#### 📋 Texto Rápido y Exportación en PDF de tu Boleto Crear Apuesta:")
         st.code(slip_text, language="text")
+        try:
+            from custom_target_parlay_engine import generate_universal_parlay_pdf_bytes as _gen_u_pdf
+            _sgp_pdf_b = _gen_u_pdf(
+                title=f"ALFRA SPORTS - BOLETO CREAR APUESTA (SGP): {h} vs {a}",
+                subtitle=f"Liga: {league_sel} ({m_sel['time']} hs CDMX) | Cuota Combinada: {compounded_odds}x | Pago $50 -> ${payout_50} MXN",
+                tickets=[{
+                    "header": f"Crear Apuesta ({len(chosen_objects)} Variables) - {h} vs {a} ({compounded_odds}x)",
+                    "summary_line": f"Apuesta $50 MXN -> Cobro ${payout_50} MXN | Apuesta $500 MXN -> Cobro ${payout_500} MXN",
+                    "legs": [{
+                        "time": m_sel["time"],
+                        "league": league_sel,
+                        "match": f"{h} vs {a}",
+                        "pick": o["pick"],
+                        "odds": o["odds"],
+                        "prob": o["hit_rate"],
+                        "alt_text": o.get("synergy", "")
+                    } for o in chosen_objects]
+                }],
+                date_str=date_str,
+            )
+            st.download_button(
+                label=f"🖨️ DESCARGAR / IMPRIMIR ESTE BOLETO CREAR APUESTA ({compounded_odds}x) EN PDF",
+                data=_sgp_pdf_b,
+                file_name=f"Boleto_SGP_{h.replace(' ', '_')}_vs_{a.replace(' ', '_')}_{date_str}.pdf",
+                mime="application/pdf",
+                use_container_width=True,
+                key=f"dl_sgp_pdf_{date_str}_{h}_{a}_{len(chosen_objects)}"
+            )
+        except Exception as _e_sgp:
+            st.caption(f"PDF SGP info: {_e_sgp}")
 
         render_html(f"""
         <div style="background-color: #080c14; border: 1px solid #1e293b; padding: 14px 18px; border-radius: 8px; margin-top: 14px;">
@@ -2038,10 +2068,69 @@ with t_parlay:
                     slip_txt += f"   Ruta: {leg_s['bookmaker_tree']}\n"
                 slip_txt += "=================================================="
                 st.code(slip_txt, language="text")
+                try:
+                    _single_res = dict(target_res)
+                    _single_res["options"] = [opt]
+                    _single_pdf_b = _ctpe.generate_target_options_pdf_bytes(_single_res, date_str)
+                    st.download_button(
+                        label=f"🖨️ DESCARGAR / IMPRIMIR SOLO ESTE BOLETO (OPCIÓN #{opt['option_id']} - {opt_odds:.2f}x) EN PDF",
+                        data=_single_pdf_b,
+                        file_name=f"Boleto_Opcion_{opt['option_id']}_{int(u_stake)}_a_{int(u_profit)}_{date_str}.pdf",
+                        mime="application/pdf",
+                        use_container_width=True,
+                        key=f"dl_single_opt_pdf_{date_str}_{opt['option_id']}_{int(u_stake)}_{int(u_profit)}"
+                    )
+                except Exception:
+                    pass
 
     st.markdown("---")
     st.markdown(f"### 🎟️ Boleto Parlay Tradicional {parlay_odds_val}x ({selected_date.strftime('%d/%m')})")
     st.caption("Auditoría de las 11 selecciones del parlay de jornada corrida con linaje a CSVs oficiales:")
+    try:
+        from custom_target_parlay_engine import generate_universal_parlay_pdf_bytes as _gen_u_pdf
+        _trad_pdf_b = _gen_u_pdf(
+            title=f"ALFRA SPORTS - BOLETOS PARLAY MAESTROS DEL DIA ({selected_date.strftime('%d/%m/%Y')})",
+            subtitle=f"Boleto Parlay Estelar ({parlay_odds_val}x) + Boleto Ultra-Seguro Calibrado ({safe_11x_odds_val}x)",
+            tickets=[
+                {
+                    "header": f"Boleto #1: Parlay Tradicional Estelar ({parlay_odds_val}x) - {len(TICKET_100X)} Selecciones",
+                    "summary_line": f"Inversión base sugerida: ${user_stake:,.2f} MXN | Retorno estimado: ${user_stake * float(parlay_odds_val):,.2f} MXN",
+                    "legs": [{
+                        "time": it.get("time", ""),
+                        "league": it.get("league", ""),
+                        "match": it.get("match", ""),
+                        "pick": it.get("pick", ""),
+                        "odds": it.get("odds", 1.5),
+                        "prob": it.get("prob", 82.0),
+                        "alt_text": f"Ruta: {it.get('bookmaker_tree', '')} | {it.get('stat_backing', '')}"
+                    } for it in TICKET_100X]
+                },
+                {
+                    "header": f"Boleto #2: Parlay Ultra-Seguro Calibrado ({safe_11x_odds_val}x) - {len(TICKET_11X)} Selecciones",
+                    "summary_line": f"Inversión base sugerida: ${user_stake:,.2f} MXN | Retorno estimado: ${user_stake * float(safe_11x_odds_val):,.2f} MXN",
+                    "legs": [{
+                        "time": it.get("time", ""),
+                        "league": it.get("league", ""),
+                        "match": it.get("match", ""),
+                        "pick": it.get("pick", ""),
+                        "odds": it.get("odds", 1.25),
+                        "prob": it.get("prob", 88.0),
+                        "alt_text": f"Ruta: {it.get('bookmaker_tree', '')} | {it.get('stat_backing', '')}"
+                    } for it in TICKET_11X]
+                }
+            ],
+            date_str=date_str,
+        )
+        st.download_button(
+            label=f"🖨️ DESCARGAR / IMPRIMIR BOLETOS PARLAY MAESTROS ({parlay_odds_val}x y {safe_11x_odds_val}x) EN PDF",
+            data=_trad_pdf_b,
+            file_name=f"Boletos_Parlay_Maestros_Futbol_{date_str}.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            key=f"dl_trad_parlay_pdf_{date_str}"
+        )
+    except Exception:
+        pass
 
     for item in TICKET_100X:
         m_parts = item['match'].split(' vs ')
