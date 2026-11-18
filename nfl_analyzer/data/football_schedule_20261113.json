@@ -42,13 +42,13 @@
         "team": "Pittsburgh Panthers",
         "pos": "QB",
         "jersey": "6",
-        "pass_yds": 155.0,
+        "pass_yds": 175.0,
         "pass_tds": 1.56,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Pittsburgh Panthers (144.9 YDS/g, 1.6 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Pittsburgh Panthers (175.0 YDS/J)"
       },
       {
         "name": "Damon Ferguson Jr.",
@@ -61,7 +61,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 64.8,
-        "role": "RB Líder Pittsburgh Panthers (73.6 YDS/g)"
+        "role": "Corredor Titular Pittsburgh Panthers (73.6 YDS/J)"
       },
       {
         "name": "Cataurus Hicks",
@@ -74,20 +74,33 @@
         "rec_yds": 77.6,
         "receptions": 3.8,
         "anytime_td_pct": 62.2,
-        "role": "WR/TE Líder Pittsburgh Panthers (77.6 YDS/g, 3.8 REC/g)"
+        "role": "Receptor Titular Pittsburgh Panthers (77.6 YDS/J)"
       },
       {
         "name": "Ashton Daniels",
         "team": "Florida State Seminoles",
         "pos": "QB",
         "jersey": "14",
-        "pass_yds": 238.4,
-        "pass_tds": 1.56,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Florida State Seminoles (238.4 YDS/g, 1.6 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Florida State Seminoles (242.0 YDS/J)"
+      },
+      {
+        "name": "Amari Thomas",
+        "team": "Florida State Seminoles",
+        "pos": "RB",
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Florida State Seminoles (74.0 YDS/J)"
       },
       {
         "name": "Ousmane Kromah",
@@ -100,7 +113,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 59.8,
-        "role": "RB Líder Florida State Seminoles (67.7 YDS/g)"
+        "role": "Corredor Titular Florida State Seminoles (67.7 YDS/J)"
       },
       {
         "name": "Micahi Danzy",
@@ -110,10 +123,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 54.1,
-        "receptions": 3.3,
-        "anytime_td_pct": 45.8,
-        "role": "WR/TE Líder Florida State Seminoles (54.1 YDS/g, 3.3 REC/g)"
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Florida State Seminoles (68.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -161,13 +174,13 @@
         "team": "UCLA Bruins",
         "pos": "QB",
         "jersey": "14",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder UCLA Bruins (109.6 YDS/g, 0.7 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular UCLA Bruins (242.0 YDS/J)"
       },
       {
         "name": "Wayne Knight",
@@ -177,10 +190,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 87.7,
-        "rec_yds": 14.0,
+        "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder UCLA Bruins (87.7 YDS/g)"
+        "role": "Corredor Titular UCLA Bruins (87.7 YDS/J)"
+      },
+      {
+        "name": "Aidan Mizell",
+        "team": "UCLA Bruins",
+        "pos": "WR",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular UCLA Bruins (68.0 YDS/J)"
       },
       {
         "name": "Semaj Morgan",
@@ -190,10 +216,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 52.1,
+        "rec_yds": 52.5,
         "receptions": 4.1,
-        "anytime_td_pct": 40.6,
-        "role": "WR/TE Líder UCLA Bruins (52.1 YDS/g, 4.1 REC/g)"
+        "anytime_td_pct": 44.4,
+        "role": "Receptor Titular UCLA Bruins (52.5 YDS/J)"
       },
       {
         "name": "Katin Houser",
@@ -201,12 +227,12 @@
         "pos": "QB",
         "jersey": "4",
         "pass_yds": 217.2,
-        "pass_tds": 1.78,
+        "pass_tds": 1.8,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Illinois Fighting Illini (217.2 YDS/g, 1.8 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Illinois Fighting Illini (217.2 YDS/J)"
       },
       {
         "name": "Aidan Laughery",
@@ -219,7 +245,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 44.1,
-        "role": "RB Líder Illinois Fighting Illini (68.3 YDS/g)"
+        "role": "Corredor Titular Illinois Fighting Illini (68.3 YDS/J)"
       },
       {
         "name": "Collin Dixon",
@@ -232,7 +258,7 @@
         "rec_yds": 101.1,
         "receptions": 7.6,
         "anytime_td_pct": 74.0,
-        "role": "WR/TE Líder Illinois Fighting Illini (101.1 YDS/g, 7.6 REC/g)"
+        "role": "Receptor Titular Illinois Fighting Illini (101.1 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -280,13 +306,26 @@
         "team": "Colorado Buffaloes",
         "pos": "QB",
         "jersey": "16",
-        "pass_yds": 156.9,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Colorado Buffaloes (156.9 YDS/g, 0.9 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Colorado Buffaloes (242.0 YDS/J)"
+      },
+      {
+        "name": "Richard Young",
+        "team": "Colorado Buffaloes",
+        "pos": "RB",
+        "jersey": "9",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Colorado Buffaloes (74.0 YDS/J)"
       },
       {
         "name": "JaQuail Smith",
@@ -298,8 +337,8 @@
         "rush_yds": 48.0,
         "rec_yds": 14.0,
         "receptions": 1.8,
-        "anytime_td_pct": 42.0,
-        "role": "RB Líder Colorado Buffaloes (42.7 YDS/g)"
+        "anytime_td_pct": 43.2,
+        "role": "Corredor Titular Colorado Buffaloes (48.0 YDS/J)"
       },
       {
         "name": "Joseph Williams",
@@ -311,21 +350,34 @@
         "rush_yds": 0.0,
         "rec_yds": 94.8,
         "receptions": 6.4,
-        "anytime_td_pct": 62.2,
-        "role": "WR/TE Líder Colorado Buffaloes (94.8 YDS/g, 6.4 REC/g)"
+        "anytime_td_pct": 63.6,
+        "role": "Receptor Titular Colorado Buffaloes (94.8 YDS/J)"
       },
       {
         "name": "Conner Weigman",
         "team": "Houston Cougars",
         "pos": "QB",
         "jersey": "1",
-        "pass_yds": 253.3,
-        "pass_tds": 2.44,
-        "rush_yds": 15.0,
+        "pass_yds": 255.2,
+        "pass_tds": 2.5,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Houston Cougars (253.3 YDS/g, 2.4 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Houston Cougars (255.2 YDS/J)"
+      },
+      {
+        "name": "Re'Shaun Sanford II",
+        "team": "Houston Cougars",
+        "pos": "RB",
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Houston Cougars (74.0 YDS/J)"
       },
       {
         "name": "Makhi Hughes",
@@ -334,11 +386,11 @@
         "jersey": "21",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 67.3,
+        "rush_yds": 71.2,
         "rec_yds": 14.0,
         "receptions": 1.8,
-        "anytime_td_pct": 54.2,
-        "role": "RB Líder Houston Cougars (67.3 YDS/g)"
+        "anytime_td_pct": 57.0,
+        "role": "Corredor Titular Houston Cougars (71.2 YDS/J)"
       },
       {
         "name": "Amare Thomas",
@@ -349,9 +401,9 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 77.6,
-        "receptions": 5.2,
-        "anytime_td_pct": 72.7,
-        "role": "WR/TE Líder Houston Cougars (77.6 YDS/g, 5.2 REC/g)"
+        "receptions": 5.3,
+        "anytime_td_pct": 73.2,
+        "role": "Receptor Titular Houston Cougars (77.6 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

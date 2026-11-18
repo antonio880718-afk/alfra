@@ -222,6 +222,8 @@ def sync_nba_date_from_espn(date_str: str) -> list:
 
         h_team = h.get("team", {}).get("displayName", "Home Team")
         a_team = a.get("team", {}).get("displayName", "Away Team")
+        if "TBD" in h_team.upper() or "TBD" in a_team.upper():
+            continue
 
         h_score = int(_to_float(h.get("score", 0), 0.0)) if h.get("score") else 0
         a_score = int(_to_float(a.get("score", 0), 0.0)) if a.get("score") else 0
@@ -257,9 +259,18 @@ def sync_nba_date_from_espn(date_str: str) -> list:
         stars = _extract_scoreboard_bball_stars(h, h_team) + _extract_scoreboard_bball_stars(a, a_team)
         try:
             from nba_data_api import NBA_DEFAULT_STARS
-            for def_s in list(NBA_DEFAULT_STARS.get(h_team, [])) + list(NBA_DEFAULT_STARS.get(a_team, [])):
-                if not any(s["name"].lower() == def_s["name"].lower() for s in stars):
-                    stars.append(dict(def_s))
+            for _tm_k in (h_team, a_team):
+                for def_s in list(NBA_DEFAULT_STARS.get(_tm_k, [])):
+                    _existing = next((s for s in stars if s["name"].lower() == def_s["name"].lower()), None)
+                    if _existing:
+                        _existing["team"] = _tm_k
+                        if float(_existing.get("pts", 0)) in (0.0, 12.5) and float(def_s.get("pts", 0)) > 12.5:
+                            _existing["pts"] = def_s["pts"]
+                            _existing["pra"] = round(_existing["pts"] + float(_existing.get("reb", 4.0)) + float(_existing.get("ast", 3.0)), 1)
+                    else:
+                        _sc = dict(def_s)
+                        _sc["team"] = _tm_k
+                        stars.append(_sc)
         except Exception:
             pass
 

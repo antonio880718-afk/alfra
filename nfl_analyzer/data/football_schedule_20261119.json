@@ -38,17 +38,17 @@
     },
     "stars": [
       {
-        "name": "Ajani Sheppard",
+        "name": "Jaxon Smolik",
         "team": "Temple Owls",
         "pos": "QB",
-        "jersey": "13",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Temple Owls (133.0 YDS/g, 0.9 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Temple Owls (242.0 YDS/J)"
       },
       {
         "name": "Keveun Mason",
@@ -57,37 +57,76 @@
         "jersey": "26",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 65.3,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 47.8,
-        "role": "RB Líder Temple Owls (65.3 YDS/g)"
+        "rush_yds": 70.8,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Temple Owls (70.8 YDS/J)"
       },
       {
-        "name": "Colin Chase",
+        "name": "Jayce Freeman",
         "team": "Temple Owls",
         "pos": "WR",
-        "jersey": "1",
+        "jersey": "10",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.2,
-        "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Temple Owls (39.5 YDS/g, 2.6 REC/g)"
+        "rec_yds": 55.1,
+        "receptions": 4.8,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Temple Owls (55.1 YDS/J)"
+      },
+      {
+        "name": "Joey Schlaffer",
+        "team": "Temple Owls",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Temple Owls (46.0 YDS/J)"
       },
       {
         "name": "Jacurri Brown",
         "team": "Rice Owls",
         "pos": "QB",
         "jersey": "11",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 69.1,
-        "rec_yds": 0.0,
+        "rec_yds": 68.0,
         "receptions": 0.0,
         "anytime_td_pct": 57.0,
-        "role": "QB Líder Rice Owls (47.8 YDS/g, 0.3 TD/g)"
+        "role": "QB Titular Rice Owls (175.0 YDS/J)"
+      },
+      {
+        "name": "D'Andre Hardeman Jr.",
+        "team": "Rice Owls",
+        "pos": "RB",
+        "jersey": "28",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 65.6,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Rice Owls (65.6 YDS/J)"
+      },
+      {
+        "name": "Gael Ochoa",
+        "team": "Rice Owls",
+        "pos": "RB",
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 59.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Rice Owls (59.0 YDS/J)"
       },
       {
         "name": "Jordan Clark",
@@ -98,9 +137,9 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.2,
+        "receptions": 3.4,
         "anytime_td_pct": 38.0,
-        "role": "WR/TE Líder Rice Owls (25.7 YDS/g, 2.0 REC/g)"
+        "role": "Receptor Titular Rice Owls (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -147,13 +186,26 @@
         "team": "Houston Texans",
         "pos": "QB",
         "jersey": "7",
-        "pass_yds": 273.6,
-        "pass_tds": 2.11,
-        "rush_yds": 15.0,
+        "pass_yds": 323.8,
+        "pass_tds": 4.1,
+        "rush_yds": 35.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Houston Texans (273.6 YDS/g, 2.1 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Houston Texans (323.8 YDS/J)"
+      },
+      {
+        "name": "Woody Marks",
+        "team": "Houston Texans",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 60.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Houston Texans (60.0 YDS/J)"
       },
       {
         "name": "David Montgomery",
@@ -166,33 +218,46 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 44.1,
-        "role": "RB Líder Houston Texans (15.3 YDS/g)"
+        "role": "Corredor Titular Houston Texans (48.0 YDS/J)"
       },
       {
-        "name": "Nico Collins",
+        "name": "Kayshon Boutte",
         "team": "Houston Texans",
         "pos": "WR",
-        "jersey": "12",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 53.1,
-        "receptions": 4.1,
-        "anytime_td_pct": 56.9,
-        "role": "WR/TE Líder Houston Texans (53.1 YDS/g, 4.1 REC/g)"
+        "rec_yds": 90.9,
+        "receptions": 7.9,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Houston Texans (90.9 YDS/J)"
+      },
+      {
+        "name": "Tank Dell",
+        "team": "Houston Texans",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 80.0,
+        "receptions": 7.0,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Houston Texans (80.0 YDS/J)"
       },
       {
         "name": "Daniel Jones",
         "team": "Indianapolis Colts",
         "pos": "QB",
         "jersey": "17",
-        "pass_yds": 183.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Indianapolis Colts (183.0 YDS/g, 0.7 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Indianapolis Colts (175.0 YDS/J)"
       },
       {
         "name": "Jonathan Taylor",
@@ -201,24 +266,50 @@
         "jersey": "28",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 73.9,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 70.6,
+        "rec_yds": 35.0,
+        "receptions": 4.2,
         "anytime_td_pct": 70.8,
-        "role": "RB Líder Indianapolis Colts (73.9 YDS/g)"
+        "role": "Corredor Titular Indianapolis Colts (70.6 YDS/J)"
       },
       {
-        "name": "Tyler Warren",
+        "name": "Seth McGowan",
         "team": "Indianapolis Colts",
-        "pos": "TE",
-        "jersey": "84",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 63.9,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Indianapolis Colts (63.9 YDS/J)"
+      },
+      {
+        "name": "Keenan Allen",
+        "team": "Indianapolis Colts",
+        "pos": "WR",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
+        "rec_yds": 46.0,
         "receptions": 4.0,
-        "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Indianapolis Colts (27.6 YDS/g, 4.0 REC/g)"
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Indianapolis Colts (46.0 YDS/J)"
+      },
+      {
+        "name": "Josh Downs",
+        "team": "Indianapolis Colts",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Indianapolis Colts (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

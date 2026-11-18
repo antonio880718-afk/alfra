@@ -41,13 +41,13 @@
         "team": "Detroit Lions",
         "pos": "QB",
         "jersey": "16",
-        "pass_yds": 270.8,
-        "pass_tds": 2.0,
+        "pass_yds": 258.8,
+        "pass_tds": 1.8,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Detroit Lions (270.8 YDS/g, 2.0 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Detroit Lions (258.8 YDS/J)"
       },
       {
         "name": "Jahmyr Gibbs",
@@ -56,11 +56,24 @@
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 111.1,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 113.5,
+        "rec_yds": 49.5,
+        "receptions": 3.5,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder Detroit Lions (111.1 YDS/g)"
+        "role": "Corredor Titular Detroit Lions (113.5 YDS/J)"
+      },
+      {
+        "name": "Sione Vaki",
+        "team": "Detroit Lions",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 35.0,
+        "receptions": 2.5,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Detroit Lions (48.0 YDS/J)"
       },
       {
         "name": "Amon-Ra St. Brown",
@@ -70,23 +83,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 83.9,
-        "receptions": 7.2,
+        "rec_yds": 92.0,
+        "receptions": 8.0,
         "anytime_td_pct": 67.4,
-        "role": "WR/TE Líder Detroit Lions (83.9 YDS/g, 7.2 REC/g)"
+        "role": "Receptor Titular Detroit Lions (92.0 YDS/J)"
+      },
+      {
+        "name": "Jameson Williams",
+        "team": "Detroit Lions",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 44.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Detroit Lions (44.0 YDS/J)"
       },
       {
         "name": "Caleb Williams",
         "team": "Chicago Bears",
         "pos": "QB",
         "jersey": "18",
-        "pass_yds": 171.8,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 279.0,
+        "pass_tds": 2.0,
+        "rush_yds": 35.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Chicago Bears (171.8 YDS/g, 0.9 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Chicago Bears (279.0 YDS/J)"
       },
       {
         "name": "D'Andre Swift",
@@ -95,11 +121,24 @@
         "jersey": "4",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 64.0,
+        "rush_yds": 52.5,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder Chicago Bears (64.0 YDS/g)"
+        "role": "Corredor Titular Chicago Bears (52.5 YDS/J)"
+      },
+      {
+        "name": "Salvon Ahmed",
+        "team": "Chicago Bears",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Chicago Bears (48.0 YDS/J)"
       },
       {
         "name": "Luther Burden III",
@@ -109,10 +148,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 71.6,
-        "receptions": 5.4,
-        "anytime_td_pct": 51.1,
-        "role": "WR/TE Líder Chicago Bears (71.6 YDS/g, 5.4 REC/g)"
+        "rec_yds": 97.0,
+        "receptions": 8.4,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Chicago Bears (97.0 YDS/J)"
+      },
+      {
+        "name": "Rome Odunze",
+        "team": "Chicago Bears",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 60.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Chicago Bears (60.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -158,13 +210,13 @@
         "team": "Dallas Cowboys",
         "pos": "QB",
         "jersey": "4",
-        "pass_yds": 272.4,
-        "pass_tds": 2.1,
+        "pass_yds": 339.0,
+        "pass_tds": 4.0,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Dallas Cowboys (272.4 YDS/g, 2.1 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Dallas Cowboys (339.0 YDS/J)"
       },
       {
         "name": "Javonte Williams",
@@ -173,11 +225,24 @@
         "jersey": "33",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 69.2,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 84.5,
+        "rec_yds": 35.0,
+        "receptions": 3.4,
         "anytime_td_pct": 75.4,
-        "role": "RB Líder Dallas Cowboys (69.2 YDS/g)"
+        "role": "Corredor Titular Dallas Cowboys (84.5 YDS/J)"
+      },
+      {
+        "name": "Tyler Goodson",
+        "team": "Dallas Cowboys",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 77.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Dallas Cowboys (77.0 YDS/J)"
       },
       {
         "name": "CeeDee Lamb",
@@ -187,23 +252,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 97.6,
-        "receptions": 7.7,
+        "rec_yds": 154.5,
+        "receptions": 13.4,
         "anytime_td_pct": 68.4,
-        "role": "WR/TE Líder Dallas Cowboys (97.6 YDS/g, 7.7 REC/g)"
+        "role": "Receptor Titular Dallas Cowboys (154.5 YDS/J)"
       },
       {
-        "name": "Tanner McKee",
+        "name": "George Pickens",
+        "team": "Dallas Cowboys",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 145.0,
+        "receptions": 12.6,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Dallas Cowboys (145.0 YDS/J)"
+      },
+      {
+        "name": "Joe Milton",
         "team": "Philadelphia Eagles",
         "pos": "QB",
-        "jersey": "16",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
+        "pass_tds": 1.5,
+        "rush_yds": 64.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Philadelphia Eagles (70.9 YDS/g, 0.2 TD/g)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Philadelphia Eagles (185.0 YDS/J)"
       },
       {
         "name": "Saquon Barkley",
@@ -216,7 +294,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 49.2,
-        "role": "RB Líder Philadelphia Eagles (32.9 YDS/g)"
+        "role": "Corredor Titular Philadelphia Eagles (48.0 YDS/J)"
       },
       {
         "name": "Makai Lemon",
@@ -226,35 +304,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 4.1,
+        "rec_yds": 61.0,
+        "receptions": 6.0,
         "anytime_td_pct": 38.0,
-        "role": "WR/TE Líder Philadelphia Eagles (34.7 YDS/g, 4.1 REC/g)"
+        "role": "Receptor Titular Philadelphia Eagles (61.0 YDS/J)"
       },
       {
-        "name": "Jalen Hurts",
-        "pos": "QB",
-        "jersey": "1",
-        "pass_yds": 225.0,
-        "pass_tds": 1.6,
-        "rush_yds": 38.0,
-        "anytime_td_pct": 68.0,
-        "role": "QB Titular / Especialista en Touchdown Terrestre ('Tush Push')",
+        "name": "Dallas Goedert",
         "team": "Philadelphia Eagles",
-        "receptions": 2.0
-      },
-      {
-        "name": "A.J. Brown",
         "pos": "WR",
-        "jersey": "11",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 88.0,
-        "anytime_td_pct": 62.0,
-        "role": "Receptor Dominante en Duelos 1 vs 1",
-        "team": "Philadelphia Eagles",
-        "receptions": 4.5
+        "rec_yds": 50.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Philadelphia Eagles (50.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -298,17 +364,17 @@
     },
     "stars": [
       {
-        "name": "Will Hammond",
+        "name": "Thomas Castellanos",
         "team": "Texas Tech Red Raiders",
         "pos": "QB",
-        "jersey": "15",
-        "pass_yds": 156.6,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Texas Tech Red Raiders (156.6 YDS/g, 0.6 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Texas Tech Red Raiders (242.0 YDS/J)"
       },
       {
         "name": "J'Koby Williams",
@@ -318,10 +384,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 107.8,
-        "rec_yds": 14.0,
+        "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "RB Líder Texas Tech Red Raiders (107.8 YDS/g)"
+        "role": "Corredor Titular Texas Tech Red Raiders (107.8 YDS/J)"
       },
       {
         "name": "Kenny Johnson",
@@ -332,22 +398,22 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 70.7,
-        "receptions": 4.3,
+        "receptions": 4.4,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder Texas Tech Red Raiders (70.7 YDS/g, 4.3 REC/g)"
+        "role": "Receptor Titular Texas Tech Red Raiders (70.7 YDS/J)"
       },
       {
         "name": "Jaden Craig",
         "team": "TCU Horned Frogs",
         "pos": "QB",
         "jersey": "1",
-        "pass_yds": 266.4,
-        "pass_tds": 1.3,
+        "pass_yds": 251.9,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder TCU Horned Frogs (266.4 YDS/g, 1.3 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular TCU Horned Frogs (251.9 YDS/J)"
       },
       {
         "name": "Jeremy Payne",
@@ -356,24 +422,37 @@
         "jersey": "26",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 48.4,
+        "rush_yds": 55.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 43.2,
-        "role": "RB Líder TCU Horned Frogs (48.4 YDS/g)"
+        "role": "Corredor Titular TCU Horned Frogs (55.0 YDS/J)"
       },
       {
-        "name": "Kari Ashley",
+        "name": "Jordan Dwyer",
         "team": "TCU Horned Frogs",
-        "pos": "TE",
-        "jersey": "81",
+        "pos": "WR",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 68.4,
-        "receptions": 5.7,
-        "anytime_td_pct": 49.2,
-        "role": "WR/TE Líder TCU Horned Frogs (68.4 YDS/g, 5.7 REC/g)"
+        "rec_yds": 85.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular TCU Horned Frogs (85.0 YDS/J)"
+      },
+      {
+        "name": "Ed Small",
+        "team": "TCU Horned Frogs",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 65.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular TCU Horned Frogs (65.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -419,13 +498,13 @@
         "team": "Buffalo Bills",
         "pos": "QB",
         "jersey": "17",
-        "pass_yds": 247.0,
-        "pass_tds": 1.44,
+        "pass_yds": 235.8,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Buffalo Bills (247.0 YDS/g, 1.4 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Buffalo Bills (235.8 YDS/J)"
       },
       {
         "name": "James Cook III",
@@ -434,37 +513,50 @@
         "jersey": "4",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 107.9,
+        "rush_yds": 132.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder Buffalo Bills (107.9 YDS/g)"
+        "role": "Corredor Titular Buffalo Bills (132.0 YDS/J)"
       },
       {
-        "name": "Dalton Kincaid",
+        "name": "DJ Moore",
         "team": "Buffalo Bills",
-        "pos": "TE",
-        "jersey": "86",
+        "pos": "WR",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 54.1,
-        "receptions": 3.6,
-        "anytime_td_pct": 40.6,
-        "role": "WR/TE Líder Buffalo Bills (54.1 YDS/g, 3.6 REC/g)"
+        "rec_yds": 69.8,
+        "receptions": 6.1,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Buffalo Bills (69.8 YDS/J)"
+      },
+      {
+        "name": "Khalil Shakir",
+        "team": "Buffalo Bills",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 52.4,
+        "receptions": 4.6,
+        "anytime_td_pct": 35.0,
+        "role": "Receptor Titular Buffalo Bills (52.4 YDS/J)"
       },
       {
         "name": "Patrick Mahomes",
         "team": "Kansas City Chiefs",
         "pos": "QB",
         "jersey": "15",
-        "pass_yds": 265.0,
-        "pass_tds": 2.11,
+        "pass_yds": 295.0,
+        "pass_tds": 3.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Kansas City Chiefs (265.0 YDS/g, 2.1 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Kansas City Chiefs (295.0 YDS/J)"
       },
       {
         "name": "Kenneth Walker III",
@@ -473,11 +565,37 @@
         "jersey": "9",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 96.9,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 102.0,
+        "rec_yds": 41.0,
+        "receptions": 4.0,
         "anytime_td_pct": 69.9,
-        "role": "RB Líder Kansas City Chiefs (96.9 YDS/g)"
+        "role": "Corredor Titular Kansas City Chiefs (102.0 YDS/J)"
+      },
+      {
+        "name": "Emmett Johnson",
+        "team": "Kansas City Chiefs",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 79.4,
+        "rec_yds": 59.5,
+        "receptions": 5.1,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Kansas City Chiefs (79.4 YDS/J)"
+      },
+      {
+        "name": "Rashee Rice",
+        "team": "Kansas City Chiefs",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.2,
+        "receptions": 5.9,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Kansas City Chiefs (68.2 YDS/J)"
       },
       {
         "name": "Travis Kelce",
@@ -487,36 +605,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 56.9,
-        "receptions": 3.9,
+        "rec_yds": 54.8,
+        "receptions": 4.8,
         "anytime_td_pct": 40.6,
-        "role": "WR/TE Líder Kansas City Chiefs (56.9 YDS/g, 3.9 REC/g)"
-      },
-      {
-        "name": "Khalil Shakir",
-        "pos": "WR",
-        "jersey": "10",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 4.0,
-        "rec_yds": 58.5,
-        "anytime_td_pct": 40.0,
-        "role": "Receptor Ranura Rápido tras Recepción",
-        "team": "Buffalo Bills",
-        "receptions": 4.5
-      },
-      {
-        "name": "Kareem Hunt",
-        "pos": "RB",
-        "jersey": "29",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 62.0,
-        "rec_yds": 14.0,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor de Fuerza en Zona de Gol",
-        "team": "Kansas City Chiefs",
-        "receptions": 2.0
+        "role": "Receptor Titular Kansas City Chiefs (54.8 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

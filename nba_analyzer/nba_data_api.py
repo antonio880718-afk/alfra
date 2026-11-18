@@ -192,6 +192,15 @@ def fetch_espn_summary_cached(sport: str, league: str, event_id: str) -> dict:
     except Exception:
         return {}
 
+
+_ROSTERS_2026_FILE = os.path.join(DATA_DIR, "espn_2026_bball_rosters.json")
+if os.path.exists(_ROSTERS_2026_FILE):
+    try:
+        with open(_ROSTERS_2026_FILE, "r", encoding="utf-8") as _rf:
+            NBA_DEFAULT_STARS = json.load(_rf)
+    except Exception:
+        pass
+
 def extract_live_espn_stars(sport: str, league: str, event_id: str, h_team: str, a_team: str) -> list:
     """Extrae las estrellas reales y sus promedios directamente del resumen de ESPN."""
     summary = fetch_espn_summary_cached(sport, league, event_id)

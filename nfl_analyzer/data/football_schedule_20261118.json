@@ -42,13 +42,13 @@
         "team": "Massachusetts Minutemen",
         "pos": "QB",
         "jersey": "5",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Massachusetts Minutemen (134.9 YDS/g, 0.9 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Massachusetts Minutemen (175.0 YDS/J)"
       },
       {
         "name": "Curtis Kimmons IV",
@@ -59,9 +59,9 @@
         "pass_tds": 0.0,
         "rush_yds": 48.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 52.4,
-        "role": "RB Líder Massachusetts Minutemen (42.6 YDS/g)"
+        "role": "Corredor Titular Massachusetts Minutemen (48.0 YDS/J)"
       },
       {
         "name": "T.Y. Harding",
@@ -74,20 +74,33 @@
         "rec_yds": 45.0,
         "receptions": 3.4,
         "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Massachusetts Minutemen (39.7 YDS/g, 3.4 REC/g)"
+        "role": "Receptor Titular Massachusetts Minutemen (45.0 YDS/J)"
       },
       {
-        "name": "Brayden Roggow",
+        "name": "Drew Alsup",
+        "team": "Massachusetts Minutemen",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 44.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Massachusetts Minutemen (44.0 YDS/J)"
+      },
+      {
+        "name": "Cibastian Broughton",
         "team": "Akron Zips",
         "pos": "QB",
-        "jersey": "6",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
+        "pass_tds": 2.0,
+        "rush_yds": -19.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Akron Zips (134.3 YDS/g, 0.7 TD/g)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Akron Zips (185.0 YDS/J)"
       },
       {
         "name": "Jordan Gant",
@@ -96,11 +109,11 @@
         "jersey": "1",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 79.1,
+        "rush_yds": 72.8,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "RB Líder Akron Zips (79.1 YDS/g)"
+        "role": "Corredor Titular Akron Zips (72.8 YDS/J)"
       },
       {
         "name": "Marcel Williams",
@@ -110,10 +123,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 50.2,
-        "receptions": 4.2,
+        "rec_yds": 85.0,
+        "receptions": 7.4,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder Akron Zips (50.2 YDS/g, 4.2 REC/g)"
+        "role": "Receptor Titular Akron Zips (85.0 YDS/J)"
+      },
+      {
+        "name": "Miles Burris",
+        "team": "Akron Zips",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 55.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Akron Zips (55.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -161,13 +187,13 @@
         "team": "Buffalo Bulls",
         "pos": "QB",
         "jersey": "7",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Buffalo Bulls (139.3 YDS/g, 1.0 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Buffalo Bulls (175.0 YDS/J)"
       },
       {
         "name": "Messiah Burch",
@@ -176,11 +202,24 @@
         "jersey": "4",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 111.0,
+        "rush_yds": 209.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "RB Líder Buffalo Bulls (111.0 YDS/g)"
+        "role": "Corredor Titular Buffalo Bulls (209.0 YDS/J)"
+      },
+      {
+        "name": "Terrance Shelton Jr.",
+        "team": "Buffalo Bulls",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 92.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Buffalo Bulls (92.0 YDS/J)"
       },
       {
         "name": "Chance Morrow",
@@ -193,33 +232,72 @@
         "rec_yds": 69.3,
         "receptions": 5.4,
         "anytime_td_pct": 73.2,
-        "role": "WR/TE Líder Buffalo Bulls (69.3 YDS/g, 5.4 REC/g)"
+        "role": "Receptor Titular Buffalo Bulls (69.3 YDS/J)"
+      },
+      {
+        "name": "Clint Walker",
+        "team": "Buffalo Bulls",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 44.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Buffalo Bulls (44.0 YDS/J)"
       },
       {
         "name": "Jadyn Glasser",
         "team": "Central Michigan Chippewas",
         "pos": "QB",
         "jersey": "5",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
+        "rush_yds": 35.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Central Michigan Chippewas (74.3 YDS/g, 0.3 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Central Michigan Chippewas (175.0 YDS/J)"
       },
       {
-        "name": "Angel Flores",
+        "name": "Nick Woodford",
         "team": "Central Michigan Chippewas",
         "pos": "RB",
-        "jersey": "7",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 61.8,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 52.4,
-        "role": "RB Líder Central Michigan Chippewas (61.8 YDS/g)"
+        "rush_yds": 119.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Central Michigan Chippewas (119.0 YDS/J)"
+      },
+      {
+        "name": "Jayden Clerveaux",
+        "team": "Central Michigan Chippewas",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 100.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Central Michigan Chippewas (100.0 YDS/J)"
+      },
+      {
+        "name": "Nasir Williams",
+        "team": "Central Michigan Chippewas",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 57.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Central Michigan Chippewas (57.0 YDS/J)"
       },
       {
         "name": "Langston Lewis",
@@ -230,9 +308,9 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.2,
+        "receptions": 3.4,
         "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Central Michigan Chippewas (37.9 YDS/g, 2.4 REC/g)"
+        "role": "Receptor Titular Central Michigan Chippewas (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

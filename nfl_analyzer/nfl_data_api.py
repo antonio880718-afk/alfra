@@ -143,6 +143,15 @@ def fetch_espn_football_summary_cached(sport: str, league: str, event_id: str) -
     except Exception:
         return {}
 
+
+_ROSTERS_2026_NFL_FILE = os.path.join(DATA_DIR, "espn_2026_fball_rosters.json")
+if os.path.exists(_ROSTERS_2026_NFL_FILE):
+    try:
+        with open(_ROSTERS_2026_NFL_FILE, "r", encoding="utf-8") as _rf_nfl:
+            NFL_DEFAULT_STARS = json.load(_rf_nfl)
+    except Exception:
+        pass
+
 def extract_live_football_stars(sport: str, league: str, event_id: str, h_team: str, a_team: str) -> list:
     summary = fetch_espn_football_summary_cached(sport, league, event_id)
     if not summary:

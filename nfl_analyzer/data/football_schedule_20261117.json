@@ -42,13 +42,13 @@
         "team": "Western Michigan Broncos",
         "pos": "QB",
         "jersey": "12",
-        "pass_yds": 155.0,
-        "pass_tds": 1.2,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Western Michigan Broncos (154.6 YDS/g, 1.2 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Western Michigan Broncos (175.0 YDS/J)"
       },
       {
         "name": "Jalen Buckley",
@@ -57,37 +57,63 @@
         "jersey": "6",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 83.2,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 121.0,
+        "rec_yds": 35.0,
+        "receptions": 2.5,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder Western Michigan Broncos (83.2 YDS/g)"
+        "role": "Corredor Titular Western Michigan Broncos (121.0 YDS/J)"
       },
       {
-        "name": "Aveion Chenault",
+        "name": "Cole Cabana",
+        "team": "Western Michigan Broncos",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 107.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Western Michigan Broncos (107.0 YDS/J)"
+      },
+      {
+        "name": "Baylin Brooks",
         "team": "Western Michigan Broncos",
         "pos": "WR",
-        "jersey": "2",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 56.6,
-        "receptions": 3.5,
-        "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Western Michigan Broncos (56.6 YDS/g, 3.5 REC/g)"
+        "rec_yds": 78.0,
+        "receptions": 8.0,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Western Michigan Broncos (78.0 YDS/J)"
+      },
+      {
+        "name": "Keivin Boone-Nelson II",
+        "team": "Western Michigan Broncos",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Western Michigan Broncos (46.0 YDS/J)"
       },
       {
         "name": "Noah Kim",
         "team": "Eastern Michigan Eagles",
         "pos": "QB",
         "jersey": "1",
-        "pass_yds": 167.8,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Eastern Michigan Eagles (167.8 YDS/g, 1.1 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Eastern Michigan Eagles (175.0 YDS/J)"
       },
       {
         "name": "Amareon Blue",
@@ -100,7 +126,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 47.8,
-        "role": "RB Líder Eastern Michigan Eagles (44.7 YDS/g)"
+        "role": "Corredor Titular Eastern Michigan Eagles (48.0 YDS/J)"
       },
       {
         "name": "Harold Mack",
@@ -113,7 +139,7 @@
         "rec_yds": 45.0,
         "receptions": 3.8,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder Eastern Michigan Eagles (39.2 YDS/g, 3.8 REC/g)"
+        "role": "Receptor Titular Eastern Michigan Eagles (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -161,13 +187,13 @@
         "team": "Ohio Bobcats",
         "pos": "QB",
         "jersey": "8",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 193.0,
+        "pass_tds": 1.5,
+        "rush_yds": 68.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Ohio Bobcats (117.1 YDS/g, 0.8 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Ohio Bobcats (193.0 YDS/J)"
       },
       {
         "name": "Duncan Brune",
@@ -176,11 +202,11 @@
         "jersey": "6",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 51.0,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 57.0,
-        "role": "RB Líder Ohio Bobcats (51.0 YDS/g)"
+        "rush_yds": 49.6,
+        "rec_yds": 35.0,
+        "receptions": 3.0,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Ohio Bobcats (49.6 YDS/J)"
       },
       {
         "name": "Riley Neer",
@@ -190,23 +216,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 62.5,
-        "receptions": 4.7,
+        "rec_yds": 74.0,
+        "receptions": 6.4,
         "anytime_td_pct": 58.8,
-        "role": "WR/TE Líder Ohio Bobcats (62.5 YDS/g, 4.7 REC/g)"
+        "role": "Receptor Titular Ohio Bobcats (74.0 YDS/J)"
+      },
+      {
+        "name": "Preston Bowman",
+        "team": "Ohio Bobcats",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 35.0,
+        "rec_yds": 50.0,
+        "receptions": 4.3,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Ohio Bobcats (50.0 YDS/J)"
       },
       {
         "name": "Keldric Luster",
         "team": "Ball State Cardinals",
         "pos": "QB",
         "jersey": "6",
-        "pass_yds": 161.8,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
+        "rush_yds": 35.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Ball State Cardinals (161.8 YDS/g, 1.0 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Ball State Cardinals (175.0 YDS/J)"
       },
       {
         "name": "TJ Horton",
@@ -215,11 +254,24 @@
         "jersey": "4",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 52.8,
+        "rush_yds": 92.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 75.4,
-        "role": "RB Líder Ball State Cardinals (52.8 YDS/g)"
+        "role": "Corredor Titular Ball State Cardinals (92.0 YDS/J)"
+      },
+      {
+        "name": "Elijah Jackson",
+        "team": "Ball State Cardinals",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Ball State Cardinals (48.0 YDS/J)"
       },
       {
         "name": "Donovan Hamilton",
@@ -229,10 +281,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.8,
-        "receptions": 3.9,
+        "rec_yds": 104.0,
+        "receptions": 11.0,
         "anytime_td_pct": 38.0,
-        "role": "WR/TE Líder Ball State Cardinals (45.8 YDS/g, 3.9 REC/g)"
+        "role": "Receptor Titular Ball State Cardinals (104.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -280,13 +332,13 @@
         "team": "Kent State Golden Flashes",
         "pos": "QB",
         "jersey": "12",
-        "pass_yds": 196.1,
-        "pass_tds": 1.1,
-        "rush_yds": 29.5,
+        "pass_yds": 332.0,
+        "pass_tds": 2.0,
+        "rush_yds": 35.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 57.0,
-        "role": "QB Líder Kent State Golden Flashes (196.1 YDS/g, 1.1 TD/g)"
+        "anytime_td_pct": 58.0,
+        "role": "QB Titular Kent State Golden Flashes (332.0 YDS/J)"
       },
       {
         "name": "Wayne Harris",
@@ -296,23 +348,49 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 81.7,
-        "receptions": 5.1,
+        "rec_yds": 143.0,
+        "receptions": 12.4,
         "anytime_td_pct": 63.6,
-        "role": "WR/TE Líder Kent State Golden Flashes (81.7 YDS/g, 5.1 REC/g)"
+        "role": "Receptor Titular Kent State Golden Flashes (143.0 YDS/J)"
+      },
+      {
+        "name": "Da'Realyst Clark",
+        "team": "Kent State Golden Flashes",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 107.0,
+        "receptions": 9.3,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Kent State Golden Flashes (107.0 YDS/J)"
       },
       {
         "name": "David McComb",
         "team": "Miami (OH) RedHawks",
         "pos": "QB",
         "jersey": "16",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Miami (OH) RedHawks (112.1 YDS/g, 0.7 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Miami (OH) RedHawks (175.0 YDS/J)"
+      },
+      {
+        "name": "D'Shawntae Jones",
+        "team": "Miami (OH) RedHawks",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 115.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Miami (OH) RedHawks (115.0 YDS/J)"
       },
       {
         "name": "Rodney Nelson",
@@ -323,9 +401,9 @@
         "pass_tds": 0.0,
         "rush_yds": 48.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 52.4,
-        "role": "RB Líder Miami (OH) RedHawks (47.4 YDS/g)"
+        "role": "Corredor Titular Miami (OH) RedHawks (48.0 YDS/J)"
       },
       {
         "name": "Maleek Huggins",
@@ -335,10 +413,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 53.4,
-        "receptions": 3.2,
-        "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Miami (OH) RedHawks (53.4 YDS/g, 3.0 REC/g)"
+        "rec_yds": 61.0,
+        "receptions": 5.3,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Miami (OH) RedHawks (61.0 YDS/J)"
+      },
+      {
+        "name": "Braylon Isom",
+        "team": "Miami (OH) RedHawks",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Miami (OH) RedHawks (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

@@ -41,13 +41,26 @@
         "team": "Los Angeles Rams",
         "pos": "QB",
         "jersey": "9",
-        "pass_yds": 262.3,
-        "pass_tds": 1.9,
+        "pass_yds": 254.0,
+        "pass_tds": 2.3,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Los Angeles Rams (262.3 YDS/g, 1.9 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Los Angeles Rams (254.0 YDS/J)"
+      },
+      {
+        "name": "Blake Corum",
+        "team": "Los Angeles Rams",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 82.9,
+        "rec_yds": 35.0,
+        "receptions": 2.5,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Los Angeles Rams (82.9 YDS/J)"
       },
       {
         "name": "Kyren Williams",
@@ -56,37 +69,50 @@
         "jersey": "23",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 61.6,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 51.9,
+        "rec_yds": 35.0,
+        "receptions": 2.5,
         "anytime_td_pct": 61.6,
-        "role": "RB Líder Los Angeles Rams (61.6 YDS/g)"
+        "role": "Corredor Titular Los Angeles Rams (51.9 YDS/J)"
       },
       {
-        "name": "Tyler Higbee",
+        "name": "Puka Nacua",
         "team": "Los Angeles Rams",
-        "pos": "TE",
-        "jersey": "89",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 35.0,
+        "rec_yds": 150.0,
+        "receptions": 14.0,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Los Angeles Rams (150.0 YDS/J)"
+      },
+      {
+        "name": "Konata Mumpfield",
+        "team": "Los Angeles Rams",
+        "pos": "WR",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.2,
-        "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Los Angeles Rams (30.4 YDS/g, 3.1 REC/g)"
+        "rec_yds": 62.4,
+        "receptions": 5.4,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Los Angeles Rams (62.4 YDS/J)"
       },
       {
         "name": "Jordan Love",
         "team": "Green Bay Packers",
         "pos": "QB",
         "jersey": "10",
-        "pass_yds": 283.8,
-        "pass_tds": 2.0,
+        "pass_yds": 316.4,
+        "pass_tds": 2.3,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Green Bay Packers (283.8 YDS/g, 2.0 TD/g)"
+        "anytime_td_pct": 58.0,
+        "role": "QB Titular Green Bay Packers (316.4 YDS/J)"
       },
       {
         "name": "Kaleb Johnson",
@@ -95,11 +121,24 @@
         "jersey": "26",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 48.0,
+        "rush_yds": 56.8,
         "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 42.0,
-        "role": "RB Líder Green Bay Packers (21.4 YDS/g)"
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Green Bay Packers (56.8 YDS/J)"
+      },
+      {
+        "name": "Matthew Golden",
+        "team": "Green Bay Packers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 131.6,
+        "receptions": 11.4,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Green Bay Packers (131.6 YDS/J)"
       },
       {
         "name": "Christian Watson",
@@ -109,10 +148,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 91.6,
-        "receptions": 5.2,
+        "rec_yds": 130.8,
+        "receptions": 11.4,
         "anytime_td_pct": 63.6,
-        "role": "WR/TE Líder Green Bay Packers (91.6 YDS/g, 5.2 REC/g)"
+        "role": "Receptor Titular Green Bay Packers (130.8 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

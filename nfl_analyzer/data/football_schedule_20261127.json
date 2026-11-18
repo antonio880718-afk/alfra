@@ -42,13 +42,26 @@
         "team": "Iowa Hawkeyes",
         "pos": "QB",
         "jersey": "9",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Iowa Hawkeyes (150.4 YDS/g, 1.0 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Iowa Hawkeyes (242.0 YDS/J)"
+      },
+      {
+        "name": "L.J. Phillips Jr.",
+        "team": "Iowa Hawkeyes",
+        "pos": "RB",
+        "jersey": "21",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Iowa Hawkeyes (74.0 YDS/J)"
       },
       {
         "name": "Kamari Moulton",
@@ -57,11 +70,11 @@
         "jersey": "28",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 54.1,
+        "rush_yds": 60.1,
         "rec_yds": 14.0,
         "receptions": 1.8,
-        "anytime_td_pct": 52.4,
-        "role": "RB Líder Iowa Hawkeyes (54.1 YDS/g)"
+        "anytime_td_pct": 54.2,
+        "role": "Corredor Titular Iowa Hawkeyes (60.1 YDS/J)"
       },
       {
         "name": "Tony Diaz",
@@ -71,23 +84,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 54.9,
+        "rec_yds": 68.0,
         "receptions": 4.0,
-        "anytime_td_pct": 44.4,
-        "role": "WR/TE Líder Iowa Hawkeyes (54.9 YDS/g, 4.0 REC/g)"
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Iowa Hawkeyes (68.0 YDS/J)"
       },
       {
         "name": "Anthony Colandrea",
         "team": "Nebraska Cornhuskers",
         "pos": "QB",
         "jersey": "10",
-        "pass_yds": 229.7,
-        "pass_tds": 1.8,
-        "rush_yds": 15.0,
+        "pass_yds": 215.1,
+        "pass_tds": 2.0,
+        "rush_yds": 66.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Nebraska Cornhuskers (229.7 YDS/g, 1.8 TD/g)"
+        "anytime_td_pct": 58.0,
+        "role": "QB Titular Nebraska Cornhuskers (215.1 YDS/J)"
       },
       {
         "name": "Jamal Rule",
@@ -96,11 +109,24 @@
         "jersey": "25",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 63.5,
+        "rush_yds": 103.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 57.0,
-        "role": "RB Líder Nebraska Cornhuskers (63.5 YDS/g)"
+        "role": "Corredor Titular Nebraska Cornhuskers (103.0 YDS/J)"
+      },
+      {
+        "name": "Mekhi Nelson",
+        "team": "Nebraska Cornhuskers",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Nebraska Cornhuskers (48.0 YDS/J)"
       },
       {
         "name": "Kwazi Gilmer",
@@ -113,7 +139,20 @@
         "rec_yds": 60.3,
         "receptions": 4.6,
         "anytime_td_pct": 63.6,
-        "role": "WR/TE Líder Nebraska Cornhuskers (60.3 YDS/g, 4.6 REC/g)"
+        "role": "Receptor Titular Nebraska Cornhuskers (60.3 YDS/J)"
+      },
+      {
+        "name": "Carter Nelson",
+        "team": "Nebraska Cornhuskers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 53.0,
+        "receptions": 4.6,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Nebraska Cornhuskers (53.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -161,26 +200,39 @@
         "team": "Ole Miss Rebels",
         "pos": "QB",
         "jersey": "6",
-        "pass_yds": 248.6,
-        "pass_tds": 1.9,
-        "rush_yds": 15.0,
+        "pass_yds": 206.0,
+        "pass_tds": 1.6,
+        "rush_yds": 84.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Ole Miss Rebels (248.6 YDS/g, 1.9 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Ole Miss Rebels (206.0 YDS/J)"
       },
       {
-        "name": "Kewan Lacy",
+        "name": "Joshua Dye",
         "team": "Ole Miss Rebels",
         "pos": "RB",
-        "jersey": "5",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 48.0,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 57.0,
-        "role": "RB Líder Ole Miss Rebels (38.8 YDS/g)"
+        "rush_yds": 58.0,
+        "rec_yds": 35.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Ole Miss Rebels (58.0 YDS/J)"
+      },
+      {
+        "name": "Shekai Mills-Knight",
+        "team": "Ole Miss Rebels",
+        "pos": "RB",
+        "jersey": "33",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 62.1,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Ole Miss Rebels (62.1 YDS/J)"
       },
       {
         "name": "Deuce Alexander",
@@ -193,20 +245,33 @@
         "rec_yds": 68.7,
         "receptions": 5.0,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder Ole Miss Rebels (68.7 YDS/g, 5.0 REC/g)"
+        "role": "Receptor Titular Ole Miss Rebels (68.7 YDS/J)"
       },
       {
-        "name": "Kamario Taylor",
+        "name": "Horatio Fields",
+        "team": "Ole Miss Rebels",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Ole Miss Rebels (68.0 YDS/J)"
+      },
+      {
+        "name": "AJ Swann",
         "team": "Mississippi State Bulldogs",
         "pos": "QB",
-        "jersey": "1",
-        "pass_yds": 155.0,
-        "pass_tds": 1.7,
-        "rush_yds": 15.0,
+        "jersey": "17",
+        "pass_yds": 205.6,
+        "pass_tds": 1.5,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Mississippi State Bulldogs (146.0 YDS/g, 1.7 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Mississippi State Bulldogs (205.6 YDS/J)"
       },
       {
         "name": "Fluff Bothwell",
@@ -215,11 +280,11 @@
         "jersey": "24",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 64.9,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 47.8,
-        "role": "RB Líder Mississippi State Bulldogs (64.9 YDS/g)"
+        "rush_yds": 60.7,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Mississippi State Bulldogs (60.7 YDS/J)"
       },
       {
         "name": "Anthony Evans III",
@@ -229,10 +294,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 80.0,
-        "receptions": 6.5,
+        "rec_yds": 89.0,
+        "receptions": 7.7,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder Mississippi State Bulldogs (80.0 YDS/g, 6.5 REC/g)"
+        "role": "Receptor Titular Mississippi State Bulldogs (89.0 YDS/J)"
+      },
+      {
+        "name": "Sanfrisco Magee",
+        "team": "Mississippi State Bulldogs",
+        "pos": "WR",
+        "jersey": "13",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 56.1,
+        "receptions": 4.9,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Mississippi State Bulldogs (56.1 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -280,13 +358,13 @@
         "team": "UTSA Roadrunners",
         "pos": "QB",
         "jersey": "2",
-        "pass_yds": 210.1,
-        "pass_tds": 1.3,
+        "pass_yds": 224.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder UTSA Roadrunners (210.1 YDS/g, 1.3 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular UTSA Roadrunners (224.0 YDS/J)"
       },
       {
         "name": "Will Henderson III",
@@ -295,11 +373,11 @@
         "jersey": "1",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 75.2,
+        "rush_yds": 75.8,
         "rec_yds": 14.0,
         "receptions": 1.8,
-        "anytime_td_pct": 57.0,
-        "role": "RB Líder UTSA Roadrunners (75.2 YDS/g)"
+        "anytime_td_pct": 59.8,
+        "role": "Corredor Titular UTSA Roadrunners (75.8 YDS/J)"
       },
       {
         "name": "Mekhi Anderson",
@@ -309,23 +387,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.8,
-        "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder UTSA Roadrunners (44.9 YDS/g, 3.8 REC/g)"
+        "rec_yds": 48.2,
+        "receptions": 3.9,
+        "anytime_td_pct": 56.9,
+        "role": "Receptor Titular UTSA Roadrunners (48.2 YDS/J)"
       },
       {
         "name": "Baylor Hayes",
         "team": "Tulsa Golden Hurricane",
         "pos": "QB",
         "jersey": "10",
-        "pass_yds": 199.0,
-        "pass_tds": 1.6,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Tulsa Golden Hurricane (199.0 YDS/g, 1.6 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Tulsa Golden Hurricane (242.0 YDS/J)"
       },
       {
         "name": "Damari Alston",
@@ -334,11 +412,11 @@
         "jersey": "6",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 57.3,
-        "rec_yds": 14.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "RB Líder Tulsa Golden Hurricane (57.3 YDS/g)"
+        "role": "Corredor Titular Tulsa Golden Hurricane (74.0 YDS/J)"
       },
       {
         "name": "Oran Singleton Jr.",
@@ -348,10 +426,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 77.5,
+        "rec_yds": 79.1,
         "receptions": 6.3,
-        "anytime_td_pct": 63.6,
-        "role": "WR/TE Líder Tulsa Golden Hurricane (77.5 YDS/g, 6.3 REC/g)"
+        "anytime_td_pct": 67.4,
+        "role": "Receptor Titular Tulsa Golden Hurricane (79.1 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -395,17 +473,17 @@
     },
     "stars": [
       {
-        "name": "Brayden Roggow",
+        "name": "Cibastian Broughton",
         "team": "Akron Zips",
         "pos": "QB",
-        "jersey": "6",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "0",
+        "pass_yds": 185.0,
+        "pass_tds": 2.0,
+        "rush_yds": -19.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Akron Zips (134.3 YDS/g, 0.7 TD/g)"
+        "anytime_td_pct": 28.0,
+        "role": "QB Titular Akron Zips (185.0 YDS/J)"
       },
       {
         "name": "Jordan Gant",
@@ -414,11 +492,11 @@
         "jersey": "1",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 79.1,
+        "rush_yds": 72.8,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "RB Líder Akron Zips (79.1 YDS/g)"
+        "role": "Corredor Titular Akron Zips (72.8 YDS/J)"
       },
       {
         "name": "Marcel Williams",
@@ -428,23 +506,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 50.2,
-        "receptions": 4.2,
+        "rec_yds": 85.0,
+        "receptions": 7.4,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder Akron Zips (50.2 YDS/g, 4.2 REC/g)"
+        "role": "Receptor Titular Akron Zips (85.0 YDS/J)"
+      },
+      {
+        "name": "Miles Burris",
+        "team": "Akron Zips",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 55.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Akron Zips (55.0 YDS/J)"
       },
       {
         "name": "Jason Wright",
         "team": "Buffalo Bulls",
         "pos": "QB",
         "jersey": "7",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Buffalo Bulls (139.3 YDS/g, 1.0 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Buffalo Bulls (175.0 YDS/J)"
       },
       {
         "name": "Messiah Burch",
@@ -453,11 +544,24 @@
         "jersey": "4",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 111.0,
+        "rush_yds": 209.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "RB Líder Buffalo Bulls (111.0 YDS/g)"
+        "role": "Corredor Titular Buffalo Bulls (209.0 YDS/J)"
+      },
+      {
+        "name": "Terrance Shelton Jr.",
+        "team": "Buffalo Bulls",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 92.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Buffalo Bulls (92.0 YDS/J)"
       },
       {
         "name": "Chance Morrow",
@@ -470,7 +574,20 @@
         "rec_yds": 69.3,
         "receptions": 5.4,
         "anytime_td_pct": 73.2,
-        "role": "WR/TE Líder Buffalo Bulls (69.3 YDS/g, 5.4 REC/g)"
+        "role": "Receptor Titular Buffalo Bulls (69.3 YDS/J)"
+      },
+      {
+        "name": "Clint Walker",
+        "team": "Buffalo Bulls",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 44.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Buffalo Bulls (44.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -518,13 +635,13 @@
         "team": "Ohio Bobcats",
         "pos": "QB",
         "jersey": "8",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 193.0,
+        "pass_tds": 1.5,
+        "rush_yds": 68.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Ohio Bobcats (117.1 YDS/g, 0.8 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Ohio Bobcats (193.0 YDS/J)"
       },
       {
         "name": "Duncan Brune",
@@ -533,11 +650,11 @@
         "jersey": "6",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 51.0,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 57.0,
-        "role": "RB Líder Ohio Bobcats (51.0 YDS/g)"
+        "rush_yds": 49.6,
+        "rec_yds": 35.0,
+        "receptions": 3.0,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Ohio Bobcats (49.6 YDS/J)"
       },
       {
         "name": "Riley Neer",
@@ -547,23 +664,49 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 62.5,
-        "receptions": 4.7,
+        "rec_yds": 74.0,
+        "receptions": 6.4,
         "anytime_td_pct": 58.8,
-        "role": "WR/TE Líder Ohio Bobcats (62.5 YDS/g, 4.7 REC/g)"
+        "role": "Receptor Titular Ohio Bobcats (74.0 YDS/J)"
+      },
+      {
+        "name": "Preston Bowman",
+        "team": "Ohio Bobcats",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 35.0,
+        "rec_yds": 50.0,
+        "receptions": 4.3,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Ohio Bobcats (50.0 YDS/J)"
       },
       {
         "name": "John Alan Richter",
         "team": "Toledo Rockets",
         "pos": "QB",
         "jersey": "6",
-        "pass_yds": 250.1,
-        "pass_tds": 1.9,
+        "pass_yds": 231.5,
+        "pass_tds": 1.6,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Toledo Rockets (250.1 YDS/g, 1.9 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Toledo Rockets (231.5 YDS/J)"
+      },
+      {
+        "name": "Connor Walendzak",
+        "team": "Toledo Rockets",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 117.0,
+        "rec_yds": 41.0,
+        "receptions": 3.0,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Toledo Rockets (117.0 YDS/J)"
       },
       {
         "name": "CJ Miller",
@@ -572,11 +715,11 @@
         "jersey": "22",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 82.7,
+        "rush_yds": 83.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 66.2,
-        "role": "RB Líder Toledo Rockets (82.7 YDS/g)"
+        "role": "Corredor Titular Toledo Rockets (83.0 YDS/J)"
       },
       {
         "name": "Adjatay Dabbs",
@@ -586,10 +729,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 73.6,
-        "receptions": 4.7,
+        "rec_yds": 144.0,
+        "receptions": 12.5,
         "anytime_td_pct": 63.6,
-        "role": "WR/TE Líder Toledo Rockets (73.6 YDS/g, 4.7 REC/g)"
+        "role": "Receptor Titular Toledo Rockets (144.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -633,17 +776,17 @@
     },
     "stars": [
       {
-        "name": "Jared Hollins",
+        "name": "Bishop Davenport",
         "team": "South Alabama Jaguars",
         "pos": "QB",
-        "jersey": "7",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "4",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder South Alabama Jaguars (119.5 YDS/g, 0.9 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular South Alabama Jaguars (242.0 YDS/J)"
       },
       {
         "name": "PJ Martin",
@@ -656,7 +799,20 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 66.2,
-        "role": "RB Líder South Alabama Jaguars (63.9 YDS/g)"
+        "role": "Corredor Titular South Alabama Jaguars (63.9 YDS/J)"
+      },
+      {
+        "name": "Trae'von Dunbar",
+        "team": "South Alabama Jaguars",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular South Alabama Jaguars (48.0 YDS/J)"
       },
       {
         "name": "Brendan Jenkins",
@@ -666,23 +822,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 56.8,
+        "rec_yds": 68.0,
         "receptions": 3.5,
-        "anytime_td_pct": 44.4,
-        "role": "WR/TE Líder South Alabama Jaguars (56.8 YDS/g, 3.5 REC/g)"
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular South Alabama Jaguars (68.0 YDS/J)"
       },
       {
         "name": "Malachi Singleton",
         "team": "App State Mountaineers",
         "pos": "QB",
         "jersey": "3",
-        "pass_yds": 228.7,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder App State Mountaineers (228.7 YDS/g, 1.1 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular App State Mountaineers (242.0 YDS/J)"
       },
       {
         "name": "Jaquari Lewis",
@@ -691,11 +847,24 @@
         "jersey": "5",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 59.9,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 68.8,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
         "anytime_td_pct": 70.8,
-        "role": "RB Líder App State Mountaineers (59.9 YDS/g)"
+        "role": "Corredor Titular App State Mountaineers (68.8 YDS/J)"
+      },
+      {
+        "name": "Chris Lofton",
+        "team": "App State Mountaineers",
+        "pos": "WR",
+        "jersey": "6",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular App State Mountaineers (68.0 YDS/J)"
       },
       {
         "name": "Sam Pickett III",
@@ -705,10 +874,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 67.9,
-        "receptions": 4.5,
+        "rec_yds": 55.0,
+        "receptions": 4.8,
         "anytime_td_pct": 49.2,
-        "role": "WR/TE Líder App State Mountaineers (67.9 YDS/g, 4.5 REC/g)"
+        "role": "Receptor Titular App State Mountaineers (55.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -756,13 +925,13 @@
         "team": "Pittsburgh Steelers",
         "pos": "QB",
         "jersey": "8",
-        "pass_yds": 223.8,
-        "pass_tds": 1.67,
+        "pass_yds": 195.5,
+        "pass_tds": 2.0,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Pittsburgh Steelers (223.8 YDS/g, 1.7 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Pittsburgh Steelers (195.5 YDS/J)"
       },
       {
         "name": "Jaylen Warren",
@@ -771,11 +940,24 @@
         "jersey": "30",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 79.9,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 57.2,
+        "rec_yds": 35.0,
+        "receptions": 5.0,
         "anytime_td_pct": 44.1,
-        "role": "RB Líder Pittsburgh Steelers (79.9 YDS/g)"
+        "role": "Corredor Titular Pittsburgh Steelers (57.2 YDS/J)"
+      },
+      {
+        "name": "Lew Nichols",
+        "team": "Pittsburgh Steelers",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Pittsburgh Steelers (48.0 YDS/J)"
       },
       {
         "name": "DK Metcalf",
@@ -785,23 +967,49 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 48.0,
-        "receptions": 3.9,
-        "anytime_td_pct": 40.6,
-        "role": "WR/TE Líder Pittsburgh Steelers (48.0 YDS/g, 3.9 REC/g)"
+        "rec_yds": 54.0,
+        "receptions": 4.7,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Pittsburgh Steelers (54.0 YDS/J)"
+      },
+      {
+        "name": "Pat Freiermuth",
+        "team": "Pittsburgh Steelers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 44.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Pittsburgh Steelers (44.0 YDS/J)"
       },
       {
         "name": "Bo Nix",
         "team": "Denver Broncos",
         "pos": "QB",
         "jersey": "10",
-        "pass_yds": 192.2,
-        "pass_tds": 1.22,
+        "pass_yds": 237.0,
+        "pass_tds": 2.0,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Denver Broncos (192.2 YDS/g, 1.2 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Denver Broncos (237.0 YDS/J)"
+      },
+      {
+        "name": "Jonah Coleman",
+        "team": "Denver Broncos",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 57.0,
+        "rec_yds": 35.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Denver Broncos (57.0 YDS/J)"
       },
       {
         "name": "J.K. Dobbins",
@@ -814,20 +1022,33 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 49.2,
-        "role": "RB Líder Denver Broncos (36.0 YDS/g)"
+        "role": "Corredor Titular Denver Broncos (48.0 YDS/J)"
       },
       {
-        "name": "Jaylen Waddle",
+        "name": "Pat Bryant",
         "team": "Denver Broncos",
         "pos": "WR",
-        "jersey": "17",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 56.0,
+        "receptions": 4.9,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Denver Broncos (56.0 YDS/J)"
+      },
+      {
+        "name": "Courtland Sutton",
+        "team": "Denver Broncos",
+        "pos": "WR",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.3,
-        "anytime_td_pct": 40.6,
-        "role": "WR/TE Líder Denver Broncos (37.4 YDS/g, 3.3 REC/g)"
+        "receptions": 5.0,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Denver Broncos (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -875,13 +1096,26 @@
         "team": "Florida State Seminoles",
         "pos": "QB",
         "jersey": "14",
-        "pass_yds": 230.9,
-        "pass_tds": 1.4,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Florida State Seminoles (230.9 YDS/g, 1.4 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Florida State Seminoles (242.0 YDS/J)"
+      },
+      {
+        "name": "Amari Thomas",
+        "team": "Florida State Seminoles",
+        "pos": "RB",
+        "jersey": "24",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Florida State Seminoles (74.0 YDS/J)"
       },
       {
         "name": "Ousmane Kromah",
@@ -890,11 +1124,11 @@
         "jersey": "32",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 60.9,
+        "rush_yds": 67.7,
         "rec_yds": 14.0,
         "receptions": 1.8,
-        "anytime_td_pct": 57.0,
-        "role": "RB Líder Florida State Seminoles (60.9 YDS/g)"
+        "anytime_td_pct": 59.8,
+        "role": "Corredor Titular Florida State Seminoles (67.7 YDS/J)"
       },
       {
         "name": "Micahi Danzy",
@@ -904,23 +1138,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 51.1,
-        "receptions": 3.2,
-        "anytime_td_pct": 44.4,
-        "role": "WR/TE Líder Florida State Seminoles (51.1 YDS/g, 3.2 REC/g)"
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Florida State Seminoles (68.0 YDS/J)"
       },
       {
-        "name": "Aaron Philo",
+        "name": "Tramell Jones Jr.",
         "team": "Florida Gators",
         "pos": "QB",
-        "jersey": "12",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "9",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Florida Gators (148.6 YDS/g, 0.9 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Florida Gators (242.0 YDS/J)"
       },
       {
         "name": "Jadan Baugh",
@@ -930,10 +1164,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 90.5,
-        "rec_yds": 14.0,
+        "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder Florida Gators (90.5 YDS/g)"
+        "role": "Corredor Titular Florida Gators (90.5 YDS/J)"
+      },
+      {
+        "name": "Duke Clark",
+        "team": "Florida Gators",
+        "pos": "WR",
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Florida Gators (68.0 YDS/J)"
       },
       {
         "name": "Dallas Wilson",
@@ -946,7 +1193,7 @@
         "rec_yds": 48.3,
         "receptions": 3.8,
         "anytime_td_pct": 44.4,
-        "role": "WR/TE Líder Florida Gators (48.3 YDS/g, 3.8 REC/g)"
+        "role": "Receptor Titular Florida Gators (48.3 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -994,13 +1241,13 @@
         "team": "Memphis Tigers",
         "pos": "QB",
         "jersey": "2",
-        "pass_yds": 284.5,
-        "pass_tds": 2.8,
-        "rush_yds": 15.0,
+        "pass_yds": 313.0,
+        "pass_tds": 3.0,
+        "rush_yds": 73.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Memphis Tigers (284.5 YDS/g, 2.8 TD/g)"
+        "anytime_td_pct": 58.0,
+        "role": "QB Titular Memphis Tigers (313.0 YDS/J)"
       },
       {
         "name": "Jaylin Carter",
@@ -1009,11 +1256,24 @@
         "jersey": "6",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 103.8,
+        "rush_yds": 109.0,
         "rec_yds": 14.0,
-        "receptions": 1.8,
+        "receptions": 2.2,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder Memphis Tigers (103.8 YDS/g)"
+        "role": "Corredor Titular Memphis Tigers (109.0 YDS/J)"
+      },
+      {
+        "name": "Jordan Thompson",
+        "team": "Memphis Tigers",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 51.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Memphis Tigers (51.0 YDS/J)"
       },
       {
         "name": "Jemyri Davis",
@@ -1023,23 +1283,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 56.1,
-        "receptions": 3.2,
+        "rec_yds": 161.0,
+        "receptions": 14.0,
         "anytime_td_pct": 63.6,
-        "role": "WR/TE Líder Memphis Tigers (56.1 YDS/g, 2.8 REC/g)"
+        "role": "Receptor Titular Memphis Tigers (161.0 YDS/J)"
       },
       {
-        "name": "Ajani Sheppard",
+        "name": "Aidan O'Callaghan",
+        "team": "Memphis Tigers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 53.0,
+        "receptions": 4.6,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Memphis Tigers (53.0 YDS/J)"
+      },
+      {
+        "name": "Jaxon Smolik",
         "team": "Temple Owls",
         "pos": "QB",
-        "jersey": "13",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "14",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Temple Owls (133.0 YDS/g, 0.9 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Temple Owls (242.0 YDS/J)"
       },
       {
         "name": "Keveun Mason",
@@ -1048,24 +1321,37 @@
         "jersey": "26",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 65.3,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 47.8,
-        "role": "RB Líder Temple Owls (65.3 YDS/g)"
+        "rush_yds": 70.8,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Temple Owls (70.8 YDS/J)"
       },
       {
-        "name": "Colin Chase",
+        "name": "Jayce Freeman",
         "team": "Temple Owls",
         "pos": "WR",
-        "jersey": "1",
+        "jersey": "10",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.2,
-        "anytime_td_pct": 39.6,
-        "role": "WR/TE Líder Temple Owls (39.5 YDS/g, 2.6 REC/g)"
+        "rec_yds": 55.1,
+        "receptions": 4.8,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Temple Owls (55.1 YDS/J)"
+      },
+      {
+        "name": "Joey Schlaffer",
+        "team": "Temple Owls",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 46.0,
+        "receptions": 3.6,
+        "anytime_td_pct": 44.0,
+        "role": "Receptor Titular Temple Owls (46.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1109,17 +1395,30 @@
     },
     "stars": [
       {
-        "name": "Luke Weaver",
+        "name": "Daniel Rolovich",
         "team": "San José State Spartans",
         "pos": "QB",
-        "jersey": "3",
-        "pass_yds": 177.1,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "5",
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder San José State Spartans (177.1 YDS/g, 1.0 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular San José State Spartans (242.0 YDS/J)"
+      },
+      {
+        "name": "Viliami Teu",
+        "team": "San José State Spartans",
+        "pos": "RB",
+        "jersey": "20",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular San José State Spartans (74.0 YDS/J)"
       },
       {
         "name": "Jabari Bates",
@@ -1128,11 +1427,11 @@
         "jersey": "6",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 63.6,
+        "rush_yds": 68.2,
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 42.0,
-        "role": "RB Líder San José State Spartans (63.6 YDS/g)"
+        "role": "Corredor Titular San José State Spartans (68.2 YDS/J)"
       },
       {
         "name": "Carson Clark",
@@ -1142,23 +1441,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 67.8,
+        "rec_yds": 68.9,
         "receptions": 6.1,
-        "anytime_td_pct": 51.6,
-        "role": "WR/TE Líder San José State Spartans (67.8 YDS/g, 6.1 REC/g)"
+        "anytime_td_pct": 54.0,
+        "role": "Receptor Titular San José State Spartans (68.9 YDS/J)"
+      },
+      {
+        "name": "Dominique McKenzie",
+        "team": "San José State Spartans",
+        "pos": "WR",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular San José State Spartans (68.0 YDS/J)"
       },
       {
         "name": "Nathan Hayes",
         "team": "North Dakota State Bison",
         "pos": "QB",
         "jersey": "2",
-        "pass_yds": 180.7,
-        "pass_tds": 1.4,
+        "pass_yds": 190.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder North Dakota State Bison (180.7 YDS/g, 1.4 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular North Dakota State Bison (190.0 YDS/J)"
       },
       {
         "name": "Myles Mitchell",
@@ -1170,8 +1482,8 @@
         "rush_yds": 48.0,
         "rec_yds": 14.0,
         "receptions": 1.8,
-        "anytime_td_pct": 47.8,
-        "role": "RB Líder North Dakota State Bison (41.9 YDS/g)"
+        "anytime_td_pct": 49.2,
+        "role": "Corredor Titular North Dakota State Bison (48.0 YDS/J)"
       },
       {
         "name": "Jackson Williams",
@@ -1181,10 +1493,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 62.2,
-        "receptions": 4.4,
+        "rec_yds": 68.2,
+        "receptions": 4.7,
         "anytime_td_pct": 38.0,
-        "role": "WR/TE Líder North Dakota State Bison (62.2 YDS/g, 4.4 REC/g)"
+        "role": "Receptor Titular North Dakota State Bison (68.2 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1232,13 +1544,13 @@
         "team": "New Mexico Lobos",
         "pos": "QB",
         "jersey": "13",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder New Mexico Lobos (108.1 YDS/g, 0.8 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular New Mexico Lobos (175.0 YDS/J)"
       },
       {
         "name": "Scottre Humphrey",
@@ -1251,7 +1563,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "RB Líder New Mexico Lobos (73.6 YDS/g)"
+        "role": "Corredor Titular New Mexico Lobos (73.6 YDS/J)"
       },
       {
         "name": "Cade Keith",
@@ -1262,35 +1574,61 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.2,
+        "receptions": 3.4,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder New Mexico Lobos (38.4 YDS/g, 3.0 REC/g)"
+        "role": "Receptor Titular New Mexico Lobos (45.0 YDS/J)"
       },
       {
         "name": "Liam Szarka",
         "team": "Air Force Falcons",
         "pos": "QB",
         "jersey": "9",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 175.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Air Force Falcons (29.6 YDS/g, 0.1 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Air Force Falcons (175.0 YDS/J)"
+      },
+      {
+        "name": "Kemper Hodges",
+        "team": "Air Force Falcons",
+        "pos": "RB",
+        "jersey": "4",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Air Force Falcons (74.0 YDS/J)"
       },
       {
         "name": "Evan Medders",
         "team": "Air Force Falcons",
         "pos": "RB",
         "jersey": "5",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
         "rush_yds": 69.5,
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "RB Líder Air Force Falcons (69.5 YDS/g)"
+        "role": "Corredor Titular Air Force Falcons (69.5 YDS/J)"
+      },
+      {
+        "name": "Mason Hayes",
+        "team": "Air Force Falcons",
+        "pos": "WR",
+        "jersey": "18",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Air Force Falcons (68.0 YDS/J)"
       },
       {
         "name": "Simon Kibbee",
@@ -1301,9 +1639,9 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.2,
+        "receptions": 3.4,
         "anytime_td_pct": 38.0,
-        "role": "WR/TE Líder Air Force Falcons (16.6 YDS/g, 1.0 REC/g)"
+        "role": "Receptor Titular Air Force Falcons (45.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1351,13 +1689,13 @@
         "team": "Texas A&M Aggies",
         "pos": "QB",
         "jersey": "10",
-        "pass_yds": 171.2,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "pass_yds": 182.2,
+        "pass_tds": 1.5,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Texas A&M Aggies (171.2 YDS/g, 0.8 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Texas A&M Aggies (182.2 YDS/J)"
       },
       {
         "name": "Rueben Owens II",
@@ -1366,11 +1704,24 @@
         "jersey": "4",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 50.8,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 42.0,
-        "role": "RB Líder Texas A&M Aggies (50.8 YDS/g)"
+        "rush_yds": 61.8,
+        "rec_yds": 20.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Texas A&M Aggies (61.8 YDS/J)"
+      },
+      {
+        "name": "KJ Edwards",
+        "team": "Texas A&M Aggies",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 12.0,
+        "receptions": 2.2,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Texas A&M Aggies (48.0 YDS/J)"
       },
       {
         "name": "Isaiah Horton",
@@ -1380,23 +1731,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.2,
-        "anytime_td_pct": 44.4,
-        "role": "WR/TE Líder Texas A&M Aggies (39.7 YDS/g, 3.0 REC/g)"
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Texas A&M Aggies (68.0 YDS/J)"
+      },
+      {
+        "name": "Mario Craver",
+        "team": "Texas A&M Aggies",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 49.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Texas A&M Aggies (49.0 YDS/J)"
       },
       {
         "name": "Arch Manning",
         "team": "Texas Longhorns",
         "pos": "QB",
         "jersey": "16",
-        "pass_yds": 219.8,
-        "pass_tds": 1.9,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 2.0,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Texas Longhorns (219.8 YDS/g, 1.9 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Texas Longhorns (242.0 YDS/J)"
       },
       {
         "name": "Raleek Brown",
@@ -1405,11 +1769,24 @@
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 57.2,
-        "rec_yds": 14.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
         "receptions": 1.8,
-        "anytime_td_pct": 61.6,
-        "role": "RB Líder Texas Longhorns (57.2 YDS/g)"
+        "anytime_td_pct": 64.8,
+        "role": "Corredor Titular Texas Longhorns (74.0 YDS/J)"
+      },
+      {
+        "name": "Emmett Mosley V",
+        "team": "Texas Longhorns",
+        "pos": "WR",
+        "jersey": "3",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Texas Longhorns (68.0 YDS/J)"
       },
       {
         "name": "Ryan Wingo",
@@ -1421,33 +1798,8 @@
         "rush_yds": 0.0,
         "rec_yds": 59.1,
         "receptions": 4.8,
-        "anytime_td_pct": 49.2,
-        "role": "WR/TE Líder Texas Longhorns (59.1 YDS/g, 4.8 REC/g)"
-      },
-      {
-        "name": "Quinn Ewers",
-        "pos": "QB",
-        "jersey": "3",
-        "pass_yds": 258.0,
-        "pass_tds": 2.2,
-        "rush_yds": 8.0,
-        "anytime_td_pct": 20.0,
-        "role": "QB Titular / Brazo de Primera Ronda",
-        "team": "Texas Longhorns",
-        "receptions": 2.0
-      },
-      {
-        "name": "Isaiah Bond",
-        "pos": "WR",
-        "jersey": "7",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 4.0,
-        "rec_yds": 74.0,
-        "anytime_td_pct": 55.0,
-        "role": "Receptor Rápido Colegial",
-        "team": "Texas Longhorns",
-        "receptions": 4.5
+        "anytime_td_pct": 51.1,
+        "role": "Receptor Titular Texas Longhorns (59.1 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1491,30 +1843,56 @@
     },
     "stars": [
       {
-        "name": "Colton Joseph",
+        "name": "Ryan Hopkins",
         "team": "Wisconsin Badgers",
         "pos": "QB",
-        "jersey": "1",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
-        "rush_yds": 15.0,
+        "jersey": "10",
+        "pass_yds": 184.2,
+        "pass_tds": 1.5,
+        "rush_yds": 35.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Wisconsin Badgers (136.8 YDS/g, 1.1 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Wisconsin Badgers (184.2 YDS/J)"
       },
       {
-        "name": "Abu Sama III",
+        "name": "Eugene Hilton Jr.",
         "team": "Wisconsin Badgers",
         "pos": "RB",
-        "jersey": "3",
+        "jersey": "13",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 48.0,
-        "rec_yds": 14.0,
+        "rush_yds": 74.0,
+        "rec_yds": 20.0,
         "receptions": 1.8,
-        "anytime_td_pct": 42.0,
-        "role": "RB Líder Wisconsin Badgers (37.3 YDS/g)"
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Wisconsin Badgers (74.0 YDS/J)"
+      },
+      {
+        "name": "Darrion Dupree",
+        "team": "Wisconsin Badgers",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 57.0,
+        "rec_yds": 35.0,
+        "receptions": 4.0,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Wisconsin Badgers (57.0 YDS/J)"
+      },
+      {
+        "name": "Shamar Rigby",
+        "team": "Wisconsin Badgers",
+        "pos": "WR",
+        "jersey": "7",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Wisconsin Badgers (68.0 YDS/J)"
       },
       {
         "name": "Tyrell Henry",
@@ -1524,23 +1902,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
+        "rec_yds": 44.0,
         "receptions": 3.6,
         "anytime_td_pct": 38.0,
-        "role": "WR/TE Líder Wisconsin Badgers (43.4 YDS/g, 3.6 REC/g)"
+        "role": "Receptor Titular Wisconsin Badgers (44.0 YDS/J)"
       },
       {
         "name": "Drake Lindsey",
         "team": "Minnesota Golden Gophers",
         "pos": "QB",
         "jersey": "5",
-        "pass_yds": 198.2,
-        "pass_tds": 1.3,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 1.8,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Minnesota Golden Gophers (198.2 YDS/g, 1.3 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Minnesota Golden Gophers (242.0 YDS/J)"
+      },
+      {
+        "name": "Darius Taylor",
+        "team": "Minnesota Golden Gophers",
+        "pos": "RB",
+        "jersey": "1",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 76.0,
+        "rec_yds": 28.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 60.0,
+        "role": "Corredor Titular Minnesota Golden Gophers (76.0 YDS/J)"
       },
       {
         "name": "TJ Thomas",
@@ -1553,7 +1944,20 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 42.0,
-        "role": "RB Líder Minnesota Golden Gophers (41.1 YDS/g)"
+        "role": "Corredor Titular Minnesota Golden Gophers (48.0 YDS/J)"
+      },
+      {
+        "name": "Jalen Smith",
+        "team": "Minnesota Golden Gophers",
+        "pos": "WR",
+        "jersey": "8",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 68.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular Minnesota Golden Gophers (68.0 YDS/J)"
       },
       {
         "name": "Javon Tracy",
@@ -1566,7 +1970,7 @@
         "rec_yds": 53.6,
         "receptions": 5.5,
         "anytime_td_pct": 44.4,
-        "role": "WR/TE Líder Minnesota Golden Gophers (53.6 YDS/g, 5.5 REC/g)"
+        "role": "Receptor Titular Minnesota Golden Gophers (53.6 YDS/J)"
       }
     ],
     "boxscore_athletes": {}
@@ -1614,13 +2018,13 @@
         "team": "Utah Utes",
         "pos": "QB",
         "jersey": "4",
-        "pass_yds": 225.7,
-        "pass_tds": 2.2,
-        "rush_yds": 15.0,
+        "pass_yds": 242.0,
+        "pass_tds": 2.22,
+        "rush_yds": 18.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Utah Utes (225.7 YDS/g, 2.2 TD/g)"
+        "anytime_td_pct": 35.0,
+        "role": "QB Titular Utah Utes (242.0 YDS/J)"
       },
       {
         "name": "Wayshawn Parker",
@@ -1629,11 +2033,11 @@
         "jersey": "1",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 76.4,
+        "rush_yds": 84.7,
         "rec_yds": 14.0,
         "receptions": 1.8,
-        "anytime_td_pct": 75.4,
-        "role": "RB Líder Utah Utes (76.4 YDS/g)"
+        "anytime_td_pct": 80.0,
+        "role": "Corredor Titular Utah Utes (84.7 YDS/J)"
       },
       {
         "name": "Braden Pegan",
@@ -1643,23 +2047,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 64.3,
-        "receptions": 4.7,
-        "anytime_td_pct": 68.4,
-        "role": "WR/TE Líder Utah Utes (64.3 YDS/g, 4.7 REC/g)"
+        "rec_yds": 68.0,
+        "receptions": 4.9,
+        "anytime_td_pct": 72.7,
+        "role": "Receptor Titular Utah Utes (68.0 YDS/J)"
       },
       {
         "name": "Michael Hawkins Jr.",
         "team": "West Virginia Mountaineers",
         "pos": "QB",
         "jersey": "3",
-        "pass_yds": 212.8,
-        "pass_tds": 1.3,
-        "rush_yds": 15.0,
+        "pass_yds": 236.8,
+        "pass_tds": 1.5,
+        "rush_yds": 36.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder West Virginia Mountaineers (212.8 YDS/g, 1.3 TD/g)"
+        "anytime_td_pct": 58.0,
+        "role": "QB Titular West Virginia Mountaineers (236.8 YDS/J)"
       },
       {
         "name": "Cam Cook",
@@ -1669,10 +2073,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 108.4,
-        "rec_yds": 14.0,
+        "rec_yds": 20.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "RB Líder West Virginia Mountaineers (108.4 YDS/g)"
+        "role": "Corredor Titular West Virginia Mountaineers (108.4 YDS/J)"
       },
       {
         "name": "DJ Epps",
@@ -1682,10 +2086,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 61.5,
-        "receptions": 3.2,
+        "rec_yds": 57.8,
+        "receptions": 5.0,
         "anytime_td_pct": 54.0,
-        "role": "WR/TE Líder West Virginia Mountaineers (61.5 YDS/g, 2.8 REC/g)"
+        "role": "Receptor Titular West Virginia Mountaineers (57.8 YDS/J)"
+      },
+      {
+        "name": "TaRon Francis",
+        "team": "West Virginia Mountaineers",
+        "pos": "WR",
+        "jersey": "11",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 57.5,
+        "receptions": 5.0,
+        "anytime_td_pct": 50.0,
+        "role": "Receptor Titular West Virginia Mountaineers (57.5 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

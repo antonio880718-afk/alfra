@@ -41,13 +41,39 @@
         "team": "Washington Commanders",
         "pos": "QB",
         "jersey": "5",
-        "pass_yds": 166.6,
-        "pass_tds": 1.11,
-        "rush_yds": 31.1,
+        "pass_yds": 261.5,
+        "pass_tds": 2.3,
+        "rush_yds": 35.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
         "anytime_td_pct": 39.9,
-        "role": "QB Líder Washington Commanders (166.6 YDS/g, 1.1 TD/g)"
+        "role": "QB Titular Washington Commanders (261.5 YDS/J)"
+      },
+      {
+        "name": "Rachaad White",
+        "team": "Washington Commanders",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 35.0,
+        "receptions": 2.5,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Washington Commanders (48.0 YDS/J)"
+      },
+      {
+        "name": "Austin Ekeler",
+        "team": "Washington Commanders",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 35.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 36.0,
+        "role": "Corredor Titular Washington Commanders (48.0 YDS/J)"
       },
       {
         "name": "Stefon Diggs",
@@ -57,23 +83,36 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 4.0,
+        "rec_yds": 69.3,
+        "receptions": 6.0,
         "anytime_td_pct": 62.2,
-        "role": "WR/TE Líder Washington Commanders (42.9 YDS/g, 4.0 REC/g)"
+        "role": "Receptor Titular Washington Commanders (69.3 YDS/J)"
+      },
+      {
+        "name": "Van Jefferson",
+        "team": "Washington Commanders",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 58.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Washington Commanders (58.0 YDS/J)"
       },
       {
         "name": "Joe Burrow",
         "team": "Cincinnati Bengals",
         "pos": "QB",
         "jersey": "9",
-        "pass_yds": 310.6,
-        "pass_tds": 3.0,
+        "pass_yds": 352.9,
+        "pass_tds": 3.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Cincinnati Bengals (310.6 YDS/g, 3.0 TD/g)"
+        "anytime_td_pct": 58.0,
+        "role": "QB Titular Cincinnati Bengals (352.9 YDS/J)"
       },
       {
         "name": "Chase Brown",
@@ -82,11 +121,24 @@
         "jersey": "30",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 49.0,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 42.0,
-        "role": "RB Líder Cincinnati Bengals (49.0 YDS/g)"
+        "rush_yds": 50.5,
+        "rec_yds": 35.0,
+        "receptions": 6.8,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Cincinnati Bengals (50.5 YDS/J)"
+      },
+      {
+        "name": "Samaje Perine",
+        "team": "Cincinnati Bengals",
+        "pos": "RB",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 48.0,
+        "rec_yds": 35.0,
+        "receptions": 3.4,
+        "anytime_td_pct": 58.0,
+        "role": "Corredor Titular Cincinnati Bengals (48.0 YDS/J)"
       },
       {
         "name": "Ja'Marr Chase",
@@ -96,10 +148,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 97.6,
-        "receptions": 7.1,
+        "rec_yds": 195.1,
+        "receptions": 17.0,
         "anytime_td_pct": 67.4,
-        "role": "WR/TE Líder Cincinnati Bengals (97.6 YDS/g, 7.1 REC/g)"
+        "role": "Receptor Titular Cincinnati Bengals (195.1 YDS/J)"
+      },
+      {
+        "name": "Tee Higgins",
+        "team": "Cincinnati Bengals",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 49.0,
+        "receptions": 5.0,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Cincinnati Bengals (49.0 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

@@ -42,13 +42,13 @@
         "team": "Tampa Bay Buccaneers",
         "pos": "QB",
         "jersey": "6",
-        "pass_yds": 155.0,
-        "pass_tds": 1.1,
+        "pass_yds": 243.0,
+        "pass_tds": 1.5,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Tampa Bay Buccaneers (102.4 YDS/g, 0.3 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Tampa Bay Buccaneers (243.0 YDS/J)"
       },
       {
         "name": "Bucky Irving",
@@ -57,37 +57,50 @@
         "jersey": "7",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 91.7,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 97.0,
+        "rec_yds": 35.0,
+        "receptions": 4.0,
         "anytime_td_pct": 69.9,
-        "role": "RB Líder Tampa Bay Buccaneers (91.7 YDS/g)"
+        "role": "Corredor Titular Tampa Bay Buccaneers (97.0 YDS/J)"
       },
       {
-        "name": "Emeka Egbuka",
+        "name": "Tez Johnson",
         "team": "Tampa Bay Buccaneers",
         "pos": "WR",
-        "jersey": "2",
+        "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 45.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 40.6,
-        "role": "WR/TE Líder Tampa Bay Buccaneers (30.9 YDS/g, 3.4 REC/g)"
+        "rec_yds": 76.0,
+        "receptions": 6.6,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Tampa Bay Buccaneers (76.0 YDS/J)"
+      },
+      {
+        "name": "Kenny Gainwell",
+        "team": "Tampa Bay Buccaneers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 35.0,
+        "rec_yds": 60.0,
+        "receptions": 5.2,
+        "anytime_td_pct": 36.0,
+        "role": "Receptor Titular Tampa Bay Buccaneers (60.0 YDS/J)"
       },
       {
         "name": "Bryce Young",
         "team": "Carolina Panthers",
         "pos": "QB",
         "jersey": "9",
-        "pass_yds": 266.3,
-        "pass_tds": 1.78,
+        "pass_yds": 256.4,
+        "pass_tds": 2.1,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 22.0,
-        "role": "QB Líder Carolina Panthers (266.3 YDS/g, 1.8 TD/g)"
+        "anytime_td_pct": 36.0,
+        "role": "QB Titular Carolina Panthers (256.4 YDS/J)"
       },
       {
         "name": "Chuba Hubbard",
@@ -96,11 +109,24 @@
         "jersey": "30",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 79.0,
-        "rec_yds": 14.0,
-        "receptions": 1.8,
+        "rush_yds": 85.5,
+        "rec_yds": 68.0,
+        "receptions": 4.5,
         "anytime_td_pct": 69.9,
-        "role": "RB Líder Carolina Panthers (79.0 YDS/g)"
+        "role": "Corredor Titular Carolina Panthers (85.5 YDS/J)"
+      },
+      {
+        "name": "Darren Waller",
+        "team": "Carolina Panthers",
+        "pos": "WR",
+        "jersey": "0",
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
+        "rush_yds": 0.0,
+        "rec_yds": 69.7,
+        "receptions": 6.8,
+        "anytime_td_pct": 58.0,
+        "role": "Receptor Titular Carolina Panthers (69.7 YDS/J)"
       },
       {
         "name": "Tetairoa McMillan",
@@ -110,10 +136,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 73.3,
-        "receptions": 5.4,
+        "rec_yds": 63.6,
+        "receptions": 5.5,
         "anytime_td_pct": 45.8,
-        "role": "WR/TE Líder Carolina Panthers (73.3 YDS/g, 5.4 REC/g)"
+        "role": "Receptor Titular Carolina Panthers (63.6 YDS/J)"
       }
     ],
     "boxscore_athletes": {}

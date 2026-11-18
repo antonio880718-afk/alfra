@@ -275,6 +275,8 @@ def sync_nfl_date_from_espn(date_str: str) -> list:
 
         h_team = h.get("team", {}).get("displayName", "Home Team")
         a_team = a.get("team", {}).get("displayName", "Away Team")
+        if "TBD" in h_team.upper() or "TBD" in a_team.upper():
+            continue
 
         h_score = int(_to_float(h.get("score", 0), 0.0)) if h.get("score") else 0
         a_score = int(_to_float(a.get("score", 0), 0.0)) if a.get("score") else 0
