@@ -2550,6 +2550,27 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             extra={"status": f"⚽ Goleador Referente ({p_pos}{j_tag})"},
         )
 
+    # También incluir al referente ofensivo del otro equipo cruzado contra su rival
+    _other_star = star_h if star_team == a else star_a
+    _other_team = h if star_team == a else a
+    _other_opp_sot = pa.get("sot_ag_avg", 4.15) if _other_team == h else ph.get("sot_ag_avg", 4.15)
+    _other_lam_raw = lam_p_h if _other_team == h else lam_p_a
+    _other_lam_eff = _other_lam_raw * 0.90
+    _other_rp = _other_lam_eff / 0.25
+    _other_p_sot = round(max(50.0, min(89.5, (1.0 - (_other_rp / (_other_rp + _other_lam_eff)) ** _other_rp) * 100.0)), 1)
+    _other_name = _other_star.get("name", "")
+    if _other_name and _other_name != p_name:
+        _oj = f" #{_other_star.get('jersey')}" if _other_star.get("jersey") else ""
+        _add_cand(
+            "Jugadores", "Remates de Jugador",
+            f"{_other_name}: Más de 0.5 Tiros a Puerta",
+            f"{_other_name} ({_other_team}{_oj}) ≥ 1 Tiro a Puerta",
+            _other_p_sot,
+            f"Cruce λ_SOT={_other_lam_eff:.2f}: {_other_name} ante defensa que concede {_other_opp_sot} SOT/j.",
+            cols_used="HST, AST Cruzados + Plantillas ESPN", vig=0.94, min_o=1.18,
+            extra={"status": f"🟢 Titular Verificado ({_other_star.get('pos', 'Delantero')}{_oj})"},
+        )
+
     _add_cand(
         "Tiros", "Tiros a Puerta Totales",
         "Total Tiros a Puerta: Más de 6.5 en el Partido", "Tiros a Puerta Over 6.5",

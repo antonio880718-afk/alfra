@@ -14,7 +14,7 @@ if _app_dir not in sys.path:
 import importlib
 import sys as _sys
 
-_ENGINE_VER = "2026.11.11.v18"
+_ENGINE_VER = "2026.11.17.v19"
 if getattr(_sys, "_ALFRA_ENGINE_VER", None) != _ENGINE_VER:
     for _base_name in [
         "soccer_quant_model",
@@ -1903,6 +1903,37 @@ with t_parlay:
     if not opts:
         st.warning(f"No fue posible encontrar combinaciones que alcancen la cuota objetivo {t_odds_val:.2f}x con los partidos verificados de esta jornada. Prueba ajustando el monto.")
     else:
+        try:
+            _pdf_target_fn = getattr(_ctpe, "generate_target_options_pdf_bytes", None)
+            if _pdf_target_fn:
+                _t_pdf_bytes = _pdf_target_fn(target_res, date_str)
+                st.download_button(
+                    label=f"🖨️ DESCARGAR / IMPRIMIR PDF CON LAS {len(opts)} OPCIONES PROBABLES PARA TU OBJETIVO (${u_stake:,.0f} ➔ +${u_profit:,.0f} MXN)",
+                    data=_t_pdf_bytes,
+                    file_name=f"Opciones_Probables_Objetivo_{int(u_stake)}_a_{int(u_profit)}_{date_str}.pdf",
+                    mime="application/pdf",
+                    use_container_width=True,
+                    key=f"dl_target_pdf_{date_str}_{int(u_stake)}_{int(u_profit)}",
+                )
+        except Exception:
+            pass
+
+        st.markdown(f"#### 📊 Resumen Comparativo de las {len(opts)} Opciones Probables para Alcanzar tu Meta ({t_odds_val:.2f}x)")
+        _sum_rows = []
+        for _o in opts:
+            _sum_rows.append({
+                "Boleto": f"Opción #{_o['option_id']}",
+                "Estrategia / Perfil": _o.get("title", "").split(": ", 1)[-1],
+                "Patas": f"{_o.get('legs_count', 1)} juegos",
+                "Cuota Total": f"{_o.get('total_odds', 1.0):.2f}x",
+                "Inversión": f"${u_stake:,.2f} MXN",
+                "Cobro Total": f"${_o.get('est_return_mxn', 0.0):,.2f} MXN",
+                "Ganancia Neta": f"+${_o.get('est_profit_mxn', 0.0):,.2f} MXN",
+                "% Prob. Conjunta": f"{_o.get('joint_prob', 0.0):.2f}%",
+                "Valor (+EV)": f"+{_o.get('ev_pct', 0.0):.1f}%",
+            })
+        st.dataframe(pd.DataFrame(_sum_rows), use_container_width=True, hide_index=True)
+
         for opt in opts:
             opt_title = opt.get("title", f"Opción {opt['option_id']}")
             opt_badge = opt.get("badge", "CALIBRADO")
@@ -1983,6 +2014,9 @@ with t_parlay:
                         </div>
                         <div style="margin-top: 6px; font-size: 0.78rem; color: #64748b;">
                             📁 <b>Dataset Oficial:</b> {leg.get('data_origin', 'football-data.co.uk')} • <b>Muestra:</b> {leg.get('sample_size', '92 partidos')}
+                        </div>
+                        <div style="margin-top: 6px; background-color: #091526; border: 1px solid #065f46; border-radius: 6px; padding: 6px 10px; font-size: 0.80rem; color: #a7f3d0;">
+                            🔄 <b>Otras Opciones Probables Verificadas en este Partido:</b> {(" &nbsp;•&nbsp; ".join([f"<b>{ap['pick']}</b> ({ap['prob']}% | @{ap['odds']:.2f})" for ap in leg.get("alt_picks", [])[:3]]) or "Mercado único seleccionado")}
                         </div>
                         <div style="margin-top: 6px; background-color: #080c14; border: 1px dashed #334155; border-radius: 6px; padding: 6px 10px; font-size: 0.78rem; color: #93c5fd;">
                             🧭 <b>Navegación en Playdoit / Altenar:</b> {leg['bookmaker_tree']}
