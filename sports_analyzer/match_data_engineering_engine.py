@@ -4808,6 +4808,8 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
             "expected_fouls": round(q_dist["counts"]["fouls"]["home"] + q_dist["counts"]["fouls"]["away"], 1),
             "expected_offsides": round(q_dist["counts"].get("offsides", {}).get("home", 1.85) + q_dist["counts"].get("offsides", {}).get("away", 1.55), 1),
             "expected_shots": round(q_dist["counts"].get("shots", {}).get("home", 12.5) + q_dist["counts"].get("shots", {}).get("away", 10.2), 1),
+            "multigol_total": q_dist.get("multigol_total", {}),
+            "powerstats_breakdown": q_dist.get("powerstats_breakdown", {}),
         },
     }
     _DE_CACHE[cache_key] = res_out

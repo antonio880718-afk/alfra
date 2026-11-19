@@ -1474,6 +1474,71 @@ with t_sgp:
     </div>
     """)
 
+    # -------------------------------------------------------------
+    # PANEL 0.1: MATRIZ CUANTITATIVA POWERSTATS (MULTIGOLES & MITADES)
+    # -------------------------------------------------------------
+    qm_ps = de_data.get("quant_model", {})
+    mg_data = qm_ps.get("multigol_total", {})
+    ps_breakdown = qm_ps.get("powerstats_breakdown", {})
+    if mg_data:
+        with st.expander("⚡ MATRIZ CUANTITATIVA POWERSTATS (Multigoles V4, Ratios por Mitad & Sweet Spot)", expanded=True):
+            st.markdown("##### 📊 Espectro Completo de Multigoles (Algoritmo Bivariado PowerStats):")
+            st.caption("Probabilidades exactas calculadas de la matriz Dixon-Coles. Las casillas en verde brillante indican el **Sweet Spot (58%-68%)**, la zona óptima de mayor valor esperado frente a las casas:")
+            
+            mg_cols = st.columns(4)
+            bands_to_show = [
+                ("Multigol 1-3", mg_data.get("mg13", 0.0), "Banda Baja"),
+                ("Multigol 1-4", mg_data.get("mg14", 0.0), "Cobertura Estándar"),
+                ("Multigol 1-5", mg_data.get("mg15", 0.0), "Alta Seguridad"),
+                ("Multigol 2-4", mg_data.get("mg24", 0.0), "Banda Central Típica"),
+                ("Multigol 2-5", mg_data.get("mg25", 0.0), "Alta Liquidez Caliente/Playdoit"),
+                ("Multigol 2-6", mg_data.get("mg26", 0.0), "Cubre Marcadores Abiertos"),
+                ("Multigol 1-2", mg_data.get("mg12", 0.0), "Duelo Cerrado"),
+                ("Multigol 3-5", mg_data.get("mg35", 0.0), "Partido Dinámico")
+            ]
+            for idx, (b_name, b_prob, b_desc) in enumerate(bands_to_show):
+                c = mg_cols[idx % 4]
+                is_sweet = 58.0 <= b_prob <= 68.0
+                badge = "🎯 SWEET SPOT" if is_sweet else ("🔥 ALTA PROB" if b_prob >= 75.0 else "VALOR")
+                border_col = "#10b981" if is_sweet else ("#3b82f6" if b_prob >= 75.0 else "#334155")
+                bg_col = "#064e3b" if is_sweet else ("#1e3a8a" if b_prob >= 75.0 else "#0f172a")
+                with c:
+                    render_html(f"""
+                    <div style="background-color: {bg_col}; border: 1.5px solid {border_col}; border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; text-align: center;">
+                        <span style="color: #94a3b8; font-size: 0.75rem; text-transform: uppercase;">{b_name}</span><br>
+                        <b style="color: #ffffff; font-size: 1.3rem;">{b_prob}%</b><br>
+                        <span style="color: {'#6ee7b7' if is_sweet else '#93c5fd'}; font-size: 0.72rem; font-weight: bold;">{badge}</span><br>
+                        <span style="color: #cbd5e1; font-size: 0.70rem;">{b_desc}</span>
+                    </div>
+                    """)
+            
+            st.markdown("##### ⏱️ Ratios Empíricos por Mitad (PowerStats Halves):")
+            col_m1, col_m2, col_m3 = st.columns(3)
+            with col_m1:
+                render_html("""
+                <div style="background-color: #0b132b; border: 1px solid #1e3a8a; border-radius: 8px; padding: 10px 12px; text-align: center;">
+                    <b style="color: #38bdf8;">⚽ División de Goles</b><br>
+                    <span style="color: #e2e8f0; font-size: 0.85rem;">1er Tiempo: <b>45%</b> | 2do Tiempo: <b>55%</b></span><br>
+                    <span style="color: #94a3b8; font-size: 0.74rem;">Mayor volumen tras ajustes tácticos</span>
+                </div>
+                """)
+            with col_m2:
+                render_html("""
+                <div style="background-color: #0b132b; border: 1px solid #1e3a8a; border-radius: 8px; padding: 10px 12px; text-align: center;">
+                    <b style="color: #facc15;">⛳ División de Córners</b><br>
+                    <span style="color: #e2e8f0; font-size: 0.85rem;">1er Tiempo: <b>46%</b> | 2do Tiempo: <b>54%</b></span><br>
+                    <span style="color: #94a3b8; font-size: 0.74rem;">Presión por bandas en tramos finales</span>
+                </div>
+                """)
+            with col_m3:
+                render_html("""
+                <div style="background-color: #0b132b; border: 1px solid #1e3a8a; border-radius: 8px; padding: 10px 12px; text-align: center;">
+                    <b style="color: #f43f5e;">🟨 División de Tarjetas</b><br>
+                    <span style="color: #e2e8f0; font-size: 0.85rem;">1er Tiempo: <b>30%</b> | 2do Tiempo: <b>70%</b></span><br>
+                    <span style="color: #94a3b8; font-size: 0.74rem;">Faltas tácticas y desgaste concentrado en 2T</span>
+                </div>
+                """)
+
     # PANEL 0.5: CLIMA, ALTITUD, ESTADIO, ÁRBITRO, PLANTILLAS 2026/27 & COTEJO EN 5 PÁGINAS (TAB 2)
     from hourly_slots_engine import analyze_match_for_slot
     _sgp_t2 = analyze_match_for_slot({"home": h, "away": a, "league": league_sel, "code": code_sel, "time_cdmx": m_sel.get("time", "14:00")})
