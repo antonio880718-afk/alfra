@@ -4592,6 +4592,8 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     m_c.append(make_opt(f"{away_team}: Más de 3.5 Córners", "Córners", c_a35, na, _mkt_odds(qp["away_corners_over35"]), synergy=f"{home_team} concede {ph_prof['corners_ag_avg']:.2f} córners por partido.", model_prob=qp["away_corners_over35"]))
     m_c.append(make_opt(f"{away_team}: Más de 4.5 Córners", "Córners", c_a45, na, _mkt_odds(qp["away_corners_over45"]), synergy="Línea visitante para transiciones por costados.", model_prob=qp["away_corners_over45"]))
     m_c.append(make_opt("Ambos Equipos Lanzan Más de 2.5 Córners", "Córners Ambos", 0, nh, _mkt_odds(qp["both_corners_over25"]), synergy="Ambos clubes superan los 3 saques de esquina en distribución conjunta.", model_prob=qp["both_corners_over25"]))
+    m_c.append(make_opt("1er Tiempo: Más de 3.5 Córners en la 1ª Mitad", "Córners 1T", 0, nh, _mkt_odds(qp.get("ht_corners_over35", 72.0)), synergy="Calibración PowerStats (46% de tiros de esquina en 1T).", model_prob=qp.get("ht_corners_over35", 72.0)))
+    m_c.append(make_opt("1er Tiempo: Menos de 6.5 Córners en la 1ª Mitad", "Córners 1T", 0, nh, _mkt_odds(qp.get("ht_corners_under65", 84.0)), synergy="Techo estadístico de córners antes del descanso.", model_prob=qp.get("ht_corners_under65", 84.0)))
     m_c.append(make_opt(f"Más Córners en el Partido: {home_team}", "Carrera Córners", 0, nh, _mkt_odds(qp["more_corners_home"]), synergy=f"Dominio territorial esperado ({c_exp_h:.1f} vs {c_exp_a:.1f} córners).", model_prob=qp["more_corners_home"]))
     categories.append({"category": "🚩 Tiros de Esquina (Córners Totales, por Equipo y Dominio)", "options": m_c})
 
@@ -4616,6 +4618,9 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     m_cards.append(make_opt("1er Tiempo: Más de 0.5 Tarjetas en la 1ª Mitad", "Tarjetas 1T", 0, nh, _mkt_odds(qp.get("ht_cards_over05", 81.0)), synergy=f"Árbitro {cards_model['referee_name']} suele amonestar temprano para fijar límites.", model_prob=qp.get("ht_cards_over05", 81.0)))
     m_cards.append(make_opt(f"{home_team}: Recibe Más de 2.5 Tarjetas", "Tarjetas Equipo", sum(1 for x in h_cards if x >= 3) if h_cards else 0, nh, _mkt_odds(qp.get("home_cards_over25", 48.0)), synergy="Presión alta y faltas tácticas del cuadro local.", model_prob=qp.get("home_cards_over25", 48.0)))
     m_cards.append(make_opt("Ambos Equipos Reciben 2 o Más Tarjetas: SÍ", "Tarjetas Ambos", 0, nh, _mkt_odds(qp.get("both_cards_over15", 58.0)), synergy="Duelo de alta fricción con al menos 2 amarillas por equipo.", model_prob=qp.get("both_cards_over15", 58.0)))
+    m_cards.append(make_opt("1er Tiempo: Menos de 2.5 Tarjetas en la 1ª Mitad", "Tarjetas 1T", 0, nh, _mkt_odds(qp.get("ht_cards_under25", 82.0)), synergy="Calibración PowerStats (30% de amonestaciones en 1T).", model_prob=qp.get("ht_cards_under25", 82.0)))
+    m_cards.append(make_opt("2do Tiempo: Más de 1.5 Tarjetas en la 2ª Mitad", "Tarjetas 2T", 0, nh, _mkt_odds(qp.get("h2_cards_over15", 78.0)), synergy="Calibración PowerStats (70% de tarjetas ocurren en 2T por desgaste y roces).", model_prob=qp.get("h2_cards_over15", 78.0)))
+    m_cards.append(make_opt("2do Tiempo: Más de 2.5 Tarjetas en la 2ª Mitad", "Tarjetas 2T", 0, nh, _mkt_odds(qp.get("h2_cards_over25", 56.0)), synergy="Fricción disciplinaria en el tramo final del partido.", model_prob=qp.get("h2_cards_over25", 56.0)))
     m_cards.append(make_opt("Tarjeta Roja en el Partido: NO (Menos de 0.5 Rojas)", "Tarjetas Rojas", 0, nh, 1.22, synergy="Baja frecuencia histórica de expulsiones directas (~15% de los encuentros).", model_prob=qp.get("card_red_no", 85.0)))
     categories.append({"category": "🟨 Tarjetas Disciplinarias del Árbitro y Equipos (Totales, por Equipo y 1T)", "options": m_cards})
 
@@ -4698,15 +4703,23 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     c_1x_u35 = sum(1 for i in range(len(h_goals)) if h_goals[i] >= h_goals_conceded[i] and (h_goals[i] + h_goals_conceded[i]) <= 3) if h_goals else 0
     c_x2_u35 = sum(1 for i in range(len(a_goals)) if a_goals[i] >= a_goals_conceded[i] and (a_goals[i] + a_goals_conceded[i]) <= 3) if a_goals else 0
     rng_1_3 = sum(1 for i in range(len(h_goals)) if 1 <= (h_goals[i] + h_goals_conceded[i]) <= 3) if h_goals else 0
+    rng_1_4 = sum(1 for i in range(len(h_goals)) if 1 <= (h_goals[i] + h_goals_conceded[i]) <= 4) if h_goals else 0
+    rng_1_5 = sum(1 for i in range(len(h_goals)) if 1 <= (h_goals[i] + h_goals_conceded[i]) <= 5) if h_goals else 0
     rng_2_3 = sum(1 for i in range(len(h_goals)) if 2 <= (h_goals[i] + h_goals_conceded[i]) <= 3) if h_goals else 0
     rng_2_4 = sum(1 for i in range(len(h_goals)) if 2 <= (h_goals[i] + h_goals_conceded[i]) <= 4) if h_goals else 0
+    rng_2_5 = sum(1 for i in range(len(h_goals)) if 2 <= (h_goals[i] + h_goals_conceded[i]) <= 5) if h_goals else 0
+    rng_2_6 = sum(1 for i in range(len(h_goals)) if 2 <= (h_goals[i] + h_goals_conceded[i]) <= 6) if h_goals else 0
 
     m_combo.append(make_opt(f"1X ({home_team} o Empate) y Más de 1.5 Goles", "Combo Doble + Goles", c_1x_o15, nh, _mkt_odds(qp["dc1x_over15"]), synergy="Cubre marcadores 1-1, 2-0, 2-1, 2-2, 3-0, 3-1 a favor o empate del local.", model_prob=qp["dc1x_over15"]))
     m_combo.append(make_opt(f"X2 ({away_team} o Empate) y Más de 1.5 Goles", "Combo Doble + Goles", c_x2_o15, na, _mkt_odds(qp["dcx2_over15"]), synergy="Cubre empate con goles (1-1, 2-2) o triunfo visitante con ≥2 goles totales.", model_prob=qp["dcx2_over15"]))
     m_combo.append(make_opt(f"1X ({home_team} o Empate) y Menos de 4.5 Goles", "Combo Doble + Goles", c_1x_u35, nh, _mkt_odds(qp["dc1x_under45"]), synergy="Combinada conservadora de alta probabilidad sobre matriz Dixon-Coles.", model_prob=qp["dc1x_under45"]))
     m_combo.append(make_opt(f"X2 ({away_team} o Empate) y Menos de 4.5 Goles", "Combo Doble + Goles", c_x2_u35, na, _mkt_odds(qp["dcx2_under45"]), synergy="Cubre 0-0, 1-1, 2-2, 0-1, 0-2, 1-2, 0-3, 1-3.", model_prob=qp["dcx2_under45"]))
     m_combo.append(make_opt("Rango Multigoles: De 1 a 3 Goles en el Partido", "Rango Multigoles", rng_1_3, nh, _mkt_odds(qp["range_1_3"]), synergy="Cubre partidos con 1, 2 o 3 goles exactos en total.", model_prob=qp["range_1_3"]))
+    m_combo.append(make_opt("Rango Multigoles: De 1 a 4 Goles en el Partido", "Rango Multigoles", rng_1_4, nh, _mkt_odds(qp.get("range_1_4", 82.0)), synergy="Cobertura clásica estándar de fútbol (1 a 4 tantos).", model_prob=qp.get("range_1_4", 82.0)))
+    m_combo.append(make_opt("Rango Multigoles: De 1 a 5 Goles en el Partido", "Rango Multigoles", rng_1_5, nh, _mkt_odds(qp.get("range_1_5", 90.0)), synergy="Rango seguro para combinadas y parlays protegidos.", model_prob=qp.get("range_1_5", 90.0)))
     m_combo.append(make_opt("Rango Multigoles: De 2 a 4 Goles en el Partido", "Rango Multigoles", rng_2_4, nh, _mkt_odds(qp["range_2_4"]), synergy="Banda central de máxima densidad de la distribución de goles (2, 3 o 4 tantos).", model_prob=qp["range_2_4"]))
+    m_combo.append(make_opt("Rango Multigoles: De 2 a 5 Goles en el Partido", "Rango Multigoles", rng_2_5, nh, _mkt_odds(qp.get("range_2_5", 74.0)), synergy="Línea de alta liquidez PowerStats (2 a 5 goles totales).", model_prob=qp.get("range_2_5", 74.0)))
+    m_combo.append(make_opt("Rango Multigoles: De 2 a 6 Goles en el Partido", "Rango Multigoles", rng_2_6, nh, _mkt_odds(qp.get("range_2_6", 80.0)), synergy="Cubre encuentros activos con al menos 2 goles.", model_prob=qp.get("range_2_6", 80.0)))
     m_combo.append(make_opt("Rango Multigoles: De 2 a 3 Goles en el Partido", "Rango Multigoles", rng_2_3, nh, _mkt_odds(qp["range_2_3"]), synergy="Marcadores de 2 o 3 goles totales en tiempo reglamentario.", model_prob=qp["range_2_3"]))
     categories.append({"category": "🔗 Mercados Combinados (1X/X2 + Goles) y Rango Multigoles", "options": m_combo})
 

@@ -2279,8 +2279,19 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
             min_o=1.45,
         )
 
-    rng_lbl = "Rango Multigoles: De 2 a 4 Goles en el Partido" if lam_tot >= 2.45 else "Rango Multigoles: De 1 a 3 Goles en el Partido"
-    rng_prob = qp["range_2_4"] if lam_tot >= 2.45 else qp["range_1_3"]
+    # Selección de rango óptimo PowerStats (Sweet Spot: 58% a 68% de probabilidad)
+    if qp.get("range_2_4", 0) >= 58.0 and qp.get("range_2_4", 0) <= 68.0:
+        rng_lbl = "Rango Multigoles: De 2 a 4 Goles en el Partido"
+        rng_prob = qp["range_2_4"]
+    elif qp.get("range_1_3", 0) >= 58.0 and qp.get("range_1_3", 0) <= 68.0:
+        rng_lbl = "Rango Multigoles: De 1 a 3 Goles en el Partido"
+        rng_prob = qp["range_1_3"]
+    elif qp.get("range_2_5", 0) >= 65.0:
+        rng_lbl = "Rango Multigoles: De 2 a 5 Goles en el Partido"
+        rng_prob = qp.get("range_2_5", 74.0)
+    else:
+        rng_lbl = "Rango Multigoles: De 1 a 4 Goles en el Partido"
+        rng_prob = qp.get("range_1_4", 82.0)
     _add_cand(
         "Goles", "Rango Multigoles",
         rng_lbl, rng_lbl,

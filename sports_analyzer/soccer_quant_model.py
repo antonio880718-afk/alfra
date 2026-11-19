@@ -632,7 +632,7 @@ def build_markets(pred: Dict[str, Any]) -> List[Dict[str, Any]]:
         po = M[tot > ln].sum()
         add("Goles Totales", f"Más de {ln} goles", po, {"t": "ou", "stat": "goals", "side": "total", "op": "over", "line": ln})
         add("Goles Totales", f"Menos de {ln} goles", 1 - po, {"t": "ou", "stat": "goals", "side": "total", "op": "under", "line": ln})
-    for gl_lo, gl_hi in [(1, 3), (2, 3), (2, 4), (1, 4)]:
+    for gl_lo, gl_hi in [(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 3), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (5, 6)]:
         pr_rng = M[(tot >= gl_lo) & (tot <= gl_hi)].sum()
         add("Rango Multigoles", f"Rango de {gl_lo} a {gl_hi} goles en el partido", pr_rng, {"t": "multigoals", "lo": gl_lo, "hi": gl_hi})
     btts = M[(I > 0) & (J > 0)].sum()
@@ -1302,6 +1302,19 @@ def compute_hybrid_match_distributions(
     da_sh = count_dist(sh_info["away"], sh_info["disp"])
     dt_sh = np.convolve(dh_sh, da_sh)
 
+    # Distribuciones por Mitad PowerStats (Corners 46% 1T / 54% 2T | Tarjetas 30% 1T / 70% 2T)
+    dh_c1 = count_dist(c_info["home"] * 0.46, c_disp)
+    da_c1 = count_dist(c_info["away"] * 0.46, c_disp)
+    dt_c1 = np.convolve(dh_c1, da_c1)
+
+    dh_k1 = count_dist(card_info["home"] * 0.30, k_disp)
+    da_k1 = count_dist(card_info["away"] * 0.30, k_disp)
+    dt_k1 = np.convolve(dh_k1, da_k1)
+
+    dh_k2 = count_dist(card_info["home"] * 0.70, k_disp)
+    da_k2 = count_dist(card_info["away"] * 0.70, k_disp)
+    dt_k2 = np.convolve(dh_k2, da_k2)
+
     tot1 = np.bincount(t1.ravel(), M1.ravel())
     tot2 = np.bincount(t1.ravel(), M2.ravel())
     p_2h_more = float(sum(tot1[a] * tot2[a + 1:].sum() for a in range(len(tot1))))
@@ -1325,10 +1338,22 @@ def compute_hybrid_match_distributions(
         "dcx2_under35": float(M[(I <= J) & (tot < 3.5)].sum()),
         "dc1x_under45": float(M[(I >= J) & (tot < 4.5)].sum()),
         "dcx2_under45": float(M[(I <= J) & (tot < 4.5)].sum()),
+        "range_1_2": float(M[(tot >= 1) & (tot <= 2)].sum()),
         "range_1_3": float(M[(tot >= 1) & (tot <= 3)].sum()),
+        "range_1_4": float(M[(tot >= 1) & (tot <= 4)].sum()),
+        "range_1_5": float(M[(tot >= 1) & (tot <= 5)].sum()),
+        "range_1_6": float(M[(tot >= 1) & (tot <= 6)].sum()),
         "range_2_3": float(M[(tot >= 2) & (tot <= 3)].sum()),
         "range_2_4": float(M[(tot >= 2) & (tot <= 4)].sum()),
-        "range_1_4": float(M[(tot >= 1) & (tot <= 4)].sum()),
+        "range_2_5": float(M[(tot >= 2) & (tot <= 5)].sum()),
+        "range_2_6": float(M[(tot >= 2) & (tot <= 6)].sum()),
+        "range_3_4": float(M[(tot >= 3) & (tot <= 4)].sum()),
+        "range_3_5": float(M[(tot >= 3) & (tot <= 5)].sum()),
+        "range_3_6": float(M[(tot >= 3) & (tot <= 6)].sum()),
+        "range_4_5": float(M[(tot >= 4) & (tot <= 5)].sum()),
+        "range_4_6": float(M[(tot >= 4) & (tot <= 6)].sum()),
+        "range_5_6": float(M[(tot >= 5) & (tot <= 6)].sum()),
+        "range_7plus": float(M[tot >= 7].sum()),
         "home_over05": float(M[I > 0.5].sum()),
         "home_over15": float(M[I > 1.5].sum()),
         "away_over05": float(M[J > 0.5].sum()),
@@ -1364,6 +1389,10 @@ def compute_hybrid_match_distributions(
         "corners_over95": _over(dt_c, 9.5),
         "corners_over105": _over(dt_c, 10.5),
         "corners_under115": 1.0 - _over(dt_c, 11.5),
+        "ht_corners_over35": _over(dt_c1, 3.5),
+        "ht_corners_over45": _over(dt_c1, 4.5),
+        "ht_corners_under55": 1.0 - _over(dt_c1, 5.5),
+        "ht_corners_under65": 1.0 - _over(dt_c1, 6.5),
         "home_corners_over35": _over(dh_c, 3.5),
         "home_corners_over45": _over(dh_c, 4.5),
         "home_corners_over55": _over(dh_c, 5.5),
@@ -1383,6 +1412,10 @@ def compute_hybrid_match_distributions(
         "both_cards_over05": float(_over(dh_k, 0.5) * _over(da_k, 0.5)),
         "both_cards_over15": float(_over(dh_k, 1.5) * _over(da_k, 1.5)),
         "ht_cards_over05": float(1.0 - (1.0 - _over(dt_k, 2.5)) ** 0.45),
+        "ht_cards_over15": _over(dt_k1, 1.5),
+        "ht_cards_under25": 1.0 - _over(dt_k1, 2.5),
+        "h2_cards_over15": _over(dt_k2, 1.5),
+        "h2_cards_over25": _over(dt_k2, 2.5),
         "card_red_no": float(0.85),
         "sot_over65": _over(dt_s, 6.5),
         "sot_over75": _over(dt_s, 7.5),
@@ -1418,5 +1451,31 @@ def compute_hybrid_match_distributions(
     }
 
     pred["probs"] = {k: round(min(0.96, max(0.03, v)) * 100.0, 1) for k, v in probs.items()}
+    pred["multigol_total"] = {
+        "mg12": round(float(M[(tot >= 1) & (tot <= 2)].sum()) * 100, 1),
+        "mg13": round(float(M[(tot >= 1) & (tot <= 3)].sum()) * 100, 1),
+        "mg14": round(float(M[(tot >= 1) & (tot <= 4)].sum()) * 100, 1),
+        "mg15": round(float(M[(tot >= 1) & (tot <= 5)].sum()) * 100, 1),
+        "mg16": round(float(M[(tot >= 1) & (tot <= 6)].sum()) * 100, 1),
+        "mg23": round(float(M[(tot >= 2) & (tot <= 3)].sum()) * 100, 1),
+        "mg24": round(float(M[(tot >= 2) & (tot <= 4)].sum()) * 100, 1),
+        "mg25": round(float(M[(tot >= 2) & (tot <= 5)].sum()) * 100, 1),
+        "mg26": round(float(M[(tot >= 2) & (tot <= 6)].sum()) * 100, 1),
+        "mg34": round(float(M[(tot >= 3) & (tot <= 4)].sum()) * 100, 1),
+        "mg35": round(float(M[(tot >= 3) & (tot <= 5)].sum()) * 100, 1),
+        "mg36": round(float(M[(tot >= 3) & (tot <= 6)].sum()) * 100, 1),
+        "mg45": round(float(M[(tot >= 4) & (tot <= 5)].sum()) * 100, 1),
+        "mg46": round(float(M[(tot >= 4) & (tot <= 6)].sum()) * 100, 1),
+        "mg56": round(float(M[(tot >= 5) & (tot <= 6)].sum()) * 100, 1),
+        "mg7plus": round(float(M[tot >= 7].sum()) * 100, 1),
+    }
+    pred["powerstats_breakdown"] = {
+        "halves_ratios": {"goals": {"ht": 0.45, "h2": 0.55}, "corners": {"ht": 0.46, "h2": 0.54}, "cards": {"ht": 0.30, "h2": 0.70}},
+        "ref_multiplier": {
+            "fouls": round(float(np.clip(float(ref_cards_avg) / 4.15, 0.80, 1.25)), 2),
+            "cards": round(float(np.clip(float(ref_cards_avg) / 4.15, 0.70, 1.45)), 2),
+        },
+        "multigol_suggest_band": [58.0, 65.0],
+    }
     pred["markets"] = build_markets(pred)
     return pred
