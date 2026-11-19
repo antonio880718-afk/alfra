@@ -4,7 +4,7 @@ import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Modal } from '../../components/ui/Modal';
-import { Users as UsersIcon, Search, UserCog, CheckCircle, UserPlus, Trash2, Stamp, Gift, Calendar, Clock, History, X, ChevronDown, Receipt, DollarSign, Download, CreditCard, Sparkles, FileText, RefreshCw } from 'lucide-react';
+import { Users as UsersIcon, Search, UserCog, CheckCircle, UserPlus, Trash2, Stamp, Gift, Calendar, Clock, History, X, ChevronDown, Receipt, DollarSign, Download, CreditCard, Sparkles, FileText, RefreshCw, Apple } from 'lucide-react';
 import ReciboDigital from '../../components/ui/ReciboDigital';
 import { getRecibosPaciente } from '../../services/recibosService';
 import { getDocs, query, collection, where, orderBy } from 'firebase/firestore';
@@ -233,6 +233,67 @@ export default function AdminPacientes() {
             alert('Error al agendar: ' + error.message);
         } finally {
             setAgendandoPremio(false);
+        }
+    };
+
+        const handleTogglePlanNutricional = async (paciente) => {
+        if (!paciente) return;
+        const nuevoEstado = !paciente.planNutricionalActivo;
+        try {
+            const { doc, updateDoc, collection, query, where, getDocs } = await import('firebase/firestore');
+            const { db } = await import('../../lib/firebase');
+            const { calcularPlanNutricionalOmron } = await import('../../services/nutricionService');
+
+            let planData = null;
+            if (nuevoEstado) {
+                // Verificar si tiene al menos un tratamiento corporal o mixto activo
+                const tratsSnap = await getDocs(query(collection(db, 'tratamientos'), where('pacienteId', '==', paciente.id)));
+                const tieneCorporal = tratsSnap.docs.some(d => {
+                    const t = d.data();
+                    const estado = (t.estado || '').toLowerCase();
+                    const tipo = (t.tipo || t.area || t.nombre || '').toLowerCase();
+                    const esCorporal = tipo.includes('corporal') || tipo.includes('lipo') || tipo.includes('reductiv') || tipo.includes('anticelulitis') || tipo.includes('post-op') || tipo.includes('drenaje');
+                    return esCorporal && estado !== 'alta' && estado !== 'finalizado';
+                });
+
+                if (!tieneCorporal && (paciente.tipoTratamiento || '').toLowerCase() !== 'corporal') {
+                    if (!window.confirm('Aviso: Esta paciente no tiene un tratamiento corporal activo registrado. ¿Deseas activar el Plan Nutricional Clínico de todas formas?')) {
+                        return;
+                    }
+                }
+
+                // Obtener últimas métricas de valoración OMRON
+                let ultimaBiometria = {};
+                try {
+                    const sesionesSnap = await getDocs(query(collection(db, 'sesiones'), where('pacienteId', '==', paciente.id)));
+                    if (!sesionesSnap.empty) {
+                        const ult = sesionesSnap.docs[sesionesSnap.docs.length - 1].data();
+                        ultimaBiometria = ult.medidas || {};
+                    }
+                } catch (_) {}
+
+                planData = calcularPlanNutricionalOmron({
+                    peso: ultimaBiometria.peso || paciente.peso || 70,
+                    estatura: ultimaBiometria.estatura || paciente.estatura || 160,
+                    edad: paciente.edad || 30,
+                    rmKcal: ultimaBiometria.rmKcal || 0,
+                    grasaPct: ultimaBiometria.grasaPct || 30,
+                    musculoPct: ultimaBiometria.musculoPct || 25,
+                    grasaVisceral: ultimaBiometria.grasaVisceral || 4,
+                    bmi: ultimaBiometria.bmi || 25
+                });
+            }
+
+            await updateDoc(doc(db, 'pacientes', paciente.id), {
+                planNutricionalActivo: nuevoEstado,
+                ...(planData ? { planNutricionalData: planData } : {}),
+                planNutricionalUpdatedAt: new Date().toISOString()
+            });
+
+            alert(`Plan Nutricional Clínico ${nuevoEstado ? 'ACTIVADO' : 'DESACTIVADO'} para ${paciente.nombre}.`);
+        } catch (err) {
+            console.error('Error al cambiar plan nutricional:', err);
+            alert('Error al modificar estado del Plan Nutricional.');
         }
     };
 
@@ -600,6 +661,24 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                                         >
                                             <span className={`w-2 h-2 rounded-full ${p.expedienteActivo !== false ? 'bg-emerald-500' : 'bg-slate-400'}`} />
                                             <span>{p.expedienteActivo !== false ? 'Exp. Activo' : 'Exp. Inactivo'}</span>
+                                        </button>
+                                    )}
+                                    {userRole === 'Administrador' && (
+                                        <button
+                                            type="button"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleTogglePlanNutricional(p);
+                                            }}
+                                            title={p.planNutricionalActivo ? "Plan Nutricional Activo (Clic para desactivar)" : "Plan Nutricional Inactivo (Clic para activar plan automático corporal)"}
+                                            className={`px-2.5 py-1.5 rounded-xl text-[11px] font-black uppercase tracking-wider transition-all hover:scale-105 active:scale-95 flex items-center gap-1 cursor-pointer border ${
+                                                p.planNutricionalActivo
+                                                    ? 'bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100 shadow-sm'
+                                                    : 'bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100'
+                                            }`}
+                                        >
+                                            <Apple size={13} className={p.planNutricionalActivo ? "text-amber-600" : "text-gray-400"} />
+                                            <span>{p.planNutricionalActivo ? 'Plan Nutri Activo' : 'Plan Nutri Off'}</span>
                                         </button>
                                     )}
                                     <Button

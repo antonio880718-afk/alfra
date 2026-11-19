@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import ReciboDigital from "../../components/ui/ReciboDigital";
+import { programarAlertasNutricionalesLocales, cancelarAlertasNutricionalesLocales } from "../../services/nutricionService";
 import AutoAgendadoModal from "../../components/paciente/AutoAgendadoModal";
 import { Card } from "../../components/ui/Card";
 import { Button } from "../../components/ui/Button";
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { 
-  Calendar, Activity, User, Lock, Gift, Camera, Bell, FileText, Receipt, 
+  Calendar, Activity, User, Lock, Gift, Camera, Bell, FileText, Receipt, Apple, ShoppingBag,
   CheckCircle, Mail, Crown, Heart, Stethoscope, Sparkles, ChevronRight, Zap, 
   RefreshCw, Search, RotateCw, Flame, Award, Target, MapPin, Play, Pause, Square, 
   Timer, Navigation, Footprints, Trophy, ShieldCheck, Star, MessageSquare, 
@@ -2134,9 +2135,22 @@ export default function PacienteProfile() {
     }
   };
 
+  const [superChecklist, setSuperChecklist] = useState({});
+  const [alertasNutriActivas, setAlertasNutriActivas] = useState(false);
+
+  useEffect(() => {
+    if (perfilPaciente?.planNutricionalActivo) {
+      programarAlertasNutricionalesLocales().then(ok => setAlertasNutriActivas(ok)).catch(() => {});
+    } else {
+      cancelarAlertasNutricionalesLocales().catch(() => {});
+      setAlertasNutriActivas(false);
+    }
+  }, [perfilPaciente?.planNutricionalActivo]);
+
   const membresiaObj = getMembresiaObj(perfilPaciente.membresia, pacienteDocId);
   const tabs = [ 
     {key:"progreso", label:"Resumen", icon: Activity},
+    ...(perfilPaciente?.planNutricionalActivo ? [{key:"nutricion", label:"Plan Nutricional", icon: Apple}] : []),
     {key:"miprogreso", label:"Progreso", icon: Sparkles},
     {key:"citas", label:"Citas", icon: Calendar},
     {key:"expediente", label:"Estilo de Vida", icon: Flame},
@@ -3418,6 +3432,159 @@ export default function PacienteProfile() {
               </div>
             </div>
           </Card>
+        </div>
+      )}
+
+      {/* ==================== TAB PLAN NUTRICIONAL OMRON ==================== */}
+      {activeTab === "nutricion" && perfilPaciente?.planNutricionalActivo && (
+        <div className="space-y-6 animate-in fade-in pb-10">
+          <div className="bg-gradient-to-r from-amber-950 via-slate-900 to-emerald-950 rounded-3xl p-6 text-white border-2 border-amber-400/30 shadow-2xl relative overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                  <Apple size={12} /> Plan Nutricional Clínico ALFRA
+                </span>
+                <h2 className="text-xl sm:text-2xl font-black text-white mt-2">
+                  Nutrición Especializada para Tratamiento Corporal
+                </h2>
+                <p className="text-xs text-amber-100/80 mt-1 max-w-xl">
+                  Calculado automáticamente con tu valoración en báscula clínica <strong>OMRON Full Body Sensor HBF-514C</strong> para potenciar tus sesiones de aparatología y drenaje linfático.
+                </p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20 text-center shrink-0">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block animate-pulse mb-1"></span>
+                <p className="text-[10px] font-black uppercase tracking-wider text-emerald-300">Alertas en tu Celular</p>
+                <p className="text-xs font-bold text-white">5 Comidas + Hidratación</p>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const res = await programarAlertasNutricionalesLocales();
+                    alert(res ? '✓ Alertas y recordatorios sincronizados con tu celular.' : 'Aviso: Permite las notificaciones en tu celular para recibir los recordatorios.');
+                  }}
+                  className="mt-2 text-[10px] text-amber-300 underline font-bold cursor-pointer"
+                >
+                  Probar / Re-sincronizar
+                </button>
+              </div>
+            </div>
+
+            {perfilPaciente?.planNutricionalData && (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5 pt-4 border-t border-white/10 text-center">
+                <div className="bg-white/5 rounded-2xl p-2.5">
+                  <p className="text-[9px] uppercase font-black text-amber-300 tracking-wider">Meta Diaria</p>
+                  <p className="text-xl font-black text-white mt-0.5">{perfilPaciente.planNutricionalData.metaCalorias} <span className="text-xs font-normal">kcal</span></p>
+                  <p className="text-[9px] text-gray-400">Déficit Lipolítico</p>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-2.5">
+                  <p className="text-[9px] uppercase font-black text-teal-300 tracking-wider">Proteína Magra</p>
+                  <p className="text-xl font-black text-white mt-0.5">{perfilPaciente.planNutricionalData.gramosProteina} <span className="text-xs font-normal">g</span></p>
+                  <p className="text-[9px] text-gray-400">Protección muscular</p>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-2.5">
+                  <p className="text-[9px] uppercase font-black text-emerald-300 tracking-wider">Carbohidratos</p>
+                  <p className="text-xl font-black text-white mt-0.5">{perfilPaciente.planNutricionalData.gramosCarbos} <span className="text-xs font-normal">g</span></p>
+                  <p className="text-[9px] text-gray-400">Energía compleja</p>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-2.5">
+                  <p className="text-[9px] uppercase font-black text-cyan-300 tracking-wider">Agua Diaria</p>
+                  <p className="text-xl font-black text-white mt-0.5">{perfilPaciente.planNutricionalData.litrosAguaRecomendados} <span className="text-xs font-normal">L</span></p>
+                  <p className="text-[9px] text-gray-400">~{perfilPaciente.planNutricionalData.vasosAguaAlDia} vasos de 250ml</p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {perfilPaciente?.planNutricionalData?.menus && (
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-base sm:text-lg font-black text-gray-800 uppercase tracking-wider">
+                  Tus 5 Tiempos de Alimento (Con Horarios y Opciones)
+                </h3>
+                <p className="text-xs text-gray-500">Selecciona la opción que más se te antoje para cada momento del día.</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Object.entries(perfilPaciente.planNutricionalData.menus).map(([key, tiempo]) => (
+                  <Card key={key} className="shadow-md border border-gray-100 p-5 rounded-3xl space-y-3">
+                    <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+                      <span className="text-xs font-black uppercase text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                        {tiempo.titulo || key}
+                      </span>
+                      <span className="text-xs font-black text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-lg border border-emerald-200">
+                        ⏰ {tiempo.horario}
+                      </span>
+                    </div>
+
+                    <div className="space-y-2.5">
+                      {tiempo.opciones.map((opc, idx) => (
+                        <div key={idx} className="p-3 bg-gray-50/80 rounded-2xl border border-gray-150 hover:border-turquesa/40 transition-all">
+                          <p className="text-xs font-black text-gray-900 flex items-center gap-1.5">
+                            <span className="w-4 h-4 rounded-full bg-turquesa text-white text-[10px] flex items-center justify-center font-bold">
+                              {idx + 1}
+                            </span>
+                            {opc.nombre}
+                          </p>
+                          <p className="text-[11px] text-gray-600 mt-1 leading-relaxed">{opc.descripcion}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {perfilPaciente?.planNutricionalData?.listaSuper && (
+            <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-xl space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2.5 bg-emerald-100 text-emerald-700 rounded-2xl">
+                    <ShoppingBag size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-black text-gray-800 uppercase tracking-wider">
+                      Lista del Súper Semanal (Organizada por Pasillo)
+                    </h3>
+                    <p className="text-xs text-gray-500">Marca las compras que ya tengas en casa para tu semana.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {perfilPaciente.planNutricionalData.listaSuper.map((cat, cIdx) => (
+                  <div key={cIdx} className="p-4 bg-gray-50/80 rounded-2xl border border-gray-200 space-y-2">
+                    <h4 className="text-xs font-black text-gray-900 flex items-center gap-1.5 uppercase">
+                      <span>{cat.icon}</span> {cat.categoria}
+                    </h4>
+                    <ul className="space-y-1.5 text-xs text-gray-700">
+                      {cat.items.map((it, iIdx) => {
+                        const itemKey = `${cIdx}-${iIdx}`;
+                        const isChecked = Boolean(superChecklist[itemKey]);
+                        return (
+                          <li
+                            key={iIdx}
+                            onClick={() => setSuperChecklist(prev => ({ ...prev, [itemKey]: !prev[itemKey] }))}
+                            className={`flex items-center gap-2 p-1.5 rounded-lg cursor-pointer transition-all ${
+                              isChecked ? 'line-through text-gray-400 bg-emerald-50/50' : 'hover:bg-white'
+                            }`}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={isChecked}
+                              onChange={() => {}}
+                              className="rounded text-turquesa focus:ring-turquesa cursor-pointer"
+                            />
+                            <span>{it}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
 

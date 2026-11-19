@@ -500,16 +500,20 @@ export const eliminarSesion = async (sesionId, fotosSesion = []) => {
 // ─── CAMPOS POR TIPO ──────────────────────────────────────────────────────────
 
 export const MEDIDAS_CORPORALES = [
-    { key: 'peso',     label: 'Peso',     unit: 'kg',  tipo: 'number' },
-    { key: 'estatura', label: 'Estatura', unit: 'cm',  tipo: 'number' },
-    // IMC se calcula auto
-    { key: 'cintura',  label: 'Cintura',  unit: 'cm',  tipo: 'number' },
-    { key: 'abdomen',  label: 'Abdomen',  unit: 'cm',  tipo: 'number' },
-    { key: 'cadera',   label: 'Cadera',   unit: 'cm',  tipo: 'number' },
-    { key: 'busto',    label: 'Busto',    unit: 'cm',  tipo: 'number' },
-    { key: 'brazo',    label: 'Brazo',    unit: 'cm',  tipo: 'number' },
-    { key: 'muslos',   label: 'Muslos',   unit: 'cm',  tipo: 'number' },
-    { key: 'pierna',   label: 'Pierna',   unit: 'cm',  tipo: 'number' },
+    { key: 'peso',          label: 'Peso',              unit: 'kg',   tipo: 'number' },
+    { key: 'estatura',      label: 'Estatura',          unit: 'cm',   tipo: 'number' },
+    { key: 'grasaPct',      label: '% Grasa Corporal',  unit: '%',    tipo: 'number', omron: true },
+    { key: 'musculoPct',    label: '% Músculo Esquelético', unit: '%', tipo: 'number', omron: true },
+    { key: 'rmKcal',        label: 'Metabolismo Basal', unit: 'kcal', tipo: 'number', omron: true },
+    { key: 'grasaVisceral', label: 'Grasa Visceral',    unit: 'nivel',tipo: 'number', omron: true },
+    { key: 'edadCorporal',  label: 'Edad Corporal',     unit: 'años', tipo: 'number', omron: true },
+    { key: 'cintura',       label: 'Cintura',           unit: 'cm',   tipo: 'number' },
+    { key: 'abdomen',       label: 'Abdomen',           unit: 'cm',   tipo: 'number' },
+    { key: 'cadera',        label: 'Cadera',            unit: 'cm',   tipo: 'number' },
+    { key: 'busto',         label: 'Busto',             unit: 'cm',   tipo: 'number' },
+    { key: 'brazo',         label: 'Brazo',             unit: 'cm',   tipo: 'number' },
+    { key: 'muslos',        label: 'Muslos',            unit: 'cm',   tipo: 'number' },
+    { key: 'pierna',        label: 'Pierna',            unit: 'cm',   tipo: 'number' },
 ];
 
 export const CAMPOS_FACIALES = [
