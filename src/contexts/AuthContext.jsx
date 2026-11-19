@@ -706,25 +706,52 @@ export function AuthProvider({ children }) {
             createdAt: new Date().toISOString(),
         });
 
-        // 3. Buscar si el paciente ya existe en 'pacientes' por correo o teléfono para unificar (Merge)
-        const { addDoc, collection, getDocs, updateDoc, doc: firestoreDoc } = await import('firebase/firestore');
+        // 3. Buscar si el paciente ya existe en 'pacientes' por directorio, teléfono, correo o nombre para unificar (Merge)
+        const { addDoc, collection, getDocs, getDoc, updateDoc, doc: firestoreDoc } = await import('firebase/firestore');
         let existingPatientRef = null;
         let matchedPatientId = null;
 
+        const normalizarNombre = (txt = '') =>
+            String(txt || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+
+        const inputNombreNorm = normalizarNombre(nombre);
+        const last10Input = cleanPhone.slice(-10);
+
         try {
-            const snapAll = await getDocs(collection(db, 'pacientes'));
-            for (const d of snapAll.docs) {
-                const data = d.data();
-                const pTel = String(data.telefono || data.celular || '').replace(/\D/g, '');
-                const pEmail = String(data.email || data.correo || '').toLowerCase().trim();
+            // A) Primer intento prioritario: Buscar en directorio_pacientes por los últimos 10 dígitos
+            if (last10Input && last10Input.length === 10) {
+                try {
+                    const dirSnap = await getDoc(firestoreDoc(db, 'directorio_pacientes', last10Input));
+                    if (dirSnap.exists() && dirSnap.data().pacienteId) {
+                        const targetId = dirSnap.data().pacienteId;
+                        const pacDocSnap = await getDoc(firestoreDoc(db, 'pacientes', targetId));
+                        if (pacDocSnap.exists()) {
+                            existingPatientRef = firestoreDoc(db, 'pacientes', targetId);
+                            matchedPatientId = targetId;
+                        }
+                    }
+                } catch (_) {}
+            }
 
-                const matchTel = cleanPhone && cleanPhone.length >= 7 && pTel && (pTel === cleanPhone || pTel.endsWith(cleanPhone) || cleanPhone.endsWith(pTel));
-                const matchEmail = targetEmail && pEmail && pEmail === targetEmail;
+            // B) Segundo intento: Recorrer pacientes con coincidencias robustas de teléfono, correo o nombre completo
+            if (!matchedPatientId) {
+                const snapAll = await getDocs(collection(db, 'pacientes'));
+                for (const d of snapAll.docs) {
+                    const data = d.data();
+                    const pTel = String(data.telefono || data.celular || '').replace(/\D/g, '');
+                    const last10PTel = pTel.slice(-10);
+                    const pEmail = String(data.email || data.correo || '').toLowerCase().trim();
+                    const pNombreNorm = normalizarNombre(data.nombre);
 
-                if (matchTel || matchEmail) {
-                    existingPatientRef = firestoreDoc(db, 'pacientes', d.id);
-                    matchedPatientId = d.id;
-                    break;
+                    const matchTel = last10Input && last10PTel && (last10PTel === last10Input);
+                    const matchEmail = targetEmail && pEmail && (pEmail === targetEmail || (data.emailPrincipal && data.emailPrincipal.toLowerCase().trim() === targetEmail));
+                    const matchNombre = inputNombreNorm && pNombreNorm && (pNombreNorm === inputNombreNorm);
+
+                    if (matchTel || matchEmail || matchNombre) {
+                        existingPatientRef = firestoreDoc(db, 'pacientes', d.id);
+                        matchedPatientId = d.id;
+                        break;
+                    }
                 }
             }
         } catch (errSearch) {

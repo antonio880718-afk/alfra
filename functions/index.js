@@ -49,11 +49,11 @@ exports.enviarNotificacionLlegada = functions.firestore
             let usuarioSnap = await admin.firestore().collection("usuarios").doc(especialistaId).get();
             let finalUid = especialistaId;
 
-            // --- LÃ“GICA DE AUTO-CORRECCIÃ“N ---
+            // --- LÓGICA DE AUTO-CORRECCIÓN ---
             if (!usuarioSnap.exists) {
                 console.warn(`[DEBUG_NOTIF] ID ${especialistaId} no encontrado en 'usuarios'. Buscando por Staff...`);
 
-                // 1. Buscar en la colecciÃ³n 'staff' por el ID que nos llegÃ³
+                // 1. Buscar en la colección 'staff' por el ID que nos llegó
                 const staffSnap = await admin.firestore().collection("staff").doc(especialistaId).get();
 
                 if (staffSnap.exists) {
@@ -74,7 +74,7 @@ exports.enviarNotificacionLlegada = functions.firestore
                             finalUid = correctUserDoc.id;
                             usuarioSnap = correctUserDoc;
 
-                            console.log(`[DEBUG_NOTIF] Â¡Ã‰XITO! Mapeado a UID real: ${finalUid}. Parcheando documento de staff...`);
+                            console.log(`[DEBUG_NOTIF] ¡ÉXITO! Mapeado a UID real: ${finalUid}. Parcheando documento de staff...`);
 
                             // 3. AUTO-PARCHE: Guardar el UID correcto en el documento de staff para siempre
                             await staffSnap.ref.update({ uid: finalUid });
@@ -96,11 +96,11 @@ exports.enviarNotificacionLlegada = functions.firestore
                 return snap.ref.update({ estado: 'error', errorDetalle: 'Sin Token FCM' });
             }
 
-            console.log(`[DEBUG_NOTIF] Enviando notificaciÃ³n a: ${usuarioData.nombre}`);
+            console.log(`[DEBUG_NOTIF] Enviando notificación a: ${usuarioData.nombre}`);
 
             const payload = {
                 notification: {
-                    title: "Â¡Paciente en Sala de Espera!",
+                    title: "¡Paciente en Sala de Espera!",
                     body: mensaje
                 },
                 android: ANDROID_NOTIFICATION_CONFIG,
@@ -109,13 +109,13 @@ exports.enviarNotificacionLlegada = functions.firestore
             };
 
             const response = await admin.messaging().send(payload);
-            console.log(`[DEBUG_NOTIF] ENVÃO EXITOSO: ${response}`);
+            console.log(`[DEBUG_NOTIF] ENVIO EXITOSO: ${response}`);
 
             return snap.ref.update({
                 estado: 'completado',
                 enviadoEn: admin.firestore.FieldValue.serverTimestamp(),
                 fcmResponse: response,
-                uidResuelto: finalUid // Guardamos para auditorÃ­a
+                uidResuelto: finalUid // Guardamos para auditoría
             });
 
         } catch (error) {
@@ -128,7 +128,7 @@ exports.enviarNotificacionLlegada = functions.firestore
     });
 
 // --- RECORDATORIO DE CITAS (1 HORA ANTES) ---
-// Se ejecuta cada 15 minutos para buscar citas prÃ³ximas
+// Se ejecuta cada 15 minutos para buscar citas próximas
 exports.enviarRecordatorioCita = functions.pubsub
     .schedule('every 15 minutes')
     .onRun(async (context) => {
@@ -150,7 +150,7 @@ exports.enviarRecordatorioCita = functions.pubsub
                 .get();
 
             if (citasSnap.empty) {
-                console.log("[DEBUG_REMAINDER] No hay citas prÃ³ximas para notificar.");
+                console.log("[DEBUG_REMAINDER] No hay citas próximas para notificar.");
                 return null;
             }
 
@@ -160,7 +160,7 @@ exports.enviarRecordatorioCita = functions.pubsub
 
                 if (!pacienteId) return null;
 
-                // 1. Obtener UID del paciente desde la colecciÃ³n 'pacientes'
+                // 1. Obtener UID del paciente desde la colección 'pacientes'
                 const pacienteSnap = await admin.firestore().collection("pacientes").doc(pacienteId).get();
                 if (!pacienteSnap.exists) return null;
 
@@ -174,7 +174,7 @@ exports.enviarRecordatorioCita = functions.pubsub
                 const fcmToken = usuarioSnap.data().fcmToken;
                 if (!fcmToken) return null;
 
-                // 3. Enviar NotificaciÃ³n
+                // 3. Enviar Notificación
                 const payload = {
                     notification: {
                         title: "â° Recordatorio de Cita",
@@ -189,7 +189,7 @@ exports.enviarRecordatorioCita = functions.pubsub
                     await admin.messaging().send(payload);
                     // 4. Marcar como notificado
                     await doc.ref.update({ notificadoRecordatorio: true });
-                    console.log(`[DEBUG_REMAINDER] NotificaciÃ³n enviada a ${cita.pacienteNombre}`);
+                    console.log(`[DEBUG_REMAINDER] Notificación enviada a ${cita.pacienteNombre}`);
                 } catch (err) {
                     console.error(`[DEBUG_REMAINDER] Error enviando a ${cita.pacienteNombre}:`, err);
                 }
@@ -328,7 +328,7 @@ exports.notificarEspecialistaAgenda = functions.firestore
             };
 
             const response = await admin.messaging().send(payload);
-            console.log(`[DEBUG_AGENDA] NotificaciÃ³n ${tipoNotificacion} enviada a ${especialistaNombre}. Response: ${response}`);
+            console.log(`[DEBUG_AGENDA] Notificación ${tipoNotificacion} enviada a ${especialistaNombre}. Response: ${response}`);
 
             await admin.firestore().collection("notificaciones").add({
                 android: ANDROID_NOTIFICATION_CONFIG,
@@ -345,7 +345,7 @@ exports.notificarEspecialistaAgenda = functions.firestore
             return null;
 
         } catch (error) {
-            console.error(`[DEBUG_AGENDA] Error en envÃ­o:`, error);
+            console.error(`[DEBUG_AGENDA] Error en envío:`, error);
             return null;
         }
     });
@@ -395,15 +395,15 @@ const obtenerTokensAdmins = async () => {
     return Array.from(tokens);
 };
 
-// --- 1. NOTIFICACIÃ“N CANCELACIÃ“N DE CAJA ---
+// --- 1. NOTIFICACIÓN CANCELACIÓN DE CAJA ---
 exports.notificarCancelacionCaja = functions.firestore
     .document("movimientos/{movId}")
     .onUpdate(async (change, context) => {
         const dataBefore = change.before.data();
         const dataAfter = change.after.data();
 
-        // Detectar cambio de estado a 'Pendiente CancelaciÃ³n'
-        if (dataBefore.estado !== 'Pendiente CancelaciÃ³n' && dataAfter.estado === 'Pendiente CancelaciÃ³n') {
+        // Detectar cambio de estado a 'Pendiente Cancelación'
+        if (dataBefore.estado !== 'Pendiente Cancelación' && dataAfter.estado === 'Pendiente Cancelación') {
             const tokens = await obtenerTokensAdmins();
             if (tokens.length === 0) return null;
 
@@ -413,24 +413,24 @@ exports.notificarCancelacionCaja = functions.firestore
 
             const payload = {
                 notification: {
-                    title: "ðŸš¨ Solicitud de CancelaciÃ³n",
-                    body: `RecepciÃ³n solicita cancelar un cobro/gasto de ${monto} por '${concepto}'. Motivo: ${motivoCancelacion}. Requiere tu aprobaciÃ³n en caja.`
+                    title: "🚨 Solicitud de Cancelación",
+                    body: `Recepción solicita cancelar un cobro/gasto de ${monto} por '${concepto}'. Motivo: ${motivoCancelacion}. Requiere tu aprobación en caja.`
                 }
             };
 
             try {
                 const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-                console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de cancelaciÃ³n de caja enviada. Response:", response);
+                console.log("[DEBUG_ADMIN_NOTIF] Notificación de cancelación de caja enviada. Response:", response);
                 return response;
             } catch(e) {
-                console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelaciÃ³n caja:", e);
+                console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelación caja:", e);
                 return null;
             }
         }
         return null;
     });
 
-// --- 2. NOTIFICACIÃ“N INVENTARIO BAJO ---
+// --- 2. NOTIFICACIÓN INVENTARIO BAJO ---
 exports.notificarInventarioBajo = functions.firestore
     .document("inventario/{itemId}")
     .onUpdate(async (change, context) => {
@@ -450,13 +450,13 @@ exports.notificarInventarioBajo = functions.firestore
             const payload = {
                 notification: {
                     title: "ðŸ“¦ Alerta de Inventario Bajo",
-                    body: `El producto '${nombreItem}' estÃ¡ por agotarse (quedan ${stockActual} piezas). Favor de re-ordenar.`
+                    body: `El producto '${nombreItem}' está por agotarse (quedan ${stockActual} piezas). Favor de re-ordenar.`
                 }
             };
 
             try {
                 const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-                console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de inventario bajo enviada. Response:", response);
+                console.log("[DEBUG_ADMIN_NOTIF] Notificación de inventario bajo enviada. Response:", response);
                 return response;
             } catch(e) {
                 console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif inventario:", e);
@@ -656,7 +656,7 @@ exports.testCorteDiarioManual = functions.https.onRequest(async (req, res) => {
     }
 });
 
-// --- 4. CANCELACIÃ“N DE CITAS DE ALTO VALOR ---
+// --- 4. CANCELACIÓN DE CITAS DE ALTO VALOR ---
 exports.notificarAdminCancelacionCita = functions.firestore
     .document("citas/{citaId}")
     .onUpdate(async (change, context) => {
@@ -665,24 +665,24 @@ exports.notificarAdminCancelacionCita = functions.firestore
 
         if (dataBefore.status !== 'Cancelada' && dataAfter.status === 'Cancelada') {
             const servicio = (dataAfter.servicio || '').toLowerCase();
-            if (servicio.includes('cirugÃ­a') || servicio.includes('tratamiento')) {
+            if (servicio.includes('cirugía') || servicio.includes('tratamiento')) {
                 const tokens = await obtenerTokensAdmins();
                 if (tokens.length === 0) return null;
 
                 const pacienteNombre = dataAfter.paciente || dataAfter.pacienteNombre || 'Paciente';
                 const payload = {
                     notification: {
-                        title: "ðŸ“‰ CancelaciÃ³n Importante",
-                        body: `El paciente ${pacienteNombre} cancelÃ³ su cita de '${dataAfter.servicio}'.`
+                        title: "📉 Cancelación Importante",
+                        body: `El paciente ${pacienteNombre} canceló su cita de '${dataAfter.servicio}'.`
                     }
                 };
 
                 try {
                     const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-                    console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n cancelaciÃ³n cita enviada. Response:", response);
+                    console.log("[DEBUG_ADMIN_NOTIF] Notificación cancelación cita enviada. Response:", response);
                     return response;
                 } catch(e) {
-                    console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelaciÃ³n cita:", e);
+                    console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelación cita:", e);
                     return null;
                 }
             }
@@ -690,7 +690,7 @@ exports.notificarAdminCancelacionCita = functions.firestore
         return null;
     });
 
-// --- 5. NOTIFICACIÃ“N DE NUEVO TRATAMIENTO (EXPEDIENTE) ---
+// --- 5. NOTIFICACIÓN DE NUEVO TRATAMIENTO (EXPEDIENTE) ---
 exports.notificarAdminNuevoTratamiento = functions.firestore
     .document("tratamientos/{tratamientoId}")
     .onCreate(async (snap, context) => {
@@ -717,13 +717,13 @@ exports.notificarAdminNuevoTratamiento = functions.firestore
         const payload = {
             notification: {
                 title: "ðŸ“‚ Nuevo Expediente Abierto",
-                body: `${especialistaNombre} iniciÃ³ el tratamiento de '${tratamientoNombre}' para el paciente ${pacienteNombre}.`
+                body: `${especialistaNombre} inició el tratamiento de '${tratamientoNombre}' para el paciente ${pacienteNombre}.`
             }
         };
 
         try {
             const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-            console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n nuevo tratamiento enviada. Response:", response);
+            console.log("[DEBUG_ADMIN_NOTIF] Notificación nuevo tratamiento enviada. Response:", response);
             return response;
         } catch(e) {
             console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif nuevo tratamiento:", e);
@@ -731,7 +731,7 @@ exports.notificarAdminNuevoTratamiento = functions.firestore
         }
     });
 
-// --- 6. NOTIFICACIÃ“N DE NUEVA SESIÃ“N/EVOLUCIÃ“N (EXPEDIENTE) ---
+// --- 6. NOTIFICACIÓN DE NUEVA SESIÓN/EVOLUCIÓN (EXPEDIENTE) ---
 exports.notificarAdminNuevaSesion = functions.firestore
     .document("sesiones/{sesionId}")
     .onCreate(async (snap, context) => {
@@ -753,7 +753,7 @@ exports.notificarAdminNuevaSesion = functions.firestore
                     tratamientoNombre = tData.nombre || tratamientoNombre;
                     especialistaNombre = tData.especialistaNombre || especialistaNombre;
                     
-                    // Si la sesiÃ³n no tiene pacienteId directo (por alguna razÃ³n), usar el del tratamiento
+                    // Si la sesión no tiene pacienteId directo (por alguna razón), usar el del tratamiento
                     if (!data.pacienteId && tData.pacienteId) {
                         data.pacienteId = tData.pacienteId;
                     }
@@ -768,27 +768,27 @@ exports.notificarAdminNuevaSesion = functions.firestore
                 }
             }
         } catch (e) {
-            console.error("[DEBUG_ADMIN_NOTIF] Error obteniendo datos para notif sesiÃ³n:", e);
+            console.error("[DEBUG_ADMIN_NOTIF] Error obteniendo datos para notif sesión:", e);
         }
 
         const payload = {
             notification: {
-                title: "ðŸ“ EvoluciÃ³n Registrada",
-                body: `${especialistaNombre} firmÃ³ una nueva sesiÃ³n de '${tratamientoNombre}' para el paciente ${pacienteNombre}.`
+                title: "📝 Evolución Registrada",
+                body: `${especialistaNombre} firmó una nueva sesión de '${tratamientoNombre}' para el paciente ${pacienteNombre}.`
             }
         };
 
         try {
             const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-            console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n nueva sesiÃ³n enviada. Response:", response);
+            console.log("[DEBUG_ADMIN_NOTIF] Notificación nueva sesión enviada. Response:", response);
             return response;
         } catch(e) {
-            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif nueva sesiÃ³n:", e);
+            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif nueva sesión:", e);
             return null;
         }
     });
 
-// --- NOTIFICACIÃ“N SOLICITUD ELIMINACIÃ“N PACIENTE ---
+// --- NOTIFICACIÓN SOLICITUD ELIMINACIÓN PACIENTE ---
 exports.notificarSolicitudEliminacionPaciente = functions.firestore
     .document("solicitudes_eliminacion_pacientes/{id}")
     .onCreate(async (snap, context) => {
@@ -801,17 +801,17 @@ exports.notificarSolicitudEliminacionPaciente = functions.firestore
 
         const payload = {
             notification: {
-                title: "ðŸš¨ Solicitud de EliminaciÃ³n",
-                body: `RecepciÃ³n solicita eliminar al paciente '${pacienteNombre}'. Motivo: ${motivo}. Requiere tu aprobaciÃ³n.`
+                title: "🚨 Solicitud de Eliminación",
+                body: `Recepción solicita eliminar al paciente '${pacienteNombre}'. Motivo: ${motivo}. Requiere tu aprobación.`
             }
         };
 
         try {
             const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-            console.log("[DEBUG_ADMIN_NOTIF] NotificaciÃ³n de solicitud de eliminaciÃ³n enviada. Response:", response);
+            console.log("[DEBUG_ADMIN_NOTIF] Notificación de solicitud de eliminación enviada. Response:", response);
             return response;
         } catch(e) {
-            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif solicitud eliminaciÃ³n:", e);
+            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif solicitud eliminación:", e);
             return null;
         }
     });
@@ -850,7 +850,7 @@ exports.cambiarPasswordStaff = functions.https.onCall(async (data, context) => {
     const { email, newPassword } = data;
     
     if (!email || !newPassword) {
-        throw new functions.https.HttpsError('invalid-argument', 'Faltan datos (email o contraseÃ±a).');
+        throw new functions.https.HttpsError('invalid-argument', 'Faltan datos (email o contraseña).');
     }
     
     try {
@@ -858,7 +858,7 @@ exports.cambiarPasswordStaff = functions.https.onCall(async (data, context) => {
         const user = await admin.auth().getUserByEmail(email);
         const uid = user.uid;
         
-        // 3. Actualizar contraseÃ±a
+        // 3. Actualizar contraseña
         await admin.auth().updateUser(uid, {
             password: newPassword
         });
@@ -868,9 +868,9 @@ exports.cambiarPasswordStaff = functions.https.onCall(async (data, context) => {
             debeCambiarPassword: true
         }, { merge: true });
         
-        return { success: true, message: 'ContraseÃ±a actualizada y forzada a cambio.' };
+        return { success: true, message: 'Contraseña actualizada y forzada a cambio.' };
     } catch (error) {
-        console.error("Error cambiando contraseÃ±a:", error);
+        console.error("Error cambiando contraseña:", error);
         throw new functions.https.HttpsError('internal', error.message);
     }
 });
@@ -904,7 +904,7 @@ exports.getHorariosOcupados = functions.https.onCall(async (data, context) => {
     }
 });
 
-// --- AUTO-AGENDADO: devuelve citas del dÃ­a con su duraciÃ³n real ---
+// --- AUTO-AGENDADO: devuelve citas del día con su duración real ---
 exports.getHorariosOcupados = functions.https.onCall(async (data, context) => {
     if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
     const { fecha } = data;

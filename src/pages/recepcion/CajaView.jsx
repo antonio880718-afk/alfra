@@ -1970,10 +1970,13 @@ export default function CajaView() {
                             {/* PESTAÑA 1: CHECK-IN POST-CONSULTA (CON BOTÓN DE WHATSAPP MOTIVACIONAL) */}
                             {subTabAlertas === 'checkin' && (
                                 <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
-                                    {alertasCheckinPost.length === 0 ? (
-                                        <p className="text-xs text-gray-400 text-center py-6">Sin respuestas de check-in recientes.</p>
+                                    {alertasCheckinPost.filter(a => !a.atendido).length === 0 ? (
+                                        <div className="py-8 text-center space-y-1">
+                                            <p className="text-xs font-bold text-emerald-600">✓ Todas las alertas de check-in están atendidas</p>
+                                            <p className="text-[10px] text-gray-400">Excelente trabajo en recepción</p>
+                                        </div>
                                     ) : (
-                                        alertasCheckinPost.map((alerta) => (
+                                        alertasCheckinPost.filter(a => !a.atendido).map((alerta) => (
                                             <div
                                                 key={alerta.id}
                                                 className={`p-3 rounded-2xl border transition-all space-y-2 ${
@@ -2019,15 +2022,14 @@ export default function CajaView() {
                                                     >
                                                         <MessageSquare size={12} /> Enviar WhatsApp Motivador
                                                     </button>
-                                                    {!alerta.atendido && (
-                                                        <button
-                                                            type="button"
-                                                            onClick={() => handleMarcarAlertaAtendida(alerta.id)}
-                                                            className="text-[10px] font-bold text-gray-500 hover:text-gray-800 px-2 py-1 rounded-lg bg-white border border-gray-200 cursor-pointer"
-                                                        >
-                                                            ✓ Listo
-                                                        </button>
-                                                    )}
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleMarcarAlertaAtendida(alerta.id, 'seguimiento_post_consulta')}
+                                                        className="px-3 py-1.5 rounded-xl bg-white hover:bg-gray-100 text-gray-700 hover:text-emerald-700 font-black text-[10px] uppercase tracking-wider border border-gray-200 hover:border-emerald-300 transition-all flex items-center gap-1 shadow-sm cursor-pointer"
+                                                        title="Marcar como atendido y retirar de la lista"
+                                                    >
+                                                        ✓ Atendido
+                                                    </button>
                                                 </div>
                                             </div>
                                         ))
