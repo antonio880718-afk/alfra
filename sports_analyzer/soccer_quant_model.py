@@ -1411,7 +1411,7 @@ def compute_hybrid_match_distributions(
         "away_cards_over25": _over(da_k, 2.5),
         "both_cards_over05": float(_over(dh_k, 0.5) * _over(da_k, 0.5)),
         "both_cards_over15": float(_over(dh_k, 1.5) * _over(da_k, 1.5)),
-        "ht_cards_over05": float(1.0 - (1.0 - _over(dt_k, 2.5)) ** 0.45),
+        "ht_cards_over05": _over(dt_k1, 0.5),
         "ht_cards_over15": _over(dt_k1, 1.5),
         "ht_cards_under25": 1.0 - _over(dt_k1, 2.5),
         "h2_cards_over15": _over(dt_k2, 1.5),
