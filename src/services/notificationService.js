@@ -64,10 +64,22 @@ export const solicitarPermisoNotificaciones = async () => {
             }
             if (perm.receive === 'granted') {
                 try {
+                    // Canal principal con máxima prioridad (Heads-up banner, sonido y vibración)
+                    await PushNotifications.createChannel({
+                        id: 'alfra_citas_urgentes_v2',
+                        name: 'Alertas y Citas ALFRA',
+                        description: 'Notificaciones urgentes sobre citas, llegadas de pacientes y cortes de caja',
+                        importance: 5,
+                        visibility: 1,
+                        sound: 'default',
+                        vibration: true,
+                        lights: true,
+                        lightColor: '#20B2AA'
+                    });
                     await PushNotifications.createChannel({
                         id: 'alfra_citas_alertas',
-                        name: 'Citas y Alertas ALFRA',
-                        description: 'Notificaciones sobre citas médicas, recordatorios y avisos clínicos',
+                        name: 'Citas y Alertas Generales ALFRA',
+                        description: 'Avisos y recordatorios generales de clínica ALFRA',
                         importance: 5,
                         visibility: 1,
                         sound: 'default',

@@ -13,10 +13,59 @@ import { onAlertasAdminChange, onAlertasPacienteChange, onAlertasEspecialistaCha
 import { getPacienteByUid } from '../../services/pacientesService';
 import { getStaffDocByUid, onStaffDocChange } from '../../services/staffService';
 import { getAuth } from 'firebase/auth';
+import { collection, query, orderBy, limit, onSnapshot } from 'firebase/firestore';
+import { db } from '../../lib/firebase';
 
 export default function AppLayout() {
     const { userRole, logout, currentUser } = useAuth();
     const [drawerOpen, setDrawerOpen] = useState(false);
+
+    // ── LISTENER DE CITAS EN TIEMPO REAL PARA AVISO VISUAL Y SONIDO EN PC Y CELULAR ──
+    useEffect(() => {
+        if (!currentUser?.uid || (userRole !== 'Administrador' && userRole !== 'Recepcionista')) return;
+
+        const qCitas = query(collection(db, 'citas'), orderBy('createdAt', 'desc'), limit(15));
+        let isInitialCitas = true;
+        const citasVistas = new Set();
+
+        const unsubCitas = onSnapshot(qCitas, (snap) => {
+            if (isInitialCitas) {
+                snap.docs.forEach(d => citasVistas.add(d.id));
+                isInitialCitas = false;
+                return;
+            }
+
+            snap.docChanges().forEach((change) => {
+                const c = change.doc.data();
+                if (change.type === 'added' && !citasVistas.has(change.doc.id)) {
+                    citasVistas.add(change.doc.id);
+                    const nomPac = c.pacienteNombre || c.paciente || 'Paciente';
+                    const nomServ = c.servicio || 'Tratamiento';
+                    const horario = `${c.fecha || ''} ${c.hora || ''}`.trim();
+                    emitirNotificacion('📅 Nueva Cita Agendada', {
+                        body: `${nomPac} - ${nomServ} (${horario})`,
+                        tag: 'cita-nueva-' + change.doc.id
+                    });
+                } else if (change.type === 'modified') {
+                    if (c.status === 'Cancelada') {
+                        emitirNotificacion('❌ Cita Cancelada', {
+                            body: `${c.pacienteNombre || 'Paciente'} canceló su cita de ${c.servicio || 'servicio'}.`,
+                            tag: 'cita-cancel-' + change.doc.id
+                        });
+                    } else if (c.status === 'Reagendada') {
+                        emitirNotificacion('🔄 Cita Reagendada', {
+                            body: `${c.pacienteNombre || 'Paciente'} reagendó para ${c.fecha || ''} ${c.hora || ''}.`,
+                            tag: 'cita-reag-' + change.doc.id
+                        });
+                    }
+                }
+            });
+        }, (err) => {
+            console.warn('[ALERTA_CITAS_PC] Error escuchando citas:', err);
+        });
+
+        return () => unsubCitas();
+    }, [currentUser?.uid, userRole]);
     const [staffPerfil, setStaffPerfil] = useState(null);
 
     useEffect(() => {

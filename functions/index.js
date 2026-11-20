@@ -207,6 +207,10 @@ exports.enviarNotificacionLlegada = functions.firestore
         const especialistaId = data.especialistaId;
         const mensaje = data.mensaje;
 
+        if (data.tipo && data.tipo !== 'PACIENTE_LLEGADA') {
+            return null;
+        }
+
         console.log(`[DEBUG_NOTIF] Procesando alerta ${alertaId} para especialista: ${especialistaId}`);
 
         if (!mensaje) {
@@ -472,6 +476,19 @@ exports.notificarEspecialistaAgenda = functions.firestore
                 }
             }
 
+            // CREAR ALERTA EN TIEMPO REAL PARA PC Y NAVEGADOR
+            try {
+                await admin.firestore().collection("alertas_pacientes").add({
+                    tipo: "CITA_" + tipoNotificacion,
+                    titulo: tituloAdmin,
+                    mensaje: cuerpoAdmin,
+                    estado: "pendiente",
+                    citaId: String(citaId),
+                    paraRol: "Administrador",
+                    createdAt: admin.firestore.FieldValue.serverTimestamp()
+                });
+            } catch (_) {}
+
             return null;
 
         } catch (error) {
@@ -648,6 +665,17 @@ exports.corteDiarioCaja = functions.pubsub
                 data: { tipo: "CORTE_DIARIO", fecha: hoyStr }
             });
             console.log("[DEBUG_ADMIN_NOTIF] Notificacion de corte diario enviada. Exito:", response.successCount);
+
+            try {
+                await admin.firestore().collection("alertas_pacientes").add({
+                    tipo: "CORTE_DIARIO",
+                    titulo: payload.notification.title,
+                    mensaje: payload.notification.body,
+                    estado: "pendiente",
+                    paraRol: "Administrador",
+                    createdAt: admin.firestore.FieldValue.serverTimestamp()
+                });
+            } catch (_) {}
             return response;
         } catch (error) {
             console.error("[DEBUG_ADMIN_NOTIF] Error en corteDiarioCaja:", error);
