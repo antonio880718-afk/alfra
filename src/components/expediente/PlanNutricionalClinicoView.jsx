@@ -192,7 +192,7 @@ export default function PlanNutricionalClinicoView({
                 <div className="space-y-1.5">
                     <div className="flex items-center gap-2 flex-wrap">
                         <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-teal-400/20 text-teal-300 border border-teal-400/30 flex items-center gap-1.5">
-                            <Scale size={12} /> OMRON HBF-514C Full Body Sensor
+                            <Scale size={12} /> Bioimpedancia Clínica ALFRA
                         </span>
                         <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 ${
                             activo ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-gray-500/20 text-gray-300 border border-gray-500/30'
@@ -202,7 +202,7 @@ export default function PlanNutricionalClinicoView({
                         </span>
                     </div>
                     <h2 className="text-xl font-black text-white flex items-center gap-2">
-                        <Apple className="text-teal-400" size={24} /> Plan Nutricional Clinico Personalizado
+                        <Apple className="text-teal-400" size={24} /> Plan Nutricional ALFRA
                     </h2>
                     <p className="text-xs text-gray-300 max-w-2xl">
                         Calculo metabolico directo de bioimpedancia para acelerar drenaje linfatico, reduccion de medidas y proteccion de masa muscular magra.
@@ -237,7 +237,7 @@ export default function PlanNutricionalClinicoView({
                             setModalMedicion(true);
                         }}
                     >
-                        Capturar Bascula OMRON
+                        Capturar Báscula / Medición
                     </Button>
                     <Button
                         variant="outline"
@@ -490,7 +490,7 @@ export default function PlanNutricionalClinicoView({
             <Modal
                 isOpen={modalMedicion}
                 onClose={() => setModalMedicion(false)}
-                title="Captura de Bascula OMRON HBF-514C"
+                title="Captura de Báscula Clínica - Plan Nutricional ALFRA"
             >
                 <form onSubmit={handleGuardarMedicion} className="space-y-4 p-2">
                     <p className="text-xs text-gray-500">

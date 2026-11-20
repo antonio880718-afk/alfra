@@ -2685,7 +2685,7 @@ export default function ExpedienteClinico() {
                         { key: 'evolucion', label: '📊 Evolución y Medidas', count: sesiones.length },
                         { key: 'galeria', label: '📸 Galería y Antes / Después', count: todasLasFotos.length },
                         { key: 'roadmap', label: `🗺️ Roadmap Clínico (Fase ${faseActualGlobal})`, count: 4 },
-                        { key: 'apoyo', label: '🥗 Plan Nutricional OMRON y Casa', count: (paciente?.planNutricionalActivo ? 'Activo' : apoyoList.length) },
+                        { key: 'apoyo', label: '🥗 Plan Nutricional ALFRA', count: (paciente?.planNutricionalActivo ? 'Activo' : apoyoList.length) },
                         { key: 'ficha', label: '🩺 Ficha Médica, Citas y Firmas', count: citasHistorial.length },
                     ].map(tab => (
                         <button
