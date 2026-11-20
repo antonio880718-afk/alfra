@@ -16,52 +16,41 @@
     "home_1h_score": null,
     "away_1h_score": null,
     "total_1h_points": null,
-    "spread_str": "UCF -2.5",
-    "over_under": 49.5,
+    "spread_str": "ISU -1.5",
+    "over_under": 50.5,
     "is_dome": false,
     "venue": "Acrisure Bounce House",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_yds_allowed": 220.0,
       "rush_def_rank": 16,
       "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 26.5,
+      "style": "Base NCAAF"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_yds_allowed": 222.0,
       "rush_def_rank": 17,
       "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 27.0,
+      "style": "Base NCAAF"
     },
     "stars": [
       {
-        "name": "Alonza Barnett III",
+        "name": "Keyone Jenkins",
         "team": "UCF Knights",
         "pos": "QB",
-        "jersey": "14",
-        "pass_yds": 199.7,
-        "pass_tds": 1.5,
-        "rush_yds": 18.0,
+        "jersey": "12",
+        "pass_yds": 155.0,
+        "pass_tds": 1.1,
+        "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Activo UCF Knights (199.7 YDS/J)"
-      },
-      {
-        "name": "Landen Chambers",
-        "team": "UCF Knights",
-        "pos": "RB",
-        "jersey": "11",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 59.0,
-        "rec_yds": 20.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Activo UCF Knights (59.0 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder UCF Knights (118.1 YDS/g, 1.1 TD/g)"
       },
       {
         "name": "Duke Watson",
@@ -74,7 +63,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 47.8,
-        "role": "Corredor Titular Activo UCF Knights (59.6 YDS/J)"
+        "role": "RB Líder UCF Knights (59.6 YDS/g)"
       },
       {
         "name": "Josh Derry",
@@ -84,36 +73,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 66.7,
-        "receptions": 5.8,
-        "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Activo UCF Knights (66.7 YDS/J)"
-      },
-      {
-        "name": "Caden Piening",
-        "team": "UCF Knights",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 44.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Activo UCF Knights (44.0 YDS/J)"
+        "rec_yds": 70.8,
+        "receptions": 5.2,
+        "anytime_td_pct": 49.2,
+        "role": "WR/TE Líder UCF Knights (70.8 YDS/g, 5.2 REC/g)"
       },
       {
         "name": "Jaylen Raynor",
         "team": "Iowa State Cyclones",
         "pos": "QB",
         "jersey": "1",
-        "pass_yds": 237.4,
-        "pass_tds": 1.5,
-        "rush_yds": 18.0,
+        "pass_yds": 190.1,
+        "pass_tds": 1.3,
+        "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Activo Iowa State Cyclones (237.4 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Iowa State Cyclones (190.1 YDS/g, 1.3 TD/g)"
       },
       {
         "name": "Aiden Flora",
@@ -122,37 +98,11 @@
         "jersey": "21",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 216.0,
-        "rec_yds": 38.0,
-        "receptions": 4.0,
+        "rush_yds": 133.5,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Activo Iowa State Cyclones (216.0 YDS/J)"
-      },
-      {
-        "name": "Arnold Barnes III",
-        "team": "Iowa State Cyclones",
-        "pos": "RB",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 55.0,
-        "rec_yds": 12.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Activo Iowa State Cyclones (55.0 YDS/J)"
-      },
-      {
-        "name": "Cameron Pettaway",
-        "team": "Iowa State Cyclones",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 76.0,
-        "receptions": 6.6,
-        "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Activo Iowa State Cyclones (76.0 YDS/J)"
+        "role": "RB Líder Iowa State Cyclones (133.5 YDS/g)"
       },
       {
         "name": "Jamal Polite Jr.",
@@ -162,10 +112,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 68.0,
-        "receptions": 5.9,
+        "rec_yds": 45.0,
+        "receptions": 3.2,
         "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Activo Iowa State Cyclones (68.0 YDS/J)"
+        "role": "WR/TE Líder Iowa State Cyclones (38.9 YDS/g, 2.0 REC/g)"
       }
     ],
     "boxscore_athletes": {}
@@ -187,25 +137,27 @@
     "home_1h_score": null,
     "away_1h_score": null,
     "total_1h_points": null,
-    "spread_str": "DUKE -13.5",
-    "over_under": 40.5,
+    "spread_str": "DUKE -11.5",
+    "over_under": 41.5,
     "is_dome": false,
     "venue": "Wallace Wade Stadium",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_yds_allowed": 220.0,
       "rush_def_rank": 16,
       "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 26.5,
+      "style": "Base NCAAF"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_yds_allowed": 222.0,
       "rush_def_rank": 17,
       "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 27.0,
+      "style": "Base NCAAF"
     },
     "stars": [
       {
@@ -213,13 +165,13 @@
         "team": "Duke Blue Devils",
         "pos": "QB",
         "jersey": "2",
-        "pass_yds": 225.6,
-        "pass_tds": 1.5,
-        "rush_yds": 18.0,
+        "pass_yds": 204.4,
+        "pass_tds": 1.1,
+        "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Activo Duke Blue Devils (225.6 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Duke Blue Devils (204.4 YDS/g, 1.1 TD/g)"
       },
       {
         "name": "Nate Sheppard",
@@ -228,24 +180,11 @@
         "jersey": "20",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 131.6,
-        "rec_yds": 93.0,
-        "receptions": 12.0,
+        "rush_yds": 132.0,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Activo Duke Blue Devils (131.6 YDS/J)"
-      },
-      {
-        "name": "Jaivon Solomon",
-        "team": "Duke Blue Devils",
-        "pos": "WR",
-        "jersey": "4",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 68.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Activo Duke Blue Devils (68.0 YDS/J)"
+        "role": "RB Líder Duke Blue Devils (132.0 YDS/g)"
       },
       {
         "name": "Jonah Burton",
@@ -255,36 +194,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 46.0,
-        "receptions": 4.0,
+        "rec_yds": 45.0,
+        "receptions": 3.2,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Activo Duke Blue Devils (46.0 YDS/J)"
+        "role": "WR/TE Líder Duke Blue Devils (40.6 YDS/g, 3.1 REC/g)"
       },
       {
         "name": "Tait Reynolds",
         "team": "Clemson Tigers",
         "pos": "QB",
         "jersey": "2",
-        "pass_yds": 242.0,
-        "pass_tds": 1.8,
-        "rush_yds": 18.0,
+        "pass_yds": 155.0,
+        "pass_tds": 1.1,
+        "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Activo Clemson Tigers (242.0 YDS/J)"
-      },
-      {
-        "name": "Jarvis Green",
-        "team": "Clemson Tigers",
-        "pos": "RB",
-        "jersey": "21",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 61.8,
-        "rec_yds": 20.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Activo Clemson Tigers (61.8 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Clemson Tigers (144.9 YDS/g, 0.3 TD/g)"
       },
       {
         "name": "Gideon Davidson",
@@ -297,20 +223,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular Activo Clemson Tigers (52.8 YDS/J)"
-      },
-      {
-        "name": "Juju Preston",
-        "team": "Clemson Tigers",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 56.0,
-        "receptions": 4.9,
-        "anytime_td_pct": 36.0,
-        "role": "Receptor Titular Activo Clemson Tigers (56.0 YDS/J)"
+        "role": "RB Líder Clemson Tigers (52.8 YDS/g)"
       },
       {
         "name": "Bryant Wesco Jr.",
@@ -320,10 +233,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 53.0,
+        "rec_yds": 53.6,
         "receptions": 4.7,
-        "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Activo Clemson Tigers (53.0 YDS/J)"
+        "anytime_td_pct": 38.0,
+        "role": "WR/TE Líder Clemson Tigers (53.6 YDS/g, 4.7 REC/g)"
       }
     ],
     "boxscore_athletes": {}
@@ -345,25 +258,27 @@
     "home_1h_score": null,
     "away_1h_score": null,
     "total_1h_points": null,
-    "spread_str": "TOL -15.5",
-    "over_under": 48.5,
+    "spread_str": "TOL -16.5",
+    "over_under": 45.5,
     "is_dome": false,
     "venue": "Glass Bowl",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_yds_allowed": 220.0,
       "rush_def_rank": 16,
       "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 26.5,
+      "style": "Base NCAAF"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_yds_allowed": 222.0,
       "rush_def_rank": 17,
       "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 27.0,
+      "style": "Base NCAAF"
     },
     "stars": [
       {
@@ -371,26 +286,13 @@
         "team": "Toledo Rockets",
         "pos": "QB",
         "jersey": "6",
-        "pass_yds": 231.5,
-        "pass_tds": 1.6,
+        "pass_yds": 250.1,
+        "pass_tds": 1.9,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Activo Toledo Rockets (231.5 YDS/J)"
-      },
-      {
-        "name": "Connor Walendzak",
-        "team": "Toledo Rockets",
-        "pos": "RB",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 117.0,
-        "rec_yds": 41.0,
-        "receptions": 3.0,
-        "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Activo Toledo Rockets (117.0 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Toledo Rockets (250.1 YDS/g, 1.9 TD/g)"
       },
       {
         "name": "CJ Miller",
@@ -399,11 +301,11 @@
         "jersey": "22",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 83.0,
+        "rush_yds": 82.7,
         "rec_yds": 14.0,
-        "receptions": 2.2,
+        "receptions": 1.8,
         "anytime_td_pct": 66.2,
-        "role": "Corredor Titular Activo Toledo Rockets (83.0 YDS/J)"
+        "role": "RB Líder Toledo Rockets (82.7 YDS/g)"
       },
       {
         "name": "Adjatay Dabbs",
@@ -413,36 +315,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 144.0,
-        "receptions": 12.5,
+        "rec_yds": 73.6,
+        "receptions": 4.7,
         "anytime_td_pct": 63.6,
-        "role": "Receptor Titular Activo Toledo Rockets (144.0 YDS/J)"
+        "role": "WR/TE Líder Toledo Rockets (73.6 YDS/g, 4.7 REC/g)"
       },
       {
-        "name": "Austin Novosad",
+        "name": "Jay Kastantin",
         "team": "Bowling Green Falcons",
         "pos": "QB",
-        "jersey": "0",
-        "pass_yds": 229.0,
-        "pass_tds": 3.0,
-        "rush_yds": 0.0,
+        "jersey": "17",
+        "pass_yds": 156.7,
+        "pass_tds": 1.1,
+        "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Activo Bowling Green Falcons (229.0 YDS/J)"
-      },
-      {
-        "name": "Nakai Amachree",
-        "team": "Bowling Green Falcons",
-        "pos": "RB",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 110.0,
-        "rec_yds": 87.0,
-        "receptions": 3.0,
-        "anytime_td_pct": 58.0,
-        "role": "Corredor Titular Activo Bowling Green Falcons (110.0 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Bowling Green Falcons (156.7 YDS/g, 1.1 TD/g)"
       },
       {
         "name": "Austyn Dendy",
@@ -455,33 +344,20 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Activo Bowling Green Falcons (48.0 YDS/J)"
+        "role": "RB Líder Bowling Green Falcons (37.1 YDS/g)"
       },
       {
-        "name": "Eli Jacon-Duffy",
+        "name": "Jeremiah Scoby",
         "team": "Bowling Green Falcons",
-        "pos": "WR",
+        "pos": "TE",
         "jersey": "0",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 59.0,
-        "receptions": 5.1,
-        "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Activo Bowling Green Falcons (59.0 YDS/J)"
-      },
-      {
-        "name": "Brennan Ridley",
-        "team": "Bowling Green Falcons",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 46.0,
-        "receptions": 3.6,
-        "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Activo Bowling Green Falcons (46.0 YDS/J)"
+        "rec_yds": 45.0,
+        "receptions": 3.5,
+        "anytime_td_pct": 38.0,
+        "role": "WR/TE Líder Bowling Green Falcons (35.6 YDS/g, 3.5 REC/g)"
       }
     ],
     "boxscore_athletes": {}
@@ -503,25 +379,27 @@
     "home_1h_score": null,
     "away_1h_score": null,
     "total_1h_points": null,
-    "spread_str": "ORE -16.5",
-    "over_under": 45.5,
+    "spread_str": "ORE -17.5",
+    "over_under": 42.5,
     "is_dome": false,
     "venue": "Spartan Stadium",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_yds_allowed": 220.0,
       "rush_def_rank": 16,
       "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 26.5,
+      "style": "Base NCAAF"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_yds_allowed": 222.0,
       "rush_def_rank": 17,
       "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 27.0,
+      "style": "Base NCAAF"
     },
     "stars": [
       {
@@ -529,26 +407,13 @@
         "team": "Michigan State Spartans",
         "pos": "QB",
         "jersey": "11",
-        "pass_yds": 195.1,
-        "pass_tds": 1.5,
-        "rush_yds": 18.0,
+        "pass_yds": 155.9,
+        "pass_tds": 1.1,
+        "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Activo Michigan State Spartans (195.1 YDS/J)"
-      },
-      {
-        "name": "Brandon Tullis",
-        "team": "Michigan State Spartans",
-        "pos": "RB",
-        "jersey": "7",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 63.1,
-        "rec_yds": 20.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Activo Michigan State Spartans (63.1 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Michigan State Spartans (155.9 YDS/g, 0.7 TD/g)"
       },
       {
         "name": "Jaziun Patterson",
@@ -561,7 +426,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 57.0,
-        "role": "Corredor Titular Activo Michigan State Spartans (48.0 YDS/J)"
+        "role": "RB Líder Michigan State Spartans (32.7 YDS/g)"
       },
       {
         "name": "Chrishon McCray",
@@ -571,36 +436,23 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 53.7,
-        "receptions": 4.7,
-        "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Activo Michigan State Spartans (53.7 YDS/J)"
-      },
-      {
-        "name": "Carson Gulker",
-        "team": "Michigan State Spartans",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 46.0,
-        "receptions": 3.6,
-        "anytime_td_pct": 44.0,
-        "role": "Receptor Titular Activo Michigan State Spartans (46.0 YDS/J)"
+        "rec_yds": 45.0,
+        "receptions": 3.9,
+        "anytime_td_pct": 38.0,
+        "role": "WR/TE Líder Michigan State Spartans (41.4 YDS/g, 3.9 REC/g)"
       },
       {
         "name": "Dylan Raiola",
         "team": "Oregon Ducks",
         "pos": "QB",
         "jersey": "8",
-        "pass_yds": 341.0,
-        "pass_tds": 4.0,
-        "rush_yds": 18.0,
+        "pass_yds": 169.5,
+        "pass_tds": 1.5,
+        "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 36.0,
-        "role": "QB Titular Activo Oregon Ducks (341.0 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Oregon Ducks (169.5 YDS/g, 1.5 TD/g)"
       },
       {
         "name": "Dierre Hill Jr.",
@@ -609,37 +461,11 @@
         "jersey": "6",
         "pass_yds": 0.0,
         "pass_tds": 0.0,
-        "rush_yds": 98.0,
-        "rec_yds": 49.0,
-        "receptions": 2.5,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Activo Oregon Ducks (98.0 YDS/J)"
-      },
-      {
-        "name": "Brandon Smith",
-        "team": "Oregon Ducks",
-        "pos": "RB",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 48.0,
-        "rec_yds": 12.0,
-        "receptions": 2.2,
-        "anytime_td_pct": 36.0,
-        "role": "Corredor Titular Activo Oregon Ducks (48.0 YDS/J)"
-      },
-      {
-        "name": "Jeremiah McClellan",
-        "team": "Oregon Ducks",
-        "pos": "WR",
-        "jersey": "0",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 105.0,
-        "receptions": 9.1,
-        "anytime_td_pct": 58.0,
-        "role": "Receptor Titular Activo Oregon Ducks (105.0 YDS/J)"
+        "rush_yds": 57.2,
+        "rec_yds": 14.0,
+        "receptions": 1.8,
+        "anytime_td_pct": 57.0,
+        "role": "RB Líder Oregon Ducks (57.2 YDS/g)"
       },
       {
         "name": "Dakorien Moore",
@@ -649,10 +475,10 @@
         "pass_yds": 0.0,
         "pass_tds": 0.0,
         "rush_yds": 0.0,
-        "rec_yds": 101.0,
-        "receptions": 8.8,
+        "rec_yds": 70.2,
+        "receptions": 5.5,
         "anytime_td_pct": 68.4,
-        "role": "Receptor Titular Activo Oregon Ducks (101.0 YDS/J)"
+        "role": "WR/TE Líder Oregon Ducks (70.2 YDS/g, 5.5 REC/g)"
       }
     ],
     "boxscore_athletes": {}
@@ -674,25 +500,27 @@
     "home_1h_score": null,
     "away_1h_score": null,
     "total_1h_points": null,
-    "spread_str": "AF -23.5",
-    "over_under": 47.5,
+    "spread_str": "AF -22.5",
+    "over_under": 48.5,
     "is_dome": false,
     "venue": "Falcon Stadium",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_yds_allowed": 220.0,
       "rush_def_rank": 16,
       "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 26.5,
+      "style": "Base NCAAF"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_yds_allowed": 222.0,
       "rush_def_rank": 17,
       "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 27.0,
+      "style": "Base NCAAF"
     },
     "stars": [
       {
@@ -700,52 +528,26 @@
         "team": "Air Force Falcons",
         "pos": "QB",
         "jersey": "9",
-        "pass_yds": 175.0,
-        "pass_tds": 1.5,
+        "pass_yds": 155.0,
+        "pass_tds": 1.1,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Activo Air Force Falcons (175.0 YDS/J)"
-      },
-      {
-        "name": "Kemper Hodges",
-        "team": "Air Force Falcons",
-        "pos": "RB",
-        "jersey": "4",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 74.0,
-        "rec_yds": 20.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Activo Air Force Falcons (74.0 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder Air Force Falcons (29.6 YDS/g, 0.1 TD/g)"
       },
       {
         "name": "Evan Medders",
         "team": "Air Force Falcons",
         "pos": "RB",
         "jersey": "5",
-        "pass_yds": 242.0,
-        "pass_tds": 1.8,
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
         "rush_yds": 69.5,
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 70.8,
-        "role": "Corredor Titular Activo Air Force Falcons (69.5 YDS/J)"
-      },
-      {
-        "name": "Mason Hayes",
-        "team": "Air Force Falcons",
-        "pos": "WR",
-        "jersey": "18",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 68.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Activo Air Force Falcons (68.0 YDS/J)"
+        "role": "RB Líder Air Force Falcons (69.5 YDS/g)"
       },
       {
         "name": "Simon Kibbee",
@@ -756,61 +558,35 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.4,
+        "receptions": 3.2,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Activo Air Force Falcons (45.0 YDS/J)"
+        "role": "WR/TE Líder Air Force Falcons (16.6 YDS/g, 1.0 REC/g)"
       },
       {
         "name": "EJ Colson Jr.",
         "team": "UTEP Miners",
         "pos": "QB",
         "jersey": "1",
-        "pass_yds": 175.0,
-        "pass_tds": 1.5,
+        "pass_yds": 155.0,
+        "pass_tds": 1.1,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Activo UTEP Miners (175.0 YDS/J)"
-      },
-      {
-        "name": "Lamar Sperling",
-        "team": "UTEP Miners",
-        "pos": "RB",
-        "jersey": "32",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 74.0,
-        "rec_yds": 20.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Activo UTEP Miners (74.0 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder UTEP Miners (68.7 YDS/g, 0.7 TD/g)"
       },
       {
         "name": "Raymond Moore III",
         "team": "UTEP Miners",
         "pos": "RB",
         "jersey": "12",
-        "pass_yds": 242.0,
-        "pass_tds": 1.8,
+        "pass_yds": 0.0,
+        "pass_tds": 0.0,
         "rush_yds": 68.6,
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 52.4,
-        "role": "Corredor Titular Activo UTEP Miners (68.6 YDS/J)"
-      },
-      {
-        "name": "Carver Cheeks",
-        "team": "UTEP Miners",
-        "pos": "WR",
-        "jersey": "5",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 68.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Activo UTEP Miners (68.0 YDS/J)"
+        "role": "RB Líder UTEP Miners (68.6 YDS/g)"
       },
       {
         "name": "Jaden Smith",
@@ -821,9 +597,9 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 4.0,
+        "receptions": 3.7,
         "anytime_td_pct": 38.0,
-        "role": "Receptor Titular Activo UTEP Miners (45.0 YDS/J)"
+        "role": "WR/TE Líder UTEP Miners (31.4 YDS/g, 3.7 REC/g)"
       }
     ],
     "boxscore_athletes": {}
@@ -845,25 +621,27 @@
     "home_1h_score": null,
     "away_1h_score": null,
     "total_1h_points": null,
-    "spread_str": "UNM -7.5",
+    "spread_str": "UNM -10",
     "over_under": 37.5,
     "is_dome": false,
     "venue": "War Memorial Stadium",
     "home_defense": {
       "pass_def_rank": 16,
-      "pass_yds_allowed": 225.0,
+      "pass_yds_allowed": 220.0,
       "rush_def_rank": 16,
       "rush_yds_allowed": 115.0,
-      "pts_allowed": 22.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 26.5,
+      "style": "Base NCAAF"
     },
     "away_defense": {
       "pass_def_rank": 17,
-      "pass_yds_allowed": 228.0,
+      "pass_yds_allowed": 222.0,
       "rush_def_rank": 17,
       "rush_yds_allowed": 118.0,
-      "pts_allowed": 23.0,
-      "style": "Defensa Promedio"
+      "pts_for": 26.5,
+      "pts_allowed": 27.0,
+      "style": "Base NCAAF"
     },
     "stars": [
       {
@@ -871,39 +649,13 @@
         "team": "Wyoming Cowboys",
         "pos": "QB",
         "jersey": "6",
-        "pass_yds": 242.0,
-        "pass_tds": 1.8,
-        "rush_yds": 75.1,
+        "pass_yds": 155.0,
+        "pass_tds": 1.1,
+        "rush_yds": 67.6,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 60.2,
-        "role": "QB Titular Activo Wyoming Cowboys (242.0 YDS/J)"
-      },
-      {
-        "name": "Samuel Harris",
-        "team": "Wyoming Cowboys",
-        "pos": "RB",
-        "jersey": "1",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 74.0,
-        "rec_yds": 20.0,
-        "receptions": 1.8,
-        "anytime_td_pct": 60.0,
-        "role": "Corredor Titular Activo Wyoming Cowboys (74.0 YDS/J)"
-      },
-      {
-        "name": "Jake Wilson",
-        "team": "Wyoming Cowboys",
-        "pos": "TE",
-        "jersey": "89",
-        "pass_yds": 0.0,
-        "pass_tds": 0.0,
-        "rush_yds": 0.0,
-        "rec_yds": 68.0,
-        "receptions": 3.4,
-        "anytime_td_pct": 50.0,
-        "role": "Receptor Titular Activo Wyoming Cowboys (68.0 YDS/J)"
+        "anytime_td_pct": 57.0,
+        "role": "QB Líder Wyoming Cowboys (123.8 YDS/g, 0.6 TD/g)"
       },
       {
         "name": "Kyle Frendt",
@@ -914,22 +666,22 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.4,
+        "receptions": 3.2,
         "anytime_td_pct": 39.6,
-        "role": "Receptor Titular Activo Wyoming Cowboys (45.0 YDS/J)"
+        "role": "WR/TE Líder Wyoming Cowboys (35.6 YDS/g, 1.7 REC/g)"
       },
       {
         "name": "Toa Fa'avae",
         "team": "New Mexico Lobos",
         "pos": "QB",
         "jersey": "13",
-        "pass_yds": 175.0,
-        "pass_tds": 1.5,
+        "pass_yds": 155.0,
+        "pass_tds": 1.1,
         "rush_yds": 15.0,
         "rec_yds": 0.0,
         "receptions": 0.0,
-        "anytime_td_pct": 35.0,
-        "role": "QB Titular Activo New Mexico Lobos (175.0 YDS/J)"
+        "anytime_td_pct": 22.0,
+        "role": "QB Líder New Mexico Lobos (108.1 YDS/g, 0.8 TD/g)"
       },
       {
         "name": "Scottre Humphrey",
@@ -942,7 +694,7 @@
         "rec_yds": 14.0,
         "receptions": 1.8,
         "anytime_td_pct": 80.0,
-        "role": "Corredor Titular Activo New Mexico Lobos (73.6 YDS/J)"
+        "role": "RB Líder New Mexico Lobos (73.6 YDS/g)"
       },
       {
         "name": "Cade Keith",
@@ -953,9 +705,9 @@
         "pass_tds": 0.0,
         "rush_yds": 0.0,
         "rec_yds": 45.0,
-        "receptions": 3.4,
+        "receptions": 3.2,
         "anytime_td_pct": 54.0,
-        "role": "Receptor Titular Activo New Mexico Lobos (45.0 YDS/J)"
+        "role": "WR/TE Líder New Mexico Lobos (38.4 YDS/g, 3.0 REC/g)"
       }
     ],
     "boxscore_athletes": {}

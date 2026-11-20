@@ -635,14 +635,16 @@ def build_markets(pred: Dict[str, Any]) -> List[Dict[str, Any]]:
     for gl_lo, gl_hi in [(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 3), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (5, 6)]:
         pr_rng = M[(tot >= gl_lo) & (tot <= gl_hi)].sum()
         add("Rango Multigoles", f"Rango de {gl_lo} a {gl_hi} goles en el partido", pr_rng, {"t": "multigoals", "lo": gl_lo, "hi": gl_hi})
-    btts = M[(I > 0) & (J > 0)].sum()
+    raw_btts_bm = float(M[(I > 0) & (J > 0)].sum())
+    btts = max(0.18, min(0.76, 0.78 * raw_btts_bm + 0.22 * 0.50))
+    _shk = lambda pv: 0.88 * float(pv) + 0.12 * 0.50
     add("Ambos Anotan", "Ambos anotan: SÍ", btts, {"t": "btts", "sel": True})
     add("Ambos Anotan", "Ambos anotan: NO", 1 - btts, {"t": "btts", "sel": False})
-    add("Combinados", "Ambos anotan + Más de 2.5", M[(I > 0) & (J > 0) & (tot > 2.5)].sum(), {"t": "btts_ou", "line": 2.5})
-    add("Combinados", "1X + Más de 1.5 goles", M[(I >= J) & (tot > 1.5)].sum(), {"t": "dc_ou", "sel": "1X", "op": "over", "line": 1.5})
-    add("Combinados", "X2 + Más de 1.5 goles", M[(I <= J) & (tot > 1.5)].sum(), {"t": "dc_ou", "sel": "X2", "op": "over", "line": 1.5})
-    add("Combinados", "1X + Menos de 3.5 goles", M[(I >= J) & (tot < 3.5)].sum(), {"t": "dc_ou", "sel": "1X", "op": "under", "line": 3.5})
-    add("Combinados", "X2 + Menos de 3.5 goles", M[(I <= J) & (tot < 3.5)].sum(), {"t": "dc_ou", "sel": "X2", "op": "under", "line": 3.5})
+    add("Combinados", "Ambos anotan + Más de 2.5", float(M[(I > 0) & (J > 0) & (tot > 2.5)].sum()) * (btts / max(1e-6, raw_btts_bm)), {"t": "btts_ou", "line": 2.5})
+    add("Combinados", "1X + Más de 1.5 goles", _shk(M[(I >= J) & (tot > 1.5)].sum()), {"t": "dc_ou", "sel": "1X", "op": "over", "line": 1.5})
+    add("Combinados", "X2 + Más de 1.5 goles", _shk(M[(I <= J) & (tot > 1.5)].sum()), {"t": "dc_ou", "sel": "X2", "op": "over", "line": 1.5})
+    add("Combinados", "1X + Menos de 3.5 goles", _shk(M[(I >= J) & (tot < 3.5)].sum()), {"t": "dc_ou", "sel": "1X", "op": "under", "line": 3.5})
+    add("Combinados", "X2 + Menos de 3.5 goles", _shk(M[(I <= J) & (tot < 3.5)].sum()), {"t": "dc_ou", "sel": "X2", "op": "under", "line": 3.5})
     for side, name, arr in [("home", H, I), ("away", A, J)]:
         for ln in [0.5, 1.5, 2.5]:
             po = M[arr > ln].sum()
@@ -704,7 +706,9 @@ def build_markets(pred: Dict[str, Any]) -> List[Dict[str, Any]]:
         e = pred.get("counts", {}).get(stat)
         if not e:
             return
-        dh, da = count_dist(e["home"], e["disp"]), count_dist(e["away"], e["disp"])
+        _min_d = {"corners": 1.55, "cards": 1.48, "sot": 1.55, "fouls": 2.15, "shots": 2.35}.get(stat, 1.40)
+        _eff_d = max(_min_d, float(e["disp"]))
+        dh, da = count_dist(e["home"], _eff_d), count_dist(e["away"], _eff_d)
         dt = np.convolve(dh, da)
         for ln in tot_lines:
             po = _over(dt, ln)
@@ -1213,12 +1217,12 @@ def compute_hybrid_match_distributions(
             "lam_home_ht": lam_h1,
             "lam_away_ht": lam_a1,
             "counts": {
-                "corners": {"home": c_h, "away": c_a, "disp": c_pri["disp"]},
-                "cards": {"home": cards_h, "away": cards_a, "disp": cards_pri["disp"]},
-                "sot": {"home": sot_h, "away": sot_a, "disp": sot_pri["disp"]},
-                "fouls": {"home": f_h, "away": f_a, "disp": f_pri["disp"]},
-                "offsides": {"home": max(0.9, min(4.2, 1.85 * (lam_h / 1.5))), "away": max(0.8, min(3.8, 1.55 * (lam_a / 1.2))), "disp": 1.25},
-                "shots": {"home": max(6.5, min(22.0, sot_h * 2.85)), "away": max(5.5, min(19.0, sot_a * 2.80)), "disp": 1.20},
+                "corners": {"home": c_h, "away": c_a, "disp": max(1.55, float(c_pri["disp"]))},
+                "cards": {"home": cards_h, "away": cards_a, "disp": max(1.48, float(cards_pri["disp"]))},
+                "sot": {"home": sot_h, "away": sot_a, "disp": max(1.55, float(sot_pri["disp"]))},
+                "fouls": {"home": f_h, "away": f_a, "disp": max(2.15, float(f_pri["disp"]))},
+                "offsides": {"home": max(0.9, min(4.2, 1.85 * (lam_h / 1.5))), "away": max(0.8, min(3.8, 1.55 * (lam_a / 1.2))), "disp": 1.55},
+                "shots": {"home": round(0.55 * min(19.0, sot_h * 2.75) + 0.45 * 12.2, 2), "away": round(0.55 * min(17.0, sot_a * 2.70) + 0.45 * 10.1, 2), "disp": 2.40},
             },
         }
     else:
@@ -1265,8 +1269,8 @@ def compute_hybrid_match_distributions(
 
     raw_btts = float(M[(I > 0) & (J > 0)].sum())
     r_asym = min(lh, la) / max(0.35, max(lh, la))
-    btts_discount = 0.86 + 0.09 * r_asym
-    btts = max(0.20, min(0.78, raw_btts * btts_discount))
+    _w_b = 0.78 if pred.get("tier") == "A" else 0.72
+    btts = max(0.18, min(0.75, _w_b * raw_btts + (1.0 - _w_b) * 0.50))
 
     c_info = pred["counts"]["corners"]
     c_disp = max(1.50, float(c_info.get("disp", 1.534)))
@@ -1277,19 +1281,21 @@ def compute_hybrid_match_distributions(
     Ic, Jc = np.indices(jm_c.shape)
 
     card_info = pred["counts"]["cards"]
-    k_disp = max(1.327, float(card_info.get("disp", 1.327)))
+    k_disp = max(1.48, float(card_info.get("disp", 1.48)))
     dh_k = count_dist(card_info["home"], k_disp)
     da_k = count_dist(card_info["away"], k_disp)
     dt_k = np.convolve(dh_k, da_k)
 
     sot_info = pred["counts"]["sot"]
-    dh_s = count_dist(sot_info["home"], sot_info["disp"])
-    da_s = count_dist(sot_info["away"], sot_info["disp"])
+    sot_disp = max(1.55, float(sot_info.get("disp", 1.55)))
+    dh_s = count_dist(sot_info["home"], sot_disp)
+    da_s = count_dist(sot_info["away"], sot_disp)
     dt_s = np.convolve(dh_s, da_s)
 
     f_info = pred["counts"]["fouls"]
-    dh_f = count_dist(f_info["home"], f_info["disp"])
-    da_f = count_dist(f_info["away"], f_info["disp"])
+    f_disp = max(2.15, float(f_info.get("disp", 2.15)))
+    dh_f = count_dist(f_info["home"], f_disp)
+    da_f = count_dist(f_info["away"], f_disp)
     dt_f = np.convolve(dh_f, da_f)
 
     o_info = pred["counts"].get("offsides", {"home": 1.85, "away": 1.55, "disp": 1.25})
@@ -1298,8 +1304,9 @@ def compute_hybrid_match_distributions(
     dt_o = np.convolve(dh_o, da_o)
 
     sh_info = pred["counts"].get("shots", {"home": 12.5, "away": 10.2, "disp": 1.20})
-    dh_sh = count_dist(sh_info["home"], sh_info["disp"])
-    da_sh = count_dist(sh_info["away"], sh_info["disp"])
+    sh_disp = max(2.35, float(sh_info.get("disp", 2.35)))
+    dh_sh = count_dist(sh_info["home"], sh_disp)
+    da_sh = count_dist(sh_info["away"], sh_disp)
     dt_sh = np.convolve(dh_sh, da_sh)
 
     # Distribuciones por Mitad PowerStats (Corners 46% 1T / 54% 2T | Tarjetas 30% 1T / 70% 2T)
@@ -1332,12 +1339,12 @@ def compute_hybrid_match_distributions(
         "under_45": float(M[tot < 4.5].sum()),
         "btts_yes": btts, "btts_no": 1.0 - btts,
         "btts_over25": float(M[(I > 0) & (J > 0) & (tot > 2.5)].sum()) * (btts / max(1e-6, raw_btts)),
-        "dc1x_over15": float(M[(I >= J) & (tot > 1.5)].sum()),
-        "dcx2_over15": float(M[(I <= J) & (tot > 1.5)].sum()),
-        "dc1x_under35": float(M[(I >= J) & (tot < 3.5)].sum()),
-        "dcx2_under35": float(M[(I <= J) & (tot < 3.5)].sum()),
-        "dc1x_under45": float(M[(I >= J) & (tot < 4.5)].sum()),
-        "dcx2_under45": float(M[(I <= J) & (tot < 4.5)].sum()),
+        "dc1x_over15": 0.87 * float(M[(I >= J) & (tot > 1.5)].sum()) + 0.13 * 0.50,
+        "dcx2_over15": 0.87 * float(M[(I <= J) & (tot > 1.5)].sum()) + 0.13 * 0.50,
+        "dc1x_under35": 0.87 * float(M[(I >= J) & (tot < 3.5)].sum()) + 0.13 * 0.50,
+        "dcx2_under35": 0.87 * float(M[(I <= J) & (tot < 3.5)].sum()) + 0.13 * 0.50,
+        "dc1x_under45": 0.88 * float(M[(I >= J) & (tot < 4.5)].sum()) + 0.12 * 0.50,
+        "dcx2_under45": 0.88 * float(M[(I <= J) & (tot < 4.5)].sum()) + 0.12 * 0.50,
         "range_1_2": float(M[(tot >= 1) & (tot <= 2)].sum()),
         "range_1_3": float(M[(tot >= 1) & (tot <= 3)].sum()),
         "range_1_4": float(M[(tot >= 1) & (tot <= 4)].sum()),

@@ -46,7 +46,7 @@ def normal_prob_over(mean: float, std: float, k: float) -> float:
                         key_bonus += weight * dist_factor
             p_raw = min(0.96, p_raw + key_bonus)
 
-    p_cal = 0.90 * p_raw + 0.10 * 0.52
+    p_cal = 0.85 * p_raw + 0.15 * 0.50
     return max(0.03, min(0.95, p_cal))
 
 
@@ -147,20 +147,23 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     a_def = dict(NFL_DEFENSE_PROFILES.get(away, game.get("away_defense", {"pass_def_rank": 16, "pass_yds_allowed": 220.0, "rush_def_rank": 16, "rush_yds_allowed": 112.0, "pts_allowed": 22.2, "style": "Defensa Táctica"})))
 
     is_nfl = league == "NFL"
-    tot_std = 12.8 if is_nfl else 14.5
-    margin_std = 13.5 if is_nfl else 15.5
-    h_pa = float(h_def.get("pts_allowed", 21.8 if is_nfl else 25.0))
-    a_pa = float(a_def.get("pts_allowed", 22.4 if is_nfl else 26.0))
+    has_vegas_spread = bool(spread_str and str(spread_str).strip())
+    tot_std = 13.8 if is_nfl else 15.5
+    margin_std = (14.5 if has_vegas_spread else 15.5) if is_nfl else (16.5 if has_vegas_spread else 19.0)
+    h_pa = float(h_def.get("pts_allowed", 22.0 if is_nfl else 26.5))
+    a_pa = float(a_def.get("pts_allowed", 22.0 if is_nfl else 26.5))
+    h_pf = float(h_def.get("pts_for", h_pa))
+    a_pf = float(a_def.get("pts_for", a_pa))
     h_yds = float(h_def.get("pass_yds_allowed", 220.0)) + float(h_def.get("rush_yds_allowed", 112.0))
     a_yds = float(a_def.get("pass_yds_allowed", 222.0)) + float(a_def.get("rush_yds_allowed", 115.0))
-    dome_adj = 1.6 if is_dome else -0.8
-    def_cross_total = (h_pa + a_pa) + ((h_yds + a_yds - 665.0) * 0.025) + dome_adj
-    has_vegas_spread = bool(spread_str and str(spread_str).strip())
+    dome_adj = 1.4 if is_dome else -0.6
+    def_cross_total = (((h_pf + a_pa) / 2.0) + ((a_pf + h_pa) / 2.0)) + ((h_yds + a_yds - 665.0) * 0.02) + dome_adj
     home_spread = _extract_home_spread(spread_str, home, away)
     if not has_vegas_spread:
-        home_spread = round(max(-14.5, min(14.5, (h_pa - a_pa) * 0.70 - 2.2)), 1)
+        exp_margin = ((h_pf - h_pa) - (a_pf - a_pa)) * 0.55 + 2.2
+        home_spread = round(max(-14.5, min(14.5, -exp_margin)), 1)
     is_default_ou = (is_nfl and abs(ou_line - 46.5) < 0.05) or ((not is_nfl) and abs(ou_line - 54.5) < 0.05)
-    proj_total = round((0.30 * ou_line + 0.70 * def_cross_total) if (is_default_ou and not has_vegas_spread) else (0.68 * ou_line + 0.32 * def_cross_total), 1)
+    proj_total = round((0.35 * ou_line + 0.65 * def_cross_total) if (is_default_ou and not has_vegas_spread) else (0.78 * ou_line + 0.22 * def_cross_total), 1)
     exp_home = round((proj_total - home_spread) / 2.0, 1)
     exp_away = round((proj_total + home_spread) / 2.0, 1)
     match_lbl = f"{away} @ {home}"
@@ -280,8 +283,8 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     for tm, exp_tm, st_key in [(home, exp_home, "home_points"), (away, exp_away, "away_points")]:
         o_line = max(9.5, round(exp_tm - 4.5) + 0.5)
         u_line = round(exp_tm + 5.5) + 0.5
-        p_o = normal_prob_over(exp_tm, 8.5, o_line)
-        p_u = 1.0 - normal_prob_over(exp_tm, 8.5, u_line)
+        p_o = normal_prob_over(exp_tm, 10.2 if is_nfl else 11.5, o_line)
+        p_u = 1.0 - normal_prob_over(exp_tm, 10.2 if is_nfl else 11.5, u_line)
         cat_team_tot["options"].append(_make_opt(
             pick=f"{tm} Total Puntos Over {o_line:.1f}",
             category="Total por Equipo",
@@ -320,11 +323,11 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
 
     # 4. PRIMERA MITAD (1H TOTAL Y POR EQUIPO - 4 líneas)
     cat_1h = {"category": "Primera Mitad (1st Half Over / Under)", "options": []}
-    exp_1h = round(ou_line * 0.49, 1)
+    exp_1h = round(proj_total * 0.49, 1)
     h1_o = max(10.5, round(exp_1h - 4.5) + 0.5)
     h1_u = round(exp_1h + 4.5) + 0.5
-    p_1h_o = normal_prob_over(exp_1h, 8.0, h1_o)
-    p_1h_u = 1.0 - normal_prob_over(exp_1h, 8.0, h1_u)
+    p_1h_o = normal_prob_over(exp_1h, 9.8 if is_nfl else 11.0, h1_o)
+    p_1h_u = 1.0 - normal_prob_over(exp_1h, 9.8 if is_nfl else 11.0, h1_u)
     cat_1h["options"].append(_make_opt(
         pick=f"1ra Mitad Puntos Over {h1_o:.1f}",
         category="Primera Mitad",
@@ -361,7 +364,7 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     ))
     for tm, exp_tm, st_1h in [(home, exp_home * 0.49, "home_half_points"), (away, exp_away * 0.49, "away_half_points")]:
         t1h_o = max(3.5, round(exp_tm - 3.5) + 0.5)
-        p_t1h = normal_prob_over(exp_tm, 5.5, t1h_o)
+        p_t1h = normal_prob_over(exp_tm, 7.6 if is_nfl else 8.6, t1h_o)
         cat_1h["options"].append(_make_opt(
             pick=f"1ra Mitad {tm} Over {t1h_o:.1f} PTS",
             category="Primera Mitad Equipo",
@@ -402,12 +405,12 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     for s in stars:
         if s.get("pos") == "QB" or float(s.get("pass_yds", 0.0)) >= 120.0:
             raw_pass = max(145.0, float(s.get("pass_yds", 225.0)))
-            base_pass = round(235.0 + (raw_pass - 235.0) * 0.55, 1) if raw_pass > 265.0 else raw_pass
+            base_pass = round(0.75 * raw_pass + 0.25 * (220.0 if is_nfl else 205.0), 1)
             p_team, opp_tm, opp_def, pass_mult, _, _ = _opp_ctx(s)
             exp_pass = round(base_pass * pass_mult, 1)
             for tag, mult in [("Segura", 0.74), ("Media", 0.86)]:
                 safe_line = max(119.5, round(exp_pass * mult) + 0.5)
-                p_pass = normal_prob_over(exp_pass, 43.5, safe_line)
+                p_pass = normal_prob_over(exp_pass, max(62.0, float(s.get('pass_yds_std') or exp_pass * 0.34)), safe_line)
                 cat_pass["options"].append(_make_opt(
                     pick=f"{s['name']} Over {safe_line:.1f} Yardas de Pase ({tag})",
                     category="Yardas Pase QB",
@@ -432,13 +435,13 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
     cat_tds = {"category": "Pases de Touchdown de QB", "options": []}
     for s in stars:
         if s.get("pos") == "QB" or float(s.get("pass_yds", 0.0)) >= 120.0:
-            base_tds = max(1.1, float(s.get("pass_tds", 1.6)))
+            base_tds = max(0.85, 0.72 * float(s.get("pass_tds", 1.45)) + 0.28 * 1.40)
             p_team, opp_tm, opp_def, pass_mult, _, td_mult = _opp_ctx(s)
             adj_tds = round(base_tds * (0.55 * td_mult + 0.45 * pass_mult), 2)
             for td_line in (0.5, 1.5):
                 if td_line == 1.5 and adj_tds < 1.45:
                     continue
-                p_td = poisson_prob_over(adj_tds, td_line)
+                p_td = 0.82 * poisson_prob_over(adj_tds, td_line) + 0.18 * 0.50
                 cat_tds["options"].append(_make_opt(
                     pick=f"{s['name']} Over {td_line:.1f} Pases de TD",
                     category="Pases de Touchdown",
@@ -465,11 +468,11 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
         raw_rush = float(s.get("rush_yds", 0.0))
         if s.get("pos") == "RB" or raw_rush >= 25.0:
             raw_rush = max(32.0, raw_rush)
-            base_rush = round(75.0 + (raw_rush - 75.0) * 0.52, 1) if raw_rush > 85.0 else raw_rush
+            base_rush = round(0.75 * raw_rush + 0.25 * 55.0, 1)
             p_team, opp_tm, opp_def, _, rush_mult, _ = _opp_ctx(s)
             adj_rush = round(base_rush * rush_mult, 1)
             safe_line = max(18.5, round(adj_rush * 0.68) + 0.5)
-            p_rush = normal_prob_over(adj_rush, max(15.5, adj_rush * 0.31), safe_line)
+            p_rush = normal_prob_over(adj_rush, max(24.0, float(s.get('rush_yds_std') or adj_rush * 0.48)), safe_line)
             cat_rush["options"].append(_make_opt(
                 pick=f"{s['name']} Over {safe_line:.1f} Yardas Terrestres",
                 category="Yardas Terrestres",
@@ -496,11 +499,11 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
         raw_rec = float(s.get("rec_yds", 0.0))
         if s.get("pos") in ("WR", "TE") or raw_rec >= 25.0:
             raw_rec = max(32.0, raw_rec)
-            base_rec = round(72.0 + (raw_rec - 72.0) * 0.52, 1) if raw_rec > 82.0 else raw_rec
+            base_rec = round(0.75 * raw_rec + 0.25 * 48.0, 1)
             p_team, opp_tm, opp_def, pass_mult, _, _ = _opp_ctx(s)
             adj_rec = round(base_rec * pass_mult, 1)
             safe_line = max(19.5, round(adj_rec * 0.66) + 0.5)
-            p_rec = normal_prob_over(adj_rec, max(17.0, adj_rec * 0.33), safe_line)
+            p_rec = normal_prob_over(adj_rec, max(25.0, float(s.get('rec_yds_std') or adj_rec * 0.55)), safe_line)
             cat_rec["options"].append(_make_opt(
                 pick=f"{s['name']} Over {safe_line:.1f} Yardas de Recepción",
                 category="Yardas Recepción",
@@ -531,7 +534,7 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
             p_team, opp_tm, _, pass_mult, _, _ = _opp_ctx(s)
             adj_rcp = round(receptions * (0.5 + 0.5 * pass_mult), 2)
             safe_line = max(1.5, round(adj_rcp * 0.65) - 0.5)
-            p_rcp = poisson_prob_over(adj_rcp, safe_line)
+            p_rcp = normal_prob_over(0.80 * adj_rcp + 0.20 * 3.8, max(1.9, float(s.get('receptions_std') or adj_rcp * 0.50)), safe_line)
             cat_receptions["options"].append(_make_opt(
                 pick=f"{s['name']} Over {safe_line:.1f} Recepciones",
                 category="Recepciones",
@@ -559,7 +562,7 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
             p_team, opp_tm, _, pass_mult, rush_mult, _ = _opp_ctx(s)
             adj_scrim = round(scrim * (0.55 * rush_mult + 0.45 * pass_mult), 1)
             safe_line = max(29.5, round(adj_scrim * 0.70) + 0.5)
-            p_scr = normal_prob_over(adj_scrim, max(20.0, adj_scrim * 0.30), safe_line)
+            p_scr = normal_prob_over(0.80 * adj_scrim + 0.20 * 65.0, max(28.0, adj_scrim * 0.46), safe_line)
             cat_scrim["options"].append(_make_opt(
                 pick=f"{s['name']} Over {safe_line:.1f} YDS Scrimmage (Rush+Rec)",
                 category="Scrimmage YDS",
@@ -585,7 +588,7 @@ def compute_full_nfl_game_data_engineering(game: dict) -> dict:
         td_rate = float(s.get("anytime_td_pct", 35.0))
         if td_rate >= 34.0:
             p_team, opp_tm, _, _, _, td_mult = _opp_ctx(s)
-            p_atd = min(0.84, max(0.32, (td_rate / 100.0) * (0.45 + 0.55 * td_mult)))
+            p_atd = min(0.68, max(0.24, (0.75 * (td_rate / 100.0) + 0.25 * 0.35) * (0.55 + 0.45 * td_mult)))
             cat_atd["options"].append(_make_opt(
                 pick=f"{s['name']} Anota Touchdown (Anytime TD)",
                 category="Anytime Touchdown",

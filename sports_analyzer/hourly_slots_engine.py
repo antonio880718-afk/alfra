@@ -2492,8 +2492,8 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     # -----------------------------------------------------------------
     star_h = dict(resolve_team_star_player(h, code))
     star_a = dict(resolve_team_star_player(a, code))
-    lam_p_h = float(star_h.get("sot_avg", 1.40)) * max(0.78, min(1.28, sot_exp_h / 4.25))
-    lam_p_a = float(star_a.get("sot_avg", 1.35)) * max(0.78, min(1.28, sot_exp_a / 4.25))
+    lam_p_h = min(1.65, max(0.45, float(star_h.get("sot_avg", 1.05)))) * max(0.78, min(1.25, sot_exp_h / 4.25))
+    lam_p_a = min(1.55, max(0.42, float(star_a.get("sot_avg", 0.98)))) * max(0.78, min(1.25, sot_exp_a / 4.25))
     if lam_p_a > lam_p_h:
         star_sel = star_a
         star_team = a
@@ -2507,10 +2507,10 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         lam_p_raw = lam_p_h
         sel_team_sot_exp = sot_exp_h
 
-    lam_eff = lam_p_raw * 0.92
-    r_p = lam_eff / 0.25
+    lam_eff = lam_p_raw * 0.80
+    r_p = lam_eff / 0.45
     p_zero_sot = (r_p / (r_p + lam_eff)) ** r_p
-    p_sot_val = round(max(52.0, min(91.5, (1.0 - p_zero_sot) * 100.0)), 1)
+    p_sot_val = round(max(42.0, min(76.0, (1.0 - p_zero_sot) * 100.0)), 1)
 
     p_name = star_sel["name"]
     p_jrsy = star_sel.get("jersey", "")
@@ -2566,9 +2566,9 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
     _other_team = h if star_team == a else a
     _other_opp_sot = pa.get("sot_ag_avg", 4.15) if _other_team == h else ph.get("sot_ag_avg", 4.15)
     _other_lam_raw = lam_p_h if _other_team == h else lam_p_a
-    _other_lam_eff = _other_lam_raw * 0.90
-    _other_rp = _other_lam_eff / 0.25
-    _other_p_sot = round(max(50.0, min(89.5, (1.0 - (_other_rp / (_other_rp + _other_lam_eff)) ** _other_rp) * 100.0)), 1)
+    _other_lam_eff = _other_lam_raw * 0.78
+    _other_rp = _other_lam_eff / 0.45
+    _other_p_sot = round(max(40.0, min(74.0, (1.0 - (_other_rp / (_other_rp + _other_lam_eff)) ** _other_rp) * 100.0)), 1)
     _other_name = _other_star.get("name", "")
     if _other_name and _other_name != p_name:
         _oj = f" #{_other_star.get('jersey')}" if _other_star.get("jersey") else ""
@@ -2607,7 +2607,8 @@ def analyze_match_for_slot(m: Dict[str, Any]) -> Dict[str, Any]:
         c["fair_odds"] = round(1.0 / p_dec, 2)
         c["ev_pct"] = round((p_dec * c["odds"] - 1.0) * 100.0, 1)
 
-    best_pick = candidates[0]
+    _actionable = [c for c in candidates if c['odds'] >= 1.16 and 'fueras de juego' not in c['pick'].lower()]
+    best_pick = _actionable[0] if _actionable else candidates[0]
 
     # SGP Balanceado del Encuentro (1 mejor pick de 4 categorías distintas: Goles/Resultado, Córners, Jugador, Tarjetas/BTTS)
     def _best_from_groups(groups: tuple) -> Dict[str, Any]:

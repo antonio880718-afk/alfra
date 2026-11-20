@@ -1,0 +1,290 @@
+{
+  "Arizona Cardinals": {
+    "pts_for": 18.4,
+    "pts_allowed": 28.9,
+    "pass_yds_allowed": 217.3,
+    "rush_yds_allowed": 129.9,
+    "pass_def_rank": 13,
+    "rush_def_rank": 28,
+    "style": "Real ESPN (18.4 PF / 28.9 PA)"
+  },
+  "Atlanta Falcons": {
+    "pts_for": 20.1,
+    "pts_allowed": 25.8,
+    "pass_yds_allowed": 239.1,
+    "rush_yds_allowed": 119.1,
+    "pass_def_rank": 26,
+    "rush_def_rank": 19,
+    "style": "Real ESPN (20.1 PF / 25.8 PA)"
+  },
+  "Baltimore Ravens": {
+    "pts_for": 20.9,
+    "pts_allowed": 25.9,
+    "pass_yds_allowed": 219.5,
+    "rush_yds_allowed": 105.9,
+    "pass_def_rank": 14,
+    "rush_def_rank": 13,
+    "style": "Real ESPN (20.9 PF / 25.9 PA)"
+  },
+  "Buffalo Bills": {
+    "pts_for": 31.9,
+    "pts_allowed": 22.1,
+    "pass_yds_allowed": 241.9,
+    "rush_yds_allowed": 93.6,
+    "pass_def_rank": 28,
+    "rush_def_rank": 8,
+    "style": "Real ESPN (31.9 PF / 22.1 PA)"
+  },
+  "Carolina Panthers": {
+    "pts_for": 24.3,
+    "pts_allowed": 26.2,
+    "pass_yds_allowed": 207.2,
+    "rush_yds_allowed": 124.0,
+    "pass_def_rank": 8,
+    "rush_def_rank": 22,
+    "style": "Real ESPN (24.3 PF / 26.2 PA)"
+  },
+  "Chicago Bears": {
+    "pts_for": 26.8,
+    "pts_allowed": 20.4,
+    "pass_yds_allowed": 219.8,
+    "rush_yds_allowed": 91.1,
+    "pass_def_rank": 15,
+    "rush_def_rank": 7,
+    "style": "Real ESPN (26.8 PF / 20.4 PA)"
+  },
+  "Cincinnati Bengals": {
+    "pts_for": 30.9,
+    "pts_allowed": 21.4,
+    "pass_yds_allowed": 216.2,
+    "rush_yds_allowed": 123.9,
+    "pass_def_rank": 11,
+    "rush_def_rank": 21,
+    "style": "Real ESPN (30.9 PF / 21.4 PA)"
+  },
+  "Cleveland Browns": {
+    "pts_for": 18.8,
+    "pts_allowed": 22.0,
+    "pass_yds_allowed": 201.1,
+    "rush_yds_allowed": 126.3,
+    "pass_def_rank": 6,
+    "rush_def_rank": 26,
+    "style": "Real ESPN (18.8 PF / 22.0 PA)"
+  },
+  "Dallas Cowboys": {
+    "pts_for": 28.6,
+    "pts_allowed": 28.2,
+    "pass_yds_allowed": 239.7,
+    "rush_yds_allowed": 154.1,
+    "pass_def_rank": 27,
+    "rush_def_rank": 32,
+    "style": "Real ESPN (28.6 PF / 28.2 PA)"
+  },
+  "Denver Broncos": {
+    "pts_for": 22.0,
+    "pts_allowed": 20.7,
+    "pass_yds_allowed": 230.7,
+    "rush_yds_allowed": 124.3,
+    "pass_def_rank": 21,
+    "rush_def_rank": 24,
+    "style": "Real ESPN (22.0 PF / 20.7 PA)"
+  },
+  "Detroit Lions": {
+    "pts_for": 28.6,
+    "pts_allowed": 22.1,
+    "pass_yds_allowed": 241.9,
+    "rush_yds_allowed": 90.4,
+    "pass_def_rank": 29,
+    "rush_def_rank": 5,
+    "style": "Real ESPN (28.6 PF / 22.1 PA)"
+  },
+  "Green Bay Packers": {
+    "pts_for": 22.6,
+    "pts_allowed": 22.1,
+    "pass_yds_allowed": 210.8,
+    "rush_yds_allowed": 111.0,
+    "pass_def_rank": 9,
+    "rush_def_rank": 16,
+    "style": "Real ESPN (22.6 PF / 22.1 PA)"
+  },
+  "Houston Texans": {
+    "pts_for": 25.9,
+    "pts_allowed": 22.2,
+    "pass_yds_allowed": 229.4,
+    "rush_yds_allowed": 96.1,
+    "pass_def_rank": 20,
+    "rush_def_rank": 9,
+    "style": "Real ESPN (25.9 PF / 22.2 PA)"
+  },
+  "Indianapolis Colts": {
+    "pts_for": 19.2,
+    "pts_allowed": 27.0,
+    "pass_yds_allowed": 220.5,
+    "rush_yds_allowed": 134.4,
+    "pass_def_rank": 16,
+    "rush_def_rank": 29,
+    "style": "Real ESPN (19.2 PF / 27.0 PA)"
+  },
+  "Jacksonville Jaguars": {
+    "pts_for": 29.9,
+    "pts_allowed": 16.0,
+    "pass_yds_allowed": 228.2,
+    "rush_yds_allowed": 91.0,
+    "pass_def_rank": 19,
+    "rush_def_rank": 6,
+    "style": "Real ESPN (29.9 PF / 16.0 PA)"
+  },
+  "Kansas City Chiefs": {
+    "pts_for": 26.3,
+    "pts_allowed": 17.3,
+    "pass_yds_allowed": 217.0,
+    "rush_yds_allowed": 97.8,
+    "pass_def_rank": 12,
+    "rush_def_rank": 11,
+    "style": "Real ESPN (26.3 PF / 17.3 PA)"
+  },
+  "Las Vegas Raiders": {
+    "pts_for": 25.1,
+    "pts_allowed": 28.9,
+    "pass_yds_allowed": 234.0,
+    "rush_yds_allowed": 151.1,
+    "pass_def_rank": 24,
+    "rush_def_rank": 31,
+    "style": "Real ESPN (25.1 PF / 28.9 PA)"
+  },
+  "Los Angeles Chargers": {
+    "pts_for": 16.0,
+    "pts_allowed": 26.6,
+    "pass_yds_allowed": 233.4,
+    "rush_yds_allowed": 110.2,
+    "pass_def_rank": 23,
+    "rush_def_rank": 15,
+    "style": "Real ESPN (16.0 PF / 26.6 PA)"
+  },
+  "Los Angeles Rams": {
+    "pts_for": 24.8,
+    "pts_allowed": 18.7,
+    "pass_yds_allowed": 187.7,
+    "rush_yds_allowed": 96.8,
+    "pass_def_rank": 4,
+    "rush_def_rank": 10,
+    "style": "Real ESPN (24.8 PF / 18.7 PA)"
+  },
+  "Miami Dolphins": {
+    "pts_for": 16.4,
+    "pts_allowed": 24.9,
+    "pass_yds_allowed": 202.1,
+    "rush_yds_allowed": 118.4,
+    "pass_def_rank": 7,
+    "rush_def_rank": 18,
+    "style": "Real ESPN (16.4 PF / 24.9 PA)"
+  },
+  "Minnesota Vikings": {
+    "pts_for": 19.6,
+    "pts_allowed": 14.0,
+    "pass_yds_allowed": 161.4,
+    "rush_yds_allowed": 111.9,
+    "pass_def_rank": 2,
+    "rush_def_rank": 17,
+    "style": "Real ESPN (19.6 PF / 14.0 PA)"
+  },
+  "New England Patriots": {
+    "pts_for": 22.1,
+    "pts_allowed": 24.2,
+    "pass_yds_allowed": 239.0,
+    "rush_yds_allowed": 106.1,
+    "pass_def_rank": 25,
+    "rush_def_rank": 14,
+    "style": "Real ESPN (22.1 PF / 24.2 PA)"
+  },
+  "New Orleans Saints": {
+    "pts_for": 22.4,
+    "pts_allowed": 26.2,
+    "pass_yds_allowed": 231.0,
+    "rush_yds_allowed": 129.8,
+    "pass_def_rank": 22,
+    "rush_def_rank": 27,
+    "style": "Real ESPN (22.4 PF / 26.2 PA)"
+  },
+  "New York Giants": {
+    "pts_for": 22.6,
+    "pts_allowed": 21.8,
+    "pass_yds_allowed": 184.1,
+    "rush_yds_allowed": 121.6,
+    "pass_def_rank": 3,
+    "rush_def_rank": 20,
+    "style": "Real ESPN (22.6 PF / 21.8 PA)"
+  },
+  "New York Jets": {
+    "pts_for": 19.4,
+    "pts_allowed": 25.4,
+    "pass_yds_allowed": 196.8,
+    "rush_yds_allowed": 135.3,
+    "pass_def_rank": 5,
+    "rush_def_rank": 30,
+    "style": "Real ESPN (19.4 PF / 25.4 PA)"
+  },
+  "Philadelphia Eagles": {
+    "pts_for": 16.4,
+    "pts_allowed": 24.6,
+    "pass_yds_allowed": 227.3,
+    "rush_yds_allowed": 126.1,
+    "pass_def_rank": 18,
+    "rush_def_rank": 25,
+    "style": "Real ESPN (16.4 PF / 24.6 PA)"
+  },
+  "Pittsburgh Steelers": {
+    "pts_for": 22.0,
+    "pts_allowed": 20.2,
+    "pass_yds_allowed": 242.2,
+    "rush_yds_allowed": 83.2,
+    "pass_def_rank": 30,
+    "rush_def_rank": 3,
+    "style": "Real ESPN (22.0 PF / 20.2 PA)"
+  },
+  "San Francisco 49ers": {
+    "pts_for": 31.2,
+    "pts_allowed": 21.8,
+    "pass_yds_allowed": 225.7,
+    "rush_yds_allowed": 82.6,
+    "pass_def_rank": 17,
+    "rush_def_rank": 2,
+    "style": "Real ESPN (31.2 PF / 21.8 PA)"
+  },
+  "Seattle Seahawks": {
+    "pts_for": 22.3,
+    "pts_allowed": 17.5,
+    "pass_yds_allowed": 149.4,
+    "rush_yds_allowed": 86.7,
+    "pass_def_rank": 1,
+    "rush_def_rank": 4,
+    "style": "Real ESPN (22.3 PF / 17.5 PA)"
+  },
+  "Tampa Bay Buccaneers": {
+    "pts_for": 22.4,
+    "pts_allowed": 19.8,
+    "pass_yds_allowed": 213.8,
+    "rush_yds_allowed": 79.1,
+    "pass_def_rank": 10,
+    "rush_def_rank": 1,
+    "style": "Real ESPN (22.4 PF / 19.8 PA)"
+  },
+  "Tennessee Titans": {
+    "pts_for": 18.6,
+    "pts_allowed": 26.6,
+    "pass_yds_allowed": 266.9,
+    "rush_yds_allowed": 124.0,
+    "pass_def_rank": 32,
+    "rush_def_rank": 23,
+    "style": "Real ESPN (18.6 PF / 26.6 PA)"
+  },
+  "Washington Commanders": {
+    "pts_for": 21.8,
+    "pts_allowed": 24.8,
+    "pass_yds_allowed": 244.8,
+    "rush_yds_allowed": 103.8,
+    "pass_def_rank": 31,
+    "rush_def_rank": 12,
+    "style": "Real ESPN (21.8 PF / 24.8 PA)"
+  }
+}

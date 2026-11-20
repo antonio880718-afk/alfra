@@ -193,6 +193,16 @@ def fetch_espn_summary_cached(sport: str, league: str, event_id: str) -> dict:
         return {}
 
 
+_TEAM_PROFILES_2026_FILE = os.path.join(DATA_DIR, "nba_team_profiles_2026.json")
+if os.path.exists(_TEAM_PROFILES_2026_FILE):
+    try:
+        with open(_TEAM_PROFILES_2026_FILE, "r", encoding="utf-8") as _tpf:
+            _tp_loaded = json.load(_tpf)
+            if isinstance(_tp_loaded, dict) and _tp_loaded:
+                NBA_DEFENSE_PROFILES.update(_tp_loaded)
+    except Exception:
+        pass
+
 _ROSTERS_2026_FILE = os.path.join(DATA_DIR, "espn_2026_bball_rosters.json")
 if os.path.exists(_ROSTERS_2026_FILE):
     try:
@@ -309,7 +319,9 @@ def get_normalized_bball_schedule(date_str: str = None, league_filter: str = "AL
                 except Exception:
                     pass
                 today_s = datetime.now(CDMX_TZ).strftime('%Y%m%d')
-                if all_games and not has_placeholders and not missing_finished_box and (not has_unfinalized or date_str > today_s or age_sec < 1800):
+                has_bad_ncaab_def = any(g.get("league") == "NCAAB" and float((g.get("home_defense") or {}).get("pts_allowed", 74.0)) > 95.0 for g in all_games)
+                has_missing_odds_today = (date_str >= today_s) and any(not str(g.get("spread_str", "")).strip() for g in all_games) and age_sec > 300
+                if all_games and not has_placeholders and not missing_finished_box and not has_bad_ncaab_def and not has_missing_odds_today and (not has_unfinalized or date_str > today_s or age_sec < 1800):
                     if league_filter != "ALL":
                         return [g for g in all_games if g.get("league") == league_filter]
                     return all_games
@@ -396,8 +408,10 @@ def get_normalized_bball_schedule(date_str: str = None, league_filter: str = "AL
                 ]
 
             # Inyectar perfiles defensivos del rival
-            h_def = NBA_DEFENSE_PROFILES.get(h_team, {"def_rank": 15, "pts_allowed": 113.5, "pace": 100.0, "style": "Defensa Promedio"})
-            a_def = NBA_DEFENSE_PROFILES.get(a_team, {"def_rank": 16, "pts_allowed": 114.0, "pace": 100.0, "style": "Defensa Promedio"})
+            _fb_pa = 114.5 if l_key == "NBA" else 73.5
+            _fb_pc = 99.8 if l_key == "NBA" else 68.5
+            h_def = NBA_DEFENSE_PROFILES.get(h_team, {"def_rank": 15, "pts_for": _fb_pa, "pts_allowed": _fb_pa, "pace": _fb_pc, "style": f"Base {l_key}"})
+            a_def = NBA_DEFENSE_PROFILES.get(a_team, {"def_rank": 16, "pts_for": _fb_pa, "pts_allowed": _fb_pa + 0.5, "pace": _fb_pc, "style": f"Base {l_key}"})
 
             games.append({
                 "id": eid,

@@ -285,7 +285,7 @@ def sync_nfl_date_from_espn(date_str: str) -> list:
 
         odds_arr = comp.get("odds", [])
         spread_str = odds_arr[0].get("details", "") if odds_arr else ""
-        ou_val = float(odds_arr[0].get("overUnder", 46.5 if l_key == "NFL" else 54.5)) if odds_arr and odds_arr[0].get("overUnder") else (46.5 if l_key == "NFL" else 54.5)
+        ou_val = float(odds_arr[0].get("overUnder", 0.0)) if odds_arr and odds_arr[0].get("overUnder") else 0.0
 
         status_obj = comp.get("status", {}).get("type", {})
         status_desc = status_obj.get("description", "Scheduled")
@@ -306,20 +306,53 @@ def sync_nfl_date_from_espn(date_str: str) -> list:
         is_dome = comp.get("venue", {}).get("indoor", False)
 
         s_data = event_summaries.get(eid, {})
+        if (not spread_str or ou_val <= 0) and s_data:
+            pc_arr = s_data.get("pickcenter", []) or []
+            if pc_arr:
+                if not spread_str:
+                    spread_str = str(pc_arr[0].get("details", "") or "")
+                if ou_val <= 0 and pc_arr[0].get("overUnder"):
+                    ou_val = float(pc_arr[0]["overUnder"])
+        if ou_val <= 0:
+            ou_val = 46.5 if l_key == "NFL" else 54.5
         box_athletes = extract_athletes_from_nfl_summary(s_data)
 
-        # Estrellas priorizando líderes reales de temporada (scoreboard + defaults + boxscore con pos real)
-        stars = _extract_scoreboard_football_stars(h, h_team) + _extract_scoreboard_football_stars(a, a_team)
+        # Estrellas priorizando rosters oficiales 2026 (gameLog real) + blacklist de lesionados
+        try:
+            _bl_path = os.path.join(DATA_DIR, "espn_injured_blacklist.json")
+            _inj_bl = set(json.load(open(_bl_path, "r", encoding="utf-8"))) if os.path.exists(_bl_path) else set()
+        except Exception:
+            _inj_bl = set()
+
+        stars = []
         try:
             from nfl_data_api import NFL_DEFAULT_STARS
-            for def_s in list(NFL_DEFAULT_STARS.get(h_team, [])) + list(NFL_DEFAULT_STARS.get(a_team, [])):
-                if not any(s["name"].lower() == def_s["name"].lower() for s in stars):
+            for _tm_k in (h_team, a_team):
+                for def_s in list(NFL_DEFAULT_STARS.get(_tm_k, [])):
+                    if def_s["name"].lower().strip() in _inj_bl:
+                        continue
                     s_copy = dict(def_s)
-                    s_copy.setdefault("team", h_team if def_s in NFL_DEFAULT_STARS.get(h_team, []) else a_team)
-                    s_copy.setdefault("receptions", 4.5 if s_copy.get("pos") in ("WR", "TE") else 2.0)
+                    s_copy["team"] = _tm_k
+                    s_copy.setdefault("receptions", 4.0 if s_copy.get("pos") in ("WR", "TE") else 1.5)
                     stars.append(s_copy)
         except Exception:
             pass
+
+        if len(stars) < 4:
+            for s_sb in _extract_scoreboard_football_stars(h, h_team) + _extract_scoreboard_football_stars(a, a_team):
+                if s_sb["name"].lower().strip() in _inj_bl:
+                    continue
+                if not any(x["name"].lower() == s_sb["name"].lower() for x in stars):
+                    if is_final:
+                        if s_sb.get("pass_yds", 0) > 0:
+                            s_sb["pass_yds"] = round(min(255.0, max(150.0, 195.0 + (s_sb["pass_yds"] - 195.0) * 0.45)), 1)
+                        if s_sb.get("rush_yds", 0) > 0:
+                            s_sb["rush_yds"] = round(min(85.0, max(25.0, 50.0 + (s_sb["rush_yds"] - 50.0) * 0.45)), 1)
+                        if s_sb.get("rec_yds", 0) > 0:
+                            s_sb["rec_yds"] = round(min(75.0, max(25.0, 48.0 + (s_sb["rec_yds"] - 48.0) * 0.45)), 1)
+                        if s_sb.get("receptions", 0) > 0:
+                            s_sb["receptions"] = round(min(5.2, max(2.0, 3.5 + (s_sb["receptions"] - 3.5) * 0.45)), 1)
+                    stars.append(s_sb)
 
         if box_athletes and len(stars) < 8:
             for ath in box_athletes.values():
@@ -362,13 +395,14 @@ def sync_nfl_date_from_espn(date_str: str) -> list:
                 {"name": f"RB {a_short}", "team": a_team, "pos": "RB", "jersey": "26", "pass_yds": 0.0, "pass_tds": 0.0, "rush_yds": 64.0, "rec_yds": 14.0, "receptions": 1.8, "anytime_td_pct": 50.0, "role": f"RB #1 {a_team}"}
             ]
 
+        _fb_pa = 22.0 if l_key == "NFL" else 26.5
         try:
             from nfl_data_api import NFL_DEFENSE_PROFILES
-            h_def = NFL_DEFENSE_PROFILES.get(h_team, {"pass_def_rank": 16, "pass_yds_allowed": 225.0, "rush_def_rank": 16, "rush_yds_allowed": 115.0, "pts_allowed": 22.0, "style": "Defensa Promedio"})
-            a_def = NFL_DEFENSE_PROFILES.get(a_team, {"pass_def_rank": 17, "pass_yds_allowed": 228.0, "rush_def_rank": 17, "rush_yds_allowed": 118.0, "pts_allowed": 23.0, "style": "Defensa Promedio"})
+            h_def = NFL_DEFENSE_PROFILES.get(h_team, {"pass_def_rank": 16, "pass_yds_allowed": 220.0, "rush_def_rank": 16, "rush_yds_allowed": 115.0, "pts_for": _fb_pa, "pts_allowed": _fb_pa, "style": f"Base {l_key}"})
+            a_def = NFL_DEFENSE_PROFILES.get(a_team, {"pass_def_rank": 17, "pass_yds_allowed": 222.0, "rush_def_rank": 17, "rush_yds_allowed": 118.0, "pts_for": _fb_pa, "pts_allowed": _fb_pa + 0.5, "style": f"Base {l_key}"})
         except Exception:
-            h_def = {"pass_def_rank": 16, "pass_yds_allowed": 225.0, "rush_def_rank": 16, "rush_yds_allowed": 115.0, "pts_allowed": 22.0, "style": "Defensa Promedio"}
-            a_def = {"pass_def_rank": 17, "pass_yds_allowed": 228.0, "rush_def_rank": 17, "rush_yds_allowed": 118.0, "pts_allowed": 23.0, "style": "Defensa Promedio"}
+            h_def = {"pass_def_rank": 16, "pass_yds_allowed": 220.0, "rush_def_rank": 16, "rush_yds_allowed": 115.0, "pts_for": _fb_pa, "pts_allowed": _fb_pa, "style": f"Base {l_key}"}
+            a_def = {"pass_def_rank": 17, "pass_yds_allowed": 222.0, "rush_def_rank": 17, "rush_yds_allowed": 118.0, "pts_for": _fb_pa, "pts_allowed": _fb_pa + 0.5, "style": f"Base {l_key}"}
 
         status_str = "FINALIZADO" if is_final else ("EN JUEGO" if is_in_progress else "PROGRAMADO")
         score_str = f"{a_score} - {h_score}" if (h_score > 0 or a_score > 0) else "vs"

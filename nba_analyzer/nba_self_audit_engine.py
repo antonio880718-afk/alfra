@@ -22,20 +22,34 @@ def _norm_name(txt: str) -> str:
     return " ".join(tokens)
 
 
-def _match_player_box(player_name: str, box_ath: dict):
+def _match_player_box(player_name: str, box_ath: dict, player_team: str = ""):
     p_norm = _norm_name(player_name)
     if not p_norm or not box_ath:
         return None
     p_parts = p_norm.split()
+    tm_l = str(player_team or "").lower().strip()
     for k, v in box_ath.items():
         k_norm = _norm_name(k)
         if not k_norm:
             continue
-        if p_norm == k_norm or p_norm in k_norm or k_norm in p_norm:
+        v_tm = str(v.get("team", "")).lower().strip()
+        if tm_l and v_tm and tm_l not in v_tm and v_tm not in tm_l:
+            continue
+        if p_norm == k_norm:
+            return v
+    for k, v in box_ath.items():
+        k_norm = _norm_name(k)
+        if not k_norm:
+            continue
+        v_tm = str(v.get("team", "")).lower().strip()
+        if tm_l and v_tm and tm_l not in v_tm and v_tm not in tm_l:
+            continue
+        if p_norm in k_norm or k_norm in p_norm:
             return v
         k_parts = k_norm.split()
-        if len(p_parts) >= 2 and len(k_parts) >= 2 and p_parts[-1] == k_parts[-1] and p_parts[0][:1] == k_parts[0][:1]:
-            return v
+        if len(p_parts) >= 2 and len(k_parts) >= 2 and p_parts[-1] == k_parts[-1]:
+            if (len(p_parts[0]) <= 2 or len(k_parts[0]) <= 2) and p_parts[0][:1] == k_parts[0][:1]:
+                return v
     return None
 
 
@@ -117,7 +131,7 @@ def audit_individual_nba_pick(pick_item: dict, game_info: dict = None, date_str:
     if not box_ath:
         return {"outcome": "PENDING", "stat_actual": "Boxscore ESPN aún sin jugadores (pulsa Sincronizar)", "match_status": status}
 
-    match_ath = _match_player_box(player_name, box_ath)
+    match_ath = _match_player_box(player_name, box_ath, pick_item.get('player_team', ''))
     if match_ath:
         if match_ath.get("dnp") or str(match_ath.get("min", "0")) in ("0", "--", "DNP", ""):
             return {

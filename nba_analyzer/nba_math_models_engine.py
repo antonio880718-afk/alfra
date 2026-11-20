@@ -36,7 +36,7 @@ def normal_prob_over(mean: float, std: float, k: float) -> float:
         p_raw = 1.0 - (0.55 * cdf_ln + 0.45 * cdf_t)
     else:
         p_raw = 1.0 - (0.65 * cdf_t + 0.35 * cdf_norm)
-    p_cal = 0.90 * p_raw + 0.10 * 0.52
+    p_cal = 0.86 * p_raw + 0.14 * 0.50
     return max(0.03, min(0.96, p_cal))
 
 
@@ -132,24 +132,32 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
         from nba_data_api import NBA_DEFENSE_PROFILES
     except Exception:
         NBA_DEFENSE_PROFILES = {}
-    h_def = dict(NBA_DEFENSE_PROFILES.get(home, game.get("home_defense", {"def_rank": 14, "pts_allowed": 112.8, "pace": 99.8, "style": "Defensa Táctica"})))
-    a_def = dict(NBA_DEFENSE_PROFILES.get(away, game.get("away_defense", {"def_rank": 16, "pts_allowed": 113.6, "pace": 100.1, "style": "Defensa Táctica"})))
-
     is_nba = league == "NBA"
-    tot_std = 16.0 if is_nba else 12.5
-    margin_std = 11.5 if is_nba else 10.5
-    expected_pace = round((float(h_def.get("pace", 100.0)) + float(a_def.get("pace", 100.0))) / 2.0, 1) if is_nba else 68.5
-    h_pa = float(h_def.get("pts_allowed", 113.5 if is_nba else 72.5))
-    a_pa = float(a_def.get("pts_allowed", 114.0 if is_nba else 73.0))
-    pace_factor = (expected_pace / 100.0) if is_nba else 1.0
-    def_cross_total = (h_pa + a_pa) * pace_factor
+    _def_base = {"def_rank": 15, "pts_for": 114.5 if is_nba else 74.0, "pts_allowed": 114.5 if is_nba else 74.0, "pace": 99.8 if is_nba else 68.5, "style": f"Base {league}"}
+    h_def = dict(NBA_DEFENSE_PROFILES.get(home, game.get("home_defense") or _def_base))
+    a_def = dict(NBA_DEFENSE_PROFILES.get(away, game.get("away_defense") or _def_base))
+    # Guard against NBA stats accidentally polluting NCAAB cached games
+    if not is_nba and float(h_def.get("pts_allowed", 74.0)) > 95.0:
+        h_def = dict(_def_base)
+    if not is_nba and float(a_def.get("pts_allowed", 74.0)) > 95.0:
+        a_def = dict(_def_base)
+
     has_vegas_spread = bool(spread_str and str(spread_str).strip())
+    tot_std = 18.5 if is_nba else 15.5
+    margin_std = (14.0 if has_vegas_spread else 15.5) if is_nba else (13.8 if has_vegas_spread else 17.5)
+    expected_pace = round((float(h_def.get("pace", 99.8)) + float(a_def.get("pace", 99.8))) / 2.0, 1) if is_nba else 68.5
+    h_pa = float(h_def.get("pts_allowed", 114.5 if is_nba else 74.0))
+    a_pa = float(a_def.get("pts_allowed", 114.5 if is_nba else 74.0))
+    h_pf = float(h_def.get("pts_for", h_pa))
+    a_pf = float(a_def.get("pts_for", a_pa))
+    def_cross_total = ((h_pf + a_pa) / 2.0) + ((a_pf + h_pa) / 2.0)
     home_spread = _extract_home_spread(spread_str, home, away)
     if not has_vegas_spread:
         hca = 2.8 if is_nba else 3.5
-        home_spread = round(max(-14.5, min(14.5, (h_pa - a_pa) * 0.65 - hca)), 1)
+        exp_margin = ((h_pf - h_pa) - (a_pf - a_pa)) * 0.55 + hca
+        home_spread = round(max(-14.5, min(14.5, -exp_margin)), 1)
     is_default_ou = (is_nba and abs(ou_line - 226.5) < 0.05) or ((not is_nba) and abs(ou_line - 145.5) < 0.05)
-    proj_total = round((0.30 * ou_line + 0.70 * def_cross_total) if (is_default_ou and not has_vegas_spread) else (0.65 * ou_line + 0.35 * def_cross_total), 1)
+    proj_total = round((0.35 * ou_line + 0.65 * def_cross_total) if (is_default_ou and not has_vegas_spread) else (0.78 * ou_line + 0.22 * def_cross_total), 1)
     exp_home = round((proj_total - home_spread) / 2.0, 1)
     exp_away = round((proj_total + home_spread) / 2.0, 1)
     match_lbl = f"{away} @ {home}"
@@ -267,7 +275,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
 
     # 3. TOTALES POR EQUIPO (4 líneas)
     cat_team_tot = {"category": "Totales por Equipo (Team Totals)", "options": []}
-    tm_std = 10.5 if is_nba else 8.5
+    tm_std = 12.8 if is_nba else 10.5
     for tm, exp_tm, st_key in [(home, exp_home, "home_points"), (away, exp_away, "away_points")]:
         o_line = round(exp_tm - 5.5) + 0.5
         u_line = round(exp_tm + 5.5) + 0.5
@@ -311,11 +319,11 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
 
     # 4. PRIMERA MITAD (1H TOTAL Y POR EQUIPO - 4 líneas)
     cat_1h = {"category": "Primera Mitad (1st Half Over / Under)", "options": []}
-    exp_1h = round(ou_line * 0.49, 1)
+    exp_1h = round(proj_total * 0.49, 1)
     h1_over = round(exp_1h - 5.5) + 0.5
     h1_under = round(exp_1h + 5.5) + 0.5
-    p_1h_o = normal_prob_over(exp_1h, 10.0 if is_nba else 8.0, h1_over)
-    p_1h_u = 1.0 - normal_prob_over(exp_1h, 10.0 if is_nba else 8.0, h1_under)
+    p_1h_o = normal_prob_over(exp_1h, 12.5 if is_nba else 10.5, h1_over)
+    p_1h_u = 1.0 - normal_prob_over(exp_1h, 12.5 if is_nba else 10.5, h1_under)
     cat_1h["options"].append(_make_opt(
         pick=f"1ra Mitad Total Puntos Over {h1_over:.1f}",
         category="Primera Mitad",
@@ -352,7 +360,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
     ))
     for tm, exp_tm, st_1h in [(home, exp_home * 0.49, "home_half_points"), (away, exp_away * 0.49, "away_half_points")]:
         tm_1h_line = round(exp_tm - 3.5) + 0.5
-        p_tm_1h = normal_prob_over(exp_tm, 6.5 if is_nba else 5.5, tm_1h_line)
+        p_tm_1h = normal_prob_over(exp_tm, 8.8 if is_nba else 7.5, tm_1h_line)
         cat_1h["options"].append(_make_opt(
             pick=f"1ra Mitad {tm} Over {tm_1h_line:.1f} PTS",
             category="Primera Mitad Equipo",
@@ -397,7 +405,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
         p_team, opp_tm, opp_def, pace_adj = _opp_ctx(s)
         adj_pts = round(base_pts * pace_adj, 1)
         safe_line = max(5.5, round(adj_pts * 0.72) + 0.5)
-        prob_pts = normal_prob_over(adj_pts, max(4.2, adj_pts * 0.25), safe_line)
+        prob_pts = normal_prob_over(adj_pts, float(s.get('pts_std') or max(4.8, adj_pts * 0.28)), safe_line)
         cat_pts["options"].append(_make_opt(
             pick=f"{s['name']} Over {safe_line:.1f} Puntos",
             category="Puntos Jugador",
@@ -419,7 +427,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
         if base_pts >= 18.0:
             hi_line = round(adj_pts * 0.85) + 0.5
             if hi_line > safe_line + 1.5:
-                p_hi = normal_prob_over(adj_pts, max(4.2, adj_pts * 0.25), hi_line)
+                p_hi = normal_prob_over(adj_pts, float(s.get('pts_std') or max(4.8, adj_pts * 0.28)), hi_line)
                 cat_pts["options"].append(_make_opt(
                     pick=f"{s['name']} Over {hi_line:.1f} Puntos (Línea Media)",
                     category="Puntos Jugador",
@@ -448,7 +456,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
             continue
         p_team, opp_tm, opp_def, _ = _opp_ctx(s)
         safe_line = max(2.5, round(base_reb * 0.68) + 0.5)
-        prob_reb = poisson_prob_over(base_reb, safe_line)
+        prob_reb = normal_prob_over(base_reb, float(s.get('reb_std') or max(2.0, base_reb * 0.36)), safe_line)
         cat_reb["options"].append(_make_opt(
             pick=f"{s['name']} Over {safe_line:.1f} Rebotes",
             category="Rebotes Jugador",
@@ -477,7 +485,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
             continue
         p_team, opp_tm, opp_def, _ = _opp_ctx(s)
         safe_line = max(1.5, round(base_ast * 0.65) + 0.5)
-        prob_ast = poisson_prob_over(base_ast, safe_line)
+        prob_ast = normal_prob_over(base_ast, float(s.get('ast_std') or max(1.7, base_ast * 0.38)), safe_line)
         cat_ast["options"].append(_make_opt(
             pick=f"{s['name']} Over {safe_line:.1f} Asistencias",
             category="Asistencias Jugador",
@@ -506,7 +514,7 @@ def compute_full_nba_game_data_engineering(game: dict) -> dict:
             continue
         p_team, opp_tm, opp_def, _ = _opp_ctx(s)
         safe_line = 0.5 if base_3 < 2.4 else 1.5
-        prob_3 = poisson_prob_over(base_3, safe_line)
+        prob_3 = normal_prob_over(base_3, float(s.get('threes_std') or max(1.30, math.sqrt(base_3 * 1.65))), safe_line)
         cat_3pm["options"].append(_make_opt(
             pick=f"{s['name']} Over {safe_line:.1f} Triples",
             category="Triples (3PM)",

@@ -280,8 +280,8 @@ def _build_dynamic_picks_for_date(date_str: str) -> List[Dict[str, Any]]:
         a = m.get("away", "Visitante")
         ana = analyze_match_for_slot(m)
         vars_list = ana.get("variables", [])
-        if idx in (2, 5, 8) and len(vars_list) >= 6:
-            chosen_v = next((v for v in vars_list if "fueras de juego" in v.get("pick", "").lower()), vars_list[4])
+        if idx in (2, 5, 8) and len(vars_list) >= 2:
+            chosen_v = next((v for v in vars_list if "córner" in v.get("pick", "").lower() or "1x" in v.get("pick", "").lower() or "x2" in v.get("pick", "").lower()), vars_list[1])
         elif idx in (3, 7) and len(vars_list) >= 4:
             chosen_v = next((v for v in vars_list if "tarjeta" in v.get("pick", "").lower() or "córner" in v.get("pick", "").lower()), vars_list[1])
         else:

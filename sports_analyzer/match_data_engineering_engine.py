@@ -8,6 +8,7 @@ Integra plantillas oficiales actualizadas 2026/2027 sincronizadas con la API en 
 """
 
 import os
+import math
 import glob
 import json
 import pandas as pd
@@ -4524,38 +4525,46 @@ def compute_full_match_data_engineering(home_team: str, away_team: str, league_c
     h_stars = get_team_star_players(home_team)
     for idx_p, p in enumerate(h_stars):
         status_line = "🟢 Titular Confirmado (Si es suplente o no juega, cuota = 1.00 VOID)"
-        p_hr = round(min(94.0, max(48.0, float(p.get("hit_rate", 82.0)) * (0.50 + 0.50 * _h_sot_mult))), 1)
+        _sot_avg_h = min(1.65, max(0.35, float(p.get("sot_avg", 0.95))))
+        _lam_sot_h = _sot_avg_h * _h_sot_mult
+        _p_sot_poisson_h = (1.0 - math.exp(-_lam_sot_h)) * 87.0
+        p_hr = round(min(76.0, max(32.0, _p_sot_poisson_h)), 1)
         hits_sot = int(round(nh * (p_hr / 100.0)))
-        syn_sot = f"{p['name']} ({p['pos']}) promedia {p.get('sot_avg', 1.4)} SOT/90m cruzado vs {away_team} que concede {_a_sot_conceded:.1f} SOT/j (factor {_h_sot_mult:.2f}x)."
+        syn_sot = f"{p['name']} ({p['pos']}) promedia {_sot_avg_h:.2f} SOT/90m cruzado vs {away_team} que concede {_a_sot_conceded:.1f} SOT/j (factor {_h_sot_mult:.2f}x)."
         m_sot_players.append(make_opt(f"{p['name']} ({home_team}): Más de 0.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot, nh, _mkt_odds(p_hr), status_line, syn_sot, model_prob=p_hr))
         if idx_p == 0:
-            p_sot15 = round(min(75.0, max(34.0, (p_hr - 25.0) * (0.60 + 0.40 * _h_sot_mult))), 1)
-            m_sot_players.append(make_opt(f"{p['name']} ({home_team}): Más de 1.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", int(round(nh * p_sot15 / 100.0)), nh, _mkt_odds(p_sot15), status_line, f"Goleador principal de {home_team} ({p.get('sot_avg', 1.5)} SOT/90m) ante {_a_sot_conceded:.1f} SOT concedidos por {away_team}.", model_prob=p_sot15))
-        g_rate = round(min(78.0, max(12.0, float(p.get("goal_hit_rate", 42.0)) * (0.35 + 0.65 * _h_goal_mult))), 1)
-        m_goal_players.append(make_opt(f"{p['name']} ({home_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", int(round(nh * g_rate / 100.0)), nh, _mkt_odds(g_rate), status_line, f"{p['name']} ({p.get('goals_avg', 0.45)} g/90m) ajustado por λ equipo={q_dist['lam_home']:.2f} vs defensa {away_team} ({_h_goal_mult:.2f}x).", model_prob=g_rate))
+            _p15_h = (1.0 - math.exp(-_lam_sot_h) * (1.0 + _lam_sot_h)) * 84.0
+            p_sot15 = round(min(54.0, max(16.0, _p15_h)), 1)
+            m_sot_players.append(make_opt(f"{p['name']} ({home_team}): Más de 1.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", int(round(nh * p_sot15 / 100.0)), nh, _mkt_odds(p_sot15), status_line, f"Goleador principal de {home_team} ({_sot_avg_h:.2f} SOT/90m) ante {_a_sot_conceded:.1f} SOT concedidos por {away_team}.", model_prob=p_sot15))
+        g_rate = round(min(58.0, max(12.0, float(p.get("goal_hit_rate", 26.0)) * (0.35 + 0.65 * _h_goal_mult))), 1)
+        m_goal_players.append(make_opt(f"{p['name']} ({home_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", int(round(nh * g_rate / 100.0)), nh, _mkt_odds(g_rate), status_line, f"{p['name']} ({p.get('goals_avg', 0.35)} g/90m) ajustado por λ equipo={q_dist['lam_home']:.2f} vs defensa {away_team} ({_h_goal_mult:.2f}x).", model_prob=g_rate))
         if idx_p == 0:
-            fg_rate = round(min(48.0, max(10.0, g_rate * 0.54)), 1)
+            fg_rate = round(min(34.0, max(8.0, g_rate * 0.50)), 1)
             m_goal_players.append(make_opt(f"{p['name']} ({home_team}): Marca el 1er Gol del Partido", "Goles de Jugador", int(round(nh * fg_rate / 100.0)), nh, _mkt_odds(fg_rate, 0.90), status_line, f"Referente de área de {home_team} (λ={q_dist['lam_home']:.2f}); abre el marcador con regularidad.", model_prob=fg_rate))
-        a_rate = round(min(62.0, max(10.0, float(p.get("assist_hit_rate", 28.0)) * (0.45 + 0.55 * _h_goal_mult))), 1)
-        m_assist_players.append(make_opt(f"{p['name']} ({home_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", int(round(nh * a_rate / 100.0)), nh, _mkt_odds(a_rate), status_line, f"{p['name']} promedia {p.get('assists_avg', 0.32)} asist/90m (λ={q_dist['lam_home']:.2f}).", model_prob=a_rate))
-        ga_rate = round(min(84.0, max(20.0, float(p.get("ga_hit_rate", 64.0)) * (0.45 + 0.55 * _h_goal_mult))), 1)
+        a_rate = round(min(42.0, max(8.0, float(p.get("assist_hit_rate", 16.0)) * (0.45 + 0.55 * _h_goal_mult))), 1)
+        m_assist_players.append(make_opt(f"{p['name']} ({home_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", int(round(nh * a_rate / 100.0)), nh, _mkt_odds(a_rate), status_line, f"{p['name']} promedia {p.get('assists_avg', 0.22)} asist/90m (λ={q_dist['lam_home']:.2f}).", model_prob=a_rate))
+        ga_rate = round(min(66.0, max(18.0, float(p.get("ga_hit_rate", 38.0)) * (0.45 + 0.55 * _h_goal_mult))), 1)
         m_ga_players.append(make_opt(f"{p['name']} ({home_team}): Registra Gol o Asistencia (G+A ≥ 1)", "Contribución Gol o Asistencia", int(round(nh * ga_rate / 100.0)), nh, _mkt_odds(ga_rate), status_line, f"Participación directa en goles de {home_team} ajustada al rival ({ga_rate}%).", model_prob=ga_rate))
 
     a_stars = get_team_star_players(away_team)
     for idx_p, p in enumerate(a_stars):
         status_line = "🟢 Titular Confirmado (Si es suplente o no juega, cuota = 1.00 VOID)"
-        p_hr = round(min(93.0, max(46.0, float(p.get("hit_rate", 80.0)) * (0.50 + 0.50 * _a_sot_mult))), 1)
+        _sot_avg_a = min(1.55, max(0.32, float(p.get("sot_avg", 0.88))))
+        _lam_sot_a = _sot_avg_a * _a_sot_mult
+        _p_sot_poisson_a = (1.0 - math.exp(-_lam_sot_a)) * 86.0
+        p_hr = round(min(74.0, max(30.0, _p_sot_poisson_a)), 1)
         hits_sot = int(round(na * (p_hr / 100.0)))
-        syn_sot = f"{p['name']} ({p['pos']}) promedia {p.get('sot_avg', 1.3)} SOT/90m cruzado vs {home_team} que concede {_h_sot_conceded:.1f} SOT/j (factor {_a_sot_mult:.2f}x)."
+        syn_sot = f"{p['name']} ({p['pos']}) promedia {_sot_avg_a:.2f} SOT/90m cruzado vs {home_team} que concede {_h_sot_conceded:.1f} SOT/j (factor {_a_sot_mult:.2f}x)."
         m_sot_players.append(make_opt(f"{p['name']} ({away_team}): Más de 0.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", hits_sot, na, _mkt_odds(p_hr), status_line, syn_sot, model_prob=p_hr))
         if idx_p == 0:
-            p_sot15 = round(min(72.0, max(32.0, (p_hr - 27.0) * (0.60 + 0.40 * _a_sot_mult))), 1)
+            _p15_a = (1.0 - math.exp(-_lam_sot_a) * (1.0 + _lam_sot_a)) * 82.0
+            p_sot15 = round(min(50.0, max(14.0, _p15_a)), 1)
             m_sot_players.append(make_opt(f"{p['name']} ({away_team}): Más de 1.5 Tiros a Puerta", "Jugadores (Tiros al Arco)", int(round(na * p_sot15 / 100.0)), na, _mkt_odds(p_sot15), status_line, f"Líder ofensivo de {away_team} ante {_h_sot_conceded:.1f} SOT concedidos por {home_team}.", model_prob=p_sot15))
-        g_rate = round(min(75.0, max(12.0, float(p.get("goal_hit_rate", 39.0)) * (0.35 + 0.65 * _a_goal_mult))), 1)
-        m_goal_players.append(make_opt(f"{p['name']} ({away_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", int(round(na * g_rate / 100.0)), na, _mkt_odds(g_rate), status_line, f"{p['name']} ({p.get('goals_avg', 0.42)} g/90m) ajustado por λ visita={q_dist['lam_away']:.2f} vs defensa {home_team} ({_a_goal_mult:.2f}x).", model_prob=g_rate))
-        a_rate = round(min(58.0, max(10.0, float(p.get("assist_hit_rate", 26.0)) * (0.45 + 0.55 * _a_goal_mult))), 1)
-        m_assist_players.append(make_opt(f"{p['name']} ({away_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", int(round(na * a_rate / 100.0)), na, _mkt_odds(a_rate), status_line, f"{p['name']} genera {p.get('assists_avg', 0.28)} asist/90m (λ={q_dist['lam_away']:.2f}).", model_prob=a_rate))
-        ga_rate = round(min(82.0, max(18.0, float(p.get("ga_hit_rate", 59.0)) * (0.45 + 0.55 * _a_goal_mult))), 1)
+        g_rate = round(min(54.0, max(10.0, float(p.get("goal_hit_rate", 23.0)) * (0.35 + 0.65 * _a_goal_mult))), 1)
+        m_goal_players.append(make_opt(f"{p['name']} ({away_team}): Anota Gol en Cualquier Momento", "Goles de Jugador", int(round(na * g_rate / 100.0)), na, _mkt_odds(g_rate), status_line, f"{p['name']} ({p.get('goals_avg', 0.30)} g/90m) ajustado por λ visita={q_dist['lam_away']:.2f} vs defensa {home_team} ({_a_goal_mult:.2f}x).", model_prob=g_rate))
+        a_rate = round(min(38.0, max(8.0, float(p.get("assist_hit_rate", 14.0)) * (0.45 + 0.55 * _a_goal_mult))), 1)
+        m_assist_players.append(make_opt(f"{p['name']} ({away_team}): Registra Al Menos 1 Asistencia", "Asistencias de Jugador", int(round(na * a_rate / 100.0)), na, _mkt_odds(a_rate), status_line, f"{p['name']} genera {p.get('assists_avg', 0.20)} asist/90m (λ={q_dist['lam_away']:.2f}).", model_prob=a_rate))
+        ga_rate = round(min(62.0, max(16.0, float(p.get("ga_hit_rate", 34.0)) * (0.45 + 0.55 * _a_goal_mult))), 1)
         m_ga_players.append(make_opt(f"{p['name']} ({away_team}): Registra Gol o Asistencia (G+A ≥ 1)", "Contribución Gol o Asistencia", int(round(na * ga_rate / 100.0)), na, _mkt_odds(ga_rate), status_line, f"Impacto directo en marcador para {away_team} ajustado al rival ({ga_rate}%).", model_prob=ga_rate))
 
     categories.append({"category": "🎯 Remates a Puerta por Jugador (Player Props - Tiros al Arco)", "options": m_sot_players})

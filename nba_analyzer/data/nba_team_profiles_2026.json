@@ -1,0 +1,212 @@
+{
+  "Atlanta Hawks": {
+    "pts_for": 117.7,
+    "pts_allowed": 115.8,
+    "pace": 99.5,
+    "def_rank": 20,
+    "style": "Real ESPN (117.7 PF / 115.8 PA)"
+  },
+  "Boston Celtics": {
+    "pts_for": 113.9,
+    "pts_allowed": 103.4,
+    "pace": 99.5,
+    "def_rank": 1,
+    "style": "Real ESPN (113.9 PF / 103.4 PA)"
+  },
+  "Brooklyn Nets": {
+    "pts_for": 110.9,
+    "pts_allowed": 119.2,
+    "pace": 99.5,
+    "def_rank": 25,
+    "style": "Real ESPN (110.9 PF / 119.2 PA)"
+  },
+  "Charlotte Hornets": {
+    "pts_for": 100.1,
+    "pts_allowed": 110.4,
+    "pace": 99.5,
+    "def_rank": 8,
+    "style": "Real ESPN (100.1 PF / 110.4 PA)"
+  },
+  "Chicago Bulls": {
+    "pts_for": 116.2,
+    "pts_allowed": 124.6,
+    "pace": 99.5,
+    "def_rank": 30,
+    "style": "Real ESPN (116.2 PF / 124.6 PA)"
+  },
+  "Cleveland Cavaliers": {
+    "pts_for": 118.2,
+    "pts_allowed": 116.3,
+    "pace": 99.5,
+    "def_rank": 22,
+    "style": "Real ESPN (118.2 PF / 116.3 PA)"
+  },
+  "Dallas Mavericks": {
+    "pts_for": 112.3,
+    "pts_allowed": 113.2,
+    "pace": 99.5,
+    "def_rank": 15,
+    "style": "Real ESPN (112.3 PF / 113.2 PA)"
+  },
+  "Denver Nuggets": {
+    "pts_for": 113.2,
+    "pts_allowed": 112.2,
+    "pace": 99.5,
+    "def_rank": 13,
+    "style": "Real ESPN (113.2 PF / 112.2 PA)"
+  },
+  "Detroit Pistons": {
+    "pts_for": 115.4,
+    "pts_allowed": 108.9,
+    "pace": 99.5,
+    "def_rank": 6,
+    "style": "Real ESPN (115.4 PF / 108.9 PA)"
+  },
+  "Golden State Warriors": {
+    "pts_for": 112.7,
+    "pts_allowed": 113.6,
+    "pace": 99.5,
+    "def_rank": 16,
+    "style": "Real ESPN (112.7 PF / 113.6 PA)"
+  },
+  "Houston Rockets": {
+    "pts_for": 117.9,
+    "pts_allowed": 109.2,
+    "pace": 99.5,
+    "def_rank": 7,
+    "style": "Real ESPN (117.9 PF / 109.2 PA)"
+  },
+  "Indiana Pacers": {
+    "pts_for": 111.5,
+    "pts_allowed": 114.8,
+    "pace": 99.5,
+    "def_rank": 18,
+    "style": "Real ESPN (111.5 PF / 114.8 PA)"
+  },
+  "LA Clippers": {
+    "pts_for": 111.9,
+    "pts_allowed": 118.1,
+    "pace": 99.5,
+    "def_rank": 24,
+    "style": "Real ESPN (111.9 PF / 118.1 PA)"
+  },
+  "Los Angeles Lakers": {
+    "pts_for": 120.9,
+    "pts_allowed": 114.4,
+    "pace": 99.5,
+    "def_rank": 17,
+    "style": "Real ESPN (120.9 PF / 114.4 PA)"
+  },
+  "Memphis Grizzlies": {
+    "pts_for": 122.1,
+    "pts_allowed": 111.9,
+    "pace": 99.5,
+    "def_rank": 11,
+    "style": "Real ESPN (122.1 PF / 111.9 PA)"
+  },
+  "Miami Heat": {
+    "pts_for": 120.5,
+    "pts_allowed": 119.9,
+    "pace": 99.5,
+    "def_rank": 26,
+    "style": "Real ESPN (120.5 PF / 119.9 PA)"
+  },
+  "Milwaukee Bucks": {
+    "pts_for": 108.1,
+    "pts_allowed": 121.1,
+    "pace": 99.5,
+    "def_rank": 27,
+    "style": "Real ESPN (108.1 PF / 121.1 PA)"
+  },
+  "Minnesota Timberwolves": {
+    "pts_for": 115.6,
+    "pts_allowed": 105.8,
+    "pace": 99.5,
+    "def_rank": 3,
+    "style": "Real ESPN (115.6 PF / 105.8 PA)"
+  },
+  "New Orleans Pelicans": {
+    "pts_for": 115.4,
+    "pts_allowed": 122.8,
+    "pace": 99.5,
+    "def_rank": 29,
+    "style": "Real ESPN (115.4 PF / 122.8 PA)"
+  },
+  "New York Knicks": {
+    "pts_for": 109.5,
+    "pts_allowed": 103.5,
+    "pace": 99.5,
+    "def_rank": 2,
+    "style": "Real ESPN (109.5 PF / 103.5 PA)"
+  },
+  "Oklahoma City Thunder": {
+    "pts_for": 112.1,
+    "pts_allowed": 107.7,
+    "pace": 99.5,
+    "def_rank": 5,
+    "style": "Real ESPN (112.1 PF / 107.7 PA)"
+  },
+  "Orlando Magic": {
+    "pts_for": 109.4,
+    "pts_allowed": 112.8,
+    "pace": 99.5,
+    "def_rank": 14,
+    "style": "Real ESPN (109.4 PF / 112.8 PA)"
+  },
+  "Philadelphia 76ers": {
+    "pts_for": 114.5,
+    "pts_allowed": 111.6,
+    "pace": 99.5,
+    "def_rank": 10,
+    "style": "Real ESPN (114.5 PF / 111.6 PA)"
+  },
+  "Phoenix Suns": {
+    "pts_for": 114.1,
+    "pts_allowed": 115.7,
+    "pace": 99.5,
+    "def_rank": 19,
+    "style": "Real ESPN (114.1 PF / 115.7 PA)"
+  },
+  "Portland Trail Blazers": {
+    "pts_for": 117.5,
+    "pts_allowed": 111.2,
+    "pace": 99.5,
+    "def_rank": 9,
+    "style": "Real ESPN (117.5 PF / 111.2 PA)"
+  },
+  "Sacramento Kings": {
+    "pts_for": 107.7,
+    "pts_allowed": 121.7,
+    "pace": 99.5,
+    "def_rank": 28,
+    "style": "Real ESPN (107.7 PF / 121.7 PA)"
+  },
+  "San Antonio Spurs": {
+    "pts_for": 117.5,
+    "pts_allowed": 106.2,
+    "pace": 99.5,
+    "def_rank": 4,
+    "style": "Real ESPN (117.5 PF / 106.2 PA)"
+  },
+  "Toronto Raptors": {
+    "pts_for": 112.0,
+    "pts_allowed": 112.0,
+    "pace": 99.5,
+    "def_rank": 12,
+    "style": "Real ESPN (112.0 PF / 112.0 PA)"
+  },
+  "Utah Jazz": {
+    "pts_for": 108.8,
+    "pts_allowed": 116.0,
+    "pace": 99.5,
+    "def_rank": 21,
+    "style": "Real ESPN (108.8 PF / 116.0 PA)"
+  },
+  "Washington Wizards": {
+    "pts_for": 110.8,
+    "pts_allowed": 117.9,
+    "pace": 99.5,
+    "def_rank": 23,
+    "style": "Real ESPN (110.8 PF / 117.9 PA)"
+  }
+}

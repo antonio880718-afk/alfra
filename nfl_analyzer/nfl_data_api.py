@@ -144,6 +144,16 @@ def fetch_espn_football_summary_cached(sport: str, league: str, event_id: str) -
         return {}
 
 
+_TEAM_PROFILES_2026_FILE = os.path.join(DATA_DIR, "nfl_team_profiles_2026.json")
+if os.path.exists(_TEAM_PROFILES_2026_FILE):
+    try:
+        with open(_TEAM_PROFILES_2026_FILE, "r", encoding="utf-8") as _tpf:
+            _tp_loaded = json.load(_tpf)
+            if isinstance(_tp_loaded, dict) and _tp_loaded:
+                NFL_DEFENSE_PROFILES.update(_tp_loaded)
+    except Exception:
+        pass
+
 _ROSTERS_2026_NFL_FILE = os.path.join(DATA_DIR, "espn_2026_fball_rosters.json")
 if os.path.exists(_ROSTERS_2026_NFL_FILE):
     try:
@@ -249,7 +259,8 @@ def get_normalized_football_schedule(date_str: str = None, league_filter: str = 
                 except Exception:
                     pass
                 today_s = datetime.now(CDMX_TZ).strftime('%Y%m%d')
-                if all_games and not has_placeholders and not missing_finished_box and (not has_unfinalized or date_str > today_s or age_sec < 1800):
+                has_missing_odds_today = (date_str >= today_s) and any(not str(g.get("spread_str", "")).strip() for g in all_games) and age_sec > 300
+                if all_games and not has_placeholders and not missing_finished_box and not has_missing_odds_today and (not has_unfinalized or date_str > today_s or age_sec < 1800):
                     if league_filter != "ALL":
                         return [g for g in all_games if g.get("league") == league_filter]
                     return all_games

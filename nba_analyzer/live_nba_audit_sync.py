@@ -232,7 +232,7 @@ def sync_nba_date_from_espn(date_str: str) -> list:
 
         odds_arr = comp.get("odds", [])
         spread_str = odds_arr[0].get("details", "") if odds_arr else ""
-        ou_val = float(odds_arr[0].get("overUnder", 226.5 if l_key == "NBA" else 145.5)) if odds_arr and odds_arr[0].get("overUnder") else (226.5 if l_key == "NBA" else 145.5)
+        ou_val = float(odds_arr[0].get("overUnder", 0.0)) if odds_arr and odds_arr[0].get("overUnder") else 0.0
 
         status_obj = comp.get("status", {}).get("type", {})
         status_desc = status_obj.get("description", "Scheduled")
@@ -253,26 +253,50 @@ def sync_nba_date_from_espn(date_str: str) -> list:
         city = comp.get("venue", {}).get("address", {}).get("city", "")
 
         s_data = event_summaries.get(eid, {})
+        if (not spread_str or ou_val <= 0) and s_data:
+            pc_arr = s_data.get("pickcenter", []) or []
+            if pc_arr:
+                if not spread_str:
+                    spread_str = str(pc_arr[0].get("details", "") or "")
+                if ou_val <= 0 and pc_arr[0].get("overUnder"):
+                    ou_val = float(pc_arr[0]["overUnder"])
+        if ou_val <= 0:
+            ou_val = 228.5 if l_key == "NBA" else 146.5
         box_athletes = extract_athletes_from_summary(s_data)
 
-        # Estrellas priorizando líderes reales de temporada (scoreboard + base fija + boxscore como respaldo)
-        stars = _extract_scoreboard_bball_stars(h, h_team) + _extract_scoreboard_bball_stars(a, a_team)
+        # Estrellas priorizando rosters oficiales 2026 (season gameLog + std real) y scoreboard pre-juego
+        try:
+            _bl_path = os.path.join(DATA_DIR, "espn_injured_blacklist.json")
+            _inj_bl = set(json.load(open(_bl_path, "r", encoding="utf-8"))) if os.path.exists(_bl_path) else set()
+        except Exception:
+            _inj_bl = set()
+
+        stars = []
         try:
             from nba_data_api import NBA_DEFAULT_STARS
             for _tm_k in (h_team, a_team):
                 for def_s in list(NBA_DEFAULT_STARS.get(_tm_k, [])):
-                    _existing = next((s for s in stars if s["name"].lower() == def_s["name"].lower()), None)
-                    if _existing:
-                        _existing["team"] = _tm_k
-                        if float(_existing.get("pts", 0)) in (0.0, 12.5) and float(def_s.get("pts", 0)) > 12.5:
-                            _existing["pts"] = def_s["pts"]
-                            _existing["pra"] = round(_existing["pts"] + float(_existing.get("reb", 4.0)) + float(_existing.get("ast", 3.0)), 1)
-                    else:
-                        _sc = dict(def_s)
-                        _sc["team"] = _tm_k
-                        stars.append(_sc)
+                    if def_s["name"].lower().strip() in _inj_bl:
+                        continue
+                    _sc = dict(def_s)
+                    _sc["team"] = _tm_k
+                    stars.append(_sc)
         except Exception:
             pass
+
+        if len(stars) < 4:
+            sb_stars = _extract_scoreboard_bball_stars(h, h_team) + _extract_scoreboard_bball_stars(a, a_team)
+            for s_sb in sb_stars:
+                if s_sb["name"].lower().strip() in _inj_bl:
+                    continue
+                if not any(x["name"].lower() == s_sb["name"].lower() for x in stars):
+                    # If game is already FINAL, scoreboard leaders reflect single-game stats -> regress heavily
+                    if is_final:
+                        s_sb["pts"] = round(min(22.0, max(8.0, 13.0 + (s_sb["pts"] - 13.0) * 0.40)), 1)
+                        s_sb["reb"] = round(min(9.0, max(2.5, 4.5 + (s_sb["reb"] - 4.5) * 0.45)), 1)
+                        s_sb["ast"] = round(min(7.0, max(1.5, 3.0 + (s_sb["ast"] - 3.0) * 0.45)), 1)
+                        s_sb["pra"] = round(s_sb["pts"] + s_sb["reb"] + s_sb["ast"], 1)
+                    stars.append(s_sb)
 
         if box_athletes and len(stars) < 8:
             sorted_ath = sorted(box_athletes.values(), key=lambda x: x.get("pra", 0), reverse=True)
@@ -306,13 +330,15 @@ def sync_nba_date_from_espn(date_str: str) -> list:
                 {"name": f"Líder {a_short}", "team": a_team, "pos": "G", "jersey": "2", "pts": 18.2, "reb": 4.0, "ast": 4.0, "stl": 0.9, "blk": 0.4, "threes": 2.0, "pra": 26.2, "role": f"Anotador {a_team}"}
             ]
 
+        _fb_pa = 114.5 if l_key == "NBA" else 73.5
+        _fb_pc = 99.8 if l_key == "NBA" else 68.5
         try:
             from nba_data_api import NBA_DEFENSE_PROFILES
-            h_def = NBA_DEFENSE_PROFILES.get(h_team, {"def_rank": 15, "pts_allowed": 113.5, "pace": 100.0, "style": "Defensa Promedio"})
-            a_def = NBA_DEFENSE_PROFILES.get(a_team, {"def_rank": 16, "pts_allowed": 114.0, "pace": 100.0, "style": "Defensa Promedio"})
+            h_def = NBA_DEFENSE_PROFILES.get(h_team, {"def_rank": 15, "pts_for": _fb_pa, "pts_allowed": _fb_pa, "pace": _fb_pc, "style": f"Base {l_key}"})
+            a_def = NBA_DEFENSE_PROFILES.get(a_team, {"def_rank": 16, "pts_for": _fb_pa, "pts_allowed": _fb_pa + 0.5, "pace": _fb_pc, "style": f"Base {l_key}"})
         except Exception:
-            h_def = {"def_rank": 15, "pts_allowed": 113.5, "pace": 100.0, "style": "Defensa Promedio"}
-            a_def = {"def_rank": 16, "pts_allowed": 114.0, "pace": 100.0, "style": "Defensa Promedio"}
+            h_def = {"def_rank": 15, "pts_for": _fb_pa, "pts_allowed": _fb_pa, "pace": _fb_pc, "style": f"Base {l_key}"}
+            a_def = {"def_rank": 16, "pts_for": _fb_pa, "pts_allowed": _fb_pa + 0.5, "pace": _fb_pc, "style": f"Base {l_key}"}
 
         status_str = "FINALIZADO" if is_final else ("EN JUEGO" if is_in_progress else "PROGRAMADO")
         score_str = f"{a_score} - {h_score}" if (h_score > 0 or a_score > 0) else "vs"
