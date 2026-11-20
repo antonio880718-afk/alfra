@@ -1239,3 +1239,150 @@ export const toggleExpedienteActivo = async (pacienteId, activo) => {
     });
     return estadoBool;
 };
+
+
+/**
+ * Detecta grupos de pacientes duplicados comparando teléfono a 10 dígitos,
+ * correo electrónico real o nombre normalizado sin acentos.
+ */
+export const detectarPacientesDuplicados = (pacientesList = []) => {
+    if (!pacientesList || pacientesList.length === 0) return [];
+
+    const normalizar = (txt = '') =>
+        String(txt || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+
+    const grupos = {};
+
+    pacientesList.forEach(p => {
+        const rawTel = p.telefono || p.celular || '';
+        const cleanTel = String(rawTel).replace(/\D/g, '').slice(-10);
+        const normNom = normalizar(p.nombre);
+        const normEmail = String(p.email || p.correo || '').toLowerCase().trim();
+
+        let key = null;
+        if (cleanTel.length === 10) {
+            key = 'tel_' + cleanTel;
+        } else if (normNom.length >= 6) {
+            key = 'nom_' + normNom;
+        } else if (normEmail && !normEmail.includes('@paciente.alfra.mx')) {
+            key = 'mail_' + normEmail;
+        }
+
+        if (key) {
+            if (!grupos[key]) grupos[key] = [];
+            if (!grupos[key].some(item => item.id === p.id)) {
+                grupos[key].push(p);
+            }
+        }
+    });
+
+    return Object.values(grupos).filter(g => g.length > 1);
+};
+
+/**
+ * Fusiona de forma atómica y completa dos expedientes de paciente:
+ * Migra citas, tratamientos, sesiones, recibos y vinculación de app móvil
+ * hacia el expediente principal, y elimina el expediente duplicado secundario.
+ */
+export const fusionarExpedientesPacientes = async (principalId, secundarioId) => {
+    if (!principalId || !secundarioId || principalId === secundarioId) {
+        throw new Error('IDs inválidos para fusión');
+    }
+
+    const principalRef = doc(db, COLLECTION_NAME, principalId);
+    const secundarioRef = doc(db, COLLECTION_NAME, secundarioId);
+
+    const [pSnap, sSnap] = await Promise.all([
+        getDoc(principalRef),
+        getDoc(secundarioRef)
+    ]);
+
+    if (!pSnap.exists() || !sSnap.exists()) {
+        throw new Error('Uno de los expedientes a fusionar ya no existe en el sistema.');
+    }
+
+    const p = pSnap.data();
+    const s = sSnap.data();
+
+    // 1. Unificar datos faltantes en el principal
+    const merged = {
+        updatedAt: new Date().toISOString()
+    };
+    if (!p.uid && s.uid) merged.uid = s.uid;
+    if (!p.email && s.email) merged.email = s.email;
+    if (!p.telefono && s.telefono) merged.telefono = s.telefono;
+    if (!p.fechaNacimiento && s.fechaNacimiento) merged.fechaNacimiento = s.fechaNacimiento;
+    if (!p.comoNosConocio && s.comoNosConocio) merged.comoNosConocio = s.comoNosConocio;
+    if (s.planNutricionalActivo === true) merged.planNutricionalActivo = true;
+    if (s.planNutricionalData && !p.planNutricionalData) merged.planNutricionalData = s.planNutricionalData;
+    if (s.sellosLealtad && (!p.sellosLealtad || s.sellosLealtad > p.sellosLealtad)) {
+        merged.sellosLealtad = s.sellosLealtad;
+    }
+
+    await updateDoc(principalRef, merged);
+
+    // 2. Reasignar citas vinculadas
+    try {
+        const citasSnap = await getDocs(query(collection(db, 'citas'), where('pacienteId', '==', secundarioId)));
+        for (const c of citasSnap.docs) {
+            await updateDoc(c.ref, { pacienteId: principalId, pacienteNombre: p.nombre || c.data().pacienteNombre });
+        }
+    } catch (eC) {
+        console.warn('Aviso migrando citas:', eC);
+    }
+
+    // 3. Reasignar tratamientos vinculados
+    try {
+        const tratSnap = await getDocs(query(collection(db, 'tratamientos'), where('pacienteId', '==', secundarioId)));
+        for (const t of tratSnap.docs) {
+            await updateDoc(t.ref, { pacienteId: principalId });
+        }
+    } catch (eT) {
+        console.warn('Aviso migrando tratamientos:', eT);
+    }
+
+    // 4. Reasignar sesiones vinculadas
+    try {
+        const sesSnap = await getDocs(query(collection(db, 'sesiones'), where('pacienteId', '==', secundarioId)));
+        for (const sDoc of sesSnap.docs) {
+            await updateDoc(sDoc.ref, { pacienteId: principalId });
+        }
+    } catch (eS) {
+        console.warn('Aviso migrando sesiones:', eS);
+    }
+
+    // 5. Reasignar recibos de pago
+    try {
+        const recSnap = await getDocs(query(collection(db, 'recibos'), where('pacienteId', '==', secundarioId)));
+        for (const r of recSnap.docs) {
+            await updateDoc(r.ref, { pacienteId: principalId, pacienteNombre: p.nombre || r.data().pacienteNombre });
+        }
+    } catch (eR) {
+        console.warn('Aviso migrando recibos:', eR);
+    }
+
+    // 6. Actualizar directorio telefónico público
+    const cleanPhone = String(p.telefono || s.telefono || '').replace(/\D/g, '').slice(-10);
+    if (cleanPhone.length === 10) {
+        try {
+            await setDoc(doc(db, 'directorio_pacientes', cleanPhone), {
+                pacienteId: principalId,
+                nombre: p.nombre || s.nombre,
+                telefono: cleanPhone,
+                updatedAt: new Date().toISOString()
+            }, { merge: true });
+        } catch (_) {}
+    }
+
+    // 7. Si el duplicado tenía cuenta Auth vinculada, mapear en usuarios/{uid}
+    if (s.uid) {
+        try {
+            await setDoc(doc(db, 'usuarios', s.uid), { pacienteId: principalId }, { merge: true });
+        } catch (_) {}
+    }
+
+    // 8. Eliminar el documento secundario duplicado
+    await deleteDoc(secundarioRef);
+
+    return true;
+};

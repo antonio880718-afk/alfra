@@ -9,7 +9,7 @@ import ReciboDigital from '../../components/ui/ReciboDigital';
 import { getRecibosPaciente } from '../../services/recibosService';
 import { getDocs, query, collection, where, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos, sincronizarTodosLosPacientes, sincronizarDirectorioTelefonos, toggleExpedienteActivo } from '../../services/pacientesService';
+import { onPacientesChange, updatePaciente, createPaciente, deletePaciente, updateAllPacientesLealtad, activarMembresia, recargarHorasMembresia, solicitarEliminacionPaciente, resetAllSellos, sincronizarTodosLosPacientes, sincronizarDirectorioTelefonos, toggleExpedienteActivo, detectarPacientesDuplicados, fusionarExpedientesPacientes } from '../../services/pacientesService';
 import { sellarVisita, canjearRecompensa } from '../../services/lealtadService';
 import { onStaffChange } from '../../services/staffService';
 import { createCita } from '../../services/citasService';
@@ -66,6 +66,66 @@ export default function AdminPacientes() {
     const [historialTab, setHistorialTab] = useState('citas');
     const [loadingHistorial, setLoadingHistorial] = useState(false);
     const [reciboVisualizar, setReciboVisualizar] = useState(null);
+
+    // ── GESTIÓN DE EXPEDIENTES DUPLICADOS ──────────────────────────
+    const [modalDuplicados, setModalDuplicados] = useState(false);
+    const [fusionando, setFusionando] = useState(false);
+    const [mensajeFusion, setMensajeFusion] = useState(null);
+
+    const duplicadosGrupos = useMemo(() => {
+        return detectarPacientesDuplicados(pacientes);
+    }, [pacientes]);
+
+    const handleFusionarIndividual = async (principalId, secundarioId) => {
+        if (!window.confirm('¿Deseas fusionar estos expedientes? Se conservará el seleccionado como principal, transfiriendo todas las citas, tratamientos, pagos y datos de la app del duplicado, y se eliminará el duplicado.')) return;
+        setFusionando(true);
+        try {
+            await fusionarExpedientesPacientes(principalId, secundarioId);
+            setMensajeFusion('¡Expedientes fusionados exitosamente!');
+            setTimeout(() => setMensajeFusion(null), 3500);
+        } catch (e) {
+            console.error('Error al fusionar:', e);
+            alert('Error al fusionar: ' + e.message);
+        } finally {
+            setFusionando(false);
+        }
+    };
+
+    const handleAutoFusionarTodos = async () => {
+        if (duplicadosGrupos.length === 0) return;
+        if (!window.confirm(`Se detectaron ${duplicadosGrupos.length} grupos con pacientes duplicados. ¿Deseas auto-fusionarlos todos en sus expedientes principales?`)) return;
+        setFusionando(true);
+        let count = 0;
+        try {
+            for (const grupo of duplicadosGrupos) {
+                if (grupo.length >= 2) {
+                    // Elegir el principal: el que tenga UID de auth o el más antiguo con más datos
+                    const sorted = [...grupo].sort((a, b) => {
+                        if (a.uid && !b.uid) return -1;
+                        if (!a.uid && b.uid) return 1;
+                        const dateA = new Date(a.createdAt || a.fechaRegistro || 0);
+                        const dateB = new Date(b.createdAt || b.fechaRegistro || 0);
+                        return dateA - dateB;
+                    });
+                    const principal = sorted[0];
+                    for (let i = 1; i < sorted.length; i++) {
+                        await fusionarExpedientesPacientes(principal.id, sorted[i].id);
+                        count++;
+                    }
+                }
+            }
+            setMensajeFusion(`¡Se fusionaron con éxito ${count} expediente(s) duplicado(s)!`);
+            setTimeout(() => {
+                setMensajeFusion(null);
+                setModalDuplicados(false);
+            }, 3000);
+        } catch (e) {
+            console.error('Error en auto-fusión:', e);
+            alert('Error durante la auto-fusión: ' + e.message);
+        } finally {
+            setFusionando(false);
+        }
+    };
 
     const abrirHistorial = async (paciente, e, initialTab = 'citas') => {
         e?.stopPropagation();
@@ -519,6 +579,36 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                     </Button>
                 </div>
             </div>
+
+            {/* BANNER DE EXPEDIENTES DUPLICADOS */}
+            {duplicadosGrupos.length > 0 && (
+                <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 shadow-xs animate-in fade-in">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-black shrink-0 text-lg shadow-xs">
+                            ⚠️
+                        </div>
+                        <div>
+                            <h4 className="text-sm font-black text-amber-950 flex items-center gap-2">
+                                Se detectaron {duplicadosGrupos.length} grupo(s) de expedientes duplicados
+                                <span className="text-[10px] bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded-full">Atención requerida</span>
+                            </h4>
+                            <p className="text-xs text-amber-800 mt-0.5">
+                                Pacientes creados en recepción que luego crearon cuenta en la App móvil (mismo teléfono a 10 dígitos o nombre). Puedes unificarlos en 1 clic.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                        <Button
+                            variant="primary"
+                            size="sm"
+                            className="bg-amber-600 hover:bg-amber-700 text-white font-bold shadow-xs cursor-pointer"
+                            onClick={() => setModalDuplicados(true)}
+                        >
+                            ⚡ Revisar y Fusionar ({duplicadosGrupos.length})
+                        </Button>
+                    </div>
+                </div>
+            )}
 
             <Card className="p-3">
                 <div className="relative">
@@ -1550,6 +1640,93 @@ Registros vinculados actualizados: ${res.totalActualizados}`);
                     </div>
                 </div>
             )}
+
+            {/* MODAL GESTOR DE EXPEDIENTES DUPLICADOS */}
+            <Modal
+                isOpen={modalDuplicados}
+                onClose={() => setModalDuplicados(false)}
+                title={`⚡ Fusión de Expedientes Duplicados (${duplicadosGrupos.length} grupos)`}
+            >
+                <div className="space-y-4 p-2 max-h-[75vh] overflow-y-auto">
+                    {mensajeFusion && (
+                        <div className="p-3 bg-emerald-50 border border-emerald-300 rounded-xl text-emerald-800 text-xs font-bold animate-in fade-in">
+                            {mensajeFusion}
+                        </div>
+                    )}
+
+                    <div className="bg-amber-50/70 border border-amber-200 rounded-xl p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                        <div className="text-xs text-amber-900">
+                            <p className="font-bold">¿Cómo funciona la fusión de expedientes?</p>
+                            <p className="text-amber-800 text-[11px] mt-0.5">
+                                Se conserva el expediente principal seleccionado. Todas las <strong>citas, tratamientos, sesiones, recibos y acceso a la App Móvil</strong> del duplicado se transfieren automáticamente al expediente conservado, y el duplicado se elimina.
+                            </p>
+                        </div>
+                        <Button
+                            variant="primary"
+                            size="sm"
+                            disabled={fusionando || duplicadosGrupos.length === 0}
+                            className="bg-amber-600 hover:bg-amber-700 text-white font-black shrink-0 whitespace-nowrap cursor-pointer"
+                            onClick={handleAutoFusionarTodos}
+                        >
+                            {fusionando ? 'Fusionando...' : '⚡ Auto-Fusionar Todos'}
+                        </Button>
+                    </div>
+
+                    <div className="space-y-4">
+                        {duplicadosGrupos.map((grupo, gIdx) => (
+                            <div key={gIdx} className="border border-gray-200 rounded-2xl p-4 bg-gray-50/50 space-y-3">
+                                <div className="flex items-center justify-between">
+                                    <span className="text-xs font-black text-acero uppercase tracking-wider flex items-center gap-1.5">
+                                        <span className="w-2 h-2 rounded-full bg-amber-500"></span> Grupo #{gIdx + 1} ({grupo.length} expedientes coincidentes)
+                                    </span>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    {grupo.map((p, pIdx) => {
+                                        const otro = grupo.find(x => x.id !== p.id) || grupo[(pIdx + 1) % grupo.length];
+                                        return (
+                                            <div key={p.id} className="bg-white border border-gray-200 rounded-xl p-3 flex flex-col justify-between space-y-2.5 shadow-2xs">
+                                                <div className="space-y-1">
+                                                    <div className="flex items-center justify-between">
+                                                        <h5 className="text-sm font-black text-acero leading-snug">{p.nombre || 'Sin Nombre'}</h5>
+                                                        {p.uid && (
+                                                            <span className="text-[9px] bg-teal-50 text-teal-700 border border-teal-200 px-1.5 py-0.5 rounded font-black">
+                                                                App Móvil
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <p className="text-xs text-gray-500">📱 {p.telefono || p.celular || 'Sin teléfono'}</p>
+                                                    <p className="text-xs text-gray-500">✉️ {p.email || p.correo || 'Sin correo'}</p>
+                                                    <div className="flex items-center gap-2 text-[10px] text-gray-400 pt-1 border-t border-gray-100">
+                                                        <span>ID: <code className="text-gray-600">{p.id.slice(0, 8)}...</code></span>
+                                                        {p.fechaNacimiento && <span>• Nac: {p.fechaNacimiento}</span>}
+                                                    </div>
+                                                </div>
+
+                                                <Button
+                                                    variant="outline"
+                                                    size="xs"
+                                                    disabled={fusionando}
+                                                    className="w-full border-teal-600 text-teal-700 hover:bg-teal-50 font-bold justify-center cursor-pointer"
+                                                    onClick={() => handleFusionarIndividual(p.id, otro.id)}
+                                                >
+                                                    ⚡ Conservar este expediente
+                                                </Button>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="flex justify-end pt-3 border-t border-gray-100">
+                        <Button variant="outline" size="sm" onClick={() => setModalDuplicados(false)}>
+                            Cerrar
+                        </Button>
+                    </div>
+                </div>
+            </Modal>
 
             {/* MODAL RECIBO DIGITAL OFICIAL */}
             {reciboVisualizar && (

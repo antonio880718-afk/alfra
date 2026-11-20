@@ -1,4 +1,4 @@
-{
+﻿{
     "firestore": {
         "rules": "firestore.rules"
     },
@@ -16,6 +16,7 @@
         }
     ],
     "hosting": {
+        "site": "clinica-alfra",
         "public": "dist",
         "ignore": [
             "firebase.json",

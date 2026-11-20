@@ -36,6 +36,7 @@ import { addDoc, collection, serverTimestamp, doc, onSnapshot } from 'firebase/f
 import { createCita, getCitasByPaciente, updateCitaStatus } from '../../services/citasService';
 import { createPlan, getPlanes } from '../../services/planesService';
 import { useAuth } from '../../contexts/AuthContext';
+import PlanNutricionalClinicoView from '../../components/expediente/PlanNutricionalClinicoView';
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 const calcIMC = (peso, estatura) => {
@@ -2684,7 +2685,7 @@ export default function ExpedienteClinico() {
                         { key: 'evolucion', label: '📊 Evolución y Medidas', count: sesiones.length },
                         { key: 'galeria', label: '📸 Galería y Antes / Después', count: todasLasFotos.length },
                         { key: 'roadmap', label: `🗺️ Roadmap Clínico (Fase ${faseActualGlobal})`, count: 4 },
-                        { key: 'apoyo', label: '🏠 Apoyo en Casa y Nutrición', count: apoyoList.length },
+                        { key: 'apoyo', label: '🥗 Plan Nutricional OMRON y Casa', count: (paciente?.planNutricionalActivo ? 'Activo' : apoyoList.length) },
                         { key: 'ficha', label: '🩺 Ficha Médica, Citas y Firmas', count: citasHistorial.length },
                     ].map(tab => (
                         <button
@@ -3111,6 +3112,8 @@ export default function ExpedienteClinico() {
                ═══════════════════════════════════════════════════════════════════════ */}
             {activeTab === 'apoyo' && (
                 <div className="space-y-6 animate-in fade-in duration-200">
+                    {/* Plan Nutricional Clinico OMRON HBF-514C */}
+                    <PlanNutricionalClinicoView paciente={paciente} tratamiento={tratamientoActivo} sesiones={sesiones} />
                     {/* Resumen de Compromiso y Vulnerabilidad Horaria */}
                     <div className="bg-gradient-to-r from-slate-900 to-acero rounded-2xl p-5 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div className="space-y-1">
