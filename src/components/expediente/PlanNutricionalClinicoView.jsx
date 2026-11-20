@@ -387,7 +387,7 @@ export default function PlanNutricionalClinicoView({
 
                 {/* Selector de Tiempo de Comida */}
                 <div className="flex border-b border-gray-100 bg-gray-50/60 overflow-x-auto scrollbar-none">
-                    {Object.entries(plan.menus).map(([key, item]) => {
+                    {Object.entries(plan?.menus || {}).map(([key, item]) => {
                         const isSelected = tiempoComidaActivo === key;
                         return (
                             <button
@@ -459,30 +459,21 @@ export default function PlanNutricionalClinicoView({
                     <span className="text-[11px] font-bold text-gray-400">Optimizada para las 5 comidas</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-                    {Object.entries(plan.listaCompras).map(([catKey, items]) => {
-                        const titulosMap = {
-                            proteinas: 'Proteinas Magras',
-                            vegetalesYFrutas: 'Vegetales & Frutas',
-                            carbohidratos: 'Carbohidratos',
-                            grasasSaludables: 'Grasas Buenas',
-                            bebidasEInfusiones: 'Hidratacion'
-                        };
-                        return (
-                            <div key={catKey} className="bg-gray-50/60 border border-gray-200/60 rounded-xl p-3.5 space-y-2">
-                                <h4 className="text-xs font-black text-acero pb-1.5 border-b border-gray-200/60">
-                                    {titulosMap[catKey] || catKey}
-                                </h4>
-                                <ul className="space-y-1">
-                                    {items.map((it, itIdx) => (
-                                        <li key={itIdx} className="text-[11px] text-gray-600 flex items-start gap-1.5 leading-snug">
-                                            <span className="text-teal-500 font-bold">•</span> {it}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        );
-                    })}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {(plan?.listaSuper || []).map((cat, catIdx) => (
+                        <div key={catIdx} className="bg-gray-50/60 border border-gray-200/60 rounded-xl p-3.5 space-y-2">
+                            <h4 className="text-xs font-black text-acero pb-1.5 border-b border-gray-200/60 flex items-center gap-1.5">
+                                <span>{cat.icon || '🛒'}</span> <span>{cat.categoria}</span>
+                            </h4>
+                            <ul className="space-y-1">
+                                {(cat.items || []).map((it, itIdx) => (
+                                    <li key={itIdx} className="text-[11px] text-gray-600 flex items-start gap-1.5 leading-snug">
+                                        <span className="text-teal-500 font-bold">•</span> {it}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
             </div>
 
