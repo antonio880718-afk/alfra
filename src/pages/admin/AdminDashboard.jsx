@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
 import { LineChart, Line, AreaChart, Area, PieChart, Pie, Cell, Legend, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
-import { TrendingUp, TrendingDown, DollarSign, Activity, AlertTriangle, GitMerge, Users, CalendarDays, CalendarCheck, CalendarX, Clock, UserMinus, Gift, Loader, X, Coins, Crown, CheckCircle2, AlertCircle, ShieldAlert, FileText, Sparkles, Send, Copy, Check, ChevronRight, Lock, UserCheck, Flame } from 'lucide-react';
+import { Bell, TrendingUp, TrendingDown, DollarSign, Activity, AlertTriangle, GitMerge, Users, CalendarDays, CalendarCheck, CalendarX, Clock, UserMinus, Gift, Loader, X, Coins, Crown, CheckCircle2, AlertCircle, ShieldAlert, FileText, Sparkles, Send, Copy, Check, ChevronRight, Lock, UserCheck, Flame } from 'lucide-react';
 import { format, isSameDay, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { toLocalISOString, getCortesAprobados } from '../../services/finanzasService';
@@ -16,6 +16,7 @@ import { onControlFlyersMensualChange, marcarFlyersMesCompletado, getMesActualCl
 import { useNavigate } from 'react-router-dom';
 import { obtenerProximosCumpleanos } from '../../utils/cumpleanosUtils';
 import ModalTarjetaCumpleanos from '../../components/cumpleanos/ModalTarjetaCumpleanos';
+import { probarNotificacionYVibracion } from '../../services/notificationService';
 
 export default function AdminDashboard() {
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -36,6 +37,28 @@ export default function AdminDashboard() {
     const [pacienteCumpleModal, setPacienteCumpleModal] = useState(null);
     const [detalleModal, setDetalleModal] = useState(null);
     
+    // Estados para prueba de alertas push
+    const [probandoAlerta, setProbandoAlerta] = useState(false);
+    const [alertaResultado, setAlertaResultado] = useState(null);
+
+    const handleProbarAlertas = async () => {
+        setProbandoAlerta(true);
+        setAlertaResultado(null);
+        try {
+            const res = await probarNotificacionYVibracion();
+            if (res.success) {
+                setAlertaResultado('✅ ¡Alerta enviada al celular! Revisa tu barra de notificaciones, sonido y vibración.');
+            } else {
+                setAlertaResultado(`🔔 Sonido local ejecutado. Estado Push: ${res.error || 'Verifica permisos de notificación en tu teléfono'}`);
+            }
+        } catch (e) {
+            setAlertaResultado(`❌ Error: ${e.message}`);
+        } finally {
+            setProbandoAlerta(false);
+            setTimeout(() => setAlertaResultado(null), 8000);
+        }
+    };
+
     // Estados para reset de password de staff
     const [staffEmail, setStaffEmail] = useState('');
     const [genericPassword, setGenericPassword] = useState('Alfra2026!');
@@ -570,6 +593,17 @@ export default function AdminDashboard() {
                     </div>
                 </div>
             </div>
+
+            {/* BANNER RESULTADO PRUEBA DE ALERTAS */}
+            {alertaResultado && (
+                <div className="p-3.5 px-4 rounded-2xl bg-teal-900 text-white shadow-md flex items-center justify-between text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2">
+                    <div className="flex items-center gap-2.5">
+                        <Bell size={18} className="text-teal-300 animate-pulse shrink-0" />
+                        <span>{alertaResultado}</span>
+                    </div>
+                    <button onClick={() => setAlertaResultado(null)} className="text-teal-300 hover:text-white font-bold ml-4">✕</button>
+                </div>
+            )}
 
             {/* ALERTA MENSUAL: CAMBIAR FLYERS DEL MES */}
             {!controlFlyersMes?.completadoEsteMes && (

@@ -1,35 +1,204 @@
-const functions = require("firebase-functions");
+﻿const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 admin.initializeApp();
 
 // --- CONFIGURACION GLOBAL DE NOTIFICACIONES PUSH FCM (SONIDO Y VIBRACION) ---
 const ANDROID_NOTIFICATION_CONFIG = {
-    priority: 'high',
+    priority: "high",
     notification: {
-        channelId: 'alfra_citas_urgentes_v2',
-        sound: 'default',
+        channelId: "alfra_citas_urgentes_v2",
+        sound: "default",
         defaultSound: true,
         defaultVibrateTimings: true,
         vibrateTimingsMillis: [0, 500, 250, 500, 250, 500],
-        priority: 'high',
-        visibility: 'public'
+        priority: "high",
+        visibility: "public"
     }
 };
 
 const APNS_NOTIFICATION_CONFIG = {
     headers: {
-        'apns-priority': '10'
+        "apns-priority": "10"
     },
     payload: {
         aps: {
-            sound: 'default',
+            sound: "default",
             badge: 1,
             contentAvailable: true
         }
     }
 };
 
+// --- UTILIDADES GLOBALES PARA OBTENCION ROBUSTA DE TOKENS FCM ---
 
+const extractTokens = (raw, tokenSet) => {
+    if (!raw) return;
+    if (typeof raw === "string" && raw.trim().length > 15) {
+        tokenSet.add(raw.trim());
+    } else if (Array.isArray(raw)) {
+        raw.forEach(item => {
+            if (typeof item === "string" && item.trim().length > 15) {
+                tokenSet.add(item.trim());
+            }
+        });
+    }
+};
+
+const MASTER_ADMIN_EMAILS = [
+    "antonio880718@gmail.com",
+    "alejandra291714@gmail.com",
+    "aleja291714@gmail.com",
+    "recepcion@alfra.com",
+    "administracion@alfra.com",
+    "admin@alfra.com"
+];
+
+/**
+ * Recupera todos los tokens de administradores y recepcionistas
+ * buscando en 'usuarios' y 'staff' de forma redundante e insensible a mayusculas.
+ */
+const obtenerTokensAdmins = async () => {
+    const tokens = new Set();
+    try {
+        const rolesTarget = [
+            "Administrador", "Recepcionista", "admin", "Recepcion", 
+            "recepcionista", "administrador", "Admin", "ADMIN", "SuperAdmin", "Directora"
+        ];
+
+        // 1. Coleccion 'usuarios' por roles
+        for (const r of rolesTarget) {
+            try {
+                const snap = await admin.firestore().collection("usuarios").where("role", "==", r).get();
+                snap.forEach(doc => {
+                    const d = doc.data();
+                    extractTokens(d.fcmToken, tokens);
+                    extractTokens(d.fcmTokens, tokens);
+                });
+            } catch (_) {}
+        }
+
+        // 2. Coleccion 'usuarios' por emails de administradores maestros
+        for (const email of MASTER_ADMIN_EMAILS) {
+            try {
+                const snapEmail = await admin.firestore().collection("usuarios").where("email", "==", email).get();
+                snapEmail.forEach(doc => {
+                    const d = doc.data();
+                    extractTokens(d.fcmToken, tokens);
+                    extractTokens(d.fcmTokens, tokens);
+                });
+            } catch (_) {}
+        }
+
+        // 3. Coleccion 'staff' (escaneo de colaboradores)
+        try {
+            const staffSnap = await admin.firestore().collection("staff").get();
+            for (const doc of staffSnap.docs) {
+                const d = doc.data();
+                const rol = String(d.rol || d.role || "").toLowerCase();
+                const email = String(d.email || "").toLowerCase().trim();
+                const esAdminORecep = rol.includes("admin") || rol.includes("recep") || rol.includes("direct") || rol.includes("gerent") || MASTER_ADMIN_EMAILS.includes(email);
+
+                if (esAdminORecep) {
+                    extractTokens(d.fcmToken, tokens);
+                    extractTokens(d.fcmTokens, tokens);
+
+                    if (d.uid) {
+                        try {
+                            const uDoc = await admin.firestore().collection("usuarios").doc(d.uid).get();
+                            if (uDoc.exists) {
+                                const ud = uDoc.data();
+                                extractTokens(ud.fcmToken, tokens);
+                                extractTokens(ud.fcmTokens, tokens);
+                            }
+                        } catch (_) {}
+                    }
+                }
+            }
+        } catch (eStaff) {
+            console.error("[DEBUG_ADMIN_NOTIF] Error escaneando staff:", eStaff);
+        }
+
+    } catch (e) {
+        console.error("[DEBUG_ADMIN_NOTIF] Error obteniendo tokens de administradores:", e);
+    }
+
+    const tokenArray = Array.from(tokens);
+    console.log(`[DEBUG_ADMIN_NOTIF] Tokens admin/recepcion encontrados: ${tokenArray.length}`);
+    return tokenArray;
+};
+
+/**
+ * Recupera todos los tokens del especialista buscando en 'usuarios' y 'staff'
+ * por doc ID, uid y email.
+ */
+const obtenerTokensEspecialista = async (especialistaId) => {
+    const tokens = new Set();
+    if (!especialistaId) return [];
+
+    try {
+        // 1. Probar como doc ID directo en 'usuarios'
+        try {
+            const uSnap = await admin.firestore().collection("usuarios").doc(especialistaId).get();
+            if (uSnap.exists) {
+                const ud = uSnap.data();
+                extractTokens(ud.fcmToken, tokens);
+                extractTokens(ud.fcmTokens, tokens);
+            }
+        } catch (_) {}
+
+        // 2. Probar como doc ID directo en 'staff'
+        try {
+            const sSnap = await admin.firestore().collection("staff").doc(especialistaId).get();
+            if (sSnap.exists) {
+                const sData = sSnap.data();
+                extractTokens(sData.fcmToken, tokens);
+                extractTokens(sData.fcmTokens, tokens);
+
+                if (sData.uid) {
+                    try {
+                        const uDoc = await admin.firestore().collection("usuarios").doc(sData.uid).get();
+                        if (uDoc.exists) {
+                            const ud = uDoc.data();
+                            extractTokens(ud.fcmToken, tokens);
+                            extractTokens(ud.fcmTokens, tokens);
+                        }
+                    } catch (_) {}
+                }
+
+                if (sData.email) {
+                    const emailClean = String(sData.email).trim().toLowerCase();
+                    try {
+                        const uQuery = await admin.firestore().collection("usuarios").where("email", "==", emailClean).get();
+                        uQuery.forEach(doc => {
+                            const ud = doc.data();
+                            extractTokens(ud.fcmToken, tokens);
+                            extractTokens(ud.fcmTokens, tokens);
+                        });
+                    } catch (_) {}
+                }
+            }
+        } catch (_) {}
+
+        // 3. Buscar en 'staff' por campo uid == especialistaId
+        try {
+            const qStaff = await admin.firestore().collection("staff").where("uid", "==", especialistaId).get();
+            qStaff.forEach(doc => {
+                const sd = doc.data();
+                extractTokens(sd.fcmToken, tokens);
+                extractTokens(sd.fcmTokens, tokens);
+            });
+        } catch (_) {}
+
+    } catch (e) {
+        console.error(`[DEBUG_ESP_NOTIF] Error buscando tokens especialista ${especialistaId}:`, e);
+    }
+
+    const tokenArray = Array.from(tokens);
+    console.log(`[DEBUG_ESP_NOTIF] Tokens encontrados para especialista ${especialistaId}: ${tokenArray.length}`);
+    return tokenArray;
+};
+
+// --- ALERTA: PACIENTE EN SALA DE ESPERA ---
 exports.enviarNotificacionLlegada = functions.firestore
     .document("alertas_pacientes/{alertaId}")
     .onCreate(async (snap, context) => {
@@ -40,103 +209,67 @@ exports.enviarNotificacionLlegada = functions.firestore
 
         console.log(`[DEBUG_NOTIF] Procesando alerta ${alertaId} para especialista: ${especialistaId}`);
 
-        if (!especialistaId || !mensaje) {
-            console.error(`[DEBUG_NOTIF] Faltan datos en la alerta ${alertaId}:`, { especialistaId, mensaje });
+        if (!mensaje) {
+            console.error(`[DEBUG_NOTIF] Faltan datos en la alerta ${alertaId}`);
             return null;
         }
 
         try {
-            let usuarioSnap = await admin.firestore().collection("usuarios").doc(especialistaId).get();
-            let finalUid = especialistaId;
-
-            // --- LÓGICA DE AUTO-CORRECCIÓN ---
-            if (!usuarioSnap.exists) {
-                console.warn(`[DEBUG_NOTIF] ID ${especialistaId} no encontrado en 'usuarios'. Buscando por Staff...`);
-
-                // 1. Buscar en la colección 'staff' por el ID que nos llegó
-                const staffSnap = await admin.firestore().collection("staff").doc(especialistaId).get();
-
-                if (staffSnap.exists) {
-                    const staffData = staffSnap.data();
-                    const email = staffData.email;
-
-                    if (email) {
-                        console.log(`[DEBUG_NOTIF] Staff encontrado (${staffData.nombre}). Buscando UID por email: ${email}`);
-
-                        // 2. Buscar en 'usuarios' por ese email
-                        const userQuery = await admin.firestore().collection("usuarios")
-                            .where("email", "==", email.trim())
-                            .limit(1)
-                            .get();
-
-                        if (!userQuery.empty) {
-                            const correctUserDoc = userQuery.docs[0];
-                            finalUid = correctUserDoc.id;
-                            usuarioSnap = correctUserDoc;
-
-                            console.log(`[DEBUG_NOTIF] ¡ÉXITO! Mapeado a UID real: ${finalUid}. Parcheando documento de staff...`);
-
-                            // 3. AUTO-PARCHE: Guardar el UID correcto en el documento de staff para siempre
-                            await staffSnap.ref.update({ uid: finalUid });
-                        }
-                    }
-                }
+            // 1. Notificar al especialista asignado
+            const espTokens = await obtenerTokensEspecialista(especialistaId);
+            if (espTokens.length > 0) {
+                const espPayload = {
+                    tokens: espTokens,
+                    notification: {
+                        title: "🔔 ¡Paciente en Sala de Espera!",
+                        body: mensaje
+                    },
+                    android: ANDROID_NOTIFICATION_CONFIG,
+                    apns: APNS_NOTIFICATION_CONFIG,
+                    data: { tipo: "PACIENTE_LLEGADA", alertaId: String(alertaId) }
+                };
+                await admin.messaging().sendEachForMulticast(espPayload);
+                console.log(`[DEBUG_NOTIF] Notificacion enviada a especialista (${espTokens.length} dispositivos)`);
             }
 
-            if (!usuarioSnap.exists) {
-                console.error(`[DEBUG_NOTIF] ERROR: No se pudo resolver la identidad de ${especialistaId} tras todos los intentos.`);
-                return snap.ref.update({ estado: 'error', errorDetalle: 'Identidad no resuelta' });
+            // 2. Notificar tambien a recepcion y administradores
+            const adminTokens = await obtenerTokensAdmins();
+            if (adminTokens.length > 0) {
+                const adminPayload = {
+                    tokens: adminTokens,
+                    notification: {
+                        title: "🔔 Paciente en Espera",
+                        body: mensaje
+                    },
+                    android: ANDROID_NOTIFICATION_CONFIG,
+                    apns: APNS_NOTIFICATION_CONFIG,
+                    data: { tipo: "PACIENTE_LLEGADA", alertaId: String(alertaId) }
+                };
+                await admin.messaging().sendEachForMulticast(adminPayload);
             }
-
-            const usuarioData = usuarioSnap.data();
-            const fcmToken = usuarioData.fcmToken;
-
-            if (!fcmToken) {
-                console.warn(`[DEBUG_NOTIF] Usuario ${usuarioData.nombre || finalUid} NO TIENE fcmToken.`);
-                return snap.ref.update({ estado: 'error', errorDetalle: 'Sin Token FCM' });
-            }
-
-            console.log(`[DEBUG_NOTIF] Enviando notificación a: ${usuarioData.nombre}`);
-
-            const payload = {
-                notification: {
-                    title: "¡Paciente en Sala de Espera!",
-                    body: mensaje
-                },
-                android: ANDROID_NOTIFICATION_CONFIG,
-                apns: APNS_NOTIFICATION_CONFIG,
-                token: fcmToken
-            };
-
-            const response = await admin.messaging().send(payload);
-            console.log(`[DEBUG_NOTIF] ENVIO EXITOSO: ${response}`);
 
             return snap.ref.update({
-                estado: 'completado',
-                enviadoEn: admin.firestore.FieldValue.serverTimestamp(),
-                fcmResponse: response,
-                uidResuelto: finalUid // Guardamos para auditoría
+                estado: "completado",
+                enviadoEn: admin.firestore.FieldValue.serverTimestamp()
             });
 
         } catch (error) {
-            console.error(`[DEBUG_NOTIF] ERROR FATAL: ${error.message}`);
+            console.error(`[DEBUG_NOTIF] ERROR FATAL en llegada:`, error);
             return snap.ref.update({
-                estado: 'error',
+                estado: "error",
                 errorDetalle: error.message
             });
         }
     });
 
-// --- RECORDATORIO DE CITAS (1 HORA ANTES) ---
-// Se ejecuta cada 15 minutos para buscar citas próximas
+// --- RECORDATORIO DE CITAS (CADA 15 MINUTOS) ---
 exports.enviarRecordatorioCita = functions.pubsub
-    .schedule('every 15 minutes')
+    .schedule("every 15 minutes")
     .onRun(async (context) => {
         const ahora = new Date();
         const unaHoraDespues = new Date(ahora.getTime() + (60 * 60 * 1000));
         const unaHoraYMediaDespues = new Date(ahora.getTime() + (90 * 60 * 1000));
 
-        // Formato ISO para comparar con el string de fechaHora en Firestore
         const minTime = unaHoraDespues.toISOString();
         const maxTime = unaHoraYMediaDespues.toISOString();
 
@@ -150,46 +283,54 @@ exports.enviarRecordatorioCita = functions.pubsub
                 .get();
 
             if (citasSnap.empty) {
-                console.log("[DEBUG_REMAINDER] No hay citas próximas para notificar.");
+                console.log("[DEBUG_REMAINDER] No hay citas proximas para notificar.");
                 return null;
             }
 
             const promises = citasSnap.docs.map(async (doc) => {
                 const cita = doc.data();
                 const pacienteId = cita.pacienteId;
-
                 if (!pacienteId) return null;
 
-                // 1. Obtener UID del paciente desde la colección 'pacientes'
-                const pacienteSnap = await admin.firestore().collection("pacientes").doc(pacienteId).get();
-                if (!pacienteSnap.exists) return null;
+                const tokens = new Set();
 
-                const uid = pacienteSnap.data().uid;
-                if (!uid) return null;
+                // 1. Buscar en coleccion 'pacientes'
+                try {
+                    const pacienteSnap = await admin.firestore().collection("pacientes").doc(pacienteId).get();
+                    if (pacienteSnap.exists) {
+                        const pd = pacienteSnap.data();
+                        extractTokens(pd.fcmToken, tokens);
+                        extractTokens(pd.fcmTokens, tokens);
 
-                // 2. Obtener Token FCM del usuario
-                const usuarioSnap = await admin.firestore().collection("usuarios").doc(uid).get();
-                if (!usuarioSnap.exists) return null;
+                        if (pd.uid) {
+                            const uSnap = await admin.firestore().collection("usuarios").doc(pd.uid).get();
+                            if (uSnap.exists) {
+                                const ud = uSnap.data();
+                                extractTokens(ud.fcmToken, tokens);
+                                extractTokens(ud.fcmTokens, tokens);
+                            }
+                        }
+                    }
+                } catch (_) {}
 
-                const fcmToken = usuarioSnap.data().fcmToken;
-                if (!fcmToken) return null;
+                const tokenList = Array.from(tokens);
+                if (tokenList.length === 0) return null;
 
-                // 3. Enviar Notificación
                 const payload = {
+                    tokens: tokenList,
                     notification: {
-                        title: "â° Recordatorio de Cita",
-                        body: `Hola ${cita.pacienteNombre}, te recordamos tu cita de ${cita.servicio} en 1 hora.`
+                        title: "⏰ Recordatorio de Cita",
+                        body: `Hola ${cita.pacienteNombre || "Paciente"}, te recordamos tu cita de ${cita.servicio || "Consulta"} en 1 hora en Clinica ALFRA.`
                     },
                     android: ANDROID_NOTIFICATION_CONFIG,
                     apns: APNS_NOTIFICATION_CONFIG,
-                    token: fcmToken
+                    data: { tipo: "RECORDATORIO_CITA", citaId: doc.id }
                 };
 
                 try {
-                    await admin.messaging().send(payload);
-                    // 4. Marcar como notificado
+                    await admin.messaging().sendEachForMulticast(payload);
                     await doc.ref.update({ notificadoRecordatorio: true });
-                    console.log(`[DEBUG_REMAINDER] Notificación enviada a ${cita.pacienteNombre}`);
+                    console.log(`[DEBUG_REMAINDER] Notificacion enviada a ${cita.pacienteNombre}`);
                 } catch (err) {
                     console.error(`[DEBUG_REMAINDER] Error enviando a ${cita.pacienteNombre}:`, err);
                 }
@@ -203,7 +344,8 @@ exports.enviarRecordatorioCita = functions.pubsub
         }
     });
 
-// --- NOTIFICACIONES A ESPECIALISTAS POR CAMBIOS EN AGENDA ---
+
+﻿// --- NOTIFICACIONES POR CAMBIOS EN AGENDA (NUEVA, REAGENDADA, CANCELADA) ---
 exports.notificarEspecialistaAgenda = functions.firestore
     .document("citas/{citaId}")
     .onWrite(async (change, context) => {
@@ -217,23 +359,23 @@ exports.notificarEspecialistaAgenda = functions.firestore
         let cita = null;
 
         if (!dataBefore && dataAfter) {
-            tipoNotificacion = 'NUEVA';
+            tipoNotificacion = "NUEVA";
             cita = dataAfter;
         } else if (dataBefore && !dataAfter) {
-            tipoNotificacion = 'CANCELADA';
+            tipoNotificacion = "CANCELADA";
             cita = dataBefore;
         } else if (dataBefore && dataAfter) {
             cita = dataAfter;
-            if (dataBefore.status !== 'Cancelada' && dataAfter.status === 'Cancelada') {
-                tipoNotificacion = 'CANCELADA';
+            if (dataBefore.status !== "Cancelada" && dataAfter.status === "Cancelada") {
+                tipoNotificacion = "CANCELADA";
             } else if (
-                (dataBefore.status !== 'Reagendada' && dataAfter.status === 'Reagendada') ||
+                (dataBefore.status !== "Reagendada" && dataAfter.status === "Reagendada") ||
                 (dataBefore.fechaYMD !== dataAfter.fechaYMD) ||
                 (dataBefore.hora !== dataAfter.hora) ||
                 (dataBefore.fechaHora !== dataAfter.fechaHora)
             ) {
-                if (dataAfter.status !== 'Cancelada') {
-                    tipoNotificacion = 'REAGENDADA';
+                if (dataAfter.status !== "Cancelada") {
+                    tipoNotificacion = "REAGENDADA";
                 }
             }
         }
@@ -241,196 +383,143 @@ exports.notificarEspecialistaAgenda = functions.firestore
         if (!tipoNotificacion) return null;
 
         const especialistaId = cita.especialistaId;
-        const especialistaNombre = cita.especialistaNombre || 'Doctor(a)';
-        const pacienteNombre = cita.paciente || cita.pacienteNombre || 'Paciente';
-        const servicio = cita.servicio || 'Servicio';
+        const especialistaNombre = cita.especialistaNombre || cita.especialista || "Doctor(a)";
+        const pacienteNombre = cita.paciente || cita.pacienteNombre || "Paciente";
+        const servicio = cita.servicio || "Consulta / Tratamiento";
         
-        // Formatear fecha si es posible para que no sea solo AAAA-MM-DD
-        let fechaFormat = 'Fecha';
-        let horaFormat = 'Hora';
+        let fechaFormat = "Fecha";
+        let horaFormat = "Hora";
         
         try {
             if (cita.fechaHora) {
-                const partes = cita.fechaHora.split('T');
+                const partes = cita.fechaHora.split("T");
                 if (partes.length >= 2) {
-                    const [y, m, d] = partes[0].split('-');
+                    const [y, m, d] = partes[0].split("-");
                     fechaFormat = `${d}/${m}/${y}`;
                     
-                    const timeStr = partes[1].substring(0, 5); // HH:MM
-                    const [hh, mm] = timeStr.split(':');
+                    const timeStr = partes[1].substring(0, 5);
+                    const [hh, mm] = timeStr.split(":");
                     const h = parseInt(hh, 10);
-                    const ampm = h >= 12 ? 'PM' : 'AM';
+                    const ampm = h >= 12 ? "PM" : "AM";
                     const h12 = h % 12 || 12;
                     horaFormat = `${h12}:${mm} ${ampm}`;
                 }
             } else if (cita.fechaYMD && cita.hora) {
-                const [y, m, d] = cita.fechaYMD.split('-');
+                const [y, m, d] = cita.fechaYMD.split("-");
                 fechaFormat = `${d}/${m}/${y}`;
                 horaFormat = cita.hora;
             }
         } catch (e) {
-            console.warn(`[DEBUG_AGENDA] Error formateando fechaHora:`, e);
-        }
-
-        if (!especialistaId) {
-            console.warn(`[DEBUG_AGENDA] Cita ${citaId} sin especialistaId, no se puede notificar.`);
-            return null;
+            console.warn("[DEBUG_AGENDA] Error formateando fechaHora:", e);
         }
 
         try {
-            let finalUid = especialistaId;
-            let fcmToken = null;
+            let tituloAdmin = "";
+            let cuerpoAdmin = "";
+            let tituloEsp = "";
+            let cuerpoEsp = "";
 
-            const usuarioSnap = await admin.firestore().collection("usuarios").doc(especialistaId).get();
-            if (usuarioSnap.exists) {
-                fcmToken = usuarioSnap.data().fcmToken;
-            } else {
-                const staffSnap = await admin.firestore().collection("staff").doc(especialistaId).get();
-                if (staffSnap.exists && staffSnap.data().email) {
-                    const userQuery = await admin.firestore().collection("usuarios")
-                        .where("email", "==", staffSnap.data().email.trim())
-                        .limit(1)
-                        .get();
-                    if (!userQuery.empty) {
-                        fcmToken = userQuery.docs[0].data().fcmToken;
-                        finalUid = userQuery.docs[0].id;
+            if (tipoNotificacion === "NUEVA") {
+                tituloAdmin = "📅 ¡Nueva Cita Agendada!";
+                cuerpoAdmin = `${pacienteNombre} agendó '${servicio}' para el ${fechaFormat} ${horaFormat} con ${especialistaNombre}.`;
+                tituloEsp = "📅 ¡Nueva Cita en tu Agenda!";
+                cuerpoEsp = `Hola ${especialistaNombre}, tienes una nueva cita de '${servicio}' con el paciente ${pacienteNombre} para el ${fechaFormat} ${horaFormat}. Prepara tu material y herramientas de trabajo.`;
+            } else if (tipoNotificacion === "REAGENDADA") {
+                tituloAdmin = "📅 Cita Reagendada";
+                cuerpoAdmin = `Se reagendó la cita de ${pacienteNombre} ('${servicio}') para el ${fechaFormat} ${horaFormat} con ${especialistaNombre}.`;
+                tituloEsp = "📅 Cita Reagendada";
+                cuerpoEsp = `Hola ${especialistaNombre}, se reagendó tu cita de '${servicio}' con el paciente ${pacienteNombre} para el ${fechaFormat} ${horaFormat}.`;
+            } else if (tipoNotificacion === "CANCELADA") {
+                tituloAdmin = "❌ Cita Cancelada";
+                cuerpoAdmin = `Se canceló la cita de ${pacienteNombre} ('${servicio}') programada para el ${fechaFormat} ${horaFormat} con ${especialistaNombre}.`;
+                tituloEsp = "❌ Cita Cancelada";
+                cuerpoEsp = `Hola ${especialistaNombre}, se canceló la cita de '${servicio}' que tenías con el paciente ${pacienteNombre} el ${fechaFormat} ${horaFormat}.`;
+            }
+
+            // ENVIAR A ADMINISTRADORES Y RECEPCION (SIEMPRE)
+            const adminTokens = await obtenerTokensAdmins();
+            if (adminTokens.length > 0) {
+                try {
+                    await admin.messaging().sendEachForMulticast({
+                        tokens: adminTokens,
+                        notification: { title: tituloAdmin, body: cuerpoAdmin },
+                        android: ANDROID_NOTIFICATION_CONFIG,
+                        apns: APNS_NOTIFICATION_CONFIG,
+                        data: { tipo: tipoNotificacion, citaId: String(citaId) }
+                    });
+                    console.log(`[DEBUG_AGENDA] Push enviado a Admins (${adminTokens.length} dispositivos)`);
+                } catch (eAdm) {
+                    console.error("[DEBUG_AGENDA] Error enviando a admins:", eAdm);
+                }
+            }
+
+            // ENVIAR AL ESPECIALISTA ASIGNADO
+            if (especialistaId) {
+                const espTokens = await obtenerTokensEspecialista(especialistaId);
+                if (espTokens.length > 0) {
+                    try {
+                        await admin.messaging().sendEachForMulticast({
+                            tokens: espTokens,
+                            notification: { title: tituloEsp, body: cuerpoEsp },
+                            android: ANDROID_NOTIFICATION_CONFIG,
+                            apns: APNS_NOTIFICATION_CONFIG,
+                            data: { tipo: tipoNotificacion, citaId: String(citaId) }
+                        });
+                        console.log(`[DEBUG_AGENDA] Push enviado a Especialista ${especialistaNombre} (${espTokens.length} dispositivos)`);
+                    } catch (eEsp) {
+                        console.error("[DEBUG_AGENDA] Error enviando a especialista:", eEsp);
                     }
                 }
             }
 
-            if (!fcmToken) {
-                console.warn(`[DEBUG_AGENDA] Especialista ${especialistaNombre} (${finalUid}) sin FCM Token.`);
-                return null;
-            }
-
-            let titulo = "";
-            let cuerpo = "";
-
-            if (tipoNotificacion === 'NUEVA') {
-                titulo = "NUEVA CITA AGENDADA";
-                cuerpo = `Hola ${especialistaNombre}, se te agendó un ${servicio} con el paciente ${pacienteNombre} para el ${fechaFormat} a las ${horaFormat}. Es importante no hacer esperar más de 5 minutos a tu paciente; prepara tu material y herramientas de trabajo con tiempo.`;
-            } else if (tipoNotificacion === 'REAGENDADA') {
-                titulo = "CITA REAGENDADA";
-                cuerpo = `Hola ${especialistaNombre}, se reagendó tu cita de ${servicio} con el paciente ${pacienteNombre} para el ${fechaFormat} a las ${horaFormat}. Es importante no hacer esperar más de 5 minutos a tu paciente; prepara tu material y herramientas de trabajo con tiempo.`;
-            } else if (tipoNotificacion === 'CANCELADA') {
-                titulo = "CITA CANCELADA";
-                cuerpo = `Hola ${especialistaNombre}, se ha cancelado la cita de ${servicio} que tenías con el paciente ${pacienteNombre} el ${fechaFormat} a las ${horaFormat}.`;
-            }
-
-            const payload = {
-                notification: {
-                    title: titulo,
-                    body: cuerpo
-                },
-                android: ANDROID_NOTIFICATION_CONFIG,
-                apns: APNS_NOTIFICATION_CONFIG,
-                token: fcmToken
-            };
-
-            const response = await admin.messaging().send(payload);
-            console.log(`[DEBUG_AGENDA] Notificación ${tipoNotificacion} enviada a ${especialistaNombre}. Response: ${response}`);
-
-            await admin.firestore().collection("notificaciones").add({
-                android: ANDROID_NOTIFICATION_CONFIG,
-                apns: APNS_NOTIFICATION_CONFIG,
-                token: fcmToken,
-                title: titulo,
-                body: cuerpo,
-                data: { citaId },
-                createdAt: admin.firestore.FieldValue.serverTimestamp(),
-                userId: finalUid,
-                tipo: tipoNotificacion
-            });
-
             return null;
 
         } catch (error) {
-            console.error(`[DEBUG_AGENDA] Error en envío:`, error);
+            console.error("[DEBUG_AGENDA] Error en notificarEspecialistaAgenda:", error);
             return null;
         }
     });
 
-// --- UTILIDADES ---
-const obtenerTokensAdmins = async () => {
-    const tokens = new Set();
-    try {
-        const roles = ['Administrador', 'Recepcionista', 'admin', 'Recepcion', 'recepcionista', 'administrador'];
-        for (const r of roles) {
-            try {
-                const snap = await admin.firestore().collection('usuarios').where('role', '==', r).get();
-                snap.forEach(doc => {
-                    const t = doc.data().fcmToken;
-                    if (t) tokens.add(t);
-                });
-            } catch (_) {}
-        }
-
-        const masterEmails = [
-            'antonio880718@gmail.com',
-            'alejandra291714@gmail.com',
-            'aleja291714@gmail.com',
-            'recepcion@alfra.com'
-        ];
-        try {
-            const masterSnap = await admin.firestore().collection('usuarios').where('email', 'in', masterEmails).get();
-            masterSnap.forEach(doc => {
-                const t = doc.data().fcmToken;
-                if (t) tokens.add(t);
-            });
-        } catch (_) {}
-
-        try {
-            const staffSnap = await admin.firestore().collection('staff').get();
-            staffSnap.forEach(doc => {
-                const d = doc.data();
-                const rol = (d.rol || d.role || '').toLowerCase();
-                if (rol.includes('admin') || rol.includes('recep') || masterEmails.includes(String(d.email || '').toLowerCase())) {
-                    if (d.fcmToken) tokens.add(d.fcmToken);
-                }
-            });
-        } catch (_) {}
-    } catch (e) {
-        console.error('[DEBUG_ADMIN_NOTIF] Error obteniendo tokens de administradores:', e);
-    }
-    return Array.from(tokens);
-};
-
-// --- 1. NOTIFICACIÓN CANCELACIÓN DE CAJA ---
+// --- 1. NOTIFICACION CANCELACION DE CAJA ---
 exports.notificarCancelacionCaja = functions.firestore
     .document("movimientos/{movId}")
     .onUpdate(async (change, context) => {
         const dataBefore = change.before.data();
         const dataAfter = change.after.data();
 
-        // Detectar cambio de estado a 'Pendiente Cancelación'
-        if (dataBefore.estado !== 'Pendiente Cancelación' && dataAfter.estado === 'Pendiente Cancelación') {
+        if (dataBefore.estado !== "Pendiente Cancelación" && dataAfter.estado === "Pendiente Cancelación") {
             const tokens = await obtenerTokensAdmins();
             if (tokens.length === 0) return null;
 
-            const monto = dataAfter.monto ? `$${Number(dataAfter.monto).toLocaleString('es-MX')}` : '';
-            const concepto = dataAfter.motivo || dataAfter.concepto || 'Movimiento';
-            const motivoCancelacion = dataAfter.motivoCancelacion || 'No especificado';
+            const monto = dataAfter.monto ? `$${Number(dataAfter.monto).toLocaleString("es-MX")}` : "";
+            const concepto = dataAfter.motivo || dataAfter.concepto || "Movimiento";
+            const motivoCancelacion = dataAfter.motivoCancelacion || "No especificado";
 
             const payload = {
                 notification: {
-                    title: "🚨 Solicitud de Cancelación",
-                    body: `Recepción solicita cancelar un cobro/gasto de ${monto} por '${concepto}'. Motivo: ${motivoCancelacion}. Requiere tu aprobación en caja.`
+                    title: "🚨 Solicitud de Cancelación de Movimiento",
+                    body: `Recepción solicita cancelar cobro/gasto de ${monto} por '${concepto}'. Motivo: ${motivoCancelacion}. Requiere tu aprobación en caja.`
                 }
             };
 
             try {
-                const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-                console.log("[DEBUG_ADMIN_NOTIF] Notificación de cancelación de caja enviada. Response:", response);
+                const response = await admin.messaging().sendEachForMulticast({
+                    tokens,
+                    notification: payload.notification,
+                    android: ANDROID_NOTIFICATION_CONFIG,
+                    apns: APNS_NOTIFICATION_CONFIG
+                });
+                console.log("[DEBUG_ADMIN_NOTIF] Notificacion cancelacion caja enviada:", response.successCount);
                 return response;
             } catch(e) {
-                console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelación caja:", e);
+                console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelacion caja:", e);
                 return null;
             }
         }
         return null;
     });
 
-// --- 2. NOTIFICACIÓN INVENTARIO BAJO ---
+// --- 2. NOTIFICACION INVENTARIO BAJO ---
 exports.notificarInventarioBajo = functions.firestore
     .document("inventario/{itemId}")
     .onUpdate(async (change, context) => {
@@ -440,23 +529,27 @@ exports.notificarInventarioBajo = functions.firestore
         const stockAnterior = Number(dataBefore.stock) || 0;
         const stockActual = Number(dataAfter.stock) || 0;
 
-        // Detectar cuando cruza el umbral de 2 piezas hacia abajo
         if (stockAnterior > 2 && stockActual <= 2) {
             const tokens = await obtenerTokensAdmins();
             if (tokens.length === 0) return null;
 
-            const nombreItem = dataAfter.nombre || 'Producto no identificado';
+            const nombreItem = dataAfter.nombre || "Producto no identificado";
 
             const payload = {
                 notification: {
-                    title: "ðŸ“¦ Alerta de Inventario Bajo",
+                    title: "📦 Alerta de Inventario Bajo",
                     body: `El producto '${nombreItem}' está por agotarse (quedan ${stockActual} piezas). Favor de re-ordenar.`
                 }
             };
 
             try {
-                const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-                console.log("[DEBUG_ADMIN_NOTIF] Notificación de inventario bajo enviada. Response:", response);
+                const response = await admin.messaging().sendEachForMulticast({
+                    tokens,
+                    notification: payload.notification,
+                    android: ANDROID_NOTIFICATION_CONFIG,
+                    apns: APNS_NOTIFICATION_CONFIG
+                });
+                console.log("[DEBUG_ADMIN_NOTIF] Notificacion inventario bajo enviada:", response.successCount);
                 return response;
             } catch(e) {
                 console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif inventario:", e);
@@ -468,8 +561,8 @@ exports.notificarInventarioBajo = functions.firestore
 
 // --- 3. CORTE DIARIO DE CAJA (A las 21:00 CDMX) ---
 exports.corteDiarioCaja = functions.pubsub
-    .schedule('every day 21:00')
-    .timeZone('America/Mexico_City')
+    .schedule("every day 21:00")
+    .timeZone("America/Mexico_City")
     .onRun(async (context) => {
         try {
             const tokens = await obtenerTokensAdmins();
@@ -478,48 +571,40 @@ exports.corteDiarioCaja = functions.pubsub
                 return null;
             }
 
-            // Obtener fecha de hoy en formato local (YYYY-MM-DD) usando Mexico_City timezone
-            const formatter = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Mexico_City' }); 
+            const formatter = new Intl.DateTimeFormat("sv-SE", { timeZone: "America/Mexico_City" }); 
             const hoyStr = formatter.format(new Date()); 
 
             let ingresos = 0;
             let egresos = 0;
             let totalMovimientos = 0;
 
-            // 1. Consultar collection('finanzas') (fuente contable de la app)
+            // 1. Coleccion 'finanzas'
             try {
-                const finSnap = await admin.firestore().collection("finanzas")
-                    .orderBy("createdAt", "desc")
-                    .limit(300)
-                    .get();
-
+                const finSnap = await admin.firestore().collection("finanzas").get();
                 finSnap.forEach(doc => {
                     const mov = doc.data();
-                    const rawFecha = mov.fecha || mov.createdAt || '';
+                    const rawFecha = mov.fecha || mov.createdAt || "";
                     const fechaDoc = String(rawFecha).substring(0, 10);
-                    if (fechaDoc === hoyStr && mov.estado !== 'Cancelado') {
+                    if (fechaDoc === hoyStr && mov.estado !== "Cancelado") {
                         totalMovimientos++;
                         const monto = Number(mov.monto) || 0;
-                        if (mov.tipo === 'Ingreso') ingresos += monto;
-                        if (mov.tipo === 'Egreso') egresos += monto;
+                        if (mov.tipo === "Ingreso") ingresos += monto;
+                        if (mov.tipo === "Egreso") egresos += monto;
                     }
                 });
             } catch (eFin) {
                 console.error("[DEBUG_ADMIN_NOTIF] Error leyendo finanzas:", eFin);
             }
 
-            // 2. Si ingresos es 0, consultar 'recibos' de hoy como respaldo
+            // 2. Respaldo 'recibos'
             if (ingresos === 0) {
                 try {
-                    const recibosSnap = await admin.firestore().collection("recibos")
-                        .orderBy("createdAt", "desc")
-                        .limit(100)
-                        .get();
+                    const recibosSnap = await admin.firestore().collection("recibos").get();
                     recibosSnap.forEach(doc => {
                         const r = doc.data();
-                        const rawFecha = r.fecha || r.createdAt || '';
+                        const rawFecha = r.fecha || r.createdAt || "";
                         const fechaDoc = String(rawFecha).substring(0, 10);
-                        if (fechaDoc === hoyStr && r.estado !== 'Cancelado') {
+                        if (fechaDoc === hoyStr && r.estado !== "Cancelado") {
                             const monto = Number(r.total || r.monto) || 0;
                             ingresos += monto;
                         }
@@ -529,7 +614,7 @@ exports.corteDiarioCaja = functions.pubsub
                 }
             }
 
-            // 3. Consultar doc de 'cajas_diarias/{hoyStr}' como respaldo de totales
+            // 3. Respaldo 'cajas_diarias/{hoyStr}'
             try {
                 const cajaDoc = await admin.firestore().collection("cajas_diarias").doc(hoyStr).get();
                 if (cajaDoc.exists) {
@@ -546,7 +631,7 @@ exports.corteDiarioCaja = functions.pubsub
             }
 
             const utilidad = ingresos - egresos;
-            const formatoMx = (num) => `$${Number(num).toLocaleString('es-MX', { minimumFractionDigits: 2 })}`;
+            const formatoMx = (num) => `$${Number(num).toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
             const payload = {
                 notification: {
@@ -559,9 +644,10 @@ exports.corteDiarioCaja = functions.pubsub
                 tokens,
                 notification: payload.notification,
                 android: ANDROID_NOTIFICATION_CONFIG,
-                apns: APNS_NOTIFICATION_CONFIG
+                apns: APNS_NOTIFICATION_CONFIG,
+                data: { tipo: "CORTE_DIARIO", fecha: hoyStr }
             });
-            console.log("[DEBUG_ADMIN_NOTIF] Notificación de corte diario enviada. Response:", response);
+            console.log("[DEBUG_ADMIN_NOTIF] Notificacion de corte diario enviada. Exito:", response.successCount);
             return response;
         } catch (error) {
             console.error("[DEBUG_ADMIN_NOTIF] Error en corteDiarioCaja:", error);
@@ -569,43 +655,37 @@ exports.corteDiarioCaja = functions.pubsub
         }
     });
 
-// Endpoint HTTP de prueba para ejecutar y verificar el corte diario en cualquier momento
+
+﻿// --- ENDPOINT HTTP MANUAL PARA TESTEAR EL CORTE DIARIO Y LAS ALERTAS ---
 exports.testCorteDiarioManual = functions.https.onRequest(async (req, res) => {
     try {
-        const formatter = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Mexico_City' }); 
+        const formatter = new Intl.DateTimeFormat("sv-SE", { timeZone: "America/Mexico_City" }); 
         const hoyStr = req.query.fecha || formatter.format(new Date()); 
 
         let ingresos = 0;
         let egresos = 0;
         let totalMovimientos = 0;
 
-        const finSnap = await admin.firestore().collection("finanzas")
-            .orderBy("createdAt", "desc")
-            .limit(300)
-            .get();
-
+        const finSnap = await admin.firestore().collection("finanzas").get();
         finSnap.forEach(doc => {
             const mov = doc.data();
-            const rawFecha = mov.fecha || mov.createdAt || '';
+            const rawFecha = mov.fecha || mov.createdAt || "";
             const fechaDoc = String(rawFecha).substring(0, 10);
-            if (fechaDoc === hoyStr && mov.estado !== 'Cancelado') {
+            if (fechaDoc === hoyStr && mov.estado !== "Cancelado") {
                 totalMovimientos++;
                 const monto = Number(mov.monto) || 0;
-                if (mov.tipo === 'Ingreso') ingresos += monto;
-                if (mov.tipo === 'Egreso') egresos += monto;
+                if (mov.tipo === "Ingreso") ingresos += monto;
+                if (mov.tipo === "Egreso") egresos += monto;
             }
         });
 
         if (ingresos === 0) {
-            const recibosSnap = await admin.firestore().collection("recibos")
-                .orderBy("createdAt", "desc")
-                .limit(100)
-                .get();
+            const recibosSnap = await admin.firestore().collection("recibos").get();
             recibosSnap.forEach(doc => {
                 const r = doc.data();
-                const rawFecha = r.fecha || r.createdAt || '';
+                const rawFecha = r.fecha || r.createdAt || "";
                 const fechaDoc = String(rawFecha).substring(0, 10);
-                if (fechaDoc === hoyStr && r.estado !== 'Cancelado') {
+                if (fechaDoc === hoyStr && r.estado !== "Cancelado") {
                     const monto = Number(r.total || r.monto) || 0;
                     ingresos += monto;
                 }
@@ -626,8 +706,10 @@ exports.testCorteDiarioManual = functions.https.onRequest(async (req, res) => {
         const utilidad = ingresos - egresos;
         const tokens = await obtenerTokensAdmins();
         let notifRes = null;
-        if (tokens.length > 0 && req.query.enviarPush === '1') {
-            const formatoMx = (num) => `$${Number(num).toLocaleString('es-MX', { minimumFractionDigits: 2 })}`;
+        const debeEnviarPush = req.query.enviarPush !== "0";
+
+        if (tokens.length > 0 && debeEnviarPush) {
+            const formatoMx = (num) => `$${Number(num).toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
             const payload = {
                 notification: {
                     title: "📊 Corte de Caja del Día (Prueba)",
@@ -638,11 +720,13 @@ exports.testCorteDiarioManual = functions.https.onRequest(async (req, res) => {
                 tokens,
                 notification: payload.notification,
                 android: ANDROID_NOTIFICATION_CONFIG,
-                apns: APNS_NOTIFICATION_CONFIG
+                apns: APNS_NOTIFICATION_CONFIG,
+                data: { tipo: "CORTE_DIARIO_TEST", fecha: hoyStr }
             });
         }
 
         res.json({
+            success: true,
             fecha: hoyStr,
             ingresos,
             egresos,
@@ -656,20 +740,20 @@ exports.testCorteDiarioManual = functions.https.onRequest(async (req, res) => {
     }
 });
 
-// --- 4. CANCELACIÓN DE CITAS DE ALTO VALOR ---
+// --- 4. CANCELACION DE CITAS DE ALTO VALOR ---
 exports.notificarAdminCancelacionCita = functions.firestore
     .document("citas/{citaId}")
     .onUpdate(async (change, context) => {
         const dataBefore = change.before.data();
         const dataAfter = change.after.data();
 
-        if (dataBefore.status !== 'Cancelada' && dataAfter.status === 'Cancelada') {
-            const servicio = (dataAfter.servicio || '').toLowerCase();
-            if (servicio.includes('cirugía') || servicio.includes('tratamiento')) {
+        if (dataBefore.status !== "Cancelada" && dataAfter.status === "Cancelada") {
+            const servicio = (dataAfter.servicio || "").toLowerCase();
+            if (servicio.includes("cirugía") || servicio.includes("tratamiento") || servicio.includes("cirugia")) {
                 const tokens = await obtenerTokensAdmins();
                 if (tokens.length === 0) return null;
 
-                const pacienteNombre = dataAfter.paciente || dataAfter.pacienteNombre || 'Paciente';
+                const pacienteNombre = dataAfter.paciente || dataAfter.pacienteNombre || "Paciente";
                 const payload = {
                     notification: {
                         title: "📉 Cancelación Importante",
@@ -678,11 +762,16 @@ exports.notificarAdminCancelacionCita = functions.firestore
                 };
 
                 try {
-                    const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-                    console.log("[DEBUG_ADMIN_NOTIF] Notificación cancelación cita enviada. Response:", response);
+                    const response = await admin.messaging().sendEachForMulticast({
+                        tokens,
+                        notification: payload.notification,
+                        android: ANDROID_NOTIFICATION_CONFIG,
+                        apns: APNS_NOTIFICATION_CONFIG
+                    });
+                    console.log("[DEBUG_ADMIN_NOTIF] Notificacion cancelacion cita enviada:", response.successCount);
                     return response;
                 } catch(e) {
-                    console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelación cita:", e);
+                    console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif cancelacion cita:", e);
                     return null;
                 }
             }
@@ -690,24 +779,23 @@ exports.notificarAdminCancelacionCita = functions.firestore
         return null;
     });
 
-// --- 5. NOTIFICACIÓN DE NUEVO TRATAMIENTO (EXPEDIENTE) ---
+// --- 5. NOTIFICACION DE NUEVO TRATAMIENTO (EXPEDIENTE) ---
 exports.notificarAdminNuevoTratamiento = functions.firestore
     .document("tratamientos/{tratamientoId}")
     .onCreate(async (snap, context) => {
         const data = snap.data();
-        const especialistaNombre = data.especialistaNombre || 'Un especialista';
-        const tratamientoNombre = data.nombre || 'Tratamiento';
+        const especialistaNombre = data.especialistaNombre || "Un especialista";
+        const tratamientoNombre = data.nombre || "Tratamiento";
         
         const tokens = await obtenerTokensAdmins();
         if (tokens.length === 0) return null;
 
-        // Fetch paciente nombre if possible, otherwise use generic
-        let pacienteNombre = 'un paciente';
+        let pacienteNombre = "un paciente";
         try {
             if (data.pacienteId) {
                 const pacienteSnap = await admin.firestore().collection("pacientes").doc(data.pacienteId).get();
                 if (pacienteSnap.exists) {
-                    pacienteNombre = pacienteSnap.data().nombre || 'un paciente';
+                    pacienteNombre = pacienteSnap.data().nombre || "un paciente";
                 }
             }
         } catch (e) {
@@ -716,14 +804,19 @@ exports.notificarAdminNuevoTratamiento = functions.firestore
 
         const payload = {
             notification: {
-                title: "ðŸ“‚ Nuevo Expediente Abierto",
+                title: "📁 Nuevo Expediente Abierto",
                 body: `${especialistaNombre} inició el tratamiento de '${tratamientoNombre}' para el paciente ${pacienteNombre}.`
             }
         };
 
         try {
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-            console.log("[DEBUG_ADMIN_NOTIF] Notificación nuevo tratamiento enviada. Response:", response);
+            const response = await admin.messaging().sendEachForMulticast({
+                tokens,
+                notification: payload.notification,
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG
+            });
+            console.log("[DEBUG_ADMIN_NOTIF] Notificacion nuevo tratamiento enviada:", response.successCount);
             return response;
         } catch(e) {
             console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif nuevo tratamiento:", e);
@@ -731,7 +824,7 @@ exports.notificarAdminNuevoTratamiento = functions.firestore
         }
     });
 
-// --- 6. NOTIFICACIÓN DE NUEVA SESIÓN/EVOLUCIÓN (EXPEDIENTE) ---
+// --- 6. NOTIFICACION DE NUEVA SESION/EVOLUCION (EXPEDIENTE) ---
 exports.notificarAdminNuevaSesion = functions.firestore
     .document("sesiones/{sesionId}")
     .onCreate(async (snap, context) => {
@@ -740,27 +833,23 @@ exports.notificarAdminNuevaSesion = functions.firestore
         const tokens = await obtenerTokensAdmins();
         if (tokens.length === 0) return null;
 
-        let pacienteNombre = 'un paciente';
-        let tratamientoNombre = 'un tratamiento';
-        let especialistaNombre = 'Un especialista';
+        let pacienteNombre = "un paciente";
+        let tratamientoNombre = "un tratamiento";
+        let especialistaNombre = "Un especialista";
 
         try {
-            // Obtener datos del tratamiento para saber nombre y especialista
             if (data.tratamientoId) {
                 const tratamientoSnap = await admin.firestore().collection("tratamientos").doc(data.tratamientoId).get();
                 if (tratamientoSnap.exists) {
                     const tData = tratamientoSnap.data();
                     tratamientoNombre = tData.nombre || tratamientoNombre;
                     especialistaNombre = tData.especialistaNombre || especialistaNombre;
-                    
-                    // Si la sesión no tiene pacienteId directo (por alguna razón), usar el del tratamiento
                     if (!data.pacienteId && tData.pacienteId) {
                         data.pacienteId = tData.pacienteId;
                     }
                 }
             }
 
-            // Obtener paciente
             if (data.pacienteId) {
                 const pacienteSnap = await admin.firestore().collection("pacientes").doc(data.pacienteId).get();
                 if (pacienteSnap.exists) {
@@ -768,7 +857,7 @@ exports.notificarAdminNuevaSesion = functions.firestore
                 }
             }
         } catch (e) {
-            console.error("[DEBUG_ADMIN_NOTIF] Error obteniendo datos para notif sesión:", e);
+            console.error("[DEBUG_ADMIN_NOTIF] Error obteniendo datos para notif sesion:", e);
         }
 
         const payload = {
@@ -779,16 +868,21 @@ exports.notificarAdminNuevaSesion = functions.firestore
         };
 
         try {
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-            console.log("[DEBUG_ADMIN_NOTIF] Notificación nueva sesión enviada. Response:", response);
+            const response = await admin.messaging().sendEachForMulticast({
+                tokens,
+                notification: payload.notification,
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG
+            });
+            console.log("[DEBUG_ADMIN_NOTIF] Notificacion nueva sesion enviada:", response.successCount);
             return response;
         } catch(e) {
-            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif nueva sesión:", e);
+            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif nueva sesion:", e);
             return null;
         }
     });
 
-// --- NOTIFICACIÓN SOLICITUD ELIMINACIÓN PACIENTE ---
+// --- NOTIFICACION SOLICITUD ELIMINACION PACIENTE ---
 exports.notificarSolicitudEliminacionPaciente = functions.firestore
     .document("solicitudes_eliminacion_pacientes/{id}")
     .onCreate(async (snap, context) => {
@@ -796,8 +890,8 @@ exports.notificarSolicitudEliminacionPaciente = functions.firestore
         const tokens = await obtenerTokensAdmins();
         if (tokens.length === 0) return null;
 
-        const pacienteNombre = data.nombrePaciente || 'Paciente';
-        const motivo = data.motivo || 'No especificado';
+        const pacienteNombre = data.nombrePaciente || "Paciente";
+        const motivo = data.motivo || "No especificado";
 
         const payload = {
             notification: {
@@ -807,117 +901,85 @@ exports.notificarSolicitudEliminacionPaciente = functions.firestore
         };
 
         try {
-            const response = await admin.messaging().sendEachForMulticast({ tokens, notification: payload.notification, android: ANDROID_NOTIFICATION_CONFIG, apns: APNS_NOTIFICATION_CONFIG });
-            console.log("[DEBUG_ADMIN_NOTIF] Notificación de solicitud de eliminación enviada. Response:", response);
+            const response = await admin.messaging().sendEachForMulticast({
+                tokens,
+                notification: payload.notification,
+                android: ANDROID_NOTIFICATION_CONFIG,
+                apns: APNS_NOTIFICATION_CONFIG
+            });
+            console.log("[DEBUG_ADMIN_NOTIF] Notificacion solicitud eliminacion enviada:", response.successCount);
             return response;
         } catch(e) {
-            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif solicitud eliminación:", e);
+            console.error("[DEBUG_ADMIN_NOTIF] Error enviando notif solicitud eliminacion:", e);
             return null;
         }
     });
 
+// --- CAMBIAR PASSWORD STAFF ---
 exports.cambiarPasswordStaff = functions.https.onCall(async (data, context) => {
-    // 1. Verificar que el usuario que llama es Admin
     if (!context.auth) {
-        throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+        throw new functions.https.HttpsError("unauthenticated", "Debe estar autenticado.");
     }
     
     const callerUid = context.auth.uid;
-    const callerEmail = context.auth.token.email ? context.auth.token.email.toLowerCase().trim() : '';
+    const callerEmail = context.auth.token.email ? context.auth.token.email.toLowerCase().trim() : "";
     
-    const masterAdmins = [
-        'antonio880718@gmail.com',
-        'alejandra291714@gmail.com',
-        'aleja291714@gmail.com'
-    ];
-    
-    let isAuthorized = masterAdmins.includes(callerEmail);
+    let isAuthorized = MASTER_ADMIN_EMAILS.includes(callerEmail);
     
     if (!isAuthorized) {
         const callerSnap = await admin.firestore().collection("usuarios").doc(callerUid).get();
         if (callerSnap.exists) {
             const callerData = callerSnap.data();
-            if (callerData.role === 'Administrador') {
+            if (callerData.role === "Administrador") {
                 isAuthorized = true;
             }
         }
     }
     
     if (!isAuthorized) {
-        throw new functions.https.HttpsError('permission-denied', 'Solo administradores pueden hacer esto.');
+        throw new functions.https.HttpsError("permission-denied", "Solo administradores pueden hacer esto.");
     }
     
     const { email, newPassword } = data;
     
     if (!email || !newPassword) {
-        throw new functions.https.HttpsError('invalid-argument', 'Faltan datos (email o contraseña).');
+        throw new functions.https.HttpsError("invalid-argument", "Faltan datos (email o contraseña).");
     }
     
     try {
-        // 2. Buscar usuario por email
         const user = await admin.auth().getUserByEmail(email);
         const uid = user.uid;
         
-        // 3. Actualizar contraseña
         await admin.auth().updateUser(uid, {
             password: newPassword
         });
         
-        // 4. Marcar en Firestore
         await admin.firestore().collection("usuarios").doc(uid).set({
             debeCambiarPassword: true
         }, { merge: true });
         
-        return { success: true, message: 'Contraseña actualizada y forzada a cambio.' };
+        return { success: true, message: "Contraseña actualizada y forzada a cambio." };
     } catch (error) {
         console.error("Error cambiando contraseña:", error);
-        throw new functions.https.HttpsError('internal', error.message);
+        throw new functions.https.HttpsError("internal", error.message);
     }
 });
 
-// --- AUTO-AGENDADO PACIENTES ---
 
+﻿// --- AUTO-AGENDADO PACIENTES: HORARIOS OCUPADOS CON DURACION REAL ---
 exports.getHorariosOcupados = functions.https.onCall(async (data, context) => {
-    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
-    
-    const { fecha } = data; // Formato YYYY-MM-DD
-    if (!fecha) throw new functions.https.HttpsError('invalid-argument', 'Falta la fecha.');
-    
-    try {
-        const citasSnap = await admin.firestore().collection('citas')
-            .where('fechaHora', '>=', `${fecha}T00:00:00`)
-            .where('fechaHora', '<=', `${fecha}T23:59:59`)
-            .get();
-            
-        const ocupados = [];
-        citasSnap.forEach(doc => {
-            const cita = doc.data();
-            if (cita.status !== 'Cancelada') {
-                ocupados.push(cita.fechaHora); // Ej: 2026-05-12T10:30:00
-            }
-        });
-        
-        return { ocupados };
-    } catch (error) {
-        console.error("Error obteniendo horarios:", error);
-        throw new functions.https.HttpsError('internal', error.message);
-    }
-});
-
-// --- AUTO-AGENDADO: devuelve citas del día con su duración real ---
-exports.getHorariosOcupados = functions.https.onCall(async (data, context) => {
-    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+    if (!context.auth) throw new functions.https.HttpsError("unauthenticated", "Debe estar autenticado.");
     const { fecha } = data;
-    if (!fecha) throw new functions.https.HttpsError('invalid-argument', 'Falta la fecha.');
+    if (!fecha) throw new functions.https.HttpsError("invalid-argument", "Falta la fecha.");
     try {
-        const citasSnap = await admin.firestore().collection('citas')
-            .where('fechaHora', '>=', `${fecha}T00:00:00`)
-            .where('fechaHora', '<=', `${fecha}T23:59:59`)
+        const citasSnap = await admin.firestore().collection("citas")
+            .where("fechaHora", ">=", `${fecha}T00:00:00`)
+            .where("fechaHora", "<=", `${fecha}T23:59:59`)
             .get();
         const ocupados = [];
         citasSnap.forEach(doc => {
             const c = doc.data();
-            if (c.status !== 'Cancelada') {
+            if (c.status !== "Cancelada") {
                 ocupados.push({
                     fechaHora: c.fechaHora,
                     duracionMin: Number(c.duracionMin) || 90
@@ -926,23 +988,21 @@ exports.getHorariosOcupados = functions.https.onCall(async (data, context) => {
         });
         return { ocupados };
     } catch (error) {
-        console.error('Error obteniendo horarios:', error);
-        throw new functions.https.HttpsError('internal', error.message);
+        console.error("Error obteniendo horarios:", error);
+        throw new functions.https.HttpsError("internal", error.message);
     }
 });
 
+// --- MIS CITAS PACIENTE ---
 exports.getMisCitas = functions.https.onCall(async (data, context) => {
-    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+    if (!context.auth) throw new functions.https.HttpsError("unauthenticated", "Debe estar autenticado.");
     const uid = context.auth.uid;
     
     try {
-        // 1. Get paciente ID for this UID
         const pacientesSnap = await admin.firestore().collection("pacientes").where("uid", "==", uid).limit(1).get();
         if (pacientesSnap.empty) return { citas: [] };
         
         const pacienteId = pacientesSnap.docs[0].id;
-        
-        // 2. Fetch citas for this paciente
         const citasSnap = await admin.firestore().collection("citas").where("pacienteId", "==", pacienteId).get();
         
         const citas = [];
@@ -950,18 +1010,17 @@ exports.getMisCitas = functions.https.onCall(async (data, context) => {
             citas.push({ id: doc.id, ...doc.data() });
         });
         
-        // Sort descending
         citas.sort((a, b) => new Date(b.fechaHora) - new Date(a.fechaHora));
-        
         return { citas };
     } catch (error) {
         console.error("Error getting mis citas:", error);
-        throw new functions.https.HttpsError('internal', error.message);
+        throw new functions.https.HttpsError("internal", error.message);
     }
 });
 
+// --- MIS RECIBOS PACIENTE ---
 exports.getMisRecibos = functions.https.onCall(async (data, context) => {
-    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+    if (!context.auth) throw new functions.https.HttpsError("unauthenticated", "Debe estar autenticado.");
     const uid = context.auth.uid;
     
     try {
@@ -969,7 +1028,6 @@ exports.getMisRecibos = functions.https.onCall(async (data, context) => {
         if (pacientesSnap.empty) return { recibos: [] };
         
         const pacienteId = pacientesSnap.docs[0].id;
-        
         const recibosSnap = await admin.firestore().collection("recibos").where("pacienteId", "==", pacienteId).get();
         
         const recibos = [];
@@ -978,81 +1036,78 @@ exports.getMisRecibos = functions.https.onCall(async (data, context) => {
         });
         
         recibos.sort((a, b) => new Date(b.createdAt || b.fecha || 0) - new Date(a.createdAt || a.fecha || 0));
-        
         return { recibos };
     } catch (error) {
         console.error("Error getting mis recibos:", error);
-        throw new functions.https.HttpsError('internal', error.message);
+        throw new functions.https.HttpsError("internal", error.message);
     }
 });
 
-
+// --- NOTIFICAR NUEVA CITA DESDE APP MOVIL DE PACIENTE ---
 exports.notificarNuevaCitaPaciente = functions.https.onCall(async (data, context) => {
-    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+    if (!context.auth) throw new functions.https.HttpsError("unauthenticated", "Debe estar autenticado.");
     
     const { citaId, pacienteNombre, fechaHora, especialistaId, especialistaNombre, servicio, fecha, hora } = data;
     const ahoraStr = new Date().toISOString();
-    let fechaFormat = fecha || (fechaHora ? new Date(fechaHora).toLocaleDateString('es-MX') : '');
-    let horaFormat = hora || (fechaHora ? new Date(fechaHora).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }) : '');
+    let fechaFormat = fecha || (fechaHora ? new Date(fechaHora).toLocaleDateString("es-MX") : "");
+    let horaFormat = hora || (fechaHora ? new Date(fechaHora).toLocaleTimeString("es-MX", { hour: "2-digit", minute: "2-digit" }) : "");
     let nomEsp = especialistaNombre;
     let nomServ = servicio;
     let nomPac = pacienteNombre;
 
-    // CONSULTAR DIRECTAMENTE EN FIRESTORE LA CITA SI FALTA EL SERVICIO O ESPECIALISTA
-    if (citaId && (!nomServ || nomServ === 'Tratamiento' || !nomEsp || nomEsp === 'Especialista ALFRA' || !nomPac || !fechaFormat || !horaFormat)) {
+    if (citaId && (!nomServ || nomServ === "Tratamiento" || !nomEsp || nomEsp === "Especialista ALFRA" || !nomPac || !fechaFormat || !horaFormat)) {
         try {
-            const citaSnap = await admin.firestore().collection('citas').doc(citaId).get();
+            const citaSnap = await admin.firestore().collection("citas").doc(citaId).get();
             if (citaSnap.exists) {
                 const cd = citaSnap.data();
-                if (!nomServ || nomServ === 'Tratamiento') {
+                if (!nomServ || nomServ === "Tratamiento") {
                     nomServ = cd.servicio || cd.tratamiento || cd.nombreServicio || cd.concepto;
                 }
-                if (!nomEsp || nomEsp === 'Especialista ALFRA') {
+                if (!nomEsp || nomEsp === "Especialista ALFRA") {
                     nomEsp = cd.especialistaNombre || cd.especialista;
                 }
                 if (!nomPac) {
                     nomPac = cd.pacienteNombre || cd.paciente;
                 }
                 if (!fechaFormat) {
-                    fechaFormat = cd.fecha || cd.fechaYMD || '';
+                    fechaFormat = cd.fecha || cd.fechaYMD || "";
                 }
                 if (!horaFormat) {
-                    horaFormat = cd.hora || '';
+                    horaFormat = cd.hora || "";
                 }
             }
         } catch (fetchErr) {
-            console.warn('[DEBUG_NOTIF] Error consultando cita en Firestore:', fetchErr);
+            console.warn("[DEBUG_NOTIF] Error consultando cita en Firestore:", fetchErr);
         }
     }
 
-    nomServ = nomServ || 'Consulta / Tratamiento';
-    nomEsp = nomEsp || 'Especialista ALFRA';
-    nomPac = nomPac || 'Paciente';
-    if (!fechaFormat) fechaFormat = 'próxima fecha';
+    nomServ = nomServ || "Consulta / Tratamiento";
+    nomEsp = nomEsp || "Especialista ALFRA";
+    nomPac = nomPac || "Paciente";
+    if (!fechaFormat) fechaFormat = "próxima fecha";
 
     try {
-        // 1. Guardar en alertas de Firestore para panel web
         const alertDoc = {
-            tipo: 'urgente',
-            titulo: '¡Nueva Cita desde App Móvil!',
+            tipo: "urgente",
+            titulo: "¡Nueva Cita desde App Móvil!",
             mensaje: `${nomPac} agendó ${nomServ} para el ${fechaFormat} ${horaFormat} con ${nomEsp}.`,
             fecha: ahoraStr,
-            estado: 'activa',
-            rolesDestino: ['Administrador', 'Recepcionista'],
-            referenciaId: citaId || '',
-            especialistaId: especialistaId || '',
+            estado: "activa",
+            rolesDestino: ["Administrador", "Recepcionista"],
+            referenciaId: citaId || "",
+            especialistaId: especialistaId || "",
             servicio: nomServ,
             pacienteNombre: nomPac,
             creadoEn: ahoraStr
         };
 
         await Promise.all([
-            admin.firestore().collection('alertas_pacientes').add(alertDoc).catch(() => {}),
-            admin.firestore().collection('alertas_admin').add(alertDoc).catch(() => {}),
-            admin.firestore().collection('alertas_recepcion').add(alertDoc).catch(() => {})
+            admin.firestore().collection("alertas_pacientes").add(alertDoc).catch(() => {}),
+            admin.firestore().collection("alertas_admin").add(alertDoc).catch(() => {}),
+            admin.firestore().collection("alertas_recepcion").add(alertDoc).catch(() => {})
         ]);
 
-        // 2. Enviar PUSH NOTIFICATION CON SONIDO Y VIBRACIÓN A ADMINISTRADORES Y RECEPCIÓN
+        // 1. Notificar a Administradores y Recepcion
         const adminTokens = await obtenerTokensAdmins();
         if (adminTokens.length > 0) {
             try {
@@ -1064,47 +1119,31 @@ exports.notificarNuevaCitaPaciente = functions.https.onCall(async (data, context
                     },
                     android: ANDROID_NOTIFICATION_CONFIG,
                     apns: APNS_NOTIFICATION_CONFIG,
-                    data: { tipo: 'NUEVA_CITA', citaId: String(citaId || '') }
+                    data: { tipo: "NUEVA_CITA", citaId: String(citaId || "") }
                 };
-                const admRes = await admin.messaging().sendEachForMulticast(adminPayload);
-                console.log("[DEBUG_NOTIF] Push enviado a Administradores/Recepción:", admRes.successCount);
+                await admin.messaging().sendEachForMulticast(adminPayload);
+                console.log("[DEBUG_NOTIF] Push enviado a Administradores:", adminTokens.length);
             } catch (errAdm) {
                 console.error("[DEBUG_NOTIF] Error enviando push a admins:", errAdm);
             }
         }
 
-        // 3. Enviar PUSH NOTIFICATION AL ESPECIALISTA ASIGNADO
+        // 2. Notificar al Especialista asignado
         if (especialistaId) {
             try {
-                let espToken = null;
-                const uSnap = await admin.firestore().collection("usuarios").doc(especialistaId).get();
-                if (uSnap.exists && uSnap.data().fcmToken) {
-                    espToken = uSnap.data().fcmToken;
-                } else {
-                    const stSnap = await admin.firestore().collection("staff").doc(especialistaId).get();
-                    if (stSnap.exists) {
-                        espToken = stSnap.data().fcmToken;
-                        if (!espToken && stSnap.data().email) {
-                            const uQ = await admin.firestore().collection("usuarios")
-                                .where("email", "==", String(stSnap.data().email).toLowerCase().trim())
-                                .limit(1).get();
-                            if (!uQ.empty) espToken = uQ.docs[0].data().fcmToken;
-                        }
-                    }
-                }
-
-                if (espToken) {
+                const espTokens = await obtenerTokensEspecialista(especialistaId);
+                if (espTokens.length > 0) {
                     const espPayload = {
-                        token: espToken,
+                        tokens: espTokens,
                         notification: {
                             title: "📅 ¡Nueva Cita en tu Agenda!",
                             body: `Hola ${nomEsp}, tienes una nueva cita de '${nomServ}' con el paciente ${nomPac} el ${fechaFormat} ${horaFormat}.`
                         },
                         android: ANDROID_NOTIFICATION_CONFIG,
                         apns: APNS_NOTIFICATION_CONFIG,
-                        data: { tipo: 'NUEVA_CITA', citaId: String(citaId || '') }
+                        data: { tipo: "NUEVA_CITA", citaId: String(citaId || "") }
                     };
-                    await admin.messaging().send(espPayload);
+                    await admin.messaging().sendEachForMulticast(espPayload);
                     console.log(`[DEBUG_NOTIF] Push enviado al especialista ${nomEsp}`);
                 }
             } catch (errEsp) {
@@ -1112,85 +1151,95 @@ exports.notificarNuevaCitaPaciente = functions.https.onCall(async (data, context
             }
         }
 
-        // 4. Enviar PUSH NOTIFICATION DE CONFIRMACIÓN AL PACIENTE
+        // 3. Notificar al Paciente confirmacion
         try {
             const callerUid = context.auth.uid;
-            let pacToken = null;
+            const pacTokens = new Set();
             const pacUserSnap = await admin.firestore().collection("usuarios").doc(callerUid).get();
-            if (pacUserSnap.exists && pacUserSnap.data().fcmToken) {
-                pacToken = pacUserSnap.data().fcmToken;
+            if (pacUserSnap.exists) {
+                extractTokens(pacUserSnap.data().fcmToken, pacTokens);
+                extractTokens(pacUserSnap.data().fcmTokens, pacTokens);
             }
 
-            if (pacToken) {
+            const pacTokenList = Array.from(pacTokens);
+            if (pacTokenList.length > 0) {
                 const pacPayload = {
-                    token: pacToken,
+                    tokens: pacTokenList,
                     notification: {
                         title: "✨ Cita Confirmada en Clínica ALFRA",
                         body: `Tu cita de '${nomServ}' con ${nomEsp} quedó confirmada para el ${fechaFormat} a las ${horaFormat}. ¡Te esperamos!`
                     },
                     android: ANDROID_NOTIFICATION_CONFIG,
                     apns: APNS_NOTIFICATION_CONFIG,
-                    data: { tipo: 'CONFIRMACION_CITA', citaId: String(citaId || '') }
+                    data: { tipo: "CONFIRMACION_CITA", citaId: String(citaId || "") }
                 };
-                await admin.messaging().send(pacPayload);
-                console.log("[DEBUG_NOTIF] Push de confirmación enviado al paciente");
+                await admin.messaging().sendEachForMulticast(pacPayload);
+                console.log("[DEBUG_NOTIF] Push de confirmacion enviado al paciente");
             }
         } catch (_) {}
 
         return { success: true };
     } catch (error) {
         console.error("Error creando alerta y notificando cita:", error);
-        throw new functions.https.HttpsError('internal', error.message);
+        throw new functions.https.HttpsError("internal", error.message);
     }
 });
 
-// --- FUNCIÓN PARA PROBAR NOTIFICACIONES, SONIDO Y VIBRACIÓN EN EL CELULAR EN TIEMPO REAL ---
+// --- FUNCION DE PRUEBA DE NOTIFICACION EN TIEMPO REAL ---
 exports.enviarNotificacionPrueba = functions.https.onCall(async (data, context) => {
-    if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Debe estar autenticado.');
+    if (!context.auth) throw new functions.https.HttpsError("unauthenticated", "Debe estar autenticado.");
     const uid = context.auth.uid;
     
-    let token = data?.token || null;
-    if (!token) {
+    const tokens = new Set();
+    if (data?.token) {
+        extractTokens(data.token, tokens);
+    }
+    
+    try {
         const uSnap = await admin.firestore().collection("usuarios").doc(uid).get();
-        if (uSnap.exists && uSnap.data().fcmToken) {
-            token = uSnap.data().fcmToken;
+        if (uSnap.exists) {
+            extractTokens(uSnap.data().fcmToken, tokens);
+            extractTokens(uSnap.data().fcmTokens, tokens);
         }
-    }
-    
-    if (!token) {
-        const sSnap = await admin.firestore().collection("staff").doc(uid).get();
-        if (sSnap.exists && sSnap.data().fcmToken) {
-            token = sSnap.data().fcmToken;
-        }
-    }
+    } catch (_) {}
 
-    if (!token) {
-        // Fallback: buscar cualquier token de admin
+    try {
+        const sSnap = await admin.firestore().collection("staff").doc(uid).get();
+        if (sSnap.exists) {
+            extractTokens(sSnap.data().fcmToken, tokens);
+            extractTokens(sSnap.data().fcmTokens, tokens);
+        }
+    } catch (_) {}
+
+    if (tokens.size === 0) {
         const adminTokens = await obtenerTokensAdmins();
-        if (adminTokens.length > 0) token = adminTokens[0];
+        adminTokens.forEach(t => tokens.add(t));
     }
     
-    if (!token) {
-        throw new functions.https.HttpsError('not-found', 'No se encontró un token FCM registrado para tu dispositivo. Asegúrate de tener la app abierta en el teléfono.');
+    const tokenList = Array.from(tokens);
+    if (tokenList.length === 0) {
+        throw new functions.https.HttpsError("not-found", "No se encontró un token FCM registrado para tu dispositivo. Abre la app en el teléfono para registrarlo.");
     }
     
     const payload = {
-        token,
+        tokens: tokenList,
         notification: {
             title: "🔔 ¡Alerta de Prueba Clínica ALFRA!",
             body: "Tu celular está conectado y configurado con éxito. Sonido de timbre y vibración física funcionando al 100%."
         },
         android: ANDROID_NOTIFICATION_CONFIG,
         apns: APNS_NOTIFICATION_CONFIG,
-        data: { tipo: 'TEST_ALERT', timestamp: String(Date.now()) }
+        data: { tipo: "TEST_ALERT", timestamp: String(Date.now()) }
     };
     
     try {
-        const response = await admin.messaging().send(payload);
-        console.log("[DEBUG_NOTIF] Notificación de prueba enviada exitosamente:", response);
-        return { success: true, response };
+        const response = await admin.messaging().sendEachForMulticast(payload);
+        console.log("[DEBUG_NOTIF] Notificacion de prueba enviada:", response.successCount);
+        return { success: true, count: response.successCount, responses: response.responses };
     } catch (e) {
-        console.error("[DEBUG_NOTIF] Error enviando notificación de prueba:", e);
-        throw new functions.https.HttpsError('internal', e.message);
+        console.error("[DEBUG_NOTIF] Error enviando notificacion de prueba:", e);
+        throw new functions.https.HttpsError("internal", e.message);
     }
 });
+
+

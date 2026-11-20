@@ -6,7 +6,7 @@ import {
     onAuthStateChanged,
     sendPasswordResetEmail,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, updateDoc, onSnapshot, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, onSnapshot, collection, query, where, getDocs, arrayUnion } from 'firebase/firestore';
 import { auth, db } from '../lib/firebase';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { Capacitor } from '@capacitor/core';
@@ -261,49 +261,76 @@ export function AuthProvider({ children }) {
                 await PushNotifications.removeAllListeners();
             } catch (_) {}
 
-            // Listener: Token FCM recibido exitosamente
-            PushNotifications.addListener('registration', async (token) => {
-                console.log('[NOTIF] Push registration success, token:', token.value);
+            // Helper para persistir token FCM de forma redundante y resiliente
+            const guardarTokenFCM = async (tokenVal) => {
+                if (!tokenVal || typeof tokenVal !== 'string' || tokenVal.length < 15) return;
+                console.log('[NOTIF] Sincronizando token FCM en Firestore:', tokenVal.substring(0, 15) + '...');
                 const tokenData = {
-                    fcmToken: token.value,
+                    fcmToken: tokenVal,
+                    fcmTokens: arrayUnion(tokenVal),
                     fcmTokenUpdatedAt: new Date().toISOString(),
                     dispositivo: Capacitor.getPlatform()
                 };
 
-                // Guardar en /usuarios/{uid}
+                // Guardar en localStorage
+                try { localStorage.setItem('fcmToken', tokenVal); } catch (_) {}
+
+                // 1. Guardar en /usuarios/{uid}
                 try {
                     await setDoc(doc(db, 'usuarios', uid), tokenData, { merge: true });
                 } catch (e) {
                     console.warn('[NOTIF] Error guardando token en usuarios:', e);
                 }
 
-                // Guardar en localStorage para disponibilidad inmediata
-                try {
-                    localStorage.setItem('fcmToken', token.value);
-                } catch (_) {}
-
-                // Sincronizar en /staff (por ID directo o por campo uid)
+                // 2. Sincronizar en /staff (por doc ID, campo uid y email)
                 try {
                     const staffRef = doc(db, 'staff', uid);
                     const staffDoc = await getDoc(staffRef);
                     if (staffDoc.exists()) {
-                        await setDoc(staffRef, { fcmToken: token.value, fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
+                        await setDoc(staffRef, { fcmToken: tokenVal, fcmTokens: arrayUnion(tokenVal), fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt, uid }, { merge: true });
                     }
                     const qStaff = query(collection(db, 'staff'), where('uid', '==', uid));
                     const snapStaff = await getDocs(qStaff);
                     snapStaff.forEach(async (d) => {
-                        await setDoc(d.ref, { fcmToken: token.value, fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
+                        await setDoc(d.ref, { fcmToken: tokenVal, fcmTokens: arrayUnion(tokenVal), fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt, uid }, { merge: true });
                     });
-                } catch (_) {}
 
-                // Sincronizar en /pacientes si es paciente vinculado
+                    if (currentUser?.email) {
+                        const emailLow = currentUser.email.toLowerCase().trim();
+                        const qStaffEmail = query(collection(db, 'staff'), where('email', '==', emailLow));
+                        const snapStaffEmail = await getDocs(qStaffEmail);
+                        snapStaffEmail.forEach(async (d) => {
+                            await setDoc(d.ref, { fcmToken: tokenVal, fcmTokens: arrayUnion(tokenVal), fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt, uid }, { merge: true });
+                        });
+                    }
+                } catch (eSt) {
+                    console.warn('[NOTIF] Error sincronizando token en staff:', eSt);
+                }
+
+                // 3. Sincronizar en /pacientes
                 try {
                     const qPac = query(collection(db, 'pacientes'), where('uid', '==', uid));
                     const pacSnap = await getDocs(qPac);
                     pacSnap.forEach(async (d) => {
-                        await setDoc(d.ref, { fcmToken: token.value, fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
+                        await setDoc(d.ref, { fcmToken: tokenVal, fcmTokens: arrayUnion(tokenVal), fcmTokenUpdatedAt: tokenData.fcmTokenUpdatedAt }, { merge: true });
                     });
                 } catch (_) {}
+            };
+
+            // Disparar sincronizacion INMEDIATA si ya existe un token en cache local
+            try {
+                const cachedToken = localStorage.getItem('fcmToken');
+                if (cachedToken) {
+                    await guardarTokenFCM(cachedToken);
+                }
+            } catch (_) {}
+
+            // Listener: Token FCM recibido exitosamente
+            PushNotifications.addListener('registration', async (token) => {
+                console.log('[NOTIF] Push registration callback recibido:', token?.value?.substring(0, 15));
+                if (token?.value) {
+                    await guardarTokenFCM(token.value);
+                }
             });
 
             PushNotifications.addListener('registrationError', (error) => {
